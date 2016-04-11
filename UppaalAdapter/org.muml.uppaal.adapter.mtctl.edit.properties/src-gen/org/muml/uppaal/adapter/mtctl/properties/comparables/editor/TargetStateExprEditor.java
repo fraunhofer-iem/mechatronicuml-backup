@@ -1,15 +1,15 @@
 
-package org.muml.uppaal.adapter.mtctl.properties.mtctl.editor;
+package org.muml.uppaal.adapter.mtctl.properties.comparables.editor;
 
 /**
  * @generated
  */
-public class PropertyEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
+public class TargetStateExprEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public PropertyEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public TargetStateExprEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -34,9 +34,9 @@ public class PropertyEditor extends org.muml.ape.runtime.editors.ClassPropertyEd
 	/**
 	 * @generated
 	 */
-	public PropertyEditor(String tab) {
+	public TargetStateExprEditor(String tab) {
 		this(tab, org.muml.uppaal.adapter.mtctl.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
-				org.muml.uppaal.adapter.mtctl.MtctlPackage.eINSTANCE.getProperty());
+				org.muml.uppaal.adapter.mtctl.comparables.ComparablesPackage.eINSTANCE.getTargetStateExpr());
 	}
 
 	/**
@@ -45,7 +45,7 @@ public class PropertyEditor extends org.muml.ape.runtime.editors.ClassPropertyEd
 	public static class Factory implements org.muml.ape.runtime.factory.IPropertyEditorFactory {
 		@Override
 		public org.muml.ape.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
-			return new PropertyEditor(tab);
+			return new TargetStateExprEditor(tab);
 		}
 
 		@Override

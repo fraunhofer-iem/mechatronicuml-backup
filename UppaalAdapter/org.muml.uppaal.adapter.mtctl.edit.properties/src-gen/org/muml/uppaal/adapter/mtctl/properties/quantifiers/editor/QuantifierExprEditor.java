@@ -1,15 +1,15 @@
 
-package org.muml.uppaal.adapter.mtctl.properties.mtctl.editor;
+package org.muml.uppaal.adapter.mtctl.properties.quantifiers.editor;
 
 /**
  * @generated
  */
-public abstract class ExpressionEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
+public abstract class QuantifierExprEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public ExpressionEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public QuantifierExprEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}

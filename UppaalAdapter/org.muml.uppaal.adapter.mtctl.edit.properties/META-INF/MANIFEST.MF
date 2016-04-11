@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Mtctl Properties
-Bundle-SymbolicName: org.muml.uppaal.adapter.mtctl.edit.properties;singleton:=true
+Bundle-SymbolicName: org.muml.uppaal.adapter.mtctl.edit.properties; singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.core.runtime,
@@ -13,13 +13,12 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.muml.uppaal.adapter.mtctl.xtext.ui
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.muml.uppaal.adapter.mtctl.properties.BooleanLogic.editor,
- org.muml.uppaal.adapter.mtctl.properties.Comparables.editor,
- org.muml.uppaal.adapter.mtctl.properties.Predicates.editor,
- org.muml.uppaal.adapter.mtctl.properties.Quantifiers.editor,
- org.muml.uppaal.adapter.mtctl.properties.Sets.editor,
- org.muml.uppaal.adapter.mtctl.properties.constraint,
- org.muml.uppaal.adapter.mtctl.properties.metamodel,
+Export-Package: org.muml.uppaal.adapter.mtctl.properties.metamodel, org.muml.uppaal.adapter.mtctl.properties.constraint,
+ org.muml.uppaal.adapter.mtctl.properties.booleanlogic.editor,
+ org.muml.uppaal.adapter.mtctl.properties.predicates.editor,
+ org.muml.uppaal.adapter.mtctl.properties.quantifiers.editor,
  org.muml.uppaal.adapter.mtctl.properties.mtctl.editor,
+ org.muml.uppaal.adapter.mtctl.properties.comparables.editor,
+ org.muml.uppaal.adapter.mtctl.properties.sets.editor,
  org.muml.uppaal.adapter.mtctl.properties.tabs
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

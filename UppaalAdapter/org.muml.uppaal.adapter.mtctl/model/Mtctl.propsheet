@@ -14,105 +14,105 @@
   </plugin>
   <tabs xmi:id="_RnHf4M1gEeSIgPDefa6ZBw" id="property.tab.mtctl" name="Mtctl" afterTab=""/>
   <packages xmi:id="_RnHf4c1gEeSIgPDefa6ZBw">
-    <genPackage href="Mtctl.genmodel#//mtctl/BooleanLogic"/>
+    <genPackage href="Mtctl.genmodel#//mtctl/booleanlogic"/>
     <classes xmi:id="_RnHf4s1gEeSIgPDefa6ZBw" superClasses="_RnJ8KM1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/BooleanLogic/AndExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/booleanlogic/AndExpr"/>
     </classes>
     <classes xmi:id="_RnHf481gEeSIgPDefa6ZBw" superClasses="_RnJ8KM1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/BooleanLogic/ImplyExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/booleanlogic/ImplyExpr"/>
     </classes>
     <classes xmi:id="_RnHf5M1gEeSIgPDefa6ZBw" superClasses="_RnJ8KM1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/BooleanLogic/NotExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/booleanlogic/NotExpr"/>
     </classes>
     <classes xmi:id="_RnHf5c1gEeSIgPDefa6ZBw" superClasses="_RnJ8KM1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/BooleanLogic/OrExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/booleanlogic/OrExpr"/>
     </classes>
   </packages>
   <packages xmi:id="_RnHf5s1gEeSIgPDefa6ZBw">
-    <genPackage href="Mtctl.genmodel#//mtctl/Predicates"/>
+    <genPackage href="Mtctl.genmodel#//mtctl/predicates"/>
     <classes xmi:id="_RnHf581gEeSIgPDefa6ZBw" superClasses="_RnIuAc1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Predicates/DeadlockExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/predicates/DeadlockExpr"/>
     </classes>
     <classes xmi:id="_RnIG8c1gEeSIgPDefa6ZBw" superClasses="_RnIuAM1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Predicates/ComparisonExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/predicates/ComparisonExpr"/>
       <orderedElements xsi:type="org.muml:Property" xmi:id="_RnIG8s1gEeSIgPDefa6ZBw" tab="_RnHf4M1gEeSIgPDefa6ZBw" tooltip="" reconcile="false" initializeOCLExpression="">
-        <genFeature href="Mtctl.genmodel#//mtctl/Predicates/ComparisonExpr/op"/>
+        <genFeature href="Mtctl.genmodel#//mtctl/predicates/ComparisonExpr/op"/>
       </orderedElements>
     </classes>
     <classes xmi:id="_RnIG881gEeSIgPDefa6ZBw" superClasses="_RnIuAc1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Predicates/MessageInBufferExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/predicates/MessageInBufferExpr"/>
     </classes>
     <classes xmi:id="_RnIG9M1gEeSIgPDefa6ZBw" superClasses="_RnIuAc1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Predicates/MessageInTransitExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/predicates/MessageInTransitExpr"/>
     </classes>
     <classes xmi:id="_RnIG9c1gEeSIgPDefa6ZBw" superClasses="_RnIuAc1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Predicates/StateActiveExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/predicates/StateActiveExpr"/>
     </classes>
     <classes xmi:id="_RnIG9s1gEeSIgPDefa6ZBw" superClasses="_RnIuAs1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Predicates/SubstateOfExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/predicates/SubstateOfExpr"/>
     </classes>
     <classes xmi:id="_RnIG981gEeSIgPDefa6ZBw" superClasses="_RnIuAc1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Predicates/TransitionFiringExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/predicates/TransitionFiringExpr"/>
     </classes>
     <classes xmi:id="_RnIuAM1gEeSIgPDefa6ZBw" superClasses="_RnJ8KM1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Predicates/PredicateExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/predicates/PredicateExpr"/>
     </classes>
     <classes xmi:id="_RnIuAc1gEeSIgPDefa6ZBw" superClasses="_RnIuAM1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Predicates/DynamicPredicateExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/predicates/DynamicPredicateExpr"/>
     </classes>
     <classes xmi:id="_RnIuAs1gEeSIgPDefa6ZBw" superClasses="_RnIuAM1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Predicates/StaticPredicateExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/predicates/StaticPredicateExpr"/>
     </classes>
     <classes xmi:id="_RnIuA81gEeSIgPDefa6ZBw" superClasses="_RnIuAs1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Predicates/TrueExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/predicates/TrueExpr"/>
     </classes>
     <classes xmi:id="_RnIuBM1gEeSIgPDefa6ZBw" superClasses="_RnIuAs1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Predicates/FalseExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/predicates/FalseExpr"/>
     </classes>
     <classes xmi:id="_RnIuBc1gEeSIgPDefa6ZBw" superClasses="_RnIuAs1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Predicates/StateInStatechartExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/predicates/StateInStatechartExpr"/>
     </classes>
     <classes superClasses="_RnIuAc1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Predicates/ConnectorOverflowExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/predicates/ConnectorOverflowExpr"/>
     </classes>
     <classes superClasses="_RnIuAc1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Predicates/MessageDiscardedExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/predicates/MessageDiscardedExpr"/>
     </classes>
   </packages>
   <packages xmi:id="_RnIuBs1gEeSIgPDefa6ZBw">
-    <genPackage href="Mtctl.genmodel#//mtctl/Quantifiers"/>
+    <genPackage href="Mtctl.genmodel#//mtctl/quantifiers"/>
     <classes xmi:id="_RnIuB81gEeSIgPDefa6ZBw" superClasses="_RnJ8IM1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Quantifiers/AFExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/quantifiers/AFExpr"/>
     </classes>
     <classes xmi:id="_RnJVEM1gEeSIgPDefa6ZBw" superClasses="_RnJ8IM1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Quantifiers/AGExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/quantifiers/AGExpr"/>
     </classes>
     <classes xmi:id="_RnJVEc1gEeSIgPDefa6ZBw" superClasses="_RnJ8IM1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Quantifiers/EFExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/quantifiers/EFExpr"/>
     </classes>
     <classes xmi:id="_RnJVEs1gEeSIgPDefa6ZBw" superClasses="_RnJ8IM1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Quantifiers/EGExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/quantifiers/EGExpr"/>
     </classes>
     <classes xmi:id="_RnJVE81gEeSIgPDefa6ZBw" superClasses="_RnJVFM1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Quantifiers/ExistenceQuantExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/quantifiers/ExistenceQuantExpr"/>
     </classes>
     <classes xmi:id="_RnJVFM1gEeSIgPDefa6ZBw" superClasses="_RnJ8KM1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Quantifiers/QuantifierExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/quantifiers/QuantifierExpr"/>
     </classes>
     <classes xmi:id="_RnJVFc1gEeSIgPDefa6ZBw" superClasses="_RnJ8KM1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Quantifiers/BoundVariable"/>
+      <genClass href="Mtctl.genmodel#//mtctl/quantifiers/BoundVariable"/>
       <orderedElements xsi:type="org.muml:Property" xmi:id="_RnJVFs1gEeSIgPDefa6ZBw" tab="_RnHf4M1gEeSIgPDefa6ZBw" tooltip="" reconcile="false">
-        <genFeature href="Mtctl.genmodel#//mtctl/Quantifiers/BoundVariable/name"/>
+        <genFeature href="Mtctl.genmodel#//mtctl/quantifiers/BoundVariable/name"/>
       </orderedElements>
     </classes>
     <classes xmi:id="_RnJ8IM1gEeSIgPDefa6ZBw" superClasses="_RnJ8KM1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Quantifiers/TemporalQuantifierExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/quantifiers/TemporalQuantifierExpr"/>
     </classes>
     <classes xmi:id="_RnJ8Ic1gEeSIgPDefa6ZBw" superClasses="_RnJVFM1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Quantifiers/UniversalQuantExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/quantifiers/UniversalQuantExpr"/>
     </classes>
     <classes xmi:id="_RnJ8Is1gEeSIgPDefa6ZBw" superClasses="_RnJ8IM1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Quantifiers/LeadsToExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/quantifiers/LeadsToExpr"/>
     </classes>
   </packages>
   <packages xmi:id="_RnJ8I81gEeSIgPDefa6ZBw">
@@ -132,259 +132,79 @@
     </classes>
   </packages>
   <packages xmi:id="_RnKjMM1gEeSIgPDefa6ZBw">
-    <genPackage href="Mtctl.genmodel#//mtctl/Comparables"/>
+    <genPackage href="Mtctl.genmodel#//mtctl/comparables"/>
     <classes xmi:id="_RnKjMc1gEeSIgPDefa6ZBw" superClasses="_RnKjNs1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Comparables/BufferMsgCountExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/comparables/BufferMsgCountExpr"/>
     </classes>
     <classes xmi:id="_RnKjMs1gEeSIgPDefa6ZBw" superClasses="_RnKjNs1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Comparables/ConstExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/comparables/ConstExpr"/>
       <orderedElements xsi:type="org.muml:Property" xmi:id="_RnKjM81gEeSIgPDefa6ZBw" tab="_RnHf4M1gEeSIgPDefa6ZBw" tooltip="" reconcile="false">
-        <genFeature href="Mtctl.genmodel#//mtctl/Comparables/ConstExpr/val"/>
+        <genFeature href="Mtctl.genmodel#//mtctl/comparables/ConstExpr/val"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property" xmi:id="_RnKjNM1gEeSIgPDefa6ZBw" tab="_RnHf4M1gEeSIgPDefa6ZBw">
-        <genFeature href="Mtctl.genmodel#//mtctl/Comparables/ConstExpr/timeUnit"/>
-        <editor xsi:type="org.muml:RadioPropertyEditor"/>
+        <genFeature href="Mtctl.genmodel#//mtctl/comparables/ConstExpr/timeUnit"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes xmi:id="_RnKjNs1gEeSIgPDefa6ZBw" superClasses="_RnJ8KM1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Comparables/MapExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/comparables/MapExpr"/>
     </classes>
     <classes xmi:id="_RnKjN81gEeSIgPDefa6ZBw" superClasses="_RnKjNs1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Comparables/MumlElemExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/comparables/MumlElemExpr"/>
       <orderedElements xsi:type="org.muml:Property" xmi:id="_RnLKQM1gEeSIgPDefa6ZBw" tab="_RnHf4M1gEeSIgPDefa6ZBw" reconcile="false">
-        <genFeature href="Mtctl.genmodel#//mtctl/Comparables/MumlElemExpr/elem"/>
+        <genFeature href="Mtctl.genmodel#//mtctl/comparables/MumlElemExpr/elem"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property" xmi:id="_RnLKQc1gEeSIgPDefa6ZBw" tab="_RnHf4M1gEeSIgPDefa6ZBw">
-        <genFeature href="Mtctl.genmodel#//mtctl/Comparables/MumlElemExpr/instance"/>
-        <editor xsi:type="org.muml:RadioPropertyEditor"/>
+        <genFeature href="Mtctl.genmodel#//mtctl/comparables/MumlElemExpr/instance"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes xmi:id="_RnLKQ81gEeSIgPDefa6ZBw" superClasses="_RnKjNs1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Comparables/TransitionMap"/>
+      <genClass href="Mtctl.genmodel#//mtctl/comparables/TransitionMap"/>
     </classes>
     <classes xmi:id="_RnLKRM1gEeSIgPDefa6ZBw" superClasses="_RnLKQ81gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Comparables/SourceStateExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/comparables/SourceStateExpr"/>
     </classes>
     <classes xmi:id="_RnLKRc1gEeSIgPDefa6ZBw" superClasses="_RnLKQ81gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Comparables/TargetStateExpr"/>
-    </classes>
-  </packages>
-  <packages xmi:id="_RnLKRs1gEeSIgPDefa6ZBw">
-    <genPackage href="Mtctl.genmodel#//mtctl/Sets"/>
-    <classes xmi:id="_RnLKR81gEeSIgPDefa6ZBw" superClasses="_RnJ8KM1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Sets/SetExpr"/>
-    </classes>
-    <classes xmi:id="_RnLKSM1gEeSIgPDefa6ZBw" superClasses="_RnLKR81gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Sets/ClockSetExpr"/>
-    </classes>
-    <classes xmi:id="_RnLxUM1gEeSIgPDefa6ZBw" superClasses="_RnLKR81gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Sets/IntervalSetExpr"/>
-      <orderedElements xsi:type="org.muml:Property" xmi:id="_RnLxUc1gEeSIgPDefa6ZBw" tab="_RnHf4M1gEeSIgPDefa6ZBw" tooltip="" reconcile="false">
-        <genFeature href="Mtctl.genmodel#//mtctl/Sets/IntervalSetExpr/lowerVal"/>
-      </orderedElements>
-      <orderedElements xsi:type="org.muml:Property" xmi:id="_RnLxUs1gEeSIgPDefa6ZBw" tab="_RnHf4M1gEeSIgPDefa6ZBw" tooltip="" reconcile="false">
-        <genFeature href="Mtctl.genmodel#//mtctl/Sets/IntervalSetExpr/upperVal"/>
-      </orderedElements>
-    </classes>
-    <classes xmi:id="_RnLxU81gEeSIgPDefa6ZBw" superClasses="_RnLKR81gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Sets/MessageSetExpr"/>
-    </classes>
-    <classes xmi:id="_RnLxVM1gEeSIgPDefa6ZBw" superClasses="_RnLKR81gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Sets/StateSetExpr"/>
-    </classes>
-    <classes xmi:id="_RnLxVc1gEeSIgPDefa6ZBw" superClasses="_RnLKR81gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Sets/TransitionSetExpr"/>
-    </classes>
-    <classes xmi:id="_RnLxVs1gEeSIgPDefa6ZBw" superClasses="_RnLKR81gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Sets/BufferSetExpr"/>
-    </classes>
-    <classes xmi:id="_RnLxV81gEeSIgPDefa6ZBw" superClasses="_RnLKR81gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Sets/InstanceSetExpr"/>
-    </classes>
-    <classes xmi:id="_RnMYYM1gEeSIgPDefa6ZBw" superClasses="_RnLKR81gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Sets/SubinstanceSetExpr"/>
+      <genClass href="Mtctl.genmodel#//mtctl/comparables/TargetStateExpr"/>
     </classes>
   </packages>
   <packages>
-    <genPackage href="Mtctl.genmodel#//mtctl/@nestedGenPackages.0"/>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.0/@genClasses.0"/>
+    <genPackage href="Mtctl.genmodel#//mtctl/sets"/>
+    <classes superClasses="_RnJ8KM1gEeSIgPDefa6ZBw">
+      <genClass href="Mtctl.genmodel#//mtctl/sets/SetExpr"/>
     </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.0/@genClasses.1"/>
+    <classes superClasses="//@packages.5/@classes.0">
+      <genClass href="Mtctl.genmodel#//mtctl/sets/ClockSetExpr"/>
     </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.0/@genClasses.2"/>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.0/@genClasses.3"/>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.0/@genClasses.4"/>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.0/@genClasses.5"/>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.0/@genClasses.6"/>
+    <classes superClasses="//@packages.5/@classes.0">
+      <genClass href="Mtctl.genmodel#//mtctl/sets/IntervalSetExpr"/>
       <orderedElements xsi:type="org.muml:Property" tab="_RnHf4M1gEeSIgPDefa6ZBw">
-        <genFeature href="Mtctl.genmodel#//mtctl/@nestedGenPackages.0/@genClasses.6/@genFeatures.1"/>
-        <editor xsi:type="org.muml:RadioPropertyEditor"/>
-      </orderedElements>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.0/@genClasses.7"/>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.0/@genClasses.8"/>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.0/@genClasses.9"/>
-    </classes>
-  </packages>
-  <packages>
-    <genPackage href="Mtctl.genmodel#//mtctl/@nestedGenPackages.2"/>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.2/@genClasses.0"/>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.2/@genClasses.1"/>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.2/@genClasses.2"/>
-      <orderedElements xsi:type="org.muml:Property" tab="_RnHf4M1gEeSIgPDefa6ZBw">
-        <genFeature href="Mtctl.genmodel#//mtctl/@nestedGenPackages.2/@genClasses.2/@genFeatures.0"/>
-        <editor xsi:type="org.muml:RadioPropertyEditor"/>
+        <genFeature href="Mtctl.genmodel#//mtctl/sets/IntervalSetExpr/lowerVal"/>
+        <editor xsi:type="org.muml:SpinnerPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property" tab="_RnHf4M1gEeSIgPDefa6ZBw">
-        <genFeature href="Mtctl.genmodel#//mtctl/@nestedGenPackages.2/@genClasses.2/@genFeatures.1"/>
-        <editor xsi:type="org.muml:RadioPropertyEditor"/>
+        <genFeature href="Mtctl.genmodel#//mtctl/sets/IntervalSetExpr/upperVal"/>
+        <editor xsi:type="org.muml:SpinnerPropertyEditor"/>
       </orderedElements>
     </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.2/@genClasses.3"/>
+    <classes superClasses="//@packages.5/@classes.0">
+      <genClass href="Mtctl.genmodel#//mtctl/sets/MessageSetExpr"/>
     </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.2/@genClasses.4"/>
+    <classes superClasses="//@packages.5/@classes.0">
+      <genClass href="Mtctl.genmodel#//mtctl/sets/StateSetExpr"/>
     </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.2/@genClasses.5"/>
+    <classes superClasses="//@packages.5/@classes.0">
+      <genClass href="Mtctl.genmodel#//mtctl/sets/TransitionSetExpr"/>
     </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.2/@genClasses.6"/>
+    <classes superClasses="//@packages.5/@classes.0">
+      <genClass href="Mtctl.genmodel#//mtctl/sets/BufferSetExpr"/>
     </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.2/@genClasses.7"/>
+    <classes superClasses="//@packages.5/@classes.0">
+      <genClass href="Mtctl.genmodel#//mtctl/sets/InstanceSetExpr"/>
     </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.2/@genClasses.8"/>
-    </classes>
-  </packages>
-  <packages>
-    <genPackage href="Mtctl.genmodel#//mtctl/@nestedGenPackages.4"/>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.4/@genClasses.0"/>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.4/@genClasses.1"/>
-      <orderedElements xsi:type="org.muml:Property" tab="_RnHf4M1gEeSIgPDefa6ZBw">
-        <genFeature href="Mtctl.genmodel#//mtctl/@nestedGenPackages.4/@genClasses.1/@genFeatures.0"/>
-        <editor xsi:type="org.muml:RadioPropertyEditor"/>
-      </orderedElements>
-      <orderedElements xsi:type="org.muml:Property" tab="_RnHf4M1gEeSIgPDefa6ZBw">
-        <genFeature href="Mtctl.genmodel#//mtctl/@nestedGenPackages.4/@genClasses.1/@genFeatures.1"/>
-        <editor xsi:type="org.muml:RadioPropertyEditor"/>
-      </orderedElements>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.4/@genClasses.2"/>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.4/@genClasses.3"/>
-      <orderedElements xsi:type="org.muml:Property" tab="_RnHf4M1gEeSIgPDefa6ZBw">
-        <genFeature href="Mtctl.genmodel#//mtctl/@nestedGenPackages.4/@genClasses.3/@genFeatures.0"/>
-        <editor xsi:type="org.muml:RadioPropertyEditor"/>
-      </orderedElements>
-      <orderedElements xsi:type="org.muml:Property" tab="_RnHf4M1gEeSIgPDefa6ZBw">
-        <genFeature href="Mtctl.genmodel#//mtctl/@nestedGenPackages.4/@genClasses.3/@genFeatures.1"/>
-        <editor xsi:type="org.muml:RadioPropertyEditor"/>
-      </orderedElements>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.4/@genClasses.4"/>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.4/@genClasses.5"/>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.4/@genClasses.6"/>
-    </classes>
-  </packages>
-  <packages>
-    <genPackage href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1"/>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.0"/>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.1"/>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.2"/>
-      <orderedElements xsi:type="org.muml:Property" tab="_RnHf4M1gEeSIgPDefa6ZBw">
-        <genFeature href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.2/@genFeatures.1"/>
-        <editor xsi:type="org.muml:RadioPropertyEditor"/>
-      </orderedElements>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.3"/>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.4"/>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.5"/>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.6"/>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.7"/>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.8"/>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.9"/>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.10"/>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.11"/>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.12"/>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.13"/>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.14"/>
-    </classes>
-  </packages>
-  <packages>
-    <genPackage href="Mtctl.genmodel#//mtctl/@nestedGenPackages.3"/>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.3/@genClasses.0"/>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.3/@genClasses.1"/>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.3/@genClasses.2"/>
-    </classes>
-    <classes>
-      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.3/@genClasses.3"/>
+    <classes superClasses="//@packages.5/@classes.0">
+      <genClass href="Mtctl.genmodel#//mtctl/sets/SubinstanceSetExpr"/>
     </classes>
   </packages>
 </org.muml:PropertyGenerator>
