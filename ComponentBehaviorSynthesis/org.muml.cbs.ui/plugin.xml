@@ -15,7 +15,7 @@
 						<or>
 							<with variable="selection">
 								<iterate ifEmpty="false">
-								<instanceof value="de.uni_paderborn.fujaba.muml.component.AtomicComponent">
+								<instanceof value="org.muml.pim.component.AtomicComponent">
 								</instanceof>
 								</iterate>
 							</with>

@@ -34,7 +34,7 @@
       </componentInstances>
     </modelElements>
   </categories>
-  <categories xmi:id="_M8Zu0J9TEeG4eMpbz4C8AQ" key="org.storydriven.activities.category">
+  <categories xmi:id="_M8Zu0J9TEeG4eMpbz4C8AQ" key="org.muml.activities.category">
     <modelElements xsi:type="sda:Activity" xmi:id="_M8Zu0Z9TEeG4eMpbz4C8AQ" name="createSubPortInstanceInOneActivity">
       <ownedActivityEdge xmi:id="_Y899sJ9TEeG4eMpbz4C8AQ" target="_Pv-CoJ9TEeG4eMpbz4C8AQ" source="_OeJOYJ9TEeG4eMpbz4C8AQ"/>
       <ownedActivityEdge xmi:id="_aWO2sJ9TEeG4eMpbz4C8AQ" target="_PHNZgJ9TEeG4eMpbz4C8AQ" source="_Pv-CoJ9TEeG4eMpbz4C8AQ"/>

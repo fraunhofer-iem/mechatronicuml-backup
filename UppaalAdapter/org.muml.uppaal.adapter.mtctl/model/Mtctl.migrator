@@ -6,5 +6,5 @@
   <sourcePackages href="Mtctl.ecore#//Predicates"/>
   <sourcePackages href="Mtctl.ecore#//Quantifiers"/>
   <sourcePackages href="Mtctl.ecore#//Sets"/>
-  <release href="../../org.storydriven.core.migrator/model/muml.releaseset#//@releases.1"/>
+  <release href="../../org.muml.core.migrator/model/muml.releaseset#//@releases.1"/>
 </migration:Migrator>

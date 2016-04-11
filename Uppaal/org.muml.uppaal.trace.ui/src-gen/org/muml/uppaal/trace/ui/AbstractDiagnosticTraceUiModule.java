@@ -8,7 +8,7 @@ import org.eclipse.xtext.ui.DefaultUiModule;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
- * Manual modifications go to {de.uni_paderborn.uppaal.trace.ui.DiagnosticTraceUiModule}
+ * Manual modifications go to {org.muml.uppaal.trace.ui.DiagnosticTraceUiModule}
  */
 @SuppressWarnings("all")
 public abstract class AbstractDiagnosticTraceUiModule extends DefaultUiModule {

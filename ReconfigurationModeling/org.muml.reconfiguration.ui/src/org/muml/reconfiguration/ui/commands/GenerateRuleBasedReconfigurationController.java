@@ -116,7 +116,7 @@ public class GenerateRuleBasedReconfigurationController extends AbstractHandler 
 
 		URI transformationURI = URI
 				.createPlatformPluginURI(
-						"/de.uni_paderborn.fujaba.muml.reconfiguration.ui/transforms/GenerateReconfigurationController.qvto",
+						"/org.muml.reconfiguration.ui/transforms/GenerateReconfigurationController.qvto",
 						true);
 
 		// create executor and execution context

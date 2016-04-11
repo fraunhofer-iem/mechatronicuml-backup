@@ -9,7 +9,7 @@ options {
 }
 
 @lexer::header {
-package de.uni_paderborn.uppaal.trace.parser.antlr.internal;
+package org.muml.uppaal.trace.parser.antlr.internal;
 
 // Hack: Use our own Lexer superclass by means of import. 
 // Currently there is no other way to specify the superclass for the lexer.
@@ -17,7 +17,7 @@ import org.eclipse.xtext.parser.antlr.Lexer;
 }
 
 @parser::header {
-package de.uni_paderborn.uppaal.trace.parser.antlr.internal; 
+package org.muml.uppaal.trace.parser.antlr.internal; 
 
 import org.eclipse.xtext.*;
 import org.eclipse.xtext.parser.*;
@@ -29,7 +29,7 @@ import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
 import org.eclipse.xtext.parser.antlr.AntlrDatatypeRuleToken;
-import de.uni_paderborn.uppaal.trace.services.DiagnosticTraceGrammarAccess;
+import org.muml.uppaal.trace.services.DiagnosticTraceGrammarAccess;
 
 }
 

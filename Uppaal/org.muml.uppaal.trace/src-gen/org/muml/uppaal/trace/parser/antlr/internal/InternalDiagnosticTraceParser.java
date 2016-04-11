@@ -74,7 +74,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
         
 
     public String[] getTokenNames() { return InternalDiagnosticTraceParser.tokenNames; }
-    public String getGrammarFileName() { return "../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g"; }
+    public String getGrammarFileName() { return "../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g"; }
 
 
 
@@ -99,7 +99,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTraceRepository"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:68:1: entryRuleTraceRepository returns [EObject current=null] : iv_ruleTraceRepository= ruleTraceRepository EOF ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:68:1: entryRuleTraceRepository returns [EObject current=null] : iv_ruleTraceRepository= ruleTraceRepository EOF ;
     public final EObject entryRuleTraceRepository() throws RecognitionException {
         EObject current = null;
 
@@ -107,8 +107,8 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:69:2: (iv_ruleTraceRepository= ruleTraceRepository EOF )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:70:2: iv_ruleTraceRepository= ruleTraceRepository EOF
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:69:2: (iv_ruleTraceRepository= ruleTraceRepository EOF )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:70:2: iv_ruleTraceRepository= ruleTraceRepository EOF
             {
              newCompositeNode(grammarAccess.getTraceRepositoryRule()); 
             pushFollow(FOLLOW_ruleTraceRepository_in_entryRuleTraceRepository75);
@@ -135,7 +135,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTraceRepository"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:77:1: ruleTraceRepository returns [EObject current=null] : ( (otherlv_0= 'Cannot reuse state space when trace length optimisation is used.' )? ( (lv_traces_1_0= ruleTrace ) )* ) ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:77:1: ruleTraceRepository returns [EObject current=null] : ( (otherlv_0= 'Cannot reuse state space when trace length optimisation is used.' )? ( (lv_traces_1_0= ruleTrace ) )* ) ;
     public final EObject ruleTraceRepository() throws RecognitionException {
         EObject current = null;
 
@@ -146,13 +146,13 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:80:28: ( ( (otherlv_0= 'Cannot reuse state space when trace length optimisation is used.' )? ( (lv_traces_1_0= ruleTrace ) )* ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:81:1: ( (otherlv_0= 'Cannot reuse state space when trace length optimisation is used.' )? ( (lv_traces_1_0= ruleTrace ) )* )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:80:28: ( ( (otherlv_0= 'Cannot reuse state space when trace length optimisation is used.' )? ( (lv_traces_1_0= ruleTrace ) )* ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:81:1: ( (otherlv_0= 'Cannot reuse state space when trace length optimisation is used.' )? ( (lv_traces_1_0= ruleTrace ) )* )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:81:1: ( (otherlv_0= 'Cannot reuse state space when trace length optimisation is used.' )? ( (lv_traces_1_0= ruleTrace ) )* )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:81:2: (otherlv_0= 'Cannot reuse state space when trace length optimisation is used.' )? ( (lv_traces_1_0= ruleTrace ) )*
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:81:1: ( (otherlv_0= 'Cannot reuse state space when trace length optimisation is used.' )? ( (lv_traces_1_0= ruleTrace ) )* )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:81:2: (otherlv_0= 'Cannot reuse state space when trace length optimisation is used.' )? ( (lv_traces_1_0= ruleTrace ) )*
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:81:2: (otherlv_0= 'Cannot reuse state space when trace length optimisation is used.' )?
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:81:2: (otherlv_0= 'Cannot reuse state space when trace length optimisation is used.' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -161,7 +161,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
             }
             switch (alt1) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:81:4: otherlv_0= 'Cannot reuse state space when trace length optimisation is used.'
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:81:4: otherlv_0= 'Cannot reuse state space when trace length optimisation is used.'
                     {
                     otherlv_0=(Token)match(input,13,FOLLOW_13_in_ruleTraceRepository123); 
 
@@ -173,7 +173,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:85:3: ( (lv_traces_1_0= ruleTrace ) )*
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:85:3: ( (lv_traces_1_0= ruleTrace ) )*
             loop2:
             do {
                 int alt2=2;
@@ -186,10 +186,10 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:86:1: (lv_traces_1_0= ruleTrace )
+            	    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:86:1: (lv_traces_1_0= ruleTrace )
             	    {
-            	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:86:1: (lv_traces_1_0= ruleTrace )
-            	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:87:3: lv_traces_1_0= ruleTrace
+            	    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:86:1: (lv_traces_1_0= ruleTrace )
+            	    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:87:3: lv_traces_1_0= ruleTrace
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getTraceRepositoryAccess().getTracesTraceParserRuleCall_1_0()); 
@@ -243,7 +243,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTrace"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:111:1: entryRuleTrace returns [EObject current=null] : iv_ruleTrace= ruleTrace EOF ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:111:1: entryRuleTrace returns [EObject current=null] : iv_ruleTrace= ruleTrace EOF ;
     public final EObject entryRuleTrace() throws RecognitionException {
         EObject current = null;
 
@@ -251,8 +251,8 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:112:2: (iv_ruleTrace= ruleTrace EOF )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:113:2: iv_ruleTrace= ruleTrace EOF
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:112:2: (iv_ruleTrace= ruleTrace EOF )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:113:2: iv_ruleTrace= ruleTrace EOF
             {
              newCompositeNode(grammarAccess.getTraceRule()); 
             pushFollow(FOLLOW_ruleTrace_in_entryRuleTrace183);
@@ -279,7 +279,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTrace"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:120:1: ruleTrace returns [EObject current=null] : (otherlv_0= 'Verifying' (otherlv_1= 'property' | otherlv_2= 'formula' ) ( (lv_property_3_0= RULE_INT ) ) otherlv_4= 'at line' ( (lv_line_5_0= RULE_INT ) ) ( (lv_result_6_0= ruleResult ) ) ( (otherlv_7= 'Showing counter example.' | otherlv_8= 'Showing example trace.' ) ( (lv_traceItems_9_0= ruleTraceItem ) )+ )? ) ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:120:1: ruleTrace returns [EObject current=null] : (otherlv_0= 'Verifying' (otherlv_1= 'property' | otherlv_2= 'formula' ) ( (lv_property_3_0= RULE_INT ) ) otherlv_4= 'at line' ( (lv_line_5_0= RULE_INT ) ) ( (lv_result_6_0= ruleResult ) ) ( (otherlv_7= 'Showing counter example.' | otherlv_8= 'Showing example trace.' ) ( (lv_traceItems_9_0= ruleTraceItem ) )+ )? ) ;
     public final EObject ruleTrace() throws RecognitionException {
         EObject current = null;
 
@@ -299,17 +299,17 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:123:28: ( (otherlv_0= 'Verifying' (otherlv_1= 'property' | otherlv_2= 'formula' ) ( (lv_property_3_0= RULE_INT ) ) otherlv_4= 'at line' ( (lv_line_5_0= RULE_INT ) ) ( (lv_result_6_0= ruleResult ) ) ( (otherlv_7= 'Showing counter example.' | otherlv_8= 'Showing example trace.' ) ( (lv_traceItems_9_0= ruleTraceItem ) )+ )? ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:124:1: (otherlv_0= 'Verifying' (otherlv_1= 'property' | otherlv_2= 'formula' ) ( (lv_property_3_0= RULE_INT ) ) otherlv_4= 'at line' ( (lv_line_5_0= RULE_INT ) ) ( (lv_result_6_0= ruleResult ) ) ( (otherlv_7= 'Showing counter example.' | otherlv_8= 'Showing example trace.' ) ( (lv_traceItems_9_0= ruleTraceItem ) )+ )? )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:123:28: ( (otherlv_0= 'Verifying' (otherlv_1= 'property' | otherlv_2= 'formula' ) ( (lv_property_3_0= RULE_INT ) ) otherlv_4= 'at line' ( (lv_line_5_0= RULE_INT ) ) ( (lv_result_6_0= ruleResult ) ) ( (otherlv_7= 'Showing counter example.' | otherlv_8= 'Showing example trace.' ) ( (lv_traceItems_9_0= ruleTraceItem ) )+ )? ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:124:1: (otherlv_0= 'Verifying' (otherlv_1= 'property' | otherlv_2= 'formula' ) ( (lv_property_3_0= RULE_INT ) ) otherlv_4= 'at line' ( (lv_line_5_0= RULE_INT ) ) ( (lv_result_6_0= ruleResult ) ) ( (otherlv_7= 'Showing counter example.' | otherlv_8= 'Showing example trace.' ) ( (lv_traceItems_9_0= ruleTraceItem ) )+ )? )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:124:1: (otherlv_0= 'Verifying' (otherlv_1= 'property' | otherlv_2= 'formula' ) ( (lv_property_3_0= RULE_INT ) ) otherlv_4= 'at line' ( (lv_line_5_0= RULE_INT ) ) ( (lv_result_6_0= ruleResult ) ) ( (otherlv_7= 'Showing counter example.' | otherlv_8= 'Showing example trace.' ) ( (lv_traceItems_9_0= ruleTraceItem ) )+ )? )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:124:3: otherlv_0= 'Verifying' (otherlv_1= 'property' | otherlv_2= 'formula' ) ( (lv_property_3_0= RULE_INT ) ) otherlv_4= 'at line' ( (lv_line_5_0= RULE_INT ) ) ( (lv_result_6_0= ruleResult ) ) ( (otherlv_7= 'Showing counter example.' | otherlv_8= 'Showing example trace.' ) ( (lv_traceItems_9_0= ruleTraceItem ) )+ )?
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:124:1: (otherlv_0= 'Verifying' (otherlv_1= 'property' | otherlv_2= 'formula' ) ( (lv_property_3_0= RULE_INT ) ) otherlv_4= 'at line' ( (lv_line_5_0= RULE_INT ) ) ( (lv_result_6_0= ruleResult ) ) ( (otherlv_7= 'Showing counter example.' | otherlv_8= 'Showing example trace.' ) ( (lv_traceItems_9_0= ruleTraceItem ) )+ )? )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:124:3: otherlv_0= 'Verifying' (otherlv_1= 'property' | otherlv_2= 'formula' ) ( (lv_property_3_0= RULE_INT ) ) otherlv_4= 'at line' ( (lv_line_5_0= RULE_INT ) ) ( (lv_result_6_0= ruleResult ) ) ( (otherlv_7= 'Showing counter example.' | otherlv_8= 'Showing example trace.' ) ( (lv_traceItems_9_0= ruleTraceItem ) )+ )?
             {
             otherlv_0=(Token)match(input,14,FOLLOW_14_in_ruleTrace230); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getTraceAccess().getVerifyingKeyword_0());
                 
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:128:1: (otherlv_1= 'property' | otherlv_2= 'formula' )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:128:1: (otherlv_1= 'property' | otherlv_2= 'formula' )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -327,7 +327,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
             }
             switch (alt3) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:128:3: otherlv_1= 'property'
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:128:3: otherlv_1= 'property'
                     {
                     otherlv_1=(Token)match(input,15,FOLLOW_15_in_ruleTrace243); 
 
@@ -337,7 +337,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:133:7: otherlv_2= 'formula'
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:133:7: otherlv_2= 'formula'
                     {
                     otherlv_2=(Token)match(input,16,FOLLOW_16_in_ruleTrace261); 
 
@@ -349,11 +349,11 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:137:2: ( (lv_property_3_0= RULE_INT ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:138:1: (lv_property_3_0= RULE_INT )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:137:2: ( (lv_property_3_0= RULE_INT ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:138:1: (lv_property_3_0= RULE_INT )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:138:1: (lv_property_3_0= RULE_INT )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:139:3: lv_property_3_0= RULE_INT
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:138:1: (lv_property_3_0= RULE_INT )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:139:3: lv_property_3_0= RULE_INT
             {
             lv_property_3_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleTrace279); 
 
@@ -379,11 +379,11 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
                 	newLeafNode(otherlv_4, grammarAccess.getTraceAccess().getAtLineKeyword_3());
                 
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:159:1: ( (lv_line_5_0= RULE_INT ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:160:1: (lv_line_5_0= RULE_INT )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:159:1: ( (lv_line_5_0= RULE_INT ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:160:1: (lv_line_5_0= RULE_INT )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:160:1: (lv_line_5_0= RULE_INT )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:161:3: lv_line_5_0= RULE_INT
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:160:1: (lv_line_5_0= RULE_INT )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:161:3: lv_line_5_0= RULE_INT
             {
             lv_line_5_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleTrace313); 
 
@@ -405,11 +405,11 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:177:2: ( (lv_result_6_0= ruleResult ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:178:1: (lv_result_6_0= ruleResult )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:177:2: ( (lv_result_6_0= ruleResult ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:178:1: (lv_result_6_0= ruleResult )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:178:1: (lv_result_6_0= ruleResult )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:179:3: lv_result_6_0= ruleResult
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:178:1: (lv_result_6_0= ruleResult )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:179:3: lv_result_6_0= ruleResult
             {
              
             	        newCompositeNode(grammarAccess.getTraceAccess().getResultResultEnumRuleCall_5_0()); 
@@ -436,7 +436,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:195:2: ( (otherlv_7= 'Showing counter example.' | otherlv_8= 'Showing example trace.' ) ( (lv_traceItems_9_0= ruleTraceItem ) )+ )?
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:195:2: ( (otherlv_7= 'Showing counter example.' | otherlv_8= 'Showing example trace.' ) ( (lv_traceItems_9_0= ruleTraceItem ) )+ )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -445,9 +445,9 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
             }
             switch (alt6) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:195:3: (otherlv_7= 'Showing counter example.' | otherlv_8= 'Showing example trace.' ) ( (lv_traceItems_9_0= ruleTraceItem ) )+
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:195:3: (otherlv_7= 'Showing counter example.' | otherlv_8= 'Showing example trace.' ) ( (lv_traceItems_9_0= ruleTraceItem ) )+
                     {
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:195:3: (otherlv_7= 'Showing counter example.' | otherlv_8= 'Showing example trace.' )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:195:3: (otherlv_7= 'Showing counter example.' | otherlv_8= 'Showing example trace.' )
                     int alt4=2;
                     int LA4_0 = input.LA(1);
 
@@ -465,7 +465,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt4) {
                         case 1 :
-                            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:195:5: otherlv_7= 'Showing counter example.'
+                            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:195:5: otherlv_7= 'Showing counter example.'
                             {
                             otherlv_7=(Token)match(input,18,FOLLOW_18_in_ruleTrace353); 
 
@@ -475,7 +475,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:200:7: otherlv_8= 'Showing example trace.'
+                            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:200:7: otherlv_8= 'Showing example trace.'
                             {
                             otherlv_8=(Token)match(input,19,FOLLOW_19_in_ruleTrace371); 
 
@@ -487,7 +487,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:204:2: ( (lv_traceItems_9_0= ruleTraceItem ) )+
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:204:2: ( (lv_traceItems_9_0= ruleTraceItem ) )+
                     int cnt5=0;
                     loop5:
                     do {
@@ -501,10 +501,10 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:205:1: (lv_traceItems_9_0= ruleTraceItem )
+                    	    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:205:1: (lv_traceItems_9_0= ruleTraceItem )
                     	    {
-                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:205:1: (lv_traceItems_9_0= ruleTraceItem )
-                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:206:3: lv_traceItems_9_0= ruleTraceItem
+                    	    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:205:1: (lv_traceItems_9_0= ruleTraceItem )
+                    	    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:206:3: lv_traceItems_9_0= ruleTraceItem
                     	    {
                     	     
                     	    	        newCompositeNode(grammarAccess.getTraceAccess().getTraceItemsTraceItemParserRuleCall_6_1_0()); 
@@ -568,7 +568,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleProcessIdentifier"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:230:1: entryRuleProcessIdentifier returns [EObject current=null] : iv_ruleProcessIdentifier= ruleProcessIdentifier EOF ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:230:1: entryRuleProcessIdentifier returns [EObject current=null] : iv_ruleProcessIdentifier= ruleProcessIdentifier EOF ;
     public final EObject entryRuleProcessIdentifier() throws RecognitionException {
         EObject current = null;
 
@@ -576,8 +576,8 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:231:2: (iv_ruleProcessIdentifier= ruleProcessIdentifier EOF )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:232:2: iv_ruleProcessIdentifier= ruleProcessIdentifier EOF
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:231:2: (iv_ruleProcessIdentifier= ruleProcessIdentifier EOF )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:232:2: iv_ruleProcessIdentifier= ruleProcessIdentifier EOF
             {
              newCompositeNode(grammarAccess.getProcessIdentifierRule()); 
             pushFollow(FOLLOW_ruleProcessIdentifier_in_entryRuleProcessIdentifier432);
@@ -604,7 +604,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProcessIdentifier"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:239:1: ruleProcessIdentifier returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_arguments_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_arguments_4_0= RULE_INT ) ) )* otherlv_5= ')' )? ) ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:239:1: ruleProcessIdentifier returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_arguments_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_arguments_4_0= RULE_INT ) ) )* otherlv_5= ')' )? ) ;
     public final EObject ruleProcessIdentifier() throws RecognitionException {
         EObject current = null;
 
@@ -618,17 +618,17 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:242:28: ( ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_arguments_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_arguments_4_0= RULE_INT ) ) )* otherlv_5= ')' )? ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:243:1: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_arguments_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_arguments_4_0= RULE_INT ) ) )* otherlv_5= ')' )? )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:242:28: ( ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_arguments_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_arguments_4_0= RULE_INT ) ) )* otherlv_5= ')' )? ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:243:1: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_arguments_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_arguments_4_0= RULE_INT ) ) )* otherlv_5= ')' )? )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:243:1: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_arguments_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_arguments_4_0= RULE_INT ) ) )* otherlv_5= ')' )? )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:243:2: ( (otherlv_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_arguments_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_arguments_4_0= RULE_INT ) ) )* otherlv_5= ')' )?
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:243:1: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_arguments_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_arguments_4_0= RULE_INT ) ) )* otherlv_5= ')' )? )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:243:2: ( (otherlv_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_arguments_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_arguments_4_0= RULE_INT ) ) )* otherlv_5= ')' )?
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:243:2: ( (otherlv_0= RULE_ID ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:244:1: (otherlv_0= RULE_ID )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:243:2: ( (otherlv_0= RULE_ID ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:244:1: (otherlv_0= RULE_ID )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:244:1: (otherlv_0= RULE_ID )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:245:3: otherlv_0= RULE_ID
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:244:1: (otherlv_0= RULE_ID )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:245:3: otherlv_0= RULE_ID
             {
 
             			if (current==null) {
@@ -645,7 +645,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:256:2: (otherlv_1= '(' ( (lv_arguments_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_arguments_4_0= RULE_INT ) ) )* otherlv_5= ')' )?
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:256:2: (otherlv_1= '(' ( (lv_arguments_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_arguments_4_0= RULE_INT ) ) )* otherlv_5= ')' )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -654,17 +654,17 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
             }
             switch (alt8) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:256:4: otherlv_1= '(' ( (lv_arguments_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_arguments_4_0= RULE_INT ) ) )* otherlv_5= ')'
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:256:4: otherlv_1= '(' ( (lv_arguments_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_arguments_4_0= RULE_INT ) ) )* otherlv_5= ')'
                     {
                     otherlv_1=(Token)match(input,20,FOLLOW_20_in_ruleProcessIdentifier500); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getProcessIdentifierAccess().getLeftParenthesisKeyword_1_0());
                         
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:260:1: ( (lv_arguments_2_0= RULE_INT ) )
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:261:1: (lv_arguments_2_0= RULE_INT )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:260:1: ( (lv_arguments_2_0= RULE_INT ) )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:261:1: (lv_arguments_2_0= RULE_INT )
                     {
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:261:1: (lv_arguments_2_0= RULE_INT )
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:262:3: lv_arguments_2_0= RULE_INT
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:261:1: (lv_arguments_2_0= RULE_INT )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:262:3: lv_arguments_2_0= RULE_INT
                     {
                     lv_arguments_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleProcessIdentifier517); 
 
@@ -686,7 +686,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:278:2: (otherlv_3= ',' ( (lv_arguments_4_0= RULE_INT ) ) )*
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:278:2: (otherlv_3= ',' ( (lv_arguments_4_0= RULE_INT ) ) )*
                     loop7:
                     do {
                         int alt7=2;
@@ -699,17 +699,17 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:278:4: otherlv_3= ',' ( (lv_arguments_4_0= RULE_INT ) )
+                    	    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:278:4: otherlv_3= ',' ( (lv_arguments_4_0= RULE_INT ) )
                     	    {
                     	    otherlv_3=(Token)match(input,21,FOLLOW_21_in_ruleProcessIdentifier535); 
 
                     	        	newLeafNode(otherlv_3, grammarAccess.getProcessIdentifierAccess().getCommaKeyword_1_2_0());
                     	        
-                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:282:1: ( (lv_arguments_4_0= RULE_INT ) )
-                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:283:1: (lv_arguments_4_0= RULE_INT )
+                    	    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:282:1: ( (lv_arguments_4_0= RULE_INT ) )
+                    	    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:283:1: (lv_arguments_4_0= RULE_INT )
                     	    {
-                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:283:1: (lv_arguments_4_0= RULE_INT )
-                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:284:3: lv_arguments_4_0= RULE_INT
+                    	    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:283:1: (lv_arguments_4_0= RULE_INT )
+                    	    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:284:3: lv_arguments_4_0= RULE_INT
                     	    {
                     	    lv_arguments_4_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleProcessIdentifier552); 
 
@@ -771,7 +771,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLocationActivity"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:312:1: entryRuleLocationActivity returns [EObject current=null] : iv_ruleLocationActivity= ruleLocationActivity EOF ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:312:1: entryRuleLocationActivity returns [EObject current=null] : iv_ruleLocationActivity= ruleLocationActivity EOF ;
     public final EObject entryRuleLocationActivity() throws RecognitionException {
         EObject current = null;
 
@@ -779,8 +779,8 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:313:2: (iv_ruleLocationActivity= ruleLocationActivity EOF )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:314:2: iv_ruleLocationActivity= ruleLocationActivity EOF
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:313:2: (iv_ruleLocationActivity= ruleLocationActivity EOF )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:314:2: iv_ruleLocationActivity= ruleLocationActivity EOF
             {
              newCompositeNode(grammarAccess.getLocationActivityRule()); 
             pushFollow(FOLLOW_ruleLocationActivity_in_entryRuleLocationActivity609);
@@ -807,7 +807,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLocationActivity"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:321:1: ruleLocationActivity returns [EObject current=null] : ( ( (lv_process_0_0= ruleProcessIdentifier ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) ) ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:321:1: ruleLocationActivity returns [EObject current=null] : ( ( (lv_process_0_0= ruleProcessIdentifier ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) ) ;
     public final EObject ruleLocationActivity() throws RecognitionException {
         EObject current = null;
 
@@ -819,17 +819,17 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:324:28: ( ( ( (lv_process_0_0= ruleProcessIdentifier ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:325:1: ( ( (lv_process_0_0= ruleProcessIdentifier ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:324:28: ( ( ( (lv_process_0_0= ruleProcessIdentifier ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:325:1: ( ( (lv_process_0_0= ruleProcessIdentifier ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:325:1: ( ( (lv_process_0_0= ruleProcessIdentifier ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:325:2: ( (lv_process_0_0= ruleProcessIdentifier ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:325:1: ( ( (lv_process_0_0= ruleProcessIdentifier ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:325:2: ( (lv_process_0_0= ruleProcessIdentifier ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:325:2: ( (lv_process_0_0= ruleProcessIdentifier ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:326:1: (lv_process_0_0= ruleProcessIdentifier )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:325:2: ( (lv_process_0_0= ruleProcessIdentifier ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:326:1: (lv_process_0_0= ruleProcessIdentifier )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:326:1: (lv_process_0_0= ruleProcessIdentifier )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:327:3: lv_process_0_0= ruleProcessIdentifier
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:326:1: (lv_process_0_0= ruleProcessIdentifier )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:327:3: lv_process_0_0= ruleProcessIdentifier
             {
              
             	        newCompositeNode(grammarAccess.getLocationActivityAccess().getProcessProcessIdentifierParserRuleCall_0_0()); 
@@ -860,11 +860,11 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
                 	newLeafNode(otherlv_1, grammarAccess.getLocationActivityAccess().getFullStopKeyword_1());
                 
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:347:1: ( (otherlv_2= RULE_ID ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:348:1: (otherlv_2= RULE_ID )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:347:1: ( (otherlv_2= RULE_ID ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:348:1: (otherlv_2= RULE_ID )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:348:1: (otherlv_2= RULE_ID )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:349:3: otherlv_2= RULE_ID
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:348:1: (otherlv_2= RULE_ID )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:349:3: otherlv_2= RULE_ID
             {
 
             			if (current==null) {
@@ -902,7 +902,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVariableValue"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:368:1: entryRuleVariableValue returns [EObject current=null] : iv_ruleVariableValue= ruleVariableValue EOF ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:368:1: entryRuleVariableValue returns [EObject current=null] : iv_ruleVariableValue= ruleVariableValue EOF ;
     public final EObject entryRuleVariableValue() throws RecognitionException {
         EObject current = null;
 
@@ -910,8 +910,8 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:369:2: (iv_ruleVariableValue= ruleVariableValue EOF )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:370:2: iv_ruleVariableValue= ruleVariableValue EOF
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:369:2: (iv_ruleVariableValue= ruleVariableValue EOF )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:370:2: iv_ruleVariableValue= ruleVariableValue EOF
             {
              newCompositeNode(grammarAccess.getVariableValueRule()); 
             pushFollow(FOLLOW_ruleVariableValue_in_entryRuleVariableValue733);
@@ -938,7 +938,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVariableValue"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:377:1: ruleVariableValue returns [EObject current=null] : ( ( (lv_firstNamedElementReference_0_0= ruleNamedElementReference ) ) (otherlv_1= '-' ( (lv_secondNamedElementReference_2_0= ruleNamedElementReference ) ) )? ( (lv_operator_3_0= ruleCompareOperator ) ) ( (lv_value_4_0= RULE_INT ) ) ) ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:377:1: ruleVariableValue returns [EObject current=null] : ( ( (lv_firstNamedElementReference_0_0= ruleNamedElementReference ) ) (otherlv_1= '-' ( (lv_secondNamedElementReference_2_0= ruleNamedElementReference ) ) )? ( (lv_operator_3_0= ruleCompareOperator ) ) ( (lv_value_4_0= RULE_INT ) ) ) ;
     public final EObject ruleVariableValue() throws RecognitionException {
         EObject current = null;
 
@@ -954,17 +954,17 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:380:28: ( ( ( (lv_firstNamedElementReference_0_0= ruleNamedElementReference ) ) (otherlv_1= '-' ( (lv_secondNamedElementReference_2_0= ruleNamedElementReference ) ) )? ( (lv_operator_3_0= ruleCompareOperator ) ) ( (lv_value_4_0= RULE_INT ) ) ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:381:1: ( ( (lv_firstNamedElementReference_0_0= ruleNamedElementReference ) ) (otherlv_1= '-' ( (lv_secondNamedElementReference_2_0= ruleNamedElementReference ) ) )? ( (lv_operator_3_0= ruleCompareOperator ) ) ( (lv_value_4_0= RULE_INT ) ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:380:28: ( ( ( (lv_firstNamedElementReference_0_0= ruleNamedElementReference ) ) (otherlv_1= '-' ( (lv_secondNamedElementReference_2_0= ruleNamedElementReference ) ) )? ( (lv_operator_3_0= ruleCompareOperator ) ) ( (lv_value_4_0= RULE_INT ) ) ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:381:1: ( ( (lv_firstNamedElementReference_0_0= ruleNamedElementReference ) ) (otherlv_1= '-' ( (lv_secondNamedElementReference_2_0= ruleNamedElementReference ) ) )? ( (lv_operator_3_0= ruleCompareOperator ) ) ( (lv_value_4_0= RULE_INT ) ) )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:381:1: ( ( (lv_firstNamedElementReference_0_0= ruleNamedElementReference ) ) (otherlv_1= '-' ( (lv_secondNamedElementReference_2_0= ruleNamedElementReference ) ) )? ( (lv_operator_3_0= ruleCompareOperator ) ) ( (lv_value_4_0= RULE_INT ) ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:381:2: ( (lv_firstNamedElementReference_0_0= ruleNamedElementReference ) ) (otherlv_1= '-' ( (lv_secondNamedElementReference_2_0= ruleNamedElementReference ) ) )? ( (lv_operator_3_0= ruleCompareOperator ) ) ( (lv_value_4_0= RULE_INT ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:381:1: ( ( (lv_firstNamedElementReference_0_0= ruleNamedElementReference ) ) (otherlv_1= '-' ( (lv_secondNamedElementReference_2_0= ruleNamedElementReference ) ) )? ( (lv_operator_3_0= ruleCompareOperator ) ) ( (lv_value_4_0= RULE_INT ) ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:381:2: ( (lv_firstNamedElementReference_0_0= ruleNamedElementReference ) ) (otherlv_1= '-' ( (lv_secondNamedElementReference_2_0= ruleNamedElementReference ) ) )? ( (lv_operator_3_0= ruleCompareOperator ) ) ( (lv_value_4_0= RULE_INT ) )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:381:2: ( (lv_firstNamedElementReference_0_0= ruleNamedElementReference ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:382:1: (lv_firstNamedElementReference_0_0= ruleNamedElementReference )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:381:2: ( (lv_firstNamedElementReference_0_0= ruleNamedElementReference ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:382:1: (lv_firstNamedElementReference_0_0= ruleNamedElementReference )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:382:1: (lv_firstNamedElementReference_0_0= ruleNamedElementReference )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:383:3: lv_firstNamedElementReference_0_0= ruleNamedElementReference
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:382:1: (lv_firstNamedElementReference_0_0= ruleNamedElementReference )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:383:3: lv_firstNamedElementReference_0_0= ruleNamedElementReference
             {
              
             	        newCompositeNode(grammarAccess.getVariableValueAccess().getFirstNamedElementReferenceNamedElementReferenceParserRuleCall_0_0()); 
@@ -991,7 +991,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:399:2: (otherlv_1= '-' ( (lv_secondNamedElementReference_2_0= ruleNamedElementReference ) ) )?
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:399:2: (otherlv_1= '-' ( (lv_secondNamedElementReference_2_0= ruleNamedElementReference ) ) )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -1000,17 +1000,17 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
             }
             switch (alt9) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:399:4: otherlv_1= '-' ( (lv_secondNamedElementReference_2_0= ruleNamedElementReference ) )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:399:4: otherlv_1= '-' ( (lv_secondNamedElementReference_2_0= ruleNamedElementReference ) )
                     {
                     otherlv_1=(Token)match(input,24,FOLLOW_24_in_ruleVariableValue802); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getVariableValueAccess().getHyphenMinusKeyword_1_0());
                         
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:403:1: ( (lv_secondNamedElementReference_2_0= ruleNamedElementReference ) )
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:404:1: (lv_secondNamedElementReference_2_0= ruleNamedElementReference )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:403:1: ( (lv_secondNamedElementReference_2_0= ruleNamedElementReference ) )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:404:1: (lv_secondNamedElementReference_2_0= ruleNamedElementReference )
                     {
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:404:1: (lv_secondNamedElementReference_2_0= ruleNamedElementReference )
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:405:3: lv_secondNamedElementReference_2_0= ruleNamedElementReference
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:404:1: (lv_secondNamedElementReference_2_0= ruleNamedElementReference )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:405:3: lv_secondNamedElementReference_2_0= ruleNamedElementReference
                     {
                      
                     	        newCompositeNode(grammarAccess.getVariableValueAccess().getSecondNamedElementReferenceNamedElementReferenceParserRuleCall_1_1_0()); 
@@ -1043,11 +1043,11 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:421:4: ( (lv_operator_3_0= ruleCompareOperator ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:422:1: (lv_operator_3_0= ruleCompareOperator )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:421:4: ( (lv_operator_3_0= ruleCompareOperator ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:422:1: (lv_operator_3_0= ruleCompareOperator )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:422:1: (lv_operator_3_0= ruleCompareOperator )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:423:3: lv_operator_3_0= ruleCompareOperator
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:422:1: (lv_operator_3_0= ruleCompareOperator )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:423:3: lv_operator_3_0= ruleCompareOperator
             {
              
             	        newCompositeNode(grammarAccess.getVariableValueAccess().getOperatorCompareOperatorEnumRuleCall_2_0()); 
@@ -1074,11 +1074,11 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:439:2: ( (lv_value_4_0= RULE_INT ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:440:1: (lv_value_4_0= RULE_INT )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:439:2: ( (lv_value_4_0= RULE_INT ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:440:1: (lv_value_4_0= RULE_INT )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:440:1: (lv_value_4_0= RULE_INT )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:441:3: lv_value_4_0= RULE_INT
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:440:1: (lv_value_4_0= RULE_INT )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:441:3: lv_value_4_0= RULE_INT
             {
             lv_value_4_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleVariableValue863); 
 
@@ -1121,7 +1121,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSingleNamedElementReference"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:465:1: entryRuleSingleNamedElementReference returns [EObject current=null] : iv_ruleSingleNamedElementReference= ruleSingleNamedElementReference EOF ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:465:1: entryRuleSingleNamedElementReference returns [EObject current=null] : iv_ruleSingleNamedElementReference= ruleSingleNamedElementReference EOF ;
     public final EObject entryRuleSingleNamedElementReference() throws RecognitionException {
         EObject current = null;
 
@@ -1129,8 +1129,8 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:466:2: (iv_ruleSingleNamedElementReference= ruleSingleNamedElementReference EOF )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:467:2: iv_ruleSingleNamedElementReference= ruleSingleNamedElementReference EOF
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:466:2: (iv_ruleSingleNamedElementReference= ruleSingleNamedElementReference EOF )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:467:2: iv_ruleSingleNamedElementReference= ruleSingleNamedElementReference EOF
             {
              newCompositeNode(grammarAccess.getSingleNamedElementReferenceRule()); 
             pushFollow(FOLLOW_ruleSingleNamedElementReference_in_entryRuleSingleNamedElementReference904);
@@ -1157,7 +1157,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSingleNamedElementReference"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:474:1: ruleSingleNamedElementReference returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '[' ( (lv_indexes_2_0= RULE_INT ) ) otherlv_3= ']' )* ) ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:474:1: ruleSingleNamedElementReference returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '[' ( (lv_indexes_2_0= RULE_INT ) ) otherlv_3= ']' )* ) ;
     public final EObject ruleSingleNamedElementReference() throws RecognitionException {
         EObject current = null;
 
@@ -1169,17 +1169,17 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:477:28: ( ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '[' ( (lv_indexes_2_0= RULE_INT ) ) otherlv_3= ']' )* ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:478:1: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '[' ( (lv_indexes_2_0= RULE_INT ) ) otherlv_3= ']' )* )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:477:28: ( ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '[' ( (lv_indexes_2_0= RULE_INT ) ) otherlv_3= ']' )* ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:478:1: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '[' ( (lv_indexes_2_0= RULE_INT ) ) otherlv_3= ']' )* )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:478:1: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '[' ( (lv_indexes_2_0= RULE_INT ) ) otherlv_3= ']' )* )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:478:2: ( (otherlv_0= RULE_ID ) ) (otherlv_1= '[' ( (lv_indexes_2_0= RULE_INT ) ) otherlv_3= ']' )*
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:478:1: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '[' ( (lv_indexes_2_0= RULE_INT ) ) otherlv_3= ']' )* )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:478:2: ( (otherlv_0= RULE_ID ) ) (otherlv_1= '[' ( (lv_indexes_2_0= RULE_INT ) ) otherlv_3= ']' )*
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:478:2: ( (otherlv_0= RULE_ID ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:479:1: (otherlv_0= RULE_ID )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:478:2: ( (otherlv_0= RULE_ID ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:479:1: (otherlv_0= RULE_ID )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:479:1: (otherlv_0= RULE_ID )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:480:3: otherlv_0= RULE_ID
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:479:1: (otherlv_0= RULE_ID )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:480:3: otherlv_0= RULE_ID
             {
 
             			if (current==null) {
@@ -1196,7 +1196,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:491:2: (otherlv_1= '[' ( (lv_indexes_2_0= RULE_INT ) ) otherlv_3= ']' )*
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:491:2: (otherlv_1= '[' ( (lv_indexes_2_0= RULE_INT ) ) otherlv_3= ']' )*
             loop10:
             do {
                 int alt10=2;
@@ -1209,17 +1209,17 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
                 switch (alt10) {
             	case 1 :
-            	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:491:4: otherlv_1= '[' ( (lv_indexes_2_0= RULE_INT ) ) otherlv_3= ']'
+            	    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:491:4: otherlv_1= '[' ( (lv_indexes_2_0= RULE_INT ) ) otherlv_3= ']'
             	    {
             	    otherlv_1=(Token)match(input,25,FOLLOW_25_in_ruleSingleNamedElementReference972); 
 
             	        	newLeafNode(otherlv_1, grammarAccess.getSingleNamedElementReferenceAccess().getLeftSquareBracketKeyword_1_0());
             	        
-            	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:495:1: ( (lv_indexes_2_0= RULE_INT ) )
-            	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:496:1: (lv_indexes_2_0= RULE_INT )
+            	    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:495:1: ( (lv_indexes_2_0= RULE_INT ) )
+            	    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:496:1: (lv_indexes_2_0= RULE_INT )
             	    {
-            	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:496:1: (lv_indexes_2_0= RULE_INT )
-            	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:497:3: lv_indexes_2_0= RULE_INT
+            	    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:496:1: (lv_indexes_2_0= RULE_INT )
+            	    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:497:3: lv_indexes_2_0= RULE_INT
             	    {
             	    lv_indexes_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSingleNamedElementReference989); 
 
@@ -1275,7 +1275,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNamedElementReference"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:525:1: entryRuleNamedElementReference returns [EObject current=null] : iv_ruleNamedElementReference= ruleNamedElementReference EOF ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:525:1: entryRuleNamedElementReference returns [EObject current=null] : iv_ruleNamedElementReference= ruleNamedElementReference EOF ;
     public final EObject entryRuleNamedElementReference() throws RecognitionException {
         EObject current = null;
 
@@ -1283,8 +1283,8 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:526:2: (iv_ruleNamedElementReference= ruleNamedElementReference EOF )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:527:2: iv_ruleNamedElementReference= ruleNamedElementReference EOF
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:526:2: (iv_ruleNamedElementReference= ruleNamedElementReference EOF )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:527:2: iv_ruleNamedElementReference= ruleNamedElementReference EOF
             {
              newCompositeNode(grammarAccess.getNamedElementReferenceRule()); 
             pushFollow(FOLLOW_ruleNamedElementReference_in_entryRuleNamedElementReference1044);
@@ -1311,7 +1311,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNamedElementReference"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:534:1: ruleNamedElementReference returns [EObject current=null] : ( ( (lv_singleNamedElementReference_0_0= ruleSingleNamedElementReference ) ) (otherlv_1= '.' ( (lv_namedElementReference_2_0= ruleNamedElementReference ) ) )? ) ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:534:1: ruleNamedElementReference returns [EObject current=null] : ( ( (lv_singleNamedElementReference_0_0= ruleSingleNamedElementReference ) ) (otherlv_1= '.' ( (lv_namedElementReference_2_0= ruleNamedElementReference ) ) )? ) ;
     public final EObject ruleNamedElementReference() throws RecognitionException {
         EObject current = null;
 
@@ -1324,17 +1324,17 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:537:28: ( ( ( (lv_singleNamedElementReference_0_0= ruleSingleNamedElementReference ) ) (otherlv_1= '.' ( (lv_namedElementReference_2_0= ruleNamedElementReference ) ) )? ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:538:1: ( ( (lv_singleNamedElementReference_0_0= ruleSingleNamedElementReference ) ) (otherlv_1= '.' ( (lv_namedElementReference_2_0= ruleNamedElementReference ) ) )? )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:537:28: ( ( ( (lv_singleNamedElementReference_0_0= ruleSingleNamedElementReference ) ) (otherlv_1= '.' ( (lv_namedElementReference_2_0= ruleNamedElementReference ) ) )? ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:538:1: ( ( (lv_singleNamedElementReference_0_0= ruleSingleNamedElementReference ) ) (otherlv_1= '.' ( (lv_namedElementReference_2_0= ruleNamedElementReference ) ) )? )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:538:1: ( ( (lv_singleNamedElementReference_0_0= ruleSingleNamedElementReference ) ) (otherlv_1= '.' ( (lv_namedElementReference_2_0= ruleNamedElementReference ) ) )? )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:538:2: ( (lv_singleNamedElementReference_0_0= ruleSingleNamedElementReference ) ) (otherlv_1= '.' ( (lv_namedElementReference_2_0= ruleNamedElementReference ) ) )?
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:538:1: ( ( (lv_singleNamedElementReference_0_0= ruleSingleNamedElementReference ) ) (otherlv_1= '.' ( (lv_namedElementReference_2_0= ruleNamedElementReference ) ) )? )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:538:2: ( (lv_singleNamedElementReference_0_0= ruleSingleNamedElementReference ) ) (otherlv_1= '.' ( (lv_namedElementReference_2_0= ruleNamedElementReference ) ) )?
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:538:2: ( (lv_singleNamedElementReference_0_0= ruleSingleNamedElementReference ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:539:1: (lv_singleNamedElementReference_0_0= ruleSingleNamedElementReference )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:538:2: ( (lv_singleNamedElementReference_0_0= ruleSingleNamedElementReference ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:539:1: (lv_singleNamedElementReference_0_0= ruleSingleNamedElementReference )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:539:1: (lv_singleNamedElementReference_0_0= ruleSingleNamedElementReference )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:540:3: lv_singleNamedElementReference_0_0= ruleSingleNamedElementReference
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:539:1: (lv_singleNamedElementReference_0_0= ruleSingleNamedElementReference )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:540:3: lv_singleNamedElementReference_0_0= ruleSingleNamedElementReference
             {
              
             	        newCompositeNode(grammarAccess.getNamedElementReferenceAccess().getSingleNamedElementReferenceSingleNamedElementReferenceParserRuleCall_0_0()); 
@@ -1361,7 +1361,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:556:2: (otherlv_1= '.' ( (lv_namedElementReference_2_0= ruleNamedElementReference ) ) )?
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:556:2: (otherlv_1= '.' ( (lv_namedElementReference_2_0= ruleNamedElementReference ) ) )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -1370,17 +1370,17 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
             }
             switch (alt11) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:556:4: otherlv_1= '.' ( (lv_namedElementReference_2_0= ruleNamedElementReference ) )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:556:4: otherlv_1= '.' ( (lv_namedElementReference_2_0= ruleNamedElementReference ) )
                     {
                     otherlv_1=(Token)match(input,23,FOLLOW_23_in_ruleNamedElementReference1113); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getNamedElementReferenceAccess().getFullStopKeyword_1_0());
                         
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:560:1: ( (lv_namedElementReference_2_0= ruleNamedElementReference ) )
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:561:1: (lv_namedElementReference_2_0= ruleNamedElementReference )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:560:1: ( (lv_namedElementReference_2_0= ruleNamedElementReference ) )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:561:1: (lv_namedElementReference_2_0= ruleNamedElementReference )
                     {
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:561:1: (lv_namedElementReference_2_0= ruleNamedElementReference )
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:562:3: lv_namedElementReference_2_0= ruleNamedElementReference
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:561:1: (lv_namedElementReference_2_0= ruleNamedElementReference )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:562:3: lv_namedElementReference_2_0= ruleNamedElementReference
                     {
                      
                     	        newCompositeNode(grammarAccess.getNamedElementReferenceAccess().getNamedElementReferenceNamedElementReferenceParserRuleCall_1_1_0()); 
@@ -1434,7 +1434,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTraceItem"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:586:1: entryRuleTraceItem returns [EObject current=null] : iv_ruleTraceItem= ruleTraceItem EOF ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:586:1: entryRuleTraceItem returns [EObject current=null] : iv_ruleTraceItem= ruleTraceItem EOF ;
     public final EObject entryRuleTraceItem() throws RecognitionException {
         EObject current = null;
 
@@ -1442,8 +1442,8 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:587:2: (iv_ruleTraceItem= ruleTraceItem EOF )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:588:2: iv_ruleTraceItem= ruleTraceItem EOF
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:587:2: (iv_ruleTraceItem= ruleTraceItem EOF )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:588:2: iv_ruleTraceItem= ruleTraceItem EOF
             {
              newCompositeNode(grammarAccess.getTraceItemRule()); 
             pushFollow(FOLLOW_ruleTraceItem_in_entryRuleTraceItem1172);
@@ -1470,7 +1470,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTraceItem"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:595:1: ruleTraceItem returns [EObject current=null] : (this_State_0= ruleState | this_Transition_1= ruleTransition ) ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:595:1: ruleTraceItem returns [EObject current=null] : (this_State_0= ruleState | this_Transition_1= ruleTransition ) ;
     public final EObject ruleTraceItem() throws RecognitionException {
         EObject current = null;
 
@@ -1482,10 +1482,10 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:598:28: ( (this_State_0= ruleState | this_Transition_1= ruleTransition ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:599:1: (this_State_0= ruleState | this_Transition_1= ruleTransition )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:598:28: ( (this_State_0= ruleState | this_Transition_1= ruleTransition ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:599:1: (this_State_0= ruleState | this_Transition_1= ruleTransition )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:599:1: (this_State_0= ruleState | this_Transition_1= ruleTransition )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:599:1: (this_State_0= ruleState | this_Transition_1= ruleTransition )
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -1503,7 +1503,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
             }
             switch (alt12) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:600:5: this_State_0= ruleState
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:600:5: this_State_0= ruleState
                     {
                      
                             newCompositeNode(grammarAccess.getTraceItemAccess().getStateParserRuleCall_0()); 
@@ -1521,7 +1521,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:610:5: this_Transition_1= ruleTransition
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:610:5: this_Transition_1= ruleTransition
                     {
                      
                             newCompositeNode(grammarAccess.getTraceItemAccess().getTransitionParserRuleCall_1()); 
@@ -1559,7 +1559,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleState"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:626:1: entryRuleState returns [EObject current=null] : iv_ruleState= ruleState EOF ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:626:1: entryRuleState returns [EObject current=null] : iv_ruleState= ruleState EOF ;
     public final EObject entryRuleState() throws RecognitionException {
         EObject current = null;
 
@@ -1570,8 +1570,8 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_DEPTH");
         	
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:630:2: (iv_ruleState= ruleState EOF )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:631:2: iv_ruleState= ruleState EOF
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:630:2: (iv_ruleState= ruleState EOF )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:631:2: iv_ruleState= ruleState EOF
             {
              newCompositeNode(grammarAccess.getStateRule()); 
             pushFollow(FOLLOW_ruleState_in_entryRuleState1297);
@@ -1601,7 +1601,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleState"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:641:1: ruleState returns [EObject current=null] : (otherlv_0= 'State' (otherlv_1= ':' )? otherlv_2= '(' ( (lv_locationActivities_3_0= ruleLocationActivity ) )+ otherlv_4= ')' ( ( (lv_variableValues_5_0= ruleVariableValue ) ) ( (otherlv_6= ',' )? ( (lv_variableValues_7_0= ruleVariableValue ) ) )* )? ) ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:641:1: ruleState returns [EObject current=null] : (otherlv_0= 'State' (otherlv_1= ':' )? otherlv_2= '(' ( (lv_locationActivities_3_0= ruleLocationActivity ) )+ otherlv_4= ')' ( ( (lv_variableValues_5_0= ruleVariableValue ) ) ( (otherlv_6= ',' )? ( (lv_variableValues_7_0= ruleVariableValue ) ) )* )? ) ;
     public final EObject ruleState() throws RecognitionException {
         EObject current = null;
 
@@ -1621,17 +1621,17 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_DEPTH");
             
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:645:28: ( (otherlv_0= 'State' (otherlv_1= ':' )? otherlv_2= '(' ( (lv_locationActivities_3_0= ruleLocationActivity ) )+ otherlv_4= ')' ( ( (lv_variableValues_5_0= ruleVariableValue ) ) ( (otherlv_6= ',' )? ( (lv_variableValues_7_0= ruleVariableValue ) ) )* )? ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:646:1: (otherlv_0= 'State' (otherlv_1= ':' )? otherlv_2= '(' ( (lv_locationActivities_3_0= ruleLocationActivity ) )+ otherlv_4= ')' ( ( (lv_variableValues_5_0= ruleVariableValue ) ) ( (otherlv_6= ',' )? ( (lv_variableValues_7_0= ruleVariableValue ) ) )* )? )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:645:28: ( (otherlv_0= 'State' (otherlv_1= ':' )? otherlv_2= '(' ( (lv_locationActivities_3_0= ruleLocationActivity ) )+ otherlv_4= ')' ( ( (lv_variableValues_5_0= ruleVariableValue ) ) ( (otherlv_6= ',' )? ( (lv_variableValues_7_0= ruleVariableValue ) ) )* )? ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:646:1: (otherlv_0= 'State' (otherlv_1= ':' )? otherlv_2= '(' ( (lv_locationActivities_3_0= ruleLocationActivity ) )+ otherlv_4= ')' ( ( (lv_variableValues_5_0= ruleVariableValue ) ) ( (otherlv_6= ',' )? ( (lv_variableValues_7_0= ruleVariableValue ) ) )* )? )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:646:1: (otherlv_0= 'State' (otherlv_1= ':' )? otherlv_2= '(' ( (lv_locationActivities_3_0= ruleLocationActivity ) )+ otherlv_4= ')' ( ( (lv_variableValues_5_0= ruleVariableValue ) ) ( (otherlv_6= ',' )? ( (lv_variableValues_7_0= ruleVariableValue ) ) )* )? )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:646:3: otherlv_0= 'State' (otherlv_1= ':' )? otherlv_2= '(' ( (lv_locationActivities_3_0= ruleLocationActivity ) )+ otherlv_4= ')' ( ( (lv_variableValues_5_0= ruleVariableValue ) ) ( (otherlv_6= ',' )? ( (lv_variableValues_7_0= ruleVariableValue ) ) )* )?
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:646:1: (otherlv_0= 'State' (otherlv_1= ':' )? otherlv_2= '(' ( (lv_locationActivities_3_0= ruleLocationActivity ) )+ otherlv_4= ')' ( ( (lv_variableValues_5_0= ruleVariableValue ) ) ( (otherlv_6= ',' )? ( (lv_variableValues_7_0= ruleVariableValue ) ) )* )? )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:646:3: otherlv_0= 'State' (otherlv_1= ':' )? otherlv_2= '(' ( (lv_locationActivities_3_0= ruleLocationActivity ) )+ otherlv_4= ')' ( ( (lv_variableValues_5_0= ruleVariableValue ) ) ( (otherlv_6= ',' )? ( (lv_variableValues_7_0= ruleVariableValue ) ) )* )?
             {
             otherlv_0=(Token)match(input,27,FOLLOW_27_in_ruleState1348); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getStateAccess().getStateKeyword_0());
                 
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:650:1: (otherlv_1= ':' )?
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:650:1: (otherlv_1= ':' )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -1640,7 +1640,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
             }
             switch (alt13) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:650:3: otherlv_1= ':'
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:650:3: otherlv_1= ':'
                     {
                     otherlv_1=(Token)match(input,28,FOLLOW_28_in_ruleState1361); 
 
@@ -1656,7 +1656,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
                 	newLeafNode(otherlv_2, grammarAccess.getStateAccess().getLeftParenthesisKeyword_2());
                 
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:658:1: ( (lv_locationActivities_3_0= ruleLocationActivity ) )+
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:658:1: ( (lv_locationActivities_3_0= ruleLocationActivity ) )+
             int cnt14=0;
             loop14:
             do {
@@ -1670,10 +1670,10 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
                 switch (alt14) {
             	case 1 :
-            	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:659:1: (lv_locationActivities_3_0= ruleLocationActivity )
+            	    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:659:1: (lv_locationActivities_3_0= ruleLocationActivity )
             	    {
-            	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:659:1: (lv_locationActivities_3_0= ruleLocationActivity )
-            	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:660:3: lv_locationActivities_3_0= ruleLocationActivity
+            	    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:659:1: (lv_locationActivities_3_0= ruleLocationActivity )
+            	    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:660:3: lv_locationActivities_3_0= ruleLocationActivity
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getStateAccess().getLocationActivitiesLocationActivityParserRuleCall_3_0()); 
@@ -1714,7 +1714,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
                 	newLeafNode(otherlv_4, grammarAccess.getStateAccess().getRightParenthesisKeyword_4());
                 
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:680:1: ( ( (lv_variableValues_5_0= ruleVariableValue ) ) ( (otherlv_6= ',' )? ( (lv_variableValues_7_0= ruleVariableValue ) ) )* )?
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:680:1: ( ( (lv_variableValues_5_0= ruleVariableValue ) ) ( (otherlv_6= ',' )? ( (lv_variableValues_7_0= ruleVariableValue ) ) )* )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -1723,13 +1723,13 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
             }
             switch (alt17) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:680:2: ( (lv_variableValues_5_0= ruleVariableValue ) ) ( (otherlv_6= ',' )? ( (lv_variableValues_7_0= ruleVariableValue ) ) )*
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:680:2: ( (lv_variableValues_5_0= ruleVariableValue ) ) ( (otherlv_6= ',' )? ( (lv_variableValues_7_0= ruleVariableValue ) ) )*
                     {
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:680:2: ( (lv_variableValues_5_0= ruleVariableValue ) )
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:681:1: (lv_variableValues_5_0= ruleVariableValue )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:680:2: ( (lv_variableValues_5_0= ruleVariableValue ) )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:681:1: (lv_variableValues_5_0= ruleVariableValue )
                     {
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:681:1: (lv_variableValues_5_0= ruleVariableValue )
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:682:3: lv_variableValues_5_0= ruleVariableValue
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:681:1: (lv_variableValues_5_0= ruleVariableValue )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:682:3: lv_variableValues_5_0= ruleVariableValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getStateAccess().getVariableValuesVariableValueParserRuleCall_5_0_0()); 
@@ -1756,7 +1756,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:698:2: ( (otherlv_6= ',' )? ( (lv_variableValues_7_0= ruleVariableValue ) ) )*
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:698:2: ( (otherlv_6= ',' )? ( (lv_variableValues_7_0= ruleVariableValue ) ) )*
                     loop16:
                     do {
                         int alt16=2;
@@ -1769,9 +1769,9 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
                         switch (alt16) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:698:3: (otherlv_6= ',' )? ( (lv_variableValues_7_0= ruleVariableValue ) )
+                    	    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:698:3: (otherlv_6= ',' )? ( (lv_variableValues_7_0= ruleVariableValue ) )
                     	    {
-                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:698:3: (otherlv_6= ',' )?
+                    	    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:698:3: (otherlv_6= ',' )?
                     	    int alt15=2;
                     	    int LA15_0 = input.LA(1);
 
@@ -1780,7 +1780,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
                     	    }
                     	    switch (alt15) {
                     	        case 1 :
-                    	            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:698:5: otherlv_6= ','
+                    	            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:698:5: otherlv_6= ','
                     	            {
                     	            otherlv_6=(Token)match(input,21,FOLLOW_21_in_ruleState1445); 
 
@@ -1792,11 +1792,11 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
                     	    }
 
-                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:702:3: ( (lv_variableValues_7_0= ruleVariableValue ) )
-                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:703:1: (lv_variableValues_7_0= ruleVariableValue )
+                    	    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:702:3: ( (lv_variableValues_7_0= ruleVariableValue ) )
+                    	    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:703:1: (lv_variableValues_7_0= ruleVariableValue )
                     	    {
-                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:703:1: (lv_variableValues_7_0= ruleVariableValue )
-                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:704:3: lv_variableValues_7_0= ruleVariableValue
+                    	    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:703:1: (lv_variableValues_7_0= ruleVariableValue )
+                    	    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:704:3: lv_variableValues_7_0= ruleVariableValue
                     	    {
                     	     
                     	    	        newCompositeNode(grammarAccess.getStateAccess().getVariableValuesVariableValueParserRuleCall_5_1_1_0()); 
@@ -1862,7 +1862,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEdgeActivity"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:731:1: entryRuleEdgeActivity returns [EObject current=null] : iv_ruleEdgeActivity= ruleEdgeActivity EOF ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:731:1: entryRuleEdgeActivity returns [EObject current=null] : iv_ruleEdgeActivity= ruleEdgeActivity EOF ;
     public final EObject entryRuleEdgeActivity() throws RecognitionException {
         EObject current = null;
 
@@ -1870,8 +1870,8 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:732:2: (iv_ruleEdgeActivity= ruleEdgeActivity EOF )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:733:2: iv_ruleEdgeActivity= ruleEdgeActivity EOF
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:732:2: (iv_ruleEdgeActivity= ruleEdgeActivity EOF )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:733:2: iv_ruleEdgeActivity= ruleEdgeActivity EOF
             {
              newCompositeNode(grammarAccess.getEdgeActivityRule()); 
             pushFollow(FOLLOW_ruleEdgeActivity_in_entryRuleEdgeActivity1512);
@@ -1898,7 +1898,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEdgeActivity"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:740:1: ruleEdgeActivity returns [EObject current=null] : ( ( (lv_source_0_0= ruleLocationActivity ) ) otherlv_1= '->' ( (lv_target_2_0= ruleLocationActivity ) ) ( (lv_details_3_0= RULE_EDGE ) ) ) ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:740:1: ruleEdgeActivity returns [EObject current=null] : ( ( (lv_source_0_0= ruleLocationActivity ) ) otherlv_1= '->' ( (lv_target_2_0= ruleLocationActivity ) ) ( (lv_details_3_0= RULE_EDGE ) ) ) ;
     public final EObject ruleEdgeActivity() throws RecognitionException {
         EObject current = null;
 
@@ -1912,17 +1912,17 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:743:28: ( ( ( (lv_source_0_0= ruleLocationActivity ) ) otherlv_1= '->' ( (lv_target_2_0= ruleLocationActivity ) ) ( (lv_details_3_0= RULE_EDGE ) ) ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:744:1: ( ( (lv_source_0_0= ruleLocationActivity ) ) otherlv_1= '->' ( (lv_target_2_0= ruleLocationActivity ) ) ( (lv_details_3_0= RULE_EDGE ) ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:743:28: ( ( ( (lv_source_0_0= ruleLocationActivity ) ) otherlv_1= '->' ( (lv_target_2_0= ruleLocationActivity ) ) ( (lv_details_3_0= RULE_EDGE ) ) ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:744:1: ( ( (lv_source_0_0= ruleLocationActivity ) ) otherlv_1= '->' ( (lv_target_2_0= ruleLocationActivity ) ) ( (lv_details_3_0= RULE_EDGE ) ) )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:744:1: ( ( (lv_source_0_0= ruleLocationActivity ) ) otherlv_1= '->' ( (lv_target_2_0= ruleLocationActivity ) ) ( (lv_details_3_0= RULE_EDGE ) ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:744:2: ( (lv_source_0_0= ruleLocationActivity ) ) otherlv_1= '->' ( (lv_target_2_0= ruleLocationActivity ) ) ( (lv_details_3_0= RULE_EDGE ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:744:1: ( ( (lv_source_0_0= ruleLocationActivity ) ) otherlv_1= '->' ( (lv_target_2_0= ruleLocationActivity ) ) ( (lv_details_3_0= RULE_EDGE ) ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:744:2: ( (lv_source_0_0= ruleLocationActivity ) ) otherlv_1= '->' ( (lv_target_2_0= ruleLocationActivity ) ) ( (lv_details_3_0= RULE_EDGE ) )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:744:2: ( (lv_source_0_0= ruleLocationActivity ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:745:1: (lv_source_0_0= ruleLocationActivity )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:744:2: ( (lv_source_0_0= ruleLocationActivity ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:745:1: (lv_source_0_0= ruleLocationActivity )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:745:1: (lv_source_0_0= ruleLocationActivity )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:746:3: lv_source_0_0= ruleLocationActivity
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:745:1: (lv_source_0_0= ruleLocationActivity )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:746:3: lv_source_0_0= ruleLocationActivity
             {
              
             	        newCompositeNode(grammarAccess.getEdgeActivityAccess().getSourceLocationActivityParserRuleCall_0_0()); 
@@ -1953,11 +1953,11 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
                 	newLeafNode(otherlv_1, grammarAccess.getEdgeActivityAccess().getHyphenMinusGreaterThanSignKeyword_1());
                 
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:766:1: ( (lv_target_2_0= ruleLocationActivity ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:767:1: (lv_target_2_0= ruleLocationActivity )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:766:1: ( (lv_target_2_0= ruleLocationActivity ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:767:1: (lv_target_2_0= ruleLocationActivity )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:767:1: (lv_target_2_0= ruleLocationActivity )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:768:3: lv_target_2_0= ruleLocationActivity
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:767:1: (lv_target_2_0= ruleLocationActivity )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:768:3: lv_target_2_0= ruleLocationActivity
             {
              
             	        newCompositeNode(grammarAccess.getEdgeActivityAccess().getTargetLocationActivityParserRuleCall_2_0()); 
@@ -1984,11 +1984,11 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:784:2: ( (lv_details_3_0= RULE_EDGE ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:785:1: (lv_details_3_0= RULE_EDGE )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:784:2: ( (lv_details_3_0= RULE_EDGE ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:785:1: (lv_details_3_0= RULE_EDGE )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:785:1: (lv_details_3_0= RULE_EDGE )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:786:3: lv_details_3_0= RULE_EDGE
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:785:1: (lv_details_3_0= RULE_EDGE )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:786:3: lv_details_3_0= RULE_EDGE
             {
             lv_details_3_0=(Token)match(input,RULE_EDGE,FOLLOW_RULE_EDGE_in_ruleEdgeActivity1618); 
 
@@ -2031,7 +2031,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleChannelSynchronization"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:812:1: entryRuleChannelSynchronization returns [EObject current=null] : iv_ruleChannelSynchronization= ruleChannelSynchronization EOF ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:812:1: entryRuleChannelSynchronization returns [EObject current=null] : iv_ruleChannelSynchronization= ruleChannelSynchronization EOF ;
     public final EObject entryRuleChannelSynchronization() throws RecognitionException {
         EObject current = null;
 
@@ -2039,8 +2039,8 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:813:2: (iv_ruleChannelSynchronization= ruleChannelSynchronization EOF )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:814:2: iv_ruleChannelSynchronization= ruleChannelSynchronization EOF
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:813:2: (iv_ruleChannelSynchronization= ruleChannelSynchronization EOF )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:814:2: iv_ruleChannelSynchronization= ruleChannelSynchronization EOF
             {
              newCompositeNode(grammarAccess.getChannelSynchronizationRule()); 
             pushFollow(FOLLOW_ruleChannelSynchronization_in_entryRuleChannelSynchronization1661);
@@ -2067,7 +2067,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleChannelSynchronization"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:821:1: ruleChannelSynchronization returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) ( (lv_kind_1_0= ruleSynchronizationKind ) ) ) ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:821:1: ruleChannelSynchronization returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) ( (lv_kind_1_0= ruleSynchronizationKind ) ) ) ;
     public final EObject ruleChannelSynchronization() throws RecognitionException {
         EObject current = null;
 
@@ -2078,17 +2078,17 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:824:28: ( ( ( (otherlv_0= RULE_ID ) ) ( (lv_kind_1_0= ruleSynchronizationKind ) ) ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:825:1: ( ( (otherlv_0= RULE_ID ) ) ( (lv_kind_1_0= ruleSynchronizationKind ) ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:824:28: ( ( ( (otherlv_0= RULE_ID ) ) ( (lv_kind_1_0= ruleSynchronizationKind ) ) ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:825:1: ( ( (otherlv_0= RULE_ID ) ) ( (lv_kind_1_0= ruleSynchronizationKind ) ) )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:825:1: ( ( (otherlv_0= RULE_ID ) ) ( (lv_kind_1_0= ruleSynchronizationKind ) ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:825:2: ( (otherlv_0= RULE_ID ) ) ( (lv_kind_1_0= ruleSynchronizationKind ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:825:1: ( ( (otherlv_0= RULE_ID ) ) ( (lv_kind_1_0= ruleSynchronizationKind ) ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:825:2: ( (otherlv_0= RULE_ID ) ) ( (lv_kind_1_0= ruleSynchronizationKind ) )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:825:2: ( (otherlv_0= RULE_ID ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:826:1: (otherlv_0= RULE_ID )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:825:2: ( (otherlv_0= RULE_ID ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:826:1: (otherlv_0= RULE_ID )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:826:1: (otherlv_0= RULE_ID )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:827:3: otherlv_0= RULE_ID
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:826:1: (otherlv_0= RULE_ID )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:827:3: otherlv_0= RULE_ID
             {
 
             			if (current==null) {
@@ -2105,11 +2105,11 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:838:2: ( (lv_kind_1_0= ruleSynchronizationKind ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:839:1: (lv_kind_1_0= ruleSynchronizationKind )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:838:2: ( (lv_kind_1_0= ruleSynchronizationKind ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:839:1: (lv_kind_1_0= ruleSynchronizationKind )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:839:1: (lv_kind_1_0= ruleSynchronizationKind )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:840:3: lv_kind_1_0= ruleSynchronizationKind
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:839:1: (lv_kind_1_0= ruleSynchronizationKind )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:840:3: lv_kind_1_0= ruleSynchronizationKind
             {
              
             	        newCompositeNode(grammarAccess.getChannelSynchronizationAccess().getKindSynchronizationKindEnumRuleCall_1_0()); 
@@ -2157,7 +2157,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTauSynchronization"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:864:1: entryRuleTauSynchronization returns [String current=null] : iv_ruleTauSynchronization= ruleTauSynchronization EOF ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:864:1: entryRuleTauSynchronization returns [String current=null] : iv_ruleTauSynchronization= ruleTauSynchronization EOF ;
     public final String entryRuleTauSynchronization() throws RecognitionException {
         String current = null;
 
@@ -2165,8 +2165,8 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:865:2: (iv_ruleTauSynchronization= ruleTauSynchronization EOF )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:866:2: iv_ruleTauSynchronization= ruleTauSynchronization EOF
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:865:2: (iv_ruleTauSynchronization= ruleTauSynchronization EOF )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:866:2: iv_ruleTauSynchronization= ruleTauSynchronization EOF
             {
              newCompositeNode(grammarAccess.getTauSynchronizationRule()); 
             pushFollow(FOLLOW_ruleTauSynchronization_in_entryRuleTauSynchronization1774);
@@ -2193,7 +2193,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTauSynchronization"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:873:1: ruleTauSynchronization returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'tau' ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:873:1: ruleTauSynchronization returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'tau' ;
     public final AntlrDatatypeRuleToken ruleTauSynchronization() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2202,8 +2202,8 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:876:28: (kw= 'tau' )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:878:2: kw= 'tau'
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:876:28: (kw= 'tau' )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:878:2: kw= 'tau'
             {
             kw=(Token)match(input,30,FOLLOW_30_in_ruleTauSynchronization1822); 
 
@@ -2228,7 +2228,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDelayTransition"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:891:1: entryRuleDelayTransition returns [EObject current=null] : iv_ruleDelayTransition= ruleDelayTransition EOF ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:891:1: entryRuleDelayTransition returns [EObject current=null] : iv_ruleDelayTransition= ruleDelayTransition EOF ;
     public final EObject entryRuleDelayTransition() throws RecognitionException {
         EObject current = null;
 
@@ -2236,8 +2236,8 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:892:2: (iv_ruleDelayTransition= ruleDelayTransition EOF )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:893:2: iv_ruleDelayTransition= ruleDelayTransition EOF
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:892:2: (iv_ruleDelayTransition= ruleDelayTransition EOF )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:893:2: iv_ruleDelayTransition= ruleDelayTransition EOF
             {
              newCompositeNode(grammarAccess.getDelayTransitionRule()); 
             pushFollow(FOLLOW_ruleDelayTransition_in_entryRuleDelayTransition1861);
@@ -2264,7 +2264,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDelayTransition"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:900:1: ruleDelayTransition returns [EObject current=null] : (otherlv_0= 'Delay:' ( (lv_duration_1_0= RULE_INT ) ) ) ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:900:1: ruleDelayTransition returns [EObject current=null] : (otherlv_0= 'Delay:' ( (lv_duration_1_0= RULE_INT ) ) ) ;
     public final EObject ruleDelayTransition() throws RecognitionException {
         EObject current = null;
 
@@ -2274,21 +2274,21 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:903:28: ( (otherlv_0= 'Delay:' ( (lv_duration_1_0= RULE_INT ) ) ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:904:1: (otherlv_0= 'Delay:' ( (lv_duration_1_0= RULE_INT ) ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:903:28: ( (otherlv_0= 'Delay:' ( (lv_duration_1_0= RULE_INT ) ) ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:904:1: (otherlv_0= 'Delay:' ( (lv_duration_1_0= RULE_INT ) ) )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:904:1: (otherlv_0= 'Delay:' ( (lv_duration_1_0= RULE_INT ) ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:904:3: otherlv_0= 'Delay:' ( (lv_duration_1_0= RULE_INT ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:904:1: (otherlv_0= 'Delay:' ( (lv_duration_1_0= RULE_INT ) ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:904:3: otherlv_0= 'Delay:' ( (lv_duration_1_0= RULE_INT ) )
             {
             otherlv_0=(Token)match(input,31,FOLLOW_31_in_ruleDelayTransition1908); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getDelayTransitionAccess().getDelayKeyword_0());
                 
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:908:1: ( (lv_duration_1_0= RULE_INT ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:909:1: (lv_duration_1_0= RULE_INT )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:908:1: ( (lv_duration_1_0= RULE_INT ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:909:1: (lv_duration_1_0= RULE_INT )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:909:1: (lv_duration_1_0= RULE_INT )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:910:3: lv_duration_1_0= RULE_INT
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:909:1: (lv_duration_1_0= RULE_INT )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:910:3: lv_duration_1_0= RULE_INT
             {
             lv_duration_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleDelayTransition1925); 
 
@@ -2331,7 +2331,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleActionTransition"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:934:1: entryRuleActionTransition returns [EObject current=null] : iv_ruleActionTransition= ruleActionTransition EOF ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:934:1: entryRuleActionTransition returns [EObject current=null] : iv_ruleActionTransition= ruleActionTransition EOF ;
     public final EObject entryRuleActionTransition() throws RecognitionException {
         EObject current = null;
 
@@ -2339,8 +2339,8 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:935:2: (iv_ruleActionTransition= ruleActionTransition EOF )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:936:2: iv_ruleActionTransition= ruleActionTransition EOF
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:935:2: (iv_ruleActionTransition= ruleActionTransition EOF )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:936:2: iv_ruleActionTransition= ruleActionTransition EOF
             {
              newCompositeNode(grammarAccess.getActionTransitionRule()); 
             pushFollow(FOLLOW_ruleActionTransition_in_entryRuleActionTransition1966);
@@ -2367,7 +2367,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActionTransition"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:943:1: ruleActionTransition returns [EObject current=null] : (otherlv_0= 'Transitions:' ( (lv_edgeActivities_1_0= ruleEdgeActivity ) )+ ) ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:943:1: ruleActionTransition returns [EObject current=null] : (otherlv_0= 'Transitions:' ( (lv_edgeActivities_1_0= ruleEdgeActivity ) )+ ) ;
     public final EObject ruleActionTransition() throws RecognitionException {
         EObject current = null;
 
@@ -2378,17 +2378,17 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:946:28: ( (otherlv_0= 'Transitions:' ( (lv_edgeActivities_1_0= ruleEdgeActivity ) )+ ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:947:1: (otherlv_0= 'Transitions:' ( (lv_edgeActivities_1_0= ruleEdgeActivity ) )+ )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:946:28: ( (otherlv_0= 'Transitions:' ( (lv_edgeActivities_1_0= ruleEdgeActivity ) )+ ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:947:1: (otherlv_0= 'Transitions:' ( (lv_edgeActivities_1_0= ruleEdgeActivity ) )+ )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:947:1: (otherlv_0= 'Transitions:' ( (lv_edgeActivities_1_0= ruleEdgeActivity ) )+ )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:947:3: otherlv_0= 'Transitions:' ( (lv_edgeActivities_1_0= ruleEdgeActivity ) )+
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:947:1: (otherlv_0= 'Transitions:' ( (lv_edgeActivities_1_0= ruleEdgeActivity ) )+ )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:947:3: otherlv_0= 'Transitions:' ( (lv_edgeActivities_1_0= ruleEdgeActivity ) )+
             {
             otherlv_0=(Token)match(input,32,FOLLOW_32_in_ruleActionTransition2013); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getActionTransitionAccess().getTransitionsKeyword_0());
                 
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:951:1: ( (lv_edgeActivities_1_0= ruleEdgeActivity ) )+
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:951:1: ( (lv_edgeActivities_1_0= ruleEdgeActivity ) )+
             int cnt18=0;
             loop18:
             do {
@@ -2402,10 +2402,10 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
                 switch (alt18) {
             	case 1 :
-            	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:952:1: (lv_edgeActivities_1_0= ruleEdgeActivity )
+            	    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:952:1: (lv_edgeActivities_1_0= ruleEdgeActivity )
             	    {
-            	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:952:1: (lv_edgeActivities_1_0= ruleEdgeActivity )
-            	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:953:3: lv_edgeActivities_1_0= ruleEdgeActivity
+            	    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:952:1: (lv_edgeActivities_1_0= ruleEdgeActivity )
+            	    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:953:3: lv_edgeActivities_1_0= ruleEdgeActivity
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getActionTransitionAccess().getEdgeActivitiesEdgeActivityParserRuleCall_1_0()); 
@@ -2463,7 +2463,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTransition"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:977:1: entryRuleTransition returns [EObject current=null] : iv_ruleTransition= ruleTransition EOF ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:977:1: entryRuleTransition returns [EObject current=null] : iv_ruleTransition= ruleTransition EOF ;
     public final EObject entryRuleTransition() throws RecognitionException {
         EObject current = null;
 
@@ -2471,8 +2471,8 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:978:2: (iv_ruleTransition= ruleTransition EOF )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:979:2: iv_ruleTransition= ruleTransition EOF
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:978:2: (iv_ruleTransition= ruleTransition EOF )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:979:2: iv_ruleTransition= ruleTransition EOF
             {
              newCompositeNode(grammarAccess.getTransitionRule()); 
             pushFollow(FOLLOW_ruleTransition_in_entryRuleTransition2071);
@@ -2499,7 +2499,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTransition"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:986:1: ruleTransition returns [EObject current=null] : (this_ActionTransition_0= ruleActionTransition | this_DelayTransition_1= ruleDelayTransition ) ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:986:1: ruleTransition returns [EObject current=null] : (this_ActionTransition_0= ruleActionTransition | this_DelayTransition_1= ruleDelayTransition ) ;
     public final EObject ruleTransition() throws RecognitionException {
         EObject current = null;
 
@@ -2511,10 +2511,10 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:989:28: ( (this_ActionTransition_0= ruleActionTransition | this_DelayTransition_1= ruleDelayTransition ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:990:1: (this_ActionTransition_0= ruleActionTransition | this_DelayTransition_1= ruleDelayTransition )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:989:28: ( (this_ActionTransition_0= ruleActionTransition | this_DelayTransition_1= ruleDelayTransition ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:990:1: (this_ActionTransition_0= ruleActionTransition | this_DelayTransition_1= ruleDelayTransition )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:990:1: (this_ActionTransition_0= ruleActionTransition | this_DelayTransition_1= ruleDelayTransition )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:990:1: (this_ActionTransition_0= ruleActionTransition | this_DelayTransition_1= ruleDelayTransition )
             int alt19=2;
             int LA19_0 = input.LA(1);
 
@@ -2532,7 +2532,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
             }
             switch (alt19) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:991:5: this_ActionTransition_0= ruleActionTransition
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:991:5: this_ActionTransition_0= ruleActionTransition
                     {
                      
                             newCompositeNode(grammarAccess.getTransitionAccess().getActionTransitionParserRuleCall_0()); 
@@ -2550,7 +2550,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1001:5: this_DelayTransition_1= ruleDelayTransition
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1001:5: this_DelayTransition_1= ruleDelayTransition
                     {
                      
                             newCompositeNode(grammarAccess.getTransitionAccess().getDelayTransitionParserRuleCall_1()); 
@@ -2588,7 +2588,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleResult"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1017:1: ruleResult returns [Enumerator current=null] : ( (enumLiteral_0= '-- Property is satisfied.' ) | (enumLiteral_1= '-- Property is NOT satisfied.' ) | (enumLiteral_2= '-- Formula is satisfied.' ) | (enumLiteral_3= '-- Formula is NOT satisfied.' ) ) ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1017:1: ruleResult returns [Enumerator current=null] : ( (enumLiteral_0= '-- Property is satisfied.' ) | (enumLiteral_1= '-- Property is NOT satisfied.' ) | (enumLiteral_2= '-- Formula is satisfied.' ) | (enumLiteral_3= '-- Formula is NOT satisfied.' ) ) ;
     public final Enumerator ruleResult() throws RecognitionException {
         Enumerator current = null;
 
@@ -2599,10 +2599,10 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1019:28: ( ( (enumLiteral_0= '-- Property is satisfied.' ) | (enumLiteral_1= '-- Property is NOT satisfied.' ) | (enumLiteral_2= '-- Formula is satisfied.' ) | (enumLiteral_3= '-- Formula is NOT satisfied.' ) ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1020:1: ( (enumLiteral_0= '-- Property is satisfied.' ) | (enumLiteral_1= '-- Property is NOT satisfied.' ) | (enumLiteral_2= '-- Formula is satisfied.' ) | (enumLiteral_3= '-- Formula is NOT satisfied.' ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1019:28: ( ( (enumLiteral_0= '-- Property is satisfied.' ) | (enumLiteral_1= '-- Property is NOT satisfied.' ) | (enumLiteral_2= '-- Formula is satisfied.' ) | (enumLiteral_3= '-- Formula is NOT satisfied.' ) ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1020:1: ( (enumLiteral_0= '-- Property is satisfied.' ) | (enumLiteral_1= '-- Property is NOT satisfied.' ) | (enumLiteral_2= '-- Formula is satisfied.' ) | (enumLiteral_3= '-- Formula is NOT satisfied.' ) )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1020:1: ( (enumLiteral_0= '-- Property is satisfied.' ) | (enumLiteral_1= '-- Property is NOT satisfied.' ) | (enumLiteral_2= '-- Formula is satisfied.' ) | (enumLiteral_3= '-- Formula is NOT satisfied.' ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1020:1: ( (enumLiteral_0= '-- Property is satisfied.' ) | (enumLiteral_1= '-- Property is NOT satisfied.' ) | (enumLiteral_2= '-- Formula is satisfied.' ) | (enumLiteral_3= '-- Formula is NOT satisfied.' ) )
             int alt20=4;
             switch ( input.LA(1) ) {
             case 33:
@@ -2634,10 +2634,10 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
             switch (alt20) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1020:2: (enumLiteral_0= '-- Property is satisfied.' )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1020:2: (enumLiteral_0= '-- Property is satisfied.' )
                     {
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1020:2: (enumLiteral_0= '-- Property is satisfied.' )
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1020:4: enumLiteral_0= '-- Property is satisfied.'
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1020:2: (enumLiteral_0= '-- Property is satisfied.' )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1020:4: enumLiteral_0= '-- Property is satisfied.'
                     {
                     enumLiteral_0=(Token)match(input,33,FOLLOW_33_in_ruleResult2204); 
 
@@ -2651,10 +2651,10 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1026:6: (enumLiteral_1= '-- Property is NOT satisfied.' )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1026:6: (enumLiteral_1= '-- Property is NOT satisfied.' )
                     {
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1026:6: (enumLiteral_1= '-- Property is NOT satisfied.' )
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1026:8: enumLiteral_1= '-- Property is NOT satisfied.'
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1026:6: (enumLiteral_1= '-- Property is NOT satisfied.' )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1026:8: enumLiteral_1= '-- Property is NOT satisfied.'
                     {
                     enumLiteral_1=(Token)match(input,34,FOLLOW_34_in_ruleResult2221); 
 
@@ -2668,10 +2668,10 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1032:6: (enumLiteral_2= '-- Formula is satisfied.' )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1032:6: (enumLiteral_2= '-- Formula is satisfied.' )
                     {
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1032:6: (enumLiteral_2= '-- Formula is satisfied.' )
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1032:8: enumLiteral_2= '-- Formula is satisfied.'
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1032:6: (enumLiteral_2= '-- Formula is satisfied.' )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1032:8: enumLiteral_2= '-- Formula is satisfied.'
                     {
                     enumLiteral_2=(Token)match(input,35,FOLLOW_35_in_ruleResult2238); 
 
@@ -2685,10 +2685,10 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1038:6: (enumLiteral_3= '-- Formula is NOT satisfied.' )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1038:6: (enumLiteral_3= '-- Formula is NOT satisfied.' )
                     {
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1038:6: (enumLiteral_3= '-- Formula is NOT satisfied.' )
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1038:8: enumLiteral_3= '-- Formula is NOT satisfied.'
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1038:6: (enumLiteral_3= '-- Formula is NOT satisfied.' )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1038:8: enumLiteral_3= '-- Formula is NOT satisfied.'
                     {
                     enumLiteral_3=(Token)match(input,36,FOLLOW_36_in_ruleResult2255); 
 
@@ -2722,7 +2722,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCompareOperator"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1048:1: ruleCompareOperator returns [Enumerator current=null] : ( (enumLiteral_0= '=' ) | (enumLiteral_1= '<=' ) | (enumLiteral_2= '>=' ) ) ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1048:1: ruleCompareOperator returns [Enumerator current=null] : ( (enumLiteral_0= '=' ) | (enumLiteral_1= '<=' ) | (enumLiteral_2= '>=' ) ) ;
     public final Enumerator ruleCompareOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -2732,10 +2732,10 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1050:28: ( ( (enumLiteral_0= '=' ) | (enumLiteral_1= '<=' ) | (enumLiteral_2= '>=' ) ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1051:1: ( (enumLiteral_0= '=' ) | (enumLiteral_1= '<=' ) | (enumLiteral_2= '>=' ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1050:28: ( ( (enumLiteral_0= '=' ) | (enumLiteral_1= '<=' ) | (enumLiteral_2= '>=' ) ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1051:1: ( (enumLiteral_0= '=' ) | (enumLiteral_1= '<=' ) | (enumLiteral_2= '>=' ) )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1051:1: ( (enumLiteral_0= '=' ) | (enumLiteral_1= '<=' ) | (enumLiteral_2= '>=' ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1051:1: ( (enumLiteral_0= '=' ) | (enumLiteral_1= '<=' ) | (enumLiteral_2= '>=' ) )
             int alt21=3;
             switch ( input.LA(1) ) {
             case 37:
@@ -2762,10 +2762,10 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
             switch (alt21) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1051:2: (enumLiteral_0= '=' )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1051:2: (enumLiteral_0= '=' )
                     {
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1051:2: (enumLiteral_0= '=' )
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1051:4: enumLiteral_0= '='
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1051:2: (enumLiteral_0= '=' )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1051:4: enumLiteral_0= '='
                     {
                     enumLiteral_0=(Token)match(input,37,FOLLOW_37_in_ruleCompareOperator2300); 
 
@@ -2779,10 +2779,10 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1057:6: (enumLiteral_1= '<=' )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1057:6: (enumLiteral_1= '<=' )
                     {
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1057:6: (enumLiteral_1= '<=' )
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1057:8: enumLiteral_1= '<='
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1057:6: (enumLiteral_1= '<=' )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1057:8: enumLiteral_1= '<='
                     {
                     enumLiteral_1=(Token)match(input,38,FOLLOW_38_in_ruleCompareOperator2317); 
 
@@ -2796,10 +2796,10 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1063:6: (enumLiteral_2= '>=' )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1063:6: (enumLiteral_2= '>=' )
                     {
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1063:6: (enumLiteral_2= '>=' )
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1063:8: enumLiteral_2= '>='
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1063:6: (enumLiteral_2= '>=' )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1063:8: enumLiteral_2= '>='
                     {
                     enumLiteral_2=(Token)match(input,39,FOLLOW_39_in_ruleCompareOperator2334); 
 
@@ -2833,7 +2833,7 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSynchronizationKind"
-    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1073:1: ruleSynchronizationKind returns [Enumerator current=null] : ( (enumLiteral_0= '?' ) | (enumLiteral_1= '!' ) ) ;
+    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1073:1: ruleSynchronizationKind returns [Enumerator current=null] : ( (enumLiteral_0= '?' ) | (enumLiteral_1= '!' ) ) ;
     public final Enumerator ruleSynchronizationKind() throws RecognitionException {
         Enumerator current = null;
 
@@ -2842,10 +2842,10 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1075:28: ( ( (enumLiteral_0= '?' ) | (enumLiteral_1= '!' ) ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1076:1: ( (enumLiteral_0= '?' ) | (enumLiteral_1= '!' ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1075:28: ( ( (enumLiteral_0= '?' ) | (enumLiteral_1= '!' ) ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1076:1: ( (enumLiteral_0= '?' ) | (enumLiteral_1= '!' ) )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1076:1: ( (enumLiteral_0= '?' ) | (enumLiteral_1= '!' ) )
+            // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1076:1: ( (enumLiteral_0= '?' ) | (enumLiteral_1= '!' ) )
             int alt22=2;
             int LA22_0 = input.LA(1);
 
@@ -2863,10 +2863,10 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
             }
             switch (alt22) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1076:2: (enumLiteral_0= '?' )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1076:2: (enumLiteral_0= '?' )
                     {
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1076:2: (enumLiteral_0= '?' )
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1076:4: enumLiteral_0= '?'
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1076:2: (enumLiteral_0= '?' )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1076:4: enumLiteral_0= '?'
                     {
                     enumLiteral_0=(Token)match(input,40,FOLLOW_40_in_ruleSynchronizationKind2379); 
 
@@ -2880,10 +2880,10 @@ public class InternalDiagnosticTraceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1082:6: (enumLiteral_1= '!' )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1082:6: (enumLiteral_1= '!' )
                     {
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1082:6: (enumLiteral_1= '!' )
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1082:8: enumLiteral_1= '!'
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1082:6: (enumLiteral_1= '!' )
+                    // ../org.muml.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1082:8: enumLiteral_1= '!'
                     {
                     enumLiteral_1=(Token)match(input,41,FOLLOW_41_in_ruleSynchronizationKind2396); 
 

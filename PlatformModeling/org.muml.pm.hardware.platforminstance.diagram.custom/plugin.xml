@@ -14,7 +14,7 @@
          point="org.eclipse.ui.menus">
       <menuContribution
             allPopups="false"
-            locationURI="popup:de.uni_paderborn.fujaba">
+            locationURI="popup:org.muml">
          <separator
                name="org.muml.pm.hardware.platforminstance.diagram.custom.separator1"
                visible="true">
@@ -31,7 +31,7 @@
                      <iterate
                            ifEmpty="false">
                         <adapt
-                              type="de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform">
+                              type="org.muml.pm.hardware.hwplatform.HWPlatform">
                         </adapt>
                      </iterate>
                   </with>
@@ -92,7 +92,7 @@
          point="org.eclipse.ui.menus">
       <menuContribution
             allPopups="false"
-            locationURI="popup:de.uni_paderborn.fujaba">
+            locationURI="popup:org.muml">
          <command
                commandId="testCommand"
                id="testCommand"

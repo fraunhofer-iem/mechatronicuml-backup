@@ -19,7 +19,7 @@
       <wizard
             category="org.muml.core.export"
             class="org.muml.uppaal.ui.wizard.UppaalExportWizard"
-            id="de.uni_paderborn.uppaal.export"
+            id="org.muml.uppaal.export"
             name="Uppaal EMF to Uppaal XML">
       </wizard>
    </extension>

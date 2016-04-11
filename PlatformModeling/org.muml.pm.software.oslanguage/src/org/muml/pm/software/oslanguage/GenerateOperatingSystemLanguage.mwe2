@@ -17,9 +17,9 @@ Workflow {
 //		registerGeneratedEPackage = "org.eclipse.emf.ecore.EcorePackage"
 //		registerGeneratedEPackage = "org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage"
 //		
-//		registerGeneratedEPackage = "org.storydriven.core.CorePackage" 
-//		registerGeneratedEPackage = "org.storydriven.core.expressions.ExpressionsPackage" 
-//		registerGeneratedEPackage = "org.storydriven.core.expressions.common.CommonExpressionsPackage" 
+//		registerGeneratedEPackage = "org.muml.core.CorePackage" 
+//		registerGeneratedEPackage = "org.muml.core.expressions.ExpressionsPackage" 
+//		registerGeneratedEPackage = "org.muml.core.expressions.common.CommonExpressionsPackage" 
 //		
 //	 	registerGeneratedEPackage = "org.muml.core.types.TypesPackage"
 //		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage"

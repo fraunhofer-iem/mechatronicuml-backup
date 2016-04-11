@@ -13,5 +13,5 @@
   <sourcePackages href="muml.ecore#//realtimestatechart"/>
   <sourcePackages href="muml.ecore#//types"/>
   <sourcePackages href="muml.ecore#//valuetype"/>
-  <release href="../../org.storydriven.core.migrator/model/muml.releaseset#//@releases.1"/>
+  <release href="../../org.muml.core.migrator/model/muml.releaseset#//@releases.1"/>
 </migration:Migrator>

@@ -12,7 +12,7 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="de.uni_paderborn.uppaal.presentation.UppaalModelWizardID"
+            id="org.muml.uppaal.presentation.UppaalModelWizardID"
             name="%_UI_UppaalModelWizard_label"
             class="org.muml.uppaal.presentation.UppaalModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
@@ -25,7 +25,7 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated uppaal -->
       <editor
-            id="de.uni_paderborn.uppaal.presentation.UppaalEditorID"
+            id="org.muml.uppaal.presentation.UppaalEditorID"
             name="%_UI_UppaalEditor_label"
             icon="icons/full/obj16/UppaalModelFile.gif"
             extensions="uppaal"
@@ -40,7 +40,7 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="de.uni_paderborn.uppaal.types.presentation.TypesModelWizardID"
+            id="org.muml.uppaal.types.presentation.TypesModelWizardID"
             name="%_UI_TypesModelWizard_label"
             class="org.muml.uppaal.types.presentation.TypesModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
@@ -53,7 +53,7 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated uppaal -->
       <editor
-            id="de.uni_paderborn.uppaal.types.presentation.TypesEditorID"
+            id="org.muml.uppaal.types.presentation.TypesEditorID"
             name="%_UI_TypesEditor_label"
             icon="icons/full/obj16/TypesModelFile.gif"
             extensions="types"
@@ -68,7 +68,7 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="de.uni_paderborn.uppaal.declarations.presentation.DeclarationsModelWizardID"
+            id="org.muml.uppaal.declarations.presentation.DeclarationsModelWizardID"
             name="%_UI_DeclarationsModelWizard_label"
             class="org.muml.uppaal.declarations.presentation.DeclarationsModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
@@ -81,7 +81,7 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated uppaal -->
       <editor
-            id="de.uni_paderborn.uppaal.declarations.presentation.DeclarationsEditorID"
+            id="org.muml.uppaal.declarations.presentation.DeclarationsEditorID"
             name="%_UI_DeclarationsEditor_label"
             icon="icons/full/obj16/DeclarationsModelFile.gif"
             extensions="declarations"
@@ -96,7 +96,7 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="de.uni_paderborn.uppaal.declarations.global.presentation.GlobalModelWizardID"
+            id="org.muml.uppaal.declarations.global.presentation.GlobalModelWizardID"
             name="%_UI_GlobalModelWizard_label"
             class="org.muml.uppaal.declarations.global.presentation.GlobalModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
@@ -109,7 +109,7 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated uppaal -->
       <editor
-            id="de.uni_paderborn.uppaal.declarations.global.presentation.GlobalEditorID"
+            id="org.muml.uppaal.declarations.global.presentation.GlobalEditorID"
             name="%_UI_GlobalEditor_label"
             icon="icons/full/obj16/GlobalModelFile.gif"
             extensions="global"
@@ -124,7 +124,7 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="de.uni_paderborn.uppaal.declarations.system.presentation.SystemModelWizardID"
+            id="org.muml.uppaal.declarations.system.presentation.SystemModelWizardID"
             name="%_UI_SystemModelWizard_label"
             class="org.muml.uppaal.declarations.system.presentation.SystemModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
@@ -137,7 +137,7 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated uppaal -->
       <editor
-            id="de.uni_paderborn.uppaal.declarations.system.presentation.SystemEditorID"
+            id="org.muml.uppaal.declarations.system.presentation.SystemEditorID"
             name="%_UI_SystemEditor_label"
             icon="icons/full/obj16/SystemModelFile.gif"
             extensions="system"
@@ -152,7 +152,7 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="de.uni_paderborn.uppaal.templates.presentation.TemplatesModelWizardID"
+            id="org.muml.uppaal.templates.presentation.TemplatesModelWizardID"
             name="%_UI_TemplatesModelWizard_label"
             class="org.muml.uppaal.templates.presentation.TemplatesModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
@@ -165,7 +165,7 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated uppaal -->
       <editor
-            id="de.uni_paderborn.uppaal.templates.presentation.TemplatesEditorID"
+            id="org.muml.uppaal.templates.presentation.TemplatesEditorID"
             name="%_UI_TemplatesEditor_label"
             icon="icons/full/obj16/TemplatesModelFile.gif"
             extensions="templates"
@@ -180,7 +180,7 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="de.uni_paderborn.uppaal.statements.presentation.StatementsModelWizardID"
+            id="org.muml.uppaal.statements.presentation.StatementsModelWizardID"
             name="%_UI_StatementsModelWizard_label"
             class="org.muml.uppaal.statements.presentation.StatementsModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
@@ -193,7 +193,7 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated uppaal -->
       <editor
-            id="de.uni_paderborn.uppaal.statements.presentation.StatementsEditorID"
+            id="org.muml.uppaal.statements.presentation.StatementsEditorID"
             name="%_UI_StatementsEditor_label"
             icon="icons/full/obj16/StatementsModelFile.gif"
             extensions="statements"
@@ -208,7 +208,7 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="de.uni_paderborn.uppaal.expressions.presentation.ExpressionsModelWizardID"
+            id="org.muml.uppaal.expressions.presentation.ExpressionsModelWizardID"
             name="%_UI_ExpressionsModelWizard_label"
             class="org.muml.uppaal.expressions.presentation.ExpressionsModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
@@ -221,7 +221,7 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated uppaal -->
       <editor
-            id="de.uni_paderborn.uppaal.expressions.presentation.ExpressionsEditorID"
+            id="org.muml.uppaal.expressions.presentation.ExpressionsEditorID"
             name="%_UI_ExpressionsEditor_label"
             icon="icons/full/obj16/ExpressionsModelFile.gif"
             extensions="expressions"
@@ -236,7 +236,7 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="de.uni_paderborn.uppaal.visuals.presentation.VisualsModelWizardID"
+            id="org.muml.uppaal.visuals.presentation.VisualsModelWizardID"
             name="%_UI_VisualsModelWizard_label"
             class="org.muml.uppaal.visuals.presentation.VisualsModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
@@ -249,7 +249,7 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated uppaal -->
       <editor
-            id="de.uni_paderborn.uppaal.visuals.presentation.VisualsEditorID"
+            id="org.muml.uppaal.visuals.presentation.VisualsEditorID"
             name="%_UI_VisualsEditor_label"
             icon="icons/full/obj16/VisualsModelFile.gif"
             extensions="visuals"

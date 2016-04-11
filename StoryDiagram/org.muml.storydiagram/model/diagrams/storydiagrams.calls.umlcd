@@ -137,8 +137,8 @@
     <targetRole xmi:id="_rXt1CyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.muml.storydiagram/model/storydiagrams.uml#_WMtZcxzNEeChOvWwuwx7tQ" derived="true" name="parameter" navigable="true">
       <modelElement href="../storydiagrams.uml#_WMtZcxzNEeChOvWwuwx7tQ"/>
       <visualProperties xmi:id="_xEEToiJCEeCMEorpcZtLvw" position="1.0,0.0"/>
-      <stereotypes xmi:id="_LYgyYD3PEeCkabonkEk6JQ" abstractModelReference="platform:/resource/org.storydriven.core/model/core.uml#_av6VcB2qEeCgKe8vMUdTKg" name="EReference">
-        <modelElement href="../../../org.storydriven.core/model/core.uml#_av6VcB2qEeCgKe8vMUdTKg"/>
+      <stereotypes xmi:id="_LYgyYD3PEeCkabonkEk6JQ" abstractModelReference="platform:/resource/org.muml.core/model/core.uml#_av6VcB2qEeCgKe8vMUdTKg" name="EReference">
+        <modelElement href="../../../org.muml.core/model/core.uml#_av6VcB2qEeCgKe8vMUdTKg"/>
       </stereotypes>
       <stereotypes xmi:id="_BRswgMtsEeGgX-yRbtg0lw" name="EReference">
         <modelElement href="../storydiagrams.uml#_av6VcB2qEeCgKe8vMUdTKg"/>
@@ -409,8 +409,8 @@
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_nubK8CLnEeCLL8iyhYH9-w" abstractModelReference="platform:/resource/org.muml.storydiagram/model/storydiagrams.uml#_0aPsEBzuEeChOvWwuwx7tQ" item="_nvKx5SLnEeCLL8iyhYH9-w" sourceConnectionVisual="_nuk78CLnEeCLL8iyhYH9-w" text="References a story node which represents the precondition for the execution of the activity. I.e., the activity is executed, iff the object structure in the story node can be matched. Obviously the referenced story node may only contain black (i.e., non-create and non-destroy) objects and links.">
     <modelElement href="../storydiagrams.uml#_0aPsEBzuEeChOvWwuwx7tQ"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_4H-DACPpEeCBbagboshu9g" abstractModelReference="platform:/resource/org.storydriven.core/model/core.uml#_RcJm8BztEeChOvWwuwx7tQ" item="_4JGEYCPpEeCBbagboshu9g" sourceConnectionVisual="_4H-qECPpEeCBbagboshu9g" text="Represents any expression in an embedded textual language, e.g. OCL or Java. An expression's type is dynamically derived by an external mechanism (see TypedElement).">
-    <modelElement href="../../../org.storydriven.core/model/core.uml#_RcJm8BztEeChOvWwuwx7tQ"/>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_4H-DACPpEeCBbagboshu9g" abstractModelReference="platform:/resource/org.muml.core/model/core.uml#_RcJm8BztEeChOvWwuwx7tQ" item="_4JGEYCPpEeCBbagboshu9g" sourceConnectionVisual="_4H-qECPpEeCBbagboshu9g" text="Represents any expression in an embedded textual language, e.g. OCL or Java. An expression's type is dynamically derived by an external mechanism (see TypedElement).">
+    <modelElement href="../../../org.muml.core/model/core.uml#_RcJm8BztEeChOvWwuwx7tQ"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_50mo4CR2EeCZkonQmyNaoA" abstractModelReference="platform:/resource/org.muml.storydiagram/model/storydiagrams.uml#_Gu3dgBzwEeChOvWwuwx7tQ" item="_2Y4vcGBMEeCpbIdowMJ-lA" sourceConnectionVisual="_50mo4SR2EeCZkonQmyNaoA" text="A MethodCallExpression references an expression instead of a target object to allow the determination of the call target by an expression. This can be handy when a method should be called e.g. on the return value of another method (as in a.b().c() ). Then the method call of c() would be modeled by a MethodCallExpression with the callExpression a.b(), which again is a MethodCallExpression itself.">
     <modelElement href="../storydiagrams.uml#_Gu3dgBzwEeChOvWwuwx7tQ"/>
@@ -584,8 +584,8 @@
       </type>
     </attributes>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_4JGEYCPpEeCBbagboshu9g" abstractModelReference="platform:/resource/org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" comments="_4H-DACPpEeCBbagboshu9g" targetConnectionVisual="_4H-qECPpEeCBbagboshu9g" name="Expression" abstractClass="true" associationsIn="_rXt09CJCEeCMEorpcZtLvw _4H_RICPpEeCBbagboshu9g" subclassedBy="_4H-qESPpEeCBbagboshu9g _uTyCcD3PEeCkabonkEk6JQ">
-    <modelElement href="../../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_4JGEYCPpEeCBbagboshu9g" abstractModelReference="platform:/resource/org.muml.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" comments="_4H-DACPpEeCBbagboshu9g" targetConnectionVisual="_4H-qECPpEeCBbagboshu9g" name="Expression" abstractClass="true" associationsIn="_rXt09CJCEeCMEorpcZtLvw _4H_RICPpEeCBbagboshu9g" subclassedBy="_4H-qESPpEeCBbagboshu9g _uTyCcD3PEeCkabonkEk6JQ">
+    <modelElement href="../../../org.muml.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
     <visualProperties xmi:id="_4JdQwCPpEeCBbagboshu9g" position="295.0,529.0" size="151.0,27.0"/>
     <visibility xmi:id="_4JGEYSPpEeCBbagboshu9g" label="+"/>
   </nodes>
@@ -608,8 +608,8 @@
       <visualProperties xmi:id="_2Y4vcWBMEeCpbIdowMJ-lA" visible="false"/>
       <visibility xmi:id="_2Y4vh2BMEeCpbIdowMJ-lA" label="+"/>
       <cardinality xmi:id="_2Y4viGBMEeCpbIdowMJ-lA" label="0..1" max="1"/>
-      <type xmi:id="_2Y4vhmBMEeCpbIdowMJ-lA" abstractModelReference="platform:/resource/org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression">
-        <modelElement href="../../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+      <type xmi:id="_2Y4vhmBMEeCpbIdowMJ-lA" abstractModelReference="platform:/resource/org.muml.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression">
+        <modelElement href="../../../org.muml.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
       </type>
     </attributes>
   </nodes>
@@ -631,8 +631,8 @@
       <visualProperties xmi:id="_2Y4vfWBMEeCpbIdowMJ-lA" visible="false"/>
       <visibility xmi:id="_2ZCgfWBMEeCpbIdowMJ-lA" label="+"/>
       <cardinality xmi:id="_2ZCgfmBMEeCpbIdowMJ-lA" label="1" max="1" min="1"/>
-      <type xmi:id="_2ZCgfGBMEeCpbIdowMJ-lA" abstractModelReference="platform:/resource/org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression">
-        <modelElement href="../../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+      <type xmi:id="_2ZCgfGBMEeCpbIdowMJ-lA" abstractModelReference="platform:/resource/org.muml.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression">
+        <modelElement href="../../../org.muml.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
       </type>
     </attributes>
     <attributes xmi:id="_2Y4vfmBMEeCpbIdowMJ-lA" abstractModelReference="platform:/resource/org.muml.storydiagram/model/storydiagrams.uml#_Gcyj8hzNEeChOvWwuwx7tQ" name="parameter">

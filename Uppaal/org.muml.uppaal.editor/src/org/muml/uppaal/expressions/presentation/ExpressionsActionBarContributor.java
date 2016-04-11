@@ -174,7 +174,7 @@ public class ExpressionsActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(UppaalEditorPlugin.INSTANCE.getString("_UI_ExpressionsEditor_menu"), "de.uni_paderborn.uppaal.expressionsMenuID");
+		IMenuManager submenuManager = new MenuManager(UppaalEditorPlugin.INSTANCE.getString("_UI_ExpressionsEditor_menu"), "org.muml.uppaal.expressionsMenuID");
 		menuManager.insertAfter("additions", submenuManager);
 		submenuManager.add(new Separator("settings"));
 		submenuManager.add(new Separator("actions"));

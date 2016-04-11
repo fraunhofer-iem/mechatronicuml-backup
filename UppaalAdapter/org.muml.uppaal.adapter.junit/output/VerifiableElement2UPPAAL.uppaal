@@ -2,7 +2,7 @@
 <uppaal:NTA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:declarations="http://www.muml.org/uppaal/declarations/1.0.0" xmlns:expressions="http://www.muml.org/uppaal/expressions/1.0.0" xmlns:statements="http://www.muml.org/uppaal/statements/1.0.0" xmlns:system="http://www.muml.org/uppaal/declarations/system/1.0.0" xmlns:types="http://www.muml.org/uppaal/types/1.0.0" xmlns:uppaal="http://www.muml.org/uppaal/1.0.0" xsi:schemaLocation="http://www.muml.org/uppaal/declarations/1.0.0 http://www.muml.org/uppaal/1.0.0#//declarations http://www.muml.org/uppaal/expressions/1.0.0 http://www.muml.org/uppaal/1.0.0#//expressions http://www.muml.org/uppaal/statements/1.0.0 http://www.muml.org/uppaal/1.0.0#//statements http://www.muml.org/uppaal/declarations/system/1.0.0 http://www.muml.org/uppaal/1.0.0#//declarations/system http://www.muml.org/uppaal/types/1.0.0 http://www.muml.org/uppaal/1.0.0#//types" name="MumlElement_EinparkhilfeCIC">
   <globalDeclarations>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:ChannelPrefixExpression" urgent="true" channelType="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.3"/>
+      <typeDefinition xsi:type="expressions:ChannelPrefixExpression" urgent="true" channelType="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.3"/>
       <variable xsi:type="declarations:Variable" name="hurry"/>
     </declaration>
     <declaration xsi:type="declarations:TypeDeclaration">
@@ -34,7 +34,7 @@
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
       <typeDefinition xsi:type="expressions:DataPrefixExpression">
-        <dataTypeExpression xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.0"/>
+        <dataTypeExpression xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.0"/>
       </typeDefinition>
       <variable xsi:type="declarations:Variable" name="NUM_OF_MESSAGE_KINDS">
         <initializer xsi:type="declarations:ExpressionInitializer">
@@ -44,7 +44,7 @@
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
       <typeDefinition xsi:type="expressions:DataPrefixExpression">
-        <dataTypeExpression xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.0"/>
+        <dataTypeExpression xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.0"/>
       </typeDefinition>
       <variable xsi:type="declarations:Variable" name="NUM_MAX_MESSAGES_IN_TRANSIT">
         <initializer xsi:type="declarations:ExpressionInitializer">
@@ -54,7 +54,7 @@
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
       <typeDefinition xsi:type="expressions:DataPrefixExpression">
-        <dataTypeExpression xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.0"/>
+        <dataTypeExpression xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.0"/>
       </typeDefinition>
       <variable xsi:type="declarations:Variable" name="MAX_BUFFER_SIZE">
         <initializer xsi:type="declarations:ExpressionInitializer">
@@ -64,7 +64,7 @@
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
       <typeDefinition xsi:type="expressions:DataPrefixExpression">
-        <dataTypeExpression xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.0"/>
+        <dataTypeExpression xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.0"/>
       </typeDefinition>
       <variable xsi:type="declarations:Variable" name="MAX_NUM_OF_MESSAGE_BUFFERS_PER_ROLE">
         <initializer xsi:type="declarations:ExpressionInitializer">
@@ -102,7 +102,7 @@
           <variable xsi:type="declarations:Variable" name="mType"/>
         </declaration>
         <declaration>
-          <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.0"/>
+          <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.0"/>
           <variable xsi:type="declarations:Variable" name="mArgsPosition"/>
         </declaration>
       </typeDefinition>
@@ -165,7 +165,7 @@
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
       <typeDefinition xsi:type="expressions:DataPrefixExpression">
-        <dataTypeExpression xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.0"/>
+        <dataTypeExpression xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.0"/>
       </typeDefinition>
       <variable xsi:type="declarations:Variable" name="NUM_OF_DISCRETE_PORT_INSTANCES">
         <initializer xsi:type="declarations:ExpressionInitializer">
@@ -175,7 +175,7 @@
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
       <typeDefinition xsi:type="expressions:DataPrefixExpression">
-        <dataTypeExpression xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.0"/>
+        <dataTypeExpression xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.0"/>
       </typeDefinition>
       <variable xsi:type="declarations:Variable" name="NUM_OF_COMPONENT_INSTANCES">
         <initializer xsi:type="declarations:ExpressionInitializer">
@@ -422,7 +422,7 @@
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.1"/>
+      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.1"/>
       <variable xsi:type="declarations:Variable" name="overflow"/>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
@@ -448,19 +448,19 @@
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.0"/>
+      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.0"/>
       <variable xsi:type="declarations:Variable" name="earliest">
         <index xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.18/@type.0"/>
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.0"/>
+      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.0"/>
       <variable xsi:type="declarations:Variable" name="latest">
         <index xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.18/@type.0"/>
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.2"/>
+      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.2"/>
       <variable xsi:type="declarations:Variable" name="transmissionTimes">
         <index xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.18/@type.0"/>
         <index xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.6/@elements.0"/>
@@ -987,7 +987,7 @@
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.4"/>
+      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.4"/>
       <variable xsi:type="declarations:Function" name="add">
         <block>
           <statement xsi:type="statements:ExpressionStatement">
@@ -1024,7 +1024,7 @@
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.0"/>
+      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.0"/>
       <variable xsi:type="declarations:Function" name="getNumberOfElementsInBuffer">
         <block>
           <statement xsi:type="statements:ReturnStatement">
@@ -1041,7 +1041,7 @@
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.1"/>
+      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.1"/>
       <variable xsi:type="declarations:Function" name="check">
         <block>
           <declarations>
@@ -1086,12 +1086,12 @@
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.1"/>
+      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.1"/>
       <variable xsi:type="declarations:Function" name="checkMessageInBuffer">
         <block>
           <declarations>
             <declaration xsi:type="declarations:TypedDeclaration">
-              <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.0"/>
+              <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.0"/>
               <variable xsi:type="declarations:Variable" name="i"/>
             </declaration>
           </declarations>
@@ -1140,7 +1140,7 @@
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.4"/>
+      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.4"/>
       <variable xsi:type="declarations:Function" name="remove">
         <block>
           <statement xsi:type="statements:IfStatement">
@@ -1151,7 +1151,7 @@
             <thenStatement xsi:type="statements:Block">
               <declarations>
                 <declaration xsi:type="declarations:TypedDeclaration">
-                  <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.0"/>
+                  <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.0"/>
                   <variable xsi:type="declarations:Variable" name="i"/>
                 </declaration>
               </declarations>
@@ -1226,7 +1226,7 @@
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.1"/>
+      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.1"/>
       <variable xsi:type="declarations:Function" name="receive">
         <block>
           <statement xsi:type="statements:ReturnStatement">
@@ -1258,7 +1258,7 @@
         <block>
           <declarations>
             <declaration xsi:type="declarations:TypedDeclaration">
-              <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.0"/>
+              <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.0"/>
               <variable xsi:type="declarations:Variable" name="i"/>
             </declaration>
           </declarations>
@@ -1317,12 +1317,12 @@
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.1"/>
+      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.1"/>
       <variable xsi:type="declarations:Function" name="releaseId">
         <block>
           <declarations>
             <declaration xsi:type="declarations:TypedDeclaration">
-              <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.0"/>
+              <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.0"/>
               <variable xsi:type="declarations:Variable" name="i"/>
             </declaration>
           </declarations>
@@ -1395,7 +1395,7 @@
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.0"/>
+      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.0"/>
       <variable xsi:type="declarations:Function" name="addMumlElement_startArguments">
         <block>
           <statement xsi:type="statements:ExpressionStatement">
@@ -1425,7 +1425,7 @@
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.0"/>
+      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.0"/>
       <variable xsi:type="declarations:Function" name="addMumlElement_stopArguments">
         <block>
           <statement xsi:type="statements:ExpressionStatement">
@@ -1455,7 +1455,7 @@
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.0"/>
+      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.0"/>
       <variable xsi:type="declarations:Function" name="addMumlElement_freiArguments">
         <block>
           <statement xsi:type="statements:ExpressionStatement">
@@ -1485,7 +1485,7 @@
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.0"/>
+      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.0"/>
       <variable xsi:type="declarations:Function" name="addMumlElement_akzeptiereStopArguments">
         <block>
           <statement xsi:type="statements:ExpressionStatement">
@@ -1515,12 +1515,12 @@
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.1"/>
+      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.1"/>
       <variable xsi:type="declarations:Function" name="removeMumlElement_startArguments">
         <block>
           <declarations>
             <declaration xsi:type="declarations:TypedDeclaration">
-              <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.0"/>
+              <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.0"/>
               <variable xsi:type="declarations:Variable" name="i"/>
             </declaration>
           </declarations>
@@ -1550,7 +1550,7 @@
                 <thenStatement xsi:type="statements:Block">
                   <declarations>
                     <declaration xsi:type="declarations:TypedDeclaration">
-                      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.0"/>
+                      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.0"/>
                       <variable xsi:type="declarations:Variable" name="j"/>
                     </declaration>
                   </declarations>
@@ -1617,12 +1617,12 @@
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.1"/>
+      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.1"/>
       <variable xsi:type="declarations:Function" name="removeMumlElement_stopArguments">
         <block>
           <declarations>
             <declaration xsi:type="declarations:TypedDeclaration">
-              <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.0"/>
+              <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.0"/>
               <variable xsi:type="declarations:Variable" name="i"/>
             </declaration>
           </declarations>
@@ -1652,7 +1652,7 @@
                 <thenStatement xsi:type="statements:Block">
                   <declarations>
                     <declaration xsi:type="declarations:TypedDeclaration">
-                      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.0"/>
+                      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.0"/>
                       <variable xsi:type="declarations:Variable" name="j"/>
                     </declaration>
                   </declarations>
@@ -1719,12 +1719,12 @@
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.1"/>
+      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.1"/>
       <variable xsi:type="declarations:Function" name="removeMumlElement_freiArguments">
         <block>
           <declarations>
             <declaration xsi:type="declarations:TypedDeclaration">
-              <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.0"/>
+              <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.0"/>
               <variable xsi:type="declarations:Variable" name="i"/>
             </declaration>
           </declarations>
@@ -1754,7 +1754,7 @@
                 <thenStatement xsi:type="statements:Block">
                   <declarations>
                     <declaration xsi:type="declarations:TypedDeclaration">
-                      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.0"/>
+                      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.0"/>
                       <variable xsi:type="declarations:Variable" name="j"/>
                     </declaration>
                   </declarations>
@@ -1821,12 +1821,12 @@
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.1"/>
+      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.1"/>
       <variable xsi:type="declarations:Function" name="removeMumlElement_akzeptiereStopArguments">
         <block>
           <declarations>
             <declaration xsi:type="declarations:TypedDeclaration">
-              <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.0"/>
+              <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.0"/>
               <variable xsi:type="declarations:Variable" name="i"/>
             </declaration>
           </declarations>
@@ -1856,7 +1856,7 @@
                 <thenStatement xsi:type="statements:Block">
                   <declarations>
                     <declaration xsi:type="declarations:TypedDeclaration">
-                      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.0"/>
+                      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.0"/>
                       <variable xsi:type="declarations:Variable" name="j"/>
                     </declaration>
                   </declarations>
@@ -1923,7 +1923,7 @@
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.4"/>
+      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.4"/>
       <variable xsi:type="declarations:Function" name="sendMumlElement_start">
         <block>
           <statement xsi:type="statements:IfStatement">
@@ -2068,7 +2068,7 @@
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.4"/>
+      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.4"/>
       <variable xsi:type="declarations:Function" name="sendMumlElement_stop">
         <block>
           <statement xsi:type="statements:IfStatement">
@@ -2213,7 +2213,7 @@
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.4"/>
+      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.4"/>
       <variable xsi:type="declarations:Function" name="sendMumlElement_frei">
         <block>
           <statement xsi:type="statements:IfStatement">
@@ -2358,7 +2358,7 @@
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.4"/>
+      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.4"/>
       <variable xsi:type="declarations:Function" name="sendMumlElement_akzeptiereStop">
         <block>
           <statement xsi:type="statements:IfStatement">
@@ -2503,7 +2503,7 @@
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.4"/>
+      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.4"/>
       <variable xsi:type="declarations:Function" name="consume">
         <block>
           <statement xsi:type="statements:IfStatement">
@@ -2623,37 +2623,37 @@
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.2"/>
+      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.2"/>
       <variable xsi:type="declarations:Variable" name="MumlElement_cFrei0">
         <index xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.18/@type.0"/>
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:ChannelPrefixExpression" urgent="true" channelType="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.3"/>
+      <typeDefinition xsi:type="expressions:ChannelPrefixExpression" urgent="true" channelType="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.3"/>
       <variable xsi:type="declarations:Variable" name="exit_MumlElement_Initial">
         <index xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.18/@type.0"/>
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.2"/>
+      <typeDefinition xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.2"/>
       <variable xsi:type="declarations:Variable" name="MumlElement_cHindernis0">
         <index xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.18/@type.0"/>
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:ChannelPrefixExpression" urgent="true" channelType="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.3"/>
+      <typeDefinition xsi:type="expressions:ChannelPrefixExpression" urgent="true" channelType="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.3"/>
       <variable xsi:type="declarations:Variable" name="exit_MumlElement_Initial0">
         <index xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.18/@type.0"/>
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:ChannelPrefixExpression" urgent="true" channelType="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.3"/>
+      <typeDefinition xsi:type="expressions:ChannelPrefixExpression" urgent="true" channelType="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.3"/>
       <variable xsi:type="declarations:Variable" name="exit_MumlElement_aktiv0">
         <index xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.18/@type.0"/>
       </variable>
     </declaration>
     <declaration xsi:type="declarations:TypedDeclaration">
-      <typeDefinition xsi:type="expressions:ChannelPrefixExpression" urgent="true" channelType="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.3"/>
+      <typeDefinition xsi:type="expressions:ChannelPrefixExpression" urgent="true" channelType="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.3"/>
       <variable xsi:type="declarations:Variable" name="enter_MumlElement_aktiv0_in_MumlElement_RolleHinderniserkennung0_via_MumlElement_aktiv0_ENTRY0">
         <index xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.18/@type.0"/>
       </variable>
@@ -2702,19 +2702,19 @@
     </parameter>
     <parameter>
       <typeDefinition xsi:type="expressions:DataPrefixExpression">
-        <dataTypeExpression xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.0"/>
+        <dataTypeExpression xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.0"/>
       </typeDefinition>
       <variable xsi:type="declarations:Parameter" name="min"/>
     </parameter>
     <parameter>
       <typeDefinition xsi:type="expressions:DataPrefixExpression">
-        <dataTypeExpression xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.0"/>
+        <dataTypeExpression xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.0"/>
       </typeDefinition>
       <variable xsi:type="declarations:Parameter" name="max"/>
     </parameter>
     <parameter>
       <typeDefinition xsi:type="expressions:DataPrefixExpression">
-        <dataTypeExpression xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/de.uni_paderborn.uppaal/model/stdlib.xmi#//@types.1"/>
+        <dataTypeExpression xsi:type="expressions:IdentifierExpression" identifier="types:PredefinedType ../../../plugin/org.muml.uppaal/model/stdlib.xmi#//@types.1"/>
       </typeDefinition>
       <variable xsi:type="declarations:Parameter" name="loss"/>
     </parameter>

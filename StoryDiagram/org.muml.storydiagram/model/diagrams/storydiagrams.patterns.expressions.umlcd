@@ -296,7 +296,7 @@
     <modelElement href="../storydiagrams.uml#_CPc8UmKTEeCBq7LKLVIv3g"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_VwRHcMthEeGlhpkD8MrS_w" item="_VwRHdsthEeGlhpkD8MrS_w" sourceConnectionVisual="_VwRHccthEeGlhpkD8MrS_w" text="Represents any expression in an embedded textual language, e.g. OCL or Java. An expression's type is dynamically derived by an external mechanism (see TypedElement).">
-    <modelElement href="../../../org.storydriven.core/model/core.uml#_RcJm8BztEeChOvWwuwx7tQ"/>
+    <modelElement href="../../../org.muml.core/model/core.uml#_RcJm8BztEeChOvWwuwx7tQ"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_PEi2ZcthEeGlhpkD8MrS_w" comments="_PEi2YcthEeGlhpkD8MrS_w" targetConnectionVisual="_PEi2YsthEeGlhpkD8MrS_w" name="ObjectVariableExpression" associationsOut="_PEsAScthEeGlhpkD8MrS_w" generalizations="_VwRHc8thEeGlhpkD8MrS_w">
     <modelElement href="../storydiagrams.uml#_t26VMBzeEeChOvWwuwx7tQ"/>
@@ -433,7 +433,7 @@
       <visibility xmi:id="_miaPEMthEeGlhpkD8MrS_w" label="+"/>
       <cardinality xmi:id="_miaPEcthEeGlhpkD8MrS_w" label="1" max="1" min="1"/>
       <type xmi:id="_miaPEsthEeGlhpkD8MrS_w" name="Expression">
-        <modelElement href="../../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+        <modelElement href="../../../org.muml.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
       </type>
     </attributes>
   </nodes>
@@ -577,7 +577,7 @@
       <visibility xmi:id="_4ey8FsthEeGlhpkD8MrS_w" label="+"/>
       <cardinality xmi:id="_4ey8F8thEeGlhpkD8MrS_w" label="0..1" max="1"/>
       <type xmi:id="_4ey8GMthEeGlhpkD8MrS_w" name="Expression">
-        <modelElement href="../../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+        <modelElement href="../../../org.muml.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
       </type>
     </attributes>
     <attributes xmi:id="_4ey8GcthEeGlhpkD8MrS_w" name="constraint">
@@ -630,7 +630,7 @@
     <modelElement href="../storydiagrams.uml#_vdCIcJ3VEeCuYMafrm1l2g"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_VwRHdsthEeGlhpkD8MrS_w" comments="_VwRHcMthEeGlhpkD8MrS_w" targetConnectionVisual="_VwRHccthEeGlhpkD8MrS_w" name="Expression" abstractClass="true" associationsIn="_miQd8cthEeGlhpkD8MrS_w _4epLAMthEeGlhpkD8MrS_w _-1sMoMthEeGlhpkD8MrS_w" subclassedBy="_VwRHcsthEeGlhpkD8MrS_w _VwRHc8thEeGlhpkD8MrS_w _VwRHdMthEeGlhpkD8MrS_w _VwRHdcthEeGlhpkD8MrS_w">
-    <modelElement href="../../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+    <modelElement href="../../../org.muml.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
     <visualProperties xmi:id="_VwRHd8thEeGlhpkD8MrS_w" position="62.0,7.0" size="85.0,48.0"/>
     <visibility xmi:id="_VwRHeMthEeGlhpkD8MrS_w" label="+"/>
   </nodes>
@@ -644,7 +644,7 @@
       <visibility xmi:id="_-1_HmcthEeGlhpkD8MrS_w" label="+"/>
       <cardinality xmi:id="_-1_HmsthEeGlhpkD8MrS_w" label="1" max="1" min="1"/>
       <type xmi:id="_-1_Hm8thEeGlhpkD8MrS_w" name="Expression">
-        <modelElement href="../../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+        <modelElement href="../../../org.muml.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
       </type>
     </attributes>
     <attributes xmi:id="_-1_HnMthEeGlhpkD8MrS_w" name="objectVariable">

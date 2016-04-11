@@ -174,7 +174,7 @@ public class VisualsActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(UppaalEditorPlugin.INSTANCE.getString("_UI_VisualsEditor_menu"), "de.uni_paderborn.uppaal.visualsMenuID");
+		IMenuManager submenuManager = new MenuManager(UppaalEditorPlugin.INSTANCE.getString("_UI_VisualsEditor_menu"), "org.muml.uppaal.visualsMenuID");
 		menuManager.insertAfter("additions", submenuManager);
 		submenuManager.add(new Separator("settings"));
 		submenuManager.add(new Separator("actions"));

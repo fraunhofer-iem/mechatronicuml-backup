@@ -621,11 +621,11 @@
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_pZkMcJxcEeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.muml.storydiagram/model/storydiagrams.uml#_pw8L0JKyEeCoWcgn2XgBaQ" item="_CAl7-SJCEeCMEorpcZtLvw" sourceConnectionVisual="_pZkMcZxcEeCuYMafrm1l2g" text="A Story Pattern is a graph rewrite rule that may be embedded into a StoryActivityNode&#xD;&#xA;of an Activity.">
     <modelElement href="../storydiagrams.uml#_pw8L0JKyEeCoWcgn2XgBaQ"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_NG2NUJ3TEeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.core/model/core.uml#_beYKUJxkEeCuYMafrm1l2g" sourceConnectionVisual="_NG2NUZ3TEeCuYMafrm1l2g" text="Abstract super class for all meta-model elements that carry a name. ">
-    <modelElement href="../../../org.storydriven.core/model/core.uml#_beYKUJxkEeCuYMafrm1l2g"/>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_NG2NUJ3TEeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.muml.core/model/core.uml#_beYKUJxkEeCuYMafrm1l2g" sourceConnectionVisual="_NG2NUZ3TEeCuYMafrm1l2g" text="Abstract super class for all meta-model elements that carry a name. ">
+    <modelElement href="../../../org.muml.core/model/core.uml#_beYKUJxkEeCuYMafrm1l2g"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_NG2NUp3TEeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.core/model/core.uml#_f_Jm0JxkEeCuYMafrm1l2g" sourceConnectionVisual="_NG2NU53TEeCuYMafrm1l2g" text="The name attribute of a meta-model element.">
-    <modelElement href="../../../org.storydriven.core/model/core.uml#_f_Jm0JxkEeCuYMafrm1l2g"/>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_NG2NUp3TEeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.muml.core/model/core.uml#_f_Jm0JxkEeCuYMafrm1l2g" sourceConnectionVisual="_NG2NU53TEeCuYMafrm1l2g" text="The name attribute of a meta-model element.">
+    <modelElement href="../../../org.muml.core/model/core.uml#_f_Jm0JxkEeCuYMafrm1l2g"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_QZEMAJ3TEeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.muml.storydiagram/model/storydiagrams.uml#_QY6bAJ3TEeCuYMafrm1l2g" item="_CA42lCJCEeCMEorpcZtLvw" sourceConnectionVisual="_QZEMAZ3TEeCuYMafrm1l2g" text="A MatchingPattern is a special kind of story pattern that does not change the underlying graph. Thus, no contained object or link may carry an create or destroy BindingOperator.">
     <modelElement href="../storydiagrams.uml#_QY6bAJ3TEeCuYMafrm1l2g"/>
@@ -827,8 +827,8 @@
       <modelElement href="../storydiagrams.uml#_-GnpcLLwEd-uk56s-ldeog"/>
       <visibility xmi:id="_2Uq3gWHxEeCDNuSrVjgXCA" label="+"/>
       <cardinality xmi:id="_2Uq3gmHxEeCDNuSrVjgXCA" label="0..1" max="1"/>
-      <type xmi:id="_2Uq3g2HxEeCDNuSrVjgXCA" abstractModelReference="platform:/resource/org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression">
-        <modelElement href="../../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+      <type xmi:id="_2Uq3g2HxEeCDNuSrVjgXCA" abstractModelReference="platform:/resource/org.muml.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression">
+        <modelElement href="../../../org.muml.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
       </type>
     </attributes>
     <attributes xmi:id="_72mzVJ58EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.muml.storydiagram/model/storydiagrams.uml#97f7e21a-6cb3-4e71-a689-faf97d6546e6" name="pattern">
@@ -952,8 +952,8 @@
       <modelElement href="../storydiagrams.uml#_XMVjwLK8Ed-uk56s-ldeog"/>
       <visibility xmi:id="_CAvstiJCEeCMEorpcZtLvw" label="+"/>
       <cardinality xmi:id="_CAvstyJCEeCMEorpcZtLvw" label="0..1" max="1"/>
-      <type xmi:id="_CAvsuCJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression">
-        <modelElement href="../../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+      <type xmi:id="_CAvsuCJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.muml.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression">
+        <modelElement href="../../../org.muml.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
       </type>
     </attributes>
   </nodes>
@@ -977,8 +977,8 @@
       <modelElement href="../storydiagrams.uml#_-z5JsbLxEd-uk56s-ldeog"/>
       <visibility xmi:id="_CAvspSJCEeCMEorpcZtLvw" label="+"/>
       <cardinality xmi:id="_CAvspiJCEeCMEorpcZtLvw" label="1" max="1" min="1"/>
-      <type xmi:id="_CAvspyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression">
-        <modelElement href="../../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+      <type xmi:id="_CAvspyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.muml.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression">
+        <modelElement href="../../../org.muml.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
       </type>
     </attributes>
   </nodes>
@@ -1075,8 +1075,8 @@
       <modelElement href="../storydiagrams.uml#_ETMR0hzbEeChOvWwuwx7tQ"/>
       <visibility xmi:id="_CAvsvSJCEeCMEorpcZtLvw" label="+"/>
       <cardinality xmi:id="_CAvsviJCEeCMEorpcZtLvw" label="1" max="1" min="1"/>
-      <type xmi:id="_CAvsvyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression">
-        <modelElement href="../../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+      <type xmi:id="_CAvsvyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.muml.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression">
+        <modelElement href="../../../org.muml.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
       </type>
     </attributes>
     <attributes xmi:id="_72mzUJ58EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.muml.storydiagram/model/storydiagrams.uml#_Q53MgBzdEeChOvWwuwx7tQ" comments="_i0vyQZ3VEeCuYMafrm1l2g" targetConnectionVisual="_i0vyQp3VEeCuYMafrm1l2g" name="objectVariable">
@@ -1149,8 +1149,8 @@
       <modelElement href="../storydiagrams.uml#_bFtwcrK5Ed-uk56s-ldeog"/>
       <visibility xmi:id="_CAcx3yJCEeCMEorpcZtLvw" label="+"/>
       <cardinality xmi:id="_CAcx4CJCEeCMEorpcZtLvw" label="1" max="1" min="1"/>
-      <type xmi:id="_CAcx4SJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression">
-        <modelElement href="../../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+      <type xmi:id="_CAcx4SJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.muml.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression">
+        <modelElement href="../../../org.muml.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
       </type>
     </attributes>
     <attributes xmi:id="_72T4YJ58EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.muml.storydiagram/model/storydiagrams.uml#0494208f-7471-4bfe-8c33-9a7bd40c3425" name="objectVariable">

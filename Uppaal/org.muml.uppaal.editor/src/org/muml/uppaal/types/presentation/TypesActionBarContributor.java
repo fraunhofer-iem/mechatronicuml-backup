@@ -174,7 +174,7 @@ public class TypesActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(UppaalEditorPlugin.INSTANCE.getString("_UI_TypesEditor_menu"), "de.uni_paderborn.uppaal.typesMenuID");
+		IMenuManager submenuManager = new MenuManager(UppaalEditorPlugin.INSTANCE.getString("_UI_TypesEditor_menu"), "org.muml.uppaal.typesMenuID");
 		menuManager.insertAfter("additions", submenuManager);
 		submenuManager.add(new Separator("settings"));
 		submenuManager.add(new Separator("actions"));

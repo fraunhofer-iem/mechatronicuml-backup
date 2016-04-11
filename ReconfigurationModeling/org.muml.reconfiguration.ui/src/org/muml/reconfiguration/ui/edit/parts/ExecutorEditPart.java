@@ -110,7 +110,7 @@ public class ExecutorEditPart extends AbstractBorderedShapeEditPart {
 					// case
 					// org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
 					// case
-					// de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart.VISUAL_ID:
+					// org.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart.VISUAL_ID:
 				case org.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
 				}

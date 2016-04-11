@@ -1,4 +1,4 @@
-package org.storydriven.core.ocl.editor;
+package org.muml.core.ocl.editor;
 
 import org.eclipse.jface.text.rules.IRule;
 import org.eclipse.jface.text.rules.RuleBasedScanner;

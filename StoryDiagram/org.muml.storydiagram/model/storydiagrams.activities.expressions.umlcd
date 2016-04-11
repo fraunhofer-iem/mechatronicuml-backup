@@ -349,7 +349,7 @@
       <visibility xmi:id="_KQ_jqMtoEeGgX-yRbtg0lw" label="+"/>
       <cardinality xmi:id="_KQ_jqctoEeGgX-yRbtg0lw" label="0..1" max="1"/>
       <type xmi:id="_KQ_jqstoEeGgX-yRbtg0lw" name="Expression">
-        <modelElement href="../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+        <modelElement href="../../org.muml.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
       </type>
     </attributes>
     <attributes xmi:id="_KQ_jq8toEeGgX-yRbtg0lw" comments="_KQ_jkMtoEeGgX-yRbtg0lw" targetConnectionVisual="_KQ_jkctoEeGgX-yRbtg0lw" name="owningActivity">

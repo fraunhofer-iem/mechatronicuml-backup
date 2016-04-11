@@ -12,7 +12,7 @@ import com.google.inject.Binder;
 import com.google.inject.name.Names;
 
 /**
- * Manual modifications go to {de.uni_paderborn.uppaal.trace.DiagnosticTraceRuntimeModule}
+ * Manual modifications go to {org.muml.uppaal.trace.DiagnosticTraceRuntimeModule}
  */
  @SuppressWarnings("all")
 public abstract class AbstractDiagnosticTraceRuntimeModule extends DefaultRuntimeModule {
@@ -26,7 +26,7 @@ public abstract class AbstractDiagnosticTraceRuntimeModule extends DefaultRuntim
 	}
 	
 	public void configureLanguageName(Binder binder) {
-		binder.bind(String.class).annotatedWith(Names.named(Constants.LANGUAGE_NAME)).toInstance("de.uni_paderborn.uppaal.trace.DiagnosticTrace");
+		binder.bind(String.class).annotatedWith(Names.named(Constants.LANGUAGE_NAME)).toInstance("org.muml.uppaal.trace.DiagnosticTrace");
 	}
 	
 	public void configureFileExtensions(Binder binder) {

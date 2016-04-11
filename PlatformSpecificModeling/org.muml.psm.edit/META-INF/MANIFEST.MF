@@ -10,7 +10,7 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.psm.allocation.provider;
   uses:="org.eclipse.emf.ecore,
-   org.storydriven.core.provider,
+   org.muml.core.provider,
    org.eclipse.emf.common.util,
    org.muml.psm.allocation.util,
    org.eclipse.emf.edit.provider,
@@ -20,12 +20,12 @@ Export-Package: org.muml.psm.allocation.provider;
    org.eclipse.emf.ecore,
    org.eclipse.emf.common.util,
    org.eclipse.emf.edit.provider,
-   org.storydriven.core.expressions.provider,
+   org.muml.core.expressions.provider,
    org.eclipse.emf.common.notify",
  org.muml.psm.codegen.provider,
  org.muml.psm.portapimapping.provider;
   uses:="org.eclipse.emf.ecore,
-   org.storydriven.core.provider,
+   org.muml.core.provider,
    org.eclipse.emf.common.util,
    org.muml.psm.portapimapping.util,
    org.eclipse.emf.edit.provider,

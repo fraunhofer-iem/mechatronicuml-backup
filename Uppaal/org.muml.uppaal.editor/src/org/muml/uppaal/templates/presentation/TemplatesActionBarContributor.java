@@ -174,7 +174,7 @@ public class TemplatesActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(UppaalEditorPlugin.INSTANCE.getString("_UI_TemplatesEditor_menu"), "de.uni_paderborn.uppaal.templatesMenuID");
+		IMenuManager submenuManager = new MenuManager(UppaalEditorPlugin.INSTANCE.getString("_UI_TemplatesEditor_menu"), "org.muml.uppaal.templatesMenuID");
 		menuManager.insertAfter("additions", submenuManager);
 		submenuManager.add(new Separator("settings"));
 		submenuManager.add(new Separator("actions"));

@@ -12,7 +12,7 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="de.uni_paderborn.uppaal.requirements.presentation.RequirementsModelWizardID"
+            id="org.muml.uppaal.requirements.presentation.RequirementsModelWizardID"
             name="%_UI_RequirementsModelWizard_label"
             class="org.muml.uppaal.requirements.presentation.RequirementsModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
@@ -25,7 +25,7 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated requirements -->
       <editor
-            id="de.uni_paderborn.uppaal.requirements.presentation.RequirementsEditorID"
+            id="org.muml.uppaal.requirements.presentation.RequirementsEditorID"
             name="%_UI_RequirementsEditor_label"
             icon="icons/full/obj16/RequirementsModelFile.gif"
             extensions="requirements"

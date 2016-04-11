@@ -1,4 +1,4 @@
-package org.storydriven.core.ocl.editor;
+package org.muml.core.ocl.editor;
 
 import de.upb.swt.core.ui.runtime.AbstractActivator;
 import de.upb.swt.core.ui.runtime.IActivator;

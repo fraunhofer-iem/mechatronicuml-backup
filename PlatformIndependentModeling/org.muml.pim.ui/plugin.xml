@@ -6,7 +6,7 @@
          point="org.eclipse.ui.menus">
       <menuContribution
             allPopups="false"
-            locationURI="popup:de.uni_paderborn.fujaba">
+            locationURI="popup:org.muml">
          <separator
                name="de.uni_paderborn.fujaba.muml.ui.separator1"
                visible="true">
@@ -23,7 +23,7 @@
                      <iterate
                            ifEmpty="false">
                         <adapt
-                              type="de.uni_paderborn.fujaba.muml.component.DiscretePort">
+                              type="org.muml.pim.component.DiscretePort">
                         </adapt>
                      </iterate>
                   </with></and>
@@ -42,7 +42,7 @@
                            ifEmpty="false"
                            operator="or">
                         <adapt
-                              type="de.uni_paderborn.fujaba.muml.component.StaticAtomicComponent">
+                              type="org.muml.pim.component.StaticAtomicComponent">
                         </adapt>
                      </iterate>
                   </with>
@@ -61,7 +61,7 @@
                      <iterate
                            ifEmpty="false">
                         <adapt
-                              type="de.uni_paderborn.fujaba.muml.component.StaticAtomicComponent">
+                              type="org.muml.pim.component.StaticAtomicComponent">
                         </adapt>
                      </iterate>
                   </with>
@@ -80,7 +80,7 @@
                      <iterate
                            ifEmpty="false">
                         <adapt
-                              type="de.uni_paderborn.fujaba.muml.protocol.Role">
+                              type="org.muml.pim.protocol.Role">
                         </adapt>
                      </iterate>
                   </with></and>
@@ -96,7 +96,7 @@
                      <iterate
                            ifEmpty="false">
                         <adapt
-                              type="de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart">
+                              type="org.muml.pim.realtimestatechart.RealtimeStatechart">
                         </adapt>
                      </iterate>
                   </with>
@@ -117,10 +117,10 @@
                            operator="or">
                         <or>
                            <adapt
-                                 type="de.uni_paderborn.fujaba.muml.component.AtomicComponent">
+                                 type="org.muml.pim.component.AtomicComponent">
                            </adapt>
                            <adapt
-                                 type="de.uni_paderborn.fujaba.muml.component.StructuredComponent">
+                                 type="org.muml.pim.component.StructuredComponent">
                            </adapt></or>
                      </iterate>
                   </with>
@@ -139,7 +139,7 @@
                      <iterate
                            ifEmpty="false">
                         <adapt
-                              type="de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint">
+                              type="org.muml.pim.connector.DiscreteInteractionEndpoint">
                         </adapt>
                      </iterate>
                   </with>

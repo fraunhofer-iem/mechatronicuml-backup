@@ -483,5 +483,5 @@
     <targetClass href="hardware-1.1.ecore#//hwresourceinstance/ActuatorInstance"/>
     <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/ActuatorInstance"/>
   </mappings>
-  <release href="../../org.storydriven.core.migrator/model/muml.releaseset#//@releases.1"/>
+  <release href="../../org.muml.core.migrator/model/muml.releaseset#//@releases.1"/>
 </migration:Migrator>

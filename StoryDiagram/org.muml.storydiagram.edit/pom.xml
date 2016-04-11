@@ -4,8 +4,8 @@
 	<artifactId>org.muml.storydiagram.edit</artifactId>
 	<packaging>eclipse-plugin</packaging>
 	<parent>
-		<groupId>org.storydriven</groupId>
-		<artifactId>org.storydriven.master</artifactId>
+		<groupId>org.muml</groupId>
+		<artifactId>org.muml.master</artifactId>
 		<version>1.0.1-SNAPSHOT</version>
 		<relativePath>../..</relativePath>
 	</parent>

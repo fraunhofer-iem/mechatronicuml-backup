@@ -40,21 +40,21 @@ public class ReconfigurationElementTypes {
 	 */
 	private static Set<IElementType> KNOWN_ELEMENT_TYPES;
 
-	public static final IElementType ReconfigurableAtomicComponent_2078 = getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent_2078");
-	public static final IElementType ReconfigurableStructuredComponent_2076 = getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent_2076");
-	public static final IElementType ReconfigurationMessagePort_3076 = getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePort_3076");
-	public static final IElementType ReconfigurationExecutionPort_3077 = getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPort_3077");
-	public static final IElementType RuleBasedReconfigurationController_7076 = getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationController_7076");
-	public static final IElementType Manager_2075 = getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.Manager_2075");
-	public static final IElementType Executor_2077 = getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.Executor_2077");
-	public static final IElementType ReconfigurationPortDelegationConnector_4076 = getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortDelegationConnector_4076");
-	public static final IElementType ReconfigurationPortAssemblyConnector_4075 = getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortAssemblyConnector_4075");
+	public static final IElementType ReconfigurableAtomicComponent_2078 = getElementType("org.muml.reconfiguration.ReconfigurableAtomicComponent_2078");
+	public static final IElementType ReconfigurableStructuredComponent_2076 = getElementType("org.muml.reconfiguration.ReconfigurableStructuredComponent_2076");
+	public static final IElementType ReconfigurationMessagePort_3076 = getElementType("org.muml.reconfiguration.ReconfigurationMessagePort_3076");
+	public static final IElementType ReconfigurationExecutionPort_3077 = getElementType("org.muml.reconfiguration.ReconfigurationExecutionPort_3077");
+	public static final IElementType RuleBasedReconfigurationController_7076 = getElementType("org.muml.reconfiguration.RuleBasedReconfigurationController_7076");
+	public static final IElementType Manager_2075 = getElementType("org.muml.reconfiguration.Manager_2075");
+	public static final IElementType Executor_2077 = getElementType("org.muml.reconfiguration.Executor_2077");
+	public static final IElementType ReconfigurationPortDelegationConnector_4076 = getElementType("org.muml.reconfiguration.ReconfigurationPortDelegationConnector_4076");
+	public static final IElementType ReconfigurationPortAssemblyConnector_4075 = getElementType("org.muml.reconfiguration.ReconfigurationPortAssemblyConnector_4075");
 	public static final IElementType ComponentPart_3012 = getElementType("org.muml.pim.component.diagram.ComponentPart_3012");
 	public static final IElementType DiscretePort_3010 = getElementType("org.muml.pim.component.diagram.DiscretePort_3010");
 	public static final IElementType HybridPort_3013 = getElementType("org.muml.pim.component.diagram.HybridPort_3013");
 	public static final IElementType ContinuousPort_3011 = getElementType("org.muml.pim.component.diagram.ContinuousPort_3011");
-	public static final IElementType FadingComponent_2079 = getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.FadingComponent_2079");
-	public static final IElementType BroadcastPort_3078 = getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.BroadcastPort_3078");
+	public static final IElementType FadingComponent_2079 = getElementType("org.muml.reconfiguration.FadingComponent_2079");
+	public static final IElementType BroadcastPort_3078 = getElementType("org.muml.reconfiguration.BroadcastPort_3078");
 	public static final IElementType CoordinationProtocolPart_3016 = getElementType("org.muml.pim.component.diagram.CoordinationProtocolPart_3016");
 	
 	public static ImageDescriptor getImageDescriptor(ENamedElement element) {

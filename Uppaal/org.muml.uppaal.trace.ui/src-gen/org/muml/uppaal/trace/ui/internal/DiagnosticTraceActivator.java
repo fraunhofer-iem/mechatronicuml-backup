@@ -23,7 +23,7 @@ import com.google.inject.Module;
  */
 public class DiagnosticTraceActivator extends AbstractUIPlugin {
 	
-	public static final String DE_UNI_PADERBORN_UPPAAL_TRACE_DIAGNOSTICTRACE = "de.uni_paderborn.uppaal.trace.DiagnosticTrace";
+	public static final String DE_UNI_PADERBORN_UPPAAL_TRACE_DIAGNOSTICTRACE = "org.muml.uppaal.trace.DiagnosticTrace";
 	
 	private static final Logger logger = Logger.getLogger(DiagnosticTraceActivator.class);
 	

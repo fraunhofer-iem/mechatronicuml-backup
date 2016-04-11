@@ -7,28 +7,28 @@
             categoryId="org.muml"
             defaultHandler="org.muml.reconfiguration.ui.commands.MakeStructuredComponentReconfigurableCommand"
             description="Transforms this structured component into a reconfigurable structured component."
-            id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.MakeStructuredComponentReconfigurableCommand"
+            id="org.muml.reconfiguration.ui.commands.MakeStructuredComponentReconfigurableCommand"
             name="Make Reconfigurable">
       </command>
       <command
             categoryId="org.muml"
             defaultHandler="org.muml.reconfiguration.ui.commands.GenerateManagerAndExecutorImplementationCommand"
             description="Generates Real-Time Statecharts for the Manager and Executor of this ReconfigurableStructuredComponent."
-            id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.GenerateManagerAndExecutorImplementationCommand"
+            id="org.muml.reconfiguration.ui.commands.GenerateManagerAndExecutorImplementationCommand"
             name="Generate Manager and Executor Implementation">
       </command>
       <command
             categoryId="org.muml"
             defaultHandler="org.muml.reconfiguration.ui.commands.GenerateRuleBasedReconfigurationController"
             description="Generates RuleBasedReconfigurationController"
-            id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.GenerateRuleBasedReconfigurationControllerCommand"
+            id="org.muml.reconfiguration.ui.commands.GenerateRuleBasedReconfigurationControllerCommand"
             name="Generate RuleBasedReconfigurationController">
       </command>
       <command
             categoryId="org.muml"
             defaultHandler="org.muml.reconfiguration.ui.edit.handlers.ComputePossibleConfigurationsHandler"
             description="Computes possible Configurations for a ReconfigurableStructuredComponent"
-            id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.ComputePossibleConfigurationsCommand"
+            id="org.muml.reconfiguration.ui.commands.ComputePossibleConfigurationsCommand"
             name="Compute Possible Configurations">
       </command>
    </extension>
@@ -38,9 +38,9 @@
             allPopups="false"
             locationURI="popup:org.muml?after=diagrams">
          <command
-               commandId="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.MakeStructuredComponentReconfigurableCommand"
+               commandId="org.muml.reconfiguration.ui.commands.MakeStructuredComponentReconfigurableCommand"
                icon="icons/MakeReconfigurable.gif"
-               id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.MakeStructuredComponentReconfigurableCommand"
+               id="org.muml.reconfiguration.ui.commands.MakeStructuredComponentReconfigurableCommand"
                label="Make Reconfigurable"
                style="push">
             <visibleWhen>
@@ -53,7 +53,7 @@
                               value="org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentEditPart">
                         </instanceof>
                         <instanceof
-                              value="de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent">
+                              value="org.muml.pim.component.StaticStructuredComponent">
                         </instanceof>
                      </or>
                   </iterate>
@@ -61,9 +61,9 @@
             </visibleWhen>
          </command>
          <command
-               commandId="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.GenerateManagerAndExecutorImplementationCommand"
+               commandId="org.muml.reconfiguration.ui.commands.GenerateManagerAndExecutorImplementationCommand"
                icon="icons/GenerateImplementation.gif"
-               id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.GenerateManagerAndExecutorImplementationCommand"
+               id="org.muml.reconfiguration.ui.commands.GenerateManagerAndExecutorImplementationCommand"
                label="Generate Manager and Executor Implementation"
                style="push">
             <visibleWhen>
@@ -73,7 +73,7 @@
                         ifEmpty="false">
                      <or>
                         <instanceof
-                              value="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent">
+                              value="org.muml.reconfiguration.ReconfigurableStructuredComponent">
                         </instanceof>
                         <instanceof
                               value="org.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart">
@@ -84,9 +84,9 @@
             </visibleWhen>
          </command>
          <command
-               commandId="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.GenerateRuleBasedReconfigurationControllerCommand"
+               commandId="org.muml.reconfiguration.ui.commands.GenerateRuleBasedReconfigurationControllerCommand"
                icon="icons/MakeReconfigurable.gif"
-               id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.GenerateRuleBasedReconfigurationControllerCommand"
+               id="org.muml.reconfiguration.ui.commands.GenerateRuleBasedReconfigurationControllerCommand"
                label="Generate RuleBasedReconfigurationController"
                style="push">
             <visibleWhen>
@@ -96,7 +96,7 @@
                         ifEmpty="false">
                      <or>
                         <instanceof
-                              value="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent">
+                              value="org.muml.reconfiguration.ReconfigurableStructuredComponent">
                         </instanceof>
                         <instanceof
                               value="org.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart">
@@ -107,9 +107,9 @@
             </visibleWhen>
          </command>
          <command
-               commandId="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.ComputePossibleConfigurationsCommand"
+               commandId="org.muml.reconfiguration.ui.commands.ComputePossibleConfigurationsCommand"
                icon="icons/MakeReconfigurable.gif"
-               id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.ComputePossibleConfigurationsCommand"
+               id="org.muml.reconfiguration.ui.commands.ComputePossibleConfigurationsCommand"
                label="Compute Possible Configurations"
                style="push">
             <visibleWhen>
@@ -119,7 +119,7 @@
                         ifEmpty="false">
                      <or>
                         <instanceof
-                              value="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent">
+                              value="org.muml.reconfiguration.ReconfigurableStructuredComponent">
                         </instanceof>
                         <instanceof
                               value="org.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart">
@@ -173,7 +173,7 @@
             <entry
                   defineOnly="false"
                   description="Creates a reconfigurable structured component."
-                  id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.ReconfigurableStructuredComponentTool"
+                  id="org.muml.reconfiguration.ui.ReconfigurableStructuredComponentTool"
                   kind="tool"
                   label="Reconfigurable Structured Component"
                   path="/reconfDrawer/"
@@ -182,7 +182,7 @@
             <entry
                   defineOnly="false"
                   description="Creates a reconfigurable atomic component."
-                  id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.ReconfigurableAtomicComponentTool"
+                  id="org.muml.reconfiguration.ui.ReconfigurableAtomicComponentTool"
                   kind="tool"
                   label="Reconfigurable Atomic Component"
                   path="/reconfDrawer/"
@@ -191,7 +191,7 @@
             <entry
                   defineOnly="false"
                   description="Creates a reconfiguration message port."
-                  id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.ReconfigurationMessagePortTool"
+                  id="org.muml.reconfiguration.ui.ReconfigurationMessagePortTool"
                   kind="tool"
                   label="Reconfiguration Message Port"
                   path="/reconfDrawer/"
@@ -200,7 +200,7 @@
             <entry
                   defineOnly="false"
                   description="Creates a reconfiguration execution port."
-                  id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.ReconfigurationExecutionPortTool"
+                  id="org.muml.reconfiguration.ui.ReconfigurationExecutionPortTool"
                   kind="tool"
                   label="Reconfiguration Execution Port"
                   path="/reconfDrawer/"
@@ -209,7 +209,7 @@
             <entry
                   defineOnly="false"
                   description="Creates a fading component."
-                  id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.FadingComponentTool"
+                  id="org.muml.reconfiguration.ui.FadingComponentTool"
                   kind="tool"
                   label="Fading Component"
                   path="/reconfDrawer/"
@@ -218,7 +218,7 @@
             <entry
                   defineOnly="false"
                   description="Creates a broadcast port."
-                  id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.BroadcastPortTool"
+                  id="org.muml.reconfiguration.ui.BroadcastPortTool"
                   kind="tool"
                   label="Broadcast Port"
                   path="/reconfDrawer/"
@@ -231,7 +231,7 @@
   <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider
-            class="de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.CustomReconfigurationEditPartProvider">
+            class="org.muml.reconfiguration.ui.providers.CustomReconfigurationEditPartProvider">
          <Priority
                name="Medium">
          </Priority>
@@ -244,7 +244,7 @@
              <metamodelType
                    eclass="Manager"
                    edithelper="org.muml.reconfiguration.ui.edit.helpers.ManagerEditHelper"
-                   id="de.uni_paderborn.fujaba.muml.reconfiguration.Manager_2075"
+                   id="org.muml.reconfiguration.Manager_2075"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="Manager">
                 <param
@@ -255,7 +255,7 @@
              <metamodelType
                    eclass="InternalReconfigurationCommunicationPort"
                    edithelper="org.muml.reconfiguration.ui.edit.helpers.InternalReconfigurationCommunicationPortEditHelper"
-                   id="de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort_3075"
+                   id="org.muml.reconfiguration.InternalReconfigurationCommunicationPort_3075"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="InternalReconfigurationCommunicationPort">
                 <param
@@ -266,7 +266,7 @@
              <metamodelType
                    eclass="Executor"
                    edithelper="org.muml.reconfiguration.ui.edit.helpers.ExecutorEditHelper"
-                   id="de.uni_paderborn.fujaba.muml.reconfiguration.Executor_2077"
+                   id="org.muml.reconfiguration.Executor_2077"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="Executor">
                 <param
@@ -277,7 +277,7 @@
              <metamodelType
                    eclass="ReconfigurationMessagePort"
                    edithelper="org.muml.reconfiguration.ui.edit.helpers.ReconfigurationMessagePortEditHelper"
-                   id="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePort_3076"
+                   id="org.muml.reconfiguration.ReconfigurationMessagePort_3076"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="ReconfigurationMessagePort">
                 <param
@@ -288,7 +288,7 @@
              <metamodelType
                    eclass="ReconfigurationPortAssemblyConnector"
                    edithelper="org.muml.reconfiguration.ui.edit.helpers.ReconfigurationPortAssemblyEditHelper"
-                   id="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortAssemblyConnector_4075"
+                   id="org.muml.reconfiguration.ReconfigurationPortAssemblyConnector_4075"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="ReconfigurationPortAssemblyConnector">
                 <param
@@ -299,7 +299,7 @@
              <metamodelType
                    eclass="ReconfigurationExecutionPort"
                    edithelper="org.muml.reconfiguration.ui.edit.helpers.ReconfigurationExecutionPortEditHelper"
-                   id="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPort_3077"
+                   id="org.muml.reconfiguration.ReconfigurationExecutionPort_3077"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="ReconfigurationExecutionPort">
                 <param
@@ -310,7 +310,7 @@
              <metamodelType
                    eclass="ReconfigurationPortDelegationConnector"
                    edithelper="org.muml.reconfiguration.ui.edit.helpers.ReconfigurationPortDelegationConnectorEditHelper"
-                   id="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortDelegationConnector_4076"
+                   id="org.muml.reconfiguration.ReconfigurationPortDelegationConnector_4076"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="ReconfigurationPortDelegationConnector">
                 <param
@@ -321,7 +321,7 @@
              <metamodelType
                    eclass="RuleBasedReconfigurationController"
                    edithelper="org.muml.reconfiguration.ui.edit.helpers.RuleBasedReconfigurationControllerEditHelper"
-                   id="de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationController_7076"
+                   id="org.muml.reconfiguration.RuleBasedReconfigurationController_7076"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="RuleBasedReconfigurationController">
                 <param
@@ -332,7 +332,7 @@
              <metamodelType
                    eclass="ReconfigurableStructuredComponent"
                    edithelper="org.muml.reconfiguration.ui.edit.helpers.ReconfigurableStructuredComponentEditHelper"
-                   id="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent_2076"
+                   id="org.muml.reconfiguration.ReconfigurableStructuredComponent_2076"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="ReconfigurableStructuredComponent">
                 <param
@@ -343,7 +343,7 @@
              <metamodelType
                    eclass="ReconfigurableAtomicComponent"
                    edithelper="org.muml.reconfiguration.ui.edit.helpers.ReconfigurableAtomicComponentEditHelper"
-                   id="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent_2078"
+                   id="org.muml.reconfiguration.ReconfigurableAtomicComponent_2078"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="ReconfigurableAtomicComponent">
                 <param
@@ -354,7 +354,7 @@
              <metamodelType
                    eclass="FadingComponent"
                    edithelper="org.muml.reconfiguration.ui.edit.helpers.FadingComponentEditHelper"
-                   id="de.uni_paderborn.fujaba.muml.reconfiguration.FadingComponent_2079"
+                   id="org.muml.reconfiguration.FadingComponent_2079"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="FadingComponent">
                 <param
@@ -368,7 +368,7 @@
              <metamodelType
                    eclass="BroadcastPort"
                    edithelper="org.muml.reconfiguration.ui.edit.helpers.BroadcastPortEditHelper"
-                   id="de.uni_paderborn.fujaba.muml.reconfiguration.BroadcastPort_3078"
+                   id="org.muml.reconfiguration.BroadcastPort_3078"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="BroadcastPort">
                 <param
@@ -408,7 +408,7 @@
        <extension
              point="org.eclipse.gmf.runtime.diagram.core.viewProviders">
           <viewProvider
-                class="de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ReconfigurationViewProvider">
+                class="org.muml.reconfiguration.ui.providers.ReconfigurationViewProvider">
              <Priority
                    name="Low">
              </Priority>
@@ -418,7 +418,7 @@
        <extension
              point="org.eclipse.gmf.runtime.diagram.ui.editpolicyProviders">
           <editpolicyProvider
-                class="de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ReconfigurationEditPolicyProvider">
+                class="org.muml.reconfiguration.ui.providers.ReconfigurationEditPolicyProvider">
              <Priority
                    name="Highest">
              </Priority>

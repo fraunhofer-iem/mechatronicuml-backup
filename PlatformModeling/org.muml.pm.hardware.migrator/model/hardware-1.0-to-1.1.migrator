@@ -701,5 +701,5 @@
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/LinkProtocol"/>
   </mappings>
-  <release href="../../org.storydriven.core.migrator/model/muml.releaseset#//@releases.1"/>
+  <release href="../../org.muml.core.migrator/model/muml.releaseset#//@releases.1"/>
 </migration:Migrator>

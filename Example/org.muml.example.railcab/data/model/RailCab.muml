@@ -11373,7 +11373,7 @@
                                 <lhs_typedNamedElementExpression xmi:id="_VO1tFXi0EeSM8KwkAFk8ZA" typedNamedElement="_VOK-tXi0EeSM8KwkAFk8ZA"/>
                               </expressions>
                               <expressions xsi:type="actionlanguage:Assignment" xmi:id="_VO1tFni0EeSM8KwkAFk8ZA" assignOperator=":=">
-                                <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_VO1tF3i0EeSM8KwkAFk8ZA" value="org.storydriven.core.expressions.common.impl.LiteralExpressionImpl@3bc94d95 (comment: &quot;no comment provided&quot;) (value: 50)"/>
+                                <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_VO1tF3i0EeSM8KwkAFk8ZA" value="org.muml.core.expressions.common.impl.LiteralExpressionImpl@3bc94d95 (comment: &quot;no comment provided&quot;) (value: 50)"/>
                                 <lhs_typedNamedElementExpression xmi:id="_VO1tGHi0EeSM8KwkAFk8ZA" typedNamedElement="_VOK-tni0EeSM8KwkAFk8ZA"/>
                               </expressions>
                             </expressions>
@@ -11400,7 +11400,7 @@
                                 <lhs_typedNamedElementExpression xmi:id="_VO27N3i0EeSM8KwkAFk8ZA" typedNamedElement="_VOK-tXi0EeSM8KwkAFk8ZA"/>
                               </expressions>
                               <expressions xsi:type="actionlanguage:Assignment" xmi:id="_VO27OHi0EeSM8KwkAFk8ZA" assignOperator=":=">
-                                <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_VO27OXi0EeSM8KwkAFk8ZA" value="org.storydriven.core.expressions.common.impl.LiteralExpressionImpl@4c52260a (comment: &quot;no comment provided&quot;) (value: 10)"/>
+                                <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_VO27OXi0EeSM8KwkAFk8ZA" value="org.muml.core.expressions.common.impl.LiteralExpressionImpl@4c52260a (comment: &quot;no comment provided&quot;) (value: 10)"/>
                                 <lhs_typedNamedElementExpression xmi:id="_VO27Oni0EeSM8KwkAFk8ZA" typedNamedElement="_VOK-tni0EeSM8KwkAFk8ZA"/>
                               </expressions>
                             </expressions>
@@ -11427,7 +11427,7 @@
                                 <lhs_typedNamedElementExpression xmi:id="_VO4wZni0EeSM8KwkAFk8ZA" typedNamedElement="_VOK-tXi0EeSM8KwkAFk8ZA"/>
                               </expressions>
                               <expressions xsi:type="actionlanguage:Assignment" xmi:id="_VO4wZ3i0EeSM8KwkAFk8ZA" assignOperator=":=">
-                                <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_VO4waHi0EeSM8KwkAFk8ZA" value="org.storydriven.core.expressions.common.impl.LiteralExpressionImpl@637d719a (comment: &quot;no comment provided&quot;) (value: 50)"/>
+                                <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_VO4waHi0EeSM8KwkAFk8ZA" value="org.muml.core.expressions.common.impl.LiteralExpressionImpl@637d719a (comment: &quot;no comment provided&quot;) (value: 50)"/>
                                 <lhs_typedNamedElementExpression xmi:id="_VO4waXi0EeSM8KwkAFk8ZA" typedNamedElement="_VOK-tni0EeSM8KwkAFk8ZA"/>
                               </expressions>
                             </expressions>
@@ -11454,7 +11454,7 @@
                                 <lhs_typedNamedElementExpression xmi:id="_VO7MpXi0EeSM8KwkAFk8ZA" typedNamedElement="_VOK-tXi0EeSM8KwkAFk8ZA"/>
                               </expressions>
                               <expressions xsi:type="actionlanguage:Assignment" xmi:id="_VO7Mpni0EeSM8KwkAFk8ZA" assignOperator=":=">
-                                <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_VO7Mp3i0EeSM8KwkAFk8ZA" value="org.storydriven.core.expressions.common.impl.LiteralExpressionImpl@71527917 (comment: &quot;no comment provided&quot;) (value: 5)"/>
+                                <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_VO7Mp3i0EeSM8KwkAFk8ZA" value="org.muml.core.expressions.common.impl.LiteralExpressionImpl@71527917 (comment: &quot;no comment provided&quot;) (value: 5)"/>
                                 <lhs_typedNamedElementExpression xmi:id="_VO7MqHi0EeSM8KwkAFk8ZA" typedNamedElement="_VOK-tni0EeSM8KwkAFk8ZA"/>
                               </expressions>
                             </expressions>
@@ -11481,7 +11481,7 @@
                                 <lhs_typedNamedElementExpression xmi:id="_VO9B1Xi0EeSM8KwkAFk8ZA" typedNamedElement="_VOK-tXi0EeSM8KwkAFk8ZA"/>
                               </expressions>
                               <expressions xsi:type="actionlanguage:Assignment" xmi:id="_VO9B1ni0EeSM8KwkAFk8ZA" assignOperator=":=">
-                                <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_VO9B13i0EeSM8KwkAFk8ZA" value="org.storydriven.core.expressions.common.impl.LiteralExpressionImpl@3b4d2148 (comment: &quot;no comment provided&quot;) (value: 5)"/>
+                                <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_VO9B13i0EeSM8KwkAFk8ZA" value="org.muml.core.expressions.common.impl.LiteralExpressionImpl@3b4d2148 (comment: &quot;no comment provided&quot;) (value: 5)"/>
                                 <lhs_typedNamedElementExpression xmi:id="_VO9B2Hi0EeSM8KwkAFk8ZA" typedNamedElement="_VOK-tni0EeSM8KwkAFk8ZA"/>
                               </expressions>
                             </expressions>
@@ -13764,7 +13764,7 @@
                                 <lhs_typedNamedElementExpression xmi:id="_b0oN9Xi3EeSM8KwkAFk8ZA" typedNamedElement="_b0FbaXi3EeSM8KwkAFk8ZA"/>
                               </expressions>
                               <expressions xsi:type="actionlanguage:Assignment" xmi:id="_b0oN9ni3EeSM8KwkAFk8ZA" assignOperator=":=">
-                                <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_b0oN93i3EeSM8KwkAFk8ZA" value="org.storydriven.core.expressions.common.impl.LiteralExpressionImpl@1e52ff3d (comment: &quot;no comment provided&quot;) (value: 50)"/>
+                                <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_b0oN93i3EeSM8KwkAFk8ZA" value="org.muml.core.expressions.common.impl.LiteralExpressionImpl@1e52ff3d (comment: &quot;no comment provided&quot;) (value: 50)"/>
                                 <lhs_typedNamedElementExpression xmi:id="_b0oN-Hi3EeSM8KwkAFk8ZA" typedNamedElement="_b0Fbani3EeSM8KwkAFk8ZA"/>
                               </expressions>
                             </expressions>

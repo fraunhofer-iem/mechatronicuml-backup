@@ -185,7 +185,7 @@
           </attributeAssignment>
           <attributeAssignment>
             <attribute href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter/value"/>
-            <valueExpression xsi:type="expr:TextualExpression" expressionText="'org.storydriven.core.expressions.common.impl.LiteralExpressionImpl@7783ec (comment: &quot;no comment provided&quot;) (value: 11)'" language="OCL" languageVersion="1.0"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'org.muml.core.expressions.common.impl.LiteralExpressionImpl@7783ec (comment: &quot;no comment provided&quot;) (value: 11)'" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
           <attributeAssignment>
             <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
@@ -193,7 +193,7 @@
           </attributeAssignment>
           <attributeAssignment>
             <attribute href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter/value"/>
-            <valueExpression xsi:type="expr:TextualExpression" expressionText="'org.storydriven.core.expressions.common.impl.LiteralExpressionImpl@8ffd84 (comment: &quot;no comment provided&quot;) (value: 11)'" language="OCL" languageVersion="1.0"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'org.muml.core.expressions.common.impl.LiteralExpressionImpl@8ffd84 (comment: &quot;no comment provided&quot;) (value: 11)'" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
           <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter"/>
         </variable>
@@ -204,7 +204,7 @@
           </attributeAssignment>
           <attributeAssignment>
             <attribute href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter/value"/>
-            <valueExpression xsi:type="expr:TextualExpression" expressionText="'org.storydriven.core.expressions.common.impl.LiteralExpressionImpl@7aa244 (comment: &quot;no comment provided&quot;) (value: 12)'" language="OCL" languageVersion="1.0"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'org.muml.core.expressions.common.impl.LiteralExpressionImpl@7aa244 (comment: &quot;no comment provided&quot;) (value: 12)'" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
           <attributeAssignment>
             <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
@@ -212,7 +212,7 @@
           </attributeAssignment>
           <attributeAssignment>
             <attribute href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter/value"/>
-            <valueExpression xsi:type="expr:TextualExpression" expressionText="'org.storydriven.core.expressions.common.impl.LiteralExpressionImpl@9daa2e (comment: &quot;no comment provided&quot;) (value: 12)'" language="OCL" languageVersion="1.0"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'org.muml.core.expressions.common.impl.LiteralExpressionImpl@9daa2e (comment: &quot;no comment provided&quot;) (value: 12)'" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
           <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter"/>
         </variable>
@@ -501,7 +501,7 @@
           </attributeAssignment>
           <attributeAssignment>
             <attribute href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter/value"/>
-            <valueExpression xsi:type="expr:TextualExpression" expressionText="'org.storydriven.core.expressions.common.impl.LiteralExpressionImpl@16b0e26 (comment: &quot;no comment provided&quot;) (value: 11)'" language="OCL" languageVersion="1.0"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'org.muml.core.expressions.common.impl.LiteralExpressionImpl@16b0e26 (comment: &quot;no comment provided&quot;) (value: 11)'" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
           <attributeAssignment>
             <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
@@ -509,7 +509,7 @@
           </attributeAssignment>
           <attributeAssignment>
             <attribute href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter/value"/>
-            <valueExpression xsi:type="expr:TextualExpression" expressionText="'org.storydriven.core.expressions.common.impl.LiteralExpressionImpl@ab2a78 (comment: &quot;no comment provided&quot;) (value: 11)'" language="OCL" languageVersion="1.0"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'org.muml.core.expressions.common.impl.LiteralExpressionImpl@ab2a78 (comment: &quot;no comment provided&quot;) (value: 11)'" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
           <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter"/>
         </variable>
@@ -520,7 +520,7 @@
           </attributeAssignment>
           <attributeAssignment>
             <attribute href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter/value"/>
-            <valueExpression xsi:type="expr:TextualExpression" expressionText="'org.storydriven.core.expressions.common.impl.LiteralExpressionImpl@9f8c12 (comment: &quot;no comment provided&quot;) (value: 12)'" language="OCL" languageVersion="1.0"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'org.muml.core.expressions.common.impl.LiteralExpressionImpl@9f8c12 (comment: &quot;no comment provided&quot;) (value: 12)'" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
           <attributeAssignment>
             <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
@@ -528,7 +528,7 @@
           </attributeAssignment>
           <attributeAssignment>
             <attribute href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter/value"/>
-            <valueExpression xsi:type="expr:TextualExpression" expressionText="'org.storydriven.core.expressions.common.impl.LiteralExpressionImpl@bcc447 (comment: &quot;no comment provided&quot;) (value: 12)'" language="OCL" languageVersion="1.0"/>
+            <valueExpression xsi:type="expr:TextualExpression" expressionText="'org.muml.core.expressions.common.impl.LiteralExpressionImpl@bcc447 (comment: &quot;no comment provided&quot;) (value: 12)'" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
           <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeParameter"/>
         </variable>

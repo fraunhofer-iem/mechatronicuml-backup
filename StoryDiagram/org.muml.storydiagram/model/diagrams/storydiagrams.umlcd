@@ -7,18 +7,18 @@
     <modelElement href="../storydiagrams.uml#_eO2nwBzJEeChOvWwuwx7tQ"/>
   </edges>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_RobgoMtnEeGgX-yRbtg0lw" sourceAnchor="250.0,24.0" targetAnchor="0.0,20.0" comments="_RpLHgstnEeGgX-yRbtg0lw" targetConnectionVisual="_RpU4gMtnEeGgX-yRbtg0lw" source="_O-1BI8tnEeGgX-yRbtg0lw" target="_RpeCcMtnEeGgX-yRbtg0lw">
-    <modelElement href="../../../org.storydriven.core/model/core.uml#_HPoxgLLzEd-uk56s-ldeog"/>
+    <modelElement href="../../../org.muml.core/model/core.uml#_HPoxgLLzEd-uk56s-ldeog"/>
     <nameVisual xmi:id="_RolRoMtnEeGgX-yRbtg0lw" text="HasType">
       <visualProperties xmi:id="_R2t0R8tnEeGgX-yRbtg0lw" position="-26.666666666666686,-15.5"/>
     </nameVisual>
     <sourceRole xmi:id="_RpLHgMtnEeGgX-yRbtg0lw" name="typedElement">
-      <modelElement href="../../../org.storydriven.core/model/core.uml#_HPoxgbLzEd-uk56s-ldeog"/>
+      <modelElement href="../../../org.muml.core/model/core.uml#_HPoxgbLzEd-uk56s-ldeog"/>
       <visualProperties xmi:id="_R2t0RstnEeGgX-yRbtg0lw" position="2.6666666666666288,-17.5"/>
       <visibility xmi:id="_RpU4gstnEeGgX-yRbtg0lw" label="+"/>
       <cardinality xmi:id="_RpU4gctnEeGgX-yRbtg0lw" label="*" max="-1"/>
     </sourceRole>
     <targetRole xmi:id="_RpLHgctnEeGgX-yRbtg0lw" derived="true" name="type" navigable="true">
-      <modelElement href="../../../org.storydriven.core/model/core.uml#_HPpYkbLzEd-uk56s-ldeog"/>
+      <modelElement href="../../../org.muml.core/model/core.uml#_HPpYkbLzEd-uk56s-ldeog"/>
       <visualProperties xmi:id="_R2t0SMtnEeGgX-yRbtg0lw" position="-45.39999999999998,-18.5"/>
       <visibility xmi:id="_RpU4hMtnEeGgX-yRbtg0lw" label="+"/>
       <cardinality xmi:id="_RpU4g8tnEeGgX-yRbtg0lw" label="0..1" max="1"/>
@@ -134,19 +134,19 @@
     </targetRole>
   </edges>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_RpeCpstnEeGgX-yRbtg0lw" sourceAnchor="104.0,15.0" targetAnchor="44.0,41.0" source="_O-1BI8tnEeGgX-yRbtg0lw" target="_Rpw9YctnEeGgX-yRbtg0lw">
-    <modelElement href="../../../org.storydriven.core/model/core.uml#_rCMwALw1Ed-Ytrd77fw2LA"/>
+    <modelElement href="../../../org.muml.core/model/core.uml#_rCMwALw1Ed-Ytrd77fw2LA"/>
     <nameVisual xmi:id="_RpnzfMtnEeGgX-yRbtg0lw" text="HasGenericType">
       <visualProperties xmi:id="_R22-MMtnEeGgX-yRbtg0lw" position="2.5,-129.0"/>
     </nameVisual>
     <bendpoints xmi:id="_eHykUctnEeGgX-yRbtg0lw" sourceX="267" targetY="243"/>
     <sourceRole xmi:id="_RpnzfctnEeGgX-yRbtg0lw" name="typedElement">
-      <modelElement href="../../../org.storydriven.core/model/core.uml#_rCNXELw1Ed-Ytrd77fw2LA"/>
+      <modelElement href="../../../org.muml.core/model/core.uml#_rCNXELw1Ed-Ytrd77fw2LA"/>
       <visualProperties xmi:id="_R2t0SctnEeGgX-yRbtg0lw" position="45.375,-37.0"/>
       <visibility xmi:id="_Rpnzj8tnEeGgX-yRbtg0lw" label="+"/>
       <cardinality xmi:id="_RpnzjstnEeGgX-yRbtg0lw" label="0..1" max="1"/>
     </sourceRole>
     <targetRole xmi:id="_RpnzfstnEeGgX-yRbtg0lw" aggregationKind="2" name="genericType" navigable="true">
-      <modelElement href="../../../org.storydriven.core/model/core.uml#_rCN-Ibw1Ed-Ytrd77fw2LA"/>
+      <modelElement href="../../../org.muml.core/model/core.uml#_rCN-Ibw1Ed-Ytrd77fw2LA"/>
       <visualProperties xmi:id="_R22-MctnEeGgX-yRbtg0lw" position="-81.5,30.428571428571416"/>
       <visibility xmi:id="_RpnzkctnEeGgX-yRbtg0lw" label="+"/>
       <cardinality xmi:id="_RpnzkMtnEeGgX-yRbtg0lw" label="0..1" max="1"/>
@@ -158,23 +158,23 @@
     <modelElement href="../storydiagrams.uml#_rTlJ4BzrEeChOvWwuwx7tQ"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_O-1BIMtnEeGgX-yRbtg0lw" item="_O-1BI8tnEeGgX-yRbtg0lw" sourceConnectionVisual="_O-1BIctnEeGgX-yRbtg0lw" text="Abstract super class for all meta-model elements that are typed by means of an EClassifier or an EGenericType.">
-    <modelElement href="../../../org.storydriven.core/model/core.uml#_iSb4EJxkEeCuYMafrm1l2g"/>
+    <modelElement href="../../../org.muml.core/model/core.uml#_iSb4EJxkEeCuYMafrm1l2g"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_RpLHgstnEeGgX-yRbtg0lw" item="_RobgoMtnEeGgX-yRbtg0lw" sourceConnectionVisual="_RpU4gMtnEeGgX-yRbtg0lw" text="The EClassifier this model element is typed over.">
-    <modelElement href="../../../org.storydriven.core/model/core.uml#_rmak4JxkEeCuYMafrm1l2g"/>
+    <modelElement href="../../../org.muml.core/model/core.uml#_rmak4JxkEeCuYMafrm1l2g"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_WyaSMMtnEeGgX-yRbtg0lw" item="_WyaSNMtnEeGgX-yRbtg0lw" sourceConnectionVisual="_WyaSMctnEeGgX-yRbtg0lw" text="Abstract super class for all meta-model elements that carry a name. ">
-    <modelElement href="../../../org.storydriven.core/model/core.uml#_beYKUJxkEeCuYMafrm1l2g"/>
+    <modelElement href="../../../org.muml.core/model/core.uml#_beYKUJxkEeCuYMafrm1l2g"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_WyaSMstnEeGgX-yRbtg0lw" item="_WyaSN8tnEeGgX-yRbtg0lw" sourceConnectionVisual="_WyaSM8tnEeGgX-yRbtg0lw" text="The name attribute of a meta-model element.">
-    <modelElement href="../../../org.storydriven.core/model/core.uml#_f_Jm0JxkEeCuYMafrm1l2g"/>
+    <modelElement href="../../../org.muml.core/model/core.uml#_f_Jm0JxkEeCuYMafrm1l2g"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_WyaSNMtnEeGgX-yRbtg0lw" comments="_WyaSMMtnEeGgX-yRbtg0lw" targetConnectionVisual="_WyaSMctnEeGgX-yRbtg0lw" name="NamedElement" abstractClass="true">
-    <modelElement href="../../../org.storydriven.core/model/core.uml#_tB8FcLK5Ed-uk56s-ldeog"/>
+    <modelElement href="../../../org.muml.core/model/core.uml#_tB8FcLK5Ed-uk56s-ldeog"/>
     <visualProperties xmi:id="_WyaSNctnEeGgX-yRbtg0lw" position="686.0,181.0" visible="false"/>
     <visibility xmi:id="_WyaSNstnEeGgX-yRbtg0lw" label="+"/>
     <attributes xmi:id="_WyaSN8tnEeGgX-yRbtg0lw" comments="_WyaSMstnEeGgX-yRbtg0lw" targetConnectionVisual="_WyaSM8tnEeGgX-yRbtg0lw" name="name">
-      <modelElement href="../../../org.storydriven.core/model/core.uml#9a70c295-e052-4eb6-a68c-778c528f658f"/>
+      <modelElement href="../../../org.muml.core/model/core.uml#9a70c295-e052-4eb6-a68c-778c528f658f"/>
       <visualProperties xmi:id="_WyjcIMtnEeGgX-yRbtg0lw"/>
       <visibility xmi:id="_WyaSOMtnEeGgX-yRbtg0lw" label="+"/>
       <cardinality xmi:id="_WyaSOctnEeGgX-yRbtg0lw" label="1" max="1" min="1"/>
@@ -284,17 +284,17 @@
     </attributes>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_O-1BI8tnEeGgX-yRbtg0lw" comments="_O-1BIMtnEeGgX-yRbtg0lw" targetConnectionVisual="_O-1BIctnEeGgX-yRbtg0lw" name="TypedElement" abstractClass="true" associationsOut="_RobgoMtnEeGgX-yRbtg0lw _RpeCpstnEeGgX-yRbtg0lw" subclassedBy="_O-1BIstnEeGgX-yRbtg0lw">
-    <modelElement href="../../../org.storydriven.core/model/core.uml#__xUl0LLyEd-uk56s-ldeog"/>
+    <modelElement href="../../../org.muml.core/model/core.uml#__xUl0LLyEd-uk56s-ldeog"/>
     <visualProperties xmi:id="_O-1BJMtnEeGgX-yRbtg0lw" position="109.0,63.0" size="-1.0,-1.0"/>
     <visibility xmi:id="_O-1BJctnEeGgX-yRbtg0lw" label="+"/>
     <attributes xmi:id="_O-1BJstnEeGgX-yRbtg0lw" derived="true" name="type">
-      <modelElement href="../../../org.storydriven.core/model/core.uml#_HPpYkbLzEd-uk56s-ldeog"/>
+      <modelElement href="../../../org.muml.core/model/core.uml#_HPpYkbLzEd-uk56s-ldeog"/>
       <visualProperties xmi:id="_O--LEMtnEeGgX-yRbtg0lw"/>
       <stereotypes xmi:id="_O-1BJ8tnEeGgX-yRbtg0lw" name="EReference">
-        <modelElement href="../../../org.storydriven.core/model/core.uml#_mHa4ELw1Ed-Ytrd77fw2LA"/>
+        <modelElement href="../../../org.muml.core/model/core.uml#_mHa4ELw1Ed-Ytrd77fw2LA"/>
       </stereotypes>
       <stereotypes xmi:id="_RpU4hctnEeGgX-yRbtg0lw" name="EReference">
-        <modelElement href="../../../org.storydriven.core/model/core.uml#_mHa4ELw1Ed-Ytrd77fw2LA"/>
+        <modelElement href="../../../org.muml.core/model/core.uml#_mHa4ELw1Ed-Ytrd77fw2LA"/>
       </stereotypes>
       <visibility xmi:id="_O-1BKMtnEeGgX-yRbtg0lw" label="+"/>
       <cardinality xmi:id="_O-1BKctnEeGgX-yRbtg0lw" label="0..1" max="1"/>
@@ -303,13 +303,13 @@
       </type>
     </attributes>
     <attributes xmi:id="_O-1BK8tnEeGgX-yRbtg0lw" name="genericType">
-      <modelElement href="../../../org.storydriven.core/model/core.uml#_rCN-Ibw1Ed-Ytrd77fw2LA"/>
+      <modelElement href="../../../org.muml.core/model/core.uml#_rCN-Ibw1Ed-Ytrd77fw2LA"/>
       <visualProperties xmi:id="_O--LEctnEeGgX-yRbtg0lw"/>
       <stereotypes xmi:id="_O-1BLMtnEeGgX-yRbtg0lw" name="EReference">
-        <modelElement href="../../../org.storydriven.core/model/core.uml#_aoEjQLxeEd-HP-M1eWm3kg"/>
+        <modelElement href="../../../org.muml.core/model/core.uml#_aoEjQLxeEd-HP-M1eWm3kg"/>
       </stereotypes>
       <stereotypes xmi:id="_Rpw9YMtnEeGgX-yRbtg0lw" name="EReference">
-        <modelElement href="../../../org.storydriven.core/model/core.uml#_aoEjQLxeEd-HP-M1eWm3kg"/>
+        <modelElement href="../../../org.muml.core/model/core.uml#_aoEjQLxeEd-HP-M1eWm3kg"/>
       </stereotypes>
       <visibility xmi:id="_O-1BLctnEeGgX-yRbtg0lw" label="+"/>
       <cardinality xmi:id="_O-1BLstnEeGgX-yRbtg0lw" label="0..1" max="1"/>

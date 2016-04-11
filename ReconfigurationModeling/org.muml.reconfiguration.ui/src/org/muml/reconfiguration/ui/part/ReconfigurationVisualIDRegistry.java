@@ -19,7 +19,7 @@ public class ReconfigurationVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	private static final String DEBUG_KEY = "de.uni_paderborn.fujaba.muml.reconfiguration.ui/debug/visualID"; //$NON-NLS-1$
+	private static final String DEBUG_KEY = "org.muml.reconfiguration.ui/debug/visualID"; //$NON-NLS-1$
 
 	// /**
 	// * @generated

@@ -9,7 +9,7 @@
   
 	<extension point="org.muml.core.ui.expressionEditor">
 		<editor
-			class="org.storydriven.core.ocl.editor.OclExpressionEditor"
+			class="org.muml.core.ocl.editor.OclExpressionEditor"
 			language="OCL" version="1.0"/>
 	</extension>
 </plugin>

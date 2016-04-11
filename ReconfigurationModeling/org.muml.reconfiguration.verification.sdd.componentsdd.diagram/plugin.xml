@@ -207,13 +207,13 @@
          <propertySection
             id="property.section.general" 
             tab="property.tab.general"
-            filter="org.storydriven.core.properties.tabs.GeneralTabElementFilter"
+            filter="org.muml.core.properties.tabs.GeneralTabElementFilter"
             class="org.muml.ape.runtime.sections.ObjectPropertySection">
          </propertySection>
          <propertySection
             id="property.section.documentation" 
             tab="property.tab.documentation"
-            filter="org.storydriven.core.properties.tabs.DocumentationTabElementFilter"
+            filter="org.muml.core.properties.tabs.DocumentationTabElementFilter"
             class="org.muml.ape.runtime.sections.ObjectPropertySection">
          </propertySection>
       </propertySections>

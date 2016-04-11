@@ -24,7 +24,7 @@
          point="org.eclipse.ui.menus">
       <menuContribution
             allPopups="false"
-            locationURI="popup:de.uni_paderborn.fujaba">
+            locationURI="popup:org.muml">
          <separator
                name="org.muml.pm.hardware.resource.diagram.custom.separator1"
                visible="true">
@@ -41,7 +41,7 @@
                      <iterate
                            ifEmpty="false">
                         <adapt
-                              type="de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource">
+                              type="org.muml.pm.hardware.hwresource.Resource">
                         </adapt>
                      </iterate>
                   </with></or>

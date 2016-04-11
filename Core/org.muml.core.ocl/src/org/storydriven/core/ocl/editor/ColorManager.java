@@ -1,4 +1,4 @@
-package org.storydriven.core.ocl.editor;
+package org.muml.core.ocl.editor;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

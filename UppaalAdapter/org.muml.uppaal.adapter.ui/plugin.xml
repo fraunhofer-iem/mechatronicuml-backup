@@ -58,7 +58,7 @@
    <extension point="org.eclipse.ui.menus">
       <menuContribution
             allPopups="false"
-            locationURI="popup:de.uni_paderborn.fujaba">
+            locationURI="popup:org.muml">
          
          
 
@@ -73,7 +73,7 @@
                      <iterate
                            ifEmpty="false">
                         <adapt
-                              type="de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification">
+                              type="org.muml.pim.protocol.AbstractCoordinationSpecification">
                         </adapt>
                      </iterate>
                   </with></and>
@@ -89,13 +89,13 @@
                      <iterate
                            ifEmpty="false">
                         <adapt
-                              type="de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification">
+                              type="org.muml.pim.protocol.AbstractCoordinationSpecification">
                         </adapt>
                      </iterate>
                   </with></and>
             </visibleWhen>
          </command>
-      	                   
+
          <command
                commandId="de.uni_paderborn.fujaba.muml.verification.uppaal.ExportTraceImageAction"
                label="Verify Single Property for a Trace">
@@ -106,7 +106,7 @@
                      <iterate
                            ifEmpty="false">
                         <adapt
-                              type="de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification">
+                              type="org.muml.pim.protocol.AbstractCoordinationSpecification">
                         </adapt>
                      </iterate>
                   </with></and>
@@ -125,7 +125,7 @@
                      <iterate
                            ifEmpty="false">
                         <adapt
-                              type="de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification">
+                              type="org.muml.pim.protocol.AbstractCoordinationSpecification">
                         </adapt>
                      </iterate>
                   </with></and>
@@ -142,7 +142,7 @@
                      <iterate
                            ifEmpty="false">
                         <adapt
-                              type="de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification">
+                              type="org.muml.pim.protocol.AbstractCoordinationSpecification">
                         </adapt>
                      </iterate>
                   </with></and>

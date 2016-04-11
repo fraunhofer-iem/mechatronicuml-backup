@@ -185,7 +185,7 @@ public class CommonExpressionsItemProviderAdapterFactory extends
 	}
 
 	/**
-	 * This creates an adapter for a {@link org.storydriven.core.expressions.common.LogicExpression}.
+	 * This creates an adapter for a {@link org.muml.core.expressions.common.LogicExpression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT

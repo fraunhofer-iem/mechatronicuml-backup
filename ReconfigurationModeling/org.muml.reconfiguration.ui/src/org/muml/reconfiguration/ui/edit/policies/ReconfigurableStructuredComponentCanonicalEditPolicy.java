@@ -107,7 +107,7 @@ public class ReconfigurableStructuredComponentCanonicalEditPolicy extends
 								org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID,
 								org.muml.reconfiguration.ui.edit.parts.BroadcastPortEditPart.VISUAL_ID,
 								//TODO add this here?
-								//de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart.VISUAL_ID
+								//org.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart.VISUAL_ID
 								});
 				if (childElement.eContainer() == containerView.getElement()
 						&& visualIDs.contains(visualID)) {
@@ -148,7 +148,7 @@ public class ReconfigurableStructuredComponentCanonicalEditPolicy extends
 				|| visualID == org.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart.VISUAL_ID
 						|| visualID == org.muml.reconfiguration.ui.edit.parts.BroadcastPortEditPart.VISUAL_ID
 				//TODO this here?
-			//	|| visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart.VISUAL_ID
+			//	|| visualID == org.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart.VISUAL_ID
 				;
 	}
 

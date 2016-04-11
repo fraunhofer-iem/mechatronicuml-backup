@@ -1,4 +1,4 @@
-package org.storydriven.core.ocl.editor;
+package org.muml.core.ocl.editor;
 
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EParameter;

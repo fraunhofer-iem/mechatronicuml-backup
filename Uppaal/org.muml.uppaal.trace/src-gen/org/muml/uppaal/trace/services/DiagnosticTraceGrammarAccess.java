@@ -802,7 +802,7 @@ public class DiagnosticTraceGrammarAccess extends AbstractGrammarElementFinder {
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
 		Grammar grammar = grammarProvider.getGrammar(this);
 		while (grammar != null) {
-			if ("de.uni_paderborn.uppaal.trace.DiagnosticTrace".equals(grammar.getName())) {
+			if ("org.muml.uppaal.trace.DiagnosticTrace".equals(grammar.getName())) {
 				return grammar;
 			}
 			List<Grammar> grammars = grammar.getUsedGrammars();

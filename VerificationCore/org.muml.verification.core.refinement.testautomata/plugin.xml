@@ -5,7 +5,7 @@
          point="org.eclipse.ui.menus">
       <menuContribution
             allPopups="false"
-            locationURI="popup:de.uni_paderborn.fujaba">
+            locationURI="popup:org.muml">
          <command
                commandId="de.uni_paderborn.fujaba.muml.verification.refinement.testautomata.verifyRefinement"
                label="Verify Refinement"
@@ -20,7 +20,7 @@
                                  value="org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart">
                            </instanceof>
                            <instanceof
-                                 value="de.uni_paderborn.fujaba.muml.component.DiscretePort">
+                                 value="org.muml.pim.component.DiscretePort">
                            </instanceof>
                         </or>
                      </iterate>
@@ -35,7 +35,7 @@
             categoryId="org.muml"
             defaultHandler="org.muml.verification.core.refinement.testautomata.commands.VerifyRefinement"
             description="Verify whether behaviour of port is correct refinement of role"
-            id="de.uni_paderborn.fujaba.muml.verification.refinement.testautomata.verifyRefinement"
+            id="org.muml.verification.core.refinement.testautomata.verifyRefinement"
             name="Verify Refinement">
       </command>
    </extension>

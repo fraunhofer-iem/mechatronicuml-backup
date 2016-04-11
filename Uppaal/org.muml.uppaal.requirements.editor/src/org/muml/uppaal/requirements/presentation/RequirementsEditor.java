@@ -591,7 +591,7 @@ public class RequirementsEditor
 			BasicDiagnostic diagnostic =
 				new BasicDiagnostic
 					(Diagnostic.OK,
-					 "de.uni_paderborn.uppaal.requirements.editor",
+					 "org.muml.uppaal.requirements.editor",
 					 0,
 					 null,
 					 new Object [] { editingDomain.getResourceSet() });
@@ -964,7 +964,7 @@ public class RequirementsEditor
 			BasicDiagnostic basicDiagnostic =
 				new BasicDiagnostic
 					(Diagnostic.ERROR,
-					 "de.uni_paderborn.uppaal.requirements.editor",
+					 "org.muml.uppaal.requirements.editor",
 					 0,
 					 getString("_UI_CreateModelError_message", resource.getURI()),
 					 new Object [] { exception == null ? (Object)resource : exception });
@@ -975,7 +975,7 @@ public class RequirementsEditor
 			return
 				new BasicDiagnostic
 					(Diagnostic.ERROR,
-					 "de.uni_paderborn.uppaal.requirements.editor",
+					 "org.muml.uppaal.requirements.editor",
 					 0,
 					 getString("_UI_CreateModelError_message", resource.getURI()),
 					 new Object[] { exception });

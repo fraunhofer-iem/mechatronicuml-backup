@@ -1,4 +1,4 @@
-package org.storydriven.core.ocl.editor;
+package org.muml.core.ocl.editor;
 
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;

@@ -278,7 +278,7 @@
       			</para></listitem>
       		</itemizedlist>
       		
-			Additionally you need some plugins from another SVN (org.storydriven.modeling):
+			Additionally you need some plugins from another SVN (org.muml.modeling):
 			<ulink url="http://svn.codespot.com/a/eclipselabs.org/sdm-commons">
 				http://svn.codespot.com/a/eclipselabs.org/sdm-commons
 			</ulink>

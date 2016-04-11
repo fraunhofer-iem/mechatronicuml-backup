@@ -104,7 +104,7 @@ public class GenerateManagerAndExecutorImplementationCommand extends AbstractHan
 
 		URI transformationURI = URI
 				.createPlatformPluginURI(
-						"/de.uni_paderborn.fujaba.muml.reconfiguration.ui/transforms/GenerateManagerImplementation.qvto",
+						"/org.muml.reconfiguration.ui/transforms/GenerateManagerImplementation.qvto",
 						true);
 
 		// create executor and execution context
@@ -149,7 +149,7 @@ public class GenerateManagerAndExecutorImplementationCommand extends AbstractHan
 
 		URI transformationURI = URI
 				.createPlatformPluginURI(
-						"/de.uni_paderborn.fujaba.muml.reconfiguration.ui/transforms/GenerateExecutorImplementation.qvto",
+						"/org.muml.reconfiguration.ui/transforms/GenerateExecutorImplementation.qvto",
 						true);
 
 		// create executor and execution context

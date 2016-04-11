@@ -171,7 +171,7 @@ public class MakeStructuredComponentReconfigurableCommand extends AbstractHandle
 		
 		URI transformationURI = URI
 				.createPlatformPluginURI(
-						"/de.uni_paderborn.fujaba.muml.reconfiguration.ui/transforms/MakeStructuredComponentReconfigurable.qvto",
+						"/org.muml.reconfiguration.ui/transforms/MakeStructuredComponentReconfigurable.qvto",
 						true);
 
 		// create executor and execution context

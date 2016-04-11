@@ -362,7 +362,7 @@
     <modelElement href="../storydiagrams.uml#_2G3JcBzvEeChOvWwuwx7tQ"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_Me1QA8tvEeG0xq-c7E4dMQ" item="_Me-Z4stvEeG0xq-c7E4dMQ" sourceConnectionVisual="_Me1QBMtvEeG0xq-c7E4dMQ" text="Represents any expression in an embedded textual language, e.g. OCL or Java. An expression's type is dynamically derived by an external mechanism (see TypedElement).">
-    <modelElement href="../../../org.storydriven.core/model/core.uml#_RcJm8BztEeChOvWwuwx7tQ"/>
+    <modelElement href="../../../org.muml.core/model/core.uml#_RcJm8BztEeChOvWwuwx7tQ"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_NV4MsMtvEeG0xq-c7E4dMQ" item="_NWLHoMtvEeG0xq-c7E4dMQ" sourceConnectionVisual="_NV4MsctvEeG0xq-c7E4dMQ" text="Represents an EParameter and adds functionality to it, especially beiing subtype of Variable.">
     <modelElement href="../storydiagrams.uml#_8sVooBzvEeChOvWwuwx7tQ"/>
@@ -430,7 +430,7 @@
       <visibility xmi:id="_IjjGJctvEeG0xq-c7E4dMQ" label="+"/>
       <cardinality xmi:id="_IjjGJstvEeG0xq-c7E4dMQ" label="0..1" max="1"/>
       <type xmi:id="_IjjGJ8tvEeG0xq-c7E4dMQ" name="Expression">
-        <modelElement href="../../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+        <modelElement href="../../../org.muml.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
       </type>
     </attributes>
     <attributes xmi:id="_IjjGKMtvEeG0xq-c7E4dMQ" name="opaqueCallable">
@@ -443,7 +443,7 @@
     </attributes>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_Me-Z4stvEeG0xq-c7E4dMQ" comments="_Me1QA8tvEeG0xq-c7E4dMQ" targetConnectionVisual="_Me1QBMtvEeG0xq-c7E4dMQ" name="Expression" abstractClass="true" associationsIn="_Ijs3IMtvEeG0xq-c7E4dMQ _Q2X4AMtvEeG0xq-c7E4dMQ" subclassedBy="_Me-Z4MtvEeG0xq-c7E4dMQ _Me-Z4ctvEeG0xq-c7E4dMQ">
-    <modelElement href="../../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+    <modelElement href="../../../org.muml.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
     <visualProperties xmi:id="_Me-Z48tvEeG0xq-c7E4dMQ" position="281.0,277.0" size="-1.0,-1.0"/>
     <visibility xmi:id="_Me-Z5MtvEeG0xq-c7E4dMQ" label="+"/>
   </nodes>
@@ -528,7 +528,7 @@
       <visibility xmi:id="_Q2X4GstvEeG0xq-c7E4dMQ" label="+"/>
       <cardinality xmi:id="_Q2X4G8tvEeG0xq-c7E4dMQ" label="1" max="1" min="1"/>
       <type xmi:id="_Q2X4HMtvEeG0xq-c7E4dMQ" name="Expression">
-        <modelElement href="../../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+        <modelElement href="../../../org.muml.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
       </type>
     </attributes>
     <attributes xmi:id="_Q2X4HctvEeG0xq-c7E4dMQ" name="parameter">

@@ -11,27 +11,27 @@ import org.muml.reconfiguration.ui.providers.ReconfigurationElementTypes;
 public class ReconfigurationPaletteFactory extends PaletteFactory.Adapter {
 
 	public Tool createTool(String toolId) {
-        if (toolId.equals("de.uni_paderborn.fujaba.muml.reconfiguration.ui.ReconfigurableStructuredComponentTool")){
+        if (toolId.equals("org.muml.reconfiguration.ui.ReconfigurableStructuredComponentTool")){
             return new CreationTool(ReconfigurationElementTypes.ReconfigurableStructuredComponent_2076);
 
         }
-        if (toolId.equals("de.uni_paderborn.fujaba.muml.reconfiguration.ui.ReconfigurableAtomicComponentTool")){
+        if (toolId.equals("org.muml.reconfiguration.ui.ReconfigurableAtomicComponentTool")){
             return new CreationTool(ReconfigurationElementTypes.ReconfigurableAtomicComponent_2078);
 
         }
-        if (toolId.equals("de.uni_paderborn.fujaba.muml.reconfiguration.ui.ReconfigurationMessagePortTool")){
+        if (toolId.equals("org.muml.reconfiguration.ui.ReconfigurationMessagePortTool")){
             return new CreationTool(ReconfigurationElementTypes.ReconfigurationMessagePort_3076);
 
         }
-        if (toolId.equals("de.uni_paderborn.fujaba.muml.reconfiguration.ui.ReconfigurationExecutionPortTool")){
+        if (toolId.equals("org.muml.reconfiguration.ui.ReconfigurationExecutionPortTool")){
             return new CreationTool(ReconfigurationElementTypes.ReconfigurationExecutionPort_3077);
 
         }
-        if (toolId.equals("de.uni_paderborn.fujaba.muml.reconfiguration.ui.FadingComponentTool")){
+        if (toolId.equals("org.muml.reconfiguration.ui.FadingComponentTool")){
             return new CreationTool(ReconfigurationElementTypes.FadingComponent_2079);
 
         }
-        if (toolId.equals("de.uni_paderborn.fujaba.muml.reconfiguration.ui.BroadcastPortTool")){
+        if (toolId.equals("org.muml.reconfiguration.ui.BroadcastPortTool")){
             return new CreationTool(ReconfigurationElementTypes.BroadcastPort_3078);
 
         }

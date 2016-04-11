@@ -173,7 +173,7 @@ public class RequirementsActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(RequirementsEditorPlugin.INSTANCE.getString("_UI_RequirementsEditor_menu"), "de.uni_paderborn.uppaal.requirementsMenuID");
+		IMenuManager submenuManager = new MenuManager(RequirementsEditorPlugin.INSTANCE.getString("_UI_RequirementsEditor_menu"), "org.muml.uppaal.requirementsMenuID");
 		menuManager.insertAfter("additions", submenuManager);
 		submenuManager.add(new Separator("settings"));
 		submenuManager.add(new Separator("actions"));
