@@ -192,11 +192,11 @@ the Eclipse framework.
          version="0.0.0"/>
 
    <includes
-         id="org.muml.external.owlapi.feature"
+         id="org.muml.external.ontology.owlapi.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.external.unitontology.feature"
+         id="org.muml.external.ontology.unitontology.feature"
          version="0.0.0"/>
 
    <includes
