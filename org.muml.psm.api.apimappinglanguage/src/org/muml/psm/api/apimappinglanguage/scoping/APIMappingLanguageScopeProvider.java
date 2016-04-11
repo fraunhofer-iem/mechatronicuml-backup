@@ -32,7 +32,7 @@ import org.muml.psm.apiexpressions.APICallExpression;
  */
 public class APIMappingLanguageScopeProvider extends
 		org.muml.pim.actionlanguage.xtext.scoping.ActionLanguageScopeProvider {
-	private static final String OS_CATEGORY_KEY = "de.uni_paderborn.fujaba.muml.os.category";
+	private static final String OS_CATEGORY_KEY = "org.muml.os.category";
 	private static final String TYPES_CATEGORY_KEY = "org.muml.types.category";
 	private static final String INSTANCE_CATEGORY_KEY = "org.muml.pim.instance.category";
 
