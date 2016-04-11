@@ -28,5 +28,6 @@ Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.muml.psm.api.apimappinglanguage.ui.contentassist,
  org.muml.psm.api.apimappinglanguage.ui.contentassist.antlr,
  org.muml.psm.api.apimappinglanguage.ui.internal,
- org.muml.psm.api.apimappinglanguage.ui.quickfix
+ org.muml.psm.api.apimappinglanguage.ui.quickfix,
+ org.muml.psm.api.apimappinglanguage.ui.contentassist.antlr.internal
 Bundle-Activator: org.muml.psm.api.apimappinglanguage.ui.internal.APIMappingLanguageActivator

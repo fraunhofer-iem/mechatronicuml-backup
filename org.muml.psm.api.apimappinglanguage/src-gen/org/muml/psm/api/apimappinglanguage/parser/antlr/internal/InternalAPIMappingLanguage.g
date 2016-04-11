@@ -91,7 +91,7 @@ ruleMappingRepository returns [EObject current=null]
        			$current, 
        			"imports",
         		lv_imports_0_0, 
-        		"Import");
+        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Import");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -113,7 +113,7 @@ ruleMappingRepository returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"EString");
+        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -135,7 +135,7 @@ ruleMappingRepository returns [EObject current=null]
        			$current, 
        			"portApiMappings",
         		lv_portApiMappings_4_0, 
-        		"PortApiMapping");
+        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.PortApiMapping");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -157,7 +157,7 @@ ruleMappingRepository returns [EObject current=null]
        			$current, 
        			"portApiMappings",
         		lv_portApiMappings_6_0, 
-        		"PortApiMapping");
+        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.PortApiMapping");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -183,7 +183,7 @@ ruleMappingRepository returns [EObject current=null]
        			$current, 
        			"comment",
         		lv_comment_9_0, 
-        		"EString");
+        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -227,7 +227,7 @@ ruleImport returns [EObject current=null]
        			$current, 
        			"importURI",
         		lv_importURI_1_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -292,7 +292,7 @@ rulePortApiMapping returns [EObject current=null]
        			$current, 
        			"execCommand",
         		lv_execCommand_4_0, 
-        		"Entry");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.Entry");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -314,7 +314,7 @@ rulePortApiMapping returns [EObject current=null]
        			$current, 
        			"initCommand",
         		lv_initCommand_6_0, 
-        		"Entry");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.Entry");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -456,7 +456,7 @@ ruleAPICallExpression returns [EObject current=null]
        			$current, 
        			"parameterBindings",
         		lv_parameterBindings_3_0, 
-        		"ParamaterBinding");
+        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.ParamaterBinding");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -478,7 +478,7 @@ ruleAPICallExpression returns [EObject current=null]
        			$current, 
        			"parameterBindings",
         		lv_parameterBindings_5_0, 
-        		"ParamaterBinding");
+        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.ParamaterBinding");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -545,7 +545,7 @@ ruleParamaterBinding returns [EObject current=null]
        			$current, 
        			"value",
         		lv_value_3_1, 
-        		"Expression");
+        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Expression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -560,7 +560,7 @@ ruleParamaterBinding returns [EObject current=null]
        			$current, 
        			"value",
         		lv_value_3_2, 
-        		"EnumerationValueExpression");
+        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.EnumerationValueExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -575,7 +575,7 @@ ruleParamaterBinding returns [EObject current=null]
        			$current, 
        			"value",
         		lv_value_3_3, 
-        		"ContiniousPortExpressions");
+        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.ContiniousPortExpressions");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -912,7 +912,7 @@ ruleBlock returns [EObject current=null]
        			$current, 
        			"expressions",
         		lv_expressions_2_0, 
-        		"ExpressionStartRule");
+        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.ExpressionStartRule");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -966,7 +966,7 @@ ruleForLoop returns [EObject current=null]
        			$current, 
        			"initializeExpression",
         		lv_initializeExpression_2_0, 
-        		"Assignment");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.Assignment");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -984,7 +984,7 @@ ruleForLoop returns [EObject current=null]
        			$current, 
        			"loopTest",
         		lv_loopTest_3_0, 
-        		"Expression");
+        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Expression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1006,7 +1006,7 @@ ruleForLoop returns [EObject current=null]
        			$current, 
        			"countingExpression",
         		lv_countingExpression_5_0, 
-        		"ForLoopCountingExpression");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.ForLoopCountingExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1028,7 +1028,7 @@ ruleForLoop returns [EObject current=null]
        			$current, 
        			"block",
         		lv_block_7_0, 
-        		"Block");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.Block");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1067,7 +1067,7 @@ ruleForLoopCountingExpression returns [EObject current=null]
        			$current, 
        			"lhs_typedNamedElementExpression",
         		lv_lhs_typedNamedElementExpression_0_0, 
-        		"TypedNamedElementExpression");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.TypedNamedElementExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1085,7 +1085,7 @@ ruleForLoopCountingExpression returns [EObject current=null]
        			$current, 
        			"incrementDecrementOperator",
         		lv_incrementDecrementOperator_1_0, 
-        		"UnaryPostIncrementDecrementOperator");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.UnaryPostIncrementDecrementOperator");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1104,7 +1104,7 @@ ruleForLoopCountingExpression returns [EObject current=null]
        			$current, 
        			"assignOperator",
         		lv_assignOperator_2_0, 
-        		"AssignOperator");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.AssignOperator");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1122,7 +1122,7 @@ ruleForLoopCountingExpression returns [EObject current=null]
        			$current, 
        			"rhs_assignExpression",
         		lv_rhs_assignExpression_3_0, 
-        		"Expression");
+        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Expression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1169,7 +1169,7 @@ ruleWhileLoop returns [EObject current=null]
        			$current, 
        			"loopTest",
         		lv_loopTest_2_0, 
-        		"Expression");
+        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Expression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1191,7 +1191,7 @@ ruleWhileLoop returns [EObject current=null]
        			$current, 
        			"block",
         		lv_block_4_0, 
-        		"Block");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.Block");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1234,7 +1234,7 @@ ruleDoWhileLoop returns [EObject current=null]
        			$current, 
        			"block",
         		lv_block_1_0, 
-        		"Block");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.Block");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1260,7 +1260,7 @@ ruleDoWhileLoop returns [EObject current=null]
        			$current, 
        			"loopTest",
         		lv_loopTest_4_0, 
-        		"Expression");
+        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Expression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1311,7 +1311,7 @@ ruleIfStatement returns [EObject current=null]
        			$current, 
        			"ifCondition",
         		lv_ifCondition_2_0, 
-        		"Expression");
+        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Expression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1333,7 +1333,7 @@ ruleIfStatement returns [EObject current=null]
        			$current, 
        			"ifBlock",
         		lv_ifBlock_4_0, 
-        		"Block");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.Block");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1351,7 +1351,7 @@ ruleIfStatement returns [EObject current=null]
        			$current, 
        			"elseIfStatements",
         		lv_elseIfStatements_5_0, 
-        		"ElseIfStatement");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.ElseIfStatement");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1373,7 +1373,7 @@ ruleIfStatement returns [EObject current=null]
        			$current, 
        			"elseBlock",
         		lv_elseBlock_7_0, 
-        		"Block");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.Block");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1420,7 +1420,7 @@ ruleElseIfStatement returns [EObject current=null]
        			$current, 
        			"elseIfCondition",
         		lv_elseIfCondition_2_0, 
-        		"Expression");
+        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Expression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1442,7 +1442,7 @@ ruleElseIfStatement returns [EObject current=null]
        			$current, 
        			"elseIfBlock",
         		lv_elseIfBlock_4_0, 
-        		"Block");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.Block");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1491,7 +1491,7 @@ ruleReturnStatement returns [EObject current=null]
        			$current, 
        			"expression",
         		lv_expression_2_0, 
-        		"Expression");
+        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Expression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1568,7 +1568,7 @@ ruleAssignment returns [EObject current=null]
        			$current, 
        			"lhs_typedNamedElementExpression",
         		lv_lhs_typedNamedElementExpression_0_0, 
-        		"TypedNamedElementExpression");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.TypedNamedElementExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1586,7 +1586,7 @@ ruleAssignment returns [EObject current=null]
        			$current, 
        			"assignOperator",
         		lv_assignOperator_1_0, 
-        		"AssignOperator");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.AssignOperator");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1604,7 +1604,7 @@ ruleAssignment returns [EObject current=null]
        			$current, 
        			"rhs_assignExpression",
         		lv_rhs_assignExpression_2_0, 
-        		"InitializeExpression");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.InitializeExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1623,7 +1623,7 @@ ruleAssignment returns [EObject current=null]
        			$current, 
        			"incrementDecrementOperator",
         		lv_incrementDecrementOperator_3_0, 
-        		"UnaryPostIncrementDecrementOperator");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.UnaryPostIncrementDecrementOperator");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1720,7 +1720,7 @@ ruleArrayInitializeExpression returns [EObject current=null]
        			$current, 
        			"expressions",
         		lv_expressions_1_0, 
-        		"InitializeExpression");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.InitializeExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1742,7 +1742,7 @@ ruleArrayInitializeExpression returns [EObject current=null]
        			$current, 
        			"expressions",
         		lv_expressions_3_0, 
-        		"InitializeExpression");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.InitializeExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1786,7 +1786,7 @@ ruleLocalVariableOrConstantDeclarationStatement returns [EObject current=null]
        			$current, 
        			"variable",
         		lv_variable_0_1, 
-        		"LocalVariableDeclaration");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.LocalVariableDeclaration");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1801,7 +1801,7 @@ ruleLocalVariableOrConstantDeclarationStatement returns [EObject current=null]
        			$current, 
        			"variable",
         		lv_variable_0_2, 
-        		"LocalConstantDeclaration");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.LocalConstantDeclaration");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1858,7 +1858,7 @@ ruleLocalVariableDeclaration returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"ID");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.ID");
 	    }
 
 )
@@ -1879,7 +1879,7 @@ ruleLocalVariableDeclaration returns [EObject current=null]
        			$current, 
        			"initializeExpression",
         		lv_initializeExpression_3_0, 
-        		"InitializeExpression");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.InitializeExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1953,7 +1953,7 @@ ruleLocalConstantDeclaration returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"ID");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.ID");
 	    }
 
 )
@@ -1974,7 +1974,7 @@ ruleLocalConstantDeclaration returns [EObject current=null]
        			$current, 
        			"initializeExpression",
         		lv_initializeExpression_4_0, 
-        		"InitializeExpression");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.InitializeExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2030,7 +2030,7 @@ ruleNondeterministicChoiceExpression returns [EObject current=null]
        			$current, 
        			"range",
         		lv_range_1_0, 
-        		"Range");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.Range");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2073,7 +2073,7 @@ ruleRange returns [EObject current=null]
        			$current, 
        			"lowerBound",
         		lv_lowerBound_1_0, 
-        		"LONG");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.LONG");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2095,7 +2095,7 @@ ruleRange returns [EObject current=null]
        			$current, 
        			"upperBound",
         		lv_upperBound_3_0, 
-        		"LONG");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.LONG");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2211,7 +2211,7 @@ ruleLogicalOrExpression returns [EObject current=null]
        			$current, 
        			"operator",
         		lv_operator_2_0, 
-        		"LogicalOrOperator");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.LogicalOrOperator");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2229,7 +2229,7 @@ ruleLogicalOrExpression returns [EObject current=null]
        			$current, 
        			"rightExpression",
         		lv_rightExpression_3_0, 
-        		"LogicalAndExpression");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.LogicalAndExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2283,7 +2283,7 @@ ruleLogicalAndExpression returns [EObject current=null]
        			$current, 
        			"operator",
         		lv_operator_2_0, 
-        		"LogicalAndOperator");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.LogicalAndOperator");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2301,7 +2301,7 @@ ruleLogicalAndExpression returns [EObject current=null]
        			$current, 
        			"rightExpression",
         		lv_rightExpression_3_0, 
-        		"ComparisonExpression");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.ComparisonExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2355,7 +2355,7 @@ ruleComparisonExpression returns [EObject current=null]
        			$current, 
        			"operator",
         		lv_operator_2_0, 
-        		"ComparingEQNEQOperator");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.ComparingEQNEQOperator");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2373,7 +2373,7 @@ ruleComparisonExpression returns [EObject current=null]
        			$current, 
        			"rightExpression",
         		lv_rightExpression_3_0, 
-        		"ComparisonHigherOpExpression");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.ComparisonHigherOpExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2427,7 +2427,7 @@ ruleComparisonHigherOpExpression returns [EObject current=null]
        			$current, 
        			"operator",
         		lv_operator_2_0, 
-        		"ComparingRelOperator");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.ComparingRelOperator");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2445,7 +2445,7 @@ ruleComparisonHigherOpExpression returns [EObject current=null]
        			$current, 
        			"rightExpression",
         		lv_rightExpression_3_0, 
-        		"ArithmeticExpression");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.ArithmeticExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2529,7 +2529,7 @@ ruleAdditionExpression returns [EObject current=null]
        			$current, 
        			"operator",
         		lv_operator_2_0, 
-        		"AdditionOperator");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.AdditionOperator");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2547,7 +2547,7 @@ ruleAdditionExpression returns [EObject current=null]
        			$current, 
        			"rightExpression",
         		lv_rightExpression_3_0, 
-        		"MultiplicationExpression");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.MultiplicationExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2611,7 +2611,7 @@ ruleMultiplicationExpression returns [EObject current=null]
        			$current, 
        			"operator",
         		lv_operator_3_0, 
-        		"MultiplicationOperator");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.MultiplicationOperator");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2630,7 +2630,7 @@ ruleMultiplicationExpression returns [EObject current=null]
        			$current, 
        			"rightExpression",
         		lv_rightExpression_4_1, 
-        		"UnaryPreExpression");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.UnaryPreExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2645,7 +2645,7 @@ ruleMultiplicationExpression returns [EObject current=null]
        			$current, 
        			"rightExpression",
         		lv_rightExpression_4_2, 
-        		"TypeCastExpression");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.TypeCastExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2692,7 +2692,7 @@ ruleUnaryPreExpression returns [EObject current=null]
        			$current, 
        			"operator",
         		lv_operator_1_0, 
-        		"UnaryPreOperator");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.UnaryPreOperator");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2710,7 +2710,7 @@ ruleUnaryPreExpression returns [EObject current=null]
        			$current, 
        			"enclosedExpression",
         		lv_enclosedExpression_2_0, 
-        		"TypeCastExpression");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.TypeCastExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2788,7 +2788,7 @@ ruleTypeCastExpression returns [EObject current=null]
        			$current, 
        			"enclosedExpression",
         		lv_enclosedExpression_5_0, 
-        		"Operand");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.Operand");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2931,7 +2931,7 @@ ruleLiteralExpression returns [EObject current=null]
        			$current, 
        			"value",
         		lv_value_1_0, 
-        		"Literal");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.Literal");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3074,7 +3074,7 @@ ruleExtendedTypedNamedElementExpression returns [EObject current=null]
        			$current, 
        			"position",
         		lv_position_3_0, 
-        		"PositionSelectorExpression");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.PositionSelectorExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3099,7 +3099,7 @@ ruleExtendedTypedNamedElementExpression returns [EObject current=null]
        			$current, 
        			"incrementDecrementOperator",
         		lv_incrementDecrementOperator_5_0, 
-        		"IncrementDecrementOperatorExpression");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.IncrementDecrementOperatorExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3152,7 +3152,7 @@ ruleTypedNamedElementExpression returns [EObject current=null]
        			$current, 
        			"elementAccessors",
         		lv_elementAccessors_1_1, 
-        		"ArrayIndexExpression");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.ArrayIndexExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3167,7 +3167,7 @@ ruleTypedNamedElementExpression returns [EObject current=null]
        			$current, 
        			"elementAccessors",
         		lv_elementAccessors_1_2, 
-        		"AttributeAccessorExpression");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.AttributeAccessorExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3212,7 +3212,7 @@ ruleArrayIndexExpression returns [EObject current=null]
        			$current, 
        			"index",
         		lv_index_1_0, 
-        		"ArithmeticExpression");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.ArithmeticExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3293,7 +3293,7 @@ ruleNoAttributeSelectorExpression returns [EObject current=null]
        			$current, 
        			"position",
         		lv_position_0_0, 
-        		"PositionSelectorExpression");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.PositionSelectorExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3332,7 +3332,7 @@ rulePositionSelectorExpression returns [EObject current=null]
        			$current, 
        			"kind",
         		lv_kind_0_0, 
-        		"PositionSelectorKind");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.PositionSelectorKind");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3354,7 +3354,7 @@ rulePositionSelectorExpression returns [EObject current=null]
        			$current, 
        			"successor",
         		lv_successor_2_0, 
-        		"PositionSelectorExpression");
+        		"org.muml.pim.actionlanguage.xtext.ActionLanguage.PositionSelectorExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3410,7 +3410,7 @@ ruleOperationCall returns [EObject current=null]
        			$current, 
        			"parameterBinding",
         		lv_parameterBinding_2_0, 
-        		"ParamaterBinding");
+        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.ParamaterBinding");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3432,7 +3432,7 @@ ruleOperationCall returns [EObject current=null]
        			$current, 
        			"parameterBinding",
         		lv_parameterBinding_4_0, 
-        		"ParamaterBinding");
+        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.ParamaterBinding");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3785,7 +3785,7 @@ rulePositionSelectorKind returns [Enumerator current=null]
 
 
 
-RULE_MINORMAXKEYWORD : ('maxMessageDelay'|'minMessageDelay');
+RULE_MINORMAXKEYWORD : 'maxMsgDelay';
 
 RULE_NUMBER : RULE_INT '.' RULE_INT;
 

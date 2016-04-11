@@ -3,6 +3,7 @@
  */
 package org.muml.psm.api.apimappinglanguage;
 
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.ISetup;
 

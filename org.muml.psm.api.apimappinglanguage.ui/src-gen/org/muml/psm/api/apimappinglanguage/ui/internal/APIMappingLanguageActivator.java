@@ -23,7 +23,7 @@ import com.google.inject.Module;
  */
 public class APIMappingLanguageActivator extends AbstractUIPlugin {
 	
-	public static final String DE_UNI_PADERBORN_FUJABA_MUML_PSM_API_APIMAPPINGLANGUAGE_APIMAPPINGLANGUAGE = "org.muml.psm.api.apimappinglanguage.APIMappingLanguage";
+	public static final String ORG_MUML_PSM_API_APIMAPPINGLANGUAGE_APIMAPPINGLANGUAGE = "org.muml.psm.api.apimappinglanguage.APIMappingLanguage";
 	
 	private static final Logger logger = Logger.getLogger(APIMappingLanguageActivator.class);
 	
@@ -73,7 +73,7 @@ public class APIMappingLanguageActivator extends AbstractUIPlugin {
 	}
 
 	protected Module getRuntimeModule(String grammar) {
-		if (DE_UNI_PADERBORN_FUJABA_MUML_PSM_API_APIMAPPINGLANGUAGE_APIMAPPINGLANGUAGE.equals(grammar)) {
+		if (ORG_MUML_PSM_API_APIMAPPINGLANGUAGE_APIMAPPINGLANGUAGE.equals(grammar)) {
 			return new org.muml.psm.api.apimappinglanguage.APIMappingLanguageRuntimeModule();
 		}
 		
@@ -81,7 +81,7 @@ public class APIMappingLanguageActivator extends AbstractUIPlugin {
 	}
 	
 	protected Module getUiModule(String grammar) {
-		if (DE_UNI_PADERBORN_FUJABA_MUML_PSM_API_APIMAPPINGLANGUAGE_APIMAPPINGLANGUAGE.equals(grammar)) {
+		if (ORG_MUML_PSM_API_APIMAPPINGLANGUAGE_APIMAPPINGLANGUAGE.equals(grammar)) {
 			return new org.muml.psm.api.apimappinglanguage.ui.APIMappingLanguageUiModule(this);
 		}
 		

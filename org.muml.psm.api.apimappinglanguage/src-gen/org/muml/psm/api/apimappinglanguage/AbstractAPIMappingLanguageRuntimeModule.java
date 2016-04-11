@@ -20,7 +20,7 @@ public abstract class AbstractAPIMappingLanguageRuntimeModule extends org.eclips
 
 	@Override
 	public void configure(Binder binder) {
-		properties = tryBindProperties(binder, "de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/APIMappingLanguage.properties");
+		properties = tryBindProperties(binder, "org/muml/psm/api/apimappinglanguage/APIMappingLanguage.properties");
 		super.configure(binder);
 	}
 	

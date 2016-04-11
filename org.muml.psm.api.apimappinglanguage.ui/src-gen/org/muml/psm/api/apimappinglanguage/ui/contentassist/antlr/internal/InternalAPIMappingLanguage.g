@@ -10122,7 +10122,7 @@ finally {
 }
 
 
-RULE_MINORMAXKEYWORD : ('maxMessageDelay'|'minMessageDelay');
+RULE_MINORMAXKEYWORD : 'maxMsgDelay';
 
 RULE_NUMBER : RULE_INT '.' RULE_INT;
 
