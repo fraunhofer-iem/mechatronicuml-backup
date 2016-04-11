@@ -62,7 +62,6 @@ import org.muml.storydiagram.calls.provider.CallsItemProviderAdapterFactory;
 import org.muml.storydiagram.patterns.expressions.provider.PatternsExpressionsItemProviderAdapterFactory;
 import org.muml.storydiagram.patterns.provider.PatternsItemProviderAdapterFactory;
 import org.muml.storydiagram.provider.StorydiagramItemProviderAdapterFactory;
-import org.muml.storydiagram.provider.StorydiagramsItemProviderAdapterFactory;
 import org.muml.storydiagram.templates.provider.TemplatesItemProviderAdapterFactory;
 import org.muml.storydiagram.verification.sdd.provider.SDDItemProviderAdapterFactory;
 import org.osgi.framework.BundleContext;

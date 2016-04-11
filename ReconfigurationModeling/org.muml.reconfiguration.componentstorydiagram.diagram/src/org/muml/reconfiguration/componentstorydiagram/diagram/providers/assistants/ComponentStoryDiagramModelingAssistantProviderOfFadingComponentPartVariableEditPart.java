@@ -14,6 +14,7 @@ package org.muml.reconfiguration.componentstorydiagram.diagram.providers.assista
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes;

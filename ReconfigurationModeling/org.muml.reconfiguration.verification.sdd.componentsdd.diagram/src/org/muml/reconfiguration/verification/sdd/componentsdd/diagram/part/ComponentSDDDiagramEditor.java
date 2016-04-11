@@ -55,8 +55,6 @@ import org.eclipse.ui.navigator.resources.ProjectExplorer;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.IShowInTargetList;
 import org.eclipse.ui.part.ShowInContext;
-import org.muml.core.common.editingdomain.EditingDomainPlugin;
-import org.muml.core.common.editingdomain.initialize.IEditingDomainInitializer;
 import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorItem;
 
 /**
@@ -303,9 +301,10 @@ public class ComponentSDDDiagramEditor extends DiagramDocumentEditor implements 
 	@Override
 	public void setInput(IEditorInput input) {
 		super.setInput(input);
-		for (IEditingDomainInitializer init : EditingDomainPlugin.getEditingDomainInitializers()) {
-			init.initialize(getEditingDomain());
-		}
+		// XXX Activate again
+		//		for (org.muml.core.common.editingdomain.initialize.IEditingDomainInitializer init : org.muml.core.common.editingdomain.EditingDomainPlugin.getEditingDomainInitializers()) {
+		//			init.initialize(getEditingDomain());
+		//		}
 	}
 
 	/**

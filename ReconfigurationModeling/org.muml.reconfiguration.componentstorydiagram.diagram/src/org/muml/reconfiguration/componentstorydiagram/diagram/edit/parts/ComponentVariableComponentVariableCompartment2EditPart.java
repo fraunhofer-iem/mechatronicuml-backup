@@ -13,6 +13,7 @@
 package org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts;
 
 import java.util.Collection;
+
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.LayoutManager;
 import org.eclipse.gef.EditPart;

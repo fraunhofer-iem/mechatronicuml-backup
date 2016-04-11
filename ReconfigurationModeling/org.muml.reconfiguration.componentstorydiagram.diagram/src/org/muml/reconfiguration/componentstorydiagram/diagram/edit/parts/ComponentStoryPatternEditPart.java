@@ -1,6 +1,7 @@
 package org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts;
 
 import java.util.Collection;
+
 import org.eclipse.draw2d.ConnectionAnchor;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;

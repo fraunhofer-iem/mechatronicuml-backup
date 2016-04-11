@@ -16,10 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.runtime.IPath;
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -64,7 +62,6 @@ import org.muml.storydiagram.calls.provider.CallsItemProviderAdapterFactory;
 import org.muml.storydiagram.patterns.expressions.provider.PatternsExpressionsItemProviderAdapterFactory;
 import org.muml.storydiagram.patterns.provider.PatternsItemProviderAdapterFactory;
 import org.muml.storydiagram.provider.StorydiagramItemProviderAdapterFactory;
-import org.muml.storydiagram.provider.StorydiagramsItemProviderAdapterFactory;
 import org.muml.storydiagram.templates.provider.TemplatesItemProviderAdapterFactory;
 import org.osgi.framework.BundleContext;
 
