@@ -17,6 +17,6 @@ public class HardwarePluginXmlPackageTest extends PluginXmlPackageTest {
 
 	@Parameters
 	public static Collection<Object[]> getData() {
-		return Collections.singleton(new Object[] {"de.uni_paderborn.fujaba.muml.hardware", "model/hardware.ecore"});
+		return Collections.singleton(new Object[] {"org.muml.pm.hardware", "model/hardware.ecore"});
 	}
 }

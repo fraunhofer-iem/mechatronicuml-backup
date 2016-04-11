@@ -31,13 +31,13 @@
     <leftGraphPattern xmi:id="_LO_rWinkEeORPcZB3PfXyA" node="_LO_rUSnkEeORPcZB3PfXyA _LO_rUynkEeORPcZB3PfXyA _LO_rVSnkEeORPcZB3PfXyA _LO_rVinkEeORPcZB3PfXyA" edge="_LO_rUinkEeORPcZB3PfXyA _LO_rVynkEeORPcZB3PfXyA _LO_rWCnkEeORPcZB3PfXyA"/>
     <rightGraphPattern xmi:id="_LO_rWynkEeORPcZB3PfXyA" node="_LO_rUSnkEeORPcZB3PfXyA _LO_rUynkEeORPcZB3PfXyA _LO_rVSnkEeORPcZB3PfXyA _LO_rVinkEeORPcZB3PfXyA _LO_rWSnkEeORPcZB3PfXyA" edge="_LO_rUinkEeORPcZB3PfXyA _LO_rVynkEeORPcZB3PfXyA _LO_rWCnkEeORPcZB3PfXyA _LO_rVCnkEeORPcZB3PfXyA"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_LO_rXCnkEeORPcZB3PfXyA" node="_LO_rVSnkEeORPcZB3PfXyA">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_NK6IcJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_NK6IcJzXEeCxo-rGjpVr5g"/>
     </domain>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_LO_rXSnkEeORPcZB3PfXyA" node="_LO_rVinkEeORPcZB3PfXyA">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_NYLIYJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_NYLIYJzXEeCxo-rGjpVr5g"/>
     </domain>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_LO_rXinkEeORPcZB3PfXyA" node="_LO_rUSnkEeORPcZB3PfXyA _LO_rUynkEeORPcZB3PfXyA _LO_rWSnkEeORPcZB3PfXyA">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_M439QJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_M439QJzXEeCxo-rGjpVr5g"/>
     </domain>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_LO_rXynkEeORPcZB3PfXyA" slotNode="_LO_rUynkEeORPcZB3PfXyA" expression="'org.muml.pim.components.category'">
       <slotAttribute href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/key"/>
@@ -194,13 +194,13 @@
     <leftGraphPattern xmi:id="_moyuMinkEeORPcZB3PfXyA" node="_moyuASnkEeORPcZB3PfXyA _moyuBinkEeORPcZB3PfXyA _moyuCinkEeORPcZB3PfXyA _moyuESnkEeORPcZB3PfXyA _moyuHynkEeORPcZB3PfXyA _moyuIynkEeORPcZB3PfXyA _moyuJCnkEeORPcZB3PfXyA _moyuJinkEeORPcZB3PfXyA" edge="_moyuBynkEeORPcZB3PfXyA _moyuICnkEeORPcZB3PfXyA _moyuISnkEeORPcZB3PfXyA _moyuAinkEeORPcZB3PfXyA _moyuJynkEeORPcZB3PfXyA _moyuKSnkEeORPcZB3PfXyA _moyuKinkEeORPcZB3PfXyA"/>
     <rightGraphPattern xmi:id="_moyuMynkEeORPcZB3PfXyA" node="_moyuASnkEeORPcZB3PfXyA _moyuAynkEeORPcZB3PfXyA _moyuBinkEeORPcZB3PfXyA _moyuCinkEeORPcZB3PfXyA _moyuDCnkEeORPcZB3PfXyA _moyuDynkEeORPcZB3PfXyA _moyuESnkEeORPcZB3PfXyA _moyuEynkEeORPcZB3PfXyA _moyuFinkEeORPcZB3PfXyA _moyuHCnkEeORPcZB3PfXyA _moyuHynkEeORPcZB3PfXyA _moyuIynkEeORPcZB3PfXyA _moyuJCnkEeORPcZB3PfXyA _moyuJinkEeORPcZB3PfXyA _moyuKynkEeORPcZB3PfXyA _moyuLSnkEeORPcZB3PfXyA _moyuLynkEeORPcZB3PfXyA _moyuMCnkEeORPcZB3PfXyA" edge="_moyuBynkEeORPcZB3PfXyA _moyuCynkEeORPcZB3PfXyA _moyuDSnkEeORPcZB3PfXyA _moyuEinkEeORPcZB3PfXyA _moyuFCnkEeORPcZB3PfXyA _moyuFynkEeORPcZB3PfXyA _moyuGCnkEeORPcZB3PfXyA _moyuGSnkEeORPcZB3PfXyA _moyuGinkEeORPcZB3PfXyA _moyuCCnkEeORPcZB3PfXyA _moyuHSnkEeORPcZB3PfXyA _moyuHinkEeORPcZB3PfXyA _moyuICnkEeORPcZB3PfXyA _moyuISnkEeORPcZB3PfXyA _moyuIinkEeORPcZB3PfXyA _moyuFSnkEeORPcZB3PfXyA _moyuAinkEeORPcZB3PfXyA _moyuGynkEeORPcZB3PfXyA _moyuDinkEeORPcZB3PfXyA _moyuJynkEeORPcZB3PfXyA _moyuKCnkEeORPcZB3PfXyA _moyuJSnkEeORPcZB3PfXyA _moyuLCnkEeORPcZB3PfXyA _moyuBCnkEeORPcZB3PfXyA _moyuKSnkEeORPcZB3PfXyA _moyuCSnkEeORPcZB3PfXyA _moyuKinkEeORPcZB3PfXyA _moyuECnkEeORPcZB3PfXyA _moyuLinkEeORPcZB3PfXyA _moyuBSnkEeORPcZB3PfXyA _moyuMSnkEeORPcZB3PfXyA"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_moyuNCnkEeORPcZB3PfXyA" node="_moyuAynkEeORPcZB3PfXyA _moyuESnkEeORPcZB3PfXyA _moyuEynkEeORPcZB3PfXyA _moyuJCnkEeORPcZB3PfXyA _moyuKynkEeORPcZB3PfXyA _moyuMCnkEeORPcZB3PfXyA">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_NK6IcJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_NK6IcJzXEeCxo-rGjpVr5g"/>
     </domain>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_moyuNSnkEeORPcZB3PfXyA" node="_moyuBinkEeORPcZB3PfXyA _moyuFinkEeORPcZB3PfXyA _moyuHCnkEeORPcZB3PfXyA _moyuHynkEeORPcZB3PfXyA _moyuJinkEeORPcZB3PfXyA">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_NYLIYJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_NYLIYJzXEeCxo-rGjpVr5g"/>
     </domain>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_moyuNinkEeORPcZB3PfXyA" node="_moyuASnkEeORPcZB3PfXyA _moyuCinkEeORPcZB3PfXyA _moyuDCnkEeORPcZB3PfXyA _moyuDynkEeORPcZB3PfXyA _moyuIynkEeORPcZB3PfXyA _moyuLSnkEeORPcZB3PfXyA _moyuLynkEeORPcZB3PfXyA">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_M439QJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_M439QJzXEeCxo-rGjpVr5g"/>
     </domain>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_moyuNynkEeORPcZB3PfXyA" slotNode="_moyuDCnkEeORPcZB3PfXyA" expression="libRef.name">
       <slotAttribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
@@ -369,13 +369,13 @@
     <leftGraphPattern xmi:id="_moyubinkEeORPcZB3PfXyA" node="_moyuQinkEeORPcZB3PfXyA _moyuRinkEeORPcZB3PfXyA _moyuSCnkEeORPcZB3PfXyA _moyuTynkEeORPcZB3PfXyA _moyuXSnkEeORPcZB3PfXyA _moyuYSnkEeORPcZB3PfXyA _moyuYinkEeORPcZB3PfXyA _moyuZCnkEeORPcZB3PfXyA" edge="_moyuQynkEeORPcZB3PfXyA _moyuXinkEeORPcZB3PfXyA _moyuXynkEeORPcZB3PfXyA _moyuRynkEeORPcZB3PfXyA _moyuZSnkEeORPcZB3PfXyA _moyuZynkEeORPcZB3PfXyA _moyuaCnkEeORPcZB3PfXyA"/>
     <rightGraphPattern xmi:id="_moyubynkEeORPcZB3PfXyA" node="_moyuQCnkEeORPcZB3PfXyA _moyuQinkEeORPcZB3PfXyA _moyuRinkEeORPcZB3PfXyA _moyuSCnkEeORPcZB3PfXyA _moyuSinkEeORPcZB3PfXyA _moyuTSnkEeORPcZB3PfXyA _moyuTynkEeORPcZB3PfXyA _moyuUSnkEeORPcZB3PfXyA _moyuVCnkEeORPcZB3PfXyA _moyuWinkEeORPcZB3PfXyA _moyuXSnkEeORPcZB3PfXyA _moyuYSnkEeORPcZB3PfXyA _moyuYinkEeORPcZB3PfXyA _moyuZCnkEeORPcZB3PfXyA _moyuaSnkEeORPcZB3PfXyA _moyuaynkEeORPcZB3PfXyA _moyubSnkEeORPcZB3PfXyA" edge="_moyuQynkEeORPcZB3PfXyA _moyuSSnkEeORPcZB3PfXyA _moyuSynkEeORPcZB3PfXyA _moyuUCnkEeORPcZB3PfXyA _moyuUinkEeORPcZB3PfXyA _moyuUynkEeORPcZB3PfXyA _moyuRCnkEeORPcZB3PfXyA _moyuVSnkEeORPcZB3PfXyA _moyuVinkEeORPcZB3PfXyA _moyuVynkEeORPcZB3PfXyA _moyuWCnkEeORPcZB3PfXyA _moyuWynkEeORPcZB3PfXyA _moyuXCnkEeORPcZB3PfXyA _moyuXinkEeORPcZB3PfXyA _moyuXynkEeORPcZB3PfXyA _moyuYCnkEeORPcZB3PfXyA _moyuRynkEeORPcZB3PfXyA _moyuTCnkEeORPcZB3PfXyA _moyuWSnkEeORPcZB3PfXyA _moyuZSnkEeORPcZB3PfXyA _moyuZinkEeORPcZB3PfXyA _moyuZynkEeORPcZB3PfXyA _moyuaCnkEeORPcZB3PfXyA _moyuQSnkEeORPcZB3PfXyA _moyuRSnkEeORPcZB3PfXyA _moyuYynkEeORPcZB3PfXyA _moyuainkEeORPcZB3PfXyA _moyuTinkEeORPcZB3PfXyA _moyubCnkEeORPcZB3PfXyA"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_moyucCnkEeORPcZB3PfXyA" node="_moyuQCnkEeORPcZB3PfXyA _moyuTynkEeORPcZB3PfXyA _moyuUSnkEeORPcZB3PfXyA _moyuYinkEeORPcZB3PfXyA _moyuaSnkEeORPcZB3PfXyA">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_NK6IcJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_NK6IcJzXEeCxo-rGjpVr5g"/>
     </domain>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_moyucSnkEeORPcZB3PfXyA" node="_moyuRinkEeORPcZB3PfXyA _moyuSCnkEeORPcZB3PfXyA _moyuSinkEeORPcZB3PfXyA _moyuTSnkEeORPcZB3PfXyA _moyuYSnkEeORPcZB3PfXyA _moyuaynkEeORPcZB3PfXyA _moyubSnkEeORPcZB3PfXyA">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_M439QJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_M439QJzXEeCxo-rGjpVr5g"/>
     </domain>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_moyucinkEeORPcZB3PfXyA" node="_moyuQinkEeORPcZB3PfXyA _moyuVCnkEeORPcZB3PfXyA _moyuWinkEeORPcZB3PfXyA _moyuXSnkEeORPcZB3PfXyA _moyuZCnkEeORPcZB3PfXyA">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_NYLIYJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_NYLIYJzXEeCxo-rGjpVr5g"/>
     </domain>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_moyucynkEeORPcZB3PfXyA" slotNode="_moyuSinkEeORPcZB3PfXyA" expression="libRef.name">
       <slotAttribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
@@ -646,13 +646,13 @@
     <leftGraphPattern xmi:id="_Yc5DRzHGEeO1rcTjon2HaQ" node="_Yc5DCzHGEeO1rcTjon2HaQ _Yc5DDjHGEeO1rcTjon2HaQ _Yc5DETHGEeO1rcTjon2HaQ _Yc5DFDHGEeO1rcTjon2HaQ _Yc5DFzHGEeO1rcTjon2HaQ _Yc5DGzHGEeO1rcTjon2HaQ _Yc5DJjHGEeO1rcTjon2HaQ _Yc5DKTHGEeO1rcTjon2HaQ _Yc5DLDHGEeO1rcTjon2HaQ _Yc5DLzHGEeO1rcTjon2HaQ _HZvOkDHHEeO1rcTjon2HaQ _kNK9sDHHEeO1rcTjon2HaQ" edge="_Yc5DDzHGEeO1rcTjon2HaQ _Yc5DEDHGEeO1rcTjon2HaQ _Yc5DGDHGEeO1rcTjon2HaQ _Yc5DGTHGEeO1rcTjon2HaQ _Yc5DKjHGEeO1rcTjon2HaQ _Yc5DFTHGEeO1rcTjon2HaQ _Yc5DKzHGEeO1rcTjon2HaQ _Yc5DLTHGEeO1rcTjon2HaQ _Yc5DBzHGEeO1rcTjon2HaQ _Yc5DCDHGEeO1rcTjon2HaQ _Yc5DGjHGEeO1rcTjon2HaQ _Yc5DMDHGEeO1rcTjon2HaQ _Yc5DDDHGEeO1rcTjon2HaQ _Yc5DMTHGEeO1rcTjon2HaQ _Yc5DFjHGEeO1rcTjon2HaQ _mmMqkDHHEeO1rcTjon2HaQ _-CA0wDHHEeO1rcTjon2HaQ"/>
     <rightGraphPattern xmi:id="_Yc5DSDHGEeO1rcTjon2HaQ" node="_Yc5DCzHGEeO1rcTjon2HaQ _Yc5DDjHGEeO1rcTjon2HaQ _Yc5DETHGEeO1rcTjon2HaQ _Yc5DFDHGEeO1rcTjon2HaQ _Yc5DFzHGEeO1rcTjon2HaQ _Yc5DGzHGEeO1rcTjon2HaQ _Yc5DJjHGEeO1rcTjon2HaQ _Yc5DKTHGEeO1rcTjon2HaQ _Yc5DLDHGEeO1rcTjon2HaQ _Yc5DLzHGEeO1rcTjon2HaQ _Yc5DMzHGEeO1rcTjon2HaQ _Yc5DNzHGEeO1rcTjon2HaQ _Yc5DOzHGEeO1rcTjon2HaQ _Yc5DPzHGEeO1rcTjon2HaQ _Yc5DRDHGEeO1rcTjon2HaQ _HZvOkDHHEeO1rcTjon2HaQ _kNK9sDHHEeO1rcTjon2HaQ _CSNfYDJcEeO50N1GFGL30Q" edge="_Yc5DDzHGEeO1rcTjon2HaQ _Yc5DEDHGEeO1rcTjon2HaQ _Yc5DGDHGEeO1rcTjon2HaQ _Yc5DGTHGEeO1rcTjon2HaQ _Yc5DKjHGEeO1rcTjon2HaQ _Yc5DFTHGEeO1rcTjon2HaQ _Yc5DKzHGEeO1rcTjon2HaQ _Yc5DLTHGEeO1rcTjon2HaQ _Yc5DBzHGEeO1rcTjon2HaQ _Yc5DCDHGEeO1rcTjon2HaQ _Yc5DGjHGEeO1rcTjon2HaQ _Yc5DMDHGEeO1rcTjon2HaQ _Yc5DDDHGEeO1rcTjon2HaQ _Yc5DMTHGEeO1rcTjon2HaQ _Yc5DFjHGEeO1rcTjon2HaQ _Yc5DQDHGEeO1rcTjon2HaQ _Yc5DQTHGEeO1rcTjon2HaQ _Yc5DQjHGEeO1rcTjon2HaQ _Yc5DQzHGEeO1rcTjon2HaQ _Yc5DRTHGEeO1rcTjon2HaQ _Yc5DLjHGEeO1rcTjon2HaQ _Yc5DRjHGEeO1rcTjon2HaQ _Yc5DDTHGEeO1rcTjon2HaQ _Yc5DMjHGEeO1rcTjon2HaQ _Yc5DCjHGEeO1rcTjon2HaQ _Yc5DHjHGEeO1rcTjon2HaQ _Yc5DNjHGEeO1rcTjon2HaQ _Yc5DBDHGEeO1rcTjon2HaQ _Yc5DOjHGEeO1rcTjon2HaQ _Yc5DJTHGEeO1rcTjon2HaQ _Yc5DPjHGEeO1rcTjon2HaQ _mmMqkDHHEeO1rcTjon2HaQ _-CA0wDHHEeO1rcTjon2HaQ _zF1JIDHJEeO1rcTjon2HaQ _zOrjIDHJEeO1rcTjon2HaQ _0qsOIDHJEeO1rcTjon2HaQ _06tnIDHJEeO1rcTjon2HaQ _312ikDHJEeO1rcTjon2HaQ _4ErBsDHJEeO1rcTjon2HaQ _5LPBIDHJEeO1rcTjon2HaQ _5d2bIDHJEeO1rcTjon2HaQ _CTM94DJcEeO50N1GFGL30Q _GHUIsDJcEeO50N1GFGL30Q _IKndMDJcEeO50N1GFGL30Q"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_Yc5DSTHGEeO1rcTjon2HaQ" node="_Yc5DETHGEeO1rcTjon2HaQ _Yc5DGzHGEeO1rcTjon2HaQ _Yc5DHzHGEeO1rcTjon2HaQ _Yc5DIjHGEeO1rcTjon2HaQ _Yc5DJjHGEeO1rcTjon2HaQ _Yc5DMzHGEeO1rcTjon2HaQ _Yc5DNzHGEeO1rcTjon2HaQ _Yc5DOzHGEeO1rcTjon2HaQ _Wp5l8DHHEeO1rcTjon2HaQ _ZRIt8DHHEeO1rcTjon2HaQ _kNK9sDHHEeO1rcTjon2HaQ">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_M439QJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_M439QJzXEeCxo-rGjpVr5g"/>
     </domain>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_Yc5DSjHGEeO1rcTjon2HaQ" node="_Yc5DDjHGEeO1rcTjon2HaQ _Yc5DFzHGEeO1rcTjon2HaQ _Yc5DKTHGEeO1rcTjon2HaQ _Yc5DPzHGEeO1rcTjon2HaQ _HZvOkDHHEeO1rcTjon2HaQ _CSNfYDJcEeO50N1GFGL30Q">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_NYLIYJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_NYLIYJzXEeCxo-rGjpVr5g"/>
     </domain>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_Yc5DSzHGEeO1rcTjon2HaQ" node="_Yc5DCzHGEeO1rcTjon2HaQ _Yc5DFDHGEeO1rcTjon2HaQ _Yc5DLDHGEeO1rcTjon2HaQ _Yc5DLzHGEeO1rcTjon2HaQ _Yc5DRDHGEeO1rcTjon2HaQ">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_NK6IcJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_NK6IcJzXEeCxo-rGjpVr5g"/>
     </domain>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_Yc5DTDHGEeO1rcTjon2HaQ" slotNode="_Yc5DRDHGEeO1rcTjon2HaQ" expression="scStateIn.outgoingTransitions->size() - scOutTrans.priority +1">
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//stateflow/Transition/priority"/>
@@ -899,13 +899,13 @@
     <leftGraphPattern xmi:id="_l95gQTKBEeOMa8FDYZATEw" node="_l95f8TKBEeOMa8FDYZATEw _l95f9DKBEeOMa8FDYZATEw _l95f9zKBEeOMa8FDYZATEw _l95f-jKBEeOMa8FDYZATEw _l95f_TKBEeOMa8FDYZATEw _l95gATKBEeOMa8FDYZATEw _l95gDDKBEeOMa8FDYZATEw _l95gDzKBEeOMa8FDYZATEw _l95gEjKBEeOMa8FDYZATEw _l95gFTKBEeOMa8FDYZATEw _l95gLTKBEeOMa8FDYZATEw _l95gPDKBEeOMa8FDYZATEw" edge="_l95f9TKBEeOMa8FDYZATEw _l95f9jKBEeOMa8FDYZATEw _l95f_jKBEeOMa8FDYZATEw _l95f_zKBEeOMa8FDYZATEw _l95gEDKBEeOMa8FDYZATEw _l95f-zKBEeOMa8FDYZATEw _l95gETKBEeOMa8FDYZATEw _l95gEzKBEeOMa8FDYZATEw _l95gLzKBEeOMa8FDYZATEw _l95gMDKBEeOMa8FDYZATEw _l95gADKBEeOMa8FDYZATEw _l95gFjKBEeOMa8FDYZATEw _l95f8jKBEeOMa8FDYZATEw _l95gFzKBEeOMa8FDYZATEw _l95f_DKBEeOMa8FDYZATEw _l95gLjKBEeOMa8FDYZATEw _l95gMjKBEeOMa8FDYZATEw"/>
     <rightGraphPattern xmi:id="_l95gQjKBEeOMa8FDYZATEw" node="_l95f8TKBEeOMa8FDYZATEw _l95f9DKBEeOMa8FDYZATEw _l95f9zKBEeOMa8FDYZATEw _l95f-jKBEeOMa8FDYZATEw _l95f_TKBEeOMa8FDYZATEw _l95gATKBEeOMa8FDYZATEw _l95gDDKBEeOMa8FDYZATEw _l95gDzKBEeOMa8FDYZATEw _l95gEjKBEeOMa8FDYZATEw _l95gFTKBEeOMa8FDYZATEw _l95gGTKBEeOMa8FDYZATEw _l95gHTKBEeOMa8FDYZATEw _l95gITKBEeOMa8FDYZATEw _l95gKjKBEeOMa8FDYZATEw _l95gLTKBEeOMa8FDYZATEw _l95gPDKBEeOMa8FDYZATEw _l95gPjKBEeOMa8FDYZATEw _i0p00DM2EeOuvb-X1PsS1w" edge="_l95f9TKBEeOMa8FDYZATEw _l95f9jKBEeOMa8FDYZATEw _l95f_jKBEeOMa8FDYZATEw _l95f_zKBEeOMa8FDYZATEw _l95gEDKBEeOMa8FDYZATEw _l95f-zKBEeOMa8FDYZATEw _l95gETKBEeOMa8FDYZATEw _l95gEzKBEeOMa8FDYZATEw _l95gLzKBEeOMa8FDYZATEw _l95gMDKBEeOMa8FDYZATEw _l95gADKBEeOMa8FDYZATEw _l95gFjKBEeOMa8FDYZATEw _l95f8jKBEeOMa8FDYZATEw _l95gFzKBEeOMa8FDYZATEw _l95f_DKBEeOMa8FDYZATEw _l95gGDKBEeOMa8FDYZATEw _l95gAzKBEeOMa8FDYZATEw _l95gGjKBEeOMa8FDYZATEw _l95gOTKBEeOMa8FDYZATEw _l95gHjKBEeOMa8FDYZATEw _l95gCzKBEeOMa8FDYZATEw _l95gIjKBEeOMa8FDYZATEw _l95gLjKBEeOMa8FDYZATEw _l95gMjKBEeOMa8FDYZATEw _l95gMzKBEeOMa8FDYZATEw _l95gPzKBEeOMa8FDYZATEw _l95gQDKBEeOMa8FDYZATEw _g2dPkDKCEeOMa8FDYZATEw _hBk6cDKCEeOMa8FDYZATEw _hzCMkDKCEeOMa8FDYZATEw _h8fqkDKCEeOMa8FDYZATEw _kRa6kDKCEeOMa8FDYZATEw _kYXQEDKCEeOMa8FDYZATEw _lLxqADKCEeOMa8FDYZATEw _lVx6kDKCEeOMa8FDYZATEw _JYqS8DKDEeOMa8FDYZATEw _Jg-hcDKDEeOMa8FDYZATEw _Kmew8DKDEeOMa8FDYZATEw _K0mFcDKDEeOMa8FDYZATEw _mnf0UDM2EeOuvb-X1PsS1w _nTYp8DM2EeOuvb-X1PsS1w _o8HiUDM2EeOuvb-X1PsS1w _qByJ4DM2EeOuvb-X1PsS1w"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_l95gQzKBEeOMa8FDYZATEw" node="_l95f9zKBEeOMa8FDYZATEw _l95gATKBEeOMa8FDYZATEw _l95gBTKBEeOMa8FDYZATEw _l95gCDKBEeOMa8FDYZATEw _l95gDDKBEeOMa8FDYZATEw _l95gGTKBEeOMa8FDYZATEw _l95gHTKBEeOMa8FDYZATEw _l95gITKBEeOMa8FDYZATEw _l95gNDKBEeOMa8FDYZATEw _l95gNzKBEeOMa8FDYZATEw _l95gPDKBEeOMa8FDYZATEw">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_M439QJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_M439QJzXEeCxo-rGjpVr5g"/>
     </domain>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_l95gRDKBEeOMa8FDYZATEw" node="_l95f9DKBEeOMa8FDYZATEw _l95f_TKBEeOMa8FDYZATEw _l95gDzKBEeOMa8FDYZATEw _l95gLTKBEeOMa8FDYZATEw _l95gPjKBEeOMa8FDYZATEw _i0p00DM2EeOuvb-X1PsS1w">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_NYLIYJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_NYLIYJzXEeCxo-rGjpVr5g"/>
     </domain>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_l95gRTKBEeOMa8FDYZATEw" node="_l95f8TKBEeOMa8FDYZATEw _l95f-jKBEeOMa8FDYZATEw _l95gEjKBEeOMa8FDYZATEw _l95gFTKBEeOMa8FDYZATEw _l95gKjKBEeOMa8FDYZATEw">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_NK6IcJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_NK6IcJzXEeCxo-rGjpVr5g"/>
     </domain>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_l95gRjKBEeOMa8FDYZATEw" slotNode="_l95gKjKBEeOMa8FDYZATEw" expression="scStateIn.outgoingTransitions->size() - scOutTrans.priority +1">
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//stateflow/Transition/priority"/>
@@ -1215,13 +1215,13 @@
     <leftGraphPattern xmi:id="_burL0TKEEeOMa8FDYZATEw" node="_burLhDKEEeOMa8FDYZATEw _burLkTKEEeOMa8FDYZATEw _burLnDKEEeOMa8FDYZATEw _burLnzKEEeOMa8FDYZATEw _burLojKEEeOMa8FDYZATEw _burLvTKEEeOMa8FDYZATEw _tmrSYDKFEeOMa8FDYZATEw _GhKaADKGEeOMa8FDYZATEw _3uSJoDKHEeOMa8FDYZATEw _IDCxkDKIEeOMa8FDYZATEw _LimBoDKIEeOMa8FDYZATEw _Sqq3kDKIEeOMa8FDYZATEw _U6ovEDKIEeOMa8FDYZATEw _ej2FADKIEeOMa8FDYZATEw _ktXA8DKIEeOMa8FDYZATEw" edge="_burLoDKEEeOMa8FDYZATEw _burLoTKEEeOMa8FDYZATEw _burLvzKEEeOMa8FDYZATEw _EQVU8DKIEeOMa8FDYZATEw _IDHDADKIEeOMa8FDYZATEw _LipsADKIEeOMa8FDYZATEw _Squh8DKIEeOMa8FDYZATEw _Tb0AoDKIEeOMa8FDYZATEw _U6uOoDKIEeOMa8FDYZATEw _VQd1IDKIEeOMa8FDYZATEw _WshjcDKIEeOMa8FDYZATEw _XfLIYDKIEeOMa8FDYZATEw _YuI14DKIEeOMa8FDYZATEw _ZV0g8DKIEeOMa8FDYZATEw _ccCD8DKIEeOMa8FDYZATEw _dVjF4DKIEeOMa8FDYZATEw _ej6WcDKIEeOMa8FDYZATEw _fTxtIDKIEeOMa8FDYZATEw _ktbSYDKIEeOMa8FDYZATEw _lC2IwDKIEeOMa8FDYZATEw _mkloUDKIEeOMa8FDYZATEw _nyuPYDKIEeOMa8FDYZATEw"/>
     <rightGraphPattern xmi:id="_burL0jKEEeOMa8FDYZATEw" node="_burLhDKEEeOMa8FDYZATEw _burLkTKEEeOMa8FDYZATEw _burLnDKEEeOMa8FDYZATEw _burLnzKEEeOMa8FDYZATEw _burLojKEEeOMa8FDYZATEw _burLqTKEEeOMa8FDYZATEw _burLrTKEEeOMa8FDYZATEw _burLsTKEEeOMa8FDYZATEw _burLujKEEeOMa8FDYZATEw _burLvTKEEeOMa8FDYZATEw _burLzjKEEeOMa8FDYZATEw _ePGrcDKFEeOMa8FDYZATEw _tmrSYDKFEeOMa8FDYZATEw _zYYyUDKFEeOMa8FDYZATEw _GhKaADKGEeOMa8FDYZATEw _3uSJoDKHEeOMa8FDYZATEw _IDCxkDKIEeOMa8FDYZATEw _LimBoDKIEeOMa8FDYZATEw _Sqq3kDKIEeOMa8FDYZATEw _U6ovEDKIEeOMa8FDYZATEw _ej2FADKIEeOMa8FDYZATEw _ktXA8DKIEeOMa8FDYZATEw" edge="_burLoDKEEeOMa8FDYZATEw _burLoTKEEeOMa8FDYZATEw _burLvzKEEeOMa8FDYZATEw _burLkzKEEeOMa8FDYZATEw _burLqjKEEeOMa8FDYZATEw _burLmzKEEeOMa8FDYZATEw _burLsjKEEeOMa8FDYZATEw _burLwzKEEeOMa8FDYZATEw _burLzzKEEeOMa8FDYZATEw _burL0DKEEeOMa8FDYZATEw _4NjKcDKFEeOMa8FDYZATEw _4YTo8DKFEeOMa8FDYZATEw _5YsH4DKFEeOMa8FDYZATEw _5hdpYDKFEeOMa8FDYZATEw _6e4T4DKFEeOMa8FDYZATEw _6tKAcDKFEeOMa8FDYZATEw _7eIKYDKFEeOMa8FDYZATEw _7vN6YDKFEeOMa8FDYZATEw __HW64DKFEeOMa8FDYZATEw __ntO4DKFEeOMa8FDYZATEw _LOMJ0DKGEeOMa8FDYZATEw _L0fU0DKGEeOMa8FDYZATEw _7UI2ADKHEeOMa8FDYZATEw _7hG7ADKHEeOMa8FDYZATEw _9LsNgDKHEeOMa8FDYZATEw _9LsNgTKHEeOMa8FDYZATEw _95JwcDKHEeOMa8FDYZATEw _95KXgDKHEeOMa8FDYZATEw _EQVU8DKIEeOMa8FDYZATEw _IDHDADKIEeOMa8FDYZATEw _LipsADKIEeOMa8FDYZATEw _Squh8DKIEeOMa8FDYZATEw _Tb0AoDKIEeOMa8FDYZATEw _U6uOoDKIEeOMa8FDYZATEw _VQd1IDKIEeOMa8FDYZATEw _WshjcDKIEeOMa8FDYZATEw _XfLIYDKIEeOMa8FDYZATEw _YuI14DKIEeOMa8FDYZATEw _ZV0g8DKIEeOMa8FDYZATEw _ccCD8DKIEeOMa8FDYZATEw _dVjF4DKIEeOMa8FDYZATEw _ej6WcDKIEeOMa8FDYZATEw _fTxtIDKIEeOMa8FDYZATEw _ktbSYDKIEeOMa8FDYZATEw _lC2IwDKIEeOMa8FDYZATEw _mkloUDKIEeOMa8FDYZATEw _nyuPYDKIEeOMa8FDYZATEw _p9kWUDKIEeOMa8FDYZATEw _qJeEUDKIEeOMa8FDYZATEw _sgipYDKIEeOMa8FDYZATEw _sp_gUDKIEeOMa8FDYZATEw _bMVhMDKJEeOMa8FDYZATEw"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_burL0zKEEeOMa8FDYZATEw" node="_burLkTKEEeOMa8FDYZATEw _burLlTKEEeOMa8FDYZATEw _burLmDKEEeOMa8FDYZATEw _burLnDKEEeOMa8FDYZATEw _burLqTKEEeOMa8FDYZATEw _burLrTKEEeOMa8FDYZATEw _burLsTKEEeOMa8FDYZATEw _ePGrcDKFEeOMa8FDYZATEw _tmrSYDKFEeOMa8FDYZATEw _zYYyUDKFEeOMa8FDYZATEw _GhKaADKGEeOMa8FDYZATEw _fZuPADKGEeOMa8FDYZATEw _hWrD4DKGEeOMa8FDYZATEw _vQXiIDKHEeOMa8FDYZATEw _xreSoDKHEeOMa8FDYZATEw _3uSJoDKHEeOMa8FDYZATEw">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_M439QJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_M439QJzXEeCxo-rGjpVr5g"/>
     </domain>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_burL1DKEEeOMa8FDYZATEw" node="_burLhDKEEeOMa8FDYZATEw _burLnzKEEeOMa8FDYZATEw _burLvTKEEeOMa8FDYZATEw _burLzjKEEeOMa8FDYZATEw _IDCxkDKIEeOMa8FDYZATEw _LimBoDKIEeOMa8FDYZATEw">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_NYLIYJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_NYLIYJzXEeCxo-rGjpVr5g"/>
     </domain>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_burL1TKEEeOMa8FDYZATEw" node="_burLojKEEeOMa8FDYZATEw _burLujKEEeOMa8FDYZATEw _Sqq3kDKIEeOMa8FDYZATEw _U6ovEDKIEeOMa8FDYZATEw _ej2FADKIEeOMa8FDYZATEw _ktXA8DKIEeOMa8FDYZATEw">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_NK6IcJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_NK6IcJzXEeCxo-rGjpVr5g"/>
     </domain>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_burL1jKEEeOMa8FDYZATEw" slotNode="_burLujKEEeOMa8FDYZATEw" expression="scStateReg.outgoingTransitions->size()">
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//stateflow/Transition/priority"/>
@@ -1282,13 +1282,13 @@
     <leftGraphPattern xmi:id="_QNu27DKPEeOMa8FDYZATEw" node="_QNu26DKPEeOMa8FDYZATEw _jTzv4DKPEeOMa8FDYZATEw _CXg4gDKQEeOMa8FDYZATEw" edge="_zGovcDKPEeOMa8FDYZATEw _CXki4DKQEeOMa8FDYZATEw"/>
     <rightGraphPattern xmi:id="_QNu27TKPEeOMa8FDYZATEw" node="_QNu26DKPEeOMa8FDYZATEw _QNu26jKPEeOMa8FDYZATEw _jTzv4DKPEeOMa8FDYZATEw _CXg4gDKQEeOMa8FDYZATEw" edge="_QNu26TKPEeOMa8FDYZATEw _zGovcDKPEeOMa8FDYZATEw _CXki4DKQEeOMa8FDYZATEw"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_QNu27jKPEeOMa8FDYZATEw" node="_QNu24TKPEeOMa8FDYZATEw _QNu26zKPEeOMa8FDYZATEw _CXg4gDKQEeOMa8FDYZATEw _HOt4ADKQEeOMa8FDYZATEw _I2egADKQEeOMa8FDYZATEw">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_M439QJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_M439QJzXEeCxo-rGjpVr5g"/>
     </domain>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_QNu27zKPEeOMa8FDYZATEw" node="_jTzv4DKPEeOMa8FDYZATEw">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_NYLIYJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_NYLIYJzXEeCxo-rGjpVr5g"/>
     </domain>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_QNu28DKPEeOMa8FDYZATEw" node="_QNu26DKPEeOMa8FDYZATEw _QNu26jKPEeOMa8FDYZATEw">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_NK6IcJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_NK6IcJzXEeCxo-rGjpVr5g"/>
     </domain>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_QNu28TKPEeOMa8FDYZATEw" slotNode="_QNu24TKPEeOMa8FDYZATEw" expression="'portStatechart'">
       <slotAttribute href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation/source"/>
@@ -1365,13 +1365,13 @@
     <leftGraphPattern xmi:id="_FaCY7TKREeOMa8FDYZATEw" node="_FaCY5jKREeOMa8FDYZATEw _TNjMEDKREeOMa8FDYZATEw _XMP2QDKREeOMa8FDYZATEw" edge="_WUnDoDKREeOMa8FDYZATEw _XMSSgDKREeOMa8FDYZATEw"/>
     <rightGraphPattern xmi:id="_FaCY7jKREeOMa8FDYZATEw" node="_FaCY5jKREeOMa8FDYZATEw _FaCY6DKREeOMa8FDYZATEw _FaCY6zKREeOMa8FDYZATEw _TNjMEDKREeOMa8FDYZATEw _XMP2QDKREeOMa8FDYZATEw" edge="_FaCY5zKREeOMa8FDYZATEw _FaCY6TKREeOMa8FDYZATEw _FaCY6jKREeOMa8FDYZATEw _WUnDoDKREeOMa8FDYZATEw _XMSSgDKREeOMa8FDYZATEw"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_FaCY7zKREeOMa8FDYZATEw" node="_FaCY7DKREeOMa8FDYZATEw _XMP2QDKREeOMa8FDYZATEw _YnHRwDKREeOMa8FDYZATEw _aQd1MDKREeOMa8FDYZATEw">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_M439QJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_M439QJzXEeCxo-rGjpVr5g"/>
     </domain>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_FaCY8DKREeOMa8FDYZATEw" node="_TNjMEDKREeOMa8FDYZATEw">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_NYLIYJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_NYLIYJzXEeCxo-rGjpVr5g"/>
     </domain>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_FaCY8TKREeOMa8FDYZATEw" node="_FaCY5jKREeOMa8FDYZATEw _FaCY6DKREeOMa8FDYZATEw _FaCY6zKREeOMa8FDYZATEw">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_NK6IcJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_NK6IcJzXEeCxo-rGjpVr5g"/>
     </domain>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_FaCY8jKREeOMa8FDYZATEw" slotNode="_FaCY7DKREeOMa8FDYZATEw" expression="'portStatechart'">
       <slotAttribute href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation/source"/>
@@ -1433,13 +1433,13 @@
     <leftGraphPattern xmi:id="_mDgz5zSyEeO2FajGvdeGtw" node="_plRtkDS2EeOZ4cmbJlkOfg _wiuA0DS2EeOZ4cmbJlkOfg _ytDKYDS2EeOZ4cmbJlkOfg _15zaQDS2EeOZ4cmbJlkOfg" edge="_wiy5UDS2EeOZ4cmbJlkOfg _ytKfIDS2EeOZ4cmbJlkOfg _15450DS2EeOZ4cmbJlkOfg"/>
     <rightGraphPattern xmi:id="_mDgz6DSyEeO2FajGvdeGtw" node="_jSJ_IDS1EeOZ4cmbJlkOfg _lQoeADS1EeOZ4cmbJlkOfg _plRtkDS2EeOZ4cmbJlkOfg _wiuA0DS2EeOZ4cmbJlkOfg _ytDKYDS2EeOZ4cmbJlkOfg _15zaQDS2EeOZ4cmbJlkOfg _8UpWwDS2EeOZ4cmbJlkOfg" edge="_jSkO0DS1EeOZ4cmbJlkOfg _lQt9kDS1EeOZ4cmbJlkOfg _wiy5UDS2EeOZ4cmbJlkOfg _ytKfIDS2EeOZ4cmbJlkOfg _15450DS2EeOZ4cmbJlkOfg _8UuPQDS2EeOZ4cmbJlkOfg _8zX6IDS2EeOZ4cmbJlkOfg"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_mDgz6TSyEeO2FajGvdeGtw" node="_wiuA0DS2EeOZ4cmbJlkOfg _ytDKYDS2EeOZ4cmbJlkOfg _8UpWwDS2EeOZ4cmbJlkOfg">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_NK6IcJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_NK6IcJzXEeCxo-rGjpVr5g"/>
     </domain>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_mDgz6jSyEeO2FajGvdeGtw" node="_plRtkDS2EeOZ4cmbJlkOfg">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_NYLIYJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_NYLIYJzXEeCxo-rGjpVr5g"/>
     </domain>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_mDgz6zSyEeO2FajGvdeGtw" node="_jSJ_IDS1EeOZ4cmbJlkOfg _lQoeADS1EeOZ4cmbJlkOfg _15zaQDS2EeOZ4cmbJlkOfg">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_M439QJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_M439QJzXEeCxo-rGjpVr5g"/>
     </domain>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_YNXG4DSzEeO2FajGvdeGtw" expression="not subSys.inPorts->exists(e| e.oclIsTypeOf(model::EnablePort))"/>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_qD_fUDS1EeOZ4cmbJlkOfg" slotNode="_jSJ_IDS1EeOZ4cmbJlkOfg" expression="'Reconfiguration'">
@@ -1486,13 +1486,13 @@
     <leftGraphPattern xmi:id="_h0KksDcGEeOB1-JFijdexw" node="_h0IIcDcGEeOB1-JFijdexw _ltfmsDcGEeOB1-JFijdexw _n30JMDcGEeOB1-JFijdexw" edge="_ltkfMDcGEeOB1-JFijdexw _n34aoDcGEeOB1-JFijdexw"/>
     <rightGraphPattern xmi:id="_h0KksTcGEeOB1-JFijdexw" node="_h0IIcDcGEeOB1-JFijdexw _ltfmsDcGEeOB1-JFijdexw _n30JMDcGEeOB1-JFijdexw _vcbKIDcGEeOB1-JFijdexw _DbybkDcHEeOB1-JFijdexw _Q5IxgDcHEeOB1-JFijdexw" edge="_ltkfMDcGEeOB1-JFijdexw _n34aoDcGEeOB1-JFijdexw _vcgCoDcGEeOB1-JFijdexw _Db4iMDcHEeOB1-JFijdexw _Q5PfMDcHEeOB1-JFijdexw"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_c0BEkDcGEeOB1-JFijdexw" node="_n30JMDcGEeOB1-JFijdexw _DbybkDcHEeOB1-JFijdexw _Q5IxgDcHEeOB1-JFijdexw">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_M439QJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_M439QJzXEeCxo-rGjpVr5g"/>
     </domain>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_eTmoADcGEeOB1-JFijdexw" node="_h0IIcDcGEeOB1-JFijdexw">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_NYLIYJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_NYLIYJzXEeCxo-rGjpVr5g"/>
     </domain>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_en5dADcGEeOB1-JFijdexw" node="_ltfmsDcGEeOB1-JFijdexw _vcbKIDcGEeOB1-JFijdexw">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_NK6IcJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_NK6IcJzXEeCxo-rGjpVr5g"/>
     </domain>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_xhcV4DcGEeOB1-JFijdexw" slotNode="_vcbKIDcGEeOB1-JFijdexw" expression="multilineindex.key">
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Parameter/name"/>
@@ -1544,13 +1544,13 @@
     <leftGraphPattern xmi:id="_2J_nrFRNEeOfSIp-QrYk8Q" node="_2J_npFRNEeOfSIp-QrYk8Q _HPVX8FROEeOfSIp-QrYk8Q _MFfOkFROEeOfSIp-QrYk8Q" edge="_LNGOAFROEeOfSIp-QrYk8Q _MFkuIFROEeOfSIp-QrYk8Q"/>
     <rightGraphPattern xmi:id="_2J_nrVRNEeOfSIp-QrYk8Q" node="_2J_npFRNEeOfSIp-QrYk8Q _2J_nqFRNEeOfSIp-QrYk8Q _2J_nqVRNEeOfSIp-QrYk8Q _2J_nq1RNEeOfSIp-QrYk8Q _HPVX8FROEeOfSIp-QrYk8Q _MFfOkFROEeOfSIp-QrYk8Q" edge="_2J_npVRNEeOfSIp-QrYk8Q _2J_np1RNEeOfSIp-QrYk8Q _2J_nqlRNEeOfSIp-QrYk8Q _LNGOAFROEeOfSIp-QrYk8Q _MFkuIFROEeOfSIp-QrYk8Q"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_2J_nrlRNEeOfSIp-QrYk8Q" node="_2J_nqVRNEeOfSIp-QrYk8Q _2J_nq1RNEeOfSIp-QrYk8Q _MFfOkFROEeOfSIp-QrYk8Q">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_M439QJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_M439QJzXEeCxo-rGjpVr5g"/>
     </domain>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_2J_nr1RNEeOfSIp-QrYk8Q" node="_HPVX8FROEeOfSIp-QrYk8Q">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_NYLIYJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_NYLIYJzXEeCxo-rGjpVr5g"/>
     </domain>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_2J_nsFRNEeOfSIp-QrYk8Q" node="_2J_npFRNEeOfSIp-QrYk8Q _2J_nqFRNEeOfSIp-QrYk8Q">
-      <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_NK6IcJzXEeCxo-rGjpVr5g"/>
+      <typedModel href="../../org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg#_NK6IcJzXEeCxo-rGjpVr5g"/>
     </domain>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_2J_nsVRNEeOfSIp-QrYk8Q" slotNode="_2J_nqFRNEeOfSIp-QrYk8Q" expression="multilineindex.key">
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Parameter/name"/>

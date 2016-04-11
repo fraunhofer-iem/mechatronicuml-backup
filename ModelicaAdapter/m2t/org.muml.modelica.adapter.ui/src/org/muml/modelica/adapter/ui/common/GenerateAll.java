@@ -79,8 +79,8 @@ public class GenerateAll {
 			targetFolder.getLocation().toFile().mkdirs();
 		}
 		
-		// final URI template0 = getTemplateURI("de.uni_paderborn.fujaba.modelica.m2t", new Path("/de/uni_paderborn/fujaba/modelica/m2t/main/generate.emtl"));
-		// de.uni_paderborn.fujaba.modelica.m2t.main.Generate gen0 = new de.uni_paderborn.fujaba.modelica.m2t.main.Generate(modelURI, targetFolder.getLocation().toFile(), arguments) {
+		// final URI template0 = getTemplateURI("org.muml.modelica.adapter", new Path("/de/uni_paderborn/fujaba/modelica/m2t/main/generate.emtl"));
+		// org.muml.modelica.adapter.main.Generate gen0 = new org.muml.modelica.adapter.main.Generate(modelURI, targetFolder.getLocation().toFile(), arguments) {
 		//	protected URI createTemplateURI(String entry) {
 		//		return template0;
 		//	}
@@ -89,7 +89,7 @@ public class GenerateAll {
 		monitor.subTask("Loading...");
 		org.muml.modelica.adapter.main.Generate gen0 = new org.muml.modelica.adapter.main.Generate(modelURI, targetFolder.getLocation().toFile(), arguments);
 		monitor.worked(1);
-		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("de.uni_paderborn.fujaba.modelica.m2t", "de.uni_paderborn.fujaba.modelica.m2t.main.Generate", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
+		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("org.muml.modelica.adapter", "org.muml.modelica.adapter.main.Generate", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
 		gen0.setGenerationID(generationID);
 		gen0.doGenerate(BasicMonitor.toMonitor(monitor));
 			

@@ -43,7 +43,7 @@ public class DisassembleOne2ManyComSchemataHandler extends AbstractHandler {
 
 	// janas transformation
 	// private static String dissambleTransformation=
-	// "/de.uni_paderborn.fujaba.muml.onetomanyprotocols.synthesis/transforms/SynthesisApproach.qvto";
+	// "/org.muml.onetomanyprotocols.synthesis/transforms/SynthesisApproach.qvto";
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {

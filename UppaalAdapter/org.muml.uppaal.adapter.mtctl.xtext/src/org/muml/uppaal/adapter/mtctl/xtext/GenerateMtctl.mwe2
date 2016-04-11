@@ -1,4 +1,4 @@
-module de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl
+module org.muml.uppaal.adapter.mtctl
 
 import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
@@ -6,7 +6,7 @@ import org.eclipse.xtext.ui.generator.*
 
 var grammarURI = "classpath:/de/uni_paderborn/fujaba/muml/verification/uppaal/Mtctl.xtext"
 var fileExtensions = "mtctl"
-var projectName = "de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext"
+var projectName = "org.muml.uppaal.adapter.mtctl.xtext"
 var runtimeProject = "../${projectName}"
 var generateXtendStub = false
 
@@ -20,7 +20,7 @@ Workflow {
 		registerGeneratedEPackage = "mtctl.Sets.SetsPackage"
 		registerGeneratedEPackage = "mtctl.BooleanLogic.BooleanLogicPackage"
 		registerGeneratedEPackage = "mtctl.Quantifiers.QuantifiersPackage"*/
-		registerGenModelFile = "platform:/resource/de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl/model/Mtctl.genmodel"
+		registerGenModelFile = "platform:/resource/org.muml.uppaal.adapter.mtctl/model/Mtctl.genmodel"
 	}
 
 	component = DirectoryCleaner {

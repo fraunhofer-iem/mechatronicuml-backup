@@ -75,7 +75,7 @@ public class GtAutomatonComputation extends SDMReachabilityComputation{
 	private static final String identifierPrefix = "id";
 	
 	/**	Path to the QVT-O transformation that transforms the input timed GTS to a forEach enhanced timed GTS. */
-	private static final String TRANSFORMATION_PATH = "/de.uni_paderborn.fujaba.muml.reachanalysis.tsdm.transform/transforms/forEachTransformation.qvto";
+	private static final String TRANSFORMATION_PATH = "/org.muml.reconfigurationverification.reachanalysis.tsdm.transform/transforms/forEachTransformation.qvto";
 	
 	/** All invariant rules used by this reachability computation */
 	private List<InvariantStoryDiagram> invariants;

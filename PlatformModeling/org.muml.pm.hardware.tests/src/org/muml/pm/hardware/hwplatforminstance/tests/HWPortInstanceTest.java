@@ -190,10 +190,10 @@ public class HWPortInstanceTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link org.muml.pm.hardware.hwresourceinstance.HWPort#setPortKind(de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind) <em>Port Kind</em>}' feature setter.
+	 * Tests the '{@link org.muml.pm.hardware.hwresourceinstance.HWPort#setPortKind(org.muml.pm.hardware.hwresource.CommunicationKind) <em>Port Kind</em>}' feature setter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.pm.hardware.hwresourceinstance.HWPort#setPortKind(de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind)
+	 * @see org.muml.pm.hardware.hwresourceinstance.HWPort#setPortKind(org.muml.pm.hardware.hwresource.CommunicationKind)
 	 * @generated
 	 */
 	public void testSetPortKind() {

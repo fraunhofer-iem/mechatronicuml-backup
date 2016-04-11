@@ -71,7 +71,7 @@ public class HardwareItemProviderAdapterFactory extends HardwareAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.hardware.TEst} instances.
+	 * This keeps track of the one adapter used for all {@link org.muml.pm.hardware.TEst} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -79,7 +79,7 @@ public class HardwareItemProviderAdapterFactory extends HardwareAdapterFactory i
 	protected TEstItemProvider tEstItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.TEst}.
+	 * This creates an adapter for a {@link org.muml.pm.hardware.TEst}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

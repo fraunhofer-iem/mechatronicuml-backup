@@ -20,7 +20,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.TEst} object.
+ * This is the item provider adapter for a {@link org.muml.pm.hardware.TEst} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

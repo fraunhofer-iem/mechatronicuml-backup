@@ -10,16 +10,16 @@
   <mapping sourceURI="http://www.muml.org/verification/core/reachanalysis/reachabilitygraph/rtsc/1.0.0" targetURI="platform:/resource/org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc/model/RTSCReachabilityGraph.ecore"/>
   <mapping sourceURI="http://www.muml.org/core/reachabilitygraph/1.0.0" targetURI="platform:/resource/org.muml.core.reachanalysis.reachabilitygraph/model/ReachabilityAnalysisCore.ecore"/>
   <mapping sourceURI="http://www.muml.org/core/modelinstance/1.0.0" targetURI="platform:/resource/org.muml.core.modelinstance/model/modelinstance.ecore"/>
-  <mapping sourceURI="http://www.muml.org/uppaal/adapter/mtctl/1.0.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl/model/Mtctl.ecore"/>
+  <mapping sourceURI="http://www.muml.org/uppaal/adapter/mtctl/1.0.0" targetURI="platform:/resource/org.muml.uppaal.adapter.mtctl/model/Mtctl.ecore"/>
   <mapping sourceURI="http://www.muml.org/uppaal/requirements/1.0.0" targetURI="platform:/resource/org.muml.uppaal.requirements/model/requirements.ecore"/>
   <mapping sourceURI="http://www.muml.org/verification/core/reachanalysis/reachabilitygraph/cic/1.0.0" targetURI="platform:/resource/org.muml.verification.core.reachanalysis.reachabilitygraph.cic/model/CICReachabilityGraph.ecore"/>
   <mapping sourceURI="http://www.muml.org/pim/instance/1.0.0" targetURI="platform:/resource/org.muml.pim/model/pim.ecore"/>
   <mapping sourceURI="http://www.muml.org/pim/constraint/1.0.0" targetURI="platform:/resource/org.muml.pim/model/pim.ecore"/>
-  <mapping sourceURI="http://www.muml.org/uppaal/adapter/mtctl/quantifiers/1.0.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl/model/Mtctl.ecore"/>
-  <mapping sourceURI="http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl/model/Mtctl.ecore"/>
-  <mapping sourceURI="http://www.muml.org/uppaal/adapter/mtctl/sets/1.0.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl/model/Mtctl.ecore"/>
-  <mapping sourceURI="http://www.muml.org/uppaal/adapter/mtctl/booleanlogic/1.0.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl/model/Mtctl.ecore"/>
-  <mapping sourceURI="http://www.muml.org/uppaal/adapter/mtctl/comparables/1.0.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl/model/Mtctl.ecore"/>
+  <mapping sourceURI="http://www.muml.org/uppaal/adapter/mtctl/quantifiers/1.0.0" targetURI="platform:/resource/org.muml.uppaal.adapter.mtctl/model/Mtctl.ecore"/>
+  <mapping sourceURI="http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0" targetURI="platform:/resource/org.muml.uppaal.adapter.mtctl/model/Mtctl.ecore"/>
+  <mapping sourceURI="http://www.muml.org/uppaal/adapter/mtctl/sets/1.0.0" targetURI="platform:/resource/org.muml.uppaal.adapter.mtctl/model/Mtctl.ecore"/>
+  <mapping sourceURI="http://www.muml.org/uppaal/adapter/mtctl/booleanlogic/1.0.0" targetURI="platform:/resource/org.muml.uppaal.adapter.mtctl/model/Mtctl.ecore"/>
+  <mapping sourceURI="http://www.muml.org/uppaal/adapter/mtctl/comparables/1.0.0" targetURI="platform:/resource/org.muml.uppaal.adapter.mtctl/model/Mtctl.ecore"/>
   <mapping sourceURI="http://www.muml.org/uppaal/options/1.0.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.verification.uppaal.options/model/options.ecore"/>
   <mapping sourceURI="http://www.muml.org/pim/behavior/1.0.0" targetURI="platform:/resource/org.muml.pim/model/pim.ecore"/>
   <mapping sourceURI="http://www.muml.org/uppaal/adapter/results/1.0.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.verification.uppaal.results/model/results.ecore"/>

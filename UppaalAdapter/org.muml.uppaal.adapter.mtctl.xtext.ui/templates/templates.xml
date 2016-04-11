@@ -3,7 +3,7 @@
 <templates>
 
 <!--<template autoinsert="true" 
-context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_leadsTo"
+context="org.muml.uppaal.adapter.mtctl.kw_leadsTo"
 deleted="false" 
 description="after first_expression holds, eventually second_expression holds" 
 id="leadsTo"
@@ -11,7 +11,7 @@ enabled="true"
 name="leadsTo">${first_expression} leadsTo ${second_expression}</template>-->
 
 <template autoinsert="true" 
-context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_forall"
+context="org.muml.uppaal.adapter.mtctl.kw_forall"
 deleted="false" 
 description="expression should hold for all elements in the set" 
 id="forall"
@@ -19,7 +19,7 @@ enabled="true"
 name="forall">forall(${name}:${Set})</template>
 
 <template autoinsert="true" 
-context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_Instances"
+context="org.muml.uppaal.adapter.mtctl.kw_Instances"
 deleted="false" 
 description="set of instances of a type" 
 id="Instances"
@@ -27,7 +27,7 @@ enabled="true"
 name="Instances">Instances&lt;${Type}&gt;</template>
 
 <template autoinsert="true" 
-context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_Subinstances"
+context="org.muml.uppaal.adapter.mtctl.kw_Subinstances"
 deleted="false" 
 description="set of subinstances of a multi discrete interaction endpoint" 
 id="Subinstances"
@@ -35,7 +35,7 @@ enabled="true"
 name="Subinstances">Subinstances&lt;${Type}&gt;</template>
 
 <template autoinsert="true" 
-context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_exists"
+context="org.muml.uppaal.adapter.mtctl.kw_exists"
 deleted="false" 
 description="there exists one element in the set for which the expression holds" 
 id="exists"
@@ -43,7 +43,7 @@ enabled="true"
 name="exists">exists(${name}:${Set})</template>
 
 <template autoinsert="true"
-context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_stateActive"
+context="org.muml.uppaal.adapter.mtctl.kw_stateActive"
  deleted="false" 
  description="true iff state is active"
  id = "stateActive"
@@ -51,7 +51,7 @@ context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_stateActive"
  name="stateActive">stateActive(${state})</template>
  
 <template autoinsert="true" 
-context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_substateOf"
+context="org.muml.uppaal.adapter.mtctl.kw_substateOf"
 deleted="false" 
 description="true iff state is a (proper) substate of superstate" 
 id="substateOf"
@@ -59,7 +59,7 @@ enabled="true"
 name="substateOf">substateOf(${state},${superstate})</template>
 
 <template autoinsert="true" 
-context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_stateInStatechart"
+context="org.muml.uppaal.adapter.mtctl.kw_stateInStatechart"
 deleted="false" 
 description="true iff state is indirectly contained in a statechart" 
 id="stateInStatechart"
@@ -67,7 +67,7 @@ enabled="true"
 name="stateInStatechart">stateInStatechart(${state},${statechart})</template>
 
 <template autoinsert="true" 
-context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_messageInTransit"
+context="org.muml.uppaal.adapter.mtctl.kw_messageInTransit"
 deleted="false" 
 description="true iff message is in transit (i.e. message has been sent but not yet arrived in the receiver's buffer)" 
 id="messageInTransit"
@@ -75,7 +75,7 @@ enabled="true"
 name="messageInTransit">messageInTransit(${message})</template>
 
 <template autoinsert="true" 
-context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_messageInBuffer"
+context="org.muml.uppaal.adapter.mtctl.kw_messageInBuffer"
 deleted="false" 
 description="true iff message is in buffer" 
 id="messageInBuffer"
@@ -83,7 +83,7 @@ enabled="true"
 name="messageInBuffer">messageInBuffer(${message},${buffer})</template>
 
 <template autoinsert="true" 
-context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_messageDiscarded"
+context="org.muml.uppaal.adapter.mtctl.kw_messageDiscarded"
 deleted="false" 
 description="true iff a message of buffer gets discarded" 
 id="messageDiscarded"
@@ -91,7 +91,7 @@ enabled="true"
 name="messageDiscarded">messageDiscarded(${buffer})</template>
 
 <template autoinsert="true" 
-context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_transitionFiring"
+context="org.muml.uppaal.adapter.mtctl.kw_transitionFiring"
 deleted="false" 
 description="true iff transition is firing" 
 id="transitionFiring"
@@ -99,7 +99,7 @@ enabled="true"
 name="transitionFiring">transitionFiring(${transition})</template>
 
 <template autoinsert="true" 
-context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_bufferMessageCount"
+context="org.muml.uppaal.adapter.mtctl.kw_bufferMessageCount"
 deleted="false" 
 description="returns the current number of elements in a buffer" 
 id="bufferMessageCount"
@@ -107,7 +107,7 @@ enabled="true"
 name="bufferMessageCount">bufferMessageCount(${buffer})</template>
 
 <template autoinsert="true" 
-context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_sourceState"
+context="org.muml.uppaal.adapter.mtctl.kw_sourceState"
 deleted="false" 
 description="returns the source state of the transition" 
 id="sourceState"
@@ -115,7 +115,7 @@ enabled="true"
 name="sourceState">sourceState(${transition})</template>
 
 <template autoinsert="true" 
-context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_targetState"
+context="org.muml.uppaal.adapter.mtctl.kw_targetState"
 deleted="false" 
 description="returns the target state of the transition" 
 id="targetState"

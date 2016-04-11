@@ -151,11 +151,11 @@ public class TGGTransformation {
 		TripleGraphGrammar tgg = null;
 		// If the .tgg-files are in the runtime-Workspace (for developers)
 		try{
-			tgg = InterpreterconfigurationUtil.loadAndInitTripleGraphGrammar(URI.createPlatformResourceURI("/de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg",true), resourceSet);
+			tgg = InterpreterconfigurationUtil.loadAndInitTripleGraphGrammar(URI.createPlatformResourceURI("/org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg",true), resourceSet);
 		}
 		// else
 		catch(Exception e){
-			tgg = InterpreterconfigurationUtil.loadAndInitTripleGraphGrammar(URI.createPlatformPluginURI("de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg",true), resourceSet);
+			tgg = InterpreterconfigurationUtil.loadAndInitTripleGraphGrammar(URI.createPlatformPluginURI("org.muml.simulink.adapter.reconfiguration.m2m/tgg/fujaba2simulink.tgg",true), resourceSet);
 		}
 		
 		return tgg;

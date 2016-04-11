@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: de.uni_paderborn.fujaba.muml.verification.fotctl.xtext
+Bundle-Name: org.muml.reconfigurationverification.fotctl.xtext
 Bundle-Vendor: My Company
 Bundle-Version: 1.0.0
 Bundle-SymbolicName: org.muml.reconfigurationverification.fotctl.xtext;singleton:=true

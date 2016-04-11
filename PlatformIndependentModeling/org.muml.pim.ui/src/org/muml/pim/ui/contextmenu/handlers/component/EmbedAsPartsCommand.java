@@ -17,7 +17,7 @@ import org.muml.pim.ui.Activator;
 
 public class EmbedAsPartsCommand extends ChangeCommand {
 
-	public static final String EMBED_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.ui/transforms/component/EmbedAsParts.qvto";
+	public static final String EMBED_TRANSFORMATION = "/org.muml.pim.ui/transforms/component/EmbedAsParts.qvto";
 
 	private EditingDomain editingDomain;
 

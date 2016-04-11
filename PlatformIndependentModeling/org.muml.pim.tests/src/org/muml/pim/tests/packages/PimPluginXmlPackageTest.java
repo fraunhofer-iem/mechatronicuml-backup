@@ -17,6 +17,6 @@ public class PimPluginXmlPackageTest extends PluginXmlPackageTest {
 
 	@Parameters
 	public static Collection<Object[]> getData() {
-		return Collections.singleton(new Object[] {"de.uni_paderborn.fujaba.muml", "model/muml.ecore"});
+		return Collections.singleton(new Object[] {"org.muml.pim", "model/muml.ecore"});
 	}
 }

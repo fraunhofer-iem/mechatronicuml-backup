@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedGraphTransformationSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba.muml.timedstorydiagram="http:///de/uni_paderborn/fujaba/muml/timedstorydiagram" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:sdma="http://ns.storydriven.org/sdm/activities/0.1.0" xmlns:sdmce="http://ns.storydriven.org/sdm/calls/expressions/0.1.0" xmlns:sdme="http://ns.storydriven.org/sdm/expressions/0.1.0" xmlns:sdmp="http://ns.storydriven.org/sdm/patterns/0.1.0" xmlns:sdmpe="http://ns.storydriven.org/sdm/patterns/expressions/0.1.0" name="execute transition TGTS">
+<de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedGraphTransformationSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba.muml.timedstorydiagram="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:sdma="http://ns.storydriven.org/sdm/activities/0.1.0" xmlns:sdmce="http://ns.storydriven.org/sdm/calls/expressions/0.1.0" xmlns:sdme="http://ns.storydriven.org/sdm/expressions/0.1.0" xmlns:sdmp="http://ns.storydriven.org/sdm/patterns/0.1.0" xmlns:sdmpe="http://ns.storydriven.org/sdm/patterns/expressions/0.1.0" name="execute transition TGTS">
   <rules inParameter="//@rules.0/@containedParameters.0 //@rules.0/@containedParameters.1" name="TSDForEachTSD">
     <containedParameters name="step">
       <eType xsi:type="ecore:EClass" href="http://uni_paderborn/fujaba/pgSafeBots/verification/reachanalysis/reachabilitygraph/gta#//GtStepGraph"/>
@@ -1218,7 +1218,7 @@
           <classifier href="http://uni_paderborn/fujaba/pgSafeBots/verification/reachanalysis/reachabilitygraph/gta#//GtTransition"/>
         </variable>
         <variable xsi:type="sdmp:ObjectVariable" name="ci_succ" incomingLink="//@rules.1/@ownedActivityNode.9/@ownedRule/@linkVariable.4 //@rules.1/@ownedActivityNode.9/@ownedRule/@linkVariable.9 //@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.7 //@rules.1/@ownedActivityNode.6/@ownedRule/@linkVariable.7 //@rules.1/@ownedActivityNode.10/@ownedRule/@linkVariable.27 //@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.22" bindingOperator="CREATE">
-          <classifier href="http:///de/uni_paderborn/fujaba/muml/timedstorydiagram#//ClockInstance"/>
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
         </variable>
         <variable xsi:type="sdmp:ObjectVariable" name="succ" incomingLink="//@rules.1/@ownedActivityNode.9/@ownedRule/@linkVariable.0 //@rules.1/@ownedActivityNode.9/@ownedRule/@linkVariable.2 //@rules.1/@ownedActivityNode.9/@ownedRule/@linkVariable.6" outgoingLink="//@rules.1/@ownedActivityNode.9/@ownedRule/@linkVariable.3 //@rules.1/@ownedActivityNode.9/@ownedRule/@linkVariable.4">
           <classifier href="http://uni_paderborn/fujaba/pgSafeBots/verification/reachanalysis/reachabilitygraph/gta#//GtStepGraph"/>
@@ -1509,7 +1509,7 @@
           <classifier href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//State"/>
         </variable>
         <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" incomingLink="//@invariants.0/@ownedActivityNode.0/@ownedRule/@linkVariable.5 //@invariants.0/@ownedActivityNode.0/@ownedRule/@linkVariable.9" outgoingLink="//@invariants.0/@ownedActivityNode.0/@ownedRule/@linkVariable.3 //@invariants.0/@ownedActivityNode.0/@ownedRule/@linkVariable.4" clockInstanceConstraints="//@invariants.0/@clockInstConstraint">
-          <classifier href="http:///de/uni_paderborn/fujaba/muml/timedstorydiagram#//ClockInstance"/>
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
         </variable>
         <variable xsi:type="sdmp:ObjectVariable" name="step" bindingState="BOUND" outgoingLink="//@invariants.0/@ownedActivityNode.0/@ownedRule/@linkVariable.7 //@invariants.0/@ownedActivityNode.0/@ownedRule/@linkVariable.6 //@invariants.0/@ownedActivityNode.0/@ownedRule/@linkVariable.8 //@invariants.0/@ownedActivityNode.0/@ownedRule/@linkVariable.9">
           <classifier href="http://uni_paderborn/fujaba/pgSafeBots/verification/reachanalysis/reachabilitygraph/gta#//GtStepGraph"/>
@@ -1530,10 +1530,10 @@
           <targetEnd href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//ActiveState/active"/>
         </linkVariable>
         <linkVariable xsi:type="sdmp:LinkVariable" name="hasNode" source="//@invariants.0/@ownedActivityNode.0/@ownedRule/@variable.3" target="//@invariants.0/@ownedActivityNode.0/@ownedRule/@variable.0">
-          <targetEnd href="http:///de/uni_paderborn/fujaba/muml/timedstorydiagram#//ClockInstance/hasNode"/>
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
         </linkVariable>
         <linkVariable xsi:type="sdmp:LinkVariable" name="hasNode" source="//@invariants.0/@ownedActivityNode.0/@ownedRule/@variable.3" target="//@invariants.0/@ownedActivityNode.0/@ownedRule/@variable.1">
-          <targetEnd href="http:///de/uni_paderborn/fujaba/muml/timedstorydiagram#//ClockInstance/hasNode"/>
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
         </linkVariable>
         <linkVariable xsi:type="sdmp:LinkVariable" name="ci" source="//@invariants.0/@ownedActivityNode.0/@ownedRule/@variable.5" bindingState="BOUND" target="//@invariants.0/@ownedActivityNode.0/@ownedRule/@variable.3">
           <targetEnd href="http://uni_paderborn/fujaba/pgSafeBots/verification/reachanalysis/reachabilitygraph/gta#//VariableNameToClockInstance/value"/>
@@ -1616,16 +1616,16 @@
               <object href="My.timedstorydiagram#/0/@rules.1/@ownedActivityNode.10/@ownedRule/@variable.3"/>
             </valueExpression>
           </attributeAssignment>
-          <classifier href="http:///de/uni_paderborn/fujaba/muml/timedstorydiagram#//ClockInstance"/>
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
         </variable>
         <linkVariable xsi:type="sdmp:LinkVariable" name="in" source="//@clockInstanceRules.0/@ownedActivityNode.3/@ownedRule/@variable.0" target="//@clockInstanceRules.0/@ownedActivityNode.3/@ownedRule/@variable.1">
           <targetEnd href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//ActiveState/in"/>
         </linkVariable>
         <linkVariable xsi:type="sdmp:LinkVariable" name="hasNode" source="//@clockInstanceRules.0/@ownedActivityNode.3/@ownedRule/@variable.2" target="//@clockInstanceRules.0/@ownedActivityNode.3/@ownedRule/@variable.1">
-          <targetEnd href="http:///de/uni_paderborn/fujaba/muml/timedstorydiagram#//ClockInstance/hasNode"/>
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
         </linkVariable>
         <linkVariable xsi:type="sdmp:LinkVariable" name="hasNode" source="//@clockInstanceRules.0/@ownedActivityNode.3/@ownedRule/@variable.2" target="//@clockInstanceRules.0/@ownedActivityNode.3/@ownedRule/@variable.0">
-          <targetEnd href="http:///de/uni_paderborn/fujaba/muml/timedstorydiagram#//ClockInstance/hasNode"/>
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
         </linkVariable>
       </ownedRule>
     </ownedActivityNode>
@@ -1638,7 +1638,7 @@
           <classifier href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//Statechart"/>
         </variable>
         <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" incomingLink="//@clockInstanceRules.0/@ownedActivityNode.4/@ownedRule/@linkVariable.3 //@clockInstanceRules.0/@ownedActivityNode.4/@ownedRule/@linkVariable.7" outgoingLink="//@clockInstanceRules.0/@ownedActivityNode.4/@ownedRule/@linkVariable.1 //@clockInstanceRules.0/@ownedActivityNode.4/@ownedRule/@linkVariable.2" bindingOperator="CREATE">
-          <classifier href="http:///de/uni_paderborn/fujaba/muml/timedstorydiagram#//ClockInstance"/>
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
         </variable>
         <variable xsi:type="sdmp:ObjectVariable" name="result" bindingState="BOUND" outgoingLink="//@clockInstanceRules.0/@ownedActivityNode.4/@ownedRule/@linkVariable.4">
           <classifier href="http://uni_paderborn/fujaba/pgSafeBots/verification/reachanalysis/reachabilitygraph/gta#//BoundClockInstances"/>
@@ -1653,10 +1653,10 @@
           <targetEnd href="http:///de/uni_paderborn/fujaba/umlrt/storychecking/tsc#//ActiveState/in"/>
         </linkVariable>
         <linkVariable xsi:type="sdmp:LinkVariable" name="hasNode" bindingOperator="CREATE" source="//@clockInstanceRules.0/@ownedActivityNode.4/@ownedRule/@variable.2" target="//@clockInstanceRules.0/@ownedActivityNode.3/@ownedRule/@variable.1">
-          <targetEnd href="http:///de/uni_paderborn/fujaba/muml/timedstorydiagram#//ClockInstance/hasNode"/>
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
         </linkVariable>
         <linkVariable xsi:type="sdmp:LinkVariable" name="hasNode" bindingOperator="CREATE" source="//@clockInstanceRules.0/@ownedActivityNode.4/@ownedRule/@variable.2" target="//@clockInstanceRules.0/@ownedActivityNode.3/@ownedRule/@variable.0">
-          <targetEnd href="http:///de/uni_paderborn/fujaba/muml/timedstorydiagram#//ClockInstance/hasNode"/>
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
         </linkVariable>
         <linkVariable xsi:type="sdmp:LinkVariable" name="ci" bindingOperator="CREATE" source="//@clockInstanceRules.0/@ownedActivityNode.4/@ownedRule/@variable.4" target="//@clockInstanceRules.0/@ownedActivityNode.4/@ownedRule/@variable.2">
           <targetEnd href="http://uni_paderborn/fujaba/pgSafeBots/verification/reachanalysis/reachabilitygraph/gta#//VariableNameToClockInstance/value"/>

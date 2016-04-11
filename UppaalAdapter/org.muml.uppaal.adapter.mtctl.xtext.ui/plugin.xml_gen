@@ -10,7 +10,7 @@
             contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
             default="true"
             extensions="mtctl"
-            id="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl"
+            id="org.muml.uppaal.adapter.mtctl"
             name="Mtctl Editor">
         </editor>
     </extension>
@@ -21,16 +21,16 @@
             commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
             <activeWhen>
                 <reference
-                    definitionId="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.Editor.opened">
+                    definitionId="org.muml.uppaal.adapter.mtctl.Editor.opened">
                 </reference>
             </activeWhen>
         </handler>
         <handler
             class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
-            commandId="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.validate">
+            commandId="org.muml.uppaal.adapter.mtctl.validate">
          <activeWhen>
             <reference
-                    definitionId="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.Editor.opened">
+                    definitionId="org.muml.uppaal.adapter.mtctl.Editor.opened">
             </reference>
          </activeWhen>
       	</handler>
@@ -39,7 +39,7 @@
             class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
             commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName">
             <activeWhen>
-				<reference definitionId="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.Editor.opened" />
+				<reference definitionId="org.muml.uppaal.adapter.mtctl.Editor.opened" />
             </activeWhen>
         </handler>
         <handler
@@ -47,7 +47,7 @@
             commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName">
             <activeWhen>
             	<and>
-            		<reference definitionId="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.XtextEditor.opened" />
+            		<reference definitionId="org.muml.uppaal.adapter.mtctl.XtextEditor.opened" />
 	                <iterate>
 						<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 					</iterate>
@@ -56,22 +56,22 @@
         </handler>
     </extension>
     <extension point="org.eclipse.core.expressions.definitions">
-        <definition id="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.Editor.opened">
+        <definition id="org.muml.uppaal.adapter.mtctl.Editor.opened">
             <and>
                 <reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
                 <with variable="activeEditor">
                     <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
-                        value="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl" 
+                        value="org.muml.uppaal.adapter.mtctl" 
                         forcePluginActivation="true"/>
                 </with>        
             </and>
         </definition>
-        <definition id="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.XtextEditor.opened">
+        <definition id="org.muml.uppaal.adapter.mtctl.XtextEditor.opened">
             <and>
                 <reference definitionId="isXtextEditorActive"/>
                 <with variable="activeEditor">
                     <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
-                        value="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl" 
+                        value="org.muml.uppaal.adapter.mtctl" 
                         forcePluginActivation="true"/>
                 </with>        
             </and>
@@ -81,21 +81,21 @@
             point="org.eclipse.ui.preferencePages">
         <page
             class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-            id="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl"
+            id="org.muml.uppaal.adapter.mtctl"
             name="Mtctl">
             <keywordReference id="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.keyword_Mtctl"/>
         </page>
         <page
-            category="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl"
+            category="org.muml.uppaal.adapter.mtctl"
             class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
-            id="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.coloring"
+            id="org.muml.uppaal.adapter.mtctl.coloring"
             name="Syntax Coloring">
             <keywordReference id="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.keyword_Mtctl"/>
         </page>
         <page
-            category="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl"
+            category="org.muml.uppaal.adapter.mtctl"
             class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
-            id="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.templates"
+            id="org.muml.uppaal.adapter.mtctl.templates"
             name="Templates">
             <keywordReference id="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.keyword_Mtctl"/>
         </page>
@@ -104,7 +104,7 @@
             point="org.eclipse.ui.propertyPages">
         <page
             class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-            id="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl"
+            id="org.muml.uppaal.adapter.mtctl"
             name="Mtctl">
             <keywordReference id="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.keyword_Mtctl"/>
             <enabledWhen>
@@ -123,7 +123,7 @@
          point="org.eclipse.ui.commands">
       <command
             description="Trigger expensive validation"
-            id="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.validate"
+            id="org.muml.uppaal.adapter.mtctl.validate"
             name="Validate">
       </command>
       <!-- copy qualified name -->
@@ -144,12 +144,12 @@
         <menuContribution
             locationURI="popup:#TextEditorContext?after=group.edit">
              <command
-                 commandId="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.validate"
+                 commandId="org.muml.uppaal.adapter.mtctl.validate"
                  style="push"
                  tooltip="Trigger expensive validation">
             <visibleWhen checkEnabled="false">
                 <reference
-                    definitionId="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.Editor.opened">
+                    definitionId="org.muml.uppaal.adapter.mtctl.Editor.opened">
                 </reference>
             </visibleWhen>
          </command>  
@@ -159,7 +159,7 @@
          	<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName" 
          		style="push" tooltip="Copy Qualified Name">
             	<visibleWhen checkEnabled="false">
-                	<reference definitionId="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.Editor.opened" />
+                	<reference definitionId="org.muml.uppaal.adapter.mtctl.Editor.opened" />
             	</visibleWhen>
          	</command>  
          </menuContribution>
@@ -167,7 +167,7 @@
          	<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
             	style="push" tooltip="Copy Qualified Name">
             	<visibleWhen checkEnabled="false">
-                	<reference definitionId="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.Editor.opened" />
+                	<reference definitionId="org.muml.uppaal.adapter.mtctl.Editor.opened" />
             	</visibleWhen>
          	</command>  
          </menuContribution>
@@ -176,7 +176,7 @@
 				style="push" tooltip="Copy Qualified Name">
          		<visibleWhen checkEnabled="false">
 	            	<and>
-	            		<reference definitionId="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.XtextEditor.opened" />
+	            		<reference definitionId="org.muml.uppaal.adapter.mtctl.XtextEditor.opened" />
 						<iterate>
 							<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 						</iterate>
@@ -189,7 +189,7 @@
 		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
 			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
 				<visibleWhen checkEnabled="false">
-                	<reference definitionId="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.Editor.opened">
+                	<reference definitionId="org.muml.uppaal.adapter.mtctl.Editor.opened">
                 	</reference>
             	</visibleWhen>
 			</command>
@@ -201,7 +201,7 @@
             commandId="org.eclipse.xtext.ui.editor.FindReferences">
             <activeWhen>
                 <reference
-                    definitionId="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.Editor.opened">
+                    definitionId="org.muml.uppaal.adapter.mtctl.Editor.opened">
                 </reference>
             </activeWhen>
         </handler>
@@ -224,7 +224,7 @@
     </extension>
 
 
-    <!-- marker definitions for de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl -->
+    <!-- marker definitions for org.muml.uppaal.adapter.mtctl -->
     <extension
             id="mtctl.check.fast"
             name="Mtctl Problem"
@@ -255,7 +255,7 @@
 			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
 			<activeWhen>
 				<reference
-					definitionId="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.Editor.opened">
+					definitionId="org.muml.uppaal.adapter.mtctl.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -275,12 +275,12 @@
 				style="push"
 				tooltip="Open Quick Outline">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.Editor.opened"/>
+					<reference definitionId="org.muml.uppaal.adapter.mtctl.Editor.opened"/>
 				</visibleWhen>
 			</command>
 		</menuContribution>
 	</extension>
-    <!-- quickfix marker resolution generator for de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl -->
+    <!-- quickfix marker resolution generator for org.muml.uppaal.adapter.mtctl -->
     <extension
             point="org.eclipse.ui.ide.markerResolution">
         <markerResolutionGenerator
@@ -315,7 +315,7 @@
 			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
 			<activeWhen>
 				<reference
-					definitionId="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.Editor.opened">
+					definitionId="org.muml.uppaal.adapter.mtctl.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -327,7 +327,7 @@
                style="push">
             <visibleWhen checkEnabled="false">
                <reference
-                     definitionId="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.Editor.opened">
+                     definitionId="org.muml.uppaal.adapter.mtctl.Editor.opened">
                </reference>
             </visibleWhen>
          </command>
@@ -335,28 +335,28 @@
    </extension>
    <extension point="org.eclipse.ui.preferencePages">
 	    <page
-	        category="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl"
+	        category="org.muml.uppaal.adapter.mtctl"
 	        class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
-	        id="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.refactoring"
+	        id="org.muml.uppaal.adapter.mtctl.refactoring"
 	        name="Refactoring">
 	        <keywordReference id="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.keyword_Mtctl"/>
 	    </page>
 	</extension>
 
   <extension point="org.eclipse.compare.contentViewers">
-    <viewer id="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.compare.contentViewers"
+    <viewer id="org.muml.uppaal.adapter.mtctl.compare.contentViewers"
             class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
             extensions="mtctl">
     </viewer>
   </extension>
   <extension point="org.eclipse.compare.contentMergeViewers">
-    <viewer id="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.compare.contentMergeViewers"
+    <viewer id="org.muml.uppaal.adapter.mtctl.compare.contentMergeViewers"
             class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
             extensions="mtctl" label="Mtctl Compare">
      </viewer>
   </extension>
   <extension point="org.eclipse.ui.editors.documentProviders">
-    <provider id="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.editors.documentProviders"
+    <provider id="org.muml.uppaal.adapter.mtctl.editors.documentProviders"
             class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
             extensions="mtctl">
     </provider>

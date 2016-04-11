@@ -121,10 +121,10 @@ public class BusTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link org.muml.pm.hardware.hwplatform.Bus#setBandwidth(de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataRate) <em>Bandwidth</em>}' feature setter.
+	 * Tests the '{@link org.muml.pm.hardware.hwplatform.Bus#setBandwidth(org.muml.pm.hardware.hwvaluetype.DataRate) <em>Bandwidth</em>}' feature setter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.pm.hardware.hwplatform.Bus#setBandwidth(de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataRate)
+	 * @see org.muml.pm.hardware.hwplatform.Bus#setBandwidth(org.muml.pm.hardware.hwvaluetype.DataRate)
 	 * @generated
 	 */
 	public void testSetBandwidth() {

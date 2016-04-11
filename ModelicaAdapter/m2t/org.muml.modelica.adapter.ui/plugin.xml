@@ -6,7 +6,7 @@
       <command
             categoryId="org.muml"
             defaultHandler="org.muml.modelica.adapter.ui.handler.GenerateModelicaCodeHandler"
-            id="de.uni_paderborn.fujaba.modelica.m2t.ui.GenerateModelicaCodeCommand"
+            id="org.muml.modelica.adapter.ui.GenerateModelicaCodeCommand"
             name="Generate Modelica Code">
       </command>
    </extension>
@@ -20,7 +20,7 @@
                visible="true">
          </separator>
          <command
-               commandId="de.uni_paderborn.fujaba.modelica.m2t.ui.GenerateModelicaCodeCommand"
+               commandId="org.muml.modelica.adapter.ui.GenerateModelicaCodeCommand"
                label="Generate Modelica Code"
                style="push">
             <visibleWhen
@@ -37,7 +37,7 @@
       <wizard
             category="org.muml.core.export"
             class="org.muml.modelica.adapter.ui.export.ModelicaExportWizard"
-            id="de.uni_paderborn.fujaba.modelica.m2t.ui.export.ModelicaExportWizard"
+            id="org.muml.modelica.adapter.ui.export.ModelicaExportWizard"
             name="Modelica">
       </wizard>
    </extension>

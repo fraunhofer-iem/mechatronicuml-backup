@@ -11,7 +11,7 @@ public class MtctlUiInjectorProvider implements IInjectorProvider {
 	
 	@Override
 	public Injector getInjector() {
-		return org.muml.uppaal.adapter.mtctl.xtext.ui.internal.MtctlActivator.getInstance().getInjector("de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl");
+		return org.muml.uppaal.adapter.mtctl.xtext.ui.internal.MtctlActivator.getInstance().getInjector("org.muml.uppaal.adapter.mtctl");
 	}
 	
 }

@@ -6,7 +6,7 @@ import org.eclipse.xtext.ui.generator.*
 
 var grammarURI = "classpath:/de/uni_paderborn/fujaba/muml/verification/FOTCTL.xtext"
 var file.extensions = "fotctl"
-var projectName = "de.uni_paderborn.fujaba.muml.verification.fotctl.xtext"
+var projectName = "org.muml.reconfigurationverification.fotctl.xtext"
 var runtimeProject = "../${projectName}"
 
 Workflow {

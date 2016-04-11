@@ -34,7 +34,7 @@ public class ModelicaExportWizard extends AbstractFujabaExportWizard {
 
 	@Override
 	public String wizardGetId() {
-		return "de.uni_paderborn.fujaba.modelica.m2t.ui.export";
+		return "org.muml.modelica.adapter.ui.export";
 	}
 	
 	@Override

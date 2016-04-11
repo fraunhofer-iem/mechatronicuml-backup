@@ -47,47 +47,47 @@
       <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_Pv-CoJ9TEeG4eMpbz4C8AQ" name="StoryNode1" outgoing="_6D1g0J9nEeG3Irl6UQpZxQ _8lGjsJ9nEeG3Irl6UQpZxQ" incoming="_Y899sJ9TEeG4eMpbz4C8AQ">
         <ownedRule xmi:id="_PwtpgJ9TEeG4eMpbz4C8AQ" comment="">
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_eRzUYJ9TEeG4eMpbz4C8AQ" name="compInstance" bindingState="BOUND" outgoingLink="_UOsJUJ9WEeG4eMpbz4C8AQ _A1WgoJ9XEeG4eMpbz4C8AQ">
-            <classifier href="../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstance"/>
+            <classifier href="../org.muml.pim/model/pim.ecore#//model/instance/ComponentInstance"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_W8FOkJ9UEeG4eMpbz4C8AQ" name="compType" bindingState="BOUND" incomingLink="_UOsJUJ9WEeG4eMpbz4C8AQ" outgoingLink="_y8R4AJ9WEeG4eMpbz4C8AQ">
-            <classifier href="../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Component"/>
+            <classifier href="../org.muml.pim/model/pim.ecore#//model/component/Component"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_RZTGAJ9VEeG4eMpbz4C8AQ" name="portType" incomingLink="_y8R4AJ9WEeG4eMpbz4C8AQ _PGKB4J9ZEeG4eMpbz4C8AQ">
-            <classifier href="../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Port"/>
+            <classifier href="../org.muml.pim/model/pim.ecore#//model/component/Port"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_Gh0JoJ9WEeG4eMpbz4C8AQ" name="multiPortInst" incomingLink="_A1WgoJ9XEeG4eMpbz4C8AQ" outgoingLink="_PGKB4J9ZEeG4eMpbz4C8AQ">
-            <classifier href="../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/DiscreteMultiPortInstance"/>
+            <classifier href="../org.muml.pim/model/pim.ecore#//model/instance/DiscreteMultiPortInstance"/>
           </variable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_UOsJUJ9WEeG4eMpbz4C8AQ" name="compInstToCompType" source="_eRzUYJ9TEeG4eMpbz4C8AQ" target="_W8FOkJ9UEeG4eMpbz4C8AQ">
-            <targetEnd href="../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ComponentPart/componentType"/>
+            <targetEnd href="../org.muml.pim/model/pim.ecore#//model/component/ComponentPart/componentType"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_y8R4AJ9WEeG4eMpbz4C8AQ" name="compTypeToPortType" source="_W8FOkJ9UEeG4eMpbz4C8AQ" target="_RZTGAJ9VEeG4eMpbz4C8AQ">
-            <targetEnd href="../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Component/ports"/>
+            <targetEnd href="../org.muml.pim/model/pim.ecore#//model/component/Component/ports"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_A1WgoJ9XEeG4eMpbz4C8AQ" name="compInstToMultiPortInst" source="_eRzUYJ9TEeG4eMpbz4C8AQ" target="_Gh0JoJ9WEeG4eMpbz4C8AQ">
-            <targetEnd href="../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstance/portInstances"/>
+            <targetEnd href="../org.muml.pim/model/pim.ecore#//model/instance/ComponentInstance/portInstances"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_PGKB4J9ZEeG4eMpbz4C8AQ" name="multiPortInstToPortType" source="_Gh0JoJ9WEeG4eMpbz4C8AQ" target="_RZTGAJ9VEeG4eMpbz4C8AQ">
-            <targetEnd href="../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/PortInstance/portType"/>
+            <targetEnd href="../org.muml.pim/model/pim.ecore#//model/instance/PortInstance/portType"/>
           </linkVariable>
         </ownedRule>
       </ownedActivityNode>
       <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_aAWysJ9mEeG3Irl6UQpZxQ" name="StoryNode2" outgoing="_aWO2sJ9TEeG4eMpbz4C8AQ" incoming="_6D1g0J9nEeG3Irl6UQpZxQ">
         <ownedRule xmi:id="_D5jeMJ9nEeG3Irl6UQpZxQ">
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_HtY8MJ9nEeG3Irl6UQpZxQ" name="portType" bindingState="BOUND" incomingLink="_Y4-ecJ9nEeG3Irl6UQpZxQ">
-            <classifier href="../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Port"/>
+            <classifier href="../org.muml.pim/model/pim.ecore#//model/component/Port"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_PsbPUJ9nEeG3Irl6UQpZxQ" name="multiPortInst" bindingState="BOUND" outgoingLink="_h2pkEJ9nEeG3Irl6UQpZxQ">
-            <classifier href="../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/DiscreteMultiPortInstance"/>
+            <classifier href="../org.muml.pim/model/pim.ecore#//model/instance/DiscreteMultiPortInstance"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_PEjmwJ9WEeG4eMpbz4C8AQ" name="singlePortInst" incomingLink="_h2pkEJ9nEeG3Irl6UQpZxQ" outgoingLink="_Y4-ecJ9nEeG3Irl6UQpZxQ" bindingOperator="CREATE">
-            <classifier href="../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/DiscreteSinglePortInstance"/>
+            <classifier href="../org.muml.pim/model/pim.ecore#//model/instance/DiscreteSinglePortInstance"/>
           </variable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_Y4-ecJ9nEeG3Irl6UQpZxQ" name="singlePortInstToPortType" bindingOperator="CREATE" source="_PEjmwJ9WEeG4eMpbz4C8AQ" target="_HtY8MJ9nEeG3Irl6UQpZxQ">
-            <targetEnd href="../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/PortInstance/portType"/>
+            <targetEnd href="../org.muml.pim/model/pim.ecore#//model/instance/PortInstance/portType"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_h2pkEJ9nEeG3Irl6UQpZxQ" name="multiPortInstToSinglePortInst" bindingOperator="CREATE" source="_PsbPUJ9nEeG3Irl6UQpZxQ" target="_PEjmwJ9WEeG4eMpbz4C8AQ">
-            <targetEnd href="../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/DiscreteMultiPortInstance/subPortInstances"/>
+            <targetEnd href="../org.muml.pim/model/pim.ecore#//model/instance/DiscreteMultiPortInstance/subPortInstances"/>
           </linkVariable>
         </ownedRule>
       </ownedActivityNode>

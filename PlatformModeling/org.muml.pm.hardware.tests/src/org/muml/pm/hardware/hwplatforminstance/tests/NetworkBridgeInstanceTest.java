@@ -102,10 +102,10 @@ public class NetworkBridgeInstanceTest extends NetworkingHardwareInstanceTest {
 	}
 
 	/**
-	 * Tests the '{@link org.muml.pm.hardware.hwplatforminstance.NetworkBridgeInstance#setNetworkBridgeType(de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkBridge) <em>Network Bridge Type</em>}' feature setter.
+	 * Tests the '{@link org.muml.pm.hardware.hwplatforminstance.NetworkBridgeInstance#setNetworkBridgeType(org.muml.pm.hardware.hwplatform.NetworkBridge) <em>Network Bridge Type</em>}' feature setter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.pm.hardware.hwplatforminstance.NetworkBridgeInstance#setNetworkBridgeType(de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkBridge)
+	 * @see org.muml.pm.hardware.hwplatforminstance.NetworkBridgeInstance#setNetworkBridgeType(org.muml.pm.hardware.hwplatform.NetworkBridge)
 	 * @generated
 	 */
 	public void testSetNetworkBridgeType() {

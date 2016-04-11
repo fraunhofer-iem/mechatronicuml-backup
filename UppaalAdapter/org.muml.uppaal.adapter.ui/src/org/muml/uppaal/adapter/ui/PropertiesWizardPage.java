@@ -215,7 +215,7 @@ public class PropertiesWizardPage extends WizardPage {
 	
 	protected class PropertiesLabelProvider extends StyledCellLabelProvider {
 		MtctlXtextPropertyEditor.VerificationPropertyLanguageResource languageResource = new MtctlXtextPropertyEditor.VerificationPropertyLanguageResource(); //to serialize the VerificationProperty
-		Injector uiInjector = org.muml.uppaal.adapter.mtctl.xtext.ui.internal.MtctlActivator.getInstance().getInjector("de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl");
+		Injector uiInjector = org.muml.uppaal.adapter.mtctl.xtext.ui.internal.MtctlActivator.getInstance().getInjector("org.muml.uppaal.adapter.mtctl");
 		Lexer lexer = uiInjector.getInstance(Key.get(Lexer.class, Names.named(org.eclipse.xtext.ui.LexerUIBindings.HIGHLIGHTING))); //to parse the serialized String and emit tokens
 		AbstractAntlrTokenToAttributeIdMapper tokenToAttributeIdMapper = uiInjector.getInstance(AbstractAntlrTokenToAttributeIdMapper.class); //to map a token id to its attribute id (i.e. the id of its look)
 		TextAttributeProvider attributeProvider = uiInjector.getInstance(TextAttributeProvider.class); //to get an attribute style from an attribute id

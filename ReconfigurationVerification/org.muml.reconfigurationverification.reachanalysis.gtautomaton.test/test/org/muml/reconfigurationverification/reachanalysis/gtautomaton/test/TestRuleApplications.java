@@ -55,7 +55,7 @@ import org.muml.storydiagram.StorydiagramPackage;
 
 public class TestRuleApplications {
 	
-	private static final String TRANSFORMATION_PATH = "/de.uni_paderborn.fujaba.muml.reachanalysis.tsdm.transform/transforms/forEachTransformation.qvto";
+	private static final String TRANSFORMATION_PATH = "/org.muml.reconfigurationverification.reachanalysis.tsdm.transform/transforms/forEachTransformation.qvto";
 	
 	// for debugging purposes
 	private static final boolean SAVE_FOREACH_GTS = true;

@@ -23,7 +23,7 @@ import com.google.inject.Module;
  */
 public class MtctlActivator extends AbstractUIPlugin {
 	
-	public static final String DE_UNI_PADERBORN_FUJABA_MUML_VERIFICATION_UPPAAL_MTCTL = "de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl";
+	public static final String DE_UNI_PADERBORN_FUJABA_MUML_VERIFICATION_UPPAAL_MTCTL = "org.muml.uppaal.adapter.mtctl";
 	
 	private static final Logger logger = Logger.getLogger(MtctlActivator.class);
 	

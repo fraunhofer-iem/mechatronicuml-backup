@@ -1872,7 +1872,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
 		Grammar grammar = grammarProvider.getGrammar(this);
 		while (grammar != null) {
-			if ("de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl".equals(grammar.getName())) {
+			if ("org.muml.uppaal.adapter.mtctl".equals(grammar.getName())) {
 				return grammar;
 			}
 			List<Grammar> grammars = grammar.getUsedGrammars();

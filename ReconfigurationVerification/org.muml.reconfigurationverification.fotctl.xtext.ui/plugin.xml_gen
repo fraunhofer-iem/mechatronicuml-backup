@@ -47,7 +47,7 @@
             commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName">
             <activeWhen>
             	<and>
-            		<reference definitionId="de.uni_paderborn.fujaba.muml.verification.FOTCTL.XtextEditor.opened" />
+            		<reference definitionId="org.muml.reconfigurationverification.fotctl.xtextEditor.opened" />
 	                <iterate>
 						<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 					</iterate>
@@ -66,7 +66,7 @@
                 </with>        
             </and>
         </definition>
-        <definition id="de.uni_paderborn.fujaba.muml.verification.FOTCTL.XtextEditor.opened">
+        <definition id="org.muml.reconfigurationverification.fotctl.xtextEditor.opened">
             <and>
                 <reference definitionId="isXtextEditorActive"/>
                 <with variable="activeEditor">
@@ -176,7 +176,7 @@
 				style="push" tooltip="Copy Qualified Name">
          		<visibleWhen checkEnabled="false">
 	            	<and>
-	            		<reference definitionId="de.uni_paderborn.fujaba.muml.verification.FOTCTL.XtextEditor.opened" />
+	            		<reference definitionId="org.muml.reconfigurationverification.fotctl.xtextEditor.opened" />
 						<iterate>
 							<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 						</iterate>

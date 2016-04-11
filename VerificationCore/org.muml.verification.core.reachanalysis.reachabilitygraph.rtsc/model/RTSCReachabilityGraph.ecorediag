@@ -99,7 +99,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_qRUyGyETEeKLloA4O8HoyQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_qRUyESETEeKLloA4O8HoyQ" fontColor="4210752" fontName="MS Shell Dlg" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model.runtime/model/RuntimeModel.ecore#//RealtimeStatechartInstance"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.muml.verification.core.runtime/model/RuntimeModel.ecore#//RealtimeStatechartInstance"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qRUyEiETEeKLloA4O8HoyQ" x="85" y="120"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_qRUyHiETEeKLloA4O8HoyQ" type="1001">

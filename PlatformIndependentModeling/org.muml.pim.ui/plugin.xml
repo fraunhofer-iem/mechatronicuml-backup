@@ -8,7 +8,7 @@
             allPopups="false"
             locationURI="popup:org.muml">
          <separator
-               name="de.uni_paderborn.fujaba.muml.ui.separator1"
+               name="org.muml.ui.separator1"
                visible="true">
          </separator>
          <command

@@ -2,15 +2,15 @@
 <de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://www.muml.org/ape/1.0.0" xmi:id="_RnG40M1gEeSIgPDefa6ZBw" defaultTab="_RnHf4M1gEeSIgPDefa6ZBw" contributorId="org.muml.ape.contributor">
   <reconciler xmi:id="_RnG40c1gEeSIgPDefa6ZBw"/>
   <genModel href="Mtctl.genmodel#/"/>
-  <plugin xmi:id="_RnG40s1gEeSIgPDefa6ZBw" id="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.edit.properties" name="Mtctl Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.5.0.qualifier">
+  <plugin xmi:id="_RnG40s1gEeSIgPDefa6ZBw" id="org.muml.uppaal.adapter.mtctl.edit.properties" name="Mtctl Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.5.0.qualifier">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
     <requiredBundles>org.muml.ape.runtime</requiredBundles>
     <requiredBundles>org.eclipse.emf.edit</requiredBundles>
     <requiredBundles>org.eclipse.ui</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.edit</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui</requiredBundles>
+    <requiredBundles>org.muml.uppaal.adapter.mtctl.edit</requiredBundles>
+    <requiredBundles>org.muml.uppaal.adapter.mtctl</requiredBundles>
+    <requiredBundles>org.muml.uppaal.adapter.mtctl.xtext.ui</requiredBundles>
   </plugin>
   <tabs xmi:id="_RnHf4M1gEeSIgPDefa6ZBw" id="property.tab.mtctl" name="Mtctl" afterTab=""/>
   <packages xmi:id="_RnHf4c1gEeSIgPDefa6ZBw">

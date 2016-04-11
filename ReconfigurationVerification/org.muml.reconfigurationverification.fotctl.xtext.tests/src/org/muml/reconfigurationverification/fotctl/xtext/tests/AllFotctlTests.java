@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.verification.fotctl.xtext.tests;
+package org.muml.reconfigurationverification.fotctl.xtext.tests;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;

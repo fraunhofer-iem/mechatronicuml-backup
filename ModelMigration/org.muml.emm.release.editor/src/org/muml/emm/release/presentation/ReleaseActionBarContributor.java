@@ -178,7 +178,7 @@ public class ReleaseActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(ReleaseEditorPlugin.INSTANCE.getString("_UI_ReleaseEditor_menu"), "de.uni_paderborn.fujaba.ecore.migration.releaseMenuID");
+		IMenuManager submenuManager = new MenuManager(ReleaseEditorPlugin.INSTANCE.getString("_UI_ReleaseEditor_menu"), "org.muml.emm.releaseMenuID");
 		menuManager.insertAfter("additions", submenuManager);
 		submenuManager.add(new Separator("settings"));
 		submenuManager.add(new Separator("actions"));

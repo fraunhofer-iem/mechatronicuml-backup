@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext
+Bundle-Name: org.muml.uppaal.adapter.mtctl.xtext
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
 Bundle-Version: 0.5.0.qualifier
 Bundle-SymbolicName: org.muml.uppaal.adapter.mtctl.xtext;singleton:=true

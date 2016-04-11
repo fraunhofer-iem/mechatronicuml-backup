@@ -81,7 +81,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
         
 
     public String[] getTokenNames() { return InternalFOTCTLParser.tokenNames; }
-    public String getGrammarFileName() { return "../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g"; }
+    public String getGrammarFileName() { return "../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g"; }
 
 
 
@@ -111,7 +111,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFoTCTLSpec"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:74:1: entryRuleFoTCTLSpec returns [EObject current=null] : iv_ruleFoTCTLSpec= ruleFoTCTLSpec EOF ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:74:1: entryRuleFoTCTLSpec returns [EObject current=null] : iv_ruleFoTCTLSpec= ruleFoTCTLSpec EOF ;
     public final EObject entryRuleFoTCTLSpec() throws RecognitionException {
         EObject current = null;
 
@@ -119,8 +119,8 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:75:2: (iv_ruleFoTCTLSpec= ruleFoTCTLSpec EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:76:2: iv_ruleFoTCTLSpec= ruleFoTCTLSpec EOF
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:75:2: (iv_ruleFoTCTLSpec= ruleFoTCTLSpec EOF )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:76:2: iv_ruleFoTCTLSpec= ruleFoTCTLSpec EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getFoTCTLSpecRule()); 
@@ -151,7 +151,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFoTCTLSpec"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:83:1: ruleFoTCTLSpec returns [EObject current=null] : ( () otherlv_1= 'Declaration\\n' (otherlv_2= 'NodeLabelPredicates {' ( (lv_nodeLabelPredicates_3_0= ruleNodeLabelPredicateDecl ) ) (otherlv_4= ',' ( (lv_nodeLabelPredicates_5_0= ruleNodeLabelPredicateDecl ) ) )* otherlv_6= '}\\n' )? (otherlv_7= 'EdgeLabelPredicates {' ( (lv_edgeLabelPredicates_8_0= ruleEdgeLabelPredicateDecl ) ) (otherlv_9= ',' ( (lv_edgeLabelPredicates_10_0= ruleEdgeLabelPredicateDecl ) ) )* otherlv_11= '}\\n' )? (otherlv_12= 'Constants {' ( (lv_constants_13_0= ruleConstantSymbolDecl ) ) (otherlv_14= ',' ( (lv_constants_15_0= ruleConstantSymbolDecl ) ) )* otherlv_16= '}\\n' )? otherlv_17= 'Formulas\\n' ( (lv_formulas_18_0= ruleFoTCTLFormula ) )+ ) ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:83:1: ruleFoTCTLSpec returns [EObject current=null] : ( () otherlv_1= 'Declaration\\n' (otherlv_2= 'NodeLabelPredicates {' ( (lv_nodeLabelPredicates_3_0= ruleNodeLabelPredicateDecl ) ) (otherlv_4= ',' ( (lv_nodeLabelPredicates_5_0= ruleNodeLabelPredicateDecl ) ) )* otherlv_6= '}\\n' )? (otherlv_7= 'EdgeLabelPredicates {' ( (lv_edgeLabelPredicates_8_0= ruleEdgeLabelPredicateDecl ) ) (otherlv_9= ',' ( (lv_edgeLabelPredicates_10_0= ruleEdgeLabelPredicateDecl ) ) )* otherlv_11= '}\\n' )? (otherlv_12= 'Constants {' ( (lv_constants_13_0= ruleConstantSymbolDecl ) ) (otherlv_14= ',' ( (lv_constants_15_0= ruleConstantSymbolDecl ) ) )* otherlv_16= '}\\n' )? otherlv_17= 'Formulas\\n' ( (lv_formulas_18_0= ruleFoTCTLFormula ) )+ ) ;
     public final EObject ruleFoTCTLSpec() throws RecognitionException {
         EObject current = null;
 
@@ -184,14 +184,14 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:86:28: ( ( () otherlv_1= 'Declaration\\n' (otherlv_2= 'NodeLabelPredicates {' ( (lv_nodeLabelPredicates_3_0= ruleNodeLabelPredicateDecl ) ) (otherlv_4= ',' ( (lv_nodeLabelPredicates_5_0= ruleNodeLabelPredicateDecl ) ) )* otherlv_6= '}\\n' )? (otherlv_7= 'EdgeLabelPredicates {' ( (lv_edgeLabelPredicates_8_0= ruleEdgeLabelPredicateDecl ) ) (otherlv_9= ',' ( (lv_edgeLabelPredicates_10_0= ruleEdgeLabelPredicateDecl ) ) )* otherlv_11= '}\\n' )? (otherlv_12= 'Constants {' ( (lv_constants_13_0= ruleConstantSymbolDecl ) ) (otherlv_14= ',' ( (lv_constants_15_0= ruleConstantSymbolDecl ) ) )* otherlv_16= '}\\n' )? otherlv_17= 'Formulas\\n' ( (lv_formulas_18_0= ruleFoTCTLFormula ) )+ ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:87:1: ( () otherlv_1= 'Declaration\\n' (otherlv_2= 'NodeLabelPredicates {' ( (lv_nodeLabelPredicates_3_0= ruleNodeLabelPredicateDecl ) ) (otherlv_4= ',' ( (lv_nodeLabelPredicates_5_0= ruleNodeLabelPredicateDecl ) ) )* otherlv_6= '}\\n' )? (otherlv_7= 'EdgeLabelPredicates {' ( (lv_edgeLabelPredicates_8_0= ruleEdgeLabelPredicateDecl ) ) (otherlv_9= ',' ( (lv_edgeLabelPredicates_10_0= ruleEdgeLabelPredicateDecl ) ) )* otherlv_11= '}\\n' )? (otherlv_12= 'Constants {' ( (lv_constants_13_0= ruleConstantSymbolDecl ) ) (otherlv_14= ',' ( (lv_constants_15_0= ruleConstantSymbolDecl ) ) )* otherlv_16= '}\\n' )? otherlv_17= 'Formulas\\n' ( (lv_formulas_18_0= ruleFoTCTLFormula ) )+ )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:86:28: ( ( () otherlv_1= 'Declaration\\n' (otherlv_2= 'NodeLabelPredicates {' ( (lv_nodeLabelPredicates_3_0= ruleNodeLabelPredicateDecl ) ) (otherlv_4= ',' ( (lv_nodeLabelPredicates_5_0= ruleNodeLabelPredicateDecl ) ) )* otherlv_6= '}\\n' )? (otherlv_7= 'EdgeLabelPredicates {' ( (lv_edgeLabelPredicates_8_0= ruleEdgeLabelPredicateDecl ) ) (otherlv_9= ',' ( (lv_edgeLabelPredicates_10_0= ruleEdgeLabelPredicateDecl ) ) )* otherlv_11= '}\\n' )? (otherlv_12= 'Constants {' ( (lv_constants_13_0= ruleConstantSymbolDecl ) ) (otherlv_14= ',' ( (lv_constants_15_0= ruleConstantSymbolDecl ) ) )* otherlv_16= '}\\n' )? otherlv_17= 'Formulas\\n' ( (lv_formulas_18_0= ruleFoTCTLFormula ) )+ ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:87:1: ( () otherlv_1= 'Declaration\\n' (otherlv_2= 'NodeLabelPredicates {' ( (lv_nodeLabelPredicates_3_0= ruleNodeLabelPredicateDecl ) ) (otherlv_4= ',' ( (lv_nodeLabelPredicates_5_0= ruleNodeLabelPredicateDecl ) ) )* otherlv_6= '}\\n' )? (otherlv_7= 'EdgeLabelPredicates {' ( (lv_edgeLabelPredicates_8_0= ruleEdgeLabelPredicateDecl ) ) (otherlv_9= ',' ( (lv_edgeLabelPredicates_10_0= ruleEdgeLabelPredicateDecl ) ) )* otherlv_11= '}\\n' )? (otherlv_12= 'Constants {' ( (lv_constants_13_0= ruleConstantSymbolDecl ) ) (otherlv_14= ',' ( (lv_constants_15_0= ruleConstantSymbolDecl ) ) )* otherlv_16= '}\\n' )? otherlv_17= 'Formulas\\n' ( (lv_formulas_18_0= ruleFoTCTLFormula ) )+ )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:87:1: ( () otherlv_1= 'Declaration\\n' (otherlv_2= 'NodeLabelPredicates {' ( (lv_nodeLabelPredicates_3_0= ruleNodeLabelPredicateDecl ) ) (otherlv_4= ',' ( (lv_nodeLabelPredicates_5_0= ruleNodeLabelPredicateDecl ) ) )* otherlv_6= '}\\n' )? (otherlv_7= 'EdgeLabelPredicates {' ( (lv_edgeLabelPredicates_8_0= ruleEdgeLabelPredicateDecl ) ) (otherlv_9= ',' ( (lv_edgeLabelPredicates_10_0= ruleEdgeLabelPredicateDecl ) ) )* otherlv_11= '}\\n' )? (otherlv_12= 'Constants {' ( (lv_constants_13_0= ruleConstantSymbolDecl ) ) (otherlv_14= ',' ( (lv_constants_15_0= ruleConstantSymbolDecl ) ) )* otherlv_16= '}\\n' )? otherlv_17= 'Formulas\\n' ( (lv_formulas_18_0= ruleFoTCTLFormula ) )+ )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:87:2: () otherlv_1= 'Declaration\\n' (otherlv_2= 'NodeLabelPredicates {' ( (lv_nodeLabelPredicates_3_0= ruleNodeLabelPredicateDecl ) ) (otherlv_4= ',' ( (lv_nodeLabelPredicates_5_0= ruleNodeLabelPredicateDecl ) ) )* otherlv_6= '}\\n' )? (otherlv_7= 'EdgeLabelPredicates {' ( (lv_edgeLabelPredicates_8_0= ruleEdgeLabelPredicateDecl ) ) (otherlv_9= ',' ( (lv_edgeLabelPredicates_10_0= ruleEdgeLabelPredicateDecl ) ) )* otherlv_11= '}\\n' )? (otherlv_12= 'Constants {' ( (lv_constants_13_0= ruleConstantSymbolDecl ) ) (otherlv_14= ',' ( (lv_constants_15_0= ruleConstantSymbolDecl ) ) )* otherlv_16= '}\\n' )? otherlv_17= 'Formulas\\n' ( (lv_formulas_18_0= ruleFoTCTLFormula ) )+
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:87:1: ( () otherlv_1= 'Declaration\\n' (otherlv_2= 'NodeLabelPredicates {' ( (lv_nodeLabelPredicates_3_0= ruleNodeLabelPredicateDecl ) ) (otherlv_4= ',' ( (lv_nodeLabelPredicates_5_0= ruleNodeLabelPredicateDecl ) ) )* otherlv_6= '}\\n' )? (otherlv_7= 'EdgeLabelPredicates {' ( (lv_edgeLabelPredicates_8_0= ruleEdgeLabelPredicateDecl ) ) (otherlv_9= ',' ( (lv_edgeLabelPredicates_10_0= ruleEdgeLabelPredicateDecl ) ) )* otherlv_11= '}\\n' )? (otherlv_12= 'Constants {' ( (lv_constants_13_0= ruleConstantSymbolDecl ) ) (otherlv_14= ',' ( (lv_constants_15_0= ruleConstantSymbolDecl ) ) )* otherlv_16= '}\\n' )? otherlv_17= 'Formulas\\n' ( (lv_formulas_18_0= ruleFoTCTLFormula ) )+ )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:87:2: () otherlv_1= 'Declaration\\n' (otherlv_2= 'NodeLabelPredicates {' ( (lv_nodeLabelPredicates_3_0= ruleNodeLabelPredicateDecl ) ) (otherlv_4= ',' ( (lv_nodeLabelPredicates_5_0= ruleNodeLabelPredicateDecl ) ) )* otherlv_6= '}\\n' )? (otherlv_7= 'EdgeLabelPredicates {' ( (lv_edgeLabelPredicates_8_0= ruleEdgeLabelPredicateDecl ) ) (otherlv_9= ',' ( (lv_edgeLabelPredicates_10_0= ruleEdgeLabelPredicateDecl ) ) )* otherlv_11= '}\\n' )? (otherlv_12= 'Constants {' ( (lv_constants_13_0= ruleConstantSymbolDecl ) ) (otherlv_14= ',' ( (lv_constants_15_0= ruleConstantSymbolDecl ) ) )* otherlv_16= '}\\n' )? otherlv_17= 'Formulas\\n' ( (lv_formulas_18_0= ruleFoTCTLFormula ) )+
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:87:2: ()
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:88:2: 
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:87:2: ()
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:88:2: 
             {
             if ( state.backtracking==0 ) {
                
@@ -214,7 +214,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_1, grammarAccess.getFoTCTLSpecAccess().getDeclarationKeyword_1());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:100:1: (otherlv_2= 'NodeLabelPredicates {' ( (lv_nodeLabelPredicates_3_0= ruleNodeLabelPredicateDecl ) ) (otherlv_4= ',' ( (lv_nodeLabelPredicates_5_0= ruleNodeLabelPredicateDecl ) ) )* otherlv_6= '}\\n' )?
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:100:1: (otherlv_2= 'NodeLabelPredicates {' ( (lv_nodeLabelPredicates_3_0= ruleNodeLabelPredicateDecl ) ) (otherlv_4= ',' ( (lv_nodeLabelPredicates_5_0= ruleNodeLabelPredicateDecl ) ) )* otherlv_6= '}\\n' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -223,7 +223,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
             }
             switch (alt2) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:100:3: otherlv_2= 'NodeLabelPredicates {' ( (lv_nodeLabelPredicates_3_0= ruleNodeLabelPredicateDecl ) ) (otherlv_4= ',' ( (lv_nodeLabelPredicates_5_0= ruleNodeLabelPredicateDecl ) ) )* otherlv_6= '}\\n'
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:100:3: otherlv_2= 'NodeLabelPredicates {' ( (lv_nodeLabelPredicates_3_0= ruleNodeLabelPredicateDecl ) ) (otherlv_4= ',' ( (lv_nodeLabelPredicates_5_0= ruleNodeLabelPredicateDecl ) ) )* otherlv_6= '}\\n'
                     {
                     otherlv_2=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleFoTCTLSpec153); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -231,11 +231,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                           	newLeafNode(otherlv_2, grammarAccess.getFoTCTLSpecAccess().getNodeLabelPredicatesKeyword_2_0());
                           
                     }
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:104:1: ( (lv_nodeLabelPredicates_3_0= ruleNodeLabelPredicateDecl ) )
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:105:1: (lv_nodeLabelPredicates_3_0= ruleNodeLabelPredicateDecl )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:104:1: ( (lv_nodeLabelPredicates_3_0= ruleNodeLabelPredicateDecl ) )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:105:1: (lv_nodeLabelPredicates_3_0= ruleNodeLabelPredicateDecl )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:105:1: (lv_nodeLabelPredicates_3_0= ruleNodeLabelPredicateDecl )
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:106:3: lv_nodeLabelPredicates_3_0= ruleNodeLabelPredicateDecl
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:105:1: (lv_nodeLabelPredicates_3_0= ruleNodeLabelPredicateDecl )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:106:3: lv_nodeLabelPredicates_3_0= ruleNodeLabelPredicateDecl
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -266,7 +266,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:122:2: (otherlv_4= ',' ( (lv_nodeLabelPredicates_5_0= ruleNodeLabelPredicateDecl ) ) )*
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:122:2: (otherlv_4= ',' ( (lv_nodeLabelPredicates_5_0= ruleNodeLabelPredicateDecl ) ) )*
                     loop1:
                     do {
                         int alt1=2;
@@ -279,7 +279,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
                         switch (alt1) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:122:4: otherlv_4= ',' ( (lv_nodeLabelPredicates_5_0= ruleNodeLabelPredicateDecl ) )
+                    	    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:122:4: otherlv_4= ',' ( (lv_nodeLabelPredicates_5_0= ruleNodeLabelPredicateDecl ) )
                     	    {
                     	    otherlv_4=(Token)match(input,17,FollowSets000.FOLLOW_17_in_ruleFoTCTLSpec187); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
@@ -287,11 +287,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                     	          	newLeafNode(otherlv_4, grammarAccess.getFoTCTLSpecAccess().getCommaKeyword_2_2_0());
                     	          
                     	    }
-                    	    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:126:1: ( (lv_nodeLabelPredicates_5_0= ruleNodeLabelPredicateDecl ) )
-                    	    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:127:1: (lv_nodeLabelPredicates_5_0= ruleNodeLabelPredicateDecl )
+                    	    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:126:1: ( (lv_nodeLabelPredicates_5_0= ruleNodeLabelPredicateDecl ) )
+                    	    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:127:1: (lv_nodeLabelPredicates_5_0= ruleNodeLabelPredicateDecl )
                     	    {
-                    	    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:127:1: (lv_nodeLabelPredicates_5_0= ruleNodeLabelPredicateDecl )
-                    	    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:128:3: lv_nodeLabelPredicates_5_0= ruleNodeLabelPredicateDecl
+                    	    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:127:1: (lv_nodeLabelPredicates_5_0= ruleNodeLabelPredicateDecl )
+                    	    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:128:3: lv_nodeLabelPredicates_5_0= ruleNodeLabelPredicateDecl
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
@@ -343,7 +343,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:148:3: (otherlv_7= 'EdgeLabelPredicates {' ( (lv_edgeLabelPredicates_8_0= ruleEdgeLabelPredicateDecl ) ) (otherlv_9= ',' ( (lv_edgeLabelPredicates_10_0= ruleEdgeLabelPredicateDecl ) ) )* otherlv_11= '}\\n' )?
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:148:3: (otherlv_7= 'EdgeLabelPredicates {' ( (lv_edgeLabelPredicates_8_0= ruleEdgeLabelPredicateDecl ) ) (otherlv_9= ',' ( (lv_edgeLabelPredicates_10_0= ruleEdgeLabelPredicateDecl ) ) )* otherlv_11= '}\\n' )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -352,7 +352,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
             }
             switch (alt4) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:148:5: otherlv_7= 'EdgeLabelPredicates {' ( (lv_edgeLabelPredicates_8_0= ruleEdgeLabelPredicateDecl ) ) (otherlv_9= ',' ( (lv_edgeLabelPredicates_10_0= ruleEdgeLabelPredicateDecl ) ) )* otherlv_11= '}\\n'
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:148:5: otherlv_7= 'EdgeLabelPredicates {' ( (lv_edgeLabelPredicates_8_0= ruleEdgeLabelPredicateDecl ) ) (otherlv_9= ',' ( (lv_edgeLabelPredicates_10_0= ruleEdgeLabelPredicateDecl ) ) )* otherlv_11= '}\\n'
                     {
                     otherlv_7=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleFoTCTLSpec237); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -360,11 +360,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                           	newLeafNode(otherlv_7, grammarAccess.getFoTCTLSpecAccess().getEdgeLabelPredicatesKeyword_3_0());
                           
                     }
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:152:1: ( (lv_edgeLabelPredicates_8_0= ruleEdgeLabelPredicateDecl ) )
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:153:1: (lv_edgeLabelPredicates_8_0= ruleEdgeLabelPredicateDecl )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:152:1: ( (lv_edgeLabelPredicates_8_0= ruleEdgeLabelPredicateDecl ) )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:153:1: (lv_edgeLabelPredicates_8_0= ruleEdgeLabelPredicateDecl )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:153:1: (lv_edgeLabelPredicates_8_0= ruleEdgeLabelPredicateDecl )
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:154:3: lv_edgeLabelPredicates_8_0= ruleEdgeLabelPredicateDecl
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:153:1: (lv_edgeLabelPredicates_8_0= ruleEdgeLabelPredicateDecl )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:154:3: lv_edgeLabelPredicates_8_0= ruleEdgeLabelPredicateDecl
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -395,7 +395,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:170:2: (otherlv_9= ',' ( (lv_edgeLabelPredicates_10_0= ruleEdgeLabelPredicateDecl ) ) )*
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:170:2: (otherlv_9= ',' ( (lv_edgeLabelPredicates_10_0= ruleEdgeLabelPredicateDecl ) ) )*
                     loop3:
                     do {
                         int alt3=2;
@@ -408,7 +408,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
                         switch (alt3) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:170:4: otherlv_9= ',' ( (lv_edgeLabelPredicates_10_0= ruleEdgeLabelPredicateDecl ) )
+                    	    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:170:4: otherlv_9= ',' ( (lv_edgeLabelPredicates_10_0= ruleEdgeLabelPredicateDecl ) )
                     	    {
                     	    otherlv_9=(Token)match(input,17,FollowSets000.FOLLOW_17_in_ruleFoTCTLSpec271); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
@@ -416,11 +416,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                     	          	newLeafNode(otherlv_9, grammarAccess.getFoTCTLSpecAccess().getCommaKeyword_3_2_0());
                     	          
                     	    }
-                    	    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:174:1: ( (lv_edgeLabelPredicates_10_0= ruleEdgeLabelPredicateDecl ) )
-                    	    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:175:1: (lv_edgeLabelPredicates_10_0= ruleEdgeLabelPredicateDecl )
+                    	    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:174:1: ( (lv_edgeLabelPredicates_10_0= ruleEdgeLabelPredicateDecl ) )
+                    	    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:175:1: (lv_edgeLabelPredicates_10_0= ruleEdgeLabelPredicateDecl )
                     	    {
-                    	    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:175:1: (lv_edgeLabelPredicates_10_0= ruleEdgeLabelPredicateDecl )
-                    	    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:176:3: lv_edgeLabelPredicates_10_0= ruleEdgeLabelPredicateDecl
+                    	    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:175:1: (lv_edgeLabelPredicates_10_0= ruleEdgeLabelPredicateDecl )
+                    	    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:176:3: lv_edgeLabelPredicates_10_0= ruleEdgeLabelPredicateDecl
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
@@ -472,7 +472,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:196:3: (otherlv_12= 'Constants {' ( (lv_constants_13_0= ruleConstantSymbolDecl ) ) (otherlv_14= ',' ( (lv_constants_15_0= ruleConstantSymbolDecl ) ) )* otherlv_16= '}\\n' )?
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:196:3: (otherlv_12= 'Constants {' ( (lv_constants_13_0= ruleConstantSymbolDecl ) ) (otherlv_14= ',' ( (lv_constants_15_0= ruleConstantSymbolDecl ) ) )* otherlv_16= '}\\n' )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -481,7 +481,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
             }
             switch (alt6) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:196:5: otherlv_12= 'Constants {' ( (lv_constants_13_0= ruleConstantSymbolDecl ) ) (otherlv_14= ',' ( (lv_constants_15_0= ruleConstantSymbolDecl ) ) )* otherlv_16= '}\\n'
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:196:5: otherlv_12= 'Constants {' ( (lv_constants_13_0= ruleConstantSymbolDecl ) ) (otherlv_14= ',' ( (lv_constants_15_0= ruleConstantSymbolDecl ) ) )* otherlv_16= '}\\n'
                     {
                     otherlv_12=(Token)match(input,20,FollowSets000.FOLLOW_20_in_ruleFoTCTLSpec321); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -489,11 +489,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                           	newLeafNode(otherlv_12, grammarAccess.getFoTCTLSpecAccess().getConstantsKeyword_4_0());
                           
                     }
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:200:1: ( (lv_constants_13_0= ruleConstantSymbolDecl ) )
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:201:1: (lv_constants_13_0= ruleConstantSymbolDecl )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:200:1: ( (lv_constants_13_0= ruleConstantSymbolDecl ) )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:201:1: (lv_constants_13_0= ruleConstantSymbolDecl )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:201:1: (lv_constants_13_0= ruleConstantSymbolDecl )
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:202:3: lv_constants_13_0= ruleConstantSymbolDecl
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:201:1: (lv_constants_13_0= ruleConstantSymbolDecl )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:202:3: lv_constants_13_0= ruleConstantSymbolDecl
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -524,7 +524,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:218:2: (otherlv_14= ',' ( (lv_constants_15_0= ruleConstantSymbolDecl ) ) )*
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:218:2: (otherlv_14= ',' ( (lv_constants_15_0= ruleConstantSymbolDecl ) ) )*
                     loop5:
                     do {
                         int alt5=2;
@@ -537,7 +537,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:218:4: otherlv_14= ',' ( (lv_constants_15_0= ruleConstantSymbolDecl ) )
+                    	    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:218:4: otherlv_14= ',' ( (lv_constants_15_0= ruleConstantSymbolDecl ) )
                     	    {
                     	    otherlv_14=(Token)match(input,17,FollowSets000.FOLLOW_17_in_ruleFoTCTLSpec355); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
@@ -545,11 +545,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                     	          	newLeafNode(otherlv_14, grammarAccess.getFoTCTLSpecAccess().getCommaKeyword_4_2_0());
                     	          
                     	    }
-                    	    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:222:1: ( (lv_constants_15_0= ruleConstantSymbolDecl ) )
-                    	    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:223:1: (lv_constants_15_0= ruleConstantSymbolDecl )
+                    	    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:222:1: ( (lv_constants_15_0= ruleConstantSymbolDecl ) )
+                    	    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:223:1: (lv_constants_15_0= ruleConstantSymbolDecl )
                     	    {
-                    	    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:223:1: (lv_constants_15_0= ruleConstantSymbolDecl )
-                    	    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:224:3: lv_constants_15_0= ruleConstantSymbolDecl
+                    	    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:223:1: (lv_constants_15_0= ruleConstantSymbolDecl )
+                    	    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:224:3: lv_constants_15_0= ruleConstantSymbolDecl
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
@@ -607,7 +607,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_17, grammarAccess.getFoTCTLSpecAccess().getFormulasKeyword_5());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:248:1: ( (lv_formulas_18_0= ruleFoTCTLFormula ) )+
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:248:1: ( (lv_formulas_18_0= ruleFoTCTLFormula ) )+
             int cnt7=0;
             loop7:
             do {
@@ -621,10 +621,10 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:249:1: (lv_formulas_18_0= ruleFoTCTLFormula )
+            	    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:249:1: (lv_formulas_18_0= ruleFoTCTLFormula )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:249:1: (lv_formulas_18_0= ruleFoTCTLFormula )
-            	    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:250:3: lv_formulas_18_0= ruleFoTCTLFormula
+            	    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:249:1: (lv_formulas_18_0= ruleFoTCTLFormula )
+            	    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:250:3: lv_formulas_18_0= ruleFoTCTLFormula
             	    {
             	    if ( state.backtracking==0 ) {
             	       
@@ -689,7 +689,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFoTCTLFormula"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:274:1: entryRuleFoTCTLFormula returns [EObject current=null] : iv_ruleFoTCTLFormula= ruleFoTCTLFormula EOF ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:274:1: entryRuleFoTCTLFormula returns [EObject current=null] : iv_ruleFoTCTLFormula= ruleFoTCTLFormula EOF ;
     public final EObject entryRuleFoTCTLFormula() throws RecognitionException {
         EObject current = null;
 
@@ -697,8 +697,8 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:275:2: (iv_ruleFoTCTLFormula= ruleFoTCTLFormula EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:276:2: iv_ruleFoTCTLFormula= ruleFoTCTLFormula EOF
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:275:2: (iv_ruleFoTCTLFormula= ruleFoTCTLFormula EOF )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:276:2: iv_ruleFoTCTLFormula= ruleFoTCTLFormula EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getFoTCTLFormulaRule()); 
@@ -729,7 +729,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFoTCTLFormula"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:283:1: ruleFoTCTLFormula returns [EObject current=null] : ( () ( (lv_formula_1_0= ruleFormulaDefinition ) ) otherlv_2= ';\\n' ) ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:283:1: ruleFoTCTLFormula returns [EObject current=null] : ( () ( (lv_formula_1_0= ruleFormulaDefinition ) ) otherlv_2= ';\\n' ) ;
     public final EObject ruleFoTCTLFormula() throws RecognitionException {
         EObject current = null;
 
@@ -740,14 +740,14 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:286:28: ( ( () ( (lv_formula_1_0= ruleFormulaDefinition ) ) otherlv_2= ';\\n' ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:287:1: ( () ( (lv_formula_1_0= ruleFormulaDefinition ) ) otherlv_2= ';\\n' )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:286:28: ( ( () ( (lv_formula_1_0= ruleFormulaDefinition ) ) otherlv_2= ';\\n' ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:287:1: ( () ( (lv_formula_1_0= ruleFormulaDefinition ) ) otherlv_2= ';\\n' )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:287:1: ( () ( (lv_formula_1_0= ruleFormulaDefinition ) ) otherlv_2= ';\\n' )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:287:2: () ( (lv_formula_1_0= ruleFormulaDefinition ) ) otherlv_2= ';\\n'
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:287:1: ( () ( (lv_formula_1_0= ruleFormulaDefinition ) ) otherlv_2= ';\\n' )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:287:2: () ( (lv_formula_1_0= ruleFormulaDefinition ) ) otherlv_2= ';\\n'
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:287:2: ()
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:288:2: 
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:287:2: ()
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:288:2: 
             {
             if ( state.backtracking==0 ) {
                
@@ -764,11 +764,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:296:2: ( (lv_formula_1_0= ruleFormulaDefinition ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:297:1: (lv_formula_1_0= ruleFormulaDefinition )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:296:2: ( (lv_formula_1_0= ruleFormulaDefinition ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:297:1: (lv_formula_1_0= ruleFormulaDefinition )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:297:1: (lv_formula_1_0= ruleFormulaDefinition )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:298:3: lv_formula_1_0= ruleFormulaDefinition
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:297:1: (lv_formula_1_0= ruleFormulaDefinition )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:298:3: lv_formula_1_0= ruleFormulaDefinition
             {
             if ( state.backtracking==0 ) {
                
@@ -828,7 +828,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFormulaDefinition"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:326:1: entryRuleFormulaDefinition returns [EObject current=null] : iv_ruleFormulaDefinition= ruleFormulaDefinition EOF ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:326:1: entryRuleFormulaDefinition returns [EObject current=null] : iv_ruleFormulaDefinition= ruleFormulaDefinition EOF ;
     public final EObject entryRuleFormulaDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -836,8 +836,8 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:327:2: (iv_ruleFormulaDefinition= ruleFormulaDefinition EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:328:2: iv_ruleFormulaDefinition= ruleFormulaDefinition EOF
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:327:2: (iv_ruleFormulaDefinition= ruleFormulaDefinition EOF )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:328:2: iv_ruleFormulaDefinition= ruleFormulaDefinition EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getFormulaDefinitionRule()); 
@@ -868,7 +868,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFormulaDefinition"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:335:1: ruleFormulaDefinition returns [EObject current=null] : (this_AtomicFormula_0= ruleAtomicFormula | this_UnaryFormula_1= ruleUnaryFormula | this_BinaryFormula_2= ruleBinaryFormula ) ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:335:1: ruleFormulaDefinition returns [EObject current=null] : (this_AtomicFormula_0= ruleAtomicFormula | this_UnaryFormula_1= ruleUnaryFormula | this_BinaryFormula_2= ruleBinaryFormula ) ;
     public final EObject ruleFormulaDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -882,10 +882,10 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:338:28: ( (this_AtomicFormula_0= ruleAtomicFormula | this_UnaryFormula_1= ruleUnaryFormula | this_BinaryFormula_2= ruleBinaryFormula ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:339:1: (this_AtomicFormula_0= ruleAtomicFormula | this_UnaryFormula_1= ruleUnaryFormula | this_BinaryFormula_2= ruleBinaryFormula )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:338:28: ( (this_AtomicFormula_0= ruleAtomicFormula | this_UnaryFormula_1= ruleUnaryFormula | this_BinaryFormula_2= ruleBinaryFormula ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:339:1: (this_AtomicFormula_0= ruleAtomicFormula | this_UnaryFormula_1= ruleUnaryFormula | this_BinaryFormula_2= ruleBinaryFormula )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:339:1: (this_AtomicFormula_0= ruleAtomicFormula | this_UnaryFormula_1= ruleUnaryFormula | this_BinaryFormula_2= ruleBinaryFormula )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:339:1: (this_AtomicFormula_0= ruleAtomicFormula | this_UnaryFormula_1= ruleUnaryFormula | this_BinaryFormula_2= ruleBinaryFormula )
             int alt8=3;
             switch ( input.LA(1) ) {
             case RULE_NODE_PREDICATE_NAME:
@@ -922,7 +922,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
             switch (alt8) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:340:2: this_AtomicFormula_0= ruleAtomicFormula
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:340:2: this_AtomicFormula_0= ruleAtomicFormula
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -949,7 +949,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:353:2: this_UnaryFormula_1= ruleUnaryFormula
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:353:2: this_UnaryFormula_1= ruleUnaryFormula
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -976,7 +976,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:366:2: this_BinaryFormula_2= ruleBinaryFormula
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:366:2: this_BinaryFormula_2= ruleBinaryFormula
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -1025,7 +1025,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNodeLabelPredicateDecl"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:385:1: entryRuleNodeLabelPredicateDecl returns [EObject current=null] : iv_ruleNodeLabelPredicateDecl= ruleNodeLabelPredicateDecl EOF ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:385:1: entryRuleNodeLabelPredicateDecl returns [EObject current=null] : iv_ruleNodeLabelPredicateDecl= ruleNodeLabelPredicateDecl EOF ;
     public final EObject entryRuleNodeLabelPredicateDecl() throws RecognitionException {
         EObject current = null;
 
@@ -1033,8 +1033,8 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:386:2: (iv_ruleNodeLabelPredicateDecl= ruleNodeLabelPredicateDecl EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:387:2: iv_ruleNodeLabelPredicateDecl= ruleNodeLabelPredicateDecl EOF
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:386:2: (iv_ruleNodeLabelPredicateDecl= ruleNodeLabelPredicateDecl EOF )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:387:2: iv_ruleNodeLabelPredicateDecl= ruleNodeLabelPredicateDecl EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getNodeLabelPredicateDeclRule()); 
@@ -1065,7 +1065,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNodeLabelPredicateDecl"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:394:1: ruleNodeLabelPredicateDecl returns [EObject current=null] : ( () ( (lv_name_1_0= RULE_NODE_PREDICATE_NAME ) ) ) ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:394:1: ruleNodeLabelPredicateDecl returns [EObject current=null] : ( () ( (lv_name_1_0= RULE_NODE_PREDICATE_NAME ) ) ) ;
     public final EObject ruleNodeLabelPredicateDecl() throws RecognitionException {
         EObject current = null;
 
@@ -1074,14 +1074,14 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:397:28: ( ( () ( (lv_name_1_0= RULE_NODE_PREDICATE_NAME ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:398:1: ( () ( (lv_name_1_0= RULE_NODE_PREDICATE_NAME ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:397:28: ( ( () ( (lv_name_1_0= RULE_NODE_PREDICATE_NAME ) ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:398:1: ( () ( (lv_name_1_0= RULE_NODE_PREDICATE_NAME ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:398:1: ( () ( (lv_name_1_0= RULE_NODE_PREDICATE_NAME ) ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:398:2: () ( (lv_name_1_0= RULE_NODE_PREDICATE_NAME ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:398:1: ( () ( (lv_name_1_0= RULE_NODE_PREDICATE_NAME ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:398:2: () ( (lv_name_1_0= RULE_NODE_PREDICATE_NAME ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:398:2: ()
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:399:2: 
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:398:2: ()
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:399:2: 
             {
             if ( state.backtracking==0 ) {
                
@@ -1098,11 +1098,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:407:2: ( (lv_name_1_0= RULE_NODE_PREDICATE_NAME ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:408:1: (lv_name_1_0= RULE_NODE_PREDICATE_NAME )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:407:2: ( (lv_name_1_0= RULE_NODE_PREDICATE_NAME ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:408:1: (lv_name_1_0= RULE_NODE_PREDICATE_NAME )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:408:1: (lv_name_1_0= RULE_NODE_PREDICATE_NAME )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:409:3: lv_name_1_0= RULE_NODE_PREDICATE_NAME
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:408:1: (lv_name_1_0= RULE_NODE_PREDICATE_NAME )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:409:3: lv_name_1_0= RULE_NODE_PREDICATE_NAME
             {
             lv_name_1_0=(Token)match(input,RULE_NODE_PREDICATE_NAME,FollowSets000.FOLLOW_RULE_NODE_PREDICATE_NAME_in_ruleNodeLabelPredicateDecl797); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -1151,7 +1151,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEdgeLabelPredicateDecl"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:433:1: entryRuleEdgeLabelPredicateDecl returns [EObject current=null] : iv_ruleEdgeLabelPredicateDecl= ruleEdgeLabelPredicateDecl EOF ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:433:1: entryRuleEdgeLabelPredicateDecl returns [EObject current=null] : iv_ruleEdgeLabelPredicateDecl= ruleEdgeLabelPredicateDecl EOF ;
     public final EObject entryRuleEdgeLabelPredicateDecl() throws RecognitionException {
         EObject current = null;
 
@@ -1159,8 +1159,8 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:434:2: (iv_ruleEdgeLabelPredicateDecl= ruleEdgeLabelPredicateDecl EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:435:2: iv_ruleEdgeLabelPredicateDecl= ruleEdgeLabelPredicateDecl EOF
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:434:2: (iv_ruleEdgeLabelPredicateDecl= ruleEdgeLabelPredicateDecl EOF )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:435:2: iv_ruleEdgeLabelPredicateDecl= ruleEdgeLabelPredicateDecl EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEdgeLabelPredicateDeclRule()); 
@@ -1191,7 +1191,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEdgeLabelPredicateDecl"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:442:1: ruleEdgeLabelPredicateDecl returns [EObject current=null] : ( () ( (lv_name_1_0= RULE_EDGE_PREDICATE_NAME ) ) ) ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:442:1: ruleEdgeLabelPredicateDecl returns [EObject current=null] : ( () ( (lv_name_1_0= RULE_EDGE_PREDICATE_NAME ) ) ) ;
     public final EObject ruleEdgeLabelPredicateDecl() throws RecognitionException {
         EObject current = null;
 
@@ -1200,14 +1200,14 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:445:28: ( ( () ( (lv_name_1_0= RULE_EDGE_PREDICATE_NAME ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:446:1: ( () ( (lv_name_1_0= RULE_EDGE_PREDICATE_NAME ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:445:28: ( ( () ( (lv_name_1_0= RULE_EDGE_PREDICATE_NAME ) ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:446:1: ( () ( (lv_name_1_0= RULE_EDGE_PREDICATE_NAME ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:446:1: ( () ( (lv_name_1_0= RULE_EDGE_PREDICATE_NAME ) ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:446:2: () ( (lv_name_1_0= RULE_EDGE_PREDICATE_NAME ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:446:1: ( () ( (lv_name_1_0= RULE_EDGE_PREDICATE_NAME ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:446:2: () ( (lv_name_1_0= RULE_EDGE_PREDICATE_NAME ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:446:2: ()
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:447:2: 
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:446:2: ()
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:447:2: 
             {
             if ( state.backtracking==0 ) {
                
@@ -1224,11 +1224,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:455:2: ( (lv_name_1_0= RULE_EDGE_PREDICATE_NAME ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:456:1: (lv_name_1_0= RULE_EDGE_PREDICATE_NAME )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:455:2: ( (lv_name_1_0= RULE_EDGE_PREDICATE_NAME ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:456:1: (lv_name_1_0= RULE_EDGE_PREDICATE_NAME )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:456:1: (lv_name_1_0= RULE_EDGE_PREDICATE_NAME )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:457:3: lv_name_1_0= RULE_EDGE_PREDICATE_NAME
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:456:1: (lv_name_1_0= RULE_EDGE_PREDICATE_NAME )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:457:3: lv_name_1_0= RULE_EDGE_PREDICATE_NAME
             {
             lv_name_1_0=(Token)match(input,RULE_EDGE_PREDICATE_NAME,FollowSets000.FOLLOW_RULE_EDGE_PREDICATE_NAME_in_ruleEdgeLabelPredicateDecl902); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -1277,7 +1277,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConstantSymbolDecl"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:481:1: entryRuleConstantSymbolDecl returns [EObject current=null] : iv_ruleConstantSymbolDecl= ruleConstantSymbolDecl EOF ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:481:1: entryRuleConstantSymbolDecl returns [EObject current=null] : iv_ruleConstantSymbolDecl= ruleConstantSymbolDecl EOF ;
     public final EObject entryRuleConstantSymbolDecl() throws RecognitionException {
         EObject current = null;
 
@@ -1285,8 +1285,8 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:482:2: (iv_ruleConstantSymbolDecl= ruleConstantSymbolDecl EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:483:2: iv_ruleConstantSymbolDecl= ruleConstantSymbolDecl EOF
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:482:2: (iv_ruleConstantSymbolDecl= ruleConstantSymbolDecl EOF )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:483:2: iv_ruleConstantSymbolDecl= ruleConstantSymbolDecl EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getConstantSymbolDeclRule()); 
@@ -1317,7 +1317,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConstantSymbolDecl"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:490:1: ruleConstantSymbolDecl returns [EObject current=null] : ( () ( (lv_name_1_0= RULE_CONSTANT_NAME ) ) ) ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:490:1: ruleConstantSymbolDecl returns [EObject current=null] : ( () ( (lv_name_1_0= RULE_CONSTANT_NAME ) ) ) ;
     public final EObject ruleConstantSymbolDecl() throws RecognitionException {
         EObject current = null;
 
@@ -1326,14 +1326,14 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:493:28: ( ( () ( (lv_name_1_0= RULE_CONSTANT_NAME ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:494:1: ( () ( (lv_name_1_0= RULE_CONSTANT_NAME ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:493:28: ( ( () ( (lv_name_1_0= RULE_CONSTANT_NAME ) ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:494:1: ( () ( (lv_name_1_0= RULE_CONSTANT_NAME ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:494:1: ( () ( (lv_name_1_0= RULE_CONSTANT_NAME ) ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:494:2: () ( (lv_name_1_0= RULE_CONSTANT_NAME ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:494:1: ( () ( (lv_name_1_0= RULE_CONSTANT_NAME ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:494:2: () ( (lv_name_1_0= RULE_CONSTANT_NAME ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:494:2: ()
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:495:2: 
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:494:2: ()
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:495:2: 
             {
             if ( state.backtracking==0 ) {
                
@@ -1350,11 +1350,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:503:2: ( (lv_name_1_0= RULE_CONSTANT_NAME ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:504:1: (lv_name_1_0= RULE_CONSTANT_NAME )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:503:2: ( (lv_name_1_0= RULE_CONSTANT_NAME ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:504:1: (lv_name_1_0= RULE_CONSTANT_NAME )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:504:1: (lv_name_1_0= RULE_CONSTANT_NAME )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:505:3: lv_name_1_0= RULE_CONSTANT_NAME
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:504:1: (lv_name_1_0= RULE_CONSTANT_NAME )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:505:3: lv_name_1_0= RULE_CONSTANT_NAME
             {
             lv_name_1_0=(Token)match(input,RULE_CONSTANT_NAME,FollowSets000.FOLLOW_RULE_CONSTANT_NAME_in_ruleConstantSymbolDecl1007); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -1403,7 +1403,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConstant"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:529:1: entryRuleConstant returns [EObject current=null] : iv_ruleConstant= ruleConstant EOF ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:529:1: entryRuleConstant returns [EObject current=null] : iv_ruleConstant= ruleConstant EOF ;
     public final EObject entryRuleConstant() throws RecognitionException {
         EObject current = null;
 
@@ -1411,8 +1411,8 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:530:2: (iv_ruleConstant= ruleConstant EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:531:2: iv_ruleConstant= ruleConstant EOF
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:530:2: (iv_ruleConstant= ruleConstant EOF )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:531:2: iv_ruleConstant= ruleConstant EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getConstantRule()); 
@@ -1443,7 +1443,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConstant"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:538:1: ruleConstant returns [EObject current=null] : ( () ( (otherlv_1= RULE_CONSTANT_NAME ) ) ) ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:538:1: ruleConstant returns [EObject current=null] : ( () ( (otherlv_1= RULE_CONSTANT_NAME ) ) ) ;
     public final EObject ruleConstant() throws RecognitionException {
         EObject current = null;
 
@@ -1452,14 +1452,14 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:541:28: ( ( () ( (otherlv_1= RULE_CONSTANT_NAME ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:542:1: ( () ( (otherlv_1= RULE_CONSTANT_NAME ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:541:28: ( ( () ( (otherlv_1= RULE_CONSTANT_NAME ) ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:542:1: ( () ( (otherlv_1= RULE_CONSTANT_NAME ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:542:1: ( () ( (otherlv_1= RULE_CONSTANT_NAME ) ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:542:2: () ( (otherlv_1= RULE_CONSTANT_NAME ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:542:1: ( () ( (otherlv_1= RULE_CONSTANT_NAME ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:542:2: () ( (otherlv_1= RULE_CONSTANT_NAME ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:542:2: ()
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:543:2: 
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:542:2: ()
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:543:2: 
             {
             if ( state.backtracking==0 ) {
                
@@ -1476,11 +1476,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:551:2: ( (otherlv_1= RULE_CONSTANT_NAME ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:552:1: (otherlv_1= RULE_CONSTANT_NAME )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:551:2: ( (otherlv_1= RULE_CONSTANT_NAME ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:552:1: (otherlv_1= RULE_CONSTANT_NAME )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:552:1: (otherlv_1= RULE_CONSTANT_NAME )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:553:3: otherlv_1= RULE_CONSTANT_NAME
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:552:1: (otherlv_1= RULE_CONSTANT_NAME )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:553:3: otherlv_1= RULE_CONSTANT_NAME
             {
             if ( state.backtracking==0 ) {
                
@@ -1529,7 +1529,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVariable"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:575:1: entryRuleVariable returns [EObject current=null] : iv_ruleVariable= ruleVariable EOF ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:575:1: entryRuleVariable returns [EObject current=null] : iv_ruleVariable= ruleVariable EOF ;
     public final EObject entryRuleVariable() throws RecognitionException {
         EObject current = null;
 
@@ -1537,8 +1537,8 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:576:2: (iv_ruleVariable= ruleVariable EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:577:2: iv_ruleVariable= ruleVariable EOF
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:576:2: (iv_ruleVariable= ruleVariable EOF )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:577:2: iv_ruleVariable= ruleVariable EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getVariableRule()); 
@@ -1569,7 +1569,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVariable"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:584:1: ruleVariable returns [EObject current=null] : ( () ( (otherlv_1= RULE_VARIABLE_NAME ) ) ) ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:584:1: ruleVariable returns [EObject current=null] : ( () ( (otherlv_1= RULE_VARIABLE_NAME ) ) ) ;
     public final EObject ruleVariable() throws RecognitionException {
         EObject current = null;
 
@@ -1578,14 +1578,14 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:587:28: ( ( () ( (otherlv_1= RULE_VARIABLE_NAME ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:588:1: ( () ( (otherlv_1= RULE_VARIABLE_NAME ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:587:28: ( ( () ( (otherlv_1= RULE_VARIABLE_NAME ) ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:588:1: ( () ( (otherlv_1= RULE_VARIABLE_NAME ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:588:1: ( () ( (otherlv_1= RULE_VARIABLE_NAME ) ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:588:2: () ( (otherlv_1= RULE_VARIABLE_NAME ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:588:1: ( () ( (otherlv_1= RULE_VARIABLE_NAME ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:588:2: () ( (otherlv_1= RULE_VARIABLE_NAME ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:588:2: ()
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:589:2: 
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:588:2: ()
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:589:2: 
             {
             if ( state.backtracking==0 ) {
                
@@ -1602,11 +1602,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:597:2: ( (otherlv_1= RULE_VARIABLE_NAME ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:598:1: (otherlv_1= RULE_VARIABLE_NAME )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:597:2: ( (otherlv_1= RULE_VARIABLE_NAME ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:598:1: (otherlv_1= RULE_VARIABLE_NAME )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:598:1: (otherlv_1= RULE_VARIABLE_NAME )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:599:3: otherlv_1= RULE_VARIABLE_NAME
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:598:1: (otherlv_1= RULE_VARIABLE_NAME )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:599:3: otherlv_1= RULE_VARIABLE_NAME
             {
             if ( state.backtracking==0 ) {
                
@@ -1655,7 +1655,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUnaryFormula"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:621:1: entryRuleUnaryFormula returns [EObject current=null] : iv_ruleUnaryFormula= ruleUnaryFormula EOF ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:621:1: entryRuleUnaryFormula returns [EObject current=null] : iv_ruleUnaryFormula= ruleUnaryFormula EOF ;
     public final EObject entryRuleUnaryFormula() throws RecognitionException {
         EObject current = null;
 
@@ -1663,8 +1663,8 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:622:2: (iv_ruleUnaryFormula= ruleUnaryFormula EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:623:2: iv_ruleUnaryFormula= ruleUnaryFormula EOF
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:622:2: (iv_ruleUnaryFormula= ruleUnaryFormula EOF )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:623:2: iv_ruleUnaryFormula= ruleUnaryFormula EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getUnaryFormulaRule()); 
@@ -1695,7 +1695,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUnaryFormula"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:630:1: ruleUnaryFormula returns [EObject current=null] : (this_NotFormula_0= ruleNotFormula | this_UnaryTemporalFormula_1= ruleUnaryTemporalFormula | this_QuantifiedFormula_2= ruleQuantifiedFormula ) ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:630:1: ruleUnaryFormula returns [EObject current=null] : (this_NotFormula_0= ruleNotFormula | this_UnaryTemporalFormula_1= ruleUnaryTemporalFormula | this_QuantifiedFormula_2= ruleQuantifiedFormula ) ;
     public final EObject ruleUnaryFormula() throws RecognitionException {
         EObject current = null;
 
@@ -1709,10 +1709,10 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:633:28: ( (this_NotFormula_0= ruleNotFormula | this_UnaryTemporalFormula_1= ruleUnaryTemporalFormula | this_QuantifiedFormula_2= ruleQuantifiedFormula ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:634:1: (this_NotFormula_0= ruleNotFormula | this_UnaryTemporalFormula_1= ruleUnaryTemporalFormula | this_QuantifiedFormula_2= ruleQuantifiedFormula )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:633:28: ( (this_NotFormula_0= ruleNotFormula | this_UnaryTemporalFormula_1= ruleUnaryTemporalFormula | this_QuantifiedFormula_2= ruleQuantifiedFormula ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:634:1: (this_NotFormula_0= ruleNotFormula | this_UnaryTemporalFormula_1= ruleUnaryTemporalFormula | this_QuantifiedFormula_2= ruleQuantifiedFormula )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:634:1: (this_NotFormula_0= ruleNotFormula | this_UnaryTemporalFormula_1= ruleUnaryTemporalFormula | this_QuantifiedFormula_2= ruleQuantifiedFormula )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:634:1: (this_NotFormula_0= ruleNotFormula | this_UnaryTemporalFormula_1= ruleUnaryTemporalFormula | this_QuantifiedFormula_2= ruleQuantifiedFormula )
             int alt9=3;
             switch ( input.LA(1) ) {
             case 26:
@@ -1746,7 +1746,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
             switch (alt9) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:635:2: this_NotFormula_0= ruleNotFormula
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:635:2: this_NotFormula_0= ruleNotFormula
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -1773,7 +1773,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:648:2: this_UnaryTemporalFormula_1= ruleUnaryTemporalFormula
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:648:2: this_UnaryTemporalFormula_1= ruleUnaryTemporalFormula
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -1800,7 +1800,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:661:2: this_QuantifiedFormula_2= ruleQuantifiedFormula
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:661:2: this_QuantifiedFormula_2= ruleQuantifiedFormula
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -1849,7 +1849,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBinaryFormula"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:680:1: entryRuleBinaryFormula returns [EObject current=null] : iv_ruleBinaryFormula= ruleBinaryFormula EOF ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:680:1: entryRuleBinaryFormula returns [EObject current=null] : iv_ruleBinaryFormula= ruleBinaryFormula EOF ;
     public final EObject entryRuleBinaryFormula() throws RecognitionException {
         EObject current = null;
 
@@ -1857,8 +1857,8 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:681:2: (iv_ruleBinaryFormula= ruleBinaryFormula EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:682:2: iv_ruleBinaryFormula= ruleBinaryFormula EOF
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:681:2: (iv_ruleBinaryFormula= ruleBinaryFormula EOF )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:682:2: iv_ruleBinaryFormula= ruleBinaryFormula EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getBinaryFormulaRule()); 
@@ -1889,7 +1889,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBinaryFormula"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:689:1: ruleBinaryFormula returns [EObject current=null] : (this_BinaryLogicFormula_0= ruleBinaryLogicFormula | this_BinaryTemporalFormula_1= ruleBinaryTemporalFormula ) ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:689:1: ruleBinaryFormula returns [EObject current=null] : (this_BinaryLogicFormula_0= ruleBinaryLogicFormula | this_BinaryTemporalFormula_1= ruleBinaryTemporalFormula ) ;
     public final EObject ruleBinaryFormula() throws RecognitionException {
         EObject current = null;
 
@@ -1901,10 +1901,10 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:692:28: ( (this_BinaryLogicFormula_0= ruleBinaryLogicFormula | this_BinaryTemporalFormula_1= ruleBinaryTemporalFormula ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:693:1: (this_BinaryLogicFormula_0= ruleBinaryLogicFormula | this_BinaryTemporalFormula_1= ruleBinaryTemporalFormula )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:692:28: ( (this_BinaryLogicFormula_0= ruleBinaryLogicFormula | this_BinaryTemporalFormula_1= ruleBinaryTemporalFormula ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:693:1: (this_BinaryLogicFormula_0= ruleBinaryLogicFormula | this_BinaryTemporalFormula_1= ruleBinaryTemporalFormula )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:693:1: (this_BinaryLogicFormula_0= ruleBinaryLogicFormula | this_BinaryTemporalFormula_1= ruleBinaryTemporalFormula )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:693:1: (this_BinaryLogicFormula_0= ruleBinaryLogicFormula | this_BinaryTemporalFormula_1= ruleBinaryTemporalFormula )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1934,7 +1934,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
             }
             switch (alt10) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:694:2: this_BinaryLogicFormula_0= ruleBinaryLogicFormula
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:694:2: this_BinaryLogicFormula_0= ruleBinaryLogicFormula
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -1961,7 +1961,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:707:2: this_BinaryTemporalFormula_1= ruleBinaryTemporalFormula
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:707:2: this_BinaryTemporalFormula_1= ruleBinaryTemporalFormula
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -2010,7 +2010,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAtomicFormula"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:726:1: entryRuleAtomicFormula returns [EObject current=null] : iv_ruleAtomicFormula= ruleAtomicFormula EOF ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:726:1: entryRuleAtomicFormula returns [EObject current=null] : iv_ruleAtomicFormula= ruleAtomicFormula EOF ;
     public final EObject entryRuleAtomicFormula() throws RecognitionException {
         EObject current = null;
 
@@ -2018,8 +2018,8 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:727:2: (iv_ruleAtomicFormula= ruleAtomicFormula EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:728:2: iv_ruleAtomicFormula= ruleAtomicFormula EOF
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:727:2: (iv_ruleAtomicFormula= ruleAtomicFormula EOF )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:728:2: iv_ruleAtomicFormula= ruleAtomicFormula EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getAtomicFormulaRule()); 
@@ -2050,7 +2050,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAtomicFormula"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:735:1: ruleAtomicFormula returns [EObject current=null] : (this_NodeLabelPredicate_0= ruleNodeLabelPredicate | this_EdgeLabelPredicate_1= ruleEdgeLabelPredicate ) ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:735:1: ruleAtomicFormula returns [EObject current=null] : (this_NodeLabelPredicate_0= ruleNodeLabelPredicate | this_EdgeLabelPredicate_1= ruleEdgeLabelPredicate ) ;
     public final EObject ruleAtomicFormula() throws RecognitionException {
         EObject current = null;
 
@@ -2062,10 +2062,10 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:738:28: ( (this_NodeLabelPredicate_0= ruleNodeLabelPredicate | this_EdgeLabelPredicate_1= ruleEdgeLabelPredicate ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:739:1: (this_NodeLabelPredicate_0= ruleNodeLabelPredicate | this_EdgeLabelPredicate_1= ruleEdgeLabelPredicate )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:738:28: ( (this_NodeLabelPredicate_0= ruleNodeLabelPredicate | this_EdgeLabelPredicate_1= ruleEdgeLabelPredicate ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:739:1: (this_NodeLabelPredicate_0= ruleNodeLabelPredicate | this_EdgeLabelPredicate_1= ruleEdgeLabelPredicate )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:739:1: (this_NodeLabelPredicate_0= ruleNodeLabelPredicate | this_EdgeLabelPredicate_1= ruleEdgeLabelPredicate )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:739:1: (this_NodeLabelPredicate_0= ruleNodeLabelPredicate | this_EdgeLabelPredicate_1= ruleEdgeLabelPredicate )
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -2084,7 +2084,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
             }
             switch (alt11) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:740:2: this_NodeLabelPredicate_0= ruleNodeLabelPredicate
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:740:2: this_NodeLabelPredicate_0= ruleNodeLabelPredicate
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -2111,7 +2111,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:753:2: this_EdgeLabelPredicate_1= ruleEdgeLabelPredicate
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:753:2: this_EdgeLabelPredicate_1= ruleEdgeLabelPredicate
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -2160,7 +2160,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNodeLabelPredicate"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:772:1: entryRuleNodeLabelPredicate returns [EObject current=null] : iv_ruleNodeLabelPredicate= ruleNodeLabelPredicate EOF ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:772:1: entryRuleNodeLabelPredicate returns [EObject current=null] : iv_ruleNodeLabelPredicate= ruleNodeLabelPredicate EOF ;
     public final EObject entryRuleNodeLabelPredicate() throws RecognitionException {
         EObject current = null;
 
@@ -2168,8 +2168,8 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:773:2: (iv_ruleNodeLabelPredicate= ruleNodeLabelPredicate EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:774:2: iv_ruleNodeLabelPredicate= ruleNodeLabelPredicate EOF
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:773:2: (iv_ruleNodeLabelPredicate= ruleNodeLabelPredicate EOF )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:774:2: iv_ruleNodeLabelPredicate= ruleNodeLabelPredicate EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getNodeLabelPredicateRule()); 
@@ -2200,7 +2200,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNodeLabelPredicate"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:781:1: ruleNodeLabelPredicate returns [EObject current=null] : ( () ( (otherlv_1= RULE_NODE_PREDICATE_NAME ) ) otherlv_2= '(' ( (lv_term_3_0= ruleTerm ) ) otherlv_4= ')' ) ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:781:1: ruleNodeLabelPredicate returns [EObject current=null] : ( () ( (otherlv_1= RULE_NODE_PREDICATE_NAME ) ) otherlv_2= '(' ( (lv_term_3_0= ruleTerm ) ) otherlv_4= ')' ) ;
     public final EObject ruleNodeLabelPredicate() throws RecognitionException {
         EObject current = null;
 
@@ -2213,14 +2213,14 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:784:28: ( ( () ( (otherlv_1= RULE_NODE_PREDICATE_NAME ) ) otherlv_2= '(' ( (lv_term_3_0= ruleTerm ) ) otherlv_4= ')' ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:785:1: ( () ( (otherlv_1= RULE_NODE_PREDICATE_NAME ) ) otherlv_2= '(' ( (lv_term_3_0= ruleTerm ) ) otherlv_4= ')' )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:784:28: ( ( () ( (otherlv_1= RULE_NODE_PREDICATE_NAME ) ) otherlv_2= '(' ( (lv_term_3_0= ruleTerm ) ) otherlv_4= ')' ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:785:1: ( () ( (otherlv_1= RULE_NODE_PREDICATE_NAME ) ) otherlv_2= '(' ( (lv_term_3_0= ruleTerm ) ) otherlv_4= ')' )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:785:1: ( () ( (otherlv_1= RULE_NODE_PREDICATE_NAME ) ) otherlv_2= '(' ( (lv_term_3_0= ruleTerm ) ) otherlv_4= ')' )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:785:2: () ( (otherlv_1= RULE_NODE_PREDICATE_NAME ) ) otherlv_2= '(' ( (lv_term_3_0= ruleTerm ) ) otherlv_4= ')'
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:785:1: ( () ( (otherlv_1= RULE_NODE_PREDICATE_NAME ) ) otherlv_2= '(' ( (lv_term_3_0= ruleTerm ) ) otherlv_4= ')' )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:785:2: () ( (otherlv_1= RULE_NODE_PREDICATE_NAME ) ) otherlv_2= '(' ( (lv_term_3_0= ruleTerm ) ) otherlv_4= ')'
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:785:2: ()
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:786:2: 
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:785:2: ()
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:786:2: 
             {
             if ( state.backtracking==0 ) {
                
@@ -2237,11 +2237,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:794:2: ( (otherlv_1= RULE_NODE_PREDICATE_NAME ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:795:1: (otherlv_1= RULE_NODE_PREDICATE_NAME )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:794:2: ( (otherlv_1= RULE_NODE_PREDICATE_NAME ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:795:1: (otherlv_1= RULE_NODE_PREDICATE_NAME )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:795:1: (otherlv_1= RULE_NODE_PREDICATE_NAME )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:796:3: otherlv_1= RULE_NODE_PREDICATE_NAME
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:795:1: (otherlv_1= RULE_NODE_PREDICATE_NAME )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:796:3: otherlv_1= RULE_NODE_PREDICATE_NAME
             {
             if ( state.backtracking==0 ) {
                
@@ -2273,11 +2273,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_2, grammarAccess.getNodeLabelPredicateAccess().getLeftParenthesisKeyword_2());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:814:1: ( (lv_term_3_0= ruleTerm ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:815:1: (lv_term_3_0= ruleTerm )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:814:1: ( (lv_term_3_0= ruleTerm ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:815:1: (lv_term_3_0= ruleTerm )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:815:1: (lv_term_3_0= ruleTerm )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:816:3: lv_term_3_0= ruleTerm
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:815:1: (lv_term_3_0= ruleTerm )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:816:3: lv_term_3_0= ruleTerm
             {
             if ( state.backtracking==0 ) {
                
@@ -2337,7 +2337,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEdgeLabelPredicate"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:844:1: entryRuleEdgeLabelPredicate returns [EObject current=null] : iv_ruleEdgeLabelPredicate= ruleEdgeLabelPredicate EOF ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:844:1: entryRuleEdgeLabelPredicate returns [EObject current=null] : iv_ruleEdgeLabelPredicate= ruleEdgeLabelPredicate EOF ;
     public final EObject entryRuleEdgeLabelPredicate() throws RecognitionException {
         EObject current = null;
 
@@ -2345,8 +2345,8 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:845:2: (iv_ruleEdgeLabelPredicate= ruleEdgeLabelPredicate EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:846:2: iv_ruleEdgeLabelPredicate= ruleEdgeLabelPredicate EOF
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:845:2: (iv_ruleEdgeLabelPredicate= ruleEdgeLabelPredicate EOF )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:846:2: iv_ruleEdgeLabelPredicate= ruleEdgeLabelPredicate EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEdgeLabelPredicateRule()); 
@@ -2377,7 +2377,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEdgeLabelPredicate"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:853:1: ruleEdgeLabelPredicate returns [EObject current=null] : ( () ( (otherlv_1= RULE_EDGE_PREDICATE_NAME ) ) otherlv_2= '(' ( (lv_term_3_0= ruleTerm ) ) otherlv_4= ',' ( (lv_secondTerm_5_0= ruleTerm ) ) otherlv_6= ')' ) ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:853:1: ruleEdgeLabelPredicate returns [EObject current=null] : ( () ( (otherlv_1= RULE_EDGE_PREDICATE_NAME ) ) otherlv_2= '(' ( (lv_term_3_0= ruleTerm ) ) otherlv_4= ',' ( (lv_secondTerm_5_0= ruleTerm ) ) otherlv_6= ')' ) ;
     public final EObject ruleEdgeLabelPredicate() throws RecognitionException {
         EObject current = null;
 
@@ -2393,14 +2393,14 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:856:28: ( ( () ( (otherlv_1= RULE_EDGE_PREDICATE_NAME ) ) otherlv_2= '(' ( (lv_term_3_0= ruleTerm ) ) otherlv_4= ',' ( (lv_secondTerm_5_0= ruleTerm ) ) otherlv_6= ')' ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:857:1: ( () ( (otherlv_1= RULE_EDGE_PREDICATE_NAME ) ) otherlv_2= '(' ( (lv_term_3_0= ruleTerm ) ) otherlv_4= ',' ( (lv_secondTerm_5_0= ruleTerm ) ) otherlv_6= ')' )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:856:28: ( ( () ( (otherlv_1= RULE_EDGE_PREDICATE_NAME ) ) otherlv_2= '(' ( (lv_term_3_0= ruleTerm ) ) otherlv_4= ',' ( (lv_secondTerm_5_0= ruleTerm ) ) otherlv_6= ')' ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:857:1: ( () ( (otherlv_1= RULE_EDGE_PREDICATE_NAME ) ) otherlv_2= '(' ( (lv_term_3_0= ruleTerm ) ) otherlv_4= ',' ( (lv_secondTerm_5_0= ruleTerm ) ) otherlv_6= ')' )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:857:1: ( () ( (otherlv_1= RULE_EDGE_PREDICATE_NAME ) ) otherlv_2= '(' ( (lv_term_3_0= ruleTerm ) ) otherlv_4= ',' ( (lv_secondTerm_5_0= ruleTerm ) ) otherlv_6= ')' )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:857:2: () ( (otherlv_1= RULE_EDGE_PREDICATE_NAME ) ) otherlv_2= '(' ( (lv_term_3_0= ruleTerm ) ) otherlv_4= ',' ( (lv_secondTerm_5_0= ruleTerm ) ) otherlv_6= ')'
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:857:1: ( () ( (otherlv_1= RULE_EDGE_PREDICATE_NAME ) ) otherlv_2= '(' ( (lv_term_3_0= ruleTerm ) ) otherlv_4= ',' ( (lv_secondTerm_5_0= ruleTerm ) ) otherlv_6= ')' )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:857:2: () ( (otherlv_1= RULE_EDGE_PREDICATE_NAME ) ) otherlv_2= '(' ( (lv_term_3_0= ruleTerm ) ) otherlv_4= ',' ( (lv_secondTerm_5_0= ruleTerm ) ) otherlv_6= ')'
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:857:2: ()
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:858:2: 
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:857:2: ()
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:858:2: 
             {
             if ( state.backtracking==0 ) {
                
@@ -2417,11 +2417,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:866:2: ( (otherlv_1= RULE_EDGE_PREDICATE_NAME ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:867:1: (otherlv_1= RULE_EDGE_PREDICATE_NAME )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:866:2: ( (otherlv_1= RULE_EDGE_PREDICATE_NAME ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:867:1: (otherlv_1= RULE_EDGE_PREDICATE_NAME )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:867:1: (otherlv_1= RULE_EDGE_PREDICATE_NAME )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:868:3: otherlv_1= RULE_EDGE_PREDICATE_NAME
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:867:1: (otherlv_1= RULE_EDGE_PREDICATE_NAME )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:868:3: otherlv_1= RULE_EDGE_PREDICATE_NAME
             {
             if ( state.backtracking==0 ) {
                
@@ -2453,11 +2453,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_2, grammarAccess.getEdgeLabelPredicateAccess().getLeftParenthesisKeyword_2());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:886:1: ( (lv_term_3_0= ruleTerm ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:887:1: (lv_term_3_0= ruleTerm )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:886:1: ( (lv_term_3_0= ruleTerm ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:887:1: (lv_term_3_0= ruleTerm )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:887:1: (lv_term_3_0= ruleTerm )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:888:3: lv_term_3_0= ruleTerm
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:887:1: (lv_term_3_0= ruleTerm )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:888:3: lv_term_3_0= ruleTerm
             {
             if ( state.backtracking==0 ) {
                
@@ -2494,11 +2494,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_4, grammarAccess.getEdgeLabelPredicateAccess().getCommaKeyword_4());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:908:1: ( (lv_secondTerm_5_0= ruleTerm ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:909:1: (lv_secondTerm_5_0= ruleTerm )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:908:1: ( (lv_secondTerm_5_0= ruleTerm ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:909:1: (lv_secondTerm_5_0= ruleTerm )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:909:1: (lv_secondTerm_5_0= ruleTerm )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:910:3: lv_secondTerm_5_0= ruleTerm
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:909:1: (lv_secondTerm_5_0= ruleTerm )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:910:3: lv_secondTerm_5_0= ruleTerm
             {
             if ( state.backtracking==0 ) {
                
@@ -2558,7 +2558,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQuantifiedFormula"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:938:1: entryRuleQuantifiedFormula returns [EObject current=null] : iv_ruleQuantifiedFormula= ruleQuantifiedFormula EOF ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:938:1: entryRuleQuantifiedFormula returns [EObject current=null] : iv_ruleQuantifiedFormula= ruleQuantifiedFormula EOF ;
     public final EObject entryRuleQuantifiedFormula() throws RecognitionException {
         EObject current = null;
 
@@ -2566,8 +2566,8 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:939:2: (iv_ruleQuantifiedFormula= ruleQuantifiedFormula EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:940:2: iv_ruleQuantifiedFormula= ruleQuantifiedFormula EOF
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:939:2: (iv_ruleQuantifiedFormula= ruleQuantifiedFormula EOF )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:940:2: iv_ruleQuantifiedFormula= ruleQuantifiedFormula EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getQuantifiedFormulaRule()); 
@@ -2598,7 +2598,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQuantifiedFormula"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:947:1: ruleQuantifiedFormula returns [EObject current=null] : ( () ( (lv_quantifier_1_0= ruleQuantifier ) ) otherlv_2= ' ' ( (lv_name_3_0= RULE_VARIABLE_NAME ) ) otherlv_4= ' ' ( (lv_subformula_5_0= ruleFormulaDefinition ) ) ) ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:947:1: ruleQuantifiedFormula returns [EObject current=null] : ( () ( (lv_quantifier_1_0= ruleQuantifier ) ) otherlv_2= ' ' ( (lv_name_3_0= RULE_VARIABLE_NAME ) ) otherlv_4= ' ' ( (lv_subformula_5_0= ruleFormulaDefinition ) ) ) ;
     public final EObject ruleQuantifiedFormula() throws RecognitionException {
         EObject current = null;
 
@@ -2613,14 +2613,14 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:950:28: ( ( () ( (lv_quantifier_1_0= ruleQuantifier ) ) otherlv_2= ' ' ( (lv_name_3_0= RULE_VARIABLE_NAME ) ) otherlv_4= ' ' ( (lv_subformula_5_0= ruleFormulaDefinition ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:951:1: ( () ( (lv_quantifier_1_0= ruleQuantifier ) ) otherlv_2= ' ' ( (lv_name_3_0= RULE_VARIABLE_NAME ) ) otherlv_4= ' ' ( (lv_subformula_5_0= ruleFormulaDefinition ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:950:28: ( ( () ( (lv_quantifier_1_0= ruleQuantifier ) ) otherlv_2= ' ' ( (lv_name_3_0= RULE_VARIABLE_NAME ) ) otherlv_4= ' ' ( (lv_subformula_5_0= ruleFormulaDefinition ) ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:951:1: ( () ( (lv_quantifier_1_0= ruleQuantifier ) ) otherlv_2= ' ' ( (lv_name_3_0= RULE_VARIABLE_NAME ) ) otherlv_4= ' ' ( (lv_subformula_5_0= ruleFormulaDefinition ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:951:1: ( () ( (lv_quantifier_1_0= ruleQuantifier ) ) otherlv_2= ' ' ( (lv_name_3_0= RULE_VARIABLE_NAME ) ) otherlv_4= ' ' ( (lv_subformula_5_0= ruleFormulaDefinition ) ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:951:2: () ( (lv_quantifier_1_0= ruleQuantifier ) ) otherlv_2= ' ' ( (lv_name_3_0= RULE_VARIABLE_NAME ) ) otherlv_4= ' ' ( (lv_subformula_5_0= ruleFormulaDefinition ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:951:1: ( () ( (lv_quantifier_1_0= ruleQuantifier ) ) otherlv_2= ' ' ( (lv_name_3_0= RULE_VARIABLE_NAME ) ) otherlv_4= ' ' ( (lv_subformula_5_0= ruleFormulaDefinition ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:951:2: () ( (lv_quantifier_1_0= ruleQuantifier ) ) otherlv_2= ' ' ( (lv_name_3_0= RULE_VARIABLE_NAME ) ) otherlv_4= ' ' ( (lv_subformula_5_0= ruleFormulaDefinition ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:951:2: ()
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:952:2: 
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:951:2: ()
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:952:2: 
             {
             if ( state.backtracking==0 ) {
                
@@ -2637,11 +2637,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:960:2: ( (lv_quantifier_1_0= ruleQuantifier ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:961:1: (lv_quantifier_1_0= ruleQuantifier )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:960:2: ( (lv_quantifier_1_0= ruleQuantifier ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:961:1: (lv_quantifier_1_0= ruleQuantifier )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:961:1: (lv_quantifier_1_0= ruleQuantifier )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:962:3: lv_quantifier_1_0= ruleQuantifier
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:961:1: (lv_quantifier_1_0= ruleQuantifier )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:962:3: lv_quantifier_1_0= ruleQuantifier
             {
             if ( state.backtracking==0 ) {
                
@@ -2678,11 +2678,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_2, grammarAccess.getQuantifiedFormulaAccess().getSpaceKeyword_2());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:982:1: ( (lv_name_3_0= RULE_VARIABLE_NAME ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:983:1: (lv_name_3_0= RULE_VARIABLE_NAME )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:982:1: ( (lv_name_3_0= RULE_VARIABLE_NAME ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:983:1: (lv_name_3_0= RULE_VARIABLE_NAME )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:983:1: (lv_name_3_0= RULE_VARIABLE_NAME )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:984:3: lv_name_3_0= RULE_VARIABLE_NAME
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:983:1: (lv_name_3_0= RULE_VARIABLE_NAME )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:984:3: lv_name_3_0= RULE_VARIABLE_NAME
             {
             lv_name_3_0=(Token)match(input,RULE_VARIABLE_NAME,FollowSets000.FOLLOW_RULE_VARIABLE_NAME_in_ruleQuantifiedFormula2101); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -2714,11 +2714,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_4, grammarAccess.getQuantifiedFormulaAccess().getSpaceKeyword_4());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1004:1: ( (lv_subformula_5_0= ruleFormulaDefinition ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1005:1: (lv_subformula_5_0= ruleFormulaDefinition )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1004:1: ( (lv_subformula_5_0= ruleFormulaDefinition ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1005:1: (lv_subformula_5_0= ruleFormulaDefinition )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1005:1: (lv_subformula_5_0= ruleFormulaDefinition )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1006:3: lv_subformula_5_0= ruleFormulaDefinition
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1005:1: (lv_subformula_5_0= ruleFormulaDefinition )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1006:3: lv_subformula_5_0= ruleFormulaDefinition
             {
             if ( state.backtracking==0 ) {
                
@@ -2772,7 +2772,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNotFormula"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1032:1: entryRuleNotFormula returns [EObject current=null] : iv_ruleNotFormula= ruleNotFormula EOF ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1032:1: entryRuleNotFormula returns [EObject current=null] : iv_ruleNotFormula= ruleNotFormula EOF ;
     public final EObject entryRuleNotFormula() throws RecognitionException {
         EObject current = null;
 
@@ -2780,8 +2780,8 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1033:2: (iv_ruleNotFormula= ruleNotFormula EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1034:2: iv_ruleNotFormula= ruleNotFormula EOF
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1033:2: (iv_ruleNotFormula= ruleNotFormula EOF )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1034:2: iv_ruleNotFormula= ruleNotFormula EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getNotFormulaRule()); 
@@ -2812,7 +2812,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNotFormula"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1041:1: ruleNotFormula returns [EObject current=null] : (otherlv_0= 'NOT ' () ( (lv_subformula_2_0= ruleFormulaDefinition ) ) ) ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1041:1: ruleNotFormula returns [EObject current=null] : (otherlv_0= 'NOT ' () ( (lv_subformula_2_0= ruleFormulaDefinition ) ) ) ;
     public final EObject ruleNotFormula() throws RecognitionException {
         EObject current = null;
 
@@ -2823,11 +2823,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1044:28: ( (otherlv_0= 'NOT ' () ( (lv_subformula_2_0= ruleFormulaDefinition ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1045:1: (otherlv_0= 'NOT ' () ( (lv_subformula_2_0= ruleFormulaDefinition ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1044:28: ( (otherlv_0= 'NOT ' () ( (lv_subformula_2_0= ruleFormulaDefinition ) ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1045:1: (otherlv_0= 'NOT ' () ( (lv_subformula_2_0= ruleFormulaDefinition ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1045:1: (otherlv_0= 'NOT ' () ( (lv_subformula_2_0= ruleFormulaDefinition ) ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1045:3: otherlv_0= 'NOT ' () ( (lv_subformula_2_0= ruleFormulaDefinition ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1045:1: (otherlv_0= 'NOT ' () ( (lv_subformula_2_0= ruleFormulaDefinition ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1045:3: otherlv_0= 'NOT ' () ( (lv_subformula_2_0= ruleFormulaDefinition ) )
             {
             otherlv_0=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleNotFormula2224); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -2835,8 +2835,8 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_0, grammarAccess.getNotFormulaAccess().getNOTKeyword_0());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1049:1: ()
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1050:2: 
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1049:1: ()
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1050:2: 
             {
             if ( state.backtracking==0 ) {
                
@@ -2853,11 +2853,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1058:2: ( (lv_subformula_2_0= ruleFormulaDefinition ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1059:1: (lv_subformula_2_0= ruleFormulaDefinition )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1058:2: ( (lv_subformula_2_0= ruleFormulaDefinition ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1059:1: (lv_subformula_2_0= ruleFormulaDefinition )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1059:1: (lv_subformula_2_0= ruleFormulaDefinition )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1060:3: lv_subformula_2_0= ruleFormulaDefinition
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1059:1: (lv_subformula_2_0= ruleFormulaDefinition )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1060:3: lv_subformula_2_0= ruleFormulaDefinition
             {
             if ( state.backtracking==0 ) {
                
@@ -2911,7 +2911,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUnaryTemporalFormula"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1086:1: entryRuleUnaryTemporalFormula returns [EObject current=null] : iv_ruleUnaryTemporalFormula= ruleUnaryTemporalFormula EOF ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1086:1: entryRuleUnaryTemporalFormula returns [EObject current=null] : iv_ruleUnaryTemporalFormula= ruleUnaryTemporalFormula EOF ;
     public final EObject entryRuleUnaryTemporalFormula() throws RecognitionException {
         EObject current = null;
 
@@ -2919,8 +2919,8 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1087:2: (iv_ruleUnaryTemporalFormula= ruleUnaryTemporalFormula EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1088:2: iv_ruleUnaryTemporalFormula= ruleUnaryTemporalFormula EOF
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1087:2: (iv_ruleUnaryTemporalFormula= ruleUnaryTemporalFormula EOF )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1088:2: iv_ruleUnaryTemporalFormula= ruleUnaryTemporalFormula EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getUnaryTemporalFormulaRule()); 
@@ -2951,7 +2951,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUnaryTemporalFormula"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1095:1: ruleUnaryTemporalFormula returns [EObject current=null] : ( () ( (lv_temporalOperator_1_0= ruleTemporalOperator ) ) otherlv_2= '[' ( (lv_comparisonOperator_3_0= ruleComparisonOperator ) ) ( (lv_value_4_0= RULE_INT ) ) otherlv_5= '] ' ( (lv_subformula_6_0= ruleFormulaDefinition ) ) ) ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1095:1: ruleUnaryTemporalFormula returns [EObject current=null] : ( () ( (lv_temporalOperator_1_0= ruleTemporalOperator ) ) otherlv_2= '[' ( (lv_comparisonOperator_3_0= ruleComparisonOperator ) ) ( (lv_value_4_0= RULE_INT ) ) otherlv_5= '] ' ( (lv_subformula_6_0= ruleFormulaDefinition ) ) ) ;
     public final EObject ruleUnaryTemporalFormula() throws RecognitionException {
         EObject current = null;
 
@@ -2968,14 +2968,14 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1098:28: ( ( () ( (lv_temporalOperator_1_0= ruleTemporalOperator ) ) otherlv_2= '[' ( (lv_comparisonOperator_3_0= ruleComparisonOperator ) ) ( (lv_value_4_0= RULE_INT ) ) otherlv_5= '] ' ( (lv_subformula_6_0= ruleFormulaDefinition ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1099:1: ( () ( (lv_temporalOperator_1_0= ruleTemporalOperator ) ) otherlv_2= '[' ( (lv_comparisonOperator_3_0= ruleComparisonOperator ) ) ( (lv_value_4_0= RULE_INT ) ) otherlv_5= '] ' ( (lv_subformula_6_0= ruleFormulaDefinition ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1098:28: ( ( () ( (lv_temporalOperator_1_0= ruleTemporalOperator ) ) otherlv_2= '[' ( (lv_comparisonOperator_3_0= ruleComparisonOperator ) ) ( (lv_value_4_0= RULE_INT ) ) otherlv_5= '] ' ( (lv_subformula_6_0= ruleFormulaDefinition ) ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1099:1: ( () ( (lv_temporalOperator_1_0= ruleTemporalOperator ) ) otherlv_2= '[' ( (lv_comparisonOperator_3_0= ruleComparisonOperator ) ) ( (lv_value_4_0= RULE_INT ) ) otherlv_5= '] ' ( (lv_subformula_6_0= ruleFormulaDefinition ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1099:1: ( () ( (lv_temporalOperator_1_0= ruleTemporalOperator ) ) otherlv_2= '[' ( (lv_comparisonOperator_3_0= ruleComparisonOperator ) ) ( (lv_value_4_0= RULE_INT ) ) otherlv_5= '] ' ( (lv_subformula_6_0= ruleFormulaDefinition ) ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1099:2: () ( (lv_temporalOperator_1_0= ruleTemporalOperator ) ) otherlv_2= '[' ( (lv_comparisonOperator_3_0= ruleComparisonOperator ) ) ( (lv_value_4_0= RULE_INT ) ) otherlv_5= '] ' ( (lv_subformula_6_0= ruleFormulaDefinition ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1099:1: ( () ( (lv_temporalOperator_1_0= ruleTemporalOperator ) ) otherlv_2= '[' ( (lv_comparisonOperator_3_0= ruleComparisonOperator ) ) ( (lv_value_4_0= RULE_INT ) ) otherlv_5= '] ' ( (lv_subformula_6_0= ruleFormulaDefinition ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1099:2: () ( (lv_temporalOperator_1_0= ruleTemporalOperator ) ) otherlv_2= '[' ( (lv_comparisonOperator_3_0= ruleComparisonOperator ) ) ( (lv_value_4_0= RULE_INT ) ) otherlv_5= '] ' ( (lv_subformula_6_0= ruleFormulaDefinition ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1099:2: ()
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1100:2: 
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1099:2: ()
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1100:2: 
             {
             if ( state.backtracking==0 ) {
                
@@ -2992,11 +2992,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1108:2: ( (lv_temporalOperator_1_0= ruleTemporalOperator ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1109:1: (lv_temporalOperator_1_0= ruleTemporalOperator )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1108:2: ( (lv_temporalOperator_1_0= ruleTemporalOperator ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1109:1: (lv_temporalOperator_1_0= ruleTemporalOperator )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1109:1: (lv_temporalOperator_1_0= ruleTemporalOperator )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1110:3: lv_temporalOperator_1_0= ruleTemporalOperator
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1109:1: (lv_temporalOperator_1_0= ruleTemporalOperator )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1110:3: lv_temporalOperator_1_0= ruleTemporalOperator
             {
             if ( state.backtracking==0 ) {
                
@@ -3033,11 +3033,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_2, grammarAccess.getUnaryTemporalFormulaAccess().getLeftSquareBracketKeyword_2());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1130:1: ( (lv_comparisonOperator_3_0= ruleComparisonOperator ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1131:1: (lv_comparisonOperator_3_0= ruleComparisonOperator )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1130:1: ( (lv_comparisonOperator_3_0= ruleComparisonOperator ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1131:1: (lv_comparisonOperator_3_0= ruleComparisonOperator )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1131:1: (lv_comparisonOperator_3_0= ruleComparisonOperator )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1132:3: lv_comparisonOperator_3_0= ruleComparisonOperator
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1131:1: (lv_comparisonOperator_3_0= ruleComparisonOperator )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1132:3: lv_comparisonOperator_3_0= ruleComparisonOperator
             {
             if ( state.backtracking==0 ) {
                
@@ -3068,11 +3068,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1148:2: ( (lv_value_4_0= RULE_INT ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1149:1: (lv_value_4_0= RULE_INT )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1148:2: ( (lv_value_4_0= RULE_INT ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1149:1: (lv_value_4_0= RULE_INT )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1149:1: (lv_value_4_0= RULE_INT )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1150:3: lv_value_4_0= RULE_INT
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1149:1: (lv_value_4_0= RULE_INT )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1150:3: lv_value_4_0= RULE_INT
             {
             lv_value_4_0=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleUnaryTemporalFormula2413); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -3104,11 +3104,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_5, grammarAccess.getUnaryTemporalFormulaAccess().getRightSquareBracketSpaceKeyword_5());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1170:1: ( (lv_subformula_6_0= ruleFormulaDefinition ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1171:1: (lv_subformula_6_0= ruleFormulaDefinition )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1170:1: ( (lv_subformula_6_0= ruleFormulaDefinition ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1171:1: (lv_subformula_6_0= ruleFormulaDefinition )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1171:1: (lv_subformula_6_0= ruleFormulaDefinition )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1172:3: lv_subformula_6_0= ruleFormulaDefinition
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1171:1: (lv_subformula_6_0= ruleFormulaDefinition )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1172:3: lv_subformula_6_0= ruleFormulaDefinition
             {
             if ( state.backtracking==0 ) {
                
@@ -3162,7 +3162,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBinaryTemporalFormula"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1196:1: entryRuleBinaryTemporalFormula returns [EObject current=null] : iv_ruleBinaryTemporalFormula= ruleBinaryTemporalFormula EOF ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1196:1: entryRuleBinaryTemporalFormula returns [EObject current=null] : iv_ruleBinaryTemporalFormula= ruleBinaryTemporalFormula EOF ;
     public final EObject entryRuleBinaryTemporalFormula() throws RecognitionException {
         EObject current = null;
 
@@ -3170,8 +3170,8 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1197:2: (iv_ruleBinaryTemporalFormula= ruleBinaryTemporalFormula EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1198:2: iv_ruleBinaryTemporalFormula= ruleBinaryTemporalFormula EOF
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1197:2: (iv_ruleBinaryTemporalFormula= ruleBinaryTemporalFormula EOF )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1198:2: iv_ruleBinaryTemporalFormula= ruleBinaryTemporalFormula EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getBinaryTemporalFormulaRule()); 
@@ -3202,7 +3202,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBinaryTemporalFormula"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1205:1: ruleBinaryTemporalFormula returns [EObject current=null] : ( () otherlv_1= '(' ( (lv_leftSubformula_2_0= ruleFormulaDefinition ) ) otherlv_3= ' ' ( (lv_temporalOperator_4_0= ruleTemporalOperator ) ) otherlv_5= '[' ( (lv_comparisonOperator_6_0= ruleComparisonOperator ) ) ( (lv_value_7_0= RULE_INT ) ) otherlv_8= '] ' ( (lv_rightSubformula_9_0= ruleFormulaDefinition ) ) otherlv_10= ')' ) ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1205:1: ruleBinaryTemporalFormula returns [EObject current=null] : ( () otherlv_1= '(' ( (lv_leftSubformula_2_0= ruleFormulaDefinition ) ) otherlv_3= ' ' ( (lv_temporalOperator_4_0= ruleTemporalOperator ) ) otherlv_5= '[' ( (lv_comparisonOperator_6_0= ruleComparisonOperator ) ) ( (lv_value_7_0= RULE_INT ) ) otherlv_8= '] ' ( (lv_rightSubformula_9_0= ruleFormulaDefinition ) ) otherlv_10= ')' ) ;
     public final EObject ruleBinaryTemporalFormula() throws RecognitionException {
         EObject current = null;
 
@@ -3224,14 +3224,14 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1208:28: ( ( () otherlv_1= '(' ( (lv_leftSubformula_2_0= ruleFormulaDefinition ) ) otherlv_3= ' ' ( (lv_temporalOperator_4_0= ruleTemporalOperator ) ) otherlv_5= '[' ( (lv_comparisonOperator_6_0= ruleComparisonOperator ) ) ( (lv_value_7_0= RULE_INT ) ) otherlv_8= '] ' ( (lv_rightSubformula_9_0= ruleFormulaDefinition ) ) otherlv_10= ')' ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1209:1: ( () otherlv_1= '(' ( (lv_leftSubformula_2_0= ruleFormulaDefinition ) ) otherlv_3= ' ' ( (lv_temporalOperator_4_0= ruleTemporalOperator ) ) otherlv_5= '[' ( (lv_comparisonOperator_6_0= ruleComparisonOperator ) ) ( (lv_value_7_0= RULE_INT ) ) otherlv_8= '] ' ( (lv_rightSubformula_9_0= ruleFormulaDefinition ) ) otherlv_10= ')' )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1208:28: ( ( () otherlv_1= '(' ( (lv_leftSubformula_2_0= ruleFormulaDefinition ) ) otherlv_3= ' ' ( (lv_temporalOperator_4_0= ruleTemporalOperator ) ) otherlv_5= '[' ( (lv_comparisonOperator_6_0= ruleComparisonOperator ) ) ( (lv_value_7_0= RULE_INT ) ) otherlv_8= '] ' ( (lv_rightSubformula_9_0= ruleFormulaDefinition ) ) otherlv_10= ')' ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1209:1: ( () otherlv_1= '(' ( (lv_leftSubformula_2_0= ruleFormulaDefinition ) ) otherlv_3= ' ' ( (lv_temporalOperator_4_0= ruleTemporalOperator ) ) otherlv_5= '[' ( (lv_comparisonOperator_6_0= ruleComparisonOperator ) ) ( (lv_value_7_0= RULE_INT ) ) otherlv_8= '] ' ( (lv_rightSubformula_9_0= ruleFormulaDefinition ) ) otherlv_10= ')' )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1209:1: ( () otherlv_1= '(' ( (lv_leftSubformula_2_0= ruleFormulaDefinition ) ) otherlv_3= ' ' ( (lv_temporalOperator_4_0= ruleTemporalOperator ) ) otherlv_5= '[' ( (lv_comparisonOperator_6_0= ruleComparisonOperator ) ) ( (lv_value_7_0= RULE_INT ) ) otherlv_8= '] ' ( (lv_rightSubformula_9_0= ruleFormulaDefinition ) ) otherlv_10= ')' )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1209:2: () otherlv_1= '(' ( (lv_leftSubformula_2_0= ruleFormulaDefinition ) ) otherlv_3= ' ' ( (lv_temporalOperator_4_0= ruleTemporalOperator ) ) otherlv_5= '[' ( (lv_comparisonOperator_6_0= ruleComparisonOperator ) ) ( (lv_value_7_0= RULE_INT ) ) otherlv_8= '] ' ( (lv_rightSubformula_9_0= ruleFormulaDefinition ) ) otherlv_10= ')'
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1209:1: ( () otherlv_1= '(' ( (lv_leftSubformula_2_0= ruleFormulaDefinition ) ) otherlv_3= ' ' ( (lv_temporalOperator_4_0= ruleTemporalOperator ) ) otherlv_5= '[' ( (lv_comparisonOperator_6_0= ruleComparisonOperator ) ) ( (lv_value_7_0= RULE_INT ) ) otherlv_8= '] ' ( (lv_rightSubformula_9_0= ruleFormulaDefinition ) ) otherlv_10= ')' )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1209:2: () otherlv_1= '(' ( (lv_leftSubformula_2_0= ruleFormulaDefinition ) ) otherlv_3= ' ' ( (lv_temporalOperator_4_0= ruleTemporalOperator ) ) otherlv_5= '[' ( (lv_comparisonOperator_6_0= ruleComparisonOperator ) ) ( (lv_value_7_0= RULE_INT ) ) otherlv_8= '] ' ( (lv_rightSubformula_9_0= ruleFormulaDefinition ) ) otherlv_10= ')'
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1209:2: ()
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1210:2: 
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1209:2: ()
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1210:2: 
             {
             if ( state.backtracking==0 ) {
                
@@ -3254,11 +3254,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_1, grammarAccess.getBinaryTemporalFormulaAccess().getLeftParenthesisKeyword_1());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1222:1: ( (lv_leftSubformula_2_0= ruleFormulaDefinition ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1223:1: (lv_leftSubformula_2_0= ruleFormulaDefinition )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1222:1: ( (lv_leftSubformula_2_0= ruleFormulaDefinition ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1223:1: (lv_leftSubformula_2_0= ruleFormulaDefinition )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1223:1: (lv_leftSubformula_2_0= ruleFormulaDefinition )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1224:3: lv_leftSubformula_2_0= ruleFormulaDefinition
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1223:1: (lv_leftSubformula_2_0= ruleFormulaDefinition )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1224:3: lv_leftSubformula_2_0= ruleFormulaDefinition
             {
             if ( state.backtracking==0 ) {
                
@@ -3295,11 +3295,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_3, grammarAccess.getBinaryTemporalFormulaAccess().getSpaceKeyword_3());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1244:1: ( (lv_temporalOperator_4_0= ruleTemporalOperator ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1245:1: (lv_temporalOperator_4_0= ruleTemporalOperator )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1244:1: ( (lv_temporalOperator_4_0= ruleTemporalOperator ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1245:1: (lv_temporalOperator_4_0= ruleTemporalOperator )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1245:1: (lv_temporalOperator_4_0= ruleTemporalOperator )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1246:3: lv_temporalOperator_4_0= ruleTemporalOperator
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1245:1: (lv_temporalOperator_4_0= ruleTemporalOperator )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1246:3: lv_temporalOperator_4_0= ruleTemporalOperator
             {
             if ( state.backtracking==0 ) {
                
@@ -3336,11 +3336,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_5, grammarAccess.getBinaryTemporalFormulaAccess().getLeftSquareBracketKeyword_5());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1266:1: ( (lv_comparisonOperator_6_0= ruleComparisonOperator ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1267:1: (lv_comparisonOperator_6_0= ruleComparisonOperator )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1266:1: ( (lv_comparisonOperator_6_0= ruleComparisonOperator ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1267:1: (lv_comparisonOperator_6_0= ruleComparisonOperator )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1267:1: (lv_comparisonOperator_6_0= ruleComparisonOperator )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1268:3: lv_comparisonOperator_6_0= ruleComparisonOperator
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1267:1: (lv_comparisonOperator_6_0= ruleComparisonOperator )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1268:3: lv_comparisonOperator_6_0= ruleComparisonOperator
             {
             if ( state.backtracking==0 ) {
                
@@ -3371,11 +3371,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1284:2: ( (lv_value_7_0= RULE_INT ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1285:1: (lv_value_7_0= RULE_INT )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1284:2: ( (lv_value_7_0= RULE_INT ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1285:1: (lv_value_7_0= RULE_INT )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1285:1: (lv_value_7_0= RULE_INT )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1286:3: lv_value_7_0= RULE_INT
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1285:1: (lv_value_7_0= RULE_INT )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1286:3: lv_value_7_0= RULE_INT
             {
             lv_value_7_0=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleBinaryTemporalFormula2650); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -3407,11 +3407,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_8, grammarAccess.getBinaryTemporalFormulaAccess().getRightSquareBracketSpaceKeyword_8());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1306:1: ( (lv_rightSubformula_9_0= ruleFormulaDefinition ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1307:1: (lv_rightSubformula_9_0= ruleFormulaDefinition )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1306:1: ( (lv_rightSubformula_9_0= ruleFormulaDefinition ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1307:1: (lv_rightSubformula_9_0= ruleFormulaDefinition )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1307:1: (lv_rightSubformula_9_0= ruleFormulaDefinition )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1308:3: lv_rightSubformula_9_0= ruleFormulaDefinition
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1307:1: (lv_rightSubformula_9_0= ruleFormulaDefinition )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1308:3: lv_rightSubformula_9_0= ruleFormulaDefinition
             {
             if ( state.backtracking==0 ) {
                
@@ -3471,7 +3471,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBinaryLogicFormula"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1336:1: entryRuleBinaryLogicFormula returns [EObject current=null] : iv_ruleBinaryLogicFormula= ruleBinaryLogicFormula EOF ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1336:1: entryRuleBinaryLogicFormula returns [EObject current=null] : iv_ruleBinaryLogicFormula= ruleBinaryLogicFormula EOF ;
     public final EObject entryRuleBinaryLogicFormula() throws RecognitionException {
         EObject current = null;
 
@@ -3479,8 +3479,8 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1337:2: (iv_ruleBinaryLogicFormula= ruleBinaryLogicFormula EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1338:2: iv_ruleBinaryLogicFormula= ruleBinaryLogicFormula EOF
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1337:2: (iv_ruleBinaryLogicFormula= ruleBinaryLogicFormula EOF )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1338:2: iv_ruleBinaryLogicFormula= ruleBinaryLogicFormula EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getBinaryLogicFormulaRule()); 
@@ -3511,7 +3511,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBinaryLogicFormula"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1345:1: ruleBinaryLogicFormula returns [EObject current=null] : ( () otherlv_1= '(' ( (lv_leftSubformula_2_0= ruleFormulaDefinition ) ) ( (lv_operator_3_0= ruleBinaryLogicOperator ) ) ( (lv_rightSubformula_4_0= ruleFormulaDefinition ) ) otherlv_5= ')' ) ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1345:1: ruleBinaryLogicFormula returns [EObject current=null] : ( () otherlv_1= '(' ( (lv_leftSubformula_2_0= ruleFormulaDefinition ) ) ( (lv_operator_3_0= ruleBinaryLogicOperator ) ) ( (lv_rightSubformula_4_0= ruleFormulaDefinition ) ) otherlv_5= ')' ) ;
     public final EObject ruleBinaryLogicFormula() throws RecognitionException {
         EObject current = null;
 
@@ -3527,14 +3527,14 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1348:28: ( ( () otherlv_1= '(' ( (lv_leftSubformula_2_0= ruleFormulaDefinition ) ) ( (lv_operator_3_0= ruleBinaryLogicOperator ) ) ( (lv_rightSubformula_4_0= ruleFormulaDefinition ) ) otherlv_5= ')' ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1349:1: ( () otherlv_1= '(' ( (lv_leftSubformula_2_0= ruleFormulaDefinition ) ) ( (lv_operator_3_0= ruleBinaryLogicOperator ) ) ( (lv_rightSubformula_4_0= ruleFormulaDefinition ) ) otherlv_5= ')' )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1348:28: ( ( () otherlv_1= '(' ( (lv_leftSubformula_2_0= ruleFormulaDefinition ) ) ( (lv_operator_3_0= ruleBinaryLogicOperator ) ) ( (lv_rightSubformula_4_0= ruleFormulaDefinition ) ) otherlv_5= ')' ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1349:1: ( () otherlv_1= '(' ( (lv_leftSubformula_2_0= ruleFormulaDefinition ) ) ( (lv_operator_3_0= ruleBinaryLogicOperator ) ) ( (lv_rightSubformula_4_0= ruleFormulaDefinition ) ) otherlv_5= ')' )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1349:1: ( () otherlv_1= '(' ( (lv_leftSubformula_2_0= ruleFormulaDefinition ) ) ( (lv_operator_3_0= ruleBinaryLogicOperator ) ) ( (lv_rightSubformula_4_0= ruleFormulaDefinition ) ) otherlv_5= ')' )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1349:2: () otherlv_1= '(' ( (lv_leftSubformula_2_0= ruleFormulaDefinition ) ) ( (lv_operator_3_0= ruleBinaryLogicOperator ) ) ( (lv_rightSubformula_4_0= ruleFormulaDefinition ) ) otherlv_5= ')'
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1349:1: ( () otherlv_1= '(' ( (lv_leftSubformula_2_0= ruleFormulaDefinition ) ) ( (lv_operator_3_0= ruleBinaryLogicOperator ) ) ( (lv_rightSubformula_4_0= ruleFormulaDefinition ) ) otherlv_5= ')' )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1349:2: () otherlv_1= '(' ( (lv_leftSubformula_2_0= ruleFormulaDefinition ) ) ( (lv_operator_3_0= ruleBinaryLogicOperator ) ) ( (lv_rightSubformula_4_0= ruleFormulaDefinition ) ) otherlv_5= ')'
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1349:2: ()
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1350:2: 
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1349:2: ()
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1350:2: 
             {
             if ( state.backtracking==0 ) {
                
@@ -3557,11 +3557,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_1, grammarAccess.getBinaryLogicFormulaAccess().getLeftParenthesisKeyword_1());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1362:1: ( (lv_leftSubformula_2_0= ruleFormulaDefinition ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1363:1: (lv_leftSubformula_2_0= ruleFormulaDefinition )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1362:1: ( (lv_leftSubformula_2_0= ruleFormulaDefinition ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1363:1: (lv_leftSubformula_2_0= ruleFormulaDefinition )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1363:1: (lv_leftSubformula_2_0= ruleFormulaDefinition )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1364:3: lv_leftSubformula_2_0= ruleFormulaDefinition
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1363:1: (lv_leftSubformula_2_0= ruleFormulaDefinition )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1364:3: lv_leftSubformula_2_0= ruleFormulaDefinition
             {
             if ( state.backtracking==0 ) {
                
@@ -3592,11 +3592,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1380:2: ( (lv_operator_3_0= ruleBinaryLogicOperator ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1381:1: (lv_operator_3_0= ruleBinaryLogicOperator )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1380:2: ( (lv_operator_3_0= ruleBinaryLogicOperator ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1381:1: (lv_operator_3_0= ruleBinaryLogicOperator )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1381:1: (lv_operator_3_0= ruleBinaryLogicOperator )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1382:3: lv_operator_3_0= ruleBinaryLogicOperator
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1381:1: (lv_operator_3_0= ruleBinaryLogicOperator )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1382:3: lv_operator_3_0= ruleBinaryLogicOperator
             {
             if ( state.backtracking==0 ) {
                
@@ -3627,11 +3627,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1398:2: ( (lv_rightSubformula_4_0= ruleFormulaDefinition ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1399:1: (lv_rightSubformula_4_0= ruleFormulaDefinition )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1398:2: ( (lv_rightSubformula_4_0= ruleFormulaDefinition ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1399:1: (lv_rightSubformula_4_0= ruleFormulaDefinition )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1399:1: (lv_rightSubformula_4_0= ruleFormulaDefinition )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1400:3: lv_rightSubformula_4_0= ruleFormulaDefinition
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1399:1: (lv_rightSubformula_4_0= ruleFormulaDefinition )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1400:3: lv_rightSubformula_4_0= ruleFormulaDefinition
             {
             if ( state.backtracking==0 ) {
                
@@ -3691,7 +3691,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTerm"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1428:1: entryRuleTerm returns [EObject current=null] : iv_ruleTerm= ruleTerm EOF ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1428:1: entryRuleTerm returns [EObject current=null] : iv_ruleTerm= ruleTerm EOF ;
     public final EObject entryRuleTerm() throws RecognitionException {
         EObject current = null;
 
@@ -3699,8 +3699,8 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1429:2: (iv_ruleTerm= ruleTerm EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1430:2: iv_ruleTerm= ruleTerm EOF
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1429:2: (iv_ruleTerm= ruleTerm EOF )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1430:2: iv_ruleTerm= ruleTerm EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getTermRule()); 
@@ -3731,7 +3731,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTerm"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1437:1: ruleTerm returns [EObject current=null] : (this_Variable_0= ruleVariable | this_Constant_1= ruleConstant | this_AtomicProposition_2= ruleAtomicProposition ) ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1437:1: ruleTerm returns [EObject current=null] : (this_Variable_0= ruleVariable | this_Constant_1= ruleConstant | this_AtomicProposition_2= ruleAtomicProposition ) ;
     public final EObject ruleTerm() throws RecognitionException {
         EObject current = null;
 
@@ -3745,10 +3745,10 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1440:28: ( (this_Variable_0= ruleVariable | this_Constant_1= ruleConstant | this_AtomicProposition_2= ruleAtomicProposition ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1441:1: (this_Variable_0= ruleVariable | this_Constant_1= ruleConstant | this_AtomicProposition_2= ruleAtomicProposition )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1440:28: ( (this_Variable_0= ruleVariable | this_Constant_1= ruleConstant | this_AtomicProposition_2= ruleAtomicProposition ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1441:1: (this_Variable_0= ruleVariable | this_Constant_1= ruleConstant | this_AtomicProposition_2= ruleAtomicProposition )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1441:1: (this_Variable_0= ruleVariable | this_Constant_1= ruleConstant | this_AtomicProposition_2= ruleAtomicProposition )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1441:1: (this_Variable_0= ruleVariable | this_Constant_1= ruleConstant | this_AtomicProposition_2= ruleAtomicProposition )
             int alt12=3;
             int LA12_0 = input.LA(1);
 
@@ -3781,7 +3781,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
             }
             switch (alt12) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1442:2: this_Variable_0= ruleVariable
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1442:2: this_Variable_0= ruleVariable
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -3808,7 +3808,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1455:2: this_Constant_1= ruleConstant
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1455:2: this_Constant_1= ruleConstant
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -3835,7 +3835,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1468:2: this_AtomicProposition_2= ruleAtomicProposition
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1468:2: this_AtomicProposition_2= ruleAtomicProposition
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -3884,7 +3884,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAtomicProposition"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1487:1: entryRuleAtomicProposition returns [EObject current=null] : iv_ruleAtomicProposition= ruleAtomicProposition EOF ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1487:1: entryRuleAtomicProposition returns [EObject current=null] : iv_ruleAtomicProposition= ruleAtomicProposition EOF ;
     public final EObject entryRuleAtomicProposition() throws RecognitionException {
         EObject current = null;
 
@@ -3892,8 +3892,8 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1488:2: (iv_ruleAtomicProposition= ruleAtomicProposition EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1489:2: iv_ruleAtomicProposition= ruleAtomicProposition EOF
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1488:2: (iv_ruleAtomicProposition= ruleAtomicProposition EOF )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1489:2: iv_ruleAtomicProposition= ruleAtomicProposition EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getAtomicPropositionRule()); 
@@ -3924,7 +3924,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAtomicProposition"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1496:1: ruleAtomicProposition returns [EObject current=null] : ( () ( (lv_name_1_0= RULE_VARIABLE_NAME ) ) ) ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1496:1: ruleAtomicProposition returns [EObject current=null] : ( () ( (lv_name_1_0= RULE_VARIABLE_NAME ) ) ) ;
     public final EObject ruleAtomicProposition() throws RecognitionException {
         EObject current = null;
 
@@ -3933,14 +3933,14 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1499:28: ( ( () ( (lv_name_1_0= RULE_VARIABLE_NAME ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1500:1: ( () ( (lv_name_1_0= RULE_VARIABLE_NAME ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1499:28: ( ( () ( (lv_name_1_0= RULE_VARIABLE_NAME ) ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1500:1: ( () ( (lv_name_1_0= RULE_VARIABLE_NAME ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1500:1: ( () ( (lv_name_1_0= RULE_VARIABLE_NAME ) ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1500:2: () ( (lv_name_1_0= RULE_VARIABLE_NAME ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1500:1: ( () ( (lv_name_1_0= RULE_VARIABLE_NAME ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1500:2: () ( (lv_name_1_0= RULE_VARIABLE_NAME ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1500:2: ()
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1501:2: 
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1500:2: ()
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1501:2: 
             {
             if ( state.backtracking==0 ) {
                
@@ -3957,11 +3957,11 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1509:2: ( (lv_name_1_0= RULE_VARIABLE_NAME ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1510:1: (lv_name_1_0= RULE_VARIABLE_NAME )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1509:2: ( (lv_name_1_0= RULE_VARIABLE_NAME ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1510:1: (lv_name_1_0= RULE_VARIABLE_NAME )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1510:1: (lv_name_1_0= RULE_VARIABLE_NAME )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1511:3: lv_name_1_0= RULE_VARIABLE_NAME
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1510:1: (lv_name_1_0= RULE_VARIABLE_NAME )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1511:3: lv_name_1_0= RULE_VARIABLE_NAME
             {
             lv_name_1_0=(Token)match(input,RULE_VARIABLE_NAME,FollowSets000.FOLLOW_RULE_VARIABLE_NAME_in_ruleAtomicProposition3125); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -4010,7 +4010,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQuantifier"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1535:1: ruleQuantifier returns [Enumerator current=null] : ( (enumLiteral_0= 'exists' ) | (enumLiteral_1= 'forall' ) ) ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1535:1: ruleQuantifier returns [Enumerator current=null] : ( (enumLiteral_0= 'exists' ) | (enumLiteral_1= 'forall' ) ) ;
     public final Enumerator ruleQuantifier() throws RecognitionException {
         Enumerator current = null;
 
@@ -4019,10 +4019,10 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1537:28: ( ( (enumLiteral_0= 'exists' ) | (enumLiteral_1= 'forall' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1538:1: ( (enumLiteral_0= 'exists' ) | (enumLiteral_1= 'forall' ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1537:28: ( ( (enumLiteral_0= 'exists' ) | (enumLiteral_1= 'forall' ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1538:1: ( (enumLiteral_0= 'exists' ) | (enumLiteral_1= 'forall' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1538:1: ( (enumLiteral_0= 'exists' ) | (enumLiteral_1= 'forall' ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1538:1: ( (enumLiteral_0= 'exists' ) | (enumLiteral_1= 'forall' ) )
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -4041,10 +4041,10 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
             }
             switch (alt13) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1538:2: (enumLiteral_0= 'exists' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1538:2: (enumLiteral_0= 'exists' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1538:2: (enumLiteral_0= 'exists' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1538:4: enumLiteral_0= 'exists'
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1538:2: (enumLiteral_0= 'exists' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1538:4: enumLiteral_0= 'exists'
                     {
                     enumLiteral_0=(Token)match(input,29,FollowSets000.FOLLOW_29_in_ruleQuantifier3180); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -4060,10 +4060,10 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1544:6: (enumLiteral_1= 'forall' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1544:6: (enumLiteral_1= 'forall' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1544:6: (enumLiteral_1= 'forall' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1544:8: enumLiteral_1= 'forall'
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1544:6: (enumLiteral_1= 'forall' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1544:8: enumLiteral_1= 'forall'
                     {
                     enumLiteral_1=(Token)match(input,30,FollowSets000.FOLLOW_30_in_ruleQuantifier3197); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -4101,7 +4101,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBinaryLogicOperator"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1554:1: ruleBinaryLogicOperator returns [Enumerator current=null] : ( (enumLiteral_0= ' & ' ) | (enumLiteral_1= ' <=> ' ) | (enumLiteral_2= ' => ' ) | (enumLiteral_3= ' | ' ) | (enumLiteral_4= ' ^ ' ) ) ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1554:1: ruleBinaryLogicOperator returns [Enumerator current=null] : ( (enumLiteral_0= ' & ' ) | (enumLiteral_1= ' <=> ' ) | (enumLiteral_2= ' => ' ) | (enumLiteral_3= ' | ' ) | (enumLiteral_4= ' ^ ' ) ) ;
     public final Enumerator ruleBinaryLogicOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -4113,10 +4113,10 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1556:28: ( ( (enumLiteral_0= ' & ' ) | (enumLiteral_1= ' <=> ' ) | (enumLiteral_2= ' => ' ) | (enumLiteral_3= ' | ' ) | (enumLiteral_4= ' ^ ' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1557:1: ( (enumLiteral_0= ' & ' ) | (enumLiteral_1= ' <=> ' ) | (enumLiteral_2= ' => ' ) | (enumLiteral_3= ' | ' ) | (enumLiteral_4= ' ^ ' ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1556:28: ( ( (enumLiteral_0= ' & ' ) | (enumLiteral_1= ' <=> ' ) | (enumLiteral_2= ' => ' ) | (enumLiteral_3= ' | ' ) | (enumLiteral_4= ' ^ ' ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1557:1: ( (enumLiteral_0= ' & ' ) | (enumLiteral_1= ' <=> ' ) | (enumLiteral_2= ' => ' ) | (enumLiteral_3= ' | ' ) | (enumLiteral_4= ' ^ ' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1557:1: ( (enumLiteral_0= ' & ' ) | (enumLiteral_1= ' <=> ' ) | (enumLiteral_2= ' => ' ) | (enumLiteral_3= ' | ' ) | (enumLiteral_4= ' ^ ' ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1557:1: ( (enumLiteral_0= ' & ' ) | (enumLiteral_1= ' <=> ' ) | (enumLiteral_2= ' => ' ) | (enumLiteral_3= ' | ' ) | (enumLiteral_4= ' ^ ' ) )
             int alt14=5;
             switch ( input.LA(1) ) {
             case 31:
@@ -4154,10 +4154,10 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
             switch (alt14) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1557:2: (enumLiteral_0= ' & ' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1557:2: (enumLiteral_0= ' & ' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1557:2: (enumLiteral_0= ' & ' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1557:4: enumLiteral_0= ' & '
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1557:2: (enumLiteral_0= ' & ' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1557:4: enumLiteral_0= ' & '
                     {
                     enumLiteral_0=(Token)match(input,31,FollowSets000.FOLLOW_31_in_ruleBinaryLogicOperator3242); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -4173,10 +4173,10 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1563:6: (enumLiteral_1= ' <=> ' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1563:6: (enumLiteral_1= ' <=> ' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1563:6: (enumLiteral_1= ' <=> ' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1563:8: enumLiteral_1= ' <=> '
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1563:6: (enumLiteral_1= ' <=> ' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1563:8: enumLiteral_1= ' <=> '
                     {
                     enumLiteral_1=(Token)match(input,32,FollowSets000.FOLLOW_32_in_ruleBinaryLogicOperator3259); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -4192,10 +4192,10 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1569:6: (enumLiteral_2= ' => ' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1569:6: (enumLiteral_2= ' => ' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1569:6: (enumLiteral_2= ' => ' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1569:8: enumLiteral_2= ' => '
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1569:6: (enumLiteral_2= ' => ' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1569:8: enumLiteral_2= ' => '
                     {
                     enumLiteral_2=(Token)match(input,33,FollowSets000.FOLLOW_33_in_ruleBinaryLogicOperator3276); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -4211,10 +4211,10 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1575:6: (enumLiteral_3= ' | ' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1575:6: (enumLiteral_3= ' | ' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1575:6: (enumLiteral_3= ' | ' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1575:8: enumLiteral_3= ' | '
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1575:6: (enumLiteral_3= ' | ' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1575:8: enumLiteral_3= ' | '
                     {
                     enumLiteral_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleBinaryLogicOperator3293); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -4230,10 +4230,10 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1581:6: (enumLiteral_4= ' ^ ' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1581:6: (enumLiteral_4= ' ^ ' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1581:6: (enumLiteral_4= ' ^ ' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1581:8: enumLiteral_4= ' ^ '
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1581:6: (enumLiteral_4= ' ^ ' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1581:8: enumLiteral_4= ' ^ '
                     {
                     enumLiteral_4=(Token)match(input,35,FollowSets000.FOLLOW_35_in_ruleBinaryLogicOperator3310); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -4271,7 +4271,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComparisonOperator"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1591:1: ruleComparisonOperator returns [Enumerator current=null] : ( (enumLiteral_0= ' = ' ) | (enumLiteral_1= ' > ' ) | (enumLiteral_2= ' >= ' ) | (enumLiteral_3= ' < ' ) | (enumLiteral_4= ' <= ' ) ) ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1591:1: ruleComparisonOperator returns [Enumerator current=null] : ( (enumLiteral_0= ' = ' ) | (enumLiteral_1= ' > ' ) | (enumLiteral_2= ' >= ' ) | (enumLiteral_3= ' < ' ) | (enumLiteral_4= ' <= ' ) ) ;
     public final Enumerator ruleComparisonOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -4283,10 +4283,10 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1593:28: ( ( (enumLiteral_0= ' = ' ) | (enumLiteral_1= ' > ' ) | (enumLiteral_2= ' >= ' ) | (enumLiteral_3= ' < ' ) | (enumLiteral_4= ' <= ' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1594:1: ( (enumLiteral_0= ' = ' ) | (enumLiteral_1= ' > ' ) | (enumLiteral_2= ' >= ' ) | (enumLiteral_3= ' < ' ) | (enumLiteral_4= ' <= ' ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1593:28: ( ( (enumLiteral_0= ' = ' ) | (enumLiteral_1= ' > ' ) | (enumLiteral_2= ' >= ' ) | (enumLiteral_3= ' < ' ) | (enumLiteral_4= ' <= ' ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1594:1: ( (enumLiteral_0= ' = ' ) | (enumLiteral_1= ' > ' ) | (enumLiteral_2= ' >= ' ) | (enumLiteral_3= ' < ' ) | (enumLiteral_4= ' <= ' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1594:1: ( (enumLiteral_0= ' = ' ) | (enumLiteral_1= ' > ' ) | (enumLiteral_2= ' >= ' ) | (enumLiteral_3= ' < ' ) | (enumLiteral_4= ' <= ' ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1594:1: ( (enumLiteral_0= ' = ' ) | (enumLiteral_1= ' > ' ) | (enumLiteral_2= ' >= ' ) | (enumLiteral_3= ' < ' ) | (enumLiteral_4= ' <= ' ) )
             int alt15=5;
             switch ( input.LA(1) ) {
             case 36:
@@ -4324,10 +4324,10 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
             switch (alt15) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1594:2: (enumLiteral_0= ' = ' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1594:2: (enumLiteral_0= ' = ' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1594:2: (enumLiteral_0= ' = ' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1594:4: enumLiteral_0= ' = '
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1594:2: (enumLiteral_0= ' = ' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1594:4: enumLiteral_0= ' = '
                     {
                     enumLiteral_0=(Token)match(input,36,FollowSets000.FOLLOW_36_in_ruleComparisonOperator3355); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -4343,10 +4343,10 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1600:6: (enumLiteral_1= ' > ' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1600:6: (enumLiteral_1= ' > ' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1600:6: (enumLiteral_1= ' > ' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1600:8: enumLiteral_1= ' > '
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1600:6: (enumLiteral_1= ' > ' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1600:8: enumLiteral_1= ' > '
                     {
                     enumLiteral_1=(Token)match(input,37,FollowSets000.FOLLOW_37_in_ruleComparisonOperator3372); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -4362,10 +4362,10 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1606:6: (enumLiteral_2= ' >= ' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1606:6: (enumLiteral_2= ' >= ' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1606:6: (enumLiteral_2= ' >= ' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1606:8: enumLiteral_2= ' >= '
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1606:6: (enumLiteral_2= ' >= ' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1606:8: enumLiteral_2= ' >= '
                     {
                     enumLiteral_2=(Token)match(input,38,FollowSets000.FOLLOW_38_in_ruleComparisonOperator3389); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -4381,10 +4381,10 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1612:6: (enumLiteral_3= ' < ' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1612:6: (enumLiteral_3= ' < ' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1612:6: (enumLiteral_3= ' < ' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1612:8: enumLiteral_3= ' < '
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1612:6: (enumLiteral_3= ' < ' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1612:8: enumLiteral_3= ' < '
                     {
                     enumLiteral_3=(Token)match(input,39,FollowSets000.FOLLOW_39_in_ruleComparisonOperator3406); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -4400,10 +4400,10 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1618:6: (enumLiteral_4= ' <= ' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1618:6: (enumLiteral_4= ' <= ' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1618:6: (enumLiteral_4= ' <= ' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1618:8: enumLiteral_4= ' <= '
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1618:6: (enumLiteral_4= ' <= ' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1618:8: enumLiteral_4= ' <= '
                     {
                     enumLiteral_4=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleComparisonOperator3423); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -4441,7 +4441,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTemporalOperator"
-    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1628:1: ruleTemporalOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'AF' ) | (enumLiteral_1= 'AG' ) | (enumLiteral_2= 'AU' ) | (enumLiteral_3= 'EF' ) | (enumLiteral_4= 'EG' ) | (enumLiteral_5= 'EU' ) ) ;
+    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1628:1: ruleTemporalOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'AF' ) | (enumLiteral_1= 'AG' ) | (enumLiteral_2= 'AU' ) | (enumLiteral_3= 'EF' ) | (enumLiteral_4= 'EG' ) | (enumLiteral_5= 'EU' ) ) ;
     public final Enumerator ruleTemporalOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -4454,10 +4454,10 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1630:28: ( ( (enumLiteral_0= 'AF' ) | (enumLiteral_1= 'AG' ) | (enumLiteral_2= 'AU' ) | (enumLiteral_3= 'EF' ) | (enumLiteral_4= 'EG' ) | (enumLiteral_5= 'EU' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1631:1: ( (enumLiteral_0= 'AF' ) | (enumLiteral_1= 'AG' ) | (enumLiteral_2= 'AU' ) | (enumLiteral_3= 'EF' ) | (enumLiteral_4= 'EG' ) | (enumLiteral_5= 'EU' ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1630:28: ( ( (enumLiteral_0= 'AF' ) | (enumLiteral_1= 'AG' ) | (enumLiteral_2= 'AU' ) | (enumLiteral_3= 'EF' ) | (enumLiteral_4= 'EG' ) | (enumLiteral_5= 'EU' ) ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1631:1: ( (enumLiteral_0= 'AF' ) | (enumLiteral_1= 'AG' ) | (enumLiteral_2= 'AU' ) | (enumLiteral_3= 'EF' ) | (enumLiteral_4= 'EG' ) | (enumLiteral_5= 'EU' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1631:1: ( (enumLiteral_0= 'AF' ) | (enumLiteral_1= 'AG' ) | (enumLiteral_2= 'AU' ) | (enumLiteral_3= 'EF' ) | (enumLiteral_4= 'EG' ) | (enumLiteral_5= 'EU' ) )
+            // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1631:1: ( (enumLiteral_0= 'AF' ) | (enumLiteral_1= 'AG' ) | (enumLiteral_2= 'AU' ) | (enumLiteral_3= 'EF' ) | (enumLiteral_4= 'EG' ) | (enumLiteral_5= 'EU' ) )
             int alt16=6;
             switch ( input.LA(1) ) {
             case 41:
@@ -4500,10 +4500,10 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
 
             switch (alt16) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1631:2: (enumLiteral_0= 'AF' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1631:2: (enumLiteral_0= 'AF' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1631:2: (enumLiteral_0= 'AF' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1631:4: enumLiteral_0= 'AF'
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1631:2: (enumLiteral_0= 'AF' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1631:4: enumLiteral_0= 'AF'
                     {
                     enumLiteral_0=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleTemporalOperator3468); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -4519,10 +4519,10 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1637:6: (enumLiteral_1= 'AG' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1637:6: (enumLiteral_1= 'AG' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1637:6: (enumLiteral_1= 'AG' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1637:8: enumLiteral_1= 'AG'
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1637:6: (enumLiteral_1= 'AG' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1637:8: enumLiteral_1= 'AG'
                     {
                     enumLiteral_1=(Token)match(input,42,FollowSets000.FOLLOW_42_in_ruleTemporalOperator3485); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -4538,10 +4538,10 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1643:6: (enumLiteral_2= 'AU' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1643:6: (enumLiteral_2= 'AU' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1643:6: (enumLiteral_2= 'AU' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1643:8: enumLiteral_2= 'AU'
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1643:6: (enumLiteral_2= 'AU' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1643:8: enumLiteral_2= 'AU'
                     {
                     enumLiteral_2=(Token)match(input,43,FollowSets000.FOLLOW_43_in_ruleTemporalOperator3502); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -4557,10 +4557,10 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1649:6: (enumLiteral_3= 'EF' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1649:6: (enumLiteral_3= 'EF' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1649:6: (enumLiteral_3= 'EF' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1649:8: enumLiteral_3= 'EF'
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1649:6: (enumLiteral_3= 'EF' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1649:8: enumLiteral_3= 'EF'
                     {
                     enumLiteral_3=(Token)match(input,44,FollowSets000.FOLLOW_44_in_ruleTemporalOperator3519); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -4576,10 +4576,10 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1655:6: (enumLiteral_4= 'EG' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1655:6: (enumLiteral_4= 'EG' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1655:6: (enumLiteral_4= 'EG' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1655:8: enumLiteral_4= 'EG'
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1655:6: (enumLiteral_4= 'EG' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1655:8: enumLiteral_4= 'EG'
                     {
                     enumLiteral_4=(Token)match(input,45,FollowSets000.FOLLOW_45_in_ruleTemporalOperator3536); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -4595,10 +4595,10 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1661:6: (enumLiteral_5= 'EU' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1661:6: (enumLiteral_5= 'EU' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1661:6: (enumLiteral_5= 'EU' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1661:8: enumLiteral_5= 'EU'
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1661:6: (enumLiteral_5= 'EU' )
+                    // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1661:8: enumLiteral_5= 'EU'
                     {
                     enumLiteral_5=(Token)match(input,46,FollowSets000.FOLLOW_46_in_ruleTemporalOperator3553); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -4639,8 +4639,8 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
         EObject this_BinaryLogicFormula_0 = null;
 
 
-        // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:694:2: (this_BinaryLogicFormula_0= ruleBinaryLogicFormula )
-        // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:694:2: this_BinaryLogicFormula_0= ruleBinaryLogicFormula
+        // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:694:2: (this_BinaryLogicFormula_0= ruleBinaryLogicFormula )
+        // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:694:2: this_BinaryLogicFormula_0= ruleBinaryLogicFormula
         {
         if ( state.backtracking==0 ) {
            
@@ -4662,8 +4662,8 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
         EObject this_Variable_0 = null;
 
 
-        // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1442:2: (this_Variable_0= ruleVariable )
-        // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1442:2: this_Variable_0= ruleVariable
+        // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1442:2: (this_Variable_0= ruleVariable )
+        // ../org.muml.reconfigurationverification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1442:2: this_Variable_0= ruleVariable
         {
         if ( state.backtracking==0 ) {
            

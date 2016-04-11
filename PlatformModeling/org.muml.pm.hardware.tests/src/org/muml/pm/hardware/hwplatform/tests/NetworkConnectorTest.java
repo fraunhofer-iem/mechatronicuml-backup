@@ -111,10 +111,10 @@ public class NetworkConnectorTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link org.muml.pm.hardware.hwplatform.NetworkConnector#setProtocol(de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol) <em>Protocol</em>}' feature setter.
+	 * Tests the '{@link org.muml.pm.hardware.hwplatform.NetworkConnector#setProtocol(org.muml.pm.hardware.hwresource.CommunicationProtocol) <em>Protocol</em>}' feature setter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.pm.hardware.hwplatform.NetworkConnector#setProtocol(de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol)
+	 * @see org.muml.pm.hardware.hwplatform.NetworkConnector#setProtocol(org.muml.pm.hardware.hwresource.CommunicationProtocol)
 	 * @generated
 	 */
 	public void testSetProtocol() {
@@ -137,10 +137,10 @@ public class NetworkConnectorTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link org.muml.pm.hardware.hwplatform.NetworkConnector#setBandwidth(de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataRate) <em>Bandwidth</em>}' feature setter.
+	 * Tests the '{@link org.muml.pm.hardware.hwplatform.NetworkConnector#setBandwidth(org.muml.pm.hardware.hwvaluetype.DataRate) <em>Bandwidth</em>}' feature setter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.pm.hardware.hwplatform.NetworkConnector#setBandwidth(de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataRate)
+	 * @see org.muml.pm.hardware.hwplatform.NetworkConnector#setBandwidth(org.muml.pm.hardware.hwvaluetype.DataRate)
 	 * @generated
 	 */
 	public void testSetBandwidth() {
@@ -176,10 +176,10 @@ public class NetworkConnectorTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link org.muml.pm.hardware.hwplatform.NetworkConnector#setConnectorKind(de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind) <em>Connector Kind</em>}' feature setter.
+	 * Tests the '{@link org.muml.pm.hardware.hwplatform.NetworkConnector#setConnectorKind(org.muml.pm.hardware.hwresource.CommunicationKind) <em>Connector Kind</em>}' feature setter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.pm.hardware.hwplatform.NetworkConnector#setConnectorKind(de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind)
+	 * @see org.muml.pm.hardware.hwplatform.NetworkConnector#setConnectorKind(org.muml.pm.hardware.hwresource.CommunicationKind)
 	 * @generated
 	 */
 	public void testSetConnectorKind() {

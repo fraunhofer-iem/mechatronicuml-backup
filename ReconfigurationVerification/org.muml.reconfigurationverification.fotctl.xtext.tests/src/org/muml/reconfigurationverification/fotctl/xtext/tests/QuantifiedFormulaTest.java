@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.verification.fotctl.xtext.tests;
+package org.muml.reconfigurationverification.fotctl.xtext.tests;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
@@ -34,7 +34,7 @@ public class QuantifiedFormulaTest {
 	{
 		ResourceSet rs = new ResourceSetImpl();
 		
-		String modelFolder = "/de.uni_paderborn.fujaba.muml.verification.fotctl.xtext.tests/formulae/";
+		String modelFolder = "/org.muml.reconfigurationverification.fotctl.xtext.tests/formulae/";
 		Resource r = rs.createResource(URI.createPlatformPluginURI(
 				modelFolder + fileName, true));
 

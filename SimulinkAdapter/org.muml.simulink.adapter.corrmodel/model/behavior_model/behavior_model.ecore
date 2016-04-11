@@ -9,7 +9,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FRtSc2Chart" eSuperTypes="../fujaba2simulink.ecore#//AbstractContainerCorrespondenceNode">
     <eStructuralFeatures xsi:type="ecore:EReference" name="chart" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/Chart"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fRtSc" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fRtSc" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/RealtimeStatechart"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mt_par" upperBound="-1"
         eType="#//MT_Par2MTD"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sfChartState" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/State"/>
@@ -18,55 +18,55 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="sfSelfTrans" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/Transition"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ScState2SfState" eSuperTypes="../fujaba2simulink.ecore#//AbstractContainerCorrespondenceNode">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scState" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scState" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/State"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sfState" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/State"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ScTrans2SfTrans" eSuperTypes="../fujaba2simulink.ecore#//AbstractContainerCorrespondenceNode">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scTrans" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Transition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scTrans" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/Transition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sfTrans" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/Transition"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ScRegion2sfParallel" eSuperTypes="../fujaba2simulink.ecore#//AbstractContainerCorrespondenceNode">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scRegion" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Region"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scRegion" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/Region"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sfParallelState" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/State"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scRegRtsc" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scRegRtsc" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/RealtimeStatechart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ScEntry2sfEntry" eSuperTypes="../fujaba2simulink.ecore#//AbstractContainerCorrespondenceNode">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scEntryEvent" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/EntryEvent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scEntryEvent" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/EntryEvent"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sfEntryAction" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scEntryAction" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Action"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scEntryAction" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/Action"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scExpr" eType="ecore:EClass ../../../org.muml.core/model/core.ecore#//expressions/TextualExpression"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scClock" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Clock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scClock" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/Clock"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ScExit2sfExit" eSuperTypes="../fujaba2simulink.ecore#//AbstractContainerCorrespondenceNode">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scExitEvent" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/ExitEvent"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scExitAction" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Action"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scExitEvent" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/ExitEvent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scExitAction" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/Action"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scExitExpr" eType="ecore:EClass ../../../org.muml.core/model/core.ecore#//expressions/TextualExpression"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sfExitAction" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scClock" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Clock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scClock" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/Clock"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ScStEnPoint2sfTrans" eSuperTypes="../fujaba2simulink.ecore#//AbstractContainerCorrespondenceNode">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sfTrans" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/Transition"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scInTrans" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Transition"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scOutTrans" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Transition"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scStateEntryP" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/StateEntryPoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scInTrans" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/Transition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scOutTrans" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/Transition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scStateEntryP" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/StateEntryPoint"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ScStExPoint2sfTrans" eSuperTypes="../fujaba2simulink.ecore#//AbstractContainerCorrespondenceNode">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sfTrans" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/Transition"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scOutTrans" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Transition"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scInTrans" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Transition"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scStExPoint" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/StateExitPoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scOutTrans" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/Transition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scInTrans" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/Transition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scStExPoint" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/StateExitPoint"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ScSyncChannel2sfSignal" eSuperTypes="../fujaba2simulink.ecore#//AbstractContainerCorrespondenceNode">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scSyncChannel" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/SynchronizationChannel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scSyncChannel" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/SynchronizationChannel"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sfSyncEvent" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/Event"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ScSyncReceiveAction2sfAction" eSuperTypes="../fujaba2simulink.ecore#//AbstractContainerCorrespondenceNode">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scAction" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Action"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scAction" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/Action"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scActionExpr" eType="ecore:EClass ../../../org.muml.core/model/core.ecore#//expressions/TextualExpression"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sfAction" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ScSyncReceive2sfSyncReceive" eSuperTypes="../fujaba2simulink.ecore#//AbstractContainerCorrespondenceNode">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scSyncReceive" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Synchronization"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scSyncReceive" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/Synchronization"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sfEntryAction" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sfExitAction" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sfTransEvent" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/Event"/>
@@ -83,7 +83,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="scParaType" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EDataType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MT_Par2MTD" eSuperTypes="../fujaba2simulink.ecore#//AbstractContainerCorrespondenceNode">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mt" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgiface/MessageType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mt" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/msgiface/MessageType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="par" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EParameter"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="data" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/Data"/>
   </eClassifiers>
@@ -96,22 +96,22 @@
   <eClassifiers xsi:type="ecore:EClass" name="scSendAsync2sfTransAction" eSuperTypes="../fujaba2simulink.ecore#//AbstractContainerCorrespondenceNode">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sfSendAsync" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="AsynchronousMessageEvent"
-        eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/AsynchronousMessageEvent"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Message" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Message"/>
+        eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/AsynchronousMessageEvent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Message" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/Message"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ActionValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral=""/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scPara" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EParameter"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parBind" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/ParameterBinding"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parBind" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/core/ParameterBinding"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="scSendParaBind2sfAction" eSuperTypes="../fujaba2simulink.ecore#//AbstractContainerCorrespondenceNode">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scParaBinding" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/ParameterBinding"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scParaBinding" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/core/ParameterBinding"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sfParaBAction" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scParaBTextual" eType="ecore:EClass ../../../org.muml.core/model/core.ecore#//expressions/TextualExpression"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="scAsyncSend2sfAction" eSuperTypes="../fujaba2simulink.ecore#//AbstractContainerCorrespondenceNode">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sfEnqAction" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="AsynchronousMessageEvent"
-        eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/AsynchronousMessageEvent"/>
+        eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/AsynchronousMessageEvent"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EAnnotation" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAnnotation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EStringToStringMapEntry"
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"/>
@@ -120,27 +120,27 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="guardAnnotation" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EAnnotation" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAnnotation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="AsynchronousMessageEvent"
-        eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/AsynchronousMessageEvent"/>
+        eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/AsynchronousMessageEvent"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="asyncRecGuard" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="scClock2sfData" eSuperTypes="../fujaba2simulink.ecore#//AbstractContainerCorrespondenceNode">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scClock" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Clock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scClock" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/Clock"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sfClockVariable" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/Data"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="scClockConstr2sfGuard" eSuperTypes="../fujaba2simulink.ecore#//AbstractContainerCorrespondenceNode">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scClockConstr" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/ClockConstraint"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scBound" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/NaturalNumber"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scClock" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Clock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scClockConstr" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/ClockConstraint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scBound" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/core/NaturalNumber"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scClock" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/Clock"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sfClockGuard" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="clock2ClockReset" eSuperTypes="../fujaba2simulink.ecore#//AbstractContainerCorrespondenceNode">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scClock" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Clock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scClock" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/Clock"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sfClockReset" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="scInvariant2sfInvError" eSuperTypes="../fujaba2simulink.ecore#//AbstractContainerCorrespondenceNode">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scInvariant" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/ClockConstraint"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scBound" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/NaturalNumber"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scClock" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Clock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scInvariant" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/ClockConstraint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scBound" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/core/NaturalNumber"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scClock" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/Clock"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sfInvTrans" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/Transition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sfInvGuard" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sfInvNode" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/State"/>
@@ -150,7 +150,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="sfGuard" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="scAction2sfAction" eSuperTypes="../fujaba2simulink.ecore#//AbstractContainerCorrespondenceNode">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scAction" eType="ecore:EClass ../../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Action"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scAction" eType="ecore:EClass ../../../org.muml.pim/model/pim.ecore#//model/realtimestatechart/Action"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sfAction" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/Action"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scActionExpr" eType="ecore:EClass ../../../org.muml.core/model/core.ecore#//expressions/TextualExpression"/>
   </eClassifiers>

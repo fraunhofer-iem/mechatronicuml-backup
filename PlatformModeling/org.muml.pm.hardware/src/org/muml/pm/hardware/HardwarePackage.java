@@ -62,10 +62,10 @@ public interface HardwarePackage extends EPackage {
 	HardwarePackage eINSTANCE = org.muml.pm.hardware.impl.HardwarePackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.impl.TEstImpl <em>TEst</em>}' class.
+	 * The meta object id for the '{@link org.muml.pm.hardware.impl.TEstImpl <em>TEst</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.hardware.impl.TEstImpl
+	 * @see org.muml.pm.hardware.impl.TEstImpl
 	 * @see org.muml.pm.hardware.impl.HardwarePackageImpl#getTEst()
 	 * @generated
 	 */
@@ -91,11 +91,11 @@ public interface HardwarePackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.TEst <em>TEst</em>}'.
+	 * Returns the meta object for class '{@link org.muml.pm.hardware.TEst <em>TEst</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>TEst</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.TEst
+	 * @see org.muml.pm.hardware.TEst
 	 * @generated
 	 */
 	EClass getTEst();
@@ -124,10 +124,10 @@ public interface HardwarePackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.impl.TEstImpl <em>TEst</em>}' class.
+		 * The meta object literal for the '{@link org.muml.pm.hardware.impl.TEstImpl <em>TEst</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.hardware.impl.TEstImpl
+		 * @see org.muml.pm.hardware.impl.TEstImpl
 		 * @see org.muml.pm.hardware.impl.HardwarePackageImpl#getTEst()
 		 * @generated
 		 */

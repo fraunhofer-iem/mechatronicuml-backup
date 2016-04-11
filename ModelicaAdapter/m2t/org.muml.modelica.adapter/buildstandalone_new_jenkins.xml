@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project basedir="." default="compile" name="de.uni_paderborn.fujaba.modelica.m2t">
+<project basedir="." default="compile" name="org.muml.modelica.adapter">
     
     <property name="ECLIPSE_HOME" value="/data/jenkins/jobs/Eclipse Target Platform/lastSuccessful/archive/targetPlatform"/>
     <property name="ECLIPSE_WORKSPACE" value="../"/>
@@ -7,19 +7,19 @@
     <property name="SOURCE_FOLDER" value="${basedir}/src/"/>    
     <property name="OUTPUT_FOLDER" value="${basedir}/bin/"/>
 
-    <path id="de.uni_paderborn.fujaba.modelica.m2t.classpath">
-        <path refid="de.uni_paderborn.fujaba.modelica.m2t.libraryclasspath" />
+    <path id="org.muml.modelica.adapter.classpath">
+        <path refid="org.muml.modelica.adapter.libraryclasspath" />
     </path>
 
     <!-- The classpath with only the dependencies used by the project (a dependency with the parser is required) -->
-    <path id="de.uni_paderborn.fujaba.modelica.m2t.libraryclasspath">
+    <path id="org.muml.modelica.adapter.libraryclasspath">
         <pathelement location="${ECLIPSE_WORKSPACE}/org.muml.modelica.adapter/bin"/>
     	<pathelement location="${ECLIPSE_WORKSPACE}/org.muml.core/target/classes"/>
     	<pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.muml/bin"/>
     	<pathelement location="${ECLIPSE_WORKSPACE}/org.muml.core.modelinstance/bin"/>
     	<pathelement location="${ECLIPSE_WORKSPACE}/org.muml.pim.actionlanguage/bin"/>
-    	<pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.modelica.m2t.transform/bin"/>
-    	<pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.modelica.m2t.rtsc/bin"/>
+    	<pathelement location="${ECLIPSE_WORKSPACE}/org.muml.modelica.adapter.transform/bin"/>
+    	<pathelement location="${ECLIPSE_WORKSPACE}/org.muml.modelica.adapter.rtsc/bin"/>
     	<fileset dir="${ECLIPSE_HOME}/plugins">
             <include name="*.jar"/>
         </fileset>
@@ -60,7 +60,7 @@
     </path>
 
     
-    <taskdef id="acceleoCompiler" name="acceleoCompiler" classname="org.eclipse.acceleo.parser.compiler.AcceleoCompiler" classpathref="de.uni_paderborn.fujaba.modelica.m2t.libraryclasspath" >
+    <taskdef id="acceleoCompiler" name="acceleoCompiler" classname="org.eclipse.acceleo.parser.compiler.AcceleoCompiler" classpathref="org.muml.modelica.adapter.libraryclasspath" >
     </taskdef>
 
     <!-- Change the value of the property SOURCE_FOLDERS to match the configuration of your project. -->
@@ -69,7 +69,7 @@
                          outputFolder="${OUTPUT_FOLDER}"
                          dependencies=""
                          binaryResource="false"
-    					 packagesToRegister="de.uni_paderborn.fujaba.muml.MumlPackage;de.uni_paderborn.fujaba.muml.instance.InstancePackage;de.uni_paderborn.fujaba.muml.component.ComponentPackage;org.muml.pim.actionlanguage.ActionlanguagePackage;de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;org.muml.core.CorePackage;de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;org.muml.pim.protocol.ProtocolPackage;de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;org.muml.core.types.TypesPackage;de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;org.muml.core.modelinstance.ModelinstancePackage;de.uni_paderborn.fujaba.modelica.m2t.transform.TransformPackage;org.muml.core.expressions.ExpressionsPackage;org.muml.core.expressions.common.CommonExpressionsPackage">
+    					 packagesToRegister="de.uni_paderborn.fujaba.muml.MumlPackage;de.uni_paderborn.fujaba.muml.instance.InstancePackage;de.uni_paderborn.fujaba.muml.component.ComponentPackage;org.muml.pim.actionlanguage.ActionlanguagePackage;de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;org.muml.core.CorePackage;de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;org.muml.pim.protocol.ProtocolPackage;de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;org.muml.core.types.TypesPackage;de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;org.muml.core.modelinstance.ModelinstancePackage;org.muml.modelica.adapter.transform.TransformPackage;org.muml.core.expressions.ExpressionsPackage;org.muml.core.expressions.common.CommonExpressionsPackage">
         </acceleoCompiler>-->
     </target>
 </project>
