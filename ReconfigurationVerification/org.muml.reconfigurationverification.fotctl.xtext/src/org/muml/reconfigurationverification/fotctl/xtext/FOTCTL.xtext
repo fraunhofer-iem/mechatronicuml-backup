@@ -1,4 +1,4 @@
-grammar de.uni_paderborn.fujaba.muml.verification.FOTCTL with org.eclipse.xtext.common.Terminals 
+grammar org.muml.reconfigurationverification.fotctl.xtext.FOTCTL with org.eclipse.xtext.common.Terminals 
 
 import "platform:/resource/org.muml.reconfigurationverification.fotctl/model/FOTCTL.ecore" 
 

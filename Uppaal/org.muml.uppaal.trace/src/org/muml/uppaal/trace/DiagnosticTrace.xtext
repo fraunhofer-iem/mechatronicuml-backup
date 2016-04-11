@@ -1,17 +1,17 @@
-grammar de.uni_paderborn.uppaal.trace.DiagnosticTrace with org.eclipse.xtext.common.Terminals
+grammar org.muml.uppaal.trace.DiagnosticTrace with org.eclipse.xtext.common.Terminals
 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
-import "platform:/resource/de.uni_paderborn.uppaal/model/uppaal.ecore" as uppaal
-import "platform:/resource/de.uni_paderborn.uppaal/model/uppaal.ecore#//core" as core
-import "platform:/resource/de.uni_paderborn.uppaal/model/uppaal.ecore#//types" as types
-import "platform:/resource/de.uni_paderborn.uppaal/model/uppaal.ecore#//declarations" as declarations
-import "platform:/resource/de.uni_paderborn.uppaal/model/uppaal.ecore#//declarations/global" as global
-import "platform:/resource/de.uni_paderborn.uppaal/model/uppaal.ecore#//declarations/system" as system
-import "platform:/resource/de.uni_paderborn.uppaal/model/uppaal.ecore#//templates" as templates
-import "platform:/resource/de.uni_paderborn.uppaal/model/uppaal.ecore#//statements" as statements
-import "platform:/resource/de.uni_paderborn.uppaal/model/uppaal.ecore#//expressions" as expressions
-import "platform:/resource/de.uni_paderborn.uppaal/model/uppaal.ecore#//visuals" as visuals
+import "platform:/resource/org.muml.uppaal/model/uppaal.ecore" as uppaal
+import "platform:/resource/org.muml.uppaal/model/uppaal.ecore#//core" as core
+import "platform:/resource/org.muml.uppaal/model/uppaal.ecore#//types" as types
+import "platform:/resource/org.muml.uppaal/model/uppaal.ecore#//declarations" as declarations
+import "platform:/resource/org.muml.uppaal/model/uppaal.ecore#//declarations/global" as global
+import "platform:/resource/org.muml.uppaal/model/uppaal.ecore#//declarations/system" as system
+import "platform:/resource/org.muml.uppaal/model/uppaal.ecore#//templates" as templates
+import "platform:/resource/org.muml.uppaal/model/uppaal.ecore#//statements" as statements
+import "platform:/resource/org.muml.uppaal/model/uppaal.ecore#//expressions" as expressions
+import "platform:/resource/org.muml.uppaal/model/uppaal.ecore#//visuals" as visuals
 
 generate diagnosticTrace "http://www.muml.org/uppaal/trace/1.0.0"
 
