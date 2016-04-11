@@ -78,16 +78,16 @@
       <states xmi:id="_REYtK496EeWSLqn0Kjoxwg" name="state2" outgoingTransitions="_hHv3gI-EEeWmmOmRWalNHA" incomingTransitions="_REYtIo96EeWSLqn0Kjoxwg"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_hNXtLmddEeW2PYMF5P3p8Q" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol"/>
-  <categories xmi:id="_hNXtL2ddEeW2PYMF5P3p8Q" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+  <categories xmi:id="_hNXtLmddEeW2PYMF5P3p8Q" key="org.muml.pim.protocol.category" name="protocol"/>
+  <categories xmi:id="_hNXtL2ddEeW2PYMF5P3p8Q" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_nvCwwGdlEeWDqoFdtyaAuw" name="M1">
       <messageTypes xmi:id="_oBH_QGdlEeWDqoFdtyaAuw" name="M1"/>
       <messageTypes xmi:id="_oScYwGdlEeWDqoFdtyaAuw" name="M2"/>
     </modelElements>
   </categories>
   <categories xmi:id="_hNXtMGddEeW2PYMF5P3p8Q" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance"/>
-  <categories xmi:id="_hNXtMWddEeW2PYMF5P3p8Q" key="de.uni_paderborn.fujaba.muml.components.category" name="component"/>
-  <categories xmi:id="_k0VMwGddEeW2PYMF5P3p8Q" key="de.uni_paderborn.fujaba.muml.pattern.category" name="pattern">
+  <categories xmi:id="_hNXtMWddEeW2PYMF5P3p8Q" key="org.muml.pim.components.category" name="component"/>
+  <categories xmi:id="_k0VMwGddEeW2PYMF5P3p8Q" key="org.muml.pim.pattern.category" name="pattern">
     <modelElements xsi:type="pattern:CoordinationPattern" xmi:id="_-5apAI6eEeWORsmFM0Dyxw" name="Pattern" patternVariants="_ldoBYGddEeW2PYMF5P3p8Q">
       <roles xmi:id="_-5h9wI6eEeWORsmFM0Dyxw" connectors="_-5pSgI6eEeWORsmFM0Dyxw" behavior="_REYtII96EeWSLqn0Kjoxwg" name="role1" receiverMessageTypes="_oScYwGdlEeWDqoFdtyaAuw">
         <cardinality xmi:id="_-5loII6eEeWORsmFM0Dyxw">

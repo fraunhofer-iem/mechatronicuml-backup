@@ -814,8 +814,8 @@
       <clocks xmi:id="__HeaYN5DEeWhxdibxUaacg" name="c"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_t0IlzOdrEeSmgcfWtmVOuw" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol"/>
-  <categories xmi:id="_t0IlzedrEeSmgcfWtmVOuw" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+  <categories xmi:id="_t0IlzOdrEeSmgcfWtmVOuw" key="org.muml.pim.protocol.category" name="protocol"/>
+  <categories xmi:id="_t0IlzedrEeSmgcfWtmVOuw" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_45iekOgIEeSrL7p2IXXVVg" name="AcquireAssuranceMessages">
       <messageTypes xmi:id="_890zYOgIEeSrL7p2IXXVVg" name="requestAssurance"/>
       <messageTypes xmi:id="_-E_PwOgIEeSrL7p2IXXVVg" name="deactivateAssurance"/>
@@ -860,8 +860,8 @@
     </modelElements>
   </categories>
   <categories xmi:id="_t0IlzudrEeSmgcfWtmVOuw" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance"/>
-  <categories xmi:id="_t0Ilz-drEeSmgcfWtmVOuw" key="de.uni_paderborn.fujaba.muml.components.category" name="component"/>
-  <categories xmi:id="_LQLNAOdsEeSeg8s21JHaOw" key="de.uni_paderborn.fujaba.muml.pattern.category" name="pattern">
+  <categories xmi:id="_t0Ilz-drEeSmgcfWtmVOuw" key="org.muml.pim.components.category" name="component"/>
+  <categories xmi:id="_LQLNAOdsEeSeg8s21JHaOw" key="org.muml.pim.pattern.category" name="pattern">
     <modelElements xsi:type="pattern:CoordinationPattern" xmi:id="_JDgLwOgJEeSrL7p2IXXVVg" name="AcquireAssurance">
       <verificationConstraintRepositories xsi:type="mtctl:PropertyRepository" xmi:id="_NW_3gNv8EeWk7OzKNRMDBQ">
         <properties xmi:id="_aOSS0N5IEeWhxdibxUaacg">

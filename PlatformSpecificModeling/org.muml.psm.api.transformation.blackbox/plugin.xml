@@ -5,7 +5,7 @@
          point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
       <unit
             name="TimeUnitLibUnit"
-            namespace="de.uni_paderborn.fujaba.muml.software.transform._blackbox">
+            namespace="org.muml.psm.api._transformation._blackbox">
          <library
                class="org.muml.psm.api.transformation.blackbox.TimeUnitLibrary"
                name="TimenitLib">

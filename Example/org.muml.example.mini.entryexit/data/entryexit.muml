@@ -15,11 +15,11 @@
       <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_viKloB4MEeSKP_lLzmbIVg" name="A1" componentType="_sapbEB4MEeSKP_lLzmbIVg"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_w_z6RR4KEeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
+  <categories xmi:id="_w_z6RR4KEeSKP_lLzmbIVg" key="org.muml.pim.components.category" name="component">
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_sapbEB4MEeSKP_lLzmbIVg" name="aComponent" behavior="_UCEjIB4LEeSKP_lLzmbIVg"/>
   </categories>
-  <categories xmi:id="_w_z6Rh4KEeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol"/>
-  <categories xmi:id="_w_0hUB4KEeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype"/>
+  <categories xmi:id="_w_z6Rh4KEeSKP_lLzmbIVg" key="org.muml.pim.protocol.category" name="protocol"/>
+  <categories xmi:id="_w_0hUB4KEeSKP_lLzmbIVg" key="org.muml.pim.messagetype.category" name="msgtype"/>
   <categories xmi:id="_w_0hUR4KEeSKP_lLzmbIVg" key="org.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_UCEjIB4LEeSKP_lLzmbIVg" name="Behavior" behavioralElement="_sapbEB4MEeSKP_lLzmbIVg">
       <variables xmi:id="_MnfygB4MEeSKP_lLzmbIVg" name="i" dataType="_w_z6QR4KEeSKP_lLzmbIVg"/>

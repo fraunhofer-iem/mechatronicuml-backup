@@ -39,7 +39,7 @@
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_LO_rXinkEeORPcZB3PfXyA" node="_LO_rUSnkEeORPcZB3PfXyA _LO_rUynkEeORPcZB3PfXyA _LO_rWSnkEeORPcZB3PfXyA">
       <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_M439QJzXEeCxo-rGjpVr5g"/>
     </domain>
-    <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_LO_rXynkEeORPcZB3PfXyA" slotNode="_LO_rUynkEeORPcZB3PfXyA" expression="'de.uni_paderborn.fujaba.muml.components.category'">
+    <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_LO_rXynkEeORPcZB3PfXyA" slotNode="_LO_rUynkEeORPcZB3PfXyA" expression="'org.muml.pim.components.category'">
       <slotAttribute href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/key"/>
     </constraint>
   </rule>

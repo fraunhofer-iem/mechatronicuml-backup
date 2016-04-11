@@ -46,7 +46,7 @@ main() {
 	assert fatal (retcode.succeeded()) with log('Destroy-Trace copying failed: ' + retcode.raisedException().repr());
 }
 
-property componentCategoryKey : String = "de.uni_paderborn.fujaba.muml.components.category";
+property componentCategoryKey : String = "org.muml.pim.components.category";
 property componentCategoryName : String ="component";
 property componentInstanceCategoryKey : String = "de.uni_paderborn.fujaba.muml.instance.category";
 property componentInstanceCategoryName : String = "instance";

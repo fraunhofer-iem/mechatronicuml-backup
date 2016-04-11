@@ -139,7 +139,7 @@
          point="org.muml.core.modelinstance.modelelementcategory">
       <?gmfgen generated="true"?>  
       <category
-            key="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category"
+            key="org.muml.pm.hardware.hwplatform.category"
             name="hwplatform">
          
          <child
@@ -159,7 +159,7 @@
             editorId="org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorID"
             editorName="PlatformInstance Editor"
             fileExtension="platforminstance_diagram"
-            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category"
+            modelElementCategoryKey="org.muml.pm.hardware.hwplatform.category"
             modelId="PlatformInstance">
          <diagramElement
                packageNsURI="http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0"

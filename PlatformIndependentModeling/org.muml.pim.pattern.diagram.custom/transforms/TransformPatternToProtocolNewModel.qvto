@@ -1,6 +1,6 @@
 import transforms.lib.common.PatternProtocolCommon;
 import transforms.lib.patternToprotocol.PatternToProtocolCommon;
-import de.uni_paderborn.fujaba.muml.types._library.TypesBlackbox;
+import org.muml.pim.types._library.TypesBlackbox;
 
 modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
 modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
@@ -54,7 +54,7 @@ main()
 	rootOfNewModel := new RootNode();
 	
 	theRootNode.categories->forEach(cat) {
-	 if(cat.key.oclAsType(String).matches('org.muml.types.category') or cat.key.oclAsType(String).matches('de.uni_paderborn.fujaba.muml.messagetype.category') ) {
+	 if(cat.key.oclAsType(String).matches('org.muml.types.category') or cat.key.oclAsType(String).matches('org.muml.pim.messagetype.category') ) {
 	 	rootOfNewModel.categories += cat.map transform().oclAsType(ModelElementCategory);
 	 	}
 	 	else {

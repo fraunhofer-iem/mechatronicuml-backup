@@ -11,8 +11,8 @@
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_M7u6aAUkEeSJTqo7jlVMjA" name="DOUBLE" primitiveType="DOUBLE"/>
   </categories>
   <categories xmi:id="_M7u6aQUkEeSJTqo7jlVMjA" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance"/>
-  <categories xmi:id="_M7u6agUkEeSJTqo7jlVMjA" key="de.uni_paderborn.fujaba.muml.components.category" name="component"/>
-  <categories xmi:id="_M7u6awUkEeSJTqo7jlVMjA" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+  <categories xmi:id="_M7u6agUkEeSJTqo7jlVMjA" key="org.muml.pim.components.category" name="component"/>
+  <categories xmi:id="_M7u6awUkEeSJTqo7jlVMjA" key="org.muml.pim.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_5md5YAUkEeSJTqo7jlVMjA" name="Einparkhilfe">
       <verificationConstraintRepositories xsi:type="mtctl:PropertyRepository" xmi:id="_XT3XwCx0EeSojuqLRXKWWA"/>
       <roles xmi:id="_5mnqYAUkEeSJTqo7jlVMjA" connectors="_5mw0VgUkEeSJTqo7jlVMjA" behavior="_cjkVcAUlEeSJTqo7jlVMjA" name="Parksystem" senderMessageTypes="_xoxqEAUkEeSJTqo7jlVMjA _0ZXiYAUkEeSJTqo7jlVMjA" receiverMessageTypes="_tBA0wAUkEeSJTqo7jlVMjA _AltGUCyLEeSYk6MjS_5mTw">
@@ -52,7 +52,7 @@
       </roleConnector>
     </modelElements>
   </categories>
-  <categories xmi:id="_M7u6bAUkEeSJTqo7jlVMjA" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+  <categories xmi:id="_M7u6bAUkEeSJTqo7jlVMjA" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_mwEbIAUkEeSJTqo7jlVMjA" name="Einparkhilfe">
       <messageTypes xmi:id="_tBA0wAUkEeSJTqo7jlVMjA" name="frei" comment="Signalisiert, dass kein Hindernis im Weg ist."/>
       <messageTypes xmi:id="_xoxqEAUkEeSJTqo7jlVMjA" name="start" comment="Startet den Einparkvorgang."/>

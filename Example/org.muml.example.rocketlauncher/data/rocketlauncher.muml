@@ -176,7 +176,7 @@
       </states>
     </modelElements>
   </categories>
-  <categories xmi:id="_IaAgA8jrEeW0gpRI-mS_yA" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+  <categories xmi:id="_IaAgA8jrEeW0gpRI-mS_yA" key="org.muml.pim.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_4UO50MjrEeW0gpRI-mS_yA" name="C1">
       <verificationConstraintRepositories xsi:type="mtctl:PropertyRepository" xmi:id="_s6dAAOLHEeWXyfL4NpxXow">
         <properties xmi:id="_v_A9MOLHEeWXyfL4NpxXow" comment="a deadlock never occurs">
@@ -290,7 +290,7 @@
       </roleConnector>
     </modelElements>
   </categories>
-  <categories xmi:id="_IaAgBMjrEeW0gpRI-mS_yA" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+  <categories xmi:id="_IaAgBMjrEeW0gpRI-mS_yA" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_jLAdUMjrEeW0gpRI-mS_yA" name="M1">
       <messageTypes xmi:id="_jxLsgMjrEeW0gpRI-mS_yA" name="launchCode">
         <parameters xmi:id="_kuXtgMjrEeW0gpRI-mS_yA" name="id">
@@ -336,7 +336,7 @@
       </componentInstances>
     </modelElements>
   </categories>
-  <categories xmi:id="_IaAgBsjrEeW0gpRI-mS_yA" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
+  <categories xmi:id="_IaAgBsjrEeW0gpRI-mS_yA" key="org.muml.pim.components.category" name="component">
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_MYz34MjrEeW0gpRI-mS_yA" name="IdentificationInput" componentKind="continuous component">
       <ports xsi:type="component:ContinuousPort" xmi:id="_TYcjgMjrEeW0gpRI-mS_yA" name="code" kind="OUT">
         <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
@@ -444,8 +444,8 @@
       <coordinationProtocolParts xmi:id="_t09dkMj2EeWzrcBaL-cniQ" coordinationProtocol="_4UO50MjrEeW0gpRI-mS_yA" portParts="_YGfmC8j2EeWzrcBaL-cniQ _YGfmEMj2EeWzrcBaL-cniQ"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_IaAgB8jrEeW0gpRI-mS_yA" key="de.uni_paderborn.fujaba.muml.pattern.category" name="pattern"/>
-  <categories xmi:id="_xOKXwMknEeWbAtw7kHpt1w" key="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category" name="hwplatform"/>
-  <categories xmi:id="_xOKX4sknEeWbAtw7kHpt1w" key="de.uni_paderborn.fujaba.muml.hardware.hwresource.category" name="hwresource"/>
+  <categories xmi:id="_IaAgB8jrEeW0gpRI-mS_yA" key="org.muml.pim.pattern.category" name="pattern"/>
+  <categories xmi:id="_xOKXwMknEeWbAtw7kHpt1w" key="org.muml.pm.hardware.hwplatform.category" name="hwplatform"/>
+  <categories xmi:id="_xOKX4sknEeWbAtw7kHpt1w" key="org.muml.pm.hardware.hwresource.category" name="hwresource"/>
   <categories xmi:id="_xOKX9sknEeWbAtw7kHpt1w" key="de.uni_paderborn.fujaba.muml.psm.allocation.category" name="allocation"/>
 </modelinstance:RootNode>

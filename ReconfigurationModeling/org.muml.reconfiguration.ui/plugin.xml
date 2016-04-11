@@ -134,7 +134,7 @@
    <extension
          point="org.muml.core.modelinstance.modelelementcategory">
       <category
-            key="de.uni_paderborn.fujaba.muml.components.category"
+            key="org.muml.pim.components.category"
             name="component">
          <child
                class="ReconfigurableStructuredComponent"
@@ -384,7 +384,7 @@
                 editorId="org.muml.pim.component.diagram.part.ComponentDiagramEditorID"
                 editorName="Component Editor"
                 fileExtension="component_diagram"
-                modelElementCategoryKey="de.uni_paderborn.fujaba.muml.components.category"
+                modelElementCategoryKey="org.muml.pim.components.category"
                 modelId="Component"
                 preferencesHint="org.muml.pim.component.diagram">
              <diagramElement

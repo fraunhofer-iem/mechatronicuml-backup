@@ -10,7 +10,7 @@
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_CwOdt8OmEeKt4K__LJLJ8w" name="INT64" primitiveType="INT64"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_CwOduMOmEeKt4K__LJLJ8w" name="DOUBLE" primitiveType="DOUBLE"/>
   </categories>
-  <categories xmi:id="_HgnqkMOmEeKt4K__LJLJ8w" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+  <categories xmi:id="_HgnqkMOmEeKt4K__LJLJ8w" key="org.muml.pim.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_Jft0gMOmEeKt4K__LJLJ8w" name="EnterSection">
       <verificationConstraintRepositories xsi:type="mtctl:PropertyRepository" xmi:id="_FxfxgLrwEeSmz5E0erVbmg">
         <properties xmi:id="_FxfxgbrwEeSmz5E0erVbmg" comment="a deadlock never occurs">
@@ -458,7 +458,7 @@
       </roleConnector>
     </modelElements>
   </categories>
-  <categories xmi:id="_Vdd4kMOpEeKt4K__LJLJ8w" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+  <categories xmi:id="_Vdd4kMOpEeKt4K__LJLJ8w" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_V15msMOpEeKt4K__LJLJ8w" name="EnterSection">
       <messageTypes xmi:id="_XTIZsMOpEeKt4K__LJLJ8w" name="newSection"/>
       <messageTypes xmi:id="_YL9fIMOpEeKt4K__LJLJ8w" name="request"/>

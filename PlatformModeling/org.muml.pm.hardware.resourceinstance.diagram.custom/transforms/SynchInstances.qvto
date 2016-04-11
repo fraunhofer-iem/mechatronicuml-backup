@@ -43,7 +43,7 @@ log("QVT-O Script \"ResourceInstanceRepositoryTransformation.qvto\" started.");
 	//process ResourceType
 	var resourceInstances:Bag(ResourceInstance) := input.rootObjects()[Resource]->map mapResourceType();
 	if(resourceInstances->notEmpty()) then{
-		var modelElementCategory : ModelElementCategory := theRootNode.categories->select(cat | cat.key = "de.uni_paderborn.fujaba.muml.hardware.resource.category")->any(true);
+		var modelElementCategory : ModelElementCategory := theRootNode.categories->select(cat | cat.key = "org.muml.pm.hardware.hwresource.category")->any(true);
 		var repository : ResourceInstanceRepository := new ResourceInstanceRepository();
 		repository.resourceInstances:=resourceInstances;
 		modelElementCategory.modelElements+=repository;

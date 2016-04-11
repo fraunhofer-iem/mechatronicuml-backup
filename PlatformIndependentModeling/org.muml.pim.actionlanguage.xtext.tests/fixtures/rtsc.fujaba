@@ -79,7 +79,7 @@
   </categories>
   <categories
       xmi:id="_VT18ibe2EeKdhdSR8ySkxQ"
-      key="de.uni_paderborn.fujaba.muml.messagetype.category"
+      key="org.muml.pim.messagetype.category"
       name="msgtype">
     <modelElements
         xsi:type="msgtype:MessageTypeRepository"
@@ -99,7 +99,7 @@
   </categories>
   <categories
       xmi:id="_VT18jre2EeKdhdSR8ySkxQ"
-      key="de.uni_paderborn.fujaba.muml.components.category"
+      key="org.muml.pim.components.category"
       name="component">
     <modelElements
         xsi:type="component:StaticAtomicComponent"

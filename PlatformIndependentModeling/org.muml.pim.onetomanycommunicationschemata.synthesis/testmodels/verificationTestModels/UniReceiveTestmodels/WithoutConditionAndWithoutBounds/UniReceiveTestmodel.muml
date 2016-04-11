@@ -43,7 +43,7 @@
       <clocks xmi:id="_3MFAAJdIEeW_n8FySayE1g" name="c1"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_N8D303vSEeWJtcJpbyRDKg" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+  <categories xmi:id="_N8D303vSEeWJtcJpbyRDKg" key="org.muml.pim.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_SavCkHvSEeWJtcJpbyRDKg" name="C1">
       <roles xmi:id="_Sa9sEHvSEeWJtcJpbyRDKg" connectors="_SbIrMHvSEeWJtcJpbyRDKg" behavior="_XgFVUHveEeWJtcJpbyRDKg" name="role1" senderMessageTypes="_WdIhAHvSEeWJtcJpbyRDKg">
         <cardinality xmi:id="_SbEZwHvSEeWJtcJpbyRDKg">
@@ -72,12 +72,12 @@
       </roleConnector>
     </modelElements>
   </categories>
-  <categories xmi:id="_N8D31HvSEeWJtcJpbyRDKg" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+  <categories xmi:id="_N8D31HvSEeWJtcJpbyRDKg" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_V_imEHvSEeWJtcJpbyRDKg" name="M1">
       <messageTypes xmi:id="_WdIhAHvSEeWJtcJpbyRDKg" name="M1"/>
     </modelElements>
   </categories>
   <categories xmi:id="_N8D31XvSEeWJtcJpbyRDKg" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance"/>
-  <categories xmi:id="_N8D31nvSEeWJtcJpbyRDKg" key="de.uni_paderborn.fujaba.muml.components.category" name="component"/>
-  <categories xmi:id="_N8D313vSEeWJtcJpbyRDKg" key="de.uni_paderborn.fujaba.muml.pattern.category" name="pattern"/>
+  <categories xmi:id="_N8D31nvSEeWJtcJpbyRDKg" key="org.muml.pim.components.category" name="component"/>
+  <categories xmi:id="_N8D313vSEeWJtcJpbyRDKg" key="org.muml.pim.pattern.category" name="pattern"/>
 </modelinstance:RootNode>

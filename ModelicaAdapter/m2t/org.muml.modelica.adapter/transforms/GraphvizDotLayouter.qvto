@@ -1,4 +1,4 @@
-import de.uni_paderborn.fujaba.graphviz._blackbox.GraphvizDotLayouterUnit;
+import org.muml.graphviz._blackbox.GraphvizDotLayouterUnit;
 
 modeltype DOT uses dot("http://www.muml.org/graphviz/dot/1.0.0");
 

@@ -31,7 +31,7 @@ mapping updateReferencesToComponent(inout rootNode : RootNode, in oldComp : Comp
 										inout newComp : Component){
 	
 	-- update references of component parts
-	var compCategory := rootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.components.category') -> any(true);
+	var compCategory := rootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.pim.components.category') -> any(true);
 	map updateComponentParts(compCategory, oldComp, newComp);
 	
 	-- update references of component story diagram (parameters + variables) 

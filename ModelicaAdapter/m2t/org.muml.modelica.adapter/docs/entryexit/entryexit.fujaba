@@ -15,11 +15,11 @@
       <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_TKU10PxsEeOgTKCYN32qOw" name="cinstance" componentType="_IJZw8PxqEeOgTKCYN32qOw"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_EqA4-fxqEeOgTKCYN32qOw" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
+  <categories xmi:id="_EqA4-fxqEeOgTKCYN32qOw" key="org.muml.pim.components.category" name="component">
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_IJZw8PxqEeOgTKCYN32qOw" name="comp" behavior="_Kj5dcPxqEeOgTKCYN32qOw"/>
   </categories>
-  <categories xmi:id="_EqA4-vxqEeOgTKCYN32qOw" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol"/>
-  <categories xmi:id="_EqA4-_xqEeOgTKCYN32qOw" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype"/>
+  <categories xmi:id="_EqA4-vxqEeOgTKCYN32qOw" key="org.muml.pim.protocol.category" name="protocol"/>
+  <categories xmi:id="_EqA4-_xqEeOgTKCYN32qOw" key="org.muml.pim.messagetype.category" name="msgtype"/>
   <categories xmi:id="_EqA4_PxqEeOgTKCYN32qOw" key="org.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_Kj5dcPxqEeOgTKCYN32qOw" name="rootrtsc" behavioralElement="_IJZw8PxqEeOgTKCYN32qOw">
       <variables xmi:id="_cJYGYPxqEeOgTKCYN32qOw" name="cnt" dataType="_EqA49fxqEeOgTKCYN32qOw"/>

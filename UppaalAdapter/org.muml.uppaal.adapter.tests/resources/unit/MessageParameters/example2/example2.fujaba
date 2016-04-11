@@ -13,7 +13,7 @@
       <cardinality xmi:id="_bDDzMMbjEeOdtdQTfYnn-A" value="3"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_Lsb5YMbhEeOdtdQTfYnn-A" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+  <categories xmi:id="_Lsb5YMbhEeOdtdQTfYnn-A" key="org.muml.pim.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_DeguUMbkEeOdtdQTfYnn-A" name="Example2">
       <roles xmi:id="_Delm0MbkEeOdtdQTfYnn-A" connectors="_DencAcbkEeOdtdQTfYnn-A" behavior="_bIUjIMbiEeOdtdQTfYnn-A" name="role1" senderMessageTypes="_qzmTwMbjEeOdtdQTfYnn-A" receiverMessageTypes="_qzmTwMbjEeOdtdQTfYnn-A">
         <cardinality xmi:id="_DemN4MbkEeOdtdQTfYnn-A">
@@ -45,7 +45,7 @@
       </roleConnector>
     </modelElements>
   </categories>
-  <categories xmi:id="_gJX3oMbhEeOdtdQTfYnn-A" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+  <categories xmi:id="_gJX3oMbhEeOdtdQTfYnn-A" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_qgcHMMbjEeOdtdQTfYnn-A" name="Repository">
       <messageTypes xmi:id="_qzmTwMbjEeOdtdQTfYnn-A" name="messageWithParams">
         <parameters xmi:id="_soVn0MbjEeOdtdQTfYnn-A" name="p1" dataType="_JjU308bhEeOdtdQTfYnn-A"/>

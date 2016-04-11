@@ -3,11 +3,11 @@
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hwplatform="http://www.muml.org/pm/hardware/hwplatform/1.0.0" xmlns:hwplatforminstance="http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0" xmlns:hwresource="http://www.muml.org/pm/hardware/hwresource/1.0.0" xmlns:hwresourceinstance="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmi:id="_EhvwEAmXEeS8psHeDisM0A">
   <categories xmi:id="_EhvwEQmXEeS8psHeDisM0A" key="org.muml.types.category" name="types"/>
   <categories xmi:id="_EhvwGQmXEeS8psHeDisM0A" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance"/>
-  <categories xmi:id="_EhvwGgmXEeS8psHeDisM0A" key="de.uni_paderborn.fujaba.muml.components.category" name="component"/>
-  <categories xmi:id="_EhvwGwmXEeS8psHeDisM0A" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol"/>
-  <categories xmi:id="_EhvwHAmXEeS8psHeDisM0A" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype"/>
+  <categories xmi:id="_EhvwGgmXEeS8psHeDisM0A" key="org.muml.pim.components.category" name="component"/>
+  <categories xmi:id="_EhvwGwmXEeS8psHeDisM0A" key="org.muml.pim.protocol.category" name="protocol"/>
+  <categories xmi:id="_EhvwHAmXEeS8psHeDisM0A" key="org.muml.pim.messagetype.category" name="msgtype"/>
   <categories xmi:id="_EhvwHQmXEeS8psHeDisM0A" key="org.muml.realtimestatechart.category" name="realtimestatechart"/>
-  <categories xmi:id="_LDcigAmXEeS8psHeDisM0A" key="de.uni_paderborn.fujaba.muml.hardware.resource.category" name="resource">
+  <categories xmi:id="_LDcigAmXEeS8psHeDisM0A" key="org.muml.pm.hardware.hwresource.category" name="resource">
     <modelElements xsi:type="hwresource:ResourceRepository" xmi:id="_0YfC4Jq9EeWHH7cQ5HOrAg">
       <resources xsi:type="hwresource:StructuredResource" xmi:id="_0YfC4Zq9EeWHH7cQ5HOrAg" name="Arduino">
         <communicationResources xmi:id="_0YfC4pq9EeWHH7cQ5HOrAg" name="CAN-Shield" protocol="_0YfqCZq9EeWHH7cQ5HOrAg">
@@ -112,7 +112,7 @@
       </resourceInstances>
     </modelElements>
   </categories>
-  <categories xmi:id="_ZVQbQAmXEeS8psHeDisM0A" key="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category" name="hwplatform">
+  <categories xmi:id="_ZVQbQAmXEeS8psHeDisM0A" key="org.muml.pm.hardware.hwplatform.category" name="hwplatform">
     <modelElements xsi:type="hwplatform:HWPlatform" xmi:id="_0YgRBpq9EeWHH7cQ5HOrAg" name="Powertrain">
       <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_0YgRB5q9EeWHH7cQ5HOrAg" name="motor_board" resourceType="_0Yfp8Zq9EeWHH7cQ5HOrAg">
         <cardinality xmi:id="_x4dCQAmtEeScYdi4uMqLaw">

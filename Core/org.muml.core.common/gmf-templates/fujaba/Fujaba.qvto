@@ -22,14 +22,14 @@ helper usesModelElementCategory(genDiagram : gmfgen::GenDiagram) : Boolean {
 helper modelElementCategoryKey(genDiagram : gmfgen::GenDiagram) : String {
 	switch {
 		case (genDiagram.domainDiagramElement.ecoreClass.name = 'ResourceRepository'){
-			return 'de.uni_paderborn.fujaba.muml.hardware.hwresource.category';
+			return 'org.muml.pm.hardware.hwresource.category';
 		}
 		
 		case (genDiagram.domainDiagramElement.ecoreClass.name = 'ResourceInstanceRepository'){
-						return 'de.uni_paderborn.fujaba.muml.hardware.hwresource.category';
+						return 'org.muml.pm.hardware.hwresource.category';
 		}
 		case (genDiagram.domainDiagramElement.ecoreClass.name = 'HWPlatformInstanceConfiguration'){
-				return 'de.uni_paderborn.fujaba.muml.hardware.hwplatform.category';
+				return 'org.muml.pm.hardware.hwplatform.category';
 		}
 		
 		else{

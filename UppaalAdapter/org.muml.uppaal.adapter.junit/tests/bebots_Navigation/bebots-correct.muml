@@ -16,7 +16,7 @@
       <cardinality xmi:id="_H_TQMLrMEeSUTO04IKA8nA" value="3"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_VrQD8F6LEeOogaHLhp186w" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+  <categories xmi:id="_VrQD8F6LEeOogaHLhp186w" key="org.muml.pim.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_Z9xpEF6LEeOogaHLhp186w" name="Navigation">
       <verificationConstraintRepositories xsi:type="mtctl:PropertyRepository" xmi:id="_K4uSMLq9EeS_yNxpQx27dg">
         <properties xmi:id="_M2ZisCxyEeW4k_sqcOtbiQ" comment="a deadlock never occurs">
@@ -514,7 +514,7 @@
       <clocks xmi:id="_ejD9wHYnEeOftqkRKcg6BA" name="c_period"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_A8nQsF6WEeOU6dzb6wKMjg" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+  <categories xmi:id="_A8nQsF6WEeOU6dzb6wKMjg" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_C2KzUF6WEeOU6dzb6wKMjg" name="Navigation">
       <messageTypes xmi:id="_HyrJkF6WEeOU6dzb6wKMjg" name="targetReached"/>
       <messageTypes xmi:id="_Mrq8ALZ-EeObnJbUcPIxUA" name="moveTo">

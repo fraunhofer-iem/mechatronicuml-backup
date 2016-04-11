@@ -47,16 +47,16 @@
       <states xmi:id="_1lyBoGdmEeWJc7rlIredIQ" name="state2" incomingTransitions="_24zvwGdmEeWJc7rlIredIQ"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_hNXtLmddEeW2PYMF5P3p8Q" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol"/>
-  <categories xmi:id="_hNXtL2ddEeW2PYMF5P3p8Q" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+  <categories xmi:id="_hNXtLmddEeW2PYMF5P3p8Q" key="org.muml.pim.protocol.category" name="protocol"/>
+  <categories xmi:id="_hNXtL2ddEeW2PYMF5P3p8Q" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_nvCwwGdlEeWDqoFdtyaAuw" name="M1">
       <messageTypes xmi:id="_oBH_QGdlEeWDqoFdtyaAuw" name="M1"/>
       <messageTypes xmi:id="_oScYwGdlEeWDqoFdtyaAuw" name="M2"/>
     </modelElements>
   </categories>
   <categories xmi:id="_hNXtMGddEeW2PYMF5P3p8Q" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance"/>
-  <categories xmi:id="_hNXtMWddEeW2PYMF5P3p8Q" key="de.uni_paderborn.fujaba.muml.components.category" name="component"/>
-  <categories xmi:id="_k0VMwGddEeW2PYMF5P3p8Q" key="de.uni_paderborn.fujaba.muml.pattern.category" name="pattern">
+  <categories xmi:id="_hNXtMWddEeW2PYMF5P3p8Q" key="org.muml.pim.components.category" name="component"/>
+  <categories xmi:id="_k0VMwGddEeW2PYMF5P3p8Q" key="org.muml.pim.pattern.category" name="pattern">
     <modelElements xsi:type="pattern:CoordinationPattern" xmi:id="_ldoBYGddEeW2PYMF5P3p8Q" name="Pattern">
       <verificationConstraintRepositories xsi:type="mtctl:PropertyRepository" xmi:id="_vNsYIHmDEeWFQM-OXapvnw">
         <properties xmi:id="_Dx_DwHvCEeWl5KBPSsNDxw" comment="a deadlock never occurs">

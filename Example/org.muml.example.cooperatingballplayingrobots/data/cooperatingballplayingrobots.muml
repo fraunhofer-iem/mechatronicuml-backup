@@ -9,7 +9,7 @@
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_fLFNZJe3EeKIIefjcfllxA" name="int32" primitiveType="INT32"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_fLF0cZe3EeKIIefjcfllxA" name="double" primitiveType="DOUBLE"/>
   </categories>
-  <categories xmi:id="_rwtbsJe4EeKIIefjcfllxA" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
+  <categories xmi:id="_rwtbsJe4EeKIIefjcfllxA" key="org.muml.pim.components.category" name="component">
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_MOsUgZe6EeKVX6r_GEFobQ" name="StrikeProcessing" behavior="_servUJvGEeKe1dmyo6HznA">
       <ports xsi:type="component:DiscretePort" xmi:id="_9wPRcJe6EeKVX6r_GEFobQ" name="BAT_Info" behavior="_1E6mAJ0eEeKe1dmyo6HznA" receiverMessageTypes="_HP9hgJ0cEeKe1dmyo6HznA">
         <cardinality xmi:id="_9wUJ8Je6EeKVX6r_GEFobQ">
@@ -666,7 +666,7 @@
       <clocks xmi:id="_6Y7EYKcxEeKFNPHtfiMz7g" name="c"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_rIvYIJ0bEeKe1dmyo6HznA" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+  <categories xmi:id="_rIvYIJ0bEeKe1dmyo6HznA" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_sSeAUJ0bEeKe1dmyo6HznA" name="TurnTransmission_Partner_BAT_Info">
       <messageTypes xmi:id="_uofcgJ0bEeKe1dmyo6HznA" name="turn">
         <parameters xmi:id="_ve3q4J0bEeKe1dmyo6HznA" name="posX" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
@@ -787,7 +787,7 @@
       <coordinationProtocolInstances xmi:id="_Aqrf0GwEEeW66qqCAwhr8A" name="" portInstances="_vioZwGwDEeW66qqCAwhr8A _3yjokGwDEeW66qqCAwhr8A" coordinationProtocol="_OfAEkJ3sEeKiuKmEjvlIFQ"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_MGeuAJ3sEeKiuKmEjvlIFQ" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+  <categories xmi:id="_MGeuAJ3sEeKiuKmEjvlIFQ" key="org.muml.pim.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_OfAEkJ3sEeKiuKmEjvlIFQ" name="TurnTransmission">
       <verificationConstraintRepositories xsi:type="mtctl:PropertyRepository" xmi:id="_Z1LV0N51EeWffpOzzKuOVw">
         <properties xmi:id="_Z1LV0d51EeWffpOzzKuOVw" comment="a deadlock never occurs">
@@ -907,5 +907,5 @@
       </roleConnector>
     </modelElements>
   </categories>
-  <categories xmi:id="_rPr94GwDEeW66qqCAwhr8A" key="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category" name="hwplatform"/>
+  <categories xmi:id="_rPr94GwDEeW66qqCAwhr8A" key="org.muml.pm.hardware.hwplatform.category" name="hwplatform"/>
 </modelinstance:RootNode>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component="http://www.fujaba.de/muml/model/component/0.2.3" xmlns:expr="http://www.storydriven.org/core/expressions/0.2.0" xmlns:instance="http://www.fujaba.de/muml/model/instance/0.2.2" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.2.4" xmlns:msgiface="http://www.fujaba.de/muml/model/msgiface/0.2.2" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.0" xmlns:sdp="http://www.storydriven.org/storydiagrams/patterns/0.2.0" xmi:id="_pX_QkZ9REeG4eMpbz4C8AQ">
-  <categories xmi:id="_y6ceQJ9REeG4eMpbz4C8AQ" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
+  <categories xmi:id="_y6ceQJ9REeG4eMpbz4C8AQ" key="org.muml.pim.components.category" name="component">
     <modelElements xsi:type="component:AtomicComponent" xmi:id="_zemUMJ9REeG4eMpbz4C8AQ" name="compA">
       <ports xsi:type="component:DiscretePort" xmi:id="_1YcxwJ9REeG4eMpbz4C8AQ" name="singlePort" receiverMessageInterface="_IV5TMJ9SEeG4eMpbz4C8AQ">
         <cardinality xmi:id="_1YcxwZ9REeG4eMpbz4C8AQ">

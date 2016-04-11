@@ -73,7 +73,7 @@
   </categories>
   <categories
       xmi:id="_W8MzW9UMEeOzB5sVHdJ6ng"
-      key="de.uni_paderborn.fujaba.muml.protocol.category"
+      key="org.muml.pim.protocol.category"
       name="protocol">
     <modelElements
         xsi:type="protocol:CoordinationProtocol"
@@ -145,7 +145,7 @@
   </categories>
   <categories
       xmi:id="_W8MzXNUMEeOzB5sVHdJ6ng"
-      key="de.uni_paderborn.fujaba.muml.messagetype.category"
+      key="org.muml.pim.messagetype.category"
       name="msgtype">
     <modelElements
         xsi:type="msgtype:MessageTypeRepository"
@@ -744,7 +744,7 @@
   </categories>
   <categories
       xmi:id="_F2LXMN0HEeOokIiF69iPLA"
-      key="de.uni_paderborn.fujaba.muml.components.category"
+      key="org.muml.pim.components.category"
       name="component">
     <modelElements
         xsi:type="component:StaticAtomicComponent"

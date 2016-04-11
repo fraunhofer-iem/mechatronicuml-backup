@@ -38,9 +38,9 @@ helper getOrCreateReconfigurationMessageTypeRepositoy(inout rootNode : RootNode)
 
 -- returns the model element category for message types.
 helper getOrCreateMessageTypeCategory(inout rootNode : RootNode) : ModelElementCategory {
-	var messageTypeCategory := rootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.messagetype.category') -> any(true);
+	var messageTypeCategory := rootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.pim.messagetype.category') -> any(true);
 	if(messageTypeCategory.oclIsUndefined()){
-		messageTypeCategory := new ModelElementCategory('de.uni_paderborn.fujaba.muml.messagetype.category', 'msgtype');
+		messageTypeCategory := new ModelElementCategory('org.muml.pim.messagetype.category', 'msgtype');
 		rootNode.categories += messageTypeCategory;
 	};
 	return messageTypeCategory;

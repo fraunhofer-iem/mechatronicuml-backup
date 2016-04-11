@@ -39,7 +39,7 @@
       <states xmi:id="_IGkANZvyEeOdXYbrwwJ4PA" name="init" initial="true"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_r_5VsJPIEeO5ccOxUJdcGw" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+  <categories xmi:id="_r_5VsJPIEeO5ccOxUJdcGw" key="org.muml.pim.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_8F7TMJPKEeOrms8TmXbKaQ" name="ScalingClockValues">
       <roles xmi:id="_8Gf68JPKEeOrms8TmXbKaQ" connectors="_8GyO0ZPKEeOrms8TmXbKaQ" behavior="_BPA0QJPIEeO5ccOxUJdcGw" name="role1" senderMessageTypes="_XAtUEJPKEeO5ccOxUJdcGw" receiverMessageTypes="_XAtUEJPKEeO5ccOxUJdcGw">
         <cardinality xmi:id="_8Gt9YJPKEeOrms8TmXbKaQ">
@@ -71,7 +71,7 @@
       </roleConnector>
     </modelElements>
   </categories>
-  <categories xmi:id="_WHFkcJPKEeO5ccOxUJdcGw" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+  <categories xmi:id="_WHFkcJPKEeO5ccOxUJdcGw" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_Wu_5AJPKEeO5ccOxUJdcGw" name="Repository">
       <messageTypes xmi:id="_XAtUEJPKEeO5ccOxUJdcGw" name="integerMessage"/>
     </modelElements>

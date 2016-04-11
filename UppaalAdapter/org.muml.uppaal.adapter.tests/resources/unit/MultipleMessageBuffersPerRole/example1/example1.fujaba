@@ -10,7 +10,7 @@
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_z-25d8oEEeOlIfSLr-4igA" name="LONG" primitiveType="LONG"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_z-25eMoEEeOlIfSLr-4igA" name="DOUBLE" primitiveType="DOUBLE"/>
   </categories>
-  <categories xmi:id="_Uzmh4MoFEeOlIfSLr-4igA" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+  <categories xmi:id="_Uzmh4MoFEeOlIfSLr-4igA" key="org.muml.pim.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_oJgUsMoHEeOlIfSLr-4igA" name="Example1">
       <roles xmi:id="_oJ0dwMoHEeOlIfSLr-4igA" connectors="_oJ4vMMoHEeOlIfSLr-4igA" behavior="_XjpAkMoFEeOlIfSLr-4igA" name="role1" senderMessageTypes="_fmQhQMoHEeOlIfSLr-4igA _hyAnIMoHEeOlIfSLr-4igA _izn1IMoHEeOlIfSLr-4igA _l5LQ0MoHEeOlIfSLr-4igA">
         <cardinality xmi:id="_oJ1r4MoHEeOlIfSLr-4igA">
@@ -92,7 +92,7 @@
       <states xmi:id="_X3rsAcoHEeOlIfSLr-4igA" name="init" outgoingTransitions="_MUDkQNQtEeOGoMCpN12vvQ _NEVxsNQtEeOGoMCpN12vvQ _QOG_ANQtEeOGoMCpN12vvQ _XgV2gNQtEeOGoMCpN12vvQ" incomingTransitions="_MUDkQNQtEeOGoMCpN12vvQ _NEVxsNQtEeOGoMCpN12vvQ _QOG_ANQtEeOGoMCpN12vvQ _XgV2gNQtEeOGoMCpN12vvQ" initial="true"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_eiUYAMoHEeOlIfSLr-4igA" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+  <categories xmi:id="_eiUYAMoHEeOlIfSLr-4igA" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_fD2XwMoHEeOlIfSLr-4igA" name="Repository">
       <messageTypes xmi:id="_fmQhQMoHEeOlIfSLr-4igA" name="messagetype1"/>
       <messageTypes xmi:id="_hyAnIMoHEeOlIfSLr-4igA" name="messagetype2"/>

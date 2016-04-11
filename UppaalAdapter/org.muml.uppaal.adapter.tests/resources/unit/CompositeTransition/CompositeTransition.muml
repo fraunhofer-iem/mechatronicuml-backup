@@ -15,8 +15,8 @@
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_0pwLiwN_EeWYuPKYu7E8Kw" name="uint64" primitiveType="UINT64"/>
   </categories>
   <categories xmi:id="_0pwLjAN_EeWYuPKYu7E8Kw" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance"/>
-  <categories xmi:id="_0pwLjQN_EeWYuPKYu7E8Kw" key="de.uni_paderborn.fujaba.muml.components.category" name="component"/>
-  <categories xmi:id="_0pwLjgN_EeWYuPKYu7E8Kw" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+  <categories xmi:id="_0pwLjQN_EeWYuPKYu7E8Kw" key="org.muml.pim.components.category" name="component"/>
+  <categories xmi:id="_0pwLjgN_EeWYuPKYu7E8Kw" key="org.muml.pim.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_8RicQAN_EeWYuPKYu7E8Kw" name="CompositeTransition">
       <verificationConstraintRepositories xsi:type="mtctl:PropertyRepository" xmi:id="_p44YAAOBEeWYuPKYu7E8Kw">
         <properties xmi:id="_p44YAQOBEeWYuPKYu7E8Kw" comment="a deadlock never occurs">
@@ -130,7 +130,7 @@
       </roleConnector>
     </modelElements>
   </categories>
-  <categories xmi:id="_0pwLjwN_EeWYuPKYu7E8Kw" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+  <categories xmi:id="_0pwLjwN_EeWYuPKYu7E8Kw" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_EwSKMAOAEeWYuPKYu7E8Kw" name="M1">
       <messageTypes xmi:id="_GL5zoAOAEeWYuPKYu7E8Kw" name="M1"/>
     </modelElements>

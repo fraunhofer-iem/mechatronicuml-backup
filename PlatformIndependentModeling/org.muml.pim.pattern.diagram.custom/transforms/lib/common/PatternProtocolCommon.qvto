@@ -21,14 +21,14 @@ query getRealtimeStatechartCategory(theRootNode : RootNode) : ModelElementCatego
 	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.realtimestatechart.category') -> any(true);
 }
 query getProtocolCategory(theRootNode : RootNode) : ModelElementCategory {
-	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.protocol.category') -> any(true);
+	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.pim.protocol.category') -> any(true);
 }
 query getPatternCategory(theRootNode : RootNode) : ModelElementCategory {
-	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.pattern.category') -> any(true);
+	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.pim.pattern.category') -> any(true);
 }
 
 query getMsgTypeCategory(theRootNode : RootNode) : ModelElementCategory {
-	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.messagetype.category') -> any(true);
+	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.pim.messagetype.category') -> any(true);
 }
 
 query getTypesCategory(theRootNode : RootNode) : ModelElementCategory {

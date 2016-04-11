@@ -112,7 +112,7 @@
       </states>
     </modelElements>
   </categories>
-  <categories xmi:id="_8J0gQITBEeKO9r0VL65xcg" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+  <categories xmi:id="_8J0gQITBEeKO9r0VL65xcg" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_9E-g8ITBEeKO9r0VL65xcg" name="Repository">
       <messageTypes xmi:id="_9xK4kITBEeKO9r0VL65xcg" name="request"/>
       <messageTypes xmi:id="_--9hYITBEeKO9r0VL65xcg" name="accept"/>
@@ -120,7 +120,7 @@
       <messageTypes xmi:id="_fSrzEJ2-EeKCPPYajybjTw" name="finish"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_FN-BUITCEeKO9r0VL65xcg" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+  <categories xmi:id="_FN-BUITCEeKO9r0VL65xcg" key="org.muml.pim.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_GPaQMITCEeKO9r0VL65xcg" name="Overtaking">
       <roles xmi:id="_GQwUAITCEeKO9r0VL65xcg" connectors="_GRMY5oTCEeKO9r0VL65xcg" behavior="_ZOLusIS_EeKO9r0VL65xcg" name="rear" senderMessageTypes="_9xK4kITBEeKO9r0VL65xcg _fSrzEJ2-EeKCPPYajybjTw" receiverMessageTypes="__4UyUITBEeKO9r0VL65xcg _--9hYITBEeKO9r0VL65xcg">
         <cardinality xmi:id="_GQ5d8ITCEeKO9r0VL65xcg">

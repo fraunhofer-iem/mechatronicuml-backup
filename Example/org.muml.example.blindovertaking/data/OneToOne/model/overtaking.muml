@@ -392,7 +392,7 @@
       </states>
     </modelElements>
   </categories>
-  <categories xmi:id="_8J0gQITBEeKO9r0VL65xcg" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+  <categories xmi:id="_8J0gQITBEeKO9r0VL65xcg" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_9E-g8ITBEeKO9r0VL65xcg" name="Repository">
       <messageTypes xmi:id="_9xK4kITBEeKO9r0VL65xcg" name="request">
         <parameters xmi:id="_yzpYEM8rEeWiNvKFA70SzQ" name="speed">
@@ -405,7 +405,7 @@
       <messageTypes xmi:id="_mYhlsCqaEeO22YgZcbz7_A" name="laneChanged"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_FN-BUITCEeKO9r0VL65xcg" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+  <categories xmi:id="_FN-BUITCEeKO9r0VL65xcg" key="org.muml.pim.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_GPaQMITCEeKO9r0VL65xcg" name="Overtaking">
       <verificationConstraintRepositories xsi:type="mtctl:PropertyRepository" xmi:id="_mlQtwOVxEeOKtovAzVvTtg">
         <properties xmi:id="_qvM1gN5KEeWhxdibxUaacg" comment="the following are default properties">
@@ -549,7 +549,7 @@
     </modelElements>
   </categories>
   <categories xmi:id="_O_7KwCqeEeO22YgZcbz7_A" key="org.muml.types.category" name="types"/>
-  <categories xmi:id="_zp96gEfOEeO56fW-RvmTLw" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
+  <categories xmi:id="_zp96gEfOEeO56fW-RvmTLw" key="org.muml.pim.components.category" name="component">
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_0IDksEfOEeO56fW-RvmTLw" name="YellowSw" behavior="_9Zq0YEhaEeOWZs6RcsWoZw">
       <ports xsi:type="component:DiscretePort" xmi:id="_1JdXUEfOEeO56fW-RvmTLw" name="Overtakee" behavior="_X6rN4EhbEeOJnpqrtjndJA" senderMessageTypes="__4UyUITBEeKO9r0VL65xcg _--9hYITBEeKO9r0VL65xcg" receiverMessageTypes="_9xK4kITBEeKO9r0VL65xcg _fSrzEJ2-EeKCPPYajybjTw _mYhlsCqaEeO22YgZcbz7_A" refinedRole="_GRMY4oTCEeKO9r0VL65xcg">
         <cardinality xmi:id="_X6lHQEhbEeOJnpqrtjndJA">

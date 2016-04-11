@@ -11,8 +11,8 @@
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_P_fLKMvpEeSqLp1EdST_nQ" name="DOUBLE" primitiveType="DOUBLE"/>
   </categories>
   <categories xmi:id="_P_fLKcvpEeSqLp1EdST_nQ" key="org.muml.realtimestatechart.category" name="realtimestatechart"/>
-  <categories xmi:id="_P_fLKsvpEeSqLp1EdST_nQ" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol"/>
-  <categories xmi:id="_P_fLK8vpEeSqLp1EdST_nQ" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+  <categories xmi:id="_P_fLKsvpEeSqLp1EdST_nQ" key="org.muml.pim.protocol.category" name="protocol"/>
+  <categories xmi:id="_P_fLK8vpEeSqLp1EdST_nQ" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_W-nc0OmrEeSE4Zrj1GnMCg" name="M1">
       <messageTypes xmi:id="_XlxjcOmrEeSE4Zrj1GnMCg" name="calliperForce"/>
       <messageTypes xmi:id="_bO174OmrEeSE4Zrj1GnMCg" name="spin"/>
@@ -148,7 +148,7 @@
       </componentInstances>
     </modelElements>
   </categories>
-  <categories xmi:id="_P_fLLcvpEeSqLp1EdST_nQ" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
+  <categories xmi:id="_P_fLLcvpEeSqLp1EdST_nQ" key="org.muml.pim.components.category" name="component">
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_LO8bkOmpEeSsPdK-DtuwOA" name="ParkingBrakeActuator" componentKind="continuous component">
       <ports xsi:type="component:ContinuousPort" xmi:id="_-G_RYOmpEeSsPdK-DtuwOA" name="C1" dataType="_P_fLKMvpEeSqLp1EdST_nQ"/>
     </modelElements>
@@ -433,7 +433,7 @@
       <connectors xsi:type="component:AssemblyConnector" xmi:id="_ob-YoOm4EeSE4Zrj1GnMCg" connectorEndpoints="_S047cOm4EeSE4Zrj1GnMCg _JUKMEOm4EeSE4Zrj1GnMCg"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_XudrAPfFEeSpLt6xXKFDsw" key="de.uni_paderborn.fujaba.muml.hardware.resource.category" name="resource">
+  <categories xmi:id="_XudrAPfFEeSpLt6xXKFDsw" key="org.muml.pm.hardware.hwresource.category" name="resource">
     <modelElements xsi:type="hwresource:ResourceRepository" xmi:id="_XuguUPfFEeSpLt6xXKFDsw">
       <resources xsi:type="hwresource:StructuredResource" xmi:id="_ZBWPMPfFEeSpLt6xXKFDsw" name="ECU">
         <communicationResources xmi:id="_BCFu0PfHEeSpLt6xXKFDsw" name="can_port" protocol="_sdvWcPfFEeSpLt6xXKFDsw">
@@ -592,7 +592,7 @@
       </resourceInstances>
     </modelElements>
   </categories>
-  <categories xmi:id="_Lad4EPfsEeS7MOwqUGBWdg" key="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category" name="hwplatform">
+  <categories xmi:id="_Lad4EPfsEeS7MOwqUGBWdg" key="org.muml.pm.hardware.hwplatform.category" name="hwplatform">
     <modelElements xsi:type="hwplatform:HWPlatform" xmi:id="_LaefIPfsEeS7MOwqUGBWdg" name="Assitance">
       <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_OuwTUPfsEeS7MOwqUGBWdg" name="hw1" resourceType="_-WQFwPfpEeSzWIUU-t7NAw">
         <cardinality xmi:id="_Ouw6YPfsEeS7MOwqUGBWdg">

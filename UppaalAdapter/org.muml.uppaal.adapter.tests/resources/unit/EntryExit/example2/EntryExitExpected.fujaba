@@ -10,8 +10,8 @@
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_FtCtZ5ydEeOSPY_MNk-8EA" name="LONG" primitiveType="LONG"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_FtCtaJydEeOSPY_MNk-8EA" name="DOUBLE" primitiveType="DOUBLE"/>
   </categories>
-  <categories xmi:id="_FtCtaZydEeOSPY_MNk-8EA" key="de.uni_paderborn.fujaba.muml.components.category" name="component"/>
-  <categories xmi:id="_FtCtapydEeOSPY_MNk-8EA" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+  <categories xmi:id="_FtCtaZydEeOSPY_MNk-8EA" key="org.muml.pim.components.category" name="component"/>
+  <categories xmi:id="_FtCtapydEeOSPY_MNk-8EA" key="org.muml.pim.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_FtCta5ydEeOSPY_MNk-8EA" name="proto">
       <roles xmi:id="_FtCtbJydEeOSPY_MNk-8EA" connectors="_FtCteJydEeOSPY_MNk-8EA" behavior="_FtCtf5ydEeOSPY_MNk-8EA" name="role1" senderMessageTypes="_FtCtmpydEeOSPY_MNk-8EA" receiverMessageTypes="_FtCtmpydEeOSPY_MNk-8EA">
         <cardinality xmi:id="_FtCtbZydEeOSPY_MNk-8EA">
@@ -83,7 +83,7 @@
       <states xmi:id="_FtCtl5ydEeOSPY_MNk-8EA" name="init" initial="true"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_FtCtmJydEeOSPY_MNk-8EA" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+  <categories xmi:id="_FtCtmJydEeOSPY_MNk-8EA" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_FtCtmZydEeOSPY_MNk-8EA" name="Repository">
       <messageTypes xmi:id="_FtCtmpydEeOSPY_MNk-8EA" name="exampleMessage"/>
     </modelElements>

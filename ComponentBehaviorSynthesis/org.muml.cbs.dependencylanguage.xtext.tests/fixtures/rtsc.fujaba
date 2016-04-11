@@ -18,7 +18,7 @@
       <cardinality xmi:id="_eGalYLe2EeKdhdSR8ySkxQ" value="2"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_VT18ibe2EeKdhdSR8ySkxQ" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+  <categories xmi:id="_VT18ibe2EeKdhdSR8ySkxQ" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_VT18ire2EeKdhdSR8ySkxQ" name="Repository">
       <messageTypes xmi:id="_VT18i7e2EeKdhdSR8ySkxQ" name="m1">
         <parameters xmi:id="_VT18jLe2EeKdhdSR8ySkxQ" name="i"/>
@@ -26,7 +26,7 @@
       </messageTypes>
     </modelElements>
   </categories>
-  <categories xmi:id="_VT18jre2EeKdhdSR8ySkxQ" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
+  <categories xmi:id="_VT18jre2EeKdhdSR8ySkxQ" key="org.muml.pim.components.category" name="component">
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_VT18j7e2EeKdhdSR8ySkxQ" name="comp">
       <extension xsi:type="dependencylanguage:SynthesizableBehavior" xmi:id="_GVRcEGfZEeOsdLmZXmHIRw" behavior="_9gNZgGfQEeO_V7Y4JoDQ6g">
         <dependencyModel xmi:id="_NpqWEJPTEeOPH-f8jNZabA" comment="// Dependency Test&#xD;&#xA;">

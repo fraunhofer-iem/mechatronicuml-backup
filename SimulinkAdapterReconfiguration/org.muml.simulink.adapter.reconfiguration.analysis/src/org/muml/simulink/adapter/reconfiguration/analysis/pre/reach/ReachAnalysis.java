@@ -39,9 +39,9 @@ public class ReachAnalysis
 	protected ComponentInstanceConfiguration cic;
 	
 	final static String CATEGORY_ACTIVITIES = "org.storydriven.storydiagrams.category";
-	final static String CATEGORY_COMPONENTS = "de.uni_paderborn.fujaba.muml.components.category";
+	final static String CATEGORY_COMPONENTS = "org.muml.pim.components.category";
 	static final String CATEGORY_RTSC = "org.muml.realtimestatechart.category";
-	static final String CATEGORY_MSGTYPE = "de.uni_paderborn.fujaba.muml.messagetype.category";
+	static final String CATEGORY_MSGTYPE = "org.muml.pim.messagetype.category";
 	
 	public ReachAnalysis(RootNode model, ComponentInstanceConfiguration cic)
 	{

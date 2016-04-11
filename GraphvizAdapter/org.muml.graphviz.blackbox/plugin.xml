@@ -5,7 +5,7 @@
          point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
       <unit
             name="GraphvizPlainLayouterUnit"
-            namespace="de.uni_paderborn.fujaba.graphviz._blackbox">
+            namespace="org.muml.graphviz._blackbox">
          <library
                class="org.muml.graphviz.blackbox.GraphvizPlainLayouter"
                name="GraphvizPlainLayouterBlackbox">
@@ -19,7 +19,7 @@
       </unit>
       <unit
             name="GraphvizDotLayouterUnit"
-            namespace="de.uni_paderborn.fujaba.graphviz._blackbox">
+            namespace="org.muml.graphviz._blackbox">
          <library
                class="org.muml.graphviz.blackbox.GraphvizDotLayouter"
                name="GraphvizDotLayouterBlackbox">

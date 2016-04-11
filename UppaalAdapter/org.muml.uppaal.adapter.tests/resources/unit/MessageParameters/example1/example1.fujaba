@@ -16,8 +16,8 @@
       <cardinality xmi:id="_IQoWwMGEEeOhQOn4pO_vFQ" value="2"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_9vbU8JM4EeOYZ8555fyhuw" key="de.uni_paderborn.fujaba.muml.components.category" name="component"/>
-  <categories xmi:id="_Ed-QkJM5EeOYZ8555fyhuw" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+  <categories xmi:id="_9vbU8JM4EeOYZ8555fyhuw" key="org.muml.pim.components.category" name="component"/>
+  <categories xmi:id="_Ed-QkJM5EeOYZ8555fyhuw" key="org.muml.pim.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_mZLx0JM5EeOYZ8555fyhuw" name="Example1">
       <roles xmi:id="_mZU7wJM5EeOYZ8555fyhuw" connectors="_mZU7yJM5EeOYZ8555fyhuw" behavior="_FOyCcZM5EeOYZ8555fyhuw" name="role1" senderMessageTypes="_ZEqZsJvqEeOgzpyCht1RLA _crYVkJ8HEeO4HIdkLKX7ag _g14gIL8REeO4_PHIOBYK1g _nu8NMMGDEeOhQOn4pO_vFQ __1ABEMbPEeOdtdQTfYnn-A _wtCG8MbQEeOdtdQTfYnn-A _7muNUMbQEeOdtdQTfYnn-A" receiverMessageTypes="_ZEqZsJvqEeOgzpyCht1RLA _crYVkJ8HEeO4HIdkLKX7ag _g14gIL8REeO4_PHIOBYK1g _nu8NMMGDEeOhQOn4pO_vFQ __1ABEMbPEeOdtdQTfYnn-A _wtCG8MbQEeOdtdQTfYnn-A _7muNUMbQEeOdtdQTfYnn-A">
         <cardinality xmi:id="_mZU7wZM5EeOYZ8555fyhuw">
@@ -246,7 +246,7 @@
       </states>
     </modelElements>
   </categories>
-  <categories xmi:id="_XXKWEJvqEeOgzpyCht1RLA" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+  <categories xmi:id="_XXKWEJvqEeOgzpyCht1RLA" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_YwIUIJvqEeOgzpyCht1RLA" name="Repository">
       <messageTypes xmi:id="_ZEqZsJvqEeOgzpyCht1RLA" name="exampleMessage"/>
       <messageTypes xmi:id="_crYVkJ8HEeO4HIdkLKX7ag" name="exampleMessageInt">

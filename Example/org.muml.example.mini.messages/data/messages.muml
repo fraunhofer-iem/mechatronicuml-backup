@@ -31,7 +31,7 @@
       </componentInstances>
     </modelElements>
   </categories>
-  <categories xmi:id="_onxjWhyAEeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
+  <categories xmi:id="_onxjWhyAEeSKP_lLzmbIVg" key="org.muml.pim.components.category" name="component">
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_ryB40ByAEeSKP_lLzmbIVg" name="Sender" behavior="__MSowGZ9EeWMif2ccgn7Yw">
       <ports xsi:type="component:DiscretePort" xmi:id="_EA_XMByBEeSKP_lLzmbIVg" name="out" behavior="__MSow2Z9EeWMif2ccgn7Yw" senderMessageTypes="_iSJokByBEeSKP_lLzmbIVg" refinedRole="_Q7jJIByBEeSKP_lLzmbIVg">
         <cardinality xmi:id="__L3K8GZ9EeWMif2ccgn7Yw">
@@ -88,7 +88,7 @@
       <ports xsi:type="component:ContinuousPort" xmi:id="_Ms8cQGZ8EeWMif2ccgn7Yw" name="LED" dataType="_onxjVByAEeSKP_lLzmbIVg"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_onxjWxyAEeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+  <categories xmi:id="_onxjWxyAEeSKP_lLzmbIVg" key="org.muml.pim.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_Q7gs4ByBEeSKP_lLzmbIVg" name="C1">
       <verificationConstraintRepositories xsi:type="mtctl:PropertyRepository" xmi:id="_eA6jMNwUEeWVGefPVpopOA">
         <properties xmi:id="_eA6jMdwUEeWVGefPVpopOA" comment="a deadlock never occurs">
@@ -202,7 +202,7 @@
       </roleConnector>
     </modelElements>
   </categories>
-  <categories xmi:id="_onxjXByAEeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+  <categories xmi:id="_onxjXByAEeSKP_lLzmbIVg" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_hfgDoByBEeSKP_lLzmbIVg" name="M1">
       <messageTypes xmi:id="_iSJokByBEeSKP_lLzmbIVg" name="myMessage">
         <parameters xmi:id="_jE5UIByBEeSKP_lLzmbIVg" name="lightValue" dataType="_onxjVByAEeSKP_lLzmbIVg"/>

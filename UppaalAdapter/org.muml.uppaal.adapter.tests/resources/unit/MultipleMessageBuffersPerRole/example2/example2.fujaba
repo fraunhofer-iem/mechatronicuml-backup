@@ -11,8 +11,8 @@
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_JNvSl9Q4EeO5qLADvSb61w" name="DOUBLE" primitiveType="DOUBLE"/>
   </categories>
   <categories xmi:id="_JNvSmNQ4EeO5qLADvSb61w" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance"/>
-  <categories xmi:id="_JNvSmdQ4EeO5qLADvSb61w" key="de.uni_paderborn.fujaba.muml.components.category" name="component"/>
-  <categories xmi:id="_JNvSmtQ4EeO5qLADvSb61w" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+  <categories xmi:id="_JNvSmdQ4EeO5qLADvSb61w" key="org.muml.pim.components.category" name="component"/>
+  <categories xmi:id="_JNvSmtQ4EeO5qLADvSb61w" key="org.muml.pim.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_Ps4gQNQ4EeO5qLADvSb61w" name="Example2">
       <roles xmi:id="_PtWaUNQ4EeO5qLADvSb61w" connectors="_PtaEsNQ4EeO5qLADvSb61w" behavior="_SvFF8NQ4EeO5qLADvSb61w" name="role1" senderMessageTypes="_NuNNENQ4EeO5qLADvSb61w">
         <cardinality xmi:id="_PtXBYNQ4EeO5qLADvSb61w">
@@ -41,7 +41,7 @@
       </roleConnector>
     </modelElements>
   </categories>
-  <categories xmi:id="_JNvSm9Q4EeO5qLADvSb61w" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+  <categories xmi:id="_JNvSm9Q4EeO5qLADvSb61w" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_NXWzUNQ4EeO5qLADvSb61w" name="Repository">
       <messageTypes xmi:id="_NuNNENQ4EeO5qLADvSb61w" name="messagetype1"/>
     </modelElements>

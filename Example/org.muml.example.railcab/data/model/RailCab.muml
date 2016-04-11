@@ -73,7 +73,7 @@
       </attributes>
     </modelElements>
   </categories>
-  <categories xmi:id="_SuoZoLi6EeKp46K0r5yxrg" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+  <categories xmi:id="_SuoZoLi6EeKp46K0r5yxrg" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_TOBrYLi6EeKp46K0r5yxrg" name="ReconfigurationMessageTypes">
       <messageTypes xmi:id="_dZh2ELi6EeKp46K0r5yxrg" name="drivingAtHighSpeed"/>
       <messageTypes xmi:id="_e16UgLi6EeKp46K0r5yxrg" name="drivingAtNormalSpeed"/>
@@ -321,7 +321,7 @@
       </messageTypes>
     </modelElements>
   </categories>
-  <categories xmi:id="_gSpDkHasEeOh__JNCv2_1A" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+  <categories xmi:id="_gSpDkHasEeOh__JNCv2_1A" key="org.muml.pim.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_jka9YHasEeOh__JNCv2_1A" name="ConvoyEntry">
       <roles xmi:id="_jk3pUHasEeOh__JNCv2_1A" connectors="_jk3pWHasEeOh__JNCv2_1A" behavior="_RTDXcXavEeOh__JNCv2_1A" name="peer" senderMessageTypes="_Dy8d4HauEeOh__JNCv2_1A _CL95AHauEeOh__JNCv2_1A _BG8KoHauEeOh__JNCv2_1A _-iU6AHbHEeOth4KXtc7iXA _qG47IHbIEeOth4KXtc7iXA _spWQ0HbIEeOth4KXtc7iXA" receiverMessageTypes="_Dy8d4HauEeOh__JNCv2_1A _CL95AHauEeOh__JNCv2_1A _BG8KoHauEeOh__JNCv2_1A _-iU6AHbHEeOth4KXtc7iXA _qG47IHbIEeOth4KXtc7iXA _spWQ0HbIEeOth4KXtc7iXA">
         <cardinality xmi:id="_jk3pUXasEeOh__JNCv2_1A">
@@ -15309,7 +15309,7 @@
       </ownedActivityNode>
     </modelElements>
   </categories>
-  <categories xmi:id="_zEShsO5uEeOKI4bZ_bxwuQ" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
+  <categories xmi:id="_zEShsO5uEeOKI4bZ_bxwuQ" key="org.muml.pim.components.category" name="component">
     <modelElements xsi:type="reconfiguration:ReconfigurableStructuredComponent" xmi:id="_Aj7rwO5xEeOKI4bZ_bxwuQ" name="VelocityController" componentKind="hybrid component">
       <ports xsi:type="reconfiguration:ReconfigurationMessagePort" xmi:id="_Dm1cEO5xEeOKI4bZ_bxwuQ" connectors="_DnSIAO5xEeOKI4bZ_bxwuQ" name="reconfMsg" senderMessageTypes="_dZh2ELi6EeKp46K0r5yxrg _e16UgLi6EeKp46K0r5yxrg _gGi18Li6EeKp46K0r5yxrg" receiverMessageTypes="_qlvYJHShEeSlCdM66-7ACQ _qlvYJXShEeSlCdM66-7ACQ _qlvYJnShEeSlCdM66-7ACQ">
         <cardinality xmi:id="_Dm1cEe5xEeOKI4bZ_bxwuQ">

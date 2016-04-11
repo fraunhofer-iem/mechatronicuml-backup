@@ -953,7 +953,7 @@
       <clocks xmi:id="_K4bAAME7EeSGhLo9NApUcQ" name="c"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_FB0TSpJ7EeSSMde45fnrcg" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+  <categories xmi:id="_FB0TSpJ7EeSSMde45fnrcg" key="org.muml.pim.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_V7hbgJKgEeSSMde45fnrcg" name="Overtake">
       <verificationConstraintRepositories xsi:type="mtctl:PropertyRepository" xmi:id="_2AVEwKMHEeSwy6Dvtdi1ng">
         <properties xmi:id="_lDskoME8EeSGhLo9NApUcQ" comment="a deadlock never occurs">
@@ -1734,7 +1734,7 @@
       </roleConnector>
     </modelElements>
   </categories>
-  <categories xmi:id="_FB0TS5J7EeSSMde45fnrcg" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+  <categories xmi:id="_FB0TS5J7EeSSMde45fnrcg" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_NXVmMJKbEeSSMde45fnrcg" name="OvertakingMessages">
       <messageTypes xmi:id="_a_7mAJKfEeSSMde45fnrcg" name="requestOvertaking"/>
       <messageTypes xmi:id="_dRjDUJKfEeSSMde45fnrcg" name="acceptOvertaking"/>

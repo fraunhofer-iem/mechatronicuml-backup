@@ -230,7 +230,7 @@
       </states>
     </modelElements>
   </categories>
-  <categories xmi:id="_8J0gQITBEeKO9r0VL65xcg" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+  <categories xmi:id="_8J0gQITBEeKO9r0VL65xcg" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_9E-g8ITBEeKO9r0VL65xcg" name="Overtaking">
       <messageTypes xmi:id="_9xK4kITBEeKO9r0VL65xcg" name="request">
         <parameters xmi:id="_Z70IMAjXEeShtdwabZpR0Q" name="plannedOvertakingSpeed" dataType="_Byc_tCqlEeOmGPWtq6tuHA"/>
@@ -244,7 +244,7 @@
       <messageTypes xmi:id="_JZR8kAdvEeScEaYFsu5sEQ" name="unsafe"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_FN-BUITCEeKO9r0VL65xcg" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+  <categories xmi:id="_FN-BUITCEeKO9r0VL65xcg" key="org.muml.pim.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_GPaQMITCEeKO9r0VL65xcg" name="Overtaking">
       <verificationConstraintRepositories xsi:type="mtctl:PropertyRepository" xmi:id="_mlQtwOVxEeOKtovAzVvTtg">
         <properties xmi:id="_F_PksAtLEeSUoKfUHBEMIA">
@@ -363,7 +363,7 @@
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_tSqlEeOmGPWtq6tuHA" name="INT64"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_tiqlEeOmGPWtq6tuHA" name="DOUBLE" primitiveType="DOUBLE"/>
   </categories>
-  <categories xmi:id="_zp96gEfOEeO56fW-RvmTLw" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
+  <categories xmi:id="_zp96gEfOEeO56fW-RvmTLw" key="org.muml.pim.components.category" name="component">
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_1vFz8EfOEeO56fW-RvmTLw" name="WhiteSw" behavior="_tmUHcAjYEeShtdwabZpR0Q">
       <extension xsi:type="dependencylanguage:SynthesizableBehavior" xmi:id="_PwNk8AjZEeShtdwabZpR0Q">
         <dependencyModel xmi:id="_aPYecPEIEeSqYobe1M1FBA" comment="/* dependency 1: if track is safe longer than 5 seconds and the distance to grey is below 20, &#xD;&#xA; enable the requesting for overtaking&#xD;&#xA; */">

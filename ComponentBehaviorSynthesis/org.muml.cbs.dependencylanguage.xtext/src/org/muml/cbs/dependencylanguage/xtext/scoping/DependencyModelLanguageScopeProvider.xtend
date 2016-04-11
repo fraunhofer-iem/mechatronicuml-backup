@@ -76,7 +76,7 @@ class DependencyModelLanguageScopeProvider extends AbstractDeclarativeScopeProvi
 
 	// TODO: make this string public in class TypeCategoryInitializer
 	private static final String DATA_TYPES_CATEGORY_KEY = "org.muml.types.category";
-	private static final String MESSAGE_TYPES_CATEGORY_KEY = "de.uni_paderborn.fujaba.muml.messagetype.category";
+	private static final String MESSAGE_TYPES_CATEGORY_KEY = "org.muml.pim.messagetype.category";
 	
 	private static final String INT_ID = "INT";
 

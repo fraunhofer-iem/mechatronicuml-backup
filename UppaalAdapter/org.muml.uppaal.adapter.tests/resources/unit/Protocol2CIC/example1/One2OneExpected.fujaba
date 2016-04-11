@@ -10,7 +10,7 @@
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_w6fx9wdMEeS1buZSll3L6Q" name="LONG" primitiveType="LONG"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_w6fx-AdMEeS1buZSll3L6Q" name="DOUBLE" primitiveType="DOUBLE"/>
   </categories>
-  <categories xmi:id="_w6fx-QdMEeS1buZSll3L6Q" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+  <categories xmi:id="_w6fx-QdMEeS1buZSll3L6Q" key="org.muml.pim.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_w6fx-gdMEeS1buZSll3L6Q" name="proto">
       <roles xmi:id="_w6fx-wdMEeS1buZSll3L6Q" connectors="_w6fyBwdMEeS1buZSll3L6Q" behavior="_w6fyDgdMEeS1buZSll3L6Q" name="role1" senderMessageTypes="_w6fyNAdMEeS1buZSll3L6Q" receiverMessageTypes="_w6fyNAdMEeS1buZSll3L6Q">
         <cardinality xmi:id="_w6fx_AdMEeS1buZSll3L6Q">
@@ -104,12 +104,12 @@
       </states>
     </modelElements>
   </categories>
-  <categories xmi:id="_w6fyMgdMEeS1buZSll3L6Q" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+  <categories xmi:id="_w6fyMgdMEeS1buZSll3L6Q" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_w6fyMwdMEeS1buZSll3L6Q" name="Repository">
       <messageTypes xmi:id="_w6fyNAdMEeS1buZSll3L6Q" name="exampleMessage"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_w6fyNQdMEeS1buZSll3L6Q" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
+  <categories xmi:id="_w6fyNQdMEeS1buZSll3L6Q" key="org.muml.pim.components.category" name="component">
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_w6fyNgdMEeS1buZSll3L6Q" name="role1Component" behavior="_w6fyHQdMEeS1buZSll3L6Q">
       <ports xsi:type="component:DiscretePort" xmi:id="_w6fyNwdMEeS1buZSll3L6Q" name="role1Port" behavior="_w6fyIAdMEeS1buZSll3L6Q" senderMessageTypes="_w6fyNAdMEeS1buZSll3L6Q" receiverMessageTypes="_w6fyNAdMEeS1buZSll3L6Q" refinedRole="_w6fx-wdMEeS1buZSll3L6Q">
         <cardinality xmi:id="_w6fyOAdMEeS1buZSll3L6Q">

@@ -10,7 +10,7 @@
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Jo3JJwdNEeS1buZSll3L6Q" name="LONG" primitiveType="LONG"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Jo3JKAdNEeS1buZSll3L6Q" name="DOUBLE" primitiveType="DOUBLE"/>
   </categories>
-  <categories xmi:id="_Jo3JKQdNEeS1buZSll3L6Q" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+  <categories xmi:id="_Jo3JKQdNEeS1buZSll3L6Q" key="org.muml.pim.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_Jo3JKgdNEeS1buZSll3L6Q" name="proto">
       <verificationConstraintRepositories xsi:type="mtctl:PropertyRepository" xmi:id="_Jo3JKwdNEeS1buZSll3L6Q">
         <properties xmi:id="_Jo3JLAdNEeS1buZSll3L6Q">
@@ -502,7 +502,7 @@
       </states>
     </modelElements>
   </categories>
-  <categories xmi:id="_Jo3KXAdNEeS1buZSll3L6Q" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+  <categories xmi:id="_Jo3KXAdNEeS1buZSll3L6Q" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_Jo3KXQdNEeS1buZSll3L6Q" name="Repository">
       <messageTypes xmi:id="_Jo3KXgdNEeS1buZSll3L6Q" name="exampleMessageInt">
         <parameters xmi:id="_Jo3KXwdNEeS1buZSll3L6Q" name="intParameter" dataType="_Jo3JJgdNEeS1buZSll3L6Q"/>
@@ -510,7 +510,7 @@
       <messageTypes xmi:id="_Jo3KYAdNEeS1buZSll3L6Q" name="exampleMessage"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_Jo3KYQdNEeS1buZSll3L6Q" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
+  <categories xmi:id="_Jo3KYQdNEeS1buZSll3L6Q" key="org.muml.pim.components.category" name="component">
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_Jo3KYgdNEeS1buZSll3L6Q" name="role1Component" behavior="_Jo3JzQdNEeS1buZSll3L6Q">
       <ports xsi:type="component:DiscretePort" xmi:id="_Jo3KYwdNEeS1buZSll3L6Q" name="role1Port" behavior="_Jo3J0AdNEeS1buZSll3L6Q" senderMessageTypes="_Jo3KYAdNEeS1buZSll3L6Q _Jo3KXgdNEeS1buZSll3L6Q" receiverMessageTypes="_Jo3KYAdNEeS1buZSll3L6Q _Jo3KXgdNEeS1buZSll3L6Q" coordinatorBehavior="_Jo3J1QdNEeS1buZSll3L6Q" subroleBehavior="_Jo3J_QdNEeS1buZSll3L6Q" refinedRole="_Jo3JMQdNEeS1buZSll3L6Q">
         <cardinality xmi:id="_Jo3KZAdNEeS1buZSll3L6Q">

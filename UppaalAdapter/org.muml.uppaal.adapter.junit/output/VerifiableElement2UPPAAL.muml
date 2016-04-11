@@ -82,7 +82,7 @@
       <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@categories.1/@modelElements.0/@componentInstances.0/@portInstances.0 //@categories.1/@modelElements.0/@componentInstances.1/@portInstances.0"/>
     </modelElements>
   </categories>
-  <categories key="de.uni_paderborn.fujaba.muml.components.category" name="component">
+  <categories key="org.muml.pim.components.category" name="component">
     <modelElements xsi:type="component:StaticAtomicComponent" name="ParksystemComponent" behavior="//@categories.5/@modelElements.2">
       <ports xsi:type="component:DiscretePort" name="ParksystemPort" behavior="//@categories.5/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart" senderMessageTypes="//@categories.4/@modelElements.0/@messageTypes.0 //@categories.4/@modelElements.0/@messageTypes.2" receiverMessageTypes="//@categories.4/@modelElements.0/@messageTypes.3 //@categories.4/@modelElements.0/@messageTypes.1" refinedRole="//@categories.3/@modelElements.0/@roles.0">
         <cardinality>
@@ -106,7 +106,7 @@
       </ports>
     </modelElements>
   </categories>
-  <categories key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+  <categories key="org.muml.pim.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" name="Einparkhilfe">
       <verificationConstraintRepositories xsi:type="mtctl:PropertyRepository">
         <properties>
@@ -199,7 +199,7 @@
       </roleConnector>
     </modelElements>
   </categories>
-  <categories key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+  <categories key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" name="EinparkhilfeNachrichten">
       <messageTypes name="start"/>
       <messageTypes name="akzeptiereStop"/>

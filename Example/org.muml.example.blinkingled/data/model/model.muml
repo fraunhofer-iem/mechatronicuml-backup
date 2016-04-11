@@ -51,8 +51,8 @@
       </states>
     </modelElements>
   </categories>
-  <categories xmi:id="_yGgTvFL0EeWl58eUwm1Yvw" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol"/>
-  <categories xmi:id="_yGgTvVL0EeWl58eUwm1Yvw" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype"/>
+  <categories xmi:id="_yGgTvFL0EeWl58eUwm1Yvw" key="org.muml.pim.protocol.category" name="protocol"/>
+  <categories xmi:id="_yGgTvVL0EeWl58eUwm1Yvw" key="org.muml.pim.messagetype.category" name="msgtype"/>
   <categories xmi:id="_yGgTvlL0EeWl58eUwm1Yvw" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance">
     <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_HSyZUFL3EeWl58eUwm1Yvw" name="root-cic">
       <componentInstances xsi:type="instance:StructuredComponentInstance" xmi:id="_Ik_BAFL3EeWl58eUwm1Yvw" name="sys" componentType="_3g4m0FL2EeWl58eUwm1Yvw">
@@ -68,7 +68,7 @@
       </componentInstances>
     </modelElements>
   </categories>
-  <categories xmi:id="_yGgTv1L0EeWl58eUwm1Yvw" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
+  <categories xmi:id="_yGgTv1L0EeWl58eUwm1Yvw" key="org.muml.pim.components.category" name="component">
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_2sZgwFL0EeWl58eUwm1Yvw" name="Main" behavior="_QbiYcFL1EeWl58eUwm1Yvw">
       <ports xsi:type="component:HybridPort" xmi:id="_86mIYFL0EeWl58eUwm1Yvw" name="LED_voltage" kind="OUT">
         <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int8"/>

@@ -1060,7 +1060,7 @@ public class MUMLAnalysis {
 		
 		ModelElementCategory message_cat = null;		
 		for (ModelElementCategory cat : cat_list){
-			if(cat.getKey().equals("de.uni_paderborn.fujaba.muml.messagetype.category"))
+			if(cat.getKey().equals("org.muml.pim.messagetype.category"))
 				message_cat = cat;
 		}
 		
@@ -1424,7 +1424,7 @@ public class MUMLAnalysis {
 	// ----------- FOR CURRENT VERSION ONLY-----------
 	public static boolean modelContainsMultiPorts(RootNode model){
 		for (ModelElementCategory cat : model.getCategories()){			
-			if(cat.getKey().equals("de.uni_paderborn.fujaba.muml.components.category"))
+			if(cat.getKey().equals("org.muml.pim.components.category"))
 			{
 				for(ExtendableElement me : cat.getModelElements()){
 					Component comp = (Component)me;
@@ -1481,7 +1481,7 @@ public class MUMLAnalysis {
 	public static boolean modelContainsArrayParameters(RootNode model){			 
 		
 		for (ModelElementCategory cat : model.getCategories()){			
-			if(cat.getKey().equals("de.uni_paderborn.fujaba.muml.messagetype.category"))
+			if(cat.getKey().equals("org.muml.pim.messagetype.category"))
 			{
 				for(ExtendableElement me : cat.getModelElements()){
 					MessageTypeRepository mi = (MessageTypeRepository)me;

@@ -162,7 +162,7 @@ public class CheckMTCTLImpl extends NodeSpecificationImpl implements CheckMTCTL 
 		// Get the CoordinationProtocol category.
 		org.muml.core.modelinstance.ModelElementCategory category = null;
 		for (org.muml.core.modelinstance.ModelElementCategory cur : muml.getCategories()) {
-			if (cur.getKey().equals("de.uni_paderborn.fujaba.muml.protocol.category")) {
+			if (cur.getKey().equals("org.muml.pim.protocol.category")) {
 				category = cur;
 				break;
 			}

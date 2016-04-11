@@ -139,7 +139,7 @@
          point="org.muml.core.modelinstance.modelelementcategory">
       <?gmfgen generated="true"?>  
       <category
-            key="de.uni_paderborn.fujaba.muml.hardware.hwresource.category"
+            key="org.muml.pm.hardware.hwresource.category"
             name="hwresource">
          
          <child
@@ -159,7 +159,7 @@
             editorId="org.muml.pm.hardware.resourceinstance.diagram.part.HardwareDiagramEditorID"
             editorName="ResourceInstance Editor"
             fileExtension="resourceinstance_diagram"
-            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.hardware.hwresource.category"
+            modelElementCategoryKey="org.muml.pm.hardware.hwresource.category"
             modelId="ResourceInstance">
          <diagramElement
                packageNsURI="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0"

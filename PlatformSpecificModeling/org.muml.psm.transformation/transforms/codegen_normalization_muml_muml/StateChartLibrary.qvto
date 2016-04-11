@@ -1,4 +1,4 @@
-import de.uni_paderborn.fujaba.muml.software.transform._blackbox.TimeUnitLibUnit;
+import org.muml.psm.api._transformation._blackbox.TimeUnitLibrary;
 import CommonLibrary;
 library StateChartLibrary;
 

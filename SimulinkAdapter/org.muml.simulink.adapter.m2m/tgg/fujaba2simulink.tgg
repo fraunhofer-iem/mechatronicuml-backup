@@ -149,7 +149,7 @@
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_40udA5zXEeCxo-rGjpVr5g" typedModel="_M439QJzXEeCxo-rGjpVr5g" node="_40udB5zXEeCxo-rGjpVr5g _7VES0JzXEeCxo-rGjpVr5g"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_40udBJzXEeCxo-rGjpVr5g" typedModel="_NYLIYJzXEeCxo-rGjpVr5g" node="_x-rokKDEEeCnWpMK39eFTA _3yeMIKDEEeCnWpMK39eFTA"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_40udBZzXEeCxo-rGjpVr5g" typedModel="_NK6IcJzXEeCxo-rGjpVr5g" node="_40udCJzXEeCxo-rGjpVr5g __pxpQJzXEeCxo-rGjpVr5g _5pPYRp32EeGeZZPnfJRjWA _5pPYSp32EeGeZZPnfJRjWA _5pPYTp32EeGeZZPnfJRjWA _5pPYUp32EeGeZZPnfJRjWA _5pPYVp32EeGeZZPnfJRjWA _5pPYWp32EeGeZZPnfJRjWA _5pPYXp32EeGeZZPnfJRjWA"/>
-    <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_Y_6yIJzYEeCxo-rGjpVr5g" slotNode="_7VES0JzXEeCxo-rGjpVr5g" expression="'de.uni_paderborn.fujaba.muml.components.category'">
+    <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_Y_6yIJzYEeCxo-rGjpVr5g" slotNode="_7VES0JzXEeCxo-rGjpVr5g" expression="'org.muml.pim.components.category'">
       <slotAttribute href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/key"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_skwgEKDQEeCEzLz4fDrGXA" slotNode="__pxpQJzXEeCxo-rGjpVr5g" expression="'AtomicLibrary'">
@@ -855,7 +855,7 @@
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_oEngY5zYEeCxo-rGjpVr5g" typedModel="_NK6IcJzXEeCxo-rGjpVr5g" node="_oEngaJzYEeCxo-rGjpVr5g _oEngapzYEeCxo-rGjpVr5g _sWWbUJzYEeCxo-rGjpVr5g _9iS_UCZTEeG4zKgRjwVL8w _VD4_MCsnEeG2hJjL7HcD9A _4sxIIDu6EeGJiaor-el40w _FTN7IDyTEeG8GpPm_09vtA _GRaBsDyTEeG8GpPm_09vtA _NVYawDyTEeG8GpPm_09vtA _xYNaQFV1EeGxSIz9Wfzh2g _RvB7AG9pEeGSp_fhptI-IA"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_oEngZJzYEeCxo-rGjpVr5g" typedModel="_NYLIYJzXEeCxo-rGjpVr5g" node="_6bJekKDEEeCnWpMK39eFTA _BCpXAKDFEeCnWpMK39eFTA _GZ-BAKDFEeCnWpMK39eFTA _p7qwMFV1EeGxSIz9Wfzh2g"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_oEngZZzYEeCxo-rGjpVr5g" typedModel="_M439QJzXEeCxo-rGjpVr5g" node="_oEngZpzYEeCxo-rGjpVr5g _oEngaZzYEeCxo-rGjpVr5g _qMhBAJzYEeCxo-rGjpVr5g _luY3cFV1EeGxSIz9Wfzh2g"/>
-    <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_oEngcpzYEeCxo-rGjpVr5g" slotNode="_oEngaZzYEeCxo-rGjpVr5g" expression="'de.uni_paderborn.fujaba.muml.components.category'">
+    <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_oEngcpzYEeCxo-rGjpVr5g" slotNode="_oEngaZzYEeCxo-rGjpVr5g" expression="'org.muml.pim.components.category'">
       <slotAttribute href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/key"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_Ys2oIaA5EeCfbLuZZ68Xtg" slotNode="_qMhBAJzYEeCxo-rGjpVr5g" expression="atomSys.name">
@@ -955,7 +955,7 @@
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_43elEissEeG2hJjL7HcD9A" typedModel="_NK6IcJzXEeCxo-rGjpVr5g" node="_43fMISssEeG2hJjL7HcD9A _43fMIissEeG2hJjL7HcD9A _43fMJCssEeG2hJjL7HcD9A"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_43elEyssEeG2hJjL7HcD9A" typedModel="_NYLIYJzXEeCxo-rGjpVr5g" node="_43fMJSssEeG2hJjL7HcD9A _43fMJissEeG2hJjL7HcD9A _43fMJyssEeG2hJjL7HcD9A"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_43elFCssEeG2hJjL7HcD9A" typedModel="_M439QJzXEeCxo-rGjpVr5g" node="_43elFSssEeG2hJjL7HcD9A _43fMICssEeG2hJjL7HcD9A _43fMIyssEeG2hJjL7HcD9A"/>
-    <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_43hBVSssEeG2hJjL7HcD9A" slotNode="_43fMICssEeG2hJjL7HcD9A" expression="'de.uni_paderborn.fujaba.muml.components.category'">
+    <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_43hBVSssEeG2hJjL7HcD9A" slotNode="_43fMICssEeG2hJjL7HcD9A" expression="'org.muml.pim.components.category'">
       <slotAttribute href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/key"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_43hBVissEeG2hJjL7HcD9A" slotNode="_43fMIyssEeG2hJjL7HcD9A" expression="atomSys.name">
@@ -1001,7 +1001,7 @@
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_-rizw9lOEeClStyXL6p2fw" typedModel="_NK6IcJzXEeCxo-rGjpVr5g" node="_-rizyNlOEeClStyXL6p2fw"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_-rizxNlOEeClStyXL6p2fw" typedModel="_NYLIYJzXEeCxo-rGjpVr5g" node="_-rizzNlOEeClStyXL6p2fw"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_-rizxdlOEeClStyXL6p2fw" typedModel="_M439QJzXEeCxo-rGjpVr5g" node="_-rizxtlOEeClStyXL6p2fw _-rizx9lOEeClStyXL6p2fw __nBbsN_VEeG1_K3Os7gsbA"/>
-    <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_-riz29lOEeClStyXL6p2fw" slotNode="_-rizx9lOEeClStyXL6p2fw" expression="'de.uni_paderborn.fujaba.muml.components.category'">
+    <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_-riz29lOEeClStyXL6p2fw" slotNode="_-rizx9lOEeClStyXL6p2fw" expression="'org.muml.pim.components.category'">
       <slotAttribute href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/key"/>
     </constraint>
   </rule>

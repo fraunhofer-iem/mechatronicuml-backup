@@ -7,11 +7,11 @@
       <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_wMt4QBx8EeSKP_lLzmbIVg" name="A1" componentType="_tj3msBx8EeSKP_lLzmbIVg"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_Mrkwehx7EeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
+  <categories xmi:id="_Mrkwehx7EeSKP_lLzmbIVg" key="org.muml.pim.components.category" name="component">
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_tj3msBx8EeSKP_lLzmbIVg" name="aComponent" behavior="_XfHLgBx7EeSKP_lLzmbIVg"/>
   </categories>
-  <categories xmi:id="_Mrkwexx7EeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol"/>
-  <categories xmi:id="_MrkwfBx7EeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype"/>
+  <categories xmi:id="_Mrkwexx7EeSKP_lLzmbIVg" key="org.muml.pim.protocol.category" name="protocol"/>
+  <categories xmi:id="_MrkwfBx7EeSKP_lLzmbIVg" key="org.muml.pim.messagetype.category" name="msgtype"/>
   <categories xmi:id="_MrkwfRx7EeSKP_lLzmbIVg" key="org.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_XfHLgBx7EeSKP_lLzmbIVg" name="rootStatechart" behavioralElement="_tj3msBx8EeSKP_lLzmbIVg">
       <operations xmi:id="_zbWM4Bx7EeSKP_lLzmbIVg" name="increaseInt">
