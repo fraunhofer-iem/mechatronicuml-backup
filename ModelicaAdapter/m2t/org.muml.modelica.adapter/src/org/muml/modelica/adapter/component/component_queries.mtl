@@ -114,7 +114,7 @@
 /]
 
 [query public createLayoutAnnotations(cic : ComponentInstanceConfiguration) : OclAny =
-	invoke('de.uni_paderborn.fujaba.modelica.m2t.component.transformation.CICLayouter',
-		'layout(de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration)',
+	invoke('org.muml.modelica.adapter.component.transformation.CICLayouter',
+		'layout(org.muml.pim.instance.ComponentInstanceConfiguration)',
 		Sequence{cic})
 /]

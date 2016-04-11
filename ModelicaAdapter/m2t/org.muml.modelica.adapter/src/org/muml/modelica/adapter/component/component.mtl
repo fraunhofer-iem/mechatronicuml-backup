@@ -165,7 +165,7 @@ end [componentInstance.getModelName()/];
 [/template]
 
 [query public normalizeRtsc(rtsc : RealtimeStatechart) : OclAny =
-	invoke('de.uni_paderborn.fujaba.modelica.m2t.rtsc.transformation.RealtimeStatechartNormalizations',
-		'normalize(de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart)',
+	invoke('org.muml.modelica.adapter.rtsc.transformation.RealtimeStatechartNormalizations',
+		'normalize(org.muml.modelica.adapter.rtsc.transformation.RealtimeStatechartNormalizations)',
 		Sequence{rtsc})
 /]

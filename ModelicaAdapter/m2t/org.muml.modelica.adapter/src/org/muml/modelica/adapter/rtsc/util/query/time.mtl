@@ -5,7 +5,7 @@
  * @param timeValue the time value
 */]
 [query public getTimeUnitFactor(timeValue : TimeValue) : Real =
-	invoke('de.uni_paderborn.fujaba.modelica.m2t.rtsc.util.query.TimeHelper',
-		'getFactor(de.uni_paderborn.fujaba.muml.valuetype.TimeValue)',
+	invoke('org.muml.modelica.adapter.rtsc.util.query.TimeHelper',
+		'getFactor(org.muml.pim.valuetype.TimeValue)',
 		Sequence{timeValue})
 /]

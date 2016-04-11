@@ -24,7 +24,7 @@
  * @param cic the "root" component instance configuration
 */]
 [query public createRegionInstances(cic : ComponentInstanceConfiguration) : Map =
-	invoke('de.uni_paderborn.fujaba.modelica.m2t.instantiator.RegionInstanceInstantiator',
-		'instantiate(de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration)',
+	invoke('org.muml.modelica.adapter.instantiator.RegionInstanceInstantiator',
+		'instantiate(org.muml.pim.instance.ComponentInstanceConfiguration)',
 		Sequence{cic}) 
 /]

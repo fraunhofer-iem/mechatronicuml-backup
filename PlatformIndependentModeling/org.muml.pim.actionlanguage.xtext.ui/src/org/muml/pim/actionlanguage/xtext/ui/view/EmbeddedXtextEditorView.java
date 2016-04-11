@@ -42,7 +42,7 @@ package org.muml.pim.actionlanguage.xtext.ui.view;
 //
 //public class EmbeddedXtextEditorView extends ViewPart implements ISelectionListener {
 //	
-//	private static final String languageName = "de.uni_paderborn.fujaba.muml.ActionLanguage";
+//	private static final String languageName = "org.muml.pim.actionlanguage";
 //	
 //	private EmbeddedXtextEditor editor;
 //	private IModelStorage modelStorage;

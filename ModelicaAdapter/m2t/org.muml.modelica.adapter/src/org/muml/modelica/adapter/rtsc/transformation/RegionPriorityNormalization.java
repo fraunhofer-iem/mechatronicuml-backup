@@ -5,7 +5,7 @@ import org.muml.modelica.adapter.transformation.QVToTransformationRunner;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
 
 public class RegionPriorityNormalization {
-	private static final String TRANSFORMATION = "/de.uni_paderborn.fujaba.modelica.m2t/transforms/RegionPriorityNormalization.qvto";
+	private static final String TRANSFORMATION = "/org.muml.modelica.adapter/transforms/RegionPriorityNormalization.qvto";
 	
 	public static int normalize(RealtimeStatechart rtsc) {
 		ExecutionDiagnostic result = RealtimeStatechartTransformationRunner.run(

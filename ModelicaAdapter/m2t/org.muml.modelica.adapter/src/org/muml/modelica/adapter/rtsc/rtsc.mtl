@@ -124,7 +124,7 @@ end [aRealtimeStatechart.getModelName()/];
 /]
 
 [query public createLayoutAnnotations(rtsc : RealtimeStatechart) : OclAny =
-	invoke('de.uni_paderborn.fujaba.modelica.m2t.rtsc.transformation.RealtimeStatechartLayouter',
-		'layout(de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart)',
+	invoke('org.muml.modelica.adapter.rtsc.transformation.RealtimeStatechartLayouter',
+		'layout(org.muml.pim.realtimestatechart.RealtimeStatechart)',
 		Sequence{rtsc})
 /]

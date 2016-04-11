@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <workflow>
-	<property name="model" value="de.uni_paderborn.fujaba.muml.actionLanguage.matlab.generator/src/test2.xmi" />
+	<property name="model" value="org.muml.pim.actionlanguage.matlab.generator/src/test2.xmi" />
 	<property name="src-gen" value="src-gen" />
 	
 	<!-- set up EMF for standalone execution -->
@@ -8,7 +8,7 @@
 		<platformUri value=".."/> 
 		<registerGeneratedEPackage value="org.storydriven.core.expressions.ExpressionsPackage"/>
 		<registerGeneratedEPackage value="org.storydriven.core.expressions.common.CommonExpressionsPackage"/>
-		<registerGeneratedEPackage value="de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage"/>
+		<registerGeneratedEPackage value="org.muml.pim.actionlanguage.ActionLanguagePackage"/>
 		<registerGeneratedEPackage value="de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage"/>
 	</bean>
 	
@@ -22,6 +22,6 @@
 	</component>
 
 	<!--  generate code -->
-	<component class="de.uni_paderborn.fujaba.muml.actionLanguage.matlab.generator.ExpressionsAnnotator">
+	<component class="org.muml.pim.actionlanguage.matlab.generator.ExpressionsAnnotator">
 	</component>
 </workflow>

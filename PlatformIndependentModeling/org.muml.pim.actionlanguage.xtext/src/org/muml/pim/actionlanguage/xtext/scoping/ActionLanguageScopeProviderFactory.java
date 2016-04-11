@@ -18,7 +18,7 @@ public class ActionLanguageScopeProviderFactory implements Provider<IScopeProvid
 	private static IActionLanguageScopeProvider defaultScopeProvider; 
 	
 	private static final String languageResourceEP =
-			"de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ScopeProvider";
+			"org.muml.pim.actionlanguage.xtext.ScopeProvider";
 	private static final String classAttribute = "class";
 	
 	private static IActionLanguageScopeProvider getScopeProviderFor(EObject object) {

@@ -10,7 +10,7 @@
             contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
             default="true"
             extensions="action"
-            id="de.uni_paderborn.fujaba.muml.ActionLanguage"
+            id="org.muml.pim.actionlanguage"
             name="ActionLanguage Editor">
         </editor>
     </extension>
@@ -21,27 +21,27 @@
             commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
             <activeWhen>
                 <reference
-                    definitionId="de.uni_paderborn.fujaba.muml.ActionLanguage.Editor.opened">
+                    definitionId="org.muml.pim.actionlanguage.Editor.opened">
                 </reference>
             </activeWhen>
         </handler>
         <handler
             class="de.uni_paderborn.fujaba.muml.ui.ActionLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
-            commandId="de.uni_paderborn.fujaba.muml.ActionLanguage.validate">
+            commandId="org.muml.pim.actionlanguage.validate">
          <activeWhen>
             <reference
-                    definitionId="de.uni_paderborn.fujaba.muml.ActionLanguage.Editor.opened">
+                    definitionId="org.muml.pim.actionlanguage.Editor.opened">
             </reference>
          </activeWhen>
       </handler>
     </extension>
     <extension point="org.eclipse.core.expressions.definitions">
-        <definition id="de.uni_paderborn.fujaba.muml.ActionLanguage.Editor.opened">
+        <definition id="org.muml.pim.actionlanguage.Editor.opened">
             <and>
                 <reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
                 <with variable="activeEditor">
                     <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
-                        value="de.uni_paderborn.fujaba.muml.ActionLanguage" 
+                        value="org.muml.pim.actionlanguage" 
                         forcePluginActivation="true"/>
                 </with>        
             </and>
@@ -51,21 +51,21 @@
             point="org.eclipse.ui.preferencePages">
         <page
             class="de.uni_paderborn.fujaba.muml.ui.ActionLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-            id="de.uni_paderborn.fujaba.muml.ActionLanguage"
+            id="org.muml.pim.actionlanguage"
             name="ActionLanguage">
             <keywordReference id="de.uni_paderborn.fujaba.muml.ui.keyword_ActionLanguage"/>
         </page>
         <page
-            category="de.uni_paderborn.fujaba.muml.ActionLanguage"
+            category="org.muml.pim.actionlanguage"
             class="de.uni_paderborn.fujaba.muml.ui.ActionLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
-            id="de.uni_paderborn.fujaba.muml.ActionLanguage.coloring"
+            id="org.muml.pim.actionlanguage.coloring"
             name="Syntax Coloring">
             <keywordReference id="de.uni_paderborn.fujaba.muml.ui.keyword_ActionLanguage"/>
         </page>
         <page
-            category="de.uni_paderborn.fujaba.muml.ActionLanguage"
+            category="org.muml.pim.actionlanguage"
             class="de.uni_paderborn.fujaba.muml.ui.ActionLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
-            id="de.uni_paderborn.fujaba.muml.ActionLanguage.templates"
+            id="org.muml.pim.actionlanguage.templates"
             name="Templates">
             <keywordReference id="de.uni_paderborn.fujaba.muml.ui.keyword_ActionLanguage"/>
         </page>
@@ -80,7 +80,7 @@
          point="org.eclipse.ui.commands">
       <command
             description="Trigger expensive validation"
-            id="de.uni_paderborn.fujaba.muml.ActionLanguage.validate"
+            id="org.muml.pim.actionlanguage.validate"
             name="Validate">
       </command>
     </extension>
@@ -88,12 +88,12 @@
         <menuContribution
             locationURI="popup:#TextEditorContext?after=group.edit">
              <command
-                 commandId="de.uni_paderborn.fujaba.muml.ActionLanguage.validate"
+                 commandId="org.muml.pim.actionlanguage.validate"
                  style="push"
                  tooltip="Trigger expensive validation">
             <visibleWhen checkEnabled="false">
                 <reference
-                    definitionId="de.uni_paderborn.fujaba.muml.ActionLanguage.Editor.opened">
+                    definitionId="org.muml.pim.actionlanguage.Editor.opened">
                 </reference>
             </visibleWhen>
          </command>  
@@ -103,7 +103,7 @@
 		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
 			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
 				<visibleWhen checkEnabled="false">
-                	<reference definitionId="de.uni_paderborn.fujaba.muml.ActionLanguage.Editor.opened">
+                	<reference definitionId="org.muml.pim.actionlanguage.Editor.opened">
                 	</reference>
             	</visibleWhen>
 			</command>
@@ -115,7 +115,7 @@
             commandId="org.eclipse.xtext.ui.editor.FindReferences">
             <activeWhen>
                 <reference
-                    definitionId="de.uni_paderborn.fujaba.muml.ActionLanguage.Editor.opened">
+                    definitionId="org.muml.pim.actionlanguage.Editor.opened">
                 </reference>
             </activeWhen>
         </handler>
@@ -155,11 +155,11 @@
          point="org.eclipse.ui.popupMenus">
       <objectContribution
             adaptable="false"
-            id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.objectContribution1"
+            id="org.muml.pim.actionlanguage.xtext.ui.objectContribution1"
             objectClass="org.muml.pim.realtimestatechart.diagram.edit.parts.DoEventEditPart">
          <action
                class="de.uni_paderborn.fujaba.muml.ui.popup.actions.OpenEditorAction"
-               id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.action1"
+               id="org.muml.pim.actionlanguage.xtext.ui.action1"
                label="open Action Editor">
          </action>
       </objectContribution>
@@ -168,11 +168,11 @@
          point="org.eclipse.ui.popupMenus">
       <objectContribution
             adaptable="false"
-            id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.objectContribution2"
+            id="org.muml.pim.actionlanguage.xtext.ui.objectContribution2"
             objectClass="org.muml.pim.realtimestatechart.diagram.edit.parts.EntryEventEditPart">
          <action
                class="de.uni_paderborn.fujaba.muml.ui.popup.actions.OpenEditorAction"
-               id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.action2"
+               id="org.muml.pim.actionlanguage.xtext.ui.action2"
                label="open Action Editor">
          </action>
       </objectContribution>
@@ -181,11 +181,11 @@
          point="org.eclipse.ui.popupMenus">
       <objectContribution
             adaptable="false"
-            id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.objectContribution3"
+            id="org.muml.pim.actionlanguage.xtext.ui.objectContribution3"
             objectClass="org.muml.pim.realtimestatechart.diagram.edit.parts.ExitEventEditPart">
          <action
                class="de.uni_paderborn.fujaba.muml.ui.popup.actions.OpenEditorAction"
-               id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.action3"
+               id="org.muml.pim.actionlanguage.xtext.ui.action3"
                label="open Action Editor">
          </action>
       </objectContribution>
@@ -194,11 +194,11 @@
          point="org.eclipse.ui.popupMenus">
       <objectContribution
             adaptable="false"
-            id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.objectContribution4"
+            id="org.muml.pim.actionlanguage.xtext.ui.objectContribution4"
             objectClass="org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart">
          <action
                class="de.uni_paderborn.fujaba.muml.ui.popup.actions.OpenEditorAction"
-               id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.action4"
+               id="org.muml.pim.actionlanguage.xtext.ui.action4"
                label="open Action Editor">
          </action>
       </objectContribution>
@@ -207,11 +207,11 @@
          point="org.eclipse.ui.popupMenus">
       <objectContribution
             adaptable="false"
-            id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.objectContribution5"
+            id="org.muml.pim.actionlanguage.xtext.ui.objectContribution5"
             objectClass="org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart">
          <action
                class="de.uni_paderborn.fujaba.muml.ui.popup.actions.OpenEditorGuard"
-               id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.action5"
+               id="org.muml.pim.actionlanguage.xtext.ui.action5"
                label="open Guard Editor">
          </action>
       </objectContribution>
@@ -220,11 +220,11 @@
          point="org.eclipse.ui.popupMenus">
       <objectContribution
             adaptable="false"
-            id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.objectContribution6"
+            id="org.muml.pim.actionlanguage.xtext.ui.objectContribution6"
             objectClass="org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart">
          <action
                class="de.uni_paderborn.fujaba.muml.ui.popup.actions.OpenEditorSynchronization"
-               id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.action6"
+               id="org.muml.pim.actionlanguage.xtext.ui.action6"
                label="open Synchronization Editor">
          </action>
       </objectContribution>
@@ -234,14 +234,14 @@
    <!-- extension
          point="org.eclipse.ui.views">
       <view
-            category="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.Fujaba"
+            category="org.muml.pim.actionlanguage.xtext.ui.Fujaba"
             class="de.uni_paderborn.fujaba.muml.ui.view.EmbeddedXtextEditorView"
-            id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.view1"
+            id="org.muml.pim.actionlanguage.xtext.ui.view1"
             name="Fujaba Action Editor"
             restorable="true">
       </view>
       <category
-            id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.Fujaba"
+            id="org.muml.pim.actionlanguage.xtext.ui.Fujaba"
             name="MechatronicUML">
       </category>
    </extension -->

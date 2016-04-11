@@ -501,6 +501,11 @@
              type="http://www.muml.org/pim/one_to_n_schemata/1.0.0#MultiReceive">
        </propertyEditor>
     
+       <propertyEditor
+             factory="org.muml.pim.properties.pim.editor.TestEditor$Factory"
+             type="http://www.muml.org/pim/1.0.0#Test">
+       </propertyEditor>
+    
     </propertyEditors>
  </extension>
 

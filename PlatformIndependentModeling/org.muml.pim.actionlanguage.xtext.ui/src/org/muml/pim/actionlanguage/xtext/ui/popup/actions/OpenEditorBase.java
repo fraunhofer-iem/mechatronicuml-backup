@@ -64,7 +64,7 @@ public abstract class OpenEditorBase implements IObjectActionDelegate {
 		private boolean checkOpenEditors(IWorkbenchPage page, IModelStorage modelStorage) {
 			for (IEditorReference it : page.getEditorReferences()) {
 				// FIXME: remove hardcoded string
-				if (it.getId().equals("de.uni_paderborn.fujaba.muml.ActionLanguage")) {
+				if (it.getId().equals("org.muml.pim.actionlanguage")) {
 					IEditorInput editorInput = null;
 					try {
 						editorInput = it.getEditorInput();

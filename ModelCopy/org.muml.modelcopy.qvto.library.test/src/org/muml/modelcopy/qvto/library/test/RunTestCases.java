@@ -33,7 +33,7 @@ public class RunTestCases {
 	@Parameterized.Parameters(name = "{index}: {1}")
 	public static Collection<Object[]> getTestCases() {
 		cases = new LinkedList<Object[]>();
-		addCase("platform:/plugin/de.uni_paderborn.fujaba.modelcopy.qvto.library.test/testModels/modelcopy.testlanguage");
+		addCase("platform:/plugin/org.muml.modelcopy.qvto.library.test/testModels/modelcopy.testlanguage");
 		return cases;
 	}
 

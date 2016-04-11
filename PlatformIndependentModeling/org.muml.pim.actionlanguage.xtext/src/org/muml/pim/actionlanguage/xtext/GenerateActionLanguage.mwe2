@@ -1,4 +1,4 @@
-module de.uni_paderborn.fujaba.muml.ActionLanguage
+module org.muml.pim.actionlanguage
 
 import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
@@ -15,7 +15,7 @@ Workflow {
 		platformUri = "${runtimeProject}/.."
 		registerGeneratedEPackage = "org.muml.pim.actionlanguage.ActionlanguagePackage"
 	
-		// registerGenModelFile = "platform:/resource/de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.genmodel"
+		// registerGenModelFile = "platform:/resource/org.muml.pim.actionlanguage/model/actionlanguage.genmodel"
 	
 	}
 

@@ -16,7 +16,7 @@ public class RegionInstanceInstantiator {
 	public Map instantiate(ComponentInstanceConfiguration cic) {
 		URI transformationURI = URI
 				.createPlatformPluginURI(
-						"/de.uni_paderborn.fujaba.modelica.m2t/transforms/RegionInstantiation.qvto",
+						"/org.muml.modelica.adapter/transforms/RegionInstantiation.qvto",
 						true);
 		TransformationExecutor executor = new TransformationExecutor(
 				transformationURI);

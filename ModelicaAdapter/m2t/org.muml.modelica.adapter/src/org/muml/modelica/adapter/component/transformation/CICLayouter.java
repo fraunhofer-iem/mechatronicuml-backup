@@ -10,7 +10,7 @@ import org.muml.modelica.adapter.transformation.QVToTransformationRunner;
 import org.muml.pim.instance.ComponentInstanceConfiguration;
 
 public class CICLayouter {
-private static final String TRANSFORMATION = "/de.uni_paderborn.fujaba.modelica.m2t/transforms/ciclayout.qvto";
+private static final String TRANSFORMATION = "/org.muml.modelica.adapter/transforms/ciclayout.qvto";
 
 	private static ModelExtent createModelExtent(ComponentInstanceConfiguration cic) {
 		List<ComponentInstanceConfiguration> cicList = new ArrayList<ComponentInstanceConfiguration>();

@@ -30,7 +30,7 @@ Workflow {
 		registerGeneratedEPackage = "org.storydriven.core.expressions.common.CommonExpressionsPackage"
 		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage"
 		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage"
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage"
+		registerGeneratedEPackage = "org.muml.pim.actionlanguage.ActionlanguagePackage"
 		registerGeneratedEPackage = "org.muml.core.types.TypesPackage" */
 		
 	/* 
@@ -52,7 +52,7 @@ Workflow {
 		registerGenModelFile = "platform:/resource/org.muml.core/model/core.genmodel"
 		registerGenModelFile = "platform:/resource/org.muml.core.modelinstance/model/modelinstance.genmodel"
 		registerGenModelFile = "platform:/resource/org.muml.pim/model/pim.genmodel"
-		registerGenModelFile = "platform:/resource/de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.genmodel"
+		registerGenModelFile = "platform:/resource/org.muml.pim.actionlanguage/model/actionlanguage.genmodel"
 		registerGenModelFile = "platform:/resource/org.muml.pm.software.platform/model/swplatform.genmodel"
 		registerGenModelFile = "platform:/resource/org.muml.psm/model/psm.genmodel"
 	}

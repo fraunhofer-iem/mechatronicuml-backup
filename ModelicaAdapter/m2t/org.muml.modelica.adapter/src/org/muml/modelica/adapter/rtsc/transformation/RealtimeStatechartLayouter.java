@@ -5,7 +5,7 @@ import org.muml.modelica.adapter.transformation.QVToTransformationRunner;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
 
 public class RealtimeStatechartLayouter {
-	private static final String TRANSFORMATION = "/de.uni_paderborn.fujaba.modelica.m2t/transforms/layout.qvto";
+	private static final String TRANSFORMATION = "/org.muml.modelica.adapter/transforms/layout.qvto";
 	
 	public int layout(RealtimeStatechart rtsc) {
 		ExecutionDiagnostic result = RealtimeStatechartTransformationRunner.run(

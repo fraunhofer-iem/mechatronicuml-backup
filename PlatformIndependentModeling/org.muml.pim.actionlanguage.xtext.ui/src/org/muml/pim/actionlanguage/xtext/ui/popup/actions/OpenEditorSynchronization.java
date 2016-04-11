@@ -6,7 +6,7 @@ import org.muml.pim.actionlanguage.xtext.storage.SynchronizationStorage;
 import org.muml.pim.actionlanguage.xtext.ui.internal.ActionLanguageActivator;
 
 public class OpenEditorSynchronization extends OpenEditorBase {
-	private static final String languageName = "de.uni_paderborn.fujaba.muml.ActionLanguage";
+	private static final String languageName = "org.muml.pim.actionlanguage";
 
 	@Override
 	protected IModelStorage getStorage() {

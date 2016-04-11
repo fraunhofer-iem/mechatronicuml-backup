@@ -42,6 +42,8 @@ public class MetamodelContributor implements org.muml.ape.runtime.metamodel.IMet
 		factories.add(
 				new org.muml.pim.realtimestatechart.one_to_n_schemata.provider.One_to_n_schemataItemProviderAdapterFactory());
 
+		factories.add(new org.muml.pim.provider.PimItemProviderAdapterFactory());
+
 	}
 
 }

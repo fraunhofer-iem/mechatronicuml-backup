@@ -23,7 +23,7 @@ import com.google.inject.Module;
  */
 public class ActionLanguageActivator extends AbstractUIPlugin {
 	
-	public static final String DE_UNI_PADERBORN_FUJABA_MUML_ACTIONLANGUAGE = "de.uni_paderborn.fujaba.muml.ActionLanguage";
+	public static final String DE_UNI_PADERBORN_FUJABA_MUML_ACTIONLANGUAGE = "org.muml.pim.actionlanguage";
 	
 	private static final Logger logger = Logger.getLogger(ActionLanguageActivator.class);
 	

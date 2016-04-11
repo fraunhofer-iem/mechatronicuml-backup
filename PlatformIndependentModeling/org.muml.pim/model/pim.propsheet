@@ -2,7 +2,7 @@
 <org.muml:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml="http://www.muml.org/ape/1.0.0" xmi:id="_VZIdoMwbEeSjx7OWZCcdLw" contributorId="org.muml.ape.contributor">
   <reconciler xmi:id="_VZIdocwbEeSjx7OWZCcdLw">
     <customTransformations xmi:id="_VZIdoswbEeSjx7OWZCcdLw" uri="platform:/plugin/org.muml.pim.common/transformations/muml-propsheet.qvto"/>
-    <customTransformations xmi:id="_VZIdo8wbEeSjx7OWZCcdLw" uri="platform:/plugin/de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
+    <customTransformations xmi:id="_VZIdo8wbEeSjx7OWZCcdLw" uri="platform:/plugin/org.muml.pim.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
   </reconciler>
   <genModel href="pim.genmodel#/"/>
   <referencedGenerators href="../../org.muml.core/model/core.propsheet#_i_I4kOHNEeS5Putgio2lkg"/>
@@ -1365,6 +1365,12 @@
     </classes>
     <classes superClasses="//@packages.11/@classes.0">
       <genClass href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/SendingOneToManyCommunicationSchema"/>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="pim.genmodel#//pim"/>
+    <classes>
+      <genClass href="pim.genmodel#//pim/Test"/>
     </classes>
   </packages>
 </org.muml:PropertyGenerator>

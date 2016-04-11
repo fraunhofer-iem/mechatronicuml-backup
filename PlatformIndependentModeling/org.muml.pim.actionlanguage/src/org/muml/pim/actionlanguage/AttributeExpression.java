@@ -27,7 +27,7 @@ import org.muml.pim.behavior.Variable;
  * </ul>
  * </p>
  *
- * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getAttributeExpression()
+ * @see org.muml.pim.actionlanguage.ActionLanguagePackage#getAttributeExpression()
  * @model
  * @generated
  */
@@ -45,7 +45,7 @@ public interface AttributeExpression extends Expression {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Attribute</em>' reference.
 	 * @see #setAttribute(Variable)
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getAttributeExpression_Attribute()
+	 * @see org.muml.pim.actionlanguage.ActionLanguagePackage#getAttributeExpression_Attribute()
 	 * @model
 	 * @generated
 	 */
@@ -74,7 +74,7 @@ public interface AttributeExpression extends Expression {
 	 * Indices which refer to an concrete index of an array.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Indices</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getAttributeExpression_Indices()
+	 * @see org.muml.pim.actionlanguage.ActionLanguagePackage#getAttributeExpression_Indices()
 	 * @model containment="true"
 	 * @generated
 	 */
