@@ -1,0 +1,150 @@
+transformation Initial_Container_Transformation(in mumlModel:PSM, out containerModel:MumlContainer);
+import Naming_Library;
+import org.muml.container._library.DDSHelperBlackBox;
+
+
+modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
+modeltype Typespackage uses muml::types('http://www.fujaba.de/muml/0.4.0');
+modeltype ConnectorPackage uses muml::connector('http://www.fujaba.de/muml/0.4.0');
+modeltype ValuetypePackage uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
+modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
+modeltype MessagePackage uses muml::msgtype('http://www.fujaba.de/muml/0.4.0');
+modeltype RTSCPackage uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype ProtocolPackage uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
+modeltype InstancePackage uses muml::instance('http://www.fujaba.de/muml/0.4.0');
+modeltype ModelInstance uses modelinstance('http://www.fujaba.de/modelinstance/0.4.0');
+modeltype Actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
+
+
+modeltype Hardware uses hardware('http://www.fujaba.de/muml/hardware/1.1/');
+modeltype Platform uses hardware::hwplatform('http://www.fujaba.de/muml/hardware/1.1/');
+modeltype hwpinstance uses hardware::hwplatforminstance('http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/');
+modeltype hwrinstance uses hardware::hwresourceinstance('http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/');
+modeltype Resource uses hardware::hwresource('http://www.fujaba.de/muml/hardware/1.1/');
+
+
+modeltype PSM uses psm('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype Allocation uses psm::allocation('http://www.fujaba.de/muml/psm/0.4.0/');
+
+
+modeltype MumlContainer uses muml_container('http://www.muml.org/muml_container/0.5.0');
+modeltype ECore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+intermediate property PortInstance::partnerConfig:PortInstanceConfiguration;
+
+property systemallocation:SystemAllocation;
+
+
+main() {
+	systemallocation:=mumlModel.rootObjects()[SystemAllocation]->any(true);
+	if(systemallocation=null) then{
+		systemallocation:=SystemAllocation.allInstances()->any(true);
+	}endif;
+	
+	
+	systemallocation.map mapSystemAllocation();
+}
+
+
+
+mapping SystemAllocation::mapSystemAllocation():SystemConfiguration{
+	systemAllocation:=self;
+	ecuConfigurations+=self.allocations.resourceInstance->map mapECUConfiguration();	
+}
+
+
+mapping StructuredResourceInstance::mapECUConfiguration():ECUConfiguration{
+	structuredResourceInstance:=self;
+	/**
+	* Create for all ComponentInstance of Same Component Type a Container per ECU
+	*/
+	var componentInstancesForECU :Sequence(ComponentInstance) = systemallocation.getAllAllocatedComponentInstances(self);
+	componentInstancesForECU.componentType->asOrderedSet()->forEach(componentType){
+		var componentInstancesOfComponentTypeForECU :Collection(ComponentInstance) = componentInstancesForECU->select(ci|ci.componentType = componentType); 
+		componentContainers+=self.map mapComponent2Container(componentType,componentInstancesOfComponentTypeForECU);
+	};
+	
+	//name works on attribute so at last
+	name:=getECUConfigurationName(self);
+	}
+
+/**
+* Creates a container for the specified ECU, for the given component-type and the set of componentInstances
+*/
+mapping StructuredResourceInstance::mapComponent2Container(cmp:Component, cic:Collection(ComponentInstance)):ComponentContainer{
+	componentType:=cmp;
+	componentInstanceConfigurations+=cic->map mapComponentInstance2ContainerComponentInstanceConfiguration();
+	componentInstances:=cic;
+	name:=getContainerName(result);
+}
+
+mapping ComponentInstance::mapComponentInstance2ContainerComponentInstanceConfiguration():ContainerComponentInstanceConfiguration{
+	componentInstance:=self; 
+	portInstanceConfigurations+=self.portInstances->createPortInstance2PortInstanceConfiguration();
+}
+
+
+helper PortInstance::createPortInstance2PortInstanceConfiguration():PortInstanceConfiguration{
+	var connectedPortInstances:Collection(PortInstance) :=self.getConnectedPortInstances();
+	var portInstanceConfig : PortInstanceConfiguration = null;
+	//get the own ECU
+	var ownECU : StructuredResourceInstance := self.componentInstance.getAllocatedECU(systemallocation);
+	
+	//check if we have a broad/multi-cast port
+	if(connectedPortInstances->size()>1) then{
+		
+	}
+	else{
+	// we have a one-to-one port
+		var targetPortInstance : PortInstance := connectedPortInstances->any(true);
+		//get the target ECU
+		var targetECU: StructuredResourceInstance:= targetPortInstance.componentInstance.getAllocatedECU(systemallocation);
+		//check if the connected PortInstances are hosted on the same ECU
+		if(ownECU=targetECU) then{
+			//create a Local Connector;
+			portInstanceConfig :=  object PortInstanceConfiguration_Local {
+				portInstance:=self;
+				hwportInstance:=null;
+				
+				//FIXME: compoute ownID and writersID
+				//target and source port shall share the same connector ID;
+				ownID:= getHash(Set{self});
+				writersID:=getHash(Set{targetPortInstance});
+			};
+			return portInstanceConfig;
+		}else {
+			log("else part");
+			// ownECU and targetECU are different
+			var hwport: HWPortInstance := getNetworkInterface(ownECU, targetECU, systemallocation.getRootHPIC());
+			if(hwport.protocol.oclIsKindOf(LinkProtocol)) then{
+			
+				var protocolKind : LinkProtocolKind := hwport.protocol.oclAsType(LinkProtocol).linkProtocol;
+				
+				switch{
+				
+					case (protocolKind=LinkProtocolKind::ETHERNET){
+						portInstanceConfig:= object PortInstanceConfiguration_DDS{
+							portInstance:=self;
+							hwportInstance:=hwport;
+							partitionID:=getHash(Set{self,targetPortInstance});
+							};
+						}
+					else{
+						
+					}
+					
+				};
+				
+			}endif;
+			
+			
+			
+		}endif;
+		
+		
+	
+	}endif;
+	
+	return portInstanceConfig;
+}
+

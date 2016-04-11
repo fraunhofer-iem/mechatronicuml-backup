@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.exportWizards">
+      <wizard
+            category="de.uni_paderborn.fujaba.export"
+            class="org.muml.container.transformation.ui.ContainerWizard"
+            id="org.muml.container.transformation.ui.ContainerWizard"
+            name="Create Container and DDS Model">
+      </wizard>
+   </extension>
+   
+   <extension
+         point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
+      <unit
+            name="DDSHelperBlackBox"
+            namespace="org.muml.container._library">
+         <library
+               class="org.muml.container.transformation.blackbox.ContainerTransformationBlackBox"
+               name="DDSHelperLib">
+            <metamodel
+                  nsURI="http://www.fujaba.de/muml/hardware/1.1/">
+            </metamodel>
+            <metamodel
+                  nsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/">
+            </metamodel>
+            <metamodel
+                  nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
+            </metamodel>
+            <metamodel
+                  nsURI="http://www.eclipse.org/emf/2002/Ecore">
+            </metamodel>
+         </library>
+      </unit>
+   </extension>
+
+</plugin>

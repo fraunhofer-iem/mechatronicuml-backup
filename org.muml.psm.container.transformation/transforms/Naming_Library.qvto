@@ -1,0 +1,71 @@
+library Container_Naming_Library;
+
+modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
+modeltype Typespackage uses muml::types('http://www.fujaba.de/muml/0.4.0');
+modeltype ConnectorPackage uses muml::connector('http://www.fujaba.de/muml/0.4.0');
+modeltype ValuetypePackage uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
+modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
+modeltype MessagePackage uses muml::msgtype('http://www.fujaba.de/muml/0.4.0');
+modeltype RTSCPackage uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype ProtocolPackage uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
+modeltype InstancePackage uses muml::instance('http://www.fujaba.de/muml/0.4.0');
+modeltype ModelInstance uses modelinstance('http://www.fujaba.de/modelinstance/0.4.0');
+modeltype Actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
+
+
+modeltype Hardware uses hardware('http://www.fujaba.de/muml/hardware/1.1/');
+modeltype Platform uses hardware::hwplatform('http://www.fujaba.de/muml/hardware/1.1/');
+modeltype PlatformInstance uses hardware::hwplatforminstance('http://www.fujaba.de/muml/hardware/1.1/');
+modeltype ResourceInstance uses hardware::hwresourceinstance('http://www.fujaba.de/muml/hardware/1.1/');
+modeltype Resource uses hardware::hwresource('http://www.fujaba.de/muml/hardware/1.1/');
+
+
+modeltype PSM uses psm('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype Allocation uses psm::allocation('http://www.fujaba.de/muml/psm/0.4.0/');
+
+
+modeltype MumlContainer uses muml_container('http://www.muml.org/muml_container/0.5.0');
+
+/**
+ * Helper Queries
+**/
+query SystemAllocation::getRootHPIC():HWPlatformInstanceConfiguration{
+	return self.hpic;
+}
+
+query SystemAllocation::getAllAllocatedComponentInstances(ecu:StructuredResourceInstance):Sequence(ComponentInstance){
+	return self.allocations->select(a|a.resourceInstance=ecu).componentInstance;	
+}
+
+query ComponentInstance::getAllocatedECU(systemallocation:SystemAllocation):StructuredResourceInstance{
+	return systemallocation.allocations->select(a|a.componentInstance=self)->any(true).resourceInstance;
+}
+
+
+/**
+ 	Returns  PortInstances to which the PortInstance is connected
+ 	delegation portInstances are ignored by filtering portInstances whose componentInstance is NOT a AtomicComponentInstance
+ 	Thus, only "real" PortInstances are returned
+**/
+query PortInstance::getConnectedPortInstances():Collection(PortInstance){
+		var connectorEndPointInstances:Set(ConnectorEndpointInstance) :=self.connectorInstances.connectorEndpointInstances->closure(connectorInstances.connectorEndpointInstances);
+		var portInstances:Bag(PortInstance) = connectorEndPointInstances->select(e|e.oclIsKindOf(PortInstance) and e<>self and e.oclAsType(PortInstance).componentInstance.oclIsKindOf(AtomicComponentInstance)).oclAsType(PortInstance);
+		return portInstances;
+}
+
+query SystemAllocation::getAllUsedMessages():Collection(MessageType){
+	var senderMessages: Collection(MessageType):=self.allocations.componentInstance.componentType.ports[DiscretePort].senderMessageTypes;
+	var receiverMessages: Collection(MessageType):=self.allocations.componentInstance.componentType.ports[DiscretePort].receiverMessageTypes;
+	return senderMessages->asSet()->union(receiverMessages->asSet());
+}
+
+
+
+
+query getECUConfigurationName(ecu:StructuredResourceInstance):String{
+	return ecu.name+"_config"
+}
+
+query getContainerName(container:ComponentContainer):String{
+	return "MCC_"+container.componentType.name+ 'Component';
+}
