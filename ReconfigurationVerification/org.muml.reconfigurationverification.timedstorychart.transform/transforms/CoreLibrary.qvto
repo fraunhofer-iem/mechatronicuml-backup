@@ -10,10 +10,10 @@ modeltype actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlang
 modeltype tgts uses timedstorydiagram ('http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0');
 
 modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
-modeltype protocol uses muml::protocol("http://www.muml.org/pim/1.0.0");
+modeltype protocol uses pim::protocol("http://www.muml.org/pim/1.0.0");
 modeltype mumlbehavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
 modeltype realtimestatechart uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
-modeltype mumlconnector uses muml::connector("http://www.muml.org/pim/1.0.0");
+modeltype mumlconnector uses pim::connector("http://www.muml.org/pim/1.0.0");
 
 modeltype wrapper uses wrapper('http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0');
 

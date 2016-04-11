@@ -3,12 +3,12 @@ import preTransformation;
 modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
 modeltype commonexpressions uses core::expressions::common('http://www.muml.org/core/1.0.0');
 
-modeltype rtsc uses muml::realtimestatechart("http://www.muml.org/pim/1.0.0");
+modeltype rtsc uses pim::realtimestatechart("http://www.muml.org/pim/1.0.0");
 modeltype mumlBehavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
-modeltype protocol uses muml::protocol("http://www.muml.org/pim/1.0.0");
+modeltype protocol uses pim::protocol("http://www.muml.org/pim/1.0.0");
 modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
-modeltype connector uses muml::connector("http://www.muml.org/pim/1.0.0");
-modeltype component uses muml::component("http://www.muml.org/pim/1.0.0");
+modeltype connector uses pim::connector("http://www.muml.org/pim/1.0.0");
+modeltype component uses pim::component("http://www.muml.org/pim/1.0.0");
 modeltype datatypes uses pim::types('http://www.muml.org/pim/1.0.0');
 
 modeltype transformationHelper uses "http://www.muml.org/reconfigurationverification/timedstorychart/transform/helper/1.0.0";

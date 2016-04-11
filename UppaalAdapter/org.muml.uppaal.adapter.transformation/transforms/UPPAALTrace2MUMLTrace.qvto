@@ -12,7 +12,7 @@ modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0'
 modeltype muml_proto uses pim::protocol('http://www.muml.org/pim/1.0.0');
 modeltype muml_behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
 modeltype muml_types uses pim::types('http://www.muml.org/pim/1.0.0');
-modeltype muml_instance uses muml::instance('http://www.muml.org/pim/1.0.0');
+modeltype muml_instance uses pim::instance('http://www.muml.org/pim/1.0.0');
 modeltype muml_connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 modeltype muml_component uses pim::component('http://www.muml.org/pim/1.0.0');
 modeltype muml uses 'http://www.muml.org/pim/1.0.0';

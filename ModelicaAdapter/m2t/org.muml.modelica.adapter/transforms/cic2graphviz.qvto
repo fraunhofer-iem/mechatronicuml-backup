@@ -3,8 +3,8 @@ import transforms.util;
 import transforms.GraphvizBase;
 
 modeltype DOT uses dot("http://www.muml.org/graphviz/dot/1.0.0");
-modeltype INSTANCE uses muml::instance("http://www.muml.org/pim/1.0.0");
-modeltype COMPONENT uses muml::component("http://www.muml.org/pim/1.0.0");
+modeltype INSTANCE uses pim::instance("http://www.muml.org/pim/1.0.0");
+modeltype COMPONENT uses pim::component("http://www.muml.org/pim/1.0.0");
 modeltype MSGTYPE uses pim::msgtype('http://www.muml.org/pim/1.0.0');
 modeltype ECORE uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 

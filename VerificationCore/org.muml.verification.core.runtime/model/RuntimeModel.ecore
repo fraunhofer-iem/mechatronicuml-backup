@@ -14,13 +14,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="role" lowerBound="1" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//protocol/Role"
         changeable="false" volatile="true" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="self.type.oclAsType(muml::protocol::Role)"/>
+        <details key="derivation" value="self.type.oclAsType(pim::protocol::Role)"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="assembly" eType="#//RuntimeRoleConnectorInstance"
         changeable="false" volatile="true" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="if not self.oclAsType(muml::connector::ConnectorEndpointInstance).connectorInstances->isEmpty() then&#xD;&#xA;&#x9;self.oclAsType(muml::connector::ConnectorEndpointInstance).connectorInstances->first().oclAsType(RuntimeRoleConnectorInstance)&#xD;&#xA;else&#xD;&#xA;&#x9;null&#xD;&#xA;endif"/>
+        <details key="derivation" value="if not self.oclAsType(pim::connector::ConnectorEndpointInstance).connectorInstances->isEmpty() then&#xD;&#xA;&#x9;self.oclAsType(pim::connector::ConnectorEndpointInstance).connectorInstances->first().oclAsType(RuntimeRoleConnectorInstance)&#xD;&#xA;else&#xD;&#xA;&#x9;null&#xD;&#xA;endif"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>

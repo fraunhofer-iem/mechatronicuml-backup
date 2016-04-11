@@ -7,7 +7,7 @@ import transforms.mtctl.MTCTLEvaluateResultTransformation;
 modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
 
 modeltype muml uses 'http://www.muml.org/pim/1.0.0';
-modeltype muml_constraint uses muml::constraint('http://www.muml.org/pim/1.0.0');
+modeltype muml_constraint uses pim::constraint('http://www.muml.org/pim/1.0.0');
 
 modeltype result_model uses 'http://www.muml.org/uppaal/adapter/results/1.0.0';
 modeltype verification_options uses 'http://www.muml.org/uppaal/options/1.0.0';

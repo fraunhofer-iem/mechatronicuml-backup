@@ -12,12 +12,12 @@ modeltype modelinst uses modelinstance("http://www.muml.org/modelinstance/1.0.0"
 
 -- muml models 
 modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
-modeltype component uses muml::component("http://www.muml.org/pim/1.0.0");
-modeltype connector uses muml::connector("http://www.muml.org/pim/1.0.0");
-modeltype constraints uses muml::constraint("http://www.muml.org/pim/1.0.0");
-modeltype instance uses muml::instance("http://www.muml.org/pim/1.0.0");
+modeltype component uses pim::component("http://www.muml.org/pim/1.0.0");
+modeltype connector uses pim::connector("http://www.muml.org/pim/1.0.0");
+modeltype constraints uses pim::constraint("http://www.muml.org/pim/1.0.0");
+modeltype instance uses pim::instance("http://www.muml.org/pim/1.0.0");
 modeltype msgi uses pim::msgtype('http://www.muml.org/pim/1.0.0');
-modeltype protocol uses muml::protocol("http://www.muml.org/pim/1.0.0");
+modeltype protocol uses pim::protocol("http://www.muml.org/pim/1.0.0");
 modeltype realtimestatechart uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
 modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
 modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');

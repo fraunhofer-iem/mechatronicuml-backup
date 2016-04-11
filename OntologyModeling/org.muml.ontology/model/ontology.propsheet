@@ -38,7 +38,7 @@
         <genFeature href="../../org.muml.core/model/core.genmodel#//core/Extension/extendableBase"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_OYIeHNEeS5Putgio2lkg"/>
         <creationOppositeConstraint xmi:id="_Rl9CQ81gEeSIgPDefa6ZBw">
-          <filters xsi:type="org.muml:OCLFilter" xmi:id="_Rl9CRM1gEeSIgPDefa6ZBw" expression="self.oclIsKindOf(muml::component::Port) or self.oclIsKindOf(muml::component::Component) or self.oclIsKindOf(muml::component::ComponentPart) or self.oclIsKindOf(muml::component::PortPart)"/>
+          <filters xsi:type="org.muml:OCLFilter" xmi:id="_Rl9CRM1gEeSIgPDefa6ZBw" expression="self.oclIsKindOf(pim::component::Port) or self.oclIsKindOf(pim::component::Component) or self.oclIsKindOf(pim::component::ComponentPart) or self.oclIsKindOf(pim::component::PortPart)"/>
         </creationOppositeConstraint>
       </orderedElements>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>

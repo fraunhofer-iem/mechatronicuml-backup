@@ -7,10 +7,10 @@ modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 
 modeltype transform uses transform('http://www.muml.de/modelica/transform/1.0.0');
 
-modeltype instance uses muml::instance("http://www.muml.org/pim/1.0.0");
-modeltype connector uses muml::connector("http://www.muml.org/pim/1.0.0");
-modeltype component uses muml::component("http://www.muml.org/pim/1.0.0");
-modeltype rtsctype uses muml::realtimestatechart("http://www.muml.org/pim/1.0.0");
+modeltype instance uses pim::instance("http://www.muml.org/pim/1.0.0");
+modeltype connector uses pim::connector("http://www.muml.org/pim/1.0.0");
+modeltype component uses pim::component("http://www.muml.org/pim/1.0.0");
+modeltype rtsctype uses pim::realtimestatechart("http://www.muml.org/pim/1.0.0");
 
 // TODO: rewrite this mess
 transformation RegionInstantiation(inout source : instance, out instanceMap : transform)

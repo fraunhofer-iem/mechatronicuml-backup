@@ -1,9 +1,9 @@
 import transforms.naming;
 import transforms.util;
 
-modeltype RTSC uses muml::realtimestatechart("http://www.muml.org/pim/1.0.0");
-modeltype COMP uses muml::component("http://www.muml.org/pim/1.0.0");
-modeltype PROT uses muml::protocol("http://www.muml.org/pim/1.0.0");
+modeltype RTSC uses pim::realtimestatechart("http://www.muml.org/pim/1.0.0");
+modeltype COMP uses pim::component("http://www.muml.org/pim/1.0.0");
+modeltype PROT uses pim::protocol("http://www.muml.org/pim/1.0.0");
 modeltype MSGTYPE uses pim::msgtype('http://www.muml.org/pim/1.0.0');
 modeltype BEHAVIOR uses pim::behavior('http://www.muml.org/pim/1.0.0');
 modeltype TYPES uses pim::types('http://www.muml.org/pim/1.0.0');

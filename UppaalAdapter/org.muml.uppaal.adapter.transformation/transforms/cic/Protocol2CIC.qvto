@@ -5,11 +5,11 @@ import transforms.CloneModel;
 modeltype muml uses 'http://www.muml.org/pim/1.0.0';
 modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
 modeltype muml_connector uses pim::connector('http://www.muml.org/pim/1.0.0');
-modeltype muml_constraint uses muml::constraint('http://www.muml.org/pim/1.0.0');
+modeltype muml_constraint uses pim::constraint('http://www.muml.org/pim/1.0.0');
 modeltype muml_behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
 modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
 modeltype muml_actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
-modeltype muml_msgtype uses muml::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype muml_msgtype uses pim::msgtype('http://www.muml.org/pim/1.0.0');
 modeltype muml_types uses pim::types('http://www.muml.org/pim/1.0.0');
 modeltype muml_valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
 modeltype storydriven_core uses 'http://www.muml.org/core/1.0.0';
@@ -22,7 +22,7 @@ modeltype mtctlPredicates uses mtctl::Predicates('http://www.muml.org/uppaal/ada
 modeltype mtctlSets uses mtctl::Sets('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
 modeltype mtctlBooleanLogic uses mtctl::BooleanLogic('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
 modeltype mtctlComparables uses mtctl::Comparables('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
-modeltype instanceModel uses muml::instance('http://www.muml.org/pim/1.0.0');
+modeltype instanceModel uses pim::instance('http://www.muml.org/pim/1.0.0');
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype verification_options uses 'http://www.muml.org/uppaal/options/1.0.0';
 

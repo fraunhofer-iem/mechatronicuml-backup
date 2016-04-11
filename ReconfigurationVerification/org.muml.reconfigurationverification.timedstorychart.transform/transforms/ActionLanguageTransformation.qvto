@@ -21,7 +21,7 @@ modeltype actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlang
 modeltype realtimestatechart uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
 modeltype mumlbehavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
 modeltype mumltypes uses pim::types('http://www.muml.org/pim/1.0.0');
-modeltype mumlconnector uses muml::connector("http://www.muml.org/pim/1.0.0");
+modeltype mumlconnector uses pim::connector("http://www.muml.org/pim/1.0.0");
 
 modeltype exp uses reconfiguration::expression('http://www.muml.org/reconfiguration/1.0.0');
 

@@ -16,7 +16,7 @@ public class CreationConstraintContributor
 					.getExtendableElement();
 			final org.eclipse.ocl.ecore.OCLExpression expression = org.muml.ape.runtime.RuntimePlugin
 					.createOCLExpression(
-							"self.oclIsKindOf(muml::component::Port) or self.oclIsKindOf(muml::component::Component) or self.oclIsKindOf(muml::component::ComponentPart) or self.oclIsKindOf(muml::component::PortPart)",
+							"self.oclIsKindOf(pim::component::Port) or self.oclIsKindOf(pim::component::Component) or self.oclIsKindOf(pim::component::ComponentPart) or self.oclIsKindOf(pim::component::PortPart)",
 							opposite, oppositeClass);
 			if (expression != null) {
 				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = org.muml.ape.runtime.RuntimePlugin.OCL_ECORE

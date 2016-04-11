@@ -17,12 +17,12 @@ modeltype uppaal_statements uses uppaal::statements('http://www.muml.org/uppaal/
 modeltype uppaal_types uses uppaal::types('http://www.muml.org/uppaal/1.0.0');
 modeltype uppaal_templates uses uppaal::templates('http://www.muml.org/uppaal/1.0.0');
 modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/uppaal/1.0.0');
-modeltype msgtype uses muml::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype msgtype uses pim::msgtype('http://www.muml.org/pim/1.0.0');
 modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
 modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
 modeltype component uses pim::component('http://www.muml.org/pim/1.0.0');
 modeltype protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
-modeltype instance uses muml::instance('http://www.muml.org/pim/1.0.0');
+modeltype instance uses pim::instance('http://www.muml.org/pim/1.0.0');
 modeltype storydriven_expressions uses core::expressions('http://www.muml.org/core/1.0.0');
 modeltype muml_actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
 modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');

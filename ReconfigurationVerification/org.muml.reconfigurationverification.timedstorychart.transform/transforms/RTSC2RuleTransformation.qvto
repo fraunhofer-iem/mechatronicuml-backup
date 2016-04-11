@@ -12,12 +12,12 @@ modeltype expressions_common uses core::expressions::common('http://www.muml.org
 modeltype tgts uses timedstorydiagram ('http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0');
 
 modeltype realtimestatechart uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
-modeltype mumlpattern uses muml::protocol("http://www.muml.org/pim/1.0.0");
+modeltype mumlpattern uses pim::protocol("http://www.muml.org/pim/1.0.0");
 modeltype msgi uses pim::msgtype('http://www.muml.org/pim/1.0.0');
 modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
 modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
-modeltype connector uses muml::connector("http://www.muml.org/pim/1.0.0");
-modeltype component uses muml::component("http://www.muml.org/pim/1.0.0");
+modeltype connector uses pim::connector("http://www.muml.org/pim/1.0.0");
+modeltype component uses pim::component("http://www.muml.org/pim/1.0.0");
 modeltype mumlbehavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
 
 modeltype actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');

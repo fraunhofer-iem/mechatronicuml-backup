@@ -13,7 +13,7 @@ modeltype ValuetypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
 modeltype MessageTypePackage uses pim::msgtype('http://www.muml.org/pim/1.0.0');
 modeltype BehaviorPackage uses pim::behavior('http://www.muml.org/pim/1.0.0');
 modeltype ModelInstancePackage uses modelinstance("http://www.muml.org/modelinstance/1.0.0");
-modeltype PatternPackage uses muml::pattern('http://www.muml.org/pim/1.0.0');
+modeltype PatternPackage uses pim::pattern('http://www.muml.org/pim/1.0.0');
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
 

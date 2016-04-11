@@ -11,7 +11,7 @@ modeltype uppaal_types uses uppaal::types('http://www.muml.org/uppaal/1.0.0');
 modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/uppaal/1.0.0');
 modeltype muml_behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
 modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
-modeltype muml_instance uses muml::instance('http://www.muml.org/pim/1.0.0');
+modeltype muml_instance uses pim::instance('http://www.muml.org/pim/1.0.0');
 modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
 modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
 modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');

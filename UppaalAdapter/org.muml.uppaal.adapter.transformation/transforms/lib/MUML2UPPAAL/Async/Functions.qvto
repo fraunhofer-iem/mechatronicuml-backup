@@ -15,9 +15,9 @@ modeltype uppaal_statements uses uppaal::statements('http://www.muml.org/uppaal/
 modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/uppaal/1.0.0');
 modeltype uppaal_expressions uses uppaal::expressions('http://www.muml.org/uppaal/1.0.0');
 modeltype protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
-modeltype msgtype uses muml::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype msgtype uses pim::msgtype('http://www.muml.org/pim/1.0.0');
 modeltype component uses pim::component('http://www.muml.org/pim/1.0.0');
-modeltype muml_instance uses muml::instance('http://www.muml.org/pim/1.0.0');
+modeltype muml_instance uses pim::instance('http://www.muml.org/pim/1.0.0');
 modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 
 	mapping createClearConnectorFunction() : Function {

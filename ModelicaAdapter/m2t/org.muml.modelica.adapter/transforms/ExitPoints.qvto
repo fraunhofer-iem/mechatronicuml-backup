@@ -2,7 +2,7 @@ import transforms.naming;
 import transforms.util;
 
 modeltype MINSTANCE uses modelinstance('http://www.muml.org/core/modelinstance/1.0.0');
-modeltype RTSC uses muml::realtimestatechart("http://www.muml.org/pim/1.0.0");
+modeltype RTSC uses pim::realtimestatechart("http://www.muml.org/pim/1.0.0");
 modeltype MSGTYPE uses pim::msgtype('http://www.muml.org/pim/1.0.0');
 modeltype BEHAVIOR uses pim::behavior('http://www.muml.org/pim/1.0.0');
 modeltype TYPES uses pim::types('http://www.muml.org/pim/1.0.0');

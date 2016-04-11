@@ -13,7 +13,7 @@ modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0'
 modeltype muml_behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
 modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
 modeltype muml_actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
-modeltype muml_msgtype uses muml::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype muml_msgtype uses pim::msgtype('http://www.muml.org/pim/1.0.0');
 modeltype muml_types uses pim::types('http://www.muml.org/pim/1.0.0');
 modeltype muml_valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
 modeltype storydriven_core_expressions_common uses core::expressions::common('http://www.muml.org/core/1.0.0');

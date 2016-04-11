@@ -76,7 +76,7 @@
         <tab href="../../org.muml.core/model/core.propsheet#_i_OYIeHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
         <creationOppositeConstraint>
-          <filters xsi:type="org.muml:OCLFilter" expression="self.oclIsKindOf(muml::instance::ComponentInstance)"/>
+          <filters xsi:type="org.muml:OCLFilter" expression="self.oclIsKindOf(pim::instance::ComponentInstance)"/>
         </creationOppositeConstraint>
       </orderedElements>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
@@ -96,7 +96,7 @@
         <tab href="../../org.muml.core/model/core.propsheet#_i_OYIeHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
         <creationOppositeConstraint>
-          <filters xsi:type="org.muml:OCLFilter" expression="self.oclIsKindOf(muml::instance::ComponentInstance)"/>
+          <filters xsi:type="org.muml:OCLFilter" expression="self.oclIsKindOf(pim::instance::ComponentInstance)"/>
         </creationOppositeConstraint>
       </orderedElements>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
@@ -120,7 +120,7 @@
         <tab href="../../org.muml.core/model/core.propsheet#_i_OYIeHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
         <creationOppositeConstraint>
-          <filters xsi:type="org.muml:OCLFilter" expression="self.oclIsKindOf(muml::instance::ComponentInstance)"/>
+          <filters xsi:type="org.muml:OCLFilter" expression="self.oclIsKindOf(pim::instance::ComponentInstance)"/>
         </creationOppositeConstraint>
       </orderedElements>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
@@ -152,7 +152,7 @@
         <tab href="../../org.muml.core/model/core.propsheet#_i_OYIeHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
         <creationOppositeConstraint>
-          <filters xsi:type="org.muml:OCLFilter" expression="self.oclIsKindOf(muml::instance::PortInstance)"/>
+          <filters xsi:type="org.muml:OCLFilter" expression="self.oclIsKindOf(pim::instance::PortInstance)"/>
         </creationOppositeConstraint>
       </orderedElements>
     </classes>

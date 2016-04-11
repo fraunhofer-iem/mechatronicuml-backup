@@ -1,4 +1,4 @@
-modeltype RTSC uses muml::realtimestatechart("http://www.muml.org/pim/1.0.0");
+modeltype RTSC uses pim::realtimestatechart("http://www.muml.org/pim/1.0.0");
 
 transformation TransitionPriorityNormalization(inout rtscModel : RTSC);
 

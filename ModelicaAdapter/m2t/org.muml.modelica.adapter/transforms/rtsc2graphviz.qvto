@@ -3,7 +3,7 @@ import transforms.util;
 import transforms.GraphvizBase;
 
 modeltype DOT uses dot("http://www.muml.org/graphviz/dot/1.0.0");
-modeltype RTSC uses muml::realtimestatechart("http://www.muml.org/pim/1.0.0");
+modeltype RTSC uses pim::realtimestatechart("http://www.muml.org/pim/1.0.0");
 modeltype MSGTYPE uses pim::msgtype('http://www.muml.org/pim/1.0.0');
 modeltype TRANSFORM uses transform('http://www.muml.de/modelica/transform/1.0.0');
 modeltype ECORE uses ecore('http://www.eclipse.org/emf/2002/Ecore');

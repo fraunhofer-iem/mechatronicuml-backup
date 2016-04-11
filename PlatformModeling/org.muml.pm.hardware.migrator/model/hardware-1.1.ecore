@@ -111,7 +111,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DelegationHWPort" eSuperTypes="../../org.muml.pim/model/pim.ecore#//connector/ConnectorEndpoint #//hwresourceinstance/HWPort">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents a DelegationPort of a HWPlatform.&#xA;DelegationPorts are used  to delegate HWPorts of embedded HWResourses to the outside.&#xA;In order to be conistent with the muml metamodel, this class inherits from muml::ConnectorEndpoint.&#xA;Furthermore, this class inherits from HWPort, because a DelegationPort provides to the outside the same features as a standard HWPort."/>
+        <details key="documentation" value="This class represents a DelegationPort of a HWPlatform.&#xA;DelegationPorts are used  to delegate HWPorts of embedded HWResourses to the outside.&#xA;In order to be conistent with the muml metamodel, this class inherits from pim::ConnectorEndpoint.&#xA;Furthermore, this class inherits from HWPort, because a DelegationPort provides to the outside the same features as a standard HWPort."/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HWPortPart" eSuperTypes="../../org.muml.pim/model/pim.ecore#//connector/ConnectorEndpoint">
@@ -223,7 +223,7 @@
         <details key="SameProtocol" value="-- Connected Ports must use the same Protocol&#xD;&#xA;self.hwportParts.hwport->forAll(p1 , p2 | p1.protocol = p2.protocol)"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents a network connection between hardware resources.&#xA;This class inherits from muml::Connector to be conistent with the muml metamodel."/>
+        <details key="documentation" value="This class represents a network connection between hardware resources.&#xA;This class inherits from pim::Connector to be conistent with the muml metamodel."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="protocol" eType="#//hwresource/CommunicationProtocol"
           volatile="true" derived="true">
@@ -580,7 +580,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DelegationHWPortInstance" eSuperTypes="../../org.muml.pim/model/pim.ecore#//connector/ConnectorEndpointInstance">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents a DelegationPort of a HWPlatform on instance-level.&#xA;In order to be conistent with the muml metamodel, this class inherits from muml::ConnectorEndpointInstance."/>
+        <details key="documentation" value="This class represents a DelegationPort of a HWPlatform on instance-level.&#xA;In order to be conistent with the muml metamodel, this class inherits from pim::ConnectorEndpointInstance."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parentHWPlatformInstance"
           lowerBound="1" eType="#//hwplatforminstance/HWPlatformInstance" eOpposite="#//hwplatforminstance/HWPlatformInstance/delegationPorts">
@@ -591,7 +591,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="NetworkConnectorInstance" eSuperTypes="../../org.muml.pim/model/pim.ecore#//connector/ConnectorInstance">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents a network connection between hardware resources on instance-level.&#xA;This class inherits from muml::ConnectorInstance to be conistent with the muml metamodel."/>
+        <details key="documentation" value="This class represents a network connection between hardware resources on instance-level.&#xA;This class inherits from pim::ConnectorInstance to be conistent with the muml metamodel."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectedHWPortInstances"
           upperBound="-1" eType="#//hwplatforminstance/HWPortInstance" changeable="false"

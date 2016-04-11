@@ -4,7 +4,7 @@ modeltype behaviorModel uses pim::behavior('http://www.muml.org/pim/1.0.0');
 modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
 modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
 modeltype expressionsModel uses core::expressions('http://www.muml.org/core/1.0.0');
-modeltype msgtype uses muml::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype msgtype uses pim::msgtype('http://www.muml.org/pim/1.0.0');
 modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
 modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
 modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
