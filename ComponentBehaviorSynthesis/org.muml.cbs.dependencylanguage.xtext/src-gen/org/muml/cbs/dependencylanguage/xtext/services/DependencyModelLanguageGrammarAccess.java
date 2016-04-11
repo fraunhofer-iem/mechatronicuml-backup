@@ -2700,7 +2700,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
 		Grammar grammar = grammarProvider.getGrammar(this);
 		while (grammar != null) {
-			if ("de.uni_paderborn.fujaba.muml.DependencyModelLanguage".equals(grammar.getName())) {
+			if ("org.muml.cbs.dependencylanguage.xtext.DependencyModelLanguage".equals(grammar.getName())) {
 				return grammar;
 			}
 			List<Grammar> grammars = grammar.getUsedGrammars();

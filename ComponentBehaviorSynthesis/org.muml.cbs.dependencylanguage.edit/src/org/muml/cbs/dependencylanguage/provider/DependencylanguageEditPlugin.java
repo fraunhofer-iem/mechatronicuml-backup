@@ -7,6 +7,7 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.muml.core.provider.CoreEditPlugin;
 import org.muml.pim.actionlanguage.provider.ActionlanguageEditPlugin;
+import org.muml.pim.provider.MumlEditPlugin;
 
 /**
  * This is the central singleton for the Dependencylanguage edit plugin.
@@ -42,7 +43,7 @@ public final class DependencylanguageEditPlugin extends EMFPlugin {
 		  (new ResourceLocator [] {
 		     ActionlanguageEditPlugin.INSTANCE,
 		     CoreEditPlugin.INSTANCE,
-		     org.muml.pim.provider.MumlEditPlugin.INSTANCE,
+		     MumlEditPlugin.INSTANCE,
 		   });
 	}
 

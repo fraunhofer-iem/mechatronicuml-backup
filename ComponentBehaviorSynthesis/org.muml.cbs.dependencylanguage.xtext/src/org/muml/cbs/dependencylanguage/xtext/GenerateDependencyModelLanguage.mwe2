@@ -1,15 +1,15 @@
 /**
  * @author Sebastian Goschin
  */
-module de.uni_paderborn.fujaba.muml.DependencyModelLanguage
+module org.muml.cbs.dependencylanguage.xtext.DependencyModelLanguage
 
 import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
-var grammarURI = "classpath:/de/uni_paderborn/fujaba/muml/DependencyModelLanguage.xtext"
+var grammarURI = "classpath:/org/muml/cbs/dependencylanguage/DependencyModelLanguage.xtext"
 var fileExtensions = "dependencymodel"
-var projectName = "de.uni_paderborn.fujaba.muml.dependencylanguage.xtext"
+var projectName = "org.muml.cbs.dependencylanguage.xtext"
 var runtimeProject = "../${projectName}"
 var generateXtendStub = true
 
@@ -18,20 +18,20 @@ Workflow {
 		scanClassPath  = true
 		platformUri = "${runtimeProject}/.."
 		
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.dependencylanguage.DependencylanguagePackage"
-		registerGenModelFile = "platform:/resource/de.uni_paderborn.fujaba.muml.dependencylanguage/model/dependencylanguage.genmodel"
+		registerGeneratedEPackage = "org.muml.cbs.dependencylanguage.DependencylanguagePackage"
+		registerGenModelFile = "platform:/resource/org.muml.cbs.dependencylanguage/model/dependencylanguage.genmodel"
 		
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.connector.ConnectorPackage"
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage"
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage"
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage"
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.component.ComponentPackage"
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage"
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.MumlPackage"
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage"
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.types.TypesPackage"
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.instance.InstancePackage"
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage"
+		registerGeneratedEPackage = "org.muml.pim.connector.ConnectorPackage"
+		registerGeneratedEPackage = "org.muml.pim.protocol.ProtocolPackage"
+		registerGeneratedEPackage = "org.muml.pim.realtimestatechart.RealtimestatechartPackage"
+		registerGeneratedEPackage = "org.muml.pim.constraint.ConstraintPackage"
+		registerGeneratedEPackage = "org.muml.pim.component.ComponentPackage"
+		registerGeneratedEPackage = "org.muml.pim.behavior.BehaviorPackage"
+		registerGeneratedEPackage = "org.muml.pim.PimPackage"
+		registerGeneratedEPackage = "org.muml.pim.valuetype.ValuetypePackage"
+		registerGeneratedEPackage = "org.muml.pim.types.TypesPackage"
+		registerGeneratedEPackage = "org.muml.pim.instance.InstancePackage"
+		registerGeneratedEPackage = "org.muml.pim.msgtype.MsgtypePackage"
 		registerGenModelFile = "platform:/resource/org.muml.pim/model/pim.genmodel"
 			
 	}

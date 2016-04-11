@@ -9,9 +9,9 @@
 	<extension point="org.eclipse.ui.menus">
 	   <menuContribution
 	         allPopups="false"
-	         locationURI="popup:de.uni_paderborn.fujaba?after=diagrams">
+	         locationURI="popup:org.muml?after=diagrams">
 	      <command
-	            commandId="de.uni_paderborn.fujaba.muml.dependencylanguage.commands.CreateSynthesizableBehavior"
+	            commandId="org.muml.dependencylanguage.commands.CreateSynthesizableBehavior"
 	            icon="icons/SynthesizableBehavior.gif"
 	            id="org.muml.pim.common.commands.OpenTypeDialogCommand"
 	            label="Create Synthesizable Behavior"
@@ -20,7 +20,7 @@
 						<or>
 							<with variable="selection">
 								<iterate ifEmpty="false">
-								<instanceof value="de.uni_paderborn.fujaba.muml.component.AtomicComponent">
+								<instanceof value="org.muml.pim.component.AtomicComponent">
 								</instanceof>
 								</iterate>
 							</with>
@@ -31,7 +31,7 @@
 								<with variable="selection">
 									<iterate ifEmpty="false">
 									<instanceof
-									value="org.muml.pim.component.diagram.edit.parts.AtomicComponentEditPart">
+									value="org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentEditPart">
 									</instanceof>
 									</iterate>
 								</with>
@@ -45,11 +45,11 @@
 	<extension
         point="org.eclipse.ui.commands">
      <category
-           id="de.uni_paderborn.fujaba"
+           id="org.muml"
            name="Fujaba">
      </category>
      <command
-           categoryId="de.uni_paderborn.fujaba"
+           categoryId="org.muml"
            defaultHandler="org.muml.cbs.dependencylanguage.ui.commands.CreateSynthesizableBehaviorCommand"
            description="Create Synthesizable Behavior"
            id="de.uni_paderborn.fujaba.muml.dependencylanguage.commands.CreateSynthesizableBehavior"

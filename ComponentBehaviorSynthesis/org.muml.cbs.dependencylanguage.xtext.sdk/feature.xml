@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.fujaba.muml.dependencylanguage.xtext.sdk"
+      id="org.muml.cbs.dependencylanguage.xtext.sdk"
       label="DependencyModelLanguage SDK Feature "
       version="1.0.0.qualifier">
 
@@ -25,14 +25,14 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
    </license>
    
    <plugin
-         id="de.uni_paderborn.fujaba.muml.dependencylanguage.xtext"
+         id="org.muml.cbs.dependencylanguage.xtext"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.dependencylanguage.xtext.ui"
+         id="org.muml.cbs.dependencylanguage.xtext.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"

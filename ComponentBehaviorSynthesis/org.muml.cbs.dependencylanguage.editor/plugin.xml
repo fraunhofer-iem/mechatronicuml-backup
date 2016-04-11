@@ -12,7 +12,7 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="de.uni_paderborn.fujaba.muml.dependencylanguage.presentation.DependencylanguageModelWizardID"
+            id="org.muml.cbs.dependencylanguage.presentation.DependencylanguageModelWizardID"
             name="%_UI_DependencylanguageModelWizard_label"
             class="org.muml.cbs.dependencylanguage.presentation.DependencylanguageModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
@@ -25,7 +25,7 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated dependencylanguage -->
       <editor
-            id="de.uni_paderborn.fujaba.muml.dependencylanguage.presentation.DependencylanguageEditorID"
+            id="org.muml.cbs.dependencylanguage.presentation.DependencylanguageEditorID"
             name="%_UI_DependencylanguageEditor_label"
             icon="icons/full/obj16/DependencylanguageModelFile.gif"
             extensions="dependencylanguage"
@@ -33,5 +33,4 @@
             contributorClass="org.muml.cbs.dependencylanguage.presentation.DependencylanguageActionBarContributor">
       </editor>
    </extension>
-
 </plugin>

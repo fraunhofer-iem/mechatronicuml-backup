@@ -11,7 +11,7 @@ import com.google.inject.Binder;
 import com.google.inject.name.Names;
 
 /**
- * Manual modifications go to {de.uni_paderborn.fujaba.muml.DependencyModelLanguageRuntimeModule}
+ * Manual modifications go to {org.muml.cbs.dependencylanguage.xtext.DependencyModelLanguageRuntimeModule}
  */
 @SuppressWarnings("all")
 public abstract class AbstractDependencyModelLanguageRuntimeModule extends org.eclipse.xtext.common.types.DefaultCommonTypesRuntimeModule {
@@ -25,7 +25,7 @@ public abstract class AbstractDependencyModelLanguageRuntimeModule extends org.e
 	}
 	
 	public void configureLanguageName(Binder binder) {
-		binder.bind(String.class).annotatedWith(Names.named(Constants.LANGUAGE_NAME)).toInstance("de.uni_paderborn.fujaba.muml.DependencyModelLanguage");
+		binder.bind(String.class).annotatedWith(Names.named(Constants.LANGUAGE_NAME)).toInstance("org.muml.cbs.dependencylanguage.xtext.DependencyModelLanguage");
 	}
 	
 	public void configureFileExtensions(Binder binder) {

@@ -178,7 +178,7 @@ public class DependencylanguageActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(DependencylanguageEditorPlugin.INSTANCE.getString("_UI_DependencylanguageEditor_menu"), "de.uni_paderborn.fujaba.muml.dependencylanguageMenuID");
+		IMenuManager submenuManager = new MenuManager(DependencylanguageEditorPlugin.INSTANCE.getString("_UI_DependencylanguageEditor_menu"), "org.muml.cbs.dependencylanguageMenuID");
 		menuManager.insertAfter("additions", submenuManager);
 		submenuManager.add(new Separator("settings"));
 		submenuManager.add(new Separator("actions"));

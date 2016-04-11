@@ -111,7 +111,10 @@ import org.muml.pim.connector.provider.ConnectorItemProviderAdapterFactory;
 import org.muml.pim.constraint.provider.ConstraintItemProviderAdapterFactory;
 import org.muml.pim.instance.provider.InstanceItemProviderAdapterFactory;
 import org.muml.pim.msgtype.provider.MsgtypeItemProviderAdapterFactory;
+import org.muml.pim.pattern.provider.PatternItemProviderAdapterFactory;
 import org.muml.pim.protocol.provider.ProtocolItemProviderAdapterFactory;
+import org.muml.pim.provider.PimItemProviderAdapterFactory;
+import org.muml.pim.realtimestatechart.one_to_n_schemata.provider.One_to_n_schemataItemProviderAdapterFactory;
 import org.muml.pim.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory;
 import org.muml.pim.types.provider.TypesItemProviderAdapterFactory;
 import org.muml.pim.valuetype.provider.ValuetypeItemProviderAdapterFactory;
@@ -629,7 +632,7 @@ public class DependencylanguageEditor
 			BasicDiagnostic diagnostic =
 				new BasicDiagnostic
 					(Diagnostic.OK,
-					 "de.uni_paderborn.fujaba.muml.dependencylanguage.editor",
+					 "org.muml.cbs.dependencylanguage.editor",
 					 0,
 					 null,
 					 new Object [] { editingDomain.getResourceSet() });
@@ -717,16 +720,19 @@ public class DependencylanguageEditor
 		adapterFactory.addAdapterFactory(new CoreItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ExpressionsItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new CommonExpressionsItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new ComponentItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new PimItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ConstraintItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new InstanceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ProtocolItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new RealtimestatechartItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new One_to_n_schemataItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new MsgtypeItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new TypesItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ConnectorItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ValuetypeItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new BehaviorItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ComponentItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new PatternItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.
@@ -974,7 +980,7 @@ public class DependencylanguageEditor
 	 * @generated
 	 */
 	public void createModel() {
-		URI resourceURI = EditUIUtil.getURI(getEditorInput());
+		URI resourceURI = EditUIUtil.getURI(getEditorInput(), editingDomain.getResourceSet().getURIConverter());
 		Exception exception = null;
 		Resource resource = null;
 		try {
@@ -1002,11 +1008,12 @@ public class DependencylanguageEditor
 	 * @generated
 	 */
 	public Diagnostic analyzeResourceProblems(Resource resource, Exception exception) {
-		if (!resource.getErrors().isEmpty() || !resource.getWarnings().isEmpty()) {
+		boolean hasErrors = !resource.getErrors().isEmpty();
+		if (hasErrors || !resource.getWarnings().isEmpty()) {
 			BasicDiagnostic basicDiagnostic =
 				new BasicDiagnostic
-					(Diagnostic.ERROR,
-					 "de.uni_paderborn.fujaba.muml.dependencylanguage.editor",
+					(hasErrors ? Diagnostic.ERROR : Diagnostic.WARNING,
+					 "org.muml.cbs.dependencylanguage.editor",
 					 0,
 					 getString("_UI_CreateModelError_message", resource.getURI()),
 					 new Object [] { exception == null ? (Object)resource : exception });
@@ -1017,7 +1024,7 @@ public class DependencylanguageEditor
 			return
 				new BasicDiagnostic
 					(Diagnostic.ERROR,
-					 "de.uni_paderborn.fujaba.muml.dependencylanguage.editor",
+					 "org.muml.cbs.dependencylanguage.editor",
 					 0,
 					 getString("_UI_CreateModelError_message", resource.getURI()),
 					 new Object[] { exception });
