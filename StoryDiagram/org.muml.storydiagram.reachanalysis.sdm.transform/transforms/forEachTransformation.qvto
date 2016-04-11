@@ -325,7 +325,7 @@ transformation forEachTransformation(in GTS :reach_sdm, out forEachGTS : reach_s
 	}
 	
 	mapping ModifyingStoryNode:: createOpaqueCallable(): OpaqueCallable{
-		name:= 'de.uni_paderborn.fujaba.muml.reachanalysis.sdm.SDMReachabilityComputation.copyStepGraph';
+		name:= 'org.muml.storydiagram.reachanalysis.sdm.SDMReachabilityComputation.copyStepGraph';
  		inParameter +=  'step'.map createEParameter(reach_sdm::StepGraph.oclAsType(EClass));
 		inParameter +=  'trans'.map createEParameter(reach_sdm::SDMTransition.oclAsType(EClass));
 		outParameter += 'succ'.map createEParameter(reach_sdm::StepGraph.oclAsType(EClass));

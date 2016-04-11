@@ -1092,7 +1092,7 @@
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_jHdqA6AyEeC04985_I7g0A" typedModel="_NK6IcJzXEeCxo-rGjpVr5g" node="_jHdqCKAyEeC04985_I7g0A _jHdqCqAyEeC04985_I7g0A _rN_s4IW0EeK5Afm3ujmDHg"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_jHdqBKAyEeC04985_I7g0A" typedModel="_NYLIYJzXEeCxo-rGjpVr5g" node="_ZYjx8KDFEeCnWpMK39eFTA _bI6VQKDFEeCnWpMK39eFTA"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_jHdqBaAyEeC04985_I7g0A" typedModel="_M439QJzXEeCxo-rGjpVr5g" node="_jHdqBqAyEeC04985_I7g0A _BTjlAKC-EeCnWpMK39eFTA _CUO-4KC-EeCnWpMK39eFTA _XiC34A7dEeK3S7a8oiJw3A _68oJYGV9EeKeTMk7s4_BRA _VH-a8GWJEeK-9-l0jybw7A"/>
-    <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_jHdqEqAyEeC04985_I7g0A" slotNode="_BTjlAKC-EeCnWpMK39eFTA" expression="'de.uni_paderborn.fujaba.muml.instance.category'">
+    <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_jHdqEqAyEeC04985_I7g0A" slotNode="_BTjlAKC-EeCnWpMK39eFTA" expression="'org.muml.pim.instance.category'">
       <slotAttribute href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/key"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_DS6bYaWlEeCn_NGV1J09-Q" slotNode="_jHdqCqAyEeC04985_I7g0A" expression="'LibraryReference'">
@@ -1192,7 +1192,7 @@
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_SRACMh0ZEeKSio6gBw7LGQ" typedModel="_M439QJzXEeCxo-rGjpVr5g" node="_SRApQB0ZEeKSio6gBw7LGQ _SRApQh0ZEeKSio6gBw7LGQ _SRApQx0ZEeKSio6gBw7LGQ _SRE6sB0ZEeKSio6gBw7LGQ _LLXzcGV_EeKeTMk7s4_BRA"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_SRACMx0ZEeKSio6gBw7LGQ" typedModel="_NYLIYJzXEeCxo-rGjpVr5g" node="_SRApRB0ZEeKSio6gBw7LGQ _SRBQUB0ZEeKSio6gBw7LGQ"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_SRACNB0ZEeKSio6gBw7LGQ" typedModel="_NK6IcJzXEeCxo-rGjpVr5g" node="_SRACNR0ZEeKSio6gBw7LGQ _SRApQR0ZEeKSio6gBw7LGQ"/>
-    <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_SRTkMR0ZEeKSio6gBw7LGQ" slotNode="_SRApQh0ZEeKSio6gBw7LGQ" expression="'de.uni_paderborn.fujaba.muml.instance.category'">
+    <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_SRTkMR0ZEeKSio6gBw7LGQ" slotNode="_SRApQh0ZEeKSio6gBw7LGQ" expression="'org.muml.pim.instance.category'">
       <slotAttribute href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/key"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_SRTkMh0ZEeKSio6gBw7LGQ" slotNode="_SRApQR0ZEeKSio6gBw7LGQ" expression="'LibraryReference'">

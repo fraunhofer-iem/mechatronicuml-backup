@@ -54,7 +54,7 @@
       <messageTypes xmi:id="_oScYwGdlEeWDqoFdtyaAuw" name="M2"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_hNXtMGddEeW2PYMF5P3p8Q" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance"/>
+  <categories xmi:id="_hNXtMGddEeW2PYMF5P3p8Q" key="org.muml.pim.instance.category" name="instance"/>
   <categories xmi:id="_hNXtMWddEeW2PYMF5P3p8Q" key="org.muml.pim.components.category" name="component"/>
   <categories xmi:id="_k0VMwGddEeW2PYMF5P3p8Q" key="org.muml.pim.pattern.category" name="pattern">
     <modelElements xsi:type="pattern:CoordinationPattern" xmi:id="_ldoBYGddEeW2PYMF5P3p8Q" name="Pattern">

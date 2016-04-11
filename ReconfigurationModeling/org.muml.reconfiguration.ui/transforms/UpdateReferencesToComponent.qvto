@@ -35,7 +35,7 @@ mapping updateReferencesToComponent(inout rootNode : RootNode, in oldComp : Comp
 	map updateComponentParts(compCategory, oldComp, newComp);
 	
 	-- update references of component story diagram (parameters + variables) 
-	var activityCategory := rootNode.categories -> select(c : ModelElementCategory | c.key = 'org.storydriven.storydiagrams.activities.category') -> any(true);
+	var activityCategory := rootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.storydiagram.activities.category') -> any(true);
 	map updateComponentStoryDiagrams(activityCategory, oldComp, newComp);
 	
 	-- update references of struct data types

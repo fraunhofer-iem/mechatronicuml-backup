@@ -76,7 +76,7 @@
       <messageTypes xmi:id="_ifZ7wGdoEeWVNolmKo9JXA" name="M2"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_iIwXYGddEeW2PYMF5P3p8Q" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance"/>
+  <categories xmi:id="_iIwXYGddEeW2PYMF5P3p8Q" key="org.muml.pim.instance.category" name="instance"/>
   <categories xmi:id="_iIwXYWddEeW2PYMF5P3p8Q" key="org.muml.pim.components.category" name="component"/>
   <categories xmi:id="_V4IpcGg9EeWWh7EZAnFEGw" name="pattern" key="org.muml.pim.pattern.category"/>
 </modelinstance:RootNode>

@@ -137,7 +137,7 @@ public class ReconfigurationMUMLAnalysis {
 		cat_list = root.getCategories();	
 		
 		for (ModelElementCategory cat : cat_list){			
-			if(cat.getKey().equals("de.uni_paderborn.fujaba.muml.instance.category"))
+			if(cat.getKey().equals("org.muml.pim.instance.category"))
 				chosenCIC = (ComponentInstanceConfiguration) cat.getModelElements().get(0);			
 		}
 		

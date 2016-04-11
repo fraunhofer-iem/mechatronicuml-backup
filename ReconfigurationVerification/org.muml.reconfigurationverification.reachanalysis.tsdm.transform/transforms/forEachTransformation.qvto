@@ -631,7 +631,7 @@ transformation forEachTransformation(in TGTS :reach_tsdm, out forEachActivities 
 	}
 	
 	mapping ModifyingStoryNode:: createOpaqueCallable(): OpaqueCallable{
-		name:= 'de.uni_paderborn.fujaba.muml.reachanalysis.gtautomaton.GtAutomatonComputation.copyGtStepGraph';
+		name:= 'org.muml.reconfigurationverification.reachanalysis.gtautomaton.GtAutomatonComputation.copyGtStepGraph';
  		inParameter +=  'step'.map createEParameter(reach_gta::GtStepGraph.oclAsType(EClass));
 		inParameter +=  'trans'.map createEParameter(reach_gta::GtAutomatonTransition.oclAsType(EClass));
 		outParameter += 'succ'.map createEParameter(reach_gta::GtStepGraph.oclAsType(EClass));

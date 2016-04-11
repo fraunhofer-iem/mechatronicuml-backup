@@ -10,7 +10,7 @@
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_M7u6ZwUkEeSJTqo7jlVMjA" name="LONG" primitiveType="LONG"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_M7u6aAUkEeSJTqo7jlVMjA" name="DOUBLE" primitiveType="DOUBLE"/>
   </categories>
-  <categories xmi:id="_M7u6aQUkEeSJTqo7jlVMjA" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance"/>
+  <categories xmi:id="_M7u6aQUkEeSJTqo7jlVMjA" key="org.muml.pim.instance.category" name="instance"/>
   <categories xmi:id="_M7u6agUkEeSJTqo7jlVMjA" key="org.muml.pim.components.category" name="component"/>
   <categories xmi:id="_M7u6awUkEeSJTqo7jlVMjA" key="org.muml.pim.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_5md5YAUkEeSJTqo7jlVMjA" name="Einparkhilfe">

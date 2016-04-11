@@ -10,7 +10,7 @@
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_5GPkFxyEEeSKP_lLzmbIVg" name="int64" primitiveType="INT64"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_5GPkGByEEeSKP_lLzmbIVg" name="double" primitiveType="DOUBLE"/>
   </categories>
-  <categories xmi:id="_5GPkGRyEEeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance">
+  <categories xmi:id="_5GPkGRyEEeSKP_lLzmbIVg" key="org.muml.pim.instance.category" name="instance">
     <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_z8b8MByFEeSKP_lLzmbIVg" name="root-cic">
       <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_0R2ykByFEeSKP_lLzmbIVg" name="A1" componentType="_AHpxUByFEeSKP_lLzmbIVg"/>
     </modelElements>

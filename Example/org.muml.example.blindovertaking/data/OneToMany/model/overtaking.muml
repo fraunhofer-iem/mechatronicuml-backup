@@ -375,5 +375,5 @@
   </categories>
   <categories xmi:id="_O_7KwCqeEeO22YgZcbz7_A" key="org.muml.types.category" name="types"/>
   <categories xmi:id="_zp96gEfOEeO56fW-RvmTLw" key="org.muml.pim.components.category" name="component"/>
-  <categories xmi:id="_CDbBcEfREeOKy6HrV27eJQ" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance"/>
+  <categories xmi:id="_CDbBcEfREeOKy6HrV27eJQ" key="org.muml.pim.instance.category" name="instance"/>
 </modelinstance:RootNode>

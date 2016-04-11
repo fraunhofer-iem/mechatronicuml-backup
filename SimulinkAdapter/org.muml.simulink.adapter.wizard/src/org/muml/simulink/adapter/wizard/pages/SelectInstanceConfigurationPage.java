@@ -75,7 +75,7 @@ public class SelectInstanceConfigurationPage extends WizardPage{
 		this.instancesList.remove(this.instancesList.getList());
 		for(ModelElementCategory category: this.model.getCategories())
 		{
-			if("de.uni_paderborn.fujaba.muml.instance.category".equals(category.getKey()))
+			if("org.muml.pim.instance.category".equals(category.getKey()))
 			{
 				for(ExtendableElement modelElement :category.getModelElements())
 				{

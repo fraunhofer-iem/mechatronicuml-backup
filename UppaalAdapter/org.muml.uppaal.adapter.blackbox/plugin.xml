@@ -2,7 +2,7 @@
 <plugin>
 	
 	<extension point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
-   	<unit name="TraceLibUnit" namespace="de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox">
+   	<unit name="TraceLibUnit" namespace="org.muml.uppaal.adapter._blackbox">
     <library name="TraceLib" 
              class="org.muml.uppaal.adapter.blackbox.TraceLibrary">
       <metamodel nsURI="http://www.muml.org/uppaal/1.0.0"/>       
@@ -17,7 +17,7 @@
     </unit>
     <unit
           name="ValueUnit"
-          namespace="de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox">
+          namespace="org.muml.uppaal.adapter._blackbox">
        <library
              class="org.muml.uppaal.adapter.blackbox.ValueLibrary"
              name="ValueLib">
@@ -31,7 +31,7 @@
     </unit>
     <unit
           name="ProgressUnit"
-          namespace="de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox">
+          namespace="org.muml.uppaal.adapter._blackbox">
        <library
              class="org.muml.uppaal.adapter.blackbox.ProgressLibrary"
              name="ProgressLib">
@@ -39,7 +39,7 @@
     </unit>
     <unit
           name="CharSubstitutionUnit"
-          namespace="de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox">
+          namespace="org.muml.uppaal.adapter._blackbox">
        <library
              class="org.muml.uppaal.adapter.blackbox.CharSubstitutionLibrary"
              name="CharSubstitutionLibrary">
@@ -50,7 +50,7 @@
        point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
     <unit
           name="MtctlLibrary"
-          namespace="de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox">
+          namespace="org.muml.uppaal.adapter._blackbox">
        <library
              class="org.muml.uppaal.adapter.blackbox.MtctlLibrary"
              name="MtctlLibrary">
@@ -79,7 +79,7 @@
        point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
     <unit
           name="TimeLibUnit"
-          namespace="de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox">
+          namespace="org.muml.uppaal.adapter._blackbox">
        <library
              class="org.muml.uppaal.adapter.blackbox.TimeUnitLibrary"
              name="TimeLib">

@@ -21,7 +21,7 @@
       <messageTypes xmi:id="_JLAWQJ9SEeG4eMpbz4C8AQ" name="messagetype"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_WXlsUJ9SEeG4eMpbz4C8AQ" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance">
+  <categories xmi:id="_WXlsUJ9SEeG4eMpbz4C8AQ" key="org.muml.pim.instance.category" name="instance">
     <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_WXlsUZ9SEeG4eMpbz4C8AQ">
       <componentInstances xmi:id="_efuREJ9SEeG4eMpbz4C8AQ" name="instance" componentType="_zemUMJ9REeG4eMpbz4C8AQ">
         <portInstances xsi:type="instance:DiscreteMultiPortInstance" xmi:id="_fi92wJ9SEeG4eMpbz4C8AQ" name="multiPort" portType="_3GPwUJ9REeG4eMpbz4C8AQ">

@@ -3675,7 +3675,7 @@
       <coordinationProtocolParts xmi:id="_e239sHPOEeOvAqkKFDIyQQ" coordinationProtocol="_7M6QIM0PEeKgKa329oIpmg" portParts="_ttSx0s3qEeKRVKSK8yvkGg"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_qiFhcM3nEeKxKMJSVpn_4A" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance">
+  <categories xmi:id="_qiFhcM3nEeKxKMJSVpn_4A" key="org.muml.pim.instance.category" name="instance">
     <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_qiFhcc3nEeKxKMJSVpn_4A" name="InstanceConfigurationPaper" comment="The instance configuration that appears pictographically in the paper">
       <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_tg9tYM3nEeKxKMJSVpn_4A" name="RailCab1" componentType="_4X1EgMO7EeKtesZp-51dtg">
         <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_u73lIM3nEeKxKMJSVpn_4A" name="ts21" connectorInstances="_hh9S0M3pEeKxKMJSVpn_4A" type="_lgk7EMxVEeKo8fvz0BZxMg"/>

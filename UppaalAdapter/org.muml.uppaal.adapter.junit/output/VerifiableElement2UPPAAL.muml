@@ -9,7 +9,7 @@
     <modelElements xsi:type="types:PrimitiveDataType" name="LONG" primitiveType="LONG"/>
     <modelElements xsi:type="types:PrimitiveDataType" name="DOUBLE" primitiveType="DOUBLE"/>
   </categories>
-  <categories key="de.uni_paderborn.fujaba.muml.instance.category" name="instance">
+  <categories key="org.muml.pim.instance.category" name="instance">
     <modelElements xsi:type="instance:ComponentInstanceConfiguration" name="EinparkhilfeCIC">
       <extension xsi:type="verificationExtension:ElementToVerifyExtension"/>
       <verificationConstraintRepositories xsi:type="mtctl:PropertyRepository">

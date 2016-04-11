@@ -1,8 +1,8 @@
 //transformation UPPAAL2Trace(in input:uppaal, in inputReq:uppaal_requirements, out output:uppaal_trace);
 transformation UPPAAL2Trace(in input:uppaal, in inputReq:uppaal_requirements, in optionsExtent:verification_options, out output:uppaal_trace);
 
-import de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox.TraceLibUnit;
-import de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox.ProgressUnit;
+import org.muml.uppaal.adapter._blackbox.TraceLibUnit;
+import org.muml.uppaal.adapter._blackbox.ProgressUnit;
 
 modeltype verification_options uses 'http://www.muml.org/uppaal/options/1.0.0';
 

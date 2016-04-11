@@ -299,7 +299,7 @@
       </messageTypes>
     </modelElements>
   </categories>
-  <categories xmi:id="_IaAgBcjrEeW0gpRI-mS_yA" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance">
+  <categories xmi:id="_IaAgBcjrEeW0gpRI-mS_yA" key="org.muml.pim.instance.category" name="instance">
     <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_8aQ6EMj2EeWzrcBaL-cniQ" name="rocketRoot" comment="rocketRoot">
       <componentInstances xsi:type="instance:StructuredComponentInstance" xmi:id="_95w98Mj2EeWzrcBaL-cniQ" name="S1" componentType="_YGfmAMj2EeWzrcBaL-cniQ">
         <embeddedCIC xmi:id="_-15PAMj2EeWzrcBaL-cniQ" name="System">

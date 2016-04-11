@@ -859,7 +859,7 @@
       <messageTypes xmi:id="_z_H14O5REeSkkcvANuOg5g" name="free"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_t0IlzudrEeSmgcfWtmVOuw" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance"/>
+  <categories xmi:id="_t0IlzudrEeSmgcfWtmVOuw" key="org.muml.pim.instance.category" name="instance"/>
   <categories xmi:id="_t0Ilz-drEeSmgcfWtmVOuw" key="org.muml.pim.components.category" name="component"/>
   <categories xmi:id="_LQLNAOdsEeSeg8s21JHaOw" key="org.muml.pim.pattern.category" name="pattern">
     <modelElements xsi:type="pattern:CoordinationPattern" xmi:id="_JDgLwOgJEeSrL7p2IXXVVg" name="AcquireAssurance">

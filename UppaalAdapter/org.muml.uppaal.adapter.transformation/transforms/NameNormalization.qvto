@@ -1,7 +1,7 @@
 import transforms.lib.MUML2MUML;
 import transforms.lib.ExternalizedStrings;
 import transforms.lib.RTSCUtil;
-import de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox.CharSubstitutionUnit;
+import org.muml.uppaal.adapter._blackbox.CharSubstitutionUnit;
 
 modeltype modelinstance uses 'http://www.muml.org/core/modelinstance/1.0.0';
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';

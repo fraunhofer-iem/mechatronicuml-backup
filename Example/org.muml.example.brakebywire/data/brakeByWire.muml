@@ -19,7 +19,7 @@
       <messageTypes xmi:id="_eDxhoOmrEeSE4Zrj1GnMCg" name="pedalForce"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_P_fLLMvpEeSqLp1EdST_nQ" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance">
+  <categories xmi:id="_P_fLLMvpEeSqLp1EdST_nQ" key="org.muml.pim.instance.category" name="instance">
     <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_C02w4Om5EeSyWM-b9FAU_g" name="root-cic">
       <componentInstances xsi:type="instance:StructuredComponentInstance" xmi:id="_ERz3EOm5EeSyWM-b9FAU_g" name="car" componentType="_G-ulwOm4EeSE4Zrj1GnMCg">
         <embeddedCIC xmi:id="_Fd9hIOm5EeSyWM-b9FAU_g" name="CarSw">

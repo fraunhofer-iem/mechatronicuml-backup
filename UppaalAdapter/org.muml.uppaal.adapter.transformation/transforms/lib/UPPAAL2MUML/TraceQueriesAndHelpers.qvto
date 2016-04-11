@@ -1,4 +1,4 @@
-import de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox.ValueUnit;
+import org.muml.uppaal.adapter._blackbox.ValueUnit;
 import transforms.lib.ExternalizedStrings;
 import transforms.lib.MUML2UPPAAL.Async.Variables;
 import transforms.lib.MUML2UPPAAL.Async;

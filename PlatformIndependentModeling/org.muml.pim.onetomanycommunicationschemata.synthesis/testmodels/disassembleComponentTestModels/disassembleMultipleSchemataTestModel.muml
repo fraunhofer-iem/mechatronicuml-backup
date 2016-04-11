@@ -14,7 +14,7 @@
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Jm5hqxi6EeWsFZ_Un4dxHg" name="uint32" primitiveType="UINT32"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Jm5hrBi6EeWsFZ_Un4dxHg" name="uint64" primitiveType="UINT64"/>
   </categories>
-  <categories xmi:id="_Jm5hrRi6EeWsFZ_Un4dxHg" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance"/>
+  <categories xmi:id="_Jm5hrRi6EeWsFZ_Un4dxHg" key="org.muml.pim.instance.category" name="instance"/>
   <categories xmi:id="_Jm5hrhi6EeWsFZ_Un4dxHg" key="org.muml.pim.components.category" name="component">
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_mW5hQBjFEeWz7J5_ceJ04A" name="S1" behavior="_pXj14BjFEeWz7J5_ceJ04A">
       <ports xsi:type="component:DiscretePort" xmi:id="_naco8BjFEeWz7J5_ceJ04A" name="D1" behavior="_0UcaMRjFEeWz7J5_ceJ04A" senderMessageTypes="_hGTLUBi6EeWsFZ_Un4dxHg">

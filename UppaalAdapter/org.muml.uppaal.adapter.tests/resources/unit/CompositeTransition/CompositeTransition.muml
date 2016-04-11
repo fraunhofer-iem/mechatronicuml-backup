@@ -14,7 +14,7 @@
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_0pwLigN_EeWYuPKYu7E8Kw" name="uint32" primitiveType="UINT32"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_0pwLiwN_EeWYuPKYu7E8Kw" name="uint64" primitiveType="UINT64"/>
   </categories>
-  <categories xmi:id="_0pwLjAN_EeWYuPKYu7E8Kw" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance"/>
+  <categories xmi:id="_0pwLjAN_EeWYuPKYu7E8Kw" key="org.muml.pim.instance.category" name="instance"/>
   <categories xmi:id="_0pwLjQN_EeWYuPKYu7E8Kw" key="org.muml.pim.components.category" name="component"/>
   <categories xmi:id="_0pwLjgN_EeWYuPKYu7E8Kw" key="org.muml.pim.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_8RicQAN_EeWYuPKYu7E8Kw" name="CompositeTransition">

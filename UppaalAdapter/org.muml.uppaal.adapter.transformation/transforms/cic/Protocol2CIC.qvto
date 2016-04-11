@@ -48,7 +48,7 @@ main() {
 
 property componentCategoryKey : String = "org.muml.pim.components.category";
 property componentCategoryName : String ="component";
-property componentInstanceCategoryKey : String = "de.uni_paderborn.fujaba.muml.instance.category";
+property componentInstanceCategoryKey : String = "org.muml.pim.instance.category";
 property componentInstanceCategoryName : String = "instance";
 property rtscCategoryKey : String = "org.muml.realtimestatechart.category";
 property rtscCategoryName : String = "realtimestatechart";

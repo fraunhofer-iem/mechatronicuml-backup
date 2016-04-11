@@ -31,7 +31,7 @@ modeltype muml_types uses pim::types('http://www.muml.org/pim/1.0.0');
     	_categories += self._categories.map ModelElementCategory2ModelElementCategory();
    		 }
    		 
-mapping modelinstance::ModelElementCategory :: ModelElementCategory2ModelElementCategory() : modelinstance::ModelElementCategory when{self.key = "org.storydriven.storydiagrams.activities.category"}{
+mapping modelinstance::ModelElementCategory :: ModelElementCategory2ModelElementCategory() : modelinstance::ModelElementCategory when{self.key = "org.muml.storydiagram.activities.category"}{
     	_key := 'org.storydriven.storydiagrams.category';
     	_name := 'storydiagrams';
     	_modelElements := self._modelElements[ComponentStoryRule].activity.map Activity2Activity();

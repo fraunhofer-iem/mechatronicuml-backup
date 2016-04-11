@@ -655,7 +655,7 @@
       </ports>
     </modelElements>
   </categories>
-  <categories xmi:id="_CDbBcEfREeOKy6HrV27eJQ" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance">
+  <categories xmi:id="_CDbBcEfREeOKy6HrV27eJQ" key="org.muml.pim.instance.category" name="instance">
     <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_NdEG4E06EeORybsjuqdyww" name="systemconfiguration">
       <componentInstances xsi:type="instance:StructuredComponentInstance" xmi:id="_OBbYME06EeORybsjuqdyww" name="system" componentType="_BGDOQE03EeOI293nB1lGXQ">
         <embeddedCIC xmi:id="_P7AI8E06EeORybsjuqdyww" name="System">

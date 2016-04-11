@@ -133,7 +133,7 @@
       </ports>
     </modelElements>
   </categories>
-  <categories xmi:id="_w6fyRAdMEeS1buZSll3L6Q" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance">
+  <categories xmi:id="_w6fyRAdMEeS1buZSll3L6Q" key="org.muml.pim.instance.category" name="instance">
     <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_w6fyRQdMEeS1buZSll3L6Q" name="protoCIC">
       <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_w6fyRgdMEeS1buZSll3L6Q" name="role1ComponentInstance0" componentType="_w6fyNgdMEeS1buZSll3L6Q">
         <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_w6fyRwdMEeS1buZSll3L6Q" name="role1PortInstance0" connectorInstances="_w6fySgdMEeS1buZSll3L6Q" type="_w6fyNwdMEeS1buZSll3L6Q"/>

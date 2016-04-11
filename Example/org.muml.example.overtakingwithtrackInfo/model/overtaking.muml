@@ -430,5 +430,5 @@
       </ports>
     </modelElements>
   </categories>
-  <categories xmi:id="_CDbBcEfREeOKy6HrV27eJQ" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance"/>
+  <categories xmi:id="_CDbBcEfREeOKy6HrV27eJQ" key="org.muml.pim.instance.category" name="instance"/>
 </modelinstance:RootNode>

@@ -801,7 +801,7 @@
   </categories>
   <categories
       xmi:id="_99PaIN0IEeOokIiF69iPLA"
-      key="de.uni_paderborn.fujaba.muml.instance.category"
+      key="org.muml.pim.instance.category"
       name="instance">
     <modelElements
         xsi:type="instance:ComponentInstanceConfiguration"

@@ -9,7 +9,7 @@ import transforms.NameNormalization;
 import transforms.cic.Protocol2CIC;
 import transforms.MUML2UPPAAL;
 
-import de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox.ProgressUnit;
+import org.muml.uppaal.adapter._blackbox.ProgressUnit;
 
 modeltype muml uses 'http://www.muml.org/pim/1.0.0';
 modeltype uppaal uses 'http://www.muml.org/uppaal/1.0.0';

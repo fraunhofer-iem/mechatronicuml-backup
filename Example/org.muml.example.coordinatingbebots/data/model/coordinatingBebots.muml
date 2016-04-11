@@ -3701,7 +3701,7 @@
       <connectors xsi:type="component:AssemblyConnector" xmi:id="_V7ANgJ1pEeSGUPaRXN92yA" connectorEndpoints="_gAY9sIp7EeOFVcInix1dwQ _M_1FUKXvEeOtUJ-H8DmtEA"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_F6_Y0ITuEeOAU7Vdi0NG2Q" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance">
+  <categories xmi:id="_F6_Y0ITuEeOAU7Vdi0NG2Q" key="org.muml.pim.instance.category" name="instance">
     <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_Jpye8I_oEeOuIPTkIG0q2Q" name="instanceconfiguration">
       <componentInstances xsi:type="instance:StructuredComponentInstance" xmi:id="_NKLcgI_oEeOuIPTkIG0q2Q" name="bebot distributor" componentType="_sLfRkITpEeOadtwXfqPguw">
         <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_Ut8I4I_oEeOuIPTkIG0q2Q" name="distributor1" connectorInstances="_aAANgI_qEeO8WOt6Vdn98w _rYrEUN7OEeWGzuyhtlFG0g" type="_EoNCoITrEeOadtwXfqPguw"/>

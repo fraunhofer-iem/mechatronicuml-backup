@@ -16676,7 +16676,7 @@
       </ports>
     </modelElements>
   </categories>
-  <categories xmi:id="_3n2a8AUAEeSn_-l-OlOxjg" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance">
+  <categories xmi:id="_3n2a8AUAEeSn_-l-OlOxjg" key="org.muml.pim.instance.category" name="instance">
     <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_RqJx4H00EeSBivLYFk8tFw" name="StandaloneRC-CIC">
       <componentInstances xsi:type="instance:StructuredComponentInstance" xmi:id="_v9Yf0H00EeSBivLYFk8tFw" name="standaloneRC" componentType="_RbW-QPhpEeOQsfT56fxzVQ">
         <portInstances xsi:type="instance:DiscreteMultiPortInstance" xmi:id="_x1MWAH00EeSBivLYFk8tFw" name="refDistProvider" type="_64P0EPuREeO8xJIX1d2eag"/>
@@ -17173,7 +17173,7 @@
       <coordinationProtocolInstances xmi:id="_yZXzkX1UEeS1lojfJoxnzA" name="" portInstances="_i39Q8X1QEeS1lojfJoxnzA _jvTvtX1QEeS1lojfJoxnzA _kmGNxX1QEeS1lojfJoxnzA" coordinationProtocol="_qwc3cOo1EeO-8csd75FEHw"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_woN9EAUFEeSn_-l-OlOxjg" key="org.storydriven.storydiagrams.activities.category" name="activities">
+  <categories xmi:id="_woN9EAUFEeSn_-l-OlOxjg" key="org.muml.storydiagram.activities.category" name="activities">
     <modelElements xsi:type="componentstorydiagram:ComponentStoryRule" xmi:id="_woN9EQUFEeSn_-l-OlOxjg" reconfiguredComponent="_RbW-QPhpEeOQsfT56fxzVQ">
       <signature xmi:id="_woN9EgUFEeSn_-l-OlOxjg" name="becomeCoordinator"/>
       <activity xmi:id="_EzbSIAUGEeSn_-l-OlOxjg" name="becomeCoordinator">

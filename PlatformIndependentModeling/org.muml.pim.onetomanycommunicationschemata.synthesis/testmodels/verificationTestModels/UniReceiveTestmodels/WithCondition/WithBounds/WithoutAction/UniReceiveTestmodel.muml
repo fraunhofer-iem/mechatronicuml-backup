@@ -202,7 +202,7 @@
       <messageTypes xmi:id="_WdIhAHvSEeWJtcJpbyRDKg" name="M1"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_N8D31XvSEeWJtcJpbyRDKg" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance"/>
+  <categories xmi:id="_N8D31XvSEeWJtcJpbyRDKg" key="org.muml.pim.instance.category" name="instance"/>
   <categories xmi:id="_N8D31nvSEeWJtcJpbyRDKg" key="org.muml.pim.components.category" name="component"/>
   <categories xmi:id="_N8D313vSEeWJtcJpbyRDKg" key="org.muml.pim.pattern.category" name="pattern"/>
 </modelinstance:RootNode>

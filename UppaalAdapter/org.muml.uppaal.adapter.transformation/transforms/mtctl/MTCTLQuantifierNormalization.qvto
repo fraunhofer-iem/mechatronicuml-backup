@@ -1,5 +1,5 @@
 import transforms.lib.MUML2MUML;
-import de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox.MtctlLibrary;
+import org.muml.uppaal.adapter._blackbox.MtctlLibrary;
 
 modeltype muml_cic uses muml::instance('http://www.muml.org/pim/1.0.0');
 modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');

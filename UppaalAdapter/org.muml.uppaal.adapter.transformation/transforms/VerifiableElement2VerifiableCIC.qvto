@@ -1,7 +1,7 @@
 import transforms.mtctl.MTCTLTransformation;
 import transforms.cic.Protocol2CIC;
 import transforms.CloneModel;
-import de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox.ProgressUnit;
+import org.muml.uppaal.adapter._blackbox.ProgressUnit;
 
 modeltype muml_constraint uses muml::constraint('http://www.muml.org/pim/1.0.0');
 modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
