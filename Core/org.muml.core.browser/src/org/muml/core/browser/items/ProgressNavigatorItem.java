@@ -1,4 +1,4 @@
-package org.muml.browser.items;
+package org.muml.core.browser.items;
 
 import java.net.URL;
 

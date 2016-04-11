@@ -1,4 +1,4 @@
-package org.muml.browser.actions;
+package org.muml.core.browser.actions;
 
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.ui.IActionBars;

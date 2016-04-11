@@ -1,4 +1,4 @@
-package org.muml.browser;
+package org.muml.core.browser;
 
 import java.net.MalformedURLException;
 import java.net.URL;

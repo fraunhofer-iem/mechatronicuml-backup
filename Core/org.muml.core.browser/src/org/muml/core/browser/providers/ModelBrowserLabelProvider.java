@@ -1,4 +1,4 @@
-package org.muml.browser.providers;
+package org.muml.core.browser.providers;
 
 import java.util.HashMap;
 import java.util.Map;
