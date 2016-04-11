@@ -18032,7 +18032,7 @@
       </activity>
     </modelElements>
   </categories>
-  <categories xmi:id="__Z0ZkGplEeSj9d0uO60xOw" key="de.uni_paderborn.fujaba.muml.verification.sdd.componentssdd.category" name="componentsdd">
+  <categories xmi:id="__Z0ZkGplEeSj9d0uO60xOw" key="org.muml.reconfiguration.verification.sdd.componentssdd.category" name="componentsdd">
     <modelElements xsi:type="componentsdd:ComponentStoryDecisionDiagram" xmi:id="__Z0ZkWplEeSj9d0uO60xOw" name="convoyOrder" reconfigurableComponent="_RbW-QPhpEeOQsfT56fxzVQ" invariantSDD="true">
       <nodes xsi:type="componentsdd:ComponentStoryPatternNode" xmi:id="_NFf44GqGEeSpW9kj4Guewg" outgoingEdges="_C0QnsGqIEeSpW9kj4Guewg _GZheMGqIEeSpW9kj4Guewg" incomingEdges="_Bwp70G9NEeS9UPX2kk986g" name="componentStoryPatternNode">
         <pattern xmi:id="_NFpp4GqGEeSpW9kj4Guewg" name="componentStoryPattern">
