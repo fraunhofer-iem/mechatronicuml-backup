@@ -3,7 +3,7 @@ package org.muml.psm.transformation.ui;
 import org.eclipse.osgi.util.NLS;
 
 public class Messages extends NLS {
-	private static final String BUNDLE_NAME = "de.uni_paderborn.fujaba.muml.psm.codengen.transformation.ui.messages"; //$NON-NLS-1$
+	private static final String BUNDLE_NAME = "org.muml.psm.codengen.transformation.ui.messages"; //$NON-NLS-1$
 	public static String CodegenTransformationWizard_0;
 	public static String CodegenTransformationWizard_1;
 	public static String CodegenTransformationWizard_13;

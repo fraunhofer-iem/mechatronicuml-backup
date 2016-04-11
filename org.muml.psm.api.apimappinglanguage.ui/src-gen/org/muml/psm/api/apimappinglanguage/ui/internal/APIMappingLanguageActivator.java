@@ -23,7 +23,7 @@ import com.google.inject.Module;
  */
 public class APIMappingLanguageActivator extends AbstractUIPlugin {
 	
-	public static final String DE_UNI_PADERBORN_FUJABA_MUML_PSM_API_APIMAPPINGLANGUAGE_APIMAPPINGLANGUAGE = "de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage.APIMappingLanguage";
+	public static final String DE_UNI_PADERBORN_FUJABA_MUML_PSM_API_APIMAPPINGLANGUAGE_APIMAPPINGLANGUAGE = "org.muml.psm.api.apimappinglanguage.APIMappingLanguage";
 	
 	private static final Logger logger = Logger.getLogger(APIMappingLanguageActivator.class);
 	

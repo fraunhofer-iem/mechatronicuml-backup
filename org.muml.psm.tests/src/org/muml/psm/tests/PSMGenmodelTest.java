@@ -18,7 +18,7 @@ public class PSMGenmodelTest extends GenmodelTest {
 	
 	@Parameters
 	public static Collection<Object[]> getGenmodelPaths() {
-		return Collections.singleton(new Object[] {"de.uni_paderborn.fujaba.muml.psm/model/psm.genmodel"});
+		return Collections.singleton(new Object[] {"org.muml.psm/model/psm.genmodel"});
 	}
 
 }
