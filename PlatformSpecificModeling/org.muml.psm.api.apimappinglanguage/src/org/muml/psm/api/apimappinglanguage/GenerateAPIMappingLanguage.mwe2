@@ -25,7 +25,7 @@ Workflow {
 		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.MumlPackage"
 		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage"
 		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage"
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage"
+		registerGeneratedEPackage = "org.muml.core.modelinstance.ModelinstancePackage"
 		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.instance.InstancePackage"
 		registerGeneratedEPackage = "org.storydriven.core.expressions.common.CommonExpressionsPackage"
 		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage"

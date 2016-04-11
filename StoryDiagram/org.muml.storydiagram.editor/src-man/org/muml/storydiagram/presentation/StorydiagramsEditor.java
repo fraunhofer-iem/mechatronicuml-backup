@@ -594,12 +594,12 @@ public class StorydiagramsEditor extends MultiPageEditorPart implements IEditing
 	public Diagnostic analyzeResourceProblems(Resource resource, Exception exception) {
 		if (!resource.getErrors().isEmpty() || !resource.getWarnings().isEmpty()) {
 			BasicDiagnostic basicDiagnostic = new BasicDiagnostic(Diagnostic.ERROR,
-					"org.storydriven.storydiagrams.editor", 0, getString("_UI_CreateModelError_message",
+					"org.muml.storydiagram.editor", 0, getString("_UI_CreateModelError_message",
 							resource.getURI()), new Object[] { exception == null ? (Object) resource : exception });
 			basicDiagnostic.merge(EcoreUtil.computeDiagnostic(resource, true));
 			return basicDiagnostic;
 		} else if (exception != null) {
-			return new BasicDiagnostic(Diagnostic.ERROR, "org.storydriven.storydiagrams.editor", 0, getString(
+			return new BasicDiagnostic(Diagnostic.ERROR, "org.muml.storydiagram.editor", 0, getString(
 					"_UI_CreateModelError_message", resource.getURI()), new Object[] { exception });
 		} else {
 			return Diagnostic.OK_INSTANCE;
@@ -812,7 +812,7 @@ public class StorydiagramsEditor extends MultiPageEditorPart implements IEditing
 	 */
 	protected void updateProblemIndication() {
 		if (updateProblemIndication) {
-			BasicDiagnostic diagnostic = new BasicDiagnostic(Diagnostic.OK, "org.storydriven.storydiagrams.editor", 0,
+			BasicDiagnostic diagnostic = new BasicDiagnostic(Diagnostic.OK, "org.muml.storydiagram.editor", 0,
 					null, new Object[] { editingDomain.getResourceSet() });
 			for (Diagnostic childDiagnostic : resourceToDiagnosticMap.values()) {
 				if (childDiagnostic.getSeverity() != Diagnostic.OK) {

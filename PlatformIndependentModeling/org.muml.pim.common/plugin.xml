@@ -5,7 +5,7 @@
   <extension
         point="org.eclipse.core.expressions.definitions">
      <definition
-           id="de.uni_paderborn.fujaba.expression.typesfile">
+           id="org.muml.expression.typesfile">
 	    <iterate
            ifEmpty="false"
            operator="and">
@@ -35,7 +35,7 @@
 	            	<visibleWhen checkEnabled="false">
 						<or>
 							<reference definitionId="org.muml.expression.mumlfile"></reference>
-							<reference definitionId="de.uni_paderborn.fujaba.expression.typesfile"></reference>
+							<reference definitionId="org.muml.expression.typesfile"></reference>
 						</or>
 					</visibleWhen>
 	      </command>
@@ -72,10 +72,7 @@
 	
   <extension
         point="org.eclipse.ui.commands">
-     <category
-           id="de.uni_paderborn.fujaba"
-           name="MechatronicUML">
-     </category>
+
      <command
            categoryId="org.muml"
            defaultHandler="org.muml.pim.common.internal.ui.commands.OpenTypeDialogCommand"

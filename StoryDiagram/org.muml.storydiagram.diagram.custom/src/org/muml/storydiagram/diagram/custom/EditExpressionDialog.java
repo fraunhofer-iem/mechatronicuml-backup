@@ -62,7 +62,7 @@ public class EditExpressionDialog extends Dialog {
 	private static final int RADIO_BUTTON_THRESHOLD_VERSIONS = 3;
 	private static final String DEFAULT_LANGUAGE = "OCL";
 
-	public static final String EXPRESSION_SOURCE_VIEWER_EXTENSION_POINT_ID = "org.storydriven.storydiagrams.diagram.custom.expressionSourceViewerExtension";
+	public static final String EXPRESSION_SOURCE_VIEWER_EXTENSION_POINT_ID = "org.muml.storydiagram.diagram.custom.expressionSourceViewerExtension";
 	public static final String EXPRESSION_LANGUAGES_LANGUAGE_ATTRIBUTE_NAME = "expressionLanguage";
 	public static final String EXPRESSION_LANGUAGES_VERSION_ATTRIBUTE_NAME = "version";
 	public static final String EXPRESSION_SOURCE_VIEWER_ATTRIBUTE_NAME = "sourceViewerProvider";

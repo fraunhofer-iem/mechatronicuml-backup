@@ -1,4 +1,4 @@
-module org.storydriven.storydiagrams.expressions.PathExpressions
+module org.muml.storydiagram.expressions.PathExpressions
 
 import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
@@ -6,7 +6,7 @@ import org.eclipse.xtext.ui.generator.*
 
 var grammarURI = "classpath:/org/storydriven/modeling/expressions/PathExpressions.xtext"
 var file.extensions = "sdpath"
-var projectName = "org.storydriven.storydiagrams.expressions"
+var projectName = "org.muml.storydiagram.expressions"
 var runtimeProject = "../${projectName}"
 
 Workflow {

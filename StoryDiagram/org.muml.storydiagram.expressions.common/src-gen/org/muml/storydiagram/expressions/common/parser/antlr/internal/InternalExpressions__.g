@@ -1,6 +1,6 @@
 lexer grammar InternalExpressions;
 @header {
-package org.storydriven.storydiagrams.expressions.common.parser.antlr.internal;
+package org.muml.storydiagram.expressions.common.parser.antlr.internal;
 
 // Hack: Use our own Lexer superclass by means of import. 
 // Currently there is no other way to specify the superclass for the lexer.
@@ -30,28 +30,28 @@ T31 : '%' ;
 T32 : '^' ;
 T33 : '.' ;
 
-// $ANTLR src "../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g" 1657
+// $ANTLR src "../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g" 1657
 RULE_BOOLEAN : ('true'|'false');
 
-// $ANTLR src "../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g" 1659
+// $ANTLR src "../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g" 1659
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
-// $ANTLR src "../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g" 1661
+// $ANTLR src "../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g" 1661
 RULE_INT : ('0'..'9')+;
 
-// $ANTLR src "../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g" 1663
+// $ANTLR src "../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g" 1663
 RULE_STRING : ('"' ('\\' ('b'|'t'|'n'|'f'|'r'|'"'|'\''|'\\')|~(('\\'|'"')))* '"'|'\'' ('\\' ('b'|'t'|'n'|'f'|'r'|'"'|'\''|'\\')|~(('\\'|'\'')))* '\'');
 
-// $ANTLR src "../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g" 1665
+// $ANTLR src "../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g" 1665
 RULE_ML_COMMENT : '/*' ( options {greedy=false;} : . )*'*/';
 
-// $ANTLR src "../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g" 1667
+// $ANTLR src "../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g" 1667
 RULE_SL_COMMENT : '//' ~(('\n'|'\r'))* ('\r'? '\n')?;
 
-// $ANTLR src "../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g" 1669
+// $ANTLR src "../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g" 1669
 RULE_WS : (' '|'\t'|'\r'|'\n')+;
 
-// $ANTLR src "../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g" 1671
+// $ANTLR src "../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g" 1671
 RULE_ANY_OTHER : .;
 
 

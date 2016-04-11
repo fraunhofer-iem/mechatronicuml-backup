@@ -21,7 +21,7 @@ public class ExpressionsExecutableExtensionFactory extends AbstractGuiceAwareExe
 	
 	@Override
 	protected Injector getInjector() {
-		return org.muml.storydiagram.expressions.common.ui.internal.ExpressionsActivator.getInstance().getInjector("org.storydriven.storydiagrams.expressions.common.Expressions");
+		return org.muml.storydiagram.expressions.common.ui.internal.ExpressionsActivator.getInstance().getInjector("org.muml.storydiagram.expressions.common.Expressions");
 	}
 	
 }

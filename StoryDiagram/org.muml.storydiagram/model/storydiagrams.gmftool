@@ -14,7 +14,7 @@
       <smallIcon
           xsi:type="gmftool:BundleImage"
           path="/icons/palette/activities.png"
-          bundle="org.storydriven.storydiagrams.diagram.custom"/>
+          bundle="org.muml.storydiagram.diagram.custom"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Activity Call Node"
@@ -64,7 +64,7 @@
       <smallIcon
           xsi:type="gmftool:BundleImage"
           path="/icons/palette/patterns.png"
-          bundle="org.storydriven.storydiagrams.diagram.custom"/>
+          bundle="org.muml.storydiagram.diagram.custom"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Object Variable"

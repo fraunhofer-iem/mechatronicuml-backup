@@ -21,7 +21,7 @@ public class PathExpressionsExecutableExtensionFactory extends AbstractGuiceAwar
 	
 	@Override
 	protected Injector getInjector() {
-		return org.muml.storydiagram.expressions.ui.internal.PathExpressionsActivator.getInstance().getInjector("org.storydriven.storydiagrams.expressions.PathExpressions");
+		return org.muml.storydiagram.expressions.ui.internal.PathExpressionsActivator.getInstance().getInjector("org.muml.storydiagram.expressions.PathExpressions");
 	}
 	
 }

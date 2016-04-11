@@ -12,7 +12,7 @@ import com.google.inject.Binder;
 import com.google.inject.name.Names;
 
 /**
- * Manual modifications go to {org.storydriven.storydiagrams.expressions.common.ExpressionsRuntimeModule}
+ * Manual modifications go to {org.muml.storydiagram.expressions.common.ExpressionsRuntimeModule}
  */
  @SuppressWarnings("all")
 public abstract class AbstractExpressionsRuntimeModule extends DefaultRuntimeModule {
@@ -26,7 +26,7 @@ public abstract class AbstractExpressionsRuntimeModule extends DefaultRuntimeMod
 	}
 	
 	public void configureLanguageName(Binder binder) {
-		binder.bind(String.class).annotatedWith(Names.named(Constants.LANGUAGE_NAME)).toInstance("org.storydriven.storydiagrams.expressions.common.Expressions");
+		binder.bind(String.class).annotatedWith(Names.named(Constants.LANGUAGE_NAME)).toInstance("org.muml.storydiagram.expressions.common.Expressions");
 	}
 	
 	public void configureFileExtensions(Binder binder) {

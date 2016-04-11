@@ -8,7 +8,7 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtext.ui.DefaultUiModule;
 
 /**
- * Manual modifications go to {org.storydriven.storydiagrams.expressions.ui.PathExpressionsUiModule}
+ * Manual modifications go to {org.muml.storydiagram.expressions.ui.PathExpressionsUiModule}
  */
 @SuppressWarnings("all")
 public abstract class AbstractPathExpressionsUiModule extends DefaultUiModule {

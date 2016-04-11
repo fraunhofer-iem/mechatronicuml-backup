@@ -16,13 +16,13 @@
      <extension
          point="org.eclipse.ui.exportWizards">
       <wizard
-            category="de.uni_paderborn.fujaba.export"
+            category="org.muml.core.export"
             class="org.muml.pim.pattern.diagram.custom.export.wizard.PatternToProtocolExportWizard"
             id="org.muml.pim.pattern.diagram.custom.ExportWizardPatternToProtocol"
             name="Pattern To Protocol Transformation Wizard">
       </wizard>
       <wizard
-            category="de.uni_paderborn.fujaba.export"
+            category="org.muml.core.export"
             class="org.muml.pim.pattern.diagram.custom.export.wizard.ProtocolToPatternExportWizard"
             id="org.muml.pim.pattern.diagram.custom.ExportWizardProtocolToPattern"
             name="Protocol To Pattern Transformation Wizard">

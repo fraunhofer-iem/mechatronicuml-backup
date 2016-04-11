@@ -38,7 +38,7 @@ public class ReachAnalysis
 	protected RootNode model;
 	protected ComponentInstanceConfiguration cic;
 	
-	final static String CATEGORY_ACTIVITIES = "org.storydriven.storydiagrams.category";
+	final static String CATEGORY_ACTIVITIES = "org.muml.storydiagram.category";
 	final static String CATEGORY_COMPONENTS = "org.muml.pim.components.category";
 	static final String CATEGORY_RTSC = "org.muml.realtimestatechart.category";
 	static final String CATEGORY_MSGTYPE = "org.muml.pim.messagetype.category";

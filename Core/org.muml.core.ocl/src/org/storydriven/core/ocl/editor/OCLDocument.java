@@ -54,7 +54,7 @@ public class OCLDocument extends Document {
 	 */
 	private EClassifier getOclType(EClassifier classifier, OCL ocl) {
 		// TODO: Add support for other primitive types.
-		// @see org.storydriven.storydiagrams.diagram.custom.util.TypeUtil.getType(classifier) for help
+		// @see org.muml.storydiagram.diagram.custom.util.TypeUtil.getType(classifier) for help
 
 		return classifier;
 	}

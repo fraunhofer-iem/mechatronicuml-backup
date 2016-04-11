@@ -10,7 +10,7 @@ options {
 }
 
 @lexer::header {
-package org.storydriven.storydiagrams.expressions.common.parser.antlr.internal;
+package org.muml.storydiagram.expressions.common.parser.antlr.internal;
 
 // Hack: Use our own Lexer superclass by means of import. 
 // Currently there is no other way to specify the superclass for the lexer.
@@ -18,7 +18,7 @@ import org.eclipse.xtext.parser.antlr.Lexer;
 }
 
 @parser::header {
-package org.storydriven.storydiagrams.expressions.common.parser.antlr.internal; 
+package org.muml.storydiagram.expressions.common.parser.antlr.internal; 
 
 import org.eclipse.xtext.*;
 import org.eclipse.xtext.parser.*;
@@ -29,7 +29,7 @@ import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
 import org.eclipse.xtext.parser.antlr.AntlrDatatypeRuleToken;
-import org.storydriven.storydiagrams.expressions.common.services.ExpressionsGrammarAccess;
+import org.muml.storydiagram.expressions.common.services.ExpressionsGrammarAccess;
 
 }
 

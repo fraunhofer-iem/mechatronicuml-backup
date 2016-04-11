@@ -14,7 +14,7 @@
 <plugin>
 	<extension point="org.muml.storydiagram.interpreter.core.eclipse.expressionInterpreterExtension">
 		<expressionInterpreter
-			expressionInterpreterClass="org.storydriven.storydiagrams.interpreter.calls.CallsInterpreter"
+			expressionInterpreterClass="org.muml.storydiagram.interpreter.calls.CallsInterpreter"
 			expressionLanguage="Calls"
 			expressionLanguageVersion="1.0">
 		</expressionInterpreter>

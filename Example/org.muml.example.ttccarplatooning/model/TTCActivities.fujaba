@@ -9,7 +9,7 @@
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_vcVl9wPpEeK6h-t5wiM1Gg" name="LONG" primitiveType="INT64"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_vcVl-APpEeK6h-t5wiM1Gg" name="DOUBLE" primitiveType="DOUBLE"/>
   </categories>
-  <categories xmi:id="__6vSEAPpEeK6h-t5wiM1Gg" key="org.storydriven.storydiagrams.category" name="storydiagrams">
+  <categories xmi:id="__6vSEAPpEeK6h-t5wiM1Gg" key="org.muml.storydiagram.category" name="storydiagrams">
     <modelElements xsi:type="sda:Activity" xmi:id="__6vSEQPpEeK6h-t5wiM1Gg" name="Create Car Process">
       <annotation xmi:id="_Q4OG4APqEeK6h-t5wiM1Gg" source="http://www.storydriven.org/storydiagrams/types">
         <details xmi:id="_Q4XQ0APqEeK6h-t5wiM1Gg" key="http://www.muml.org/example/ttccarplatooning/1.1.0" value="true"/>

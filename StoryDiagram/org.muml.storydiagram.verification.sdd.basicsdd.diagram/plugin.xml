@@ -744,7 +744,7 @@
 <extension point="org.eclipse.core.contenttype.contentTypes">
 		<?gmfgen generated="true"?>
    		<!--
-   		<file-association content-type="de.uni_paderborn.fujaba.modelinstance.editor.model" file-extensions="basicsdd"/>
+   		<file-association content-type="org.muml.core.modelinstance.editor.model" file-extensions="basicsdd"/>
    		-->
     </extension>
 

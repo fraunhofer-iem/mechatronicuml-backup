@@ -45,7 +45,7 @@ public class UppaalExportWizard extends AbstractFujabaExportWizard {
 
 	@Override
 	public String wizardGetId() {
-		return "de.uni_paderborn.fujaba.export.ExampleWizard";
+		return "org.muml.core.export.ExampleWizard";
 	}
 	
 	@Override

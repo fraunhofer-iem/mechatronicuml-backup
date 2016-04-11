@@ -40,7 +40,7 @@ public class ExpressionsActivator extends AbstractUIPlugin {
 	
 	private static ExpressionsActivator INSTANCE;
 	
-	public static final String ORG_STORYDRIVEN_MODELING_EXPRESSIONS_COMMON_EXPRESSIONS = "org.storydriven.storydiagrams.expressions.common.Expressions";
+	public static final String ORG_STORYDRIVEN_MODELING_EXPRESSIONS_COMMON_EXPRESSIONS = "org.muml.storydiagram.expressions.common.Expressions";
 	
 	public Injector getInjector(String languageName) {
 		return injectors.getIfPresent(languageName);

@@ -9,13 +9,13 @@ create OUT: GM refining IN: GM;
 rule FixGenEditorGenerator {
 	from
 		gegin: GM!GenEditorGenerator (
-			gegin.packageNamePrefix = 'org.storydriven.storydiagrams.diagram'
+			gegin.packageNamePrefix = 'org.muml.storydiagram.diagram'
 		)
 	to
 		gegout: GM!GenEditorGenerator (
 			domainFileExtension <- 'sdm',
 			diagramFileExtension <- 'sdm_diagram',
-			pluginDirectory <- '/org.storydriven.storydiagrams.diagram/src-gen'
+			pluginDirectory <- '/org.muml.storydiagram.diagram/src-gen'
 		)
 }
 

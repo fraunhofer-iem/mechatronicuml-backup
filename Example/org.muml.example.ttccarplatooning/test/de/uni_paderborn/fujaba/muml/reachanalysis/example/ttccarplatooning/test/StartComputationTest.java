@@ -123,7 +123,7 @@ public class StartComputationTest {
 		RootNode rn = (RootNode) r.getContents().get(0);
 		
 		for(ModelElementCategory category : rn.getCategories()){
-			if(category.getKey().equals("org.storydriven.storydiagrams.category")){
+			if(category.getKey().equals("org.muml.storydiagram.category")){
 				
 				//right category found, extract activities
 				for(EObject obj : category.getModelElements()){

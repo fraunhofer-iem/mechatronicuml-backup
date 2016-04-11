@@ -8,7 +8,7 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
 public class Activator extends AbstractUIPlugin {
-	public final static String ID = "org.storydriven.storydiagrams.diagram.custom"; //$NON-NLS-1$
+	public final static String ID = "org.muml.storydiagram.diagram.custom"; //$NON-NLS-1$
 
 	private static Activator instance;
 

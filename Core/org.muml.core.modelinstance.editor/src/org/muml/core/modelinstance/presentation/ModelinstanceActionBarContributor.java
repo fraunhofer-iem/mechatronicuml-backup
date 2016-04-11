@@ -177,7 +177,7 @@ public class ModelinstanceActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(ModelinstanceEditorPlugin.INSTANCE.getString("_UI_ModelinstanceEditor_menu"), "de.uni_paderborn.fujaba.modelinstanceMenuID");
+		IMenuManager submenuManager = new MenuManager(ModelinstanceEditorPlugin.INSTANCE.getString("_UI_ModelinstanceEditor_menu"), "org.muml.core.modelinstanceMenuID");
 		menuManager.insertAfter("additions", submenuManager);
 		submenuManager.add(new Separator("settings"));
 		submenuManager.add(new Separator("actions"));

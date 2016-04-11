@@ -694,7 +694,7 @@ Contributors:
 <extension point="org.eclipse.core.contenttype.contentTypes">
 		<?gmfgen generated="true"?>
    		<!--
-   		<file-association content-type="de.uni_paderborn.fujaba.modelinstance.editor.model" file-extensions="component"/>
+   		<file-association content-type="org.muml.core.modelinstance.editor.model" file-extensions="component"/>
    		-->
     </extension>
 

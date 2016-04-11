@@ -6,12 +6,12 @@
          point="org.eclipse.ui.views">
       <category
             name="MechatronicUML"
-            id="de.uni_paderborn.fujaba.muml.views">
+            id="org.muml.views">
       </category>
       <view
             name="Muml Browser"
             icon="icons/sample.gif"
-            category="de.uni_paderborn.fujaba.muml.views"
+            category="org.muml.views"
             class="org.muml.core.browser.ModelBrowser"
             id="org.muml.core.browser.views.ModelBrowser">
       </view>

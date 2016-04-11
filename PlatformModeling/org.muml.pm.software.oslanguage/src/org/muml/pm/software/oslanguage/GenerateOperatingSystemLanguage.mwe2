@@ -26,7 +26,7 @@ Workflow {
 //		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage"
 //		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.psm.swplatform.SwplatformPackage" 
 //		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.psm.PsmPackage" 
-//		registerGeneratedEPackage = "de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage"
+//		registerGeneratedEPackage = "org.muml.core.modelinstance.ModelinstancePackage"
 //		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.MumlPackage" 
 		
 	//	registerGenModelFile = "platform:/resource/org.eclipse.emf.codegen.ecore/model/GenModel.ecore"

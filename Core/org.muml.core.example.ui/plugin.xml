@@ -4,7 +4,7 @@
    <extension
          point="org.eclipse.ui.newWizards">
       <category
-            id="de.uni_paderborn.fujaba.muml.example"
+            id="org.muml.example"
             name="%newWizardCategories.examples.muml"
             parentCategory="org.eclipse.ui.Examples">
       </category>

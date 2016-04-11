@@ -14156,7 +14156,7 @@
       </states>
     </modelElements>
   </categories>
-  <categories xmi:id="_gxay0O5kEeO0hMrCmuqTKA" key="org.storydriven.storydiagrams.category" name="storydiagrams">
+  <categories xmi:id="_gxay0O5kEeO0hMrCmuqTKA" key="org.muml.storydiagram.category" name="storydiagrams">
     <modelElements xsi:type="sda:Activity" xmi:id="_gxay0e5kEeO0hMrCmuqTKA" inParameter="_gxay1e5kEeO0hMrCmuqTKA" outParameter="_gxay1-5kEeO0hMrCmuqTKA" name="createSubRole">
       <annotation xmi:id="_gxay0u5kEeO0hMrCmuqTKA" source="http://www.storydriven.org/storydiagrams/types">
         <details xmi:id="_gxay0-5kEeO0hMrCmuqTKA" key="http://www.muml.org/verification/core/runtime/1.0.0" value="true"/>

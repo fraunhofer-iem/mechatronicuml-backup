@@ -48,8 +48,8 @@
 		<globalVarDef name="figurepath" value="'img'"/>
 
 		<expand value="template::Generate::Generate FOR {dependencylanguage}"/> 
-		<outlet path="../de.uni_paderborn.fujaba.muml.dependencylanguage.doc/" overwrite="true" />
-		<outlet name='PACKAGEFIGURES' path='../de.uni_paderborn.fujaba.muml.dependencylanguage.doc/img/' overwrite='false'/>	
+		<outlet path="../org.muml.cbs.dependencylanguage.doc/" overwrite="true" />
+		<outlet name='PACKAGEFIGURES' path='../org.muml.cbs.dependencylanguage.doc/img/' overwrite='false'/>	
 	</component>
 	
 </workflow>

@@ -17,7 +17,7 @@
    <extension
          point="org.eclipse.ui.exportWizards">
       <wizard
-            category="de.uni_paderborn.fujaba.export"
+            category="org.muml.core.export"
             class="org.muml.uppaal.ui.wizard.UppaalExportWizard"
             id="de.uni_paderborn.uppaal.export"
             name="Uppaal EMF to Uppaal XML">

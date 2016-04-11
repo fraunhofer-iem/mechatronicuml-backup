@@ -1,4 +1,4 @@
-grammar org.storydriven.storydiagrams.expressions.PathExpressions with org.eclipse.xtext.common.Terminals
+grammar org.muml.storydiagram.expressions.PathExpressions with org.eclipse.xtext.common.Terminals
 
 generate pathExpressions "http://www.storydriven.org/modeling/expressions/PathExpressions"
 

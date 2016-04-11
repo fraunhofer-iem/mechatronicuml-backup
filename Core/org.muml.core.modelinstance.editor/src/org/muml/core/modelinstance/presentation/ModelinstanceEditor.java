@@ -600,7 +600,7 @@ public class ModelinstanceEditor
 			BasicDiagnostic diagnostic =
 				new BasicDiagnostic
 					(Diagnostic.OK,
-					 "de.uni_paderborn.fujaba.modelinstance.editor",
+					 "org.muml.core.modelinstance.editor",
 					 0,
 					 null,
 					 new Object [] { editingDomain.getResourceSet() });
@@ -974,7 +974,7 @@ public class ModelinstanceEditor
 			BasicDiagnostic basicDiagnostic =
 				new BasicDiagnostic
 					(Diagnostic.ERROR,
-					 "de.uni_paderborn.fujaba.modelinstance.editor",
+					 "org.muml.core.modelinstance.editor",
 					 0,
 					 getString("_UI_CreateModelError_message", resource.getURI()),
 					 new Object [] { exception == null ? (Object)resource : exception });
@@ -985,7 +985,7 @@ public class ModelinstanceEditor
 			return
 				new BasicDiagnostic
 					(Diagnostic.ERROR,
-					 "de.uni_paderborn.fujaba.modelinstance.editor",
+					 "org.muml.core.modelinstance.editor",
 					 0,
 					 getString("_UI_CreateModelError_message", resource.getURI()),
 					 new Object[] { exception });

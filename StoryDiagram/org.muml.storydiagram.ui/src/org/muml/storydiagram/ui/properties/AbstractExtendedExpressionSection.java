@@ -77,7 +77,7 @@ import de.upb.swt.core.ui.providers.ComposedAdapterFactoryLabelProvider;
 import de.upb.swt.core.ui.providers.ContainmentContentProvider;
 
 public abstract class AbstractExtendedExpressionSection extends AbstractPropertySection {
-	private static final String EXPRESSION_SOURCE_VIEWER_EXTENSION_POINT_ID = "org.storydriven.storydiagrams.diagram.custom.expressionSourceViewerExtension";
+	private static final String EXPRESSION_SOURCE_VIEWER_EXTENSION_POINT_ID = "org.muml.storydiagram.diagram.custom.expressionSourceViewerExtension";
 	private static final String EXPRESSION_LANGUAGES_LANGUAGE_ATTRIBUTE_NAME = "expressionLanguage";
 	private static final String EXPRESSION_LANGUAGES_VERSION_ATTRIBUTE_NAME = "version";
 	private static final String EXPRESSION_SOURCE_VIEWER_ATTRIBUTE_NAME = "sourceViewerProvider";

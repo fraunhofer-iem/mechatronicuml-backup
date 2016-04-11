@@ -61,7 +61,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
         
 
     public String[] getTokenNames() { return InternalExpressionsParser.tokenNames; }
-    public String getGrammarFileName() { return "../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g"; }
+    public String getGrammarFileName() { return "../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g"; }
 
 
 
@@ -91,7 +91,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLExpression"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:73:1: entryRuleLExpression returns [EObject current=null] : iv_ruleLExpression= ruleLExpression EOF ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:73:1: entryRuleLExpression returns [EObject current=null] : iv_ruleLExpression= ruleLExpression EOF ;
     public final EObject entryRuleLExpression() throws RecognitionException {
         EObject current = null;
 
@@ -99,8 +99,8 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:74:2: (iv_ruleLExpression= ruleLExpression EOF )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:75:2: iv_ruleLExpression= ruleLExpression EOF
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:74:2: (iv_ruleLExpression= ruleLExpression EOF )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:75:2: iv_ruleLExpression= ruleLExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getLExpressionRule()); 
@@ -131,7 +131,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLExpression"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:82:1: ruleLExpression returns [EObject current=null] : this_Equivalent_0= ruleEquivalent ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:82:1: ruleLExpression returns [EObject current=null] : this_Equivalent_0= ruleEquivalent ;
     public final EObject ruleLExpression() throws RecognitionException {
         EObject current = null;
 
@@ -141,8 +141,8 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:85:28: (this_Equivalent_0= ruleEquivalent )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:87:2: this_Equivalent_0= ruleEquivalent
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:85:28: (this_Equivalent_0= ruleEquivalent )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:87:2: this_Equivalent_0= ruleEquivalent
             {
             if ( state.backtracking==0 ) {
                
@@ -185,7 +185,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEquivalent"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:106:1: entryRuleEquivalent returns [EObject current=null] : iv_ruleEquivalent= ruleEquivalent EOF ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:106:1: entryRuleEquivalent returns [EObject current=null] : iv_ruleEquivalent= ruleEquivalent EOF ;
     public final EObject entryRuleEquivalent() throws RecognitionException {
         EObject current = null;
 
@@ -193,8 +193,8 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:107:2: (iv_ruleEquivalent= ruleEquivalent EOF )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:108:2: iv_ruleEquivalent= ruleEquivalent EOF
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:107:2: (iv_ruleEquivalent= ruleEquivalent EOF )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:108:2: iv_ruleEquivalent= ruleEquivalent EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEquivalentRule()); 
@@ -225,7 +225,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEquivalent"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:115:1: ruleEquivalent returns [EObject current=null] : (this_Implication_0= ruleImplication ( () otherlv_2= 'equiv' ( (lv_right_3_0= ruleEquivalent ) ) )? ) ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:115:1: ruleEquivalent returns [EObject current=null] : (this_Implication_0= ruleImplication ( () otherlv_2= 'equiv' ( (lv_right_3_0= ruleEquivalent ) ) )? ) ;
     public final EObject ruleEquivalent() throws RecognitionException {
         EObject current = null;
 
@@ -238,11 +238,11 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:118:28: ( (this_Implication_0= ruleImplication ( () otherlv_2= 'equiv' ( (lv_right_3_0= ruleEquivalent ) ) )? ) )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:119:1: (this_Implication_0= ruleImplication ( () otherlv_2= 'equiv' ( (lv_right_3_0= ruleEquivalent ) ) )? )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:118:28: ( (this_Implication_0= ruleImplication ( () otherlv_2= 'equiv' ( (lv_right_3_0= ruleEquivalent ) ) )? ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:119:1: (this_Implication_0= ruleImplication ( () otherlv_2= 'equiv' ( (lv_right_3_0= ruleEquivalent ) ) )? )
             {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:119:1: (this_Implication_0= ruleImplication ( () otherlv_2= 'equiv' ( (lv_right_3_0= ruleEquivalent ) ) )? )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:120:2: this_Implication_0= ruleImplication ( () otherlv_2= 'equiv' ( (lv_right_3_0= ruleEquivalent ) ) )?
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:119:1: (this_Implication_0= ruleImplication ( () otherlv_2= 'equiv' ( (lv_right_3_0= ruleEquivalent ) ) )? )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:120:2: this_Implication_0= ruleImplication ( () otherlv_2= 'equiv' ( (lv_right_3_0= ruleEquivalent ) ) )?
             {
             if ( state.backtracking==0 ) {
                
@@ -265,7 +265,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:131:1: ( () otherlv_2= 'equiv' ( (lv_right_3_0= ruleEquivalent ) ) )?
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:131:1: ( () otherlv_2= 'equiv' ( (lv_right_3_0= ruleEquivalent ) ) )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -274,10 +274,10 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:131:2: () otherlv_2= 'equiv' ( (lv_right_3_0= ruleEquivalent ) )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:131:2: () otherlv_2= 'equiv' ( (lv_right_3_0= ruleEquivalent ) )
                     {
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:131:2: ()
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:132:2: 
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:131:2: ()
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:132:2: 
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -300,11 +300,11 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                           	newLeafNode(otherlv_2, grammarAccess.getEquivalentAccess().getEquivKeyword_1_1());
                           
                     }
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:144:1: ( (lv_right_3_0= ruleEquivalent ) )
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:145:1: (lv_right_3_0= ruleEquivalent )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:144:1: ( (lv_right_3_0= ruleEquivalent ) )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:145:1: (lv_right_3_0= ruleEquivalent )
                     {
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:145:1: (lv_right_3_0= ruleEquivalent )
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:146:3: lv_right_3_0= ruleEquivalent
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:145:1: (lv_right_3_0= ruleEquivalent )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:146:3: lv_right_3_0= ruleEquivalent
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -364,7 +364,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleImplication"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:170:1: entryRuleImplication returns [EObject current=null] : iv_ruleImplication= ruleImplication EOF ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:170:1: entryRuleImplication returns [EObject current=null] : iv_ruleImplication= ruleImplication EOF ;
     public final EObject entryRuleImplication() throws RecognitionException {
         EObject current = null;
 
@@ -372,8 +372,8 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:171:2: (iv_ruleImplication= ruleImplication EOF )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:172:2: iv_ruleImplication= ruleImplication EOF
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:171:2: (iv_ruleImplication= ruleImplication EOF )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:172:2: iv_ruleImplication= ruleImplication EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getImplicationRule()); 
@@ -404,7 +404,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImplication"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:179:1: ruleImplication returns [EObject current=null] : (this_Disjunction_0= ruleDisjunction ( () otherlv_2= 'imply' ( (lv_right_3_0= ruleImplication ) ) )? ) ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:179:1: ruleImplication returns [EObject current=null] : (this_Disjunction_0= ruleDisjunction ( () otherlv_2= 'imply' ( (lv_right_3_0= ruleImplication ) ) )? ) ;
     public final EObject ruleImplication() throws RecognitionException {
         EObject current = null;
 
@@ -417,11 +417,11 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:182:28: ( (this_Disjunction_0= ruleDisjunction ( () otherlv_2= 'imply' ( (lv_right_3_0= ruleImplication ) ) )? ) )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:183:1: (this_Disjunction_0= ruleDisjunction ( () otherlv_2= 'imply' ( (lv_right_3_0= ruleImplication ) ) )? )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:182:28: ( (this_Disjunction_0= ruleDisjunction ( () otherlv_2= 'imply' ( (lv_right_3_0= ruleImplication ) ) )? ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:183:1: (this_Disjunction_0= ruleDisjunction ( () otherlv_2= 'imply' ( (lv_right_3_0= ruleImplication ) ) )? )
             {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:183:1: (this_Disjunction_0= ruleDisjunction ( () otherlv_2= 'imply' ( (lv_right_3_0= ruleImplication ) ) )? )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:184:2: this_Disjunction_0= ruleDisjunction ( () otherlv_2= 'imply' ( (lv_right_3_0= ruleImplication ) ) )?
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:183:1: (this_Disjunction_0= ruleDisjunction ( () otherlv_2= 'imply' ( (lv_right_3_0= ruleImplication ) ) )? )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:184:2: this_Disjunction_0= ruleDisjunction ( () otherlv_2= 'imply' ( (lv_right_3_0= ruleImplication ) ) )?
             {
             if ( state.backtracking==0 ) {
                
@@ -444,7 +444,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:195:1: ( () otherlv_2= 'imply' ( (lv_right_3_0= ruleImplication ) ) )?
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:195:1: ( () otherlv_2= 'imply' ( (lv_right_3_0= ruleImplication ) ) )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -453,10 +453,10 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
             }
             switch (alt2) {
                 case 1 :
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:195:2: () otherlv_2= 'imply' ( (lv_right_3_0= ruleImplication ) )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:195:2: () otherlv_2= 'imply' ( (lv_right_3_0= ruleImplication ) )
                     {
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:195:2: ()
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:196:2: 
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:195:2: ()
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:196:2: 
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -479,11 +479,11 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                           	newLeafNode(otherlv_2, grammarAccess.getImplicationAccess().getImplyKeyword_1_1());
                           
                     }
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:208:1: ( (lv_right_3_0= ruleImplication ) )
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:209:1: (lv_right_3_0= ruleImplication )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:208:1: ( (lv_right_3_0= ruleImplication ) )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:209:1: (lv_right_3_0= ruleImplication )
                     {
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:209:1: (lv_right_3_0= ruleImplication )
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:210:3: lv_right_3_0= ruleImplication
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:209:1: (lv_right_3_0= ruleImplication )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:210:3: lv_right_3_0= ruleImplication
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -543,7 +543,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDisjunction"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:234:1: entryRuleDisjunction returns [EObject current=null] : iv_ruleDisjunction= ruleDisjunction EOF ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:234:1: entryRuleDisjunction returns [EObject current=null] : iv_ruleDisjunction= ruleDisjunction EOF ;
     public final EObject entryRuleDisjunction() throws RecognitionException {
         EObject current = null;
 
@@ -551,8 +551,8 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:235:2: (iv_ruleDisjunction= ruleDisjunction EOF )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:236:2: iv_ruleDisjunction= ruleDisjunction EOF
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:235:2: (iv_ruleDisjunction= ruleDisjunction EOF )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:236:2: iv_ruleDisjunction= ruleDisjunction EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getDisjunctionRule()); 
@@ -583,7 +583,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDisjunction"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:243:1: ruleDisjunction returns [EObject current=null] : (this_Conjunction_0= ruleConjunction ( ( ( () otherlv_2= 'or' ) | ( () otherlv_4= 'xor' ) ) ( (lv_right_5_0= ruleDisjunction ) ) )? ) ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:243:1: ruleDisjunction returns [EObject current=null] : (this_Conjunction_0= ruleConjunction ( ( ( () otherlv_2= 'or' ) | ( () otherlv_4= 'xor' ) ) ( (lv_right_5_0= ruleDisjunction ) ) )? ) ;
     public final EObject ruleDisjunction() throws RecognitionException {
         EObject current = null;
 
@@ -597,11 +597,11 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:246:28: ( (this_Conjunction_0= ruleConjunction ( ( ( () otherlv_2= 'or' ) | ( () otherlv_4= 'xor' ) ) ( (lv_right_5_0= ruleDisjunction ) ) )? ) )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:247:1: (this_Conjunction_0= ruleConjunction ( ( ( () otherlv_2= 'or' ) | ( () otherlv_4= 'xor' ) ) ( (lv_right_5_0= ruleDisjunction ) ) )? )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:246:28: ( (this_Conjunction_0= ruleConjunction ( ( ( () otherlv_2= 'or' ) | ( () otherlv_4= 'xor' ) ) ( (lv_right_5_0= ruleDisjunction ) ) )? ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:247:1: (this_Conjunction_0= ruleConjunction ( ( ( () otherlv_2= 'or' ) | ( () otherlv_4= 'xor' ) ) ( (lv_right_5_0= ruleDisjunction ) ) )? )
             {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:247:1: (this_Conjunction_0= ruleConjunction ( ( ( () otherlv_2= 'or' ) | ( () otherlv_4= 'xor' ) ) ( (lv_right_5_0= ruleDisjunction ) ) )? )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:248:2: this_Conjunction_0= ruleConjunction ( ( ( () otherlv_2= 'or' ) | ( () otherlv_4= 'xor' ) ) ( (lv_right_5_0= ruleDisjunction ) ) )?
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:247:1: (this_Conjunction_0= ruleConjunction ( ( ( () otherlv_2= 'or' ) | ( () otherlv_4= 'xor' ) ) ( (lv_right_5_0= ruleDisjunction ) ) )? )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:248:2: this_Conjunction_0= ruleConjunction ( ( ( () otherlv_2= 'or' ) | ( () otherlv_4= 'xor' ) ) ( (lv_right_5_0= ruleDisjunction ) ) )?
             {
             if ( state.backtracking==0 ) {
                
@@ -624,7 +624,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:259:1: ( ( ( () otherlv_2= 'or' ) | ( () otherlv_4= 'xor' ) ) ( (lv_right_5_0= ruleDisjunction ) ) )?
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:259:1: ( ( ( () otherlv_2= 'or' ) | ( () otherlv_4= 'xor' ) ) ( (lv_right_5_0= ruleDisjunction ) ) )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -633,9 +633,9 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
             }
             switch (alt4) {
                 case 1 :
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:259:2: ( ( () otherlv_2= 'or' ) | ( () otherlv_4= 'xor' ) ) ( (lv_right_5_0= ruleDisjunction ) )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:259:2: ( ( () otherlv_2= 'or' ) | ( () otherlv_4= 'xor' ) ) ( (lv_right_5_0= ruleDisjunction ) )
                     {
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:259:2: ( ( () otherlv_2= 'or' ) | ( () otherlv_4= 'xor' ) )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:259:2: ( ( () otherlv_2= 'or' ) | ( () otherlv_4= 'xor' ) )
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
@@ -654,13 +654,13 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt3) {
                         case 1 :
-                            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:259:3: ( () otherlv_2= 'or' )
+                            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:259:3: ( () otherlv_2= 'or' )
                             {
-                            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:259:3: ( () otherlv_2= 'or' )
-                            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:259:4: () otherlv_2= 'or'
+                            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:259:3: ( () otherlv_2= 'or' )
+                            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:259:4: () otherlv_2= 'or'
                             {
-                            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:259:4: ()
-                            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:260:2: 
+                            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:259:4: ()
+                            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:260:2: 
                             {
                             if ( state.backtracking==0 ) {
                                
@@ -690,13 +690,13 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:273:6: ( () otherlv_4= 'xor' )
+                            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:273:6: ( () otherlv_4= 'xor' )
                             {
-                            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:273:6: ( () otherlv_4= 'xor' )
-                            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:273:7: () otherlv_4= 'xor'
+                            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:273:6: ( () otherlv_4= 'xor' )
+                            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:273:7: () otherlv_4= 'xor'
                             {
-                            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:273:7: ()
-                            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:274:2: 
+                            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:273:7: ()
+                            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:274:2: 
                             {
                             if ( state.backtracking==0 ) {
                                
@@ -728,11 +728,11 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:286:3: ( (lv_right_5_0= ruleDisjunction ) )
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:287:1: (lv_right_5_0= ruleDisjunction )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:286:3: ( (lv_right_5_0= ruleDisjunction ) )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:287:1: (lv_right_5_0= ruleDisjunction )
                     {
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:287:1: (lv_right_5_0= ruleDisjunction )
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:288:3: lv_right_5_0= ruleDisjunction
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:287:1: (lv_right_5_0= ruleDisjunction )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:288:3: lv_right_5_0= ruleDisjunction
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -792,7 +792,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConjunction"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:312:1: entryRuleConjunction returns [EObject current=null] : iv_ruleConjunction= ruleConjunction EOF ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:312:1: entryRuleConjunction returns [EObject current=null] : iv_ruleConjunction= ruleConjunction EOF ;
     public final EObject entryRuleConjunction() throws RecognitionException {
         EObject current = null;
 
@@ -800,8 +800,8 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:313:2: (iv_ruleConjunction= ruleConjunction EOF )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:314:2: iv_ruleConjunction= ruleConjunction EOF
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:313:2: (iv_ruleConjunction= ruleConjunction EOF )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:314:2: iv_ruleConjunction= ruleConjunction EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getConjunctionRule()); 
@@ -832,7 +832,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConjunction"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:321:1: ruleConjunction returns [EObject current=null] : (this_Negation_0= ruleNegation ( () otherlv_2= 'and' ( (lv_right_3_0= ruleConjunction ) ) )? ) ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:321:1: ruleConjunction returns [EObject current=null] : (this_Negation_0= ruleNegation ( () otherlv_2= 'and' ( (lv_right_3_0= ruleConjunction ) ) )? ) ;
     public final EObject ruleConjunction() throws RecognitionException {
         EObject current = null;
 
@@ -845,11 +845,11 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:324:28: ( (this_Negation_0= ruleNegation ( () otherlv_2= 'and' ( (lv_right_3_0= ruleConjunction ) ) )? ) )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:325:1: (this_Negation_0= ruleNegation ( () otherlv_2= 'and' ( (lv_right_3_0= ruleConjunction ) ) )? )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:324:28: ( (this_Negation_0= ruleNegation ( () otherlv_2= 'and' ( (lv_right_3_0= ruleConjunction ) ) )? ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:325:1: (this_Negation_0= ruleNegation ( () otherlv_2= 'and' ( (lv_right_3_0= ruleConjunction ) ) )? )
             {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:325:1: (this_Negation_0= ruleNegation ( () otherlv_2= 'and' ( (lv_right_3_0= ruleConjunction ) ) )? )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:326:2: this_Negation_0= ruleNegation ( () otherlv_2= 'and' ( (lv_right_3_0= ruleConjunction ) ) )?
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:325:1: (this_Negation_0= ruleNegation ( () otherlv_2= 'and' ( (lv_right_3_0= ruleConjunction ) ) )? )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:326:2: this_Negation_0= ruleNegation ( () otherlv_2= 'and' ( (lv_right_3_0= ruleConjunction ) ) )?
             {
             if ( state.backtracking==0 ) {
                
@@ -872,7 +872,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:337:1: ( () otherlv_2= 'and' ( (lv_right_3_0= ruleConjunction ) ) )?
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:337:1: ( () otherlv_2= 'and' ( (lv_right_3_0= ruleConjunction ) ) )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -881,10 +881,10 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
             }
             switch (alt5) {
                 case 1 :
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:337:2: () otherlv_2= 'and' ( (lv_right_3_0= ruleConjunction ) )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:337:2: () otherlv_2= 'and' ( (lv_right_3_0= ruleConjunction ) )
                     {
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:337:2: ()
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:338:2: 
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:337:2: ()
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:338:2: 
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -907,11 +907,11 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                           	newLeafNode(otherlv_2, grammarAccess.getConjunctionAccess().getAndKeyword_1_1());
                           
                     }
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:350:1: ( (lv_right_3_0= ruleConjunction ) )
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:351:1: (lv_right_3_0= ruleConjunction )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:350:1: ( (lv_right_3_0= ruleConjunction ) )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:351:1: (lv_right_3_0= ruleConjunction )
                     {
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:351:1: (lv_right_3_0= ruleConjunction )
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:352:3: lv_right_3_0= ruleConjunction
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:351:1: (lv_right_3_0= ruleConjunction )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:352:3: lv_right_3_0= ruleConjunction
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -971,7 +971,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNegation"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:376:1: entryRuleNegation returns [EObject current=null] : iv_ruleNegation= ruleNegation EOF ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:376:1: entryRuleNegation returns [EObject current=null] : iv_ruleNegation= ruleNegation EOF ;
     public final EObject entryRuleNegation() throws RecognitionException {
         EObject current = null;
 
@@ -979,8 +979,8 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:377:2: (iv_ruleNegation= ruleNegation EOF )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:378:2: iv_ruleNegation= ruleNegation EOF
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:377:2: (iv_ruleNegation= ruleNegation EOF )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:378:2: iv_ruleNegation= ruleNegation EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getNegationRule()); 
@@ -1011,7 +1011,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNegation"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:385:1: ruleNegation returns [EObject current=null] : ( (otherlv_0= 'not' this_Negated_1= ruleNegated ) | this_CExpression_2= ruleCExpression ) ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:385:1: ruleNegation returns [EObject current=null] : ( (otherlv_0= 'not' this_Negated_1= ruleNegated ) | this_CExpression_2= ruleCExpression ) ;
     public final EObject ruleNegation() throws RecognitionException {
         EObject current = null;
 
@@ -1024,10 +1024,10 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:388:28: ( ( (otherlv_0= 'not' this_Negated_1= ruleNegated ) | this_CExpression_2= ruleCExpression ) )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:389:1: ( (otherlv_0= 'not' this_Negated_1= ruleNegated ) | this_CExpression_2= ruleCExpression )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:388:28: ( ( (otherlv_0= 'not' this_Negated_1= ruleNegated ) | this_CExpression_2= ruleCExpression ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:389:1: ( (otherlv_0= 'not' this_Negated_1= ruleNegated ) | this_CExpression_2= ruleCExpression )
             {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:389:1: ( (otherlv_0= 'not' this_Negated_1= ruleNegated ) | this_CExpression_2= ruleCExpression )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:389:1: ( (otherlv_0= 'not' this_Negated_1= ruleNegated ) | this_CExpression_2= ruleCExpression )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1046,10 +1046,10 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:389:2: (otherlv_0= 'not' this_Negated_1= ruleNegated )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:389:2: (otherlv_0= 'not' this_Negated_1= ruleNegated )
                     {
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:389:2: (otherlv_0= 'not' this_Negated_1= ruleNegated )
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:389:4: otherlv_0= 'not' this_Negated_1= ruleNegated
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:389:2: (otherlv_0= 'not' this_Negated_1= ruleNegated )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:389:4: otherlv_0= 'not' this_Negated_1= ruleNegated
                     {
                     otherlv_0=(Token)match(input,17,FOLLOW_17_in_ruleNegation830); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -1085,7 +1085,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:407:2: this_CExpression_2= ruleCExpression
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:407:2: this_CExpression_2= ruleCExpression
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -1134,7 +1134,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNegated"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:426:1: entryRuleNegated returns [EObject current=null] : iv_ruleNegated= ruleNegated EOF ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:426:1: entryRuleNegated returns [EObject current=null] : iv_ruleNegated= ruleNegated EOF ;
     public final EObject entryRuleNegated() throws RecognitionException {
         EObject current = null;
 
@@ -1142,8 +1142,8 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:427:2: (iv_ruleNegated= ruleNegated EOF )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:428:2: iv_ruleNegated= ruleNegated EOF
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:427:2: (iv_ruleNegated= ruleNegated EOF )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:428:2: iv_ruleNegated= ruleNegated EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getNegatedRule()); 
@@ -1174,7 +1174,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNegated"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:435:1: ruleNegated returns [EObject current=null] : ( () ( (lv_not_1_0= ruleCExpression ) ) ) ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:435:1: ruleNegated returns [EObject current=null] : ( () ( (lv_not_1_0= ruleCExpression ) ) ) ;
     public final EObject ruleNegated() throws RecognitionException {
         EObject current = null;
 
@@ -1184,14 +1184,14 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:438:28: ( ( () ( (lv_not_1_0= ruleCExpression ) ) ) )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:439:1: ( () ( (lv_not_1_0= ruleCExpression ) ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:438:28: ( ( () ( (lv_not_1_0= ruleCExpression ) ) ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:439:1: ( () ( (lv_not_1_0= ruleCExpression ) ) )
             {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:439:1: ( () ( (lv_not_1_0= ruleCExpression ) ) )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:439:2: () ( (lv_not_1_0= ruleCExpression ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:439:1: ( () ( (lv_not_1_0= ruleCExpression ) ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:439:2: () ( (lv_not_1_0= ruleCExpression ) )
             {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:439:2: ()
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:440:2: 
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:439:2: ()
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:440:2: 
             {
             if ( state.backtracking==0 ) {
                
@@ -1208,11 +1208,11 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:448:2: ( (lv_not_1_0= ruleCExpression ) )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:449:1: (lv_not_1_0= ruleCExpression )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:448:2: ( (lv_not_1_0= ruleCExpression ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:449:1: (lv_not_1_0= ruleCExpression )
             {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:449:1: (lv_not_1_0= ruleCExpression )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:450:3: lv_not_1_0= ruleCExpression
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:449:1: (lv_not_1_0= ruleCExpression )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:450:3: lv_not_1_0= ruleCExpression
             {
             if ( state.backtracking==0 ) {
                
@@ -1266,7 +1266,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCExpression"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:474:1: entryRuleCExpression returns [EObject current=null] : iv_ruleCExpression= ruleCExpression EOF ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:474:1: entryRuleCExpression returns [EObject current=null] : iv_ruleCExpression= ruleCExpression EOF ;
     public final EObject entryRuleCExpression() throws RecognitionException {
         EObject current = null;
 
@@ -1274,8 +1274,8 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:475:2: (iv_ruleCExpression= ruleCExpression EOF )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:476:2: iv_ruleCExpression= ruleCExpression EOF
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:475:2: (iv_ruleCExpression= ruleCExpression EOF )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:476:2: iv_ruleCExpression= ruleCExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getCExpressionRule()); 
@@ -1306,7 +1306,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCExpression"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:483:1: ruleCExpression returns [EObject current=null] : ( (otherlv_0= '(' this_LExpression_1= ruleLExpression otherlv_2= ')' ) | this_Compare_3= ruleCompare | this_BooleanValue_4= ruleBooleanValue | this_Variable_5= ruleVariable ) ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:483:1: ruleCExpression returns [EObject current=null] : ( (otherlv_0= '(' this_LExpression_1= ruleLExpression otherlv_2= ')' ) | this_Compare_3= ruleCompare | this_BooleanValue_4= ruleBooleanValue | this_Variable_5= ruleVariable ) ;
     public final EObject ruleCExpression() throws RecognitionException {
         EObject current = null;
 
@@ -1324,10 +1324,10 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:486:28: ( ( (otherlv_0= '(' this_LExpression_1= ruleLExpression otherlv_2= ')' ) | this_Compare_3= ruleCompare | this_BooleanValue_4= ruleBooleanValue | this_Variable_5= ruleVariable ) )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:487:1: ( (otherlv_0= '(' this_LExpression_1= ruleLExpression otherlv_2= ')' ) | this_Compare_3= ruleCompare | this_BooleanValue_4= ruleBooleanValue | this_Variable_5= ruleVariable )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:486:28: ( ( (otherlv_0= '(' this_LExpression_1= ruleLExpression otherlv_2= ')' ) | this_Compare_3= ruleCompare | this_BooleanValue_4= ruleBooleanValue | this_Variable_5= ruleVariable ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:487:1: ( (otherlv_0= '(' this_LExpression_1= ruleLExpression otherlv_2= ')' ) | this_Compare_3= ruleCompare | this_BooleanValue_4= ruleBooleanValue | this_Variable_5= ruleVariable )
             {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:487:1: ( (otherlv_0= '(' this_LExpression_1= ruleLExpression otherlv_2= ')' ) | this_Compare_3= ruleCompare | this_BooleanValue_4= ruleBooleanValue | this_Variable_5= ruleVariable )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:487:1: ( (otherlv_0= '(' this_LExpression_1= ruleLExpression otherlv_2= ')' ) | this_Compare_3= ruleCompare | this_BooleanValue_4= ruleBooleanValue | this_Variable_5= ruleVariable )
             int alt7=4;
             switch ( input.LA(1) ) {
             case 18:
@@ -1403,10 +1403,10 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
             switch (alt7) {
                 case 1 :
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:487:2: (otherlv_0= '(' this_LExpression_1= ruleLExpression otherlv_2= ')' )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:487:2: (otherlv_0= '(' this_LExpression_1= ruleLExpression otherlv_2= ')' )
                     {
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:487:2: (otherlv_0= '(' this_LExpression_1= ruleLExpression otherlv_2= ')' )
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:487:4: otherlv_0= '(' this_LExpression_1= ruleLExpression otherlv_2= ')'
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:487:2: (otherlv_0= '(' this_LExpression_1= ruleLExpression otherlv_2= ')' )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:487:4: otherlv_0= '(' this_LExpression_1= ruleLExpression otherlv_2= ')'
                     {
                     otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleCExpression1073); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -1448,7 +1448,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:509:2: this_Compare_3= ruleCompare
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:509:2: this_Compare_3= ruleCompare
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -1475,7 +1475,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:522:2: this_BooleanValue_4= ruleBooleanValue
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:522:2: this_BooleanValue_4= ruleBooleanValue
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -1502,7 +1502,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:535:2: this_Variable_5= ruleVariable
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:535:2: this_Variable_5= ruleVariable
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -1551,7 +1551,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCompare"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:554:1: entryRuleCompare returns [EObject current=null] : iv_ruleCompare= ruleCompare EOF ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:554:1: entryRuleCompare returns [EObject current=null] : iv_ruleCompare= ruleCompare EOF ;
     public final EObject entryRuleCompare() throws RecognitionException {
         EObject current = null;
 
@@ -1559,8 +1559,8 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:555:2: (iv_ruleCompare= ruleCompare EOF )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:556:2: iv_ruleCompare= ruleCompare EOF
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:555:2: (iv_ruleCompare= ruleCompare EOF )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:556:2: iv_ruleCompare= ruleCompare EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getCompareRule()); 
@@ -1591,7 +1591,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCompare"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:563:1: ruleCompare returns [EObject current=null] : (this_SomeValue_0= ruleSomeValue ( ( () otherlv_2= '<=' ) | ( () otherlv_4= '<' ) | ( () otherlv_6= '>=' ) | ( () otherlv_8= '>' ) | ( () otherlv_10= '=' ) | ( () otherlv_12= '!=' ) | ( () otherlv_14= '~' ) ) ( (lv_right_15_0= ruleSomeValue ) ) ) ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:563:1: ruleCompare returns [EObject current=null] : (this_SomeValue_0= ruleSomeValue ( ( () otherlv_2= '<=' ) | ( () otherlv_4= '<' ) | ( () otherlv_6= '>=' ) | ( () otherlv_8= '>' ) | ( () otherlv_10= '=' ) | ( () otherlv_12= '!=' ) | ( () otherlv_14= '~' ) ) ( (lv_right_15_0= ruleSomeValue ) ) ) ;
     public final EObject ruleCompare() throws RecognitionException {
         EObject current = null;
 
@@ -1610,11 +1610,11 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:566:28: ( (this_SomeValue_0= ruleSomeValue ( ( () otherlv_2= '<=' ) | ( () otherlv_4= '<' ) | ( () otherlv_6= '>=' ) | ( () otherlv_8= '>' ) | ( () otherlv_10= '=' ) | ( () otherlv_12= '!=' ) | ( () otherlv_14= '~' ) ) ( (lv_right_15_0= ruleSomeValue ) ) ) )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:567:1: (this_SomeValue_0= ruleSomeValue ( ( () otherlv_2= '<=' ) | ( () otherlv_4= '<' ) | ( () otherlv_6= '>=' ) | ( () otherlv_8= '>' ) | ( () otherlv_10= '=' ) | ( () otherlv_12= '!=' ) | ( () otherlv_14= '~' ) ) ( (lv_right_15_0= ruleSomeValue ) ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:566:28: ( (this_SomeValue_0= ruleSomeValue ( ( () otherlv_2= '<=' ) | ( () otherlv_4= '<' ) | ( () otherlv_6= '>=' ) | ( () otherlv_8= '>' ) | ( () otherlv_10= '=' ) | ( () otherlv_12= '!=' ) | ( () otherlv_14= '~' ) ) ( (lv_right_15_0= ruleSomeValue ) ) ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:567:1: (this_SomeValue_0= ruleSomeValue ( ( () otherlv_2= '<=' ) | ( () otherlv_4= '<' ) | ( () otherlv_6= '>=' ) | ( () otherlv_8= '>' ) | ( () otherlv_10= '=' ) | ( () otherlv_12= '!=' ) | ( () otherlv_14= '~' ) ) ( (lv_right_15_0= ruleSomeValue ) ) )
             {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:567:1: (this_SomeValue_0= ruleSomeValue ( ( () otherlv_2= '<=' ) | ( () otherlv_4= '<' ) | ( () otherlv_6= '>=' ) | ( () otherlv_8= '>' ) | ( () otherlv_10= '=' ) | ( () otherlv_12= '!=' ) | ( () otherlv_14= '~' ) ) ( (lv_right_15_0= ruleSomeValue ) ) )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:568:2: this_SomeValue_0= ruleSomeValue ( ( () otherlv_2= '<=' ) | ( () otherlv_4= '<' ) | ( () otherlv_6= '>=' ) | ( () otherlv_8= '>' ) | ( () otherlv_10= '=' ) | ( () otherlv_12= '!=' ) | ( () otherlv_14= '~' ) ) ( (lv_right_15_0= ruleSomeValue ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:567:1: (this_SomeValue_0= ruleSomeValue ( ( () otherlv_2= '<=' ) | ( () otherlv_4= '<' ) | ( () otherlv_6= '>=' ) | ( () otherlv_8= '>' ) | ( () otherlv_10= '=' ) | ( () otherlv_12= '!=' ) | ( () otherlv_14= '~' ) ) ( (lv_right_15_0= ruleSomeValue ) ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:568:2: this_SomeValue_0= ruleSomeValue ( ( () otherlv_2= '<=' ) | ( () otherlv_4= '<' ) | ( () otherlv_6= '>=' ) | ( () otherlv_8= '>' ) | ( () otherlv_10= '=' ) | ( () otherlv_12= '!=' ) | ( () otherlv_14= '~' ) ) ( (lv_right_15_0= ruleSomeValue ) )
             {
             if ( state.backtracking==0 ) {
                
@@ -1637,7 +1637,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:579:1: ( ( () otherlv_2= '<=' ) | ( () otherlv_4= '<' ) | ( () otherlv_6= '>=' ) | ( () otherlv_8= '>' ) | ( () otherlv_10= '=' ) | ( () otherlv_12= '!=' ) | ( () otherlv_14= '~' ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:579:1: ( ( () otherlv_2= '<=' ) | ( () otherlv_4= '<' ) | ( () otherlv_6= '>=' ) | ( () otherlv_8= '>' ) | ( () otherlv_10= '=' ) | ( () otherlv_12= '!=' ) | ( () otherlv_14= '~' ) )
             int alt8=7;
             switch ( input.LA(1) ) {
             case 20:
@@ -1685,13 +1685,13 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
             switch (alt8) {
                 case 1 :
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:579:2: ( () otherlv_2= '<=' )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:579:2: ( () otherlv_2= '<=' )
                     {
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:579:2: ( () otherlv_2= '<=' )
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:579:3: () otherlv_2= '<='
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:579:2: ( () otherlv_2= '<=' )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:579:3: () otherlv_2= '<='
                     {
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:579:3: ()
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:580:2: 
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:579:3: ()
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:580:2: 
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -1721,13 +1721,13 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:593:6: ( () otherlv_4= '<' )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:593:6: ( () otherlv_4= '<' )
                     {
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:593:6: ( () otherlv_4= '<' )
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:593:7: () otherlv_4= '<'
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:593:6: ( () otherlv_4= '<' )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:593:7: () otherlv_4= '<'
                     {
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:593:7: ()
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:594:2: 
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:593:7: ()
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:594:2: 
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -1757,13 +1757,13 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:607:6: ( () otherlv_6= '>=' )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:607:6: ( () otherlv_6= '>=' )
                     {
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:607:6: ( () otherlv_6= '>=' )
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:607:7: () otherlv_6= '>='
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:607:6: ( () otherlv_6= '>=' )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:607:7: () otherlv_6= '>='
                     {
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:607:7: ()
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:608:2: 
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:607:7: ()
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:608:2: 
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -1793,13 +1793,13 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:621:6: ( () otherlv_8= '>' )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:621:6: ( () otherlv_8= '>' )
                     {
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:621:6: ( () otherlv_8= '>' )
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:621:7: () otherlv_8= '>'
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:621:6: ( () otherlv_8= '>' )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:621:7: () otherlv_8= '>'
                     {
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:621:7: ()
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:622:2: 
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:621:7: ()
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:622:2: 
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -1829,13 +1829,13 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:635:6: ( () otherlv_10= '=' )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:635:6: ( () otherlv_10= '=' )
                     {
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:635:6: ( () otherlv_10= '=' )
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:635:7: () otherlv_10= '='
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:635:6: ( () otherlv_10= '=' )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:635:7: () otherlv_10= '='
                     {
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:635:7: ()
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:636:2: 
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:635:7: ()
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:636:2: 
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -1865,13 +1865,13 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:649:6: ( () otherlv_12= '!=' )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:649:6: ( () otherlv_12= '!=' )
                     {
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:649:6: ( () otherlv_12= '!=' )
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:649:7: () otherlv_12= '!='
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:649:6: ( () otherlv_12= '!=' )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:649:7: () otherlv_12= '!='
                     {
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:649:7: ()
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:650:2: 
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:649:7: ()
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:650:2: 
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -1901,13 +1901,13 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:663:6: ( () otherlv_14= '~' )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:663:6: ( () otherlv_14= '~' )
                     {
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:663:6: ( () otherlv_14= '~' )
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:663:7: () otherlv_14= '~'
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:663:6: ( () otherlv_14= '~' )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:663:7: () otherlv_14= '~'
                     {
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:663:7: ()
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:664:2: 
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:663:7: ()
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:664:2: 
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -1939,11 +1939,11 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:676:3: ( (lv_right_15_0= ruleSomeValue ) )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:677:1: (lv_right_15_0= ruleSomeValue )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:676:3: ( (lv_right_15_0= ruleSomeValue ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:677:1: (lv_right_15_0= ruleSomeValue )
             {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:677:1: (lv_right_15_0= ruleSomeValue )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:678:3: lv_right_15_0= ruleSomeValue
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:677:1: (lv_right_15_0= ruleSomeValue )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:678:3: lv_right_15_0= ruleSomeValue
             {
             if ( state.backtracking==0 ) {
                
@@ -1997,7 +1997,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSomeValue"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:702:1: entryRuleSomeValue returns [EObject current=null] : iv_ruleSomeValue= ruleSomeValue EOF ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:702:1: entryRuleSomeValue returns [EObject current=null] : iv_ruleSomeValue= ruleSomeValue EOF ;
     public final EObject entryRuleSomeValue() throws RecognitionException {
         EObject current = null;
 
@@ -2005,8 +2005,8 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:703:2: (iv_ruleSomeValue= ruleSomeValue EOF )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:704:2: iv_ruleSomeValue= ruleSomeValue EOF
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:703:2: (iv_ruleSomeValue= ruleSomeValue EOF )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:704:2: iv_ruleSomeValue= ruleSomeValue EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getSomeValueRule()); 
@@ -2037,7 +2037,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSomeValue"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:711:1: ruleSomeValue returns [EObject current=null] : (this_StringValue_0= ruleStringValue | this_BooleanValue_1= ruleBooleanValue | this_AExpression_2= ruleAExpression ) ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:711:1: ruleSomeValue returns [EObject current=null] : (this_StringValue_0= ruleStringValue | this_BooleanValue_1= ruleBooleanValue | this_AExpression_2= ruleAExpression ) ;
     public final EObject ruleSomeValue() throws RecognitionException {
         EObject current = null;
 
@@ -2051,10 +2051,10 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:714:28: ( (this_StringValue_0= ruleStringValue | this_BooleanValue_1= ruleBooleanValue | this_AExpression_2= ruleAExpression ) )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:715:1: (this_StringValue_0= ruleStringValue | this_BooleanValue_1= ruleBooleanValue | this_AExpression_2= ruleAExpression )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:714:28: ( (this_StringValue_0= ruleStringValue | this_BooleanValue_1= ruleBooleanValue | this_AExpression_2= ruleAExpression ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:715:1: (this_StringValue_0= ruleStringValue | this_BooleanValue_1= ruleBooleanValue | this_AExpression_2= ruleAExpression )
             {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:715:1: (this_StringValue_0= ruleStringValue | this_BooleanValue_1= ruleBooleanValue | this_AExpression_2= ruleAExpression )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:715:1: (this_StringValue_0= ruleStringValue | this_BooleanValue_1= ruleBooleanValue | this_AExpression_2= ruleAExpression )
             int alt9=3;
             switch ( input.LA(1) ) {
             case RULE_STRING:
@@ -2084,7 +2084,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
             switch (alt9) {
                 case 1 :
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:716:2: this_StringValue_0= ruleStringValue
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:716:2: this_StringValue_0= ruleStringValue
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -2111,7 +2111,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:729:2: this_BooleanValue_1= ruleBooleanValue
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:729:2: this_BooleanValue_1= ruleBooleanValue
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -2138,7 +2138,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:742:2: this_AExpression_2= ruleAExpression
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:742:2: this_AExpression_2= ruleAExpression
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -2187,7 +2187,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAExpression"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:761:1: entryRuleAExpression returns [EObject current=null] : iv_ruleAExpression= ruleAExpression EOF ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:761:1: entryRuleAExpression returns [EObject current=null] : iv_ruleAExpression= ruleAExpression EOF ;
     public final EObject entryRuleAExpression() throws RecognitionException {
         EObject current = null;
 
@@ -2195,8 +2195,8 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:762:2: (iv_ruleAExpression= ruleAExpression EOF )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:763:2: iv_ruleAExpression= ruleAExpression EOF
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:762:2: (iv_ruleAExpression= ruleAExpression EOF )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:763:2: iv_ruleAExpression= ruleAExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getAExpressionRule()); 
@@ -2227,7 +2227,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAExpression"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:770:1: ruleAExpression returns [EObject current=null] : this_Addition_0= ruleAddition ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:770:1: ruleAExpression returns [EObject current=null] : this_Addition_0= ruleAddition ;
     public final EObject ruleAExpression() throws RecognitionException {
         EObject current = null;
 
@@ -2237,8 +2237,8 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:773:28: (this_Addition_0= ruleAddition )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:775:2: this_Addition_0= ruleAddition
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:773:28: (this_Addition_0= ruleAddition )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:775:2: this_Addition_0= ruleAddition
             {
             if ( state.backtracking==0 ) {
                
@@ -2281,7 +2281,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAddition"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:794:1: entryRuleAddition returns [EObject current=null] : iv_ruleAddition= ruleAddition EOF ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:794:1: entryRuleAddition returns [EObject current=null] : iv_ruleAddition= ruleAddition EOF ;
     public final EObject entryRuleAddition() throws RecognitionException {
         EObject current = null;
 
@@ -2289,8 +2289,8 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:795:2: (iv_ruleAddition= ruleAddition EOF )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:796:2: iv_ruleAddition= ruleAddition EOF
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:795:2: (iv_ruleAddition= ruleAddition EOF )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:796:2: iv_ruleAddition= ruleAddition EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getAdditionRule()); 
@@ -2321,7 +2321,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAddition"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:803:1: ruleAddition returns [EObject current=null] : (this_Multiplication_0= ruleMultiplication ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )* ) ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:803:1: ruleAddition returns [EObject current=null] : (this_Multiplication_0= ruleMultiplication ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )* ) ;
     public final EObject ruleAddition() throws RecognitionException {
         EObject current = null;
 
@@ -2335,11 +2335,11 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:806:28: ( (this_Multiplication_0= ruleMultiplication ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )* ) )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:807:1: (this_Multiplication_0= ruleMultiplication ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )* )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:806:28: ( (this_Multiplication_0= ruleMultiplication ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )* ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:807:1: (this_Multiplication_0= ruleMultiplication ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )* )
             {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:807:1: (this_Multiplication_0= ruleMultiplication ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )* )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:808:2: this_Multiplication_0= ruleMultiplication ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )*
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:807:1: (this_Multiplication_0= ruleMultiplication ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )* )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:808:2: this_Multiplication_0= ruleMultiplication ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )*
             {
             if ( state.backtracking==0 ) {
                
@@ -2362,7 +2362,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:819:1: ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )*
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:819:1: ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )*
             loop11:
             do {
                 int alt11=2;
@@ -2375,9 +2375,9 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
                 switch (alt11) {
             	case 1 :
-            	    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:819:2: ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleMultiplication ) )
+            	    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:819:2: ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleMultiplication ) )
             	    {
-            	    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:819:2: ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) )
+            	    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:819:2: ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) )
             	    int alt10=2;
             	    int LA10_0 = input.LA(1);
 
@@ -2396,13 +2396,13 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
             	    }
             	    switch (alt10) {
             	        case 1 :
-            	            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:819:3: ( () otherlv_2= '+' )
+            	            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:819:3: ( () otherlv_2= '+' )
             	            {
-            	            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:819:3: ( () otherlv_2= '+' )
-            	            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:819:4: () otherlv_2= '+'
+            	            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:819:3: ( () otherlv_2= '+' )
+            	            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:819:4: () otherlv_2= '+'
             	            {
-            	            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:819:4: ()
-            	            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:820:2: 
+            	            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:819:4: ()
+            	            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:820:2: 
             	            {
             	            if ( state.backtracking==0 ) {
             	               
@@ -2432,13 +2432,13 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:833:6: ( () otherlv_4= '-' )
+            	            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:833:6: ( () otherlv_4= '-' )
             	            {
-            	            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:833:6: ( () otherlv_4= '-' )
-            	            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:833:7: () otherlv_4= '-'
+            	            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:833:6: ( () otherlv_4= '-' )
+            	            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:833:7: () otherlv_4= '-'
             	            {
-            	            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:833:7: ()
-            	            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:834:2: 
+            	            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:833:7: ()
+            	            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:834:2: 
             	            {
             	            if ( state.backtracking==0 ) {
             	               
@@ -2470,11 +2470,11 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:846:3: ( (lv_right_5_0= ruleMultiplication ) )
-            	    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:847:1: (lv_right_5_0= ruleMultiplication )
+            	    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:846:3: ( (lv_right_5_0= ruleMultiplication ) )
+            	    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:847:1: (lv_right_5_0= ruleMultiplication )
             	    {
-            	    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:847:1: (lv_right_5_0= ruleMultiplication )
-            	    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:848:3: lv_right_5_0= ruleMultiplication
+            	    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:847:1: (lv_right_5_0= ruleMultiplication )
+            	    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:848:3: lv_right_5_0= ruleMultiplication
             	    {
             	    if ( state.backtracking==0 ) {
             	       
@@ -2537,7 +2537,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMultiplication"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:872:1: entryRuleMultiplication returns [EObject current=null] : iv_ruleMultiplication= ruleMultiplication EOF ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:872:1: entryRuleMultiplication returns [EObject current=null] : iv_ruleMultiplication= ruleMultiplication EOF ;
     public final EObject entryRuleMultiplication() throws RecognitionException {
         EObject current = null;
 
@@ -2545,8 +2545,8 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:873:2: (iv_ruleMultiplication= ruleMultiplication EOF )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:874:2: iv_ruleMultiplication= ruleMultiplication EOF
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:873:2: (iv_ruleMultiplication= ruleMultiplication EOF )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:874:2: iv_ruleMultiplication= ruleMultiplication EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getMultiplicationRule()); 
@@ -2577,7 +2577,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMultiplication"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:881:1: ruleMultiplication returns [EObject current=null] : (this_Power_0= rulePower ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) | ( () otherlv_6= '%' ) ) ( (lv_right_7_0= rulePower ) ) )* ) ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:881:1: ruleMultiplication returns [EObject current=null] : (this_Power_0= rulePower ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) | ( () otherlv_6= '%' ) ) ( (lv_right_7_0= rulePower ) ) )* ) ;
     public final EObject ruleMultiplication() throws RecognitionException {
         EObject current = null;
 
@@ -2592,11 +2592,11 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:884:28: ( (this_Power_0= rulePower ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) | ( () otherlv_6= '%' ) ) ( (lv_right_7_0= rulePower ) ) )* ) )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:885:1: (this_Power_0= rulePower ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) | ( () otherlv_6= '%' ) ) ( (lv_right_7_0= rulePower ) ) )* )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:884:28: ( (this_Power_0= rulePower ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) | ( () otherlv_6= '%' ) ) ( (lv_right_7_0= rulePower ) ) )* ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:885:1: (this_Power_0= rulePower ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) | ( () otherlv_6= '%' ) ) ( (lv_right_7_0= rulePower ) ) )* )
             {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:885:1: (this_Power_0= rulePower ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) | ( () otherlv_6= '%' ) ) ( (lv_right_7_0= rulePower ) ) )* )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:886:2: this_Power_0= rulePower ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) | ( () otherlv_6= '%' ) ) ( (lv_right_7_0= rulePower ) ) )*
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:885:1: (this_Power_0= rulePower ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) | ( () otherlv_6= '%' ) ) ( (lv_right_7_0= rulePower ) ) )* )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:886:2: this_Power_0= rulePower ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) | ( () otherlv_6= '%' ) ) ( (lv_right_7_0= rulePower ) ) )*
             {
             if ( state.backtracking==0 ) {
                
@@ -2619,7 +2619,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:897:1: ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) | ( () otherlv_6= '%' ) ) ( (lv_right_7_0= rulePower ) ) )*
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:897:1: ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) | ( () otherlv_6= '%' ) ) ( (lv_right_7_0= rulePower ) ) )*
             loop13:
             do {
                 int alt13=2;
@@ -2632,9 +2632,9 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
                 switch (alt13) {
             	case 1 :
-            	    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:897:2: ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) | ( () otherlv_6= '%' ) ) ( (lv_right_7_0= rulePower ) )
+            	    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:897:2: ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) | ( () otherlv_6= '%' ) ) ( (lv_right_7_0= rulePower ) )
             	    {
-            	    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:897:2: ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) | ( () otherlv_6= '%' ) )
+            	    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:897:2: ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) | ( () otherlv_6= '%' ) )
             	    int alt12=3;
             	    switch ( input.LA(1) ) {
             	    case 29:
@@ -2662,13 +2662,13 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
             	    switch (alt12) {
             	        case 1 :
-            	            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:897:3: ( () otherlv_2= '*' )
+            	            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:897:3: ( () otherlv_2= '*' )
             	            {
-            	            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:897:3: ( () otherlv_2= '*' )
-            	            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:897:4: () otherlv_2= '*'
+            	            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:897:3: ( () otherlv_2= '*' )
+            	            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:897:4: () otherlv_2= '*'
             	            {
-            	            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:897:4: ()
-            	            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:898:2: 
+            	            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:897:4: ()
+            	            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:898:2: 
             	            {
             	            if ( state.backtracking==0 ) {
             	               
@@ -2698,13 +2698,13 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:911:6: ( () otherlv_4= '/' )
+            	            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:911:6: ( () otherlv_4= '/' )
             	            {
-            	            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:911:6: ( () otherlv_4= '/' )
-            	            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:911:7: () otherlv_4= '/'
+            	            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:911:6: ( () otherlv_4= '/' )
+            	            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:911:7: () otherlv_4= '/'
             	            {
-            	            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:911:7: ()
-            	            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:912:2: 
+            	            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:911:7: ()
+            	            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:912:2: 
             	            {
             	            if ( state.backtracking==0 ) {
             	               
@@ -2734,13 +2734,13 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 3 :
-            	            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:925:6: ( () otherlv_6= '%' )
+            	            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:925:6: ( () otherlv_6= '%' )
             	            {
-            	            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:925:6: ( () otherlv_6= '%' )
-            	            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:925:7: () otherlv_6= '%'
+            	            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:925:6: ( () otherlv_6= '%' )
+            	            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:925:7: () otherlv_6= '%'
             	            {
-            	            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:925:7: ()
-            	            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:926:2: 
+            	            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:925:7: ()
+            	            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:926:2: 
             	            {
             	            if ( state.backtracking==0 ) {
             	               
@@ -2772,11 +2772,11 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:938:3: ( (lv_right_7_0= rulePower ) )
-            	    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:939:1: (lv_right_7_0= rulePower )
+            	    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:938:3: ( (lv_right_7_0= rulePower ) )
+            	    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:939:1: (lv_right_7_0= rulePower )
             	    {
-            	    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:939:1: (lv_right_7_0= rulePower )
-            	    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:940:3: lv_right_7_0= rulePower
+            	    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:939:1: (lv_right_7_0= rulePower )
+            	    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:940:3: lv_right_7_0= rulePower
             	    {
             	    if ( state.backtracking==0 ) {
             	       
@@ -2839,7 +2839,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePower"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:964:1: entryRulePower returns [EObject current=null] : iv_rulePower= rulePower EOF ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:964:1: entryRulePower returns [EObject current=null] : iv_rulePower= rulePower EOF ;
     public final EObject entryRulePower() throws RecognitionException {
         EObject current = null;
 
@@ -2847,8 +2847,8 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:965:2: (iv_rulePower= rulePower EOF )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:966:2: iv_rulePower= rulePower EOF
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:965:2: (iv_rulePower= rulePower EOF )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:966:2: iv_rulePower= rulePower EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getPowerRule()); 
@@ -2879,7 +2879,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePower"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:973:1: rulePower returns [EObject current=null] : (this_PrimaryExpression_0= rulePrimaryExpression ( ( () otherlv_2= '^' ) ( (lv_right_3_0= rulePrimaryExpression ) ) )* ) ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:973:1: rulePower returns [EObject current=null] : (this_PrimaryExpression_0= rulePrimaryExpression ( ( () otherlv_2= '^' ) ( (lv_right_3_0= rulePrimaryExpression ) ) )* ) ;
     public final EObject rulePower() throws RecognitionException {
         EObject current = null;
 
@@ -2892,11 +2892,11 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:976:28: ( (this_PrimaryExpression_0= rulePrimaryExpression ( ( () otherlv_2= '^' ) ( (lv_right_3_0= rulePrimaryExpression ) ) )* ) )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:977:1: (this_PrimaryExpression_0= rulePrimaryExpression ( ( () otherlv_2= '^' ) ( (lv_right_3_0= rulePrimaryExpression ) ) )* )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:976:28: ( (this_PrimaryExpression_0= rulePrimaryExpression ( ( () otherlv_2= '^' ) ( (lv_right_3_0= rulePrimaryExpression ) ) )* ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:977:1: (this_PrimaryExpression_0= rulePrimaryExpression ( ( () otherlv_2= '^' ) ( (lv_right_3_0= rulePrimaryExpression ) ) )* )
             {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:977:1: (this_PrimaryExpression_0= rulePrimaryExpression ( ( () otherlv_2= '^' ) ( (lv_right_3_0= rulePrimaryExpression ) ) )* )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:978:2: this_PrimaryExpression_0= rulePrimaryExpression ( ( () otherlv_2= '^' ) ( (lv_right_3_0= rulePrimaryExpression ) ) )*
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:977:1: (this_PrimaryExpression_0= rulePrimaryExpression ( ( () otherlv_2= '^' ) ( (lv_right_3_0= rulePrimaryExpression ) ) )* )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:978:2: this_PrimaryExpression_0= rulePrimaryExpression ( ( () otherlv_2= '^' ) ( (lv_right_3_0= rulePrimaryExpression ) ) )*
             {
             if ( state.backtracking==0 ) {
                
@@ -2919,7 +2919,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:989:1: ( ( () otherlv_2= '^' ) ( (lv_right_3_0= rulePrimaryExpression ) ) )*
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:989:1: ( ( () otherlv_2= '^' ) ( (lv_right_3_0= rulePrimaryExpression ) ) )*
             loop14:
             do {
                 int alt14=2;
@@ -2932,13 +2932,13 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
                 switch (alt14) {
             	case 1 :
-            	    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:989:2: ( () otherlv_2= '^' ) ( (lv_right_3_0= rulePrimaryExpression ) )
+            	    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:989:2: ( () otherlv_2= '^' ) ( (lv_right_3_0= rulePrimaryExpression ) )
             	    {
-            	    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:989:2: ( () otherlv_2= '^' )
-            	    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:989:3: () otherlv_2= '^'
+            	    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:989:2: ( () otherlv_2= '^' )
+            	    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:989:3: () otherlv_2= '^'
             	    {
-            	    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:989:3: ()
-            	    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:990:2: 
+            	    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:989:3: ()
+            	    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:990:2: 
             	    {
             	    if ( state.backtracking==0 ) {
             	       
@@ -2964,11 +2964,11 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1002:2: ( (lv_right_3_0= rulePrimaryExpression ) )
-            	    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1003:1: (lv_right_3_0= rulePrimaryExpression )
+            	    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1002:2: ( (lv_right_3_0= rulePrimaryExpression ) )
+            	    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1003:1: (lv_right_3_0= rulePrimaryExpression )
             	    {
-            	    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1003:1: (lv_right_3_0= rulePrimaryExpression )
-            	    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1004:3: lv_right_3_0= rulePrimaryExpression
+            	    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1003:1: (lv_right_3_0= rulePrimaryExpression )
+            	    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1004:3: lv_right_3_0= rulePrimaryExpression
             	    {
             	    if ( state.backtracking==0 ) {
             	       
@@ -3031,7 +3031,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePrimaryExpression"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1028:1: entryRulePrimaryExpression returns [EObject current=null] : iv_rulePrimaryExpression= rulePrimaryExpression EOF ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1028:1: entryRulePrimaryExpression returns [EObject current=null] : iv_rulePrimaryExpression= rulePrimaryExpression EOF ;
     public final EObject entryRulePrimaryExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3039,8 +3039,8 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1029:2: (iv_rulePrimaryExpression= rulePrimaryExpression EOF )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1030:2: iv_rulePrimaryExpression= rulePrimaryExpression EOF
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1029:2: (iv_rulePrimaryExpression= rulePrimaryExpression EOF )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1030:2: iv_rulePrimaryExpression= rulePrimaryExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getPrimaryExpressionRule()); 
@@ -3071,7 +3071,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePrimaryExpression"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1037:1: rulePrimaryExpression returns [EObject current=null] : ( (otherlv_0= '(' this_AExpression_1= ruleAExpression otherlv_2= ')' ) | this_NumberValue_3= ruleNumberValue | this_Variable_4= ruleVariable ) ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1037:1: rulePrimaryExpression returns [EObject current=null] : ( (otherlv_0= '(' this_AExpression_1= ruleAExpression otherlv_2= ')' ) | this_NumberValue_3= ruleNumberValue | this_Variable_4= ruleVariable ) ;
     public final EObject rulePrimaryExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3087,10 +3087,10 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1040:28: ( ( (otherlv_0= '(' this_AExpression_1= ruleAExpression otherlv_2= ')' ) | this_NumberValue_3= ruleNumberValue | this_Variable_4= ruleVariable ) )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1041:1: ( (otherlv_0= '(' this_AExpression_1= ruleAExpression otherlv_2= ')' ) | this_NumberValue_3= ruleNumberValue | this_Variable_4= ruleVariable )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1040:28: ( ( (otherlv_0= '(' this_AExpression_1= ruleAExpression otherlv_2= ')' ) | this_NumberValue_3= ruleNumberValue | this_Variable_4= ruleVariable ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1041:1: ( (otherlv_0= '(' this_AExpression_1= ruleAExpression otherlv_2= ')' ) | this_NumberValue_3= ruleNumberValue | this_Variable_4= ruleVariable )
             {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1041:1: ( (otherlv_0= '(' this_AExpression_1= ruleAExpression otherlv_2= ')' ) | this_NumberValue_3= ruleNumberValue | this_Variable_4= ruleVariable )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1041:1: ( (otherlv_0= '(' this_AExpression_1= ruleAExpression otherlv_2= ')' ) | this_NumberValue_3= ruleNumberValue | this_Variable_4= ruleVariable )
             int alt15=3;
             switch ( input.LA(1) ) {
             case 18:
@@ -3118,10 +3118,10 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
             switch (alt15) {
                 case 1 :
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1041:2: (otherlv_0= '(' this_AExpression_1= ruleAExpression otherlv_2= ')' )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1041:2: (otherlv_0= '(' this_AExpression_1= ruleAExpression otherlv_2= ')' )
                     {
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1041:2: (otherlv_0= '(' this_AExpression_1= ruleAExpression otherlv_2= ')' )
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1041:4: otherlv_0= '(' this_AExpression_1= ruleAExpression otherlv_2= ')'
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1041:2: (otherlv_0= '(' this_AExpression_1= ruleAExpression otherlv_2= ')' )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1041:4: otherlv_0= '(' this_AExpression_1= ruleAExpression otherlv_2= ')'
                     {
                     otherlv_0=(Token)match(input,18,FOLLOW_18_in_rulePrimaryExpression2403); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -3163,7 +3163,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1063:2: this_NumberValue_3= ruleNumberValue
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1063:2: this_NumberValue_3= ruleNumberValue
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -3190,7 +3190,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1076:2: this_Variable_4= ruleVariable
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1076:2: this_Variable_4= ruleVariable
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -3239,7 +3239,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNumberValue"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1095:1: entryRuleNumberValue returns [EObject current=null] : iv_ruleNumberValue= ruleNumberValue EOF ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1095:1: entryRuleNumberValue returns [EObject current=null] : iv_ruleNumberValue= ruleNumberValue EOF ;
     public final EObject entryRuleNumberValue() throws RecognitionException {
         EObject current = null;
 
@@ -3247,8 +3247,8 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1096:2: (iv_ruleNumberValue= ruleNumberValue EOF )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1097:2: iv_ruleNumberValue= ruleNumberValue EOF
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1096:2: (iv_ruleNumberValue= ruleNumberValue EOF )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1097:2: iv_ruleNumberValue= ruleNumberValue EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getNumberValueRule()); 
@@ -3279,7 +3279,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNumberValue"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1104:1: ruleNumberValue returns [EObject current=null] : ( (lv_numValue_0_0= ruleNUMBER ) ) ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1104:1: ruleNumberValue returns [EObject current=null] : ( (lv_numValue_0_0= ruleNUMBER ) ) ;
     public final EObject ruleNumberValue() throws RecognitionException {
         EObject current = null;
 
@@ -3289,14 +3289,14 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1107:28: ( ( (lv_numValue_0_0= ruleNUMBER ) ) )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1108:1: ( (lv_numValue_0_0= ruleNUMBER ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1107:28: ( ( (lv_numValue_0_0= ruleNUMBER ) ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1108:1: ( (lv_numValue_0_0= ruleNUMBER ) )
             {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1108:1: ( (lv_numValue_0_0= ruleNUMBER ) )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1109:1: (lv_numValue_0_0= ruleNUMBER )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1108:1: ( (lv_numValue_0_0= ruleNUMBER ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1109:1: (lv_numValue_0_0= ruleNUMBER )
             {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1109:1: (lv_numValue_0_0= ruleNUMBER )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1110:3: lv_numValue_0_0= ruleNUMBER
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1109:1: (lv_numValue_0_0= ruleNUMBER )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1110:3: lv_numValue_0_0= ruleNUMBER
             {
             if ( state.backtracking==0 ) {
                
@@ -3347,7 +3347,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNUMBER"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1134:1: entryRuleNUMBER returns [String current=null] : iv_ruleNUMBER= ruleNUMBER EOF ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1134:1: entryRuleNUMBER returns [String current=null] : iv_ruleNUMBER= ruleNUMBER EOF ;
     public final String entryRuleNUMBER() throws RecognitionException {
         String current = null;
 
@@ -3355,8 +3355,8 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1135:2: (iv_ruleNUMBER= ruleNUMBER EOF )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1136:2: iv_ruleNUMBER= ruleNUMBER EOF
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1135:2: (iv_ruleNUMBER= ruleNUMBER EOF )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1136:2: iv_ruleNUMBER= ruleNUMBER EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getNUMBERRule()); 
@@ -3387,7 +3387,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNUMBER"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1143:1: ruleNUMBER returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT )? ) ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1143:1: ruleNUMBER returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT )? ) ;
     public final AntlrDatatypeRuleToken ruleNUMBER() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -3398,11 +3398,11 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1146:28: ( (this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT )? ) )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1147:1: (this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT )? )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1146:28: ( (this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT )? ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1147:1: (this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT )? )
             {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1147:1: (this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT )? )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1147:6: this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT )?
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1147:1: (this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT )? )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1147:6: this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT )?
             {
             this_INT_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleNUMBER2678); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -3415,7 +3415,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                   newLeafNode(this_INT_0, grammarAccess.getNUMBERAccess().getINTTerminalRuleCall_0()); 
                   
             }
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1154:1: (kw= '.' this_INT_2= RULE_INT )?
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1154:1: (kw= '.' this_INT_2= RULE_INT )?
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -3424,7 +3424,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
             }
             switch (alt16) {
                 case 1 :
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1155:2: kw= '.' this_INT_2= RULE_INT
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1155:2: kw= '.' this_INT_2= RULE_INT
                     {
                     kw=(Token)match(input,33,FOLLOW_33_in_ruleNUMBER2697); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -3473,7 +3473,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBooleanValue"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1175:1: entryRuleBooleanValue returns [EObject current=null] : iv_ruleBooleanValue= ruleBooleanValue EOF ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1175:1: entryRuleBooleanValue returns [EObject current=null] : iv_ruleBooleanValue= ruleBooleanValue EOF ;
     public final EObject entryRuleBooleanValue() throws RecognitionException {
         EObject current = null;
 
@@ -3481,8 +3481,8 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1176:2: (iv_ruleBooleanValue= ruleBooleanValue EOF )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1177:2: iv_ruleBooleanValue= ruleBooleanValue EOF
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1176:2: (iv_ruleBooleanValue= ruleBooleanValue EOF )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1177:2: iv_ruleBooleanValue= ruleBooleanValue EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getBooleanValueRule()); 
@@ -3513,7 +3513,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBooleanValue"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1184:1: ruleBooleanValue returns [EObject current=null] : ( (lv_value_0_0= RULE_BOOLEAN ) ) ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1184:1: ruleBooleanValue returns [EObject current=null] : ( (lv_value_0_0= RULE_BOOLEAN ) ) ;
     public final EObject ruleBooleanValue() throws RecognitionException {
         EObject current = null;
 
@@ -3522,14 +3522,14 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1187:28: ( ( (lv_value_0_0= RULE_BOOLEAN ) ) )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1188:1: ( (lv_value_0_0= RULE_BOOLEAN ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1187:28: ( ( (lv_value_0_0= RULE_BOOLEAN ) ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1188:1: ( (lv_value_0_0= RULE_BOOLEAN ) )
             {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1188:1: ( (lv_value_0_0= RULE_BOOLEAN ) )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1189:1: (lv_value_0_0= RULE_BOOLEAN )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1188:1: ( (lv_value_0_0= RULE_BOOLEAN ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1189:1: (lv_value_0_0= RULE_BOOLEAN )
             {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1189:1: (lv_value_0_0= RULE_BOOLEAN )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1190:3: lv_value_0_0= RULE_BOOLEAN
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1189:1: (lv_value_0_0= RULE_BOOLEAN )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1190:3: lv_value_0_0= RULE_BOOLEAN
             {
             lv_value_0_0=(Token)match(input,RULE_BOOLEAN,FOLLOW_RULE_BOOLEAN_in_ruleBooleanValue2810); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -3575,7 +3575,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStringValue"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1214:1: entryRuleStringValue returns [EObject current=null] : iv_ruleStringValue= ruleStringValue EOF ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1214:1: entryRuleStringValue returns [EObject current=null] : iv_ruleStringValue= ruleStringValue EOF ;
     public final EObject entryRuleStringValue() throws RecognitionException {
         EObject current = null;
 
@@ -3583,8 +3583,8 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1215:2: (iv_ruleStringValue= ruleStringValue EOF )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1216:2: iv_ruleStringValue= ruleStringValue EOF
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1215:2: (iv_ruleStringValue= ruleStringValue EOF )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1216:2: iv_ruleStringValue= ruleStringValue EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getStringValueRule()); 
@@ -3615,7 +3615,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStringValue"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1223:1: ruleStringValue returns [EObject current=null] : ( (lv_strValue_0_0= RULE_STRING ) ) ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1223:1: ruleStringValue returns [EObject current=null] : ( (lv_strValue_0_0= RULE_STRING ) ) ;
     public final EObject ruleStringValue() throws RecognitionException {
         EObject current = null;
 
@@ -3624,14 +3624,14 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1226:28: ( ( (lv_strValue_0_0= RULE_STRING ) ) )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1227:1: ( (lv_strValue_0_0= RULE_STRING ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1226:28: ( ( (lv_strValue_0_0= RULE_STRING ) ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1227:1: ( (lv_strValue_0_0= RULE_STRING ) )
             {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1227:1: ( (lv_strValue_0_0= RULE_STRING ) )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1228:1: (lv_strValue_0_0= RULE_STRING )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1227:1: ( (lv_strValue_0_0= RULE_STRING ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1228:1: (lv_strValue_0_0= RULE_STRING )
             {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1228:1: (lv_strValue_0_0= RULE_STRING )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1229:3: lv_strValue_0_0= RULE_STRING
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1228:1: (lv_strValue_0_0= RULE_STRING )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1229:3: lv_strValue_0_0= RULE_STRING
             {
             lv_strValue_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringValue2901); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -3677,7 +3677,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVariable"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1253:1: entryRuleVariable returns [EObject current=null] : iv_ruleVariable= ruleVariable EOF ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1253:1: entryRuleVariable returns [EObject current=null] : iv_ruleVariable= ruleVariable EOF ;
     public final EObject entryRuleVariable() throws RecognitionException {
         EObject current = null;
 
@@ -3685,8 +3685,8 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1254:2: (iv_ruleVariable= ruleVariable EOF )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1255:2: iv_ruleVariable= ruleVariable EOF
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1254:2: (iv_ruleVariable= ruleVariable EOF )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1255:2: iv_ruleVariable= ruleVariable EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getVariableRule()); 
@@ -3717,7 +3717,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVariable"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1262:1: ruleVariable returns [EObject current=null] : ( (lv_varName_0_0= ruleVARIABLE_VALUE ) ) ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1262:1: ruleVariable returns [EObject current=null] : ( (lv_varName_0_0= ruleVARIABLE_VALUE ) ) ;
     public final EObject ruleVariable() throws RecognitionException {
         EObject current = null;
 
@@ -3727,14 +3727,14 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1265:28: ( ( (lv_varName_0_0= ruleVARIABLE_VALUE ) ) )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1266:1: ( (lv_varName_0_0= ruleVARIABLE_VALUE ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1265:28: ( ( (lv_varName_0_0= ruleVARIABLE_VALUE ) ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1266:1: ( (lv_varName_0_0= ruleVARIABLE_VALUE ) )
             {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1266:1: ( (lv_varName_0_0= ruleVARIABLE_VALUE ) )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1267:1: (lv_varName_0_0= ruleVARIABLE_VALUE )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1266:1: ( (lv_varName_0_0= ruleVARIABLE_VALUE ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1267:1: (lv_varName_0_0= ruleVARIABLE_VALUE )
             {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1267:1: (lv_varName_0_0= ruleVARIABLE_VALUE )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1268:3: lv_varName_0_0= ruleVARIABLE_VALUE
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1267:1: (lv_varName_0_0= ruleVARIABLE_VALUE )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1268:3: lv_varName_0_0= ruleVARIABLE_VALUE
             {
             if ( state.backtracking==0 ) {
                
@@ -3785,7 +3785,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVARIABLE_VALUE"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1292:1: entryRuleVARIABLE_VALUE returns [String current=null] : iv_ruleVARIABLE_VALUE= ruleVARIABLE_VALUE EOF ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1292:1: entryRuleVARIABLE_VALUE returns [String current=null] : iv_ruleVARIABLE_VALUE= ruleVARIABLE_VALUE EOF ;
     public final String entryRuleVARIABLE_VALUE() throws RecognitionException {
         String current = null;
 
@@ -3793,8 +3793,8 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1293:2: (iv_ruleVARIABLE_VALUE= ruleVARIABLE_VALUE EOF )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1294:2: iv_ruleVARIABLE_VALUE= ruleVARIABLE_VALUE EOF
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1293:2: (iv_ruleVARIABLE_VALUE= ruleVARIABLE_VALUE EOF )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1294:2: iv_ruleVARIABLE_VALUE= ruleVARIABLE_VALUE EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getVARIABLE_VALUERule()); 
@@ -3825,7 +3825,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVARIABLE_VALUE"
-    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1301:1: ruleVARIABLE_VALUE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID | (this_ID_1= RULE_ID kw= '.' this_ID_3= RULE_ID ) ) ;
+    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1301:1: ruleVARIABLE_VALUE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID | (this_ID_1= RULE_ID kw= '.' this_ID_3= RULE_ID ) ) ;
     public final AntlrDatatypeRuleToken ruleVARIABLE_VALUE() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -3837,10 +3837,10 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1304:28: ( (this_ID_0= RULE_ID | (this_ID_1= RULE_ID kw= '.' this_ID_3= RULE_ID ) ) )
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1305:1: (this_ID_0= RULE_ID | (this_ID_1= RULE_ID kw= '.' this_ID_3= RULE_ID ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1304:28: ( (this_ID_0= RULE_ID | (this_ID_1= RULE_ID kw= '.' this_ID_3= RULE_ID ) ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1305:1: (this_ID_0= RULE_ID | (this_ID_1= RULE_ID kw= '.' this_ID_3= RULE_ID ) )
             {
-            // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1305:1: (this_ID_0= RULE_ID | (this_ID_1= RULE_ID kw= '.' this_ID_3= RULE_ID ) )
+            // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1305:1: (this_ID_0= RULE_ID | (this_ID_1= RULE_ID kw= '.' this_ID_3= RULE_ID ) )
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -3870,7 +3870,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
             }
             switch (alt17) {
                 case 1 :
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1305:6: this_ID_0= RULE_ID
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1305:6: this_ID_0= RULE_ID
                     {
                     this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVARIABLE_VALUE3083); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -3887,10 +3887,10 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1313:6: (this_ID_1= RULE_ID kw= '.' this_ID_3= RULE_ID )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1313:6: (this_ID_1= RULE_ID kw= '.' this_ID_3= RULE_ID )
                     {
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1313:6: (this_ID_1= RULE_ID kw= '.' this_ID_3= RULE_ID )
-                    // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1313:11: this_ID_1= RULE_ID kw= '.' this_ID_3= RULE_ID
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1313:6: (this_ID_1= RULE_ID kw= '.' this_ID_3= RULE_ID )
+                    // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1313:11: this_ID_1= RULE_ID kw= '.' this_ID_3= RULE_ID
                     {
                     this_ID_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVARIABLE_VALUE3110); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -3955,11 +3955,11 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
         EObject this_LExpression_1 = null;
 
 
-        // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:487:2: ( (otherlv_0= '(' this_LExpression_1= ruleLExpression otherlv_2= ')' ) )
-        // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:487:2: (otherlv_0= '(' this_LExpression_1= ruleLExpression otherlv_2= ')' )
+        // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:487:2: ( (otherlv_0= '(' this_LExpression_1= ruleLExpression otherlv_2= ')' ) )
+        // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:487:2: (otherlv_0= '(' this_LExpression_1= ruleLExpression otherlv_2= ')' )
         {
-        // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:487:2: (otherlv_0= '(' this_LExpression_1= ruleLExpression otherlv_2= ')' )
-        // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:487:4: otherlv_0= '(' this_LExpression_1= ruleLExpression otherlv_2= ')'
+        // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:487:2: (otherlv_0= '(' this_LExpression_1= ruleLExpression otherlv_2= ')' )
+        // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:487:4: otherlv_0= '(' this_LExpression_1= ruleLExpression otherlv_2= ')'
         {
         otherlv_0=(Token)match(input,18,FOLLOW_18_in_synpred7_InternalExpressions1073); if (state.failed) return ;
         pushFollow(FOLLOW_ruleLExpression_in_synpred7_InternalExpressions1098);
@@ -3981,8 +3981,8 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
         EObject this_Compare_3 = null;
 
 
-        // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:509:2: (this_Compare_3= ruleCompare )
-        // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:509:2: this_Compare_3= ruleCompare
+        // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:509:2: (this_Compare_3= ruleCompare )
+        // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:509:2: this_Compare_3= ruleCompare
         {
         if ( state.backtracking==0 ) {
            
@@ -4004,8 +4004,8 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
         EObject this_BooleanValue_4 = null;
 
 
-        // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:522:2: (this_BooleanValue_4= ruleBooleanValue )
-        // ../org.storydriven.storydiagrams.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:522:2: this_BooleanValue_4= ruleBooleanValue
+        // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:522:2: (this_BooleanValue_4= ruleBooleanValue )
+        // ../org.muml.storydiagram.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:522:2: this_BooleanValue_4= ruleBooleanValue
         {
         if ( state.backtracking==0 ) {
            

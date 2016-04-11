@@ -73,7 +73,7 @@ public class ModelInstancePlugin implements BundleActivator {
 		StringBuilder builder = new StringBuilder();
 		IConfigurationElement[] topElements = Platform.getExtensionRegistry()
 				.getConfigurationElementsFor(
-						"de.uni_paderborn.fujaba.modelinstance.version");
+						"org.muml.core.modelinstance.version");
 
 		for (IConfigurationElement artefact : topElements) {
 			String name = artefact.getAttribute("name");

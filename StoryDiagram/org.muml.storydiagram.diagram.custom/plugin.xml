@@ -16,7 +16,7 @@
 
    <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider
-            class="org.storydriven.storydiagrams.diagram.custom.providers.CustomStorydiagramsEditPartProvider">
+            class="org.muml.storydiagram.diagram.custom.providers.CustomStorydiagramsEditPartProvider">
          <Priority
                name="Medium">
          </Priority>
@@ -32,40 +32,40 @@
    <extension point="org.eclipse.ui.popupMenus">
       <objectContribution
             adaptable="false"
-            id="org.storydriven.storydiagrams.diagram.custom.ActivityFinalNodeContribution"
-            objectClass="org.storydriven.storydiagrams.diagram.edit.parts.ActivityFinalNodeEditPart">
+            id="org.muml.storydiagram.diagram.custom.ActivityFinalNodeContribution"
+            objectClass="org.muml.storydiagram.diagram.edit.parts.ActivityFinalNodeEditPart">
          <action
                class="org.muml.storydiagram.diagram.custom.edit.commands.ActivityFinalNodeToggleFlowCommand"
-               id="org.storydriven.storydiagrams.diagram.custom.ActivityFinalNodeToggleFlowCommand"
+               id="org.muml.storydiagram.diagram.custom.ActivityFinalNodeToggleFlowCommand"
                label="Toggle end flow Attribute"
                tooltip="This will toggle they isKey Attribute of the Attribute.">
          </action>
       </objectContribution>
       <objectContribution
             adaptable="false"
-            id="org.storydriven.storydiagrams.diagram.custom.ModifyingStoryNodeContribution"
-            objectClass="org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeEditPart">
+            id="org.muml.storydiagram.diagram.custom.ModifyingStoryNodeContribution"
+            objectClass="org.muml.storydiagram.diagram.edit.parts.ModifyingStoryNodeEditPart">
          <action
                class="org.muml.storydiagram.diagram.custom.edit.commands.StoryNodeToggleForEachCommand"
-               id="org.storydriven.storydiagrams.diagram.custom.ModifyingStoryNodeToogleForEachCommand"
+               id="org.muml.storydiagram.diagram.custom.ModifyingStoryNodeToogleForEachCommand"
                label="Toggle forEach"
                tooltip="This will toggle the for each attribute of the story node.">
          </action>
       </objectContribution>
       <objectContribution
             adaptable="false"
-            id="org.storydriven.storydiagrams.diagram.custom.MatchingStoryNodeContribution"
-            objectClass="org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeEditPart">
+            id="org.muml.storydiagram.diagram.custom.MatchingStoryNodeContribution"
+            objectClass="org.muml.storydiagram.diagram.edit.parts.MatchingStoryNodeEditPart">
          <action
                class="org.muml.storydiagram.diagram.custom.edit.commands.StoryNodeToggleForEachCommand"
-               id="org.storydriven.storydiagrams.diagram.custom.MatchingStoryNodeToogleForEachCommand"
+               id="org.muml.storydiagram.diagram.custom.MatchingStoryNodeToogleForEachCommand"
                label="Toggle forEach"
                tooltip="This will toggle the for each attribute of the story node.">
          </action>
          <!--
          <action
                class="deprecated.MatchingStoryNodeToggleModifyingCommand"
-               id="org.storydriven.storydiagrams.diagram.custom.MatchingStoryNodeConvertToModifying"
+               id="org.muml.storydiagram.diagram.custom.MatchingStoryNodeConvertToModifying"
                label="Toggle Modifying/Matching"
                tooltip="This will toggle whether the storynode is matching or modifying">
          </action>
@@ -73,30 +73,30 @@
       </objectContribution>
       <objectContribution
             adaptable="false"
-            id="org.storydriven.storydiagrams.diagram.custom.expressions.OpenExpressionsDialog"
-            objectClass="org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableEditPart">
+            id="org.muml.storydiagram.diagram.custom.expressions.OpenExpressionsDialog"
+            objectClass="org.muml.storydiagram.diagram.edit.parts.ObjectVariableEditPart">
          <action
                class="org.muml.storydiagram.diagram.custom.EditExpressionWithDialogAction"
-               id="org.storydriven.storydiagrams.diagram.custom.expressions.OpenExpressionsDialog"
+               id="org.muml.storydiagram.diagram.custom.expressions.OpenExpressionsDialog"
                label="Edit Expressions"
                tooltip="This will toggle whether the storynode is matching or modifying">
          </action>
       </objectContribution>
       <objectContribution
             adaptable="false"
-            id="org.storydriven.storydiagrams.diagram.custom.expressions.OpenExpressionsDialogForAttributeAssignment"
-            objectClass="org.storydriven.storydiagrams.diagram.edit.parts.AttributeAssignmentEditPart">
+            id="org.muml.storydiagram.diagram.custom.expressions.OpenExpressionsDialogForAttributeAssignment"
+            objectClass="org.muml.storydiagram.diagram.edit.parts.AttributeAssignmentEditPart">
          <action
                class="org.muml.storydiagram.diagram.custom.EditAttributeAssignmentWithDialogAction"
-               id="org.storydriven.storydiagrams.diagram.custom.expressions.OpenExpressionsDialogForAttributeAssignment"
+               id="org.muml.storydiagram.diagram.custom.expressions.OpenExpressionsDialogForAttributeAssignment"
                label="Edit Attribute Assignment"
                tooltip="This will toggle whether the storynode is matching or modifying">
          </action>
       </objectContribution>
       <objectContribution
             adaptable="false"
-            id="org.storydriven.storydiagrams.diagram.custom.ActivityEdgeGuardContribution"
-            objectClass="org.storydriven.storydiagrams.diagram.edit.parts.ActivityEdgeEditPart">
+            id="org.muml.storydiagram.diagram.custom.ActivityEdgeGuardContribution"
+            objectClass="org.muml.storydiagram.diagram.edit.parts.ActivityEdgeEditPart">
          <menu
                id="ActivityEdgeGuardMenu"
                label="Activity Edge Guard">
@@ -106,7 +106,7 @@
          </menu>
          <action
                class="org.muml.storydiagram.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
-               id="org.storydriven.storydiagrams.diagram.custom.ActicityEdgeGuardMenuEntry.FINALLY"
+               id="org.muml.storydiagram.diagram.custom.ActicityEdgeGuardMenuEntry.FINALLY"
                label="finally"
                menubarPath="ActivityEdgeGuardMenu/GuardGroup"
                style="radio"
@@ -114,7 +114,7 @@
          </action>
          <action
                class="org.muml.storydiagram.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
-               id="org.storydriven.storydiagrams.diagram.custom.ActicityEdgeGuardMenuEntry.BOOL"
+               id="org.muml.storydiagram.diagram.custom.ActicityEdgeGuardMenuEntry.BOOL"
                label="bool"
                menubarPath="ActivityEdgeGuardMenu/GuardGroup"
                style="radio"
@@ -122,7 +122,7 @@
          </action>
          <action
                class="org.muml.storydiagram.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
-               id="org.storydriven.storydiagrams.diagram.custom.ActicityEdgeGuardMenuEntry.END"
+               id="org.muml.storydiagram.diagram.custom.ActicityEdgeGuardMenuEntry.END"
                label="end"
                menubarPath="ActivityEdgeGuardMenu/GuardGroup"
                style="radio"
@@ -130,7 +130,7 @@
          </action>
          <action
                class="org.muml.storydiagram.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
-               id="org.storydriven.storydiagrams.diagram.custom.ActicityEdgeGuardMenuEntry.FAILURE"
+               id="org.muml.storydiagram.diagram.custom.ActicityEdgeGuardMenuEntry.FAILURE"
                label="failure"
                menubarPath="ActivityEdgeGuardMenu/GuardGroup"
                style="radio"
@@ -138,7 +138,7 @@
          </action>
          <action
                class="org.muml.storydiagram.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
-               id="org.storydriven.storydiagrams.diagram.custom.ActicityEdgeGuardMenuEntry.EACH_TIME"
+               id="org.muml.storydiagram.diagram.custom.ActicityEdgeGuardMenuEntry.EACH_TIME"
                label="each time"
                menubarPath="ActivityEdgeGuardMenu/GuardGroup"
                style="radio"
@@ -146,7 +146,7 @@
          </action>
          <action
                class="org.muml.storydiagram.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
-               id="org.storydriven.storydiagrams.diagram.custom.ActicityEdgeGuardMenuEntry.SUCCESS"
+               id="org.muml.storydiagram.diagram.custom.ActicityEdgeGuardMenuEntry.SUCCESS"
                label="success"
                menubarPath="ActivityEdgeGuardMenu/GuardGroup"
                style="radio"
@@ -154,7 +154,7 @@
          </action>
          <action
                class="org.muml.storydiagram.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
-               id="org.storydriven.storydiagrams.diagram.custom.ActicityEdgeGuardMenuEntry.NONE"
+               id="org.muml.storydiagram.diagram.custom.ActicityEdgeGuardMenuEntry.NONE"
                label="none"
                menubarPath="ActivityEdgeGuardMenu/GuardGroup"
                style="radio"
@@ -162,7 +162,7 @@
          </action>
          <action
                class="org.muml.storydiagram.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
-               id="org.storydriven.storydiagrams.diagram.custom.ActicityEdgeGuardMenuEntry.ELSE"
+               id="org.muml.storydiagram.diagram.custom.ActicityEdgeGuardMenuEntry.ELSE"
                label="else"
                menubarPath="ActivityEdgeGuardMenu/GuardGroup"
                style="radio"
@@ -170,7 +170,7 @@
          </action>
          <action
                class="org.muml.storydiagram.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
-               id="org.storydriven.storydiagrams.diagram.custom.ActicityEdgeGuardMenuEntry.EXCEPTION"
+               id="org.muml.storydiagram.diagram.custom.ActicityEdgeGuardMenuEntry.EXCEPTION"
                label="exception"
                menubarPath="ActivityEdgeGuardMenu/GuardGroup"
                style="radio"
@@ -179,33 +179,33 @@
       </objectContribution>
       <objectContribution
             adaptable="false"
-            id="org.storydriven.storydiagrams.diagram.custom.ActivityEdgeGuardExpressionContribution"
-            objectClass="org.storydriven.storydiagrams.diagram.edit.parts.ActivityEdgeEditPart">
+            id="org.muml.storydiagram.diagram.custom.ActivityEdgeGuardExpressionContribution"
+            objectClass="org.muml.storydiagram.diagram.edit.parts.ActivityEdgeEditPart">
          <action
                class="org.muml.storydiagram.diagram.custom.EditActivityEdgeGuardExpressionWithDialogAction"
-               id="org.storydriven.storydiagrams.diagram.custom.ActicityEdgeGuardExpressionEdit"
+               id="org.muml.storydiagram.diagram.custom.ActicityEdgeGuardExpressionEdit"
                label="Edit Guard Expression"
                tooltip="This will toggle they isKey Attribute of the Attribute.">
          </action>
       </objectContribution>
       <objectContribution
             adaptable="false"
-            id="org.storydriven.storydiagrams.diagram.custom.StatementNodeEditExpression"
-            objectClass="org.storydriven.storydiagrams.diagram.edit.parts.StatementNodeEditPart">
+            id="org.muml.storydiagram.diagram.custom.StatementNodeEditExpression"
+            objectClass="org.muml.storydiagram.diagram.edit.parts.StatementNodeEditPart">
          <action
                class="org.muml.storydiagram.diagram.custom.EditStatementExpressionWithDialogAction"
-               id="org.storydriven.storydiagrams.diagram.custom.StatementNodeEditExpression"
+               id="org.muml.storydiagram.diagram.custom.StatementNodeEditExpression"
                label="Edit Statement Expression"
                tooltip="This will toggle they isKey Attribute of the Attribute.">
          </action>
       </objectContribution>
       <objectContribution
             adaptable="false"
-            id="org.storydriven.storydiagrams.diagram.custom.expressions.ActivityFinalNodeReturnExpression"
-            objectClass="org.storydriven.storydiagrams.diagram.edit.parts.ActivityFinalNodeEditPart">
+            id="org.muml.storydiagram.diagram.custom.expressions.ActivityFinalNodeReturnExpression"
+            objectClass="org.muml.storydiagram.diagram.edit.parts.ActivityFinalNodeEditPart">
          <action
                class="org.muml.storydiagram.diagram.custom.EditActivityFinalNodeReturnExpressionAction"
-               id="org.storydriven.storydiagrams.diagram.custom.expressions.EditActivityFinalNodeReturnExpression"
+               id="org.muml.storydiagram.diagram.custom.expressions.EditActivityFinalNodeReturnExpression"
                label="Edit Return Value Expression"
                tooltip="This will toggle whether the storynode is matching or modifying">
          </action>
@@ -214,7 +214,7 @@
 
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
       <propertyContributor
-            contributorId="org.storydriven.storydiagrams.diagram"
+            contributorId="org.muml.storydiagram.diagram"
             labelProvider="org.muml.storydiagram.diagram.custom.properties.StorydiagramsPropertiesLabelProvider">
          <propertyCategory category="domain"/>
          <propertyCategory
@@ -224,7 +224,7 @@
    </extension>
 
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
-      <propertyTabs contributorId="org.storydriven.storydiagrams.diagram">
+      <propertyTabs contributorId="org.muml.storydiagram.diagram">
           <propertyTab
              category="domain"
              id="general"
@@ -246,7 +246,7 @@
          id="activities"
          point="org.eclipse.ui.views.properties.tabbed.propertySections">
       <propertySections
-            contributorId="org.storydriven.storydiagrams.diagram">
+            contributorId="org.muml.storydiagram.diagram">
          <propertySection
                class="org.muml.storydiagram.diagram.custom.properties.sections.NamedElementNameSection"
                filter="org.muml.storydiagram.diagram.custom.properties.filters.ActivityFilter"
@@ -450,10 +450,10 @@
       </propertySections>
    </extension>
    <extension
-         id="org.storydriven.storydiagrams.patterns"
+         id="org.muml.storydiagram.patterns"
          point="org.eclipse.ui.views.properties.tabbed.propertySections">
       <propertySections
-            contributorId="org.storydriven.storydiagrams.diagram">
+            contributorId="org.muml.storydiagram.diagram">
          <propertySection
                class="org.muml.storydiagram.diagram.custom.properties.sections.NamedElementNameSection"
                filter="org.muml.storydiagram.diagram.custom.properties.filters.ObjectVariableFilter"
@@ -602,14 +602,14 @@
 			categoryId="org.muml"
 			description="Initialize Story Diagram"
 			defaultHandler="org.muml.storydiagram.diagram.custom.dialogs.SDMFujabaDiagramFileAction"
-			id="org.storydriven.storydiagrams.diagram.createDiagram"
+			id="org.muml.storydiagram.diagram.createDiagram"
 			name="Initialize Story Diagram">
 		</command>
 	</extension>
 
    <extension id="creation-wizard" point="org.eclipse.ui.newWizards">
       <wizard
-            category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
+            category="org.muml/org.muml.diagrams"
             class="org.muml.storydiagram.diagram.custom.dialogs.CustomActivityDiagramCreationWizard"
             id="sdmcreationwizard"
             name="Activity Diagram">
@@ -622,9 +622,9 @@
     <extension point="org.eclipse.ui.menus">
 	   <menuContribution allPopups="false" locationURI="popup:org.muml?after=additions">
 	      <command
-             commandId="org.storydriven.storydiagrams.diagram.createDiagram"
+             commandId="org.muml.storydiagram.diagram.createDiagram"
              icon="icons/sdm_diagram.png"
-             id="org.storydriven.storydiagrams.diagram.createDiagram"
+             id="org.muml.storydiagram.diagram.createDiagram"
              label="Initialize Story Diagram"
              style="push">
 	         <visibleWhen checkEnabled="false">
@@ -637,7 +637,7 @@
 
     <extension point="org.muml.core.modelinstance.modelelementcategory">
       <category
-            key="org.storydriven.storydiagrams.category"
+            key="org.muml.storydiagram.category"
             name="storydiagrams">
          <child
                class="Activity"
@@ -648,11 +648,11 @@
 
    <extension point="org.muml.core.modelinstance.ui.diagraminformation">
       <editor
-            preferencesHint="org.storydriven.storydiagrams.diagram"
-            editorId="org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorID"
+            preferencesHint="org.muml.storydiagram.diagram"
+            editorId="org.muml.storydiagram.diagram.part.StorydiagramsDiagramEditorID"
             editorName="Story Diagram Editor"
             fileExtension="storydiagrams_diagram"
-            modelElementCategoryKey="org.storydriven.storydiagrams.category"
+            modelElementCategoryKey="org.muml.storydiagram.category"
             modelId="Storydiagrams">
          <diagramElement
                packageNsURI="http://www.muml.org/storydiagram/activities/1.0.0"

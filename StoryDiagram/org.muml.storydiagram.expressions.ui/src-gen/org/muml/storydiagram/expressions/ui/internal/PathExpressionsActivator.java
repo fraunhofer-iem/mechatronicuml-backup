@@ -40,7 +40,7 @@ public class PathExpressionsActivator extends AbstractUIPlugin {
 	
 	private static PathExpressionsActivator INSTANCE;
 	
-	public static final String ORG_STORYDRIVEN_MODELING_EXPRESSIONS_PATHEXPRESSIONS = "org.storydriven.storydiagrams.expressions.PathExpressions";
+	public static final String ORG_STORYDRIVEN_MODELING_EXPRESSIONS_PATHEXPRESSIONS = "org.muml.storydiagram.expressions.PathExpressions";
 	
 	public Injector getInjector(String languageName) {
 		
