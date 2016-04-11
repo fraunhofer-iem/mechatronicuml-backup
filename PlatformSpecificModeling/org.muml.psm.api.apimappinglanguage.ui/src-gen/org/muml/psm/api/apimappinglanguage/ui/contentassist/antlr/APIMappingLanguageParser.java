@@ -4,17 +4,18 @@
 package org.muml.psm.api.apimappinglanguage.ui.contentassist.antlr;
 
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 import org.antlr.runtime.RecognitionException;
 import org.eclipse.xtext.AbstractElement;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.AbstractContentAssistParser;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.FollowElement;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
-import org.muml.psm.api.apimappinglanguage.services.APIMappingLanguageGrammarAccess;
 
 import com.google.inject.Inject;
+
+import org.muml.psm.api.apimappinglanguage.services.APIMappingLanguageGrammarAccess;
 
 public class APIMappingLanguageParser extends AbstractContentAssistParser {
 	

@@ -3,10 +3,10 @@
  */
 package org.muml.psm.api.apimappinglanguage.parser.antlr;
 
+import com.google.inject.Inject;
+
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.muml.psm.api.apimappinglanguage.services.APIMappingLanguageGrammarAccess;
-
-import com.google.inject.Inject;
 
 public class APIMappingLanguageParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrParser {
 	

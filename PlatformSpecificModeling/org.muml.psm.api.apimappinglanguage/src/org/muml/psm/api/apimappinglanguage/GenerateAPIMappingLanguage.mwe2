@@ -4,7 +4,7 @@ import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
-var grammarURI = "classpath:/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/APIMappingLanguage.xtext"
+var grammarURI = "classpath:/org/muml/psm/api/apimappinglanguage/APIMappingLanguage.xtext"
 var fileExtensions = "apimapping"
 var projectName = "org.muml.psm.api.apimappinglanguage"
 var runtimeProject = "../${projectName}"
@@ -53,7 +53,7 @@ Workflow {
 		registerGenModelFile = "platform:/resource/org.muml.core.modelinstance/model/modelinstance.genmodel"
 		registerGenModelFile = "platform:/resource/org.muml.pim/model/pim.genmodel"
 		registerGenModelFile = "platform:/resource/org.muml.pim.actionlanguage/model/actionlanguage.genmodel"
-		registerGenModelFile = "platform:/resource/org.muml.pm.software.platform/model/swplatform.genmodel"
+		registerGenModelFile = "platform:/resource/org.muml.pm.software/model/software.genmodel"
 		registerGenModelFile = "platform:/resource/org.muml.psm/model/psm.genmodel"
 	}
 
