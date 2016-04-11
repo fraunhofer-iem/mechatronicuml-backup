@@ -11,7 +11,7 @@
            category="org.muml"
            class="org.muml.core.modelinstance.ui.model.FujabaModelNewWizard"
            icon="icons/muml.png"
-           id="de.uni_paderborn.fujaba.muml.modelwizard.FujabaNewModelWizardID"
+           id="org.muml.core.modelinstance.ui.modelwizard.FujabaNewModelWizardID"
            name="MechatronicUML Model">
          <description>
             Creates a new MechatronicUML model file

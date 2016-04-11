@@ -6,7 +6,7 @@
       <wizard
             category="org.muml.core.export"
             class="org.muml.psm.transformation.ui.CodegenWizard"
-            id="de.uni_paderborn.fujaba.muml.psm.codegen.transformation.ui.CodeGenWizard"
+            id="org.muml.psm.codegen.transformation.ui.CodeGenWizard"
             name="Create Code-Generation Model">
       </wizard>
    </extension>

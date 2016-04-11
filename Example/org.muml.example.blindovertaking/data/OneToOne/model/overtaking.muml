@@ -4,10 +4,10 @@
   <categories xmi:id="_ZOIrYIS_EeKO9r0VL65xcg" key="org.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_ZOLusIS_EeKO9r0VL65xcg" name="overtaker_Role" behavioralElement="_GQwUAITCEeKO9r0VL65xcg">
       <variables xmi:id="_22k5oM85EeWL1ed9dOcfBQ" name="speed">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int8"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int8"/>
       </variables>
       <variables xmi:id="_aOAP4N5REeWffpOzzKuOVw" name="assumedEvalTime">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int8"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int8"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_ewkcIN5REeWffpOzzKuOVw" value="4"/>
       </variables>
       <transitions xmi:id="_yXwJQITBEeKO9r0VL65xcg" priority="3" target="_p05XYITBEeKO9r0VL65xcg" source="_YbeQgCngEeOLOOFBfu_IMg"/>
@@ -103,7 +103,7 @@
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_liNIQITDEeKO9r0VL65xcg" name="overtakee_Role" behavioralElement="_GRMY4oTCEeKO9r0VL65xcg">
       <variables xmi:id="_FxEZcM8uEeWiNvKFA70SzQ" name="accepted">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
       </variables>
       <transitions xmi:id="_tkWZwITDEeKO9r0VL65xcg" priority="1" target="_fU-PsKwwEeKPNaIATZRLqw" source="_oILsAITDEeKO9r0VL65xcg">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_VKwrYJ2_EeKCPPYajybjTw" kind="TRIGGER">
@@ -161,7 +161,7 @@
                     <expressions xsi:type="actionlanguage:Assignment" xmi:id="_Pqqigc8zEeW1U8aRHSre9A" assignOperator=":=">
                       <rhs_assignExpression xsi:type="actionlanguage:NondeterministicChoiceExpression" xmi:id="_Pqqigs8zEeW1U8aRHSre9A">
                         <range xmi:id="_Pqqig88zEeW1U8aRHSre9A"/>
-                        <dataType href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int8"/>
+                        <dataType href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int8"/>
                       </rhs_assignExpression>
                       <lhs_typedNamedElementExpression xmi:id="_PqqihM8zEeW1U8aRHSre9A" typedNamedElement="_FxEZcM8uEeWiNvKFA70SzQ"/>
                     </expressions>
@@ -186,7 +186,7 @@
         <embeddedRegions xmi:id="_X6qm0EhbEeOJnpqrtjndJA" priority="1">
           <embeddedStatechart xmi:id="_X6rN4EhbEeOJnpqrtjndJA" name="overtakee" behavioralElement="_1JdXUEfOEeO56fW-RvmTLw">
             <variables xmi:id="_diwjIFNQEeONi4ykyD_5PA" name="localVelocity">
-              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
               <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_ghjPgFNQEeONi4ykyD_5PA" value="0"/>
             </variables>
             <transitions xmi:id="_X6rN50hbEeOJnpqrtjndJA" priority="1" target="_X6rN-EhbEeOJnpqrtjndJA" source="_X6rN8EhbEeOJnpqrtjndJA">
@@ -267,7 +267,7 @@
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_cpa08EhbEeOJnpqrtjndJA" name="redSW_Component" behavioralElement="_1vFz8EfOEeO56fW-RvmTLw">
       <variables xmi:id="_mle-0M87EeW344JiqAKLMQ" name="speed">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int8"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int8"/>
       </variables>
       <states xmi:id="_cpa08UhbEeOJnpqrtjndJA" name="RedSW_Component_Main" initial="true">
         <embeddedRegions xmi:id="_lRNxMEhbEeOJnpqrtjndJA" priority="1">
@@ -396,7 +396,7 @@
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_9E-g8ITBEeKO9r0VL65xcg" name="Repository">
       <messageTypes xmi:id="_9xK4kITBEeKO9r0VL65xcg" name="request">
         <parameters xmi:id="_yzpYEM8rEeWiNvKFA70SzQ" name="speed">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int8"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int8"/>
         </parameters>
       </messageTypes>
       <messageTypes xmi:id="_--9hYITBEeKO9r0VL65xcg" name="accept"/>
@@ -561,7 +561,7 @@
         </receiverMessageBuffer>
       </ports>
       <ports xsi:type="component:HybridPort" xmi:id="_SEg6gE03EeOI293nB1lGXQ" name="Velocity" kind="OUT">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#double"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#double"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_GQ6p8FEDEeOUDKc6JIgBHg" value="0"/>
         <samplingInterval xmi:id="_RdQQwE04EeOI293nB1lGXQ" unit="MILLISECONDS">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_jv4kEFAsEeOeVI45sK4YYw" value="30"/>
@@ -579,13 +579,13 @@
         </receiverMessageBuffer>
       </ports>
       <ports xsi:type="component:HybridPort" xmi:id="_WEy5EE03EeOI293nB1lGXQ" name="Velocity" kind="OUT">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#double"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#double"/>
         <samplingInterval xmi:id="_VOcqcE04EeOI293nB1lGXQ" unit="MILLISECONDS">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_WZKKEE04EeOI293nB1lGXQ" value="30"/>
         </samplingInterval>
       </ports>
       <ports xsi:type="component:HybridPort" xmi:id="_GEnvIE05EeOI293nB1lGXQ" name="Distance">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#double"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#double"/>
         <samplingInterval xmi:id="_SnW28E05EeOI293nB1lGXQ" unit="MILLISECONDS">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_TqjZUE05EeOI293nB1lGXQ" value="30"/>
         </samplingInterval>
@@ -642,15 +642,15 @@
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_D8GOUE03EeOI293nB1lGXQ" name="Car" componentKind="continuous component">
       <ports xsi:type="component:ContinuousPort" xmi:id="_NaT_wE04EeOI293nB1lGXQ" name="VelocityR">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#double"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#double"/>
       </ports>
       <ports xsi:type="component:ContinuousPort" xmi:id="_xuK4kFIIEeO7W7GKdRsMmA" name="VelocityL">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#double"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#double"/>
       </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_c8etIE04EeOI293nB1lGXQ" name="DistanceSensor" componentKind="continuous component">
       <ports xsi:type="component:ContinuousPort" xmi:id="_0Bx0wE04EeOI293nB1lGXQ" name="CurrentDistance" kind="OUT">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#double"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#double"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_c9VM8FECEeOUDKc6JIgBHg" value="0"/>
       </ports>
     </modelElements>

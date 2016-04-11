@@ -15,11 +15,11 @@
   <categories xmi:id="_5GQLIByEEeSKP_lLzmbIVg" key="org.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_-baR8ByEEeSKP_lLzmbIVg" name="testSync" behavioralElement="_AHpxUByFEeSKP_lLzmbIVg">
       <variables xmi:id="_XVVY4ByFEeSKP_lLzmbIVg" name="var1">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_EJutsFiJEeWjIvmbZGR-Sw" value="1"/>
       </variables>
       <variables xmi:id="_YmuIQByFEeSKP_lLzmbIVg" name="var2">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_FEV70FiJEeWjIvmbZGR-Sw" value="2"/>
       </variables>
       <states xmi:id="_-baR8RyEEeSKP_lLzmbIVg" name="init" initial="true">

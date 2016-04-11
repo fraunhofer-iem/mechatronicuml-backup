@@ -972,7 +972,7 @@
       </hwplatformInstances>
     </modelElements>
   </categories>
-  <categories xmi:id="_ZpEDICPlEeSlOpyqq3LJMw" key="de.uni_paderborn.fujaba.muml.psm.allocation.category" name="allocation">
+  <categories xmi:id="_ZpEDICPlEeSlOpyqq3LJMw" key="org.muml.psm.allocation.category" name="allocation">
     <modelElements xsi:type="allocation:SystemAllocation" xmi:id="_uBZR0PpHEeScO8ccWZ2PSA" cic="_C02w4Om5EeSyWM-b9FAU_g" hpic="_YyqUcPjtEeSrLMFBH0QA8A">
       <allocations xmi:id="_uBZR0fpHEeScO8ccWZ2PSA" componentInstance="_Fd9hROm5EeSyWM-b9FAU_g" resourceInstance="_j8UJdfjtEeSrLMFBH0QA8A"/>
       <allocations xmi:id="_uBZR0vpHEeScO8ccWZ2PSA" componentInstance="_Fd9hQum5EeSyWM-b9FAU_g" resourceInstance="_lOoF5vjtEeSrLMFBH0QA8A"/>

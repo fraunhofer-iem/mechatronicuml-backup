@@ -35,7 +35,7 @@ public class CodegenWizard extends AbstractFujabaExportWizard {
 	@Override
 	public String wizardGetId() {
 		// TODO Auto-generated method stub
-		return "de.uni_paderborn.fujaba.muml.psm.codegen.CodegenWizard";
+		return "org.muml.psm.codegen.CodegenWizard";
 	}
 
 	@Override
@@ -132,7 +132,7 @@ public class CodegenWizard extends AbstractFujabaExportWizard {
 				SystemAllocation systemAllocation = (SystemAllocation) sourceElements[0];
 				MappingRepository mappingRepo = (MappingRepository) appiMappingElements[0];
 
-				String transformationPath = "/de.uni_paderborn.fujaba.muml.psm.transformation/transforms/systemAllocation2Codegen/SystemAllocation2CodegenTransformation.qvto";
+				String transformationPath = "/org.muml.psm.transformation/transforms/systemAllocation2Codegen/SystemAllocation2CodegenTransformation.qvto";
 
 				SystemAllocation2CodegenJob psmJob = new SystemAllocation2CodegenJob(systemAllocation, mappingRepo,
 						destinationURI, transformationPath);

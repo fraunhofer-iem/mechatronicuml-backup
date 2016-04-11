@@ -17,6 +17,6 @@ public class PSMPluginXmlPackageTest extends PluginXmlPackageTest {
 
 	@Parameters
 	public static Collection<Object[]> getData() {
-		return Collections.singleton(new Object[] {"de.uni_paderborn.fujaba.muml.psm", "model/psm.ecore"});
+		return Collections.singleton(new Object[] {"org.muml.psm", "model/psm.ecore"});
 	}
 }

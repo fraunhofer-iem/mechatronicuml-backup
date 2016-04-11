@@ -3,14 +3,14 @@
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BooleanLogic="http://www.muml.org/uppaal/adapter/mtctl/booleanlogic/1.0.0" xmlns:Comparables="http://www.muml.org/uppaal/adapter/mtctl/comparables/1.0.0" xmlns:Predicates="http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0" xmlns:Quantifiers="http://www.muml.org/uppaal/adapter/mtctl/quantifiers/1.0.0" xmlns:Sets="http://www.muml.org/uppaal/adapter/mtctl/sets/1.0.0" xmlns:actionlanguage="http://www.muml.org/pim/actionlanguage/1.0.0" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:instance="http://www.muml.org/pim/instance/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:mtctl="http://www.muml.org/uppaal/adapter/mtctl/1.0.0" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmlns:sdcec="http://www.muml.org/core/expressions/common/1.0.0" xmlns:types="http://www.muml.org/pim/types/1.0.0" xmi:id="_anjhMFObEeOolJcjfhTtwA">
   <categories xmi:id="_anjhMVObEeOolJcjfhTtwA" key="org.muml.types.category" name="types">
     <modelElements xsi:type="types:ArrayDataType" xmi:id="_XE5WcF6WEeOU6dzb6wKMjg" name="SinglePosArray">
-      <type xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+      <type xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
       <cardinality xmi:id="_vuFSsF6WEeOU6dzb6wKMjg" value="2"/>
     </modelElements>
     <modelElements xsi:type="types:ArrayDataType" xmi:id="_J10mMGmQEeOlIqc8khLIew" name="ThreePosArray" type="_XE5WcF6WEeOU6dzb6wKMjg">
       <cardinality xmi:id="_H_TQMLrMEeSUTO04IKA8nA" value="3"/>
     </modelElements>
     <modelElements xsi:type="types:ArrayDataType" xmi:id="_IaNRQHYcEeOftqkRKcg6BA" name="DoubleArray">
-      <type xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#double"/>
+      <type xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#double"/>
       <cardinality xmi:id="_OAQTwHYcEeOftqkRKcg6BA" value="8"/>
     </modelElements>
   </categories>
@@ -829,7 +829,7 @@
         <embeddedRegions xmi:id="_3i8PQGmQEeOlIqc8khLIew" priority="2">
           <embeddedStatechart xmi:id="_3jAgsGmQEeOlIqc8khLIew" name="sub-role-template">
             <variables xmi:id="_O-czUKXdEeOBEq443BJ_OQ" name="id">
-              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
             </variables>
             <states xmi:id="_3jBHwGmQEeOlIqc8khLIew" name="Active" initial="true">
               <embeddedRegions xmi:id="__TJcMGmQEeOlIqc8khLIew" priority="1">
@@ -1527,7 +1527,7 @@
       <variables xmi:id="_GakTcHn7EeOXC9Mz8u7bDw" name="pos" dataType="_XE5WcF6WEeOU6dzb6wKMjg"/>
       <variables xmi:id="_J_z70Hn7EeOXC9Mz8u7bDw" name="target" dataType="_XE5WcF6WEeOU6dzb6wKMjg"/>
       <variables xmi:id="_H_fhcJWoEeOexOA0YXfCPw" name="posDataOk">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
       </variables>
       <states xmi:id="_CWA4MXYyEeOftqkRKcg6BA" name="Main" initial="true">
         <embeddedRegions xmi:id="_Y6hm8HYyEeOftqkRKcg6BA" priority="1">
@@ -1900,7 +1900,7 @@
             <operations xmi:id="_j3EcoHoaEeOfObvls0kdgA" name="calcTurnAngle">
               <parameters xmi:id="_mWGq4HoaEeOfObvls0kdgA" name="pos" dataType="_XE5WcF6WEeOU6dzb6wKMjg"/>
               <parameters xmi:id="_paPKQHoaEeOfObvls0kdgA" name="target" dataType="_XE5WcF6WEeOU6dzb6wKMjg"/>
-              <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int64"/>
+              <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int64"/>
             </operations>
             <variables xmi:id="_U4fZ8HoZEeOfObvls0kdgA" name="speed" dataType="_XE5WcF6WEeOU6dzb6wKMjg"/>
             <transitions xmi:id="_jHrWIHoREeOfObvls0kdgA" priority="1" target="_o2yqgHoQEeOfObvls0kdgA" source="_c2Bx4HoREeOfObvls0kdgA">
@@ -1998,7 +1998,7 @@
       <variables xmi:id="_wL4FsH7GEeO6yadAoy6OrA" name="posArray" dataType="_J10mMGmQEeOlIqc8khLIew"/>
       <variables xmi:id="_ynksEH7GEeO6yadAoy6OrA" name="target" dataType="_XE5WcF6WEeOU6dzb6wKMjg"/>
       <variables xmi:id="_8Uo2IJWiEeOexOA0YXfCPw" name="noPosData">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
       </variables>
       <states xmi:id="_HRWLcXnwEeOZ_7LaW_t4Xg" name="Main" initial="true">
         <embeddedRegions xmi:id="_H-kd0HnwEeOZ_7LaW_t4Xg" priority="1">
@@ -2237,10 +2237,10 @@
             <operations xmi:id="_kqdbgH7HEeO6yadAoy6OrA" name="getApproval">
               <parameters xmi:id="_mzY24H7HEeO6yadAoy6OrA" name="target" dataType="_XE5WcF6WEeOU6dzb6wKMjg"/>
               <parameters xmi:id="_ps9sEH7HEeO6yadAoy6OrA" name="posArray" dataType="_J10mMGmQEeOlIqc8khLIew"/>
-              <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
+              <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
             </operations>
             <variables xmi:id="_wmfvsH7HEeO6yadAoy6OrA" name="permission">
-              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
             </variables>
             <transitions xmi:id="_NiYFoH7HEeO6yadAoy6OrA" priority="1" target="_jPfu0X7GEeO6yadAoy6OrA" source="_mfrGIH7GEeO6yadAoy6OrA">
               <synchronization xmi:id="_-dFLYH7PEeO6yadAoy6OrA" syncChannel="_kLv54HofEeOW17_KG5b7Bg"/>
@@ -2299,7 +2299,7 @@
       <variables xmi:id="__RQoAH-YEeOaCLD89FLDOA" name="pos" dataType="_XE5WcF6WEeOU6dzb6wKMjg"/>
       <variables xmi:id="_G2wkUH-aEeOaCLD89FLDOA" name="posArray" dataType="_J10mMGmQEeOlIqc8khLIew"/>
       <variables xmi:id="_HJCvgJf2EeO7D-mq8kOy2A" name="posDataOk">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
       </variables>
       <states xmi:id="_HNyEoXnxEeOXC9Mz8u7bDw" name="Main" initial="true">
         <embeddedRegions xmi:id="__9L5xerNEeW8Ua6WvGcBqg" priority="1">
@@ -2392,7 +2392,7 @@
               <embeddedRegions xmi:id="__9Vq8-rNEeW8Ua6WvGcBqg" priority="2">
                 <embeddedStatechart xmi:id="__9Vq9OrNEeW8Ua6WvGcBqg" name="sub-role-template">
                   <variables xmi:id="__9Vq9erNEeW8Ua6WvGcBqg" name="id">
-                    <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+                    <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
                   </variables>
                   <states xmi:id="__9Vq9urNEeW8Ua6WvGcBqg" name="Active" initial="true">
                     <embeddedRegions xmi:id="__9Vq9-rNEeW8Ua6WvGcBqg" priority="1">
@@ -2742,7 +2742,7 @@
       <variables xmi:id="_cKo0kYUfEeOAU7Vdi0NG2Q" name="pos" dataType="_XE5WcF6WEeOU6dzb6wKMjg"/>
       <variables xmi:id="_cKpboIUfEeOAU7Vdi0NG2Q" name="posArray" dataType="_J10mMGmQEeOlIqc8khLIew"/>
       <variables xmi:id="_r7kuEJf0EeO7D-mq8kOy2A" name="posDataOk">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
       </variables>
       <states xmi:id="_cKpboYUfEeOAU7Vdi0NG2Q" name="Main" initial="true">
         <embeddedRegions xmi:id="_cKpckIUfEeOAU7Vdi0NG2Q" priority="2">
@@ -3239,20 +3239,20 @@
       <messageTypes xmi:id="_HyrJkF6WEeOU6dzb6wKMjg" name="targetReached"/>
       <messageTypes xmi:id="_Mrq8ALZ-EeObnJbUcPIxUA" name="moveTo">
         <parameters xmi:id="_Pn6DoLZ-EeObnJbUcPIxUA" name="posX">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_X0YV0LZ-EeObnJbUcPIxUA" name="posY">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         </parameters>
       </messageTypes>
     </modelElements>
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_EOxRYGmAEeOlIqc8khLIew" name="Delegation">
       <messageTypes xmi:id="_FVawYGmAEeOlIqc8khLIew" name="check">
         <parameters xmi:id="_a_frQLnREeOumMA-2S_big" name="targetX">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_c8NPkLnREeOumMA-2S_big" name="targetY">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         </parameters>
       </messageTypes>
       <messageTypes xmi:id="_TjIMQGmAEeOlIqc8khLIew" name="declined"/>
@@ -3261,62 +3261,62 @@
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_MtqwUGmAEeOlIqc8khLIew" name="Distribution">
       <messageTypes xmi:id="_VZdioLjbEeOo4qSfvczxjQ" name="positions">
         <parameters xmi:id="_WTlBgLjbEeOo4qSfvczxjQ" name="posX1">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_YdCoYLjbEeOo4qSfvczxjQ" name="posY1">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_ZqhIILjbEeOo4qSfvczxjQ" name="posX2">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_a5CJsLjbEeOo4qSfvczxjQ" name="posY2">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_cYBQMLjbEeOo4qSfvczxjQ" name="posX3">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_d4x4ULjbEeOo4qSfvczxjQ" name="posY3">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         </parameters>
       </messageTypes>
       <messageTypes xmi:id="_l7TgILjiEeOo4qSfvczxjQ" name="position">
         <parameters xmi:id="_nU5JQLjiEeOo4qSfvczxjQ" name="posX">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_owfkkLjiEeOo4qSfvczxjQ" name="posY">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         </parameters>
       </messageTypes>
     </modelElements>
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_LyrwUHYZEeOftqkRKcg6BA" name="PositionTransmission">
       <messageTypes xmi:id="_zGbf0LjxEeOZIIv29ABAIA" name="position">
         <parameters xmi:id="_0YXo0LjxEeOZIIv29ABAIA" name="posX">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_1gThQLjxEeOZIIv29ABAIA" name="posY">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         </parameters>
       </messageTypes>
     </modelElements>
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_EEcx8HYcEeOftqkRKcg6BA" name="AllPositionsTransmission">
       <messageTypes xmi:id="_wrj_ILEKEeOUhpWh5pWHvw" name="allPositions">
         <parameters xmi:id="_yMeYQLEKEeOUhpWh5pWHvw" name="posX1">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_zkmBwLEKEeOUhpWh5pWHvw" name="posY1">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_0-OHILEKEeOUhpWh5pWHvw" name="posX2">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_2HJeELEKEeOUhpWh5pWHvw" name="posY2">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_3iHAMLEKEeOUhpWh5pWHvw" name="posX3">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         </parameters>
         <parameters xmi:id="_4-KHcLEKEeOUhpWh5pWHvw" name="posY3">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         </parameters>
       </messageTypes>
     </modelElements>
@@ -3371,13 +3371,13 @@
         </cardinality>
       </ports>
       <ports xsi:type="component:HybridPort" xmi:id="_ttB18HnqEeOZ_7LaW_t4Xg" name="speed_target" kind="OUT">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int64"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int64"/>
         <samplingInterval xmi:id="_EVJ5YHnrEeOZ_7LaW_t4Xg" unit="MILLISECONDS">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_IWQ-YHnrEeOZ_7LaW_t4Xg" value="10"/>
         </samplingInterval>
       </ports>
       <ports xsi:type="component:HybridPort" xmi:id="_wYwcYHnqEeOZ_7LaW_t4Xg" name="turnAngle_target" kind="OUT">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int64"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int64"/>
         <samplingInterval xmi:id="_Kd8ckHnrEeOZ_7LaW_t4Xg" unit="MILLISECONDS">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_4nf20JVyEeON4JsPrCDLXw" value="10"/>
         </samplingInterval>
@@ -3436,10 +3436,10 @@
     </modelElements>
     <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_g9goYIHXEeOaAZpBzLRsyA" name="Bebot_SW_Distributor" componentKind="hybrid component">
       <ports xsi:type="component:ContinuousPort" xmi:id="_uxqC0IHZEeO1qqzaJp0c1w" connectors="_vIJFYIToEeOadtwXfqPguw" name="turnAngle_target" kind="OUT">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int64"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int64"/>
       </ports>
       <ports xsi:type="component:ContinuousPort" xmi:id="_BvELMIHeEeO1qqzaJp0c1w" connectors="_t504IIToEeOadtwXfqPguw" name="speed_target" kind="OUT">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int64"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int64"/>
       </ports>
       <ports xsi:type="component:ContinuousPort" xmi:id="_lGmvAIToEeOadtwXfqPguw" connectors="_uk1kAIToEeOadtwXfqPguw" name="pos" dataType="_XE5WcF6WEeOU6dzb6wKMjg"/>
       <ports xsi:type="component:DiscretePort" xmi:id="_8vwxoIToEeOadtwXfqPguw" connectors="__WyeQIToEeOadtwXfqPguw" name="distributor" senderMessageTypes="_VZdioLjbEeOo4qSfvczxjQ" receiverMessageTypes="_l7TgILjiEeOo4qSfvczxjQ" refinedRole="_mO9KAF6PEeOU6dzb6wKMjg">
@@ -3547,16 +3547,16 @@
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_vH1t8ITpEeOadtwXfqPguw" name="MotionCtrl" componentKind="continuous component">
       <ports xsi:type="component:ContinuousPort" xmi:id="_ynYW8ITpEeOadtwXfqPguw" name="speed_in">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int64"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int64"/>
       </ports>
       <ports xsi:type="component:ContinuousPort" xmi:id="_5UHUsITpEeOadtwXfqPguw" name="speed_out" kind="OUT">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int64"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int64"/>
       </ports>
       <ports xsi:type="component:ContinuousPort" xmi:id="_-cCEsKXuEeOtUJ-H8DmtEA" name="angle_in">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int64"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int64"/>
       </ports>
       <ports xsi:type="component:ContinuousPort" xmi:id="__5x1EKXuEeOtUJ-H8DmtEA" name="angle_out" kind="OUT">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int64"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int64"/>
       </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_8GA0kITpEeOadtwXfqPguw" name="PosData" componentKind="continuous component">
@@ -3591,11 +3591,11 @@
     </modelElements>
     <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_mGWBkIp2EeOFVcInix1dwQ" name="Bebot_SW_Client" componentKind="hybrid component">
       <ports xsi:type="component:ContinuousPort" xmi:id="_OzDkcIp6EeOFVcInix1dwQ" connectors="_qsNcoIp6EeOFVcInix1dwQ" name="turnAngle_target" kind="OUT">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int64"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int64"/>
       </ports>
       <ports xsi:type="component:ContinuousPort" xmi:id="_ReP_YIp6EeOFVcInix1dwQ" connectors="_rOecMIp6EeOFVcInix1dwQ" name="position" dataType="_XE5WcF6WEeOU6dzb6wKMjg"/>
       <ports xsi:type="component:ContinuousPort" xmi:id="_TacmUIp6EeOFVcInix1dwQ" connectors="_qEKlMIp6EeOFVcInix1dwQ" name="speed_target" kind="OUT">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int64"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int64"/>
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_sdgbIIp6EeOFVcInix1dwQ" connectors="_156EIIp6EeOFVcInix1dwQ" name="client" senderMessageTypes="_l7TgILjiEeOo4qSfvczxjQ" receiverMessageTypes="_VZdioLjbEeOo4qSfvczxjQ" refinedRole="_mO9xE16PEeOU6dzb6wKMjg">
         <cardinality xmi:id="_sdgbIYp6EeOFVcInix1dwQ">

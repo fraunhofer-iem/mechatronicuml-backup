@@ -38,7 +38,7 @@ public class RealtimestatechartparameterbindingValidator extends EObjectValidato
 	 * @see org.eclipse.emf.common.util.Diagnostic#getCode()
 	 * @generated
 	 */
-	public static final String DIAGNOSTIC_SOURCE = "de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding";
+	public static final String DIAGNOSTIC_SOURCE = "org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding";
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.

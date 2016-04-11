@@ -5,7 +5,7 @@
   <categories xmi:id="_N8D30nvSEeWJtcJpbyRDKg" key="org.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_YwviYHvSEeWJtcJpbyRDKg" name="rtscRole2" behavioralElement="_SbFn4XvSEeWJtcJpbyRDKg">
       <variables xmi:id="_MaT9IL39EeWqhIVP39pr2A" name="gobalVar">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../../../../../../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="../../../../../../../../plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="__HnikL39EeWqhIVP39pr2A" value="true"/>
       </variables>
       <transitions xmi:id="_ec7pIHvSEeWJtcJpbyRDKg" priority="1" target="_a1XFgHvSEeWJtcJpbyRDKg" source="_YwviYXvSEeWJtcJpbyRDKg" urgent="false">

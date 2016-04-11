@@ -39,7 +39,7 @@
       <states xmi:id="_a1XFgHvSEeWJtcJpbyRDKg" name="state2" outgoingTransitions="_vDh8EHvfEeWJtcJpbyRDKg" incomingTransitions="_ec7pIHvSEeWJtcJpbyRDKg"/>
       <clocks xmi:id="_I7_-YJdJEeW_n8FySayE1g" name="clock"/>
       <subRoleSpecificVariables xmi:id="_T55zoL3bEeWqhIVP39pr2A" name="subVar">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../../../../../../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="../../../../../../../../plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_XTha0L3bEeWqhIVP39pr2A" value="true"/>
       </subRoleSpecificVariables>
     </modelElements>

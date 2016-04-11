@@ -24,9 +24,9 @@
           </expressions>
         </implementations>
         <parameters xmi:id="_4BM9sBx7EeSKP_lLzmbIVg" name="myInt">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         </parameters>
-        <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
       </operations>
       <operations xmi:id="_9MrkEBx7EeSKP_lLzmbIVg" name="decreaseInt">
         <implementations xsi:type="actionlanguage:Block" xmi:id="_r7__8NfgEeWRoflOKi_Auw">
@@ -38,12 +38,12 @@
           </expressions>
         </implementations>
         <parameters xmi:id="__ViuABx7EeSKP_lLzmbIVg" name="myInt">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         </parameters>
-        <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
       </operations>
       <variables xmi:id="_u8TOsBx7EeSKP_lLzmbIVg" name="myVariable">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_xFHVUBx7EeSKP_lLzmbIVg" value="21"/>
       </variables>
       <states xmi:id="_XfHLgRx7EeSKP_lLzmbIVg" name="init" initial="true">

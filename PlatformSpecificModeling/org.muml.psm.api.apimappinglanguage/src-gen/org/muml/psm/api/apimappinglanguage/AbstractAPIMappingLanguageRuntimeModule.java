@@ -11,7 +11,7 @@ import com.google.inject.Binder;
 import com.google.inject.name.Names;
 
 /**
- * Manual modifications go to {de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage.APIMappingLanguageRuntimeModule}
+ * Manual modifications go to {org.muml.psm.api.apimappinglanguage.APIMappingLanguageRuntimeModule}
  */
 @SuppressWarnings("all")
 public abstract class AbstractAPIMappingLanguageRuntimeModule extends org.eclipse.xtext.service.DefaultRuntimeModule {
@@ -25,7 +25,7 @@ public abstract class AbstractAPIMappingLanguageRuntimeModule extends org.eclips
 	}
 	
 	public void configureLanguageName(Binder binder) {
-		binder.bind(String.class).annotatedWith(Names.named(Constants.LANGUAGE_NAME)).toInstance("de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage.APIMappingLanguage");
+		binder.bind(String.class).annotatedWith(Names.named(Constants.LANGUAGE_NAME)).toInstance("org.muml.psm.api.apimappinglanguage.APIMappingLanguage");
 	}
 	
 	public void configureFileExtensions(Binder binder) {

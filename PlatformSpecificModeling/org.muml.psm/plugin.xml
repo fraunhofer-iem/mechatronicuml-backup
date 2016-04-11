@@ -89,7 +89,7 @@
    <extension
          point="org.muml.core.modelinstance.modelelementcategory">
       <category
-            key="de.uni_paderborn.fujaba.muml.psm.allocation.category"
+            key="org.muml.psm.allocation.category"
             name="allocation">
          <child
                class="SystemAllocation"

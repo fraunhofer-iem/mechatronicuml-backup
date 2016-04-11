@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: de.uni_paderborn.fujaba.muml.psm.api.transformation.blackbox
+Bundle-Name: org.muml.psm.api.transformation.blackbox
 Bundle-SymbolicName: org.muml.psm.api.transformation.blackbox;singleton:=true
 Bundle-Version: 0.4.0.qualifier
 Export-Package: org.muml.psm.api.transformation.blackbox

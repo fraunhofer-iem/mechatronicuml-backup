@@ -5,7 +5,7 @@
   <categories xmi:id="_IaAgAsjrEeW0gpRI-mS_yA" key="org.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_LkK5cMjsEeW0gpRI-mS_yA" name="peer" behavioralElement="_4UmGMMjrEeW0gpRI-mS_yA">
       <variables xmi:id="_j_y60MjsEeW0gpRI-mS_yA" name="code">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
       </variables>
       <transitions xmi:id="_QayDEMjsEeW0gpRI-mS_yA" priority="1" target="_LkK5ccjsEeW0gpRI-mS_yA" source="_LkK5ccjsEeW0gpRI-mS_yA" urgent="false">
         <clockConstraints xmi:id="_CUEXAOLKEeWXyfL4NpxXow" clock="_39m5gOLJEeWXyfL4NpxXow" operator="GREATER_OR_EQUAL">
@@ -36,13 +36,13 @@
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_Yqrx0MjuEeW0gpRI-mS_yA" name="LaunchVerifier" behavioralElement="_curTEMjrEeW0gpRI-mS_yA">
       <variables xmi:id="_3wE8gMjuEeW0gpRI-mS_yA" name="peer1">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="sdcec:UnaryExpression" xmi:id="_8vXhAMjuEeW0gpRI-mS_yA" operator="MINUS">
           <enclosedExpression xsi:type="sdcec:LiteralExpression" xmi:id="_8vXhAcjuEeW0gpRI-mS_yA" value="32"/>
         </initializeExpression>
       </variables>
       <variables xmi:id="_9SLTIMjuEeW0gpRI-mS_yA" name="peer2">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="sdcec:UnaryExpression" xmi:id="_Je4EIMqdEeWg8I9CxdQyWw" operator="MINUS">
           <enclosedExpression xsi:type="sdcec:LiteralExpression" xmi:id="_Je4EIcqdEeWg8I9CxdQyWw" value="42"/>
         </initializeExpression>
@@ -294,7 +294,7 @@
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_jLAdUMjrEeW0gpRI-mS_yA" name="M1">
       <messageTypes xmi:id="_jxLsgMjrEeW0gpRI-mS_yA" name="launchCode">
         <parameters xmi:id="_kuXtgMjrEeW0gpRI-mS_yA" name="id">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         </parameters>
       </messageTypes>
     </modelElements>
@@ -339,12 +339,12 @@
   <categories xmi:id="_IaAgBsjrEeW0gpRI-mS_yA" key="org.muml.pim.components.category" name="component">
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_MYz34MjrEeW0gpRI-mS_yA" name="IdentificationInput" componentKind="continuous component">
       <ports xsi:type="component:ContinuousPort" xmi:id="_TYcjgMjrEeW0gpRI-mS_yA" name="code" kind="OUT">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
       </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_QUHP0MjrEeW0gpRI-mS_yA" name="LaunchDelegator" behavior="_bWFoIMjuEeW0gpRI-mS_yA">
       <ports xsi:type="component:HybridPort" xmi:id="_W1YkcMjrEeW0gpRI-mS_yA" name="code">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         <samplingInterval xmi:id="_Zg15kMj1EeWzrcBaL-cniQ">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_bIz88Mj1EeWzrcBaL-cniQ" value="100"/>
         </samplingInterval>
@@ -376,7 +376,7 @@
         </receiverMessageBuffer>
       </ports>
       <ports xsi:type="component:HybridPort" xmi:id="_M0m3gMj1EeWzrcBaL-cniQ" name="verifiedLaunch" kind="OUT">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_yzfPAMmkEeWgH-bGO8AU1w" value="false"/>
         <samplingInterval xmi:id="_Vz6U0Mj1EeWzrcBaL-cniQ" unit="MILLISECONDS">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_cYp0MMj1EeWzrcBaL-cniQ" value="100"/>
@@ -385,7 +385,7 @@
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_SKhW0Mj2EeWzrcBaL-cniQ" name="Launcher" componentKind="continuous component">
       <ports xsi:type="component:ContinuousPort" xmi:id="_T5EjUMj2EeWzrcBaL-cniQ" name="launch">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
       </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_YGfmAMj2EeWzrcBaL-cniQ" name="System" componentKind="hybrid component">
@@ -447,5 +447,5 @@
   <categories xmi:id="_IaAgB8jrEeW0gpRI-mS_yA" key="org.muml.pim.pattern.category" name="pattern"/>
   <categories xmi:id="_xOKXwMknEeWbAtw7kHpt1w" key="org.muml.pm.hardware.hwplatform.category" name="hwplatform"/>
   <categories xmi:id="_xOKX4sknEeWbAtw7kHpt1w" key="org.muml.pm.hardware.hwresource.category" name="hwresource"/>
-  <categories xmi:id="_xOKX9sknEeWbAtw7kHpt1w" key="de.uni_paderborn.fujaba.muml.psm.allocation.category" name="allocation"/>
+  <categories xmi:id="_xOKX9sknEeWbAtw7kHpt1w" key="org.muml.psm.allocation.category" name="allocation"/>
 </modelinstance:RootNode>

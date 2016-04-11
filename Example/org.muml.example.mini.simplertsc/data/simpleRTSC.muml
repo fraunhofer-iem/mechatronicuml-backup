@@ -14,7 +14,7 @@
   <categories xmi:id="_Dwx8ixx3EeSKP_lLzmbIVg" key="org.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_hmH0kBx3EeSKP_lLzmbIVg" name="simpleStatechart" behavioralElement="_LTjxcBx3EeSKP_lLzmbIVg">
       <variables xmi:id="_GEa9oBx4EeSKP_lLzmbIVg" name="myVariable">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_DHu28Ni2EeWxo7TBPzv5sQ" value="42"/>
       </variables>
       <states xmi:id="_hmH0kRx3EeSKP_lLzmbIVg" name="init" initial="true">

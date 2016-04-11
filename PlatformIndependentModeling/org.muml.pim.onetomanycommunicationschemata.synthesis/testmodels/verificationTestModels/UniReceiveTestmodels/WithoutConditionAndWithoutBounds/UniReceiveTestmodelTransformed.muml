@@ -21,11 +21,11 @@
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_SIuFAJzNEeWTfvVxXiC01g" name="rtscRole2Impl" behavioralElement="_SbFn4XvSEeWJtcJpbyRDKg">
       <variables xmi:id="_SIuFAZzNEeWTfvVxXiC01g" name="consumeSingleReceive_1">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../../../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="../../../../../plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_SIuFApzNEeWTfvVxXiC01g" value="false"/>
       </variables>
       <variables xmi:id="_SIuFA5zNEeWTfvVxXiC01g" name="singleReceivePossible_1">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../../../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="../../../../../plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_SIuFBJzNEeWTfvVxXiC01g" value="false"/>
       </variables>
       <states xmi:id="_SIuFBZzNEeWTfvVxXiC01g" name="Main" initial="true">

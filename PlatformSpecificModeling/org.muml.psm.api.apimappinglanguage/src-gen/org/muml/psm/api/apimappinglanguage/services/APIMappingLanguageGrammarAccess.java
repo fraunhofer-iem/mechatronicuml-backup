@@ -539,7 +539,7 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
 		Grammar grammar = grammarProvider.getGrammar(this);
 		while (grammar != null) {
-			if ("de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage.APIMappingLanguage".equals(grammar.getName())) {
+			if ("org.muml.psm.api.apimappinglanguage.APIMappingLanguage".equals(grammar.getName())) {
 				return grammar;
 			}
 			List<Grammar> grammars = grammar.getUsedGrammars();

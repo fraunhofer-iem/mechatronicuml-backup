@@ -15,7 +15,7 @@
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_fx1IEHvpEeWn56WNjktYQQ" name="rtscRole1Impl" behavioralElement="_Sa9sEHvSEeWJtcJpbyRDKg">
       <variables xmi:id="_fx1IEXvpEeWn56WNjktYQQ" name="loadBalancingPossible_1">
-        <dataType xsi:type="types:PrimitiveDataType" href="../../../../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="../../../../../plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_fx1IEnvpEeWn56WNjktYQQ" value="false"/>
       </variables>
       <states xmi:id="_fx1IE3vpEeWn56WNjktYQQ" name="Main" initial="true">
@@ -74,14 +74,14 @@
         <embeddedRegions xmi:id="_fx1INXvpEeWn56WNjktYQQ" priority="1">
           <embeddedStatechart xmi:id="_fx1INnvpEeWn56WNjktYQQ" name="subrole">
             <variables xmi:id="_fx1IN3vpEeWn56WNjktYQQ" name="neverHadATask">
-              <dataType xsi:type="types:PrimitiveDataType" href="../../../../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="../../../../../plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
               <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_fx1IOHvpEeWn56WNjktYQQ" value="true"/>
             </variables>
             <states xmi:id="_fx1IOXvpEeWn56WNjktYQQ" name="subrole_Main" initial="true">
               <embeddedRegions xmi:id="_fx1IOnvpEeWn56WNjktYQQ" priority="2">
                 <embeddedStatechart xmi:id="_fx1IO3vpEeWn56WNjktYQQ" name="subrole_schema_statechart1">
                   <variables xmi:id="_fx1IPHvpEeWn56WNjktYQQ" name="taskPlanned_1">
-                    <dataType xsi:type="types:PrimitiveDataType" href="../../../../../plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>
+                    <dataType xsi:type="types:PrimitiveDataType" href="../../../../../plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
                   </variables>
                   <transitions xmi:id="_fx1IPXvpEeWn56WNjktYQQ" priority="1" target="_fx1IXXvpEeWn56WNjktYQQ" source="_fx1ItnvpEeWn56WNjktYQQ"/>
                   <transitions xmi:id="_fx1IPnvpEeWn56WNjktYQQ" priority="2" target="_fx1It3vpEeWn56WNjktYQQ" source="_fx1IXXvpEeWn56WNjktYQQ" clockResets="_fx1IuHvpEeWn56WNjktYQQ">

@@ -1,4 +1,4 @@
-module de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage.APIMappingLanguage
+module org.muml.psm.api.apimappinglanguage.APIMappingLanguage
 
 import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
@@ -6,7 +6,7 @@ import org.eclipse.xtext.ui.generator.*
 
 var grammarURI = "classpath:/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/APIMappingLanguage.xtext"
 var fileExtensions = "apimapping"
-var projectName = "de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage"
+var projectName = "org.muml.psm.api.apimappinglanguage"
 var runtimeProject = "../${projectName}"
 var generateXtendStub = false
 
@@ -31,22 +31,22 @@ Workflow {
 		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage"
 		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage"
 		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage"
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.types.TypesPackage" */
+		registerGeneratedEPackage = "org.muml.core.types.TypesPackage" */
 		
 	/* 
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.psm.PsmPackage"
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.psm.swplatform.SwplatformPackage"
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.psm.instance.InstancePackage"
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.psm.api.ApiPackage"
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.psm.api.portapimapping.PortapimappingPackage"
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.ApiexpressionsPackage"
+		registerGeneratedEPackage = "org.muml.psm.PsmPackage"
+		registerGeneratedEPackage = "org.muml.psm.swplatform.SwplatformPackage"
+		registerGeneratedEPackage = "org.muml.psm.instance.InstancePackage"
+		registerGeneratedEPackage = "org.muml.psm.api.ApiPackage"
+		registerGeneratedEPackage = "org.muml.psm.api.portapimapping.PortapimappingPackage"
+		registerGeneratedEPackage = "org.muml.psm.api.apiexpressions.ApiexpressionsPackage"
 		
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage"
+		registerGeneratedEPackage = "org.muml.psm.properties.PropertiesPackage"
 		
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.psm.realtimestatechart.RealtimestatechartPackage"
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage"
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterPackage"
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage" */
+		registerGeneratedEPackage = "org.muml.psm.realtimestatechart.RealtimestatechartPackage"
+		registerGeneratedEPackage = "org.muml.psm.realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage"
+		registerGeneratedEPackage = "org.muml.psm.realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterPackage"
+		registerGeneratedEPackage = "org.muml.psm.allocation.AllocationPackage" */
 		
 		
 		registerGenModelFile = "platform:/resource/org.muml.core/model/core.genmodel"
@@ -54,7 +54,7 @@ Workflow {
 		registerGenModelFile = "platform:/resource/org.muml.pim/model/pim.genmodel"
 		registerGenModelFile = "platform:/resource/de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.genmodel"
 		registerGenModelFile = "platform:/resource/org.muml.pm.software.platform/model/swplatform.genmodel"
-		registerGenModelFile = "platform:/resource/de.uni_paderborn.fujaba.muml.psm/model/psm.genmodel"
+		registerGenModelFile = "platform:/resource/org.muml.psm/model/psm.genmodel"
 	}
 
 	component = DirectoryCleaner {

@@ -4,7 +4,7 @@
    <extension
          point="org.eclipse.ui.newWizards">
       <wizard
-            category="org.eclipse.ui.Examples/de.uni_paderborn.fujaba.muml.example"
+            category="org.eclipse.ui.Examples/org.muml.example"
             class="org.muml.example.ui.wizard.ExampleCreationWizard"
             icon="images/muml.png"
             id="org.muml.example.rocketLauncherCreationWizard"

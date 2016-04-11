@@ -49,8 +49,8 @@ public class MUML2UPPAAL extends Model2Model {
 			{ "platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/overtaking4/overtaking.fujaba#//@categories.2/@modelElements.0", "platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/overtaking4/Overtaking.uppaal" },
 			{ "platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/overtaking5/overtaking.fujaba#//@categories.2/@modelElements.0", "platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/overtaking5/Overtaking.uppaal" },
 			{ "platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/overtaking6/overtaking.fujaba#//@categories.2/@modelElements.0", "platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/overtaking6/Overtaking.uppaal" },
-			{ "platform:/plugin/de.uni_paderborn.fujaba.muml.example.blindOvertaking/model/overtaking.muml#//@categories.2/@modelElements.0", "platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/overtaking7/Overtaking.uppaal" },
-			{ "platform:/plugin/de.uni_paderborn.fujaba.muml.example.sectionEntry/model/SectionEntry.muml#//@categories.1/@modelElements.0", "platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/sectionEntry/EnterSection.uppaal" }
+			{ "platform:/plugin/org.muml.example.blindOvertaking/model/overtaking.muml#//@categories.2/@modelElements.0", "platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/overtaking7/Overtaking.uppaal" },
+			{ "platform:/plugin/org.muml.example.sectionEntry/model/SectionEntry.muml#//@categories.1/@modelElements.0", "platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/sectionEntry/EnterSection.uppaal" }
 			
 		};
 		
