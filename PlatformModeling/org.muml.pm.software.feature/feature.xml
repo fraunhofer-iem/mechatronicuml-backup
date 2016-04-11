@@ -57,28 +57,28 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
    </requires>
 
    <plugin
-         id="org.muml.pm.software.platform"
+         id="org.muml.pm.software"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.muml.pm.software.platform.edit"
+         id="org.muml.pm.software.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.muml.pm.software.platform.oslanguage"
+         id="org.muml.pm.software.oslanguage"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.muml.pm.software.platform.oslanguage.ui"
+         id="org.muml.pm.software.oslanguage.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"

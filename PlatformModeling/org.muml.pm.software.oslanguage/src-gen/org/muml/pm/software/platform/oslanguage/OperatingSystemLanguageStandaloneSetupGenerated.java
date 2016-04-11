@@ -25,7 +25,7 @@ public class OperatingSystemLanguageStandaloneSetupGenerated implements ISetup {
 	}
 	
 	public Injector createInjector() {
-		return Guice.createInjector(new org.muml.pm.software.platform.oslanguage.OperatingSystemLanguageRuntimeModule());
+		return Guice.createInjector(new org.muml.pm.software.oslanguage.OperatingSystemLanguageRuntimeModule());
 	}
 	
 	public void register(Injector injector) {

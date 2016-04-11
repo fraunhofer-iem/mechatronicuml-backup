@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-Vendor: %providerName
 Bundle-Version: 0.5.0.qualifier
-Bundle-SymbolicName: org.muml.pm.software.platform.oslanguage.ui;singleton:=true
+Bundle-SymbolicName: org.muml.pm.software.oslanguage.ui;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext.ui,
  org.eclipse.ui.editors;bundle-version="3.5.0",

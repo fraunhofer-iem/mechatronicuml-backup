@@ -12,6 +12,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.muml.pim;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.muml.pm.software.platform,
- org.muml.pm.software.platform.impl,
- org.muml.pm.software.platform.util
+Export-Package: org.muml.pm.software,
+ org.muml.pm.software.impl,
+ org.muml.pm.software.util

@@ -6,12 +6,13 @@
 
 <plugin>
 
+
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated swplatform -->
+      <!-- @generated software -->
       <package
-            uri="http://www.muml.org/pm/software/platform/1.0.0"
-            class="org.muml.pm.software.platform.SwplatformPackage"
-            genModel="model/swplatform.genmodel"/>
+            uri="http://www.muml.org/pm/software/1.0.0"
+            class="org.muml.pm.software.SoftwarePackage"
+            genModel="model/software.genmodel"/>
    </extension>
 
 </plugin>
