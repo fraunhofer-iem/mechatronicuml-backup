@@ -67,18 +67,18 @@
       <import plugin="org.eclipse.emf.compare" version="3.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml"/>
       <import plugin="org.muml.pim" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.verification.uppaal.job" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.uppaal" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.uppaal.requirements" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.uppaal.trace"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.verification.uppaal.results" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.verification.extension" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.uppaal.adapter.job" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.uppaal" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.uppaal.requirements" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.uppaal.trace"/>
+      <import plugin="org.muml.uppaal.adapter.results" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.uppaal.adapter.mtctl.xtext"/>
+      <import plugin="org.muml.uppaal.adapter.extension" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.muml.core.modelinstance" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.verification.uppaal.options" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.uppaal.job"/>
+      <import plugin="org.muml.uppaal.options" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.uppaal.job"/>
       <import plugin="org.muml.testlanguage.specification" version="0.1.0" match="greaterOrEqual"/>
-      <import feature="de.uni_paderborn.fujaba.muml.verification.uppaal.feature" version="0.5.0.qualifier"/>
+      <import feature="org.muml.uppaal.adapter.feature" version="0.5.0.qualifier"/>
    </requires>
 
    <plugin
