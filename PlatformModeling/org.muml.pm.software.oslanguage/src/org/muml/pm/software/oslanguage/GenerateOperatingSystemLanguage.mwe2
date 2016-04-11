@@ -1,4 +1,4 @@
-module de.uni_paderborn.fujaba.muml.swplatform.oslanguage.OperatingSystemLanguage
+module org.muml.pm.software.oslanguage.OperatingSystemLanguage
 
 import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*

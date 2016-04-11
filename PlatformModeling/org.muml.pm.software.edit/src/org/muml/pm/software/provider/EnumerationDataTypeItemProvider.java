@@ -154,7 +154,7 @@ public class EnumerationDataTypeItemProvider extends DataTypeItemProvider {
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return SwplatformEditPlugin.INSTANCE;
+		return SoftwareEditPlugin.INSTANCE;
 	}
 
 }

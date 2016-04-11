@@ -152,7 +152,7 @@ public class ImportItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return SwplatformEditPlugin.INSTANCE;
+		return SoftwareEditPlugin.INSTANCE;
 	}
 
 }

@@ -21,19 +21,18 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.antlr.runtime,
  org.eclipse.xtext.common.types,
  org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional,
- org.muml.pm.software.platform;bundle-version="0.1.0",
- org.eclipse.xtext.xbase.lib
+ org.eclipse.xtext.xbase.lib,
+ org.muml.pm.software;bundle-version="0.5.0"
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.muml.pm.software.oslanguage,
- org.muml.pm.software.platform.oslanguage.formatting,
- org.muml.pm.software.platform.oslanguage.generator,
- org.muml.pm.software.platform.oslanguage.parseTreeConstruction,
- org.muml.pm.software.platform.oslanguage.parser.antlr,
- org.muml.pm.software.platform.oslanguage.parser.antlr.internal,
- org.muml.pm.software.platform.oslanguage.scoping,
- org.muml.pm.software.platform.oslanguage.services,
- org.muml.pm.software.platform.oslanguage.validation,
- org.muml.pm.software.platform.oslanguage.valueconverter
+ org.muml.pm.software.oslanguage.formatting,
+ org.muml.pm.software.oslanguage.generator,
+ org.muml.pm.software.oslanguage.parseTreeConstruction,
+ org.muml.pm.software.oslanguage.parser.antlr,
+ org.muml.pm.software.oslanguage.parser.antlr.internal,
+ org.muml.pm.software.oslanguage.scoping,
+ org.muml.pm.software.oslanguage.services,
+ org.muml.pm.software.oslanguage.validation
 

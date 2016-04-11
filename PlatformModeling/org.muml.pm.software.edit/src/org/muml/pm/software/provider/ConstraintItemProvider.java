@@ -103,7 +103,7 @@ public class ConstraintItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return SwplatformEditPlugin.INSTANCE;
+		return SoftwareEditPlugin.INSTANCE;
 	}
 
 }

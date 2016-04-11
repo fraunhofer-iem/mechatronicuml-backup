@@ -184,7 +184,7 @@ public class APIRepositoryItemProvider extends NamedElementItemProvider {
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return SwplatformEditPlugin.INSTANCE;
+		return SoftwareEditPlugin.INSTANCE;
 	}
 
 }
