@@ -19,7 +19,7 @@ public class ILPValidateMetamodel extends ValidateMetamodelsTest {
 	@Parameters
 	public static Collection<Object[]> getResourcePaths() {
 		return new ArrayList<Object[]>(Arrays.asList(new Object[][] {
-				new Object[] {"de.uni_paderborn.fujaba.muml.allocation.ilp/model/ilp.ecore"}
+				new Object[] {"org.muml.psm.allocation.ilp/model/ilp.ecore"}
 		}));
 	}
 
