@@ -49,8 +49,6 @@ import org.eclipse.ui.dialogs.SaveAsDialog;
 import org.eclipse.ui.ide.IGotoMarker;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ShowInContext;
-import org.muml.core.common.editingdomain.EditingDomainPlugin;
-import org.muml.core.common.editingdomain.initialize.IEditingDomainInitializer;
 
 /**
  * @generated
@@ -261,9 +259,10 @@ public class CoordinationProtocolDiagramEditor extends DiagramDocumentEditor imp
 	@Override
 	public void setInput(IEditorInput input) {
 		super.setInput(input);
-		for (IEditingDomainInitializer init : EditingDomainPlugin.getEditingDomainInitializers()) {
-			init.initialize(getEditingDomain());
-		}
+		// XXX Activate again
+		//		for (org.muml.core.common.editingdomain.initialize.IEditingDomainInitializer init : org.muml.core.common.editingdomain.EditingDomainPlugin.getEditingDomainInitializers()) {
+		//			init.initialize(getEditingDomain());
+		//		}
 	}
 
 	/**

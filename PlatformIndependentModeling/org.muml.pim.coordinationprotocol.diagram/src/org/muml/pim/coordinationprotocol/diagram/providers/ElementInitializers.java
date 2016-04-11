@@ -13,8 +13,8 @@
 package org.muml.pim.coordinationprotocol.diagram.providers;
 
 import java.util.Collection;
-
 import java.util.concurrent.TimeUnit;
+
 import org.eclipse.emf.ecore.EcorePackage;
 import org.muml.core.expressions.common.CommonExpressionsFactory;
 import org.muml.core.expressions.common.CommonExpressionsPackage;

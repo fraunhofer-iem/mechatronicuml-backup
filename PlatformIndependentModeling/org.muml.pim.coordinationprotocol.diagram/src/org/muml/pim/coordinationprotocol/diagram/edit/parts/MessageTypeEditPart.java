@@ -15,7 +15,6 @@ package org.muml.pim.coordinationprotocol.diagram.edit.parts;
 import java.util.Collection;
 
 import org.eclipse.draw2d.ConnectionAnchor;
-import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;

@@ -1,7 +1,5 @@
 package org.muml.pim.realtimestatechart.diagram.edit.policies.statechart;
 
-import java.util.Collection;
-
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;

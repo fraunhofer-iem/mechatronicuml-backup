@@ -67,9 +67,6 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.part.FileEditorInput;
-import org.muml.common.editingdomain.initialize.IEditingDomainInitializer;
-import org.muml.core.common.FujabaCommonPlugin;
-import org.muml.pim.common.MumlCommonPlugin;
 
 /**
  * @generated

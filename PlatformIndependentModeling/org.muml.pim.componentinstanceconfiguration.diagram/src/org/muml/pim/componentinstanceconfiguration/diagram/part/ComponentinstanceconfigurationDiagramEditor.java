@@ -22,7 +22,6 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.ui.URIEditorInput;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gef.KeyHandler;
@@ -56,10 +55,7 @@ import org.eclipse.ui.navigator.resources.ProjectExplorer;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.IShowInTargetList;
 import org.eclipse.ui.part.ShowInContext;
-import org.muml.core.common.editingdomain.EditingDomainPlugin;
-import org.muml.core.common.editingdomain.initialize.IEditingDomainInitializer;
 import org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem;
-import org.muml.pim.types.PrimitiveDataType;
 
 /**
  * @generated
@@ -307,9 +303,10 @@ public class ComponentinstanceconfigurationDiagramEditor extends DiagramDocument
 	@Override
 	public void setInput(IEditorInput input) {
 		super.setInput(input);
-		for (IEditingDomainInitializer init : EditingDomainPlugin.getEditingDomainInitializers()) {
-			init.initialize(getEditingDomain());
-		}
+		// XXX Activate again
+		//		for (org.muml.core.common.editingdomain.initialize.IEditingDomainInitializer init : org.muml.core.common.editingdomain.EditingDomainPlugin.getEditingDomainInitializers()) {
+		//			init.initialize(getEditingDomain());
+		//		}
 	}
 
 	/**
