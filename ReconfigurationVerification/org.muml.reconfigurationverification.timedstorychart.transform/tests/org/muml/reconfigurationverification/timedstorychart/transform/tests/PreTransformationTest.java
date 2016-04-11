@@ -106,7 +106,7 @@ public class PreTransformationTest extends TSCTransformationTestCase {
 
 	@Override
 	protected void setTransformationPath() {
-		transformation_path = "/de.uni_paderborn.fujaba.muml.reachanalysis.timedstorychart.transform/transforms/preTransformation.qvto";
+		transformation_path = "/org.muml.reconfigurationverification.reachanalysis.timedstorychart.transform/transforms/preTransformation.qvto";
 	}
 	
 	public EObject performTransformation(CoordinationProtocol rtcp) {

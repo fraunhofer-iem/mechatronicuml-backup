@@ -83,21 +83,21 @@
             class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
             id="org.muml.uppaal.adapter.mtctl"
             name="Mtctl">
-            <keywordReference id="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.keyword_Mtctl"/>
+            <keywordReference id="org.muml.uppaal.adapter.ui.keyword_Mtctl"/>
         </page>
         <page
             category="org.muml.uppaal.adapter.mtctl"
             class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
             id="org.muml.uppaal.adapter.mtctl.coloring"
             name="Syntax Coloring">
-            <keywordReference id="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.keyword_Mtctl"/>
+            <keywordReference id="org.muml.uppaal.adapter.ui.keyword_Mtctl"/>
         </page>
         <page
             category="org.muml.uppaal.adapter.mtctl"
             class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
             id="org.muml.uppaal.adapter.mtctl.templates"
             name="Templates">
-            <keywordReference id="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.keyword_Mtctl"/>
+            <keywordReference id="org.muml.uppaal.adapter.ui.keyword_Mtctl"/>
         </page>
     </extension>
     <extension
@@ -106,7 +106,7 @@
             class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
             id="org.muml.uppaal.adapter.mtctl"
             name="Mtctl">
-            <keywordReference id="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.keyword_Mtctl"/>
+            <keywordReference id="org.muml.uppaal.adapter.ui.keyword_Mtctl"/>
             <enabledWhen>
 	            <adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -116,7 +116,7 @@
     <extension
         point="org.eclipse.ui.keywords">
         <keyword
-            id="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.keyword_Mtctl"
+            id="org.muml.uppaal.adapter.ui.keyword_Mtctl"
             label="Mtctl"/>
     </extension>
     <extension
@@ -285,7 +285,7 @@
             point="org.eclipse.ui.ide.markerResolution">
         <markerResolutionGenerator
             class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.mtctl.check.fast">
+            markerType="org.muml.uppaal.adapter.ui.mtctl.check.fast">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
@@ -293,7 +293,7 @@
         </markerResolutionGenerator>
         <markerResolutionGenerator
             class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.mtctl.check.normal">
+            markerType="org.muml.uppaal.adapter.ui.mtctl.check.normal">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
@@ -301,7 +301,7 @@
         </markerResolutionGenerator>
         <markerResolutionGenerator
             class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.mtctl.check.expensive">
+            markerType="org.muml.uppaal.adapter.ui.mtctl.check.expensive">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
@@ -339,7 +339,7 @@
 	        class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
 	        id="org.muml.uppaal.adapter.mtctl.refactoring"
 	        name="Refactoring">
-	        <keywordReference id="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.keyword_Mtctl"/>
+	        <keywordReference id="org.muml.uppaal.adapter.ui.keyword_Mtctl"/>
 	    </page>
 	</extension>
 

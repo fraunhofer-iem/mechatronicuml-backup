@@ -9,7 +9,7 @@
 		<registerGeneratedEPackage value="org.muml.core.expressions.ExpressionsPackage"/>
 		<registerGeneratedEPackage value="org.muml.core.expressions.common.CommonExpressionsPackage"/>
 		<registerGeneratedEPackage value="org.muml.pim.actionlanguage.ActionLanguagePackage"/>
-		<registerGeneratedEPackage value="de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage"/>
+		<registerGeneratedEPackage value="org.muml.pim.realtimestatechart.RealtimestatechartPackage"/>
 	</bean>
 	
 	<!-- instantiate metamodel -->

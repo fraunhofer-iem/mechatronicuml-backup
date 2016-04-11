@@ -74,7 +74,7 @@ public class ExportWizard extends Wizard implements IExportWizard
 		} 
 		catch (Exception e) 
 		{
-			IStatus status = new Status(IStatus.ERROR, "de.uni_paderborn.fujaba.simulink.m2t",0, "Could not export model", e);
+			IStatus status = new Status(IStatus.ERROR, "org.muml.simulink.adapter.m2t",0, "Could not export model", e);
 			ResourcesPlugin.getPlugin().getLog().log(status);
 			return false;
 		} 

@@ -1,4 +1,4 @@
-import model;
+import simulink;
 
 /* Selects the bus for a given bus based on its incoming/outgoing lines.
    The first part of the union is for OutPorts of a SubSystem, seen from the "outside"

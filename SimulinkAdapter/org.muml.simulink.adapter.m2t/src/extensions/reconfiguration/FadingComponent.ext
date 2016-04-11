@@ -1,7 +1,7 @@
-import model;
+import simulink;
 
 cached String fadingComponentToString(String source):
-	JAVA de.uni_paderborn.fujaba.simulink.m2t.xtend.CopyUtil.mdlFileToString(java.lang.String)
+	JAVA org.muml.simulink.adapter.m2t.xtend.CopyUtil.mdlFileToString(java.lang.String)
 ;
 
 String generateFadingComponent(SubSystem fc):

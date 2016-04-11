@@ -99,7 +99,7 @@ public class PostTransformationModification {
 	public void modify(String simu_file) {
 
 		// Initialize the simulink model
-		// de.uni_paderborn.fujaba.simulink.model.SimulinkPackage.eINSTANCE.eClass();
+		// org.muml.simulink.SimulinkPackage.eINSTANCE.eClass();
 		// String oclDelegateURI = OCLDelegateDomain.OCL_DELEGATE_URI;
 		// EOperation.Internal.InvocationDelegate.Factory.Registry.INSTANCE.put(oclDelegateURI,
 		// new OCLInvocationDelegateFactory.Global());

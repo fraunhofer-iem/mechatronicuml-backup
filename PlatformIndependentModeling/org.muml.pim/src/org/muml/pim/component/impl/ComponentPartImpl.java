@@ -243,7 +243,7 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 //		 * 
 //		 * Caused by: java.lang.NullPointerException
 //		 * at org.eclipse.emf.ecore.impl.EStructuralFeatureImpl$InternalSettingDelegateMany.dynamicGet(EStructuralFeatureImpl.java:1710)
-//		 * at de.uni_paderborn.fujaba.muml.component.impl.ComponentPartImpl.getPortsDerived(ComponentPartImpl.java:286)
+//		 * at org.muml.pim.component.impl.ComponentPartImpl.getPortsDerived(ComponentPartImpl.java:286)
 //		 * 
 //		 * TODO: Why was this exception thrown?
 //		*/

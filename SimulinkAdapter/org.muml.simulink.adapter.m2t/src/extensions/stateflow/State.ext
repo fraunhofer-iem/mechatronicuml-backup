@@ -1,4 +1,4 @@
-import model::stateflow;
+import simulink::stateflow;
 
 String getLabelString(State state):
 	state.name + 

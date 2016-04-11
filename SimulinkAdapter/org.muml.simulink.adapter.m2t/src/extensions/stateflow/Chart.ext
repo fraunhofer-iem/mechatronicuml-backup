@@ -1,4 +1,4 @@
-import model::stateflow;
+import simulink::stateflow;
 
 extension extensions::stateflow::StateflowElement;
 

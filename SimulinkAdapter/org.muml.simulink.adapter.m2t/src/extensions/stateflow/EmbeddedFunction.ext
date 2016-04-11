@@ -1,7 +1,7 @@
-import model::stateflow;
+import simulink::stateflow;
 
 List[Data] getAllData(EmbeddedFunction function):
 	function.input.union(function.output).union(function.constant).union(function.local).toList();
 	
 String foldLine(String line, int offset, int length):
-	JAVA de.uni_paderborn.fujaba.simulink.m2t.xtend.EmbeddedMatlabFunction.foldLine(java.lang.String, java.lang.Integer, java.lang.Integer);
+	JAVA org.muml.simulink.adapter.m2t.xtend.EmbeddedMatlabFunction.foldLine(java.lang.String, java.lang.Integer, java.lang.Integer);

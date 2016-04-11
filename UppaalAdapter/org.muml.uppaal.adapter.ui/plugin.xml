@@ -4,7 +4,7 @@
 
 	<extension point="org.eclipse.ui.commands" id="menu-commands">
       <category id="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="UPPAAL Verification Command" description="Run UPPAAL model checking"/>
-      <command id="de.uni_paderborn.fujaba.muml.verification.uppaal.UppaalVerificationAction"
+      <command id="org.muml.uppaal.adapter.UppaalVerificationAction"
          name="Run UPPAAL Model Checking"
          categoryId="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
          defaultHandler="org.muml.uppaal.adapter.ui.UppaalVerifyForResultAction"/>
@@ -12,7 +12,7 @@
 
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <category id="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="UPPAAL XML Export Command" description="Export UPPAAL XML file"/>
-      <command id="de.uni_paderborn.fujaba.muml.verification.uppaal.ExportUppaalXMLAction"
+      <command id="org.muml.uppaal.adapter.ExportUppaalXMLAction"
          name="Export UPPAAL XML File"
          categoryId="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
          defaultHandler="org.muml.uppaal.adapter.ui.ExportUppaalXMLAction"/>
@@ -20,7 +20,7 @@
    
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <category id="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="Export UPPAAL Model Command" description="Export UPPAAL model"/>
-      <command id="de.uni_paderborn.fujaba.muml.verification.uppaal.ExportUppaalModelAction"
+      <command id="org.muml.uppaal.adapter.ExportUppaalModelAction"
          name="Export UPPAAL Model"
          categoryId="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
          defaultHandler="org.muml.uppaal.adapter.ui.ExportUppaalModelAction"/>
@@ -30,7 +30,7 @@
 
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <category id="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="Export UPPAAL Model Command" description="Export UPPAAL model (Wizard)..."/>
-      <command id="de.uni_paderborn.fujaba.muml.verification.uppaal.ExportUppaalWizardModelAction"
+      <command id="org.muml.uppaal.adapter.ExportUppaalWizardModelAction"
          name="Export UPPAAL Model (Wizard)..."
          categoryId="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
          defaultHandler="org.muml.uppaal.adapter.ui.wizard.MUML2ExportUppaalWizardDialogAction"/>
@@ -41,7 +41,7 @@
 
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <category id="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="Trace Image Export Command" description="Export trace image"/>
-      <command id="de.uni_paderborn.fujaba.muml.verification.uppaal.ExportTraceImageAction"
+      <command id="org.muml.uppaal.adapter.ExportTraceImageAction"
          name="Run UPPAAL Model Checking for a Trace"
          categoryId="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
          defaultHandler="org.muml.uppaal.adapter.ui.ExportTraceImageAction"/>
@@ -49,7 +49,7 @@
    
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <category id="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="Add Default Properties Command" description="Add Default Verification Properties"/>
-      <command id="de.uni_paderborn.fujaba.muml.verification.uppaal.AddDefaultPropertiesAction"
+      <command id="org.muml.uppaal.adapter.AddDefaultPropertiesAction"
          name="Add Default Verification Properties"
          categoryId="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
          defaultHandler="org.muml.uppaal.adapter.ui.AddDefaultPropertiesAction"/>
@@ -64,7 +64,7 @@
 
 
          <command
-               commandId="de.uni_paderborn.fujaba.muml.verification.uppaal.AddDefaultPropertiesAction"
+               commandId="org.muml.uppaal.adapter.AddDefaultPropertiesAction"
                label="Add Default Verification Properties">
             <visibleWhen>
                <and>
@@ -80,7 +80,7 @@
             </visibleWhen>
          </command>
          <command
-               commandId="de.uni_paderborn.fujaba.muml.verification.uppaal.UppaalVerificationAction"
+               commandId="org.muml.uppaal.adapter.UppaalVerificationAction"
                label="Verify Multiple Properties">
              <visibleWhen>
                <and>
@@ -97,7 +97,7 @@
          </command>
 
          <command
-               commandId="de.uni_paderborn.fujaba.muml.verification.uppaal.ExportTraceImageAction"
+               commandId="org.muml.uppaal.adapter.ExportTraceImageAction"
                label="Verify Single Property for a Trace">
             <visibleWhen>
                <and>
@@ -116,7 +116,7 @@
                id="de.uni_paderborn.de.fujaba.muml.uppaal.verification.debugging"
                label="Debugging">
                <command
-                     commandId="de.uni_paderborn.fujaba.muml.verification.uppaal.ExportUppaalModelAction"
+                     commandId="org.muml.uppaal.adapter.ExportUppaalModelAction"
                      label="Generate Uppaal Model">
             <visibleWhen>
                <and>
@@ -133,7 +133,7 @@
          </command>
 
          <command
-               commandId="de.uni_paderborn.fujaba.muml.verification.uppaal.ExportUppaalXMLAction"
+               commandId="org.muml.uppaal.adapter.ExportUppaalXMLAction"
                label="Generate Uppaal XML File">
              <visibleWhen>
                <and>
@@ -150,7 +150,7 @@
          </command>
          </menu>
         <!-- The wizard should not be dispayed anymore
-         <command commandId="de.uni_paderborn.fujaba.muml.verification.uppaal.ExportUppaalWizardModelAction">
+         <command commandId="org.muml.uppaal.adapter.ExportUppaalWizardModelAction">
             <visibleWhen>
                <and>
                   <with variable="activePartId"><equals value="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"/></with>

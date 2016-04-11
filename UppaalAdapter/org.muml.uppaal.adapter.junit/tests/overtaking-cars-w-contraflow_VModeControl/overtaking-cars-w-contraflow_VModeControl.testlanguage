@@ -7,9 +7,9 @@
     </specification>
   </nodes>
   <nodes label="Assert Result" specificationClassName="AssertResult">
-    <inputs name="property_result_repository" source="//@nodes.2/@outputs[name='results']" dataType="de.uni_paderborn.fujaba.muml.verification.uppaal.results.PropertyResultRepository"/>
+    <inputs name="property_result_repository" source="//@nodes.2/@outputs[name='results']" dataType="org.muml.uppaal.adapter.results.PropertyResultRepository"/>
     <specification xsi:type="org.muml.testlanguage.specification:AssertResult" label="Assert Result">
-      <portSpecifications name="property_result_repository" dataType="de.uni_paderborn.fujaba.muml.verification.uppaal.results.PropertyResultRepository"/>
+      <portSpecifications name="property_result_repository" dataType="org.muml.uppaal.adapter.results.PropertyResultRepository"/>
     </specification>
   </nodes>
   <nodes label="Check MTCTL" specificationClassName="CheckMTCTL">

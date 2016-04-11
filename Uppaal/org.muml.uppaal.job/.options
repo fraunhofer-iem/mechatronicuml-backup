@@ -1,4 +1,4 @@
-# Tracing options for the de.uni_paderborn.fujaba.muml.verification.uppaal.job plug-in
+# Tracing options for the org.muml.uppaal.adapter.job plug-in
 
 # Common issues
-de.uni_paderborn.fujaba.muml.verification.uppaal.job/debug=false
+org.muml.uppaal.adapter.job/debug=false

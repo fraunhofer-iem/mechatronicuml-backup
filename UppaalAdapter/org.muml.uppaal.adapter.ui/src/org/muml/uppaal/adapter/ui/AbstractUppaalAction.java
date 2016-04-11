@@ -53,7 +53,7 @@ public abstract class AbstractUppaalAction extends AbstractHandler {
 						&& ((RealtimeStatechart) role.getBehavior()).isUsesOneToManyCommunicationSchemata()) {
 					ErrorDialog dialog = new ErrorDialog(shell, "ERROR when starting the Uppaal model checking", null,
 							new org.eclipse.core.runtime.Status(IStatus.ERROR,
-									"de.uni_paderborn.fujaba.muml.verification.uppaal.ui",
+									"org.muml.uppaal.adapter.ui",
 									"Disassemble the One2Many Schemata of RealtimeStatecharts before the Uppaal Model Checking!"),
 							IStatus.ERROR);
 					dialog.open();

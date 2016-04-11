@@ -16,7 +16,7 @@
       </ports>
     </modelElements>
   </categories>
-  <categories xmi:id="_HisUoJ9SEeG4eMpbz4C8AQ" key="de.uni_paderborn.fujaba.muml.messageinterface.category" name="msgiface">
+  <categories xmi:id="_HisUoJ9SEeG4eMpbz4C8AQ" key="org.muml.pim.messagetype.category" name="msgiface">
     <modelElements xsi:type="msgiface:MessageInterface" xmi:id="_IV5TMJ9SEeG4eMpbz4C8AQ" name="Interface">
       <messageTypes xmi:id="_JLAWQJ9SEeG4eMpbz4C8AQ" name="messagetype"/>
     </modelElements>

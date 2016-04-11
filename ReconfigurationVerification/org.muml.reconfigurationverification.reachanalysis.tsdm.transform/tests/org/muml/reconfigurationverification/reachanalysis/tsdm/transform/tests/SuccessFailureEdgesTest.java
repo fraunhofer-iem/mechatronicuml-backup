@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.reachanalysis.tsdm.transform.tests;
+package org.muml.reconfigurationverification.reachanalysis.tsdm.transform.tests;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
@@ -7,17 +7,15 @@ import java.util.HashSet;
 
 import org.eclipse.emf.ecore.EClass;
 import org.junit.Test;
-import org.muml.core.expressions.TextualExpression;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedActivityNode;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedStoryDiagram;
 import org.muml.storydiagram.activities.ActivityEdge;
 import org.muml.storydiagram.activities.ActivityNode;
 import org.muml.storydiagram.activities.EdgeGuard;
 import org.muml.storydiagram.activities.InitialNode;
-import org.muml.storydiagram.activities.JunctionNode;
 import org.muml.storydiagram.patterns.AbstractVariable;
 
-public class JunctionNodeTest extends TransformationTest {
+public class SuccessFailureEdgesTest extends TransformationTest {
 
 	@Test
 	public void test() {
@@ -47,40 +45,37 @@ public class JunctionNodeTest extends TransformationTest {
 		ActivityNode restoreMatchingNode = checkOneNodeTransformed(initialNode);
 
 		assertTrue(restoreMatchingNode.getOutgoings().size() == 1);
-		
-		ActivityEdge edge = restoreMatchingNode.getOutgoings().get(0);
-		
-		assertTrue(edge.getTarget() instanceof JunctionNode);
-		
-		JunctionNode junctionNode = (JunctionNode) edge.getTarget();
-		
-		for(ActivityEdge junctionNodeEdge : junctionNode.getOutgoings())
-		{
-			assertTrue(junctionNodeEdge.getGuard() == EdgeGuard.BOOL);
-			
-			ActivityNode node = junctionNodeEdge.getTarget();
-			assertTrue(node.getOutgoings().size() == 1);
-			edge = node.getOutgoings().get(0);
-			assertTrue(edge.getTarget() == initialNode.getOutgoings().get(0).getTarget());
 
-			if(((TextualExpression) junctionNodeEdge.getGuardExpression()).getExpressionText().equals("cond1"))
+		ActivityEdge edge = restoreMatchingNode.getOutgoings().get(0);
+
+		ActivityNode node2 = edge.getTarget();
+
+		assertTrue(node2.getName().equals("node2"));
+
+		for(ActivityEdge node2Edge : node2.getOutgoings())
+		{
+			if(node2Edge.getGuard() == EdgeGuard.SUCCESS)
 			{
-				assertTrue(node.getName().equals("node2"));
+				assertTrue(node2Edge.getTarget() == initialNode.getOutgoings().get(0).getTarget());
 			}
-			else if(((TextualExpression) junctionNodeEdge.getGuardExpression()).getExpressionText().equals("cond2"))
+			else if(node2Edge.getGuard() == EdgeGuard.FAILURE)
 			{
-				assertTrue(node.getName().equals("node3"));
+				ActivityNode node3 = node2Edge.getTarget();
+				assertTrue(node3.getName().equals("node3"));
+
+				assertTrue(node3.getOutgoings().size() == 1);
+				assertTrue(node3.getOutgoings().get(0).getTarget() == initialNode.getOutgoings().get(0).getTarget());
 			}
 			else
-				fail("Wrong or missing guard expression:" + junctionNodeEdge.getGuardExpression());
-			
+			{
+				fail("Wrong edge guard: " + node2Edge.getGuard());
+			}
 		}
-
 	}
 
 	@Override
 	protected String getRuleName() {
-		return "JunctionNode.timedstorydiagram";
+		return "SuccessFailureEdges.timedstorydiagram";
 	}
 
 	@Override
@@ -94,5 +89,4 @@ public class JunctionNodeTest extends TransformationTest {
 		// node is empty
 		
 	}
-
 }

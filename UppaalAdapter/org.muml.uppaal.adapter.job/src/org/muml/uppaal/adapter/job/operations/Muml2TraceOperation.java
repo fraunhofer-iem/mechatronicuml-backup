@@ -56,7 +56,7 @@ public class Muml2TraceOperation implements IWorkspaceRunnable {
 				throw new OperationCanceledException();
 			
 			//Create CIC, run mtctl normalizations and split normalization to figure out which properties can be verified
-			TransformationOperation verifiableElement2VerifiableCICOperation = new TransformationOperation("Creating equivalent CIC and splitting properties", URI.createPlatformPluginURI("/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/VerifiableElement2VerifiableCIC.qvto", true));
+			TransformationOperation verifiableElement2VerifiableCICOperation = new TransformationOperation("Creating equivalent CIC and splitting properties", URI.createPlatformPluginURI("/org.muml.uppaal.adapter.transformation/transforms/VerifiableElement2VerifiableCIC.qvto", true));
 			//input, options, out propertySplitModel, out staticallyNormalized, out muml_cic
 			ModelExtent verifiableCicExtent = new BasicModelExtent();
 			ModelExtent optionsExtent = new BasicModelExtent(Arrays.asList(new Options[] {optionsProvider.getOptions()}));
@@ -105,11 +105,11 @@ public class Muml2TraceOperation implements IWorkspaceRunnable {
 			}
 			
 			if (propertyCount != 1 || !(lastProperty.getExpression() instanceof TemporalQuantifierExpr)) {
-				throw new CoreException(new Status(Status.ERROR, "de.uni_paderborn.fujaba.muml.verification.uppaal.job", "Please select exactly one simple property verifiable with Uppaal"));
+				throw new CoreException(new Status(Status.ERROR, "org.muml.uppaal.adapter.job", "Please select exactly one simple property verifiable with Uppaal"));
 			}			
 			
 			//Verify the resulting CIC with the one property
-			TransformationOperation mainTransformation = new TransformationOperation("MUML to Trace Transformation", URI.createPlatformPluginURI("/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/VerifiableElement2Trace.qvto", true));
+			TransformationOperation mainTransformation = new TransformationOperation("MUML to Trace Transformation", URI.createPlatformPluginURI("/org.muml.uppaal.adapter.transformation/transforms/VerifiableElement2Trace.qvto", true));
 			reachabilityResultExtent = new BasicModelExtent();
 			mainTransformation.setTransformationParameters(verifiableCicExtent, optionsExtent, reachabilityResultExtent);
 			mainTransformation.run(subMonitor.newChild(70));

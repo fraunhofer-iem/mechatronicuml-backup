@@ -41,7 +41,7 @@ public class PrepareModelOperation implements IWorkspaceRunnable {
 			SubMonitor subMonitor = SubMonitor.convert(monitor, "Preparing verification", 100);
 			
 			//Clone the model and mark the VerifiableElement that we're interested in
-			TransformationOperation cloneOperation = new TransformationOperation("Cloning model", URI.createPlatformPluginURI("/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/CloneAndMark.qvto", true));
+			TransformationOperation cloneOperation = new TransformationOperation("Cloning model", URI.createPlatformPluginURI("/org.muml.uppaal.adapter.transformation/transforms/CloneAndMark.qvto", true));
 			ModelExtent inputExtent = new BasicModelExtent(verifiableElement.eResource().getContents());
 			ModelExtent verifiableElementExtent = new BasicModelExtent(Arrays.asList(new VerifiableElement[] {verifiableElement}));
 			resultExtent = new BasicModelExtent();
@@ -81,7 +81,7 @@ public class PrepareModelOperation implements IWorkspaceRunnable {
 			}
 			
 			if (propertyCount == 0)
-				throw new CoreException(new Status(Status.ERROR, "de.uni_paderborn.fujaba.muml.verification.uppaal.job", ((NamedElement) this.verifiableElement).getName()+" has no properties to verify"));
+				throw new CoreException(new Status(Status.ERROR, "org.muml.uppaal.adapter.job", ((NamedElement) this.verifiableElement).getName()+" has no properties to verify"));
 			
 		}
 		finally {

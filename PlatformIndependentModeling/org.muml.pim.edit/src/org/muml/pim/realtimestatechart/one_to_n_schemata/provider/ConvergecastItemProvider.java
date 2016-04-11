@@ -22,7 +22,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.Convergecast} object.
+ * This is the item provider adapter for a {@link org.muml.pim.realtimestatechart.one_to_n_schemata.Convergecast} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

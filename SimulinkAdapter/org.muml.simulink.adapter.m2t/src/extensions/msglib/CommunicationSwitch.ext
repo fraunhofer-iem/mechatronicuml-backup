@@ -1,10 +1,10 @@
-import model;
-import model::msglib;
+import simulink;
+import simulink::msglib;
 
 extension org::eclipse::xtend::util::stdlib::globalvar;
 
 cached Bus generateBus(CommunicationSwitch communicationBus, Integer size):
-	JAVA de.uni_paderborn.fujaba.simulink.m2t.xtend.CommunicationSwitch.generateBus(de.uni_paderborn.fujaba.simulink.model.msglib.CommunicationSwitch, java.lang.Integer)
+	JAVA org.muml.simulink.adapter.m2t.xtend.CommunicationSwitch.generateBus(de.uni_paderborn.fujaba.simulink.model.msglib.CommunicationSwitch, java.lang.Integer)
 ;
 
 Integer getDebugValue(CommunicationSwitch cs):
@@ -18,7 +18,7 @@ cached Integer getMainBusMaxSize(CommunicationSwitch cs):
 	cs.eRootContainer.eAllContents.select(e|CommunicationSwitch.isInstance(e)).collect(e|((CommunicationSwitch)e).inPorts.size).sortBy(e|e).last();
 	
 cached String busImplToString(String source):
-	JAVA de.uni_paderborn.fujaba.simulink.m2t.xtend.CopyUtil.mdlFileToString(java.lang.String)
+	JAVA org.muml.simulink.adapter.m2t.xtend.CopyUtil.mdlFileToString(java.lang.String)
 ;
 
 String generateBusImpl(CommunicationSwitch cs):

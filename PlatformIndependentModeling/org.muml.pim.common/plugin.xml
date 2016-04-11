@@ -156,7 +156,7 @@
          point="org.muml.core.common.elementInitializer">
          <initializer
                initializer="org.muml.pim.common.elementinitializer.ClockConstraintElementInitializer"
-               qualifiedClassName="de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint"/>
+               qualifiedClassName="org.muml.pim.realtimestatechart.ClockConstraint"/>
    </extension>
    <extension
          point="org.muml.core.common.editingdomain.editingDomainInitializer">

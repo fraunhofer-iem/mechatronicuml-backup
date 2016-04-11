@@ -55,7 +55,7 @@
                   
                </documentation>
                <appInfo>
-                  <meta.attribute kind="java" basedOn=":de.uni_paderborn.fujaba.muml.scoping.IActionLanguageScopeProvider"/>
+                  <meta.attribute kind="java" basedOn=":org.muml.pim.actionlanguage.xtext.scoping.IActionLanguageScopeProvider"/>
                </appInfo>
             </annotation>
          </attribute>

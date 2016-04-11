@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <workflow>
-	<property name="model" value="de.uni_paderborn.fujaba.simulink.m2t/src-gen/PingPong.mdl.xmi" />
+	<property name="model" value="org.muml.simulink.adapter.m2t/src-gen/PingPong.mdl.xmi" />
 	<property name="src-gen" value="src-gen" />
 		
 	<!-- set up EMF for standalone execution -->
@@ -9,7 +9,7 @@
 	</bean>
 	
 	<!-- Register OCL factories -->
-	<bean class="de.uni_paderborn.fujaba.simulink.m2t.CustomModelInit">
+	<bean class="org.muml.simulink.adapter.m2t.CustomModelInit">
 	</bean>
 	
 	<!-- load model and store it in slot 'model' -->
@@ -19,7 +19,7 @@
 	</component>
 
 	<!-- load model and store it in slot 'model' -->
-	<component class="de.uni_paderborn.fujaba.simulink.m2t.LayoutComponent">
+	<component class="org.muml.simulink.adapter.m2t.LayoutComponent">
 		<modelSlot value="model" />
 	</component>
 

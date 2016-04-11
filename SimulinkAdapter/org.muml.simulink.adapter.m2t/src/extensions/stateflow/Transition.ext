@@ -1,4 +1,4 @@
-import model::stateflow;
+import simulink::stateflow;
 
 // event [condition]{condition_action}/transition_action
 String getLabelString(Transition transition):

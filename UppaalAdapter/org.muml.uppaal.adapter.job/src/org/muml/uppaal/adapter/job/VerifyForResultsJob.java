@@ -77,7 +77,7 @@ public class VerifyForResultsJob extends Job {
 			}
 			
 			//Start the verification job
-			TransformationOperation verifyOperation = new TransformationOperation("Running verification process", URI.createPlatformPluginURI("/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/VerifiableElement2Results.qvto", true));
+			TransformationOperation verifyOperation = new TransformationOperation("Running verification process", URI.createPlatformPluginURI("/org.muml.uppaal.adapter.transformation/transforms/VerifiableElement2Results.qvto", true));
 			ModelExtent resultExtent = new BasicModelExtent();
 			ModelExtent optionsExtent = new BasicModelExtent(Arrays.asList(new Options[] {optionsProvider.getOptions()}));
 									

@@ -25,7 +25,7 @@ public class AddDefaultPropertiesAction extends AbstractUppaalAction {
 		// Load default properties
 		try {
 			URL url = new URL(
-					"platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.ui/default_properties.mtctl");
+					"platform:/plugin/org.muml.uppaal.adapter.ui/default_properties.mtctl");
 			InputStream inputStream = url.openConnection().getInputStream();
 			BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
 			StringBuilder builder = new StringBuilder();

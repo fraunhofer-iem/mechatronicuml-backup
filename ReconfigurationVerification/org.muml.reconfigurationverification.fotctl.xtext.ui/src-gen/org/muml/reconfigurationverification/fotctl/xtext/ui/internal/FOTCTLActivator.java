@@ -82,7 +82,7 @@ public class FOTCTLActivator extends AbstractUIPlugin {
 	
 	protected Module getUiModule(String grammar) {
 		if (DE_UNI_PADERBORN_FUJABA_MUML_VERIFICATION_FOTCTL.equals(grammar)) {
-			return new de.uni_paderborn.fujaba.muml.verification.ui.FOTCTLUiModule(this);
+			return new org.muml.reconfigurationverification.fotctl.xtext.ui.FOTCTLUiModule(this);
 		}
 		
 		throw new IllegalArgumentException(grammar);

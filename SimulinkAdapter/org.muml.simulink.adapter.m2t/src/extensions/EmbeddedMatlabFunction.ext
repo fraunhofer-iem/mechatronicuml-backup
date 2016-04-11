@@ -1,5 +1,5 @@
-import model;
+import simulink;
 
 int generateAdditionalModelElements(EmbeddedMatlabFunction emf):
-	JAVA de.uni_paderborn.fujaba.simulink.m2t.xtend.EmbeddedMatlabFunction.generateAdditionalModelElements(de.uni_paderborn.fujaba.simulink.model.EmbeddedMatlabFunction)
+	JAVA org.muml.simulink.adapter.m2t.xtend.EmbeddedMatlabFunction.generateAdditionalModelElements(de.uni_paderborn.fujaba.simulink.model.EmbeddedMatlabFunction)
 ;

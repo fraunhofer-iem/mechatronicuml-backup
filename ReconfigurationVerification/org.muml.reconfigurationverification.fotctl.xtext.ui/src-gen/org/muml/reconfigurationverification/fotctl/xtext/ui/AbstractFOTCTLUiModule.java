@@ -50,27 +50,27 @@ public abstract class AbstractFOTCTLUiModule extends DefaultUiModule {
 
 	// contributed by org.eclipse.xtext.ui.generator.labeling.LabelProviderFragment
 	public Class<? extends org.eclipse.jface.viewers.ILabelProvider> bindILabelProvider() {
-		return de.uni_paderborn.fujaba.muml.verification.ui.labeling.FOTCTLLabelProvider.class;
+		return org.muml.reconfigurationverification.fotctl.xtext.ui.labeling.FOTCTLLabelProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.ui.generator.labeling.LabelProviderFragment
 	public void configureResourceUIServiceLabelProvider(com.google.inject.Binder binder) {
-		binder.bind(org.eclipse.jface.viewers.ILabelProvider.class).annotatedWith(org.eclipse.xtext.ui.resource.ResourceServiceDescriptionLabelProvider.class).to(de.uni_paderborn.fujaba.muml.verification.ui.labeling.FOTCTLDescriptionLabelProvider.class);
+		binder.bind(org.eclipse.jface.viewers.ILabelProvider.class).annotatedWith(org.eclipse.xtext.ui.resource.ResourceServiceDescriptionLabelProvider.class).to(org.muml.reconfigurationverification.fotctl.xtext.ui.labeling.FOTCTLDescriptionLabelProvider.class);
 	}
 
 	// contributed by org.eclipse.xtext.ui.generator.outline.OutlineTreeProviderFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.outline.IOutlineTreeProvider> bindIOutlineTreeProvider() {
-		return de.uni_paderborn.fujaba.muml.verification.ui.outline.FOTCTLOutlineTreeProvider.class;
+		return org.muml.reconfigurationverification.fotctl.xtext.ui.outline.FOTCTLOutlineTreeProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.ui.generator.outline.OutlineTreeProviderFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.outline.impl.IOutlineTreeStructureProvider> bindIOutlineTreeStructureProvider() {
-		return de.uni_paderborn.fujaba.muml.verification.ui.outline.FOTCTLOutlineTreeProvider.class;
+		return org.muml.reconfigurationverification.fotctl.xtext.ui.outline.FOTCTLOutlineTreeProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.ui.generator.contentAssist.JavaBasedContentAssistFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.IContentProposalProvider> bindIContentProposalProvider() {
-		return de.uni_paderborn.fujaba.muml.verification.ui.contentassist.FOTCTLProposalProvider.class;
+		return org.muml.reconfigurationverification.fotctl.xtext.ui.contentassist.FOTCTLProposalProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrUiGeneratorFragment
@@ -120,7 +120,7 @@ public abstract class AbstractFOTCTLUiModule extends DefaultUiModule {
 
 	// contributed by org.eclipse.xtext.ui.generator.quickfix.QuickfixProviderFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.quickfix.IssueResolutionProvider> bindIssueResolutionProvider() {
-		return de.uni_paderborn.fujaba.muml.verification.ui.quickfix.FOTCTLQuickfixProvider.class;
+		return org.muml.reconfigurationverification.fotctl.xtext.ui.quickfix.FOTCTLQuickfixProvider.class;
 	}
 
 

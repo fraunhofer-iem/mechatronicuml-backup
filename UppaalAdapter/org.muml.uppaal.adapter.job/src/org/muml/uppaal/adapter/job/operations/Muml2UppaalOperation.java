@@ -47,7 +47,7 @@ public class Muml2UppaalOperation implements IWorkspaceRunnable {
 				throw new OperationCanceledException();
 			
 			//Start the verification job
-			TransformationOperation verifyOperation = new TransformationOperation("Running verification process", URI.createPlatformPluginURI("/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/VerifiableElement2UPPAAL.qvto", true));
+			TransformationOperation verifyOperation = new TransformationOperation("Running verification process", URI.createPlatformPluginURI("/org.muml.uppaal.adapter.transformation/transforms/VerifiableElement2UPPAAL.qvto", true));
 			ModelExtent uppaalModelExtent = new BasicModelExtent();
 			ModelExtent uppaalReqModelExtent = new BasicModelExtent();
 			ModelExtent optionsExtent = new BasicModelExtent(Arrays.asList(new Options[] {optionsProvider.getOptions()}));

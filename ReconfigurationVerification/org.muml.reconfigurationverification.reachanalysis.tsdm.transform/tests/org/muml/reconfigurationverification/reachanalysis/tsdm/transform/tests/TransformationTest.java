@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.reachanalysis.tsdm.transform.tests;
+package org.muml.reconfigurationverification.reachanalysis.tsdm.transform.tests;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;

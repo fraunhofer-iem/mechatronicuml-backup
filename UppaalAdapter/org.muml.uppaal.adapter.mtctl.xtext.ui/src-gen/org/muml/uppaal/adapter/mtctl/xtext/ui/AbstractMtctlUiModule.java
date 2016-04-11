@@ -7,7 +7,7 @@ package org.muml.uppaal.adapter.mtctl.xtext.ui;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
- * Manual modifications go to {de.uni_paderborn.fujaba.muml.verification.uppaal.ui.MtctlUiModule}
+ * Manual modifications go to {org.muml.uppaal.adapter.ui.MtctlUiModule}
  */
 @SuppressWarnings("all")
 public abstract class AbstractMtctlUiModule extends org.eclipse.xtext.common.types.ui.DefaultCommonTypesUiModule {

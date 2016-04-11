@@ -1098,7 +1098,7 @@ public class SDMReachabilityComputation extends ReachabilityComputation {
 
 		URI transformationURI = URI
 				.createPlatformPluginURI(
-						"/de.uni_paderborn.fujaba.muml.reachanalysis.sdm.transform/transforms/forEachTransformation.qvto",
+						"/org.muml.storydiagram.reachanalysis.sdm.transform/transforms/forEachTransformation.qvto",
 						true);
 		// create executor and execution context
 		TransformationExecutor executor = new TransformationExecutor(

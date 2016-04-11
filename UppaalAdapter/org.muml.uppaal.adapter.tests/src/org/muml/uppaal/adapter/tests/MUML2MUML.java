@@ -54,64 +54,64 @@ public class MUML2MUML extends Model2Model {
 
 				//XXX: used for testing Muml2Muml library, please do not remove at the moment
 //				 {
-//				 "platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/unit/Muml2Muml/EntryExitInput.fujaba",
-//				 "platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/unit/Muml2Muml/EntryExitInput.fujaba",
-//				 "/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/Muml2MumlTest.qvto",
+//				 "platform:/plugin/org.muml.uppaal.adapter.tests/resources/unit/Muml2Muml/EntryExitInput.fujaba",
+//				 "platform:/plugin/org.muml.uppaal.adapter.tests/resources/unit/Muml2Muml/EntryExitInput.fujaba",
+//				 "/org.muml.uppaal.adapter.transformation/transforms/Muml2MumlTest.qvto",
 //				 null
 //				 }
 //				 ,
 				{
-						"platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/unit/Protocol2CIC/example1/One2OneInput.fujaba",
-						"platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/unit/Protocol2CIC/example1/One2OneExpected.fujaba",
-						"/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/cic/Protocol2CIC.qvto",
+						"platform:/plugin/org.muml.uppaal.adapter.tests/resources/unit/Protocol2CIC/example1/One2OneInput.fujaba",
+						"platform:/plugin/org.muml.uppaal.adapter.tests/resources/unit/Protocol2CIC/example1/One2OneExpected.fujaba",
+						"/org.muml.uppaal.adapter.transformation/transforms/cic/Protocol2CIC.qvto",
 						protocol2CICBindingsOne2One},
 
 				{
-						"platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/unit/Protocol2CIC/example2/One2ManyInput.fujaba",
-						"platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/unit/Protocol2CIC/example2/One2ManyExpected.fujaba",
-						"/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/cic/Protocol2CIC.qvto",
+						"platform:/plugin/org.muml.uppaal.adapter.tests/resources/unit/Protocol2CIC/example2/One2ManyInput.fujaba",
+						"platform:/plugin/org.muml.uppaal.adapter.tests/resources/unit/Protocol2CIC/example2/One2ManyExpected.fujaba",
+						"/org.muml.uppaal.adapter.transformation/transforms/cic/Protocol2CIC.qvto",
 						protocol2CICBindingsOne2Many},
 
 				{
-						"platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/unit/EntryExit/example1/EntryExitInput.fujaba",
-						"platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/unit/EntryExit/example1/EntryExitExpected.fujaba",
-						"/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/RTSCEntryExitEventNormalization.qvto",
+						"platform:/plugin/org.muml.uppaal.adapter.tests/resources/unit/EntryExit/example1/EntryExitInput.fujaba",
+						"platform:/plugin/org.muml.uppaal.adapter.tests/resources/unit/EntryExit/example1/EntryExitExpected.fujaba",
+						"/org.muml.uppaal.adapter.transformation/transforms/RTSCEntryExitEventNormalization.qvto",
 						null},
 
 				{
-						"platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/unit/EntryExit/example2/EntryExitInput.fujaba",
-						"platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/unit/EntryExit/example2/EntryExitExpected.fujaba",
-						"/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/RTSCEntryExitEventNormalization.qvto",
+						"platform:/plugin/org.muml.uppaal.adapter.tests/resources/unit/EntryExit/example2/EntryExitInput.fujaba",
+						"platform:/plugin/org.muml.uppaal.adapter.tests/resources/unit/EntryExit/example2/EntryExitExpected.fujaba",
+						"/org.muml.uppaal.adapter.transformation/transforms/RTSCEntryExitEventNormalization.qvto",
 						null},
 
 				{
-						"platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/unit/TimeValueScaling/example1/TimeValueScalingInput.fujaba",
-						"platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/unit/TimeValueScaling/example1/TimeValueScalingExpected.fujaba",
-						"/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/RTSCScaleTimeValuesNormalization.qvto",
+						"platform:/plugin/org.muml.uppaal.adapter.tests/resources/unit/TimeValueScaling/example1/TimeValueScalingInput.fujaba",
+						"platform:/plugin/org.muml.uppaal.adapter.tests/resources/unit/TimeValueScaling/example1/TimeValueScalingExpected.fujaba",
+						"/org.muml.uppaal.adapter.transformation/transforms/RTSCScaleTimeValuesNormalization.qvto",
 						null},
 
 				{
-						"platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/unit/Do/example1/DoInput.fujaba",
-						"platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/unit/Do/example1/DoExpected.fujaba",
-						"/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/RTSCDoEventNormalization.qvto",
+						"platform:/plugin/org.muml.uppaal.adapter.tests/resources/unit/Do/example1/DoInput.fujaba",
+						"platform:/plugin/org.muml.uppaal.adapter.tests/resources/unit/Do/example1/DoExpected.fujaba",
+						"/org.muml.uppaal.adapter.transformation/transforms/RTSCDoEventNormalization.qvto",
 						null},
 
 				{
-						"platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/unit/Do/example2/DoInput.fujaba",
-						"platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/unit/Do/example2/DoExpected.fujaba",
-						"/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/RTSCDoEventNormalization.qvto",
+						"platform:/plugin/org.muml.uppaal.adapter.tests/resources/unit/Do/example2/DoInput.fujaba",
+						"platform:/plugin/org.muml.uppaal.adapter.tests/resources/unit/Do/example2/DoExpected.fujaba",
+						"/org.muml.uppaal.adapter.transformation/transforms/RTSCDoEventNormalization.qvto",
 						null},
 
 				{
-						"platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/unit/Do/example3/DoInput.fujaba",
-						"platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/unit/Do/example3/DoExpected.fujaba",
-						"/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/RTSCDoEventNormalization.qvto",
+						"platform:/plugin/org.muml.uppaal.adapter.tests/resources/unit/Do/example3/DoInput.fujaba",
+						"platform:/plugin/org.muml.uppaal.adapter.tests/resources/unit/Do/example3/DoExpected.fujaba",
+						"/org.muml.uppaal.adapter.transformation/transforms/RTSCDoEventNormalization.qvto",
 						null},
 
 				{
-						"platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/unit/Urgency/example1/UrgencyInput.fujaba",
-						"platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/unit/Urgency/example1/UrgencyExpected.fujaba",
-						"/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/RTSCUrgencyNormalization.qvto",
+						"platform:/plugin/org.muml.uppaal.adapter.tests/resources/unit/Urgency/example1/UrgencyInput.fujaba",
+						"platform:/plugin/org.muml.uppaal.adapter.tests/resources/unit/Urgency/example1/UrgencyExpected.fujaba",
+						"/org.muml.uppaal.adapter.transformation/transforms/RTSCUrgencyNormalization.qvto",
 						null},
 
 		};

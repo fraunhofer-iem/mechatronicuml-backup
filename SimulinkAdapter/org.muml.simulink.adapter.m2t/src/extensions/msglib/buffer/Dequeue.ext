@@ -1,7 +1,7 @@
-import model;
-import model::stateflow;
-import model::msglib;
-import model::msglib::buffer;
+import simulink;
+import simulink::stateflow;
+import simulink::msglib;
+import simulink::msglib::buffer;
 
 String getCode(Dequeue function):
 'function [evtQueue, paramQueue, parameter] = ' + function.name + '(event, evtQueueIn, paramQueueIn) %eml 

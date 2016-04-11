@@ -1,4 +1,4 @@
-import model;
+import simulink;
 
 extension org::eclipse::xtend::util::stdlib::elementprops;
 

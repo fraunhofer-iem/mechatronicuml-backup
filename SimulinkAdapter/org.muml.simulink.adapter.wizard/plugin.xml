@@ -46,12 +46,12 @@
       </objectContribution>
    </extension>
    <extension
-         id="de.uni_paderborn.fujaba.simulin.wizard"
+         id="org.muml.simulink.adapter.reconfiguration.wizard"
          name="MUML to MATLAB/Simulink Transformation"
          point="org.eclipse.ui.exportWizards">
       <wizard
             class="org.muml.simulink.adapter.wizard.TransformationWizard"
-            id="de.uni_paderborn.fujaba.simulink.wizard.transformation"
+            id="org.muml.simulink.adapter.reconfiguration.wizard.transformation"
             name="MUML to MATLAB/Simulink Transformation">
          <selection
                class="org.eclipse.core.resources.IResource"
@@ -70,7 +70,7 @@
                style="push">
             <parameter
                   name="exportWizardId"
-                  value="de.uni_paderborn.fujaba.simulink.wizard.transformation">
+                  value="org.muml.simulink.adapter.reconfiguration.wizard.transformation">
             </parameter>
             <visibleWhen
                   checkEnabled="true">

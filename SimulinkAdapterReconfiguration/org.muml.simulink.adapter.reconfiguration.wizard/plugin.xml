@@ -2,12 +2,12 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         id="de.uni_paderborn.fujaba.simulink.reconfiguration.wizard"
+         id="org.muml.simulink.adapter.reconfiguration.wizard"
          name="Reconfiguration MUML to MATLAB/Simulink Transformation"
          point="org.eclipse.ui.exportWizards">
       <wizard
             class="org.muml.simulink.adapter.reconfiguration.wizard.ReconfigurationWizard"
-            id="de.uni_paderborn.fujaba.simulink.reconfiguration.wizard.transformation"
+            id="org.muml.simulink.adapter.reconfiguration.wizard.transformation"
             name="Rekonfiguration MUML to MATLAB/Simulink Transformation">
          <selection
                class="org.eclipse.core.resources.IResource"
@@ -26,7 +26,7 @@
                style="push">
             <parameter
                   name="exportWizardId"
-                  value="de.uni_paderborn.fujaba.simulink.reconfiguration.wizard.transformation">
+                  value="org.muml.simulink.adapter.reconfiguration.wizard.transformation">
             </parameter>
             <visibleWhen
                   checkEnabled="true">

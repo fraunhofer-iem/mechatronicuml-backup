@@ -138,7 +138,7 @@ public class TransformationJob extends Job {
 			IPath relDest = dest.makeRelativeTo(wp);
 			ResourcesPlugin.getWorkspace().getRoot().getFile(relDest).getParent().refreshLocal(IResource.DEPTH_ONE, new SubProgressMonitor(monitor,1));
 		} catch (CoreException e) {
-			IStatus status = new Status(IStatus.WARNING,"de.uni_paderborn.fujaba.simulink.wizard",e.getLocalizedMessage(),e);
+			IStatus status = new Status(IStatus.WARNING,"org.muml.simulink.adapter.reconfiguration.wizard",e.getLocalizedMessage(),e);
 			ResourcesPlugin.getPlugin().getLog().log(status);
 		}
 		

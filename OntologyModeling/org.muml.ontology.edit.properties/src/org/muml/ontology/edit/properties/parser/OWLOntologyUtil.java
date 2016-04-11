@@ -24,7 +24,7 @@ import org.semanticweb.owlapi.model.OWLOntologyManager;
 
 public class OWLOntologyUtil {
 
-	public static final String PREFERENCE_NODE_ONTOLOGY = "de.uni_paderborn.fujaba.ontology";
+	public static final String PREFERENCE_NODE_ONTOLOGY = "org.muml.ontology";
 	public static final String PREFERENCE_LOADED_ONTOLOGY = "LOADED_ONT";
 
 	public static final String PREFERENCE_DELIMITER = ";";

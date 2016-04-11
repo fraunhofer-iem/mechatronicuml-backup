@@ -26,9 +26,9 @@ package org.muml.pim.actionlanguage.xtext.ui.view;
 //import com.google.inject.Injector;
 //
 //import org.muml.pim.common.LanguageResource;
-//import de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent;
-//import de.uni_paderborn.fujaba.muml.realtimestatechart.EntryEvent;
-//import de.uni_paderborn.fujaba.muml.realtimestatechart.ExitEvent;
+//import org.muml.pim.realtimestatechart.DoEvent;
+//import org.muml.pim.realtimestatechart.EntryEvent;
+//import org.muml.pim.realtimestatechart.ExitEvent;
 //import org.muml.pim.realtimestatechart.diagram.edit.parts.DoEventEditPart;
 //import org.muml.pim.realtimestatechart.diagram.edit.parts.EntryEventEditPart;
 //import org.muml.pim.realtimestatechart.diagram.edit.parts.ExitEventEditPart;

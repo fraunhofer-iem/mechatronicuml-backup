@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.reachanalysis.tsdm.transform.tests;
+package org.muml.reconfigurationverification.reachanalysis.tsdm.transform.tests;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;

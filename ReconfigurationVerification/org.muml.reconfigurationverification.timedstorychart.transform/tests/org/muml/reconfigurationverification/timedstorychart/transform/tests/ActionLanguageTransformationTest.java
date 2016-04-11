@@ -397,7 +397,7 @@ public class ActionLanguageTransformationTest {
 //		// create URI for the transformation file
 //		URI transformationURI = URI
 //				.createPlatformPluginURI(
-//						"/de.uni_paderborn.fujaba.muml.reachanalysis.timedstorychart.transform/transforms/ActionLanguageTransformation.qvto",
+//						"/org.muml.reconfigurationverification.reachanalysis.timedstorychart.transform/transforms/ActionLanguageTransformation.qvto",
 //						true);
 //		// create executor and execution context
 //		TransformationExecutor executor = new TransformationExecutor(

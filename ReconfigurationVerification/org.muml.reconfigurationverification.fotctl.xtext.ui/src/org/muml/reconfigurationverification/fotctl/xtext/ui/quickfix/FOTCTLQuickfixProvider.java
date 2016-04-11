@@ -1,5 +1,5 @@
 
-package de.uni_paderborn.fujaba.muml.verification.ui.quickfix;
+package org.muml.reconfigurationverification.fotctl.xtext.ui.quickfix;
 
 import org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider;
 

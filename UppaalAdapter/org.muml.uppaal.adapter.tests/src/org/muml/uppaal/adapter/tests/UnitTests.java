@@ -15,12 +15,12 @@ public class UnitTests {
 						new String[] {
 								null,
 								null,
-								"platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/unit/Protocol2CIC/example1/One2OneExpected.fujaba"
+								"platform:/plugin/org.muml.uppaal.adapter.tests/resources/unit/Protocol2CIC/example1/One2OneExpected.fujaba"
 						}, 
-						"platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/cic/Protocol2CIC.qvto", 
+						"platform:/plugin/org.muml.uppaal.adapter.transformation/transforms/cic/Protocol2CIC.qvto", 
 						new String[] {
-								"platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/unit/Protocol2CIC/example1/One2OneInput.fujaba",
-								"platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.tests/resources/default.options",
+								"platform:/plugin/org.muml.uppaal.adapter.tests/resources/unit/Protocol2CIC/example1/One2OneInput.fujaba",
+								"platform:/plugin/org.muml.uppaal.adapter.tests/resources/default.options",
 								null
 						});
 		test.test();

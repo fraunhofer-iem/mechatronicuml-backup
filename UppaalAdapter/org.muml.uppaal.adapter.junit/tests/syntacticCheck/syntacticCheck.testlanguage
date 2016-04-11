@@ -14,7 +14,7 @@
     <outputs name="originalCIC"/>
     <outputs name="mtctlStaticallyNormalizedModel"/>
     <outputs name="verifiableCIC"/>
-    <specification xsi:type="org.muml.testlanguage.specification:Transformation" label="Transformation" uri="platform:/resource/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/VerifiableElement2UPPAAL.qvto" parameterOrder="//@nodes.1/@specification/@portSpecifications.0 //@nodes.1/@specification/@portSpecifications.1 //@nodes.1/@specification/@portSpecifications.2 //@nodes.1/@specification/@portSpecifications.3 //@nodes.1/@specification/@portSpecifications.4 //@nodes.1/@specification/@portSpecifications.5 //@nodes.1/@specification/@portSpecifications.6">
+    <specification xsi:type="org.muml.testlanguage.specification:Transformation" label="Transformation" uri="platform:/resource/org.muml.uppaal.adapter.transformation/transforms/VerifiableElement2UPPAAL.qvto" parameterOrder="//@nodes.1/@specification/@portSpecifications.0 //@nodes.1/@specification/@portSpecifications.1 //@nodes.1/@specification/@portSpecifications.2 //@nodes.1/@specification/@portSpecifications.3 //@nodes.1/@specification/@portSpecifications.4 //@nodes.1/@specification/@portSpecifications.5 //@nodes.1/@specification/@portSpecifications.6">
       <portSpecifications name="input"/>
       <portSpecifications name="options"/>
       <portSpecifications name="output_uppaal" type="OUT"/>

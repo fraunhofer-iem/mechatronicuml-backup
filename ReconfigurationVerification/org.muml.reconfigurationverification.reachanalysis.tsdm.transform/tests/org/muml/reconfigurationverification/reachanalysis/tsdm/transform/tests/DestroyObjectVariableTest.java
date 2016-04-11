@@ -1,11 +1,8 @@
-package de.uni_paderborn.fujaba.muml.reachanalysis.tsdm.transform.tests;
+package org.muml.reconfigurationverification.reachanalysis.tsdm.transform.tests;
 
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import java.util.HashSet;
-
-import javax.naming.Binding;
 
 import org.eclipse.emf.ecore.EClass;
 import org.junit.Test;
@@ -19,17 +16,19 @@ import org.muml.storydiagram.patterns.AbstractVariable;
 import org.muml.storydiagram.patterns.BindingOperator;
 import org.muml.storydiagram.patterns.ObjectVariable;
 
-public class CreateObjectVariableTest extends TransformationTest {
-
+public class DestroyObjectVariableTest extends TransformationTest {
+	
 	@Test
 	public void test() {
 		
 		// no unchangeable nodes
 		this.setClassesOfUnchangeableNodes(new HashSet<EClass>());
+		
+		
 		// transform the tgts
 		tgts = this.createForEachRules(tgts);
 		
-		// chech the result
+		// check the result
 		// still only one rule
 		assertTrue(tgts.getRules().size() == 1);
 		
@@ -59,34 +58,24 @@ public class CreateObjectVariableTest extends TransformationTest {
 		
 		ActivityNode forEachNode = initialNode.getOutgoings().get(0).getTarget();
 		checkTransformationOfObjectVariables(forEachNode);
-
 	}
-
-
-
-
 
 	@Override
 	protected String getRuleName() {
-		return "CreateObjectVariable.timedstorydiagram";
+		return "DestroyObjectVariable.timedstorydiagram";
 	}
-
-
 
 	@Override
 	protected void checkPortObject(AbstractVariable port) {
-		fail("Port has BindingOperator CREATE and should not be included in the ForEachNode");
+		// port has operator CHECK_ONLY. This will be checked in checkTransformationOfObjectVariables(..)
+		assertTrue(((ObjectVariable) port).getBindingOperator() == BindingOperator.CHECK_ONLY);		
 	}
-
-
-
-
-
+	
 	@Override
 	protected void checkRestoreMatchingNodeContents(
 			TimedActivityNode restoreMatchingNode) {
 		
-		assertTrue(restoreMatchingNode.getOwnedRule().getVariables().size() == 6);
+		assertTrue(restoreMatchingNode.getOwnedRule().getVariables().size() == 8);
 		
 		for (AbstractVariable var : restoreMatchingNode.getOwnedRule().getVariables()) {
 			ObjectVariable objVar = ((ObjectVariable) var);
@@ -102,23 +91,37 @@ public class CreateObjectVariableTest extends TransformationTest {
 				}
 			}
 			
+			if(objVar.getName().equals("p_entry"))
+			{
+				assertTrue(objVar.getOutgoingLinks().size() == 2);
+				for(AbstractLinkVariable link : objVar.getOutgoingLinks()) {
+					assertTrue(link.getTarget().getName().equals("p") 
+							|| link.getTarget().getName().equals("p_succ"));
+				}
+			}
+			
 			if(objVar.getName().equals("trans"))
 			{
-				assertTrue(objVar.getOutgoingLinks().size() == 1);
-				assertTrue(objVar.getOutgoingLinks().get(0).getTarget().getName().equals("comp_entry"));
+				assertTrue(objVar.getOutgoingLinks().size() == 2);
+				for(AbstractLinkVariable link : objVar.getOutgoingLinks()) {
+					assertTrue(link.getTarget().getName().equals("comp_entry") 
+							|| link.getTarget().getName().equals("p_entry"));
+				}
 			}
 			
 			if(objVar.getName().equals("succ"))
 			{
 				assertTrue(objVar.getOutgoingLinks().size() == 1);
 				assertTrue(objVar.getOutgoingLinks().get(0).getTarget().getName().equals("p_succ"));
-				assertTrue(objVar.getOutgoingLinks().get(0).getBindingOperator() == BindingOperator.CREATE);
+				assertTrue(objVar.getOutgoingLinks().get(0).getBindingOperator() == BindingOperator.DESTROY);
 			}
 
 			if(objVar.getName().equals("p_succ"))
 			{
-				assertTrue(objVar.getBindingOperator() == BindingOperator.CREATE);
+				assertTrue(objVar.getBindingOperator() == BindingOperator.DESTROY);
 			}
+
+
 		}
 	}
 

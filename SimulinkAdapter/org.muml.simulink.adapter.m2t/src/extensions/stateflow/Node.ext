@@ -1,4 +1,4 @@
-import model::stateflow;
+import simulink::stateflow;
 
 Chart getChart(Node node):
 	if(Chart.isInstance(node)) then
