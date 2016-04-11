@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.muml.external.ontology.owlapi.feature"
+      id="org.muml.external.owlapi.feature"
       label="owlapi external dependency"
       version="4.0.0.qualifier"
       provider-name="Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, Germany (NOT the author)">
