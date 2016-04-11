@@ -138,4 +138,31 @@
 
 
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated ape -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.muml.ape.presentation.PropertiesModelWizardID"
+            name="%_UI_PropertiesModelWizard_label"
+            class="org.muml.ape.presentation.PropertiesModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PropertiesModelFile.gif">
+         <description>%_UI_PropertiesModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated ape -->
+      <editor
+            id="org.muml.ape.presentation.PropertiesEditorID"
+            name="%_UI_PropertiesEditor_label"
+            icon="icons/full/obj16/PropertiesModelFile.gif"
+            extensions="propsheet"
+            class="org.muml.ape.presentation.PropertiesEditor"
+            contributorClass="org.muml.ape.presentation.PropertiesActionBarContributor">
+      </editor>
+   </extension>
 </plugin>

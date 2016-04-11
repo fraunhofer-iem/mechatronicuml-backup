@@ -9,11 +9,17 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.ape.presentation
-Require-Bundle: org.muml.ape.edit;visibility:=reexport,
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.resources;visibility:=reexport,
+ org.muml.ape.edit;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.muml.ape.reconcile;bundle-version="0.4.0",
  org.muml.ape.codegen;bundle-version="0.4.0",
  org.eclipse.emf.transaction;bundle-version="1.4.0",
  org.eclipse.ui.views.properties.tabbed;bundle-version="3.5.300",
  org.muml.ape.runtime;bundle-version="0.4.0",
- org.eclipse.emf.edit.ui
+ org.eclipse.emf.edit.ui;visibility:=reexport,
+ org.eclipse.ui.ide;visibility:=reexport,
+ org.eclipse.emf.ecore.edit;visibility:=reexport,
+ org.eclipse.emf.codegen.ecore.ui;visibility:=reexport
 Bundle-ActivationPolicy: lazy
