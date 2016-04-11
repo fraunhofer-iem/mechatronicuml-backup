@@ -12,8 +12,8 @@
             name="Muml Browser"
             icon="icons/sample.gif"
             category="de.uni_paderborn.fujaba.muml.views"
-            class="de.uni_paderborn.fujaba.muml.browser.ModelBrowser"
-            id="de.uni_paderborn.fujaba.muml.browser.views.ModelBrowser">
+            class="org.muml.core.browser.ModelBrowser"
+            id="org.muml.core.browser.views.ModelBrowser">
       </view>
    </extension>
    
@@ -31,9 +31,9 @@
  <extension point="org.eclipse.ui.navigator.navigatorContent" id="navigator-content">
      <navigatorContent
            activeByDefault="true"
-           contentProvider="de.uni_paderborn.fujaba.muml.browser.providers.ModelBrowserContentProvider"
-           id="de.uni_paderborn.fujaba.muml.browser.views.ModelBrowser.content"
-           labelProvider="de.uni_paderborn.fujaba.muml.browser.providers.ModelBrowserLabelProvider"
+           contentProvider="org.muml.core.browser.providers.ModelBrowserContentProvider"
+           id="org.muml.core.browser.views.ModelBrowser.content"
+           labelProvider="org.muml.core.browser.providers.ModelBrowserLabelProvider"
            name="MechatronicUML Browser Contents"
            priority="lower"
            providesSaveables="true">         
@@ -45,8 +45,8 @@
      </navigatorContent>
      <actionProvider
            appearsBefore="org.eclipse.ui.navigator.resources.OpenActions"
-           class="de.uni_paderborn.fujaba.muml.browser.actions.OpenDiagramActionProvider"
-           id="de.uni_paderborn.fujaba.muml.browser.providers.OpenDiagramNavigatorActionProvider">
+           class="org.muml.core.browser.actions.OpenDiagramActionProvider"
+           id="org.muml.core.browser.providers.OpenDiagramNavigatorActionProvider">
         <enablement>
            <or>
               <instanceof
@@ -58,8 +58,8 @@
            </or></enablement>
       </actionProvider>
      <actionProvider
-           class="de.uni_paderborn.fujaba.muml.browser.actions.NewActionProvider"
-           id="de.uni_paderborn.fujaba.muml.browser.providers.NewActions"
+           class="org.muml.core.browser.actions.NewActionProvider"
+           id="org.muml.core.browser.providers.NewActions"
            overrides="org.eclipse.ui.navigator.resources.NewActions"
            priority="high">
         <enablement>
@@ -74,8 +74,8 @@
         </enablement>
      </actionProvider>
      <actionProvider
-           class="de.uni_paderborn.fujaba.muml.browser.actions.EditActionProvider"
-           id="de.uni_paderborn.fujaba.muml.browser.providers.EditActions"
+           class="org.muml.core.browser.actions.EditActionProvider"
+           id="org.muml.core.browser.providers.EditActions"
            priority="high">
         <enablement>
            <or>
@@ -95,10 +95,10 @@
          point="org.eclipse.ui.navigator.viewer">
        <viewer
              helpContext="org.eclipse.ui.project_explorer_context"
-             viewerId="de.uni_paderborn.fujaba.muml.browser.views.ModelBrowser">
+             viewerId="org.muml.core.browser.views.ModelBrowser">
           <popupMenu
                 allowsPlatformContributions="true"
-                id="de.uni_paderborn.fujaba.muml.browser.views.ModelBrowser#PopupMenu">  
+                id="org.muml.core.browser.views.ModelBrowser#PopupMenu">  
              <insertionPoint name="group.new"/>
              <insertionPoint
                    name="group.open"
@@ -135,25 +135,25 @@
        </viewer>
        
        <viewerContentBinding 
-             viewerId="de.uni_paderborn.fujaba.muml.browser.views.ModelBrowser">
+             viewerId="org.muml.core.browser.views.ModelBrowser">
           <includes>
-       	      <contentExtension pattern="de.uni_paderborn.fujaba.muml.browser.*" />		       	      
+       	      <contentExtension pattern="org.muml.core.browser.*" />		       	      
 	          <contentExtension pattern="org.eclipse.ui.navigator.resources.filters.*"/>
            <contentExtension pattern="org.eclipse.ui.navigator.resources.linkHelper"/>
            <contentExtension pattern="org.eclipse.ui.navigator.resources.workingSets"/>
           </includes>
        </viewerContentBinding>
        <viewerActionBinding
-            viewerId="de.uni_paderborn.fujaba.muml.browser.views.ModelBrowser">
+            viewerId="org.muml.core.browser.views.ModelBrowser">
          <includes>
              <actionExtension
-                   pattern="de.uni_paderborn.fujaba.muml.browser.*">
+                   pattern="org.muml.core.browser.*">
              </actionExtension>
          </includes>
        </viewerActionBinding>
        <dragAssistant
              class="org.eclipse.ui.navigator.resources.ResourceDragAdapterAssistant"
-             viewerId="de.uni_paderborn.fujaba.muml.browser.views.ModelBrowser"/>
+             viewerId="org.muml.core.browser.views.ModelBrowser"/>
    </extension>
 
    <!-- show view as default in resource perspective -->
@@ -161,7 +161,7 @@
    <perspectiveExtension
       targetID="org.eclipse.ui.resourcePerspective">
       <view
-         id="de.uni_paderborn.fujaba.muml.browser.views.ModelBrowser"
+         id="org.muml.core.browser.views.ModelBrowser"
          relationship="stack"
          relative="org.eclipse.ui.navigator.ProjectExplorer"
          visible="true">

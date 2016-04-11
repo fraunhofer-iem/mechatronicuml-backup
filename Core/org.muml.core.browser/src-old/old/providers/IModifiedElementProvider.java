@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.browser.old.providers;
+package org.muml.core.browser.old.providers;
 
 import java.util.Collection;
 import java.util.HashMap;

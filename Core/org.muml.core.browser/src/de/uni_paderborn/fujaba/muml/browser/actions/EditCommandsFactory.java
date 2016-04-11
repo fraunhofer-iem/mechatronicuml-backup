@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.browser.actions;
+package org.muml.core.browser.actions;
 
 import java.util.ArrayList;
 import java.util.Iterator;

@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.browser.providers;
+package org.muml.core.browser.providers;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -52,8 +52,8 @@ import org.eclipse.ui.navigator.SaveablesProvider;
 import org.muml.common.editingdomain.registry.MumlEditingDomain;
 import org.muml.common.editingdomain.registry.MumlEditingDomainRegistry;
 
-import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
-import de.uni_paderborn.fujaba.muml.browser.items.ProgressNavigatorItem;
+import org.muml.core.browser.ModelBrowserPlugin;
+import org.muml.core.browser.items.ProgressNavigatorItem;
 
 // XXX Open Diagram Resources in Editing Domain of Semantic Element.
 // -> The "Open Diagram" Action that is registered on any EObject

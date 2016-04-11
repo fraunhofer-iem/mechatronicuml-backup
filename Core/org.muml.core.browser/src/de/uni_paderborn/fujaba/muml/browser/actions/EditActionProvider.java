@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.browser.actions;
+package org.muml.core.browser.actions;
 
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.ui.IActionBars;

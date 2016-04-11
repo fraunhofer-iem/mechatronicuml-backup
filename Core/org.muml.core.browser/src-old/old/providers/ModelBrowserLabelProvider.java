@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.browser.old.providers;
+package org.muml.core.browser.old.providers;
 
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EObject;
@@ -14,7 +14,7 @@ import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
 
-import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
+import org.muml.core.browser.ModelBrowserPlugin;
 
 
 public class ModelBrowserLabelProvider extends AdapterFactoryLabelProvider.StyledLabelProvider {

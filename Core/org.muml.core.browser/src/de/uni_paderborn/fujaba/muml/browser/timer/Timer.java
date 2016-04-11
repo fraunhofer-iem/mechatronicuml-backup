@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.browser.timer;
+package org.muml.core.browser.timer;
 
 import java.util.HashSet;
 import java.util.Set;

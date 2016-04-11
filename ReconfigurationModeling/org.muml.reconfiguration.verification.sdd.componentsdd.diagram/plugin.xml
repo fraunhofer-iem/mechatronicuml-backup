@@ -731,7 +731,7 @@
 	   <?gmfgen generated="true"?>
 	   <menuContribution
 	         allPopups="false"
-	         locationURI="popup:de.uni_paderborn.fujaba.muml.browser.new.menu?after=additions">
+	         locationURI="popup:org.muml.core.browser.new.menu?after=additions">
 	  		<command
                  commandId="org.muml.reconfiguration.verification.sdd.componentsdd.ComponentStoryDecisionDiagram.browser.create"
                  icon="icons/obj16/ComponentsddDiagramFile.gif"

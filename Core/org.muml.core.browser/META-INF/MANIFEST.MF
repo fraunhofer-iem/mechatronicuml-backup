@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Browser
 Bundle-SymbolicName: org.muml.core.browser;singleton:=true
 Bundle-Version: 0.5.0.qualifier
-Bundle-Activator: de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin
+Bundle-Activator: org.muml.core.browser.ModelBrowserPlugin
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.emf.edit.ui;bundle-version="2.10.1",
@@ -20,4 +20,4 @@ Require-Bundle: org.eclipse.ui,
  org.muml.core.common.editingdomain;bundle-version="0.5.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
-Export-Package: de.uni_paderborn.fujaba.muml.browser
+Export-Package: org.muml.core.browser

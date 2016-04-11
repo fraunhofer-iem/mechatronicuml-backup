@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.browser.providers;
+package org.muml.core.browser.providers;
 
 import java.util.ArrayList;
 import java.util.List;

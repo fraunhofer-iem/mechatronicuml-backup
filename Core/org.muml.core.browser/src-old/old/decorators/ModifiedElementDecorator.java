@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.browser.old.decorators;
+package org.muml.core.browser.old.decorators;
 
 import org.eclipse.emf.common.ui.viewer.IStyledLabelDecorator;
 import org.eclipse.emf.ecore.EObject;
@@ -6,7 +6,7 @@ import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.swt.graphics.Image;
 
-import de.uni_paderborn.fujaba.muml.browser.old.providers.IModifiedElementProvider;
+import org.muml.core.browser.old.providers.IModifiedElementProvider;
 
 public class ModifiedElementDecorator implements IStyledLabelDecorator {
 	

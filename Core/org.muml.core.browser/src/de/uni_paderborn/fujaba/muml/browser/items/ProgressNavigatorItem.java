@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.browser.items;
+package org.muml.core.browser.items;
 
 import java.net.URL;
 
@@ -6,9 +6,9 @@ import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.graphics.Image;
 
-import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
-import de.uni_paderborn.fujaba.muml.browser.timer.GifAnimation;
-import de.uni_paderborn.fujaba.muml.browser.timer.Timer;
+import org.muml.core.browser.ModelBrowserPlugin;
+import org.muml.core.browser.timer.GifAnimation;
+import org.muml.core.browser.timer.Timer;
 
 public class ProgressNavigatorItem implements Timer.Callback {
 	private Object parent;

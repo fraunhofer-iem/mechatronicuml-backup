@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.browser.old;
+package org.muml.core.browser.old;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -59,11 +59,11 @@ import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 
-import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
-import de.uni_paderborn.fujaba.muml.browser.old.decorators.ModifiedElementDecorator;
-import de.uni_paderborn.fujaba.muml.browser.old.providers.IModifiedElementProvider;
-import de.uni_paderborn.fujaba.muml.browser.old.providers.ModelBrowserContentProvider;
-import de.uni_paderborn.fujaba.muml.browser.old.providers.ModelBrowserLabelProvider;
+import org.muml.core.browser.ModelBrowserPlugin;
+import org.muml.core.browser.old.decorators.ModifiedElementDecorator;
+import org.muml.core.browser.old.providers.IModifiedElementProvider;
+import org.muml.core.browser.old.providers.ModelBrowserContentProvider;
+import org.muml.core.browser.old.providers.ModelBrowserLabelProvider;
 
 public class ModelBrowserView extends ViewPart implements ISelectionProvider, ITabbedPropertySheetPageContributor {
 	
@@ -212,7 +212,7 @@ public class ModelBrowserView extends ViewPart implements ISelectionProvider, IT
 		viewer.setInput(ResourcesPlugin.getWorkspace().getRoot());
 
 		// Create the help context id for the viewer's control
-		PlatformUI.getWorkbench().getHelpSystem().setHelp(viewer.getControl(), "de.uni_paderborn.fujaba.muml.browser.viewer");
+		PlatformUI.getWorkbench().getHelpSystem().setHelp(viewer.getControl(), "org.muml.core.browser.viewer");
 		makeActions();
 		hookContextMenu();
 		hookDoubleClickAction();

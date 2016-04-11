@@ -71,7 +71,7 @@ diagrams«-»
 	   «EXPAND xpt::Common::xmlGeneratedTag»
 	   <menuContribution
 	         allPopups="false"
-	         locationURI="popup:de.uni_paderborn.fujaba.muml.browser.new.menu?after=additions">
+	         locationURI="popup:org.muml.core.browser.new.menu?after=additions">
 	  		<command
                  commandId="«EXPAND MetaModel::QualifiedClassName FOR diagram.domainDiagramElement».browser.create"
                  icon="«editor.iconPathX»"

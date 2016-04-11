@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.browser.timer;
+package org.muml.core.browser.timer;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -10,7 +10,7 @@ import org.eclipse.swt.graphics.ImageData;
 import org.eclipse.swt.graphics.ImageLoader;
 import org.eclipse.swt.widgets.Display;
 
-import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
+import org.muml.core.browser.ModelBrowserPlugin;
 
 public class GifAnimation extends Timer {
 	private volatile int frame = 0;

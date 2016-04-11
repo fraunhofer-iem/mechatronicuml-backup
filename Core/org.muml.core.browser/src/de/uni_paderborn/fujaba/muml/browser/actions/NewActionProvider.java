@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.browser.actions;
+package org.muml.core.browser.actions;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -37,7 +37,7 @@ import org.muml.common.editingdomain.registry.MumlEditingDomainRegistry;
 public class NewActionProvider extends CommonActionProvider {
 	private static final String FULL_EXAMPLES_WIZARD_CATEGORY = "org.eclipse.ui.Examples"; //$NON-NLS-1$
 
-	private static final String NEW_MENU_NAME = "de.uni_paderborn.fujaba.muml.browser.new.menu";//$NON-NLS-1$
+	private static final String NEW_MENU_NAME = "org.muml.core.browser.new.menu";//$NON-NLS-1$
 
 	private ActionFactory.IWorkbenchAction showDlgAction;
 

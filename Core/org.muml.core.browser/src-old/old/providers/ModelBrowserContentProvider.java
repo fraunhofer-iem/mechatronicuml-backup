@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.browser.old.providers;
+package org.muml.core.browser.old.providers;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -9,7 +9,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.ui.model.WorkbenchContentProvider;
 
-import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
+import org.muml.core.browser.ModelBrowserPlugin;
 
 public class ModelBrowserContentProvider extends AdapterFactoryContentProvider {
 

@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.browser.providers;
+package org.muml.core.browser.providers;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,7 +29,7 @@ import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 import org.muml.common.editingdomain.registry.MumlEditingDomainRegistry;
 
-import de.uni_paderborn.fujaba.muml.browser.items.ProgressNavigatorItem;
+import org.muml.core.browser.items.ProgressNavigatorItem;
 
 public class ModelBrowserLabelProvider extends LabelProvider implements IColorProvider,
 		IFontProvider, IStyledLabelProvider, ICommonLabelProvider {

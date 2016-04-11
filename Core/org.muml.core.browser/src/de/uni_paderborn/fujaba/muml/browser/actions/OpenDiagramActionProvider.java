@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.browser.actions;
+package org.muml.core.browser.actions;
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -32,7 +32,7 @@ import org.eclipse.ui.navigator.ICommonActionExtensionSite;
 import org.eclipse.ui.navigator.ICommonViewerWorkbenchSite;
 import org.muml.common.editingdomain.registry.MumlEditingDomainRegistry;
 
-import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
+import org.muml.core.browser.ModelBrowserPlugin;
 
 public class OpenDiagramActionProvider extends CommonActionProvider {
 	private boolean contribute;

@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.browser;
+package org.muml.core.browser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +33,7 @@ import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 
-import de.uni_paderborn.fujaba.muml.browser.providers.ModelBrowserContentProvider;
+import org.muml.core.browser.providers.ModelBrowserContentProvider;
 
 /**
  * 
