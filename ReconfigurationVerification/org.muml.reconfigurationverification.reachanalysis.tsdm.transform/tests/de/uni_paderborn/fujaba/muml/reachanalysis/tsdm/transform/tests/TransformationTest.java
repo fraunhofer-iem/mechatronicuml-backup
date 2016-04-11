@@ -44,7 +44,7 @@ import org.muml.storydiagram.patterns.StoryPattern;
 
 public abstract class TransformationTest {
 
-	private static final String TRANSFORMATION_PATH = "/de.uni_paderborn.fujaba.muml.reachanalysis.tsdm.transform/transforms/forEachTransformation.qvto";
+	private static final String TRANSFORMATION_PATH = "/org.muml.reconfigurationverification.reachanalysis.tsdm.transform/transforms/forEachTransformation.qvto";
 	
 	protected TimedGraphTransformationSystem tgts;
 
@@ -74,7 +74,7 @@ public abstract class TransformationTest {
 
 		ResourceSet rs = new ResourceSetImpl();
 		
-		String modelFolder = "/de.uni_paderborn.fujaba.muml.reachanalysis.tsdm.transform/tests/";
+		String modelFolder = "/org.muml.reconfigurationverification.reachanalysis.tsdm.transform/tests/";
 		Resource r = rs.createResource(URI.createPlatformPluginURI(
 				modelFolder + modelName, true));
 

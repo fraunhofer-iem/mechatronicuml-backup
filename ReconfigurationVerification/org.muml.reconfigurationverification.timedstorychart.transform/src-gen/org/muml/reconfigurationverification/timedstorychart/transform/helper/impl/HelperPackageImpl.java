@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.muml.pim.PimPackage;
 import org.muml.pim.behavior.BehaviorPackage;
 import org.muml.pim.component.ComponentPackage;
 import org.muml.pim.connector.ConnectorPackage;
@@ -107,17 +108,7 @@ public class HelperPackageImpl extends EPackageImpl implements HelperPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
-		ComponentPackage.eINSTANCE.eClass();
-		ConstraintPackage.eINSTANCE.eClass();
-		InstancePackage.eINSTANCE.eClass();
-		ProtocolPackage.eINSTANCE.eClass();
-		RealtimestatechartPackage.eINSTANCE.eClass();
-		MsgtypePackage.eINSTANCE.eClass();
-		TypesPackage.eINSTANCE.eClass();
-		ConnectorPackage.eINSTANCE.eClass();
-		ValuetypePackage.eINSTANCE.eClass();
-		BehaviorPackage.eINSTANCE.eClass();
-		PatternPackage.eINSTANCE.eClass();
+		PimPackage.eINSTANCE.eClass();
 		TimedstorydiagramPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects

@@ -132,6 +132,7 @@ import org.muml.storydiagram.calls.expressions.provider.CallsExpressionsItemProv
 import org.muml.storydiagram.calls.provider.CallsItemProviderAdapterFactory;
 import org.muml.storydiagram.patterns.expressions.provider.PatternsExpressionsItemProviderAdapterFactory;
 import org.muml.storydiagram.patterns.provider.PatternsItemProviderAdapterFactory;
+import org.muml.storydiagram.provider.StorydiagramItemProviderAdapterFactory;
 import org.muml.storydiagram.provider.StorydiagramsItemProviderAdapterFactory;
 import org.muml.storydiagram.templates.provider.TemplatesItemProviderAdapterFactory;
 
@@ -595,7 +596,7 @@ public class TimedstorydiagramEditor
 			BasicDiagnostic diagnostic =
 				new BasicDiagnostic
 					(Diagnostic.OK,
-					 "de.uni_paderborn.fujaba.muml.timedstorydiagram.editor",
+					 "org.muml.reconfigurationverification.timedstorydiagram.editor",
 					 0,
 					 null,
 					 new Object [] { editingDomain.getResourceSet() });
@@ -683,7 +684,7 @@ public class TimedstorydiagramEditor
 		adapterFactory.addAdapterFactory(new ExpressionsItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new CommonExpressionsItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new StorydiagramsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new StorydiagramItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ActivitiesItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ActivitiesExpressionsItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new CallsItemProviderAdapterFactory());
@@ -938,7 +939,7 @@ public class TimedstorydiagramEditor
 	 * @generated
 	 */
 	public void createModel() {
-		URI resourceURI = EditUIUtil.getURI(getEditorInput());
+		URI resourceURI = EditUIUtil.getURI(getEditorInput(), editingDomain.getResourceSet().getURIConverter());
 		Exception exception = null;
 		Resource resource = null;
 		try {
@@ -966,11 +967,12 @@ public class TimedstorydiagramEditor
 	 * @generated
 	 */
 	public Diagnostic analyzeResourceProblems(Resource resource, Exception exception) {
-		if (!resource.getErrors().isEmpty() || !resource.getWarnings().isEmpty()) {
+		boolean hasErrors = !resource.getErrors().isEmpty();
+		if (hasErrors || !resource.getWarnings().isEmpty()) {
 			BasicDiagnostic basicDiagnostic =
 				new BasicDiagnostic
-					(Diagnostic.ERROR,
-					 "de.uni_paderborn.fujaba.muml.timedstorydiagram.editor",
+					(hasErrors ? Diagnostic.ERROR : Diagnostic.WARNING,
+					 "org.muml.reconfigurationverification.timedstorydiagram.editor",
 					 0,
 					 getString("_UI_CreateModelError_message", resource.getURI()),
 					 new Object [] { exception == null ? (Object)resource : exception });
@@ -981,7 +983,7 @@ public class TimedstorydiagramEditor
 			return
 				new BasicDiagnostic
 					(Diagnostic.ERROR,
-					 "de.uni_paderborn.fujaba.muml.timedstorydiagram.editor",
+					 "org.muml.reconfigurationverification.timedstorydiagram.editor",
 					 0,
 					 getString("_UI_CreateModelError_message", resource.getURI()),
 					 new Object[] { exception });

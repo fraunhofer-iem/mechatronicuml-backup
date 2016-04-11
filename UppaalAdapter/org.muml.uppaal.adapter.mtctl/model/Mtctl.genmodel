@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.uppaal.adapter.mtctl/src"
-    creationIcons="false" modelPluginID="org.muml.uppaal.adapter.mtctl"
-    modelName="Mtctl" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.uppaal.adapter.mtctl/src" creationIcons="false"
+    modelPluginID="org.muml.uppaal.adapter.mtctl" modelName="Mtctl" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
     usedGenPackages="../../org.muml.core/model/core.genmodel#//core ../../org.muml.core.modelinstance/model/modelinstance.genmodel#//modelinstance ../../org.muml.pim/model/pim.genmodel#//pim"
     operationReflection="true" importOrganizing="true">
   <foreignModel>Mtctl.ecore</foreignModel>
   <foreignModel>../../org.muml.core.modelinstance/model/modelinstance.ecore</foreignModel>
-  <genPackages prefix="Mtctl" basePackage="org.muml.uppaal.adapter"
-      disposableProviderFactory="true" ecorePackage="Mtctl.ecore#/">
+  <genPackages prefix="Mtctl" basePackage="org.muml.uppaal.adapter" disposableProviderFactory="true"
+      ecorePackage="Mtctl.ecore#/">
     <genClasses ecoreClass="Mtctl.ecore#//PropertyRepository">
       <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//PropertyRepository/properties"/>
     </genClasses>
@@ -94,8 +93,8 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//Predicates/MessageDiscardedExpr/buffer"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Sets" basePackage="org.muml.uppaal.adapter.mtctl"
-        disposableProviderFactory="true" ecorePackage="Mtctl.ecore#//Sets">
+    <nestedGenPackages prefix="Sets" basePackage="org.muml.uppaal.adapter.mtctl" disposableProviderFactory="true"
+        ecorePackage="Mtctl.ecore#//Sets">
       <genClasses image="false" ecoreClass="Mtctl.ecore#//Sets/SetExpr"/>
       <genClasses ecoreClass="Mtctl.ecore#//Sets/ClockSetExpr"/>
       <genClasses ecoreClass="Mtctl.ecore#//Sets/IntervalSetExpr">

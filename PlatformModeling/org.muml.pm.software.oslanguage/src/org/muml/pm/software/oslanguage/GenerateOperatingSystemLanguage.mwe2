@@ -22,12 +22,12 @@ Workflow {
 //		registerGeneratedEPackage = "org.muml.core.expressions.common.CommonExpressionsPackage" 
 //		
 //	 	registerGeneratedEPackage = "org.muml.core.types.TypesPackage"
-//		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage"
-//		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage"
-//		registerGeneratedEPackage = "org.muml.psm.swplatform.SwplatformPackage" 
+//		registerGeneratedEPackage = "org.muml.pim.valuetype.ValuetypePackage"
+//		registerGeneratedEPackage = "org.muml.pim.behavior.BehaviorPackage"
+//		registerGeneratedEPackage = "org.muml.psm.software.SoftwarePackage" 
 //		registerGeneratedEPackage = "org.muml.psm.PsmPackage" 
 //		registerGeneratedEPackage = "org.muml.core.modelinstance.ModelinstancePackage"
-//		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.MumlPackage" 
+//		registerGeneratedEPackage = "org.muml.pim.PimPackage" 
 		
 	//	registerGenModelFile = "platform:/resource/org.eclipse.emf.codegen.ecore/model/GenModel.ecore"
 		//registerGenModelFile = "platform:/resource/org.muml.core.modelinstance/model/modelinstance.genmodel"

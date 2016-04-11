@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://www.muml.org/ape/1.0.0" xmi:id="_RnG40M1gEeSIgPDefa6ZBw" defaultTab="_RnHf4M1gEeSIgPDefa6ZBw" contributorId="org.muml.ape.contributor">
+<org.muml:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml="http://www.muml.org/ape/1.0.0" xmi:id="_RnG40M1gEeSIgPDefa6ZBw" defaultTab="_RnHf4M1gEeSIgPDefa6ZBw" contributorId="org.muml.ape.contributor">
   <reconciler xmi:id="_RnG40c1gEeSIgPDefa6ZBw"/>
   <genModel href="Mtctl.genmodel#/"/>
   <plugin xmi:id="_RnG40s1gEeSIgPDefa6ZBw" id="org.muml.uppaal.adapter.mtctl.edit.properties" name="Mtctl Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.5.0.qualifier">
@@ -35,7 +35,7 @@
     </classes>
     <classes xmi:id="_RnIG8c1gEeSIgPDefa6ZBw" superClasses="_RnIuAM1gEeSIgPDefa6ZBw">
       <genClass href="Mtctl.genmodel#//mtctl/Predicates/ComparisonExpr"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RnIG8s1gEeSIgPDefa6ZBw" tab="_RnHf4M1gEeSIgPDefa6ZBw" tooltip="" reconcile="false" initializeOCLExpression="">
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RnIG8s1gEeSIgPDefa6ZBw" tab="_RnHf4M1gEeSIgPDefa6ZBw" tooltip="" reconcile="false" initializeOCLExpression="">
         <genFeature href="Mtctl.genmodel#//mtctl/Predicates/ComparisonExpr/op"/>
       </orderedElements>
     </classes>
@@ -101,7 +101,7 @@
     </classes>
     <classes xmi:id="_RnJVFc1gEeSIgPDefa6ZBw" superClasses="_RnJ8KM1gEeSIgPDefa6ZBw">
       <genClass href="Mtctl.genmodel#//mtctl/Quantifiers/BoundVariable"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RnJVFs1gEeSIgPDefa6ZBw" tab="_RnHf4M1gEeSIgPDefa6ZBw" tooltip="" reconcile="false">
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RnJVFs1gEeSIgPDefa6ZBw" tab="_RnHf4M1gEeSIgPDefa6ZBw" tooltip="" reconcile="false">
         <genFeature href="Mtctl.genmodel#//mtctl/Quantifiers/BoundVariable/name"/>
       </orderedElements>
     </classes>
@@ -119,9 +119,9 @@
     <genPackage href="Mtctl.genmodel#//mtctl"/>
     <classes xmi:id="_RnJ8JM1gEeSIgPDefa6ZBw">
       <genClass href="Mtctl.genmodel#//mtctl/PropertyRepository"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RnJ8Jc1gEeSIgPDefa6ZBw" tab="_RnHf4M1gEeSIgPDefa6ZBw" tooltip="" reconcile="false" initializeOCLExpression="">
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RnJ8Jc1gEeSIgPDefa6ZBw" tab="_RnHf4M1gEeSIgPDefa6ZBw" tooltip="" reconcile="false" initializeOCLExpression="">
         <genFeature href="Mtctl.genmodel#//mtctl/PropertyRepository/properties"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" xmi:id="_RnJ8Js1gEeSIgPDefa6ZBw" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.MtctlXtextPropertyEditor"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_RnJ8Js1gEeSIgPDefa6ZBw" fullyQualifiedClassName="org.muml.uppaal.adapter.mtctl.xtext.ui.properties.MtctlXtextPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes xmi:id="_RnJ8J81gEeSIgPDefa6ZBw">
@@ -138,12 +138,12 @@
     </classes>
     <classes xmi:id="_RnKjMs1gEeSIgPDefa6ZBw" superClasses="_RnKjNs1gEeSIgPDefa6ZBw">
       <genClass href="Mtctl.genmodel#//mtctl/Comparables/ConstExpr"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RnKjM81gEeSIgPDefa6ZBw" tab="_RnHf4M1gEeSIgPDefa6ZBw" tooltip="" reconcile="false">
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RnKjM81gEeSIgPDefa6ZBw" tab="_RnHf4M1gEeSIgPDefa6ZBw" tooltip="" reconcile="false">
         <genFeature href="Mtctl.genmodel#//mtctl/Comparables/ConstExpr/val"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RnKjNM1gEeSIgPDefa6ZBw" tab="_RnHf4M1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RnKjNM1gEeSIgPDefa6ZBw" tab="_RnHf4M1gEeSIgPDefa6ZBw">
         <genFeature href="Mtctl.genmodel#//mtctl/Comparables/ConstExpr/timeUnit"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RnKjNc1gEeSIgPDefa6ZBw"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes xmi:id="_RnKjNs1gEeSIgPDefa6ZBw" superClasses="_RnJ8KM1gEeSIgPDefa6ZBw">
@@ -151,12 +151,12 @@
     </classes>
     <classes xmi:id="_RnKjN81gEeSIgPDefa6ZBw" superClasses="_RnKjNs1gEeSIgPDefa6ZBw">
       <genClass href="Mtctl.genmodel#//mtctl/Comparables/MumlElemExpr"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RnLKQM1gEeSIgPDefa6ZBw" tab="_RnHf4M1gEeSIgPDefa6ZBw" reconcile="false">
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RnLKQM1gEeSIgPDefa6ZBw" tab="_RnHf4M1gEeSIgPDefa6ZBw" reconcile="false">
         <genFeature href="Mtctl.genmodel#//mtctl/Comparables/MumlElemExpr/elem"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RnLKQc1gEeSIgPDefa6ZBw" tab="_RnHf4M1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RnLKQc1gEeSIgPDefa6ZBw" tab="_RnHf4M1gEeSIgPDefa6ZBw">
         <genFeature href="Mtctl.genmodel#//mtctl/Comparables/MumlElemExpr/instance"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RnLKQs1gEeSIgPDefa6ZBw"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes xmi:id="_RnLKQ81gEeSIgPDefa6ZBw" superClasses="_RnKjNs1gEeSIgPDefa6ZBw">
@@ -179,10 +179,10 @@
     </classes>
     <classes xmi:id="_RnLxUM1gEeSIgPDefa6ZBw" superClasses="_RnLKR81gEeSIgPDefa6ZBw">
       <genClass href="Mtctl.genmodel#//mtctl/Sets/IntervalSetExpr"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RnLxUc1gEeSIgPDefa6ZBw" tab="_RnHf4M1gEeSIgPDefa6ZBw" tooltip="" reconcile="false">
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RnLxUc1gEeSIgPDefa6ZBw" tab="_RnHf4M1gEeSIgPDefa6ZBw" tooltip="" reconcile="false">
         <genFeature href="Mtctl.genmodel#//mtctl/Sets/IntervalSetExpr/lowerVal"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RnLxUs1gEeSIgPDefa6ZBw" tab="_RnHf4M1gEeSIgPDefa6ZBw" tooltip="" reconcile="false">
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RnLxUs1gEeSIgPDefa6ZBw" tab="_RnHf4M1gEeSIgPDefa6ZBw" tooltip="" reconcile="false">
         <genFeature href="Mtctl.genmodel#//mtctl/Sets/IntervalSetExpr/upperVal"/>
       </orderedElements>
     </classes>
@@ -205,4 +205,186 @@
       <genClass href="Mtctl.genmodel#//mtctl/Sets/SubinstanceSetExpr"/>
     </classes>
   </packages>
-</de.uni_paderborn.fujaba:PropertyGenerator>
+  <packages>
+    <genPackage href="Mtctl.genmodel#//mtctl/@nestedGenPackages.0"/>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.0/@genClasses.0"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.0/@genClasses.1"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.0/@genClasses.2"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.0/@genClasses.3"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.0/@genClasses.4"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.0/@genClasses.5"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.0/@genClasses.6"/>
+      <orderedElements xsi:type="org.muml:Property" tab="_RnHf4M1gEeSIgPDefa6ZBw">
+        <genFeature href="Mtctl.genmodel#//mtctl/@nestedGenPackages.0/@genClasses.6/@genFeatures.1"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.0/@genClasses.7"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.0/@genClasses.8"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.0/@genClasses.9"/>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="Mtctl.genmodel#//mtctl/@nestedGenPackages.2"/>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.2/@genClasses.0"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.2/@genClasses.1"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.2/@genClasses.2"/>
+      <orderedElements xsi:type="org.muml:Property" tab="_RnHf4M1gEeSIgPDefa6ZBw">
+        <genFeature href="Mtctl.genmodel#//mtctl/@nestedGenPackages.2/@genClasses.2/@genFeatures.0"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" tab="_RnHf4M1gEeSIgPDefa6ZBw">
+        <genFeature href="Mtctl.genmodel#//mtctl/@nestedGenPackages.2/@genClasses.2/@genFeatures.1"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.2/@genClasses.3"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.2/@genClasses.4"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.2/@genClasses.5"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.2/@genClasses.6"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.2/@genClasses.7"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.2/@genClasses.8"/>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="Mtctl.genmodel#//mtctl/@nestedGenPackages.4"/>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.4/@genClasses.0"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.4/@genClasses.1"/>
+      <orderedElements xsi:type="org.muml:Property" tab="_RnHf4M1gEeSIgPDefa6ZBw">
+        <genFeature href="Mtctl.genmodel#//mtctl/@nestedGenPackages.4/@genClasses.1/@genFeatures.0"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" tab="_RnHf4M1gEeSIgPDefa6ZBw">
+        <genFeature href="Mtctl.genmodel#//mtctl/@nestedGenPackages.4/@genClasses.1/@genFeatures.1"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.4/@genClasses.2"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.4/@genClasses.3"/>
+      <orderedElements xsi:type="org.muml:Property" tab="_RnHf4M1gEeSIgPDefa6ZBw">
+        <genFeature href="Mtctl.genmodel#//mtctl/@nestedGenPackages.4/@genClasses.3/@genFeatures.0"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" tab="_RnHf4M1gEeSIgPDefa6ZBw">
+        <genFeature href="Mtctl.genmodel#//mtctl/@nestedGenPackages.4/@genClasses.3/@genFeatures.1"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.4/@genClasses.4"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.4/@genClasses.5"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.4/@genClasses.6"/>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1"/>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.0"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.1"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.2"/>
+      <orderedElements xsi:type="org.muml:Property" tab="_RnHf4M1gEeSIgPDefa6ZBw">
+        <genFeature href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.2/@genFeatures.1"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.3"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.4"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.5"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.6"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.7"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.8"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.9"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.10"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.11"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.12"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.13"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.1/@genClasses.14"/>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="Mtctl.genmodel#//mtctl/@nestedGenPackages.3"/>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.3/@genClasses.0"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.3/@genClasses.1"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.3/@genClasses.2"/>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/@nestedGenPackages.3/@genClasses.3"/>
+    </classes>
+  </packages>
+</org.muml:PropertyGenerator>

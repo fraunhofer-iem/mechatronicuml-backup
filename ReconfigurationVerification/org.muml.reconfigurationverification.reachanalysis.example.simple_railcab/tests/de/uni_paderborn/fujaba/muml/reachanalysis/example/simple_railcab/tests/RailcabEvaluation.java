@@ -156,7 +156,7 @@ public class RailcabEvaluation {
 
 		ResourceSet rs = new ResourceSetImpl();
 		
-		String modelFolder = "/de.uni_paderborn.fujaba.muml.reachanalysis.example.simple_railcab/model/";
+		String modelFolder = "/org.muml.reconfigurationverification.reachanalysis.example.simple_railcab/model/";
 
 		Resource r = rs.createResource(URI.createPlatformPluginURI(
 				modelFolder + modelName, true));

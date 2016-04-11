@@ -122,10 +122,10 @@ public class HWPortTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link org.muml.pm.hardware.hwresourceinstance.HWPort#setCardinality(de.uni_paderborn.fujaba.muml.valuetype.Cardinality) <em>Cardinality</em>}' feature setter.
+	 * Tests the '{@link org.muml.pm.hardware.hwresourceinstance.HWPort#setCardinality(org.muml.pim.valuetype.Cardinality) <em>Cardinality</em>}' feature setter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.pm.hardware.hwresourceinstance.HWPort#setCardinality(de.uni_paderborn.fujaba.muml.valuetype.Cardinality)
+	 * @see org.muml.pm.hardware.hwresourceinstance.HWPort#setCardinality(org.muml.pim.valuetype.Cardinality)
 	 * @generated
 	 */
 	public void testSetCardinality() {

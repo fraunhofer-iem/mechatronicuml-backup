@@ -177,7 +177,7 @@ public class TimedstorydiagramActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(TimedStoryDiagramsEditorPlugin.INSTANCE.getString("_UI_TimedstorydiagramEditor_menu"), "de.uni_paderborn.fujaba.muml.timedstorydiagramMenuID");
+		IMenuManager submenuManager = new MenuManager(TimedStoryDiagramsEditorPlugin.INSTANCE.getString("_UI_TimedstorydiagramEditor_menu"), "org.muml.reconfigurationverification.timedstorydiagramMenuID");
 		menuManager.insertAfter("additions", submenuManager);
 		submenuManager.add(new Separator("settings"));
 		submenuManager.add(new Separator("actions"));

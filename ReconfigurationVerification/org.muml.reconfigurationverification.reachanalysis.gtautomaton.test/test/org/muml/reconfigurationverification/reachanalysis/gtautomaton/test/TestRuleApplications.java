@@ -280,7 +280,7 @@ public class TestRuleApplications {
 
 	protected String getModelFolder()
 	{
-		return "/de.uni_paderborn.fujaba.muml.reachanalysis.gtautomaton.test/testModels/";
+		return "/org.muml.reconfigurationverification.reachanalysis.gtautomaton.test/testModels/";
 	}
 
 	
