@@ -46,7 +46,7 @@ public interface PlatformPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.muml.org/pm/software/platform/1.0.0";
+	String eNS_URI = "http://www.muml.org/pm/software/1.0.0";
 
 	/**
 	 * The package namespace name.
