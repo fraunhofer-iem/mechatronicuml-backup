@@ -174,7 +174,7 @@ public class AllocationActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(PsmEditorPlugin.INSTANCE.getString("_UI_AllocationEditor_menu"), "de.uni_paderborn.fujaba.muml.psm.allocationMenuID");
+		IMenuManager submenuManager = new MenuManager(PsmEditorPlugin.INSTANCE.getString("_UI_AllocationEditor_menu"), "org.muml.psm.allocationMenuID");
 		menuManager.insertAfter("additions", submenuManager);
 		submenuManager.add(new Separator("settings"));
 		submenuManager.add(new Separator("actions"));

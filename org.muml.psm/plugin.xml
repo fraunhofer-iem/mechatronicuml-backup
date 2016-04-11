@@ -86,14 +86,6 @@
             genModel="model/psm.genmodel"/>
    </extension>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated psm -->
-      <package
-            uri="http://www.muml.org/pm/software/platform/1.0.0"
-            class="platform.PlatformPackage"
-            genModel="model/psm.genmodel"/>
-   </extension>
-
    <extension
          point="org.muml.core.modelinstance.modelelementcategory">
       <category
