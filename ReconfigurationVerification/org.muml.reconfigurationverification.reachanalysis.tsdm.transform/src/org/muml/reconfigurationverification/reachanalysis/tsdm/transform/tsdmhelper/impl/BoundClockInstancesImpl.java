@@ -25,10 +25,10 @@ import org.muml.reconfigurationverification.timedstorydiagram.ClockInstance;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.reachanalysis.tsdm.transform.tsdmhelper.impl.BoundClockInstancesImpl#getClockInstances <em>Clock Instances</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

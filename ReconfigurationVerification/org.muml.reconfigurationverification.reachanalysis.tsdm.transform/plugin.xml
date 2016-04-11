@@ -6,7 +6,7 @@
       <!-- @generated TimedSDMReachabilityAnalysisHelper -->
       <package
             uri="http://www.muml.org/reconfigurationverification.reachanalysis.tsdm.transform/helper/1.0.0"
-            class="de.uni_paderborn.fujaba.muml.reachanalysis.tsdm.tsdmhelper.TsdmhelperPackage"
+            class="org.muml.reconfigurationverification.reachanalysis.tsdm.transform.tsdmhelper.TsdmhelperPackage"
             genModel="model/TimedSDMReachabilityAnalysisHelper.genmodel"/>
    </extension>
 

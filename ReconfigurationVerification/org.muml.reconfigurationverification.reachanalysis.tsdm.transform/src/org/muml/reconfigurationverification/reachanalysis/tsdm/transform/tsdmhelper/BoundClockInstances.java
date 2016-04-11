@@ -18,10 +18,10 @@ import org.muml.reconfigurationverification.timedstorydiagram.ClockInstance;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.reachanalysis.tsdm.transform.tsdmhelper.BoundClockInstances#getClockInstances <em>Clock Instances</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfigurationverification.reachanalysis.tsdm.transform.tsdmhelper.TsdmhelperPackage#getBoundClockInstances()
  * @model

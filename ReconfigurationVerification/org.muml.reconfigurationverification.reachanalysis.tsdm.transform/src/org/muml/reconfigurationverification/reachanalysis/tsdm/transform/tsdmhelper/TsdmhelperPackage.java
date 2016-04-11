@@ -48,7 +48,7 @@ public interface TsdmhelperPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "de.uni_paderborn.fujaba.muml.reachanalysis.tsdm.tsdmhelper";
+	String eNS_PREFIX = "tsdmhelper";
 
 	/**
 	 * The singleton instance of the package.

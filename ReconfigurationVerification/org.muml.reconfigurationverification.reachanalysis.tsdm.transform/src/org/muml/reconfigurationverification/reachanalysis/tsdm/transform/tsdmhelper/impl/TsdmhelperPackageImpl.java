@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.muml.pim.PimPackage;
 import org.muml.reconfigurationverification.reachanalysis.tsdm.transform.tsdmhelper.BoundClockInstances;
 import org.muml.reconfigurationverification.reachanalysis.tsdm.transform.tsdmhelper.TsdmhelperFactory;
 import org.muml.reconfigurationverification.reachanalysis.tsdm.transform.tsdmhelper.TsdmhelperPackage;
@@ -77,6 +78,7 @@ public class TsdmhelperPackageImpl extends EPackageImpl implements TsdmhelperPac
 		isInited = true;
 
 		// Initialize simple dependencies
+		PimPackage.eINSTANCE.eClass();
 		TimedstorydiagramPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects

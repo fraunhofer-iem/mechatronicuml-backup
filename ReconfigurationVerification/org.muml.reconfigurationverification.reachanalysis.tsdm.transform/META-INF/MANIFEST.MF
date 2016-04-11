@@ -9,10 +9,7 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.reconfigurationverification.reachanalysis.tsdm.transform.tsdmhelper,
  org.muml.reconfigurationverification.reachanalysis.tsdm.transform.tsdmhelper.impl,
- org.muml.reconfigurationverification.reachanalysis.tsdm.transform.tsdmhelper.util,
- de.uni_paderborn.fujaba.muml.reachanalysis.tsdm.tsdmhelper,
- de.uni_paderborn.fujaba.muml.reachanalysis.tsdm.tsdmhelper.impl,
- de.uni_paderborn.fujaba.muml.reachanalysis.tsdm.tsdmhelper.util
+ org.muml.reconfigurationverification.reachanalysis.tsdm.transform.tsdmhelper.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.reconfigurationverification.timedstorydiagram;visibility:=reexport,
