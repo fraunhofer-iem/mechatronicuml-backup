@@ -18,7 +18,7 @@
 		<package
 			uri="http://www.muml.org/core/1.0.0"
 			class="org.muml.core.CorePackage"
-			genModel="model/core.uml.genmodel"/>
+			genModel="model/core.genmodel"/>
 	</extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -26,7 +26,7 @@
       <package
             uri="http://www.muml.org/core/expressions/1.0.0"
             class="org.muml.core.expressions.ExpressionsPackage"
-            genModel="model/core.uml.genmodel"/>
+            genModel="model/core.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -34,7 +34,7 @@
       <package
             uri="http://www.muml.org/core/expressions/common/1.0.0"
             class="org.muml.core.expressions.common.CommonExpressionsPackage"
-            genModel="model/core.uml.genmodel"/>
+            genModel="model/core.genmodel"/>
    </extension>
 
 </plugin>
