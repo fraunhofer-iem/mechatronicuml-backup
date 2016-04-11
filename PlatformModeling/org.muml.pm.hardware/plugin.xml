@@ -45,4 +45,12 @@
             class="org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage"
             genModel="model/hardware.genmodel"/>
    </extension>
+   <extension
+         point="org.eclipse.emf.ecore.generated_package">
+      <package
+            class="org.muml.pm.hardware.HardwarePackage"
+            genModel="model/hardware.genmodel"
+            uri="http://www.muml.org/pm/hardware/1.0.0">
+      </package>
+   </extension>
 </plugin>

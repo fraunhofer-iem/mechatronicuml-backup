@@ -43,8 +43,6 @@ import org.eclipse.ui.navigator.resources.ProjectExplorer;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.IShowInTargetList;
 import org.eclipse.ui.part.ShowInContext;
-import org.muml.core.common.editingdomain.EditingDomainPlugin;
-import org.muml.core.common.editingdomain.initialize.IEditingDomainInitializer;
 import org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorItem;
 
 /**
@@ -53,32 +51,32 @@ import org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorItem;
 public class HardwareDiagramEditor extends DiagramDocumentEditor implements IGotoMarker {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final String ID = "org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorID"; //$NON-NLS-1$
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final String CONTEXT_ID = "org.muml.pm.hardware.resource.diagram.ui.diagramContext"; //$NON-NLS-1$
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public HardwareDiagramEditor() {
 		super(true);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected String getContextID() {
 		return CONTEXT_ID;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
 		PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
 		new HardwarePaletteFactory().fillPalette(root);
@@ -86,15 +84,15 @@ public class HardwareDiagramEditor extends DiagramDocumentEditor implements IGot
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected PreferencesHint getPreferencesHint() {
 		return HardwareDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getContributorId() {
 		return HardwareDiagramEditorPlugin.ID;
 	}
@@ -115,8 +113,8 @@ public class HardwareDiagramEditor extends DiagramDocumentEditor implements IGot
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IDocumentProvider getDocumentProvider(IEditorInput input) {
 		if (input instanceof IFileEditorInput || input instanceof URIEditorInput) {
 			return HardwareDiagramEditorPlugin.getInstance().getDocumentProvider();
@@ -125,8 +123,8 @@ public class HardwareDiagramEditor extends DiagramDocumentEditor implements IGot
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public TransactionalEditingDomain getEditingDomain() {
 		IDocument document = getEditorInput() != null ? getDocumentProvider().getDocument(getEditorInput()) : null;
 		if (document instanceof IDiagramDocument) {
@@ -136,8 +134,8 @@ public class HardwareDiagramEditor extends DiagramDocumentEditor implements IGot
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setDocumentProvider(IEditorInput input) {
 		if (input instanceof IFileEditorInput || input instanceof URIEditorInput) {
 			setDocumentProvider(HardwareDiagramEditorPlugin.getInstance().getDocumentProvider());
@@ -147,29 +145,29 @@ public class HardwareDiagramEditor extends DiagramDocumentEditor implements IGot
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void gotoMarker(IMarker marker) {
 		MarkerNavigationService.getInstance().gotoMarker(this, marker);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public boolean isSaveAsAllowed() {
 		return true;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void doSaveAs() {
 		performSaveAs(new NullProgressMonitor());
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void performSaveAs(IProgressMonitor progressMonitor) {
 		Shell shell = getSite().getShell();
 		IEditorInput input = getEditorInput();
@@ -240,15 +238,15 @@ public class HardwareDiagramEditor extends DiagramDocumentEditor implements IGot
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public ShowInContext getShowInContext() {
 		return new ShowInContext(getEditorInput(), getNavigatorSelection());
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ISelection getNavigatorSelection() {
 		IDiagramDocument document = getDiagramDocument();
 		if (document == null) {
@@ -267,8 +265,8 @@ public class HardwareDiagramEditor extends DiagramDocumentEditor implements IGot
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void configureGraphicalViewer() {
 		super.configureGraphicalViewer();
 		DiagramEditorContextMenuProvider provider = new DiagramEditorContextMenuProvider(this,
@@ -291,14 +289,15 @@ public class HardwareDiagramEditor extends DiagramDocumentEditor implements IGot
 	@Override
 	public void setInput(IEditorInput input) {
 		super.setInput(input);
-		for (IEditingDomainInitializer init : EditingDomainPlugin.getEditingDomainInitializers()) {
-			init.initialize(getEditingDomain());
-		}
+		// XXX Activate again
+		//		for (org.muml.core.common.editingdomain.initialize.IEditingDomainInitializer init : org.muml.core.common.editingdomain.EditingDomainPlugin.getEditingDomainInitializers()) {
+		//			init.initialize(getEditingDomain());
+		//		}
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@Override
 	public void doSave(IProgressMonitor progressMonitor) {
 		ValidateAction.runValidation(getDiagramEditPart(), getDiagramEditPart().getDiagramView());

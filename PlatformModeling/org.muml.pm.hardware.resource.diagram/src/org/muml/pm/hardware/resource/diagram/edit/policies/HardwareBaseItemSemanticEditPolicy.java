@@ -1,6 +1,5 @@
 package org.muml.pm.hardware.resource.diagram.edit.policies;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
