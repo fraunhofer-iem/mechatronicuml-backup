@@ -1,4 +1,4 @@
-module de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage
+module org.muml.graphviz.dot.xtext.DotLanguage
 
 import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*

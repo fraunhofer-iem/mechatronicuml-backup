@@ -332,7 +332,7 @@ public class GraphvizPlainGrammarAccess extends AbstractGrammarElementFinder {
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
 		Grammar grammar = grammarProvider.getGrammar(this);
 		while (grammar != null) {
-			if ("de.uni_paderborn.fujaba.graphviz.plain.xtext.GraphvizPlain".equals(grammar.getName())) {
+			if ("org.muml.graphviz.plain.xtext.GraphvizPlain".equals(grammar.getName())) {
 				return grammar;
 			}
 			List<Grammar> grammars = grammar.getUsedGrammars();

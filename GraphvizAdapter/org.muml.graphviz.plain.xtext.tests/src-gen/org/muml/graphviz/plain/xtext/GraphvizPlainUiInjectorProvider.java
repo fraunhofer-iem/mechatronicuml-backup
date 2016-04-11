@@ -10,7 +10,7 @@ import com.google.inject.Injector;
 public class GraphvizPlainUiInjectorProvider implements IInjectorProvider {
 	
 	public Injector getInjector() {
-		return org.muml.graphviz.plain.xtext.ui.internal.GraphvizPlainActivator.getInstance().getInjector("de.uni_paderborn.fujaba.graphviz.plain.xtext.GraphvizPlain");
+		return org.muml.graphviz.plain.xtext.ui.internal.GraphvizPlainActivator.getInstance().getInjector("org.muml.graphviz.plain.xtext.GraphvizPlain");
 	}
 	
 }

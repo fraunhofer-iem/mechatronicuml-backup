@@ -78,8 +78,8 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		////import "http://www.muml.org/core/1.0.0" as core
-		////import "platform:/resource/de.uni_paderborn.fujaba.graphviz/model/graphviz.ecore#//dot" as dot
-		////import "platform:/resource/de.uni_paderborn.fujaba.graphviz/model/graphviz.ecore#//common" as common
+		////import "platform:/resource/org.muml.graphviz/model/graphviz.ecore#//dot" as dot
+		////import "platform:/resource/org.muml.graphviz/model/graphviz.ecore#//common" as common
 		//DotGraph dot::DotGraph:
 		//	{dot::DotGraph} ((directedGraph?='digraph' | 'graph') id=DotID?
 		//	| 'subgraph' id=DotID?)
@@ -661,8 +661,8 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	////import "http://www.muml.org/core/1.0.0" as core
-	////import "platform:/resource/de.uni_paderborn.fujaba.graphviz/model/graphviz.ecore#//dot" as dot
-	////import "platform:/resource/de.uni_paderborn.fujaba.graphviz/model/graphviz.ecore#//common" as common
+	////import "platform:/resource/org.muml.graphviz/model/graphviz.ecore#//dot" as dot
+	////import "platform:/resource/org.muml.graphviz/model/graphviz.ecore#//common" as common
 	//DotGraph dot::DotGraph:
 	//	{dot::DotGraph} ((directedGraph?='digraph' | 'graph') id=DotID?
 	//	| 'subgraph' id=DotID?)

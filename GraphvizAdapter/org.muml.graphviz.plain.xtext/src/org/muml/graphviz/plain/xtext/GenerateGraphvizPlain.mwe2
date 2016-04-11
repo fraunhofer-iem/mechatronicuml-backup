@@ -1,4 +1,4 @@
-module de.uni_paderborn.fujaba.graphviz.plain.xtext.GraphvizPlain
+module org.muml.graphviz.plain.xtext.GraphvizPlain
 
 import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
@@ -6,7 +6,7 @@ import org.eclipse.xtext.ui.generator.*
 
 var grammarURI = "classpath:/de/uni_paderborn/fujaba/graphviz/plain/xtext/GraphvizPlain.xtext"
 var fileExtensions = "graphviz_plain"
-var projectName = "de.uni_paderborn.fujaba.graphviz.plain.xtext"
+var projectName = "org.muml.graphviz.plain.xtext"
 var runtimeProject = "../${projectName}"
 var generateXtendStub = true
 
@@ -14,8 +14,8 @@ Workflow {
 	bean = StandaloneSetup {
 		scanClassPath  = true
 		platformUri = "${runtimeProject}/.."
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.graphviz.plain.PlainPackage"
-		registerGenModelFile = "platform:/resource/de.uni_paderborn.fujaba.graphviz/model/graphviz.genmodel"
+		registerGeneratedEPackage = "org.muml.graphviz.plain.PlainPackage"
+		registerGenModelFile = "platform:/resource/org.muml.graphviz/model/graphviz.genmodel"
 	}
 
 	component = DirectoryCleaner {

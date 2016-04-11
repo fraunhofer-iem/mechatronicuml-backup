@@ -43,6 +43,6 @@ Long story short - how to use this fragment project:
   the paths in the "lookup.properties" file (the file is part of this
   fragment project)
 - When starting a new "Eclipse Application", add the following VM argument:
-  -Dosgi.framework.extensions=de.uni_paderborn.fujaba.muml.allocation.devel
+  -Dosgi.framework.extensions=org.muml.psm.allocation.devel
   (via "Run" -> "Run Configurations" -> select or create a new Eclipse
   Application -> select the "Arguments" tab and add it the VM arguments)

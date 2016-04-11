@@ -41,15 +41,15 @@ public class InternalGraphvizPlainLexer extends Lexer {
         super(input,state);
 
     }
-    public String getGrammarFileName() { return "../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g"; }
+    public String getGrammarFileName() { return "../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g"; }
 
     // $ANTLR start "T__12"
     public final void mT__12() throws RecognitionException {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:11:7: ( 'graph' )
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:11:9: 'graph'
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:11:7: ( 'graph' )
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:11:9: 'graph'
             {
             match("graph"); 
 
@@ -69,8 +69,8 @@ public class InternalGraphvizPlainLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:12:7: ( 'stop' )
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:12:9: 'stop'
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:12:7: ( 'stop' )
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:12:9: 'stop'
             {
             match("stop"); 
 
@@ -90,8 +90,8 @@ public class InternalGraphvizPlainLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:13:7: ( 'node' )
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:13:9: 'node'
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:13:7: ( 'node' )
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:13:9: 'node'
             {
             match("node"); 
 
@@ -111,8 +111,8 @@ public class InternalGraphvizPlainLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:14:7: ( 'edge' )
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:14:9: 'edge'
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:14:7: ( 'edge' )
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:14:9: 'edge'
             {
             match("edge"); 
 
@@ -132,8 +132,8 @@ public class InternalGraphvizPlainLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:15:7: ( '-' )
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:15:9: '-'
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:15:7: ( '-' )
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:15:9: '-'
             {
             match('-'); 
 
@@ -152,10 +152,10 @@ public class InternalGraphvizPlainLexer extends Lexer {
         try {
             int _type = RULE_DOUBLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:550:13: ( ( RULE_INT )+ '.' ( RULE_INT )+ )
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:550:15: ( RULE_INT )+ '.' ( RULE_INT )+
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:550:13: ( ( RULE_INT )+ '.' ( RULE_INT )+ )
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:550:15: ( RULE_INT )+ '.' ( RULE_INT )+
             {
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:550:15: ( RULE_INT )+
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:550:15: ( RULE_INT )+
             int cnt1=0;
             loop1:
             do {
@@ -169,7 +169,7 @@ public class InternalGraphvizPlainLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:550:15: RULE_INT
+            	    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:550:15: RULE_INT
             	    {
             	    mRULE_INT(); 
 
@@ -186,7 +186,7 @@ public class InternalGraphvizPlainLexer extends Lexer {
             } while (true);
 
             match('.'); 
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:550:29: ( RULE_INT )+
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:550:29: ( RULE_INT )+
             int cnt2=0;
             loop2:
             do {
@@ -200,7 +200,7 @@ public class InternalGraphvizPlainLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:550:29: RULE_INT
+            	    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:550:29: RULE_INT
             	    {
             	    mRULE_INT(); 
 
@@ -232,10 +232,10 @@ public class InternalGraphvizPlainLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:552:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:552:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:552:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:552:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:552:11: ( '^' )?
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:552:11: ( '^' )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -244,7 +244,7 @@ public class InternalGraphvizPlainLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:552:11: '^'
+                    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:552:11: '^'
                     {
                     match('^'); 
 
@@ -262,7 +262,7 @@ public class InternalGraphvizPlainLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:552:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:552:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop4:
             do {
                 int alt4=2;
@@ -275,7 +275,7 @@ public class InternalGraphvizPlainLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:
+            	    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:
             	    {
             	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
             	        input.consume();
@@ -311,10 +311,10 @@ public class InternalGraphvizPlainLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:554:10: ( ( '0' .. '9' )+ )
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:554:12: ( '0' .. '9' )+
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:554:10: ( ( '0' .. '9' )+ )
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:554:12: ( '0' .. '9' )+
             {
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:554:12: ( '0' .. '9' )+
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:554:12: ( '0' .. '9' )+
             int cnt5=0;
             loop5:
             do {
@@ -328,7 +328,7 @@ public class InternalGraphvizPlainLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:554:13: '0' .. '9'
+            	    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:554:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -360,10 +360,10 @@ public class InternalGraphvizPlainLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:556:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:556:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:556:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:556:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:556:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:556:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -381,10 +381,10 @@ public class InternalGraphvizPlainLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:556:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:556:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:556:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:556:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -400,7 +400,7 @@ public class InternalGraphvizPlainLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:556:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:556:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -416,7 +416,7 @@ public class InternalGraphvizPlainLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:556:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:556:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -441,10 +441,10 @@ public class InternalGraphvizPlainLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:556:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:556:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:556:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:556:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop7:
                     do {
                         int alt7=3;
@@ -460,7 +460,7 @@ public class InternalGraphvizPlainLexer extends Lexer {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:556:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:556:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -476,7 +476,7 @@ public class InternalGraphvizPlainLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:556:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:556:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -519,12 +519,12 @@ public class InternalGraphvizPlainLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:558:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:558:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:558:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:558:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:558:24: ( options {greedy=false; } : . )*
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:558:24: ( options {greedy=false; } : . )*
             loop9:
             do {
                 int alt9=2;
@@ -549,7 +549,7 @@ public class InternalGraphvizPlainLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:558:52: .
+            	    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:558:52: .
             	    {
             	    matchAny(); 
 
@@ -579,12 +579,12 @@ public class InternalGraphvizPlainLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:560:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:560:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:560:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:560:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:560:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:560:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop10:
             do {
                 int alt10=2;
@@ -597,7 +597,7 @@ public class InternalGraphvizPlainLexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:560:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:560:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -617,7 +617,7 @@ public class InternalGraphvizPlainLexer extends Lexer {
                 }
             } while (true);
 
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:560:40: ( ( '\\r' )? '\\n' )?
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:560:40: ( ( '\\r' )? '\\n' )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -626,9 +626,9 @@ public class InternalGraphvizPlainLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:560:41: ( '\\r' )? '\\n'
+                    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:560:41: ( '\\r' )? '\\n'
                     {
-                    // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:560:41: ( '\\r' )?
+                    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:560:41: ( '\\r' )?
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -637,7 +637,7 @@ public class InternalGraphvizPlainLexer extends Lexer {
                     }
                     switch (alt11) {
                         case 1 :
-                            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:560:41: '\\r'
+                            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:560:41: '\\r'
                             {
                             match('\r'); 
 
@@ -669,10 +669,10 @@ public class InternalGraphvizPlainLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:562:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:562:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:562:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:562:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:562:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:562:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt13=0;
             loop13:
             do {
@@ -686,7 +686,7 @@ public class InternalGraphvizPlainLexer extends Lexer {
 
                 switch (alt13) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:
+            	    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:
             	    {
             	    if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
             	        input.consume();
@@ -726,8 +726,8 @@ public class InternalGraphvizPlainLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:564:16: ( . )
-            // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:564:18: .
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:564:16: ( . )
+            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:564:18: .
             {
             matchAny(); 
 
@@ -742,96 +742,96 @@ public class InternalGraphvizPlainLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:1:8: ( T__12 | T__13 | T__14 | T__15 | T__16 | RULE_DOUBLE | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:1:8: ( T__12 | T__13 | T__14 | T__15 | T__16 | RULE_DOUBLE | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
         int alt14=13;
         alt14 = dfa14.predict(input);
         switch (alt14) {
             case 1 :
-                // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:1:10: T__12
+                // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:1:10: T__12
                 {
                 mT__12(); 
 
                 }
                 break;
             case 2 :
-                // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:1:16: T__13
+                // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:1:16: T__13
                 {
                 mT__13(); 
 
                 }
                 break;
             case 3 :
-                // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:1:22: T__14
+                // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:1:22: T__14
                 {
                 mT__14(); 
 
                 }
                 break;
             case 4 :
-                // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:1:28: T__15
+                // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:1:28: T__15
                 {
                 mT__15(); 
 
                 }
                 break;
             case 5 :
-                // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:1:34: T__16
+                // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:1:34: T__16
                 {
                 mT__16(); 
 
                 }
                 break;
             case 6 :
-                // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:1:40: RULE_DOUBLE
+                // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:1:40: RULE_DOUBLE
                 {
                 mRULE_DOUBLE(); 
 
                 }
                 break;
             case 7 :
-                // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:1:52: RULE_ID
+                // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:1:52: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
             case 8 :
-                // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:1:60: RULE_INT
+                // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:1:60: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
             case 9 :
-                // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:1:69: RULE_STRING
+                // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:1:69: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
             case 10 :
-                // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:1:81: RULE_ML_COMMENT
+                // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:1:81: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
             case 11 :
-                // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:1:97: RULE_SL_COMMENT
+                // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:1:97: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
             case 12 :
-                // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:1:113: RULE_WS
+                // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:1:113: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
             case 13 :
-                // ../de.uni_paderborn.fujaba.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:1:121: RULE_ANY_OTHER
+                // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:1:121: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 

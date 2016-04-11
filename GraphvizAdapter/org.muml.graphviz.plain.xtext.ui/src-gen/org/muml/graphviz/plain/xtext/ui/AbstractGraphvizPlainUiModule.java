@@ -8,7 +8,7 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtext.ui.DefaultUiModule;
 
 /**
- * Manual modifications go to {de.uni_paderborn.fujaba.graphviz.plain.xtext.ui.GraphvizPlainUiModule}
+ * Manual modifications go to {org.muml.graphviz.plain.xtext.ui.GraphvizPlainUiModule}
  */
 @SuppressWarnings("all")
 public abstract class AbstractGraphvizPlainUiModule extends DefaultUiModule {

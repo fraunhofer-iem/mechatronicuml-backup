@@ -12,7 +12,7 @@ import com.google.inject.Binder;
 import com.google.inject.name.Names;
 
 /**
- * Manual modifications go to {de.uni_paderborn.fujaba.graphviz.plain.xtext.GraphvizPlainRuntimeModule}
+ * Manual modifications go to {org.muml.graphviz.plain.xtext.GraphvizPlainRuntimeModule}
  */
  @SuppressWarnings("all")
 public abstract class AbstractGraphvizPlainRuntimeModule extends DefaultRuntimeModule {
@@ -26,7 +26,7 @@ public abstract class AbstractGraphvizPlainRuntimeModule extends DefaultRuntimeM
 	}
 	
 	public void configureLanguageName(Binder binder) {
-		binder.bind(String.class).annotatedWith(Names.named(Constants.LANGUAGE_NAME)).toInstance("de.uni_paderborn.fujaba.graphviz.plain.xtext.GraphvizPlain");
+		binder.bind(String.class).annotatedWith(Names.named(Constants.LANGUAGE_NAME)).toInstance("org.muml.graphviz.plain.xtext.GraphvizPlain");
 	}
 	
 	public void configureFileExtensions(Binder binder) {

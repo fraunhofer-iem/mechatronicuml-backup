@@ -23,7 +23,7 @@ import com.google.inject.Module;
  */
 public class GraphvizPlainActivator extends AbstractUIPlugin {
 	
-	public static final String DE_UNI_PADERBORN_FUJABA_GRAPHVIZ_PLAIN_XTEXT_GRAPHVIZPLAIN = "de.uni_paderborn.fujaba.graphviz.plain.xtext.GraphvizPlain";
+	public static final String DE_UNI_PADERBORN_FUJABA_GRAPHVIZ_PLAIN_XTEXT_GRAPHVIZPLAIN = "org.muml.graphviz.plain.xtext.GraphvizPlain";
 	
 	private static final Logger logger = Logger.getLogger(GraphvizPlainActivator.class);
 	

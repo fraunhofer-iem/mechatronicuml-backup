@@ -16,7 +16,7 @@ import org.eclipse.osgi.storage.bundlefile.FileBundleEntry;
 
 public class LinkedBundleFileResolverFactory implements BundleFileWrapperFactoryHook {
 	private static final String project =
-			"de.uni_paderborn.fujaba.muml.allocation.devel";
+			"org.muml.psm.allocation.devel";
 	private static final String propertiesFilename = "lookup.properties";
 	private Map<String, List<String>> lookupMap = null;
 	

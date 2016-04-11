@@ -28,7 +28,7 @@ public class ILPMetamodelTest extends MetamodelTest {
 		CorePackage.eINSTANCE.eClass();
 		ResourceSet resSet = new ResourceSetImpl();	
 		Resource ilpModel = TestUtilities.loadResource(resSet,
-				"de.uni_paderborn.fujaba.muml.allocation.ilp/model/ilp.ecore");
+				"org.muml.psm.allocation.ilp/model/ilp.ecore");
 		EcoreUtil.resolveAll(resSet);
 		EPackage ilp = (EPackage) ilpModel.getContents().get(0);		
 		return Collections.singleton(new Object[] {ilp});

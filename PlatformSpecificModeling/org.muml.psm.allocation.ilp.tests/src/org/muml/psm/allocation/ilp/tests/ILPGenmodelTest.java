@@ -18,7 +18,7 @@ public class ILPGenmodelTest extends GenmodelTest {
 	
 	@Parameters
 	public static Collection<Object[]> getGenmodelPaths() {
-		return Collections.singleton(new Object[] {"de.uni_paderborn.fujaba.muml.allocation.ilp/model/ilp.genmodel"});
+		return Collections.singleton(new Object[] {"org.muml.psm.allocation.ilp/model/ilp.genmodel"});
 	}
 
 }
