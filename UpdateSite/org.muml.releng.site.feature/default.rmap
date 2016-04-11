@@ -12,7 +12,7 @@
 <rm:locator searchPathRef="PlatformModeling" failOnError="false"/>
 <rm:locator searchPathRef="ModelicaTransform" failOnError="false"/>
 <rm:locator searchPathRef="ModelicaAdapterM2T" failOnError="false"/>
-<rm:locator searchPathRef="ModelicaFeature" failOnError="false"/>
+<rm:locator searchPathRef="ModelicaAdapterFeature" failOnError="false"/>
 <rm:locator searchPathRef="SimulinkAdapter" failOnError="false"/>
 <rm:locator searchPathRef="TestLanguage" failOnError="false"/>
 <rm:locator searchPathRef="UDBM" failOnError="false"/>
