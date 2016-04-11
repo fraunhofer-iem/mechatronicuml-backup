@@ -90,7 +90,7 @@
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
 		            	<or>
-		            	<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+		            	<reference definitionId="org.muml.expression.mumlfile"></reference>
 						<iterate ifEmpty="false" operator="or">
 		            		<adapt type="org.eclipse.core.resources.IResource">
 		            			<test property="org.eclipse.core.resources.name" value="*.activities"></test>
@@ -108,7 +108,7 @@
 	<?gmfgen generated="true"?>
 	<command
            defaultHandler="org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramInitDiagramFileAction$CreateDiagramElement"
-           categoryId="de.uni_paderborn.fujaba"
+           categoryId="org.muml"
            description="Create new Component Story"
            id="org.muml.reconfiguration.componentstorydiagram.ComponentStoryRule.browser.create"
            name="Create new Component Story">
@@ -815,7 +815,7 @@
 <extension point="org.eclipse.ui.commands">
 		<?gmfgen generated="true"?>
 		<command
-			categoryId="de.uni_paderborn.fujaba"
+			categoryId="org.muml"
 			description="Initialize realtimestatechart_diagram"
 			defaultHandler="org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramInitDiagramFileAction"
 			id="org.muml.reconfiguration.componentstorydiagram.diagram.createDiagram"

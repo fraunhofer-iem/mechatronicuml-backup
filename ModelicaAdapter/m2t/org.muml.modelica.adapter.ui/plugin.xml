@@ -4,7 +4,7 @@
    <extension
          point="org.eclipse.ui.commands">
       <command
-            categoryId="de.uni_paderborn.fujaba"
+            categoryId="org.muml"
             defaultHandler="org.muml.modelica.adapter.ui.handler.GenerateModelicaCodeHandler"
             id="de.uni_paderborn.fujaba.modelica.m2t.ui.GenerateModelicaCodeCommand"
             name="Generate Modelica Code">
@@ -26,7 +26,7 @@
             <visibleWhen
                   checkEnabled="false">
                <reference
-                     definitionId="de.uni_paderborn.fujaba.expression.fujabafile">
+                     definitionId="org.muml.expression.mumlfile">
                </reference>
             </visibleWhen>
          </command>

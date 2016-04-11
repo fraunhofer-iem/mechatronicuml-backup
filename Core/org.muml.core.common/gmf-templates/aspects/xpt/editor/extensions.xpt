@@ -90,7 +90,7 @@ diagrams«-»
       «EXPAND xpt::Common::xmlGeneratedTag»   
 	  <menuContribution
 	         allPopups="false"
-	         locationURI="popup:de.uni_paderborn.fujaba?after=«EXPAND afterSeparator»">
+	         locationURI="popup:org.muml?after=«EXPAND afterSeparator»">
 	      <command
 	            commandId="«plugin.iD».createDiagram"
 	            icon="«diagram.creationWizardIconPathX»"
@@ -99,7 +99,7 @@ diagrams«-»
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
 		            	<or>
-		            	<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+		            	<reference definitionId="org.muml.expression.mumlfile"></reference>
 						<iterate ifEmpty="false" operator="or">
 		            		<adapt type="org.eclipse.core.resources.IResource">
 		            			<test property="org.eclipse.core.resources.name" value="*.«modelElementCategoryName(diagram)»"></test>
@@ -117,18 +117,11 @@ diagrams«-»
 	«EXPAND xpt::Common::xmlGeneratedTag»
 	<command
            defaultHandler="«diagram.getInitDiagramFileActionQualifiedClassName()»$CreateDiagramElement"
-           categoryId="de.uni_paderborn.fujaba"
+           categoryId="org.muml"
            description="Create new «modelID»"
            id="«EXPAND MetaModel::QualifiedClassName FOR diagram.domainDiagramElement».browser.create"
            name="Create new «modelID»">
     </command>
-    </extension>
-	
-	<extension point="org.eclipse.core.contenttype.contentTypes">
-		«EXPAND xpt::Common::xmlGeneratedTag»
-   		<!--
-   		<file-association content-type="de.uni_paderborn.fujaba.modelinstance.editor.model" file-extensions="«modelElementCategoryName(diagram)»"/>
-   		-->
     </extension>
 «ENDDEFINE»
 
@@ -136,7 +129,7 @@ diagrams«-»
 	<extension point="org.eclipse.ui.commands">
 		«EXPAND xpt::Common::xmlGeneratedTag»
 		<command
-			categoryId="de.uni_paderborn.fujaba"
+			categoryId="org.muml"
 			description="Initialize realtimestatechart_diagram"
 			defaultHandler="«diagram.getInitDiagramFileActionQualifiedClassName()»"
 			id="«plugin.iD».createDiagram"

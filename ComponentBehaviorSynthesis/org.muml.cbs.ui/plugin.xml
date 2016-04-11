@@ -44,7 +44,7 @@
            name="Fujaba">
      </category>
      <command
-           categoryId="de.uni_paderborn.fujaba"
+           categoryId="org.muml"
            defaultHandler="org.muml.cbs.ui.InitialSynthesisCommand"
            description="Intially synthesize the component's behavior"
            id="de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.ui.commands.InitialSynthesis"

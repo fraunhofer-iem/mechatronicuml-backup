@@ -77,7 +77,7 @@
            name="MechatronicUML">
      </category>
      <command
-           categoryId="de.uni_paderborn.fujaba"
+           categoryId="org.muml"
            defaultHandler="org.muml.core.modelinstance.ui.handlers.CreateModelFileCommand"
            description="Create new MechatronicUML Model"
            id="de.uni_paderborn.fujaba.core.ui.command.newmodel"
@@ -103,7 +103,7 @@
                  style="push">
              <visibleWhen checkEnabled="false">
 				<or>
-					<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+					<reference definitionId="org.muml.expression.mumlfile"></reference>
 				</or>
 			 </visibleWhen>
            </command>
@@ -113,7 +113,7 @@
 
   <extension point="org.eclipse.ui.commands">
      <command
-           categoryId="de.uni_paderborn.fujaba"
+           categoryId="org.muml"
            defaultHandler="org.muml.core.modelinstance.ui.batch.BatchDiagramCreationCommand"
            description="Batch Diagram Creation Wizard"
            id="de.uni_paderborn.fujaba.core.ui.command.batchdiagramcreation"

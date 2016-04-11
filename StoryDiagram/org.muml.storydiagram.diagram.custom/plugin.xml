@@ -599,7 +599,7 @@
    
    <extension point="org.eclipse.ui.commands">
 		<command
-			categoryId="de.uni_paderborn.fujaba"
+			categoryId="org.muml"
 			description="Initialize Story Diagram"
 			defaultHandler="org.muml.storydiagram.diagram.custom.dialogs.SDMFujabaDiagramFileAction"
 			id="org.storydriven.storydiagrams.diagram.createDiagram"
@@ -628,7 +628,7 @@
              label="Initialize Story Diagram"
              style="push">
 	         <visibleWhen checkEnabled="false">
-	            <reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile">
+	            <reference definitionId="org.muml.expression.mumlfile">
 	            </reference>
 	         </visibleWhen>
 	      </command>

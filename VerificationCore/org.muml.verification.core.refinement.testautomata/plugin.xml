@@ -32,7 +32,7 @@
    <extension
          point="org.eclipse.ui.commands">
       <command
-            categoryId="de.uni_paderborn.fujaba"
+            categoryId="org.muml"
             defaultHandler="org.muml.verification.core.refinement.testautomata.commands.VerifyRefinement"
             description="Verify whether behaviour of port is correct refinement of role"
             id="de.uni_paderborn.fujaba.muml.verification.refinement.testautomata.verifyRefinement"

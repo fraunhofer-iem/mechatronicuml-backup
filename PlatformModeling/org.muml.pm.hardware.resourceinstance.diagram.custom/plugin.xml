@@ -52,7 +52,7 @@
            <extension
          point="org.eclipse.ui.commands">
       <command
-            categoryId="de.uni_paderborn.fujaba"
+            categoryId="org.muml"
             defaultHandler="org.muml.pm.hardware.resourceinstance.diagram.custom.handlers.InstantiateResourceTypeHandler"
             description="InstanticateResource"
             id="org.muml.pm.hardware.resourceinstance.diagram.custom.instantiateResource"

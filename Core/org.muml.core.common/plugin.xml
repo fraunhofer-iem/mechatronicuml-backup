@@ -7,7 +7,7 @@
   <extension
         point="org.eclipse.core.expressions.definitions">
      <definition
-           id="de.uni_paderborn.fujaba.expression.fujabafile">
+           id="org.muml.expression.mumlfile">
 	    <iterate
            ifEmpty="false"
            operator="and">

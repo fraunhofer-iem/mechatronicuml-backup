@@ -34,7 +34,7 @@
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
 						<or>
-							<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+							<reference definitionId="org.muml.expression.mumlfile"></reference>
 							<reference definitionId="de.uni_paderborn.fujaba.expression.typesfile"></reference>
 						</or>
 					</visibleWhen>
@@ -48,7 +48,7 @@
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
 						<or>
-							<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+							<reference definitionId="org.muml.expression.mumlfile"></reference>
 						</or>
 					</visibleWhen>
 	      </command>
@@ -59,7 +59,7 @@
 	      		style="push" label="Export...">
 	            	<visibleWhen checkEnabled="false">
 						<or>
-					 		 <reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+					 		 <reference definitionId="org.muml.expression.mumlfile"></reference>
 							 <reference definitionId="de.uni_paderborn.fujaba.expression.categoryfile"></reference>
 						</or>
 					</visibleWhen>	      		
@@ -77,7 +77,7 @@
            name="MechatronicUML">
      </category>
      <command
-           categoryId="de.uni_paderborn.fujaba"
+           categoryId="org.muml"
            defaultHandler="org.muml.pim.common.internal.ui.commands.OpenTypeDialogCommand"
            description="Open Type Dialog"
            id="org.muml.pim.common.commands.OpenTypeDialogCommand"
@@ -90,7 +90,7 @@
   <extension
         point="org.eclipse.ui.commands">
      <command
-           categoryId="de.uni_paderborn.fujaba"
+           categoryId="org.muml"
            defaultHandler="org.muml.pim.common.internal.ui.commands.UseSharedTypesCommand"
            description="Use Shared Types"
            id="org.muml.pim.common.commands.UseSharedTypesCommand"

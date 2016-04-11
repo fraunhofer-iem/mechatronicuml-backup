@@ -90,7 +90,7 @@
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
 		            	<or>
-		            	<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+		            	<reference definitionId="org.muml.expression.mumlfile"></reference>
 						<iterate ifEmpty="false" operator="or">
 		            		<adapt type="org.eclipse.core.resources.IResource">
 		            			<test property="org.eclipse.core.resources.name" value="*.behavior"></test>
@@ -108,7 +108,7 @@
 	<?gmfgen generated="true"?>
 	<command
            defaultHandler="org.muml.pim.operationrepository.diagram.part.MumlInitDiagramFileAction$CreateDiagramElement"
-           categoryId="de.uni_paderborn.fujaba"
+           categoryId="org.muml"
            description="Create new Operation Repository"
            id="org.muml.core.modelinstance.ModelElementCategory.browser.create"
            name="Create new Operation Repository">
@@ -656,7 +656,7 @@
 <extension point="org.eclipse.ui.commands">
 		<?gmfgen generated="true"?>
 		<command
-			categoryId="de.uni_paderborn.fujaba"
+			categoryId="org.muml"
 			description="Initialize realtimestatechart_diagram"
 			defaultHandler="org.muml.pim.operationrepository.diagram.part.MumlInitDiagramFileAction"
 			id="org.muml.pim.operationrepository.diagram.createDiagram"

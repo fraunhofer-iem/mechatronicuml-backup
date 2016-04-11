@@ -4,28 +4,28 @@
    <extension
          point="org.eclipse.ui.commands">
       <command
-            categoryId="de.uni_paderborn.fujaba"
+            categoryId="org.muml"
             defaultHandler="org.muml.reconfiguration.ui.commands.MakeStructuredComponentReconfigurableCommand"
             description="Transforms this structured component into a reconfigurable structured component."
             id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.MakeStructuredComponentReconfigurableCommand"
             name="Make Reconfigurable">
       </command>
       <command
-            categoryId="de.uni_paderborn.fujaba"
+            categoryId="org.muml"
             defaultHandler="org.muml.reconfiguration.ui.commands.GenerateManagerAndExecutorImplementationCommand"
             description="Generates Real-Time Statecharts for the Manager and Executor of this ReconfigurableStructuredComponent."
             id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.GenerateManagerAndExecutorImplementationCommand"
             name="Generate Manager and Executor Implementation">
       </command>
       <command
-            categoryId="de.uni_paderborn.fujaba"
+            categoryId="org.muml"
             defaultHandler="org.muml.reconfiguration.ui.commands.GenerateRuleBasedReconfigurationController"
             description="Generates RuleBasedReconfigurationController"
             id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.GenerateRuleBasedReconfigurationControllerCommand"
             name="Generate RuleBasedReconfigurationController">
       </command>
       <command
-            categoryId="de.uni_paderborn.fujaba"
+            categoryId="org.muml"
             defaultHandler="org.muml.reconfiguration.ui.edit.handlers.ComputePossibleConfigurationsHandler"
             description="Computes possible Configurations for a ReconfigurableStructuredComponent"
             id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.ComputePossibleConfigurationsCommand"

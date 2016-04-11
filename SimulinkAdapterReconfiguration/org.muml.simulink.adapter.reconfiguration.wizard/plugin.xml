@@ -31,7 +31,7 @@
             <visibleWhen
                   checkEnabled="true">
                <reference
-                     definitionId="de.uni_paderborn.fujaba.expression.fujabafile">
+                     definitionId="org.muml.expression.mumlfile">
                </reference>
             </visibleWhen>
          </command>

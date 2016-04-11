@@ -90,7 +90,7 @@
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
 		            	<or>
-		            	<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+		            	<reference definitionId="org.muml.expression.mumlfile"></reference>
 						<iterate ifEmpty="false" operator="or">
 		            		<adapt type="org.eclipse.core.resources.IResource">
 		            			<test property="org.eclipse.core.resources.name" value="*.hwplatform"></test>
@@ -108,7 +108,7 @@
 	<?gmfgen generated="true"?>
 	<command
            defaultHandler="org.muml.pm.hardware.platforminstance.diagram.part.HardwareInitDiagramFileAction$CreateDiagramElement"
-           categoryId="de.uni_paderborn.fujaba"
+           categoryId="org.muml"
            description="Create new PlatformInstance"
            id="org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration.browser.create"
            name="Create new PlatformInstance">
@@ -126,7 +126,7 @@
 	<extension point="org.eclipse.ui.commands">
 		<?gmfgen generated="true"?>
 		<command
-			categoryId="de.uni_paderborn.fujaba"
+			categoryId="org.muml"
 			description="Initialize realtimestatechart_diagram"
 			defaultHandler="org.muml.pm.hardware.platforminstance.diagram.part.HardwareInitDiagramFileAction"
 			id="org.muml.pm.hardware.platforminstance.diagram.createDiagram"

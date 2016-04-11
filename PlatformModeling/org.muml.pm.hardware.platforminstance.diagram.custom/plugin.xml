@@ -43,7 +43,7 @@
    <extension
          point="org.eclipse.ui.commands">
       <command
-            categoryId="de.uni_paderborn.fujaba"
+            categoryId="org.muml"
             defaultHandler="org.muml.pm.hardware.platforminstance.diagram.custom.edit.handler.InitHWPlatformInstanceHandler"
             id="org.muml.pm.hardware.platforminstance.diagram.custom.InitPlatformInstance"
             name="Initialize a Hardware Platform Instance">
@@ -82,7 +82,7 @@
 <!--      <extension
          point="org.eclipse.ui.commands">
       <command
-            categoryId="de.uni_paderborn.fujaba"
+            categoryId="org.muml"
             defaultHandler="org.muml.pm.hardware.platforminstance.diagram.custom.refactor.ExtractSubdiagramHandler"
             id="testCommand"
             name="Refactor">

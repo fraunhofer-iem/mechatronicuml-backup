@@ -759,7 +759,7 @@
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
 		            	<or>
-		            	<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+		            	<reference definitionId="org.muml.expression.mumlfile"></reference>
 						<iterate ifEmpty="false" operator="or">
 		            		<adapt type="org.eclipse.core.resources.IResource">
 		            			<test property="org.eclipse.core.resources.name" value="*.componentsdd"></test>
@@ -776,7 +776,7 @@
 	<?gmfgen generated="true"?>
 	<command
            defaultHandler="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDInitDiagramFileAction$CreateDiagramElement"
-           categoryId="de.uni_paderborn.fujaba"
+           categoryId="org.muml"
            description="Create new Component Story Decision"
            id="org.muml.reconfiguration.verification.sdd.componentsdd.ComponentStoryDecisionDiagram.browser.create"
            name="Create new Component Story Decision">
@@ -848,7 +848,7 @@
 <extension point="org.eclipse.ui.commands">
 		<?gmfgen generated="true"?>
 		<command
-			categoryId="de.uni_paderborn.fujaba"
+			categoryId="org.muml"
 			description="Initialize realtimestatechart_diagram"
 			defaultHandler="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDInitDiagramFileAction"
 			id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.createDiagram"
