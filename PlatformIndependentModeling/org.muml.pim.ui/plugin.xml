@@ -70,7 +70,7 @@
          </command>
          <command
                commandId="org.muml.pim.coordinationprotocol.diagram.custom.createRoleRTSCCommand"
-               id="org.muml.pim.component.diagram.custom.copyRolePropertiesToPortde.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.createRoleRTSC"
+               id="org.muml.pim.component.diagram.custom.copyRolePropertiesToPortorg.muml.pim.coordinationprotocol.diagram.custom.createRoleRTSC"
                label="Create Role RTSC (incl. Diagram)"
                style="push">
             <visibleWhen>

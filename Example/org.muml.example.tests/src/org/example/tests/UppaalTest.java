@@ -278,7 +278,7 @@ public class UppaalTest {
 //						}
 //
 //						@Override
-//						public de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options getOptions() {
+//						public org.muml.uppaal.options.Options getOptions() {
 //							return uppaalOptions;
 //						}
 //					});

@@ -7,7 +7,7 @@
             category="org.eclipse.ui.Examples/org.muml.example"
             class="org.muml.example.ui.wizard.ExampleCreationWizard"
             icon="images/muml.png"
-            id="de.uni_paderborn.fujaba.muml.coordinationpatternlibCreationWizard"
+            id="org.muml.pim.coordinationpatternlibCreationWizard"
             name="Coordination Pattern Library"
             projectName="org.muml.example.coordinationpatternlib"
             projectPageDescription="Create project containing the Coordination Pattern Library"
