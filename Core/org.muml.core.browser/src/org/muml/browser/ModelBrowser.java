@@ -1,4 +1,4 @@
-package org.muml.core.browser;
+package org.muml.browser;
 
 import java.util.ArrayList;
 import java.util.List;

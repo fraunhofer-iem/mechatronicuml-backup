@@ -1,4 +1,4 @@
-package org.muml.core.browser.providers;
+package org.muml.browser.providers;
 
 import java.util.ArrayList;
 import java.util.List;

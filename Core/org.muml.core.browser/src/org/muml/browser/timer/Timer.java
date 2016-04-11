@@ -1,4 +1,4 @@
-package org.muml.core.browser.timer;
+package org.muml.browser.timer;
 
 import java.util.HashSet;
 import java.util.Set;

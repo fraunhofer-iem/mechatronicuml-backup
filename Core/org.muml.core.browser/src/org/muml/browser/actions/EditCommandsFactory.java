@@ -1,4 +1,4 @@
-package org.muml.core.browser.actions;
+package org.muml.browser.actions;
 
 import java.util.ArrayList;
 import java.util.Iterator;

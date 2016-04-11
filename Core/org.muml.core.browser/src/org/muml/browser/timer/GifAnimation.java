@@ -1,4 +1,4 @@
-package org.muml.core.browser.timer;
+package org.muml.browser.timer;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
