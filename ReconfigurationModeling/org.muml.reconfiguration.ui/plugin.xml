@@ -36,7 +36,7 @@
          point="org.eclipse.ui.menus">
       <menuContribution
             allPopups="false"
-            locationURI="popup:de.uni_paderborn.fujaba?after=diagrams">
+            locationURI="popup:org.muml?after=diagrams">
          <command
                commandId="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.MakeStructuredComponentReconfigurableCommand"
                icon="icons/MakeReconfigurable.gif"

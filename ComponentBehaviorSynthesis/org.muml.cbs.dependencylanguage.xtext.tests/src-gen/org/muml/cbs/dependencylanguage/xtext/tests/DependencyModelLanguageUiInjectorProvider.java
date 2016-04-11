@@ -10,7 +10,7 @@ import com.google.inject.Injector;
 public class DependencyModelLanguageUiInjectorProvider implements IInjectorProvider {
 	
 	public Injector getInjector() {
-		return org.muml.cbs.dependencylanguage.xtext.ui.internal.DependencyModelLanguageActivator.getInstance().getInjector("de.uni_paderborn.fujaba.muml.DependencyModelLanguage");
+		return org.muml.cbs.dependencylanguage.xtext.ui.internal.DependencyModelLanguageActivator.getInstance().getInjector("org.muml.cbs.dependencylanguage.xtext.DependencyModelLanguage");
 	}
 	
 }

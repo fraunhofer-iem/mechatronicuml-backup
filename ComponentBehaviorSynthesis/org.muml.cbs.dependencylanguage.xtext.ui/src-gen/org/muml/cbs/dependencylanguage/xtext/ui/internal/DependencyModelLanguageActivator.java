@@ -23,7 +23,7 @@ import com.google.inject.Module;
  */
 public class DependencyModelLanguageActivator extends AbstractUIPlugin {
 	
-	public static final String DE_UNI_PADERBORN_FUJABA_MUML_DEPENDENCYMODELLANGUAGE = "de.uni_paderborn.fujaba.muml.DependencyModelLanguage";
+	public static final String DE_UNI_PADERBORN_FUJABA_MUML_DEPENDENCYMODELLANGUAGE = "org.muml.cbs.dependencylanguage.xtext.DependencyModelLanguage";
 	
 	private static final Logger logger = Logger.getLogger(DependencyModelLanguageActivator.class);
 	

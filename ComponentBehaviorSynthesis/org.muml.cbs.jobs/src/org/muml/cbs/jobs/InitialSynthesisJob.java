@@ -43,7 +43,7 @@ public class InitialSynthesisJob extends Job {
 
 		this.comp = comp;
 
-		this.transformation = "/de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis/transforms/SoftwareComponentBehaviorSynthesis.qvto";
+		this.transformation = "/org.muml.cbs/transforms/SoftwareComponentBehaviorSynthesis.qvto";
 		
 		initializeTransformationExecutor();
 

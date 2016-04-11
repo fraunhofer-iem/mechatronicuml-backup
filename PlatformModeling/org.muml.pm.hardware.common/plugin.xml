@@ -5,7 +5,7 @@
          point="org.eclipse.ui.menus">
       <menuContribution
             allPopups="false"
-            locationURI="popup:de.uni_paderborn.fujaba?before=additions">
+            locationURI="popup:org.muml?before=additions">
          <separator
                name="psmdiagrams"
                visible="true">

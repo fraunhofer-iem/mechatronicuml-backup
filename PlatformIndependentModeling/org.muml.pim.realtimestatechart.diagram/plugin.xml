@@ -751,7 +751,7 @@
       <?gmfgen generated="true"?>   
 	  <menuContribution
 	         allPopups="false"
-	         locationURI="popup:de.uni_paderborn.fujaba?after=behavioral-diagrams">
+	         locationURI="popup:org.muml?after=behavioral-diagrams">
 	      <command
 	            commandId="org.muml.pim.realtimestatechart.diagram.createDiagram"
 	            icon="icons/obj16/RealtimestatechartDiagramFile.gif"

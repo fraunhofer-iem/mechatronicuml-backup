@@ -14,7 +14,7 @@
          point="org.eclipse.ui.menus">
       <menuContribution
             allPopups="false"
-            locationURI="popup:de.uni_paderborn.fujaba?before=beforeMumlUtilities">
+            locationURI="popup:org.muml?before=beforeMumlUtilities">
          <separator
                name="beforeMUMLCodegen"
                visible="true">

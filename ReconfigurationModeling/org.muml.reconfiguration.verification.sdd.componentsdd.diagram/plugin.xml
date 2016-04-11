@@ -750,7 +750,7 @@
       <?gmfgen generated="true"?>   
 	  <menuContribution
 	         allPopups="false"
-	         locationURI="popup:de.uni_paderborn.fujaba?after=diagrams">
+	         locationURI="popup:org.muml?after=diagrams">
 	      <command
 	            commandId="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.createDiagram"
 	            icon="icons/obj16/ComponentsddDiagramFile.gif"

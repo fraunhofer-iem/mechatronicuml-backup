@@ -93,7 +93,7 @@ Contributors:
       <?gmfgen generated="true"?>   
 	  <menuContribution
 	         allPopups="false"
-	         locationURI="popup:de.uni_paderborn.fujaba?after=structural-diagrams">
+	         locationURI="popup:org.muml?after=structural-diagrams">
 	      <command
 	            commandId="org.muml.pim.component.diagram.createDiagram"
 	            icon="icons/obj16/ModelinstanceDiagramFile.gif"

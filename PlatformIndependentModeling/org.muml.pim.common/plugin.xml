@@ -25,7 +25,7 @@
 	<extension point="org.eclipse.ui.menus">
 	   <menuContribution
 	         allPopups="false"
-	         locationURI="popup:de.uni_paderborn.fujaba?after=types">
+	         locationURI="popup:org.muml?after=types">
 	      <command
 	            commandId="org.muml.pim.common.commands.OpenTypeDialogCommand"
 	            icon="icons/TypeDialog.gif"

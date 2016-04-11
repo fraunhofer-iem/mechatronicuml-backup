@@ -56,7 +56,7 @@ public class DependencyModelLanguageXtextPropertyEditor extends
 		super(adapterFactory, feature);
 	}
 
-	private static final String languageName = "de.uni_paderborn.fujaba.muml.DependencyModelLanguage";
+	private static final String languageName = "org.muml.cbs.dependencylanguage.xtext.DependencyModelLanguage";
 
 	private EmbeddedXtextEditor embeddedXtextEditor;
 	private SaveModelListener saveModelListener;

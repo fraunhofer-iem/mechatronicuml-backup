@@ -19,7 +19,7 @@
          point="org.eclipse.ui.menus">
       <menuContribution
             allPopups="false"
-            locationURI="popup:de.uni_paderborn.fujaba?endof=utilities">
+            locationURI="popup:org.muml?endof=utilities">
          <command
                commandId="org.eclipse.ui.file.export"
                label="Reconfiguration Transform to MATLAB/Simulink"

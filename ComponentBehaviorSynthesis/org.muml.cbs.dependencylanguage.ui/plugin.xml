@@ -52,7 +52,7 @@
            categoryId="org.muml"
            defaultHandler="org.muml.cbs.dependencylanguage.ui.commands.CreateSynthesizableBehaviorCommand"
            description="Create Synthesizable Behavior"
-           id="de.uni_paderborn.fujaba.muml.dependencylanguage.commands.CreateSynthesizableBehavior"
+           id="org.muml.cbs.dependencylanguage.commands.CreateSynthesizableBehavior"
            name="Create Synthesizable Behavior">
      </command>
   </extension>

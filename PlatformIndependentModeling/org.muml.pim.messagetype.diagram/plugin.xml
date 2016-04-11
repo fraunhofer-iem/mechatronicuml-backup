@@ -81,7 +81,7 @@
       <?gmfgen generated="true"?>   
 	  <menuContribution
 	         allPopups="false"
-	         locationURI="popup:de.uni_paderborn.fujaba?after=types">
+	         locationURI="popup:org.muml?after=types">
 	      <command
 	            commandId="org.muml.pim.messagetype.diagram.createDiagram"
 	            icon="icons/obj16/MessageinterfaceDiagramFile.gif"

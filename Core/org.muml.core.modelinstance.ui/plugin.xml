@@ -90,7 +90,7 @@
       point="org.eclipse.ui.menus">
    <menuContribution
          allPopups="false"
-         locationURI="popup:de.uni_paderborn.fujaba?after=utilities">
+         locationURI="popup:org.muml?after=utilities">
       <separator
             name="beforeMumlUtilities"
             visible="true">
