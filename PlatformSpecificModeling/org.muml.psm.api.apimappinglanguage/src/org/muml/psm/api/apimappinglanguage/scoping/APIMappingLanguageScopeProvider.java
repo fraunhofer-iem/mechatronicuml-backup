@@ -18,9 +18,9 @@ import org.muml.pim.behavior.Parameter;
 import org.muml.pim.instance.ContinuousPortInstance;
 import org.muml.pim.instance.InstancePackage;
 import org.muml.pim.types.DataType;
-import org.muml.pm.software.platform.APICommand;
-import org.muml.pm.software.platform.EnumerationValue;
-import org.muml.pm.software.platform.SwplatformPackage;
+import org.muml.pm.software.APICommand;
+import org.muml.pm.software.EnumerationValue;
+import org.muml.pm.software.SoftwarePackage;
 import org.muml.psm.apiexpressions.APICallExpression;
 
 /**
@@ -155,7 +155,7 @@ public class APIMappingLanguageScopeProvider extends
 				.getAllContents();
 		while (allContents.hasNext()) {
 			final EObject eObject = allContents.next();
-			if (eObject.eClass() == SwplatformPackage.Literals.API_COMMAND) {
+			if (eObject.eClass() == SoftwarePackage.Literals.API_COMMAND) {
 				apiCommandList.add((APICommand) eObject);
 			}
 		}
