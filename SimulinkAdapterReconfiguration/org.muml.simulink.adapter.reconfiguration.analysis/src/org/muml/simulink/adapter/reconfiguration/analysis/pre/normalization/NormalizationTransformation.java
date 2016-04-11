@@ -48,7 +48,7 @@ public class NormalizationTransformation
 		port.setCardinality(rePort.getCardinality());
 		port.setName(rePort.getName());
 		port.setBehavior(rePort.getBehavior());
-		port.setAdaptationBehavior(rePort.getAdaptationBehavior());
+		port.setCoordinatorBehavior(rePort.getCoordinatorBehavior());
 		port.getReceiverMessageBuffer().addAll(rePort.getReceiverMessageBuffer());
 		port.getReceiverMessageTypes().addAll(rePort.getReceiverMessageTypes());
 		port.getSenderMessageTypes().addAll(rePort.getSenderMessageTypes());
