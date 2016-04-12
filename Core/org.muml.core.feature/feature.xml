@@ -17,42 +17,6 @@
       %license
    </license>
 
-   <requires>
-      <import plugin="org.eclipse.core.runtime" version="3.6.0" match="compatible"/>
-      <import plugin="org.eclipse.emf.ecore"/>
-      <import plugin="org.eclipse.uml2.common"/>
-      <import plugin="org.eclipse.emf.ecore.xmi" version="2.5.0" match="compatible"/>
-      <import plugin="org.eclipse.ocl" version="3.0.0" match="compatible"/>
-      <import plugin="org.eclipse.ocl.ecore" version="3.0.0" match="compatible"/>
-      <import plugin="org.eclipse.uml2.common.edit"/>
-      <import plugin="org.eclipse.emf.edit"/>
-      <import plugin="org.muml.ape.runtime"/>
-      <import plugin="org.eclipse.ui"/>
-      <import plugin="org.eclipse.jface.text" version="3.7.2" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ui" version="3.7.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.transaction" version="1.4.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.core" version="1.0.1" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.gmf.runtime.emf.commands.core" version="1.4.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.gmf.runtime.emf.ui.properties" version="1.4.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ui.views.properties.tabbed" version="3.5.100" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.m2m.qvt.oml" version="3.2.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.xtext"/>
-      <import plugin="org.eclipse.ui.ide"/>
-      <import plugin="org.muml.core.edit" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.core.modelinstance" version="0.3.1" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.edit.ui" version="2.7.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.core.resources" version="3.7.101" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ui.views.properties.tabbed" version="3.5.300" match="greaterOrEqual"/>
-      <import plugin="org.muml.core.edit.properties" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.core.modelinstance.edit.properties" version="0.1.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui"/>
-      <import plugin="org.eclipse.emf.edit.ui" version="2.6.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ui.workbench"/>
-      <import plugin="org.muml.core.common" version="0.4.0" match="greaterOrEqual"/>
-      <import feature="org.muml.emm.feature" version="0.1.0"/>
-      <import plugin="org.muml.emm"/>
-   </requires>
-
    <plugin
          id="org.muml.core"
          download-size="0"
