@@ -16,20 +16,6 @@
       [Enter License Description here.]
    </license>
 
-   <requires>
-      <import plugin="org.muml.graphviz.dot.xtext"/>
-      <import plugin="org.muml.graphviz.dot.xtext.ui"/>
-      <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.eclipse.xtext.junit4"/>
-      <import plugin="org.muml.graphviz" version="0.1.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.core" version="1.0.1" match="greaterOrEqual"/>
-      <import plugin="org.apache.log4j"/>
-      <import plugin="org.junit"/>
-      <import plugin="org.hamcrest.core"/>
-      <import plugin="org.muml.graphviz.plain.xtext"/>
-      <import plugin="org.muml.graphviz.plain.xtext.ui"/>
-   </requires>
-
    <plugin
          id="org.muml.modelica.transform"
          download-size="0"

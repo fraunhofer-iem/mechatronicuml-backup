@@ -25,21 +25,6 @@
          id="org.muml.pm.hardware.feature"
          version="0.0.0"/>
 
-   <requires>
-      <import feature="org.muml.pim.feature" version="0.5.0.qualifier"/>
-      <import plugin="org.eclipse.jface" version="3.9.1" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.jdt" version="3.9.1" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.jdt.core" version="3.9.2" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf" version="2.6.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.xtext" version="2.4.3" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.core.resources"/>
-      <import plugin="org.eclipse.equinox.registry"/>
-      <import plugin="org.eclipse.xtext.ui"/>
-      <import plugin="org.eclipse.ui.ide" version="3.9.2" match="greaterOrEqual"/>
-      <import plugin="org.muml.core.modelinstance" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.core" version="1.0.1" match="greaterOrEqual"/>
-   </requires>
-
    <plugin
          id="org.muml.pm.common"
          download-size="0"
