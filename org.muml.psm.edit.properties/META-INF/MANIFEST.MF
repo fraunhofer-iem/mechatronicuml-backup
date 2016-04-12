@@ -20,7 +20,8 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.muml.core.modelinstance.edit.properties,
  org.muml.pm.hardware.edit,
  org.muml.pm.hardware.edit.properties,
- org.muml.pim.actionlanguage.xtext.ui
+ org.muml.pim.actionlanguage.xtext.ui,
+ org.muml.pim.common
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.psm.properties.metamodel, org.muml.psm.properties.constraint,

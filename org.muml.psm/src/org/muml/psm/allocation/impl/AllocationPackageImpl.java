@@ -5,7 +5,6 @@ package org.muml.psm.allocation.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.core.CorePackage;
 import org.muml.pim.actionlanguage.ActionlanguagePackage;
@@ -22,7 +21,6 @@ import org.muml.psm.allocation.AllocationFactory;
 import org.muml.psm.allocation.AllocationPackage;
 import org.muml.psm.allocation.AssemblyConnectorInstanceAllocation;
 import org.muml.psm.allocation.SystemAllocation;
-import org.muml.psm.allocation.util.AllocationValidator;
 import org.muml.psm.apiexpressions.ApiexpressionsPackage;
 import org.muml.psm.apiexpressions.impl.ApiexpressionsPackageImpl;
 import org.muml.psm.codegen.CodegenPackage;
@@ -158,15 +156,6 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		thePortapimappingPackage.initializePackageContents();
 		theApiexpressionsPackage.initializePackageContents();
 		theCodegenPackage.initializePackageContents();
-
-		// Register package validator
-		EValidator.Registry.INSTANCE.put
-			(theAllocationPackage, 
-			 new EValidator.Descriptor() {
-				 public EValidator getEValidator() {
-					 return AllocationValidator.INSTANCE;
-				 }
-			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theAllocationPackage.freeze();
@@ -398,7 +387,7 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		  (systemAllocationEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "AllComponentInstancesAllocated"
+			 "constraints", ""
 		   });
 	}
 
