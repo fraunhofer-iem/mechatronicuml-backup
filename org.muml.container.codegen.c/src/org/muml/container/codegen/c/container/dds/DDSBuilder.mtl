@@ -21,7 +21,6 @@
 				'http://www.opendds.org/modeling/schemas/Topics/1.0')/]
 
 [import org::muml::codegen::componenttype::c::queries::ContainerQueries/]
-[import org::muml::codegen::componenttype::c::queries::middlewareQueries/]
 
 
 [import org::muml::container::codegen::c::queries::containerStringQueries/]

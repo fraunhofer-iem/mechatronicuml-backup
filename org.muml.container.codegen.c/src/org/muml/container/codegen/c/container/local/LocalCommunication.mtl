@@ -17,7 +17,6 @@
 				'http://www.muml.org/psm/muml_container/0.5.0')/]
 
 [import org::muml::codegen::componenttype::c::queries::ContainerQueries/]
-[import org::muml::codegen::componenttype::c::queries::middlewareQueries/]
 
 [import org::muml::container::codegen::c::queries::containerStringQueries/]
 [import org::muml::codegen::componenttype::c::queries::stringQueries/]
