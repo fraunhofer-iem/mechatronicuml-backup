@@ -29,7 +29,7 @@
         <details key="documentation" value="This class represents an allocation of a Component Instance Configuration to a Hardware Platform Instance Configuration."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="AllComponentInstancesAllocated"/>
+        <details key="constraints" value=""/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="AllComponentInstancesAllocated" value="-- All component instances must be allocated&#xA;let componentInstances : Bag(instance::ComponentInstance)&#xA;=&#xA;self.cic->union(&#xA;&#x9;-- XXX: is the union really needed (pivot ocl)?&#xA;&#x9;self.cic->closure(&#xA;&#x9;&#x9;componentInstances->select(&#xA;&#x9;&#x9;&#x9;oclIsKindOf(instance::StructuredComponentInstance)&#xA;&#x9;&#x9;)->collect(&#xA;&#x9;&#x9;&#x9;oclAsType(instance::StructuredComponentInstance).embeddedCIC&#xA;&#x9;&#x9;)&#xA;&#x9;)->asSet()&#xA;)->collect(&#xA;&#x9;componentInstances&#xA;)->asBag()&#xA;in&#xA;componentInstances = self.allocations->collect(componentInstance)->asBag()"/>
