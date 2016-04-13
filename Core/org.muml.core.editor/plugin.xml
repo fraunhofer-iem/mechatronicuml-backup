@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   
+   
+   
+   <extension point="org.eclipse.core.contenttype.contentTypes">
+		<content-type file-extensions="fujaba,muml" id="model" name="MechatronicUML Model Files"></content-type>
+		<file-association content-type="org.muml.core.modelinstance.editor.model" file-extensions="fujaba,muml"/>
+   </extension>
+  
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.muml.core.modelinstance.presentation.ModelinstanceEditorID"
+            name="%_UI_ModelinstanceEditor_label"
+            icon="icons/full/obj16/muml.png"
+            class="org.muml.core.modelinstance.presentation.ModelinstanceEditor"
+            contributorClass="org.muml.core.modelinstance.presentation.ModelinstanceActionBarContributor">
+         <contentTypeBinding contentTypeId="org.muml.core.editor.model"/>
+      </editor>
+   </extension>
+
+</plugin>

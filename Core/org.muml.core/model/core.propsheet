@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.muml:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml="http://www.muml.org/ape/1.0.0" xmi:id="_i_I4kOHNEeS5Putgio2lkg" defaultTab="_i_NxEOHNEeS5Putgio2lkg" contributorId="org.muml.ape.contributor">
+  <reconciler xmi:id="_i_Mi8OHNEeS5Putgio2lkg"/>
+  <genModel href="core.genmodel#/"/>
+  <plugin xmi:id="_i_NKAOHNEeS5Putgio2lkg" id="org.muml.core.edit.properties" name="Core Properties" vendor="SDM" version="1.0.0.qualifier">
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>org.muml.ape.runtime</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>org.muml.core</requiredBundles>
+    <requiredBundles>org.muml.core.edit</requiredBundles>
+  </plugin>
+  <tabs xmi:id="_i_NxEOHNEeS5Putgio2lkg" id="property.tab.general" name="General" afterTab=""/>
+  <tabs xmi:id="_i_OYIOHNEeS5Putgio2lkg" id="property.tab.documentation" name="Documentation" afterTab="property.tab.extensions"/>
+  <tabs xmi:id="_i_OYIeHNEeS5Putgio2lkg" id="property.tab.extensions" name="Extensions" afterTab="property.tab.general"/>
+  <packages xmi:id="_i_O_MOHNEeS5Putgio2lkg">
+    <genPackage href="core.genmodel#//core"/>
+    <classes xmi:id="_i_O_MeHNEeS5Putgio2lkg" superClasses="_i_PmQuHNEeS5Putgio2lkg">
+      <genClass href="core.genmodel#//core/CommentableElement"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_i_PmQOHNEeS5Putgio2lkg" tab="_i_OYIOHNEeS5Putgio2lkg" reconcile="false">
+        <genFeature href="core.genmodel#//core/CommentableElement/comment"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" xmi:id="_i_PmQeHNEeS5Putgio2lkg" multiLine="true"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_i_PmQuHNEeS5Putgio2lkg">
+      <genClass href="core.genmodel#//core/ExtendableElement"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_i_PmQ-HNEeS5Putgio2lkg" tab="_i_OYIeHNEeS5Putgio2lkg" tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="core.genmodel#//core/ExtendableElement/extensions"/>
+        <editor xsi:type="org.muml:FlattenedListPropertyEditor" xmi:id="_i_QNUOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_i_QNUeHNEeS5Putgio2lkg" superClasses="_i_PmQuHNEeS5Putgio2lkg">
+      <genClass href="core.genmodel#//core/Extension"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_i_QNUuHNEeS5Putgio2lkg" tab="_i_NxEOHNEeS5Putgio2lkg" tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="core.genmodel#//core/Extension/extendableBase"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_i_QNU-HNEeS5Putgio2lkg" superClasses="_i_PmQuHNEeS5Putgio2lkg">
+      <genClass href="core.genmodel#//core/NamedElement"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_i_QNVOHNEeS5Putgio2lkg" tab="_i_NxEOHNEeS5Putgio2lkg" tooltip="" initializeOCLExpression="let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)">
+        <genFeature href="core.genmodel#//core/NamedElement/name"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" xmi:id="_i_QNVeHNEeS5Putgio2lkg"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_i_QNVuHNEeS5Putgio2lkg" superClasses="_i_PmQuHNEeS5Putgio2lkg">
+      <genClass href="core.genmodel#//core/TypedElement"/>
+    </classes>
+    <classes superClasses="_i_QNU-HNEeS5Putgio2lkg _i_O_MeHNEeS5Putgio2lkg">
+      <genClass href="core.genmodel#//core/Repository"/>
+    </classes>
+  </packages>
+  <packages xmi:id="_i_QNV-HNEeS5Putgio2lkg">
+    <genPackage href="core.genmodel#//core/expressions"/>
+    <classes xmi:id="_i_QNWOHNEeS5Putgio2lkg" superClasses="_i_O_MeHNEeS5Putgio2lkg">
+      <genClass href="core.genmodel#//core/expressions/Expression"/>
+    </classes>
+    <classes xmi:id="_i_QNWeHNEeS5Putgio2lkg" superClasses="_i_QNWOHNEeS5Putgio2lkg">
+      <genClass href="core.genmodel#//core/expressions/TextualExpression"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_i_QNWuHNEeS5Putgio2lkg" tab="_i_NxEOHNEeS5Putgio2lkg">
+        <genFeature href="core.genmodel#//core/expressions/TextualExpression/expressionText"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" xmi:id="_i_QNW-HNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_i_Q0YOHNEeS5Putgio2lkg" tab="_i_NxEOHNEeS5Putgio2lkg">
+        <genFeature href="core.genmodel#//core/expressions/TextualExpression/language"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" xmi:id="_i_Q0YeHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_i_Q0YuHNEeS5Putgio2lkg" tab="_i_NxEOHNEeS5Putgio2lkg">
+        <genFeature href="core.genmodel#//core/expressions/TextualExpression/languageVersion"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" xmi:id="_i_Q0Y-HNEeS5Putgio2lkg"/>
+      </orderedElements>
+    </classes>
+  </packages>
+  <packages xmi:id="_i_Q0ZOHNEeS5Putgio2lkg">
+    <genPackage href="core.genmodel#//core/expressions/common"/>
+    <classes xmi:id="_i_Q0ZeHNEeS5Putgio2lkg" superClasses="_i_QNWOHNEeS5Putgio2lkg">
+      <genClass href="core.genmodel#//core/expressions/common/UnaryExpression"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_i_Q0ZuHNEeS5Putgio2lkg" tab="_i_NxEOHNEeS5Putgio2lkg">
+        <genFeature href="core.genmodel#//core/expressions/common/UnaryExpression/operator"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_i_Q0Z-HNEeS5Putgio2lkg"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_i_Q0aOHNEeS5Putgio2lkg" superClasses="_i_QNWOHNEeS5Putgio2lkg">
+      <genClass href="core.genmodel#//core/expressions/common/BinaryExpression"/>
+    </classes>
+    <classes xmi:id="_i_Q0aeHNEeS5Putgio2lkg" superClasses="_i_Q0aOHNEeS5Putgio2lkg">
+      <genClass href="core.genmodel#//core/expressions/common/ComparisonExpression"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_i_Q0auHNEeS5Putgio2lkg" tab="_i_NxEOHNEeS5Putgio2lkg">
+        <genFeature href="core.genmodel#//core/expressions/common/ComparisonExpression/operator"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_i_Q0a-HNEeS5Putgio2lkg"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_i_Q0bOHNEeS5Putgio2lkg" superClasses="_i_Q0aOHNEeS5Putgio2lkg">
+      <genClass href="core.genmodel#//core/expressions/common/ArithmeticExpression"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_i_Q0beHNEeS5Putgio2lkg" tab="_i_NxEOHNEeS5Putgio2lkg">
+        <genFeature href="core.genmodel#//core/expressions/common/ArithmeticExpression/operator"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_i_Q0buHNEeS5Putgio2lkg"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_i_RbcOHNEeS5Putgio2lkg" superClasses="_i_Q0aOHNEeS5Putgio2lkg">
+      <genClass href="core.genmodel#//core/expressions/common/LogicalExpression"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_i_RbceHNEeS5Putgio2lkg" tab="_i_NxEOHNEeS5Putgio2lkg">
+        <genFeature href="core.genmodel#//core/expressions/common/LogicalExpression/operator"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_i_RbcuHNEeS5Putgio2lkg"/>
+      </orderedElements>
+    </classes>
+    <classes xmi:id="_i_Rbc-HNEeS5Putgio2lkg" superClasses="_i_QNWOHNEeS5Putgio2lkg">
+      <genClass href="core.genmodel#//core/expressions/common/LiteralExpression"/>
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_i_RbdOHNEeS5Putgio2lkg" tab="_i_NxEOHNEeS5Putgio2lkg">
+        <genFeature href="core.genmodel#//core/expressions/common/LiteralExpression/value"/>
+        <editor xsi:type="org.muml:TextPropertyEditor" xmi:id="_i_RbdeHNEeS5Putgio2lkg"/>
+      </orderedElements>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="core.genmodel#//core/modelinstance"/>
+    <classes>
+      <genClass href="core.genmodel#//core/modelinstance/RootNode"/>
+    </classes>
+    <classes>
+      <genClass href="core.genmodel#//core/modelinstance/ModelElementCategory"/>
+      <orderedElements xsi:type="org.muml:Property" tab="_i_NxEOHNEeS5Putgio2lkg">
+        <genFeature href="core.genmodel#//core/modelinstance/ModelElementCategory/key"/>
+        <editor xsi:type="org.muml:TextPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" tab="_i_NxEOHNEeS5Putgio2lkg">
+        <genFeature href="core.genmodel#//core/modelinstance/ModelElementCategory/name"/>
+        <editor xsi:type="org.muml:TextPropertyEditor"/>
+      </orderedElements>
+    </classes>
+  </packages>
+</org.muml:PropertyGenerator>
