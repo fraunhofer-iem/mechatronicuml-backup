@@ -735,27 +735,6 @@
     </command>
     </extension>
 
-<extension
-         point="org.muml.core.modelelementcategory">
-      <?gmfgen generated="true"?>  
-      <category
-            key="org.muml.pim.pattern.category"
-            name="pattern">
-         
-         
-         <child
-               class="CoordinationPattern"
-               packageNsUri="http://www.muml.org/pim/pattern/1.0.0">
-         </child>
-         
-         <child
-               class="CoordinationPatternVariant"
-               packageNsUri="http://www.muml.org/pim/pattern/1.0.0">
-         </child>
-         
-         
-      </category>
-   </extension>
 
 <extension
          point="org.muml.core.modelinstance.ui.diagraminformation">
@@ -811,12 +790,6 @@
          <Priority name="Lowest"/>
       </ParserProvider>
    </extension>
-<extension point="org.eclipse.core.contenttype.contentTypes">
-		<?gmfgen generated="true"?>
-   		<!--
-   		<file-association content-type="org.muml.core.modelinstance.editor.model" file-extensions="pattern"/>
-   		-->
-    </extension>
 
 <extension point="org.eclipse.ui.commands">
 		<?gmfgen generated="true"?>
@@ -835,6 +808,28 @@
          class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
       </parser>
    </extension>
+<extension
+         point="org.muml.core.modelelementcategory">
+      <?gmfgen generated="true"?>  
+      <category
+            key="org.muml.pim.pattern.category"
+            name="pattern">
+         
+         
+         <child
+               class="CoordinationPattern"
+               packageNsUri="http://www.muml.org/pim/pattern/1.0.0">
+         </child>
+         
+         <child
+               class="CoordinationPatternVariant"
+               packageNsUri="http://www.muml.org/pim/pattern/1.0.0">
+         </child>
+         
+         
+      </category>
+   </extension>
+
 
 
 

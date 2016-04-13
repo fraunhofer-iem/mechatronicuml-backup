@@ -64,7 +64,8 @@ public class MessageInterfaceDiagramEditPart extends DiagramEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new MessageInterfaceDiagramItemSemanticEditPolicy());
 
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new MessageInterfaceDiagramCanonicalEditPolicy(true));
+		// Not installing the EditPolicy with the key EditPolicyRoles.CANONICAL_ROLE guarantees that the "Delete from Diagram" Action is visible. 
+		installEditPolicy("CustomCanonical", new MessageInterfaceDiagramCanonicalEditPolicy(false));
 
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicyWithCustomReparent(MumlVisualIDRegistry.TYPED_INSTANCE));

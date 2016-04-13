@@ -30,7 +30,7 @@
         xsi:type="gmfgen:FigureViewmap"
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <domainDiagramElement
-        href="../../org.muml.core.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
+        href="../../org.muml.core/model/core.genmodel#//core/modelinstance/ModelElementCategory"/>
     <childNodes
         visualID="3001"
         editPartClassName="OperationEditPart"
@@ -196,9 +196,9 @@
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/behavior/OperationRepository"/>
         <containmentMetaFeature
-            href="../../org.muml.core.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+            href="../../org.muml.core/model/core.genmodel#//core/modelinstance/ModelElementCategory/modelElements"/>
         <childMetaFeature
-            href="../../org.muml.core.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+            href="../../org.muml.core/model/core.genmodel#//core/modelinstance/ModelElementCategory/modelElements"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers

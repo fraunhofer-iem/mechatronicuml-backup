@@ -1,7 +1,7 @@
 dynamic_figure_templates=platform\:/resource/org.muml.pim.common/graphdef-templates
 eclipse.preferences.version=1
 generate_rcp=false
-ignore_gmfgen_validation=false
+ignore_gmfgen_validation=true
 ignore_mapmodel_validation=false
 post-reconcile-qvto=platform\:/resource/org.muml.pim.coordinationprotocol.diagram/model/coordinationprotocol.qvto
 pre-reconcile-qvto=platform\:/resource/org.muml.core.common/transformations/pre-reconcile.qvto

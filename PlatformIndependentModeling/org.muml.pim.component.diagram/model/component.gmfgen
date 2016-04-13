@@ -192,8 +192,6 @@
             <feature
                 href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
-          <elementClass
-              href="../../org.muml.pim/model/pim.genmodel#//pim/component/ContinuousPort"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -256,8 +254,6 @@
             <feature
                 href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
-          <elementClass
-              href="../../org.muml.pim/model/pim.genmodel#//pim/component/HybridPort"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -524,8 +520,6 @@
             <feature
                 href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
-          <elementClass
-              href="../../org.muml.pim/model/pim.genmodel#//pim/component/StaticAtomicComponent"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -592,8 +586,6 @@
             <feature
                 href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
-          <elementClass
-              href="../../org.muml.pim/model/pim.genmodel#//pim/component/StaticStructuredComponent"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -850,6 +842,7 @@
     <requiredPlugins>org.muml.core.common.editingdomain</requiredPlugins>
     <requiredPlugins>org.muml.ape.runtime</requiredPlugins>
     <requiredPlugins>org.muml.pim.common</requiredPlugins>
+    <requiredPlugins>org.muml.core</requiredPlugins>
   </plugin>
   <editor
       className="ComponentDiagramEditor"/>

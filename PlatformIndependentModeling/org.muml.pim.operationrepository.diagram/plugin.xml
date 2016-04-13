@@ -116,23 +116,7 @@
     </extension>
 
 	
-	<extension
-         point="org.muml.core.modelelementcategory">
-      <?gmfgen generated="true"?>  
-      <category
-            key="org.muml.pim.behavior.category"
-            name="behavior">
-         
-         
-         <child
-               class="OperationRepository"
-               packageNsUri="http://www.muml.org/pim/behavior/1.0.0">
-         </child>
-         
-         
-      </category>
-   </extension>
-
+	
 	
 	<extension
          point="org.muml.core.modelinstance.ui.diagraminformation">
@@ -646,12 +630,6 @@
          <Priority name="Lowest"/>
       </ParserProvider>
    </extension>
-<extension point="org.eclipse.core.contenttype.contentTypes">
-		<?gmfgen generated="true"?>
-   		<!--
-   		<file-association content-type="org.muml.core.modelinstance.editor.model" file-extensions="behavior"/>
-   		-->
-    </extension>
 
 <extension point="org.eclipse.ui.commands">
 		<?gmfgen generated="true"?>
@@ -670,6 +648,23 @@
          class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
       </parser>
    </extension>
+<extension
+         point="org.muml.core.modelelementcategory">
+      <?gmfgen generated="true"?>  
+      <category
+            key="org.muml.pim.behavior.category"
+            name="behavior">
+         
+         
+         <child
+               class="OperationRepository"
+               packageNsUri="http://www.muml.org/pim/behavior/1.0.0">
+         </child>
+         
+         
+      </category>
+   </extension>
+
 
 
 

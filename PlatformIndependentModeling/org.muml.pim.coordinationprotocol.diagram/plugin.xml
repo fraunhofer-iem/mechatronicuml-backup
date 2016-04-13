@@ -630,22 +630,6 @@
     </command>
     </extension>
 
-<extension
-         point="org.muml.core.modelelementcategory">
-      <?gmfgen generated="true"?>  
-      <category
-            key="org.muml.pim.protocol.category"
-            name="protocol">
-         
-         
-         <child
-               class="CoordinationProtocol"
-               packageNsUri="http://www.muml.org/pim/protocol/1.0.0">
-         </child>
-         
-         
-      </category>
-   </extension>
 
 <extension
          point="org.muml.core.modelinstance.ui.diagraminformation">
@@ -669,12 +653,6 @@
          
       </editor>
    </extension>
-<extension point="org.eclipse.core.contenttype.contentTypes">
-		<?gmfgen generated="true"?>
-   		<!--
-   		<file-association content-type="org.muml.core.modelinstance.editor.model" file-extensions="protocol"/>
-   		-->
-    </extension>
 
 <extension point="org.eclipse.ui.commands">
 		<?gmfgen generated="true"?>
@@ -693,6 +671,23 @@
          class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
       </parser>
    </extension>
+<extension
+         point="org.muml.core.modelelementcategory">
+      <?gmfgen generated="true"?>  
+      <category
+            key="org.muml.pim.protocol.category"
+            name="protocol">
+         
+         
+         <child
+               class="CoordinationProtocol"
+               packageNsUri="http://www.muml.org/pim/protocol/1.0.0">
+         </child>
+         
+         
+      </category>
+   </extension>
+
 
 
 

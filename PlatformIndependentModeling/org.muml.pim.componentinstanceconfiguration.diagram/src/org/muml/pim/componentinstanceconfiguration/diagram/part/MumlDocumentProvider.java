@@ -589,7 +589,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements ID
 								NLS.bind(Messages.MumlDocumentProvider_IncorrectInputError,
 										new Object[] { element, "org.eclipse.ui.IFileEditorInput", //$NON-NLS-1$
 												"org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ 
-						null));
+								null));
 			}
 			if (false == document instanceof IDiagramDocument) {
 				fireElementStateChangeFailed(element);

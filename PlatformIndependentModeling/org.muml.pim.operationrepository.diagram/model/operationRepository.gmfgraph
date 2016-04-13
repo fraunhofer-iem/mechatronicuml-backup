@@ -1,61 +1,174 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="operationrepositoryeditor">
-  <figures name="OperationRepositoryFigureGallery">
-    <descriptors name="OperationFigure">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="OperationFigure" outline="false" fill="false">
-        <layout xsi:type="gmfgraph:FlowLayout" matchMinorSize="true" forceSingleLine="true" majorAlignment="FILL" majorSpacing="0" minorSpacing="0"/>
-        <children xsi:type="gmfgraph:Label" name="ReturnTypeLabelFigure"/>
-        <children xsi:type="gmfgraph:Label" name="OperationNameLabelFigure"/>
-        <children xsi:type="gmfgraph:Label" name="OpeningParenthesesLabelFigure" text="("/>
-        <children xsi:type="gmfgraph:Rectangle" name="ParametersCompartmentFigure" outline="false" fill="false"/>
-        <children xsi:type="gmfgraph:Label" name="ClosingParenthesesLabelFigure" text=")"/>
+<gmfgraph:Canvas
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition"
+    name="operationrepositoryeditor">
+  <figures
+      name="OperationRepositoryFigureGallery">
+    <descriptors
+        name="OperationFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="OperationFigure"
+          outline="false"
+          fill="false">
+        <layout
+            xsi:type="gmfgraph:FlowLayout"
+            matchMinorSize="true"
+            forceSingleLine="true"
+            majorAlignment="FILL"
+            majorSpacing="0"
+            minorSpacing="0"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ReturnTypeLabelFigure"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="OperationNameLabelFigure"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="OpeningParenthesesLabelFigure"
+            text="("/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="ParametersCompartmentFigure"
+            outline="false"
+            fill="false"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ClosingParenthesesLabelFigure"
+            text=")"/>
       </actualFigure>
-      <accessors accessor="getFigureOperationNameLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
-      <accessors accessor="getFigureParametersCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.3"/>
-      <accessors accessor="getFigureReturnTypeLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureOperationNameLabelFigure"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+      <accessors
+          accessor="getFigureParametersCompartmentFigure"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.3"/>
+      <accessors
+          accessor="getFigureReturnTypeLabelFigure"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="ParameterFigure">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="ParameterFigure" outline="false" fill="false">
-        <children xsi:type="gmfgraph:Label" name="ParameterLabel" text=""/>
+    <descriptors
+        name="ParameterFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="ParameterFigure"
+          outline="false"
+          fill="false">
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ParameterLabel"
+            text=""/>
       </actualFigure>
-      <accessors accessor="getFigureParameterLabel" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureParameterLabel"
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="OperationRepositoryFigure">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="OperationRepositoryFigure">
-        <layout xsi:type="gmfgraph:GridLayout" equalWidth="false">
-          <margins dx="1"/>
+    <descriptors
+        name="OperationRepositoryFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="OperationRepositoryFigure">
+        <layout
+            xsi:type="gmfgraph:GridLayout"
+            equalWidth="false">
+          <margins
+              dx="1"/>
         </layout>
-        <children xsi:type="gmfgraph:Label" name="OperationRepositoryNameLabelFigure">
-          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true"/>
-          <font xsi:type="gmfgraph:BasicFont" height="10" style="BOLD"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="OperationRepositoryNameLabelFigure">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"/>
+          <font
+              xsi:type="gmfgraph:BasicFont"
+              height="10"
+              style="BOLD"/>
         </children>
-        <children xsi:type="gmfgraph:Rectangle" name="OperationCompartmentFigure" outline="false">
-          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" horizontalAlignment="FILL"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="OperationCompartmentFigure"
+            outline="false">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              horizontalAlignment="FILL"/>
         </children>
       </actualFigure>
-      <accessors accessor="getFigureOperationRepositoryNameLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
-      <accessors accessor="getFigureOperationCompartmentFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
+      <accessors
+          accessor="getFigureOperationRepositoryNameLabelFigure"
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureOperationCompartmentFigure"
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
     </descriptors>
   </figures>
-  <nodes name="OperationRepository" figure="OperationRepositoryFigure">
-    <facets xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize dx="130" dy="90"/>
+  <nodes
+      name="OperationRepository"
+      figure="OperationRepositoryFigure">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="130"
+          dy="90"/>
     </facets>
   </nodes>
-  <nodes name="Operation" figure="OperationFigure">
-    <facets xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize dx="-1" dy="-1"/>
+  <nodes
+      name="Operation"
+      figure="OperationFigure">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="-1"
+          dy="-1"/>
     </facets>
   </nodes>
-  <nodes name="Parameter" figure="ParameterFigure" resizeConstraint="NONE">
-    <facets xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize dx="-1" dy="-1"/>
+  <nodes
+      name="Parameter"
+      figure="ParameterFigure"
+      resizeConstraint="NONE">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="-1"
+          dy="-1"/>
     </facets>
   </nodes>
-  <compartments name="OperationCompartment" figure="OperationRepositoryFigure" accessor="//@figures.0/@descriptors.2/@accessors.1"/>
-  <compartments name="ParametersCompartment" figure="OperationFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.1"/>
-  <labels name="OperationRepositoryName" figure="OperationRepositoryFigure" resizeConstraint="NONE" elementIcon="false" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
-  <labels name="OperationName" figure="OperationFigure" resizeConstraint="NONE" elementIcon="false" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
-  <labels name="ParameterName" figure="ParameterFigure" resizeConstraint="NONE" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
-  <labels name="OperationReturnType" figure="OperationFigure" resizeConstraint="NONE" elementIcon="false" accessor="//@figures.0/@descriptors.0/@accessors.2"/>
+  <compartments
+      name="OperationCompartment"
+      figure="OperationRepositoryFigure"
+      accessor="//@figures.0/@descriptors.2/@accessors.1"/>
+  <compartments
+      name="ParametersCompartment"
+      figure="OperationFigure"
+      collapsible="true"
+      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <labels
+      name="OperationRepositoryName"
+      figure="OperationRepositoryFigure"
+      resizeConstraint="NONE"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels
+      name="OperationName"
+      figure="OperationFigure"
+      resizeConstraint="NONE"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels
+      name="ParameterName"
+      figure="ParameterFigure"
+      resizeConstraint="NONE"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels
+      name="OperationReturnType"
+      figure="OperationFigure"
+      resizeConstraint="NONE"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.2"/>
 </gmfgraph:Canvas>

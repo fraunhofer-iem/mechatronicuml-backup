@@ -906,12 +906,6 @@
          </propertySection>
       </propertySections>
    </extension>
-<extension point="org.eclipse.core.contenttype.contentTypes">
-		<?gmfgen generated="true"?>
-   		<!--
-   		<file-association content-type="org.muml.core.modelinstance.editor.model" file-extensions="instance"/>
-   		-->
-    </extension>
 
 <extension point="org.eclipse.ui.commands">
 		<?gmfgen generated="true"?>
@@ -944,6 +938,7 @@
          
       </category>
    </extension>
+
 
 
 

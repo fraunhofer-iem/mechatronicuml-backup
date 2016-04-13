@@ -8,7 +8,7 @@
     xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
   <nodes>
     <containmentFeature
-        href="../../org.muml.core.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements"/>
+        href="../../org.muml.core/model/core.ecore#//modelinstance/ModelElementCategory/modelElements"/>
     <ownedChild>
       <domainMetaElement
           href="../../org.muml.pim/model/pim.ecore#//protocol/CoordinationProtocol"/>
@@ -574,7 +574,7 @@
     <domainModel
         href="../../org.muml.pim/model/pim.ecore#//protocol"/>
     <domainMetaElement
-        href="../../org.muml.core.modelinstance/model/modelinstance.ecore#//ModelElementCategory"/>
+        href="../../org.muml.core/model/core.ecore#//modelinstance/ModelElementCategory"/>
     <palette
         href="coordinationprotocol.gmftool#//@palette"/>
   </diagram>

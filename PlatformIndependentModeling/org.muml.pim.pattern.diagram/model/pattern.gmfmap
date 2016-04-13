@@ -8,7 +8,7 @@
     xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
   <nodes>
     <containmentFeature
-        href="../../org.muml.core.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements"/>
+        href="../../org.muml.core/model/core.ecore#//modelinstance/ModelElementCategory/modelElements"/>
     <ownedChild>
       <domainMetaElement
           href="../../org.muml.pim/model/pim.ecore#//pattern/CoordinationPattern"/>
@@ -287,7 +287,7 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="../../org.muml.core.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements"/>
+        href="../../org.muml.core/model/core.ecore#//modelinstance/ModelElementCategory/modelElements"/>
     <ownedChild>
       <domainMetaElement
           href="../../org.muml.pim/model/pim.ecore#//pattern/CoordinationPatternVariant"/>
@@ -701,7 +701,7 @@
     <domainModel
         href="../../org.muml.pim/model/pim.ecore#//pattern"/>
     <domainMetaElement
-        href="../../org.muml.core.modelinstance/model/modelinstance.ecore#//ModelElementCategory"/>
+        href="../../org.muml.core/model/core.ecore#//modelinstance/ModelElementCategory"/>
     <palette
         href="pattern.gmftool#//@palette"/>
   </diagram>

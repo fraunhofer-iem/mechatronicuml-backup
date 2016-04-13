@@ -1,132 +1,341 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="protocoleditor">
-  <figures name="Default">
-    <descriptors name="RoleConnectorFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="RoleConnectorFigure"/>
+<gmfgraph:Canvas
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition"
+    name="protocoleditor">
+  <figures
+      name="Default">
+    <descriptors
+        name="RoleConnectorFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="RoleConnectorFigure"/>
     </descriptors>
-    <descriptors name="ConstraintLinkFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ConstraintLinkFigure"/>
+    <descriptors
+        name="ConstraintLinkFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="ConstraintLinkFigure"/>
     </descriptors>
-    <descriptors name="TextualConstraintFigure">
-      <actualFigure xsi:type="gmfgraph:ScalablePolygon">
-        <children xsi:type="gmfgraph:Label" name="TextualConstraintLabelFigure"/>
+    <descriptors
+        name="TextualConstraintFigure">
+      <actualFigure
+          xsi:type="gmfgraph:ScalablePolygon">
+        <children
+            xsi:type="gmfgraph:Label"
+            name="TextualConstraintLabelFigure"/>
         <template/>
-        <template x="30"/>
-        <template x="30" y="10"/>
-        <template x="40" y="10"/>
-        <template x="30" y="10"/>
-        <template x="30"/>
-        <template x="40" y="10"/>
-        <template x="40" y="40"/>
-        <template y="40"/>
+        <template
+            x="30"/>
+        <template
+            x="30"
+            y="10"/>
+        <template
+            x="40"
+            y="10"/>
+        <template
+            x="30"
+            y="10"/>
+        <template
+            x="30"/>
+        <template
+            x="40"
+            y="10"/>
+        <template
+            x="40"
+            y="40"/>
+        <template
+            y="40"/>
       </actualFigure>
-      <accessors figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="CoordinationProtocolContainerFigure">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="CoordinatinoProtocolContainerRectangle"/>
+    <descriptors
+        name="CoordinationProtocolContainerFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="CoordinatinoProtocolContainerRectangle"/>
     </descriptors>
-    <descriptors name="CoordinationProtocolContainerCompartmentFigure">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="CoordinationProtocolContainerCompartmentFigure" outline="false" fill="false"/>
+    <descriptors
+        name="CoordinationProtocolContainerCompartmentFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="CoordinationProtocolContainerCompartmentFigure"
+          outline="false"
+          fill="false"/>
     </descriptors>
-    <descriptors name="MessageBuffferFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="MessageBufferRectangle">
-        <layout xsi:type="gmfgraph:GridLayout" numColumns="2" equalWidth="false"/>
-        <backgroundColor xsi:type="gmfgraph:RGBColor" red="255" green="255" blue="150"/>
-        <children xsi:type="gmfgraph:Label" name="MessageBufferNameLabel">
-          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" horizontalAlignment="BEGINNING" horizontalSpan="2"/>
-          <foregroundColor xsi:type="gmfgraph:RGBColor" red="255"/>
-          <backgroundColor xsi:type="gmfgraph:RGBColor" green="255"/>
-          <font xsi:type="gmfgraph:BasicFont" faceName="" style="BOLD"/>
+    <descriptors
+        name="MessageBuffferFigure">
+      <actualFigure
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="MessageBufferRectangle">
+        <layout
+            xsi:type="gmfgraph:GridLayout"
+            numColumns="2"
+            equalWidth="false"/>
+        <backgroundColor
+            xsi:type="gmfgraph:RGBColor"
+            red="255"
+            green="255"
+            blue="150"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="MessageBufferNameLabel">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              horizontalAlignment="BEGINNING"
+              horizontalSpan="2"/>
+          <foregroundColor
+              xsi:type="gmfgraph:RGBColor"
+              red="255"/>
+          <backgroundColor
+              xsi:type="gmfgraph:RGBColor"
+              green="255"/>
+          <font
+              xsi:type="gmfgraph:BasicFont"
+              faceName=""
+              style="BOLD"/>
         </children>
-        <children xsi:type="gmfgraph:Label" name="MessageBufferSizeLabel" text="">
-          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" horizontalAlignment="BEGINNING" horizontalSpan="2"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="MessageBufferSizeLabel"
+            text="">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              horizontalAlignment="BEGINNING"
+              horizontalSpan="2"/>
         </children>
-        <children xsi:type="gmfgraph:Label" name="MessageBufferOverFlowAvoidanceStrategyLabel" text="">
-          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" horizontalAlignment="BEGINNING" horizontalSpan="2"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="MessageBufferOverFlowAvoidanceStrategyLabel"
+            text="">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              horizontalAlignment="BEGINNING"
+              horizontalSpan="2"/>
         </children>
-        <children xsi:type="gmfgraph:Label" name="MessageTypesStaticLabel" text="Messages:">
-          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" verticalAlignment="BEGINNING" horizontalAlignment="BEGINNING"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="MessageTypesStaticLabel"
+            text="Messages:">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              verticalAlignment="BEGINNING"
+              horizontalAlignment="BEGINNING"/>
         </children>
       </actualFigure>
-      <accessors figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
-      <accessors figure="//@figures.0/@descriptors.5/@actualFigure/@children.1"/>
-      <accessors figure="//@figures.0/@descriptors.5/@actualFigure/@children.2"/>
+      <accessors
+          figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.5/@actualFigure/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.5/@actualFigure/@children.2"/>
     </descriptors>
-    <descriptors name="MessageBufferCompartmentFigure">
-      <actualFigure xsi:type="gmfgraph:InvisibleRectangle" name="MessageBufferCompartmentRectangle"/>
+    <descriptors
+        name="MessageBufferCompartmentFigure">
+      <actualFigure
+          xsi:type="gmfgraph:InvisibleRectangle"
+          name="MessageBufferCompartmentRectangle"/>
     </descriptors>
-    <descriptors name="RoleMessageBufferConnectionFigureDescriptor">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="RoleMessageBufferConnection" lineKind="LINE_DOT"/>
+    <descriptors
+        name="RoleMessageBufferConnectionFigureDescriptor">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="RoleMessageBufferConnection"
+          lineKind="LINE_DOT"/>
     </descriptors>
-    <descriptors name="QualityOfServiceAssumptionsFigureDescriptor">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="QualityOfServiceAssumptionsRectangle">
-        <layout xsi:type="gmfgraph:GridLayout" equalWidth="false"/>
-        <backgroundColor xsi:type="gmfgraph:RGBColor" red="255" green="255" blue="150"/>
-        <children xsi:type="gmfgraph:Label" name="staticheadlinelabel" text="QoS Assumptions:">
-          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" horizontalAlignment="BEGINNING" horizontalSpan="2"/>
-          <font xsi:type="gmfgraph:BasicFont" style="BOLD"/>
+    <descriptors
+        name="QualityOfServiceAssumptionsFigureDescriptor">
+      <actualFigure
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="QualityOfServiceAssumptionsRectangle">
+        <layout
+            xsi:type="gmfgraph:GridLayout"
+            equalWidth="false"/>
+        <backgroundColor
+            xsi:type="gmfgraph:RGBColor"
+            red="255"
+            green="255"
+            blue="150"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="staticheadlinelabel"
+            text="QoS Assumptions:">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              horizontalAlignment="BEGINNING"
+              horizontalSpan="2"/>
+          <font
+              xsi:type="gmfgraph:BasicFont"
+              style="BOLD"/>
         </children>
-        <children xsi:type="gmfgraph:Label" name="msgLossLabel" text="">
-          <layoutData xsi:type="gmfgraph:GridLayoutData" horizontalAlignment="BEGINNING"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="msgLossLabel"
+            text="">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              horizontalAlignment="BEGINNING"/>
         </children>
-        <children xsi:type="gmfgraph:Label" name="maxDelayLabel" text="">
-          <layoutData xsi:type="gmfgraph:GridLayoutData" horizontalAlignment="BEGINNING"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="maxDelayLabel"
+            text="">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              horizontalAlignment="BEGINNING"/>
         </children>
-        <children xsi:type="gmfgraph:Label" name="StaticPreserveMsgOrderLabel" text="PreserveMsgOrder: true"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="StaticPreserveMsgOrderLabel"
+            text="PreserveMsgOrder: true"/>
       </actualFigure>
-      <accessors figure="//@figures.0/@descriptors.8/@actualFigure/@children.1"/>
-      <accessors figure="//@figures.0/@descriptors.8/@actualFigure/@children.2"/>
+      <accessors
+          figure="//@figures.0/@descriptors.8/@actualFigure/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.8/@actualFigure/@children.2"/>
     </descriptors>
-    <descriptors name="RoleConnectorQoSAConnectorConnectionFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="RoleConnectorQoSAConnectorConnection" lineKind="LINE_DOT"/>
+    <descriptors
+        name="RoleConnectorQoSAConnectorConnectionFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="RoleConnectorQoSAConnectorConnection"
+          lineKind="LINE_DOT"/>
     </descriptors>
-    <descriptors name="VerificationConstraintRepositoryFigureDescriptor">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="VerificationConstraintRepository">
-        <children xsi:type="gmfgraph:InvisibleRectangle" name="VerificationConstraintRepositoryCompartment"/>
+    <descriptors
+        name="VerificationConstraintRepositoryFigureDescriptor">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="VerificationConstraintRepository">
+        <children
+            xsi:type="gmfgraph:InvisibleRectangle"
+            name="VerificationConstraintRepositoryCompartment"/>
       </actualFigure>
-      <accessors figure="//@figures.0/@descriptors.10/@actualFigure/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.10/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="VerificationConstraintFigureDescriptor">
-      <actualFigure xsi:type="gmfgraph:InvisibleRectangle" name="VerificationConstraintRectangle">
-        <layout xsi:type="gmfgraph:FlowLayout" matchMinorSize="true" forceSingleLine="true" majorAlignment="FILL" majorSpacing="0" minorSpacing="0"/>
-        <children xsi:type="gmfgraph:Label" name="VerfificationConstraintLabel" text=""/>
+    <descriptors
+        name="VerificationConstraintFigureDescriptor">
+      <actualFigure
+          xsi:type="gmfgraph:InvisibleRectangle"
+          name="VerificationConstraintRectangle">
+        <layout
+            xsi:type="gmfgraph:FlowLayout"
+            matchMinorSize="true"
+            forceSingleLine="true"
+            majorAlignment="FILL"
+            majorSpacing="0"
+            minorSpacing="0"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="VerfificationConstraintLabel"
+            text=""/>
       </actualFigure>
-      <accessors figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
     </descriptors>
   </figures>
-  <nodes name="CoordinationProtocol">
-    <figure href="../../org.muml.pim.common/model/coordinationprotocol.gmfgraph#CoordinationProtocolFigure"/>
+  <nodes
+      name="CoordinationProtocol">
+    <figure
+        href="../../org.muml.pim.common/model/coordinationprotocol.gmfgraph#CoordinationProtocolFigure"/>
   </nodes>
-  <nodes name="Role" resizeConstraint="NONE">
-    <figure href="../../org.muml.pim.common/model/component.gmfgraph#PortFigureRef"/>
-    <facets xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize dx="20" dy="20"/>
+  <nodes
+      name="Role"
+      resizeConstraint="NONE">
+    <figure
+        href="../../org.muml.pim.common/model/component.gmfgraph#PortFigureRef"/>
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="20"
+          dy="20"/>
     </facets>
   </nodes>
-  <nodes name="TextualConstraint" figure="TextualConstraintFigure"/>
-  <nodes name="CoordinationProtocolContainer" figure="CoordinationProtocolContainerFigure"/>
-  <nodes name="MessageBuffferNode" figure="MessageBuffferFigure"/>
-  <nodes name="QualityOfServiceAssumptionsNode" figure="QualityOfServiceAssumptionsFigureDescriptor"/>
-  <connections name="RoleConnector" figure="RoleConnectorFigure"/>
-  <connections name="RolePattern">
-    <figure href="../../org.muml.pim.common/model/coordinationprotocol.gmfgraph#RolePatternFigure"/>
+  <nodes
+      name="TextualConstraint"
+      figure="TextualConstraintFigure"/>
+  <nodes
+      name="CoordinationProtocolContainer"
+      figure="CoordinationProtocolContainerFigure"/>
+  <nodes
+      name="MessageBuffferNode"
+      figure="MessageBuffferFigure"/>
+  <nodes
+      name="QualityOfServiceAssumptionsNode"
+      figure="QualityOfServiceAssumptionsFigureDescriptor"/>
+  <connections
+      name="RoleConnector"
+      figure="RoleConnectorFigure"/>
+  <connections
+      name="RolePattern">
+    <figure
+        href="../../org.muml.pim.common/model/coordinationprotocol.gmfgraph#RolePatternFigure"/>
   </connections>
-  <connections name="ConstraintLink" figure="ConstraintLinkFigure"/>
-  <connections name="RoleMessageBufferConnection" figure="RoleMessageBufferConnectionFigureDescriptor"/>
-  <connections name="RoleConnectorQoSAConnectorConnection" figure="RoleConnectorQoSAConnectorConnectionFigure"/>
-  <compartments name="CoordinationProtocolContainerCompartment" figure="CoordinationProtocolContainerCompartmentFigure"/>
-  <compartments name="MessageBufferCompartment" figure="MessageBufferCompartmentFigure"/>
-  <labels name="CoordinationProtocolName" elementIcon="false">
-    <figure href="../../org.muml.pim.common/model/coordinationprotocol.gmfgraph#CoordinationProtocolFigure"/>
-    <accessor href="../../org.muml.pim.common/model/coordinationprotocol.gmfgraph#//@figures.0/@descriptors.0/@accessors.0"/>
+  <connections
+      name="ConstraintLink"
+      figure="ConstraintLinkFigure"/>
+  <connections
+      name="RoleMessageBufferConnection"
+      figure="RoleMessageBufferConnectionFigureDescriptor"/>
+  <connections
+      name="RoleConnectorQoSAConnectorConnection"
+      figure="RoleConnectorQoSAConnectorConnectionFigure"/>
+  <compartments
+      name="CoordinationProtocolContainerCompartment"
+      figure="CoordinationProtocolContainerCompartmentFigure"/>
+  <compartments
+      name="MessageBufferCompartment"
+      figure="MessageBufferCompartmentFigure"/>
+  <labels
+      name="CoordinationProtocolName"
+      elementIcon="false">
+    <figure
+        href="../../org.muml.pim.common/model/coordinationprotocol.gmfgraph#CoordinationProtocolFigure"/>
+    <accessor
+        href="../../org.muml.pim.common/model/coordinationprotocol.gmfgraph#//@figures.0/@descriptors.0/@accessors.0"/>
   </labels>
-  <labels name="RoleName" elementIcon="false">
-    <figure href="../../org.muml.pim.common/model/component.gmfgraph#LabelFigure"/>
+  <labels
+      name="RoleName"
+      elementIcon="false">
+    <figure
+        href="../../org.muml.pim.common/model/component.gmfgraph#LabelFigure"/>
   </labels>
-  <labels name="TextualConstraintName" figure="TextualConstraintFigure" elementIcon="false" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
-  <labels name="MessageBufferDiagramLabel" figure="MessageBuffferFigure" elementIcon="false" accessor="//@figures.0/@descriptors.5/@accessors.0"/>
-  <labels name="MessageBufferSizeLabel" figure="MessageBuffferFigure" elementIcon="false" accessor="//@figures.0/@descriptors.5/@accessors.1"/>
-  <labels name="MsgLossLabel" figure="QualityOfServiceAssumptionsFigureDescriptor" elementIcon="false" accessor="//@figures.0/@descriptors.8/@accessors.0"/>
-  <labels name="MaxDelayLabel" figure="QualityOfServiceAssumptionsFigureDescriptor" elementIcon="false" accessor="//@figures.0/@descriptors.8/@accessors.1"/>
-  <labels name="MessageBufferOverflowAvoidanceStrategyLabel" figure="MessageBuffferFigure" elementIcon="false" accessor="//@figures.0/@descriptors.5/@accessors.2"/>
+  <labels
+      name="TextualConstraintName"
+      figure="TextualConstraintFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels
+      name="MessageBufferDiagramLabel"
+      figure="MessageBuffferFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.5/@accessors.0"/>
+  <labels
+      name="MessageBufferSizeLabel"
+      figure="MessageBuffferFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.5/@accessors.1"/>
+  <labels
+      name="MsgLossLabel"
+      figure="QualityOfServiceAssumptionsFigureDescriptor"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.8/@accessors.0"/>
+  <labels
+      name="MaxDelayLabel"
+      figure="QualityOfServiceAssumptionsFigureDescriptor"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.8/@accessors.1"/>
+  <labels
+      name="MessageBufferOverflowAvoidanceStrategyLabel"
+      figure="MessageBuffferFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.5/@accessors.2"/>
 </gmfgraph:Canvas>

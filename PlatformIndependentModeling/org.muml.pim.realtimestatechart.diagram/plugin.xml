@@ -784,20 +784,6 @@
     </command>
     </extension>
 
-<extension
-         point="org.muml.core.modelelementcategory">
-      <?gmfgen generated="true"?>  
-      <category
-            key="org.muml.pim.realtimestatechart.category"
-            name="realtimestatechart">
-         
-         <child
-               class="RealtimeStatechart"
-               packageNsUri="http://www.muml.org/pim/realtimestatechart/1.0.0">
-         </child>
-         
-      </category>
-   </extension>
 
 <extension
          point="org.muml.core.modelinstance.ui.diagraminformation">
@@ -821,12 +807,6 @@
          
       </editor>
    </extension>
-<extension point="org.eclipse.core.contenttype.contentTypes">
-		<?gmfgen generated="true"?>
-   		<!--
-   		<file-association content-type="org.muml.core.modelinstance.editor.model" file-extensions="realtimestatechart"/>
-   		-->
-    </extension>
 
 <extension point="org.eclipse.ui.commands">
 		<?gmfgen generated="true"?>
@@ -845,6 +825,21 @@
          class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
       </parser>
    </extension>
+<extension
+         point="org.muml.core.modelelementcategory">
+      <?gmfgen generated="true"?>  
+      <category
+            key="org.muml.pim.realtimestatechart.category"
+            name="realtimestatechart">
+         
+         <child
+               class="RealtimeStatechart"
+               packageNsUri="http://www.muml.org/pim/realtimestatechart/1.0.0">
+         </child>
+         
+      </category>
+   </extension>
+
 
 
 
