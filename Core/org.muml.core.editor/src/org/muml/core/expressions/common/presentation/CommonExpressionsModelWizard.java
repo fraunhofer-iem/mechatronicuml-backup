@@ -1,6 +1,6 @@
 /**
  */
-package org.muml.core.modelinstance.presentation;
+package org.muml.core.expressions.common.presentation;
 
 
 import java.util.ArrayList;
@@ -69,8 +69,8 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ISetSelectionTarget;
 
-import org.muml.core.modelinstance.ModelinstanceFactory;
-import org.muml.core.modelinstance.ModelinstancePackage;
+import org.muml.core.expressions.common.CommonExpressionsFactory;
+import org.muml.core.expressions.common.CommonExpressionsPackage;
 import org.muml.core.provider.CoreEditPlugin;
 
 
@@ -93,7 +93,7 @@ import org.muml.core.presentation.CoreEditorPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ModelinstanceModelWizard extends Wizard implements INewWizard {
+public class CommonExpressionsModelWizard extends Wizard implements INewWizard {
 	/**
 	 * The supported extensions for created files.
 	 * <!-- begin-user-doc -->
@@ -101,7 +101,7 @@ public class ModelinstanceModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public static final List<String> FILE_EXTENSIONS =
-		Collections.unmodifiableList(Arrays.asList(CoreEditorPlugin.INSTANCE.getString("_UI_ModelinstanceEditorFilenameExtensions").split("\\s*,\\s*")));
+		Collections.unmodifiableList(Arrays.asList(CoreEditorPlugin.INSTANCE.getString("_UI_CommonExpressionsEditorFilenameExtensions").split("\\s*,\\s*")));
 
 	/**
 	 * A formatted list of supported file extensions, suitable for display.
@@ -110,7 +110,7 @@ public class ModelinstanceModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public static final String FORMATTED_FILE_EXTENSIONS =
-		CoreEditorPlugin.INSTANCE.getString("_UI_ModelinstanceEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
+		CoreEditorPlugin.INSTANCE.getString("_UI_CommonExpressionsEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
 
 	/**
 	 * This caches an instance of the model package.
@@ -118,7 +118,7 @@ public class ModelinstanceModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ModelinstancePackage modelinstancePackage = ModelinstancePackage.eINSTANCE;
+	protected CommonExpressionsPackage commonExpressionsPackage = CommonExpressionsPackage.eINSTANCE;
 
 	/**
 	 * This caches an instance of the model factory.
@@ -126,7 +126,7 @@ public class ModelinstanceModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ModelinstanceFactory modelinstanceFactory = modelinstancePackage.getModelinstanceFactory();
+	protected CommonExpressionsFactory commonExpressionsFactory = commonExpressionsPackage.getCommonExpressionsFactory();
 
 	/**
 	 * This is the file creation page.
@@ -134,7 +134,7 @@ public class ModelinstanceModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ModelinstanceModelWizardNewFileCreationPage newFileCreationPage;
+	protected CommonExpressionsModelWizardNewFileCreationPage newFileCreationPage;
 
 	/**
 	 * This is the initial object creation page.
@@ -142,7 +142,7 @@ public class ModelinstanceModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ModelinstanceModelWizardInitialObjectCreationPage initialObjectCreationPage;
+	protected CommonExpressionsModelWizardInitialObjectCreationPage initialObjectCreationPage;
 
 	/**
 	 * Remember the selection during initialization for populating the default container.
@@ -178,7 +178,7 @@ public class ModelinstanceModelWizard extends Wizard implements INewWizard {
 		this.workbench = workbench;
 		this.selection = selection;
 		setWindowTitle(CoreEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
-		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(CoreEditorPlugin.INSTANCE.getImage("full/wizban/NewModelinstance")));
+		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(CoreEditorPlugin.INSTANCE.getImage("full/wizban/NewCommonExpressions")));
 	}
 
 	/**
@@ -190,7 +190,7 @@ public class ModelinstanceModelWizard extends Wizard implements INewWizard {
 	protected Collection<String> getInitialObjectNames() {
 		if (initialObjectNames == null) {
 			initialObjectNames = new ArrayList<String>();
-			for (EClassifier eClassifier : modelinstancePackage.getEClassifiers()) {
+			for (EClassifier eClassifier : commonExpressionsPackage.getEClassifiers()) {
 				if (eClassifier instanceof EClass) {
 					EClass eClass = (EClass)eClassifier;
 					if (!eClass.isAbstract()) {
@@ -210,8 +210,8 @@ public class ModelinstanceModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	protected EObject createInitialModel() {
-		EClass eClass = (EClass)modelinstancePackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
-		EObject rootObject = modelinstanceFactory.create(eClass);
+		EClass eClass = (EClass)commonExpressionsPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
+		EObject rootObject = commonExpressionsFactory.create(eClass);
 		return rootObject;
 	}
 
@@ -312,14 +312,14 @@ public class ModelinstanceModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public class ModelinstanceModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
+	public class CommonExpressionsModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
 		/**
 		 * Pass in the selection.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public ModelinstanceModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
+		public CommonExpressionsModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
 			super(pageId, selection);
 		}
 
@@ -359,7 +359,7 @@ public class ModelinstanceModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public class ModelinstanceModelWizardInitialObjectCreationPage extends WizardPage {
+	public class CommonExpressionsModelWizardInitialObjectCreationPage extends WizardPage {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -387,7 +387,7 @@ public class ModelinstanceModelWizard extends Wizard implements INewWizard {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public ModelinstanceModelWizardInitialObjectCreationPage(String pageId) {
+		public CommonExpressionsModelWizardInitialObjectCreationPage(String pageId) {
 			super(pageId);
 		}
 
@@ -397,7 +397,8 @@ public class ModelinstanceModelWizard extends Wizard implements INewWizard {
 		 * @generated
 		 */
 		public void createControl(Composite parent) {
-			Composite composite = new Composite(parent, SWT.NONE); {
+			Composite composite = new Composite(parent, SWT.NONE);
+			{
 				GridLayout layout = new GridLayout();
 				layout.numColumns = 1;
 				layout.verticalSpacing = 12;
@@ -571,10 +572,10 @@ public class ModelinstanceModelWizard extends Wizard implements INewWizard {
 	public void addPages() {
 		// Create a page, set the title, and the initial model file name.
 		//
-		newFileCreationPage = new ModelinstanceModelWizardNewFileCreationPage("Whatever", selection);
-		newFileCreationPage.setTitle(CoreEditorPlugin.INSTANCE.getString("_UI_ModelinstanceModelWizard_label"));
-		newFileCreationPage.setDescription(CoreEditorPlugin.INSTANCE.getString("_UI_ModelinstanceModelWizard_description"));
-		newFileCreationPage.setFileName(CoreEditorPlugin.INSTANCE.getString("_UI_ModelinstanceEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
+		newFileCreationPage = new CommonExpressionsModelWizardNewFileCreationPage("Whatever", selection);
+		newFileCreationPage.setTitle(CoreEditorPlugin.INSTANCE.getString("_UI_CommonExpressionsModelWizard_label"));
+		newFileCreationPage.setDescription(CoreEditorPlugin.INSTANCE.getString("_UI_CommonExpressionsModelWizard_description"));
+		newFileCreationPage.setFileName(CoreEditorPlugin.INSTANCE.getString("_UI_CommonExpressionsEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
 		addPage(newFileCreationPage);
 
 		// Try and get the resource selection to determine a current directory for the file dialog.
@@ -600,7 +601,7 @@ public class ModelinstanceModelWizard extends Wizard implements INewWizard {
 
 					// Make up a unique new name here.
 					//
-					String defaultModelBaseFilename = CoreEditorPlugin.INSTANCE.getString("_UI_ModelinstanceEditorFilenameDefaultBase");
+					String defaultModelBaseFilename = CoreEditorPlugin.INSTANCE.getString("_UI_CommonExpressionsEditorFilenameDefaultBase");
 					String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
 					String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
 					for (int i = 1; ((IContainer)selectedResource).findMember(modelFilename) != null; ++i) {
@@ -610,8 +611,8 @@ public class ModelinstanceModelWizard extends Wizard implements INewWizard {
 				}
 			}
 		}
-		initialObjectCreationPage = new ModelinstanceModelWizardInitialObjectCreationPage("Whatever2");
-		initialObjectCreationPage.setTitle(CoreEditorPlugin.INSTANCE.getString("_UI_ModelinstanceModelWizard_label"));
+		initialObjectCreationPage = new CommonExpressionsModelWizardInitialObjectCreationPage("Whatever2");
+		initialObjectCreationPage.setTitle(CoreEditorPlugin.INSTANCE.getString("_UI_CommonExpressionsModelWizard_label"));
 		initialObjectCreationPage.setDescription(CoreEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
 		addPage(initialObjectCreationPage);
 	}
