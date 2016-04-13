@@ -21,27 +21,27 @@ public class ModelElementCategoryEditor extends org.muml.ape.runtime.editors.Cla
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorKey_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorKey_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
-		} else if ("General".equals(tab)) { // Tab General
+		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorKey_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorKey_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
-		} else if ("Docuementation".equals(tab)) { // Tab Documentation
+		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
-		} else if ("Extensions".equals(tab)) { // Tab Extensions
+		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
 		} else {
 		}
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorKey_GeneralTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorKey_GeneralTab_Editor() {
-		if (this.editorKey_GeneralTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorKey_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorKey_property_tab_generalTab_Editor() {
+		if (this.editorKey_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE
 					.getModelElementCategory_Key();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
@@ -50,14 +50,14 @@ public class ModelElementCategoryEditor extends org.muml.ape.runtime.editors.Cla
 			editor.setTooltipMessage(
 					"The uniquely identifying key of this category. The key of the category may be\nused by editors to register for the model elements contained in this section.");
 
-			this.editorKey_GeneralTab = editor;
+			this.editorKey_property_tab_generalTab = editor;
 		}
-		return this.editorKey_GeneralTab;
+		return this.editorKey_property_tab_generalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_GeneralTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_GeneralTab_Editor() {
-		if (this.editorName_GeneralTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_property_tab_generalTab_Editor() {
+		if (this.editorName_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE
 					.getModelElementCategory_Name();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
@@ -65,9 +65,9 @@ public class ModelElementCategoryEditor extends org.muml.ape.runtime.editors.Cla
 
 			editor.setTooltipMessage("A human readable name for this category.");
 
-			this.editorName_GeneralTab = editor;
+			this.editorName_property_tab_generalTab = editor;
 		}
-		return this.editorName_GeneralTab;
+		return this.editorName_property_tab_generalTab;
 	}
 
 	//
@@ -93,7 +93,8 @@ public class ModelElementCategoryEditor extends org.muml.ape.runtime.editors.Cla
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{"General", "General"}).contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

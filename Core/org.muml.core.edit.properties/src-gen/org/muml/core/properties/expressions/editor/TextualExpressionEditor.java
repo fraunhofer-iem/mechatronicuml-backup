@@ -21,39 +21,39 @@ public class TextualExpressionEditor extends org.muml.ape.runtime.editors.ClassP
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtensions_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_DocuementationTab_Editor(), false);
+			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorExpressionText_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorExpressionText_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorLanguage_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorLanguage_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorLanguageVersion_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorLanguageVersion_property_tab_generalTab_Editor(), false);
 
-		} else if ("General".equals(tab)) { // Tab General
+		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorExpressionText_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorExpressionText_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorLanguage_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorLanguage_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorLanguageVersion_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorLanguageVersion_property_tab_generalTab_Editor(), false);
 
-		} else if ("Docuementation".equals(tab)) { // Tab Documentation
+		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(createEditorComment_DocuementationTab_Editor(), false);
+			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
-		} else if ("Extensions".equals(tab)) { // Tab Extensions
+		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtensions_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 		} else {
 		}
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExpressionText_GeneralTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExpressionText_GeneralTab_Editor() {
-		if (this.editorExpressionText_GeneralTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExpressionText_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExpressionText_property_tab_generalTab_Editor() {
+		if (this.editorExpressionText_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.expressions.ExpressionsPackage.eINSTANCE
 					.getTextualExpression_ExpressionText();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
@@ -61,14 +61,14 @@ public class TextualExpressionEditor extends org.muml.ape.runtime.editors.ClassP
 
 			editor.setTooltipMessage("Holds the expression, e.g. in OCL or Java.");
 
-			this.editorExpressionText_GeneralTab = editor;
+			this.editorExpressionText_property_tab_generalTab = editor;
 		}
-		return this.editorExpressionText_GeneralTab;
+		return this.editorExpressionText_property_tab_generalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLanguage_GeneralTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLanguage_GeneralTab_Editor() {
-		if (this.editorLanguage_GeneralTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLanguage_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLanguage_property_tab_generalTab_Editor() {
+		if (this.editorLanguage_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.expressions.ExpressionsPackage.eINSTANCE
 					.getTextualExpression_Language();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
@@ -77,14 +77,14 @@ public class TextualExpressionEditor extends org.muml.ape.runtime.editors.ClassP
 			editor.setTooltipMessage(
 					"String representation of the used language which has to be unique. Examples are OCL and Java.");
 
-			this.editorLanguage_GeneralTab = editor;
+			this.editorLanguage_property_tab_generalTab = editor;
 		}
-		return this.editorLanguage_GeneralTab;
+		return this.editorLanguage_property_tab_generalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLanguageVersion_GeneralTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLanguageVersion_GeneralTab_Editor() {
-		if (this.editorLanguageVersion_GeneralTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLanguageVersion_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLanguageVersion_property_tab_generalTab_Editor() {
+		if (this.editorLanguageVersion_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.expressions.ExpressionsPackage.eINSTANCE
 					.getTextualExpression_LanguageVersion();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
@@ -93,14 +93,14 @@ public class TextualExpressionEditor extends org.muml.ape.runtime.editors.ClassP
 			editor.setTooltipMessage(
 					"String representation of the used language's version. The format is <Major>.<Minor>[.<Revision>[.<Build>]]\nExamples: 1.4 or 3.0.1 or 1.0.2.20101208.");
 
-			this.editorLanguageVersion_GeneralTab = editor;
+			this.editorLanguageVersion_property_tab_generalTab = editor;
 		}
-		return this.editorLanguageVersion_GeneralTab;
+		return this.editorLanguageVersion_property_tab_generalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_DocuementationTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComment_DocuementationTab_Editor() {
-		if (this.editorComment_DocuementationTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_property_tab_documentationTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComment_property_tab_documentationTab_Editor() {
+		if (this.editorComment_property_tab_documentationTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.CorePackage.eINSTANCE
 					.getCommentableElement_Comment();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
@@ -109,14 +109,14 @@ public class TextualExpressionEditor extends org.muml.ape.runtime.editors.ClassP
 			editor.setTooltipMessage(
 					"The comment string that can be used to attach arbitrary information to CommentableElements.");
 
-			this.editorComment_DocuementationTab = editor;
+			this.editorComment_property_tab_documentationTab = editor;
 		}
-		return this.editorComment_DocuementationTab;
+		return this.editorComment_property_tab_documentationTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtensions_ExtensionsTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtensions_ExtensionsTab_Editor() {
-		if (this.editorExtensions_ExtensionsTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtensions_property_tab_extensionsTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtensions_property_tab_extensionsTab_Editor() {
+		if (this.editorExtensions_property_tab_extensionsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.CorePackage.eINSTANCE
 					.getExtendableElement_Extensions();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.FlattenedListPropertyEditor(
@@ -124,9 +124,9 @@ public class TextualExpressionEditor extends org.muml.ape.runtime.editors.ClassP
 
 			editor.setTooltipMessage("Extendable Elements can be extended by an Extension.");
 
-			this.editorExtensions_ExtensionsTab = editor;
+			this.editorExtensions_property_tab_extensionsTab = editor;
 		}
-		return this.editorExtensions_ExtensionsTab;
+		return this.editorExtensions_property_tab_extensionsTab;
 	}
 
 	//
@@ -153,7 +153,8 @@ public class TextualExpressionEditor extends org.muml.ape.runtime.editors.ClassP
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays
-					.asList(new java.lang.String[]{"General", "General", "General", "Docuementation", "Extensions"})
+					.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+							"property.tab.general", "property.tab.documentation", "property.tab.extensions"})
 					.contains(tab);
 		}
 	}

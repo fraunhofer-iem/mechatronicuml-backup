@@ -396,7 +396,7 @@
         generateBoilerplate="false">
       <filter
           xsi:type="gmfgen:CustomTabFilter"
-          className="org.muml.core.properties.tabs.GeneralTabElementFilter"/>
+          className="org.muml.core.properties.tabs.Property_tab_generalTabElementFilter"/>
     </tabs>
     <tabs
         xsi:type="gmfgen:GenCustomPropertyTab"
@@ -406,7 +406,7 @@
         generateBoilerplate="false">
       <filter
           xsi:type="gmfgen:CustomTabFilter"
-          className="org.muml.core.properties.tabs.DocumentationTabElementFilter"/>
+          className="org.muml.core.properties.tabs.Property_tab_documentationTabElementFilter"/>
     </tabs>
   </propertySheet>
   <domainGenModel

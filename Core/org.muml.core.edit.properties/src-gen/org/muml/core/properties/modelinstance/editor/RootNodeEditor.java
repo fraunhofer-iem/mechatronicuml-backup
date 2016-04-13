@@ -21,11 +21,11 @@ public class RootNodeEditor extends org.muml.ape.runtime.editors.ClassPropertyEd
 	protected void createProperties() {
 		if (tab == null) {
 
-		} else if ("General".equals(tab)) { // Tab General
+		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-		} else if ("Docuementation".equals(tab)) { // Tab Documentation
+		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
-		} else if ("Extensions".equals(tab)) { // Tab Extensions
+		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
 		} else {
 		}

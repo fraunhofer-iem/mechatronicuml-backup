@@ -57,8 +57,8 @@ parser.className.concat(parser._uses->first().container().oclAsType(GenCommonBas
     -- Currently the gmfgen was adapted manually
 
 
-    --model.propertySheet.map createTab("general", "General", "org.muml.core.properties.tabs.GeneralTabElementFilter");
-    --model.propertySheet.map createTab("documentation", "Documentation", "org.muml.core.properties.tabs.DocumentationTabElementFilter");
+    --model.propertySheet.map createTab("general", "General", "org.muml.core.properties.tabs.Property_tab_generalTabElementFilter");
+    --model.propertySheet.map createTab("documentation", "Documentation", "org.muml.core.properties.tabs.Property_tab_documentationTabElementFilter");
     --model.propertySheet.map createTab("constraint", "Constraint", "org.muml.core.properties.tabs.ConstraintTabElementFilter");
    
    
