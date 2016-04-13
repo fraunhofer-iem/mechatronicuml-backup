@@ -31,4 +31,5 @@ Export-Package: org.muml.pim.actionlanguage.xtext.ui,
  org.muml.pim.actionlanguage.xtext.ui.contentassist.antlr,
  org.muml.pim.actionlanguage.xtext.ui.internal,
  org.muml.pim.actionlanguage.xtext.ui.properties,
- org.muml.pim.actionlanguage.xtext.ui.quickfix
+ org.muml.pim.actionlanguage.xtext.ui.quickfix,
+ org.muml.pim.actionlanguage.xtext.ui.contentassist.antlr.internal

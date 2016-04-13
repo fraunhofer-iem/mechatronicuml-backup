@@ -12,11 +12,25 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.muml.core.common.validator.MumlValidator;
 import org.muml.pim.connector.util.ConnectorValidator;
 import org.muml.pim.instance.*;
+import org.muml.pim.instance.AssemblyConnectorInstance;
+import org.muml.pim.instance.AtomicComponentInstance;
+import org.muml.pim.instance.ComponentInstance;
+import org.muml.pim.instance.ComponentInstanceConfiguration;
+import org.muml.pim.instance.ContinuousPortInstance;
+import org.muml.pim.instance.CoordinationProtocolInstance;
+import org.muml.pim.instance.DelegationConnectorInstance;
+import org.muml.pim.instance.DiscreteMultiPortInstance;
+import org.muml.pim.instance.DiscretePortInstance;
+import org.muml.pim.instance.DiscreteSinglePortInstance;
+import org.muml.pim.instance.HybridPortInstance;
+import org.muml.pim.instance.InstancePackage;
+import org.muml.pim.instance.PortConnectorInstance;
+import org.muml.pim.instance.PortInstance;
+import org.muml.pim.instance.StructuredComponentInstance;
 
 
 /**

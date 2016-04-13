@@ -15,6 +15,15 @@ import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
 import org.muml.core.Repository;
 import org.muml.pim.behavior.*;
+import org.muml.pim.behavior.Behavior;
+import org.muml.pim.behavior.BehaviorPackage;
+import org.muml.pim.behavior.BehavioralElement;
+import org.muml.pim.behavior.Operation;
+import org.muml.pim.behavior.OperationRepository;
+import org.muml.pim.behavior.Parameter;
+import org.muml.pim.behavior.ParameterBinding;
+import org.muml.pim.behavior.TypedNamedElement;
+import org.muml.pim.behavior.Variable;
 
 
 /**

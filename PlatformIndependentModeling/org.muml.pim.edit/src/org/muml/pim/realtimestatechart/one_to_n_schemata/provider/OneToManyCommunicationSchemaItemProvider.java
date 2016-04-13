@@ -18,11 +18,8 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -34,7 +31,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.expressions.ExpressionsFactory;
 import org.muml.core.expressions.common.CommonExpressionsFactory;
-import org.muml.pim.component.provider.MumlEditPlugin;
+import org.muml.pim.provider.MumlEditPlugin;
 import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.OneToManyCommunicationSchema;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage;
@@ -265,7 +262,7 @@ public class OneToManyCommunicationSchemaItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pim.provider.MumlEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

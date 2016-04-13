@@ -13,8 +13,6 @@
 package org.muml.pim.pattern;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.pim.behavior.Parameter;
-import org.muml.pim.protocol.AbstractCoordinationSpecification;
 
 /**
  * <!-- begin-user-doc -->

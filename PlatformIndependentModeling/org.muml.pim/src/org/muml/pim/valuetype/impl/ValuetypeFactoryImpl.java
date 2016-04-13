@@ -15,6 +15,12 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.muml.pim.valuetype.*;
+import org.muml.pim.valuetype.Cardinality;
+import org.muml.pim.valuetype.NaturalNumber;
+import org.muml.pim.valuetype.Range;
+import org.muml.pim.valuetype.TimeValue;
+import org.muml.pim.valuetype.ValuetypeFactory;
+import org.muml.pim.valuetype.ValuetypePackage;
 
 /**
  * <!-- begin-user-doc -->

@@ -100,7 +100,7 @@
 
   <!-- make sure that the "types" modelelementcategory is accepted as valid -->
   <extension
-          point="org.muml.core.modelinstance.modelelementcategory">
+          point="org.muml.core.modelelementcategory">
       <category
               key="org.muml.types.category"
               name="types">

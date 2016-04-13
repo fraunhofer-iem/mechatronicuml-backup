@@ -21,7 +21,6 @@ import org.muml.core.common.DiagramEditorUtil;
 import org.muml.core.modelinstance.ModelElementCategory;
 import org.muml.core.modelinstance.ModelInstancePlugin;
 import org.muml.core.modelinstance.ModelinstanceFactory;
-import org.muml.core.modelinstance.categories.ModelElementCategoryRegistry;
 import org.muml.core.modelinstance.ui.ModelinstanceUiPlugin;
 
 public class CreateCategoryModelFileCommand extends AbstractCreateFileCommand {

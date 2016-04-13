@@ -12,6 +12,18 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.muml.pim.instance.*;
+import org.muml.pim.instance.AssemblyConnectorInstance;
+import org.muml.pim.instance.AtomicComponentInstance;
+import org.muml.pim.instance.ComponentInstanceConfiguration;
+import org.muml.pim.instance.ContinuousPortInstance;
+import org.muml.pim.instance.CoordinationProtocolInstance;
+import org.muml.pim.instance.DelegationConnectorInstance;
+import org.muml.pim.instance.DiscreteMultiPortInstance;
+import org.muml.pim.instance.DiscreteSinglePortInstance;
+import org.muml.pim.instance.HybridPortInstance;
+import org.muml.pim.instance.InstanceFactory;
+import org.muml.pim.instance.InstancePackage;
+import org.muml.pim.instance.StructuredComponentInstance;
 
 
 /**

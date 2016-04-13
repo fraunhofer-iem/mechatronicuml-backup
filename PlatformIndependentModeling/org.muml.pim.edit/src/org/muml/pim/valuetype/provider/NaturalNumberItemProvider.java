@@ -23,7 +23,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.pim.component.provider.MumlEditPlugin;
+import org.muml.pim.provider.MumlEditPlugin;
 import org.muml.pim.valuetype.NaturalNumber;
 import org.muml.pim.valuetype.ValuetypePackage;
 
@@ -175,7 +175,7 @@ public class NaturalNumberItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pim.provider.MumlEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

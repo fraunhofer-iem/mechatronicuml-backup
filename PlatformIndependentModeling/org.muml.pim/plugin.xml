@@ -13,7 +13,7 @@
 --><plugin>
 
 <!-- manual extensions -->
-<extension point="org.muml.core.modelinstance.version">
+<extension point="org.muml.core.version">
       <artefact id="org.muml.metamodel" name="muml metamodel" resource="plugin.xml" version="0.3.2">
          <!-- these following values are automatically modified by svn after committing a change in this file; see svn:keywords -->
          <lastchange committer="$LastChangedBy$" date="$LastChangedDate$" revision="$LastChangedRevision$">

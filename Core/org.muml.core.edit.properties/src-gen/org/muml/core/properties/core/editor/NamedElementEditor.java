@@ -21,27 +21,27 @@ public abstract class NamedElementEditor extends org.muml.ape.runtime.editors.Cl
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-		} else if ("property.tab.general".equals(tab)) { // Tab General
+		} else if ("General".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
+		} else if ("Docuementation".equals(tab)) { // Tab Documentation
 
-		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
+		} else if ("Extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_ExtensionsTab_Editor(), false);
 
 		} else {
 		}
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_property_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_property_tab_generalTab_Editor() {
-		if (this.editorName_property_tab_generalTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_GeneralTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_GeneralTab_Editor() {
+		if (this.editorName_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.CorePackage.eINSTANCE
 					.getNamedElement_Name();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
@@ -61,14 +61,14 @@ public abstract class NamedElementEditor extends org.muml.ape.runtime.editors.Cl
 
 			editor.setTooltipMessage("The name attribute of a meta-model element.");
 
-			this.editorName_property_tab_generalTab = editor;
+			this.editorName_GeneralTab = editor;
 		}
-		return this.editorName_property_tab_generalTab;
+		return this.editorName_GeneralTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtensions_property_tab_extensionsTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtensions_property_tab_extensionsTab_Editor() {
-		if (this.editorExtensions_property_tab_extensionsTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtensions_ExtensionsTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtensions_ExtensionsTab_Editor() {
+		if (this.editorExtensions_ExtensionsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.CorePackage.eINSTANCE
 					.getExtendableElement_Extensions();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.FlattenedListPropertyEditor(
@@ -76,9 +76,9 @@ public abstract class NamedElementEditor extends org.muml.ape.runtime.editors.Cl
 
 			editor.setTooltipMessage("Extendable Elements can be extended by an Extension.");
 
-			this.editorExtensions_property_tab_extensionsTab = editor;
+			this.editorExtensions_ExtensionsTab = editor;
 		}
-		return this.editorExtensions_property_tab_extensionsTab;
+		return this.editorExtensions_ExtensionsTab;
 	}
 
 }

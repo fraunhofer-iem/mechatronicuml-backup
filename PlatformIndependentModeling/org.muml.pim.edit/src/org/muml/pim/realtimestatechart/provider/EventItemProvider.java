@@ -13,7 +13,6 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.command.ChangeCommand;
 import org.eclipse.emf.edit.command.DeleteCommand;
@@ -28,7 +27,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.pim.component.provider.MumlEditPlugin;
+import org.muml.pim.provider.MumlEditPlugin;
 import org.muml.pim.realtimestatechart.AsynchronousMessageEvent;
 import org.muml.pim.realtimestatechart.Event;
 import org.muml.pim.realtimestatechart.EventKind;
@@ -171,7 +170,7 @@ public class EventItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pim.provider.MumlEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

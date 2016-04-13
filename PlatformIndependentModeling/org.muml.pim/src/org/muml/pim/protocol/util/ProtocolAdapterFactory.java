@@ -19,6 +19,12 @@ import org.muml.pim.connector.ConnectorEndpoint;
 import org.muml.pim.connector.DiscreteInteractionEndpoint;
 import org.muml.pim.constraint.VerifiableElement;
 import org.muml.pim.protocol.*;
+import org.muml.pim.protocol.AbstractCoordinationSpecification;
+import org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions;
+import org.muml.pim.protocol.CoordinationProtocol;
+import org.muml.pim.protocol.ProtocolPackage;
+import org.muml.pim.protocol.Role;
+import org.muml.pim.protocol.RoleConnector;
 import org.muml.pim.types.DataType;
 
 /**

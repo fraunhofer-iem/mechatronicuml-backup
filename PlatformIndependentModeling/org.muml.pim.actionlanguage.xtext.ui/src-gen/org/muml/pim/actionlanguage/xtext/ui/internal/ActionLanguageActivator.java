@@ -23,7 +23,7 @@ import com.google.inject.Module;
  */
 public class ActionLanguageActivator extends AbstractUIPlugin {
 	
-	public static final String DE_UNI_PADERBORN_FUJABA_MUML_ACTIONLANGUAGE = "org.muml.pim.actionlanguage";
+	public static final String ORG_MUML_PIM_ACTIONLANGUAGE_XTEXT_ACTIONLANGUAGE = "org.muml.pim.actionlanguage.xtext.ActionLanguage";
 	
 	private static final Logger logger = Logger.getLogger(ActionLanguageActivator.class);
 	
@@ -73,7 +73,7 @@ public class ActionLanguageActivator extends AbstractUIPlugin {
 	}
 
 	protected Module getRuntimeModule(String grammar) {
-		if (DE_UNI_PADERBORN_FUJABA_MUML_ACTIONLANGUAGE.equals(grammar)) {
+		if (ORG_MUML_PIM_ACTIONLANGUAGE_XTEXT_ACTIONLANGUAGE.equals(grammar)) {
 			return new org.muml.pim.actionlanguage.xtext.ActionLanguageRuntimeModule();
 		}
 		
@@ -81,7 +81,7 @@ public class ActionLanguageActivator extends AbstractUIPlugin {
 	}
 	
 	protected Module getUiModule(String grammar) {
-		if (DE_UNI_PADERBORN_FUJABA_MUML_ACTIONLANGUAGE.equals(grammar)) {
+		if (ORG_MUML_PIM_ACTIONLANGUAGE_XTEXT_ACTIONLANGUAGE.equals(grammar)) {
 			return new org.muml.pim.actionlanguage.xtext.ui.ActionLanguageUiModule(this);
 		}
 		

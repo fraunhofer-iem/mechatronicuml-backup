@@ -20,13 +20,11 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.core.CorePackage;
 import org.muml.core.common.descriptor.DefaultChainedPropertyDescriptor;
 import org.muml.core.common.descriptor.IChainedPropertyDescriptor;
 import org.muml.core.expressions.common.ComparingOperator;
 import org.muml.core.provider.ExtendableElementItemProvider;
-import org.muml.pim.component.provider.MumlEditPlugin;
-import org.muml.pim.pattern.PatternFactory;
+import org.muml.pim.provider.MumlEditPlugin;
 import org.muml.pim.realtimestatechart.ClockConstraint;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
 import org.muml.pim.realtimestatechart.State;
@@ -336,7 +334,7 @@ public class ClockConstraintItemProvider extends ExtendableElementItemProvider {
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pim.provider.MumlEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

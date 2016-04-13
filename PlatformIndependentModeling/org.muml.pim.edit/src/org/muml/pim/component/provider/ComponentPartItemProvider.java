@@ -26,8 +26,7 @@ import org.muml.pim.component.Component;
 import org.muml.pim.component.ComponentFactory;
 import org.muml.pim.component.ComponentPackage;
 import org.muml.pim.component.ComponentPart;
-import org.muml.pim.constraint.provider.MumlEditPlugin;
-import org.muml.pim.pattern.PatternFactory;
+import org.muml.pim.provider.MumlEditPlugin;
 import org.muml.pim.valuetype.ValuetypeFactory;
 import org.muml.pim.valuetype.ValuetypePackage;
 import org.muml.pim.valuetype.descriptor.NaturalNumberPropertyDescriptor;
@@ -354,7 +353,7 @@ public class ComponentPartItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pim.provider.MumlEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

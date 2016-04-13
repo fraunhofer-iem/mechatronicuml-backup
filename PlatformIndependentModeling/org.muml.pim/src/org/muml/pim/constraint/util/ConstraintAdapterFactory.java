@@ -12,6 +12,9 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.muml.core.ExtendableElement;
 import org.muml.pim.constraint.*;
+import org.muml.pim.constraint.ConstraintPackage;
+import org.muml.pim.constraint.VerifiableElement;
+import org.muml.pim.constraint.VerificationConstraintRepository;
 
 
 /**

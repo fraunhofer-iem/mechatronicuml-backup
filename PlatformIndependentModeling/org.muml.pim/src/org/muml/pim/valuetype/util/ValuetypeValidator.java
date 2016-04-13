@@ -13,10 +13,14 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.muml.core.common.validator.MumlValidator;
 import org.muml.pim.valuetype.*;
+import org.muml.pim.valuetype.Cardinality;
+import org.muml.pim.valuetype.NaturalNumber;
+import org.muml.pim.valuetype.Range;
+import org.muml.pim.valuetype.TimeValue;
+import org.muml.pim.valuetype.ValuetypePackage;
 
 /**
  * <!-- begin-user-doc -->

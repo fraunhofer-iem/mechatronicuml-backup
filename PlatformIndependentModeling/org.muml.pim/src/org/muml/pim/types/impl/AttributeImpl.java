@@ -13,17 +13,12 @@
 package org.muml.pim.types.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.core.CommentableElement;
 import org.muml.core.CorePackage;
-import org.muml.core.impl.NamedElementImpl;
 import org.muml.pim.behavior.impl.TypedNamedElementImpl;
 import org.muml.pim.types.Attribute;
-import org.muml.pim.types.DataType;
 import org.muml.pim.types.TypesPackage;
 
 /**

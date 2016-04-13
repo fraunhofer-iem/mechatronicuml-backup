@@ -12,6 +12,11 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.muml.core.ExtendableElement;
 import org.muml.pim.valuetype.*;
+import org.muml.pim.valuetype.Cardinality;
+import org.muml.pim.valuetype.NaturalNumber;
+import org.muml.pim.valuetype.Range;
+import org.muml.pim.valuetype.TimeValue;
+import org.muml.pim.valuetype.ValuetypePackage;
 
 /**
  * <!-- begin-user-doc -->

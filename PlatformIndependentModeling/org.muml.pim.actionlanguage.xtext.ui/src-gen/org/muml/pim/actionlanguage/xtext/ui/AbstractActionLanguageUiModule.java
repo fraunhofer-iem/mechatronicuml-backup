@@ -7,7 +7,7 @@ package org.muml.pim.actionlanguage.xtext.ui;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
- * Manual modifications go to {de.uni_paderborn.fujaba.muml.ui.ActionLanguageUiModule}
+ * Manual modifications go to {org.muml.pim.actionlanguage.xtext.ui.ActionLanguageUiModule}
  */
 @SuppressWarnings("all")
 public abstract class AbstractActionLanguageUiModule extends org.eclipse.xtext.ui.DefaultUiModule {

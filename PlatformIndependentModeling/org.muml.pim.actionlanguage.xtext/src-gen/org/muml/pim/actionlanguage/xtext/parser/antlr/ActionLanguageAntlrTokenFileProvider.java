@@ -11,6 +11,6 @@ public class ActionLanguageAntlrTokenFileProvider implements IAntlrTokenFileProv
 	@Override
 	public InputStream getAntlrTokenFile() {
 		ClassLoader classLoader = getClass().getClassLoader();
-    	return classLoader.getResourceAsStream("de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.tokens");
+    	return classLoader.getResourceAsStream("org/muml/pim/actionlanguage/xtext/parser/antlr/internal/InternalActionLanguage.tokens");
 	}
 }

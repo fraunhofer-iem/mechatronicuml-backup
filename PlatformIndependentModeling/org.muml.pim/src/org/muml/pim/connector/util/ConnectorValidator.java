@@ -14,6 +14,17 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.muml.pim.connector.*;
+import org.muml.pim.connector.BufferOverflowAvoidanceStrategy;
+import org.muml.pim.connector.Connector;
+import org.muml.pim.connector.ConnectorEndpoint;
+import org.muml.pim.connector.ConnectorEndpointInstance;
+import org.muml.pim.connector.ConnectorInstance;
+import org.muml.pim.connector.ConnectorPackage;
+import org.muml.pim.connector.DiscreteInteractionEndpoint;
+import org.muml.pim.connector.DiscreteInteractionEndpointInstance;
+import org.muml.pim.connector.DiscreteMultiInteractionEndpointInstance;
+import org.muml.pim.connector.DiscreteSingleInteractionEndpointInstance;
+import org.muml.pim.connector.MessageBuffer;
 
 /**
  * <!-- begin-user-doc -->

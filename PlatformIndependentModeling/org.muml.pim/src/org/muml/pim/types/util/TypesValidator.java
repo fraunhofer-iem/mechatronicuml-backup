@@ -12,10 +12,17 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.muml.core.common.validator.MumlValidator;
 import org.muml.pim.types.*;
+import org.muml.pim.types.ArrayDataType;
+import org.muml.pim.types.Attribute;
+import org.muml.pim.types.DataType;
+import org.muml.pim.types.PrimitiveDataType;
+import org.muml.pim.types.PrimitiveTypes;
+import org.muml.pim.types.RangedPrimitiveDataType;
+import org.muml.pim.types.StructureDataType;
+import org.muml.pim.types.TypesPackage;
 
 /**
  * <!-- begin-user-doc -->

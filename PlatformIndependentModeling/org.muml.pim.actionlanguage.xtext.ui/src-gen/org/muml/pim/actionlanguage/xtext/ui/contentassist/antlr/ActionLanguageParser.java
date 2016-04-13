@@ -12,9 +12,10 @@ import org.eclipse.xtext.AbstractElement;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.AbstractContentAssistParser;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.FollowElement;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
-import org.muml.pim.actionlanguage.xtext.services.ActionLanguageGrammarAccess;
 
 import com.google.inject.Inject;
+
+import org.muml.pim.actionlanguage.xtext.services.ActionLanguageGrammarAccess;
 
 public class ActionLanguageParser extends AbstractContentAssistParser {
 	

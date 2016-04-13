@@ -9,6 +9,7 @@ package org.muml.pim.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.muml.core.CorePackage;
 import org.muml.core.modelinstance.ModelinstancePackage;
 import org.muml.pim.PimFactory;
 import org.muml.pim.PimPackage;
@@ -100,7 +101,7 @@ public class PimPackageImpl extends EPackageImpl implements PimPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
-		ModelinstancePackage.eINSTANCE.eClass();
+		CorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		ConstraintPackageImpl theConstraintPackage = (ConstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) instanceof ConstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) : ConstraintPackage.eINSTANCE);

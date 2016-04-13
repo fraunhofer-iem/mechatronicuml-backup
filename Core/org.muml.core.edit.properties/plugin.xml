@@ -28,16 +28,16 @@
       <propertyTabs contributorId="org.muml.ape.contributor">
           <propertyTab
              category="domain"
-             id="property.tab.general"
+             id="General"
              label="General"/>
           <propertyTab
              category="domain"
-             id="property.tab.documentation"
+             id="Docuementation"
              afterTab="property.tab.extensions"
              label="Documentation"/>
           <propertyTab
              category="domain"
-             id="property.tab.extensions"
+             id="Extensions"
              afterTab="property.tab.general"
              label="Extensions"/>
           
@@ -51,27 +51,27 @@
       <propertySections contributorId="org.muml.ape.contributor">
           <propertySection
             class="org.muml.ape.runtime.sections.ObjectPropertySection"
-            filter="org.muml.core.properties.tabs.Property_tab_generalTabElementFilter"
-            id="property.tab.general"
-            tab="property.tab.general">
+            filter="org.muml.core.properties.tabs.GeneralTabElementFilter"
+            id="General"
+            tab="General">
              <input
                type="org.eclipse.emf.ecore.EObject">
              </input>
           </propertySection>
           <propertySection
             class="org.muml.ape.runtime.sections.ObjectPropertySection"
-            filter="org.muml.core.properties.tabs.Property_tab_documentationTabElementFilter"
-            id="property.tab.documentation"
-            tab="property.tab.documentation">
+            filter="org.muml.core.properties.tabs.DocumentationTabElementFilter"
+            id="Docuementation"
+            tab="Docuementation">
              <input
                type="org.eclipse.emf.ecore.EObject">
              </input>
           </propertySection>
           <propertySection
             class="org.muml.ape.runtime.sections.ObjectPropertySection"
-            filter="org.muml.core.properties.tabs.Property_tab_extensionsTabElementFilter"
-            id="property.tab.extensions"
-            tab="property.tab.extensions">
+            filter="org.muml.core.properties.tabs.ExtensionsTabElementFilter"
+            id="Extensions"
+            tab="Extensions">
              <input
                type="org.eclipse.emf.ecore.EObject">
              </input>
@@ -113,6 +113,16 @@
        <propertyEditor
              factory="org.muml.core.properties.common.editor.LiteralExpressionEditor$Factory"
              type="http://www.muml.org/core/expressions/common/1.0.0#LiteralExpression">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.core.properties.modelinstance.editor.RootNodeEditor$Factory"
+             type="http://www.muml.org/modelinstance/1.0.0#RootNode">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.core.properties.modelinstance.editor.ModelElementCategoryEditor$Factory"
+             type="http://www.muml.org/modelinstance/1.0.0#ModelElementCategory">
        </propertyEditor>
     
     </propertyEditors>

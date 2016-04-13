@@ -14,6 +14,9 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.muml.pim.msgtype.*;
+import org.muml.pim.msgtype.MessageType;
+import org.muml.pim.msgtype.MessageTypeRepository;
+import org.muml.pim.msgtype.MsgtypePackage;
 
 /**
  * <!-- begin-user-doc -->

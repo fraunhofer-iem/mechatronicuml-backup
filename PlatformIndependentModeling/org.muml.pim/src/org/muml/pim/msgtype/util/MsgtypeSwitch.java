@@ -14,6 +14,9 @@ import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
 import org.muml.core.Repository;
 import org.muml.pim.msgtype.*;
+import org.muml.pim.msgtype.MessageType;
+import org.muml.pim.msgtype.MessageTypeRepository;
+import org.muml.pim.msgtype.MsgtypePackage;
 
 /**
  * <!-- begin-user-doc -->

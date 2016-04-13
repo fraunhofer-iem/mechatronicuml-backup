@@ -13,9 +13,7 @@
 package org.muml.pim.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.muml.pim.PimPackage;
 import org.muml.pim.Test;
 

@@ -26,7 +26,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.common.descriptor.DefaultChainedPropertyDescriptor;
 import org.muml.core.common.descriptor.IChainedPropertyDescriptor;
-import org.muml.pim.component.provider.MumlEditPlugin;
+import org.muml.pim.provider.MumlEditPlugin;
 import org.muml.pim.realtimestatechart.Deadline;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
 import org.muml.pim.realtimestatechart.descriptor.EnumerationPropertyDescriptor;
@@ -292,7 +292,7 @@ public class DeadlineItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pim.provider.MumlEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

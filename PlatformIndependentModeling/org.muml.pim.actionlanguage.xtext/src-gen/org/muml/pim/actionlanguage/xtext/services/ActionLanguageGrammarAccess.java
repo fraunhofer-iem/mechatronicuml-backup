@@ -19,14 +19,14 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	public class EntryElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Entry");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.Entry");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cBlockParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cArrayInitializeExpressionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		//Entry returns expressions::Expression:
-		//	Block | Expression | ArrayInitializeExpression;
+		//Entry expressions::Expression:
+		//	Block | Expression | ArrayInitializeExpression
 		@Override public ParserRule getRule() { return rule; }
 
 		//Block | Expression | ArrayInitializeExpression
@@ -43,7 +43,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class BlockElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Block");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.Block");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cBlockAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -51,17 +51,19 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cExpressionsExpressionStartRuleParserRuleCall_2_0 = (RuleCall)cExpressionsAssignment_2.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
-		//Block returns actionlanguage::Block hidden(WS, ML_COMMENT, SL_COMMENT):
-		//	{actionlanguage::Block} "{" expressions+=ExpressionStartRule* "}";
+		//Block actionlanguage::Block hidden(WS, ML_COMMENT, SL_COMMENT):
+		//	{actionlanguage::Block}
+		//	'{'
+		//	expressions+=ExpressionStartRule* '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{actionlanguage::Block} "{" expressions+=ExpressionStartRule* "}"
+		//{actionlanguage::Block} '{' expressions+=ExpressionStartRule* '}'
 		public Group getGroup() { return cGroup; }
 
 		//{actionlanguage::Block}
 		public Action getBlockAction_0() { return cBlockAction_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 
 		//expressions+=ExpressionStartRule*
@@ -70,12 +72,12 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//ExpressionStartRule
 		public RuleCall getExpressionsExpressionStartRuleParserRuleCall_2_0() { return cExpressionsExpressionStartRuleParserRuleCall_2_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 	}
 
 	public class ForLoopElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ForLoop");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.ForLoop");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cForKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -91,21 +93,20 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cBlockBlockParserRuleCall_7_0 = (RuleCall)cBlockAssignment_7.eContents().get(0);
 		
 		//// TODO: clarify if it makes sense to allow arbitrary expressions for
-		//
 		//// the initializeExpression and countingExpression
-		// ForLoop returns actionlanguage::ForLoop:
-		//	"for" "(" initializeExpression=Assignment loopTest=Expression ";" countingExpression=ForLoopCountingExpression ")"
-		//	block=Block;
+		//ForLoop actionlanguage::ForLoop:
+		//	'for' '(' initializeExpression=Assignment loopTest=Expression ';' countingExpression=ForLoopCountingExpression ')'
+		//	block=Block
 		@Override public ParserRule getRule() { return rule; }
 
-		//"for" "(" initializeExpression=Assignment loopTest=Expression ";" countingExpression=ForLoopCountingExpression ")"
+		//'for' '(' initializeExpression=Assignment loopTest=Expression ';' countingExpression=ForLoopCountingExpression ')'
 		//block=Block
 		public Group getGroup() { return cGroup; }
 
-		//"for"
+		//'for'
 		public Keyword getForKeyword_0() { return cForKeyword_0; }
 
-		//"("
+		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
 		//initializeExpression=Assignment
@@ -120,7 +121,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//Expression
 		public RuleCall getLoopTestExpressionParserRuleCall_3_0() { return cLoopTestExpressionParserRuleCall_3_0; }
 
-		//";"
+		//';'
 		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
 
 		//countingExpression=ForLoopCountingExpression
@@ -129,7 +130,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//ForLoopCountingExpression
 		public RuleCall getCountingExpressionForLoopCountingExpressionParserRuleCall_5_0() { return cCountingExpressionForLoopCountingExpressionParserRuleCall_5_0; }
 
-		//")"
+		//')'
 		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
 
 		//block=Block
@@ -140,7 +141,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ForLoopCountingExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ForLoopCountingExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.ForLoopCountingExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cLhs_typedNamedElementExpressionAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cLhs_typedNamedElementExpressionTypedNamedElementExpressionParserRuleCall_0_0 = (RuleCall)cLhs_typedNamedElementExpressionAssignment_0.eContents().get(0);
@@ -153,10 +154,10 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRhs_assignExpressionAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
 		private final RuleCall cRhs_assignExpressionExpressionParserRuleCall_1_1_1_0 = (RuleCall)cRhs_assignExpressionAssignment_1_1_1.eContents().get(0);
 		
-		//ForLoopCountingExpression returns actionlanguage::Assignment:
+		//ForLoopCountingExpression actionlanguage::Assignment:
 		//	lhs_typedNamedElementExpression=TypedNamedElementExpression
-		//	(incrementDecrementOperator=UnaryPostIncrementDecrementOperator | assignOperator=AssignOperator
-		//	rhs_assignExpression=Expression);
+		//	(incrementDecrementOperator=UnaryPostIncrementDecrementOperator
+		//	| assignOperator=AssignOperator rhs_assignExpression=Expression)
 		@Override public ParserRule getRule() { return rule; }
 
 		//lhs_typedNamedElementExpression=TypedNamedElementExpression
@@ -170,8 +171,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//TypedNamedElementExpression
 		public RuleCall getLhs_typedNamedElementExpressionTypedNamedElementExpressionParserRuleCall_0_0() { return cLhs_typedNamedElementExpressionTypedNamedElementExpressionParserRuleCall_0_0; }
 
-		//incrementDecrementOperator=UnaryPostIncrementDecrementOperator | assignOperator=AssignOperator
-		//rhs_assignExpression=Expression
+		//(incrementDecrementOperator=UnaryPostIncrementDecrementOperator | assignOperator=AssignOperator
+		//rhs_assignExpression=Expression)
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
 		//incrementDecrementOperator=UnaryPostIncrementDecrementOperator
@@ -197,7 +198,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class WhileLoopElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WhileLoop");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.WhileLoop");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cWhileKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -207,17 +208,18 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cBlockAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cBlockBlockParserRuleCall_4_0 = (RuleCall)cBlockAssignment_4.eContents().get(0);
 		
-		//WhileLoop returns actionlanguage::WhileLoop:
-		//	"while" "(" loopTest=Expression ")" block=Block;
+		//WhileLoop actionlanguage::WhileLoop:
+		//	'while' '(' loopTest=Expression ')'
+		//	block=Block
 		@Override public ParserRule getRule() { return rule; }
 
-		//"while" "(" loopTest=Expression ")" block=Block
+		//'while' '(' loopTest=Expression ')' block=Block
 		public Group getGroup() { return cGroup; }
 
-		//"while"
+		//'while'
 		public Keyword getWhileKeyword_0() { return cWhileKeyword_0; }
 
-		//"("
+		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
 		//loopTest=Expression
@@ -226,7 +228,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//Expression
 		public RuleCall getLoopTestExpressionParserRuleCall_2_0() { return cLoopTestExpressionParserRuleCall_2_0; }
 
-		//")"
+		//')'
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 
 		//block=Block
@@ -237,7 +239,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class DoWhileLoopElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DoWhileLoop");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.DoWhileLoop");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cDoKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cBlockAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -248,14 +250,16 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLoopTestExpressionParserRuleCall_4_0 = (RuleCall)cLoopTestAssignment_4.eContents().get(0);
 		private final Keyword cRightParenthesisSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//DoWhileLoop returns actionlanguage::DoWhileLoop:
-		//	"do" block=Block "while" "(" loopTest=Expression ");";
+		//DoWhileLoop actionlanguage::DoWhileLoop:
+		//	'do'
+		//	block=Block
+		//	'while' '(' loopTest=Expression ');'
 		@Override public ParserRule getRule() { return rule; }
 
-		//"do" block=Block "while" "(" loopTest=Expression ");"
+		//'do' block=Block 'while' '(' loopTest=Expression ');'
 		public Group getGroup() { return cGroup; }
 
-		//"do"
+		//'do'
 		public Keyword getDoKeyword_0() { return cDoKeyword_0; }
 
 		//block=Block
@@ -264,10 +268,10 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//Block
 		public RuleCall getBlockBlockParserRuleCall_1_0() { return cBlockBlockParserRuleCall_1_0; }
 
-		//"while"
+		//'while'
 		public Keyword getWhileKeyword_2() { return cWhileKeyword_2; }
 
-		//"("
+		//'('
 		public Keyword getLeftParenthesisKeyword_3() { return cLeftParenthesisKeyword_3; }
 
 		//loopTest=Expression
@@ -276,12 +280,12 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//Expression
 		public RuleCall getLoopTestExpressionParserRuleCall_4_0() { return cLoopTestExpressionParserRuleCall_4_0; }
 
-		//");"
+		//');'
 		public Keyword getRightParenthesisSemicolonKeyword_5() { return cRightParenthesisSemicolonKeyword_5; }
 	}
 
 	public class IfStatementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "IfStatement");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.IfStatement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cIfKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -297,17 +301,19 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cElseBlockAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
 		private final RuleCall cElseBlockBlockParserRuleCall_6_1_0 = (RuleCall)cElseBlockAssignment_6_1.eContents().get(0);
 		
-		//IfStatement returns actionlanguage::IfStatement:
-		//	"if" "(" ifCondition=Expression ")" ifBlock=Block elseIfStatements+=ElseIfStatement* ("else" elseBlock=Block)?;
+		//IfStatement actionlanguage::IfStatement:
+		//	'if' '(' ifCondition=Expression ')'
+		//	ifBlock=Block
+		//	elseIfStatements+=ElseIfStatement* ('else' elseBlock=Block)?
 		@Override public ParserRule getRule() { return rule; }
 
-		//"if" "(" ifCondition=Expression ")" ifBlock=Block elseIfStatements+=ElseIfStatement* ("else" elseBlock=Block)?
+		//'if' '(' ifCondition=Expression ')' ifBlock=Block elseIfStatements+=ElseIfStatement* ('else' elseBlock=Block)?
 		public Group getGroup() { return cGroup; }
 
-		//"if"
+		//'if'
 		public Keyword getIfKeyword_0() { return cIfKeyword_0; }
 
-		//"("
+		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
 		//ifCondition=Expression
@@ -316,7 +322,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//Expression
 		public RuleCall getIfConditionExpressionParserRuleCall_2_0() { return cIfConditionExpressionParserRuleCall_2_0; }
 
-		//")"
+		//')'
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 
 		//ifBlock=Block
@@ -331,10 +337,10 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//ElseIfStatement
 		public RuleCall getElseIfStatementsElseIfStatementParserRuleCall_5_0() { return cElseIfStatementsElseIfStatementParserRuleCall_5_0; }
 
-		//("else" elseBlock=Block)?
+		//('else' elseBlock=Block)?
 		public Group getGroup_6() { return cGroup_6; }
 
-		//"else"
+		//'else'
 		public Keyword getElseKeyword_6_0() { return cElseKeyword_6_0; }
 
 		//elseBlock=Block
@@ -345,7 +351,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ElseIfStatementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ElseIfStatement");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.ElseIfStatement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cElseifKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -355,17 +361,18 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cElseIfBlockAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cElseIfBlockBlockParserRuleCall_4_0 = (RuleCall)cElseIfBlockAssignment_4.eContents().get(0);
 		
-		//ElseIfStatement returns actionlanguage::ElseIfStatement:
-		//	"elseif" "(" elseIfCondition=Expression ")" elseIfBlock=Block;
+		//ElseIfStatement actionlanguage::ElseIfStatement:
+		//	'elseif' '(' elseIfCondition=Expression ')'
+		//	elseIfBlock=Block
 		@Override public ParserRule getRule() { return rule; }
 
-		//"elseif" "(" elseIfCondition=Expression ")" elseIfBlock=Block
+		//'elseif' '(' elseIfCondition=Expression ')' elseIfBlock=Block
 		public Group getGroup() { return cGroup; }
 
-		//"elseif"
+		//'elseif'
 		public Keyword getElseifKeyword_0() { return cElseifKeyword_0; }
 
-		//"("
+		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
 		//elseIfCondition=Expression
@@ -374,7 +381,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//Expression
 		public RuleCall getElseIfConditionExpressionParserRuleCall_2_0() { return cElseIfConditionExpressionParserRuleCall_2_0; }
 
-		//")"
+		//')'
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 
 		//elseIfBlock=Block
@@ -385,7 +392,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ReturnStatementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ReturnStatement");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.ReturnStatement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cReturnStatementAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cReturnKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -393,17 +400,18 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cExpressionExpressionParserRuleCall_2_0 = (RuleCall)cExpressionAssignment_2.eContents().get(0);
 		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
-		//ReturnStatement returns actionlanguage::ReturnStatement:
-		//	{actionlanguage::ReturnStatement} "return" expression=Expression ";";
+		//ReturnStatement actionlanguage::ReturnStatement:
+		//	{actionlanguage::ReturnStatement}
+		//	'return' expression=Expression ';'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{actionlanguage::ReturnStatement} "return" expression=Expression ";"
+		//{actionlanguage::ReturnStatement} 'return' expression=Expression ';'
 		public Group getGroup() { return cGroup; }
 
 		//{actionlanguage::ReturnStatement}
 		public Action getReturnStatementAction_0() { return cReturnStatementAction_0; }
 
-		//"return"
+		//'return'
 		public Keyword getReturnKeyword_1() { return cReturnKeyword_1; }
 
 		//expression=Expression
@@ -412,32 +420,32 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//Expression
 		public RuleCall getExpressionExpressionParserRuleCall_2_0() { return cExpressionExpressionParserRuleCall_2_0; }
 
-		//";"
+		//';'
 		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
 	}
 
 	public class OperationCallStatementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "OperationCallStatement");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.OperationCallStatement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cOperationCallParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Keyword cSemicolonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//OperationCallStatement returns actionlanguage::OperationCall:
-		//	OperationCall ";";
+		//OperationCallStatement actionlanguage::OperationCall:
+		//	OperationCall ';'
 		@Override public ParserRule getRule() { return rule; }
 
-		//OperationCall ";"
+		//OperationCall ';'
 		public Group getGroup() { return cGroup; }
 
 		//OperationCall
 		public RuleCall getOperationCallParserRuleCall_0() { return cOperationCallParserRuleCall_0; }
 
-		//";"
+		//';'
 		public Keyword getSemicolonKeyword_1() { return cSemicolonKeyword_1; }
 	}
 
 	public class ExpressionStartRuleElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ExpressionStartRule");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.ExpressionStartRule");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cAssignmentParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cForLoopParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
@@ -448,9 +456,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLocalVariableOrConstantDeclarationStatementParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		private final RuleCall cOperationCallStatementParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		
-		//ExpressionStartRule returns expressions::Expression:
+		//ExpressionStartRule expressions::Expression:
 		//	Assignment | ForLoop | WhileLoop | DoWhileLoop | IfStatement | ReturnStatement |
-		//	LocalVariableOrConstantDeclarationStatement | OperationCallStatement;
+		//	LocalVariableOrConstantDeclarationStatement | OperationCallStatement
 		@Override public ParserRule getRule() { return rule; }
 
 		//Assignment | ForLoop | WhileLoop | DoWhileLoop | IfStatement | ReturnStatement |
@@ -483,7 +491,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class AssignmentElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Assignment");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.Assignment");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cLhs_typedNamedElementExpressionAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cLhs_typedNamedElementExpressionTypedNamedElementExpressionParserRuleCall_0_0 = (RuleCall)cLhs_typedNamedElementExpressionAssignment_0.eContents().get(0);
@@ -498,13 +506,14 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//// Assignment
-		// Assignment returns actionlanguage::Assignment:
+		//Assignment actionlanguage::Assignment:
 		//	lhs_typedNamedElementExpression=TypedNamedElementExpression (assignOperator=AssignOperator
-		//	rhs_assignExpression=InitializeExpression | incrementDecrementOperator=UnaryPostIncrementDecrementOperator) ";";
+		//	rhs_assignExpression=InitializeExpression
+		//	| incrementDecrementOperator=UnaryPostIncrementDecrementOperator) ';'
 		@Override public ParserRule getRule() { return rule; }
 
 		//lhs_typedNamedElementExpression=TypedNamedElementExpression (assignOperator=AssignOperator
-		//rhs_assignExpression=InitializeExpression | incrementDecrementOperator=UnaryPostIncrementDecrementOperator) ";"
+		//rhs_assignExpression=InitializeExpression | incrementDecrementOperator=UnaryPostIncrementDecrementOperator) ';'
 		public Group getGroup() { return cGroup; }
 
 		//lhs_typedNamedElementExpression=TypedNamedElementExpression
@@ -513,8 +522,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//TypedNamedElementExpression
 		public RuleCall getLhs_typedNamedElementExpressionTypedNamedElementExpressionParserRuleCall_0_0() { return cLhs_typedNamedElementExpressionTypedNamedElementExpressionParserRuleCall_0_0; }
 
-		//assignOperator=AssignOperator rhs_assignExpression=InitializeExpression |
-		//incrementDecrementOperator=UnaryPostIncrementDecrementOperator
+		//(assignOperator=AssignOperator rhs_assignExpression=InitializeExpression |
+		//incrementDecrementOperator=UnaryPostIncrementDecrementOperator)
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
 		//assignOperator=AssignOperator rhs_assignExpression=InitializeExpression
@@ -538,21 +547,21 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//UnaryPostIncrementDecrementOperator
 		public RuleCall getIncrementDecrementOperatorUnaryPostIncrementDecrementOperatorEnumRuleCall_1_1_0() { return cIncrementDecrementOperatorUnaryPostIncrementDecrementOperatorEnumRuleCall_1_1_0; }
 
-		//";"
+		//';'
 		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
 	}
 
 	public class InitializeExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "InitializeExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.InitializeExpression");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cArrayInitializeExpressionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cNondeterministicChoiceExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cExpressionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//// end of assignment
-		// // initialize expression
-		// InitializeExpression returns expressions::Expression:
-		//	ArrayInitializeExpression | NondeterministicChoiceExpression | Expression;
+		//// initialize expression
+		//InitializeExpression expressions::Expression:
+		//	ArrayInitializeExpression | NondeterministicChoiceExpression | Expression
 		@Override public ParserRule getRule() { return rule; }
 
 		//ArrayInitializeExpression | NondeterministicChoiceExpression | Expression
@@ -569,7 +578,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ArrayInitializeExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ArrayInitializeExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.ArrayInitializeExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLeftSquareBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cExpressionsAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -581,16 +590,16 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//// end of initialize expression
-		// // array initialization
-		// ArrayInitializeExpression returns
-		//actionlanguage::ArrayInitializeExpression:
-		//	"[" expressions+=InitializeExpression ("," expressions+=InitializeExpression)* "]";
+		//// array initialization
+		//ArrayInitializeExpression actionlanguage::ArrayInitializeExpression:
+		//	'[' expressions+=InitializeExpression (',' expressions+=InitializeExpression)*
+		//	']'
 		@Override public ParserRule getRule() { return rule; }
 
-		//"[" expressions+=InitializeExpression ("," expressions+=InitializeExpression)* "]"
+		//'[' expressions+=InitializeExpression (',' expressions+=InitializeExpression)* ']'
 		public Group getGroup() { return cGroup; }
 
-		//"["
+		//'['
 		public Keyword getLeftSquareBracketKeyword_0() { return cLeftSquareBracketKeyword_0; }
 
 		//expressions+=InitializeExpression
@@ -599,10 +608,10 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//InitializeExpression
 		public RuleCall getExpressionsInitializeExpressionParserRuleCall_1_0() { return cExpressionsInitializeExpressionParserRuleCall_1_0; }
 
-		//("," expressions+=InitializeExpression)*
+		//(',' expressions+=InitializeExpression)*
 		public Group getGroup_2() { return cGroup_2; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
 
 		//expressions+=InitializeExpression
@@ -611,28 +620,27 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//InitializeExpression
 		public RuleCall getExpressionsInitializeExpressionParserRuleCall_2_1_0() { return cExpressionsInitializeExpressionParserRuleCall_2_1_0; }
 
-		//"]"
+		//']'
 		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
 	}
 
 	public class LocalVariableOrConstantDeclarationStatementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LocalVariableOrConstantDeclarationStatement");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.LocalVariableOrConstantDeclarationStatement");
 		private final Assignment cVariableAssignment = (Assignment)rule.eContents().get(1);
 		private final Alternatives cVariableAlternatives_0 = (Alternatives)cVariableAssignment.eContents().get(0);
 		private final RuleCall cVariableLocalVariableDeclarationParserRuleCall_0_0 = (RuleCall)cVariableAlternatives_0.eContents().get(0);
 		private final RuleCall cVariableLocalConstantDeclarationParserRuleCall_0_1 = (RuleCall)cVariableAlternatives_0.eContents().get(1);
 		
 		//// end of array initialization
-		// // local variable declaration
-		// LocalVariableOrConstantDeclarationStatement returns
-		//actionlanguage::LocalVariableDeclarationStatement:
-		//	variable=(LocalVariableDeclaration | LocalConstantDeclaration);
+		//// local variable declaration
+		//LocalVariableOrConstantDeclarationStatement actionlanguage::LocalVariableDeclarationStatement:
+		//	variable=(LocalVariableDeclaration | LocalConstantDeclaration)
 		@Override public ParserRule getRule() { return rule; }
 
 		//variable=(LocalVariableDeclaration | LocalConstantDeclaration)
 		public Assignment getVariableAssignment() { return cVariableAssignment; }
 
-		//LocalVariableDeclaration | LocalConstantDeclaration
+		//(LocalVariableDeclaration | LocalConstantDeclaration)
 		public Alternatives getVariableAlternatives_0() { return cVariableAlternatives_0; }
 
 		//LocalVariableDeclaration
@@ -643,7 +651,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class LocalVariableDeclarationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LocalVariableDeclaration");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.LocalVariableDeclaration");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cDataTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final CrossReference cDataTypeDataTypeCrossReference_0_0 = (CrossReference)cDataTypeAssignment_0.eContents().get(0);
@@ -656,11 +664,11 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cInitializeExpressionInitializeExpressionParserRuleCall_2_1_0 = (RuleCall)cInitializeExpressionAssignment_2_1.eContents().get(0);
 		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
-		//LocalVariableDeclaration returns behavior::Variable:
-		//	dataType=[types::DataType|DATATYPE] name=ID (":=" initializeExpression=InitializeExpression)? ";";
+		//LocalVariableDeclaration behavior::Variable:
+		//	dataType=[types::DataType|DATATYPE] name=ID (':=' initializeExpression=InitializeExpression)? ';'
 		@Override public ParserRule getRule() { return rule; }
 
-		//dataType=[types::DataType|DATATYPE] name=ID (":=" initializeExpression=InitializeExpression)? ";"
+		//dataType=[types::DataType|DATATYPE] name=ID (':=' initializeExpression=InitializeExpression)? ';'
 		public Group getGroup() { return cGroup; }
 
 		//dataType=[types::DataType|DATATYPE]
@@ -678,10 +686,10 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
-		//(":=" initializeExpression=InitializeExpression)?
+		//(':=' initializeExpression=InitializeExpression)?
 		public Group getGroup_2() { return cGroup_2; }
 
-		//":="
+		//':='
 		public Keyword getColonEqualsSignKeyword_2_0() { return cColonEqualsSignKeyword_2_0; }
 
 		//initializeExpression=InitializeExpression
@@ -690,12 +698,12 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//InitializeExpression
 		public RuleCall getInitializeExpressionInitializeExpressionParserRuleCall_2_1_0() { return cInitializeExpressionInitializeExpressionParserRuleCall_2_1_0; }
 
-		//";"
+		//';'
 		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
 	}
 
 	public class LocalConstantDeclarationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LocalConstantDeclaration");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.LocalConstantDeclaration");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cConstantAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final Keyword cConstantConstKeyword_0_0 = (Keyword)cConstantAssignment_0.eContents().get(0);
@@ -709,17 +717,17 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cInitializeExpressionInitializeExpressionParserRuleCall_4_0 = (RuleCall)cInitializeExpressionAssignment_4.eContents().get(0);
 		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//LocalConstantDeclaration returns behavior::Variable:
-		//	constant?="const" dataType=[types::DataType|DATATYPE] name=ID ":=" initializeExpression=InitializeExpression ";";
+		//LocalConstantDeclaration behavior::Variable:
+		//	constant?='const' dataType=[types::DataType|DATATYPE] name=ID ':=' initializeExpression=InitializeExpression ';'
 		@Override public ParserRule getRule() { return rule; }
 
-		//constant?="const" dataType=[types::DataType|DATATYPE] name=ID ":=" initializeExpression=InitializeExpression ";"
+		//constant?='const' dataType=[types::DataType|DATATYPE] name=ID ':=' initializeExpression=InitializeExpression ';'
 		public Group getGroup() { return cGroup; }
 
-		//constant?="const"
+		//constant?='const'
 		public Assignment getConstantAssignment_0() { return cConstantAssignment_0; }
 
-		//"const"
+		//'const'
 		public Keyword getConstantConstKeyword_0_0() { return cConstantConstKeyword_0_0; }
 
 		//dataType=[types::DataType|DATATYPE]
@@ -737,7 +745,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 
-		//":="
+		//':='
 		public Keyword getColonEqualsSignKeyword_3() { return cColonEqualsSignKeyword_3; }
 
 		//initializeExpression=InitializeExpression
@@ -746,12 +754,12 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//InitializeExpression
 		public RuleCall getInitializeExpressionInitializeExpressionParserRuleCall_4_0() { return cInitializeExpressionInitializeExpressionParserRuleCall_4_0; }
 
-		//";"
+		//';'
 		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
 	}
 
 	public class NondeterministicChoiceExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NondeterministicChoiceExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.NondeterministicChoiceExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cDataTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final CrossReference cDataTypePrimitiveDataTypeCrossReference_0_0 = (CrossReference)cDataTypeAssignment_0.eContents().get(0);
@@ -760,10 +768,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRangeRangeParserRuleCall_1_0 = (RuleCall)cRangeAssignment_1.eContents().get(0);
 		
 		//// end of local variable declaration
-		// // nondeterministic choice expression
-		// NondeterministicChoiceExpression returns
-		//actionlanguage::NondeterministicChoiceExpression:
-		//	dataType=[types::PrimitiveDataType] range=Range;
+		//// nondeterministic choice expression
+		//NondeterministicChoiceExpression actionlanguage::NondeterministicChoiceExpression:
+		//	dataType=[types::PrimitiveDataType] range=Range
 		@Override public ParserRule getRule() { return rule; }
 
 		//dataType=[types::PrimitiveDataType] range=Range
@@ -786,7 +793,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class RangeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Range");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.Range");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLessThanSignKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cLowerBoundAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -796,14 +803,14 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cUpperBoundLONGParserRuleCall_3_0 = (RuleCall)cUpperBoundAssignment_3.eContents().get(0);
 		private final Keyword cGreaterThanSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//Range returns valuetype::Range:
-		//	"<" lowerBound=LONG "," upperBound=LONG ">";
+		//Range valuetype::Range:
+		//	'<' lowerBound=LONG ',' upperBound=LONG '>'
 		@Override public ParserRule getRule() { return rule; }
 
-		//"<" lowerBound=LONG "," upperBound=LONG ">"
+		//'<' lowerBound=LONG ',' upperBound=LONG '>'
 		public Group getGroup() { return cGroup; }
 
-		//"<"
+		//'<'
 		public Keyword getLessThanSignKeyword_0() { return cLessThanSignKeyword_0; }
 
 		//lowerBound=LONG
@@ -812,7 +819,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//LONG
 		public RuleCall getLowerBoundLONGParserRuleCall_1_0() { return cLowerBoundLONGParserRuleCall_1_0; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_2() { return cCommaKeyword_2; }
 
 		//upperBound=LONG
@@ -821,16 +828,16 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//LONG
 		public RuleCall getUpperBoundLONGParserRuleCall_3_0() { return cUpperBoundLONGParserRuleCall_3_0; }
 
-		//">"
+		//'>'
 		public Keyword getGreaterThanSignKeyword_4() { return cGreaterThanSignKeyword_4; }
 	}
 
 	public class LONGElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LONG");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.LONG");
 		private final RuleCall cINTTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//LONG returns ecore::ELong:
-		//	INT;
+		//LONG ecore::ELong:
+		//	INT
 		@Override public ParserRule getRule() { return rule; }
 
 		//INT
@@ -838,12 +845,12 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Expression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.Expression");
 		private final RuleCall cLogicalExpressionParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		//// end of nondeterministic choice expression
-		// Expression returns expressions::Expression:
-		//	LogicalExpression;
+		//Expression expressions::Expression:
+		//	LogicalExpression
 		@Override public ParserRule getRule() { return rule; }
 
 		//LogicalExpression
@@ -851,12 +858,12 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class LogicalExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LogicalExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.LogicalExpression");
 		private final RuleCall cLogicalOrExpressionParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		//// LogicalExpression
-		// LogicalExpression returns expressions::Expression:
-		//	LogicalOrExpression;
+		//LogicalExpression expressions::Expression:
+		//	LogicalOrExpression
 		@Override public ParserRule getRule() { return rule; }
 
 		//LogicalOrExpression
@@ -864,7 +871,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class LogicalOrExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LogicalOrExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.LogicalOrExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cLogicalAndExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
@@ -874,9 +881,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightExpressionAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightExpressionLogicalAndExpressionParserRuleCall_1_2_0 = (RuleCall)cRightExpressionAssignment_1_2.eContents().get(0);
 		
-		//LogicalOrExpression returns expressions::Expression:
+		//LogicalOrExpression expressions::Expression:
 		//	LogicalAndExpression ({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicalOrOperator
-		//	rightExpression=LogicalAndExpression)*;
+		//	rightExpression=LogicalAndExpression)*
 		@Override public ParserRule getRule() { return rule; }
 
 		//LogicalAndExpression ({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicalOrOperator
@@ -907,7 +914,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class LogicalAndExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LogicalAndExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.LogicalAndExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cComparisonExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
@@ -917,9 +924,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightExpressionAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightExpressionComparisonExpressionParserRuleCall_1_2_0 = (RuleCall)cRightExpressionAssignment_1_2.eContents().get(0);
 		
-		//LogicalAndExpression returns expressions::Expression:
+		//LogicalAndExpression expressions::Expression:
 		//	ComparisonExpression ({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicalAndOperator
-		//	rightExpression=ComparisonExpression)*;
+		//	rightExpression=ComparisonExpression)*
 		@Override public ParserRule getRule() { return rule; }
 
 		//ComparisonExpression ({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicalAndOperator
@@ -950,7 +957,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ComparisonExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ComparisonExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.ComparisonExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cComparisonHigherOpExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
@@ -961,10 +968,11 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRightExpressionComparisonHigherOpExpressionParserRuleCall_1_2_0 = (RuleCall)cRightExpressionAssignment_1_2.eContents().get(0);
 		
 		//// end of LogicalExpression
-		// // ComparisonExpression
-		// ComparisonExpression returns expressions::Expression:
+		//// ComparisonExpression
+		//ComparisonExpression expressions::Expression:
 		//	ComparisonHigherOpExpression ({commonExpressions::ComparisonExpression.leftExpression=current}
-		//	operator=ComparingEQNEQOperator rightExpression=ComparisonHigherOpExpression)?;
+		//	operator=ComparingEQNEQOperator
+		//	rightExpression=ComparisonHigherOpExpression)?
 		@Override public ParserRule getRule() { return rule; }
 
 		//ComparisonHigherOpExpression ({commonExpressions::ComparisonExpression.leftExpression=current}
@@ -995,7 +1003,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ComparisonHigherOpExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ComparisonHigherOpExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.ComparisonHigherOpExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cArithmeticExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
@@ -1005,9 +1013,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightExpressionAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightExpressionArithmeticExpressionParserRuleCall_1_2_0 = (RuleCall)cRightExpressionAssignment_1_2.eContents().get(0);
 		
-		//ComparisonHigherOpExpression returns expressions::Expression:
+		//ComparisonHigherOpExpression expressions::Expression:
 		//	ArithmeticExpression ({commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingRelOperator
-		//	rightExpression=ArithmeticExpression)?;
+		//	rightExpression=ArithmeticExpression)?
 		@Override public ParserRule getRule() { return rule; }
 
 		//ArithmeticExpression ({commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingRelOperator
@@ -1038,13 +1046,13 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ArithmeticExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ArithmeticExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.ArithmeticExpression");
 		private final RuleCall cAdditionExpressionParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		//// end of ComparisonExpression
-		// // ArithmeticExpression	
-		// ArithmeticExpression returns expressions::Expression:
-		//	AdditionExpression;
+		//// ArithmeticExpression	
+		//ArithmeticExpression expressions::Expression:
+		//	AdditionExpression
 		@Override public ParserRule getRule() { return rule; }
 
 		//AdditionExpression
@@ -1052,7 +1060,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class AdditionExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AdditionExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.AdditionExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cMultiplicationExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
@@ -1062,9 +1070,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightExpressionAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightExpressionMultiplicationExpressionParserRuleCall_1_2_0 = (RuleCall)cRightExpressionAssignment_1_2.eContents().get(0);
 		
-		//AdditionExpression returns expressions::Expression:
+		//AdditionExpression expressions::Expression:
 		//	MultiplicationExpression ({commonExpressions::ArithmeticExpression.leftExpression=current} operator=AdditionOperator
-		//	rightExpression=MultiplicationExpression)*;
+		//	rightExpression=MultiplicationExpression)*
 		@Override public ParserRule getRule() { return rule; }
 
 		//MultiplicationExpression ({commonExpressions::ArithmeticExpression.leftExpression=current} operator=AdditionOperator
@@ -1095,7 +1103,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class MultiplicationExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MultiplicationExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.MultiplicationExpression");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cUnaryPreExpressionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
@@ -1109,9 +1117,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRightExpressionUnaryPreExpressionParserRuleCall_1_1_2_0_0 = (RuleCall)cRightExpressionAlternatives_1_1_2_0.eContents().get(0);
 		private final RuleCall cRightExpressionTypeCastExpressionParserRuleCall_1_1_2_0_1 = (RuleCall)cRightExpressionAlternatives_1_1_2_0.eContents().get(1);
 		
-		//MultiplicationExpression returns expressions::Expression:
+		//MultiplicationExpression expressions::Expression:
 		//	UnaryPreExpression | TypeCastExpression ({commonExpressions::ArithmeticExpression.leftExpression=current}
-		//	operator=MultiplicationOperator rightExpression=(UnaryPreExpression | TypeCastExpression))*;
+		//	operator=MultiplicationOperator rightExpression=(UnaryPreExpression | TypeCastExpression))*
 		@Override public ParserRule getRule() { return rule; }
 
 		//UnaryPreExpression | TypeCastExpression ({commonExpressions::ArithmeticExpression.leftExpression=current}
@@ -1144,7 +1152,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//rightExpression=(UnaryPreExpression | TypeCastExpression)
 		public Assignment getRightExpressionAssignment_1_1_2() { return cRightExpressionAssignment_1_1_2; }
 
-		//UnaryPreExpression | TypeCastExpression
+		//(UnaryPreExpression | TypeCastExpression)
 		public Alternatives getRightExpressionAlternatives_1_1_2_0() { return cRightExpressionAlternatives_1_1_2_0; }
 
 		//UnaryPreExpression
@@ -1155,7 +1163,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class UnaryPreExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "UnaryPreExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.UnaryPreExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cUnaryExpressionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cOperatorAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -1164,9 +1172,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEnclosedExpressionTypeCastExpressionParserRuleCall_2_0 = (RuleCall)cEnclosedExpressionAssignment_2.eContents().get(0);
 		
 		//// end of ArithmeticExpression
-		// // UnaryPreExpression
-		// UnaryPreExpression returns expressions::Expression:
-		//	{commonExpressions::UnaryExpression} operator=UnaryPreOperator enclosedExpression=TypeCastExpression;
+		//// UnaryPreExpression
+		//UnaryPreExpression expressions::Expression:
+		//	{commonExpressions::UnaryExpression} operator=UnaryPreOperator enclosedExpression=TypeCastExpression
 		@Override public ParserRule getRule() { return rule; }
 
 		//{commonExpressions::UnaryExpression} operator=UnaryPreOperator enclosedExpression=TypeCastExpression
@@ -1189,7 +1197,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class TypeCastExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TypeCastExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.TypeCastExpression");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cOperandParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
@@ -1203,24 +1211,24 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEnclosedExpressionOperandParserRuleCall_1_4_0 = (RuleCall)cEnclosedExpressionAssignment_1_4.eContents().get(0);
 		
 		//// end of UnaryPreExpression
-		// TypeCastExpression returns expressions::Expression:
-		//	Operand | {actionlanguage::TypeCastExpression} "(" dataType=[types::DataType|DATATYPE] ")"
-		//	enclosedExpression=Operand;
+		//TypeCastExpression expressions::Expression:
+		//	Operand | {actionlanguage::TypeCastExpression}
+		//	'(' dataType=[types::DataType|DATATYPE] ')' enclosedExpression=Operand
 		@Override public ParserRule getRule() { return rule; }
 
-		//Operand | {actionlanguage::TypeCastExpression} "(" dataType=[types::DataType|DATATYPE] ")" enclosedExpression=Operand
+		//Operand | {actionlanguage::TypeCastExpression} '(' dataType=[types::DataType|DATATYPE] ')' enclosedExpression=Operand
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Operand
 		public RuleCall getOperandParserRuleCall_0() { return cOperandParserRuleCall_0; }
 
-		//{actionlanguage::TypeCastExpression} "(" dataType=[types::DataType|DATATYPE] ")" enclosedExpression=Operand
+		//{actionlanguage::TypeCastExpression} '(' dataType=[types::DataType|DATATYPE] ')' enclosedExpression=Operand
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{actionlanguage::TypeCastExpression}
 		public Action getTypeCastExpressionAction_1_0() { return cTypeCastExpressionAction_1_0; }
 
-		//"("
+		//'('
 		public Keyword getLeftParenthesisKeyword_1_1() { return cLeftParenthesisKeyword_1_1; }
 
 		//dataType=[types::DataType|DATATYPE]
@@ -1232,7 +1240,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//DATATYPE
 		public RuleCall getDataTypeDataTypeDATATYPEParserRuleCall_1_2_0_1() { return cDataTypeDataTypeDATATYPEParserRuleCall_1_2_0_1; }
 
-		//")"
+		//')'
 		public Keyword getRightParenthesisKeyword_1_3() { return cRightParenthesisKeyword_1_3; }
 
 		//enclosedExpression=Operand
@@ -1243,7 +1251,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class OperandElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Operand");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.Operand");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
@@ -1257,25 +1265,25 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNoAttributeSelectorExpressionParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		
 		//// Operand
-		// Operand returns expressions::Expression:
-		//	"(" Expression ")" | LiteralExpression | ExtendedTypedNamedElementExpression | TimeValueExpression | OperationCall |
-		//	TriggerMessageExpression | NoAttributeSelectorExpression;
+		//Operand expressions::Expression:
+		//	'(' Expression ')' | LiteralExpression | ExtendedTypedNamedElementExpression | TimeValueExpression
+		//	| OperationCall | TriggerMessageExpression | NoAttributeSelectorExpression
 		@Override public ParserRule getRule() { return rule; }
 
-		//"(" Expression ")" | LiteralExpression | ExtendedTypedNamedElementExpression | TimeValueExpression | OperationCall |
+		//'(' Expression ')' | LiteralExpression | ExtendedTypedNamedElementExpression | TimeValueExpression | OperationCall |
 		//TriggerMessageExpression | NoAttributeSelectorExpression
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//"(" Expression ")"
+		//'(' Expression ')'
 		public Group getGroup_0() { return cGroup_0; }
 
-		//"("
+		//'('
 		public Keyword getLeftParenthesisKeyword_0_0() { return cLeftParenthesisKeyword_0_0; }
 
 		//Expression
 		public RuleCall getExpressionParserRuleCall_0_1() { return cExpressionParserRuleCall_0_1; }
 
-		//")"
+		//')'
 		public Keyword getRightParenthesisKeyword_0_2() { return cRightParenthesisKeyword_0_2; }
 
 		//LiteralExpression
@@ -1298,15 +1306,15 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class LiteralExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LiteralExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.LiteralExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cLiteralExpressionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueLiteralParserRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
 		
 		//// end of Operand
-		// LiteralExpression returns commonExpressions::LiteralExpression:
-		//	{commonExpressions::LiteralExpression} value=Literal;
+		//LiteralExpression commonExpressions::LiteralExpression:
+		//	{commonExpressions::LiteralExpression} value=Literal
 		@Override public ParserRule getRule() { return rule; }
 
 		//{commonExpressions::LiteralExpression} value=Literal
@@ -1323,18 +1331,18 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class LiteralElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Literal");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.Literal");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cNUMBERTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cBOOLEANTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final Keyword cNullKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
 		
-		//Literal returns ecore::EString:
-		//	NUMBER | BOOLEAN | INT | "null";
+		//Literal:
+		//	NUMBER | BOOLEAN | INT | 'null';
 		@Override public ParserRule getRule() { return rule; }
 
-		//NUMBER | BOOLEAN | INT | "null"
+		//NUMBER | BOOLEAN | INT | 'null'
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//NUMBER
@@ -1346,18 +1354,18 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
 
-		//"null"
+		//'null'
 		public Keyword getNullKeyword_3() { return cNullKeyword_3; }
 	}
 
 	public class TimeValueExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TimeValueExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.TimeValueExpression");
 		private final Assignment cTimeValueAssignment = (Assignment)rule.eContents().get(1);
 		private final CrossReference cTimeValueTimeValueCrossReference_0 = (CrossReference)cTimeValueAssignment.eContents().get(0);
 		private final RuleCall cTimeValueTimeValueMINORMAXKEYWORDTerminalRuleCall_0_1 = (RuleCall)cTimeValueTimeValueCrossReference_0.eContents().get(1);
 		
-		//TimeValueExpression returns actionlanguage::TimeValueExpression:
-		//	timeValue=[valuetype::TimeValue|MINORMAXKEYWORD];
+		//TimeValueExpression actionlanguage::TimeValueExpression:
+		//	timeValue=[valuetype::TimeValue|MINORMAXKEYWORD]
 		@Override public ParserRule getRule() { return rule; }
 
 		//timeValue=[valuetype::TimeValue|MINORMAXKEYWORD]
@@ -1371,7 +1379,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ExtendedTypedNamedElementExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ExtendedTypedNamedElementExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.ExtendedTypedNamedElementExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cTypedNamedElementExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
@@ -1385,40 +1393,35 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cIncrementDecrementOperatorAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
 		private final RuleCall cIncrementDecrementOperatorIncrementDecrementOperatorExpressionEnumRuleCall_1_1_1_0 = (RuleCall)cIncrementDecrementOperatorAssignment_1_1_1.eContents().get(0);
 		
-		//ExtendedTypedNamedElementExpression returns expressions::Expression:
+		//ExtendedTypedNamedElementExpression expressions::Expression:
 		//	TypedNamedElementExpression
-		//	({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "->"
-		//	position=PositionSelectorExpression | // unary post increment/decrement			
-		//
-		//	{actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
-		//	incrementDecrementOperator=IncrementDecrementOperatorExpression)?;
+		//	({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current}
+		//	'->' position=PositionSelectorExpression
+		//	| {actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
+		//	incrementDecrementOperator=IncrementDecrementOperatorExpression)?
 		@Override public ParserRule getRule() { return rule; }
 
 		//TypedNamedElementExpression ({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current}
-		//"->" position=PositionSelectorExpression | // unary post increment/decrement			
-		//
-		//{actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
+		//'->' position=PositionSelectorExpression | {actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
 		//incrementDecrementOperator=IncrementDecrementOperatorExpression)?
 		public Group getGroup() { return cGroup; }
 
 		//TypedNamedElementExpression
 		public RuleCall getTypedNamedElementExpressionParserRuleCall_0() { return cTypedNamedElementExpressionParserRuleCall_0; }
 
-		//({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "->"
-		//position=PositionSelectorExpression | // unary post increment/decrement			
-		//
-		//{actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
+		//({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} '->'
+		//position=PositionSelectorExpression | {actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
 		//incrementDecrementOperator=IncrementDecrementOperatorExpression)?
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
-		//{actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "->"
+		//{actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} '->'
 		//position=PositionSelectorExpression
 		public Group getGroup_1_0() { return cGroup_1_0; }
 
 		//{actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current}
 		public Action getDiscreteInteractionEndpointReferenceTypedNamedElementExpressionAction_1_0_0() { return cDiscreteInteractionEndpointReferenceTypedNamedElementExpressionAction_1_0_0; }
 
-		//"->"
+		//'->'
 		public Keyword getHyphenMinusGreaterThanSignKeyword_1_0_1() { return cHyphenMinusGreaterThanSignKeyword_1_0_1; }
 
 		//position=PositionSelectorExpression
@@ -1427,13 +1430,11 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//PositionSelectorExpression
 		public RuleCall getPositionPositionSelectorExpressionParserRuleCall_1_0_2_0() { return cPositionPositionSelectorExpressionParserRuleCall_1_0_2_0; }
 
-		//// unary post increment/decrement			
-		// {actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
+		//{actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
 		//incrementDecrementOperator=IncrementDecrementOperatorExpression
 		public Group getGroup_1_1() { return cGroup_1_1; }
 
-		//// unary post increment/decrement			
-		// {actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
+		//{actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
 		public Action getAssignmentLhs_typedNamedElementExpressionAction_1_1_0() { return cAssignmentLhs_typedNamedElementExpressionAction_1_1_0; }
 
 		//incrementDecrementOperator=IncrementDecrementOperatorExpression
@@ -1444,7 +1445,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class TypedNamedElementExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TypedNamedElementExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.TypedNamedElementExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cTypedNamedElementAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final CrossReference cTypedNamedElementTypedNamedElementCrossReference_0_0 = (CrossReference)cTypedNamedElementAssignment_0.eContents().get(0);
@@ -1454,9 +1455,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cElementAccessorsArrayIndexExpressionParserRuleCall_1_0_0 = (RuleCall)cElementAccessorsAlternatives_1_0.eContents().get(0);
 		private final RuleCall cElementAccessorsAttributeAccessorExpressionParserRuleCall_1_0_1 = (RuleCall)cElementAccessorsAlternatives_1_0.eContents().get(1);
 		
-		//TypedNamedElementExpression returns actionlanguage::TypedNamedElementExpression:
+		//TypedNamedElementExpression actionlanguage::TypedNamedElementExpression:
 		//	typedNamedElement=[behavior::TypedNamedElement] elementAccessors+=(ArrayIndexExpression |
-		//	AttributeAccessorExpression)*;
+		//	AttributeAccessorExpression)*
 		@Override public ParserRule getRule() { return rule; }
 
 		//typedNamedElement=[behavior::TypedNamedElement] elementAccessors+=(ArrayIndexExpression | AttributeAccessorExpression)*
@@ -1474,7 +1475,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//elementAccessors+=(ArrayIndexExpression | AttributeAccessorExpression)*
 		public Assignment getElementAccessorsAssignment_1() { return cElementAccessorsAssignment_1; }
 
-		//ArrayIndexExpression | AttributeAccessorExpression
+		//(ArrayIndexExpression | AttributeAccessorExpression)
 		public Alternatives getElementAccessorsAlternatives_1_0() { return cElementAccessorsAlternatives_1_0; }
 
 		//ArrayIndexExpression
@@ -1485,21 +1486,21 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ArrayIndexExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ArrayIndexExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.ArrayIndexExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLeftSquareBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cIndexAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cIndexArithmeticExpressionParserRuleCall_1_0 = (RuleCall)cIndexAssignment_1.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
-		//ArrayIndexExpression returns actionlanguage::ArrayIndexExpression:
-		//	"[" index=ArithmeticExpression "]";
+		//ArrayIndexExpression actionlanguage::ArrayIndexExpression:
+		//	'[' index=ArithmeticExpression ']'
 		@Override public ParserRule getRule() { return rule; }
 
-		//"[" index=ArithmeticExpression "]"
+		//'[' index=ArithmeticExpression ']'
 		public Group getGroup() { return cGroup; }
 
-		//"["
+		//'['
 		public Keyword getLeftSquareBracketKeyword_0() { return cLeftSquareBracketKeyword_0; }
 
 		//index=ArithmeticExpression
@@ -1508,26 +1509,26 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//ArithmeticExpression
 		public RuleCall getIndexArithmeticExpressionParserRuleCall_1_0() { return cIndexArithmeticExpressionParserRuleCall_1_0; }
 
-		//"]"
+		//']'
 		public Keyword getRightSquareBracketKeyword_2() { return cRightSquareBracketKeyword_2; }
 	}
 
 	public class AttributeAccessorExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AttributeAccessorExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.AttributeAccessorExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cFullStopKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cAttributeAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cAttributeAttributeCrossReference_1_0 = (CrossReference)cAttributeAssignment_1.eContents().get(0);
 		private final RuleCall cAttributeAttributeIDTerminalRuleCall_1_0_1 = (RuleCall)cAttributeAttributeCrossReference_1_0.eContents().get(1);
 		
-		//AttributeAccessorExpression returns actionlanguage::AttributeAccessorExpression:
-		//	"." attribute=[types::Attribute];
+		//AttributeAccessorExpression actionlanguage::AttributeAccessorExpression:
+		//	'.' attribute=[types::Attribute]
 		@Override public ParserRule getRule() { return rule; }
 
-		//"." attribute=[types::Attribute]
+		//'.' attribute=[types::Attribute]
 		public Group getGroup() { return cGroup; }
 
-		//"."
+		//'.'
 		public Keyword getFullStopKeyword_0() { return cFullStopKeyword_0; }
 
 		//attribute=[types::Attribute]
@@ -1541,12 +1542,12 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class NoAttributeSelectorExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NoAttributeSelectorExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.NoAttributeSelectorExpression");
 		private final Assignment cPositionAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cPositionPositionSelectorExpressionParserRuleCall_0 = (RuleCall)cPositionAssignment.eContents().get(0);
 		
-		//NoAttributeSelectorExpression returns actionlanguage::DiscreteInteractionEndpointReference:
-		//	position=PositionSelectorExpression;
+		//NoAttributeSelectorExpression actionlanguage::DiscreteInteractionEndpointReference:
+		//	position=PositionSelectorExpression
 		@Override public ParserRule getRule() { return rule; }
 
 		//position=PositionSelectorExpression
@@ -1557,7 +1558,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class PositionSelectorExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PositionSelectorExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.PositionSelectorExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cKindAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cKindPositionSelectorKindEnumRuleCall_0_0 = (RuleCall)cKindAssignment_0.eContents().get(0);
@@ -1566,11 +1567,11 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cSuccessorAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cSuccessorPositionSelectorExpressionParserRuleCall_1_1_0 = (RuleCall)cSuccessorAssignment_1_1.eContents().get(0);
 		
-		//PositionSelectorExpression returns actionlanguage::PositionSelector:
-		//	kind=PositionSelectorKind ("->" successor=PositionSelectorExpression)?;
+		//PositionSelectorExpression actionlanguage::PositionSelector:
+		//	kind=PositionSelectorKind ('->' successor=PositionSelectorExpression)?
 		@Override public ParserRule getRule() { return rule; }
 
-		//kind=PositionSelectorKind ("->" successor=PositionSelectorExpression)?
+		//kind=PositionSelectorKind ('->' successor=PositionSelectorExpression)?
 		public Group getGroup() { return cGroup; }
 
 		//kind=PositionSelectorKind
@@ -1579,10 +1580,10 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//PositionSelectorKind
 		public RuleCall getKindPositionSelectorKindEnumRuleCall_0_0() { return cKindPositionSelectorKindEnumRuleCall_0_0; }
 
-		//("->" successor=PositionSelectorExpression)?
+		//('->' successor=PositionSelectorExpression)?
 		public Group getGroup_1() { return cGroup_1; }
 
-		//"->"
+		//'->'
 		public Keyword getHyphenMinusGreaterThanSignKeyword_1_0() { return cHyphenMinusGreaterThanSignKeyword_1_0; }
 
 		//successor=PositionSelectorExpression
@@ -1593,7 +1594,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class OperationCallElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "OperationCall");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.OperationCall");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cOperationAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final CrossReference cOperationOperationCrossReference_0_0 = (CrossReference)cOperationAssignment_0.eContents().get(0);
@@ -1608,12 +1609,12 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cParameterBindingParamaterBindingParserRuleCall_2_1_1_0 = (RuleCall)cParameterBindingAssignment_2_1_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
-		//OperationCall returns actionlanguage::OperationCall:
-		//	operation=[behavior::Operation] "(" (parameterBinding+=ParamaterBinding ("," parameterBinding+=ParamaterBinding)*)?
-		//	")";
+		//OperationCall actionlanguage::OperationCall:
+		//	operation=[behavior::Operation] '(' (parameterBinding+=ParamaterBinding (',' parameterBinding+=ParamaterBinding)*)?
+		//	')'
 		@Override public ParserRule getRule() { return rule; }
 
-		//operation=[behavior::Operation] "(" (parameterBinding+=ParamaterBinding ("," parameterBinding+=ParamaterBinding)*)? ")"
+		//operation=[behavior::Operation] '(' (parameterBinding+=ParamaterBinding (',' parameterBinding+=ParamaterBinding)*)? ')'
 		public Group getGroup() { return cGroup; }
 
 		//operation=[behavior::Operation]
@@ -1625,10 +1626,10 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getOperationOperationIDTerminalRuleCall_0_0_1() { return cOperationOperationIDTerminalRuleCall_0_0_1; }
 
-		//"("
+		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//(parameterBinding+=ParamaterBinding ("," parameterBinding+=ParamaterBinding)*)?
+		//(parameterBinding+=ParamaterBinding (',' parameterBinding+=ParamaterBinding)*)?
 		public Group getGroup_2() { return cGroup_2; }
 
 		//parameterBinding+=ParamaterBinding
@@ -1637,10 +1638,10 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//ParamaterBinding
 		public RuleCall getParameterBindingParamaterBindingParserRuleCall_2_0_0() { return cParameterBindingParamaterBindingParserRuleCall_2_0_0; }
 
-		//("," parameterBinding+=ParamaterBinding)*
+		//(',' parameterBinding+=ParamaterBinding)*
 		public Group getGroup_2_1() { return cGroup_2_1; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_2_1_0() { return cCommaKeyword_2_1_0; }
 
 		//parameterBinding+=ParamaterBinding
@@ -1649,12 +1650,12 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//ParamaterBinding
 		public RuleCall getParameterBindingParamaterBindingParserRuleCall_2_1_1_0() { return cParameterBindingParamaterBindingParserRuleCall_2_1_1_0; }
 
-		//")"
+		//')'
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
 
 	public class ParamaterBindingElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ParamaterBinding");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.ParamaterBinding");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cParameterBindingAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cParameterAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -1664,11 +1665,11 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cValueExpressionParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
 		
-		//ParamaterBinding returns behavior::ParameterBinding:
-		//	{behavior::ParameterBinding} parameter=[behavior::Parameter] ":=" value=Expression;
+		//ParamaterBinding behavior::ParameterBinding:
+		//	{behavior::ParameterBinding} parameter=[behavior::Parameter] ':=' value=Expression
 		@Override public ParserRule getRule() { return rule; }
 
-		//{behavior::ParameterBinding} parameter=[behavior::Parameter] ":=" value=Expression
+		//{behavior::ParameterBinding} parameter=[behavior::Parameter] ':=' value=Expression
 		public Group getGroup() { return cGroup; }
 
 		//{behavior::ParameterBinding}
@@ -1683,7 +1684,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getParameterParameterIDTerminalRuleCall_1_0_1() { return cParameterParameterIDTerminalRuleCall_1_0_1; }
 
-		//":="
+		//':='
 		public Keyword getColonEqualsSignKeyword_2() { return cColonEqualsSignKeyword_2; }
 
 		//value=Expression
@@ -1694,7 +1695,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class TriggerMessageExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TriggerMessageExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.TriggerMessageExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cMessageTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final CrossReference cMessageTypeMessageTypeCrossReference_0_0 = (CrossReference)cMessageTypeAssignment_0.eContents().get(0);
@@ -1705,11 +1706,11 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cParameterParameterIDTerminalRuleCall_2_0_1 = (RuleCall)cParameterParameterCrossReference_2_0.eContents().get(1);
 		
 		//// TriggerMessageExpression
-		// TriggerMessageExpression returns actionlanguage::TriggerMessageExpression:
-		//	messageType=[msgtype::MessageType] "->" parameter=[behavior::Parameter];
+		//TriggerMessageExpression actionlanguage::TriggerMessageExpression:
+		//	messageType=[msgtype::MessageType] '->' parameter=[behavior::Parameter]
 		@Override public ParserRule getRule() { return rule; }
 
-		//messageType=[msgtype::MessageType] "->" parameter=[behavior::Parameter]
+		//messageType=[msgtype::MessageType] '->' parameter=[behavior::Parameter]
 		public Group getGroup() { return cGroup; }
 
 		//messageType=[msgtype::MessageType]
@@ -1721,7 +1722,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getMessageTypeMessageTypeIDTerminalRuleCall_0_0_1() { return cMessageTypeMessageTypeIDTerminalRuleCall_0_0_1; }
 
-		//"->"
+		//'->'
 		public Keyword getHyphenMinusGreaterThanSignKeyword_1() { return cHyphenMinusGreaterThanSignKeyword_1; }
 
 		//parameter=[behavior::Parameter]
@@ -1735,7 +1736,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class DATATYPEElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DATATYPE");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.DATATYPE");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
@@ -1743,32 +1744,32 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cINTTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		private final Keyword cRightSquareBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		
-		//DATATYPE returns ecore::EString:
-		//	ID ("[" INT "]")*;
+		//DATATYPE:
+		//	ID ('[' INT ']')*;
 		@Override public ParserRule getRule() { return rule; }
 
-		//ID ("[" INT "]")*
+		//ID ('[' INT ']')*
 		public Group getGroup() { return cGroup; }
 
 		//ID
 		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
 
-		//("[" INT "]")*
+		//('[' INT ']')*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//"["
+		//'['
 		public Keyword getLeftSquareBracketKeyword_1_0() { return cLeftSquareBracketKeyword_1_0; }
 
 		//INT
 		public RuleCall getINTTerminalRuleCall_1_1() { return cINTTerminalRuleCall_1_1; }
 
-		//"]"
+		//']'
 		public Keyword getRightSquareBracketKeyword_1_2() { return cRightSquareBracketKeyword_1_2; }
 	}
 	
 	
 	public class UnaryPostIncrementDecrementOperatorElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "UnaryPostIncrementDecrementOperator");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.UnaryPostIncrementDecrementOperator");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cINCREMENTEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cINCREMENTPlusSignPlusSignKeyword_0_0 = (Keyword)cINCREMENTEnumLiteralDeclaration_0.eContents().get(0);
@@ -1776,27 +1777,27 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cDECREMENTHyphenMinusHyphenMinusKeyword_1_0 = (Keyword)cDECREMENTEnumLiteralDeclaration_1.eContents().get(0);
 		
 		//enum UnaryPostIncrementDecrementOperator returns actionlanguage::IncrementDecrementOperator:
-		//	INCREMENT="++" | DECREMENT="--";
+		//	INCREMENT='++' | DECREMENT='--';
 		public EnumRule getRule() { return rule; }
 
-		//INCREMENT="++" | DECREMENT="--"
+		//INCREMENT='++' | DECREMENT='--'
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//INCREMENT="++"
+		//INCREMENT='++'
 		public EnumLiteralDeclaration getINCREMENTEnumLiteralDeclaration_0() { return cINCREMENTEnumLiteralDeclaration_0; }
 
-		//"++"
+		//'++'
 		public Keyword getINCREMENTPlusSignPlusSignKeyword_0_0() { return cINCREMENTPlusSignPlusSignKeyword_0_0; }
 
-		//DECREMENT="--"
+		//DECREMENT='--'
 		public EnumLiteralDeclaration getDECREMENTEnumLiteralDeclaration_1() { return cDECREMENTEnumLiteralDeclaration_1; }
 
-		//"--"
+		//'--'
 		public Keyword getDECREMENTHyphenMinusHyphenMinusKeyword_1_0() { return cDECREMENTHyphenMinusHyphenMinusKeyword_1_0; }
 	}
 
 	public class IncrementDecrementOperatorExpressionElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "IncrementDecrementOperatorExpression");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.IncrementDecrementOperatorExpression");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cINCREMENTEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cINCREMENTPlusSignPlusSignKeyword_0_0 = (Keyword)cINCREMENTEnumLiteralDeclaration_0.eContents().get(0);
@@ -1804,27 +1805,27 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cDECREMENTHyphenMinusHyphenMinusKeyword_1_0 = (Keyword)cDECREMENTEnumLiteralDeclaration_1.eContents().get(0);
 		
 		//enum IncrementDecrementOperatorExpression returns actionlanguage::IncrementDecrementOperator:
-		//	INCREMENT="++" | DECREMENT="--";
+		//	INCREMENT='++' | DECREMENT='--';
 		public EnumRule getRule() { return rule; }
 
-		//INCREMENT="++" | DECREMENT="--"
+		//INCREMENT='++' | DECREMENT='--'
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//INCREMENT="++"
+		//INCREMENT='++'
 		public EnumLiteralDeclaration getINCREMENTEnumLiteralDeclaration_0() { return cINCREMENTEnumLiteralDeclaration_0; }
 
-		//"++"
+		//'++'
 		public Keyword getINCREMENTPlusSignPlusSignKeyword_0_0() { return cINCREMENTPlusSignPlusSignKeyword_0_0; }
 
-		//DECREMENT="--"
+		//DECREMENT='--'
 		public EnumLiteralDeclaration getDECREMENTEnumLiteralDeclaration_1() { return cDECREMENTEnumLiteralDeclaration_1; }
 
-		//"--"
+		//'--'
 		public Keyword getDECREMENTHyphenMinusHyphenMinusKeyword_1_0() { return cDECREMENTHyphenMinusHyphenMinusKeyword_1_0; }
 	}
 
 	public class AssignOperatorElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "AssignOperator");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.AssignOperator");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cASSIGNEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cASSIGNColonEqualsSignKeyword_0_0 = (Keyword)cASSIGNEnumLiteralDeclaration_0.eContents().get(0);
@@ -1834,65 +1835,65 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cMINUS_EQUALHyphenMinusEqualsSignKeyword_2_0 = (Keyword)cMINUS_EQUALEnumLiteralDeclaration_2.eContents().get(0);
 		
 		//enum AssignOperator returns actionlanguage::AssignOperator:
-		//	ASSIGN=":=" | PLUS_EQUAL="+=" | MINUS_EQUAL="-=";
+		//	ASSIGN=':=' | PLUS_EQUAL='+=' | MINUS_EQUAL='-=';
 		public EnumRule getRule() { return rule; }
 
-		//ASSIGN=":=" | PLUS_EQUAL="+=" | MINUS_EQUAL="-="
+		//ASSIGN=':=' | PLUS_EQUAL='+=' | MINUS_EQUAL='-='
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//ASSIGN=":="
+		//ASSIGN=':='
 		public EnumLiteralDeclaration getASSIGNEnumLiteralDeclaration_0() { return cASSIGNEnumLiteralDeclaration_0; }
 
-		//":="
+		//':='
 		public Keyword getASSIGNColonEqualsSignKeyword_0_0() { return cASSIGNColonEqualsSignKeyword_0_0; }
 
-		//PLUS_EQUAL="+="
+		//PLUS_EQUAL='+='
 		public EnumLiteralDeclaration getPLUS_EQUALEnumLiteralDeclaration_1() { return cPLUS_EQUALEnumLiteralDeclaration_1; }
 
-		//"+="
+		//'+='
 		public Keyword getPLUS_EQUALPlusSignEqualsSignKeyword_1_0() { return cPLUS_EQUALPlusSignEqualsSignKeyword_1_0; }
 
-		//MINUS_EQUAL="-="
+		//MINUS_EQUAL='-='
 		public EnumLiteralDeclaration getMINUS_EQUALEnumLiteralDeclaration_2() { return cMINUS_EQUALEnumLiteralDeclaration_2; }
 
-		//"-="
+		//'-='
 		public Keyword getMINUS_EQUALHyphenMinusEqualsSignKeyword_2_0() { return cMINUS_EQUALHyphenMinusEqualsSignKeyword_2_0; }
 	}
 
 	public class LogicalOrOperatorElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "LogicalOrOperator");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.LogicalOrOperator");
 		private final EnumLiteralDeclaration cOREnumLiteralDeclaration = (EnumLiteralDeclaration)rule.eContents().get(1);
 		private final Keyword cORVerticalLineVerticalLineKeyword_0 = (Keyword)cOREnumLiteralDeclaration.eContents().get(0);
 		
 		//enum LogicalOrOperator returns commonExpressions::LogicOperator:
-		//	OR="||";
+		//	OR='||';
 		public EnumRule getRule() { return rule; }
 
-		//OR="||"
+		//OR='||'
 		public EnumLiteralDeclaration getOREnumLiteralDeclaration() { return cOREnumLiteralDeclaration; }
 
-		//"||"
+		//'||'
 		public Keyword getORVerticalLineVerticalLineKeyword_0() { return cORVerticalLineVerticalLineKeyword_0; }
 	}
 
 	public class LogicalAndOperatorElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "LogicalAndOperator");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.LogicalAndOperator");
 		private final EnumLiteralDeclaration cANDEnumLiteralDeclaration = (EnumLiteralDeclaration)rule.eContents().get(1);
 		private final Keyword cANDAmpersandAmpersandKeyword_0 = (Keyword)cANDEnumLiteralDeclaration.eContents().get(0);
 		
 		//enum LogicalAndOperator returns commonExpressions::LogicOperator:
-		//	AND="&&";
+		//	AND='&&';
 		public EnumRule getRule() { return rule; }
 
-		//AND="&&"
+		//AND='&&'
 		public EnumLiteralDeclaration getANDEnumLiteralDeclaration() { return cANDEnumLiteralDeclaration; }
 
-		//"&&"
+		//'&&'
 		public Keyword getANDAmpersandAmpersandKeyword_0() { return cANDAmpersandAmpersandKeyword_0; }
 	}
 
 	public class ComparingEQNEQOperatorElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "ComparingEQNEQOperator");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.ComparingEQNEQOperator");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cEQUALEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cEQUALEqualsSignEqualsSignKeyword_0_0 = (Keyword)cEQUALEnumLiteralDeclaration_0.eContents().get(0);
@@ -1900,27 +1901,27 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cUNEQUALLessThanSignGreaterThanSignKeyword_1_0 = (Keyword)cUNEQUALEnumLiteralDeclaration_1.eContents().get(0);
 		
 		//enum ComparingEQNEQOperator returns commonExpressions::ComparingOperator:
-		//	EQUAL="==" | UNEQUAL="<>";
+		//	EQUAL='==' | UNEQUAL='<>';
 		public EnumRule getRule() { return rule; }
 
-		//EQUAL="==" | UNEQUAL="<>"
+		//EQUAL='==' | UNEQUAL='<>'
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//EQUAL="=="
+		//EQUAL='=='
 		public EnumLiteralDeclaration getEQUALEnumLiteralDeclaration_0() { return cEQUALEnumLiteralDeclaration_0; }
 
-		//"=="
+		//'=='
 		public Keyword getEQUALEqualsSignEqualsSignKeyword_0_0() { return cEQUALEqualsSignEqualsSignKeyword_0_0; }
 
-		//UNEQUAL="<>"
+		//UNEQUAL='<>'
 		public EnumLiteralDeclaration getUNEQUALEnumLiteralDeclaration_1() { return cUNEQUALEnumLiteralDeclaration_1; }
 
-		//"<>"
+		//'<>'
 		public Keyword getUNEQUALLessThanSignGreaterThanSignKeyword_1_0() { return cUNEQUALLessThanSignGreaterThanSignKeyword_1_0; }
 	}
 
 	public class ComparingRelOperatorElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "ComparingRelOperator");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.ComparingRelOperator");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cLESSEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cLESSLessThanSignKeyword_0_0 = (Keyword)cLESSEnumLiteralDeclaration_0.eContents().get(0);
@@ -1932,39 +1933,39 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cGREATERGreaterThanSignKeyword_3_0 = (Keyword)cGREATEREnumLiteralDeclaration_3.eContents().get(0);
 		
 		//enum ComparingRelOperator returns commonExpressions::ComparingOperator:
-		//	LESS="<" | LESS_OR_EQUAL="<=" | GREATER_OR_EQUAL=">=" | GREATER=">";
+		//	LESS='<' | LESS_OR_EQUAL='<=' | GREATER_OR_EQUAL='>=' | GREATER='>';
 		public EnumRule getRule() { return rule; }
 
-		//LESS="<" | LESS_OR_EQUAL="<=" | GREATER_OR_EQUAL=">=" | GREATER=">"
+		//LESS='<' | LESS_OR_EQUAL='<=' | GREATER_OR_EQUAL='>=' | GREATER='>'
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//LESS="<"
+		//LESS='<'
 		public EnumLiteralDeclaration getLESSEnumLiteralDeclaration_0() { return cLESSEnumLiteralDeclaration_0; }
 
-		//"<"
+		//'<'
 		public Keyword getLESSLessThanSignKeyword_0_0() { return cLESSLessThanSignKeyword_0_0; }
 
-		//LESS_OR_EQUAL="<="
+		//LESS_OR_EQUAL='<='
 		public EnumLiteralDeclaration getLESS_OR_EQUALEnumLiteralDeclaration_1() { return cLESS_OR_EQUALEnumLiteralDeclaration_1; }
 
-		//"<="
+		//'<='
 		public Keyword getLESS_OR_EQUALLessThanSignEqualsSignKeyword_1_0() { return cLESS_OR_EQUALLessThanSignEqualsSignKeyword_1_0; }
 
-		//GREATER_OR_EQUAL=">="
+		//GREATER_OR_EQUAL='>='
 		public EnumLiteralDeclaration getGREATER_OR_EQUALEnumLiteralDeclaration_2() { return cGREATER_OR_EQUALEnumLiteralDeclaration_2; }
 
-		//">="
+		//'>='
 		public Keyword getGREATER_OR_EQUALGreaterThanSignEqualsSignKeyword_2_0() { return cGREATER_OR_EQUALGreaterThanSignEqualsSignKeyword_2_0; }
 
-		//GREATER=">"
+		//GREATER='>'
 		public EnumLiteralDeclaration getGREATEREnumLiteralDeclaration_3() { return cGREATEREnumLiteralDeclaration_3; }
 
-		//">"
+		//'>'
 		public Keyword getGREATERGreaterThanSignKeyword_3_0() { return cGREATERGreaterThanSignKeyword_3_0; }
 	}
 
 	public class AdditionOperatorElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "AdditionOperator");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.AdditionOperator");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cPLUSEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cPLUSPlusSignKeyword_0_0 = (Keyword)cPLUSEnumLiteralDeclaration_0.eContents().get(0);
@@ -1972,27 +1973,27 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cMINUSHyphenMinusKeyword_1_0 = (Keyword)cMINUSEnumLiteralDeclaration_1.eContents().get(0);
 		
 		//enum AdditionOperator returns commonExpressions::ArithmeticOperator:
-		//	PLUS="+" | MINUS="-";
+		//	PLUS='+' | MINUS='-';
 		public EnumRule getRule() { return rule; }
 
-		//PLUS="+" | MINUS="-"
+		//PLUS='+' | MINUS='-'
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//PLUS="+"
+		//PLUS='+'
 		public EnumLiteralDeclaration getPLUSEnumLiteralDeclaration_0() { return cPLUSEnumLiteralDeclaration_0; }
 
-		//"+"
+		//'+'
 		public Keyword getPLUSPlusSignKeyword_0_0() { return cPLUSPlusSignKeyword_0_0; }
 
-		//MINUS="-"
+		//MINUS='-'
 		public EnumLiteralDeclaration getMINUSEnumLiteralDeclaration_1() { return cMINUSEnumLiteralDeclaration_1; }
 
-		//"-"
+		//'-'
 		public Keyword getMINUSHyphenMinusKeyword_1_0() { return cMINUSHyphenMinusKeyword_1_0; }
 	}
 
 	public class MultiplicationOperatorElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "MultiplicationOperator");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.MultiplicationOperator");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cTIMESEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cTIMESAsteriskKeyword_0_0 = (Keyword)cTIMESEnumLiteralDeclaration_0.eContents().get(0);
@@ -2002,33 +2003,33 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cMODULOPercentSignKeyword_2_0 = (Keyword)cMODULOEnumLiteralDeclaration_2.eContents().get(0);
 		
 		//enum MultiplicationOperator returns commonExpressions::ArithmeticOperator:
-		//	TIMES="*" | DIVIDE="/" | MODULO="%";
+		//	TIMES='*' | DIVIDE='/' | MODULO='%';
 		public EnumRule getRule() { return rule; }
 
-		//TIMES="*" | DIVIDE="/" | MODULO="%"
+		//TIMES='*' | DIVIDE='/' | MODULO='%'
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//TIMES="*"
+		//TIMES='*'
 		public EnumLiteralDeclaration getTIMESEnumLiteralDeclaration_0() { return cTIMESEnumLiteralDeclaration_0; }
 
-		//"*"
+		//'*'
 		public Keyword getTIMESAsteriskKeyword_0_0() { return cTIMESAsteriskKeyword_0_0; }
 
-		//DIVIDE="/"
+		//DIVIDE='/'
 		public EnumLiteralDeclaration getDIVIDEEnumLiteralDeclaration_1() { return cDIVIDEEnumLiteralDeclaration_1; }
 
-		//"/"
+		//'/'
 		public Keyword getDIVIDESolidusKeyword_1_0() { return cDIVIDESolidusKeyword_1_0; }
 
-		//MODULO="%"
+		//MODULO='%'
 		public EnumLiteralDeclaration getMODULOEnumLiteralDeclaration_2() { return cMODULOEnumLiteralDeclaration_2; }
 
-		//"%"
+		//'%'
 		public Keyword getMODULOPercentSignKeyword_2_0() { return cMODULOPercentSignKeyword_2_0; }
 	}
 
 	public class UnaryPreOperatorElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "UnaryPreOperator");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.UnaryPreOperator");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cNOTEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cNOTNotKeyword_0_0 = (Keyword)cNOTEnumLiteralDeclaration_0.eContents().get(0);
@@ -2036,27 +2037,27 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cMINUSHyphenMinusKeyword_1_0 = (Keyword)cMINUSEnumLiteralDeclaration_1.eContents().get(0);
 		
 		//enum UnaryPreOperator returns commonExpressions::UnaryOperator:
-		//	NOT="not" | MINUS="-";
+		//	NOT='not' | MINUS='-';
 		public EnumRule getRule() { return rule; }
 
-		//NOT="not" | MINUS="-"
+		//NOT='not' | MINUS='-'
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//NOT="not"
+		//NOT='not'
 		public EnumLiteralDeclaration getNOTEnumLiteralDeclaration_0() { return cNOTEnumLiteralDeclaration_0; }
 
-		//"not"
+		//'not'
 		public Keyword getNOTNotKeyword_0_0() { return cNOTNotKeyword_0_0; }
 
-		//MINUS="-"
+		//MINUS='-'
 		public EnumLiteralDeclaration getMINUSEnumLiteralDeclaration_1() { return cMINUSEnumLiteralDeclaration_1; }
 
-		//"-"
+		//'-'
 		public Keyword getMINUSHyphenMinusKeyword_1_0() { return cMINUSHyphenMinusKeyword_1_0; }
 	}
 
 	public class PositionSelectorKindElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "PositionSelectorKind");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.PositionSelectorKind");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cSELFEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cSELFSelfKeyword_0_0 = (Keyword)cSELFEnumLiteralDeclaration_0.eContents().get(0);
@@ -2070,40 +2071,40 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cNEXTNextKeyword_4_0 = (Keyword)cNEXTEnumLiteralDeclaration_4.eContents().get(0);
 		
 		//enum PositionSelectorKind returns actionlanguage::PositionSelectorKind:
-		//	SELF="self" | FIRST="first" | LAST="last" | PREV="prev" | NEXT="next";
+		//	SELF='self' | FIRST='first' | LAST='last' | PREV='prev' | NEXT='next';
 		public EnumRule getRule() { return rule; }
 
-		//SELF="self" | FIRST="first" | LAST="last" | PREV="prev" | NEXT="next"
+		//SELF='self' | FIRST='first' | LAST='last' | PREV='prev' | NEXT='next'
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//SELF="self"
+		//SELF='self'
 		public EnumLiteralDeclaration getSELFEnumLiteralDeclaration_0() { return cSELFEnumLiteralDeclaration_0; }
 
-		//"self"
+		//'self'
 		public Keyword getSELFSelfKeyword_0_0() { return cSELFSelfKeyword_0_0; }
 
-		//FIRST="first"
+		//FIRST='first'
 		public EnumLiteralDeclaration getFIRSTEnumLiteralDeclaration_1() { return cFIRSTEnumLiteralDeclaration_1; }
 
-		//"first"
+		//'first'
 		public Keyword getFIRSTFirstKeyword_1_0() { return cFIRSTFirstKeyword_1_0; }
 
-		//LAST="last"
+		//LAST='last'
 		public EnumLiteralDeclaration getLASTEnumLiteralDeclaration_2() { return cLASTEnumLiteralDeclaration_2; }
 
-		//"last"
+		//'last'
 		public Keyword getLASTLastKeyword_2_0() { return cLASTLastKeyword_2_0; }
 
-		//PREV="prev"
+		//PREV='prev'
 		public EnumLiteralDeclaration getPREVEnumLiteralDeclaration_3() { return cPREVEnumLiteralDeclaration_3; }
 
-		//"prev"
+		//'prev'
 		public Keyword getPREVPrevKeyword_3_0() { return cPREVPrevKeyword_3_0; }
 
-		//NEXT="next"
+		//NEXT='next'
 		public EnumLiteralDeclaration getNEXTEnumLiteralDeclaration_4() { return cNEXTEnumLiteralDeclaration_4; }
 
-		//"next"
+		//'next'
 		public Keyword getNEXTNextKeyword_4_0() { return cNEXTNextKeyword_4_0; }
 	}
 	
@@ -2118,10 +2119,10 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	private final ReturnStatementElements pReturnStatement;
 	private final OperationCallStatementElements pOperationCallStatement;
 	private final ExpressionStartRuleElements pExpressionStartRule;
-	private final UnaryPostIncrementDecrementOperatorElements unknownRuleUnaryPostIncrementDecrementOperator;
+	private final UnaryPostIncrementDecrementOperatorElements eUnaryPostIncrementDecrementOperator;
 	private final AssignmentElements pAssignment;
-	private final IncrementDecrementOperatorExpressionElements unknownRuleIncrementDecrementOperatorExpression;
-	private final AssignOperatorElements unknownRuleAssignOperator;
+	private final IncrementDecrementOperatorExpressionElements eIncrementDecrementOperatorExpression;
+	private final AssignOperatorElements eAssignOperator;
 	private final InitializeExpressionElements pInitializeExpression;
 	private final ArrayInitializeExpressionElements pArrayInitializeExpression;
 	private final LocalVariableOrConstantDeclarationStatementElements pLocalVariableOrConstantDeclarationStatement;
@@ -2133,20 +2134,20 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	private final ExpressionElements pExpression;
 	private final LogicalExpressionElements pLogicalExpression;
 	private final LogicalOrExpressionElements pLogicalOrExpression;
-	private final LogicalOrOperatorElements unknownRuleLogicalOrOperator;
+	private final LogicalOrOperatorElements eLogicalOrOperator;
 	private final LogicalAndExpressionElements pLogicalAndExpression;
-	private final LogicalAndOperatorElements unknownRuleLogicalAndOperator;
+	private final LogicalAndOperatorElements eLogicalAndOperator;
 	private final ComparisonExpressionElements pComparisonExpression;
 	private final ComparisonHigherOpExpressionElements pComparisonHigherOpExpression;
-	private final ComparingEQNEQOperatorElements unknownRuleComparingEQNEQOperator;
-	private final ComparingRelOperatorElements unknownRuleComparingRelOperator;
+	private final ComparingEQNEQOperatorElements eComparingEQNEQOperator;
+	private final ComparingRelOperatorElements eComparingRelOperator;
 	private final ArithmeticExpressionElements pArithmeticExpression;
 	private final AdditionExpressionElements pAdditionExpression;
-	private final AdditionOperatorElements unknownRuleAdditionOperator;
+	private final AdditionOperatorElements eAdditionOperator;
 	private final MultiplicationExpressionElements pMultiplicationExpression;
-	private final MultiplicationOperatorElements unknownRuleMultiplicationOperator;
+	private final MultiplicationOperatorElements eMultiplicationOperator;
 	private final UnaryPreExpressionElements pUnaryPreExpression;
-	private final UnaryPreOperatorElements unknownRuleUnaryPreOperator;
+	private final UnaryPreOperatorElements eUnaryPreOperator;
 	private final TypeCastExpressionElements pTypeCastExpression;
 	private final OperandElements pOperand;
 	private final LiteralExpressionElements pLiteralExpression;
@@ -2159,7 +2160,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	private final AttributeAccessorExpressionElements pAttributeAccessorExpression;
 	private final NoAttributeSelectorExpressionElements pNoAttributeSelectorExpression;
 	private final PositionSelectorExpressionElements pPositionSelectorExpression;
-	private final PositionSelectorKindElements unknownRulePositionSelectorKind;
+	private final PositionSelectorKindElements ePositionSelectorKind;
 	private final OperationCallElements pOperationCall;
 	private final ParamaterBindingElements pParamaterBinding;
 	private final TriggerMessageExpressionElements pTriggerMessageExpression;
@@ -2188,10 +2189,10 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		this.pReturnStatement = new ReturnStatementElements();
 		this.pOperationCallStatement = new OperationCallStatementElements();
 		this.pExpressionStartRule = new ExpressionStartRuleElements();
-		this.unknownRuleUnaryPostIncrementDecrementOperator = new UnaryPostIncrementDecrementOperatorElements();
+		this.eUnaryPostIncrementDecrementOperator = new UnaryPostIncrementDecrementOperatorElements();
 		this.pAssignment = new AssignmentElements();
-		this.unknownRuleIncrementDecrementOperatorExpression = new IncrementDecrementOperatorExpressionElements();
-		this.unknownRuleAssignOperator = new AssignOperatorElements();
+		this.eIncrementDecrementOperatorExpression = new IncrementDecrementOperatorExpressionElements();
+		this.eAssignOperator = new AssignOperatorElements();
 		this.pInitializeExpression = new InitializeExpressionElements();
 		this.pArrayInitializeExpression = new ArrayInitializeExpressionElements();
 		this.pLocalVariableOrConstantDeclarationStatement = new LocalVariableOrConstantDeclarationStatementElements();
@@ -2203,46 +2204,46 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		this.pExpression = new ExpressionElements();
 		this.pLogicalExpression = new LogicalExpressionElements();
 		this.pLogicalOrExpression = new LogicalOrExpressionElements();
-		this.unknownRuleLogicalOrOperator = new LogicalOrOperatorElements();
+		this.eLogicalOrOperator = new LogicalOrOperatorElements();
 		this.pLogicalAndExpression = new LogicalAndExpressionElements();
-		this.unknownRuleLogicalAndOperator = new LogicalAndOperatorElements();
+		this.eLogicalAndOperator = new LogicalAndOperatorElements();
 		this.pComparisonExpression = new ComparisonExpressionElements();
 		this.pComparisonHigherOpExpression = new ComparisonHigherOpExpressionElements();
-		this.unknownRuleComparingEQNEQOperator = new ComparingEQNEQOperatorElements();
-		this.unknownRuleComparingRelOperator = new ComparingRelOperatorElements();
+		this.eComparingEQNEQOperator = new ComparingEQNEQOperatorElements();
+		this.eComparingRelOperator = new ComparingRelOperatorElements();
 		this.pArithmeticExpression = new ArithmeticExpressionElements();
 		this.pAdditionExpression = new AdditionExpressionElements();
-		this.unknownRuleAdditionOperator = new AdditionOperatorElements();
+		this.eAdditionOperator = new AdditionOperatorElements();
 		this.pMultiplicationExpression = new MultiplicationExpressionElements();
-		this.unknownRuleMultiplicationOperator = new MultiplicationOperatorElements();
+		this.eMultiplicationOperator = new MultiplicationOperatorElements();
 		this.pUnaryPreExpression = new UnaryPreExpressionElements();
-		this.unknownRuleUnaryPreOperator = new UnaryPreOperatorElements();
+		this.eUnaryPreOperator = new UnaryPreOperatorElements();
 		this.pTypeCastExpression = new TypeCastExpressionElements();
 		this.pOperand = new OperandElements();
 		this.pLiteralExpression = new LiteralExpressionElements();
 		this.pLiteral = new LiteralElements();
 		this.pTimeValueExpression = new TimeValueExpressionElements();
-		this.tMINORMAXKEYWORD = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "MINORMAXKEYWORD");
+		this.tMINORMAXKEYWORD = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.MINORMAXKEYWORD");
 		this.pExtendedTypedNamedElementExpression = new ExtendedTypedNamedElementExpressionElements();
 		this.pTypedNamedElementExpression = new TypedNamedElementExpressionElements();
 		this.pArrayIndexExpression = new ArrayIndexExpressionElements();
 		this.pAttributeAccessorExpression = new AttributeAccessorExpressionElements();
 		this.pNoAttributeSelectorExpression = new NoAttributeSelectorExpressionElements();
 		this.pPositionSelectorExpression = new PositionSelectorExpressionElements();
-		this.unknownRulePositionSelectorKind = new PositionSelectorKindElements();
+		this.ePositionSelectorKind = new PositionSelectorKindElements();
 		this.pOperationCall = new OperationCallElements();
 		this.pParamaterBinding = new ParamaterBindingElements();
 		this.pTriggerMessageExpression = new TriggerMessageExpressionElements();
-		this.tNUMBER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NUMBER");
-		this.tBOOLEAN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "BOOLEAN");
-		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID");
+		this.tNUMBER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.NUMBER");
+		this.tBOOLEAN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.BOOLEAN");
+		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pim.actionlanguage.xtext.ActionLanguage.ID");
 		this.pDATATYPE = new DATATYPEElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
 		Grammar grammar = grammarProvider.getGrammar(this);
 		while (grammar != null) {
-			if ("org.muml.pim.actionlanguage".equals(grammar.getName())) {
+			if ("org.muml.pim.actionlanguage.xtext.ActionLanguage".equals(grammar.getName())) {
 				return grammar;
 			}
 			List<Grammar> grammars = grammar.getUsedGrammars();
@@ -2266,8 +2267,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
-	//Entry returns expressions::Expression:
-	//	Block | Expression | ArrayInitializeExpression;
+	//Entry expressions::Expression:
+	//	Block | Expression | ArrayInitializeExpression
 	public EntryElements getEntryAccess() {
 		return pEntry;
 	}
@@ -2276,8 +2277,10 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getEntryAccess().getRule();
 	}
 
-	//Block returns actionlanguage::Block hidden(WS, ML_COMMENT, SL_COMMENT):
-	//	{actionlanguage::Block} "{" expressions+=ExpressionStartRule* "}";
+	//Block actionlanguage::Block hidden(WS, ML_COMMENT, SL_COMMENT):
+	//	{actionlanguage::Block}
+	//	'{'
+	//	expressions+=ExpressionStartRule* '}'
 	public BlockElements getBlockAccess() {
 		return pBlock;
 	}
@@ -2287,11 +2290,10 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// TODO: clarify if it makes sense to allow arbitrary expressions for
-	//
 	//// the initializeExpression and countingExpression
-	// ForLoop returns actionlanguage::ForLoop:
-	//	"for" "(" initializeExpression=Assignment loopTest=Expression ";" countingExpression=ForLoopCountingExpression ")"
-	//	block=Block;
+	//ForLoop actionlanguage::ForLoop:
+	//	'for' '(' initializeExpression=Assignment loopTest=Expression ';' countingExpression=ForLoopCountingExpression ')'
+	//	block=Block
 	public ForLoopElements getForLoopAccess() {
 		return pForLoop;
 	}
@@ -2300,10 +2302,10 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getForLoopAccess().getRule();
 	}
 
-	//ForLoopCountingExpression returns actionlanguage::Assignment:
+	//ForLoopCountingExpression actionlanguage::Assignment:
 	//	lhs_typedNamedElementExpression=TypedNamedElementExpression
-	//	(incrementDecrementOperator=UnaryPostIncrementDecrementOperator | assignOperator=AssignOperator
-	//	rhs_assignExpression=Expression);
+	//	(incrementDecrementOperator=UnaryPostIncrementDecrementOperator
+	//	| assignOperator=AssignOperator rhs_assignExpression=Expression)
 	public ForLoopCountingExpressionElements getForLoopCountingExpressionAccess() {
 		return pForLoopCountingExpression;
 	}
@@ -2312,8 +2314,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getForLoopCountingExpressionAccess().getRule();
 	}
 
-	//WhileLoop returns actionlanguage::WhileLoop:
-	//	"while" "(" loopTest=Expression ")" block=Block;
+	//WhileLoop actionlanguage::WhileLoop:
+	//	'while' '(' loopTest=Expression ')'
+	//	block=Block
 	public WhileLoopElements getWhileLoopAccess() {
 		return pWhileLoop;
 	}
@@ -2322,8 +2325,10 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getWhileLoopAccess().getRule();
 	}
 
-	//DoWhileLoop returns actionlanguage::DoWhileLoop:
-	//	"do" block=Block "while" "(" loopTest=Expression ");";
+	//DoWhileLoop actionlanguage::DoWhileLoop:
+	//	'do'
+	//	block=Block
+	//	'while' '(' loopTest=Expression ');'
 	public DoWhileLoopElements getDoWhileLoopAccess() {
 		return pDoWhileLoop;
 	}
@@ -2332,8 +2337,10 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getDoWhileLoopAccess().getRule();
 	}
 
-	//IfStatement returns actionlanguage::IfStatement:
-	//	"if" "(" ifCondition=Expression ")" ifBlock=Block elseIfStatements+=ElseIfStatement* ("else" elseBlock=Block)?;
+	//IfStatement actionlanguage::IfStatement:
+	//	'if' '(' ifCondition=Expression ')'
+	//	ifBlock=Block
+	//	elseIfStatements+=ElseIfStatement* ('else' elseBlock=Block)?
 	public IfStatementElements getIfStatementAccess() {
 		return pIfStatement;
 	}
@@ -2342,8 +2349,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getIfStatementAccess().getRule();
 	}
 
-	//ElseIfStatement returns actionlanguage::ElseIfStatement:
-	//	"elseif" "(" elseIfCondition=Expression ")" elseIfBlock=Block;
+	//ElseIfStatement actionlanguage::ElseIfStatement:
+	//	'elseif' '(' elseIfCondition=Expression ')'
+	//	elseIfBlock=Block
 	public ElseIfStatementElements getElseIfStatementAccess() {
 		return pElseIfStatement;
 	}
@@ -2352,8 +2360,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getElseIfStatementAccess().getRule();
 	}
 
-	//ReturnStatement returns actionlanguage::ReturnStatement:
-	//	{actionlanguage::ReturnStatement} "return" expression=Expression ";";
+	//ReturnStatement actionlanguage::ReturnStatement:
+	//	{actionlanguage::ReturnStatement}
+	//	'return' expression=Expression ';'
 	public ReturnStatementElements getReturnStatementAccess() {
 		return pReturnStatement;
 	}
@@ -2362,8 +2371,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getReturnStatementAccess().getRule();
 	}
 
-	//OperationCallStatement returns actionlanguage::OperationCall:
-	//	OperationCall ";";
+	//OperationCallStatement actionlanguage::OperationCall:
+	//	OperationCall ';'
 	public OperationCallStatementElements getOperationCallStatementAccess() {
 		return pOperationCallStatement;
 	}
@@ -2372,9 +2381,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getOperationCallStatementAccess().getRule();
 	}
 
-	//ExpressionStartRule returns expressions::Expression:
+	//ExpressionStartRule expressions::Expression:
 	//	Assignment | ForLoop | WhileLoop | DoWhileLoop | IfStatement | ReturnStatement |
-	//	LocalVariableOrConstantDeclarationStatement | OperationCallStatement;
+	//	LocalVariableOrConstantDeclarationStatement | OperationCallStatement
 	public ExpressionStartRuleElements getExpressionStartRuleAccess() {
 		return pExpressionStartRule;
 	}
@@ -2384,9 +2393,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum UnaryPostIncrementDecrementOperator returns actionlanguage::IncrementDecrementOperator:
-	//	INCREMENT="++" | DECREMENT="--";
+	//	INCREMENT='++' | DECREMENT='--';
 	public UnaryPostIncrementDecrementOperatorElements getUnaryPostIncrementDecrementOperatorAccess() {
-		return unknownRuleUnaryPostIncrementDecrementOperator;
+		return eUnaryPostIncrementDecrementOperator;
 	}
 	
 	public EnumRule getUnaryPostIncrementDecrementOperatorRule() {
@@ -2394,9 +2403,10 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// Assignment
-	// Assignment returns actionlanguage::Assignment:
+	//Assignment actionlanguage::Assignment:
 	//	lhs_typedNamedElementExpression=TypedNamedElementExpression (assignOperator=AssignOperator
-	//	rhs_assignExpression=InitializeExpression | incrementDecrementOperator=UnaryPostIncrementDecrementOperator) ";";
+	//	rhs_assignExpression=InitializeExpression
+	//	| incrementDecrementOperator=UnaryPostIncrementDecrementOperator) ';'
 	public AssignmentElements getAssignmentAccess() {
 		return pAssignment;
 	}
@@ -2406,9 +2416,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum IncrementDecrementOperatorExpression returns actionlanguage::IncrementDecrementOperator:
-	//	INCREMENT="++" | DECREMENT="--";
+	//	INCREMENT='++' | DECREMENT='--';
 	public IncrementDecrementOperatorExpressionElements getIncrementDecrementOperatorExpressionAccess() {
-		return unknownRuleIncrementDecrementOperatorExpression;
+		return eIncrementDecrementOperatorExpression;
 	}
 	
 	public EnumRule getIncrementDecrementOperatorExpressionRule() {
@@ -2416,9 +2426,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum AssignOperator returns actionlanguage::AssignOperator:
-	//	ASSIGN=":=" | PLUS_EQUAL="+=" | MINUS_EQUAL="-=";
+	//	ASSIGN=':=' | PLUS_EQUAL='+=' | MINUS_EQUAL='-=';
 	public AssignOperatorElements getAssignOperatorAccess() {
-		return unknownRuleAssignOperator;
+		return eAssignOperator;
 	}
 	
 	public EnumRule getAssignOperatorRule() {
@@ -2426,9 +2436,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// end of assignment
-	// // initialize expression
-	// InitializeExpression returns expressions::Expression:
-	//	ArrayInitializeExpression | NondeterministicChoiceExpression | Expression;
+	//// initialize expression
+	//InitializeExpression expressions::Expression:
+	//	ArrayInitializeExpression | NondeterministicChoiceExpression | Expression
 	public InitializeExpressionElements getInitializeExpressionAccess() {
 		return pInitializeExpression;
 	}
@@ -2438,10 +2448,10 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// end of initialize expression
-	// // array initialization
-	// ArrayInitializeExpression returns
-	//actionlanguage::ArrayInitializeExpression:
-	//	"[" expressions+=InitializeExpression ("," expressions+=InitializeExpression)* "]";
+	//// array initialization
+	//ArrayInitializeExpression actionlanguage::ArrayInitializeExpression:
+	//	'[' expressions+=InitializeExpression (',' expressions+=InitializeExpression)*
+	//	']'
 	public ArrayInitializeExpressionElements getArrayInitializeExpressionAccess() {
 		return pArrayInitializeExpression;
 	}
@@ -2451,10 +2461,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// end of array initialization
-	// // local variable declaration
-	// LocalVariableOrConstantDeclarationStatement returns
-	//actionlanguage::LocalVariableDeclarationStatement:
-	//	variable=(LocalVariableDeclaration | LocalConstantDeclaration);
+	//// local variable declaration
+	//LocalVariableOrConstantDeclarationStatement actionlanguage::LocalVariableDeclarationStatement:
+	//	variable=(LocalVariableDeclaration | LocalConstantDeclaration)
 	public LocalVariableOrConstantDeclarationStatementElements getLocalVariableOrConstantDeclarationStatementAccess() {
 		return pLocalVariableOrConstantDeclarationStatement;
 	}
@@ -2463,8 +2472,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getLocalVariableOrConstantDeclarationStatementAccess().getRule();
 	}
 
-	//LocalVariableDeclaration returns behavior::Variable:
-	//	dataType=[types::DataType|DATATYPE] name=ID (":=" initializeExpression=InitializeExpression)? ";";
+	//LocalVariableDeclaration behavior::Variable:
+	//	dataType=[types::DataType|DATATYPE] name=ID (':=' initializeExpression=InitializeExpression)? ';'
 	public LocalVariableDeclarationElements getLocalVariableDeclarationAccess() {
 		return pLocalVariableDeclaration;
 	}
@@ -2473,8 +2482,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getLocalVariableDeclarationAccess().getRule();
 	}
 
-	//LocalConstantDeclaration returns behavior::Variable:
-	//	constant?="const" dataType=[types::DataType|DATATYPE] name=ID ":=" initializeExpression=InitializeExpression ";";
+	//LocalConstantDeclaration behavior::Variable:
+	//	constant?='const' dataType=[types::DataType|DATATYPE] name=ID ':=' initializeExpression=InitializeExpression ';'
 	public LocalConstantDeclarationElements getLocalConstantDeclarationAccess() {
 		return pLocalConstantDeclaration;
 	}
@@ -2484,10 +2493,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// end of local variable declaration
-	// // nondeterministic choice expression
-	// NondeterministicChoiceExpression returns
-	//actionlanguage::NondeterministicChoiceExpression:
-	//	dataType=[types::PrimitiveDataType] range=Range;
+	//// nondeterministic choice expression
+	//NondeterministicChoiceExpression actionlanguage::NondeterministicChoiceExpression:
+	//	dataType=[types::PrimitiveDataType] range=Range
 	public NondeterministicChoiceExpressionElements getNondeterministicChoiceExpressionAccess() {
 		return pNondeterministicChoiceExpression;
 	}
@@ -2496,8 +2504,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getNondeterministicChoiceExpressionAccess().getRule();
 	}
 
-	//Range returns valuetype::Range:
-	//	"<" lowerBound=LONG "," upperBound=LONG ">";
+	//Range valuetype::Range:
+	//	'<' lowerBound=LONG ',' upperBound=LONG '>'
 	public RangeElements getRangeAccess() {
 		return pRange;
 	}
@@ -2506,8 +2514,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getRangeAccess().getRule();
 	}
 
-	//LONG returns ecore::ELong:
-	//	INT;
+	//LONG ecore::ELong:
+	//	INT
 	public LONGElements getLONGAccess() {
 		return pLONG;
 	}
@@ -2517,8 +2525,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// end of nondeterministic choice expression
-	// Expression returns expressions::Expression:
-	//	LogicalExpression;
+	//Expression expressions::Expression:
+	//	LogicalExpression
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;
 	}
@@ -2528,8 +2536,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// LogicalExpression
-	// LogicalExpression returns expressions::Expression:
-	//	LogicalOrExpression;
+	//LogicalExpression expressions::Expression:
+	//	LogicalOrExpression
 	public LogicalExpressionElements getLogicalExpressionAccess() {
 		return pLogicalExpression;
 	}
@@ -2538,9 +2546,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getLogicalExpressionAccess().getRule();
 	}
 
-	//LogicalOrExpression returns expressions::Expression:
+	//LogicalOrExpression expressions::Expression:
 	//	LogicalAndExpression ({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicalOrOperator
-	//	rightExpression=LogicalAndExpression)*;
+	//	rightExpression=LogicalAndExpression)*
 	public LogicalOrExpressionElements getLogicalOrExpressionAccess() {
 		return pLogicalOrExpression;
 	}
@@ -2550,18 +2558,18 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum LogicalOrOperator returns commonExpressions::LogicOperator:
-	//	OR="||";
+	//	OR='||';
 	public LogicalOrOperatorElements getLogicalOrOperatorAccess() {
-		return unknownRuleLogicalOrOperator;
+		return eLogicalOrOperator;
 	}
 	
 	public EnumRule getLogicalOrOperatorRule() {
 		return getLogicalOrOperatorAccess().getRule();
 	}
 
-	//LogicalAndExpression returns expressions::Expression:
+	//LogicalAndExpression expressions::Expression:
 	//	ComparisonExpression ({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicalAndOperator
-	//	rightExpression=ComparisonExpression)*;
+	//	rightExpression=ComparisonExpression)*
 	public LogicalAndExpressionElements getLogicalAndExpressionAccess() {
 		return pLogicalAndExpression;
 	}
@@ -2571,9 +2579,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum LogicalAndOperator returns commonExpressions::LogicOperator:
-	//	AND="&&";
+	//	AND='&&';
 	public LogicalAndOperatorElements getLogicalAndOperatorAccess() {
-		return unknownRuleLogicalAndOperator;
+		return eLogicalAndOperator;
 	}
 	
 	public EnumRule getLogicalAndOperatorRule() {
@@ -2581,10 +2589,11 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// end of LogicalExpression
-	// // ComparisonExpression
-	// ComparisonExpression returns expressions::Expression:
+	//// ComparisonExpression
+	//ComparisonExpression expressions::Expression:
 	//	ComparisonHigherOpExpression ({commonExpressions::ComparisonExpression.leftExpression=current}
-	//	operator=ComparingEQNEQOperator rightExpression=ComparisonHigherOpExpression)?;
+	//	operator=ComparingEQNEQOperator
+	//	rightExpression=ComparisonHigherOpExpression)?
 	public ComparisonExpressionElements getComparisonExpressionAccess() {
 		return pComparisonExpression;
 	}
@@ -2593,9 +2602,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getComparisonExpressionAccess().getRule();
 	}
 
-	//ComparisonHigherOpExpression returns expressions::Expression:
+	//ComparisonHigherOpExpression expressions::Expression:
 	//	ArithmeticExpression ({commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingRelOperator
-	//	rightExpression=ArithmeticExpression)?;
+	//	rightExpression=ArithmeticExpression)?
 	public ComparisonHigherOpExpressionElements getComparisonHigherOpExpressionAccess() {
 		return pComparisonHigherOpExpression;
 	}
@@ -2605,9 +2614,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum ComparingEQNEQOperator returns commonExpressions::ComparingOperator:
-	//	EQUAL="==" | UNEQUAL="<>";
+	//	EQUAL='==' | UNEQUAL='<>';
 	public ComparingEQNEQOperatorElements getComparingEQNEQOperatorAccess() {
-		return unknownRuleComparingEQNEQOperator;
+		return eComparingEQNEQOperator;
 	}
 	
 	public EnumRule getComparingEQNEQOperatorRule() {
@@ -2615,9 +2624,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum ComparingRelOperator returns commonExpressions::ComparingOperator:
-	//	LESS="<" | LESS_OR_EQUAL="<=" | GREATER_OR_EQUAL=">=" | GREATER=">";
+	//	LESS='<' | LESS_OR_EQUAL='<=' | GREATER_OR_EQUAL='>=' | GREATER='>';
 	public ComparingRelOperatorElements getComparingRelOperatorAccess() {
-		return unknownRuleComparingRelOperator;
+		return eComparingRelOperator;
 	}
 	
 	public EnumRule getComparingRelOperatorRule() {
@@ -2625,9 +2634,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// end of ComparisonExpression
-	// // ArithmeticExpression	
-	// ArithmeticExpression returns expressions::Expression:
-	//	AdditionExpression;
+	//// ArithmeticExpression	
+	//ArithmeticExpression expressions::Expression:
+	//	AdditionExpression
 	public ArithmeticExpressionElements getArithmeticExpressionAccess() {
 		return pArithmeticExpression;
 	}
@@ -2636,9 +2645,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getArithmeticExpressionAccess().getRule();
 	}
 
-	//AdditionExpression returns expressions::Expression:
+	//AdditionExpression expressions::Expression:
 	//	MultiplicationExpression ({commonExpressions::ArithmeticExpression.leftExpression=current} operator=AdditionOperator
-	//	rightExpression=MultiplicationExpression)*;
+	//	rightExpression=MultiplicationExpression)*
 	public AdditionExpressionElements getAdditionExpressionAccess() {
 		return pAdditionExpression;
 	}
@@ -2648,18 +2657,18 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum AdditionOperator returns commonExpressions::ArithmeticOperator:
-	//	PLUS="+" | MINUS="-";
+	//	PLUS='+' | MINUS='-';
 	public AdditionOperatorElements getAdditionOperatorAccess() {
-		return unknownRuleAdditionOperator;
+		return eAdditionOperator;
 	}
 	
 	public EnumRule getAdditionOperatorRule() {
 		return getAdditionOperatorAccess().getRule();
 	}
 
-	//MultiplicationExpression returns expressions::Expression:
+	//MultiplicationExpression expressions::Expression:
 	//	UnaryPreExpression | TypeCastExpression ({commonExpressions::ArithmeticExpression.leftExpression=current}
-	//	operator=MultiplicationOperator rightExpression=(UnaryPreExpression | TypeCastExpression))*;
+	//	operator=MultiplicationOperator rightExpression=(UnaryPreExpression | TypeCastExpression))*
 	public MultiplicationExpressionElements getMultiplicationExpressionAccess() {
 		return pMultiplicationExpression;
 	}
@@ -2669,9 +2678,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum MultiplicationOperator returns commonExpressions::ArithmeticOperator:
-	//	TIMES="*" | DIVIDE="/" | MODULO="%";
+	//	TIMES='*' | DIVIDE='/' | MODULO='%';
 	public MultiplicationOperatorElements getMultiplicationOperatorAccess() {
-		return unknownRuleMultiplicationOperator;
+		return eMultiplicationOperator;
 	}
 	
 	public EnumRule getMultiplicationOperatorRule() {
@@ -2679,9 +2688,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// end of ArithmeticExpression
-	// // UnaryPreExpression
-	// UnaryPreExpression returns expressions::Expression:
-	//	{commonExpressions::UnaryExpression} operator=UnaryPreOperator enclosedExpression=TypeCastExpression;
+	//// UnaryPreExpression
+	//UnaryPreExpression expressions::Expression:
+	//	{commonExpressions::UnaryExpression} operator=UnaryPreOperator enclosedExpression=TypeCastExpression
 	public UnaryPreExpressionElements getUnaryPreExpressionAccess() {
 		return pUnaryPreExpression;
 	}
@@ -2691,9 +2700,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum UnaryPreOperator returns commonExpressions::UnaryOperator:
-	//	NOT="not" | MINUS="-";
+	//	NOT='not' | MINUS='-';
 	public UnaryPreOperatorElements getUnaryPreOperatorAccess() {
-		return unknownRuleUnaryPreOperator;
+		return eUnaryPreOperator;
 	}
 	
 	public EnumRule getUnaryPreOperatorRule() {
@@ -2701,9 +2710,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// end of UnaryPreExpression
-	// TypeCastExpression returns expressions::Expression:
-	//	Operand | {actionlanguage::TypeCastExpression} "(" dataType=[types::DataType|DATATYPE] ")"
-	//	enclosedExpression=Operand;
+	//TypeCastExpression expressions::Expression:
+	//	Operand | {actionlanguage::TypeCastExpression}
+	//	'(' dataType=[types::DataType|DATATYPE] ')' enclosedExpression=Operand
 	public TypeCastExpressionElements getTypeCastExpressionAccess() {
 		return pTypeCastExpression;
 	}
@@ -2713,9 +2722,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// Operand
-	// Operand returns expressions::Expression:
-	//	"(" Expression ")" | LiteralExpression | ExtendedTypedNamedElementExpression | TimeValueExpression | OperationCall |
-	//	TriggerMessageExpression | NoAttributeSelectorExpression;
+	//Operand expressions::Expression:
+	//	'(' Expression ')' | LiteralExpression | ExtendedTypedNamedElementExpression | TimeValueExpression
+	//	| OperationCall | TriggerMessageExpression | NoAttributeSelectorExpression
 	public OperandElements getOperandAccess() {
 		return pOperand;
 	}
@@ -2725,8 +2734,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// end of Operand
-	// LiteralExpression returns commonExpressions::LiteralExpression:
-	//	{commonExpressions::LiteralExpression} value=Literal;
+	//LiteralExpression commonExpressions::LiteralExpression:
+	//	{commonExpressions::LiteralExpression} value=Literal
 	public LiteralExpressionElements getLiteralExpressionAccess() {
 		return pLiteralExpression;
 	}
@@ -2735,8 +2744,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getLiteralExpressionAccess().getRule();
 	}
 
-	//Literal returns ecore::EString:
-	//	NUMBER | BOOLEAN | INT | "null";
+	//Literal:
+	//	NUMBER | BOOLEAN | INT | 'null';
 	public LiteralElements getLiteralAccess() {
 		return pLiteral;
 	}
@@ -2745,8 +2754,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getLiteralAccess().getRule();
 	}
 
-	//TimeValueExpression returns actionlanguage::TimeValueExpression:
-	//	timeValue=[valuetype::TimeValue|MINORMAXKEYWORD];
+	//TimeValueExpression actionlanguage::TimeValueExpression:
+	//	timeValue=[valuetype::TimeValue|MINORMAXKEYWORD]
 	public TimeValueExpressionElements getTimeValueExpressionAccess() {
 		return pTimeValueExpression;
 	}
@@ -2756,18 +2765,17 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//terminal MINORMAXKEYWORD:
-	//	"maxMsgDelay";
+	//	'maxMsgDelay';
 	public TerminalRule getMINORMAXKEYWORDRule() {
 		return tMINORMAXKEYWORD;
 	} 
 
-	//ExtendedTypedNamedElementExpression returns expressions::Expression:
+	//ExtendedTypedNamedElementExpression expressions::Expression:
 	//	TypedNamedElementExpression
-	//	({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "->"
-	//	position=PositionSelectorExpression | // unary post increment/decrement			
-	//
-	//	{actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
-	//	incrementDecrementOperator=IncrementDecrementOperatorExpression)?;
+	//	({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current}
+	//	'->' position=PositionSelectorExpression
+	//	| {actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
+	//	incrementDecrementOperator=IncrementDecrementOperatorExpression)?
 	public ExtendedTypedNamedElementExpressionElements getExtendedTypedNamedElementExpressionAccess() {
 		return pExtendedTypedNamedElementExpression;
 	}
@@ -2776,9 +2784,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getExtendedTypedNamedElementExpressionAccess().getRule();
 	}
 
-	//TypedNamedElementExpression returns actionlanguage::TypedNamedElementExpression:
+	//TypedNamedElementExpression actionlanguage::TypedNamedElementExpression:
 	//	typedNamedElement=[behavior::TypedNamedElement] elementAccessors+=(ArrayIndexExpression |
-	//	AttributeAccessorExpression)*;
+	//	AttributeAccessorExpression)*
 	public TypedNamedElementExpressionElements getTypedNamedElementExpressionAccess() {
 		return pTypedNamedElementExpression;
 	}
@@ -2787,8 +2795,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getTypedNamedElementExpressionAccess().getRule();
 	}
 
-	//ArrayIndexExpression returns actionlanguage::ArrayIndexExpression:
-	//	"[" index=ArithmeticExpression "]";
+	//ArrayIndexExpression actionlanguage::ArrayIndexExpression:
+	//	'[' index=ArithmeticExpression ']'
 	public ArrayIndexExpressionElements getArrayIndexExpressionAccess() {
 		return pArrayIndexExpression;
 	}
@@ -2797,8 +2805,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getArrayIndexExpressionAccess().getRule();
 	}
 
-	//AttributeAccessorExpression returns actionlanguage::AttributeAccessorExpression:
-	//	"." attribute=[types::Attribute];
+	//AttributeAccessorExpression actionlanguage::AttributeAccessorExpression:
+	//	'.' attribute=[types::Attribute]
 	public AttributeAccessorExpressionElements getAttributeAccessorExpressionAccess() {
 		return pAttributeAccessorExpression;
 	}
@@ -2807,8 +2815,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getAttributeAccessorExpressionAccess().getRule();
 	}
 
-	//NoAttributeSelectorExpression returns actionlanguage::DiscreteInteractionEndpointReference:
-	//	position=PositionSelectorExpression;
+	//NoAttributeSelectorExpression actionlanguage::DiscreteInteractionEndpointReference:
+	//	position=PositionSelectorExpression
 	public NoAttributeSelectorExpressionElements getNoAttributeSelectorExpressionAccess() {
 		return pNoAttributeSelectorExpression;
 	}
@@ -2817,8 +2825,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getNoAttributeSelectorExpressionAccess().getRule();
 	}
 
-	//PositionSelectorExpression returns actionlanguage::PositionSelector:
-	//	kind=PositionSelectorKind ("->" successor=PositionSelectorExpression)?;
+	//PositionSelectorExpression actionlanguage::PositionSelector:
+	//	kind=PositionSelectorKind ('->' successor=PositionSelectorExpression)?
 	public PositionSelectorExpressionElements getPositionSelectorExpressionAccess() {
 		return pPositionSelectorExpression;
 	}
@@ -2828,18 +2836,18 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum PositionSelectorKind returns actionlanguage::PositionSelectorKind:
-	//	SELF="self" | FIRST="first" | LAST="last" | PREV="prev" | NEXT="next";
+	//	SELF='self' | FIRST='first' | LAST='last' | PREV='prev' | NEXT='next';
 	public PositionSelectorKindElements getPositionSelectorKindAccess() {
-		return unknownRulePositionSelectorKind;
+		return ePositionSelectorKind;
 	}
 	
 	public EnumRule getPositionSelectorKindRule() {
 		return getPositionSelectorKindAccess().getRule();
 	}
 
-	//OperationCall returns actionlanguage::OperationCall:
-	//	operation=[behavior::Operation] "(" (parameterBinding+=ParamaterBinding ("," parameterBinding+=ParamaterBinding)*)?
-	//	")";
+	//OperationCall actionlanguage::OperationCall:
+	//	operation=[behavior::Operation] '(' (parameterBinding+=ParamaterBinding (',' parameterBinding+=ParamaterBinding)*)?
+	//	')'
 	public OperationCallElements getOperationCallAccess() {
 		return pOperationCall;
 	}
@@ -2848,8 +2856,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getOperationCallAccess().getRule();
 	}
 
-	//ParamaterBinding returns behavior::ParameterBinding:
-	//	{behavior::ParameterBinding} parameter=[behavior::Parameter] ":=" value=Expression;
+	//ParamaterBinding behavior::ParameterBinding:
+	//	{behavior::ParameterBinding} parameter=[behavior::Parameter] ':=' value=Expression
 	public ParamaterBindingElements getParamaterBindingAccess() {
 		return pParamaterBinding;
 	}
@@ -2859,8 +2867,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// TriggerMessageExpression
-	// TriggerMessageExpression returns actionlanguage::TriggerMessageExpression:
-	//	messageType=[msgtype::MessageType] "->" parameter=[behavior::Parameter];
+	//TriggerMessageExpression actionlanguage::TriggerMessageExpression:
+	//	messageType=[msgtype::MessageType] '->' parameter=[behavior::Parameter]
 	public TriggerMessageExpressionElements getTriggerMessageExpressionAccess() {
 		return pTriggerMessageExpression;
 	}
@@ -2869,27 +2877,26 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getTriggerMessageExpressionAccess().getRule();
 	}
 
-	//// end of TriggerMessageExpression
-	// terminal NUMBER returns ecore::EBigDecimal:
-	//	INT "." INT;
+	//terminal NUMBER returns ecore::EBigDecimal:
+	//	INT '.' INT;
 	public TerminalRule getNUMBERRule() {
 		return tNUMBER;
 	} 
 
 	//terminal BOOLEAN returns ecore::EBoolean:
-	//	"true" | "false";
+	//	'true' | 'false';
 	public TerminalRule getBOOLEANRule() {
 		return tBOOLEAN;
 	} 
 
 	//terminal ID:
-	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;
+	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
 	public TerminalRule getIDRule() {
 		return tID;
 	} 
 
-	//DATATYPE returns ecore::EString:
-	//	ID ("[" INT "]")*;
+	//DATATYPE:
+	//	ID ('[' INT ']')*;
 	public DATATYPEElements getDATATYPEAccess() {
 		return pDATATYPE;
 	}
@@ -2899,32 +2906,32 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//terminal INT returns ecore::EInt:
-	//	"0".."9"+;
+	//	'0'..'9'+;
 	public TerminalRule getINTRule() {
 		return gaTerminals.getINTRule();
 	} 
 
 	//terminal STRING:
-	//	"\"" ("\\" . / * 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' * / | !("\\" | "\""))* "\"" | "\'" ("\\" .
-	//	/ * 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' * / | !("\\" | "\'"))* "\'";
+	//	'"' ('\\' . | !('\\' | '"'))* '"' |
+	//	"'" ('\\' . | !('\\' | "'"))* "'";
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	} 
 
 	//terminal ML_COMMENT:
-	//	"/ *"->"* /";
+	//	'/ *'->'* /';
 	public TerminalRule getML_COMMENTRule() {
 		return gaTerminals.getML_COMMENTRule();
 	} 
 
 	//terminal SL_COMMENT:
-	//	"//" !("\n" | "\r")* ("\r"? "\n")?;
+	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
 		return gaTerminals.getSL_COMMENTRule();
 	} 
 
 	//terminal WS:
-	//	(" " | "\t" | "\r" | "\n")+;
+	//	' ' | '\t' | '\r' | '\n'+;
 	public TerminalRule getWSRule() {
 		return gaTerminals.getWSRule();
 	} 

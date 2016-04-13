@@ -1,29 +1,13 @@
 package org.muml.core.modelinstance.ui.model;
 
-import java.io.IOException;
-import java.util.LinkedList;
-
-import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.commands.operations.OperationHistoryFactory;
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.gmf.runtime.common.core.command.CommandResult;
-import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
-import org.muml.core.common.DiagramEditorUtil;
 import org.muml.core.common.Messages;
-import org.muml.core.modelinstance.ModelinstanceFactory;
-import org.muml.core.modelinstance.RootNode;
 import org.muml.core.modelinstance.ui.ModelinstanceUiPlugin;
 import org.muml.core.modelinstance.ui.diagrams.pages.NewExtendedFileCreationPage;
 

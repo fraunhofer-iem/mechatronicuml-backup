@@ -23,7 +23,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.pim.component.provider.MumlEditPlugin;
+import org.muml.pim.provider.MumlEditPlugin;
 import org.muml.pim.valuetype.Cardinality;
 import org.muml.pim.valuetype.ValuetypeFactory;
 import org.muml.pim.valuetype.ValuetypePackage;
@@ -240,7 +240,7 @@ public class CardinalityItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pim.provider.MumlEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

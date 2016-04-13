@@ -14,14 +14,11 @@ package org.muml.pim.realtimestatechart.one_to_n_schemata.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.pim.msgtype.MessageType;
 import org.muml.pim.realtimestatechart.Action;
-import org.muml.pim.realtimestatechart.AsynchronousMessageEvent;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.LoadBalancing;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage;
 import org.muml.pim.valuetype.TimeValue;

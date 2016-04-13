@@ -12,11 +12,16 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.muml.core.common.validator.MumlValidator;
 import org.muml.pim.connector.util.ConnectorValidator;
 import org.muml.pim.protocol.*;
+import org.muml.pim.protocol.AbstractCoordinationSpecification;
+import org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions;
+import org.muml.pim.protocol.CoordinationProtocol;
+import org.muml.pim.protocol.ProtocolPackage;
+import org.muml.pim.protocol.Role;
+import org.muml.pim.protocol.RoleConnector;
 
 /**
  * <!-- begin-user-doc -->

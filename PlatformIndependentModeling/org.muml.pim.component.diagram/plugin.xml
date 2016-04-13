@@ -357,7 +357,7 @@ Contributors:
          <propertySection
             id="property.section.general" 
             tab="property.tab.general"
-            filter="org.muml.core.properties.tabs.Property_tab_generalTabElementFilter"
+            filter="org.muml.core.properties.tabs.GeneralTabElementFilter"
             class="org.muml.ape.runtime.sections.ObjectPropertySection">
          </propertySection>
          <propertySection
@@ -381,13 +381,13 @@ Contributors:
          <propertySection
             id="property.section.documentation" 
             tab="property.tab.documentation"
-            filter="org.muml.core.properties.tabs.Property_tab_documentationTabElementFilter"
+            filter="org.muml.core.properties.tabs.DocumentationTabElementFilter"
             class="org.muml.ape.runtime.sections.ObjectPropertySection">
          </propertySection>
          <propertySection
             id="property.section.extensions" 
             tab="property.tab.extensions"
-            filter="org.muml.core.properties.tabs.Property_tab_extensionsTabElementFilter"
+            filter="org.muml.core.properties.tabs.ExtensionsTabElementFilter"
             class="org.muml.ape.runtime.sections.ObjectPropertySection">
          </propertySection>
       </propertySections>
@@ -691,12 +691,6 @@ Contributors:
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">
       <?gmfgen generated="true"?>
    </extension>
-<extension point="org.eclipse.core.contenttype.contentTypes">
-		<?gmfgen generated="true"?>
-   		<!--
-   		<file-association content-type="org.muml.core.modelinstance.editor.model" file-extensions="component"/>
-   		-->
-    </extension>
 
 <extension point="org.eclipse.ui.commands">
 		<?gmfgen generated="true"?>
@@ -716,7 +710,7 @@ Contributors:
       </parser>
    </extension>
 <extension
-         point="org.muml.core.modelinstance.modelelementcategory">
+         point="org.muml.core.modelelementcategory">
       <?gmfgen generated="true"?>  
       <category
             key="org.muml.pim.components.category"
@@ -736,6 +730,7 @@ Contributors:
          
       </category>
    </extension>
+
 
 
 

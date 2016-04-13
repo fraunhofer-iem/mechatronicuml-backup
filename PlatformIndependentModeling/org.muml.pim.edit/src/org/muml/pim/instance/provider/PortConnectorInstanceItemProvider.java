@@ -16,10 +16,10 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.pim.component.provider.MumlEditPlugin;
 import org.muml.pim.connector.provider.ConnectorInstanceItemProvider;
 import org.muml.pim.instance.InstancePackage;
 import org.muml.pim.instance.PortConnectorInstance;
+import org.muml.pim.provider.MumlEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link org.muml.pim.instance.PortConnectorInstance} object.
@@ -154,7 +154,7 @@ public class PortConnectorInstanceItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pim.provider.MumlEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 	/**

@@ -17,10 +17,10 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.pim.ItemProviderUtilities;
-import org.muml.pim.component.provider.MumlEditPlugin;
 import org.muml.pim.connector.provider.DiscreteInteractionEndpointItemProvider;
 import org.muml.pim.protocol.ProtocolPackage;
 import org.muml.pim.protocol.Role;
+import org.muml.pim.provider.MumlEditPlugin;
 
 /**
  * This is the item provider adapter for a
@@ -190,7 +190,7 @@ public class RoleItemProvider extends DiscreteInteractionEndpointItemProvider {
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pim.provider.MumlEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 	/**

@@ -19,10 +19,8 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.core.CorePackage;
 import org.muml.core.provider.CommentableElementItemProvider;
-import org.muml.pim.component.provider.MumlEditPlugin;
-import org.muml.pim.pattern.PatternFactory;
+import org.muml.pim.provider.MumlEditPlugin;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
 import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
@@ -310,7 +308,7 @@ public class RegionItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pim.provider.MumlEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

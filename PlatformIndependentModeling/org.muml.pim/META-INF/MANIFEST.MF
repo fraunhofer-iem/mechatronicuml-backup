@@ -10,7 +10,6 @@ Bundle-Vendor: Software Engineering Group,
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.muml.core.common;visibility:=reexport,
- org.muml.core.modelinstance;visibility:=reexport,
  org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.core;visibility:=reexport,

@@ -2,14 +2,6 @@
 <?eclipse version="3.0"?><!--
 --><plugin>
 
-   <extension
-         point="org.muml.emm.migrator">
-      <Migrator
-            file="model/actionlanguage.migrator">
-      </Migrator>
-   </extension>
-   
-   
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated actionlanguage -->
       <package

@@ -19,8 +19,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.CorePackage;
 import org.muml.core.provider.NamedElementItemProvider;
-import org.muml.pim.component.provider.MumlEditPlugin;
-import org.muml.pim.pattern.PatternFactory;
+import org.muml.pim.provider.MumlEditPlugin;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
 import org.muml.pim.realtimestatechart.Vertex;
 import org.muml.pim.realtimestatechart.descriptor.PrioritizedElementContainmentItemPropertyDescriptor;
@@ -204,7 +203,7 @@ public class VertexItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pim.provider.MumlEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

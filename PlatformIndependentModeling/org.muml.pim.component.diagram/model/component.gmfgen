@@ -31,7 +31,7 @@
         xsi:type="gmfgen:FigureViewmap"
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <domainDiagramElement
-        href="../../org.muml.core.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
+        href="../../org.muml.core/model/core.genmodel#//core/modelinstance/ModelElementCategory"/>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
         visualID="3010"
@@ -513,9 +513,9 @@
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/component/StaticAtomicComponent"/>
         <containmentMetaFeature
-            href="../../org.muml.core.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+            href="../../org.muml.core/model/core.genmodel#//core/modelinstance/ModelElementCategory/modelElements"/>
         <childMetaFeature
-            href="../../org.muml.core.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+            href="../../org.muml.core/model/core.genmodel#//core/modelinstance/ModelElementCategory/modelElements"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -581,9 +581,9 @@
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/component/StaticStructuredComponent"/>
         <containmentMetaFeature
-            href="../../org.muml.core.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+            href="../../org.muml.core/model/core.genmodel#//core/modelinstance/ModelElementCategory/modelElements"/>
         <childMetaFeature
-            href="../../org.muml.core.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+            href="../../org.muml.core/model/core.genmodel#//core/modelinstance/ModelElementCategory/modelElements"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers

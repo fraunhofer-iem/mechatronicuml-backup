@@ -8,7 +8,6 @@ import org.muml.core.NamedElement;
 import org.muml.pim.connector.MessageBuffer;
 import org.muml.pim.constraint.VerifiableElement;
 import org.muml.pim.pattern.AbstractCoordinationPattern;
-import org.muml.pim.pattern.CoordinationPattern;
 
 /**
  * <!-- begin-user-doc -->

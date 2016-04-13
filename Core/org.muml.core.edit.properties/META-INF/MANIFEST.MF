@@ -16,5 +16,6 @@ Export-Package: org.muml.core.properties.metamodel, org.muml.core.properties.con
  org.muml.core.properties.core.editor,
  org.muml.core.properties.expressions.editor,
  org.muml.core.properties.common.editor,
+ org.muml.core.properties.modelinstance.editor,
  org.muml.core.properties.tabs
 Bundle-Vendor: SDM

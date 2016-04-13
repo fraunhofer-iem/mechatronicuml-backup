@@ -15,11 +15,15 @@ package org.muml.pim.pattern.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.muml.pim.pattern.*;
+import org.muml.pim.pattern.CoordinationPattern;
+import org.muml.pim.pattern.CoordinationPatternVariant;
+import org.muml.pim.pattern.DescriptionAspects;
+import org.muml.pim.pattern.PatternFactory;
+import org.muml.pim.pattern.PatternPackage;
+import org.muml.pim.pattern.VerifiedConfiguration;
 
 /**
  * <!-- begin-user-doc -->

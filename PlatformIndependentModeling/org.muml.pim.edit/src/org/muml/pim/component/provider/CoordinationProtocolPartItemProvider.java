@@ -15,12 +15,10 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.muml.core.CorePackage;
 import org.muml.core.provider.CommentableElementItemProvider;
 import org.muml.pim.component.ComponentPackage;
 import org.muml.pim.component.CoordinationProtocolPart;
-import org.muml.pim.constraint.provider.MumlEditPlugin;
-import org.muml.pim.pattern.PatternFactory;
+import org.muml.pim.provider.MumlEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link org.muml.pim.component.CoordinationProtocolPart} object.
@@ -159,7 +157,7 @@ public class CoordinationProtocolPartItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pim.provider.MumlEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

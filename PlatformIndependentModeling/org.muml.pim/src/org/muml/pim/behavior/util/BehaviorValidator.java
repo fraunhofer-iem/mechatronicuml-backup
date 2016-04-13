@@ -12,10 +12,18 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.muml.core.common.validator.MumlValidator;
 import org.muml.pim.behavior.*;
+import org.muml.pim.behavior.Behavior;
+import org.muml.pim.behavior.BehaviorPackage;
+import org.muml.pim.behavior.BehavioralElement;
+import org.muml.pim.behavior.Operation;
+import org.muml.pim.behavior.OperationRepository;
+import org.muml.pim.behavior.Parameter;
+import org.muml.pim.behavior.ParameterBinding;
+import org.muml.pim.behavior.TypedNamedElement;
+import org.muml.pim.behavior.Variable;
 
 /**
  * <!-- begin-user-doc -->

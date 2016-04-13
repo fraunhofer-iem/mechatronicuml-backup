@@ -13,6 +13,20 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.muml.pim.component.*;
+import org.muml.pim.component.AssemblyConnector;
+import org.muml.pim.component.ComponentFactory;
+import org.muml.pim.component.ComponentKind;
+import org.muml.pim.component.ComponentPackage;
+import org.muml.pim.component.ComponentPart;
+import org.muml.pim.component.ContinuousPort;
+import org.muml.pim.component.CoordinationProtocolPart;
+import org.muml.pim.component.DelegationConnector;
+import org.muml.pim.component.DiscretePort;
+import org.muml.pim.component.HybridPort;
+import org.muml.pim.component.PortDirectionKind;
+import org.muml.pim.component.PortPart;
+import org.muml.pim.component.StaticAtomicComponent;
+import org.muml.pim.component.StaticStructuredComponent;
 
 
 /**

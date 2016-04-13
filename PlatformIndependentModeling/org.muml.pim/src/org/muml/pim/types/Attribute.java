@@ -13,7 +13,6 @@
 package org.muml.pim.types;
 
 import org.muml.core.CommentableElement;
-import org.muml.core.NamedElement;
 import org.muml.pim.behavior.TypedNamedElement;
 
 /**

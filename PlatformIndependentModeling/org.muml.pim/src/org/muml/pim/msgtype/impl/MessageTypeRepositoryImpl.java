@@ -8,17 +8,12 @@ package org.muml.pim.msgtype.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.muml.core.CommentableElement;
-import org.muml.core.CorePackage;
-import org.muml.core.impl.NamedElementImpl;
 import org.muml.core.impl.RepositoryImpl;
 import org.muml.pim.msgtype.MessageType;
 import org.muml.pim.msgtype.MessageTypeRepository;

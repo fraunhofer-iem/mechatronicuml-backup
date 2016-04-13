@@ -15,9 +15,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.pim.component.AssemblyConnector;
-import org.muml.pim.connector.Connector;
-import org.muml.pim.connector.ConnectorInstance;
 import org.muml.pim.instance.AssemblyConnectorInstance;
 import org.muml.pim.instance.InstancePackage;
 

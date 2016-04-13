@@ -18,10 +18,15 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.muml.core.common.validator.MumlValidator;
 import org.muml.pim.pattern.*;
+import org.muml.pim.pattern.AbstractCoordinationPattern;
+import org.muml.pim.pattern.CoordinationPattern;
+import org.muml.pim.pattern.CoordinationPatternVariant;
+import org.muml.pim.pattern.DescriptionAspects;
+import org.muml.pim.pattern.PatternPackage;
+import org.muml.pim.pattern.VerifiedConfiguration;
 import org.muml.pim.protocol.util.ProtocolValidator;
 
 /**

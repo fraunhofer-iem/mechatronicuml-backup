@@ -17,11 +17,11 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.pim.component.Component;
 import org.muml.pim.component.Port;
-import org.muml.pim.component.provider.MumlEditPlugin;
 import org.muml.pim.connector.ConnectorEndpointInstance;
 import org.muml.pim.connector.provider.ConnectorEndpointInstanceItemProvider;
 import org.muml.pim.instance.InstancePackage;
 import org.muml.pim.instance.PortInstance;
+import org.muml.pim.provider.MumlEditPlugin;
 
 /**
  * This is the item provider adapter for a
@@ -221,7 +221,7 @@ public class PortInstanceItemProvider extends
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pim.provider.MumlEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

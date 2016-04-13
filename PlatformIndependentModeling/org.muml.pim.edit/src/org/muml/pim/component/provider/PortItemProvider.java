@@ -21,7 +21,7 @@ import org.muml.core.CorePackage;
 import org.muml.pim.component.ComponentPackage;
 import org.muml.pim.component.Port;
 import org.muml.pim.connector.provider.ConnectorEndpointItemProvider;
-import org.muml.pim.constraint.provider.MumlEditPlugin;
+import org.muml.pim.provider.MumlEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link org.muml.pim.component.Port} object.
@@ -190,7 +190,7 @@ public class PortItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pim.provider.MumlEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

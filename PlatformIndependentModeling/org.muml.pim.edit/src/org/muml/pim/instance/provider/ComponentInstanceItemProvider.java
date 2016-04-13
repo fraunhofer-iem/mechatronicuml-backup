@@ -19,10 +19,10 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.provider.NamedElementItemProvider;
-import org.muml.pim.component.provider.MumlEditPlugin;
 import org.muml.pim.instance.ComponentInstance;
 import org.muml.pim.instance.InstanceFactory;
 import org.muml.pim.instance.InstancePackage;
+import org.muml.pim.provider.MumlEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link org.muml.pim.instance.ComponentInstance} object.
@@ -289,7 +289,7 @@ public class ComponentInstanceItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pim.provider.MumlEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 	/**

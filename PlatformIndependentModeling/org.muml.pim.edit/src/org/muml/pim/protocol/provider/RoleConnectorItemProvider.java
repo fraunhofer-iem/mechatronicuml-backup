@@ -20,11 +20,11 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.common.descriptor.DefaultChainedPropertyDescriptor;
 import org.muml.core.common.descriptor.IChainedPropertyDescriptor;
-import org.muml.pim.component.provider.MumlEditPlugin;
 import org.muml.pim.connector.provider.ConnectorItemProvider;
 import org.muml.pim.protocol.ProtocolFactory;
 import org.muml.pim.protocol.ProtocolPackage;
 import org.muml.pim.protocol.RoleConnector;
+import org.muml.pim.provider.MumlEditPlugin;
 import org.muml.pim.realtimestatechart.descriptor.EnumerationPropertyDescriptor;
 import org.muml.pim.valuetype.ValuetypePackage;
 
@@ -340,7 +340,7 @@ public class RoleConnectorItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pim.provider.MumlEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

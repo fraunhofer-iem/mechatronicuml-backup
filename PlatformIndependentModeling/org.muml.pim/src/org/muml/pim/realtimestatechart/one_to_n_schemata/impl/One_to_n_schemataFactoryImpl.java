@@ -15,11 +15,17 @@ package org.muml.pim.realtimestatechart.one_to_n_schemata.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.*;
+import org.muml.pim.realtimestatechart.one_to_n_schemata.Iterate;
+import org.muml.pim.realtimestatechart.one_to_n_schemata.LoadBalancing;
+import org.muml.pim.realtimestatechart.one_to_n_schemata.MultiReceive;
+import org.muml.pim.realtimestatechart.one_to_n_schemata.Multicast;
+import org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataFactory;
+import org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage;
+import org.muml.pim.realtimestatechart.one_to_n_schemata.SingleReceive;
+import org.muml.pim.realtimestatechart.one_to_n_schemata.Unicast;
 
 /**
  * <!-- begin-user-doc -->

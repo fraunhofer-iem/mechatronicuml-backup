@@ -29,7 +29,6 @@ import org.muml.core.expressions.common.CommonExpressionsFactory;
 import org.muml.pim.behavior.BehavioralElement;
 import org.muml.pim.component.DiscretePort;
 import org.muml.pim.msgtype.MessageType;
-import org.muml.pim.pattern.PatternFactory;
 import org.muml.pim.protocol.Role;
 import org.muml.pim.realtimestatechart.EventKind;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;

@@ -4,10 +4,8 @@
     modelDirectory="/org.muml.pim/src" modelPluginID="org.muml.pim" modelName="Muml"
     testsDirectory="/org.muml.pim.modeltests/src" importerID="org.eclipse.emf.importer.ecore"
     complianceLevel="6.0" copyrightFields="false" testsPluginID="org.muml.pim.modeltests"
-    language="" usedGenPackages="../../org.muml.core/model/core.genmodel#//core ../../org.muml.core.modelinstance/model/modelinstance.genmodel#//modelinstance"
-    operationReflection="true">
+    language="" usedGenPackages="../../org.muml.core/model/core.genmodel#//core" operationReflection="true">
   <foreignModel>pim.ecore</foreignModel>
-  <foreignModel>../../org.muml.core.modelinstance/model/modelinstance.ecore</foreignModel>
   <genPackages prefix="Pim" basePackage="org.muml" disposableProviderFactory="true"
       ecorePackage="pim.ecore#/">
     <genClasses ecoreClass="pim.ecore#//Test"/>

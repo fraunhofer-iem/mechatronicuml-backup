@@ -14,6 +14,16 @@ import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
 import org.muml.pim.behavior.BehavioralElement;
 import org.muml.pim.connector.*;
+import org.muml.pim.connector.Connector;
+import org.muml.pim.connector.ConnectorEndpoint;
+import org.muml.pim.connector.ConnectorEndpointInstance;
+import org.muml.pim.connector.ConnectorInstance;
+import org.muml.pim.connector.ConnectorPackage;
+import org.muml.pim.connector.DiscreteInteractionEndpoint;
+import org.muml.pim.connector.DiscreteInteractionEndpointInstance;
+import org.muml.pim.connector.DiscreteMultiInteractionEndpointInstance;
+import org.muml.pim.connector.DiscreteSingleInteractionEndpointInstance;
+import org.muml.pim.connector.MessageBuffer;
 
 /**
  * <!-- begin-user-doc -->

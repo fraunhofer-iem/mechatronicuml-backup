@@ -17,11 +17,19 @@ import java.util.Map;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.*;
+import org.muml.pim.realtimestatechart.one_to_n_schemata.Iterate;
+import org.muml.pim.realtimestatechart.one_to_n_schemata.LoadBalancing;
+import org.muml.pim.realtimestatechart.one_to_n_schemata.MultiReceive;
+import org.muml.pim.realtimestatechart.one_to_n_schemata.Multicast;
+import org.muml.pim.realtimestatechart.one_to_n_schemata.OneToManyCommunicationSchema;
+import org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage;
+import org.muml.pim.realtimestatechart.one_to_n_schemata.ReceivingOneToManyCommunicationSchema;
+import org.muml.pim.realtimestatechart.one_to_n_schemata.SendingOneToManyCommunicationSchema;
+import org.muml.pim.realtimestatechart.one_to_n_schemata.SingleReceive;
+import org.muml.pim.realtimestatechart.one_to_n_schemata.Unicast;
 
 /**
  * <!-- begin-user-doc -->

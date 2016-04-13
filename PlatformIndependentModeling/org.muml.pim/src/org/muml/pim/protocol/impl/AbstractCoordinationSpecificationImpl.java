@@ -23,7 +23,6 @@ import org.muml.pim.constraint.ConstraintPackage;
 import org.muml.pim.constraint.VerifiableElement;
 import org.muml.pim.constraint.VerificationConstraintRepository;
 import org.muml.pim.pattern.AbstractCoordinationPattern;
-import org.muml.pim.pattern.CoordinationPattern;
 import org.muml.pim.protocol.AbstractCoordinationSpecification;
 import org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions;
 import org.muml.pim.protocol.ProtocolPackage;

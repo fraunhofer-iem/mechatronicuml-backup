@@ -931,7 +931,7 @@
       </parser>
    </extension>
 <extension
-         point="org.muml.core.modelinstance.modelelementcategory">
+         point="org.muml.core.modelelementcategory">
       <?gmfgen generated="true"?>  
       <category
             key="org.muml.pim.instance.category"

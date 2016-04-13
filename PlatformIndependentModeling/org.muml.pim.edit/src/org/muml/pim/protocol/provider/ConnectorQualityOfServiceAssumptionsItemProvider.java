@@ -18,12 +18,10 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.core.CorePackage;
 import org.muml.core.provider.CommentableElementItemProvider;
-import org.muml.pim.component.provider.MumlEditPlugin;
-import org.muml.pim.pattern.PatternFactory;
 import org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions;
 import org.muml.pim.protocol.ProtocolPackage;
+import org.muml.pim.provider.MumlEditPlugin;
 import org.muml.pim.valuetype.ValuetypeFactory;
 
 /**
@@ -260,7 +258,7 @@ public class ConnectorQualityOfServiceAssumptionsItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pim.provider.MumlEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

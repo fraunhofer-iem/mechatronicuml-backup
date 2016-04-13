@@ -25,8 +25,7 @@ import org.muml.core.provider.NamedElementItemProvider;
 import org.muml.pim.behavior.BehaviorFactory;
 import org.muml.pim.behavior.BehaviorPackage;
 import org.muml.pim.behavior.Operation;
-import org.muml.pim.component.provider.MumlEditPlugin;
-import org.muml.pim.pattern.PatternFactory;
+import org.muml.pim.provider.MumlEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link org.muml.pim.behavior.Operation} object.
@@ -287,7 +286,7 @@ public class OperationItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pim.provider.MumlEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

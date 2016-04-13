@@ -14,14 +14,18 @@ package org.muml.pim.pattern.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
-import org.muml.core.Extension;
 import org.muml.core.NamedElement;
 import org.muml.pim.constraint.VerifiableElement;
 import org.muml.pim.pattern.*;
+import org.muml.pim.pattern.AbstractCoordinationPattern;
+import org.muml.pim.pattern.CoordinationPattern;
+import org.muml.pim.pattern.CoordinationPatternVariant;
+import org.muml.pim.pattern.DescriptionAspects;
+import org.muml.pim.pattern.PatternPackage;
+import org.muml.pim.pattern.VerifiedConfiguration;
 import org.muml.pim.protocol.AbstractCoordinationSpecification;
 
 /**

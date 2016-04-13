@@ -14,6 +14,13 @@ import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
 import org.muml.pim.behavior.TypedNamedElement;
 import org.muml.pim.types.*;
+import org.muml.pim.types.ArrayDataType;
+import org.muml.pim.types.Attribute;
+import org.muml.pim.types.DataType;
+import org.muml.pim.types.PrimitiveDataType;
+import org.muml.pim.types.RangedPrimitiveDataType;
+import org.muml.pim.types.StructureDataType;
+import org.muml.pim.types.TypesPackage;
 
 /**
  * <!-- begin-user-doc -->

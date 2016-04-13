@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.muml.core.ExtendableElement;
-import org.muml.core.reachanalysis.reachabilitygraph.*;
 import org.muml.core.reachanalysis.reachabilitygraph.ActionTransition;
 import org.muml.core.reachanalysis.reachabilitygraph.HashToStateList;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraph;

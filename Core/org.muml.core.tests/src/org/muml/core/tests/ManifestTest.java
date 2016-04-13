@@ -3,7 +3,6 @@ package org.muml.core.tests;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Paths;
 
 import org.eclipse.core.runtime.Platform;
 import org.junit.Test;

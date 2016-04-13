@@ -13,6 +13,10 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.muml.pim.connector.*;
+import org.muml.pim.connector.BufferOverflowAvoidanceStrategy;
+import org.muml.pim.connector.ConnectorFactory;
+import org.muml.pim.connector.ConnectorPackage;
+import org.muml.pim.connector.MessageBuffer;
 
 
 /**

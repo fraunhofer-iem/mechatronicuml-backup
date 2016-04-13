@@ -11,6 +11,11 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.muml.core.ExtendableElement;
 import org.muml.pim.valuetype.*;
+import org.muml.pim.valuetype.Cardinality;
+import org.muml.pim.valuetype.NaturalNumber;
+import org.muml.pim.valuetype.Range;
+import org.muml.pim.valuetype.TimeValue;
+import org.muml.pim.valuetype.ValuetypePackage;
 
 /**
  * <!-- begin-user-doc -->

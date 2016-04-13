@@ -19,7 +19,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.pim.component.ComponentPackage;
 import org.muml.pim.component.PortPart;
 import org.muml.pim.connector.provider.ConnectorEndpointItemProvider;
-import org.muml.pim.constraint.provider.MumlEditPlugin;
+import org.muml.pim.provider.MumlEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link org.muml.pim.component.PortPart} object.
@@ -211,7 +211,7 @@ public class PortPartItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pim.provider.MumlEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

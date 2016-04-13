@@ -115,7 +115,7 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 		isInited = true;
 
 		// Initialize simple dependencies
-		ModelinstancePackage.eINSTANCE.eClass();
+		CorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		PimPackageImpl thePimPackage = (PimPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PimPackage.eNS_URI) instanceof PimPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PimPackage.eNS_URI) : PimPackage.eINSTANCE);

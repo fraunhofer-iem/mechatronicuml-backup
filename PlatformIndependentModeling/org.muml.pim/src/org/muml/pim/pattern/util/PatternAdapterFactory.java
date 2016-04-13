@@ -14,16 +14,19 @@ package org.muml.pim.pattern.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
-import org.muml.core.Extension;
 import org.muml.core.NamedElement;
 import org.muml.pim.constraint.VerifiableElement;
 import org.muml.pim.pattern.*;
+import org.muml.pim.pattern.AbstractCoordinationPattern;
+import org.muml.pim.pattern.CoordinationPattern;
+import org.muml.pim.pattern.CoordinationPatternVariant;
+import org.muml.pim.pattern.DescriptionAspects;
+import org.muml.pim.pattern.PatternPackage;
+import org.muml.pim.pattern.VerifiedConfiguration;
 import org.muml.pim.protocol.AbstractCoordinationSpecification;
 
 /**

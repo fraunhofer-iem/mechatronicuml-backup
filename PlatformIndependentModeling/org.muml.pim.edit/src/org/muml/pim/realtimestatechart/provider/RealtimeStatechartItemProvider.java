@@ -22,8 +22,7 @@ import org.muml.core.CorePackage;
 import org.muml.core.provider.NamedElementItemProvider;
 import org.muml.pim.behavior.BehaviorFactory;
 import org.muml.pim.behavior.BehaviorPackage;
-import org.muml.pim.component.provider.MumlEditPlugin;
-import org.muml.pim.pattern.PatternFactory;
+import org.muml.pim.provider.MumlEditPlugin;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
 import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
@@ -636,7 +635,7 @@ public class RealtimeStatechartItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pim.provider.MumlEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

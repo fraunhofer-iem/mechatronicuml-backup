@@ -12,10 +12,38 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.muml.core.common.validator.MumlValidator;
 import org.muml.pim.realtimestatechart.*;
+import org.muml.pim.realtimestatechart.AbsoluteDeadline;
+import org.muml.pim.realtimestatechart.Action;
+import org.muml.pim.realtimestatechart.AsynchronousMessageEvent;
+import org.muml.pim.realtimestatechart.Clock;
+import org.muml.pim.realtimestatechart.ClockConstraint;
+import org.muml.pim.realtimestatechart.Deadline;
+import org.muml.pim.realtimestatechart.DoEvent;
+import org.muml.pim.realtimestatechart.EntryEvent;
+import org.muml.pim.realtimestatechart.EntryOrExitEvent;
+import org.muml.pim.realtimestatechart.EntryPoint;
+import org.muml.pim.realtimestatechart.Event;
+import org.muml.pim.realtimestatechart.EventKind;
+import org.muml.pim.realtimestatechart.ExitEvent;
+import org.muml.pim.realtimestatechart.ExitPoint;
+import org.muml.pim.realtimestatechart.Message;
+import org.muml.pim.realtimestatechart.PrioritizedElement;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
+import org.muml.pim.realtimestatechart.Region;
+import org.muml.pim.realtimestatechart.RelativeDeadline;
+import org.muml.pim.realtimestatechart.State;
+import org.muml.pim.realtimestatechart.StateConnectionPoint;
+import org.muml.pim.realtimestatechart.StateEvent;
+import org.muml.pim.realtimestatechart.Synchronization;
+import org.muml.pim.realtimestatechart.SynchronizationChannel;
+import org.muml.pim.realtimestatechart.SynchronizationKind;
+import org.muml.pim.realtimestatechart.Transition;
+import org.muml.pim.realtimestatechart.TransitionEvent;
+import org.muml.pim.realtimestatechart.Vertex;
 
 /**
  * <!-- begin-user-doc -->

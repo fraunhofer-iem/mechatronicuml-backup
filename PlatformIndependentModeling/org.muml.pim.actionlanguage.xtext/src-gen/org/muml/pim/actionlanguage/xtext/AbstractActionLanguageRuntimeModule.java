@@ -11,7 +11,7 @@ import com.google.inject.Binder;
 import com.google.inject.name.Names;
 
 /**
- * Manual modifications go to {org.muml.pim.actionlanguageRuntimeModule}
+ * Manual modifications go to {org.muml.pim.actionlanguage.xtext.ActionLanguageRuntimeModule}
  */
 @SuppressWarnings("all")
 public abstract class AbstractActionLanguageRuntimeModule extends org.eclipse.xtext.service.DefaultRuntimeModule {
@@ -20,12 +20,12 @@ public abstract class AbstractActionLanguageRuntimeModule extends org.eclipse.xt
 
 	@Override
 	public void configure(Binder binder) {
-		properties = tryBindProperties(binder, "de/uni_paderborn/fujaba/muml/ActionLanguage.properties");
+		properties = tryBindProperties(binder, "org/muml/pim/actionlanguage/xtext/ActionLanguage.properties");
 		super.configure(binder);
 	}
 	
 	public void configureLanguageName(Binder binder) {
-		binder.bind(String.class).annotatedWith(Names.named(Constants.LANGUAGE_NAME)).toInstance("org.muml.pim.actionlanguage");
+		binder.bind(String.class).annotatedWith(Names.named(Constants.LANGUAGE_NAME)).toInstance("org.muml.pim.actionlanguage.xtext.ActionLanguage");
 	}
 	
 	public void configureFileExtensions(Binder binder) {

@@ -23,12 +23,10 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.core.CorePackage;
 import org.muml.core.provider.ExtendableElementItemProvider;
-import org.muml.pim.component.provider.MumlEditPlugin;
 import org.muml.pim.constraint.ConstraintPackage;
 import org.muml.pim.constraint.VerifiableElement;
-import org.muml.pim.pattern.PatternFactory;
+import org.muml.pim.provider.MumlEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link org.muml.pim.constraint.VerifiableElement} object.
@@ -167,7 +165,7 @@ public class VerifiableElementItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pim.provider.MumlEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

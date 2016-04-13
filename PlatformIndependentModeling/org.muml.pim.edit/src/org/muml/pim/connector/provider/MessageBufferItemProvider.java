@@ -18,11 +18,9 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.CorePackage;
 import org.muml.core.provider.NamedElementItemProvider;
-import org.muml.pim.component.provider.MumlEditPlugin;
 import org.muml.pim.connector.ConnectorPackage;
 import org.muml.pim.connector.MessageBuffer;
-import org.muml.pim.msgtype.MsgtypeFactory;
-import org.muml.pim.pattern.PatternFactory;
+import org.muml.pim.provider.MumlEditPlugin;
 import org.muml.pim.valuetype.ValuetypeFactory;
 import org.muml.pim.valuetype.descriptor.NaturalNumberPropertyDescriptor;
 
@@ -288,7 +286,7 @@ public class MessageBufferItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pim.provider.MumlEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

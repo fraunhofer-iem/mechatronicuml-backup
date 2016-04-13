@@ -26,7 +26,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.pim.behavior.Behavior;
 import org.muml.pim.behavior.BehaviorFactory;
 import org.muml.pim.behavior.BehaviorPackage;
-import org.muml.pim.component.provider.MumlEditPlugin;
+import org.muml.pim.provider.MumlEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link org.muml.pim.behavior.Behavior} object.
@@ -228,7 +228,7 @@ public class BehaviorItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pim.provider.MumlEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

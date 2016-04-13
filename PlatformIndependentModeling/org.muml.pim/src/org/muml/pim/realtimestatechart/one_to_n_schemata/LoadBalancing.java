@@ -14,7 +14,6 @@ package org.muml.pim.realtimestatechart.one_to_n_schemata;
 
 import org.muml.pim.msgtype.MessageType;
 import org.muml.pim.realtimestatechart.Action;
-import org.muml.pim.realtimestatechart.AsynchronousMessageEvent;
 import org.muml.pim.valuetype.TimeValue;
 
 /**

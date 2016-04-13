@@ -6,6 +6,7 @@ package org.muml.pim.actionlanguage.xtext.parseTreeConstruction;
 import org.eclipse.emf.ecore.*;
 import org.eclipse.xtext.*;
 import org.eclipse.xtext.parsetree.reconstr.IEObjectConsumer;
+
 import org.muml.pim.actionlanguage.xtext.services.ActionLanguageGrammarAccess;
 
 import com.google.inject.Inject;
@@ -79,8 +80,8 @@ protected class ThisRootNode extends RootToken {
 
 /************ begin Rule Entry ****************
  *
- * Entry returns expressions::Expression:
- * 	Block | Expression | ArrayInitializeExpression;
+ * Entry expressions::Expression:
+ * 	Block | Expression | ArrayInitializeExpression
  *
  **/
 
@@ -253,12 +254,14 @@ protected class Entry_ArrayInitializeExpressionParserRuleCall_2 extends RuleCall
 
 /************ begin Rule Block ****************
  *
- * Block returns actionlanguage::Block hidden(WS, ML_COMMENT, SL_COMMENT):
- * 	{actionlanguage::Block} "{" expressions+=ExpressionStartRule* "}";
+ * Block actionlanguage::Block hidden(WS, ML_COMMENT, SL_COMMENT):
+ * 	{actionlanguage::Block}
+ * 	'{'
+ * 	expressions+=ExpressionStartRule* '}'
  *
  **/
 
-// {actionlanguage::Block} "{" expressions+=ExpressionStartRule* "}"
+// {actionlanguage::Block} '{' expressions+=ExpressionStartRule* '}'
 protected class Block_Group extends GroupToken {
 	
 	public Block_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -313,7 +316,7 @@ protected class Block_BlockAction_0 extends ActionToken  {
 	}
 }
 
-// "{"
+// '{'
 protected class Block_LeftCurlyBracketKeyword_1 extends KeywordToken  {
 	
 	public Block_LeftCurlyBracketKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -382,7 +385,7 @@ protected class Block_ExpressionsAssignment_2 extends AssignmentToken  {
 	}	
 }
 
-// "}"
+// '}'
 protected class Block_RightCurlyBracketKeyword_3 extends KeywordToken  {
 	
 	public Block_RightCurlyBracketKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -412,15 +415,14 @@ protected class Block_RightCurlyBracketKeyword_3 extends KeywordToken  {
 /************ begin Rule ForLoop ****************
  *
  * // TODO: clarify if it makes sense to allow arbitrary expressions for
- * 
  * // the initializeExpression and countingExpression
- *  ForLoop returns actionlanguage::ForLoop:
- * 	"for" "(" initializeExpression=Assignment loopTest=Expression ";" countingExpression=ForLoopCountingExpression ")"
- * 	block=Block;
+ * ForLoop actionlanguage::ForLoop:
+ * 	'for' '(' initializeExpression=Assignment loopTest=Expression ';' countingExpression=ForLoopCountingExpression ')'
+ * 	block=Block
  *
  **/
 
-// "for" "(" initializeExpression=Assignment loopTest=Expression ";" countingExpression=ForLoopCountingExpression ")"
+// 'for' '(' initializeExpression=Assignment loopTest=Expression ';' countingExpression=ForLoopCountingExpression ')'
 // block=Block
 protected class ForLoop_Group extends GroupToken {
 	
@@ -450,7 +452,7 @@ protected class ForLoop_Group extends GroupToken {
 
 }
 
-// "for"
+// 'for'
 protected class ForLoop_ForKeyword_0 extends KeywordToken  {
 	
 	public ForLoop_ForKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -471,7 +473,7 @@ protected class ForLoop_ForKeyword_0 extends KeywordToken  {
 
 }
 
-// "("
+// '('
 protected class ForLoop_LeftParenthesisKeyword_1 extends KeywordToken  {
 	
 	public ForLoop_LeftParenthesisKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -585,7 +587,7 @@ protected class ForLoop_LoopTestAssignment_3 extends AssignmentToken  {
 	}	
 }
 
-// ";"
+// ';'
 protected class ForLoop_SemicolonKeyword_4 extends KeywordToken  {
 	
 	public ForLoop_SemicolonKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -653,7 +655,7 @@ protected class ForLoop_CountingExpressionAssignment_5 extends AssignmentToken  
 	}	
 }
 
-// ")"
+// ')'
 protected class ForLoop_RightParenthesisKeyword_6 extends KeywordToken  {
 	
 	public ForLoop_RightParenthesisKeyword_6(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -727,10 +729,10 @@ protected class ForLoop_BlockAssignment_7 extends AssignmentToken  {
 
 /************ begin Rule ForLoopCountingExpression ****************
  *
- * ForLoopCountingExpression returns actionlanguage::Assignment:
+ * ForLoopCountingExpression actionlanguage::Assignment:
  * 	lhs_typedNamedElementExpression=TypedNamedElementExpression
- * 	(incrementDecrementOperator=UnaryPostIncrementDecrementOperator | assignOperator=AssignOperator
- * 	rhs_assignExpression=Expression);
+ * 	(incrementDecrementOperator=UnaryPostIncrementDecrementOperator
+ * 	| assignOperator=AssignOperator rhs_assignExpression=Expression)
  *
  **/
 
@@ -810,8 +812,8 @@ protected class ForLoopCountingExpression_Lhs_typedNamedElementExpressionAssignm
 	}	
 }
 
-// incrementDecrementOperator=UnaryPostIncrementDecrementOperator | assignOperator=AssignOperator
-// rhs_assignExpression=Expression
+// (incrementDecrementOperator=UnaryPostIncrementDecrementOperator | assignOperator=AssignOperator
+// rhs_assignExpression=Expression)
 protected class ForLoopCountingExpression_Alternatives_1 extends AlternativesToken {
 
 	public ForLoopCountingExpression_Alternatives_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -978,12 +980,13 @@ protected class ForLoopCountingExpression_Rhs_assignExpressionAssignment_1_1_1 e
 
 /************ begin Rule WhileLoop ****************
  *
- * WhileLoop returns actionlanguage::WhileLoop:
- * 	"while" "(" loopTest=Expression ")" block=Block;
+ * WhileLoop actionlanguage::WhileLoop:
+ * 	'while' '(' loopTest=Expression ')'
+ * 	block=Block
  *
  **/
 
-// "while" "(" loopTest=Expression ")" block=Block
+// 'while' '(' loopTest=Expression ')' block=Block
 protected class WhileLoop_Group extends GroupToken {
 	
 	public WhileLoop_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1012,7 +1015,7 @@ protected class WhileLoop_Group extends GroupToken {
 
 }
 
-// "while"
+// 'while'
 protected class WhileLoop_WhileKeyword_0 extends KeywordToken  {
 	
 	public WhileLoop_WhileKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1033,7 +1036,7 @@ protected class WhileLoop_WhileKeyword_0 extends KeywordToken  {
 
 }
 
-// "("
+// '('
 protected class WhileLoop_LeftParenthesisKeyword_1 extends KeywordToken  {
 	
 	public WhileLoop_LeftParenthesisKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1101,7 +1104,7 @@ protected class WhileLoop_LoopTestAssignment_2 extends AssignmentToken  {
 	}	
 }
 
-// ")"
+// ')'
 protected class WhileLoop_RightParenthesisKeyword_3 extends KeywordToken  {
 	
 	public WhileLoop_RightParenthesisKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1175,12 +1178,14 @@ protected class WhileLoop_BlockAssignment_4 extends AssignmentToken  {
 
 /************ begin Rule DoWhileLoop ****************
  *
- * DoWhileLoop returns actionlanguage::DoWhileLoop:
- * 	"do" block=Block "while" "(" loopTest=Expression ");";
+ * DoWhileLoop actionlanguage::DoWhileLoop:
+ * 	'do'
+ * 	block=Block
+ * 	'while' '(' loopTest=Expression ');'
  *
  **/
 
-// "do" block=Block "while" "(" loopTest=Expression ");"
+// 'do' block=Block 'while' '(' loopTest=Expression ');'
 protected class DoWhileLoop_Group extends GroupToken {
 	
 	public DoWhileLoop_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1209,7 +1214,7 @@ protected class DoWhileLoop_Group extends GroupToken {
 
 }
 
-// "do"
+// 'do'
 protected class DoWhileLoop_DoKeyword_0 extends KeywordToken  {
 	
 	public DoWhileLoop_DoKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1276,7 +1281,7 @@ protected class DoWhileLoop_BlockAssignment_1 extends AssignmentToken  {
 	}	
 }
 
-// "while"
+// 'while'
 protected class DoWhileLoop_WhileKeyword_2 extends KeywordToken  {
 	
 	public DoWhileLoop_WhileKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1298,7 +1303,7 @@ protected class DoWhileLoop_WhileKeyword_2 extends KeywordToken  {
 
 }
 
-// "("
+// '('
 protected class DoWhileLoop_LeftParenthesisKeyword_3 extends KeywordToken  {
 	
 	public DoWhileLoop_LeftParenthesisKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1366,7 +1371,7 @@ protected class DoWhileLoop_LoopTestAssignment_4 extends AssignmentToken  {
 	}	
 }
 
-// ");"
+// ');'
 protected class DoWhileLoop_RightParenthesisSemicolonKeyword_5 extends KeywordToken  {
 	
 	public DoWhileLoop_RightParenthesisSemicolonKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1394,12 +1399,14 @@ protected class DoWhileLoop_RightParenthesisSemicolonKeyword_5 extends KeywordTo
 
 /************ begin Rule IfStatement ****************
  *
- * IfStatement returns actionlanguage::IfStatement:
- * 	"if" "(" ifCondition=Expression ")" ifBlock=Block elseIfStatements+=ElseIfStatement* ("else" elseBlock=Block)?;
+ * IfStatement actionlanguage::IfStatement:
+ * 	'if' '(' ifCondition=Expression ')'
+ * 	ifBlock=Block
+ * 	elseIfStatements+=ElseIfStatement* ('else' elseBlock=Block)?
  *
  **/
 
-// "if" "(" ifCondition=Expression ")" ifBlock=Block elseIfStatements+=ElseIfStatement* ("else" elseBlock=Block)?
+// 'if' '(' ifCondition=Expression ')' ifBlock=Block elseIfStatements+=ElseIfStatement* ('else' elseBlock=Block)?
 protected class IfStatement_Group extends GroupToken {
 	
 	public IfStatement_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1430,7 +1437,7 @@ protected class IfStatement_Group extends GroupToken {
 
 }
 
-// "if"
+// 'if'
 protected class IfStatement_IfKeyword_0 extends KeywordToken  {
 	
 	public IfStatement_IfKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1451,7 +1458,7 @@ protected class IfStatement_IfKeyword_0 extends KeywordToken  {
 
 }
 
-// "("
+// '('
 protected class IfStatement_LeftParenthesisKeyword_1 extends KeywordToken  {
 	
 	public IfStatement_LeftParenthesisKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1519,7 +1526,7 @@ protected class IfStatement_IfConditionAssignment_2 extends AssignmentToken  {
 	}	
 }
 
-// ")"
+// ')'
 protected class IfStatement_RightParenthesisKeyword_3 extends KeywordToken  {
 	
 	public IfStatement_RightParenthesisKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1634,7 +1641,7 @@ protected class IfStatement_ElseIfStatementsAssignment_5 extends AssignmentToken
 	}	
 }
 
-// ("else" elseBlock=Block)?
+// ('else' elseBlock=Block)?
 protected class IfStatement_Group_6 extends GroupToken {
 	
 	public IfStatement_Group_6(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1656,7 +1663,7 @@ protected class IfStatement_Group_6 extends GroupToken {
 
 }
 
-// "else"
+// 'else'
 protected class IfStatement_ElseKeyword_6_0 extends KeywordToken  {
 	
 	public IfStatement_ElseKeyword_6_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1732,12 +1739,13 @@ protected class IfStatement_ElseBlockAssignment_6_1 extends AssignmentToken  {
 
 /************ begin Rule ElseIfStatement ****************
  *
- * ElseIfStatement returns actionlanguage::ElseIfStatement:
- * 	"elseif" "(" elseIfCondition=Expression ")" elseIfBlock=Block;
+ * ElseIfStatement actionlanguage::ElseIfStatement:
+ * 	'elseif' '(' elseIfCondition=Expression ')'
+ * 	elseIfBlock=Block
  *
  **/
 
-// "elseif" "(" elseIfCondition=Expression ")" elseIfBlock=Block
+// 'elseif' '(' elseIfCondition=Expression ')' elseIfBlock=Block
 protected class ElseIfStatement_Group extends GroupToken {
 	
 	public ElseIfStatement_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1766,7 +1774,7 @@ protected class ElseIfStatement_Group extends GroupToken {
 
 }
 
-// "elseif"
+// 'elseif'
 protected class ElseIfStatement_ElseifKeyword_0 extends KeywordToken  {
 	
 	public ElseIfStatement_ElseifKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1787,7 +1795,7 @@ protected class ElseIfStatement_ElseifKeyword_0 extends KeywordToken  {
 
 }
 
-// "("
+// '('
 protected class ElseIfStatement_LeftParenthesisKeyword_1 extends KeywordToken  {
 	
 	public ElseIfStatement_LeftParenthesisKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1855,7 +1863,7 @@ protected class ElseIfStatement_ElseIfConditionAssignment_2 extends AssignmentTo
 	}	
 }
 
-// ")"
+// ')'
 protected class ElseIfStatement_RightParenthesisKeyword_3 extends KeywordToken  {
 	
 	public ElseIfStatement_RightParenthesisKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1929,12 +1937,13 @@ protected class ElseIfStatement_ElseIfBlockAssignment_4 extends AssignmentToken 
 
 /************ begin Rule ReturnStatement ****************
  *
- * ReturnStatement returns actionlanguage::ReturnStatement:
- * 	{actionlanguage::ReturnStatement} "return" expression=Expression ";";
+ * ReturnStatement actionlanguage::ReturnStatement:
+ * 	{actionlanguage::ReturnStatement}
+ * 	'return' expression=Expression ';'
  *
  **/
 
-// {actionlanguage::ReturnStatement} "return" expression=Expression ";"
+// {actionlanguage::ReturnStatement} 'return' expression=Expression ';'
 protected class ReturnStatement_Group extends GroupToken {
 	
 	public ReturnStatement_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1989,7 +1998,7 @@ protected class ReturnStatement_ReturnStatementAction_0 extends ActionToken  {
 	}
 }
 
-// "return"
+// 'return'
 protected class ReturnStatement_ReturnKeyword_1 extends KeywordToken  {
 	
 	public ReturnStatement_ReturnKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2057,7 +2066,7 @@ protected class ReturnStatement_ExpressionAssignment_2 extends AssignmentToken  
 	}	
 }
 
-// ";"
+// ';'
 protected class ReturnStatement_SemicolonKeyword_3 extends KeywordToken  {
 	
 	public ReturnStatement_SemicolonKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2085,12 +2094,12 @@ protected class ReturnStatement_SemicolonKeyword_3 extends KeywordToken  {
 
 /************ begin Rule OperationCallStatement ****************
  *
- * OperationCallStatement returns actionlanguage::OperationCall:
- * 	OperationCall ";";
+ * OperationCallStatement actionlanguage::OperationCall:
+ * 	OperationCall ';'
  *
  **/
 
-// OperationCall ";"
+// OperationCall ';'
 protected class OperationCallStatement_Group extends GroupToken {
 	
 	public OperationCallStatement_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2153,7 +2162,7 @@ protected class OperationCallStatement_OperationCallParserRuleCall_0 extends Rul
 	}	
 }
 
-// ";"
+// ';'
 protected class OperationCallStatement_SemicolonKeyword_1 extends KeywordToken  {
 	
 	public OperationCallStatement_SemicolonKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2181,9 +2190,9 @@ protected class OperationCallStatement_SemicolonKeyword_1 extends KeywordToken  
 
 /************ begin Rule ExpressionStartRule ****************
  *
- * ExpressionStartRule returns expressions::Expression:
+ * ExpressionStartRule expressions::Expression:
  * 	Assignment | ForLoop | WhileLoop | DoWhileLoop | IfStatement | ReturnStatement |
- * 	LocalVariableOrConstantDeclarationStatement | OperationCallStatement;
+ * 	LocalVariableOrConstantDeclarationStatement | OperationCallStatement
  *
  **/
 
@@ -2526,14 +2535,15 @@ protected class ExpressionStartRule_OperationCallStatementParserRuleCall_7 exten
 /************ begin Rule Assignment ****************
  *
  * // Assignment
- *  Assignment returns actionlanguage::Assignment:
+ * Assignment actionlanguage::Assignment:
  * 	lhs_typedNamedElementExpression=TypedNamedElementExpression (assignOperator=AssignOperator
- * 	rhs_assignExpression=InitializeExpression | incrementDecrementOperator=UnaryPostIncrementDecrementOperator) ";";
+ * 	rhs_assignExpression=InitializeExpression
+ * 	| incrementDecrementOperator=UnaryPostIncrementDecrementOperator) ';'
  *
  **/
 
 // lhs_typedNamedElementExpression=TypedNamedElementExpression (assignOperator=AssignOperator
-// rhs_assignExpression=InitializeExpression | incrementDecrementOperator=UnaryPostIncrementDecrementOperator) ";"
+// rhs_assignExpression=InitializeExpression | incrementDecrementOperator=UnaryPostIncrementDecrementOperator) ';'
 protected class Assignment_Group extends GroupToken {
 	
 	public Assignment_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2607,8 +2617,8 @@ protected class Assignment_Lhs_typedNamedElementExpressionAssignment_0 extends A
 	}	
 }
 
-// assignOperator=AssignOperator rhs_assignExpression=InitializeExpression |
-// incrementDecrementOperator=UnaryPostIncrementDecrementOperator
+// (assignOperator=AssignOperator rhs_assignExpression=InitializeExpression |
+// incrementDecrementOperator=UnaryPostIncrementDecrementOperator)
 protected class Assignment_Alternatives_1 extends AlternativesToken {
 
 	public Assignment_Alternatives_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2769,7 +2779,7 @@ protected class Assignment_IncrementDecrementOperatorAssignment_1_1 extends Assi
 }
 
 
-// ";"
+// ';'
 protected class Assignment_SemicolonKeyword_2 extends KeywordToken  {
 	
 	public Assignment_SemicolonKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2798,9 +2808,9 @@ protected class Assignment_SemicolonKeyword_2 extends KeywordToken  {
 /************ begin Rule InitializeExpression ****************
  *
  * // end of assignment
- *  // initialize expression
- *  InitializeExpression returns expressions::Expression:
- * 	ArrayInitializeExpression | NondeterministicChoiceExpression | Expression;
+ * // initialize expression
+ * InitializeExpression expressions::Expression:
+ * 	ArrayInitializeExpression | NondeterministicChoiceExpression | Expression
  *
  **/
 
@@ -2974,14 +2984,14 @@ protected class InitializeExpression_ExpressionParserRuleCall_2 extends RuleCall
 /************ begin Rule ArrayInitializeExpression ****************
  *
  * // end of initialize expression
- *  // array initialization
- *  ArrayInitializeExpression returns
- * actionlanguage::ArrayInitializeExpression:
- * 	"[" expressions+=InitializeExpression ("," expressions+=InitializeExpression)* "]";
+ * // array initialization
+ * ArrayInitializeExpression actionlanguage::ArrayInitializeExpression:
+ * 	'[' expressions+=InitializeExpression (',' expressions+=InitializeExpression)*
+ * 	']'
  *
  **/
 
-// "[" expressions+=InitializeExpression ("," expressions+=InitializeExpression)* "]"
+// '[' expressions+=InitializeExpression (',' expressions+=InitializeExpression)* ']'
 protected class ArrayInitializeExpression_Group extends GroupToken {
 	
 	public ArrayInitializeExpression_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3010,7 +3020,7 @@ protected class ArrayInitializeExpression_Group extends GroupToken {
 
 }
 
-// "["
+// '['
 protected class ArrayInitializeExpression_LeftSquareBracketKeyword_0 extends KeywordToken  {
 	
 	public ArrayInitializeExpression_LeftSquareBracketKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3077,7 +3087,7 @@ protected class ArrayInitializeExpression_ExpressionsAssignment_1 extends Assign
 	}	
 }
 
-// ("," expressions+=InitializeExpression)*
+// (',' expressions+=InitializeExpression)*
 protected class ArrayInitializeExpression_Group_2 extends GroupToken {
 	
 	public ArrayInitializeExpression_Group_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3099,7 +3109,7 @@ protected class ArrayInitializeExpression_Group_2 extends GroupToken {
 
 }
 
-// ","
+// ','
 protected class ArrayInitializeExpression_CommaKeyword_2_0 extends KeywordToken  {
 	
 	public ArrayInitializeExpression_CommaKeyword_2_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3169,7 +3179,7 @@ protected class ArrayInitializeExpression_ExpressionsAssignment_2_1 extends Assi
 }
 
 
-// "]"
+// ']'
 protected class ArrayInitializeExpression_RightSquareBracketKeyword_3 extends KeywordToken  {
 	
 	public ArrayInitializeExpression_RightSquareBracketKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3199,10 +3209,9 @@ protected class ArrayInitializeExpression_RightSquareBracketKeyword_3 extends Ke
 /************ begin Rule LocalVariableOrConstantDeclarationStatement ****************
  *
  * // end of array initialization
- *  // local variable declaration
- *  LocalVariableOrConstantDeclarationStatement returns
- * actionlanguage::LocalVariableDeclarationStatement:
- * 	variable=(LocalVariableDeclaration | LocalConstantDeclaration);
+ * // local variable declaration
+ * LocalVariableOrConstantDeclarationStatement actionlanguage::LocalVariableDeclarationStatement:
+ * 	variable=(LocalVariableDeclaration | LocalConstantDeclaration)
  *
  **/
 
@@ -3268,12 +3277,12 @@ protected class LocalVariableOrConstantDeclarationStatement_VariableAssignment e
 
 /************ begin Rule LocalVariableDeclaration ****************
  *
- * LocalVariableDeclaration returns behavior::Variable:
- * 	dataType=[types::DataType|DATATYPE] name=ID (":=" initializeExpression=InitializeExpression)? ";";
+ * LocalVariableDeclaration behavior::Variable:
+ * 	dataType=[types::DataType|DATATYPE] name=ID (':=' initializeExpression=InitializeExpression)? ';'
  *
  **/
 
-// dataType=[types::DataType|DATATYPE] name=ID (":=" initializeExpression=InitializeExpression)? ";"
+// dataType=[types::DataType|DATATYPE] name=ID (':=' initializeExpression=InitializeExpression)? ';'
 protected class LocalVariableDeclaration_Group extends GroupToken {
 	
 	public LocalVariableDeclaration_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3372,7 +3381,7 @@ protected class LocalVariableDeclaration_NameAssignment_1 extends AssignmentToke
 
 }
 
-// (":=" initializeExpression=InitializeExpression)?
+// (':=' initializeExpression=InitializeExpression)?
 protected class LocalVariableDeclaration_Group_2 extends GroupToken {
 	
 	public LocalVariableDeclaration_Group_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3394,7 +3403,7 @@ protected class LocalVariableDeclaration_Group_2 extends GroupToken {
 
 }
 
-// ":="
+// ':='
 protected class LocalVariableDeclaration_ColonEqualsSignKeyword_2_0 extends KeywordToken  {
 	
 	public LocalVariableDeclaration_ColonEqualsSignKeyword_2_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3463,7 +3472,7 @@ protected class LocalVariableDeclaration_InitializeExpressionAssignment_2_1 exte
 }
 
 
-// ";"
+// ';'
 protected class LocalVariableDeclaration_SemicolonKeyword_3 extends KeywordToken  {
 	
 	public LocalVariableDeclaration_SemicolonKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3492,12 +3501,12 @@ protected class LocalVariableDeclaration_SemicolonKeyword_3 extends KeywordToken
 
 /************ begin Rule LocalConstantDeclaration ****************
  *
- * LocalConstantDeclaration returns behavior::Variable:
- * 	constant?="const" dataType=[types::DataType|DATATYPE] name=ID ":=" initializeExpression=InitializeExpression ";";
+ * LocalConstantDeclaration behavior::Variable:
+ * 	constant?='const' dataType=[types::DataType|DATATYPE] name=ID ':=' initializeExpression=InitializeExpression ';'
  *
  **/
 
-// constant?="const" dataType=[types::DataType|DATATYPE] name=ID ":=" initializeExpression=InitializeExpression ";"
+// constant?='const' dataType=[types::DataType|DATATYPE] name=ID ':=' initializeExpression=InitializeExpression ';'
 protected class LocalConstantDeclaration_Group extends GroupToken {
 	
 	public LocalConstantDeclaration_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3526,7 +3535,7 @@ protected class LocalConstantDeclaration_Group extends GroupToken {
 
 }
 
-// constant?="const"
+// constant?='const'
 protected class LocalConstantDeclaration_ConstantAssignment_0 extends AssignmentToken  {
 	
 	public LocalConstantDeclaration_ConstantAssignment_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3630,7 +3639,7 @@ protected class LocalConstantDeclaration_NameAssignment_2 extends AssignmentToke
 
 }
 
-// ":="
+// ':='
 protected class LocalConstantDeclaration_ColonEqualsSignKeyword_3 extends KeywordToken  {
 	
 	public LocalConstantDeclaration_ColonEqualsSignKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3698,7 +3707,7 @@ protected class LocalConstantDeclaration_InitializeExpressionAssignment_4 extend
 	}	
 }
 
-// ";"
+// ';'
 protected class LocalConstantDeclaration_SemicolonKeyword_5 extends KeywordToken  {
 	
 	public LocalConstantDeclaration_SemicolonKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3727,10 +3736,9 @@ protected class LocalConstantDeclaration_SemicolonKeyword_5 extends KeywordToken
 /************ begin Rule NondeterministicChoiceExpression ****************
  *
  * // end of local variable declaration
- *  // nondeterministic choice expression
- *  NondeterministicChoiceExpression returns
- * actionlanguage::NondeterministicChoiceExpression:
- * 	dataType=[types::PrimitiveDataType] range=Range;
+ * // nondeterministic choice expression
+ * NondeterministicChoiceExpression actionlanguage::NondeterministicChoiceExpression:
+ * 	dataType=[types::PrimitiveDataType] range=Range
  *
  **/
 
@@ -3851,12 +3859,12 @@ protected class NondeterministicChoiceExpression_RangeAssignment_1 extends Assig
 
 /************ begin Rule Range ****************
  *
- * Range returns valuetype::Range:
- * 	"<" lowerBound=LONG "," upperBound=LONG ">";
+ * Range valuetype::Range:
+ * 	'<' lowerBound=LONG ',' upperBound=LONG '>'
  *
  **/
 
-// "<" lowerBound=LONG "," upperBound=LONG ">"
+// '<' lowerBound=LONG ',' upperBound=LONG '>'
 protected class Range_Group extends GroupToken {
 	
 	public Range_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3885,7 +3893,7 @@ protected class Range_Group extends GroupToken {
 
 }
 
-// "<"
+// '<'
 protected class Range_LessThanSignKeyword_0 extends KeywordToken  {
 	
 	public Range_LessThanSignKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3940,7 +3948,7 @@ protected class Range_LowerBoundAssignment_1 extends AssignmentToken  {
 
 }
 
-// ","
+// ','
 protected class Range_CommaKeyword_2 extends KeywordToken  {
 	
 	public Range_CommaKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3996,7 +4004,7 @@ protected class Range_UpperBoundAssignment_3 extends AssignmentToken  {
 
 }
 
-// ">"
+// '>'
 protected class Range_GreaterThanSignKeyword_4 extends KeywordToken  {
 	
 	public Range_GreaterThanSignKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4026,8 +4034,8 @@ protected class Range_GreaterThanSignKeyword_4 extends KeywordToken  {
 /************ begin Rule Expression ****************
  *
  * // end of nondeterministic choice expression
- *  Expression returns expressions::Expression:
- * 	LogicalExpression;
+ * Expression expressions::Expression:
+ * 	LogicalExpression
  *
  **/
 
@@ -4084,8 +4092,8 @@ protected class Expression_LogicalExpressionParserRuleCall extends RuleCallToken
 /************ begin Rule LogicalExpression ****************
  *
  * // LogicalExpression
- *  LogicalExpression returns expressions::Expression:
- * 	LogicalOrExpression;
+ * LogicalExpression expressions::Expression:
+ * 	LogicalOrExpression
  *
  **/
 
@@ -4141,9 +4149,9 @@ protected class LogicalExpression_LogicalOrExpressionParserRuleCall extends Rule
 
 /************ begin Rule LogicalOrExpression ****************
  *
- * LogicalOrExpression returns expressions::Expression:
+ * LogicalOrExpression expressions::Expression:
  * 	LogicalAndExpression ({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicalOrOperator
- * 	rightExpression=LogicalAndExpression)*;
+ * 	rightExpression=LogicalAndExpression)*
  *
  **/
 
@@ -4370,9 +4378,9 @@ protected class LogicalOrExpression_RightExpressionAssignment_1_2 extends Assign
 
 /************ begin Rule LogicalAndExpression ****************
  *
- * LogicalAndExpression returns expressions::Expression:
+ * LogicalAndExpression expressions::Expression:
  * 	ComparisonExpression ({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicalAndOperator
- * 	rightExpression=ComparisonExpression)*;
+ * 	rightExpression=ComparisonExpression)*
  *
  **/
 
@@ -4600,10 +4608,11 @@ protected class LogicalAndExpression_RightExpressionAssignment_1_2 extends Assig
 /************ begin Rule ComparisonExpression ****************
  *
  * // end of LogicalExpression
- *  // ComparisonExpression
- *  ComparisonExpression returns expressions::Expression:
+ * // ComparisonExpression
+ * ComparisonExpression expressions::Expression:
  * 	ComparisonHigherOpExpression ({commonExpressions::ComparisonExpression.leftExpression=current}
- * 	operator=ComparingEQNEQOperator rightExpression=ComparisonHigherOpExpression)?;
+ * 	operator=ComparingEQNEQOperator
+ * 	rightExpression=ComparisonHigherOpExpression)?
  *
  **/
 
@@ -4829,9 +4838,9 @@ protected class ComparisonExpression_RightExpressionAssignment_1_2 extends Assig
 
 /************ begin Rule ComparisonHigherOpExpression ****************
  *
- * ComparisonHigherOpExpression returns expressions::Expression:
+ * ComparisonHigherOpExpression expressions::Expression:
  * 	ArithmeticExpression ({commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingRelOperator
- * 	rightExpression=ArithmeticExpression)?;
+ * 	rightExpression=ArithmeticExpression)?
  *
  **/
 
@@ -5058,9 +5067,9 @@ protected class ComparisonHigherOpExpression_RightExpressionAssignment_1_2 exten
 /************ begin Rule ArithmeticExpression ****************
  *
  * // end of ComparisonExpression
- *  // ArithmeticExpression	
- *  ArithmeticExpression returns expressions::Expression:
- * 	AdditionExpression;
+ * // ArithmeticExpression	
+ * ArithmeticExpression expressions::Expression:
+ * 	AdditionExpression
  *
  **/
 
@@ -5116,9 +5125,9 @@ protected class ArithmeticExpression_AdditionExpressionParserRuleCall extends Ru
 
 /************ begin Rule AdditionExpression ****************
  *
- * AdditionExpression returns expressions::Expression:
+ * AdditionExpression expressions::Expression:
  * 	MultiplicationExpression ({commonExpressions::ArithmeticExpression.leftExpression=current} operator=AdditionOperator
- * 	rightExpression=MultiplicationExpression)*;
+ * 	rightExpression=MultiplicationExpression)*
  *
  **/
 
@@ -5345,9 +5354,9 @@ protected class AdditionExpression_RightExpressionAssignment_1_2 extends Assignm
 
 /************ begin Rule MultiplicationExpression ****************
  *
- * MultiplicationExpression returns expressions::Expression:
+ * MultiplicationExpression expressions::Expression:
  * 	UnaryPreExpression | TypeCastExpression ({commonExpressions::ArithmeticExpression.leftExpression=current}
- * 	operator=MultiplicationOperator rightExpression=(UnaryPreExpression | TypeCastExpression))*;
+ * 	operator=MultiplicationOperator rightExpression=(UnaryPreExpression | TypeCastExpression))*
  *
  **/
 
@@ -5646,9 +5655,9 @@ protected class MultiplicationExpression_RightExpressionAssignment_1_1_2 extends
 /************ begin Rule UnaryPreExpression ****************
  *
  * // end of ArithmeticExpression
- *  // UnaryPreExpression
- *  UnaryPreExpression returns expressions::Expression:
- * 	{commonExpressions::UnaryExpression} operator=UnaryPreOperator enclosedExpression=TypeCastExpression;
+ * // UnaryPreExpression
+ * UnaryPreExpression expressions::Expression:
+ * 	{commonExpressions::UnaryExpression} operator=UnaryPreOperator enclosedExpression=TypeCastExpression
  *
  **/
 
@@ -5794,13 +5803,13 @@ protected class UnaryPreExpression_EnclosedExpressionAssignment_2 extends Assign
 /************ begin Rule TypeCastExpression ****************
  *
  * // end of UnaryPreExpression
- *  TypeCastExpression returns expressions::Expression:
- * 	Operand | {actionlanguage::TypeCastExpression} "(" dataType=[types::DataType|DATATYPE] ")"
- * 	enclosedExpression=Operand;
+ * TypeCastExpression expressions::Expression:
+ * 	Operand | {actionlanguage::TypeCastExpression}
+ * 	'(' dataType=[types::DataType|DATATYPE] ')' enclosedExpression=Operand
  *
  **/
 
-// Operand | {actionlanguage::TypeCastExpression} "(" dataType=[types::DataType|DATATYPE] ")" enclosedExpression=Operand
+// Operand | {actionlanguage::TypeCastExpression} '(' dataType=[types::DataType|DATATYPE] ')' enclosedExpression=Operand
 protected class TypeCastExpression_Alternatives extends AlternativesToken {
 
 	public TypeCastExpression_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5875,7 +5884,7 @@ protected class TypeCastExpression_OperandParserRuleCall_0 extends RuleCallToken
 	}	
 }
 
-// {actionlanguage::TypeCastExpression} "(" dataType=[types::DataType|DATATYPE] ")" enclosedExpression=Operand
+// {actionlanguage::TypeCastExpression} '(' dataType=[types::DataType|DATATYPE] ')' enclosedExpression=Operand
 protected class TypeCastExpression_Group_1 extends GroupToken {
 	
 	public TypeCastExpression_Group_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5930,7 +5939,7 @@ protected class TypeCastExpression_TypeCastExpressionAction_1_0 extends ActionTo
 	}
 }
 
-// "("
+// '('
 protected class TypeCastExpression_LeftParenthesisKeyword_1_1 extends KeywordToken  {
 	
 	public TypeCastExpression_LeftParenthesisKeyword_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5989,7 +5998,7 @@ protected class TypeCastExpression_DataTypeAssignment_1_2 extends AssignmentToke
 
 }
 
-// ")"
+// ')'
 protected class TypeCastExpression_RightParenthesisKeyword_1_3 extends KeywordToken  {
 	
 	public TypeCastExpression_RightParenthesisKeyword_1_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6065,13 +6074,13 @@ protected class TypeCastExpression_EnclosedExpressionAssignment_1_4 extends Assi
 /************ begin Rule Operand ****************
  *
  * // Operand
- *  Operand returns expressions::Expression:
- * 	"(" Expression ")" | LiteralExpression | ExtendedTypedNamedElementExpression | TimeValueExpression | OperationCall |
- * 	TriggerMessageExpression | NoAttributeSelectorExpression;
+ * Operand expressions::Expression:
+ * 	'(' Expression ')' | LiteralExpression | ExtendedTypedNamedElementExpression | TimeValueExpression
+ * 	| OperationCall | TriggerMessageExpression | NoAttributeSelectorExpression
  *
  **/
 
-// "(" Expression ")" | LiteralExpression | ExtendedTypedNamedElementExpression | TimeValueExpression | OperationCall |
+// '(' Expression ')' | LiteralExpression | ExtendedTypedNamedElementExpression | TimeValueExpression | OperationCall |
 // TriggerMessageExpression | NoAttributeSelectorExpression
 protected class Operand_Alternatives extends AlternativesToken {
 
@@ -6118,7 +6127,7 @@ protected class Operand_Alternatives extends AlternativesToken {
 
 }
 
-// "(" Expression ")"
+// '(' Expression ')'
 protected class Operand_Group_0 extends GroupToken {
 	
 	public Operand_Group_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6140,7 +6149,7 @@ protected class Operand_Group_0 extends GroupToken {
 
 }
 
-// "("
+// '('
 protected class Operand_LeftParenthesisKeyword_0_0 extends KeywordToken  {
 	
 	public Operand_LeftParenthesisKeyword_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6196,7 +6205,7 @@ protected class Operand_ExpressionParserRuleCall_0_1 extends RuleCallToken {
 	}	
 }
 
-// ")"
+// ')'
 protected class Operand_RightParenthesisKeyword_0_2 extends KeywordToken  {
 	
 	public Operand_RightParenthesisKeyword_0_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6444,8 +6453,8 @@ protected class Operand_NoAttributeSelectorExpressionParserRuleCall_6 extends Ru
 /************ begin Rule LiteralExpression ****************
  *
  * // end of Operand
- *  LiteralExpression returns commonExpressions::LiteralExpression:
- * 	{commonExpressions::LiteralExpression} value=Literal;
+ * LiteralExpression commonExpressions::LiteralExpression:
+ * 	{commonExpressions::LiteralExpression} value=Literal
  *
  **/
 
@@ -6545,8 +6554,8 @@ protected class LiteralExpression_ValueAssignment_1 extends AssignmentToken  {
 
 /************ begin Rule TimeValueExpression ****************
  *
- * TimeValueExpression returns actionlanguage::TimeValueExpression:
- * 	timeValue=[valuetype::TimeValue|MINORMAXKEYWORD];
+ * TimeValueExpression actionlanguage::TimeValueExpression:
+ * 	timeValue=[valuetype::TimeValue|MINORMAXKEYWORD]
  *
  **/
 
@@ -6593,20 +6602,17 @@ protected class TimeValueExpression_TimeValueAssignment extends AssignmentToken 
 
 /************ begin Rule ExtendedTypedNamedElementExpression ****************
  *
- * ExtendedTypedNamedElementExpression returns expressions::Expression:
+ * ExtendedTypedNamedElementExpression expressions::Expression:
  * 	TypedNamedElementExpression
- * 	({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "->"
- * 	position=PositionSelectorExpression | // unary post increment/decrement			
- * 
- * 	{actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
- * 	incrementDecrementOperator=IncrementDecrementOperatorExpression)?;
+ * 	({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current}
+ * 	'->' position=PositionSelectorExpression
+ * 	| {actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
+ * 	incrementDecrementOperator=IncrementDecrementOperatorExpression)?
  *
  **/
 
 // TypedNamedElementExpression ({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current}
-// "->" position=PositionSelectorExpression | // unary post increment/decrement			
-// 
-// {actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
+// '->' position=PositionSelectorExpression | {actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
 // incrementDecrementOperator=IncrementDecrementOperatorExpression)?
 protected class ExtendedTypedNamedElementExpression_Group extends GroupToken {
 	
@@ -6675,10 +6681,8 @@ protected class ExtendedTypedNamedElementExpression_TypedNamedElementExpressionP
 	}	
 }
 
-// ({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "->"
-// position=PositionSelectorExpression | // unary post increment/decrement			
-// 
-// {actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
+// ({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} '->'
+// position=PositionSelectorExpression | {actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
 // incrementDecrementOperator=IncrementDecrementOperatorExpression)?
 protected class ExtendedTypedNamedElementExpression_Alternatives_1 extends AlternativesToken {
 
@@ -6710,7 +6714,7 @@ protected class ExtendedTypedNamedElementExpression_Alternatives_1 extends Alter
 
 }
 
-// {actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "->"
+// {actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} '->'
 // position=PositionSelectorExpression
 protected class ExtendedTypedNamedElementExpression_Group_1_0 extends GroupToken {
 	
@@ -6769,7 +6773,7 @@ protected class ExtendedTypedNamedElementExpression_DiscreteInteractionEndpointR
 	}
 }
 
-// "->"
+// '->'
 protected class ExtendedTypedNamedElementExpression_HyphenMinusGreaterThanSignKeyword_1_0_1 extends KeywordToken  {
 	
 	public ExtendedTypedNamedElementExpression_HyphenMinusGreaterThanSignKeyword_1_0_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6838,8 +6842,7 @@ protected class ExtendedTypedNamedElementExpression_PositionAssignment_1_0_2 ext
 }
 
 
-// // unary post increment/decrement			
-//  {actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
+// {actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
 // incrementDecrementOperator=IncrementDecrementOperatorExpression
 protected class ExtendedTypedNamedElementExpression_Group_1_1 extends GroupToken {
 	
@@ -6869,8 +6872,7 @@ protected class ExtendedTypedNamedElementExpression_Group_1_1 extends GroupToken
 
 }
 
-// // unary post increment/decrement			
-//  {actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
+// {actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
 protected class ExtendedTypedNamedElementExpression_AssignmentLhs_typedNamedElementExpressionAction_1_1_0 extends ActionToken  {
 
 	public ExtendedTypedNamedElementExpression_AssignmentLhs_typedNamedElementExpressionAction_1_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6941,9 +6943,9 @@ protected class ExtendedTypedNamedElementExpression_IncrementDecrementOperatorAs
 
 /************ begin Rule TypedNamedElementExpression ****************
  *
- * TypedNamedElementExpression returns actionlanguage::TypedNamedElementExpression:
+ * TypedNamedElementExpression actionlanguage::TypedNamedElementExpression:
  * 	typedNamedElement=[behavior::TypedNamedElement] elementAccessors+=(ArrayIndexExpression |
- * 	AttributeAccessorExpression)*;
+ * 	AttributeAccessorExpression)*
  *
  **/
 
@@ -7076,12 +7078,12 @@ protected class TypedNamedElementExpression_ElementAccessorsAssignment_1 extends
 
 /************ begin Rule ArrayIndexExpression ****************
  *
- * ArrayIndexExpression returns actionlanguage::ArrayIndexExpression:
- * 	"[" index=ArithmeticExpression "]";
+ * ArrayIndexExpression actionlanguage::ArrayIndexExpression:
+ * 	'[' index=ArithmeticExpression ']'
  *
  **/
 
-// "[" index=ArithmeticExpression "]"
+// '[' index=ArithmeticExpression ']'
 protected class ArrayIndexExpression_Group extends GroupToken {
 	
 	public ArrayIndexExpression_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7110,7 +7112,7 @@ protected class ArrayIndexExpression_Group extends GroupToken {
 
 }
 
-// "["
+// '['
 protected class ArrayIndexExpression_LeftSquareBracketKeyword_0 extends KeywordToken  {
 	
 	public ArrayIndexExpression_LeftSquareBracketKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7177,7 +7179,7 @@ protected class ArrayIndexExpression_IndexAssignment_1 extends AssignmentToken  
 	}	
 }
 
-// "]"
+// ']'
 protected class ArrayIndexExpression_RightSquareBracketKeyword_2 extends KeywordToken  {
 	
 	public ArrayIndexExpression_RightSquareBracketKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7205,12 +7207,12 @@ protected class ArrayIndexExpression_RightSquareBracketKeyword_2 extends Keyword
 
 /************ begin Rule AttributeAccessorExpression ****************
  *
- * AttributeAccessorExpression returns actionlanguage::AttributeAccessorExpression:
- * 	"." attribute=[types::Attribute];
+ * AttributeAccessorExpression actionlanguage::AttributeAccessorExpression:
+ * 	'.' attribute=[types::Attribute]
  *
  **/
 
-// "." attribute=[types::Attribute]
+// '.' attribute=[types::Attribute]
 protected class AttributeAccessorExpression_Group extends GroupToken {
 	
 	public AttributeAccessorExpression_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7239,7 +7241,7 @@ protected class AttributeAccessorExpression_Group extends GroupToken {
 
 }
 
-// "."
+// '.'
 protected class AttributeAccessorExpression_FullStopKeyword_0 extends KeywordToken  {
 	
 	public AttributeAccessorExpression_FullStopKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7303,8 +7305,8 @@ protected class AttributeAccessorExpression_AttributeAssignment_1 extends Assign
 
 /************ begin Rule NoAttributeSelectorExpression ****************
  *
- * NoAttributeSelectorExpression returns actionlanguage::DiscreteInteractionEndpointReference:
- * 	position=PositionSelectorExpression;
+ * NoAttributeSelectorExpression actionlanguage::DiscreteInteractionEndpointReference:
+ * 	position=PositionSelectorExpression
  *
  **/
 
@@ -7360,12 +7362,12 @@ protected class NoAttributeSelectorExpression_PositionAssignment extends Assignm
 
 /************ begin Rule PositionSelectorExpression ****************
  *
- * PositionSelectorExpression returns actionlanguage::PositionSelector:
- * 	kind=PositionSelectorKind ("->" successor=PositionSelectorExpression)?;
+ * PositionSelectorExpression actionlanguage::PositionSelector:
+ * 	kind=PositionSelectorKind ('->' successor=PositionSelectorExpression)?
  *
  **/
 
-// kind=PositionSelectorKind ("->" successor=PositionSelectorExpression)?
+// kind=PositionSelectorKind ('->' successor=PositionSelectorExpression)?
 protected class PositionSelectorExpression_Group extends GroupToken {
 	
 	public PositionSelectorExpression_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7428,7 +7430,7 @@ protected class PositionSelectorExpression_KindAssignment_0 extends AssignmentTo
 
 }
 
-// ("->" successor=PositionSelectorExpression)?
+// ('->' successor=PositionSelectorExpression)?
 protected class PositionSelectorExpression_Group_1 extends GroupToken {
 	
 	public PositionSelectorExpression_Group_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7450,7 +7452,7 @@ protected class PositionSelectorExpression_Group_1 extends GroupToken {
 
 }
 
-// "->"
+// '->'
 protected class PositionSelectorExpression_HyphenMinusGreaterThanSignKeyword_1_0 extends KeywordToken  {
 	
 	public PositionSelectorExpression_HyphenMinusGreaterThanSignKeyword_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7525,13 +7527,13 @@ protected class PositionSelectorExpression_SuccessorAssignment_1_1 extends Assig
 
 /************ begin Rule OperationCall ****************
  *
- * OperationCall returns actionlanguage::OperationCall:
- * 	operation=[behavior::Operation] "(" (parameterBinding+=ParamaterBinding ("," parameterBinding+=ParamaterBinding)*)?
- * 	")";
+ * OperationCall actionlanguage::OperationCall:
+ * 	operation=[behavior::Operation] '(' (parameterBinding+=ParamaterBinding (',' parameterBinding+=ParamaterBinding)*)?
+ * 	')'
  *
  **/
 
-// operation=[behavior::Operation] "(" (parameterBinding+=ParamaterBinding ("," parameterBinding+=ParamaterBinding)*)? ")"
+// operation=[behavior::Operation] '(' (parameterBinding+=ParamaterBinding (',' parameterBinding+=ParamaterBinding)*)? ')'
 protected class OperationCall_Group extends GroupToken {
 	
 	public OperationCall_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7596,7 +7598,7 @@ protected class OperationCall_OperationAssignment_0 extends AssignmentToken  {
 
 }
 
-// "("
+// '('
 protected class OperationCall_LeftParenthesisKeyword_1 extends KeywordToken  {
 	
 	public OperationCall_LeftParenthesisKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7618,7 +7620,7 @@ protected class OperationCall_LeftParenthesisKeyword_1 extends KeywordToken  {
 
 }
 
-// (parameterBinding+=ParamaterBinding ("," parameterBinding+=ParamaterBinding)*)?
+// (parameterBinding+=ParamaterBinding (',' parameterBinding+=ParamaterBinding)*)?
 protected class OperationCall_Group_2 extends GroupToken {
 	
 	public OperationCall_Group_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7687,7 +7689,7 @@ protected class OperationCall_ParameterBindingAssignment_2_0 extends AssignmentT
 	}	
 }
 
-// ("," parameterBinding+=ParamaterBinding)*
+// (',' parameterBinding+=ParamaterBinding)*
 protected class OperationCall_Group_2_1 extends GroupToken {
 	
 	public OperationCall_Group_2_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7709,7 +7711,7 @@ protected class OperationCall_Group_2_1 extends GroupToken {
 
 }
 
-// ","
+// ','
 protected class OperationCall_CommaKeyword_2_1_0 extends KeywordToken  {
 	
 	public OperationCall_CommaKeyword_2_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7780,7 +7782,7 @@ protected class OperationCall_ParameterBindingAssignment_2_1_1 extends Assignmen
 
 
 
-// ")"
+// ')'
 protected class OperationCall_RightParenthesisKeyword_3 extends KeywordToken  {
 	
 	public OperationCall_RightParenthesisKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7809,12 +7811,12 @@ protected class OperationCall_RightParenthesisKeyword_3 extends KeywordToken  {
 
 /************ begin Rule ParamaterBinding ****************
  *
- * ParamaterBinding returns behavior::ParameterBinding:
- * 	{behavior::ParameterBinding} parameter=[behavior::Parameter] ":=" value=Expression;
+ * ParamaterBinding behavior::ParameterBinding:
+ * 	{behavior::ParameterBinding} parameter=[behavior::Parameter] ':=' value=Expression
  *
  **/
 
-// {behavior::ParameterBinding} parameter=[behavior::Parameter] ":=" value=Expression
+// {behavior::ParameterBinding} parameter=[behavior::Parameter] ':=' value=Expression
 protected class ParamaterBinding_Group extends GroupToken {
 	
 	public ParamaterBinding_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7906,7 +7908,7 @@ protected class ParamaterBinding_ParameterAssignment_1 extends AssignmentToken  
 
 }
 
-// ":="
+// ':='
 protected class ParamaterBinding_ColonEqualsSignKeyword_2 extends KeywordToken  {
 	
 	public ParamaterBinding_ColonEqualsSignKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7981,12 +7983,12 @@ protected class ParamaterBinding_ValueAssignment_3 extends AssignmentToken  {
 /************ begin Rule TriggerMessageExpression ****************
  *
  * // TriggerMessageExpression
- *  TriggerMessageExpression returns actionlanguage::TriggerMessageExpression:
- * 	messageType=[msgtype::MessageType] "->" parameter=[behavior::Parameter];
+ * TriggerMessageExpression actionlanguage::TriggerMessageExpression:
+ * 	messageType=[msgtype::MessageType] '->' parameter=[behavior::Parameter]
  *
  **/
 
-// messageType=[msgtype::MessageType] "->" parameter=[behavior::Parameter]
+// messageType=[msgtype::MessageType] '->' parameter=[behavior::Parameter]
 protected class TriggerMessageExpression_Group extends GroupToken {
 	
 	public TriggerMessageExpression_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8051,7 +8053,7 @@ protected class TriggerMessageExpression_MessageTypeAssignment_0 extends Assignm
 
 }
 
-// "->"
+// '->'
 protected class TriggerMessageExpression_HyphenMinusGreaterThanSignKeyword_1 extends KeywordToken  {
 	
 	public TriggerMessageExpression_HyphenMinusGreaterThanSignKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {

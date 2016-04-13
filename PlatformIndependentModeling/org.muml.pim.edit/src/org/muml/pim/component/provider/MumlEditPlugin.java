@@ -8,7 +8,6 @@ package org.muml.pim.component.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.muml.core.modelinstance.provider.ModelinstanceEditPlugin;
 import org.muml.core.provider.CoreEditPlugin;
 
 /**
@@ -43,8 +42,7 @@ public final class MumlEditPlugin extends EMFPlugin {
 	public MumlEditPlugin() {
 		super
 		  (new ResourceLocator [] {
-		     CoreEditPlugin.INSTANCE,
-		     ModelinstanceEditPlugin.INSTANCE,
+		     CoreEditPlugin.INSTANCE
 		   });
 	}
 

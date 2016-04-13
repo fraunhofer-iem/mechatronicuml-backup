@@ -76,7 +76,8 @@ public class ModelElementCategoryEditPart extends DiagramEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ModelElementCategoryItemSemanticEditPolicy());
 
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ModelElementCategoryCanonicalEditPolicy(true));
+		// Not installing the EditPolicy with the key EditPolicyRoles.CANONICAL_ROLE guarantees that the "Delete from Diagram" Action is visible. 
+		installEditPolicy("CustomCanonical", new ModelElementCategoryCanonicalEditPolicy(false));
 
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicyWithCustomReparent(MumlVisualIDRegistry.TYPED_INSTANCE));

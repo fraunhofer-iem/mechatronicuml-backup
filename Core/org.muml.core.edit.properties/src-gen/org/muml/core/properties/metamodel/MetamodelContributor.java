@@ -23,6 +23,8 @@ public class MetamodelContributor implements org.muml.ape.runtime.metamodel.IMet
 
 		factories.add(new org.muml.core.expressions.common.provider.CommonExpressionsItemProviderAdapterFactory());
 
+		factories.add(new org.muml.core.modelinstance.provider.ModelinstanceItemProviderAdapterFactory());
+
 	}
 
 }

@@ -12,6 +12,10 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.muml.pim.msgtype.*;
+import org.muml.pim.msgtype.MessageType;
+import org.muml.pim.msgtype.MessageTypeRepository;
+import org.muml.pim.msgtype.MsgtypeFactory;
+import org.muml.pim.msgtype.MsgtypePackage;
 
 /**
  * <!-- begin-user-doc -->

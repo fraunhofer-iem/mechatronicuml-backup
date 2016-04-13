@@ -12,6 +12,12 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.muml.pim.protocol.*;
+import org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions;
+import org.muml.pim.protocol.CoordinationProtocol;
+import org.muml.pim.protocol.ProtocolFactory;
+import org.muml.pim.protocol.ProtocolPackage;
+import org.muml.pim.protocol.Role;
+import org.muml.pim.protocol.RoleConnector;
 
 /**
  * <!-- begin-user-doc -->

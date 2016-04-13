@@ -18,20 +18,17 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.pim.behavior.BehaviorFactory;
-import org.muml.pim.component.provider.MumlEditPlugin;
 import org.muml.pim.pattern.AbstractCoordinationPattern;
 import org.muml.pim.pattern.PatternFactory;
 import org.muml.pim.pattern.PatternPackage;
 import org.muml.pim.protocol.provider.AbstractCoordinationSpecificationItemProvider;
+import org.muml.pim.provider.MumlEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link org.muml.pim.pattern.AbstractCoordinationPattern} object.
@@ -207,7 +204,7 @@ public class AbstractCoordinationPatternItemProvider extends AbstractCoordinatio
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pim.provider.MumlEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 	/**

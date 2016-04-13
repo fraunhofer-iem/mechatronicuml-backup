@@ -4,10 +4,11 @@
 package org.muml.pim.actionlanguage.xtext.ui;
 
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
-import org.muml.pim.actionlanguage.xtext.ui.internal.ActionLanguageActivator;
 import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
+
+import org.muml.pim.actionlanguage.xtext.ui.internal.ActionLanguageActivator;
 
 /**
  * This class was generated. Customizations should only happen in a newly
@@ -22,7 +23,7 @@ public class ActionLanguageExecutableExtensionFactory extends AbstractGuiceAware
 	
 	@Override
 	protected Injector getInjector() {
-		return ActionLanguageActivator.getInstance().getInjector(ActionLanguageActivator.DE_UNI_PADERBORN_FUJABA_MUML_ACTIONLANGUAGE);
+		return ActionLanguageActivator.getInstance().getInjector(ActionLanguageActivator.ORG_MUML_PIM_ACTIONLANGUAGE_XTEXT_ACTIONLANGUAGE);
 	}
 	
 }

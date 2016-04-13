@@ -11,7 +11,7 @@ import org.muml.pim.actionlanguage.xtext.ui.internal.ActionLanguageActivator;
 public class XtextPropertyEditor extends
 		AbstractSingleFeatureXtextPropertyEditor { 
 	
-	private static final String languageName = "org.muml.pim.actionlanguage";
+	private static final String languageName = "org.muml.pim.actionlanguage.xtext.ActionLanguage";
 	
 	public XtextPropertyEditor(AdapterFactory adapterFactory,
 			EStructuralFeature feature) {
