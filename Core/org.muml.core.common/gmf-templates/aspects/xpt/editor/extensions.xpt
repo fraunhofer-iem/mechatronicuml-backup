@@ -140,7 +140,7 @@ diagrams«-»
 
 «DEFINE modelelementcategory FOR gmfgen::GenEditorGenerator»
 	<extension
-         point="org.muml.core.modelinstance.modelelementcategory">
+         point="org.muml.core.modelelementcategory">
       «EXPAND xpt::Common::xmlGeneratedTag»  
       <category
             key="«modelElementCategoryKey(diagram)»"
