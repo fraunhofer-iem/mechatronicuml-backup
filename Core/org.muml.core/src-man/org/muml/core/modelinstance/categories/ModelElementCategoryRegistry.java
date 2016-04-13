@@ -21,7 +21,7 @@ import org.muml.core.modelinstance.RootNode;
 
 public class ModelElementCategoryRegistry {
 
-	private static final String EXTENSION_POINT_ID = "org.muml.core.modelinstance.modelelementcategory";
+	private static final String EXTENSION_POINT_ID = "org.muml.core.modelelementcategory";
 
 	// struct-like datatype that stores two Strings describing a class
 	private class QualifiedClassName {
