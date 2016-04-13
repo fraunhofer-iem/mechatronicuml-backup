@@ -23,7 +23,7 @@ import org.muml.ape.runtime.factory.IPropertyEditorFactory;
  */
 public class ObjectPropertyEditor extends CategoryPropertyEditor {
 	
-	public final static boolean USE_CACHE = true;
+	public final static boolean USE_CACHE = false;
 
 	private Map<EClass, List<IPropertyEditor>> cache = new HashMap<EClass, List<IPropertyEditor>>();
 	
@@ -67,7 +67,7 @@ public class ObjectPropertyEditor extends CategoryPropertyEditor {
 
 		// Remove invalid all property editors
 		if (USE_CACHE) {
-			List<IPropertyEditor> editors = cache.get(oldEClass);
+			List<IPropertyEditor> editors = cache.get(newEClass);
 
 			clearPropertyEditors(false);	
 			
