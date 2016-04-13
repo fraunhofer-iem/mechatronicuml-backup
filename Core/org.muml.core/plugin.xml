@@ -51,7 +51,7 @@
    
 
 
-<extension-point id="modelelementcategory" name="modelelementcategory" schema="schema/modelelementcategory.exsd"/>
+<extension-point id="modelinstance.modelelementcategory" name="modelinstance.modelelementcategory" schema="schema/modelelementcategory.exsd"/>
 <extension-point id="version" name="version" schema="schema/version.exsd"/>
 
    <extension point="org.eclipse.emf.ecore.extension_parser">

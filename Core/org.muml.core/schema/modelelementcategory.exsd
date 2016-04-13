@@ -3,7 +3,7 @@
 <schema targetNamespace="org.muml.core" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="org.muml.core" id="modelelementcategory" name="modelelementcategory"/>
+         <meta.schema plugin="org.muml.core" id="modelinstance.modelelementcategory" name="modelelementcategory"/>
       </appinfo>
       <documentation>
          Extensions can register a valid ModelElementCategory for usage within the fujaba model file.
