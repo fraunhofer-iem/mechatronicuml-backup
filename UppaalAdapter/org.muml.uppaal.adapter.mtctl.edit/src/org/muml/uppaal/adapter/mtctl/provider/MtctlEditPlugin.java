@@ -5,7 +5,6 @@ package org.muml.uppaal.adapter.mtctl.provider;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.muml.core.modelinstance.provider.ModelinstanceEditPlugin;
 import org.muml.core.provider.CoreEditPlugin;
 import org.muml.pim.provider.MumlEditPlugin;
 
@@ -42,7 +41,6 @@ public final class MtctlEditPlugin extends EMFPlugin {
 		super
 		  (new ResourceLocator [] {
 		     CoreEditPlugin.INSTANCE,
-		     ModelinstanceEditPlugin.INSTANCE,
 		     MumlEditPlugin.INSTANCE,
 		   });
 	}

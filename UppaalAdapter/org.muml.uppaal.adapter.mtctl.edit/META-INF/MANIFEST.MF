@@ -19,8 +19,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.edit;visibility:=reexport,
  org.muml.core;visibility:=reexport,
  org.muml.core.edit;visibility:=reexport,
- org.muml.core.modelinstance;visibility:=reexport,
- org.muml.core.modelinstance.edit;visibility:=reexport,
  org.muml.pim;visibility:=reexport,
  org.muml.pim.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
