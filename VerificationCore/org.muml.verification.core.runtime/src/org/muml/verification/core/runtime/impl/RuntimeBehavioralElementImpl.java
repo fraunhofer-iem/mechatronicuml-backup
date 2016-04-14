@@ -6,6 +6,8 @@
  */
 package org.muml.verification.core.runtime.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -19,8 +21,6 @@ import org.muml.verification.core.runtime.RealtimeStatechartInstance;
 import org.muml.verification.core.runtime.RuntimeBehavioralElement;
 import org.muml.verification.core.runtime.RuntimeMessageBuffer;
 import org.muml.verification.core.runtime.RuntimePackage;
-
-import java.util.Collection;
 
 /**
  * <!-- begin-user-doc -->

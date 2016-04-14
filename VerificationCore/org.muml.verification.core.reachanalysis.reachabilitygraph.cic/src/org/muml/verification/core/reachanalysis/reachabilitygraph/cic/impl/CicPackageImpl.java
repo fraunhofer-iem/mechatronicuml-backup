@@ -15,7 +15,6 @@ package org.muml.verification.core.reachanalysis.reachabilitygraph.cic.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.pim.instance.InstancePackage;
 import org.muml.verification.core.reachanalysis.reachabilitygraph.cic.CICZoneGraphState;

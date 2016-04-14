@@ -12,7 +12,8 @@ Require-Bundle: org.eclipse.ui,
  org.muml.pim.realtimestatechart.diagram;bundle-version="0.3.1",
  org.muml.verification.core.actionlanguage.interpreter;bundle-version="0.3.1",
  org.muml.udbm;bundle-version="0.3.0",
- org.muml.udbm.java;bundle-version="0.1.0";visibility:=reexport
+ org.muml.udbm.java;bundle-version="0.1.0";visibility:=reexport,
+ org.eclipse.core.runtime;bundle-version="3.11.1"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.verification.core.reachanalysis.rtsc,

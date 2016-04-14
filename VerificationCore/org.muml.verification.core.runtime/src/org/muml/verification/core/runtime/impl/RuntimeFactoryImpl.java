@@ -12,7 +12,21 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.muml.verification.core.runtime.*;
+import org.muml.verification.core.runtime.MessageOnConnector;
+import org.muml.verification.core.runtime.MultiRoleInstance;
+import org.muml.verification.core.runtime.RealtimeStatechartInstance;
+import org.muml.verification.core.runtime.RuntimeAssemblyConnectorInstance;
+import org.muml.verification.core.runtime.RuntimeComponentInstance;
+import org.muml.verification.core.runtime.RuntimeDiscreteMultiPortInstance;
+import org.muml.verification.core.runtime.RuntimeDiscreteSinglePortInstance;
+import org.muml.verification.core.runtime.RuntimeFactory;
+import org.muml.verification.core.runtime.RuntimeMessage;
+import org.muml.verification.core.runtime.RuntimeMessageBuffer;
+import org.muml.verification.core.runtime.RuntimePackage;
+import org.muml.verification.core.runtime.RuntimeParameter;
+import org.muml.verification.core.runtime.RuntimeRoleConnectorInstance;
+import org.muml.verification.core.runtime.SingleRoleInstance;
+import org.muml.verification.core.runtime.VariableBinding;
 
 /**
  * <!-- begin-user-doc -->

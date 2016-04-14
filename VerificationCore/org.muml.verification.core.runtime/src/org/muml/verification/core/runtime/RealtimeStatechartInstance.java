@@ -9,7 +9,6 @@ package org.muml.verification.core.runtime;
 import org.eclipse.emf.common.util.EList;
 import org.muml.core.ExtendableElement;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
-import org.muml.pim.realtimestatechart.State;
 import org.muml.pim.realtimestatechart.Transition;
 import org.muml.pim.realtimestatechart.Vertex;
 

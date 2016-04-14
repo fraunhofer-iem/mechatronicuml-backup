@@ -17,13 +17,29 @@ import java.util.Map;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.muml.pim.connector.util.ConnectorValidator;
 import org.muml.pim.instance.util.InstanceValidator;
-import org.muml.verification.core.runtime.*;
+import org.muml.verification.core.runtime.MessageOnConnector;
+import org.muml.verification.core.runtime.MultiRoleInstance;
+import org.muml.verification.core.runtime.RealtimeStatechartInstance;
+import org.muml.verification.core.runtime.RoleInstance;
+import org.muml.verification.core.runtime.RuntimeAssemblyConnectorInstance;
+import org.muml.verification.core.runtime.RuntimeBehavioralElement;
+import org.muml.verification.core.runtime.RuntimeComponentInstance;
+import org.muml.verification.core.runtime.RuntimeConnectorInstance;
+import org.muml.verification.core.runtime.RuntimeDiscreteInteractionEndpointInstance;
+import org.muml.verification.core.runtime.RuntimeDiscreteMultiPortInstance;
+import org.muml.verification.core.runtime.RuntimeDiscretePortInstance;
+import org.muml.verification.core.runtime.RuntimeDiscreteSinglePortInstance;
+import org.muml.verification.core.runtime.RuntimeMessage;
+import org.muml.verification.core.runtime.RuntimeMessageBuffer;
+import org.muml.verification.core.runtime.RuntimePackage;
+import org.muml.verification.core.runtime.RuntimeParameter;
+import org.muml.verification.core.runtime.RuntimeRoleConnectorInstance;
+import org.muml.verification.core.runtime.SingleRoleInstance;
+import org.muml.verification.core.runtime.VariableBinding;
 
 /**
  * <!-- begin-user-doc -->

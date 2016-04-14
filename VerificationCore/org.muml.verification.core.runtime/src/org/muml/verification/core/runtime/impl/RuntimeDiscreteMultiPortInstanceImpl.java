@@ -2,13 +2,14 @@
  */
 package org.muml.verification.core.runtime.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.muml.pim.instance.impl.DiscreteMultiPortInstanceImpl;
@@ -20,8 +21,6 @@ import org.muml.verification.core.runtime.RuntimeDiscreteMultiPortInstance;
 import org.muml.verification.core.runtime.RuntimeDiscretePortInstance;
 import org.muml.verification.core.runtime.RuntimeMessageBuffer;
 import org.muml.verification.core.runtime.RuntimePackage;
-
-import java.util.Collection;
 
 /**
  * <!-- begin-user-doc -->

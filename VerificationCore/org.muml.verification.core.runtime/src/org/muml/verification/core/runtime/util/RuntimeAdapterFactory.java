@@ -26,7 +26,25 @@ import org.muml.pim.instance.DiscreteSinglePortInstance;
 import org.muml.pim.instance.PortConnectorInstance;
 import org.muml.pim.instance.PortInstance;
 import org.muml.pim.types.DataType;
-import org.muml.verification.core.runtime.*;
+import org.muml.verification.core.runtime.MessageOnConnector;
+import org.muml.verification.core.runtime.MultiRoleInstance;
+import org.muml.verification.core.runtime.RealtimeStatechartInstance;
+import org.muml.verification.core.runtime.RoleInstance;
+import org.muml.verification.core.runtime.RuntimeAssemblyConnectorInstance;
+import org.muml.verification.core.runtime.RuntimeBehavioralElement;
+import org.muml.verification.core.runtime.RuntimeComponentInstance;
+import org.muml.verification.core.runtime.RuntimeConnectorInstance;
+import org.muml.verification.core.runtime.RuntimeDiscreteInteractionEndpointInstance;
+import org.muml.verification.core.runtime.RuntimeDiscreteMultiPortInstance;
+import org.muml.verification.core.runtime.RuntimeDiscretePortInstance;
+import org.muml.verification.core.runtime.RuntimeDiscreteSinglePortInstance;
+import org.muml.verification.core.runtime.RuntimeMessage;
+import org.muml.verification.core.runtime.RuntimeMessageBuffer;
+import org.muml.verification.core.runtime.RuntimePackage;
+import org.muml.verification.core.runtime.RuntimeParameter;
+import org.muml.verification.core.runtime.RuntimeRoleConnectorInstance;
+import org.muml.verification.core.runtime.SingleRoleInstance;
+import org.muml.verification.core.runtime.VariableBinding;
 
 /**
  * <!-- begin-user-doc -->

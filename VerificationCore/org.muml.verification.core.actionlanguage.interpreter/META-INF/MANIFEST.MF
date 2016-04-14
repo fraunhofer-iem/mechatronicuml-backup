@@ -5,7 +5,8 @@ Bundle-SymbolicName: org.muml.verification.core.actionlanguage.interpreter;singl
 Bundle-Version: 0.5.0.qualifier
 Bundle-Activator: org.muml.verification.core.actionlanguage.interpreter.Activator
 Require-Bundle: org.muml.verification.core.runtime;bundle-version="0.3.1",
- org.muml.pim.actionlanguage;bundle-version="0.3.1"
+ org.eclipse.core.runtime;bundle-version="3.11.1",
+ org.muml.pim.actionlanguage;bundle-version="0.5.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.verification.core.actionlanguage.interpreter,
