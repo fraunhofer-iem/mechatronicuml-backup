@@ -15,7 +15,6 @@
       <genEnumLiterals ecoreEnumLiteral="requirements.ecore#//TemporalOperator/FUTURE"/>
       <genEnumLiterals ecoreEnumLiteral="requirements.ecore#//TemporalOperator/GLOBAL"/>
     </genEnums>
-    <genClasses image="false" ecoreClass="requirements.ecore#//Property"/>
     <genClasses ecoreClass="requirements.ecore#//UnaryProperty">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference requirements.ecore#//UnaryProperty/expression"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirements.ecore#//UnaryProperty/quantifier"/>
@@ -27,5 +26,9 @@
     </genClasses>
     <genClasses ecoreClass="requirements.ecore#//LeadsToProperty"/>
     <genClasses ecoreClass="requirements.ecore#//DeadlockExpression"/>
+    <genClasses image="false" ecoreClass="requirements.ecore#//Property"/>
+    <genClasses ecoreClass="requirements.ecore#//PropertyRepository">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference requirements.ecore#//PropertyRepository/properties"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
