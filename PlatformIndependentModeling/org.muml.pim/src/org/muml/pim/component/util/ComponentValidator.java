@@ -1562,7 +1562,7 @@ public class ComponentValidator extends MumlValidator {
 		"implies (\r\n" +
 		"\t(port.oclIsKindOf(connector::DiscreteInteractionEndpoint))\r\n" +
 		"\timplies\r\n" +
-		"\t(port.eClass() = portPart.portType.eClass())\r\n" +
+		"\t(port.oclAsType(ecore::EObject).eClass() = portPart.portType.oclAsType(ecore::EObject).eClass())\r\n" +
 		")\r\n" +
 		"-- author: chris227, see MUML #1043";
 

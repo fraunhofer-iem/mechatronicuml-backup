@@ -233,7 +233,7 @@ public class ValuetypeValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String TIME_VALUE__NESTED_TIME_VALUES_MUST_DEFINE_EQUAL_TIME_UNITS__EEXPRESSION = "-- Nested TimeValues must use equal time units\r\n" +
-		"self.eContents()->closure(element| element.oclAsType(ecore::EObject).eContents()->union(element.oclAsType(ecore::EObject).eCrossReferences()))->forAll(element| element.oclIsTypeOf(valuetype::TimeValue) implies element.oclAsType(valuetype::TimeValue).unit = self.unit)";
+		"self.oclAsType(ecore::EObject).eContents()->closure(element| element.oclAsType(ecore::EObject).eContents()->union(element.oclAsType(ecore::EObject).eCrossReferences()))->forAll(element| element.oclIsTypeOf(valuetype::TimeValue) implies element.oclAsType(valuetype::TimeValue).unit = self.unit)";
 
 	/**
 	 * Validates the NestedTimeValuesMustDefineEqualTimeUnits constraint of '<em>Time Value</em>'.

@@ -565,7 +565,7 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 		   source, 
 		   new String[] {
 			 "LiteralExpressionMustBeANaturalNumber", "-- If a TimeValue has as value a LiteralExpression, it must be a natural number.\r\n-- 1. Check if the LiteralExpression can be cast to an Integer\r\n-- 2. Check if this Integer is greater or equal to zero.\r\n\r\n(\r\nnot self.value.oclIsUndefined()\r\nand \r\nself.value.oclIsKindOf(core::expressions::common::LiteralExpression)\r\n)\r\nimplies\r\n(\r\nnot self.value.oclAsType(core::expressions::common::LiteralExpression).value.toInteger().oclIsUndefined()\r\nand \r\nself.value.oclAsType(core::expressions::common::LiteralExpression).value.toInteger()>=0\r\n)\r\n-- author: xell\r\n-- ticket: 770",
-			 "NestedTimeValuesMustDefineEqualTimeUnits", "-- Nested TimeValues must use equal time units\r\nself.eContents()->closure(element| element.oclAsType(ecore::EObject).eContents()->union(element.oclAsType(ecore::EObject).eCrossReferences()))->forAll(element| element.oclIsTypeOf(valuetype::TimeValue) implies element.oclAsType(valuetype::TimeValue).unit = self.unit)"
+			 "NestedTimeValuesMustDefineEqualTimeUnits", "-- Nested TimeValues must use equal time units\r\nself.oclAsType(ecore::EObject).eContents()->closure(element| element.oclAsType(ecore::EObject).eContents()->union(element.oclAsType(ecore::EObject).eCrossReferences()))->forAll(element| element.oclIsTypeOf(valuetype::TimeValue) implies element.oclAsType(valuetype::TimeValue).unit = self.unit)"
 		   });	
 		addAnnotation
 		  (naturalNumberEClass, 
