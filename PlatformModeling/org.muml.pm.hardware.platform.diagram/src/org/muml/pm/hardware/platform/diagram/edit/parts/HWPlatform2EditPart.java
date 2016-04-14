@@ -400,7 +400,7 @@ public class HWPlatform2EditPart extends AbstractBorderedShapeEditPart {
 			constraintHWPlatformTitleAreaFigure0.horizontalSpan = 1;
 			constraintHWPlatformTitleAreaFigure0.verticalSpan = 1;
 			constraintHWPlatformTitleAreaFigure0.grabExcessHorizontalSpace = true;
-			constraintHWPlatformTitleAreaFigure0.grabExcessVerticalSpace = true;
+			constraintHWPlatformTitleAreaFigure0.grabExcessVerticalSpace = false;
 			this.add(hWPlatformTitleAreaFigure0, constraintHWPlatformTitleAreaFigure0);
 
 			GridLayout layoutHWPlatformTitleAreaFigure0 = new GridLayout();

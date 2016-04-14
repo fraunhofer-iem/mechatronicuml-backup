@@ -22,6 +22,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
+import org.muml.core.common.edit.policies.BorderItemSelectionEditPolicy;
 import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
 import org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy;
 import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
@@ -130,7 +131,7 @@ public class HWPortPartEditPart extends BorderedBorderItemEditPart {
 				View childView = (View) child.getModel();
 				switch (HardwareVisualIDRegistry.getVisualID(childView)) {
 				case HWPortLabelEditPart.VISUAL_ID:
-					return new org.muml.core.common.edit.policies.BorderItemSelectionEditPolicy();
+					return new BorderItemSelectionEditPolicy();
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {

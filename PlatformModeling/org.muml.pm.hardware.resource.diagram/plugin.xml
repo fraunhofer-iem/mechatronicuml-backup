@@ -124,13 +124,7 @@
     </command>
     </extension>
 	
-	<extension point="org.eclipse.core.contenttype.contentTypes">
-		<?gmfgen generated="true"?>
-   		<!--
-   		<file-association content-type="org.muml.core.modelinstance.editor.model" file-extensions="hwresource"/>
-   		-->
-    </extension>
-
+	
 	
 	<extension point="org.eclipse.ui.commands">
 		<?gmfgen generated="true"?>
@@ -144,21 +138,7 @@
 	</extension>
 
 	
-	<extension
-         point="org.muml.core.modelinstance.modelelementcategory">
-      <?gmfgen generated="true"?>  
-      <category
-            key="org.muml.pm.hardware.hwresource.category"
-            name="hwresource">
-         
-         <child
-               class="ResourceRepository"
-               packageNsUri="http://www.muml.org/pm/hardware/hwresource/1.0.0">
-         </child>
-         
-      </category>
-   </extension>
-
+	
 	
 	<extension
          point="org.muml.core.modelinstance.ui.diagraminformation">
@@ -832,6 +812,21 @@
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">
       <?gmfgen generated="true"?>
    </extension>
+<extension
+         point="org.muml.core.modelelementcategory">
+      <?gmfgen generated="true"?>  
+      <category
+            key="org.muml.pm.hardware.hwresource.category"
+            name="hwresource">
+         
+         <child
+               class="ResourceRepository"
+               packageNsUri="http://www.muml.org/pm/hardware/hwresource/1.0.0">
+         </child>
+         
+      </category>
+   </extension>
+
 
    <!-- optionally, specify keybindings -->
 </plugin>

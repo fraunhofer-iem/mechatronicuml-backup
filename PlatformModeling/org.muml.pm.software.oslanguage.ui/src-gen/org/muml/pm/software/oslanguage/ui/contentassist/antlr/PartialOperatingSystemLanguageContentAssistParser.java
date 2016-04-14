@@ -19,7 +19,6 @@ public class PartialOperatingSystemLanguageContentAssistParser extends Operating
 
 	private AbstractRule rule;
 
-	
 	public void initializeFor(AbstractRule rule) {
 		this.rule = rule;
 	}
