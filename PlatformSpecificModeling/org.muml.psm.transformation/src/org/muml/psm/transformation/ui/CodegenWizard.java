@@ -19,7 +19,7 @@ import org.muml.core.export.pages.ElementSelectionMode;
 import org.muml.core.export.wizard.AbstractFujabaExportWizard;
 import org.muml.pm.common.xtext.FujabaResourceServiceProvider;
 import org.muml.psm.allocation.SystemAllocation;
-import org.muml.psm.api.apimappinglanguage.ui.internal.APIMappingLanguageActivator;
+import org.muml.psm.api.apimappinglanguage.xtext.ui.internal.APIMappingLanguageActivator;
 import org.muml.psm.portapimapping.MappingRepository;
 import org.muml.psm.transformation.ui.jobs.SystemAllocation2CodegenJob;
 

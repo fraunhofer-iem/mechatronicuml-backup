@@ -35,7 +35,7 @@ import org.eclipse.xtext.util.CancelIndicator;
 import org.muml.core.modelinstance.RootNode;
 import org.muml.pm.common.xtext.FujabaResourceServiceProvider;
 import org.muml.psm.allocation.SystemAllocation;
-import org.muml.psm.api.apimappinglanguage.ui.internal.APIMappingLanguageActivator;
+import org.muml.psm.api.apimappinglanguage.xtext.ui.internal.APIMappingLanguageActivator;
 import org.muml.psm.portapimapping.MappingRepository;
 import org.muml.psm.portapimapping.PortapimappingFactory;
 import org.muml.psm.transformation.ui.jobs.CodegenFlatHierarchyJob;

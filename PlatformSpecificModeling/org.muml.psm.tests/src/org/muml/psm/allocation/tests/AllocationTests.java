@@ -30,8 +30,6 @@ public class AllocationTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new AllocationTests("allocation Tests");
-		suite.addTestSuite(SystemAllocationTest.class);
-		suite.addTestSuite(AllocationTest.class);
 		return suite;
 	}
 

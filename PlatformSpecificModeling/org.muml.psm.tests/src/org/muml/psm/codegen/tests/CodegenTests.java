@@ -31,7 +31,6 @@ public class CodegenTests extends TestSuite {
 	public static Test suite() {
 		TestSuite suite = new CodegenTests("codegen Tests");
 		suite.addTestSuite(RefinedAtomicComponentInstanceTest.class);
-		suite.addTestSuite(RefinedStructuredResourceInstanceTest.class);
 		return suite;
 	}
 

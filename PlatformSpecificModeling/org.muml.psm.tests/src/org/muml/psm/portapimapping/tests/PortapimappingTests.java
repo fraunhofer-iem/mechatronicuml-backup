@@ -30,8 +30,6 @@ public class PortapimappingTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new PortapimappingTests("portapimapping Tests");
-		suite.addTestSuite(PortApiMappingTest.class);
-		suite.addTestSuite(MappingRepositoryTest.class);
 		return suite;
 	}
 

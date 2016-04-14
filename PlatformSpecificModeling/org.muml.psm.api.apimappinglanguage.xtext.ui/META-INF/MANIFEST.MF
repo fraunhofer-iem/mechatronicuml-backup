@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-Name
 Bundle-Vendor: %Bundle-Vendor
 Bundle-Version: 0.4.0.qualifier
-Bundle-SymbolicName: org.muml.psm.api.apimappinglanguage.ui;singleton:=true
+Bundle-SymbolicName: org.muml.psm.api.apimappinglanguage.xtext.ui;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.muml.psm.api.apimappinglanguage.xtext;visibility:=reexport,
  org.eclipse.xtext.ui,
