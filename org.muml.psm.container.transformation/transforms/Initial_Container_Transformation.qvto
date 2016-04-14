@@ -3,31 +3,32 @@ import Naming_Library;
 import org.muml.container._library.DDSHelperBlackBox;
 
 
-modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
-modeltype Typespackage uses muml::types('http://www.fujaba.de/muml/0.4.0');
-modeltype ConnectorPackage uses muml::connector('http://www.fujaba.de/muml/0.4.0');
-modeltype ValuetypePackage uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
-modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
-modeltype MessagePackage uses muml::msgtype('http://www.fujaba.de/muml/0.4.0');
-modeltype RTSCPackage uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
-modeltype ProtocolPackage uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
-modeltype InstancePackage uses muml::instance('http://www.fujaba.de/muml/0.4.0');
-modeltype ModelInstance uses modelinstance('http://www.fujaba.de/modelinstance/0.4.0');
-modeltype Actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
+modeltype MumlPackage uses pim('http://www.muml.org/pim/1.0.0');
+modeltype Typespackage uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype ConnectorPackage uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype ValuetypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype MessagePackage uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype RTSCPackage uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype ProtocolPackage uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype InstancePackage uses pim::instance('http://www.muml.org/pim/1.0.0');
+modeltype core uses core('http://www.muml.org/core/1.0.0');
+modeltype ModelInstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
+modeltype Actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
 
 
-modeltype Hardware uses hardware('http://www.fujaba.de/muml/hardware/1.1/');
-modeltype Platform uses hardware::hwplatform('http://www.fujaba.de/muml/hardware/1.1/');
-modeltype hwpinstance uses hardware::hwplatforminstance('http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/');
-modeltype hwrinstance uses hardware::hwresourceinstance('http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/');
-modeltype Resource uses hardware::hwresource('http://www.fujaba.de/muml/hardware/1.1/');
+modeltype Hardware uses hardware('http://www.muml.org/pm/hardware/1.0.0');
+modeltype Platform uses hardware::hwplatform('http://www.muml.org/pm/hardware/1.0.0');
+modeltype hwpinstance uses hardware::hwplatforminstance('http://www.muml.org/pm/hardware/1.0.0');
+modeltype hwrinstance uses hardware::hwresourceinstance('http://www.muml.org/pm/hardware/1.0.0');
+modeltype Resource uses hardware::hwresource('http://www.muml.org/pm/hardware/1.0.0');
 
 
-modeltype PSM uses psm('http://www.fujaba.de/muml/psm/0.4.0/');
-modeltype Allocation uses psm::allocation('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype PSM uses psm('http://www.muml.org/psm/1.0.0');
+modeltype Allocation uses psm::allocation('http://www.muml.org/psm/1.0.0');
 
 
-modeltype MumlContainer uses muml_container('http://www.muml.org/muml_container/0.5.0');
+modeltype MumlContainer uses muml_container('http://www.muml.org/psm/muml_container/0.5.0');
 modeltype ECore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 
 intermediate property PortInstance::partnerConfig:PortInstanceConfiguration;
