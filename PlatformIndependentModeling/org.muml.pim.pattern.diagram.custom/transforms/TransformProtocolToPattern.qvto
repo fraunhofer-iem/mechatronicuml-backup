@@ -59,7 +59,7 @@ helper createPatternFromProtocol()
 	var newPattern : CoordinationPattern :=theProtocol.map CoordinationProtocol2CoordinationPattern();	
 	//var patternCategory : ModelElementCategory := getPatternCategory(theRootNode);	
 	//patternCategory.modelElements +=newPattern;
-	newPattern.verificationConstraintRepositories+= theProtocol.verificationConstraintRepositories.map transform().oclAsType(muml::constraint::VerificationConstraintRepository);
+	newPattern.verificationConstraintRepositories+= theProtocol.verificationConstraintRepositories.map transform().oclAsType(pim::constraint::VerificationConstraintRepository);
 }
 
 mapping pim::protocol::CoordinationProtocol:: CoordinationProtocol2CoordinationPattern() : pim::pattern::CoordinationPattern
@@ -122,7 +122,7 @@ mapping pim::realtimestatechart::RealtimeStatechart :: transform() : EObject{
 mapping Variable :: transform() : EObject {
 		init{
 			if(variablesToParameter->includes(self)) {
-				result := self.map Variable2Parameter();
+				result := self.map Variable2Parameter().oclAsType(EObject);
 			}
 			else {
 				result := self.map create();

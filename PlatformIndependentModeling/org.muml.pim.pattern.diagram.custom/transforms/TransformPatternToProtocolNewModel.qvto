@@ -79,7 +79,7 @@ mapping pim::pattern::AbstractCoordinationPattern :: AbstractCoordinationPattern
 {	
 	result.name := self.name + timeStamp;
 	result.comment := self.comment;
-	result.annotation := self.annotation.map transform().oclAsType(EAnnotation);		
+	result.annotations := self.annotations.map transform().oclAsType(EAnnotation);		
 	
 
 	self.roles->forEach(role)
@@ -121,8 +121,8 @@ mapping RealtimeStatechart::create():EObject{
 
 mapping PrimitiveDataType::transform(): EObject {
 	init{
-		if(self.eContainer().oclIsTypeOf(ModelElementCategory)){
-			result := self.map create().oclAsType(PrimitiveDataType);
+		if(self.oclAsType(EObject).eContainer().oclIsTypeOf(ModelElementCategory)){
+			result := self.map create().oclAsType(EObject);
 			var element := self.oclAsType(EObject);	
 			element.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
 				setValues(result, f, getValues(element, f));

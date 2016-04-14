@@ -52,7 +52,7 @@ helper createProtocol(pattern : AbstractCoordinationPattern)
 	var newProtocol : CoordinationProtocol := pattern.map CoordinationPattern2CoordinationProtocol();	
 	//var protocolCategory : ModelElementCategory := getProtocolCategory(theRootNode);
 	//protocolCategory.modelElements +=newProtocol;
-	newProtocol.verificationConstraintRepositories += pattern.verificationConstraintRepositories.map transform().oclAsType( muml::constraint::VerificationConstraintRepository);  
+	newProtocol.verificationConstraintRepositories += pattern.verificationConstraintRepositories.map transform().oclAsType( pim::constraint::VerificationConstraintRepository);  
 }
 
 
