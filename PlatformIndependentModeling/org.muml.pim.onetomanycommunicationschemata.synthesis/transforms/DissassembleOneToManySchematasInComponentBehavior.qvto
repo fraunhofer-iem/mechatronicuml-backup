@@ -11,7 +11,8 @@ modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
 modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
 modeltype protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
 modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
-modeltype modelinstance uses modelinstance('http://www.muml.org/core/modelinstance/1.0.0');
+modeltype core uses core('http://www.muml.org/core/1.0.0');
+modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
 modeltype schemata uses pim::realtimestatechart::one_to_n_schemata('http://www.muml.org/pim/1.0.0');
 modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
 
@@ -30,7 +31,7 @@ main() {
 
 	var childrenRTSCs : Set(RealtimeStatechart) := componentRTSC->closure(states.oclAsType(State).embeddedRegions.oclAsType(Region).embeddedStatechart);
 		
-	rootNode :=componentRTSC.getHighestParentStatechart().eContainer().eContainer().oclAsType(RootNode);
+	rootNode :=componentRTSC.getHighestParentStatechart().oclAsType(EObject).eContainer().eContainer().oclAsType(RootNode);
 	childrenRTSCs->select(statechart:RealtimeStatechart|statechart.behavioralElement.oclIsKindOf(pim::connector::DiscreteInteractionEndpoint) and not statechart.behavioralElement.oclIsUndefined())->forEach(chart){
 		
 		var region : Region := chart.oclAsType(RealtimeStatechart).parentRegion;

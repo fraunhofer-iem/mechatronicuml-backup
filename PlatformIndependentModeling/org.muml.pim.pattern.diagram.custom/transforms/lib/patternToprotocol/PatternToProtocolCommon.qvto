@@ -12,7 +12,8 @@ modeltype TypesPackage uses pim::types('http://www.muml.org/pim/1.0.0');
 modeltype ValuetypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
 modeltype MessageTypePackage uses pim::msgtype('http://www.muml.org/pim/1.0.0');
 modeltype BehaviorPackage uses pim::behavior('http://www.muml.org/pim/1.0.0');
-modeltype ModelInstancePackage uses modelinstance("http://www.muml.org/modelinstance/1.0.0");
+modeltype core uses core('http://www.muml.org/core/1.0.0');
+modeltype ModelInstancePackage uses core::modelinstance('http://www.muml.org/core/1.0.0');
 modeltype PatternPackage uses pim::pattern('http://www.muml.org/pim/1.0.0');
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
@@ -21,7 +22,7 @@ property bindings : Set(ParameterBinding);
 property theRootNode : RootNode;
 
 
-mapping muml::behavior::Parameter:: Parameter2Variable(rtsc : RealtimeStatechart) : muml::behavior::Variable
+mapping pim::behavior::Parameter:: Parameter2Variable(rtsc : RealtimeStatechart) : pim::behavior::Variable
 {
 	_constant := true;
 	_name := self.name;
@@ -42,7 +43,7 @@ mapping actionlanguage::TypedNamedElementExpression :: transform() : EObject {
 			if(rtsc = null or rtsc.oclIsInvalid()){
 				// in case the rtsc is invalid means that the TypedNamedElementExpression referencing the Parameter is not contained in a rtsc but in a ConnectorQualityOfServiceAssumptions
 				// therefore, just replace the TypedNamedElementExpression by the bounded expression defined in the ParameterBinding
-				result:= myExp.copyParameterExpression()
+				result:= myExp.copyParameterExpression().oclAsType(EObject)
 			}
 			else {
 				
@@ -64,8 +65,8 @@ mapping actionlanguage::TypedNamedElementExpression :: transform() : EObject {
 			
 		
 			var resultingExpression : TypedNamedElementExpression := result.oclAsType(TypedNamedElementExpression);
-			resultingExpression._annotation := self._annotation.map transform().oclAsType(EAnnotation);
-			resultingExpression._extension := self._extension.map transform().oclAsType(core::Extension);
+			resultingExpression._annotations := self._annotations.map transform().oclAsType(EAnnotation);
+			resultingExpression._extensions := self._extensions.map transform().oclAsType(core::Extension);
 			resultingExpression.typedNamedElement := self.typedNamedElement.map transform().oclAsType(TypedNamedElement);
 			
 			var element := self.oclAsType(EObject);
@@ -78,7 +79,7 @@ mapping actionlanguage::TypedNamedElementExpression :: transform() : EObject {
 
 query getHighestParentStatechart(in expr : TypedNamedElementExpression) : RealtimeStatechart
 {
-	var root : EObject := expr;
+	var root : EObject := expr.oclAsType(EObject);
 	while((not root.oclIsKindOf(ConnectorQualityOfServiceAssumptions) and not root.oclIsKindOf(RealtimeStatechart)))
 	{
 		root := root.eContainer();		

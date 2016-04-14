@@ -1,5 +1,6 @@
-import transforms.lib.common.PatternProtocolSameRootTransformationLibrary;
-import transforms.lib.common.PatternProtocolCommon;
+import lib.common.PatternProtocolSameRootTransformationLibrary;
+import lib.common.PatternProtocolCommon;
+ 
 
 modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
 modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
@@ -11,7 +12,8 @@ modeltype TypesPackage uses pim::types('http://www.muml.org/pim/1.0.0');
 modeltype ValuetypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
 modeltype MessageTypePackage uses pim::msgtype('http://www.muml.org/pim/1.0.0');
 modeltype BehaviorPackage uses pim::behavior('http://www.muml.org/pim/1.0.0');
-modeltype ModelInstancePackage uses modelinstance("http://www.muml.org/modelinstance/1.0.0");
+modeltype core uses core('http://www.muml.org/core/1.0.0');
+modeltype ModelInstancePackage uses core::modelinstance('http://www.muml.org/core/1.0.0');
 modeltype PatternPackage uses pim::pattern('http://www.muml.org/pim/1.0.0');
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
@@ -30,7 +32,7 @@ main()
 	
 	// fetch input
 	
-	theRootNode  := input.rootObjects()[RootNode] -> any(true);
+	var theRootNode  := input.rootObjects()[RootNode] -> any(true);
 		
 		
 	// not debug:
@@ -60,11 +62,11 @@ helper createPatternFromProtocol()
 	newPattern.verificationConstraintRepositories+= theProtocol.verificationConstraintRepositories.map transform().oclAsType(muml::constraint::VerificationConstraintRepository);
 }
 
-mapping muml::protocol::CoordinationProtocol:: CoordinationProtocol2CoordinationPattern() : muml::pattern::CoordinationPattern
+mapping pim::protocol::CoordinationProtocol:: CoordinationProtocol2CoordinationPattern() : pim::pattern::CoordinationPattern
 {
 	result.name := self.name + timeStamp;
 	result.comment := self.comment;
-	result.annotation := self.annotation.map transform().oclAsType(EAnnotation);		
+	result.annotations := self.annotations.map transform().oclAsType(EAnnotation);		
 	//var statechartCategory : ModelElementCategory := getRealtimeStatechartCategory(theRootNode);	
 	result.patternParameters := variablesToParameter.map transform().oclAsType(Parameter);
 	self.roles->forEach(role)
@@ -87,15 +89,15 @@ mapping Variable::Variable2Parameter(): Parameter
 		_name := self._name;
 		_comment := self._comment;
 		_dataType := self.dataType;
-		annotation := self.annotation.map transform().oclAsType(EAnnotation);
-		extension := self.extension.map transform().oclAsType(core::Extension);
+		annotations := self.annotations.map transform().oclAsType(EAnnotation);
+		extensions := self.extensions.map transform().oclAsType(core::Extension);
 }
 mapping pim::realtimestatechart::RealtimeStatechart :: transform() : EObject{
     	init {
     		result := self.map create();
     	}
     	var element := self.oclAsType(EObject);
-			element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+			element.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
 			setValues(result, f, getValues(element, f));
 			};
 			
@@ -105,8 +107,8 @@ mapping pim::realtimestatechart::RealtimeStatechart :: transform() : EObject{
     	
     	resultingRTSC._name := self._name + timeStamp;
     	resultingRTSC._comment := self._comment;
-    	resultingRTSC._annotation := self._annotation.map transform().oclAsType(EAnnotation);
-    	resultingRTSC._extension := self._extension.map transform().oclAsType(core::Extension);
+    	resultingRTSC._annotations := self._annotations.map transform().oclAsType(EAnnotation);
+    	resultingRTSC._extensions := self._extensions.map transform().oclAsType(core::Extension);
    
     	resultingRTSC._operations := self._operations.map transform().oclAsType(Operation);
     	// only transform variables that are not converted into parameter
@@ -127,7 +129,7 @@ mapping Variable :: transform() : EObject {
 				result.oclAsType(Variable).initializeExpression := self.initializeExpression.map transform().oclAsType(core::expressions::Expression);
 				result.oclAsType(Variable).dataType := self.dataType;
 				var element := self.oclAsType(EObject);	
-				element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
+				element.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
 					setValues(result, f, getValues(element, f));
 				};
 			}

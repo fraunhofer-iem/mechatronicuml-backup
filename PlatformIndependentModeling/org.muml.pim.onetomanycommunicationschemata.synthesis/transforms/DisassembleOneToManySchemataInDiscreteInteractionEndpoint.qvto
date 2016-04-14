@@ -16,7 +16,8 @@ modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
 modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
 modeltype protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
 modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
-modeltype modelinstance uses modelinstance('http://www.muml.org/core/modelinstance/1.0.0');
+modeltype core uses core('http://www.muml.org/core/1.0.0');
+modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
 modeltype schemata uses pim::realtimestatechart::one_to_n_schemata('http://www.muml.org/pim/1.0.0');
 modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
 
@@ -47,8 +48,8 @@ main() {
 		
 		// when deleting the original/input statechart, we only have to consider the case when the currentRealtimeStatechart was contained in a ModelElementCategory.
 		// Otherwise, it is embedded in a region. In this case it is deleted anyways.
-		if(currentRealtimeStatechart.eContainer().oclIsTypeOf(ModelElementCategory)) {
-			currentRealtimeStatechart.eContainer().oclAsType(ModelElementCategory).modelElements := currentRealtimeStatechart.eContainer().oclAsType(ModelElementCategory).modelElements->excluding(currentRealtimeStatechart);			
+		if(currentRealtimeStatechart.oclAsType(EObject).eContainer().oclIsTypeOf(ModelElementCategory)) {
+			currentRealtimeStatechart.oclAsType(EObject).eContainer().oclAsType(ModelElementCategory).modelElements := currentRealtimeStatechart.oclAsType(EObject).eContainer().oclAsType(ModelElementCategory).modelElements->excluding(currentRealtimeStatechart);			
 		}
 	};
 }
@@ -57,7 +58,7 @@ helper disassembleDiscreteInteractionPointRTSC(inputRTSC : RealtimeStatechart) :
 {	
 	if(inputRTSC.usesOneToManyCommunicationSchemata) {
 		currentRealtimeStatechart := inputRTSC;
-		rootNode :=currentRealtimeStatechart.getHighestParentStatechart().eContainer().eContainer().oclAsType(RootNode);
+		rootNode :=currentRealtimeStatechart.getHighestParentStatechart().oclAsType(EObject).eContainer().eContainer().oclAsType(RootNode);
 		assert fatal (currentRealtimeStatechart.behavioralElement.oclIsKindOf(pim::connector::DiscreteInteractionEndpoint)) with log ("The specified RealtimeStatechart must be the behavior of a discrete port or a role!");
 		
 		
@@ -75,7 +76,7 @@ query getRealtimeStatechartCategory(theRootNode : RootNode) : ModelElementCatego
 
 query getRealtimeStatechartCategory(): ModelElementCategory
 {
-	return currentRealtimeStatechart.eContainer().oclAsType(ModelElementCategory);
+	return currentRealtimeStatechart.oclAsType(EObject).eContainer().oclAsType(ModelElementCategory);
 }
 helper  isClockSubRoleSpecific(c : Clock): Boolean
 {

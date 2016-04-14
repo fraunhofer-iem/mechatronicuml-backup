@@ -11,7 +11,8 @@ modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
 modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
 modeltype protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
 modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
-modeltype modelinstance uses modelinstance('http://www.muml.org/core/modelinstance/1.0.0');
+modeltype core uses core('http://www.muml.org/core/1.0.0');
+modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
 modeltype schemata uses pim::realtimestatechart::one_to_n_schemata('http://www.muml.org/pim/1.0.0');
 modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
 modeltype ocl uses 'http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore';
@@ -52,9 +53,9 @@ query getBooleanPrimitiveDataType(theRootNode : RootNode) : PrimitiveDataType {
 	if(types2.oclIsUndefined()) {
 		return BOOLEAN;
 	};	
-	var data : PrimitiveDataType := types2.oclAsType(ModelElementCategory).modelElements
-	->select(element | element.oclIsTypeOf(muml::types::PrimitiveDataType) and (element.oclAsType(muml::types::PrimitiveDataType).primitiveType = PrimitiveTypes::BOOLEAN))
-	->any(true).oclAsType(muml::types::PrimitiveDataType);	
+	var data : PrimitiveDataType := types2.oclAsType(modelinstance::ModelElementCategory).modelElements
+	->select(element | element.oclIsTypeOf(pim::types::PrimitiveDataType) and (element.oclAsType(pim::types::PrimitiveDataType).primitiveType = PrimitiveTypes::BOOLEAN))
+	->any(true).oclAsType(pim::types::PrimitiveDataType);	
 	if(data.oclIsUndefined()) {
 		return BOOLEAN;
 	};

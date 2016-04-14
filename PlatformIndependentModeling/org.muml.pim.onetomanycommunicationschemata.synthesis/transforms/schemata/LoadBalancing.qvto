@@ -369,23 +369,23 @@ mapping Transition :: LoadBalancing2TransitionFromRequestedToIdle3(context:OclAn
 		
 }
 
-mapping RealtimeStatechart :: DiscreteInteractionEndpointStatechart2LoadBalancingResponseMessageRegion(message : muml::msgtype::MessageType) : Region {
+mapping RealtimeStatechart :: DiscreteInteractionEndpointStatechart2LoadBalancingResponseMessageRegion(message : pim::msgtype::MessageType) : Region {
 					
 		embeddedStatechart := self.map DiscreteInteractionEndpointStatechart2LoadBalancingResponseMessageRTSC(message);		
 }
 
-mapping RealtimeStatechart :: DiscreteInteractionEndpointStatechart2LoadBalancingResponseMessageRTSC(messageType : muml::msgtype::MessageType) : RealtimeStatechart {	
+mapping RealtimeStatechart :: DiscreteInteractionEndpointStatechart2LoadBalancingResponseMessageRTSC(messageType : pim::msgtype::MessageType) : RealtimeStatechart {	
 		name := "LoadBalancingResponseMessageRTSC";
 		result.states += self.map createInitialStateForResponseRTSC(messageType);
 		result.transitions += self.map createSelfTransitionOfResponseRTSC(messageType);
 }
 
-mapping RealtimeStatechart :: createInitialStateForResponseRTSC (messageType : muml::msgtype::MessageType) : State {
+mapping RealtimeStatechart :: createInitialStateForResponseRTSC (messageType : pim::msgtype::MessageType) : State {
 		name := "initial";
 		initial := true;		
 }
 
-mapping RealtimeStatechart :: createSelfTransitionOfResponseRTSC (messageType : muml::msgtype::MessageType) : Transition {
+mapping RealtimeStatechart :: createSelfTransitionOfResponseRTSC (messageType : pim::msgtype::MessageType) : Transition {
 		var event := new AsynchronousMessageEvent();
 		event.kind := EventKind::TRIGGER;
 		event.message := new Message();
