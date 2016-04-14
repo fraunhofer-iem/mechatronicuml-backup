@@ -5,7 +5,7 @@ Bundle-Vendor: %Bundle-Vendor
 Bundle-Version: 0.4.0.qualifier
 Bundle-SymbolicName: org.muml.psm.api.apimappinglanguage.ui;singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.muml.psm.api.apimappinglanguage;visibility:=reexport,
+Require-Bundle: org.muml.psm.api.apimappinglanguage.xtext;visibility:=reexport,
  org.eclipse.xtext.ui,
  org.eclipse.ui.editors;bundle-version="3.5.0",
  org.eclipse.ui.ide;bundle-version="3.5.0",
@@ -25,9 +25,9 @@ Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib,
  org.muml.core.modelinstance
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: org.muml.psm.api.apimappinglanguage.ui.contentassist,
- org.muml.psm.api.apimappinglanguage.ui.contentassist.antlr,
- org.muml.psm.api.apimappinglanguage.ui.internal,
- org.muml.psm.api.apimappinglanguage.ui.quickfix,
- org.muml.psm.api.apimappinglanguage.ui.contentassist.antlr.internal
-Bundle-Activator: org.muml.psm.api.apimappinglanguage.ui.internal.APIMappingLanguageActivator
+Export-Package: org.muml.psm.api.apimappinglanguage.xtext.ui.contentassist,
+ org.muml.psm.api.apimappinglanguage.xtext.ui.contentassist.antlr,
+ org.muml.psm.api.apimappinglanguage.xtext.ui.contentassist.antlr.internal,
+ org.muml.psm.api.apimappinglanguage.xtext.ui.internal,
+ org.muml.psm.api.apimappinglanguage.xtext.ui.quickfix
+Bundle-Activator: org.muml.psm.api.apimappinglanguage.xtext.ui.internal.APIMappingLanguageActivator
