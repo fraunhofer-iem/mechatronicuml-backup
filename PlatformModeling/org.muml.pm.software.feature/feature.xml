@@ -24,38 +24,6 @@ This feature is free software; you can redistribute and/or modify it under the t
 This feature is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
    </license>
 
-   <requires>
-      <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.eclipse.emf.ecore"/>
-      <import plugin="org.muml.core"/>
-      <import plugin="org.muml.pim"/>
-      <import plugin="org.eclipse.emf.edit"/>
-      <import plugin="org.muml.core.edit"/>
-      <import plugin="org.muml.pim.edit"/>
-      <import plugin="org.eclipse.xtext"/>
-      <import plugin="org.muml.core.modelinstance"/>
-      <import plugin="org.muml.pim.actionlanguage"/>
-      <import plugin="org.muml.pim.actionlanguage.xtext" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.xtext.util"/>
-      <import plugin="org.antlr.runtime"/>
-      <import plugin="org.eclipse.xtext.common.types"/>
-      <import plugin="org.muml.pm.software" version="0.1.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.xtext.xbase.lib"/>
-      <import plugin="org.apache.log4j"/>
-      <import plugin="org.eclipse.xtext.ui"/>
-      <import plugin="org.eclipse.ui.editors" version="3.5.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ui.ide" version="3.5.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.xtext.ui.shared"/>
-      <import plugin="org.eclipse.ui"/>
-      <import plugin="org.eclipse.xtext.builder"/>
-      <import plugin="org.eclipse.xtext.common.types.ui"/>
-      <import plugin="org.eclipse.xtext.ui.codetemplates.ui"/>
-      <import plugin="org.muml.pim.actionlanguage.xtext.ui" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.pm.common" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.pm.software.oslanguage" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.compare" version="3.5.501" match="greaterOrEqual"/>
-   </requires>
-
    <plugin
          id="org.muml.pm.software"
          download-size="0"
@@ -71,14 +39,14 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
          unpack="false"/>
 
    <plugin
-         id="org.muml.pm.software.oslanguage"
+         id="org.muml.pm.software.oslanguage.xtext"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.muml.pm.software.oslanguage.ui"
+         id="org.muml.pm.software.oslanguage.xtext.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
