@@ -11,7 +11,7 @@ import org.muml.pim.connector.ConnectorEndpointInstance;
  *
  * <!-- begin-model-doc -->
  * This class represents a DelegationPort of a HWPlatform on instance-level.
- * In order to be conistent with the muml metamodel, this class inherits from muml::ConnectorEndpointInstance.
+ * In order to be conistent with the muml metamodel, this class inherits from pim::ConnectorEndpointInstance.
  * <!-- end-model-doc -->
  *
  * <p>

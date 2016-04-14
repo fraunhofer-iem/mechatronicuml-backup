@@ -116,6 +116,15 @@ public interface HwresourcePackage extends EPackage {
 	int RESOURCE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -189,6 +198,15 @@ public interface HwresourcePackage extends EPackage {
 	int ATOMIC_RESOURCE_FEATURE_COUNT = RESOURCE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATOMIC_RESOURCE___GET_EXTENSION__ECLASS = RESOURCE___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Atomic Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -260,6 +278,15 @@ public interface HwresourcePackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPUTING_RESOURCE_FEATURE_COUNT = ATOMIC_RESOURCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPUTING_RESOURCE___GET_EXTENSION__ECLASS = ATOMIC_RESOURCE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Computing Resource</em>' class.
@@ -362,6 +389,15 @@ public interface HwresourcePackage extends EPackage {
 	int MEMORY_RESOURCE_FEATURE_COUNT = ATOMIC_RESOURCE_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEMORY_RESOURCE___GET_EXTENSION__ECLASS = ATOMIC_RESOURCE___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Memory Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -433,6 +469,15 @@ public interface HwresourcePackage extends EPackage {
 	 * @ordered
 	 */
 	int DEVICE_FEATURE_COUNT = RESOURCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE___GET_EXTENSION__ECLASS = RESOURCE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Device</em>' class.
@@ -580,6 +625,15 @@ public interface HwresourcePackage extends EPackage {
 	int CACHE_FEATURE_COUNT = MEMORY_RESOURCE_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CACHE___GET_EXTENSION__ECLASS = MEMORY_RESOURCE___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Cache</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -651,6 +705,15 @@ public interface HwresourcePackage extends EPackage {
 	 * @ordered
 	 */
 	int PROGRAMMABLE_LOGIC_DEVICE_FEATURE_COUNT = COMPUTING_RESOURCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAMMABLE_LOGIC_DEVICE___GET_EXTENSION__ECLASS = COMPUTING_RESOURCE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Programmable Logic Device</em>' class.
@@ -771,6 +834,15 @@ public interface HwresourcePackage extends EPackage {
 	int PROCESSOR_FEATURE_COUNT = COMPUTING_RESOURCE_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESSOR___GET_EXTENSION__ECLASS = COMPUTING_RESOURCE___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Processor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -842,6 +914,15 @@ public interface HwresourcePackage extends EPackage {
 	 * @ordered
 	 */
 	int STRUCTURED_RESOURCE_FEATURE_COUNT = RESOURCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURED_RESOURCE___GET_EXTENSION__ECLASS = RESOURCE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Structured Resource</em>' class.
@@ -917,6 +998,15 @@ public interface HwresourcePackage extends EPackage {
 	int RESOURCE_REPOSITORY_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_REPOSITORY___GET_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Resource Repository</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -979,6 +1069,15 @@ public interface HwresourcePackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMUNICATION_PROTOCOL_REPOSITORY_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_PROTOCOL_REPOSITORY___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Communication Protocol Repository</em>' class.
@@ -1097,6 +1196,15 @@ public interface HwresourcePackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMUNICATION_PROTOCOL_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_PROTOCOL___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Communication Protocol</em>' class.
@@ -1224,6 +1332,15 @@ public interface HwresourcePackage extends EPackage {
 	 * @ordered
 	 */
 	int BUS_PROTOCOL_FEATURE_COUNT = COMMUNICATION_PROTOCOL_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUS_PROTOCOL___GET_EXTENSION__ECLASS = COMMUNICATION_PROTOCOL___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>To String</em>' operation.
@@ -1362,6 +1479,15 @@ public interface HwresourcePackage extends EPackage {
 	int LINK_PROTOCOL_FEATURE_COUNT = COMMUNICATION_PROTOCOL_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_PROTOCOL___GET_EXTENSION__ECLASS = COMMUNICATION_PROTOCOL___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The operation id for the '<em>To String</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1469,6 +1595,15 @@ public interface HwresourcePackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMUNICATION_RESOURCE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_RESOURCE___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Communication Resource</em>' class.

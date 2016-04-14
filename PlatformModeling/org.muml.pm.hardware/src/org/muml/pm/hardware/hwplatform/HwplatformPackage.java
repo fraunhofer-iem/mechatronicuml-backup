@@ -147,6 +147,15 @@ public interface HwplatformPackage extends EPackage {
 	int HW_PLATFORM_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HW_PLATFORM___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>HW Platform</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -227,6 +236,15 @@ public interface HwplatformPackage extends EPackage {
 	 * @ordered
 	 */
 	int PLATFORM_PART_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLATFORM_PART___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Platform Part</em>' class.
@@ -329,6 +347,15 @@ public interface HwplatformPackage extends EPackage {
 	int HW_PLATFORM_PART_FEATURE_COUNT = PLATFORM_PART_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HW_PLATFORM_PART___GET_EXTENSION__ECLASS = PLATFORM_PART___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>HW Platform Part</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -418,6 +445,15 @@ public interface HwplatformPackage extends EPackage {
 	 * @ordered
 	 */
 	int RESOURCE_PART_FEATURE_COUNT = PLATFORM_PART_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_PART___GET_EXTENSION__ECLASS = PLATFORM_PART___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Resource Part</em>' class.
@@ -547,6 +583,15 @@ public interface HwplatformPackage extends EPackage {
 	int DELEGATION_HW_PORT_FEATURE_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 7;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_HW_PORT___GET_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR_ENDPOINT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Delegation HW Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -656,6 +701,15 @@ public interface HwplatformPackage extends EPackage {
 	int HW_PORT_PART_FEATURE_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HW_PORT_PART___GET_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR_ENDPOINT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>HW Port Part</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -747,6 +801,15 @@ public interface HwplatformPackage extends EPackage {
 	int BUS_FEATURE_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUS___GET_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR_ENDPOINT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Bus</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -791,6 +854,15 @@ public interface HwplatformPackage extends EPackage {
 	 * @ordered
 	 */
 	int NETWORKING_HARDWARE_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKING_HARDWARE___GET_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Networking Hardware</em>' class.
@@ -873,6 +945,15 @@ public interface HwplatformPackage extends EPackage {
 	 * @ordered
 	 */
 	int NETWORK_BRIDGE_FEATURE_COUNT = NETWORKING_HARDWARE_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_BRIDGE___GET_EXTENSION__ECLASS = NETWORKING_HARDWARE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Network Bridge</em>' class.
@@ -991,6 +1072,15 @@ public interface HwplatformPackage extends EPackage {
 	 * @ordered
 	 */
 	int NETWORK_CONNECTOR_FEATURE_COUNT = ConnectorPackage.CONNECTOR_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR___GET_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Network Connector</em>' class.

@@ -288,6 +288,15 @@ public interface Psm_realtimestatechartPackage extends EPackage {
 	int PARAMETERIZED_REALTIME_STATECHART_FEATURE_COUNT = RealtimestatechartPackage.REALTIME_STATECHART_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERIZED_REALTIME_STATECHART___GET_EXTENSION__ECLASS = RealtimestatechartPackage.REALTIME_STATECHART___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The operation id for the '<em>Is Super Statechart Of</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -395,6 +404,23 @@ public interface Psm_realtimestatechartPackage extends EPackage {
 	 * @ordered
 	 */
 	int API_CALL_FEATURE_COUNT = ActionlanguagePackage.OPERATION_CALL_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_CALL___GET_EXTENSION__ECLASS = ActionlanguagePackage.OPERATION_CALL___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
 
 	/**
 	 * The number of operations of the '<em>API Call</em>' class.

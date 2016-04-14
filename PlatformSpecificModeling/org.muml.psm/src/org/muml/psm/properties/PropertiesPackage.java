@@ -151,6 +151,15 @@ public interface PropertiesPackage extends EPackage {
 	int WCET_FEATURE_COUNT = CorePackage.EXTENSION_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WCET___GET_EXTENSION__ECLASS = CorePackage.EXTENSION___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>WCET</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -249,6 +258,15 @@ public interface PropertiesPackage extends EPackage {
 	 * @ordered
 	 */
 	int REQUIRED_MEMORY_FEATURE_COUNT = CorePackage.EXTENSION_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY___GET_EXTENSION__ECLASS = CorePackage.EXTENSION___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Required Memory</em>' class.
@@ -360,6 +378,15 @@ public interface PropertiesPackage extends EPackage {
 	int SCHEDULING_FEATURE_COUNT = CorePackage.EXTENSION_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING___GET_EXTENSION__ECLASS = CorePackage.EXTENSION___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Scheduling</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -458,6 +485,15 @@ public interface PropertiesPackage extends EPackage {
 	 * @ordered
 	 */
 	int MESSAGE_FRAME_FEATURE_COUNT = CorePackage.EXTENSION_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_FRAME___GET_EXTENSION__ECLASS = CorePackage.EXTENSION___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Message Frame</em>' class.
@@ -576,6 +612,15 @@ public interface PropertiesPackage extends EPackage {
 	 * @ordered
 	 */
 	int CAN_MESSAGE_FRAME_FEATURE_COUNT = MESSAGE_FRAME_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAN_MESSAGE_FRAME___GET_EXTENSION__ECLASS = MESSAGE_FRAME___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>CAN Message Frame</em>' class.

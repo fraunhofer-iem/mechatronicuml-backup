@@ -128,6 +128,15 @@ public interface HwresourceinstancePackage extends EPackage {
 	int RESOURCE_INSTANCE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_INSTANCE___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Resource Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -208,6 +217,15 @@ public interface HwresourceinstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int ATOMIC_RESOURCE_INSTANCE_FEATURE_COUNT = RESOURCE_INSTANCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATOMIC_RESOURCE_INSTANCE___GET_EXTENSION__ECLASS = RESOURCE_INSTANCE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Atomic Resource Instance</em>' class.
@@ -299,6 +317,15 @@ public interface HwresourceinstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPUTING_RESOURCE_INSTANCE_FEATURE_COUNT = ATOMIC_RESOURCE_INSTANCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPUTING_RESOURCE_INSTANCE___GET_EXTENSION__ECLASS = ATOMIC_RESOURCE_INSTANCE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Computing Resource Instance</em>' class.
@@ -410,6 +437,15 @@ public interface HwresourceinstancePackage extends EPackage {
 	int MEMORY_RESOURCE_INSTANCE_FEATURE_COUNT = ATOMIC_RESOURCE_INSTANCE_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEMORY_RESOURCE_INSTANCE___GET_EXTENSION__ECLASS = ATOMIC_RESOURCE_INSTANCE___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Memory Resource Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -481,6 +517,15 @@ public interface HwresourceinstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int DEVICE_INSTANCE_FEATURE_COUNT = RESOURCE_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_INSTANCE___GET_EXTENSION__ECLASS = RESOURCE_INSTANCE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Device Instance</em>' class.
@@ -592,6 +637,15 @@ public interface HwresourceinstancePackage extends EPackage {
 	int STORAGE_MEMORY_INSTANCE_FEATURE_COUNT = MEMORY_RESOURCE_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORAGE_MEMORY_INSTANCE___GET_EXTENSION__ECLASS = MEMORY_RESOURCE_INSTANCE___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Storage Memory Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -699,6 +753,15 @@ public interface HwresourceinstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int PROCESSING_MEMORY_INSTANCE_FEATURE_COUNT = MEMORY_RESOURCE_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESSING_MEMORY_INSTANCE___GET_EXTENSION__ECLASS = MEMORY_RESOURCE_INSTANCE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Processing Memory Instance</em>' class.
@@ -810,6 +873,15 @@ public interface HwresourceinstancePackage extends EPackage {
 	int CACHE_INSTANCE_FEATURE_COUNT = MEMORY_RESOURCE_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CACHE_INSTANCE___GET_EXTENSION__ECLASS = MEMORY_RESOURCE_INSTANCE___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Cache Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -899,6 +971,15 @@ public interface HwresourceinstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int PROGRAMMABLE_LOGIC_DEVICE_INSTANCE_FEATURE_COUNT = COMPUTING_RESOURCE_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAMMABLE_LOGIC_DEVICE_INSTANCE___GET_EXTENSION__ECLASS = COMPUTING_RESOURCE_INSTANCE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Programmable Logic Device Instance</em>' class.
@@ -1019,6 +1100,15 @@ public interface HwresourceinstancePackage extends EPackage {
 	int PROCESSOR_INSTANCE_FEATURE_COUNT = COMPUTING_RESOURCE_INSTANCE_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESSOR_INSTANCE___GET_EXTENSION__ECLASS = COMPUTING_RESOURCE_INSTANCE___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Processor Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1101,6 +1191,15 @@ public interface HwresourceinstancePackage extends EPackage {
 	int STRUCTURED_RESOURCE_INSTANCE_FEATURE_COUNT = RESOURCE_INSTANCE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURED_RESOURCE_INSTANCE___GET_EXTENSION__ECLASS = RESOURCE_INSTANCE___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Structured Resource Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1172,6 +1271,15 @@ public interface HwresourceinstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int SENSOR_INSTANCE_FEATURE_COUNT = DEVICE_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR_INSTANCE___GET_EXTENSION__ECLASS = DEVICE_INSTANCE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Sensor Instance</em>' class.
@@ -1247,6 +1355,15 @@ public interface HwresourceinstancePackage extends EPackage {
 	int ACTUATOR_INSTANCE_FEATURE_COUNT = DEVICE_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTUATOR_INSTANCE___GET_EXTENSION__ECLASS = DEVICE_INSTANCE___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Actuator Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1309,6 +1426,15 @@ public interface HwresourceinstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int RESOURCE_INSTANCE_REPOSITORY_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_INSTANCE_REPOSITORY___GET_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Resource Instance Repository</em>' class.
@@ -1419,6 +1545,15 @@ public interface HwresourceinstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int HW_PORT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HW_PORT___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>HW Port</em>' class.

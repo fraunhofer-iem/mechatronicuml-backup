@@ -260,6 +260,15 @@ public interface Psm_instancePackage extends EPackage {
 	int PARAMETERISABLE_DISCRETE_SINGLE_PORT_INSTANCE_FEATURE_COUNT = InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERISABLE_DISCRETE_SINGLE_PORT_INSTANCE___GET_EXTENSION__ECLASS = InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Parameterisable Discrete Single Port Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

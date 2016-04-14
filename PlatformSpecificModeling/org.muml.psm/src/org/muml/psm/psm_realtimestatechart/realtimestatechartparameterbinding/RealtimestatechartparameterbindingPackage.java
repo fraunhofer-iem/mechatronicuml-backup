@@ -211,13 +211,22 @@ public interface RealtimestatechartparameterbindingPackage extends EPackage {
 	int API_CALL_PARAMETER_BINDING_FEATURE_COUNT = REALTIME_STATECHART_PARAMETER_BINDING_FEATURE_COUNT + 8;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_CALL_PARAMETER_BINDING___GET_EXTENSION__ECLASS = REALTIME_STATECHART_PARAMETER_BINDING_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>API Call Parameter Binding</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int API_CALL_PARAMETER_BINDING_OPERATION_COUNT = REALTIME_STATECHART_PARAMETER_BINDING_OPERATION_COUNT + 0;
+	int API_CALL_PARAMETER_BINDING_OPERATION_COUNT = REALTIME_STATECHART_PARAMETER_BINDING_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.impl.TimeParameterBindingImpl <em>Time Parameter Binding</em>}' class.

@@ -2,6 +2,7 @@
  */
 package org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -343,6 +344,21 @@ public class APICallParameterBindingImpl extends RealtimeStatechartParameterBind
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Extension getExtension(final EClass type) {
+		EList<Extension> extensions = this.getExtensions();
+						for (Extension extension : extensions) {
+							if (type.isInstance(extension)) {
+								return extension;
+							}
+						}
+						return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -581,6 +597,51 @@ public class APICallParameterBindingImpl extends RealtimeStatechartParameterBind
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == ExtendableElement.class) {
+			switch (baseOperationID) {
+				case CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___GET_EXTENSION__ECLASS;
+				default: return -1;
+			}
+		}
+		if (baseClass == NamedElement.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == CommentableElement.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == Operation.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___GET_EXTENSION__ECLASS:
+				return getExtension((EClass)arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

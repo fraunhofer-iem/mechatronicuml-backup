@@ -16,7 +16,7 @@ import org.muml.pm.hardware.hwvaluetype.DataRate;
  *
  * <!-- begin-model-doc -->
  * This class represents a network connection between hardware resources.
- * This class inherits from muml::Connector to be conistent with the muml metamodel.
+ * This class inherits from pim::Connector to be conistent with the muml metamodel.
  * <!-- end-model-doc -->
  *
  * <p>

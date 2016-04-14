@@ -141,6 +141,15 @@ public interface VerificationExtensionPackage extends EPackage {
 	int COMMITTED_EXTENSION_FEATURE_COUNT = CorePackage.EXTENSION_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMITTED_EXTENSION___GET_EXTENSION__ECLASS = CorePackage.EXTENSION___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Committed Extension</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -230,6 +239,15 @@ public interface VerificationExtensionPackage extends EPackage {
 	 * @ordered
 	 */
 	int CLOCK_BINDINGS_EXTENSION_FEATURE_COUNT = CorePackage.EXTENSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOCK_BINDINGS_EXTENSION___GET_EXTENSION__ECLASS = CorePackage.EXTENSION___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Clock Bindings Extension</em>' class.
@@ -359,6 +377,15 @@ public interface VerificationExtensionPackage extends EPackage {
 	 * @ordered
 	 */
 	int ELEMENT_TO_VERIFY_EXTENSION_FEATURE_COUNT = CorePackage.EXTENSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_TO_VERIFY_EXTENSION___GET_EXTENSION__ECLASS = CorePackage.EXTENSION___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Element To Verify Extension</em>' class.

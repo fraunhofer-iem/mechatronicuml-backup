@@ -121,6 +121,15 @@ public interface RealtimestatechartparameterPackage extends EPackage {
 	int REALTIME_STATECHART_PARAMETER_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REALTIME_STATECHART_PARAMETER___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Realtime Statechart Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -221,6 +230,15 @@ public interface RealtimestatechartparameterPackage extends EPackage {
 	int API_CALL_PARAMETER_FEATURE_COUNT = REALTIME_STATECHART_PARAMETER_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int API_CALL_PARAMETER___GET_EXTENSION__ECLASS = REALTIME_STATECHART_PARAMETER___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>API Call Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -319,6 +337,15 @@ public interface RealtimestatechartparameterPackage extends EPackage {
 	 * @ordered
 	 */
 	int TIME_PARAMETER_FEATURE_COUNT = REALTIME_STATECHART_PARAMETER_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_PARAMETER___GET_EXTENSION__ECLASS = REALTIME_STATECHART_PARAMETER___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Time Parameter</em>' class.
