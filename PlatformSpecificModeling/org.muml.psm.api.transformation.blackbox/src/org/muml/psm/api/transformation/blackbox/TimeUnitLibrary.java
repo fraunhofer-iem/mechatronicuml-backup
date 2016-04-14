@@ -3,7 +3,7 @@ package org.muml.psm.api.transformation.blackbox;
 import java.util.concurrent.TimeUnit;
 
 import org.muml.core.expressions.Expression;
-import org.muml.core.expressions.common.CommonExpressionsFactory;
+import org.muml.core.expressions.common.CommonFactory;
 import org.muml.core.expressions.common.LiteralExpression;
 import org.muml.pim.valuetype.TimeValue;
 import org.muml.pim.valuetype.ValuetypeFactory;
@@ -55,7 +55,7 @@ public class TimeUnitLibrary {
 				value1 += toAddUnit.convert(value2, unit1);
 	
 				// create the new TimeValue
-				LiteralExpression newValue = CommonExpressionsFactory.eINSTANCE.createLiteralExpression();
+				LiteralExpression newValue = CommonFactory.eINSTANCE.createLiteralExpression();
 				
 				newValue.setValue(String.valueOf(value1));
 				ret.setUnit(unit1);
