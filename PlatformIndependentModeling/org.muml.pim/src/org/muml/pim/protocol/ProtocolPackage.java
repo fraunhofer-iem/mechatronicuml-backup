@@ -184,6 +184,15 @@ public interface ProtocolPackage extends EPackage {
 	int ABSTRACT_COORDINATION_SPECIFICATION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_COORDINATION_SPECIFICATION___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Abstract Coordination Specification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -319,6 +328,15 @@ public interface ProtocolPackage extends EPackage {
 	 * @ordered
 	 */
 	int COORDINATION_PROTOCOL_FEATURE_COUNT = ABSTRACT_COORDINATION_SPECIFICATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COORDINATION_PROTOCOL___GET_EXTENSION__ECLASS = ABSTRACT_COORDINATION_SPECIFICATION___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Coordination Protocol</em>' class.
@@ -493,6 +511,15 @@ public interface ProtocolPackage extends EPackage {
 	int ROLE_FEATURE_COUNT = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE___GET_EXTENSION__ECLASS = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Role</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -583,6 +610,15 @@ public interface ProtocolPackage extends EPackage {
 	int ROLE_CONNECTOR_FEATURE_COUNT = ConnectorPackage.CONNECTOR_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR___GET_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Role Connector</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -664,6 +700,15 @@ public interface ProtocolPackage extends EPackage {
 	 */
 	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
 
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS___GET_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Connector Quality Of Service Assumptions</em>' class.

@@ -142,6 +142,15 @@ public interface ComponentPackage extends EPackage {
 	int COMPONENT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -231,6 +240,15 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int PORT_FEATURE_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT___GET_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR_ENDPOINT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Port</em>' class.
@@ -378,6 +396,15 @@ public interface ComponentPackage extends EPackage {
 	int DIRECTED_TYPED_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_TYPED_PORT___GET_EXTENSION__ECLASS = PORT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Directed Typed Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -521,6 +548,15 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTINUOUS_PORT_FEATURE_COUNT = DIRECTED_TYPED_PORT_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT___GET_EXTENSION__ECLASS = DIRECTED_TYPED_PORT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Continuous Port</em>' class.
@@ -740,6 +776,15 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 14;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT___GET_EXTENSION__ECLASS = PORT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Discrete Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -847,6 +892,15 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPONENT_PART_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_PART___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Part</em>' class.
@@ -974,6 +1028,15 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int STRUCTURED_COMPONENT_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURED_COMPONENT___GET_EXTENSION__ECLASS = COMPONENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>To String</em>' operation.
@@ -1112,6 +1175,15 @@ public interface ComponentPackage extends EPackage {
 	int STATIC_STRUCTURED_COMPONENT_FEATURE_COUNT = STRUCTURED_COMPONENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_STRUCTURED_COMPONENT___GET_EXTENSION__ECLASS = STRUCTURED_COMPONENT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The operation id for the '<em>To String</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1221,6 +1293,15 @@ public interface ComponentPackage extends EPackage {
 	int ATOMIC_COMPONENT_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATOMIC_COMPONENT___GET_EXTENSION__ECLASS = COMPONENT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The operation id for the '<em>To String</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1310,6 +1391,15 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int PORT_CONNECTOR_FEATURE_COUNT = ConnectorPackage.CONNECTOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_CONNECTOR___GET_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Port Connector</em>' class.
@@ -1412,6 +1502,15 @@ public interface ComponentPackage extends EPackage {
 	int ASSEMBLY_CONNECTOR_FEATURE_COUNT = PORT_CONNECTOR_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_CONNECTOR___GET_EXTENSION__ECLASS = PORT_CONNECTOR___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Assembly Connector</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1510,6 +1609,15 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int DELEGATION_CONNECTOR_FEATURE_COUNT = PORT_CONNECTOR_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_CONNECTOR___GET_EXTENSION__ECLASS = PORT_CONNECTOR___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Delegation Connector</em>' class.
@@ -1666,6 +1774,15 @@ public interface ComponentPackage extends EPackage {
 	int HYBRID_PORT_FEATURE_COUNT = DIRECTED_TYPED_PORT_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT___GET_EXTENSION__ECLASS = DIRECTED_TYPED_PORT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Hybrid Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1737,6 +1854,15 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int COORDINATION_PROTOCOL_PART_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COORDINATION_PROTOCOL_PART___GET_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Coordination Protocol Part</em>' class.
@@ -1848,6 +1974,15 @@ public interface ComponentPackage extends EPackage {
 	int PORT_PART_FEATURE_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_PART___GET_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR_ENDPOINT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Port Part</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1948,6 +2083,15 @@ public interface ComponentPackage extends EPackage {
 	int STATIC_ATOMIC_COMPONENT_FEATURE_COUNT = ATOMIC_COMPONENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_ATOMIC_COMPONENT___GET_EXTENSION__ECLASS = ATOMIC_COMPONENT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The operation id for the '<em>To String</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2037,6 +2181,15 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int STATIC_COMPONENT_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT___GET_EXTENSION__ECLASS = COMPONENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Static Component</em>' class.

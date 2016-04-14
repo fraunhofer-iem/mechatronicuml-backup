@@ -140,6 +140,15 @@ public interface MsgtypePackage extends EPackage {
 	int MESSAGE_TYPE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Message Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -212,6 +221,15 @@ public interface MsgtypePackage extends EPackage {
 	 */
 	int MESSAGE_TYPE_REPOSITORY_FEATURE_COUNT = CorePackage.REPOSITORY_FEATURE_COUNT + 1;
 
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE_REPOSITORY___GET_EXTENSION__ECLASS = CorePackage.REPOSITORY___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Message Type Repository</em>' class.

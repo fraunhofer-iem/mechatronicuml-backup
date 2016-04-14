@@ -269,6 +269,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	int CLOCK_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOCK___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Clock</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -500,6 +509,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	int REGION_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION___GET_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Region</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -579,6 +597,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @ordered
 	 */
 	int VERTEX_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VERTEX___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Is Super Vertex Of</em>' operation.
@@ -813,6 +840,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @ordered
 	 */
 	int STATE_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 14;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE___GET_EXTENSION__ECLASS = VERTEX___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Is Super Vertex Of</em>' operation.
@@ -1094,13 +1130,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION_FEATURE_COUNT = PRIORITIZED_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION___GET_EXTENSION__ECLASS = PRIORITIZED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Transition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_OPERATION_COUNT = PRIORITIZED_ELEMENT_OPERATION_COUNT + 0;
+	int TRANSITION_OPERATION_COUNT = PRIORITIZED_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -1157,6 +1202,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	int CLOCK_CONSTRAINT_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOCK_CONSTRAINT___GET_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Clock Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1209,6 +1263,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACTION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Action</em>' class.
@@ -1499,6 +1562,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	int SYNCHRONIZATION_CHANNEL_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Synchronization Channel</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1560,6 +1632,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @ordered
 	 */
 	int SYNCHRONIZATION_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION___GET_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Synchronization</em>' class.
@@ -1779,6 +1860,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	int REALTIME_STATECHART_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REALTIME_STATECHART___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The operation id for the '<em>Is Super Statechart Of</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1868,6 +1958,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @ordered
 	 */
 	int MESSAGE_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE___GET_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Message</em>' class.
@@ -2080,6 +2179,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	int STATE_CONNECTION_POINT_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_CONNECTION_POINT___GET_EXTENSION__ECLASS = VERTEX___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The operation id for the '<em>Is Super Vertex Of</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2207,6 +2315,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	int ENTRY_POINT_FEATURE_COUNT = STATE_CONNECTION_POINT_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTRY_POINT___GET_EXTENSION__ECLASS = STATE_CONNECTION_POINT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The operation id for the '<em>Is Super Vertex Of</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2332,6 +2449,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXIT_POINT_FEATURE_COUNT = STATE_CONNECTION_POINT_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXIT_POINT___GET_EXTENSION__ECLASS = STATE_CONNECTION_POINT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Is Super Vertex Of</em>' operation.

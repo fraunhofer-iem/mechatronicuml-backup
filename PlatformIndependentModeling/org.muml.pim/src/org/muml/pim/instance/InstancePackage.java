@@ -159,6 +159,15 @@ public interface InstancePackage extends EPackage {
 	int COMPONENT_INSTANCE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANCE___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Component Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -248,6 +257,15 @@ public interface InstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int PORT_CONNECTOR_INSTANCE_FEATURE_COUNT = ConnectorPackage.CONNECTOR_INSTANCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_CONNECTOR_INSTANCE___GET_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR_INSTANCE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Port Connector Instance</em>' class.
@@ -368,6 +386,15 @@ public interface InstancePackage extends EPackage {
 	int PORT_INSTANCE_FEATURE_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE___GET_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Port Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -468,6 +495,15 @@ public interface InstancePackage extends EPackage {
 	int ASSEMBLY_CONNECTOR_INSTANCE_FEATURE_COUNT = PORT_CONNECTOR_INSTANCE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_CONNECTOR_INSTANCE___GET_EXTENSION__ECLASS = PORT_CONNECTOR_INSTANCE___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Assembly Connector Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -566,6 +602,15 @@ public interface InstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int DELEGATION_CONNECTOR_INSTANCE_FEATURE_COUNT = PORT_CONNECTOR_INSTANCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_CONNECTOR_INSTANCE___GET_EXTENSION__ECLASS = PORT_CONNECTOR_INSTANCE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Delegation Connector Instance</em>' class.
@@ -687,6 +732,15 @@ public interface InstancePackage extends EPackage {
 
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANCE_CONFIGURATION___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Component Instance Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -803,6 +857,15 @@ public interface InstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTINUOUS_PORT_INSTANCE_FEATURE_COUNT = PORT_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT_INSTANCE___GET_EXTENSION__ECLASS = PORT_INSTANCE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Continuous Port Instance</em>' class.
@@ -931,6 +994,15 @@ public interface InstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int HYBRID_PORT_INSTANCE_FEATURE_COUNT = PORT_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE___GET_EXTENSION__ECLASS = PORT_INSTANCE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Hybrid Port Instance</em>' class.
@@ -1075,6 +1147,15 @@ public interface InstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int DISCRETE_PORT_INSTANCE_FEATURE_COUNT = PORT_INSTANCE_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT_INSTANCE___GET_EXTENSION__ECLASS = PORT_INSTANCE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Discrete Port Instance</em>' class.
@@ -1276,6 +1357,15 @@ public interface InstancePackage extends EPackage {
 	int DISCRETE_SINGLE_PORT_INSTANCE_FEATURE_COUNT = DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_SINGLE_PORT_INSTANCE___GET_EXTENSION__ECLASS = DISCRETE_PORT_INSTANCE___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Discrete Single Port Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1466,6 +1556,15 @@ public interface InstancePackage extends EPackage {
 	int DISCRETE_MULTI_PORT_INSTANCE_FEATURE_COUNT = DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_MULTI_PORT_INSTANCE___GET_EXTENSION__ECLASS = DISCRETE_PORT_INSTANCE___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Discrete Multi Port Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1546,6 +1645,15 @@ public interface InstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int COORDINATION_PROTOCOL_INSTANCE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COORDINATION_PROTOCOL_INSTANCE___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Coordination Protocol Instance</em>' class.
@@ -1657,6 +1765,15 @@ public interface InstancePackage extends EPackage {
 	int STRUCTURED_COMPONENT_INSTANCE_FEATURE_COUNT = COMPONENT_INSTANCE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURED_COMPONENT_INSTANCE___GET_EXTENSION__ECLASS = COMPONENT_INSTANCE___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Structured Component Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1755,6 +1872,15 @@ public interface InstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int ATOMIC_COMPONENT_INSTANCE_FEATURE_COUNT = COMPONENT_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATOMIC_COMPONENT_INSTANCE___GET_EXTENSION__ECLASS = COMPONENT_INSTANCE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Atomic Component Instance</em>' class.

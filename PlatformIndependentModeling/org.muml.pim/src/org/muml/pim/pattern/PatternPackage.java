@@ -209,6 +209,15 @@ public interface PatternPackage extends EPackage {
 	int ABSTRACT_COORDINATION_PATTERN_FEATURE_COUNT = ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_COORDINATION_PATTERN___GET_EXTENSION__ECLASS = ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Abstract Coordination Pattern</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -469,6 +478,15 @@ public interface PatternPackage extends EPackage {
 	int VERIFIED_CONFIGURATION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VERIFIED_CONFIGURATION___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Verified Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -621,6 +639,15 @@ public interface PatternPackage extends EPackage {
 	 * @ordered
 	 */
 	int COORDINATION_PATTERN_VARIANT_FEATURE_COUNT = ABSTRACT_COORDINATION_PATTERN_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COORDINATION_PATTERN_VARIANT___GET_EXTENSION__ECLASS = ABSTRACT_COORDINATION_PATTERN___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Coordination Pattern Variant</em>' class.
@@ -792,6 +819,15 @@ public interface PatternPackage extends EPackage {
 	 * @ordered
 	 */
 	int COORDINATION_PATTERN_FEATURE_COUNT = ABSTRACT_COORDINATION_PATTERN_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COORDINATION_PATTERN___GET_EXTENSION__ECLASS = ABSTRACT_COORDINATION_PATTERN___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Coordination Pattern</em>' class.

@@ -122,6 +122,15 @@ public interface TypesPackage extends EPackage {
 	int DATA_TYPE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Data Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -204,6 +213,15 @@ public interface TypesPackage extends EPackage {
 	int ARRAY_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_DATA_TYPE___GET_EXTENSION__ECLASS = DATA_TYPE___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Array Data Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -275,6 +293,15 @@ public interface TypesPackage extends EPackage {
 	 * @ordered
 	 */
 	int PRIMITIVE_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_DATA_TYPE___GET_EXTENSION__ECLASS = DATA_TYPE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Primitive Data Type</em>' class.
@@ -359,6 +386,15 @@ public interface TypesPackage extends EPackage {
 	int RANGED_PRIMITIVE_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RANGED_PRIMITIVE_DATA_TYPE___GET_EXTENSION__ECLASS = DATA_TYPE___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Ranged Primitive Data Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -432,6 +468,15 @@ public interface TypesPackage extends EPackage {
 	int STRUCTURE_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURE_DATA_TYPE___GET_EXTENSION__ECLASS = DATA_TYPE___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Structure Data Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -503,6 +548,15 @@ public interface TypesPackage extends EPackage {
 	 * @ordered
 	 */
 	int ATTRIBUTE_FEATURE_COUNT = BehaviorPackage.TYPED_NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE___GET_EXTENSION__ECLASS = BehaviorPackage.TYPED_NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Attribute</em>' class.

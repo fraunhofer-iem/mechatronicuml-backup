@@ -6,6 +6,7 @@
  */
 package org.muml.pim.realtimestatechart.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.Iterator;
 
@@ -891,6 +892,21 @@ public class TransitionImpl extends PrioritizedElementImpl implements Transition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Extension getExtension(final EClass type) {
+		EList<Extension> extensions = this.getExtensions();
+						for (Extension extension : extensions) {
+							if (type.isInstance(extension)) {
+								return extension;
+							}
+						}
+						return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -1217,6 +1233,41 @@ public class TransitionImpl extends PrioritizedElementImpl implements Transition
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == ExtendableElement.class) {
+			switch (baseOperationID) {
+				case CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS: return RealtimestatechartPackage.TRANSITION___GET_EXTENSION__ECLASS;
+				default: return -1;
+			}
+		}
+		if (baseClass == CommentableElement.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case RealtimestatechartPackage.TRANSITION___GET_EXTENSION__ECLASS:
+				return getExtension((EClass)arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

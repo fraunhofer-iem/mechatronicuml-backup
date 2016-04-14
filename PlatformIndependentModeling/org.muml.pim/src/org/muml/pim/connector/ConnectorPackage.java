@@ -123,6 +123,15 @@ public interface ConnectorPackage extends EPackage {
 	int CONNECTOR_ENDPOINT_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_ENDPOINT___GET_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Endpoint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -194,6 +203,15 @@ public interface ConnectorPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONNECTOR_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR___GET_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Connector</em>' class.
@@ -278,6 +296,15 @@ public interface ConnectorPackage extends EPackage {
 	int CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_ENDPOINT_INSTANCE___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Endpoint Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -349,6 +376,15 @@ public interface ConnectorPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONNECTOR_INSTANCE_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_INSTANCE___GET_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Instance</em>' class.
@@ -497,6 +533,15 @@ public interface ConnectorPackage extends EPackage {
 
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_INTERACTION_ENDPOINT___GET_EXTENSION__ECLASS = CONNECTOR_ENDPOINT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Discrete Interaction Endpoint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -577,6 +622,15 @@ public interface ConnectorPackage extends EPackage {
 	 * @ordered
 	 */
 	int DISCRETE_INTERACTION_ENDPOINT_INSTANCE_FEATURE_COUNT = CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_INTERACTION_ENDPOINT_INSTANCE___GET_EXTENSION__ECLASS = CONNECTOR_ENDPOINT_INSTANCE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Discrete Interaction Endpoint Instance</em>' class.
@@ -706,6 +760,15 @@ public interface ConnectorPackage extends EPackage {
 	int DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE_FEATURE_COUNT = DISCRETE_INTERACTION_ENDPOINT_INSTANCE_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE___GET_EXTENSION__ECLASS = DISCRETE_INTERACTION_ENDPOINT_INSTANCE___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Discrete Single Interaction Endpoint Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -816,6 +879,15 @@ public interface ConnectorPackage extends EPackage {
 
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE___GET_EXTENSION__ECLASS = DISCRETE_INTERACTION_ENDPOINT_INSTANCE___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Discrete Multi Interaction Endpoint Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -924,6 +996,15 @@ public interface ConnectorPackage extends EPackage {
 	 * @ordered
 	 */
 	int MESSAGE_BUFFER_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_BUFFER___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Message Buffer</em>' class.
