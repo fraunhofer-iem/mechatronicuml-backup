@@ -2,7 +2,6 @@
  */
 package org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -10,8 +9,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -23,7 +20,6 @@ import org.muml.core.ExtendableElement;
 import org.muml.core.Extension;
 import org.muml.core.NamedElement;
 import org.muml.core.expressions.Expression;
-import org.muml.core.util.ExtendableElementOperations;
 import org.muml.pim.behavior.BehaviorPackage;
 import org.muml.pim.behavior.Operation;
 import org.muml.pim.behavior.Parameter;
@@ -347,42 +343,6 @@ public class APICallParameterBindingImpl extends RealtimeStatechartParameterBind
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Extension getExtension(final EClass type) {
-		return ExtendableElementOperations.getExtension(this, type);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Extension provideExtension(final EClass type) {
-		return ExtendableElementOperations.provideExtension(this, type);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAnnotation getAnnotation(final String source) {
-		return ExtendableElementOperations.getAnnotation(this, source);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAnnotation provideAnnotation(final String source) {
-		return ExtendableElementOperations.provideAnnotation(this, source);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -556,11 +516,6 @@ public class APICallParameterBindingImpl extends RealtimeStatechartParameterBind
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == EObject.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
 		if (baseClass == ExtendableElement.class) {
 			switch (derivedFeatureID) {
 				case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__ANNOTATIONS: return CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
@@ -598,11 +553,6 @@ public class APICallParameterBindingImpl extends RealtimeStatechartParameterBind
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == EObject.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
 		if (baseClass == ExtendableElement.class) {
 			switch (baseFeatureID) {
 				case CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__ANNOTATIONS;
@@ -631,80 +581,6 @@ public class APICallParameterBindingImpl extends RealtimeStatechartParameterBind
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
-		if (baseClass == EObject.class) {
-			switch (baseOperationID) {
-				case EcorePackage.EOBJECT___ECLASS: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___ECLASS;
-				case EcorePackage.EOBJECT___EIS_PROXY: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___EIS_PROXY;
-				case EcorePackage.EOBJECT___ERESOURCE: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___ERESOURCE;
-				case EcorePackage.EOBJECT___ECONTAINER: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___ECONTAINER;
-				case EcorePackage.EOBJECT___ECONTAINING_FEATURE: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___ECONTAINING_FEATURE;
-				case EcorePackage.EOBJECT___ECONTAINMENT_FEATURE: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___ECONTAINMENT_FEATURE;
-				case EcorePackage.EOBJECT___ECONTENTS: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___ECONTENTS;
-				case EcorePackage.EOBJECT___EALL_CONTENTS: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___EALL_CONTENTS;
-				case EcorePackage.EOBJECT___ECROSS_REFERENCES: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___ECROSS_REFERENCES;
-				case EcorePackage.EOBJECT___EGET__ESTRUCTURALFEATURE: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___EGET__ESTRUCTURALFEATURE;
-				case EcorePackage.EOBJECT___EGET__ESTRUCTURALFEATURE_BOOLEAN: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-				case EcorePackage.EOBJECT___ESET__ESTRUCTURALFEATURE_OBJECT: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___ESET__ESTRUCTURALFEATURE_OBJECT;
-				case EcorePackage.EOBJECT___EIS_SET__ESTRUCTURALFEATURE: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___EIS_SET__ESTRUCTURALFEATURE;
-				case EcorePackage.EOBJECT___EUNSET__ESTRUCTURALFEATURE: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___EUNSET__ESTRUCTURALFEATURE;
-				case EcorePackage.EOBJECT___EINVOKE__EOPERATION_ELIST: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___EINVOKE__EOPERATION_ELIST;
-				default: return -1;
-			}
-		}
-		if (baseClass == ExtendableElement.class) {
-			switch (baseOperationID) {
-				case CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___GET_EXTENSION__ECLASS;
-				case CorePackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___PROVIDE_EXTENSION__ECLASS;
-				case CorePackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___GET_ANNOTATION__STRING;
-				case CorePackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___PROVIDE_ANNOTATION__STRING;
-				default: return -1;
-			}
-		}
-		if (baseClass == NamedElement.class) {
-			switch (baseOperationID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == CommentableElement.class) {
-			switch (baseOperationID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == Operation.class) {
-			switch (baseOperationID) {
-				default: return -1;
-			}
-		}
-		return super.eDerivedOperationID(baseOperationID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___GET_EXTENSION__ECLASS:
-				return getExtension((EClass)arguments.get(0));
-			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___PROVIDE_EXTENSION__ECLASS:
-				return provideExtension((EClass)arguments.get(0));
-			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___GET_ANNOTATION__STRING:
-				return getAnnotation((String)arguments.get(0));
-			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING___PROVIDE_ANNOTATION__STRING:
-				return provideAnnotation((String)arguments.get(0));
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

@@ -45,8 +45,7 @@ Export-Package: org.muml.psm.allocation.provider;
  org.muml.psm.psm_instance.provider,
  org.muml.psm.psm_realtimestatechart.provider,
  org.muml.psm.psm_realtimestatechart.realtimestatechartparameter.provider,
- org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.provider,
- platform.provider
+ org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.provider
 Require-Bundle: org.eclipse.ocl.ecore,
  org.eclipse.core.runtime,
  org.muml.psm;visibility:=reexport,

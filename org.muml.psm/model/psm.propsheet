@@ -6,7 +6,6 @@
   <genModel href="psm.genmodel#/"/>
   <referencedGenerators href="../../org.muml.core/model/core.propsheet#_i_I4kOHNEeS5Putgio2lkg"/>
   <referencedGenerators href="../../org.muml.pim/model/pim.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
-  <referencedGenerators href="../../org.muml.core.modelinstance/model/modelinstance.propsheet#_VZEMMMwbEeSjx7OWZCcdLw"/>
   <referencedGenerators href="../../org.muml.pm.hardware/model/hardware.propsheet#_RlRs0M1gEeSIgPDefa6ZBw"/>
   <plugin xmi:id="_Rl8bMM1gEeSIgPDefa6ZBw" id="org.muml.psm.edit.properties" name="PSM Properties" vendor="Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT " version="0.5.0.qualifier">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
@@ -22,11 +21,10 @@
     <requiredBundles>org.muml.core.edit.properties</requiredBundles>
     <requiredBundles>org.muml.pim.edit</requiredBundles>
     <requiredBundles>org.muml.pim.edit.properties</requiredBundles>
-    <requiredBundles>org.muml.core.modelinstance.edit</requiredBundles>
-    <requiredBundles>org.muml.core.modelinstance.edit.properties</requiredBundles>
     <requiredBundles>org.muml.pm.hardware.edit</requiredBundles>
     <requiredBundles>org.muml.pm.hardware.edit.properties</requiredBundles>
     <requiredBundles>org.muml.pim.actionlanguage.xtext.ui</requiredBundles>
+    <requiredBundles>org.muml.pim.common</requiredBundles>
   </plugin>
   <tabs xmi:id="_Rl8bMc1gEeSIgPDefa6ZBw" id="property.tab.psm" name="PSM" afterTab=""/>
   <packages>

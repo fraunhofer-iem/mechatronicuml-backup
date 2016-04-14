@@ -30,8 +30,6 @@ public class RealtimestatechartparameterTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new RealtimestatechartparameterTests("realtimestatechartparameter Tests");
-		suite.addTestSuite(APICallParameterTest.class);
-		suite.addTestSuite(TimeParameterTest.class);
 		return suite;
 	}
 
