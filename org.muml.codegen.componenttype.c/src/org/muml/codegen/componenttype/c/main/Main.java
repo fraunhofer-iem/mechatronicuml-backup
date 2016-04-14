@@ -355,6 +355,9 @@ public class Main extends AbstractAcceleoGenerator {
         if (!isInWorkspace(org.muml.core.expressions.common.CommonExpressionsPackage.class)) {
             resourceSet.getPackageRegistry().put(org.muml.core.expressions.common.CommonExpressionsPackage.eINSTANCE.getNsURI(), org.muml.core.expressions.common.CommonExpressionsPackage.eINSTANCE);
         }
+        if (!isInWorkspace(org.muml.core.modelinstance.ModelinstancePackage.class)) {
+            resourceSet.getPackageRegistry().put(org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE.getNsURI(), org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE);
+        }
         if (!isInWorkspace(org.muml.pim.actionlanguage.ActionlanguagePackage.class)) {
             resourceSet.getPackageRegistry().put(org.muml.pim.actionlanguage.ActionlanguagePackage.eINSTANCE.getNsURI(), org.muml.pim.actionlanguage.ActionlanguagePackage.eINSTANCE);
         }
