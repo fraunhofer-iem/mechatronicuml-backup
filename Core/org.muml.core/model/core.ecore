@@ -25,6 +25,12 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Abstract base class for the whole story diagram model. The ExtendableElement specifies the extension mechanism that can be used to extend an object by an Extension containing additional attributes and references."/>
     </eAnnotations>
+    <eOperations name="getExtension" lowerBound="1" eType="#//Extension">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="EList&lt;Extension> extensions = this.getExtensions();&#xA;&#x9;&#x9;&#x9;&#x9;for (Extension extension : extensions) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if (type.isInstance(extension)) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return extension;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;return null;"/>
+      </eAnnotations>
+      <eParameters name="type" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAnnotation"
         containment="true">

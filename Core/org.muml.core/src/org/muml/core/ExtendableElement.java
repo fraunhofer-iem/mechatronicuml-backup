@@ -5,6 +5,7 @@ package org.muml.core;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EAnnotation;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -60,5 +61,14 @@ public interface ExtendableElement extends EObject {
 	 * @generated
 	 */
 	EList<Extension> getExtensions();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" typeRequired="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='EList<Extension> extensions = this.getExtensions();\n\t\t\t\tfor (Extension extension : extensions) {\n\t\t\t\t\tif (type.isInstance(extension)) {\n\t\t\t\t\t\treturn extension;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\treturn null;'"
+	 * @generated
+	 */
+	Extension getExtension(EClass type);
 
 } // ExtendableElement

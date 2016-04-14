@@ -2,6 +2,7 @@
  */
 package org.muml.core.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -105,6 +106,21 @@ public abstract class ExtendableElementImpl extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Extension getExtension(final EClass type) {
+		EList<Extension> extensions = this.getExtensions();
+						for (Extension extension : extensions) {
+							if (type.isInstance(extension)) {
+								return extension;
+							}
+						}
+						return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -200,6 +216,20 @@ public abstract class ExtendableElementImpl extends MinimalEObjectImpl.Container
 				return extensions != null && !extensions.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS:
+				return getExtension((EClass)arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //ExtendableElementImpl

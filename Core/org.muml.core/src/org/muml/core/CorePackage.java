@@ -4,6 +4,7 @@ package org.muml.core;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -98,13 +99,22 @@ public interface CorePackage extends EPackage {
 	int EXTENDABLE_ELEMENT_FEATURE_COUNT = 2;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS = 0;
+
+	/**
 	 * The number of operations of the '<em>Extendable Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENDABLE_ELEMENT_OPERATION_COUNT = 0;
+	int EXTENDABLE_ELEMENT_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.muml.core.impl.CommentableElementImpl <em>Commentable Element</em>}' class.
@@ -151,6 +161,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMENTABLE_ELEMENT_FEATURE_COUNT = EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS = EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Commentable Element</em>' class.
@@ -235,6 +254,15 @@ public interface CorePackage extends EPackage {
 	int EXTENSION_FEATURE_COUNT = EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENSION___GET_EXTENSION__ECLASS = EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Extension</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -288,6 +316,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int NAMED_ELEMENT_FEATURE_COUNT = EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT___GET_EXTENSION__ECLASS = EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Named Element</em>' class.
@@ -354,6 +391,15 @@ public interface CorePackage extends EPackage {
 	int TYPED_ELEMENT_FEATURE_COUNT = EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPED_ELEMENT___GET_EXTENSION__ECLASS = EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Typed Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -418,6 +464,15 @@ public interface CorePackage extends EPackage {
 	int REPOSITORY_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REPOSITORY___GET_EXTENSION__ECLASS = NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Repository</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -479,6 +534,16 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getExtendableElement_Extensions();
+
+	/**
+	 * Returns the meta object for the '{@link org.muml.core.ExtendableElement#getExtension(org.eclipse.emf.ecore.EClass) <em>Get Extension</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Extension</em>' operation.
+	 * @see org.muml.core.ExtendableElement#getExtension(org.eclipse.emf.ecore.EClass)
+	 * @generated
+	 */
+	EOperation getExtendableElement__GetExtension__EClass();
 
 	/**
 	 * Returns the meta object for class '{@link org.muml.core.Extension <em>Extension</em>}'.
@@ -663,6 +728,14 @@ public interface CorePackage extends EPackage {
 		 * @generated
 		 */
 		EReference EXTENDABLE_ELEMENT__EXTENSIONS = eINSTANCE.getExtendableElement_Extensions();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Extension</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS = eINSTANCE.getExtendableElement__GetExtension__EClass();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.core.impl.ExtensionImpl <em>Extension</em>}' class.

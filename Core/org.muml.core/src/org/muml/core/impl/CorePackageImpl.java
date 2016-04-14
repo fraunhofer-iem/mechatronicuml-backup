@@ -6,6 +6,7 @@ import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -201,6 +202,15 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getExtendableElement__GetExtension__EClass() {
+		return extendableElementEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getExtension() {
 		return extensionEClass;
 	}
@@ -329,6 +339,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		extendableElementEClass = createEClass(EXTENDABLE_ELEMENT);
 		createEReference(extendableElementEClass, EXTENDABLE_ELEMENT__ANNOTATIONS);
 		createEReference(extendableElementEClass, EXTENDABLE_ELEMENT__EXTENSIONS);
+		createEOperation(extendableElementEClass, EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS);
 
 		extensionEClass = createEClass(EXTENSION);
 		createEReference(extensionEClass, EXTENSION__BASE);
@@ -396,6 +407,9 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		initEClass(extendableElementEClass, ExtendableElement.class, "ExtendableElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExtendableElement_Annotations(), ecorePackage.getEAnnotation(), null, "annotations", null, 0, -1, ExtendableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getExtendableElement_Extensions(), this.getExtension(), this.getExtension_ExtendableBase(), "extensions", null, 0, -1, ExtendableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		EOperation op = initEOperation(getExtendableElement__GetExtension__EClass(), this.getExtension(), "getExtension", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEClass(), "type", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(extensionEClass, Extension.class, "Extension", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExtension_Base(), ecorePackage.getEObject(), null, "base", null, 1, 1, Extension.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);

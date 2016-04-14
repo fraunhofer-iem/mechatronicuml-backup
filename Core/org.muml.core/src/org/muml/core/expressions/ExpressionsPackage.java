@@ -108,6 +108,15 @@ public interface ExpressionsPackage extends EPackage {
 	int EXPRESSION_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPRESSION___GET_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -188,6 +197,15 @@ public interface ExpressionsPackage extends EPackage {
 	 * @ordered
 	 */
 	int TEXTUAL_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXTUAL_EXPRESSION___GET_EXTENSION__ECLASS = EXPRESSION___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Textual Expression</em>' class.

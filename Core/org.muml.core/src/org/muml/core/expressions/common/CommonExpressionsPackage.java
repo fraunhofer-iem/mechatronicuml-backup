@@ -128,6 +128,15 @@ public interface CommonExpressionsPackage extends EPackage {
 	int UNARY_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_EXPRESSION___GET_EXTENSION__ECLASS = ExpressionsPackage.EXPRESSION___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Unary Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -199,6 +208,15 @@ public interface CommonExpressionsPackage extends EPackage {
 	 * @ordered
 	 */
 	int BINARY_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_EXPRESSION___GET_EXTENSION__ECLASS = ExpressionsPackage.EXPRESSION___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Binary Expression</em>' class.
@@ -283,6 +301,15 @@ public interface CommonExpressionsPackage extends EPackage {
 	int COMPARISON_EXPRESSION_FEATURE_COUNT = BINARY_EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPARISON_EXPRESSION___GET_EXTENSION__ECLASS = BINARY_EXPRESSION___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Comparison Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -363,6 +390,15 @@ public interface CommonExpressionsPackage extends EPackage {
 	 * @ordered
 	 */
 	int ARITHMETIC_EXPRESSION_FEATURE_COUNT = BINARY_EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARITHMETIC_EXPRESSION___GET_EXTENSION__ECLASS = BINARY_EXPRESSION___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Arithmetic Expression</em>' class.
@@ -447,6 +483,15 @@ public interface CommonExpressionsPackage extends EPackage {
 	int LOGICAL_EXPRESSION_FEATURE_COUNT = BINARY_EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGICAL_EXPRESSION___GET_EXTENSION__ECLASS = BINARY_EXPRESSION___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Logical Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -509,6 +554,15 @@ public interface CommonExpressionsPackage extends EPackage {
 	 * @ordered
 	 */
 	int LITERAL_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LITERAL_EXPRESSION___GET_EXTENSION__ECLASS = ExpressionsPackage.EXPRESSION___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Literal Expression</em>' class.
