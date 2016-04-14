@@ -589,8 +589,6 @@ public class Muml_containerPackageImpl extends EPackageImpl implements Muml_cont
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
-		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
-		createExtendedMetaDataAnnotations();
 	}
 
 	/**
@@ -608,52 +606,6 @@ public class Muml_containerPackageImpl extends EPackageImpl implements Muml_cont
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>http:///org/eclipse/emf/ecore/util/ExtendedMetaData</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";	
-		addAnnotation
-		  (getComponentContainer_ComponentInstanceConfigurations(), 
-		   source, 
-		   new String[] {
-			 "name", "ComponentContainer"
-		   });	
-		addAnnotation
-		  (getComponentContainer_EcuConfiguration(), 
-		   source, 
-		   new String[] {
-			 "name", "ComponentContainer"
-		   });	
-		addAnnotation
-		  (getContainerComponentInstanceConfiguration_ComponentInstance(), 
-		   source, 
-		   new String[] {
-			 "name", "ComponentContainer"
-		   });	
-		addAnnotation
-		  (getContainerComponentInstanceConfiguration_PortInstanceConfigurations(), 
-		   source, 
-		   new String[] {
-			 "name", "ComponentContainer"
-		   });	
-		addAnnotation
-		  (getPortInstanceConfiguration_PortInstance(), 
-		   source, 
-		   new String[] {
-			 "name", "ComponentContainer"
-		   });	
-		addAnnotation
-		  (getSystemConfiguration_EcuConfigurations(), 
-		   source, 
-		   new String[] {
-			 "name", "ComponentContainer"
 		   });
 	}
 

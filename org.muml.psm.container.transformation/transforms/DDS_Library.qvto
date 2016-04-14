@@ -67,7 +67,7 @@ query SystemAllocation::getAllDirectedTypedPort():Collection(DirectedTypedPort){
 }
 
 query MessageType::getDDSStructName():String{
-	return 'DDS_'+getName(self)+'_'+getName(self.repository);
+	return 'DDS_'+getName(self.oclAsType(EObject))+'_'+getName(self.repository.oclAsType(EObject));
 }
 
 

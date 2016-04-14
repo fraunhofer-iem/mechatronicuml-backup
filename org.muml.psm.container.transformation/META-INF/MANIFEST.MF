@@ -17,3 +17,4 @@ Require-Bundle: org.eclipse.core.runtime,
 Export-Package: org.muml.container.transformation.blackbox,
  org.muml.container.transformation.job,
  org.muml.container.transformation.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7

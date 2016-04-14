@@ -42,7 +42,7 @@
     </genClasses>
     <genClasses ecoreClass="muml_container.ecore#//SystemConfiguration">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference muml_container.ecore#//SystemConfiguration/systemAllocation"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml_container.ecore#//SystemConfiguration/ecuConfigurations"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml_container.ecore#//SystemConfiguration/ecuConfigurations"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

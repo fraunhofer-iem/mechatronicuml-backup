@@ -68,7 +68,6 @@ public interface ComponentContainer extends NamedElement {
 	 * @return the value of the '<em>Component Instance Configurations</em>' containment reference list.
 	 * @see org.muml.psm.muml_container.Muml_containerPackage#getComponentContainer_ComponentInstanceConfigurations()
 	 * @model containment="true"
-	 *        extendedMetaData="name='ComponentContainer'"
 	 * @generated
 	 */
 	EList<ContainerComponentInstanceConfiguration> getComponentInstanceConfigurations();
@@ -87,7 +86,6 @@ public interface ComponentContainer extends NamedElement {
 	 * @see org.muml.psm.muml_container.Muml_containerPackage#getComponentContainer_EcuConfiguration()
 	 * @see org.muml.psm.muml_container.ECUConfiguration#getComponentContainers
 	 * @model opposite="componentContainers" transient="false"
-	 *        extendedMetaData="name='ComponentContainer'"
 	 * @generated
 	 */
 	ECUConfiguration getEcuConfiguration();

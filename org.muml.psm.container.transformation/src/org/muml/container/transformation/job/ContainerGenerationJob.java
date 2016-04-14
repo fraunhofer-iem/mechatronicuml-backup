@@ -1,6 +1,7 @@
 package org.muml.container.transformation.job;
 
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -20,8 +21,12 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
+import org.eclipse.m2m.qvt.oml.ExecutionContext;
+import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
+import org.eclipse.m2m.qvt.oml.util.Log;
+import org.eclipse.m2m.qvt.oml.util.WriterLog;
 import org.muml.core.common.DiagramEditorUtil;
 import org.muml.core.common.edit.commands.ExecuteQvtoTransformationCommand;
 import org.muml.psm.allocation.SystemAllocation;
@@ -61,7 +66,7 @@ public class ContainerGenerationJob extends Job {
 			SubMonitor subMonitor = SubMonitor.convert(monitor, this.getName(), 100);
 			
 			
-			String transformationPath = "/org.muml.container.transformation/transforms/Initial_Container_Transformation.qvto";
+			String transformationPath = "/org.muml.psm.container.transformation/transforms/Initial_Container_Transformation.qvto";
 
 			URI transformationURI = URI.createPlatformPluginURI(transformationPath, true);
 
@@ -74,8 +79,11 @@ public class ContainerGenerationJob extends Job {
 			List<ModelExtent> extentList = new ArrayList<ModelExtent>();
 			extentList.add(inputExtent);
 			extentList.add(outputExtent);
+			Log log = new WriterLog(new OutputStreamWriter(System.out));
+			ExecutionContextImpl context = new ExecutionContextImpl();
+			context.setLog(log);
 			ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(transformationExecutor,
-					extentList);
+					extentList,context);
 			if (command.canExecute()) {
 				editingDomain.getCommandStack().execute(command);
 			}

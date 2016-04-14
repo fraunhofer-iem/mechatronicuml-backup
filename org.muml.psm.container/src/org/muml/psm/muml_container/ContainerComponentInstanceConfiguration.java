@@ -37,7 +37,7 @@ public interface ContainerComponentInstanceConfiguration extends EObject {
 	 * @return the value of the '<em>Component Instance</em>' reference.
 	 * @see #setComponentInstance(ComponentInstance)
 	 * @see org.muml.psm.muml_container.Muml_containerPackage#getContainerComponentInstanceConfiguration_ComponentInstance()
-	 * @model extendedMetaData="name='ComponentContainer'"
+	 * @model
 	 * @generated
 	 */
 	ComponentInstance getComponentInstance();
@@ -64,7 +64,6 @@ public interface ContainerComponentInstanceConfiguration extends EObject {
 	 * @return the value of the '<em>Port Instance Configurations</em>' containment reference list.
 	 * @see org.muml.psm.muml_container.Muml_containerPackage#getContainerComponentInstanceConfiguration_PortInstanceConfigurations()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="name='ComponentContainer'"
 	 * @generated
 	 */
 	EList<PortInstanceConfiguration> getPortInstanceConfigurations();

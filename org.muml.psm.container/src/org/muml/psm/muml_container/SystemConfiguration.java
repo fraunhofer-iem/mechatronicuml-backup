@@ -64,7 +64,6 @@ public interface SystemConfiguration extends EObject {
 	 * @return the value of the '<em>Ecu Configurations</em>' containment reference list.
 	 * @see org.muml.psm.muml_container.Muml_containerPackage#getSystemConfiguration_EcuConfigurations()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="name='ComponentContainer'"
 	 * @generated
 	 */
 	EList<ECUConfiguration> getEcuConfigurations();

@@ -56,12 +56,16 @@ mapping SystemAllocation::mapSystemAllocation():SystemConfiguration{
 
 mapping StructuredResourceInstance::mapECUConfiguration():ECUConfiguration{
 	structuredResourceInstance:=self;
+	log("Create ECU Config for ECU:"+self.name);
 	/**
 	* Create for all ComponentInstance of Same Component Type a Container per ECU
 	*/
 	var componentInstancesForECU :Sequence(ComponentInstance) = systemallocation.getAllAllocatedComponentInstances(self);
 	componentInstancesForECU.componentType->asOrderedSet()->forEach(componentType){
+		log("Create Container for Component:"+componentType.name +" instances: "+componentInstancesForECU->size().toString());
+	
 		var componentInstancesOfComponentTypeForECU :Collection(ComponentInstance) = componentInstancesForECU->select(ci|ci.componentType = componentType); 
+		log("componentInstancesOfComponentTypeForECU"+componentInstancesForECU->size().toString());
 		componentContainers+=self.map mapComponent2Container(componentType,componentInstancesOfComponentTypeForECU);
 	};
 	
@@ -73,6 +77,8 @@ mapping StructuredResourceInstance::mapECUConfiguration():ECUConfiguration{
 * Creates a container for the specified ECU, for the given component-type and the set of componentInstances
 */
 mapping StructuredResourceInstance::mapComponent2Container(cmp:Component, cic:Collection(ComponentInstance)):ComponentContainer{
+		log("Created Container for Component:"+cmp.name);
+
 	componentType:=cmp;
 	componentInstanceConfigurations+=cic->map mapComponentInstance2ContainerComponentInstanceConfiguration();
 	componentInstances:=cic;
@@ -114,7 +120,7 @@ helper PortInstance::createPortInstance2PortInstanceConfiguration():PortInstance
 			};
 			return portInstanceConfig;
 		}else {
-			log("else part");
+			log("distributed allocation");
 			// ownECU and targetECU are different
 			var hwport: HWPortInstance := getNetworkInterface(ownECU, targetECU, systemallocation.getRootHPIC());
 			if(hwport.protocol.oclIsKindOf(LinkProtocol)) then{
@@ -128,6 +134,7 @@ helper PortInstance::createPortInstance2PortInstanceConfiguration():PortInstance
 							portInstance:=self;
 							hwportInstance:=hwport;
 							partitionID:=getHash(Set{self,targetPortInstance});
+							log("created DDS Config");
 							};
 						}
 					else{

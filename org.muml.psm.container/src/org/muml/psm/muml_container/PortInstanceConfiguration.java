@@ -37,7 +37,7 @@ public interface PortInstanceConfiguration extends EObject {
 	 * @return the value of the '<em>Port Instance</em>' reference.
 	 * @see #setPortInstance(PortInstance)
 	 * @see org.muml.psm.muml_container.Muml_containerPackage#getPortInstanceConfiguration_PortInstance()
-	 * @model extendedMetaData="name='ComponentContainer'"
+	 * @model
 	 * @generated
 	 */
 	PortInstance getPortInstance();

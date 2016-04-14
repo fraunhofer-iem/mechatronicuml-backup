@@ -63,6 +63,7 @@ public class SystemConfigurationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addSystemAllocationPropertyDescriptor(object);
+			addEcuConfigurationsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -84,6 +85,28 @@ public class SystemConfigurationItemProvider
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Ecu Configurations feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEcuConfigurationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SystemConfiguration_ecuConfigurations_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SystemConfiguration_ecuConfigurations_feature", "_UI_SystemConfiguration_type"),
+				 Muml_containerPackage.Literals.SYSTEM_CONFIGURATION__ECU_CONFIGURATIONS,
+				 true,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));

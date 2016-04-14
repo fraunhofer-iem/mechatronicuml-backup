@@ -63,7 +63,7 @@ public class DDSContainerGenerationJob extends Job {
 			subMonitor.setWorkRemaining(30);
 
 			subMonitor.subTask("Execute DDS-Container  Transformation");
-			String transformationPath = "/org.muml.container.transformation/transforms/MUML_DDS_Transformation.qvto";
+			String transformationPath = "/org.muml.psm.container.transformation/transforms/MUML_DDS_Transformation.qvto";
 
 			URI transformationURI = URI.createPlatformPluginURI(transformationPath, true);
 

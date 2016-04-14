@@ -10,39 +10,19 @@
   <eClassifiers xsi:type="ecore:EClass" name="ComponentContainer" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="componentType" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//component/Component"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstanceConfigurations"
-        upperBound="-1" eType="#//ContainerComponentInstanceConfiguration" containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="name" value="ComponentContainer"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+        upperBound="-1" eType="#//ContainerComponentInstanceConfiguration" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ecuConfiguration" eType="#//ECUConfiguration"
-        eOpposite="#//ECUConfiguration/componentContainers">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="name" value="ComponentContainer"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+        eOpposite="#//ECUConfiguration/componentContainers"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstances" ordered="false"
         upperBound="-1" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//instance/ComponentInstance"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ContainerComponentInstanceConfiguration">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstance" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//instance/ComponentInstance">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="name" value="ComponentContainer"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstance" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//instance/ComponentInstance"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="portInstanceConfigurations"
-        ordered="false" upperBound="-1" eType="#//PortInstanceConfiguration" containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="name" value="ComponentContainer"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+        ordered="false" upperBound="-1" eType="#//PortInstanceConfiguration" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PortInstanceConfiguration" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="portInstance" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//instance/PortInstance">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="name" value="ComponentContainer"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portInstance" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//instance/PortInstance"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hwportInstance" eType="ecore:EClass ../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance/HWPortInstance">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The HWPortInstance over which to send"/>
@@ -74,10 +54,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="systemAllocation" ordered="false"
         eType="ecore:EClass ../../org.muml.psm/model/psm.ecore#//allocation/SystemAllocation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ecuConfigurations" ordered="false"
-        upperBound="-1" eType="#//ECUConfiguration" containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="name" value="ComponentContainer"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+        upperBound="-1" eType="#//ECUConfiguration" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
