@@ -1,5 +1,5 @@
-import lib.common.PatternProtocolSameRootTransformationLibrary;
-import lib.common.PatternProtocolCommon;
+import transforms.lib.common.PatternProtocolSameRootTransformationLibrary;
+import transforms.lib.common.PatternProtocolCommon;
  
 
 modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');

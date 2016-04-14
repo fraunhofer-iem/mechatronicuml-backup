@@ -7,14 +7,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.Viewer;
-import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.muml.core.export.pages.AbstractFujabaExportSourcePage;
 import org.muml.core.export.pages.ElementSelectionMode;
-import org.muml.core.modelinstance.ModelElementCategory;
-import org.muml.core.modelinstance.RootNode;
 import org.muml.pim.pattern.AbstractCoordinationPattern;
 import org.muml.pim.pattern.VerifiedConfiguration;
 

@@ -2,17 +2,10 @@ package org.muml.pim.pattern.diagram.custom.export.wizard;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.jface.viewers.CheckStateChangedEvent;
-import org.eclipse.jface.viewers.ICheckStateListener;
 import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.ISelectionChangedListener;
-import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.SelectionChangedEvent;
-import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.muml.core.export.pages.AbstractFujabaExportSourcePage;
 import org.muml.core.export.pages.ElementSelectionMode;
-import org.muml.pim.pattern.AbstractCoordinationPattern;
 import org.muml.pim.protocol.CoordinationProtocol;
 
 public class ProtocolToPatternExportWizardPage1 extends

@@ -1,6 +1,6 @@
-import lib.common.PatternProtocolSameRootTransformationLibrary;
-import lib.common.PatternProtocolCommon;
-import lib.patternToprotocol.PatternToProtocolCommon;
+import transforms.lib.common.PatternProtocolSameRootTransformationLibrary;
+import transforms.lib.common.PatternProtocolCommon;
+import transforms.lib.patternToprotocol.PatternToProtocolCommon;
 
 modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
 modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');

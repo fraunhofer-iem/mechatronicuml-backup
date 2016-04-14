@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.util.Collections;
 
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.jface.viewers.CheckStateChangedEvent;
-import org.eclipse.jface.viewers.ICheckStateListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.internal.ide.IDEWorkbenchPlugin;

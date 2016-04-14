@@ -1,5 +1,5 @@
-import lib.common.PatternProtocolCommon;
-import lib.patternToprotocol.PatternToProtocolCommon;
+import transforms.lib.common.PatternProtocolCommon;
+import transforms.lib.patternToprotocol.PatternToProtocolCommon;
 import org.muml.pim.types._library.TypesBlackbox;
 
 modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
