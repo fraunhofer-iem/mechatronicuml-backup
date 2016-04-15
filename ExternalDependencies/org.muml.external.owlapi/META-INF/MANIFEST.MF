@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Owlapi
-Bundle-SymbolicName: org.muml.external.ontology.owlapi
+Bundle-SymbolicName: org.muml.external.owlapi
 Bundle-Version: 4.0.0
 Bundle-ClassPath: .
 Export-Package: com.fasterxml.jackson.databind.cfg,
