@@ -1,6 +1,8 @@
 package org.muml.ontology.edit.properties.providers;
 
 import org.eclipse.jface.viewers.LabelProvider;
+import org.semanticweb.owlapi.model.OWLEntity;
+import org.semanticweb.owlapi.model.OWLOntology;
 
 public class OntologyLabelProvider extends LabelProvider {
 

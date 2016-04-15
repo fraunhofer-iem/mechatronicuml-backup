@@ -27,6 +27,10 @@ import org.eclipse.swt.widgets.Tree;
 import org.muml.core.common.ui.FileSelector;
 import org.muml.ontology.edit.properties.parser.OWLOntologyUtil;
 import org.muml.ontology.edit.properties.providers.OntologyLabelProvider;
+import org.semanticweb.owlapi.model.IRI;
+import org.semanticweb.owlapi.model.OWLClass;
+import org.semanticweb.owlapi.model.OWLEntity;
+import org.semanticweb.owlapi.model.OWLOntology;
 
 public class OntologyDialog extends TitleAreaDialog {
 
