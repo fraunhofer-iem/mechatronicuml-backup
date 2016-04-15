@@ -220,7 +220,7 @@ http://sourceforge.net/projects/owlapi/
    </license>
 
    <plugin
-         id="org.muml.external.ontology.owlapi"
+         id="org.muml.external.owlapi"
          download-size="0"
          install-size="0"
          version="0.0.0"
