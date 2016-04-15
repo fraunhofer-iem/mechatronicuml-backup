@@ -10,8 +10,6 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.muml.ape.runtime,
  org.muml.core.edit,
  org.muml.core.edit.properties,
- org.muml.pim.edit,
- org.muml.pim.edit.properties,
  org.muml.storydiagram.verification.sdd,
  org.muml.storydiagram.verification.sdd.edit
 Bundle-ActivationPolicy: lazy
