@@ -25,7 +25,6 @@ import org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor;
 import org.muml.ontology.OntologyExtension;
 import org.muml.ontology.edit.properties.dialog.OntologyDialog;
 import org.muml.ontology.edit.properties.dialog.OntologyDialogFactory;
-import org.semanticweb.owlapi.model.IRI;
 
 public class OntologyPropertyEditor extends
 		AbstractStructuralFeaturePropertyEditor {

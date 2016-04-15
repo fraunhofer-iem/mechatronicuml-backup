@@ -2,7 +2,6 @@ package org.muml.ontology.edit.properties.providers;
 
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
-import org.semanticweb.owlapi.model.OWLClass;
 
 public class OntologyClassPropertyContentProvider extends ArrayContentProvider
 		implements ITreeContentProvider {

@@ -16,9 +16,8 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.muml.core.edit.properties,
  org.muml.pim.edit,
  org.muml.pim.edit.properties,
- org.muml.core.modelinstance.edit,
- org.muml.core.modelinstance.edit.properties,
- org.muml.external.ontology.owlapi
+ org.muml.external.ontology.owlapi,
+ org.muml.pim.common
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.ontology.properties.metamodel, org.muml.ontology.properties.constraint,
