@@ -49,11 +49,11 @@
          version="0.0.0"/>
 
    <includes
-         id="org.muml.external.ontology.owlapi.feature"
+         id="org.muml.external.owlapi.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.muml.external.ontology.unitontology.feature"
+         id="org.muml.external.unitontology.feature"
          version="0.0.0"/>
 
    <includes
