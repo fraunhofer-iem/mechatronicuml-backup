@@ -351,8 +351,8 @@ class DependencyModelLanguageScopeProvider extends AbstractDeclarativeScopeProvi
 	private def void setScopeForEObject(SynthesizableBehavior ext) {
 		synBehavior = ext;
 		dependencyModel = synBehavior.dependencyModel;
-		if(ext.base instanceof AtomicComponent){
-			component = ext.base as AtomicComponent;
+		if(ext.extendableBase instanceof AtomicComponent){
+			component = ext.extendableBase as AtomicComponent;
 		}
 		else{
 			throw new IllegalArgumentException("SynthesizableBehavior is broken");
