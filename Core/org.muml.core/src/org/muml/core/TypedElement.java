@@ -2,6 +2,7 @@
  */
 package org.muml.core;
 
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EGenericType;
 
@@ -18,8 +19,8 @@ import org.eclipse.emf.ecore.EGenericType;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.muml.core.TypedElement#getType <em>Type</em>}</li>
  *   <li>{@link org.muml.core.TypedElement#getGenericType <em>Generic Type</em>}</li>
+ *   <li>{@link org.muml.core.TypedElement#getClassifier <em>Classifier</em>}</li>
  * </ul>
  *
  * @see org.muml.core.CorePackage#getTypedElement()
@@ -27,20 +28,6 @@ import org.eclipse.emf.ecore.EGenericType;
  * @generated
  */
 public interface TypedElement extends ExtendableElement {
-	/**
-	 * Returns the value of the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Not used currently - returns always null.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Type</em>' reference.
-	 * @see org.muml.core.CorePackage#getTypedElement_Type()
-	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
-	 * @generated
-	 */
-	EClassifier getType();
-
 	/**
 	 * Returns the value of the '<em><b>Generic Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -92,5 +79,28 @@ public interface TypedElement extends ExtendableElement {
 	 * @generated
 	 */
 	boolean isSetGenericType();
+
+	/**
+	 * Returns the value of the '<em><b>Classifier</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The type of this ObjectVariable, given as an EClass.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Classifier</em>' reference.
+	 * @see org.muml.core.CorePackage#getTypedElement_Classifier()
+	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.genericType <> null) then self.genericType.eClassifier else null endif'"
+	 * @generated
+	 */
+	EClass getClassifier();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='EGenericType genericType = getGenericType();\nif (genericType == null) {\n\tgenericType = org.eclipse.emf.ecore.EcoreFactory.eINSTANCE.createEGenericType();\n\tsetGenericType(genericType);\n}\ngenericType.setEClassifier(classifier);'"
+	 * @generated
+	 */
+	void setClassifier(EClassifier classifier);
 
 } // TypedElement

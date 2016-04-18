@@ -2,12 +2,15 @@
  */
 package org.muml.core.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -23,8 +26,8 @@ import org.muml.core.TypedElement;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.muml.core.impl.TypedElementImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.muml.core.impl.TypedElementImpl#getGenericType <em>Generic Type</em>}</li>
+ *   <li>{@link org.muml.core.impl.TypedElementImpl#getClassifier <em>Classifier</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,6 +53,16 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements 
 	protected boolean genericTypeESet;
 
 	/**
+	 * The cached setting delegate for the '{@link #getClassifier() <em>Classifier</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getClassifier()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate CLASSIFIER__ESETTING_DELEGATE = ((EStructuralFeature.Internal)CorePackage.Literals.TYPED_ELEMENT__CLASSIFIER).getSettingDelegate();
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -66,28 +79,6 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements 
 	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.TYPED_ELEMENT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClassifier getType() {
-		EClassifier type = basicGetType();
-		return type != null && type.eIsProxy() ? (EClassifier)eResolveProxy((InternalEObject)type) : type;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClassifier basicGetType() {
-		// TODO: implement this method to return the 'Type' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -190,6 +181,38 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getClassifier() {
+		return (EClass)CLASSIFIER__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass basicGetClassifier() {
+		return (EClass)CLASSIFIER__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setClassifier(final EClassifier classifier) {
+		EGenericType genericType = getGenericType();
+		if (genericType == null) {
+			genericType = org.eclipse.emf.ecore.EcoreFactory.eINSTANCE.createEGenericType();
+			setGenericType(genericType);
+		}
+		genericType.setEClassifier(classifier);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -207,11 +230,11 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CorePackage.TYPED_ELEMENT__TYPE:
-				if (resolve) return getType();
-				return basicGetType();
 			case CorePackage.TYPED_ELEMENT__GENERIC_TYPE:
 				return getGenericType();
+			case CorePackage.TYPED_ELEMENT__CLASSIFIER:
+				if (resolve) return getClassifier();
+				return basicGetClassifier();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -254,12 +277,27 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CorePackage.TYPED_ELEMENT__TYPE:
-				return basicGetType() != null;
 			case CorePackage.TYPED_ELEMENT__GENERIC_TYPE:
 				return isSetGenericType();
+			case CorePackage.TYPED_ELEMENT__CLASSIFIER:
+				return CLASSIFIER__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case CorePackage.TYPED_ELEMENT___SET_CLASSIFIER__ECLASSIFIER:
+				setClassifier((EClassifier)arguments.get(0));
+				return null;
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //TypedElementImpl

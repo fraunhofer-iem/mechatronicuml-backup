@@ -46,25 +46,25 @@ public class TypedElementItemProvider extends ExtendableElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTypePropertyDescriptor(object);
+			addClassifierPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Type feature.
+	 * This adds a property descriptor for the Classifier feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTypePropertyDescriptor(Object object) {
+	protected void addClassifierPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_TypedElement_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TypedElement_type_feature", "_UI_TypedElement_type"),
-				 CorePackage.Literals.TYPED_ELEMENT__TYPE,
+				 getString("_UI_TypedElement_classifier_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TypedElement_classifier_feature", "_UI_TypedElement_type"),
+				 CorePackage.Literals.TYPED_ELEMENT__CLASSIFIER,
 				 false,
 				 false,
 				 false,

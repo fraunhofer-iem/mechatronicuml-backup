@@ -292,22 +292,22 @@ public interface CorePackage extends EPackage {
 	int TYPED_ELEMENT__EXTENSIONS = EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT__TYPE = EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPED_ELEMENT__GENERIC_TYPE = EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+	int TYPED_ELEMENT__GENERIC_TYPE = EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Classifier</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPED_ELEMENT__CLASSIFIER = EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Typed Element</em>' class.
@@ -328,13 +328,22 @@ public interface CorePackage extends EPackage {
 	int TYPED_ELEMENT___GET_EXTENSION__ECLASS = EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
+	 * The operation id for the '<em>Set Classifier</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPED_ELEMENT___SET_CLASSIFIER__ECLASSIFIER = EXTENDABLE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Typed Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPED_ELEMENT_OPERATION_COUNT = EXTENDABLE_ELEMENT_OPERATION_COUNT + 0;
+	int TYPED_ELEMENT_OPERATION_COUNT = EXTENDABLE_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.muml.core.impl.RepositoryImpl <em>Repository</em>}' class.
@@ -506,17 +515,6 @@ public interface CorePackage extends EPackage {
 	EClass getTypedElement();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.muml.core.TypedElement#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Type</em>'.
-	 * @see org.muml.core.TypedElement#getType()
-	 * @see #getTypedElement()
-	 * @generated
-	 */
-	EReference getTypedElement_Type();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link org.muml.core.TypedElement#getGenericType <em>Generic Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -526,6 +524,27 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTypedElement_GenericType();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.muml.core.TypedElement#getClassifier <em>Classifier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Classifier</em>'.
+	 * @see org.muml.core.TypedElement#getClassifier()
+	 * @see #getTypedElement()
+	 * @generated
+	 */
+	EReference getTypedElement_Classifier();
+
+	/**
+	 * Returns the meta object for the '{@link org.muml.core.TypedElement#setClassifier(org.eclipse.emf.ecore.EClassifier) <em>Set Classifier</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Set Classifier</em>' operation.
+	 * @see org.muml.core.TypedElement#setClassifier(org.eclipse.emf.ecore.EClassifier)
+	 * @generated
+	 */
+	EOperation getTypedElement__SetClassifier__EClassifier();
 
 	/**
 	 * Returns the meta object for class '{@link org.muml.core.Repository <em>Repository</em>}'.
@@ -651,20 +670,28 @@ public interface CorePackage extends EPackage {
 		EClass TYPED_ELEMENT = eINSTANCE.getTypedElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TYPED_ELEMENT__TYPE = eINSTANCE.getTypedElement_Type();
-
-		/**
 		 * The meta object literal for the '<em><b>Generic Type</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference TYPED_ELEMENT__GENERIC_TYPE = eINSTANCE.getTypedElement_GenericType();
+
+		/**
+		 * The meta object literal for the '<em><b>Classifier</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TYPED_ELEMENT__CLASSIFIER = eINSTANCE.getTypedElement_Classifier();
+
+		/**
+		 * The meta object literal for the '<em><b>Set Classifier</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TYPED_ELEMENT___SET_CLASSIFIER__ECLASSIFIER = eINSTANCE.getTypedElement__SetClassifier__EClassifier();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.core.impl.RepositoryImpl <em>Repository</em>}' class.

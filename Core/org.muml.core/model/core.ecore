@@ -64,18 +64,27 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Abstract super class for all meta-model elements that are typed by means of an EClassifier or an EGenericType."/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" ordered="false" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClassifier"
-        changeable="false" volatile="true" transient="true" derived="true">
-      <eAnnotations source="union"/>
+    <eOperations name="setClassifier">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Not used currently - returns always null."/>
+        <details key="body" value="EGenericType genericType = getGenericType();&#xA;if (genericType == null) {&#xA;&#x9;genericType = org.eclipse.emf.ecore.EcoreFactory.eINSTANCE.createEGenericType();&#xA;&#x9;setGenericType(genericType);&#xA;}&#xA;genericType.setEClassifier(classifier);"/>
       </eAnnotations>
-    </eStructuralFeatures>
+      <eParameters name="classifier" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="genericType" ordered="false"
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EGenericType"
         unsettable="true" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The EMF EGenericType that is used to type this typed element."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifier" ordered="false"
+        lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The type of this ObjectVariable, given as an EClass."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="if (self.genericType &lt;> null) then self.genericType.eClassifier else null endif"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>

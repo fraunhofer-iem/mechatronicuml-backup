@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.muml.core.CommentableElement;
@@ -123,6 +124,9 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		CorePackageImpl theCorePackage = (CorePackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new CorePackageImpl());
 
 		isInited = true;
+
+		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		ExpressionsPackageImpl theExpressionsPackage = (ExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) instanceof ExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) : ExpressionsPackage.eINSTANCE);
@@ -245,7 +249,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTypedElement_Type() {
+	public EReference getTypedElement_GenericType() {
 		return (EReference)typedElementEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -254,8 +258,17 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTypedElement_GenericType() {
+	public EReference getTypedElement_Classifier() {
 		return (EReference)typedElementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getTypedElement__SetClassifier__EClassifier() {
+		return typedElementEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -309,8 +322,9 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
 
 		typedElementEClass = createEClass(TYPED_ELEMENT);
-		createEReference(typedElementEClass, TYPED_ELEMENT__TYPE);
 		createEReference(typedElementEClass, TYPED_ELEMENT__GENERIC_TYPE);
+		createEReference(typedElementEClass, TYPED_ELEMENT__CLASSIFIER);
+		createEOperation(typedElementEClass, TYPED_ELEMENT___SET_CLASSIFIER__ECLASSIFIER);
 
 		repositoryEClass = createEClass(REPOSITORY);
 	}
@@ -341,6 +355,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		// Obtain other dependent packages
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 		ModelinstancePackage theModelinstancePackage = (ModelinstancePackage)EPackage.Registry.INSTANCE.getEPackage(ModelinstancePackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theExpressionsPackage);
@@ -375,8 +390,11 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 1, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(typedElementEClass, TypedElement.class, "TypedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTypedElement_Type(), ecorePackage.getEClassifier(), null, "type", null, 0, 1, TypedElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getTypedElement_GenericType(), ecorePackage.getEGenericType(), null, "genericType", null, 0, 1, TypedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getTypedElement_Classifier(), theEcorePackage.getEClass(), null, "classifier", null, 1, 1, TypedElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+
+		op = initEOperation(getTypedElement__SetClassifier__EClassifier(), null, "setClassifier", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEClassifier(), "classifier", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(repositoryEClass, Repository.class, "Repository", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -386,8 +404,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
-		// union
-		createUnionAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
 	}
 
 	/**
@@ -409,17 +427,18 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	}
 
 	/**
-	 * Initializes the annotations for <b>union</b>.
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void createUnionAnnotations() {
-		String source = "union";	
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
 		addAnnotation
-		  (getTypedElement_Type(), 
+		  (getTypedElement_Classifier(), 
 		   source, 
 		   new String[] {
+			 "derivation", "if (self.genericType <> null) then self.genericType.eClassifier else null endif"
 		   });
 	}
 
