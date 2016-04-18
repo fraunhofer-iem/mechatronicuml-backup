@@ -141,7 +141,7 @@ public class ReachAnalysis
 										 */
 										LinkVariable link = (LinkVariable) abstractlink;
 										if( link.getSource().getBindingState() == BindingState.BOUND &&
-											link.getSource().getType() == inParam.getEType() &&
+											link.getSource().getClassifier() == inParam.getEType() &&
 											inParam.getName().equals(link.getSource().getVariableName()) &&
 											"componentType".equals(link.getTargetEnd().getName()) &&
 											target.getComponentType().getName().equals(link.getTarget().getName())
