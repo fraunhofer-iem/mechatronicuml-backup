@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton;
 
@@ -10,6 +6,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
 import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SdmPackage;
 
 /**
@@ -50,7 +47,7 @@ public interface GtautomatonPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton";
+	String eNS_PREFIX = "gtautomaton";
 
 	/**
 	 * The singleton instance of the package.
@@ -59,16 +56,6 @@ public interface GtautomatonPackage extends EPackage {
 	 * @generated
 	 */
 	GtautomatonPackage eINSTANCE = org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.GtautomatonPackageImpl.init();
-
-	/**
-	 * The meta object id for the '{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.GtAutomatonImpl <em>Gt Automaton</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.GtAutomatonImpl
-	 * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.GtautomatonPackageImpl#getGtAutomaton()
-	 * @generated
-	 */
-	int GT_AUTOMATON = 6;
 
 	/**
 	 * The meta object id for the '{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.GtStepGraphImpl <em>Gt Step Graph</em>}' class.
@@ -81,22 +68,13 @@ public interface GtautomatonPackage extends EPackage {
 	int GT_STEP_GRAPH = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GT_STEP_GRAPH__ANNOTATION = SdmPackage.STEP_GRAPH__ANNOTATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GT_STEP_GRAPH__EXTENSION = SdmPackage.STEP_GRAPH__EXTENSIONS;
+	int GT_STEP_GRAPH__EXTENSIONS = SdmPackage.STEP_GRAPH__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Hash</b></em>' attribute.
@@ -214,7 +192,6 @@ public interface GtautomatonPackage extends EPackage {
 	 * @ordered
 	 */
 	int GT_STEP_GRAPH_FEATURE_COUNT = SdmPackage.STEP_GRAPH_FEATURE_COUNT + 3;
-
 
 	/**
 	 * The meta object id for the '{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.ObjectIdentifierImpl <em>Object Identifier</em>}' class.
@@ -347,22 +324,13 @@ public interface GtautomatonPackage extends EPackage {
 	int GT_AUTOMATON_TRANSITION = 4;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GT_AUTOMATON_TRANSITION__ANNOTATION = SdmPackage.SDM_TRANSITION__ANNOTATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GT_AUTOMATON_TRANSITION__EXTENSION = SdmPackage.SDM_TRANSITION__EXTENSIONS;
+	int GT_AUTOMATON_TRANSITION__EXTENSIONS = SdmPackage.SDM_TRANSITION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -492,22 +460,23 @@ public interface GtautomatonPackage extends EPackage {
 	int GT_AUTOMATON_CLOCK_CONSTRAINT_FEATURE_COUNT = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The meta object id for the '{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.GtAutomatonImpl <em>Gt Automaton</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.GtAutomatonImpl
+	 * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.GtautomatonPackageImpl#getGtAutomaton()
 	 * @generated
-	 * @ordered
 	 */
-	int GT_AUTOMATON__ANNOTATION = SdmPackage.SDM_REACHABILITY_GRAPH__ANNOTATIONS;
+	int GT_AUTOMATON = 6;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GT_AUTOMATON__EXTENSION = SdmPackage.SDM_REACHABILITY_GRAPH__EXTENSIONS;
+	int GT_AUTOMATON__EXTENSIONS = SdmPackage.SDM_REACHABILITY_GRAPH__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>States</b></em>' containment reference list.
@@ -581,7 +550,6 @@ public interface GtautomatonPackage extends EPackage {
 	 */
 	int GT_AUTOMATON_FEATURE_COUNT = SdmPackage.SDM_REACHABILITY_GRAPH_FEATURE_COUNT + 1;
 
-
 	/**
 	 * The meta object id for the '{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.ClockInstanceStoryDiagramToIdentifierImpl <em>Clock Instance Story Diagram To Identifier</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -619,61 +587,6 @@ public interface GtautomatonPackage extends EPackage {
 	 */
 	int CLOCK_INSTANCE_STORY_DIAGRAM_TO_IDENTIFIER_FEATURE_COUNT = 2;
 
-
-	/**
-	 * Returns the meta object for class '{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomaton <em>Gt Automaton</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Gt Automaton</em>'.
-	 * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomaton
-	 * @generated
-	 */
-	EClass getGtAutomaton();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomaton#getClockInstanceIdentifiers <em>Clock Instance Identifiers</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Clock Instance Identifiers</em>'.
-	 * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomaton#getClockInstanceIdentifiers()
-	 * @see #getGtAutomaton()
-	 * @generated
-	 */
-	EAttribute getGtAutomaton_ClockInstanceIdentifiers();
-
-	/**
-	 * Returns the meta object for class '{@link java.util.Map.Entry <em>Clock Instance Story Diagram To Identifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Clock Instance Story Diagram To Identifier</em>'.
-	 * @see java.util.Map.Entry
-	 * @model keyType="de.uni_paderborn.fujaba.muml.timedstorydiagram.ClockInstanceStoryDiagram"
-	 *        valueDataType="org.eclipse.emf.ecore.EString" valueMany="true"
-	 * @generated
-	 */
-	EClass getClockInstanceStoryDiagramToIdentifier();
-
-	/**
-	 * Returns the meta object for the reference '{@link java.util.Map.Entry <em>Key</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Key</em>'.
-	 * @see java.util.Map.Entry
-	 * @see #getClockInstanceStoryDiagramToIdentifier()
-	 * @generated
-	 */
-	EReference getClockInstanceStoryDiagramToIdentifier_Key();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link java.util.Map.Entry <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Value</em>'.
-	 * @see java.util.Map.Entry
-	 * @see #getClockInstanceStoryDiagramToIdentifier()
-	 * @generated
-	 */
-	EAttribute getClockInstanceStoryDiagramToIdentifier_Value();
 
 	/**
 	 * Returns the meta object for class '{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtStepGraph <em>Gt Step Graph</em>}'.
@@ -905,6 +818,61 @@ public interface GtautomatonPackage extends EPackage {
 	EAttribute getGtAutomatonClockConstraint_Value();
 
 	/**
+	 * Returns the meta object for class '{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomaton <em>Gt Automaton</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Gt Automaton</em>'.
+	 * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomaton
+	 * @generated
+	 */
+	EClass getGtAutomaton();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomaton#getClockInstanceIdentifiers <em>Clock Instance Identifiers</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Clock Instance Identifiers</em>'.
+	 * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomaton#getClockInstanceIdentifiers()
+	 * @see #getGtAutomaton()
+	 * @generated
+	 */
+	EAttribute getGtAutomaton_ClockInstanceIdentifiers();
+
+	/**
+	 * Returns the meta object for class '{@link java.util.Map.Entry <em>Clock Instance Story Diagram To Identifier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Clock Instance Story Diagram To Identifier</em>'.
+	 * @see java.util.Map.Entry
+	 * @model keyType="org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceStoryDiagram"
+	 *        valueDataType="org.eclipse.emf.ecore.EString" valueMany="true"
+	 * @generated
+	 */
+	EClass getClockInstanceStoryDiagramToIdentifier();
+
+	/**
+	 * Returns the meta object for the reference '{@link java.util.Map.Entry <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Key</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getClockInstanceStoryDiagramToIdentifier()
+	 * @generated
+	 */
+	EReference getClockInstanceStoryDiagramToIdentifier_Key();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link java.util.Map.Entry <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Value</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getClockInstanceStoryDiagramToIdentifier()
+	 * @generated
+	 */
+	EAttribute getClockInstanceStoryDiagramToIdentifier_Value();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -926,50 +894,6 @@ public interface GtautomatonPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
-		/**
-		 * The meta object literal for the '{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.GtAutomatonImpl <em>Gt Automaton</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.GtAutomatonImpl
-		 * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.GtautomatonPackageImpl#getGtAutomaton()
-		 * @generated
-		 */
-		EClass GT_AUTOMATON = eINSTANCE.getGtAutomaton();
-
-		/**
-		 * The meta object literal for the '<em><b>Clock Instance Identifiers</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute GT_AUTOMATON__CLOCK_INSTANCE_IDENTIFIERS = eINSTANCE.getGtAutomaton_ClockInstanceIdentifiers();
-
-		/**
-		 * The meta object literal for the '{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.ClockInstanceStoryDiagramToIdentifierImpl <em>Clock Instance Story Diagram To Identifier</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.ClockInstanceStoryDiagramToIdentifierImpl
-		 * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.GtautomatonPackageImpl#getClockInstanceStoryDiagramToIdentifier()
-		 * @generated
-		 */
-		EClass CLOCK_INSTANCE_STORY_DIAGRAM_TO_IDENTIFIER = eINSTANCE.getClockInstanceStoryDiagramToIdentifier();
-
-		/**
-		 * The meta object literal for the '<em><b>Key</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CLOCK_INSTANCE_STORY_DIAGRAM_TO_IDENTIFIER__KEY = eINSTANCE.getClockInstanceStoryDiagramToIdentifier_Key();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CLOCK_INSTANCE_STORY_DIAGRAM_TO_IDENTIFIER__VALUE = eINSTANCE.getClockInstanceStoryDiagramToIdentifier_Value();
-
 		/**
 		 * The meta object literal for the '{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.GtStepGraphImpl <em>Gt Step Graph</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -1149,6 +1073,50 @@ public interface GtautomatonPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute GT_AUTOMATON_CLOCK_CONSTRAINT__VALUE = eINSTANCE.getGtAutomatonClockConstraint_Value();
+
+		/**
+		 * The meta object literal for the '{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.GtAutomatonImpl <em>Gt Automaton</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.GtAutomatonImpl
+		 * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.GtautomatonPackageImpl#getGtAutomaton()
+		 * @generated
+		 */
+		EClass GT_AUTOMATON = eINSTANCE.getGtAutomaton();
+
+		/**
+		 * The meta object literal for the '<em><b>Clock Instance Identifiers</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GT_AUTOMATON__CLOCK_INSTANCE_IDENTIFIERS = eINSTANCE.getGtAutomaton_ClockInstanceIdentifiers();
+
+		/**
+		 * The meta object literal for the '{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.ClockInstanceStoryDiagramToIdentifierImpl <em>Clock Instance Story Diagram To Identifier</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.ClockInstanceStoryDiagramToIdentifierImpl
+		 * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.GtautomatonPackageImpl#getClockInstanceStoryDiagramToIdentifier()
+		 * @generated
+		 */
+		EClass CLOCK_INSTANCE_STORY_DIAGRAM_TO_IDENTIFIER = eINSTANCE.getClockInstanceStoryDiagramToIdentifier();
+
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLOCK_INSTANCE_STORY_DIAGRAM_TO_IDENTIFIER__KEY = eINSTANCE.getClockInstanceStoryDiagramToIdentifier_Key();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLOCK_INSTANCE_STORY_DIAGRAM_TO_IDENTIFIER__VALUE = eINSTANCE.getClockInstanceStoryDiagramToIdentifier_Value();
 
 	}
 

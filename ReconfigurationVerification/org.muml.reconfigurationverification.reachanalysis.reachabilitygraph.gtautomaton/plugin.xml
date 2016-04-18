@@ -6,7 +6,7 @@
       <!-- @generated GtAutomaton -->
       <package
             uri="http://www.muml.org/reconfigurationverification/reachanalysis/reachabilitygraph/gtautomaton/1.0.0"
-            class="org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.gtautomaton.GtautomatonPackage"
+            class="org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtautomatonPackage"
             genModel="model/GtAutomaton.genmodel"/>
    </extension>
 

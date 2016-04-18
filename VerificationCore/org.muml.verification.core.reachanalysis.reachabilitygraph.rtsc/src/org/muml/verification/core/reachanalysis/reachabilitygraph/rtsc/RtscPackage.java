@@ -1,10 +1,5 @@
-/**
- * <copyright>
- * </copyright>
- *
- * $Id$
- */
 package org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc;
+
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -70,15 +65,6 @@ public interface RtscPackage extends EPackage {
 	 * @generated
 	 */
 	int ZONE_GRAPH = 0;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZONE_GRAPH__ANNOTATIONS = ReachabilityGraphPackage.REACHABILITY_GRAPH__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -152,15 +138,6 @@ public interface RtscPackage extends EPackage {
 	 * @generated
 	 */
 	int ZONE_GRAPH_STATE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZONE_GRAPH_STATE__ANNOTATIONS = ReachabilityGraphPackage.REACHABILITY_GRAPH_STATE__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -263,15 +240,6 @@ public interface RtscPackage extends EPackage {
 	int ZONE_GRAPH_TRANSITION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZONE_GRAPH_TRANSITION__ANNOTATIONS = ReachabilityGraphPackage.ACTION_TRANSITION__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -336,15 +304,6 @@ public interface RtscPackage extends EPackage {
 	int DELAY_TRANSITION = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELAY_TRANSITION__ANNOTATIONS = ReachabilityGraphPackage.REACHABILITY_GRAPH_TRANSITION__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -389,7 +348,6 @@ public interface RtscPackage extends EPackage {
 	 */
 	int DELAY_TRANSITION_FEATURE_COUNT = ReachabilityGraphPackage.REACHABILITY_GRAPH_TRANSITION_FEATURE_COUNT + 0;
 
-
 	/**
 	 * The meta object id for the '<em>Federation Object</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -433,6 +391,17 @@ public interface RtscPackage extends EPackage {
 	EClass getZoneGraphState();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.ZoneGraphState#getFederation <em>Federation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Federation</em>'.
+	 * @see org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.ZoneGraphState#getFederation()
+	 * @see #getZoneGraphState()
+	 * @generated
+	 */
+	EAttribute getZoneGraphState_Federation();
+
+	/**
 	 * Returns the meta object for the reference list '{@link org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.ZoneGraphState#getLocations <em>Locations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -453,17 +422,6 @@ public interface RtscPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getZoneGraphState_ContainedToplevelStatechartInstances();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.ZoneGraphState#getFederation <em>Federation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Federation</em>'.
-	 * @see org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.ZoneGraphState#getFederation()
-	 * @see #getZoneGraphState()
-	 * @generated
-	 */
-	EAttribute getZoneGraphState_Federation();
 
 	/**
 	 * Returns the meta object for class '{@link org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.ZoneGraphTransition <em>Zone Graph Transition</em>}'.
@@ -558,6 +516,14 @@ public interface RtscPackage extends EPackage {
 		EClass ZONE_GRAPH_STATE = eINSTANCE.getZoneGraphState();
 
 		/**
+		 * The meta object literal for the '<em><b>Federation</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ZONE_GRAPH_STATE__FEDERATION = eINSTANCE.getZoneGraphState_Federation();
+
+		/**
 		 * The meta object literal for the '<em><b>Locations</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -572,14 +538,6 @@ public interface RtscPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ZONE_GRAPH_STATE__CONTAINED_TOPLEVEL_STATECHART_INSTANCES = eINSTANCE.getZoneGraphState_ContainedToplevelStatechartInstances();
-
-		/**
-		 * The meta object literal for the '<em><b>Federation</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ZONE_GRAPH_STATE__FEDERATION = eINSTANCE.getZoneGraphState_Federation();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.impl.ZoneGraphTransitionImpl <em>Zone Graph Transition</em>}' class.

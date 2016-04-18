@@ -1,10 +1,5 @@
-/**
- * <copyright>
- * </copyright>
- *
- * $Id$
- */
 package org.muml.core.reachanalysis.reachabilitygraph;
+
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -145,15 +140,6 @@ public interface ReachabilityGraphPackage extends EPackage {
 	int REACHABILITY_GRAPH = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REACHABILITY_GRAPH__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -218,15 +204,6 @@ public interface ReachabilityGraphPackage extends EPackage {
 	int REACHABILITY_GRAPH_TRANSITION = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REACHABILITY_GRAPH_TRANSITION__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -282,15 +259,6 @@ public interface ReachabilityGraphPackage extends EPackage {
 	int ACTION_TRANSITION = 4;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_TRANSITION__ANNOTATIONS = REACHABILITY_GRAPH_TRANSITION__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -344,15 +312,6 @@ public interface ReachabilityGraphPackage extends EPackage {
 	 * @generated
 	 */
 	int REACHABILITY_GRAPH_STATE = 5;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REACHABILITY_GRAPH_STATE__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -416,6 +375,7 @@ public interface ReachabilityGraphPackage extends EPackage {
 	 * @ordered
 	 */
 	int REACHABILITY_GRAPH_STATE_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 5;
+
 
 	/**
 	 * Returns the meta object for class '{@link org.muml.core.reachanalysis.reachabilitygraph.HashToStateList <em>Hash To State List</em>}'.

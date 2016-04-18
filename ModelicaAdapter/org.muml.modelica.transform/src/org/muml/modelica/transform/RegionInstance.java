@@ -88,7 +88,7 @@ public interface RegionInstance extends Region {
 	 * @see #setEmbedsMultiPortStatechart(boolean)
 	 * @see org.muml.modelica.transform.TransformPackage#getRegionInstance_EmbedsMultiPortStatechart()
 	 * @model derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='instanceOf.embeddedStatechart.behavioralElement.oclIsUndefined()\nand\nlet r : muml::realtimestatechart::Region =\n\tinstanceOf.embeddedStatechart.states->any(true).embeddedRegions->any(embeddedStatechart.behavioralElement.oclIsTypeOf(component::DiscretePort))\nin\nnot r.oclIsUndefined()\nand not r.embeddedStatechart.behavioralElement.oclIsUndefined()\nand r.embeddedStatechart.behavioralElement.oclIsTypeOf(component::DiscretePort)\nand r.embeddedStatechart.behavioralElement.oclAsType(component::DiscretePort).multiPort'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='instanceOf.embeddedStatechart.behavioralElement.oclIsUndefined()\nand\nlet r : pim::realtimestatechart::Region =\n\tinstanceOf.embeddedStatechart.states->any(true).embeddedRegions->any(embeddedStatechart.behavioralElement.oclIsTypeOf(component::DiscretePort))\nin\nnot r.oclIsUndefined()\nand not r.embeddedStatechart.behavioralElement.oclIsUndefined()\nand r.embeddedStatechart.behavioralElement.oclIsTypeOf(component::DiscretePort)\nand r.embeddedStatechart.behavioralElement.oclAsType(component::DiscretePort).multiPort'"
 	 * @generated
 	 */
 	boolean isEmbedsMultiPortStatechart();

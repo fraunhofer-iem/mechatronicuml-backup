@@ -15,6 +15,7 @@ import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.time
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.TimedsdmPackage;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage;
 import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SdmPackage;
+import org.muml.udbm.Federation;
 
 /**
  * <!-- begin-user-doc -->
@@ -236,7 +237,7 @@ public class TimedsdmPackageImpl extends EPackageImpl implements TimedsdmPackage
 		initEClass(timedGTSDelayTransitionEClass, TimedGTSDelayTransition.class, "TimedGTSDelayTransition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize data types
-		initEDataType(federationObjectEDataType, org.muml.udbm.Federation.class, "FederationObject", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(federationObjectEDataType, Federation.class, "FederationObject", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

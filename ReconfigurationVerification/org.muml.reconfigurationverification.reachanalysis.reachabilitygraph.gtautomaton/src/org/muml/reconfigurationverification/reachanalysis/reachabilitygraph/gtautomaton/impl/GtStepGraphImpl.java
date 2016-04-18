@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl;
 
@@ -10,17 +6,24 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomatonClockConstraint;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtStepGraph;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtautomatonPackage;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.ObjectIdentifier;
+
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstance;
+
 import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.impl.StepGraphImpl;
 
 /**
@@ -29,12 +32,12 @@ import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.impl.StepGraphI
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.GtStepGraphImpl#getInvariant <em>Invariant</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.GtStepGraphImpl#getObjectIdentifier <em>Object Identifier</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.GtStepGraphImpl#getClockInstances <em>Clock Instances</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -48,6 +51,7 @@ public class GtStepGraphImpl extends StepGraphImpl implements GtStepGraph {
 	 * @ordered
 	 */
 	protected EList<GtAutomatonClockConstraint> invariant;
+
 	/**
 	 * The cached value of the '{@link #getObjectIdentifier() <em>Object Identifier</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -57,6 +61,7 @@ public class GtStepGraphImpl extends StepGraphImpl implements GtStepGraph {
 	 * @ordered
 	 */
 	protected ObjectIdentifier objectIdentifier;
+
 	/**
 	 * The cached value of the '{@link #getClockInstances() <em>Clock Instances</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -66,6 +71,7 @@ public class GtStepGraphImpl extends StepGraphImpl implements GtStepGraph {
 	 * @ordered
 	 */
 	protected EList<ClockInstance> clockInstances;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

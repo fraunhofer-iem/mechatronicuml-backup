@@ -43,7 +43,7 @@ public interface Map extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='let res : OrderedSet(muml::realtimestatechart::RealtimeStatechart) = entries->select(key = instance)->collect(value.oclAsType(muml::realtimestatechart::RealtimeStatechart))->asOrderedSet()\nin\nif res->isEmpty() then\n\tnull\nelse\n\tres->first()\nendif'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='let res : OrderedSet(pim::realtimestatechart::RealtimeStatechart) = entries->select(key = instance)->collect(value.oclAsType(pim::realtimestatechart::RealtimeStatechart))->asOrderedSet()\nin\nif res->isEmpty() then\n\tnull\nelse\n\tres->first()\nendif'"
 	 * @generated
 	 */
 	RealtimeStatechart get(EObject instance);

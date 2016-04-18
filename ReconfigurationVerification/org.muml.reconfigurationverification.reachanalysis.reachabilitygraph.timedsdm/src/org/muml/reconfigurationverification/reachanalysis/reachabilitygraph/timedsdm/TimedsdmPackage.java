@@ -71,15 +71,6 @@ public interface TimedsdmPackage extends EPackage {
 	int TIMED_STEP_GRAPH = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIMED_STEP_GRAPH__ANNOTATIONS = SdmPackage.STEP_GRAPH__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -205,15 +196,6 @@ public interface TimedsdmPackage extends EPackage {
 	 * @generated
 	 */
 	int TIMED_GTS_DELAY_TRANSITION = 1;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIMED_GTS_DELAY_TRANSITION__ANNOTATIONS = ReachabilityGraphPackage.REACHABILITY_GRAPH_TRANSITION__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.

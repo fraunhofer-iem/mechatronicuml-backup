@@ -1,16 +1,16 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+
 import org.muml.core.expressions.common.ComparingOperator;
+
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomatonClockConstraint;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtautomatonPackage;
 
@@ -20,12 +20,12 @@ import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtau
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.GtAutomatonClockConstraintImpl#getClockInstanceIdentifier <em>Clock Instance Identifier</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.GtAutomatonClockConstraintImpl#getOperator <em>Operator</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.GtAutomatonClockConstraintImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -1,14 +1,10 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SDMReachabilityGraph;
 
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SDMReachabilityGraph;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,17 +13,16 @@ import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SDMReachability
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomaton#getClockInstanceIdentifiers <em>Clock Instance Identifiers</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtautomatonPackage#getGtAutomaton()
  * @model
  * @generated
  */
 public interface GtAutomaton extends SDMReachabilityGraph {
-
 	/**
 	 * Returns the value of the '<em><b>Clock Instance Identifiers</b></em>' attribute list.
 	 * The list contents are of type {@link java.lang.String}.
@@ -43,4 +38,5 @@ public interface GtAutomaton extends SDMReachabilityGraph {
 	 * @generated
 	 */
 	EList<String> getClockInstanceIdentifiers();
+
 } // GtAutomaton

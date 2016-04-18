@@ -1,13 +1,11 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstance;
+
 import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.StepGraph;
 
 /**
@@ -17,12 +15,12 @@ import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.StepGraph;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtStepGraph#getInvariant <em>Invariant</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtStepGraph#getObjectIdentifier <em>Object Identifier</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtStepGraph#getClockInstances <em>Clock Instances</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtautomatonPackage#getGtStepGraph()
  * @model
@@ -49,7 +47,7 @@ public interface GtStepGraph extends StepGraph {
 	 * Returns the value of the '<em><b>Object Identifier</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Object Identifier</em>' reference isn't clear,
+	 * If the meaning of the '<em>Object Identifier</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -76,7 +74,7 @@ public interface GtStepGraph extends StepGraph {
 	 * The list contents are of type {@link org.muml.reconfigurationverification.timedstorydiagram.ClockInstance}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Clock Instances</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Clock Instances</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->

@@ -14,6 +14,7 @@ import org.muml.core.reachanalysis.reachabilitygraph.ActionTransition;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraph;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphTransition;
+import org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.*;
 import org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.DelayTransition;
 import org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.RtscPackage;
 import org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.ZoneGraph;

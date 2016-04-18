@@ -1,18 +1,18 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomaton;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtautomatonPackage;
+
 import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.impl.SDMReachabilityGraphImpl;
 
 /**
@@ -21,10 +21,10 @@ import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.impl.SDMReachab
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.GtAutomatonImpl#getClockInstanceIdentifiers <em>Clock Instance Identifiers</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

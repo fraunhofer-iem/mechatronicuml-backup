@@ -77,15 +77,6 @@ public interface OntologyPackage extends EPackage {
 	int ONTOLOGY_EXTENSION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ONTOLOGY_EXTENSION__ANNOTATIONS = CorePackage.EXTENSION__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -93,33 +84,6 @@ public interface OntologyPackage extends EPackage {
 	 * @ordered
 	 */
 	int ONTOLOGY_EXTENSION__EXTENSIONS = CorePackage.EXTENSION__EXTENSIONS;
-
-	/**
-	 * The feature id for the '<em><b>Base</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ONTOLOGY_EXTENSION__BASE = CorePackage.EXTENSION__BASE;
-
-	/**
-	 * The feature id for the '<em><b>Model Base</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ONTOLOGY_EXTENSION__MODEL_BASE = CorePackage.EXTENSION__MODEL_BASE;
-
-	/**
-	 * The feature id for the '<em><b>Owning Annotation</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ONTOLOGY_EXTENSION__OWNING_ANNOTATION = CorePackage.EXTENSION__OWNING_ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extendable Base</b></em>' container reference.

@@ -1,14 +1,12 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
+
 import org.eclipse.emf.ecore.EObject;
+
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceStoryDiagram;
 
 /**
@@ -18,12 +16,12 @@ import org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceStory
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.ObjectIdentifier#getIdentifierToEObject <em>Identifier To EObject</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.ObjectIdentifier#getEObjectToIdentifier <em>EObject To Identifier</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.ObjectIdentifier#getFreeClockInstanceIdentifiers <em>Free Clock Instance Identifiers</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtautomatonPackage#getObjectIdentifier()
  * @model
@@ -42,7 +40,7 @@ public interface ObjectIdentifier extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Identifier To EObject</em>' map.
 	 * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtautomatonPackage#getObjectIdentifier_IdentifierToEObject()
-	 * @model mapType="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.IdentifierToEObject<org.eclipse.emf.ecore.EString, org.eclipse.emf.ecore.EObject>"
+	 * @model mapType="org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.IdentifierToEObject<org.eclipse.emf.ecore.EString, org.eclipse.emf.ecore.EObject>"
 	 * @generated
 	 */
 	EMap<String, EObject> getIdentifierToEObject();
@@ -59,7 +57,7 @@ public interface ObjectIdentifier extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>EObject To Identifier</em>' map.
 	 * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtautomatonPackage#getObjectIdentifier_EObjectToIdentifier()
-	 * @model mapType="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.EObjectToIdentifier<org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EString>"
+	 * @model mapType="org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.EObjectToIdentifier<org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EString>"
 	 * @generated
 	 */
 	EMap<EObject, String> getEObjectToIdentifier();
@@ -76,7 +74,7 @@ public interface ObjectIdentifier extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Free Clock Instance Identifiers</em>' map.
 	 * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtautomatonPackage#getObjectIdentifier_FreeClockInstanceIdentifiers()
-	 * @model mapType="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.ClockInstanceStoryDiagramToIdentifier<de.uni_paderborn.fujaba.muml.timedstorydiagram.ClockInstanceStoryDiagram, org.eclipse.emf.ecore.EString>" transient="true"
+	 * @model mapType="org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.ClockInstanceStoryDiagramToIdentifier<org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceStoryDiagram, org.eclipse.emf.ecore.EString>" transient="true"
 	 * @generated
 	 */
 	EMap<ClockInstanceStoryDiagram, EList<String>> getFreeClockInstanceIdentifiers();

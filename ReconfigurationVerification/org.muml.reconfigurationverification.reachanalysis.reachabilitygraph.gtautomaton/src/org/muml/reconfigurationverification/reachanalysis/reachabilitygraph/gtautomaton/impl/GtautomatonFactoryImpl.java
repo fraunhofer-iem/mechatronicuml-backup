@@ -1,26 +1,21 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl;
 
 import java.util.Map;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomaton;
-import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomatonClockConstraint;
-import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomatonTransition;
-import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtStepGraph;
-import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtautomatonFactory;
-import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtautomatonPackage;
-import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.ObjectIdentifier;
+
+import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.*;
+
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceStoryDiagram;
 
 /**
@@ -85,26 +80,6 @@ public class GtautomatonFactoryImpl extends EFactoryImpl implements GtautomatonF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GtAutomaton createGtAutomaton() {
-		GtAutomatonImpl gtAutomaton = new GtAutomatonImpl();
-		return gtAutomaton;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Map.Entry<ClockInstanceStoryDiagram, EList<String>> createClockInstanceStoryDiagramToIdentifier() {
-		ClockInstanceStoryDiagramToIdentifierImpl clockInstanceStoryDiagramToIdentifier = new ClockInstanceStoryDiagramToIdentifierImpl();
-		return clockInstanceStoryDiagramToIdentifier;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public GtStepGraph createGtStepGraph() {
 		GtStepGraphImpl gtStepGraph = new GtStepGraphImpl();
 		return gtStepGraph;
@@ -158,6 +133,26 @@ public class GtautomatonFactoryImpl extends EFactoryImpl implements GtautomatonF
 	public GtAutomatonClockConstraint createGtAutomatonClockConstraint() {
 		GtAutomatonClockConstraintImpl gtAutomatonClockConstraint = new GtAutomatonClockConstraintImpl();
 		return gtAutomatonClockConstraint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GtAutomaton createGtAutomaton() {
+		GtAutomatonImpl gtAutomaton = new GtAutomatonImpl();
+		return gtAutomaton;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Map.Entry<ClockInstanceStoryDiagram, EList<String>> createClockInstanceStoryDiagramToIdentifier() {
+		ClockInstanceStoryDiagramToIdentifierImpl clockInstanceStoryDiagramToIdentifier = new ClockInstanceStoryDiagramToIdentifierImpl();
+		return clockInstanceStoryDiagramToIdentifier;
 	}
 
 	/**

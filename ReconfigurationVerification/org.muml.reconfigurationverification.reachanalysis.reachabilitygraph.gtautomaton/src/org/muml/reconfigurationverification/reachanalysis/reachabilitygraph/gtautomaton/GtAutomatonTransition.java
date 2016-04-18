@@ -1,12 +1,9 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SDMTransition;
 
 /**
@@ -16,11 +13,11 @@ import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SDMTransition;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomatonTransition#getTimeGuards <em>Time Guards</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomatonTransition#getClockResets <em>Clock Resets</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtautomatonPackage#getGtAutomatonTransition()
  * @model

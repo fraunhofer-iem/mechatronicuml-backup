@@ -9,10 +9,7 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton,
  org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl,
- org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.util,
- org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.gtautomaton,
- org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.gtautomaton.impl,
- org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.gtautomaton.util
+ org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.core.reachanalysis.reachabilitygraph;visibility:=reexport,

@@ -434,7 +434,7 @@ public class TransformPackageImpl extends EPackageImpl implements TransformPacka
 		  (getMap__Get__EObject(), 
 		   source, 
 		   new String[] {
-			 "body", "let res : OrderedSet(muml::realtimestatechart::RealtimeStatechart) = entries->select(key = instance)->collect(value.oclAsType(muml::realtimestatechart::RealtimeStatechart))->asOrderedSet()\nin\nif res->isEmpty() then\n\tnull\nelse\n\tres->first()\nendif"
+			 "body", "let res : OrderedSet(pim::realtimestatechart::RealtimeStatechart) = entries->select(key = instance)->collect(value.oclAsType(pim::realtimestatechart::RealtimeStatechart))->asOrderedSet()\nin\nif res->isEmpty() then\n\tnull\nelse\n\tres->first()\nendif"
 		   });	
 		addAnnotation
 		  (getRegionInstance_EmbedsSinglePortStatechart(), 
@@ -446,7 +446,7 @@ public class TransformPackageImpl extends EPackageImpl implements TransformPacka
 		  (getRegionInstance_EmbedsMultiPortStatechart(), 
 		   source, 
 		   new String[] {
-			 "derivation", "instanceOf.embeddedStatechart.behavioralElement.oclIsUndefined()\nand\nlet r : muml::realtimestatechart::Region =\n\tinstanceOf.embeddedStatechart.states->any(true).embeddedRegions->any(embeddedStatechart.behavioralElement.oclIsTypeOf(component::DiscretePort))\nin\nnot r.oclIsUndefined()\nand not r.embeddedStatechart.behavioralElement.oclIsUndefined()\nand r.embeddedStatechart.behavioralElement.oclIsTypeOf(component::DiscretePort)\nand r.embeddedStatechart.behavioralElement.oclAsType(component::DiscretePort).multiPort"
+			 "derivation", "instanceOf.embeddedStatechart.behavioralElement.oclIsUndefined()\nand\nlet r : pim::realtimestatechart::Region =\n\tinstanceOf.embeddedStatechart.states->any(true).embeddedRegions->any(embeddedStatechart.behavioralElement.oclIsTypeOf(component::DiscretePort))\nin\nnot r.oclIsUndefined()\nand not r.embeddedStatechart.behavioralElement.oclIsUndefined()\nand r.embeddedStatechart.behavioralElement.oclIsTypeOf(component::DiscretePort)\nand r.embeddedStatechart.behavioralElement.oclAsType(component::DiscretePort).multiPort"
 		   });
 	}
 

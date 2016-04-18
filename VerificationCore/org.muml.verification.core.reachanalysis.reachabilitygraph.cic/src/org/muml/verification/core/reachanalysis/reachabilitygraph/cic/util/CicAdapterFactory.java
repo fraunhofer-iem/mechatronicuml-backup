@@ -18,6 +18,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.muml.core.ExtendableElement;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState;
+import org.muml.verification.core.reachanalysis.reachabilitygraph.cic.*;
 import org.muml.verification.core.reachanalysis.reachabilitygraph.cic.CICZoneGraphState;
 import org.muml.verification.core.reachanalysis.reachabilitygraph.cic.CicPackage;
 import org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.ZoneGraphState;

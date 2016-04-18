@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.muml.verification.core.reachanalysis.reachabilitygraph.cic.*;
 import org.muml.verification.core.reachanalysis.reachabilitygraph.cic.CICZoneGraphState;
 import org.muml.verification.core.reachanalysis.reachabilitygraph.cic.CicFactory;
 import org.muml.verification.core.reachanalysis.reachabilitygraph.cic.CicPackage;

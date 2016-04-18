@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl;
 
@@ -14,8 +10,11 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import org.muml.core.expressions.common.CommonExpressionsPackage;
+
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomaton;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomatonClockConstraint;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomatonTransition;
@@ -23,7 +22,9 @@ import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtau
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtautomatonFactory;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtautomatonPackage;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.ObjectIdentifier;
+
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage;
+
 import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SdmPackage;
 
 /**
@@ -33,20 +34,6 @@ import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SdmPackage;
  * @generated
  */
 public class GtautomatonPackageImpl extends EPackageImpl implements GtautomatonPackage {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass gtAutomatonEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass clockInstanceStoryDiagramToIdentifierEClass = null;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -88,6 +75,20 @@ public class GtautomatonPackageImpl extends EPackageImpl implements GtautomatonP
 	 * @generated
 	 */
 	private EClass gtAutomatonClockConstraintEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass gtAutomatonEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass clockInstanceStoryDiagramToIdentifierEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -152,51 +153,6 @@ public class GtautomatonPackageImpl extends EPackageImpl implements GtautomatonP
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(GtautomatonPackage.eNS_URI, theGtautomatonPackage);
 		return theGtautomatonPackage;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getGtAutomaton() {
-		return gtAutomatonEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getGtAutomaton_ClockInstanceIdentifiers() {
-		return (EAttribute)gtAutomatonEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getClockInstanceStoryDiagramToIdentifier() {
-		return clockInstanceStoryDiagramToIdentifierEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getClockInstanceStoryDiagramToIdentifier_Key() {
-		return (EReference)clockInstanceStoryDiagramToIdentifierEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getClockInstanceStoryDiagramToIdentifier_Value() {
-		return (EAttribute)clockInstanceStoryDiagramToIdentifierEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -386,6 +342,51 @@ public class GtautomatonPackageImpl extends EPackageImpl implements GtautomatonP
 	 */
 	public EAttribute getGtAutomatonClockConstraint_Value() {
 		return (EAttribute)gtAutomatonClockConstraintEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGtAutomaton() {
+		return gtAutomatonEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGtAutomaton_ClockInstanceIdentifiers() {
+		return (EAttribute)gtAutomatonEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getClockInstanceStoryDiagramToIdentifier() {
+		return clockInstanceStoryDiagramToIdentifierEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getClockInstanceStoryDiagramToIdentifier_Key() {
+		return (EReference)clockInstanceStoryDiagramToIdentifierEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getClockInstanceStoryDiagramToIdentifier_Value() {
+		return (EAttribute)clockInstanceStoryDiagramToIdentifierEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**

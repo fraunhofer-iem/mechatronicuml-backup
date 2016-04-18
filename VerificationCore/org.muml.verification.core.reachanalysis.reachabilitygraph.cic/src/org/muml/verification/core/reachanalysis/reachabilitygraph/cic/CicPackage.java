@@ -1,16 +1,5 @@
-/**
- * <copyright>
- * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *     Software Engineering Group - initial API and implementation
- * </copyright>
- */
 package org.muml.verification.core.reachanalysis.reachabilitygraph.cic;
+
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -74,15 +63,6 @@ public interface CicPackage extends EPackage {
 	 * @generated
 	 */
 	int CIC_ZONE_GRAPH_STATE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CIC_ZONE_GRAPH_STATE__ANNOTATIONS = RtscPackage.ZONE_GRAPH_STATE__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.

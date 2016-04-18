@@ -68,15 +68,6 @@ public interface OptionsPackage extends EPackage {
 	int OPTIONS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPTIONS__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -131,6 +122,15 @@ public interface OptionsPackage extends EPackage {
 	int OPTIONS_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTIONS___GET_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Options</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -148,15 +148,6 @@ public interface OptionsPackage extends EPackage {
 	 * @generated
 	 */
 	int COORDINATION_PROTOCOL_OPTIONS = 1;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COORDINATION_PROTOCOL_OPTIONS__ANNOTATIONS = OPTIONS__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -222,6 +213,15 @@ public interface OptionsPackage extends EPackage {
 	int COORDINATION_PROTOCOL_OPTIONS_FEATURE_COUNT = OPTIONS_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COORDINATION_PROTOCOL_OPTIONS___GET_EXTENSION__ECLASS = OPTIONS___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Coordination Protocol Options</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -241,15 +241,6 @@ public interface OptionsPackage extends EPackage {
 	int HIDE_OPTION_EXTENSION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HIDE_OPTION_EXTENSION__ANNOTATIONS = CorePackage.EXTENSION__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -257,33 +248,6 @@ public interface OptionsPackage extends EPackage {
 	 * @ordered
 	 */
 	int HIDE_OPTION_EXTENSION__EXTENSIONS = CorePackage.EXTENSION__EXTENSIONS;
-
-	/**
-	 * The feature id for the '<em><b>Base</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HIDE_OPTION_EXTENSION__BASE = CorePackage.EXTENSION__BASE;
-
-	/**
-	 * The feature id for the '<em><b>Model Base</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HIDE_OPTION_EXTENSION__MODEL_BASE = CorePackage.EXTENSION__MODEL_BASE;
-
-	/**
-	 * The feature id for the '<em><b>Owning Annotation</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HIDE_OPTION_EXTENSION__OWNING_ANNOTATION = CorePackage.EXTENSION__OWNING_ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extendable Base</b></em>' container reference.
@@ -311,6 +275,15 @@ public interface OptionsPackage extends EPackage {
 	 * @ordered
 	 */
 	int HIDE_OPTION_EXTENSION_FEATURE_COUNT = CorePackage.EXTENSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HIDE_OPTION_EXTENSION___GET_EXTENSION__ECLASS = CorePackage.EXTENSION___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Hide Option Extension</em>' class.

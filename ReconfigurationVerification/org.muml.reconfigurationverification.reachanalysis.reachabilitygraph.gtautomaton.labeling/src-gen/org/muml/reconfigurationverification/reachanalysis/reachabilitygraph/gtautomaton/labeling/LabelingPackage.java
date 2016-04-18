@@ -1,10 +1,5 @@
-/**
- * <copyright>
- * </copyright>
- *
- * $Id$
- */
 package org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling;
+
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -71,15 +66,6 @@ public interface LabelingPackage extends EPackage {
 	int ATOMIC_PROPOSITION_MAPPING = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATOMIC_PROPOSITION_MAPPING__ANNOTATIONS = CorePackage.EXTENSION__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -87,33 +73,6 @@ public interface LabelingPackage extends EPackage {
 	 * @ordered
 	 */
 	int ATOMIC_PROPOSITION_MAPPING__EXTENSIONS = CorePackage.EXTENSION__EXTENSIONS;
-
-	/**
-	 * The feature id for the '<em><b>Base</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATOMIC_PROPOSITION_MAPPING__BASE = CorePackage.EXTENSION__BASE;
-
-	/**
-	 * The feature id for the '<em><b>Model Base</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATOMIC_PROPOSITION_MAPPING__MODEL_BASE = CorePackage.EXTENSION__MODEL_BASE;
-
-	/**
-	 * The feature id for the '<em><b>Owning Annotation</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATOMIC_PROPOSITION_MAPPING__OWNING_ANNOTATION = CorePackage.EXTENSION__OWNING_ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extendable Base</b></em>' container reference.

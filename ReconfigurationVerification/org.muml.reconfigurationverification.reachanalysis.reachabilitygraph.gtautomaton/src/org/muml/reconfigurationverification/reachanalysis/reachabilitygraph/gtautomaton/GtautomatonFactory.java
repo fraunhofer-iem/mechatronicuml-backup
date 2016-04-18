@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton;
 
@@ -24,15 +20,6 @@ public interface GtautomatonFactory extends EFactory {
 	 * @generated
 	 */
 	GtautomatonFactory eINSTANCE = org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.impl.GtautomatonFactoryImpl.init();
-
-	/**
-	 * Returns a new object of class '<em>Gt Automaton</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Gt Automaton</em>'.
-	 * @generated
-	 */
-	GtAutomaton createGtAutomaton();
 
 	/**
 	 * Returns a new object of class '<em>Gt Step Graph</em>'.
@@ -69,6 +56,15 @@ public interface GtautomatonFactory extends EFactory {
 	 * @generated
 	 */
 	GtAutomatonClockConstraint createGtAutomatonClockConstraint();
+
+	/**
+	 * Returns a new object of class '<em>Gt Automaton</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Gt Automaton</em>'.
+	 * @generated
+	 */
+	GtAutomaton createGtAutomaton();
 
 	/**
 	 * Returns the package supported by this factory.

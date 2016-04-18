@@ -1,10 +1,5 @@
-/**
- * <copyright>
- * </copyright>
- *
- * $Id$
- */
 package org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm;
+
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -69,15 +64,6 @@ public interface SdmPackage extends EPackage {
 	 * @generated
 	 */
 	int STEP_GRAPH = 0;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP_GRAPH__ANNOTATIONS = ReachabilityGraphPackage.REACHABILITY_GRAPH_STATE__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -187,15 +173,6 @@ public interface SdmPackage extends EPackage {
 	 * @generated
 	 */
 	int SDM_TRANSITION = 1;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SDM_TRANSITION__ANNOTATIONS = ReachabilityGraphPackage.ACTION_TRANSITION__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -382,15 +359,6 @@ public interface SdmPackage extends EPackage {
 	int SDM_REACHABILITY_GRAPH = 5;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SDM_REACHABILITY_GRAPH__ANNOTATIONS = ReachabilityGraphPackage.REACHABILITY_GRAPH__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -461,7 +429,6 @@ public interface SdmPackage extends EPackage {
 	 * @ordered
 	 */
 	int SDM_REACHABILITY_GRAPH_FEATURE_COUNT = ReachabilityGraphPackage.REACHABILITY_GRAPH_FEATURE_COUNT + 2;
-
 
 	/**
 	 * The meta object id for the '{@link org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.impl.MatchingEntryImpl <em>Matching Entry</em>}' class.
