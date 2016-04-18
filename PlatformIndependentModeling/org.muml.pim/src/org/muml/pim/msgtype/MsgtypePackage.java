@@ -77,15 +77,6 @@ public interface MsgtypePackage extends EPackage {
 	int MESSAGE_TYPE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_TYPE__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -166,15 +157,6 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 */
 	int MESSAGE_TYPE_REPOSITORY = 1;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_TYPE_REPOSITORY__ANNOTATIONS = CorePackage.REPOSITORY__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.

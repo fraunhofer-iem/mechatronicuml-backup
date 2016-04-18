@@ -224,15 +224,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	int CLOCK = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLOCK__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -295,15 +286,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	int REGION = 4;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -527,15 +509,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	int REGION_OPERATION_COUNT = CorePackage.COMMENTABLE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VERTEX__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -642,15 +615,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @ordered
 	 */
 	int VERTEX_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE__ANNOTATIONS = VERTEX__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -941,22 +905,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION__PRIORITY = PRIORITIZED_ELEMENT__PRIORITY;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION__ANNOTATIONS = PRIORITIZED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__EXTENSIONS = PRIORITIZED_ELEMENT_FEATURE_COUNT + 1;
+	int TRANSITION__EXTENSIONS = PRIORITIZED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -965,7 +920,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__COMMENT = PRIORITIZED_ELEMENT_FEATURE_COUNT + 2;
+	int TRANSITION__COMMENT = PRIORITIZED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Synchronization</b></em>' containment reference.
@@ -974,7 +929,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__SYNCHRONIZATION = PRIORITIZED_ELEMENT_FEATURE_COUNT + 3;
+	int TRANSITION__SYNCHRONIZATION = PRIORITIZED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -983,7 +938,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__TARGET = PRIORITIZED_ELEMENT_FEATURE_COUNT + 4;
+	int TRANSITION__TARGET = PRIORITIZED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -992,7 +947,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__SOURCE = PRIORITIZED_ELEMENT_FEATURE_COUNT + 5;
+	int TRANSITION__SOURCE = PRIORITIZED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Statechart</b></em>' reference.
@@ -1001,7 +956,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__STATECHART = PRIORITIZED_ELEMENT_FEATURE_COUNT + 6;
+	int TRANSITION__STATECHART = PRIORITIZED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Clock Resets</b></em>' reference list.
@@ -1010,7 +965,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__CLOCK_RESETS = PRIORITIZED_ELEMENT_FEATURE_COUNT + 7;
+	int TRANSITION__CLOCK_RESETS = PRIORITIZED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Trigger Message Event</b></em>' reference.
@@ -1019,7 +974,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__TRIGGER_MESSAGE_EVENT = PRIORITIZED_ELEMENT_FEATURE_COUNT + 8;
+	int TRANSITION__TRIGGER_MESSAGE_EVENT = PRIORITIZED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Raise Message Event</b></em>' reference.
@@ -1028,7 +983,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__RAISE_MESSAGE_EVENT = PRIORITIZED_ELEMENT_FEATURE_COUNT + 9;
+	int TRANSITION__RAISE_MESSAGE_EVENT = PRIORITIZED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Clock Constraints</b></em>' containment reference list.
@@ -1037,7 +992,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__CLOCK_CONSTRAINTS = PRIORITIZED_ELEMENT_FEATURE_COUNT + 10;
+	int TRANSITION__CLOCK_CONSTRAINTS = PRIORITIZED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Absolute Deadlines</b></em>' containment reference list.
@@ -1046,7 +1001,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__ABSOLUTE_DEADLINES = PRIORITIZED_ELEMENT_FEATURE_COUNT + 11;
+	int TRANSITION__ABSOLUTE_DEADLINES = PRIORITIZED_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Relative Deadline</b></em>' containment reference.
@@ -1055,7 +1010,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__RELATIVE_DEADLINE = PRIORITIZED_ELEMENT_FEATURE_COUNT + 12;
+	int TRANSITION__RELATIVE_DEADLINE = PRIORITIZED_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Blockable</b></em>' attribute.
@@ -1064,7 +1019,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__BLOCKABLE = PRIORITIZED_ELEMENT_FEATURE_COUNT + 13;
+	int TRANSITION__BLOCKABLE = PRIORITIZED_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Guard</b></em>' containment reference.
@@ -1073,7 +1028,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__GUARD = PRIORITIZED_ELEMENT_FEATURE_COUNT + 14;
+	int TRANSITION__GUARD = PRIORITIZED_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Events</b></em>' containment reference list.
@@ -1082,7 +1037,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__EVENTS = PRIORITIZED_ELEMENT_FEATURE_COUNT + 15;
+	int TRANSITION__EVENTS = PRIORITIZED_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' containment reference.
@@ -1091,7 +1046,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__ACTION = PRIORITIZED_ELEMENT_FEATURE_COUNT + 16;
+	int TRANSITION__ACTION = PRIORITIZED_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Urgent</b></em>' attribute.
@@ -1100,7 +1055,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__URGENT = PRIORITIZED_ELEMENT_FEATURE_COUNT + 17;
+	int TRANSITION__URGENT = PRIORITIZED_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
@@ -1109,7 +1064,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__RECEIVER_MESSAGE_TYPES = PRIORITIZED_ELEMENT_FEATURE_COUNT + 18;
+	int TRANSITION__RECEIVER_MESSAGE_TYPES = PRIORITIZED_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
@@ -1118,7 +1073,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__SENDER_MESSAGE_TYPES = PRIORITIZED_ELEMENT_FEATURE_COUNT + 19;
+	int TRANSITION__SENDER_MESSAGE_TYPES = PRIORITIZED_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
@@ -1127,7 +1082,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_FEATURE_COUNT = PRIORITIZED_ELEMENT_FEATURE_COUNT + 20;
+	int TRANSITION_FEATURE_COUNT = PRIORITIZED_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -1146,15 +1101,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @ordered
 	 */
 	int TRANSITION_OPERATION_COUNT = PRIORITIZED_ELEMENT_OPERATION_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLOCK_CONSTRAINT__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -1218,15 +1164,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @ordered
 	 */
 	int CLOCK_CONSTRAINT_OPERATION_COUNT = CorePackage.EXTENDABLE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -1499,15 +1436,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	int ENTRY_OR_EXIT_EVENT_OPERATION_COUNT = STATE_EVENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1578,15 +1506,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @ordered
 	 */
 	int SYNCHRONIZATION_CHANNEL_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -1660,15 +1579,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	int REALTIME_STATECHART = 16;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REALTIME_STATECHART__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -1915,15 +1825,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	int MESSAGE = 20;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2098,15 +1999,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	int STATE_CONNECTION_POINT = 23;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_CONNECTION_POINT__ANNOTATIONS = VERTEX__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2234,15 +2126,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	int ENTRY_POINT = 24;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTRY_POINT__ANNOTATIONS = STATE_CONNECTION_POINT__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2368,15 +2251,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	int EXIT_POINT = 25;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXIT_POINT__ANNOTATIONS = STATE_CONNECTION_POINT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.

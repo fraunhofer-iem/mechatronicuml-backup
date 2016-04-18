@@ -844,7 +844,6 @@ public class TransitionItemProvider extends PrioritizedElementItemProvider {
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATIONS);
 			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__SYNCHRONIZATION);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__CLOCK_CONSTRAINTS);
@@ -930,7 +929,6 @@ public class TransitionItemProvider extends PrioritizedElementItemProvider {
 			case RealtimestatechartPackage.TRANSITION__SENDER_MESSAGE_TYPES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case RealtimestatechartPackage.TRANSITION__ANNOTATIONS:
 			case RealtimestatechartPackage.TRANSITION__EXTENSIONS:
 			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION:
 			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINTS:

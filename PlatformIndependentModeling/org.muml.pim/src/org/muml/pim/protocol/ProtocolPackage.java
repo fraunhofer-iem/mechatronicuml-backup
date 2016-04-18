@@ -76,15 +76,6 @@ public interface ProtocolPackage extends EPackage {
 	int ABSTRACT_COORDINATION_SPECIFICATION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_COORDINATION_SPECIFICATION__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -222,15 +213,6 @@ public interface ProtocolPackage extends EPackage {
 	int COORDINATION_PROTOCOL = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COORDINATION_PROTOCOL__ANNOTATIONS = ABSTRACT_COORDINATION_SPECIFICATION__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -356,15 +338,6 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 */
 	int ROLE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE__ANNOTATIONS = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -529,15 +502,6 @@ public interface ProtocolPackage extends EPackage {
 	int ROLE_OPERATION_COUNT = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE_CONNECTOR__ANNOTATIONS = ConnectorPackage.CONNECTOR__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -636,15 +600,6 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 */
 	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS = 4;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.

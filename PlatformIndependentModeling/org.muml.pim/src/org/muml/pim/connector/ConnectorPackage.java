@@ -78,15 +78,6 @@ public interface ConnectorPackage extends EPackage {
 	int CONNECTOR_ENDPOINT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTOR_ENDPOINT__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -149,15 +140,6 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 */
 	int CONNECTOR = 1;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTOR__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -231,15 +213,6 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 */
 	int CONNECTOR_ENDPOINT_INSTANCE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTOR_ENDPOINT_INSTANCE__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -324,15 +297,6 @@ public interface ConnectorPackage extends EPackage {
 	int CONNECTOR_INSTANCE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTOR_INSTANCE__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -404,15 +368,6 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 */
 	int DISCRETE_INTERACTION_ENDPOINT = 4;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_INTERACTION_ENDPOINT__ANNOTATIONS = CONNECTOR_ENDPOINT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -561,15 +516,6 @@ public interface ConnectorPackage extends EPackage {
 	int DISCRETE_INTERACTION_ENDPOINT_INSTANCE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_INTERACTION_ENDPOINT_INSTANCE__ANNOTATIONS = CONNECTOR_ENDPOINT_INSTANCE__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -650,15 +596,6 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 */
 	int DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE = 6;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__ANNOTATIONS = DISCRETE_INTERACTION_ENDPOINT_INSTANCE__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -788,15 +725,6 @@ public interface ConnectorPackage extends EPackage {
 	int DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE = 7;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__ANNOTATIONS = DISCRETE_INTERACTION_ENDPOINT_INSTANCE__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -906,15 +834,6 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 */
 	int MESSAGE_BUFFER = 8;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_BUFFER__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.

@@ -85,15 +85,6 @@ public interface ActionlanguagePackage extends EPackage {
 	int BLOCK = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BLOCK__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -156,15 +147,6 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 */
 	int LOOP = 1;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOOP__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -240,15 +222,6 @@ public interface ActionlanguagePackage extends EPackage {
 	int WHILE_LOOP = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WHILE_LOOP__ANNOTATIONS = LOOP__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -322,15 +295,6 @@ public interface ActionlanguagePackage extends EPackage {
 	int DO_WHILE_LOOP = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DO_WHILE_LOOP__ANNOTATIONS = LOOP__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -402,15 +366,6 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 */
 	int ASSIGNMENT = 4;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSIGNMENT__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -504,15 +459,6 @@ public interface ActionlanguagePackage extends EPackage {
 	int FOR_LOOP = 5;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FOR_LOOP__ANNOTATIONS = LOOP__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -602,15 +548,6 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 */
 	int IF_STATEMENT = 6;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IF_STATEMENT__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -704,15 +641,6 @@ public interface ActionlanguagePackage extends EPackage {
 	int OPERATION_CALL = 7;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION_CALL__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -786,15 +714,6 @@ public interface ActionlanguagePackage extends EPackage {
 	int RETURN_STATEMENT = 8;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_STATEMENT__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -857,15 +776,6 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 */
 	int TRIGGER_MESSAGE_EXPRESSION = 9;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRIGGER_MESSAGE_EXPRESSION__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -941,15 +851,6 @@ public interface ActionlanguagePackage extends EPackage {
 	int DISCRETE_INTERACTION_ENDPOINT_REFERENCE = 10;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_INTERACTION_ENDPOINT_REFERENCE__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1021,15 +922,6 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 */
 	int POSITION_SELECTOR = 11;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POSITION_SELECTOR__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -1105,15 +997,6 @@ public interface ActionlanguagePackage extends EPackage {
 	int LOCAL_VARIABLE_DECLARATION_STATEMENT = 12;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCAL_VARIABLE_DECLARATION_STATEMENT__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1185,15 +1068,6 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 */
 	int TYPED_NAMED_ELEMENT_EXPRESSION = 13;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_NAMED_ELEMENT_EXPRESSION__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -1269,15 +1143,6 @@ public interface ActionlanguagePackage extends EPackage {
 	int ARRAY_INITIALIZE_EXPRESSION = 14;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARRAY_INITIALIZE_EXPRESSION__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1340,15 +1205,6 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 */
 	int NONDETERMINISTIC_CHOICE_EXPRESSION = 15;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NONDETERMINISTIC_CHOICE_EXPRESSION__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -1424,15 +1280,6 @@ public interface ActionlanguagePackage extends EPackage {
 	int TIME_VALUE_EXPRESSION = 16;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME_VALUE_EXPRESSION__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1495,15 +1342,6 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 */
 	int TYPE_CAST_EXPRESSION = 17;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPE_CAST_EXPRESSION__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -1579,15 +1417,6 @@ public interface ActionlanguagePackage extends EPackage {
 	int ELEMENT_ACCESSOR_EXPRESSION = 18;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELEMENT_ACCESSOR_EXPRESSION__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1641,15 +1470,6 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 */
 	int ARRAY_INDEX_EXPRESSION = 19;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARRAY_INDEX_EXPRESSION__ANNOTATIONS = ELEMENT_ACCESSOR_EXPRESSION__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -1716,15 +1536,6 @@ public interface ActionlanguagePackage extends EPackage {
 	int ATTRIBUTE_ACCESSOR_EXPRESSION = 20;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_ACCESSOR_EXPRESSION__ANNOTATIONS = ELEMENT_ACCESSOR_EXPRESSION__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1787,15 +1598,6 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 */
 	int ELSE_IF_STATEMENT = 21;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELSE_IF_STATEMENT__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.

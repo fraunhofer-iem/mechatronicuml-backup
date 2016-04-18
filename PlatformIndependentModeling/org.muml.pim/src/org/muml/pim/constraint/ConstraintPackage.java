@@ -81,15 +81,6 @@ public interface ConstraintPackage extends EPackage {
 	int VERIFICATION_CONSTRAINT_REPOSITORY = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VERIFICATION_CONSTRAINT_REPOSITORY__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -134,15 +125,6 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 */
 	int VERIFIABLE_ELEMENT = 1;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VERIFIABLE_ELEMENT__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.

@@ -83,15 +83,6 @@ public interface PatternPackage extends EPackage {
 	int ABSTRACT_COORDINATION_PATTERN = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_COORDINATION_PATTERN__ANNOTATIONS = ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -415,15 +406,6 @@ public interface PatternPackage extends EPackage {
 	int VERIFIED_CONFIGURATION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VERIFIED_CONFIGURATION__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -504,15 +486,6 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 */
 	int COORDINATION_PATTERN_VARIANT = 3;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COORDINATION_PATTERN_VARIANT__ANNOTATIONS = ABSTRACT_COORDINATION_PATTERN__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -657,15 +630,6 @@ public interface PatternPackage extends EPackage {
 	 * @ordered
 	 */
 	int COORDINATION_PATTERN_VARIANT_OPERATION_COUNT = ABSTRACT_COORDINATION_PATTERN_OPERATION_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COORDINATION_PATTERN__ANNOTATIONS = ABSTRACT_COORDINATION_PATTERN__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
