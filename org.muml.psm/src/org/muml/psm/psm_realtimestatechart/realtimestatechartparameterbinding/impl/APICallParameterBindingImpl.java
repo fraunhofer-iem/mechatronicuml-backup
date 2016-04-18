@@ -8,7 +8,6 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -36,7 +35,6 @@ import org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.Re
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.impl.APICallParameterBindingImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.impl.APICallParameterBindingImpl#getExtensions <em>Extensions</em>}</li>
  *   <li>{@link org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.impl.APICallParameterBindingImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.impl.APICallParameterBindingImpl#getComment <em>Comment</em>}</li>
@@ -49,16 +47,6 @@ import org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.Re
  * @generated
  */
 public class APICallParameterBindingImpl extends RealtimeStatechartParameterBindingImpl implements APICallParameterBinding {
-	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAnnotations()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<EAnnotation> annotations;
-
 	/**
 	 * The cached value of the '{@link #getExtensions() <em>Extensions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -166,18 +154,6 @@ public class APICallParameterBindingImpl extends RealtimeStatechartParameterBind
 	@Override
 	protected EClass eStaticClass() {
 		return RealtimestatechartparameterbindingPackage.Literals.API_CALL_PARAMETER_BINDING;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<EAnnotation> getAnnotations() {
-		if (annotations == null) {
-			annotations = new EObjectContainmentEList<EAnnotation>(EAnnotation.class, this, RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__ANNOTATIONS);
-		}
-		return annotations;
 	}
 
 	/**
@@ -377,8 +353,6 @@ public class APICallParameterBindingImpl extends RealtimeStatechartParameterBind
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__ANNOTATIONS:
-				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__EXTENSIONS:
 				return ((InternalEList<?>)getExtensions()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__IMPLEMENTATIONS:
@@ -399,8 +373,6 @@ public class APICallParameterBindingImpl extends RealtimeStatechartParameterBind
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__ANNOTATIONS:
-				return getAnnotations();
 			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__EXTENSIONS:
 				return getExtensions();
 			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__NAME:
@@ -429,10 +401,6 @@ public class APICallParameterBindingImpl extends RealtimeStatechartParameterBind
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__ANNOTATIONS:
-				getAnnotations().clear();
-				getAnnotations().addAll((Collection<? extends EAnnotation>)newValue);
-				return;
 			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__EXTENSIONS:
 				getExtensions().clear();
 				getExtensions().addAll((Collection<? extends Extension>)newValue);
@@ -469,9 +437,6 @@ public class APICallParameterBindingImpl extends RealtimeStatechartParameterBind
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__ANNOTATIONS:
-				getAnnotations().clear();
-				return;
 			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__EXTENSIONS:
 				getExtensions().clear();
 				return;
@@ -505,8 +470,6 @@ public class APICallParameterBindingImpl extends RealtimeStatechartParameterBind
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__ANNOTATIONS:
-				return annotations != null && !annotations.isEmpty();
 			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__EXTENSIONS:
 				return extensions != null && !extensions.isEmpty();
 			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__NAME:
@@ -534,7 +497,6 @@ public class APICallParameterBindingImpl extends RealtimeStatechartParameterBind
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == ExtendableElement.class) {
 			switch (derivedFeatureID) {
-				case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__ANNOTATIONS: return CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 				case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__EXTENSIONS: return CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 				default: return -1;
 			}
@@ -571,7 +533,6 @@ public class APICallParameterBindingImpl extends RealtimeStatechartParameterBind
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == ExtendableElement.class) {
 			switch (baseFeatureID) {
-				case CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__ANNOTATIONS;
 				case CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS: return RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__EXTENSIONS;
 				default: return -1;
 			}

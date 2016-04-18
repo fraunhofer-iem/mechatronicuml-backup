@@ -70,15 +70,6 @@ public interface PortapimappingPackage extends EPackage {
 	int PORT_API_MAPPING = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_API_MAPPING__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -168,15 +159,6 @@ public interface PortapimappingPackage extends EPackage {
 	 * @generated
 	 */
 	int MAPPING_REPOSITORY = 1;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAPPING_REPOSITORY__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.

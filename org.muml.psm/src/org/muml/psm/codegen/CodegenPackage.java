@@ -72,15 +72,6 @@ public interface CodegenPackage extends EPackage {
 	int REFINED_ATOMIC_COMPONENT_INSTANCE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINED_ATOMIC_COMPONENT_INSTANCE__ANNOTATIONS = InstancePackage.ATOMIC_COMPONENT_INSTANCE__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -215,15 +206,6 @@ public interface CodegenPackage extends EPackage {
 	 * @generated
 	 */
 	int REFINED_STRUCTURED_RESOURCE_INSTANCE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINED_STRUCTURED_RESOURCE_INSTANCE__ANNOTATIONS = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.

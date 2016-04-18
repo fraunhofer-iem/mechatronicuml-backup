@@ -71,15 +71,6 @@ public interface Psm_instancePackage extends EPackage {
 	int PARAMETERISABLE_DISCRETE_SINGLE_PORT_INSTANCE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETERISABLE_DISCRETE_SINGLE_PORT_INSTANCE__ANNOTATIONS = InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
