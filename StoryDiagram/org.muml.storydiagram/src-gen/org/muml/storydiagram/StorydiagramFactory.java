@@ -26,15 +26,6 @@ public interface StorydiagramFactory extends EFactory {
 	StorydiagramFactory eINSTANCE = org.muml.storydiagram.impl.StorydiagramFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>SDM Extension</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>SDM Extension</em>'.
-	 * @generated
-	 */
-	SDMExtension createSDMExtension();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

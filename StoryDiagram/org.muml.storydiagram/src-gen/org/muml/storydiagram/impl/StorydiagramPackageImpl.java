@@ -270,7 +270,7 @@ public class StorydiagramPackageImpl extends EPackageImpl implements
 		initEClass(variableEClass, Variable.class, "Variable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVariable_VariableName(), ecorePackage.getEString(), "variableName", null, 0, 1, Variable.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
-		initEClass(sdmExtensionEClass, SDMExtension.class, "SDMExtension", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(sdmExtensionEClass, SDMExtension.class, "SDMExtension", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEOperation(getSDMExtension__GetModelBase(), theEcorePackage.getEModelElement(), "getModelBase", 0, 1, IS_UNIQUE, IS_ORDERED);
 

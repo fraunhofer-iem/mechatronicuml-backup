@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  *
  * @see org.muml.storydiagram.StorydiagramPackage#getSDMExtension()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface SDMExtension extends EObject {

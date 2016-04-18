@@ -13,6 +13,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -142,6 +143,7 @@ public class ActivityItemProvider extends CallableItemProvider {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_EDGES);
 			childrenFeatures.add(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODES);
+			childrenFeatures.add(ActivitiesPackage.Literals.ACTIVITY__ANNOTATIONS);
 		}
 		return childrenFeatures;
 	}
@@ -177,6 +179,7 @@ public class ActivityItemProvider extends CallableItemProvider {
 				return;
 			case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGES:
 			case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODES:
+			case ActivitiesPackage.ACTIVITY__ANNOTATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -257,6 +260,11 @@ public class ActivityItemProvider extends CallableItemProvider {
 			(createChildParameter
 				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODES,
 				 ActivitiesFactory.eINSTANCE.createFlowFinalNode()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.ACTIVITY__ANNOTATIONS,
+				 EcoreFactory.eINSTANCE.createEAnnotation()));
 	}
 
 }

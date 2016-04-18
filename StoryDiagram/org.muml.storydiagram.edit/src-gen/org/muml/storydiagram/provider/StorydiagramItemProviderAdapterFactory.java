@@ -72,29 +72,6 @@ public class StorydiagramItemProviderAdapterFactory extends StorydiagramAdapterF
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.muml.storydiagram.SDMExtension} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SDMExtensionItemProvider sdmExtensionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.muml.storydiagram.SDMExtension}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSDMExtensionAdapter() {
-		if (sdmExtensionItemProvider == null) {
-			sdmExtensionItemProvider = new SDMExtensionItemProvider(this);
-		}
-
-		return sdmExtensionItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -193,7 +170,6 @@ public class StorydiagramItemProviderAdapterFactory extends StorydiagramAdapterF
 	 * @generated
 	 */
 	public void dispose() {
-		if (sdmExtensionItemProvider != null) sdmExtensionItemProvider.dispose();
 	}
 
 }

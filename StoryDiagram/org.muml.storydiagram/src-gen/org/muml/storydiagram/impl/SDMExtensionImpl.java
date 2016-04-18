@@ -21,7 +21,7 @@ import org.muml.storydiagram.StorydiagramPackage;
  *
  * @generated
  */
-public class SDMExtensionImpl extends MinimalEObjectImpl.Container implements SDMExtension {
+public abstract class SDMExtensionImpl extends MinimalEObjectImpl.Container implements SDMExtension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

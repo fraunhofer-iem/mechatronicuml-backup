@@ -58,20 +58,9 @@ public class StorydiagramFactoryImpl extends EFactoryImpl implements
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case StorydiagramPackage.SDM_EXTENSION: return createSDMExtension();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SDMExtension createSDMExtension() {
-		SDMExtensionImpl sdmExtension = new SDMExtensionImpl();
-		return sdmExtension;
 	}
 
 	/**

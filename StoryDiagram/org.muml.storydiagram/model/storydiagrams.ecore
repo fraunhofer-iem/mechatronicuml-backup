@@ -13,7 +13,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" changeable="false"
         volatile="true" transient="true" derived="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SDMExtension">
+  <eClassifiers xsi:type="ecore:EClass" name="SDMExtension" abstract="true">
     <eOperations name="getModelBase" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EModelElement">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="if (getEContainer() instanceof EAnnotation &amp;&amp; getEContainer().getEContainer() instanceof EModelElement) {&#xA;&#x9;return (EModelElement) getEContainer().getEContainer();&#xA;}&#xA;return null;"/>
