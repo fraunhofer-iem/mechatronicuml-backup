@@ -11,7 +11,7 @@ import com.google.inject.Binder;
 import com.google.inject.name.Names;
 
 /**
- * Manual modifications go to {org.muml.psm.api.apimappinglanguage.APIMappingLanguageRuntimeModule}
+ * Manual modifications go to {org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguageRuntimeModule}
  */
 @SuppressWarnings("all")
 public abstract class AbstractAPIMappingLanguageRuntimeModule extends org.eclipse.xtext.service.DefaultRuntimeModule {
@@ -20,12 +20,12 @@ public abstract class AbstractAPIMappingLanguageRuntimeModule extends org.eclips
 
 	@Override
 	public void configure(Binder binder) {
-		properties = tryBindProperties(binder, "org/muml/psm/api/apimappinglanguage/APIMappingLanguage.properties");
+		properties = tryBindProperties(binder, "org/muml/psm/api/apimappinglanguage/xtext/APIMappingLanguage.properties");
 		super.configure(binder);
 	}
 	
 	public void configureLanguageName(Binder binder) {
-		binder.bind(String.class).annotatedWith(Names.named(Constants.LANGUAGE_NAME)).toInstance("org.muml.psm.api.apimappinglanguage.APIMappingLanguage");
+		binder.bind(String.class).annotatedWith(Names.named(Constants.LANGUAGE_NAME)).toInstance("org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage");
 	}
 	
 	public void configureFileExtensions(Binder binder) {

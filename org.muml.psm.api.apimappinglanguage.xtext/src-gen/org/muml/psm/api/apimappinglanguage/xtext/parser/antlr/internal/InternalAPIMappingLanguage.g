@@ -9,7 +9,7 @@ options {
 }
 
 @lexer::header {
-package org.muml.psm.api.apimappinglanguage.parser.antlr.internal;
+package org.muml.psm.api.apimappinglanguage.xtext.parser.antlr.internal;
 
 // Hack: Use our own Lexer superclass by means of import. 
 // Currently there is no other way to specify the superclass for the lexer.
@@ -17,7 +17,7 @@ import org.eclipse.xtext.parser.antlr.Lexer;
 }
 
 @parser::header {
-package org.muml.psm.api.apimappinglanguage.parser.antlr.internal; 
+package org.muml.psm.api.apimappinglanguage.xtext.parser.antlr.internal; 
 
 import org.eclipse.xtext.*;
 import org.eclipse.xtext.parser.*;
@@ -29,7 +29,7 @@ import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
 import org.eclipse.xtext.parser.antlr.AntlrDatatypeRuleToken;
-import org.muml.psm.api.apimappinglanguage.services.APIMappingLanguageGrammarAccess;
+import org.muml.psm.api.apimappinglanguage.xtext.services.APIMappingLanguageGrammarAccess;
 
 }
 
@@ -91,7 +91,7 @@ ruleMappingRepository returns [EObject current=null]
        			$current, 
        			"imports",
         		lv_imports_0_0, 
-        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Import");
+        		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.Import");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -113,7 +113,7 @@ ruleMappingRepository returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.EString");
+        		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -135,7 +135,7 @@ ruleMappingRepository returns [EObject current=null]
        			$current, 
        			"portApiMappings",
         		lv_portApiMappings_4_0, 
-        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.PortApiMapping");
+        		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.PortApiMapping");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -157,7 +157,7 @@ ruleMappingRepository returns [EObject current=null]
        			$current, 
        			"portApiMappings",
         		lv_portApiMappings_6_0, 
-        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.PortApiMapping");
+        		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.PortApiMapping");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -183,7 +183,7 @@ ruleMappingRepository returns [EObject current=null]
        			$current, 
        			"comment",
         		lv_comment_9_0, 
-        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.EString");
+        		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -456,7 +456,7 @@ ruleAPICallExpression returns [EObject current=null]
        			$current, 
        			"parameterBindings",
         		lv_parameterBindings_3_0, 
-        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.ParamaterBinding");
+        		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.ParamaterBinding");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -478,7 +478,7 @@ ruleAPICallExpression returns [EObject current=null]
        			$current, 
        			"parameterBindings",
         		lv_parameterBindings_5_0, 
-        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.ParamaterBinding");
+        		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.ParamaterBinding");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -545,7 +545,7 @@ ruleParamaterBinding returns [EObject current=null]
        			$current, 
        			"value",
         		lv_value_3_1, 
-        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Expression");
+        		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.Expression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -560,7 +560,7 @@ ruleParamaterBinding returns [EObject current=null]
        			$current, 
        			"value",
         		lv_value_3_2, 
-        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.EnumerationValueExpression");
+        		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.EnumerationValueExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -575,7 +575,7 @@ ruleParamaterBinding returns [EObject current=null]
        			$current, 
        			"value",
         		lv_value_3_3, 
-        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.ContiniousPortExpressions");
+        		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.ContiniousPortExpressions");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -912,7 +912,7 @@ ruleBlock returns [EObject current=null]
        			$current, 
        			"expressions",
         		lv_expressions_2_0, 
-        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.ExpressionStartRule");
+        		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.ExpressionStartRule");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -984,7 +984,7 @@ ruleForLoop returns [EObject current=null]
        			$current, 
        			"loopTest",
         		lv_loopTest_3_0, 
-        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Expression");
+        		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.Expression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1122,7 +1122,7 @@ ruleForLoopCountingExpression returns [EObject current=null]
        			$current, 
        			"rhs_assignExpression",
         		lv_rhs_assignExpression_3_0, 
-        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Expression");
+        		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.Expression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1169,7 +1169,7 @@ ruleWhileLoop returns [EObject current=null]
        			$current, 
        			"loopTest",
         		lv_loopTest_2_0, 
-        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Expression");
+        		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.Expression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1260,7 +1260,7 @@ ruleDoWhileLoop returns [EObject current=null]
        			$current, 
        			"loopTest",
         		lv_loopTest_4_0, 
-        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Expression");
+        		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.Expression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1311,7 +1311,7 @@ ruleIfStatement returns [EObject current=null]
        			$current, 
        			"ifCondition",
         		lv_ifCondition_2_0, 
-        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Expression");
+        		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.Expression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1420,7 +1420,7 @@ ruleElseIfStatement returns [EObject current=null]
        			$current, 
        			"elseIfCondition",
         		lv_elseIfCondition_2_0, 
-        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Expression");
+        		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.Expression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1491,7 +1491,7 @@ ruleReturnStatement returns [EObject current=null]
        			$current, 
        			"expression",
         		lv_expression_2_0, 
-        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Expression");
+        		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.Expression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3410,7 +3410,7 @@ ruleOperationCall returns [EObject current=null]
        			$current, 
        			"parameterBinding",
         		lv_parameterBinding_2_0, 
-        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.ParamaterBinding");
+        		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.ParamaterBinding");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3432,7 +3432,7 @@ ruleOperationCall returns [EObject current=null]
        			$current, 
        			"parameterBinding",
         		lv_parameterBinding_4_0, 
-        		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.ParamaterBinding");
+        		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.ParamaterBinding");
 	        afterParserOrEnumRuleCall();
 	    }
 
