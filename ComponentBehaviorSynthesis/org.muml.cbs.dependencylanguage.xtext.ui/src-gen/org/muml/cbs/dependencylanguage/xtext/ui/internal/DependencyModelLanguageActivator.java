@@ -23,7 +23,7 @@ import com.google.inject.Module;
  */
 public class DependencyModelLanguageActivator extends AbstractUIPlugin {
 	
-	public static final String DE_UNI_PADERBORN_FUJABA_MUML_DEPENDENCYMODELLANGUAGE = "org.muml.cbs.dependencylanguage.xtext.DependencyModelLanguage";
+	public static final String ORG_MUML_CBS_DEPENDENCYLANGUAGE_XTEXT_DEPENDENCYMODELLANGUAGE = "org.muml.cbs.dependencylanguage.xtext.DependencyModelLanguage";
 	
 	private static final Logger logger = Logger.getLogger(DependencyModelLanguageActivator.class);
 	
@@ -73,7 +73,7 @@ public class DependencyModelLanguageActivator extends AbstractUIPlugin {
 	}
 
 	protected Module getRuntimeModule(String grammar) {
-		if (DE_UNI_PADERBORN_FUJABA_MUML_DEPENDENCYMODELLANGUAGE.equals(grammar)) {
+		if (ORG_MUML_CBS_DEPENDENCYLANGUAGE_XTEXT_DEPENDENCYMODELLANGUAGE.equals(grammar)) {
 			return new org.muml.cbs.dependencylanguage.xtext.DependencyModelLanguageRuntimeModule();
 		}
 		
@@ -81,7 +81,7 @@ public class DependencyModelLanguageActivator extends AbstractUIPlugin {
 	}
 	
 	protected Module getUiModule(String grammar) {
-		if (DE_UNI_PADERBORN_FUJABA_MUML_DEPENDENCYMODELLANGUAGE.equals(grammar)) {
+		if (ORG_MUML_CBS_DEPENDENCYLANGUAGE_XTEXT_DEPENDENCYMODELLANGUAGE.equals(grammar)) {
 			return new org.muml.cbs.dependencylanguage.xtext.ui.DependencyModelLanguageUiModule(this);
 		}
 		

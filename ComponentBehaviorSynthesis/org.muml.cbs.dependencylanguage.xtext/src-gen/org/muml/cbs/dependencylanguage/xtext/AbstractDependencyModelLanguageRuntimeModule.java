@@ -20,7 +20,7 @@ public abstract class AbstractDependencyModelLanguageRuntimeModule extends org.e
 
 	@Override
 	public void configure(Binder binder) {
-		properties = tryBindProperties(binder, "de/uni_paderborn/fujaba/muml/DependencyModelLanguage.properties");
+		properties = tryBindProperties(binder, "org/muml/cbs/dependencylanguage/xtext/DependencyModelLanguage.properties");
 		super.configure(binder);
 	}
 	

@@ -1,7 +1,7 @@
 // written by Sebastian Goschin
 // Hidden elements can't be used as assignment, so to use SL_COMMENT and ML_COMMENT the hidden(WS) overrides hidden(WS, ML_COMMENT, SL_COMMENT)
 // Further this disallows comments that weren't be stored.
-grammar org.muml.cbs.dependencylanguage.xtext.DependencyModelLanguage with org.muml.pim.actionlanguage.ActionLanguage hidden (WS)
+grammar org.muml.cbs.dependencylanguage.xtext.DependencyModelLanguage with org.muml.pim.actionlanguage.xtext.ActionLanguage hidden (WS)
 
 import "platform:/resource/org.muml.cbs.dependencylanguage/model/dependencylanguage.ecore" 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore

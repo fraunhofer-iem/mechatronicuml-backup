@@ -11,6 +11,6 @@ public class DependencyModelLanguageAntlrTokenFileProvider implements IAntlrToke
 	@Override
 	public InputStream getAntlrTokenFile() {
 		ClassLoader classLoader = getClass().getClassLoader();
-    	return classLoader.getResourceAsStream("de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.tokens");
+    	return classLoader.getResourceAsStream("org/muml/cbs/dependencylanguage/xtext/parser/antlr/internal/InternalDependencyModelLanguage.tokens");
 	}
 }

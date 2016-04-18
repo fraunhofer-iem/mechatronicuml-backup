@@ -4,10 +4,11 @@
 package org.muml.cbs.dependencylanguage.xtext.ui;
 
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
-import org.muml.cbs.dependencylanguage.xtext.ui.internal.DependencyModelLanguageActivator;
 import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
+
+import org.muml.cbs.dependencylanguage.xtext.ui.internal.DependencyModelLanguageActivator;
 
 /**
  * This class was generated. Customizations should only happen in a newly
@@ -22,9 +23,7 @@ public class DependencyModelLanguageExecutableExtensionFactory extends AbstractG
 	
 	@Override
 	protected Injector getInjector() {
-		throw new RuntimeException();
-
-		//return DependencyModelLanguageActivator.getInstance().getInjector(DependencyModelLanguageActivator.DE_UNI_PADERBORN_FUJABA_MUML_DEPENDENCYMODELLANGUAGE);
+		return DependencyModelLanguageActivator.getInstance().getInjector(DependencyModelLanguageActivator.ORG_MUML_CBS_DEPENDENCYLANGUAGE_XTEXT_DEPENDENCYMODELLANGUAGE);
 	}
 	
 }

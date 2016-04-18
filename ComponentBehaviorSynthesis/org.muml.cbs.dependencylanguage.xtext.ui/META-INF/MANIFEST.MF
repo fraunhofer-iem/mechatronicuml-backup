@@ -31,5 +31,6 @@ Export-Package: org.muml.cbs.dependencylanguage.xtext.ui.contentassist,
  org.muml.cbs.dependencylanguage.xtext.ui.contentassist.antlr,
  org.muml.cbs.dependencylanguage.xtext.ui.internal,
  org.muml.cbs.dependencylanguage.xtext.ui.properties,
- org.muml.cbs.dependencylanguage.xtext.ui.quickfix
+ org.muml.cbs.dependencylanguage.xtext.ui.quickfix,
+ org.muml.cbs.dependencylanguage.xtext.ui.contentassist.antlr.internal
 Bundle-Activator: org.muml.cbs.dependencylanguage.xtext.ui.internal.DependencyModelLanguageActivator

@@ -10,7 +10,7 @@ options {
 }
 
 @lexer::header {
-package de.uni_paderborn.fujaba.muml.ui.contentassist.antlr.internal;
+package org.muml.cbs.dependencylanguage.xtext.ui.contentassist.antlr.internal;
 
 // Hack: Use our own Lexer superclass by means of import. 
 // Currently there is no other way to specify the superclass for the lexer.
@@ -18,7 +18,7 @@ import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.Lexer;
 }
 
 @parser::header {
-package de.uni_paderborn.fujaba.muml.ui.contentassist.antlr.internal; 
+package org.muml.cbs.dependencylanguage.xtext.ui.contentassist.antlr.internal; 
 
 import java.io.InputStream;
 import org.eclipse.xtext.*;
@@ -30,7 +30,7 @@ import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.DFA;
-import de.uni_paderborn.fujaba.muml.services.DependencyModelLanguageGrammarAccess;
+import org.muml.cbs.dependencylanguage.xtext.services.DependencyModelLanguageGrammarAccess;
 
 }
 
@@ -18626,7 +18626,7 @@ RULE_BOOLEAN : ('true'|'false');
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') (('a'..'z'|'A'..'Z'|'_'|'0'..'9')+ ('(' ('0'..'9')+ ')-->' ('a'..'z'|'A'..'Z'|'_'|'0'..'9')+)?)?;
 
-RULE_MINORMAXKEYWORD : ('maxMessageDelay'|'minMessageDelay');
+RULE_MINORMAXKEYWORD : 'maxMsgDelay';
 
 RULE_INT : ('0'..'9')+;
 

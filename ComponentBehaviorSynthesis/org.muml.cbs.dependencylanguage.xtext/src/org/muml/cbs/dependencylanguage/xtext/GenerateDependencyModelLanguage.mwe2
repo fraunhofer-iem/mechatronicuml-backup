@@ -7,7 +7,7 @@ import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
-var grammarURI = "classpath:/org/muml/cbs/dependencylanguage/DependencyModelLanguage.xtext"
+var grammarURI = "classpath:/org/muml/cbs/dependencylanguage/xtext/DependencyModelLanguage.xtext"
 var fileExtensions = "dependencymodel"
 var projectName = "org.muml.cbs.dependencylanguage.xtext"
 var runtimeProject = "../${projectName}"
