@@ -21,5 +21,6 @@ Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.muml.uppaal.trace.ui.contentassist,
  org.muml.uppaal.trace.ui.contentassist.antlr,
- org.muml.uppaal.trace.ui.quickfix
+ org.muml.uppaal.trace.ui.quickfix,
+ org.muml.uppaal.trace.ui.contentassist.antlr.internal
 Bundle-Activator: org.muml.uppaal.trace.ui.internal.DiagnosticTraceActivator

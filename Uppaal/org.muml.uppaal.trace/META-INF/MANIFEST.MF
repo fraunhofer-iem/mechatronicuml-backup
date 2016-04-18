@@ -25,9 +25,6 @@ Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.muml.uppaal.trace,
- org.muml.uppaal.trace.diagnostictrace,
- org.muml.uppaal.trace.diagnostictrace.impl,
- org.muml.uppaal.trace.diagnostictrace.util,
  org.muml.uppaal.trace.formatting,
  org.muml.uppaal.trace.generator,
  org.muml.uppaal.trace.parser.antlr,
@@ -35,5 +32,8 @@ Export-Package: org.muml.uppaal.trace,
  org.muml.uppaal.trace.scoping,
  org.muml.uppaal.trace.serializer,
  org.muml.uppaal.trace.services,
- org.muml.uppaal.trace.validation
+ org.muml.uppaal.trace.validation,
+ org.muml.uppaal.trace.diagnosticTrace,
+ org.muml.uppaal.trace.diagnosticTrace.impl,
+ org.muml.uppaal.trace.diagnosticTrace.util
 

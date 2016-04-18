@@ -7,7 +7,7 @@
     <package 
        uri = "http://www.muml.org/uppaal/trace/1.0.0" 
        class = "org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage"
-       genModel = "de/uni_paderborn/uppaal/trace/DiagnosticTrace.genmodel" /> 
+       genModel = "org/muml/uppaal/trace/DiagnosticTrace.genmodel" /> 
 	
   </extension>
 

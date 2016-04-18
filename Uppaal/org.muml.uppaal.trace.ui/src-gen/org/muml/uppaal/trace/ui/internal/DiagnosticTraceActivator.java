@@ -23,7 +23,7 @@ import com.google.inject.Module;
  */
 public class DiagnosticTraceActivator extends AbstractUIPlugin {
 	
-	public static final String DE_UNI_PADERBORN_UPPAAL_TRACE_DIAGNOSTICTRACE = "org.muml.uppaal.trace.DiagnosticTrace";
+	public static final String ORG_MUML_UPPAAL_TRACE_DIAGNOSTICTRACE = "org.muml.uppaal.trace.DiagnosticTrace";
 	
 	private static final Logger logger = Logger.getLogger(DiagnosticTraceActivator.class);
 	
@@ -73,7 +73,7 @@ public class DiagnosticTraceActivator extends AbstractUIPlugin {
 	}
 
 	protected Module getRuntimeModule(String grammar) {
-		if (DE_UNI_PADERBORN_UPPAAL_TRACE_DIAGNOSTICTRACE.equals(grammar)) {
+		if (ORG_MUML_UPPAAL_TRACE_DIAGNOSTICTRACE.equals(grammar)) {
 			return new org.muml.uppaal.trace.DiagnosticTraceRuntimeModule();
 		}
 		
@@ -81,7 +81,7 @@ public class DiagnosticTraceActivator extends AbstractUIPlugin {
 	}
 	
 	protected Module getUiModule(String grammar) {
-		if (DE_UNI_PADERBORN_UPPAAL_TRACE_DIAGNOSTICTRACE.equals(grammar)) {
+		if (ORG_MUML_UPPAAL_TRACE_DIAGNOSTICTRACE.equals(grammar)) {
 			return new org.muml.uppaal.trace.ui.DiagnosticTraceUiModule(this);
 		}
 		

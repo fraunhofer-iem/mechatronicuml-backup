@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.uppaal.trace/src-gen"
-    modelPluginID="org.muml.uppaal.trace"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.uppaal.trace/src-gen" editDirectory="/org.muml.uppaal.trace.edit/src"
+    editorDirectory="/org.muml.uppaal.trace.editor/src" modelPluginID="org.muml.uppaal.trace"
     forceOverwrite="true" modelName="DiagnosticTrace" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    complianceLevel="5.0" copyrightFields="false" runtimeVersion="2.10" usedGenPackages="platform:/resource/org.muml.uppaal/model/uppaal.genmodel#//uppaal/core platform:/resource/org.muml.uppaal/model/uppaal.genmodel#//uppaal/declarations platform:/resource/org.muml.uppaal/model/uppaal.genmodel#//uppaal/templates">
-  <genPackages prefix="DiagnosticTrace" basePackage="org.muml.uppaal.trace"
-      disposableProviderFactory="true" ecorePackage="DiagnosticTrace.ecore#/">
+    complianceLevel="6.0" copyrightFields="false" editPluginID="org.muml.uppaal.trace.edit"
+    editorPluginID="org.muml.uppaal.trace.editor" runtimeVersion="2.11" usedGenPackages="platform:/resource/org.muml.uppaal/model/uppaal.genmodel#//uppaal/core platform:/resource/org.muml.uppaal/model/uppaal.genmodel#//uppaal/declarations platform:/resource/org.muml.uppaal/model/uppaal.genmodel#//uppaal/templates">
+  <genPackages prefix="DiagnosticTrace" basePackage="org.muml.uppaal.trace" disposableProviderFactory="true"
+      ecorePackage="DiagnosticTrace.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="DiagnosticTrace.ecore#//Result">
       <genEnumLiterals ecoreEnumLiteral="DiagnosticTrace.ecore#//Result/SUCCESS"/>
       <genEnumLiterals ecoreEnumLiteral="DiagnosticTrace.ecore#//Result/FAILURE"/>

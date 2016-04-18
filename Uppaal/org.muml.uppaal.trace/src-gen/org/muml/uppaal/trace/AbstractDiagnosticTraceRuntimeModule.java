@@ -6,7 +6,6 @@ package org.muml.uppaal.trace;
 import java.util.Properties;
 
 import org.eclipse.xtext.Constants;
-import org.eclipse.xtext.service.DefaultRuntimeModule;
 
 import com.google.inject.Binder;
 import com.google.inject.name.Names;
@@ -14,14 +13,14 @@ import com.google.inject.name.Names;
 /**
  * Manual modifications go to {org.muml.uppaal.trace.DiagnosticTraceRuntimeModule}
  */
- @SuppressWarnings("all")
-public abstract class AbstractDiagnosticTraceRuntimeModule extends DefaultRuntimeModule {
+@SuppressWarnings("all")
+public abstract class AbstractDiagnosticTraceRuntimeModule extends org.eclipse.xtext.common.types.DefaultCommonTypesRuntimeModule {
 
 	protected Properties properties = null;
 
 	@Override
 	public void configure(Binder binder) {
-		properties = tryBindProperties(binder, "de/uni_paderborn/uppaal/trace/DiagnosticTrace.properties");
+		properties = tryBindProperties(binder, "org/muml/uppaal/trace/DiagnosticTrace.properties");
 		super.configure(binder);
 	}
 	
@@ -34,6 +33,11 @@ public abstract class AbstractDiagnosticTraceRuntimeModule extends DefaultRuntim
 			binder.bind(String.class).annotatedWith(Names.named(Constants.FILE_EXTENSIONS)).toInstance("trace");
 	}
 	
+	// contributed by org.eclipse.xtext.generator.grammarAccess.GrammarAccessFragment
+	public java.lang.ClassLoader bindClassLoaderToInstance() {
+		return getClass().getClassLoader();
+	}
+
 	// contributed by org.eclipse.xtext.generator.grammarAccess.GrammarAccessFragment
 	public Class<? extends org.eclipse.xtext.IGrammarAccess> bindIGrammarAccess() {
 		return org.muml.uppaal.trace.services.DiagnosticTraceGrammarAccess.class;
@@ -142,26 +146,6 @@ public abstract class AbstractDiagnosticTraceRuntimeModule extends DefaultRuntim
 	// contributed by org.eclipse.xtext.generator.formatting.FormatterFragment
 	public Class<? extends org.eclipse.xtext.formatting.IFormatter> bindIFormatter() {
 		return org.muml.uppaal.trace.formatting.DiagnosticTraceFormatter.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public java.lang.ClassLoader bindClassLoaderToInstance() {
-		return getClass().getClassLoader();
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public org.eclipse.xtext.common.types.TypesFactory bindTypesFactoryToInstance() {
-		return org.eclipse.xtext.common.types.TypesFactory.eINSTANCE;
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public Class<? extends org.eclipse.xtext.common.types.access.IJvmTypeProvider.Factory> bindIJvmTypeProvider$Factory() {
-		return org.eclipse.xtext.common.types.access.ClasspathTypeProviderFactory.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public Class<? extends org.eclipse.xtext.common.types.xtext.AbstractTypeScopeProvider> bindAbstractTypeScopeProvider() {
-		return org.eclipse.xtext.common.types.xtext.ClasspathBasedTypeScopeProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
