@@ -35,7 +35,6 @@
       <import plugin="org.eclipse.emf.edit.ui"/>
       <import plugin="org.eclipse.ui.ide"/>
       <import plugin="org.muml.cbs.dependencylanguage" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.core.modelinstance" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml" version="3.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml.project" version="3.2.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml" version="3.2.0" match="greaterOrEqual"/>

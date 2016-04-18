@@ -48,7 +48,6 @@
       <import feature="org.muml.pim.feature" version="0.5.0.qualifier"/>
       <import plugin="org.muml.core" version="1.0.1" match="greaterOrEqual"/>
       <import plugin="org.muml.simulink" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.core.modelinstance" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.muml.pim" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.runtime" version="3.6.0" match="greaterOrEqual"/>
       <import plugin="org.muml.simulink.adapter.m2t" version="0.4.0" match="greaterOrEqual"/>
