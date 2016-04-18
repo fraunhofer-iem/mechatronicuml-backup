@@ -635,7 +635,7 @@
 	   </menuContribution>
 	</extension>
 
-    <extension point="org.muml.core.modelinstance.modelelementcategory">
+    <extension point="org.muml.core.modelelementcategory">
       <category
             key="org.muml.storydiagram.category"
             name="storydiagrams">

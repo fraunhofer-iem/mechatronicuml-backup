@@ -132,7 +132,7 @@
       </menuContribution>
    </extension>
    <extension
-         point="org.muml.core.modelinstance.modelelementcategory">
+         point="org.muml.core.modelelementcategory">
       <category
             key="org.muml.pim.components.category"
             name="component">
