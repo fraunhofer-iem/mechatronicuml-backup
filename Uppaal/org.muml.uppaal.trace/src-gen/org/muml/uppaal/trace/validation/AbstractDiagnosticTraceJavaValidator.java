@@ -13,7 +13,7 @@ public class AbstractDiagnosticTraceJavaValidator extends org.eclipse.xtext.vali
 	@Override
 	protected List<EPackage> getEPackages() {
 	    List<EPackage> result = new ArrayList<EPackage>();
-	    result.add(org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage.eINSTANCE);
+	    result.add(org.muml.uppaal.trace.diagnostictrace.DiagnostictracePackage.eINSTANCE);
 		return result;
 	}
 

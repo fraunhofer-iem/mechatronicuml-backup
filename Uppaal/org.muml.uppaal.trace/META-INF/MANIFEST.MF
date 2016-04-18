@@ -33,7 +33,7 @@ Export-Package: org.muml.uppaal.trace,
  org.muml.uppaal.trace.serializer,
  org.muml.uppaal.trace.services,
  org.muml.uppaal.trace.validation,
- org.muml.uppaal.trace.diagnosticTrace,
- org.muml.uppaal.trace.diagnosticTrace.impl,
- org.muml.uppaal.trace.diagnosticTrace.util
+ org.muml.uppaal.trace.diagnostictrace,
+ org.muml.uppaal.trace.diagnostictrace.impl,
+ org.muml.uppaal.trace.diagnostictrace.util
 

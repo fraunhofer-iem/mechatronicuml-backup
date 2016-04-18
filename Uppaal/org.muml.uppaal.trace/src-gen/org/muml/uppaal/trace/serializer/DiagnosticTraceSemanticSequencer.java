@@ -14,20 +14,20 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
-import org.muml.uppaal.trace.diagnosticTrace.ActionTransition;
-import org.muml.uppaal.trace.diagnosticTrace.ChannelSynchronization;
-import org.muml.uppaal.trace.diagnosticTrace.DelayTransition;
-import org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage;
-import org.muml.uppaal.trace.diagnosticTrace.EdgeActivity;
-import org.muml.uppaal.trace.diagnosticTrace.LocationActivity;
-import org.muml.uppaal.trace.diagnosticTrace.NamedElementReference;
-import org.muml.uppaal.trace.diagnosticTrace.ProcessIdentifier;
-import org.muml.uppaal.trace.diagnosticTrace.SingleNamedElementReference;
-import org.muml.uppaal.trace.diagnosticTrace.State;
-import org.muml.uppaal.trace.diagnosticTrace.Synchronization;
-import org.muml.uppaal.trace.diagnosticTrace.Trace;
-import org.muml.uppaal.trace.diagnosticTrace.TraceRepository;
-import org.muml.uppaal.trace.diagnosticTrace.VariableValue;
+import org.muml.uppaal.trace.diagnostictrace.ActionTransition;
+import org.muml.uppaal.trace.diagnostictrace.ChannelSynchronization;
+import org.muml.uppaal.trace.diagnostictrace.DelayTransition;
+import org.muml.uppaal.trace.diagnostictrace.DiagnostictracePackage;
+import org.muml.uppaal.trace.diagnostictrace.EdgeActivity;
+import org.muml.uppaal.trace.diagnostictrace.LocationActivity;
+import org.muml.uppaal.trace.diagnostictrace.NamedElementReference;
+import org.muml.uppaal.trace.diagnostictrace.ProcessIdentifier;
+import org.muml.uppaal.trace.diagnostictrace.SingleNamedElementReference;
+import org.muml.uppaal.trace.diagnostictrace.State;
+import org.muml.uppaal.trace.diagnostictrace.Synchronization;
+import org.muml.uppaal.trace.diagnostictrace.Trace;
+import org.muml.uppaal.trace.diagnostictrace.TraceRepository;
+import org.muml.uppaal.trace.diagnostictrace.VariableValue;
 import org.muml.uppaal.trace.services.DiagnosticTraceGrammarAccess;
 
 @SuppressWarnings("all")
@@ -42,45 +42,45 @@ public class DiagnosticTraceSemanticSequencer extends AbstractDelegatingSemantic
 		ParserRule rule = context.getParserRule();
 		Action action = context.getAssignedAction();
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
-		if (epackage == DiagnosticTracePackage.eINSTANCE)
+		if (epackage == DiagnostictracePackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case DiagnosticTracePackage.ACTION_TRANSITION:
+			case DiagnostictracePackage.ACTION_TRANSITION:
 				sequence_ActionTransition(context, (ActionTransition) semanticObject); 
 				return; 
-			case DiagnosticTracePackage.CHANNEL_SYNCHRONIZATION:
+			case DiagnostictracePackage.CHANNEL_SYNCHRONIZATION:
 				sequence_ChannelSynchronization(context, (ChannelSynchronization) semanticObject); 
 				return; 
-			case DiagnosticTracePackage.DELAY_TRANSITION:
+			case DiagnostictracePackage.DELAY_TRANSITION:
 				sequence_DelayTransition(context, (DelayTransition) semanticObject); 
 				return; 
-			case DiagnosticTracePackage.EDGE_ACTIVITY:
+			case DiagnostictracePackage.EDGE_ACTIVITY:
 				sequence_EdgeActivity(context, (EdgeActivity) semanticObject); 
 				return; 
-			case DiagnosticTracePackage.LOCATION_ACTIVITY:
+			case DiagnostictracePackage.LOCATION_ACTIVITY:
 				sequence_LocationActivity(context, (LocationActivity) semanticObject); 
 				return; 
-			case DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE:
+			case DiagnostictracePackage.NAMED_ELEMENT_REFERENCE:
 				sequence_NamedElementReference(context, (NamedElementReference) semanticObject); 
 				return; 
-			case DiagnosticTracePackage.PROCESS_IDENTIFIER:
+			case DiagnostictracePackage.PROCESS_IDENTIFIER:
 				sequence_ProcessIdentifier(context, (ProcessIdentifier) semanticObject); 
 				return; 
-			case DiagnosticTracePackage.SINGLE_NAMED_ELEMENT_REFERENCE:
+			case DiagnostictracePackage.SINGLE_NAMED_ELEMENT_REFERENCE:
 				sequence_SingleNamedElementReference(context, (SingleNamedElementReference) semanticObject); 
 				return; 
-			case DiagnosticTracePackage.STATE:
+			case DiagnostictracePackage.STATE:
 				sequence_State(context, (State) semanticObject); 
 				return; 
-			case DiagnosticTracePackage.SYNCHRONIZATION:
+			case DiagnostictracePackage.SYNCHRONIZATION:
 				sequence_Synchronization(context, (Synchronization) semanticObject); 
 				return; 
-			case DiagnosticTracePackage.TRACE:
+			case DiagnostictracePackage.TRACE:
 				sequence_Trace(context, (Trace) semanticObject); 
 				return; 
-			case DiagnosticTracePackage.TRACE_REPOSITORY:
+			case DiagnostictracePackage.TRACE_REPOSITORY:
 				sequence_TraceRepository(context, (TraceRepository) semanticObject); 
 				return; 
-			case DiagnosticTracePackage.VARIABLE_VALUE:
+			case DiagnostictracePackage.VARIABLE_VALUE:
 				sequence_VariableValue(context, (VariableValue) semanticObject); 
 				return; 
 			}
@@ -112,10 +112,10 @@ public class DiagnosticTraceSemanticSequencer extends AbstractDelegatingSemantic
 	 */
 	protected void sequence_ChannelSynchronization(ISerializationContext context, ChannelSynchronization semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DiagnosticTracePackage.Literals.CHANNEL_SYNCHRONIZATION__CHANNEL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DiagnosticTracePackage.Literals.CHANNEL_SYNCHRONIZATION__CHANNEL));
-			if (transientValues.isValueTransient(semanticObject, DiagnosticTracePackage.Literals.CHANNEL_SYNCHRONIZATION__KIND) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DiagnosticTracePackage.Literals.CHANNEL_SYNCHRONIZATION__KIND));
+			if (transientValues.isValueTransient(semanticObject, DiagnostictracePackage.Literals.CHANNEL_SYNCHRONIZATION__CHANNEL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DiagnostictracePackage.Literals.CHANNEL_SYNCHRONIZATION__CHANNEL));
+			if (transientValues.isValueTransient(semanticObject, DiagnostictracePackage.Literals.CHANNEL_SYNCHRONIZATION__KIND) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DiagnostictracePackage.Literals.CHANNEL_SYNCHRONIZATION__KIND));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getChannelSynchronizationAccess().getChannelVariableIDTerminalRuleCall_0_0_1(), semanticObject.getChannel());
@@ -135,8 +135,8 @@ public class DiagnosticTraceSemanticSequencer extends AbstractDelegatingSemantic
 	 */
 	protected void sequence_DelayTransition(ISerializationContext context, DelayTransition semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DiagnosticTracePackage.Literals.DELAY_TRANSITION__DURATION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DiagnosticTracePackage.Literals.DELAY_TRANSITION__DURATION));
+			if (transientValues.isValueTransient(semanticObject, DiagnostictracePackage.Literals.DELAY_TRANSITION__DURATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DiagnostictracePackage.Literals.DELAY_TRANSITION__DURATION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getDelayTransitionAccess().getDurationINTTerminalRuleCall_1_0(), semanticObject.getDuration());
@@ -153,12 +153,12 @@ public class DiagnosticTraceSemanticSequencer extends AbstractDelegatingSemantic
 	 */
 	protected void sequence_EdgeActivity(ISerializationContext context, EdgeActivity semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DiagnosticTracePackage.Literals.EDGE_ACTIVITY__SOURCE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DiagnosticTracePackage.Literals.EDGE_ACTIVITY__SOURCE));
-			if (transientValues.isValueTransient(semanticObject, DiagnosticTracePackage.Literals.EDGE_ACTIVITY__TARGET) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DiagnosticTracePackage.Literals.EDGE_ACTIVITY__TARGET));
-			if (transientValues.isValueTransient(semanticObject, DiagnosticTracePackage.Literals.EDGE_ACTIVITY__DETAILS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DiagnosticTracePackage.Literals.EDGE_ACTIVITY__DETAILS));
+			if (transientValues.isValueTransient(semanticObject, DiagnostictracePackage.Literals.EDGE_ACTIVITY__SOURCE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DiagnostictracePackage.Literals.EDGE_ACTIVITY__SOURCE));
+			if (transientValues.isValueTransient(semanticObject, DiagnostictracePackage.Literals.EDGE_ACTIVITY__TARGET) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DiagnostictracePackage.Literals.EDGE_ACTIVITY__TARGET));
+			if (transientValues.isValueTransient(semanticObject, DiagnostictracePackage.Literals.EDGE_ACTIVITY__DETAILS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DiagnostictracePackage.Literals.EDGE_ACTIVITY__DETAILS));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getEdgeActivityAccess().getSourceLocationActivityParserRuleCall_0_0(), semanticObject.getSource());
@@ -177,10 +177,10 @@ public class DiagnosticTraceSemanticSequencer extends AbstractDelegatingSemantic
 	 */
 	protected void sequence_LocationActivity(ISerializationContext context, LocationActivity semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DiagnosticTracePackage.Literals.LOCATION_ACTIVITY__PROCESS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DiagnosticTracePackage.Literals.LOCATION_ACTIVITY__PROCESS));
-			if (transientValues.isValueTransient(semanticObject, DiagnosticTracePackage.Literals.LOCATION_ACTIVITY__LOCATION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DiagnosticTracePackage.Literals.LOCATION_ACTIVITY__LOCATION));
+			if (transientValues.isValueTransient(semanticObject, DiagnostictracePackage.Literals.LOCATION_ACTIVITY__PROCESS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DiagnostictracePackage.Literals.LOCATION_ACTIVITY__PROCESS));
+			if (transientValues.isValueTransient(semanticObject, DiagnostictracePackage.Literals.LOCATION_ACTIVITY__LOCATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DiagnostictracePackage.Literals.LOCATION_ACTIVITY__LOCATION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getLocationActivityAccess().getProcessProcessIdentifierParserRuleCall_0_0(), semanticObject.getProcess());

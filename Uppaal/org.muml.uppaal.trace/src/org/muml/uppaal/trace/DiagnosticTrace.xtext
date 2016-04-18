@@ -13,7 +13,7 @@ import "platform:/resource/org.muml.uppaal/model/uppaal.ecore#//statements" as s
 import "platform:/resource/org.muml.uppaal/model/uppaal.ecore#//expressions" as expressions
 import "platform:/resource/org.muml.uppaal/model/uppaal.ecore#//visuals" as visuals
 
-generate diagnosticTrace "http://www.muml.org/uppaal/trace/1.0.0"
+generate diagnostictrace "http://www.muml.org/uppaal/trace/1.0.0"
 
 
 TraceRepository:
