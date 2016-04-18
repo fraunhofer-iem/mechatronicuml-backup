@@ -264,6 +264,15 @@ public interface TimedstorydiagramPackage extends EPackage {
 	int TIMED_STORY_DIAGRAM__OWNED_ACTIVITY_NODES = ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODES;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMED_STORY_DIAGRAM__ANNOTATIONS = ActivitiesPackage.ACTIVITY__ANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Clock Inst Constraint</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -409,6 +418,15 @@ public interface TimedstorydiagramPackage extends EPackage {
 	int INVARIANT_STORY_DIAGRAM__OWNED_ACTIVITY_NODES = ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODES;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVARIANT_STORY_DIAGRAM__ANNOTATIONS = ActivitiesPackage.ACTIVITY__ANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Clock Inst Constraint</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -525,6 +543,15 @@ public interface TimedstorydiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int CLOCK_INSTANCE_STORY_DIAGRAM__OWNED_ACTIVITY_NODES = ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODES;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOCK_INSTANCE_STORY_DIAGRAM__ANNOTATIONS = ActivitiesPackage.ACTIVITY__ANNOTATIONS;
 
 	/**
 	 * The number of structural features of the '<em>Clock Instance Story Diagram</em>' class.
@@ -656,15 +683,6 @@ public interface TimedstorydiagramPackage extends EPackage {
 	int CLOCK_INSTANCE_VARIABLE__EXTENSIONS = PatternsPackage.OBJECT_VARIABLE__EXTENSIONS;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLOCK_INSTANCE_VARIABLE__TYPE = PatternsPackage.OBJECT_VARIABLE__TYPE;
-
-	/**
 	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -672,6 +690,15 @@ public interface TimedstorydiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int CLOCK_INSTANCE_VARIABLE__GENERIC_TYPE = PatternsPackage.OBJECT_VARIABLE__GENERIC_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Classifier</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOCK_INSTANCE_VARIABLE__CLASSIFIER = PatternsPackage.OBJECT_VARIABLE__CLASSIFIER;
 
 	/**
 	 * The feature id for the '<em><b>Variable Name</b></em>' attribute.
@@ -780,15 +807,6 @@ public interface TimedstorydiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int CLOCK_INSTANCE_VARIABLE__ATTRIBUTE_ASSIGNMENTS = PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENTS;
-
-	/**
-	 * The feature id for the '<em><b>Classifier</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLOCK_INSTANCE_VARIABLE__CLASSIFIER = PatternsPackage.OBJECT_VARIABLE__CLASSIFIER;
 
 	/**
 	 * The feature id for the '<em><b>Clock Instance Constraints</b></em>' reference list.
