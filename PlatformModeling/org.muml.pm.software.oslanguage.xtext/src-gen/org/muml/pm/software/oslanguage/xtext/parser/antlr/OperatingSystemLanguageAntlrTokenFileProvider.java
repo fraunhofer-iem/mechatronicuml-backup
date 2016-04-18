@@ -4,7 +4,6 @@
 package org.muml.pm.software.oslanguage.xtext.parser.antlr;
 
 import java.io.InputStream;
-
 import org.eclipse.xtext.parser.antlr.IAntlrTokenFileProvider;
 
 public class OperatingSystemLanguageAntlrTokenFileProvider implements IAntlrTokenFileProvider {
@@ -12,6 +11,6 @@ public class OperatingSystemLanguageAntlrTokenFileProvider implements IAntlrToke
 	@Override
 	public InputStream getAntlrTokenFile() {
 		ClassLoader classLoader = getClass().getClassLoader();
-    	return classLoader.getResourceAsStream("org/muml/pm/software/oslanguage/parser/antlr/internal/InternalOperatingSystemLanguage.tokens");
+    	return classLoader.getResourceAsStream("org/muml/pm/software/oslanguage/xtext/parser/antlr/internal/InternalOperatingSystemLanguage.tokens");
 	}
 }

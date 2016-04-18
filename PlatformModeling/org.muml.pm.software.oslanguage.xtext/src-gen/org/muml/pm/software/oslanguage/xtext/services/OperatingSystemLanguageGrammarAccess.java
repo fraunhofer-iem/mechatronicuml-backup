@@ -3,31 +3,23 @@
  */
 package org.muml.pm.software.oslanguage.xtext.services;
 
+import com.google.inject.Singleton;
+import com.google.inject.Inject;
+
 import java.util.List;
 
-import org.eclipse.xtext.Alternatives;
-import org.eclipse.xtext.Assignment;
-import org.eclipse.xtext.CrossReference;
-import org.eclipse.xtext.Grammar;
-import org.eclipse.xtext.GrammarUtil;
-import org.eclipse.xtext.Group;
-import org.eclipse.xtext.Keyword;
-import org.eclipse.xtext.ParserRule;
-import org.eclipse.xtext.RuleCall;
-import org.eclipse.xtext.TerminalRule;
-import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
-import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
+import org.eclipse.xtext.*;
 import org.eclipse.xtext.service.GrammarProvider;
+import org.eclipse.xtext.service.AbstractElementFinder.*;
 
-import com.google.inject.Inject;
-import com.google.inject.Singleton;
+import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
 
 @Singleton
 public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	public class OperatingSystemElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.OperatingSystemLanguage.OperatingSystem");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.OperatingSystem");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cImportsAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cImportsImportParserRuleCall_0_0 = (RuleCall)cImportsAssignment_0.eContents().get(0);
@@ -93,7 +85,7 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	public class ImportElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.OperatingSystemLanguage.Import");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.Import");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cImportURIAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -117,7 +109,7 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	public class EStringElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.OperatingSystemLanguage.EString");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.EString");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cSTRINGTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
@@ -138,7 +130,7 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	public class APIRepositoryElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.OperatingSystemLanguage.APIRepository");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.APIRepository");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cDevice_API_CallsKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -182,7 +174,7 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	public class EnumerationDataTypeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.OperatingSystemLanguage.EnumerationDataType");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.EnumerationDataType");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cEnumKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -245,7 +237,7 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	public class APICommandElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.OperatingSystemLanguage.APICommand");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.APICommand");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cReturnDataTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final CrossReference cReturnDataTypeDataTypeCrossReference_0_0 = (CrossReference)cReturnDataTypeAssignment_0.eContents().get(0);
@@ -327,7 +319,7 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	public class ParameterElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.OperatingSystemLanguage.Parameter");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.Parameter");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cDataTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final CrossReference cDataTypeDataTypeCrossReference_0_0 = (CrossReference)cDataTypeAssignment_0.eContents().get(0);
@@ -359,7 +351,7 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	public class EnumerationValueElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.OperatingSystemLanguage.EnumerationValue");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.EnumerationValue");
 		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cValueEStringParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
@@ -375,7 +367,7 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	public class TimeConstraintElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.OperatingSystemLanguage.TimeConstraint");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.TimeConstraint");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLeftSquareBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cSamplingTimeAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -403,7 +395,7 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	public class TimeValueElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.OperatingSystemLanguage.TimeValue");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.TimeValue");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cValueAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cValueINTExpressionParserRuleCall_0_0 = (RuleCall)cValueAssignment_0.eContents().get(0);
@@ -431,7 +423,7 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	public class INTExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.OperatingSystemLanguage.INTExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.INTExpression");
 		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cValueEStringParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
@@ -447,7 +439,7 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	public class TimeUnitExprElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.OperatingSystemLanguage.TimeUnitExpr");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.TimeUnitExpr");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Keyword cDaysKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Keyword cHoursKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
@@ -526,7 +518,7 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
 		Grammar grammar = grammarProvider.getGrammar(this);
 		while (grammar != null) {
-			if ("org.muml.pm.software.oslanguage.OperatingSystemLanguage".equals(grammar.getName())) {
+			if ("org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage".equals(grammar.getName())) {
 				return grammar;
 			}
 			List<Grammar> grammars = grammar.getUsedGrammars();

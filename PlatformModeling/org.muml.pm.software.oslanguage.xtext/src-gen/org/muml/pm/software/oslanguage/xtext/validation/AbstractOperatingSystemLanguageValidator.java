@@ -5,7 +5,6 @@ package org.muml.pm.software.oslanguage.xtext.validation;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.eclipse.emf.ecore.EPackage;
 
 public class AbstractOperatingSystemLanguageValidator extends org.eclipse.xtext.validation.AbstractDeclarativeValidator {

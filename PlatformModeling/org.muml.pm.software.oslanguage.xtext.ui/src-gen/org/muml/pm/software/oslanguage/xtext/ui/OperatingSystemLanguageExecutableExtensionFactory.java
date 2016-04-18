@@ -4,10 +4,11 @@
 package org.muml.pm.software.oslanguage.xtext.ui;
 
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
-import org.muml.pm.software.oslanguage.xtext.ui.internal.OperatingSystemLanguageActivator;
 import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
+
+import org.muml.pm.software.oslanguage.xtext.ui.internal.OperatingSystemLanguageActivator;
 
 /**
  * This class was generated. Customizations should only happen in a newly
@@ -22,7 +23,7 @@ public class OperatingSystemLanguageExecutableExtensionFactory extends AbstractG
 	
 	@Override
 	protected Injector getInjector() {
-		return OperatingSystemLanguageActivator.getInstance().getInjector(OperatingSystemLanguageActivator.ORG_MUML_PM_SOFTWARE_OSLANGUAGE_OPERATINGSYSTEMLANGUAGE);
+		return OperatingSystemLanguageActivator.getInstance().getInjector(OperatingSystemLanguageActivator.ORG_MUML_PM_SOFTWARE_OSLANGUAGE_XTEXT_OPERATINGSYSTEMLANGUAGE);
 	}
 	
 }

@@ -3,6 +3,7 @@
  */
 package org.muml.pm.software.oslanguage.xtext;
 
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.ISetup;
 

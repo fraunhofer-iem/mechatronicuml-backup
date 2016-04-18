@@ -9,7 +9,7 @@ options {
 }
 
 @lexer::header {
-package org.muml.pm.software.oslanguage.parser.antlr.internal;
+package org.muml.pm.software.oslanguage.xtext.parser.antlr.internal;
 
 // Hack: Use our own Lexer superclass by means of import. 
 // Currently there is no other way to specify the superclass for the lexer.
@@ -17,7 +17,7 @@ import org.eclipse.xtext.parser.antlr.Lexer;
 }
 
 @parser::header {
-package org.muml.pm.software.oslanguage.parser.antlr.internal; 
+package org.muml.pm.software.oslanguage.xtext.parser.antlr.internal; 
 
 import org.eclipse.xtext.*;
 import org.eclipse.xtext.parser.*;
@@ -28,7 +28,7 @@ import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
 import org.eclipse.xtext.parser.antlr.AntlrDatatypeRuleToken;
-import org.muml.pm.software.oslanguage.services.OperatingSystemLanguageGrammarAccess;
+import org.muml.pm.software.oslanguage.xtext.services.OperatingSystemLanguageGrammarAccess;
 
 }
 
@@ -90,7 +90,7 @@ ruleOperatingSystem returns [EObject current=null]
        			$current, 
        			"imports",
         		lv_imports_0_0, 
-        		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.Import");
+        		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.Import");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -112,7 +112,7 @@ ruleOperatingSystem returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.EString");
+        		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -134,7 +134,7 @@ ruleOperatingSystem returns [EObject current=null]
        			$current, 
        			"apirepositories",
         		lv_apirepositories_4_0, 
-        		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.APIRepository");
+        		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.APIRepository");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -153,7 +153,7 @@ ruleOperatingSystem returns [EObject current=null]
        			$current, 
        			"enumerationDataTypes",
         		lv_enumerationDataTypes_5_0, 
-        		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.EnumerationDataType");
+        		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.EnumerationDataType");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -279,7 +279,7 @@ ruleAPIRepository returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.EString");
+        		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -301,7 +301,7 @@ ruleAPIRepository returns [EObject current=null]
        			$current, 
        			"apiCommands",
         		lv_apiCommands_3_0, 
-        		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.APICommand");
+        		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.APICommand");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -348,7 +348,7 @@ ruleEnumerationDataType returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.EString");
+        		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -370,7 +370,7 @@ ruleEnumerationDataType returns [EObject current=null]
        			$current, 
        			"enumerationValues",
         		lv_enumerationValues_3_0, 
-        		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.EnumerationValue");
+        		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.EnumerationValue");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -392,7 +392,7 @@ ruleEnumerationDataType returns [EObject current=null]
        			$current, 
        			"enumerationValues",
         		lv_enumerationValues_5_0, 
-        		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.EnumerationValue");
+        		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.EnumerationValue");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -450,7 +450,7 @@ ruleAPICommand returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.EString");
+        		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -472,7 +472,7 @@ ruleAPICommand returns [EObject current=null]
        			$current, 
        			"parameters",
         		lv_parameters_3_0, 
-        		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.Parameter");
+        		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.Parameter");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -494,7 +494,7 @@ ruleAPICommand returns [EObject current=null]
        			$current, 
        			"parameters",
         		lv_parameters_5_0, 
-        		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.Parameter");
+        		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.Parameter");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -516,7 +516,7 @@ ruleAPICommand returns [EObject current=null]
        			$current, 
        			"constraints",
         		lv_constraints_7_0, 
-        		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.TimeConstraint");
+        		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.TimeConstraint");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -574,7 +574,7 @@ ruleParameter returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.EString");
+        		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -613,7 +613,7 @@ ruleEnumerationValue returns [EObject current=null]
        			$current, 
        			"value",
         		lv_value_0_0, 
-        		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.EString");
+        		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -656,7 +656,7 @@ ruleTimeConstraint returns [EObject current=null]
        			$current, 
        			"samplingTime",
         		lv_samplingTime_1_0, 
-        		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.TimeValue");
+        		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.TimeValue");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -699,7 +699,7 @@ ruleTimeValue returns [EObject current=null]
        			$current, 
        			"value",
         		lv_value_0_0, 
-        		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.INTExpression");
+        		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.INTExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -717,7 +717,7 @@ ruleTimeValue returns [EObject current=null]
        			$current, 
        			"unit",
         		lv_unit_1_0, 
-        		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.TimeUnitExpr");
+        		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.TimeUnitExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -756,7 +756,7 @@ ruleINTExpression returns [EObject current=null]
        			$current, 
        			"value",
         		lv_value_0_0, 
-        		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.EString");
+        		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 

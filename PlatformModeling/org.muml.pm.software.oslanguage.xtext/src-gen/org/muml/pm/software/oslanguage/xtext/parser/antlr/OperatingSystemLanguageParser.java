@@ -3,10 +3,10 @@
  */
 package org.muml.pm.software.oslanguage.xtext.parser.antlr;
 
+import com.google.inject.Inject;
+
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.muml.pm.software.oslanguage.xtext.services.OperatingSystemLanguageGrammarAccess;
-
-import com.google.inject.Inject;
 
 public class OperatingSystemLanguageParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrParser {
 	

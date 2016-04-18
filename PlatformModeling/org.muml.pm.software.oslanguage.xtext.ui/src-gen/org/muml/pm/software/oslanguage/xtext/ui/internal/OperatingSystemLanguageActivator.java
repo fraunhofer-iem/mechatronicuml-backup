@@ -23,7 +23,7 @@ import com.google.inject.Module;
  */
 public class OperatingSystemLanguageActivator extends AbstractUIPlugin {
 	
-	public static final String ORG_MUML_PM_SOFTWARE_OSLANGUAGE_OPERATINGSYSTEMLANGUAGE = "org.muml.pm.software.oslanguage.OperatingSystemLanguage";
+	public static final String ORG_MUML_PM_SOFTWARE_OSLANGUAGE_XTEXT_OPERATINGSYSTEMLANGUAGE = "org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage";
 	
 	private static final Logger logger = Logger.getLogger(OperatingSystemLanguageActivator.class);
 	
@@ -73,7 +73,7 @@ public class OperatingSystemLanguageActivator extends AbstractUIPlugin {
 	}
 
 	protected Module getRuntimeModule(String grammar) {
-		if (ORG_MUML_PM_SOFTWARE_OSLANGUAGE_OPERATINGSYSTEMLANGUAGE.equals(grammar)) {
+		if (ORG_MUML_PM_SOFTWARE_OSLANGUAGE_XTEXT_OPERATINGSYSTEMLANGUAGE.equals(grammar)) {
 			return new org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguageRuntimeModule();
 		}
 		
@@ -81,7 +81,7 @@ public class OperatingSystemLanguageActivator extends AbstractUIPlugin {
 	}
 	
 	protected Module getUiModule(String grammar) {
-		if (ORG_MUML_PM_SOFTWARE_OSLANGUAGE_OPERATINGSYSTEMLANGUAGE.equals(grammar)) {
+		if (ORG_MUML_PM_SOFTWARE_OSLANGUAGE_XTEXT_OPERATINGSYSTEMLANGUAGE.equals(grammar)) {
 			return new org.muml.pm.software.oslanguage.xtext.ui.OperatingSystemLanguageUiModule(this);
 		}
 		

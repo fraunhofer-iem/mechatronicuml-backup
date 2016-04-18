@@ -11,7 +11,7 @@ import com.google.inject.Binder;
 import com.google.inject.name.Names;
 
 /**
- * Manual modifications go to {org.muml.pm.software.oslanguage.OperatingSystemLanguageRuntimeModule}
+ * Manual modifications go to {org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguageRuntimeModule}
  */
 @SuppressWarnings("all")
 public abstract class AbstractOperatingSystemLanguageRuntimeModule extends org.eclipse.xtext.service.DefaultRuntimeModule {
@@ -20,12 +20,12 @@ public abstract class AbstractOperatingSystemLanguageRuntimeModule extends org.e
 
 	@Override
 	public void configure(Binder binder) {
-		properties = tryBindProperties(binder, "org/muml/pm/software/oslanguage/OperatingSystemLanguage.properties");
+		properties = tryBindProperties(binder, "org/muml/pm/software/oslanguage/xtext/OperatingSystemLanguage.properties");
 		super.configure(binder);
 	}
 	
 	public void configureLanguageName(Binder binder) {
-		binder.bind(String.class).annotatedWith(Names.named(Constants.LANGUAGE_NAME)).toInstance("org.muml.pm.software.oslanguage.OperatingSystemLanguage");
+		binder.bind(String.class).annotatedWith(Names.named(Constants.LANGUAGE_NAME)).toInstance("org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage");
 	}
 	
 	public void configureFileExtensions(Binder binder) {

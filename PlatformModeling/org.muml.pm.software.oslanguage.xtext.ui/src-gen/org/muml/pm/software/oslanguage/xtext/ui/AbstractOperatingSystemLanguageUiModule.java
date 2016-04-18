@@ -7,7 +7,7 @@ package org.muml.pm.software.oslanguage.xtext.ui;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
- * Manual modifications go to {org.muml.pm.software.oslanguage.ui.OperatingSystemLanguageUiModule}
+ * Manual modifications go to {org.muml.pm.software.oslanguage.xtext.ui.OperatingSystemLanguageUiModule}
  */
 @SuppressWarnings("all")
 public abstract class AbstractOperatingSystemLanguageUiModule extends org.eclipse.xtext.ui.DefaultUiModule {

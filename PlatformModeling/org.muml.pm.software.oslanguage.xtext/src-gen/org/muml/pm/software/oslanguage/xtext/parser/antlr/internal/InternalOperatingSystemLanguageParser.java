@@ -1,15 +1,22 @@
 package org.muml.pm.software.oslanguage.xtext.parser.antlr.internal; 
 
-import org.antlr.runtime.BitSet;
-import org.antlr.runtime.NoViableAltException;
-import org.antlr.runtime.RecognitionException;
-import org.antlr.runtime.RecognizerSharedState;
-import org.antlr.runtime.Token;
-import org.antlr.runtime.TokenStream;
+import org.eclipse.xtext.*;
+import org.eclipse.xtext.parser.*;
+import org.eclipse.xtext.parser.impl.*;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
+import org.eclipse.xtext.parser.antlr.XtextTokenStream;
+import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
 import org.eclipse.xtext.parser.antlr.AntlrDatatypeRuleToken;
 import org.muml.pm.software.oslanguage.xtext.services.OperatingSystemLanguageGrammarAccess;
+
+
+
+import org.antlr.runtime.*;
+import java.util.Stack;
+import java.util.List;
+import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlrParser {
@@ -178,7 +185,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
             	           			current, 
             	           			"imports",
             	            		lv_imports_0_0, 
-            	            		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.Import");
+            	            		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.Import");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -219,7 +226,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                    			current, 
                    			"name",
                     		lv_name_2_0, 
-                    		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.EString");
+                    		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.EString");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -272,7 +279,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
             	           			current, 
             	           			"apirepositories",
             	            		lv_apirepositories_4_0, 
-            	            		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.APIRepository");
+            	            		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.APIRepository");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -309,7 +316,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
             	           			current, 
             	           			"enumerationDataTypes",
             	            		lv_enumerationDataTypes_5_0, 
-            	            		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.EnumerationDataType");
+            	            		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.EnumerationDataType");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -651,7 +658,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                    			current, 
                    			"name",
                     		lv_name_1_0, 
-                    		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.EString");
+                    		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.EString");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -698,7 +705,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
             	           			current, 
             	           			"apiCommands",
             	            		lv_apiCommands_3_0, 
-            	            		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.APICommand");
+            	            		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.APICommand");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -824,7 +831,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                    			current, 
                    			"name",
                     		lv_name_1_0, 
-                    		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.EString");
+                    		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.EString");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -870,7 +877,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                            			current, 
                            			"enumerationValues",
                             		lv_enumerationValues_3_0, 
-                            		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.EnumerationValue");
+                            		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.EnumerationValue");
                     	        afterParserOrEnumRuleCall();
                     	    
 
@@ -920,7 +927,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                     	           			current, 
                     	           			"enumerationValues",
                     	            		lv_enumerationValues_5_0, 
-                    	            		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.EnumerationValue");
+                    	            		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.EnumerationValue");
                     	    	        afterParserOrEnumRuleCall();
                     	    	    
 
@@ -1081,7 +1088,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                    			current, 
                    			"name",
                     		lv_name_1_0, 
-                    		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.EString");
+                    		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.EString");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -1127,7 +1134,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                            			current, 
                            			"parameters",
                             		lv_parameters_3_0, 
-                            		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.Parameter");
+                            		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.Parameter");
                     	        afterParserOrEnumRuleCall();
                     	    
 
@@ -1177,7 +1184,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                     	           			current, 
                     	           			"parameters",
                     	            		lv_parameters_5_0, 
-                    	            		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.Parameter");
+                    	            		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.Parameter");
                     	    	        afterParserOrEnumRuleCall();
                     	    	    
 
@@ -1235,7 +1242,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                            			current, 
                            			"constraints",
                             		lv_constraints_7_0, 
-                            		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.TimeConstraint");
+                            		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.TimeConstraint");
                     	        afterParserOrEnumRuleCall();
                     	    
 
@@ -1374,7 +1381,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                    			current, 
                    			"name",
                     		lv_name_1_0, 
-                    		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.EString");
+                    		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.EString");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -1475,7 +1482,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                    			current, 
                    			"value",
                     		lv_value_0_0, 
-                    		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.EString");
+                    		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.EString");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -1582,7 +1589,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                    			current, 
                    			"samplingTime",
                     		lv_samplingTime_1_0, 
-                    		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.TimeValue");
+                    		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.TimeValue");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -1692,7 +1699,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                    			current, 
                    			"value",
                     		lv_value_0_0, 
-                    		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.INTExpression");
+                    		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.INTExpression");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -1723,7 +1730,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                    			current, 
                    			"unit",
                     		lv_unit_1_0, 
-                    		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.TimeUnitExpr");
+                    		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.TimeUnitExpr");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -1824,7 +1831,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                    			current, 
                    			"value",
                     		lv_value_0_0, 
-                    		"org.muml.pm.software.oslanguage.OperatingSystemLanguage.EString");
+                    		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.EString");
             	        afterParserOrEnumRuleCall();
             	    
 

@@ -3,12 +3,10 @@
  */
 package org.muml.pm.software.oslanguage.xtext.parseTreeConstruction;
 
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.Alternatives;
-import org.eclipse.xtext.Assignment;
-import org.eclipse.xtext.Group;
-import org.eclipse.xtext.Keyword;
+import org.eclipse.emf.ecore.*;
+import org.eclipse.xtext.*;
 import org.eclipse.xtext.parsetree.reconstr.IEObjectConsumer;
+
 import org.muml.pm.software.oslanguage.xtext.services.OperatingSystemLanguageGrammarAccess;
 
 import com.google.inject.Inject;
