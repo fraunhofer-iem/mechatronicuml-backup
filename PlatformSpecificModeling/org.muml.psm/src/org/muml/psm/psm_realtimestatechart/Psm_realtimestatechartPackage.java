@@ -72,15 +72,6 @@ public interface Psm_realtimestatechartPackage extends EPackage {
 	int PARAMETERIZED_REALTIME_STATECHART = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETERIZED_REALTIME_STATECHART__ANNOTATIONS = RealtimestatechartPackage.REALTIME_STATECHART__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -341,15 +332,6 @@ public interface Psm_realtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	int API_CALL = 1;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int API_CALL__ANNOTATIONS = ActionlanguagePackage.OPERATION_CALL__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.

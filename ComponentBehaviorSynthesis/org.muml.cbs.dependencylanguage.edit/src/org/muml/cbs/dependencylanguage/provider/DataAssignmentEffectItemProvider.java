@@ -204,7 +204,6 @@ public class DataAssignmentEffectItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATIONS);
 			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS);
 			childrenFeatures.add(ActionlanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION);
 			childrenFeatures.add(ActionlanguagePackage.Literals.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION);
@@ -268,7 +267,6 @@ public class DataAssignmentEffectItemProvider
 			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__DIRECTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__ANNOTATIONS:
 			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__EXTENSIONS:
 			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__RHS_ASSIGN_EXPRESSION:
 			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION:

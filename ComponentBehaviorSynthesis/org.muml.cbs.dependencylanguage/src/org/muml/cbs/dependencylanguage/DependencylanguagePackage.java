@@ -79,15 +79,6 @@ public interface DependencylanguagePackage extends EPackage {
 	int SYNTHESIZABLE_BEHAVIOR = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNTHESIZABLE_BEHAVIOR__ANNOTATIONS = CorePackage.EXTENSION__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -197,15 +188,6 @@ public interface DependencylanguagePackage extends EPackage {
 	int DEPENDENCY_MODEL = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPENDENCY_MODEL__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -270,15 +252,6 @@ public interface DependencylanguagePackage extends EPackage {
 	int DEPENDENCY = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPENDENCY__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -332,15 +305,6 @@ public interface DependencylanguagePackage extends EPackage {
 	 * @generated
 	 */
 	int SYNCHRONIZATION = 3;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION__ANNOTATIONS = DEPENDENCY__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -443,15 +407,6 @@ public interface DependencylanguagePackage extends EPackage {
 	int FORBIDDEN_STATE_COMBINATION = 4;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORBIDDEN_STATE_COMBINATION__ANNOTATIONS = DEPENDENCY__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -514,15 +469,6 @@ public interface DependencylanguagePackage extends EPackage {
 	 * @generated
 	 */
 	int CLOCK_MERGE = 5;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLOCK_MERGE__ANNOTATIONS = DEPENDENCY__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -596,15 +542,6 @@ public interface DependencylanguagePackage extends EPackage {
 	 * @generated
 	 */
 	int DATA_MERGE = 6;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_MERGE__ANNOTATIONS = DEPENDENCY__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -687,15 +624,6 @@ public interface DependencylanguagePackage extends EPackage {
 	 * @generated
 	 */
 	int CONDITIONAL_DEPENDENCY = 7;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITIONAL_DEPENDENCY__ANNOTATIONS = DEPENDENCY__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -1296,22 +1224,13 @@ public interface DependencylanguagePackage extends EPackage {
 	int DATA_ASSIGNMENT_EFFECT = 11;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_ASSIGNMENT_EFFECT__ANNOTATIONS = EFFECT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ASSIGNMENT_EFFECT__EXTENSIONS = EFFECT_FEATURE_COUNT + 1;
+	int DATA_ASSIGNMENT_EFFECT__EXTENSIONS = EFFECT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1320,7 +1239,7 @@ public interface DependencylanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ASSIGNMENT_EFFECT__COMMENT = EFFECT_FEATURE_COUNT + 2;
+	int DATA_ASSIGNMENT_EFFECT__COMMENT = EFFECT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Assign Operator</b></em>' attribute.
@@ -1329,7 +1248,7 @@ public interface DependencylanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ASSIGNMENT_EFFECT__ASSIGN_OPERATOR = EFFECT_FEATURE_COUNT + 3;
+	int DATA_ASSIGNMENT_EFFECT__ASSIGN_OPERATOR = EFFECT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Rhs assign Expression</b></em>' containment reference.
@@ -1338,7 +1257,7 @@ public interface DependencylanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ASSIGNMENT_EFFECT__RHS_ASSIGN_EXPRESSION = EFFECT_FEATURE_COUNT + 4;
+	int DATA_ASSIGNMENT_EFFECT__RHS_ASSIGN_EXPRESSION = EFFECT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Increment Decrement Operator</b></em>' attribute.
@@ -1347,7 +1266,7 @@ public interface DependencylanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ASSIGNMENT_EFFECT__INCREMENT_DECREMENT_OPERATOR = EFFECT_FEATURE_COUNT + 5;
+	int DATA_ASSIGNMENT_EFFECT__INCREMENT_DECREMENT_OPERATOR = EFFECT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Lhs typed Named Element Expression</b></em>' containment reference.
@@ -1356,7 +1275,7 @@ public interface DependencylanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ASSIGNMENT_EFFECT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION = EFFECT_FEATURE_COUNT + 6;
+	int DATA_ASSIGNMENT_EFFECT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION = EFFECT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -1365,7 +1284,7 @@ public interface DependencylanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ASSIGNMENT_EFFECT__DIRECTION = EFFECT_FEATURE_COUNT + 7;
+	int DATA_ASSIGNMENT_EFFECT__DIRECTION = EFFECT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Data Assignment Effect</em>' class.
@@ -1374,7 +1293,7 @@ public interface DependencylanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ASSIGNMENT_EFFECT_FEATURE_COUNT = EFFECT_FEATURE_COUNT + 8;
+	int DATA_ASSIGNMENT_EFFECT_FEATURE_COUNT = EFFECT_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -1538,15 +1457,6 @@ public interface DependencylanguagePackage extends EPackage {
 	 * @generated
 	 */
 	int BOUNDED_ACTIVE_STATE = 12;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOUNDED_ACTIVE_STATE__ANNOTATIONS = DEPENDENCY__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -2706,15 +2616,6 @@ public interface DependencylanguagePackage extends EPackage {
 	 * @generated
 	 */
 	int BASIC_CLOCK_CONDITION = 19;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASIC_CLOCK_CONDITION__ANNOTATIONS = RealtimestatechartPackage.CLOCK_CONSTRAINT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -5068,15 +4969,6 @@ public interface DependencylanguagePackage extends EPackage {
 	 * @generated
 	 */
 	int TRIGGER_MESSAGE = 32;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRIGGER_MESSAGE__ANNOTATIONS = DEPENDENCY__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.

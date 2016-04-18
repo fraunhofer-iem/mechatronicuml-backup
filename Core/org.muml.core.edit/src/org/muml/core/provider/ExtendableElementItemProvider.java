@@ -76,7 +76,6 @@ public class ExtendableElementItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATIONS);
 			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS);
 		}
 		return childrenFeatures;
@@ -119,7 +118,6 @@ public class ExtendableElementItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ExtendableElement.class)) {
-			case CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS:
 			case CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

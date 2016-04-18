@@ -4,11 +4,7 @@ package org.muml.core.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EModelElement;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -27,9 +23,6 @@ import org.muml.core.Extension;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.muml.core.impl.ExtensionImpl#getBase <em>Base</em>}</li>
- *   <li>{@link org.muml.core.impl.ExtensionImpl#getModelBase <em>Model Base</em>}</li>
- *   <li>{@link org.muml.core.impl.ExtensionImpl#getOwningAnnotation <em>Owning Annotation</em>}</li>
  *   <li>{@link org.muml.core.impl.ExtensionImpl#getExtendableBase <em>Extendable Base</em>}</li>
  * </ul>
  *
@@ -53,138 +46,6 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements Ext
 	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.EXTENSION;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EObject getBase() {
-		EObject base = basicGetBase();
-		return base != null && base.eIsProxy() ? eResolveProxy((InternalEObject)base) : base;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EObject basicGetBase() {
-		// TODO: implement this method to return the 'Base' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EModelElement getModelBase() {
-		EModelElement modelBase = basicGetModelBase();
-		return modelBase != null && modelBase.eIsProxy() ? (EModelElement)eResolveProxy((InternalEObject)modelBase) : modelBase;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EModelElement basicGetModelBase() {
-		// TODO: implement this method to return the 'Model Base' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setModelBase(EModelElement newModelBase) {
-		// TODO: implement this method to set the 'Model Base' reference
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void unsetModelBase() {
-		// TODO: implement this method to unset the 'Model Base' reference
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetModelBase() {
-		// TODO: implement this method to return whether the 'Model Base' reference is set
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAnnotation getOwningAnnotation() {
-		EAnnotation owningAnnotation = basicGetOwningAnnotation();
-		return owningAnnotation != null && owningAnnotation.eIsProxy() ? (EAnnotation)eResolveProxy((InternalEObject)owningAnnotation) : owningAnnotation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAnnotation basicGetOwningAnnotation() {
-		// TODO: implement this method to return the 'Owning Annotation' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOwningAnnotation(EAnnotation newOwningAnnotation) {
-		// TODO: implement this method to set the 'Owning Annotation' reference
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void unsetOwningAnnotation() {
-		// TODO: implement this method to unset the 'Owning Annotation' reference
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetOwningAnnotation() {
-		// TODO: implement this method to return whether the 'Owning Annotation' reference is set
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -280,15 +141,6 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements Ext
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CorePackage.EXTENSION__BASE:
-				if (resolve) return getBase();
-				return basicGetBase();
-			case CorePackage.EXTENSION__MODEL_BASE:
-				if (resolve) return getModelBase();
-				return basicGetModelBase();
-			case CorePackage.EXTENSION__OWNING_ANNOTATION:
-				if (resolve) return getOwningAnnotation();
-				return basicGetOwningAnnotation();
 			case CorePackage.EXTENSION__EXTENDABLE_BASE:
 				return getExtendableBase();
 		}
@@ -303,12 +155,6 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements Ext
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CorePackage.EXTENSION__MODEL_BASE:
-				setModelBase((EModelElement)newValue);
-				return;
-			case CorePackage.EXTENSION__OWNING_ANNOTATION:
-				setOwningAnnotation((EAnnotation)newValue);
-				return;
 			case CorePackage.EXTENSION__EXTENDABLE_BASE:
 				setExtendableBase((ExtendableElement)newValue);
 				return;
@@ -324,12 +170,6 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements Ext
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CorePackage.EXTENSION__MODEL_BASE:
-				unsetModelBase();
-				return;
-			case CorePackage.EXTENSION__OWNING_ANNOTATION:
-				unsetOwningAnnotation();
-				return;
 			case CorePackage.EXTENSION__EXTENDABLE_BASE:
 				setExtendableBase((ExtendableElement)null);
 				return;
@@ -345,12 +185,6 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements Ext
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CorePackage.EXTENSION__BASE:
-				return basicGetBase() != null;
-			case CorePackage.EXTENSION__MODEL_BASE:
-				return isSetModelBase();
-			case CorePackage.EXTENSION__OWNING_ANNOTATION:
-				return isSetOwningAnnotation();
 			case CorePackage.EXTENSION__EXTENDABLE_BASE:
 				return getExtendableBase() != null;
 		}

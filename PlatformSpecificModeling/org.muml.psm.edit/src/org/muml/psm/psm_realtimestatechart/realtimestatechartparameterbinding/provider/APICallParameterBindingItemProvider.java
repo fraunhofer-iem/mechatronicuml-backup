@@ -207,7 +207,6 @@ public class APICallParameterBindingItemProvider extends RealtimeStatechartParam
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATIONS);
 			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS);
 			childrenFeatures.add(BehaviorPackage.Literals.OPERATION__IMPLEMENTATIONS);
 			childrenFeatures.add(BehaviorPackage.Literals.OPERATION__PARAMETERS);
@@ -271,7 +270,6 @@ public class APICallParameterBindingItemProvider extends RealtimeStatechartParam
 			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__COMMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__ANNOTATIONS:
 			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__EXTENSIONS:
 			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__IMPLEMENTATIONS:
 			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__PARAMETERS:

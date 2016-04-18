@@ -2,8 +2,6 @@
  */
 package org.muml.core.impl;
 
-import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
@@ -184,17 +182,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExtendableElement_Annotations() {
-		return (EReference)extendableElementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getExtendableElement_Extensions() {
-		return (EReference)extendableElementEClass.getEStructuralFeatures().get(1);
+		return (EReference)extendableElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -220,35 +209,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExtension_Base() {
-		return (EReference)extensionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getExtension_ModelBase() {
-		return (EReference)extensionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getExtension_OwningAnnotation() {
-		return (EReference)extensionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getExtension_ExtendableBase() {
-		return (EReference)extensionEClass.getEStructuralFeatures().get(3);
+		return (EReference)extensionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -337,14 +299,10 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		createEAttribute(commentableElementEClass, COMMENTABLE_ELEMENT__COMMENT);
 
 		extendableElementEClass = createEClass(EXTENDABLE_ELEMENT);
-		createEReference(extendableElementEClass, EXTENDABLE_ELEMENT__ANNOTATIONS);
 		createEReference(extendableElementEClass, EXTENDABLE_ELEMENT__EXTENSIONS);
 		createEOperation(extendableElementEClass, EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS);
 
 		extensionEClass = createEClass(EXTENSION);
-		createEReference(extensionEClass, EXTENSION__BASE);
-		createEReference(extensionEClass, EXTENSION__MODEL_BASE);
-		createEReference(extensionEClass, EXTENSION__OWNING_ANNOTATION);
 		createEReference(extensionEClass, EXTENSION__EXTENDABLE_BASE);
 
 		namedElementEClass = createEClass(NAMED_ELEMENT);
@@ -405,16 +363,12 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		initEAttribute(getCommentableElement_Comment(), ecorePackage.getEString(), "comment", "\"no comment provided\"", 0, 1, CommentableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(extendableElementEClass, ExtendableElement.class, "ExtendableElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExtendableElement_Annotations(), ecorePackage.getEAnnotation(), null, "annotations", null, 0, -1, ExtendableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getExtendableElement_Extensions(), this.getExtension(), this.getExtension_ExtendableBase(), "extensions", null, 0, -1, ExtendableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		EOperation op = initEOperation(getExtendableElement__GetExtension__EClass(), this.getExtension(), "getExtension", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEClass(), "type", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(extensionEClass, Extension.class, "Extension", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExtension_Base(), ecorePackage.getEObject(), null, "base", null, 1, 1, Extension.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getExtension_ModelBase(), ecorePackage.getEModelElement(), null, "modelBase", null, 0, 1, Extension.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getExtension_OwningAnnotation(), ecorePackage.getEAnnotation(), null, "owningAnnotation", null, 0, 1, Extension.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getExtension_ExtendableBase(), this.getExtendableElement(), this.getExtendableElement_Extensions(), "extendableBase", null, 0, 1, Extension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -434,8 +388,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		createEcoreAnnotations();
 		// union
 		createUnionAnnotations();
-		// subsets
-		createSubsetsAnnotations();
 	}
 
 	/**
@@ -465,40 +417,9 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	protected void createUnionAnnotations() {
 		String source = "union";	
 		addAnnotation
-		  (getExtension_Base(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
 		  (getTypedElement_Type(), 
 		   source, 
 		   new String[] {
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>subsets</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createSubsetsAnnotations() {
-		String source = "subsets";	
-		addAnnotation
-		  (getExtension_ModelBase(), 
-		   source, 
-		   new String[] {
-		   },
-		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Extension/base")
-		   });	
-		addAnnotation
-		  (getExtension_ExtendableBase(), 
-		   source, 
-		   new String[] {
-		   },
-		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Extension/base")
 		   });
 	}
 

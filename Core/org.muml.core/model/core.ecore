@@ -31,13 +31,6 @@
       </eAnnotations>
       <eParameters name="type" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" ordered="false"
-        upperBound="-1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAnnotation"
-        containment="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Extendable Elements can be annotated by an EAnnotation"/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="extensions" ordered="false"
         upperBound="-1" eType="#//Extension" containment="true" eOpposite="#//Extension/extendableBase">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -49,32 +42,8 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Abstract super class for an Extension that can be defined for an object."/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="base" ordered="false" lowerBound="1"
-        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" changeable="false"
-        volatile="true" transient="true" derived="true">
-      <eAnnotations source="union"/>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The model element that embeds the owning annotation, or null."/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="modelBase" ordered="false"
-        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EModelElement"
-        volatile="true" transient="true" unsettable="true" derived="true">
-      <eAnnotations source="subsets" references="#//Extension/base"/>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The model element that embeds the owning annotation, or null."/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="owningAnnotation" ordered="false"
-        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAnnotation" volatile="true"
-        transient="true" unsettable="true" derived="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The annotation with source &quot;http://www.storydriven.org/core/extension&quot; that embeds this extension, or null."/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="extendableBase" ordered="false"
         eType="#//ExtendableElement" eOpposite="#//ExtendableElement/extensions">
-      <eAnnotations source="subsets" references="#//Extension/base"/>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The extendable element that is extended by this extension."/>
       </eAnnotations>

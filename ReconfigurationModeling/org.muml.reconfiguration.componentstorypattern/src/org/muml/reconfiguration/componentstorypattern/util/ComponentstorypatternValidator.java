@@ -283,14 +283,14 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 	 */
 	protected static final String PORT_VARIABLE__VALID_TYPE_OF_PORT_VARIABLE__EEXPRESSION = "if self.eContainer().oclIsKindOf(ComponentVariable) then\r\n" +
 		"\tif not self.eContainer().oclAsType(ComponentVariable).type.oclIsUndefined() then\r\n" +
-		"\t\tself.eContainer().oclAsType(ComponentVariable).type.oclAsType(muml::component::Component).ports->includes(self.dataType.oclAsType(muml::component::Port))\r\n" +
+		"\t\tself.eContainer().oclAsType(ComponentVariable).type.oclAsType(pim::component::Component).ports->includes(self.dataType.oclAsType(pim::component::Port))\r\n" +
 		"\telse\r\n" +
 		"\t\tfalse\r\n" +
 		"\tendif\r\n" +
 		"else\r\n" +
 		"\tif self.eContainer().oclIsKindOf(PartVariable) then\r\n" +
 		"\t\tif not self.eContainer().oclAsType(PartVariable).dataType.oclIsUndefined() then\r\n" +
-		"\t\t\tself.eContainer().oclAsType(PartVariable).dataType.oclAsType(muml::component::ComponentPart).componentType.oclAsType(muml::component::Component).ports->includes(self.dataType.oclAsType(muml::component::Port))\r\n" +
+		"\t\t\tself.eContainer().oclAsType(PartVariable).dataType.oclAsType(pim::component::ComponentPart).componentType.oclAsType(pim::component::Component).ports->includes(self.dataType.oclAsType(pim::component::Port))\r\n" +
 		"\t\telse\r\n" +
 		"\t\t\tfalse\r\n" +
 		"\t\tendif\r\n" +
@@ -380,8 +380,8 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String PART_VARIABLE__VALID_TYPE_OF_PART_VARIABLE__EEXPRESSION = "if not self.eContainer().oclAsType(ComponentVariable).type.oclIsUndefined() then\r\n" +
-		"\tif self.eContainer().oclAsType(ComponentVariable).type.oclIsKindOf(muml::component::StructuredComponent) then\r\n" +
-		"\t\tself.eContainer().oclAsType(ComponentVariable).type.oclAsType(muml::component::StructuredComponent).embeddedComponentParts->includes(self.dataType.oclAsType(muml::component::ComponentPart))\r\n" +
+		"\tif self.eContainer().oclAsType(ComponentVariable).type.oclIsKindOf(pim::component::StructuredComponent) then\r\n" +
+		"\t\tself.eContainer().oclAsType(ComponentVariable).type.oclAsType(pim::component::StructuredComponent).embeddedComponentParts->includes(self.dataType.oclAsType(pim::component::ComponentPart))\r\n" +
 		"\telse\r\n" +
 		"\t\tfalse\r\n" +
 		"\tendif\r\n" +
@@ -581,13 +581,13 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String DELEGATION_VARIABLE__EXISTING_DELEGATION_CONNECTOR_BETWEEN_PORT_VARIABLE_TYPES__EEXPRESSION = "if not self.type.oclIsUndefined() then\r\n" +
-		"\tlet selfPorts : OrderedSet(muml::component::Port) = self.portVariables.portType.oclAsType(muml::component::Port)->asOrderedSet(),\r\n" +
-		"\ttypePorts: OrderedSet(muml::component::Port) = self.type.connectorEndpoints->collect( cE |\r\n" +
-		"\t  if cE.oclIsTypeOf(muml::component::PortPart)\t\r\n" +
-		"      then cE.oclAsType(muml::component::PortPart).portType\r\n" +
+		"\tlet selfPorts : OrderedSet(pim::component::Port) = self.portVariables.portType.oclAsType(pim::component::Port)->asOrderedSet(),\r\n" +
+		"\ttypePorts: OrderedSet(pim::component::Port) = self.type.connectorEndpoints->collect( cE |\r\n" +
+		"\t  if cE.oclIsTypeOf(pim::component::PortPart)\t\r\n" +
+		"      then cE.oclAsType(pim::component::PortPart).portType\r\n" +
 		"\t  else \r\n" +
-		"\t  \tif cE.oclIsKindOf(muml::component::Port)\r\n" +
-		"\t  \tthen cE.oclAsType(muml::component::Port)\r\n" +
+		"\t  \tif cE.oclIsKindOf(pim::component::Port)\r\n" +
+		"\t  \tthen cE.oclAsType(pim::component::Port)\r\n" +
 		"\t  \telse  null\r\n" +
 		"\t  \tendif\r\n" +
 		"\t  endif)->asOrderedSet()\r\n" +
@@ -701,7 +701,7 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 		" \tif fadingFunction.oclIsUndefined()\r\n" +
 		" \tthen true\r\n" +
 		" \telse\r\n" +
-		"\t\tself.dataType.oclAsType(muml::component::ComponentPart).componentType.oclAsType(reconfiguration::FadingComponent).fadingFunction\r\n" +
+		"\t\tself.dataType.oclAsType(pim::component::ComponentPart).componentType.oclAsType(reconfiguration::FadingComponent).fadingFunction\r\n" +
 		"\t\t->select(curFadingFunction : reconfiguration::FadingFunction| curFadingFunction = fadingFunction)->size()=1\r\n" +
 		"\tendif";
 

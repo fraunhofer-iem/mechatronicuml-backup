@@ -72,22 +72,13 @@ public interface CorePackage extends EPackage {
 	int EXTENDABLE_ELEMENT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTENDABLE_ELEMENT__ANNOTATIONS = 0;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENDABLE_ELEMENT__EXTENSIONS = 1;
+	int EXTENDABLE_ELEMENT__EXTENSIONS = 0;
 
 	/**
 	 * The number of structural features of the '<em>Extendable Element</em>' class.
@@ -96,7 +87,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENDABLE_ELEMENT_FEATURE_COUNT = 2;
+	int EXTENDABLE_ELEMENT_FEATURE_COUNT = 1;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -125,15 +116,6 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 */
 	int COMMENTABLE_ELEMENT = 0;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMENTABLE_ELEMENT__ANNOTATIONS = EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -191,15 +173,6 @@ public interface CorePackage extends EPackage {
 	int EXTENSION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTENSION__ANNOTATIONS = EXTENDABLE_ELEMENT__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -209,40 +182,13 @@ public interface CorePackage extends EPackage {
 	int EXTENSION__EXTENSIONS = EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
-	 * The feature id for the '<em><b>Base</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTENSION__BASE = EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Model Base</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTENSION__MODEL_BASE = EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Owning Annotation</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTENSION__OWNING_ANNOTATION = EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Extendable Base</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION__EXTENDABLE_BASE = EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+	int EXTENSION__EXTENDABLE_BASE = EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Extension</em>' class.
@@ -251,7 +197,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION_FEATURE_COUNT = EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
+	int EXTENSION_FEATURE_COUNT = EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -280,15 +226,6 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 */
 	int NAMED_ELEMENT = 3;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_ELEMENT__ANNOTATIONS = EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -344,15 +281,6 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 */
 	int TYPED_ELEMENT = 4;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPED_ELEMENT__ANNOTATIONS = EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -417,15 +345,6 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 */
 	int REPOSITORY = 5;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REPOSITORY__ANNOTATIONS = NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -514,17 +433,6 @@ public interface CorePackage extends EPackage {
 	EClass getExtendableElement();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.muml.core.ExtendableElement#getAnnotations <em>Annotations</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Annotations</em>'.
-	 * @see org.muml.core.ExtendableElement#getAnnotations()
-	 * @see #getExtendableElement()
-	 * @generated
-	 */
-	EReference getExtendableElement_Annotations();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link org.muml.core.ExtendableElement#getExtensions <em>Extensions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -554,39 +462,6 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getExtension();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.muml.core.Extension#getBase <em>Base</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Base</em>'.
-	 * @see org.muml.core.Extension#getBase()
-	 * @see #getExtension()
-	 * @generated
-	 */
-	EReference getExtension_Base();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.muml.core.Extension#getModelBase <em>Model Base</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Model Base</em>'.
-	 * @see org.muml.core.Extension#getModelBase()
-	 * @see #getExtension()
-	 * @generated
-	 */
-	EReference getExtension_ModelBase();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.muml.core.Extension#getOwningAnnotation <em>Owning Annotation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Owning Annotation</em>'.
-	 * @see org.muml.core.Extension#getOwningAnnotation()
-	 * @see #getExtension()
-	 * @generated
-	 */
-	EReference getExtension_OwningAnnotation();
 
 	/**
 	 * Returns the meta object for the container reference '{@link org.muml.core.Extension#getExtendableBase <em>Extendable Base</em>}'.
@@ -714,14 +589,6 @@ public interface CorePackage extends EPackage {
 		EClass EXTENDABLE_ELEMENT = eINSTANCE.getExtendableElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Annotations</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EXTENDABLE_ELEMENT__ANNOTATIONS = eINSTANCE.getExtendableElement_Annotations();
-
-		/**
 		 * The meta object literal for the '<em><b>Extensions</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -746,30 +613,6 @@ public interface CorePackage extends EPackage {
 		 * @generated
 		 */
 		EClass EXTENSION = eINSTANCE.getExtension();
-
-		/**
-		 * The meta object literal for the '<em><b>Base</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EXTENSION__BASE = eINSTANCE.getExtension_Base();
-
-		/**
-		 * The meta object literal for the '<em><b>Model Base</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EXTENSION__MODEL_BASE = eINSTANCE.getExtension_ModelBase();
-
-		/**
-		 * The meta object literal for the '<em><b>Owning Annotation</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EXTENSION__OWNING_ANNOTATION = eINSTANCE.getExtension_OwningAnnotation();
 
 		/**
 		 * The meta object literal for the '<em><b>Extendable Base</b></em>' container reference feature.

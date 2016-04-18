@@ -8,14 +8,10 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -31,23 +27,12 @@ import org.muml.core.Extension;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.muml.core.impl.ExtendableElementImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link org.muml.core.impl.ExtendableElementImpl#getExtensions <em>Extensions</em>}</li>
  * </ul>
  *
  * @generated
  */
 public abstract class ExtendableElementImpl extends MinimalEObjectImpl.Container implements ExtendableElement {
-	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAnnotations()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<EAnnotation> annotations;
-
 	/**
 	 * The cached value of the '{@link #getExtensions() <em>Extensions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -75,18 +60,6 @@ public abstract class ExtendableElementImpl extends MinimalEObjectImpl.Container
 	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.EXTENDABLE_ELEMENT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<EAnnotation> getAnnotations() {
-		if (annotations == null) {
-			annotations = new EObjectContainmentEList<EAnnotation>(EAnnotation.class, this, CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS);
-		}
-		return annotations;
 	}
 
 	/**
@@ -139,8 +112,6 @@ public abstract class ExtendableElementImpl extends MinimalEObjectImpl.Container
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS:
-				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
 			case CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS:
 				return ((InternalEList<?>)getExtensions()).basicRemove(otherEnd, msgs);
 		}
@@ -155,8 +126,6 @@ public abstract class ExtendableElementImpl extends MinimalEObjectImpl.Container
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS:
-				return getAnnotations();
 			case CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS:
 				return getExtensions();
 		}
@@ -172,10 +141,6 @@ public abstract class ExtendableElementImpl extends MinimalEObjectImpl.Container
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS:
-				getAnnotations().clear();
-				getAnnotations().addAll((Collection<? extends EAnnotation>)newValue);
-				return;
 			case CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS:
 				getExtensions().clear();
 				getExtensions().addAll((Collection<? extends Extension>)newValue);
@@ -192,9 +157,6 @@ public abstract class ExtendableElementImpl extends MinimalEObjectImpl.Container
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS:
-				getAnnotations().clear();
-				return;
 			case CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS:
 				getExtensions().clear();
 				return;
@@ -210,8 +172,6 @@ public abstract class ExtendableElementImpl extends MinimalEObjectImpl.Container
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS:
-				return annotations != null && !annotations.isEmpty();
 			case CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS:
 				return extensions != null && !extensions.isEmpty();
 		}

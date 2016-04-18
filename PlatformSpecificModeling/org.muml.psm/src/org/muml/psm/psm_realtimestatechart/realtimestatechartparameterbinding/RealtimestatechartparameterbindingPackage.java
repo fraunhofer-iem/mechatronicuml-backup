@@ -130,22 +130,13 @@ public interface RealtimestatechartparameterbindingPackage extends EPackage {
 	int API_CALL_PARAMETER_BINDING__PARAMETER = REALTIME_STATECHART_PARAMETER_BINDING__PARAMETER;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int API_CALL_PARAMETER_BINDING__ANNOTATIONS = REALTIME_STATECHART_PARAMETER_BINDING_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int API_CALL_PARAMETER_BINDING__EXTENSIONS = REALTIME_STATECHART_PARAMETER_BINDING_FEATURE_COUNT + 1;
+	int API_CALL_PARAMETER_BINDING__EXTENSIONS = REALTIME_STATECHART_PARAMETER_BINDING_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -154,7 +145,7 @@ public interface RealtimestatechartparameterbindingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int API_CALL_PARAMETER_BINDING__NAME = REALTIME_STATECHART_PARAMETER_BINDING_FEATURE_COUNT + 2;
+	int API_CALL_PARAMETER_BINDING__NAME = REALTIME_STATECHART_PARAMETER_BINDING_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -163,7 +154,7 @@ public interface RealtimestatechartparameterbindingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int API_CALL_PARAMETER_BINDING__COMMENT = REALTIME_STATECHART_PARAMETER_BINDING_FEATURE_COUNT + 3;
+	int API_CALL_PARAMETER_BINDING__COMMENT = REALTIME_STATECHART_PARAMETER_BINDING_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Implementations</b></em>' containment reference list.
@@ -172,7 +163,7 @@ public interface RealtimestatechartparameterbindingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int API_CALL_PARAMETER_BINDING__IMPLEMENTATIONS = REALTIME_STATECHART_PARAMETER_BINDING_FEATURE_COUNT + 4;
+	int API_CALL_PARAMETER_BINDING__IMPLEMENTATIONS = REALTIME_STATECHART_PARAMETER_BINDING_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -181,7 +172,7 @@ public interface RealtimestatechartparameterbindingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int API_CALL_PARAMETER_BINDING__PARAMETERS = REALTIME_STATECHART_PARAMETER_BINDING_FEATURE_COUNT + 5;
+	int API_CALL_PARAMETER_BINDING__PARAMETERS = REALTIME_STATECHART_PARAMETER_BINDING_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Return Type</b></em>' reference.
@@ -190,7 +181,7 @@ public interface RealtimestatechartparameterbindingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int API_CALL_PARAMETER_BINDING__RETURN_TYPE = REALTIME_STATECHART_PARAMETER_BINDING_FEATURE_COUNT + 6;
+	int API_CALL_PARAMETER_BINDING__RETURN_TYPE = REALTIME_STATECHART_PARAMETER_BINDING_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -199,7 +190,7 @@ public interface RealtimestatechartparameterbindingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int API_CALL_PARAMETER_BINDING__EXPRESSION = REALTIME_STATECHART_PARAMETER_BINDING_FEATURE_COUNT + 7;
+	int API_CALL_PARAMETER_BINDING__EXPRESSION = REALTIME_STATECHART_PARAMETER_BINDING_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>API Call Parameter Binding</em>' class.
@@ -208,7 +199,7 @@ public interface RealtimestatechartparameterbindingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int API_CALL_PARAMETER_BINDING_FEATURE_COUNT = REALTIME_STATECHART_PARAMETER_BINDING_FEATURE_COUNT + 8;
+	int API_CALL_PARAMETER_BINDING_FEATURE_COUNT = REALTIME_STATECHART_PARAMETER_BINDING_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.

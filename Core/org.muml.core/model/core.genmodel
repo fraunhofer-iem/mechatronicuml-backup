@@ -11,16 +11,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//CommentableElement/comment"/>
     </genClasses>
     <genClasses image="false" ecoreClass="core.ecore#//ExtendableElement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//ExtendableElement/annotations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//ExtendableElement/extensions"/>
       <genOperations ecoreOperation="core.ecore#//ExtendableElement/getExtension">
         <genParameters ecoreParameter="core.ecore#//ExtendableElement/getExtension/type"/>
       </genOperations>
     </genClasses>
     <genClasses image="false" ecoreClass="core.ecore#//Extension">
-      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference core.ecore#//Extension/base"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference core.ecore#//Extension/modelBase"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference core.ecore#//Extension/owningAnnotation"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference core.ecore#//Extension/extendableBase"/>
     </genClasses>
     <genClasses image="false" ecoreClass="core.ecore#//NamedElement">

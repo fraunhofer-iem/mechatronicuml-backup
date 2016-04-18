@@ -3,8 +3,6 @@
 package org.muml.core;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
@@ -21,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.muml.core.ExtendableElement#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link org.muml.core.ExtendableElement#getExtensions <em>Extensions</em>}</li>
  * </ul>
  *
@@ -30,21 +27,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface ExtendableElement extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Annotations</b></em>' containment reference list.
-	 * The list contents are of type {@link org.eclipse.emf.ecore.EAnnotation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Extendable Elements can be annotated by an EAnnotation
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Annotations</em>' containment reference list.
-	 * @see org.muml.core.CorePackage#getExtendableElement_Annotations()
-	 * @model containment="true" ordered="false"
-	 * @generated
-	 */
-	EList<EAnnotation> getAnnotations();
-
 	/**
 	 * Returns the value of the '<em><b>Extensions</b></em>' containment reference list.
 	 * The list contents are of type {@link org.muml.core.Extension}.

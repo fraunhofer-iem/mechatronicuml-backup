@@ -949,7 +949,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		   new String[] {
 			 "SameBindingOperatorAsParent", "if self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CHECK_ONLY then\r\n\tself.bindingOperator = self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator\r\nelse\r\n\ttrue\r\nendif",
 			 "SameBindingSemanticsAsParent", "if self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingSemantics=storydiagrams::patterns::BindingSemantics::OPTIONAL then\r\n\tself.bindingSemantics = self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingSemantics\r\nelse\r\n\ttrue\r\nendif",
-			 "ValidTypeOfPortVariable", "if self.eContainer().oclIsKindOf(ComponentVariable) then\r\n\tif not self.eContainer().oclAsType(ComponentVariable).type.oclIsUndefined() then\r\n\t\tself.eContainer().oclAsType(ComponentVariable).type.oclAsType(muml::component::Component).ports->includes(self.dataType.oclAsType(muml::component::Port))\r\n\telse\r\n\t\tfalse\r\n\tendif\r\nelse\r\n\tif self.eContainer().oclIsKindOf(PartVariable) then\r\n\t\tif not self.eContainer().oclAsType(PartVariable).dataType.oclIsUndefined() then\r\n\t\t\tself.eContainer().oclAsType(PartVariable).dataType.oclAsType(muml::component::ComponentPart).componentType.oclAsType(muml::component::Component).ports->includes(self.dataType.oclAsType(muml::component::Port))\r\n\t\telse\r\n\t\t\tfalse\r\n\t\tendif\r\n\telse\r\n\t\ttrue\r\n\tendif\r\nendif"
+			 "ValidTypeOfPortVariable", "if self.eContainer().oclIsKindOf(ComponentVariable) then\r\n\tif not self.eContainer().oclAsType(ComponentVariable).type.oclIsUndefined() then\r\n\t\tself.eContainer().oclAsType(ComponentVariable).type.oclAsType(pim::component::Component).ports->includes(self.dataType.oclAsType(pim::component::Port))\r\n\telse\r\n\t\tfalse\r\n\tendif\r\nelse\r\n\tif self.eContainer().oclIsKindOf(PartVariable) then\r\n\t\tif not self.eContainer().oclAsType(PartVariable).dataType.oclIsUndefined() then\r\n\t\t\tself.eContainer().oclAsType(PartVariable).dataType.oclAsType(pim::component::ComponentPart).componentType.oclAsType(pim::component::Component).ports->includes(self.dataType.oclAsType(pim::component::Port))\r\n\t\telse\r\n\t\t\tfalse\r\n\t\tendif\r\n\telse\r\n\t\ttrue\r\n\tendif\r\nendif"
 		   });	
 		addAnnotation
 		  (getPortVariable_PortType(), 
@@ -968,7 +968,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		   source, 
 		   new String[] {
 			 "SameBindingOperatorAsComponentVariable", "if self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CHECK_ONLY then\r\n\tself.bindingOperator = self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator\r\nelse\r\n\ttrue\r\nendif",
-			 "ValidTypeOfPartVariable", "if not self.eContainer().oclAsType(ComponentVariable).type.oclIsUndefined() then\r\n\tif self.eContainer().oclAsType(ComponentVariable).type.oclIsKindOf(muml::component::StructuredComponent) then\r\n\t\tself.eContainer().oclAsType(ComponentVariable).type.oclAsType(muml::component::StructuredComponent).embeddedComponentParts->includes(self.dataType.oclAsType(muml::component::ComponentPart))\r\n\telse\r\n\t\tfalse\r\n\tendif\r\nelse\r\n\tfalse\r\nendif"
+			 "ValidTypeOfPartVariable", "if not self.eContainer().oclAsType(ComponentVariable).type.oclIsUndefined() then\r\n\tif self.eContainer().oclAsType(ComponentVariable).type.oclIsKindOf(pim::component::StructuredComponent) then\r\n\t\tself.eContainer().oclAsType(ComponentVariable).type.oclAsType(pim::component::StructuredComponent).embeddedComponentParts->includes(self.dataType.oclAsType(pim::component::ComponentPart))\r\n\telse\r\n\t\tfalse\r\n\tendif\r\nelse\r\n\tfalse\r\nendif"
 		   });	
 		addAnnotation
 		  (getPartVariable_ComponentPartType(), 
@@ -993,13 +993,13 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		  (assemblyVariableEClass, 
 		   source, 
 		   new String[] {
-			 "ExistingAssemblyConnectorBetweenPortVariableTypes", "if not self.type.oclIsUndefined() then\r\n\tlet selfPorts = self.portVariables.portType.oclAsType(muml::component::Port), typePorts = self.type.connectorEndpoints.oclAsType(muml::component::PortPart).portType in \r\n\tselfPorts->intersection(typePorts)->size() = 2\t\t\r\nelse\r\n\t\tfalse\r\nendif\r\n"
+			 "ExistingAssemblyConnectorBetweenPortVariableTypes", "if not self.type.oclIsUndefined() then\r\n\tlet selfPorts = self.portVariables.portType.oclAsType(pim::component::Port), typePorts = self.type.connectorEndpoints.oclAsType(pim::component::PortPart).portType in \r\n\tselfPorts->intersection(typePorts)->size() = 2\t\t\r\nelse\r\n\t\tfalse\r\nendif\r\n"
 		   });	
 		addAnnotation
 		  (delegationVariableEClass, 
 		   source, 
 		   new String[] {
-			 "ExistingDelegationConnectorBetweenPortVariableTypes", "if not self.type.oclIsUndefined() then\r\n\tlet selfPorts : OrderedSet(muml::component::Port) = self.portVariables.portType.oclAsType(muml::component::Port)->asOrderedSet(),\r\n\ttypePorts: OrderedSet(muml::component::Port) = self.type.connectorEndpoints->collect( cE |\r\n\t  if cE.oclIsTypeOf(muml::component::PortPart)\t\r\n      then cE.oclAsType(muml::component::PortPart).portType\r\n\t  else \r\n\t  \tif cE.oclIsKindOf(muml::component::Port)\r\n\t  \tthen cE.oclAsType(muml::component::Port)\r\n\t  \telse  null\r\n\t  \tendif\r\n\t  endif)->asOrderedSet()\r\n\tin \r\n\tselfPorts->intersection(typePorts)->size() = 2\t\t\r\nelse\r\n\t\tfalse\r\nendif"
+			 "ExistingDelegationConnectorBetweenPortVariableTypes", "if not self.type.oclIsUndefined() then\r\n\tlet selfPorts : OrderedSet(pim::component::Port) = self.portVariables.portType.oclAsType(pim::component::Port)->asOrderedSet(),\r\n\ttypePorts: OrderedSet(pim::component::Port) = self.type.connectorEndpoints->collect( cE |\r\n\t  if cE.oclIsTypeOf(pim::component::PortPart)\t\r\n      then cE.oclAsType(pim::component::PortPart).portType\r\n\t  else \r\n\t  \tif cE.oclIsKindOf(pim::component::Port)\r\n\t  \tthen cE.oclAsType(pim::component::Port)\r\n\t  \telse  null\r\n\t  \tendif\r\n\t  endif)->asOrderedSet()\r\n\tin \r\n\tselfPorts->intersection(typePorts)->size() = 2\t\t\r\nelse\r\n\t\tfalse\r\nendif"
 		   });	
 		addAnnotation
 		  (multiPortVariableEClass, 
@@ -1017,7 +1017,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		  (fadingComponentPartVariableEClass, 
 		   source, 
 		   new String[] {
-			 "AppliedFadingFunctionIsContainedInType", " let fadingFunction : reconfiguration::FadingFunction = self.appliedFadingFunction.oclAsType(reconfiguration::FadingFunction) in\r\n \tif fadingFunction.oclIsUndefined()\r\n \tthen true\r\n \telse\r\n\t\tself.dataType.oclAsType(muml::component::ComponentPart).componentType.oclAsType(reconfiguration::FadingComponent).fadingFunction\r\n\t\t->select(curFadingFunction : reconfiguration::FadingFunction| curFadingFunction = fadingFunction)->size()=1\r\n\tendif",
+			 "AppliedFadingFunctionIsContainedInType", " let fadingFunction : reconfiguration::FadingFunction = self.appliedFadingFunction.oclAsType(reconfiguration::FadingFunction) in\r\n \tif fadingFunction.oclIsUndefined()\r\n \tthen true\r\n \telse\r\n\t\tself.dataType.oclAsType(pim::component::ComponentPart).componentType.oclAsType(reconfiguration::FadingComponent).fadingFunction\r\n\t\t->select(curFadingFunction : reconfiguration::FadingFunction| curFadingFunction = fadingFunction)->size()=1\r\n\tendif",
 			 "NotDefineAppliedFadingFunctionForVariableNotContainedInControllerExchangeNode", "if not self.eContainer().eContainer().eContainer().oclIsTypeOf(componentstorydiagram::ControllerExchangeNode)\r\n\tthen self.appliedFadingFunction.oclIsUndefined()\r\nelse true\r\nendif"
 		   });
 	}
@@ -1047,7 +1047,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		  (getDelegationVariable_Type(), 
 		   source, 
 		   new String[] {
-			 "choices", "let outerPort : muml::component::Port = self.portVariables->select(eContainer().oclIsTypeOf(ComponentVariable))->at(1).portType,\r\n\tinnerPort : muml::component::Port = self.portVariables.portType->excluding(outerPort)->at(1),\r\n\tdelegationConnectorsOuter : OrderedSet(muml::connector::Connector) = outerPort.connectors->select(oclIsTypeOf(muml::component::DelegationConnector))\r\nin\r\n\tdelegationConnectorsOuter->select(dC | dC.oclAsType(muml::component::DelegationConnector).portPart.portType = innerPort)"
+			 "choices", "let outerPort : pim::component::Port = self.portVariables->select(eContainer().oclIsTypeOf(ComponentVariable))->at(1).portType,\r\n\tinnerPort : pim::component::Port = self.portVariables.portType->excluding(outerPort)->at(1),\r\n\tdelegationConnectorsOuter : OrderedSet(pim::connector::Connector) = outerPort.connectors->select(oclIsTypeOf(pim::component::DelegationConnector))\r\nin\r\n\tdelegationConnectorsOuter->select(dC | dC.oclAsType(pim::component::DelegationConnector).portPart.portType = innerPort)"
 		   });	
 		addAnnotation
 		  (fadingComponentPartVariableEClass, 
