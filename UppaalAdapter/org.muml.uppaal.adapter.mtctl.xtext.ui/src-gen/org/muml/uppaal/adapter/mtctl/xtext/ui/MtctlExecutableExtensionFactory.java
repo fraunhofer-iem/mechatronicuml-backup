@@ -4,10 +4,11 @@
 package org.muml.uppaal.adapter.mtctl.xtext.ui;
 
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
-import org.muml.uppaal.adapter.mtctl.xtext.ui.internal.MtctlActivator;
 import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
+
+import org.muml.uppaal.adapter.mtctl.xtext.ui.internal.MtctlActivator;
 
 /**
  * This class was generated. Customizations should only happen in a newly
@@ -22,7 +23,7 @@ public class MtctlExecutableExtensionFactory extends AbstractGuiceAwareExecutabl
 	
 	@Override
 	protected Injector getInjector() {
-		return MtctlActivator.getInstance().getInjector(MtctlActivator.DE_UNI_PADERBORN_FUJABA_MUML_VERIFICATION_UPPAAL_MTCTL);
+		return MtctlActivator.getInstance().getInjector(MtctlActivator.ORG_MUML_UPPAAL_ADAPTER_MTCTL_XTEXT_MTCTL);
 	}
 	
 }

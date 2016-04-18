@@ -11,6 +11,6 @@ public class MtctlAntlrTokenFileProvider implements IAntlrTokenFileProvider {
 	@Override
 	public InputStream getAntlrTokenFile() {
 		ClassLoader classLoader = getClass().getClassLoader();
-    	return classLoader.getResourceAsStream("de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.tokens");
+    	return classLoader.getResourceAsStream("org/muml/uppaal/adapter/mtctl/xtext/parser/antlr/internal/InternalMtctl.tokens");
 	}
 }

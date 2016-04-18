@@ -4,7 +4,7 @@ import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
-var grammarURI = "classpath:/de/uni_paderborn/fujaba/muml/verification/uppaal/Mtctl.xtext"
+var grammarURI = "classpath:/org/muml/uppaal/adapter/mtctl/xtext/Mtctl.xtext"
 var fileExtensions = "mtctl"
 var projectName = "org.muml.uppaal.adapter.mtctl.xtext"
 var runtimeProject = "../${projectName}"

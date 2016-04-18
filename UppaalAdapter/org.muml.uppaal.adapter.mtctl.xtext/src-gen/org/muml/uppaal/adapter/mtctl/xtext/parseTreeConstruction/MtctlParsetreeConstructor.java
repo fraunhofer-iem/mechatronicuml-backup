@@ -6,6 +6,7 @@ package org.muml.uppaal.adapter.mtctl.xtext.parseTreeConstruction;
 import org.eclipse.emf.ecore.*;
 import org.eclipse.xtext.*;
 import org.eclipse.xtext.parsetree.reconstr.IEObjectConsumer;
+
 import org.muml.uppaal.adapter.mtctl.xtext.services.MtctlGrammarAccess;
 
 import com.google.inject.Inject;
@@ -87,8 +88,8 @@ protected class ThisRootNode extends RootToken {
 
 /************ begin Rule PropertyRepository ****************
  *
- * PropertyRepository returns mtctl::PropertyRepository:
- * 	properties+=Property*;
+ * PropertyRepository mtctl::PropertyRepository:
+ * 	properties+=Property*
  *
  **/
 
@@ -143,12 +144,12 @@ protected class PropertyRepository_PropertiesAssignment extends AssignmentToken 
 
 /************ begin Rule Property ****************
  *
- * Property returns mtctl::Property hidden(WS, ML_COMMENT):
- * 	expression=Expression ";" comment=SL_COMMENT?;
+ * Property mtctl::Property hidden(WS, ML_COMMENT):
+ * 	expression=Expression ';' comment=SL_COMMENT?
  *
  **/
 
-// expression=Expression ";" comment=SL_COMMENT?
+// expression=Expression ';' comment=SL_COMMENT?
 protected class Property_Group extends GroupToken {
 	
 	public Property_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -223,7 +224,7 @@ protected class Property_ExpressionAssignment_0 extends AssignmentToken  {
 	}	
 }
 
-// ";"
+// ';'
 protected class Property_SemicolonKeyword_1 extends KeywordToken  {
 	
 	public Property_SemicolonKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -285,8 +286,8 @@ protected class Property_CommentAssignment_2 extends AssignmentToken  {
 
 /************ begin Rule Expression ****************
  *
- * Expression returns mtctl::Expression:
- * 	LeadsToExpr;
+ * Expression mtctl::Expression:
+ * 	LeadsToExpr
  *
  **/
 
@@ -354,12 +355,12 @@ protected class Expression_LeadsToExprParserRuleCall extends RuleCallToken {
 /************ begin Rule LeadsToExpr ****************
  *
  * //Binary operators (increasing precedence)
- * LeadsToExpr returns mtctl::Expression:
- * 	ImplyExpr ({mtctl::LeadsToExpr.leftOpd=current} "leadsTo" rightOpd=ImplyExpr)*;
+ * LeadsToExpr mtctl::Expression:
+ * 	ImplyExpr ({mtctl::LeadsToExpr.leftOpd=current} 'leadsTo' rightOpd=ImplyExpr)*
  *
  **/
 
-// ImplyExpr ({mtctl::LeadsToExpr.leftOpd=current} "leadsTo" rightOpd=ImplyExpr)*
+// ImplyExpr ({mtctl::LeadsToExpr.leftOpd=current} 'leadsTo' rightOpd=ImplyExpr)*
 protected class LeadsToExpr_Group extends GroupToken {
 	
 	public LeadsToExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -445,7 +446,7 @@ protected class LeadsToExpr_ImplyExprParserRuleCall_0 extends RuleCallToken {
 	}	
 }
 
-// ({mtctl::LeadsToExpr.leftOpd=current} "leadsTo" rightOpd=ImplyExpr)*
+// ({mtctl::LeadsToExpr.leftOpd=current} 'leadsTo' rightOpd=ImplyExpr)*
 protected class LeadsToExpr_Group_1 extends GroupToken {
 	
 	public LeadsToExpr_Group_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -504,7 +505,7 @@ protected class LeadsToExpr_LeadsToExprLeftOpdAction_1_0 extends ActionToken  {
 	}
 }
 
-// "leadsTo"
+// 'leadsTo'
 protected class LeadsToExpr_LeadsToKeyword_1_1 extends KeywordToken  {
 	
 	public LeadsToExpr_LeadsToKeyword_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -579,12 +580,12 @@ protected class LeadsToExpr_RightOpdAssignment_1_2 extends AssignmentToken  {
 
 /************ begin Rule ImplyExpr ****************
  *
- * ImplyExpr returns mtctl::Expression:
- * 	AndExpr ({mtctl::ImplyExpr.leftOpd=current} "implies" rightOpd=AndExpr)*;
+ * ImplyExpr mtctl::Expression:
+ * 	AndExpr ({mtctl::ImplyExpr.leftOpd=current} 'implies' rightOpd=AndExpr)*
  *
  **/
 
-// AndExpr ({mtctl::ImplyExpr.leftOpd=current} "implies" rightOpd=AndExpr)*
+// AndExpr ({mtctl::ImplyExpr.leftOpd=current} 'implies' rightOpd=AndExpr)*
 protected class ImplyExpr_Group extends GroupToken {
 	
 	public ImplyExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -670,7 +671,7 @@ protected class ImplyExpr_AndExprParserRuleCall_0 extends RuleCallToken {
 	}	
 }
 
-// ({mtctl::ImplyExpr.leftOpd=current} "implies" rightOpd=AndExpr)*
+// ({mtctl::ImplyExpr.leftOpd=current} 'implies' rightOpd=AndExpr)*
 protected class ImplyExpr_Group_1 extends GroupToken {
 	
 	public ImplyExpr_Group_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -729,7 +730,7 @@ protected class ImplyExpr_ImplyExprLeftOpdAction_1_0 extends ActionToken  {
 	}
 }
 
-// "implies"
+// 'implies'
 protected class ImplyExpr_ImpliesKeyword_1_1 extends KeywordToken  {
 	
 	public ImplyExpr_ImpliesKeyword_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -804,12 +805,12 @@ protected class ImplyExpr_RightOpdAssignment_1_2 extends AssignmentToken  {
 
 /************ begin Rule AndExpr ****************
  *
- * AndExpr returns mtctl::Expression:
- * 	OrExpr ({mtctl::AndExpr.leftOpd=current} "and" rightOpd=OrExpr)*;
+ * AndExpr mtctl::Expression:
+ * 	OrExpr ({mtctl::AndExpr.leftOpd=current} 'and' rightOpd=OrExpr)*
  *
  **/
 
-// OrExpr ({mtctl::AndExpr.leftOpd=current} "and" rightOpd=OrExpr)*
+// OrExpr ({mtctl::AndExpr.leftOpd=current} 'and' rightOpd=OrExpr)*
 protected class AndExpr_Group extends GroupToken {
 	
 	public AndExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -895,7 +896,7 @@ protected class AndExpr_OrExprParserRuleCall_0 extends RuleCallToken {
 	}	
 }
 
-// ({mtctl::AndExpr.leftOpd=current} "and" rightOpd=OrExpr)*
+// ({mtctl::AndExpr.leftOpd=current} 'and' rightOpd=OrExpr)*
 protected class AndExpr_Group_1 extends GroupToken {
 	
 	public AndExpr_Group_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -954,7 +955,7 @@ protected class AndExpr_AndExprLeftOpdAction_1_0 extends ActionToken  {
 	}
 }
 
-// "and"
+// 'and'
 protected class AndExpr_AndKeyword_1_1 extends KeywordToken  {
 	
 	public AndExpr_AndKeyword_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1029,12 +1030,12 @@ protected class AndExpr_RightOpdAssignment_1_2 extends AssignmentToken  {
 
 /************ begin Rule OrExpr ****************
  *
- * OrExpr returns mtctl::Expression:
- * 	NotExpr ({mtctl::OrExpr.leftOpd=current} "or" rightOpd=NotExpr)*;
+ * OrExpr mtctl::Expression:
+ * 	NotExpr ({mtctl::OrExpr.leftOpd=current} 'or' rightOpd=NotExpr)*
  *
  **/
 
-// NotExpr ({mtctl::OrExpr.leftOpd=current} "or" rightOpd=NotExpr)*
+// NotExpr ({mtctl::OrExpr.leftOpd=current} 'or' rightOpd=NotExpr)*
 protected class OrExpr_Group extends GroupToken {
 	
 	public OrExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1120,7 +1121,7 @@ protected class OrExpr_NotExprParserRuleCall_0 extends RuleCallToken {
 	}	
 }
 
-// ({mtctl::OrExpr.leftOpd=current} "or" rightOpd=NotExpr)*
+// ({mtctl::OrExpr.leftOpd=current} 'or' rightOpd=NotExpr)*
 protected class OrExpr_Group_1 extends GroupToken {
 	
 	public OrExpr_Group_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1179,7 +1180,7 @@ protected class OrExpr_OrExprLeftOpdAction_1_0 extends ActionToken  {
 	}
 }
 
-// "or"
+// 'or'
 protected class OrExpr_OrKeyword_1_1 extends KeywordToken  {
 	
 	public OrExpr_OrKeyword_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1255,12 +1256,12 @@ protected class OrExpr_RightOpdAssignment_1_2 extends AssignmentToken  {
 /************ begin Rule NotExpr ****************
  *
  * //Unary operators
- * NotExpr returns mtctl::Expression:
- * 	"not" {mtctl::NotExpr} opd=NotExpr | QuantifierExpr;
+ * NotExpr mtctl::Expression:
+ * 	'not' {mtctl::NotExpr} opd=NotExpr | QuantifierExpr
  *
  **/
 
-// "not" {mtctl::NotExpr} opd=NotExpr | QuantifierExpr
+// 'not' {mtctl::NotExpr} opd=NotExpr | QuantifierExpr
 protected class NotExpr_Alternatives extends AlternativesToken {
 
 	public NotExpr_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1312,7 +1313,7 @@ protected class NotExpr_Alternatives extends AlternativesToken {
 
 }
 
-// "not" {mtctl::NotExpr} opd=NotExpr
+// 'not' {mtctl::NotExpr} opd=NotExpr
 protected class NotExpr_Group_0 extends GroupToken {
 	
 	public NotExpr_Group_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1341,7 +1342,7 @@ protected class NotExpr_Group_0 extends GroupToken {
 
 }
 
-// "not"
+// 'not'
 protected class NotExpr_NotKeyword_0_0 extends KeywordToken  {
 	
 	public NotExpr_NotKeyword_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1476,8 +1477,8 @@ protected class NotExpr_QuantifierExprParserRuleCall_1 extends RuleCallToken {
 
 /************ begin Rule QuantifierExpr ****************
  *
- * QuantifierExpr returns mtctl::Expression:
- * 	UniversalQuantExpr | ExistentialQuantExpr | TemporalQuantifierExpr | AtomExpr;
+ * QuantifierExpr mtctl::Expression:
+ * 	UniversalQuantExpr | ExistentialQuantExpr | TemporalQuantifierExpr | AtomExpr
  *
  **/
 
@@ -1686,12 +1687,12 @@ protected class QuantifierExpr_AtomExprParserRuleCall_3 extends RuleCallToken {
 
 /************ begin Rule UniversalQuantExpr ****************
  *
- * UniversalQuantExpr returns mtctl::QuantifierExpr:
- * 	"forall" "(" {mtctl::UniversalQuantExpr} var=VariableBinding ")" formula=NotExpr;
+ * UniversalQuantExpr mtctl::QuantifierExpr:
+ * 	'forall' '(' {mtctl::UniversalQuantExpr} var=VariableBinding ')' formula=NotExpr
  *
  **/
 
-// "forall" "(" {mtctl::UniversalQuantExpr} var=VariableBinding ")" formula=NotExpr
+// 'forall' '(' {mtctl::UniversalQuantExpr} var=VariableBinding ')' formula=NotExpr
 protected class UniversalQuantExpr_Group extends GroupToken {
 	
 	public UniversalQuantExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1720,7 +1721,7 @@ protected class UniversalQuantExpr_Group extends GroupToken {
 
 }
 
-// "forall"
+// 'forall'
 protected class UniversalQuantExpr_ForallKeyword_0 extends KeywordToken  {
 	
 	public UniversalQuantExpr_ForallKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1741,7 +1742,7 @@ protected class UniversalQuantExpr_ForallKeyword_0 extends KeywordToken  {
 
 }
 
-// "("
+// '('
 protected class UniversalQuantExpr_LeftParenthesisKeyword_1 extends KeywordToken  {
 	
 	public UniversalQuantExpr_LeftParenthesisKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1836,7 +1837,7 @@ protected class UniversalQuantExpr_VarAssignment_3 extends AssignmentToken  {
 	}	
 }
 
-// ")"
+// ')'
 protected class UniversalQuantExpr_RightParenthesisKeyword_4 extends KeywordToken  {
 	
 	public UniversalQuantExpr_RightParenthesisKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1910,12 +1911,12 @@ protected class UniversalQuantExpr_FormulaAssignment_5 extends AssignmentToken  
 
 /************ begin Rule ExistentialQuantExpr ****************
  *
- * ExistentialQuantExpr returns mtctl::QuantifierExpr:
- * 	"exists" "(" {mtctl::ExistenceQuantExpr} var=VariableBinding ")" formula=NotExpr;
+ * ExistentialQuantExpr mtctl::QuantifierExpr:
+ * 	'exists' '(' {mtctl::ExistenceQuantExpr} var=VariableBinding ')' formula=NotExpr
  *
  **/
 
-// "exists" "(" {mtctl::ExistenceQuantExpr} var=VariableBinding ")" formula=NotExpr
+// 'exists' '(' {mtctl::ExistenceQuantExpr} var=VariableBinding ')' formula=NotExpr
 protected class ExistentialQuantExpr_Group extends GroupToken {
 	
 	public ExistentialQuantExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1944,7 +1945,7 @@ protected class ExistentialQuantExpr_Group extends GroupToken {
 
 }
 
-// "exists"
+// 'exists'
 protected class ExistentialQuantExpr_ExistsKeyword_0 extends KeywordToken  {
 	
 	public ExistentialQuantExpr_ExistsKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1965,7 +1966,7 @@ protected class ExistentialQuantExpr_ExistsKeyword_0 extends KeywordToken  {
 
 }
 
-// "("
+// '('
 protected class ExistentialQuantExpr_LeftParenthesisKeyword_1 extends KeywordToken  {
 	
 	public ExistentialQuantExpr_LeftParenthesisKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2060,7 +2061,7 @@ protected class ExistentialQuantExpr_VarAssignment_3 extends AssignmentToken  {
 	}	
 }
 
-// ")"
+// ')'
 protected class ExistentialQuantExpr_RightParenthesisKeyword_4 extends KeywordToken  {
 	
 	public ExistentialQuantExpr_RightParenthesisKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2134,12 +2135,12 @@ protected class ExistentialQuantExpr_FormulaAssignment_5 extends AssignmentToken
 
 /************ begin Rule VariableBinding ****************
  *
- * VariableBinding returns mtctl::BoundVariable:
- * 	name=ID ":" set=SetExpr;
+ * VariableBinding mtctl::BoundVariable:
+ * 	name=ID ':' set=SetExpr
  *
  **/
 
-// name=ID ":" set=SetExpr
+// name=ID ':' set=SetExpr
 protected class VariableBinding_Group extends GroupToken {
 	
 	public VariableBinding_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2201,7 +2202,7 @@ protected class VariableBinding_NameAssignment_0 extends AssignmentToken  {
 
 }
 
-// ":"
+// ':'
 protected class VariableBinding_ColonKeyword_1 extends KeywordToken  {
 	
 	public VariableBinding_ColonKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2275,8 +2276,8 @@ protected class VariableBinding_SetAssignment_2 extends AssignmentToken  {
 
 /************ begin Rule TemporalQuantifierExpr ****************
  *
- * TemporalQuantifierExpr returns mtctl::Expression:
- * 	EFExpr | AFExpr | EGExpr | AGExpr;
+ * TemporalQuantifierExpr mtctl::Expression:
+ * 	EFExpr | AFExpr | EGExpr | AGExpr
  *
  **/
 
@@ -2465,12 +2466,12 @@ protected class TemporalQuantifierExpr_AGExprParserRuleCall_3 extends RuleCallTo
 
 /************ begin Rule EFExpr ****************
  *
- * EFExpr returns mtctl::TemporalQuantifierExpr:
- * 	("EF" | "E<>") {mtctl::EFExpr} expr=NotExpr;
+ * EFExpr mtctl::TemporalQuantifierExpr:
+ * 	('EF' | 'E<>') {mtctl::EFExpr} expr=NotExpr
  *
  **/
 
-// ("EF" | "E<>") {mtctl::EFExpr} expr=NotExpr
+// ('EF' | 'E<>') {mtctl::EFExpr} expr=NotExpr
 protected class EFExpr_Group extends GroupToken {
 	
 	public EFExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2499,7 +2500,7 @@ protected class EFExpr_Group extends GroupToken {
 
 }
 
-// "EF" | "E<>"
+// ('EF' | 'E<>')
 protected class EFExpr_Alternatives_0 extends AlternativesToken {
 
 	public EFExpr_Alternatives_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2521,7 +2522,7 @@ protected class EFExpr_Alternatives_0 extends AlternativesToken {
 
 }
 
-// "EF"
+// 'EF'
 protected class EFExpr_EFKeyword_0_0 extends KeywordToken  {
 	
 	public EFExpr_EFKeyword_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2622,12 +2623,12 @@ protected class EFExpr_ExprAssignment_2 extends AssignmentToken  {
 
 /************ begin Rule AFExpr ****************
  *
- * AFExpr returns mtctl::TemporalQuantifierExpr:
- * 	("AF" | "A<>") {mtctl::AFExpr} expr=NotExpr;
+ * AFExpr mtctl::TemporalQuantifierExpr:
+ * 	('AF' | 'A<>') {mtctl::AFExpr} expr=NotExpr
  *
  **/
 
-// ("AF" | "A<>") {mtctl::AFExpr} expr=NotExpr
+// ('AF' | 'A<>') {mtctl::AFExpr} expr=NotExpr
 protected class AFExpr_Group extends GroupToken {
 	
 	public AFExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2656,7 +2657,7 @@ protected class AFExpr_Group extends GroupToken {
 
 }
 
-// "AF" | "A<>"
+// ('AF' | 'A<>')
 protected class AFExpr_Alternatives_0 extends AlternativesToken {
 
 	public AFExpr_Alternatives_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2678,7 +2679,7 @@ protected class AFExpr_Alternatives_0 extends AlternativesToken {
 
 }
 
-// "AF"
+// 'AF'
 protected class AFExpr_AFKeyword_0_0 extends KeywordToken  {
 	
 	public AFExpr_AFKeyword_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2779,12 +2780,12 @@ protected class AFExpr_ExprAssignment_2 extends AssignmentToken  {
 
 /************ begin Rule EGExpr ****************
  *
- * EGExpr returns mtctl::TemporalQuantifierExpr:
- * 	("EG" | "E[]") {mtctl::EGExpr} expr=NotExpr;
+ * EGExpr mtctl::TemporalQuantifierExpr:
+ * 	('EG' | 'E[]') {mtctl::EGExpr} expr=NotExpr
  *
  **/
 
-// ("EG" | "E[]") {mtctl::EGExpr} expr=NotExpr
+// ('EG' | 'E[]') {mtctl::EGExpr} expr=NotExpr
 protected class EGExpr_Group extends GroupToken {
 	
 	public EGExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2813,7 +2814,7 @@ protected class EGExpr_Group extends GroupToken {
 
 }
 
-// "EG" | "E[]"
+// ('EG' | 'E[]')
 protected class EGExpr_Alternatives_0 extends AlternativesToken {
 
 	public EGExpr_Alternatives_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2835,7 +2836,7 @@ protected class EGExpr_Alternatives_0 extends AlternativesToken {
 
 }
 
-// "EG"
+// 'EG'
 protected class EGExpr_EGKeyword_0_0 extends KeywordToken  {
 	
 	public EGExpr_EGKeyword_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2936,12 +2937,12 @@ protected class EGExpr_ExprAssignment_2 extends AssignmentToken  {
 
 /************ begin Rule AGExpr ****************
  *
- * AGExpr returns mtctl::TemporalQuantifierExpr:
- * 	("AG" | "A[]") {mtctl::AGExpr} expr=NotExpr;
+ * AGExpr mtctl::TemporalQuantifierExpr:
+ * 	('AG' | 'A[]') {mtctl::AGExpr} expr=NotExpr
  *
  **/
 
-// ("AG" | "A[]") {mtctl::AGExpr} expr=NotExpr
+// ('AG' | 'A[]') {mtctl::AGExpr} expr=NotExpr
 protected class AGExpr_Group extends GroupToken {
 	
 	public AGExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2970,7 +2971,7 @@ protected class AGExpr_Group extends GroupToken {
 
 }
 
-// "AG" | "A[]"
+// ('AG' | 'A[]')
 protected class AGExpr_Alternatives_0 extends AlternativesToken {
 
 	public AGExpr_Alternatives_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2992,7 +2993,7 @@ protected class AGExpr_Alternatives_0 extends AlternativesToken {
 
 }
 
-// "AG"
+// 'AG'
 protected class AGExpr_AGKeyword_0_0 extends KeywordToken  {
 	
 	public AGExpr_AGKeyword_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3094,12 +3095,12 @@ protected class AGExpr_ExprAssignment_2 extends AssignmentToken  {
 /************ begin Rule AtomExpr ****************
  *
  * //Bottom of precedence chain.
- * AtomExpr returns mtctl::Expression:
- * 	"(" Expression ")" | PredicateExpr | ComparisonExpr;
+ * AtomExpr mtctl::Expression:
+ * 	'(' Expression ')' | PredicateExpr | ComparisonExpr
  *
  **/
 
-// "(" Expression ")" | PredicateExpr | ComparisonExpr
+// '(' Expression ')' | PredicateExpr | ComparisonExpr
 protected class AtomExpr_Alternatives extends AlternativesToken {
 
 	public AtomExpr_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3152,7 +3153,7 @@ protected class AtomExpr_Alternatives extends AlternativesToken {
 
 }
 
-// "(" Expression ")"
+// '(' Expression ')'
 protected class AtomExpr_Group_0 extends GroupToken {
 	
 	public AtomExpr_Group_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3174,7 +3175,7 @@ protected class AtomExpr_Group_0 extends GroupToken {
 
 }
 
-// "("
+// '('
 protected class AtomExpr_LeftParenthesisKeyword_0_0 extends KeywordToken  {
 	
 	public AtomExpr_LeftParenthesisKeyword_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3230,7 +3231,7 @@ protected class AtomExpr_ExpressionParserRuleCall_0_1 extends RuleCallToken {
 	}	
 }
 
-// ")"
+// ')'
 protected class AtomExpr_RightParenthesisKeyword_0_2 extends KeywordToken  {
 	
 	public AtomExpr_RightParenthesisKeyword_0_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3342,8 +3343,8 @@ protected class AtomExpr_ComparisonExprParserRuleCall_2 extends RuleCallToken {
 /************ begin Rule PredicateExpr ****************
  *
  * //Predicates
- * PredicateExpr returns mtctl::Expression:
- * 	TrueExpr | FalseExpr | DeadlockExpr | ConnectorOverflowExpr | StateExpr | MessageExpr | TransitionExpr;
+ * PredicateExpr mtctl::Expression:
+ * 	TrueExpr | FalseExpr | DeadlockExpr | ConnectorOverflowExpr | StateExpr | MessageExpr | TransitionExpr
  *
  **/
 
@@ -3654,12 +3655,12 @@ protected class PredicateExpr_TransitionExprParserRuleCall_6 extends RuleCallTok
 
 /************ begin Rule DeadlockExpr ****************
  *
- * DeadlockExpr returns mtctl::DeadlockExpr:
- * 	{mtctl::DeadlockExpr} "deadlock";
+ * DeadlockExpr mtctl::DeadlockExpr:
+ * 	{mtctl::DeadlockExpr} 'deadlock'
  *
  **/
 
-// {mtctl::DeadlockExpr} "deadlock"
+// {mtctl::DeadlockExpr} 'deadlock'
 protected class DeadlockExpr_Group extends GroupToken {
 	
 	public DeadlockExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3714,7 +3715,7 @@ protected class DeadlockExpr_DeadlockExprAction_0 extends ActionToken  {
 	}
 }
 
-// "deadlock"
+// 'deadlock'
 protected class DeadlockExpr_DeadlockKeyword_1 extends KeywordToken  {
 	
 	public DeadlockExpr_DeadlockKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3742,12 +3743,12 @@ protected class DeadlockExpr_DeadlockKeyword_1 extends KeywordToken  {
 
 /************ begin Rule ConnectorOverflowExpr ****************
  *
- * ConnectorOverflowExpr returns mtctl::ConnectorOverflowExpr:
- * 	{mtctl::ConnectorOverflowExpr} "connectorOverflow";
+ * ConnectorOverflowExpr mtctl::ConnectorOverflowExpr:
+ * 	{mtctl::ConnectorOverflowExpr} 'connectorOverflow'
  *
  **/
 
-// {mtctl::ConnectorOverflowExpr} "connectorOverflow"
+// {mtctl::ConnectorOverflowExpr} 'connectorOverflow'
 protected class ConnectorOverflowExpr_Group extends GroupToken {
 	
 	public ConnectorOverflowExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3802,7 +3803,7 @@ protected class ConnectorOverflowExpr_ConnectorOverflowExprAction_0 extends Acti
 	}
 }
 
-// "connectorOverflow"
+// 'connectorOverflow'
 protected class ConnectorOverflowExpr_ConnectorOverflowKeyword_1 extends KeywordToken  {
 	
 	public ConnectorOverflowExpr_ConnectorOverflowKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3830,12 +3831,12 @@ protected class ConnectorOverflowExpr_ConnectorOverflowKeyword_1 extends Keyword
 
 /************ begin Rule TrueExpr ****************
  *
- * TrueExpr returns mtctl::TrueExpr:
- * 	{mtctl::TrueExpr} "true";
+ * TrueExpr mtctl::TrueExpr:
+ * 	{mtctl::TrueExpr} 'true'
  *
  **/
 
-// {mtctl::TrueExpr} "true"
+// {mtctl::TrueExpr} 'true'
 protected class TrueExpr_Group extends GroupToken {
 	
 	public TrueExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3890,7 +3891,7 @@ protected class TrueExpr_TrueExprAction_0 extends ActionToken  {
 	}
 }
 
-// "true"
+// 'true'
 protected class TrueExpr_TrueKeyword_1 extends KeywordToken  {
 	
 	public TrueExpr_TrueKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3918,12 +3919,12 @@ protected class TrueExpr_TrueKeyword_1 extends KeywordToken  {
 
 /************ begin Rule FalseExpr ****************
  *
- * FalseExpr returns mtctl::FalseExpr:
- * 	{mtctl::FalseExpr} "false";
+ * FalseExpr mtctl::FalseExpr:
+ * 	{mtctl::FalseExpr} 'false'
  *
  **/
 
-// {mtctl::FalseExpr} "false"
+// {mtctl::FalseExpr} 'false'
 protected class FalseExpr_Group extends GroupToken {
 	
 	public FalseExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3978,7 +3979,7 @@ protected class FalseExpr_FalseExprAction_0 extends ActionToken  {
 	}
 }
 
-// "false"
+// 'false'
 protected class FalseExpr_FalseKeyword_1 extends KeywordToken  {
 	
 	public FalseExpr_FalseKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4006,8 +4007,8 @@ protected class FalseExpr_FalseKeyword_1 extends KeywordToken  {
 
 /************ begin Rule StateExpr ****************
  *
- * StateExpr returns mtctl::PredicateExpr:
- * 	StateActiveExpr | SubstateOfExpr | StateInStatechartExpr;
+ * StateExpr mtctl::PredicateExpr:
+ * 	StateActiveExpr | SubstateOfExpr | StateInStatechartExpr
  *
  **/
 
@@ -4158,12 +4159,12 @@ protected class StateExpr_StateInStatechartExprParserRuleCall_2 extends RuleCall
 
 /************ begin Rule StateActiveExpr ****************
  *
- * StateActiveExpr returns mtctl::StateActiveExpr:
- * 	"stateActive" "(" state=StateMapExpr ")";
+ * StateActiveExpr mtctl::StateActiveExpr:
+ * 	'stateActive' '(' state=StateMapExpr ')'
  *
  **/
 
-// "stateActive" "(" state=StateMapExpr ")"
+// 'stateActive' '(' state=StateMapExpr ')'
 protected class StateActiveExpr_Group extends GroupToken {
 	
 	public StateActiveExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4192,7 +4193,7 @@ protected class StateActiveExpr_Group extends GroupToken {
 
 }
 
-// "stateActive"
+// 'stateActive'
 protected class StateActiveExpr_StateActiveKeyword_0 extends KeywordToken  {
 	
 	public StateActiveExpr_StateActiveKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4213,7 +4214,7 @@ protected class StateActiveExpr_StateActiveKeyword_0 extends KeywordToken  {
 
 }
 
-// "("
+// '('
 protected class StateActiveExpr_LeftParenthesisKeyword_1 extends KeywordToken  {
 	
 	public StateActiveExpr_LeftParenthesisKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4281,7 +4282,7 @@ protected class StateActiveExpr_StateAssignment_2 extends AssignmentToken  {
 	}	
 }
 
-// ")"
+// ')'
 protected class StateActiveExpr_RightParenthesisKeyword_3 extends KeywordToken  {
 	
 	public StateActiveExpr_RightParenthesisKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4309,12 +4310,12 @@ protected class StateActiveExpr_RightParenthesisKeyword_3 extends KeywordToken  
 
 /************ begin Rule SubstateOfExpr ****************
  *
- * SubstateOfExpr returns mtctl::SubstateOfExpr:
- * 	"substateOf" "(" state=StateMapExpr "," superstate=StateMapExpr ")";
+ * SubstateOfExpr mtctl::SubstateOfExpr:
+ * 	'substateOf' '(' state=StateMapExpr ',' superstate=StateMapExpr ')'
  *
  **/
 
-// "substateOf" "(" state=StateMapExpr "," superstate=StateMapExpr ")"
+// 'substateOf' '(' state=StateMapExpr ',' superstate=StateMapExpr ')'
 protected class SubstateOfExpr_Group extends GroupToken {
 	
 	public SubstateOfExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4343,7 +4344,7 @@ protected class SubstateOfExpr_Group extends GroupToken {
 
 }
 
-// "substateOf"
+// 'substateOf'
 protected class SubstateOfExpr_SubstateOfKeyword_0 extends KeywordToken  {
 	
 	public SubstateOfExpr_SubstateOfKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4364,7 +4365,7 @@ protected class SubstateOfExpr_SubstateOfKeyword_0 extends KeywordToken  {
 
 }
 
-// "("
+// '('
 protected class SubstateOfExpr_LeftParenthesisKeyword_1 extends KeywordToken  {
 	
 	public SubstateOfExpr_LeftParenthesisKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4432,7 +4433,7 @@ protected class SubstateOfExpr_StateAssignment_2 extends AssignmentToken  {
 	}	
 }
 
-// ","
+// ','
 protected class SubstateOfExpr_CommaKeyword_3 extends KeywordToken  {
 	
 	public SubstateOfExpr_CommaKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4500,7 +4501,7 @@ protected class SubstateOfExpr_SuperstateAssignment_4 extends AssignmentToken  {
 	}	
 }
 
-// ")"
+// ')'
 protected class SubstateOfExpr_RightParenthesisKeyword_5 extends KeywordToken  {
 	
 	public SubstateOfExpr_RightParenthesisKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4528,12 +4529,12 @@ protected class SubstateOfExpr_RightParenthesisKeyword_5 extends KeywordToken  {
 
 /************ begin Rule StateInStatechartExpr ****************
  *
- * StateInStatechartExpr returns mtctl::StateInStatechartExpr:
- * 	"stateInStatechart" "(" state=StateMapExpr "," statechart=StatechartMapExpr ")";
+ * StateInStatechartExpr mtctl::StateInStatechartExpr:
+ * 	'stateInStatechart' '(' state=StateMapExpr ',' statechart=StatechartMapExpr ')'
  *
  **/
 
-// "stateInStatechart" "(" state=StateMapExpr "," statechart=StatechartMapExpr ")"
+// 'stateInStatechart' '(' state=StateMapExpr ',' statechart=StatechartMapExpr ')'
 protected class StateInStatechartExpr_Group extends GroupToken {
 	
 	public StateInStatechartExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4562,7 +4563,7 @@ protected class StateInStatechartExpr_Group extends GroupToken {
 
 }
 
-// "stateInStatechart"
+// 'stateInStatechart'
 protected class StateInStatechartExpr_StateInStatechartKeyword_0 extends KeywordToken  {
 	
 	public StateInStatechartExpr_StateInStatechartKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4583,7 +4584,7 @@ protected class StateInStatechartExpr_StateInStatechartKeyword_0 extends Keyword
 
 }
 
-// "("
+// '('
 protected class StateInStatechartExpr_LeftParenthesisKeyword_1 extends KeywordToken  {
 	
 	public StateInStatechartExpr_LeftParenthesisKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4651,7 +4652,7 @@ protected class StateInStatechartExpr_StateAssignment_2 extends AssignmentToken 
 	}	
 }
 
-// ","
+// ','
 protected class StateInStatechartExpr_CommaKeyword_3 extends KeywordToken  {
 	
 	public StateInStatechartExpr_CommaKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4719,7 +4720,7 @@ protected class StateInStatechartExpr_StatechartAssignment_4 extends AssignmentT
 	}	
 }
 
-// ")"
+// ')'
 protected class StateInStatechartExpr_RightParenthesisKeyword_5 extends KeywordToken  {
 	
 	public StateInStatechartExpr_RightParenthesisKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4747,8 +4748,8 @@ protected class StateInStatechartExpr_RightParenthesisKeyword_5 extends KeywordT
 
 /************ begin Rule MessageExpr ****************
  *
- * MessageExpr returns mtctl::PredicateExpr:
- * 	MessageInBufferExpr | MessageInTransitExpr | MessageDiscardedExpr;
+ * MessageExpr mtctl::PredicateExpr:
+ * 	MessageInBufferExpr | MessageInTransitExpr | MessageDiscardedExpr
  *
  **/
 
@@ -4899,12 +4900,12 @@ protected class MessageExpr_MessageDiscardedExprParserRuleCall_2 extends RuleCal
 
 /************ begin Rule MessageInTransitExpr ****************
  *
- * MessageInTransitExpr returns mtctl::MessageInTransitExpr:
- * 	"messageInTransit" "(" message=MessageMapExpr ")";
+ * MessageInTransitExpr mtctl::MessageInTransitExpr:
+ * 	'messageInTransit' '(' message=MessageMapExpr ')'
  *
  **/
 
-// "messageInTransit" "(" message=MessageMapExpr ")"
+// 'messageInTransit' '(' message=MessageMapExpr ')'
 protected class MessageInTransitExpr_Group extends GroupToken {
 	
 	public MessageInTransitExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4933,7 +4934,7 @@ protected class MessageInTransitExpr_Group extends GroupToken {
 
 }
 
-// "messageInTransit"
+// 'messageInTransit'
 protected class MessageInTransitExpr_MessageInTransitKeyword_0 extends KeywordToken  {
 	
 	public MessageInTransitExpr_MessageInTransitKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4954,7 +4955,7 @@ protected class MessageInTransitExpr_MessageInTransitKeyword_0 extends KeywordTo
 
 }
 
-// "("
+// '('
 protected class MessageInTransitExpr_LeftParenthesisKeyword_1 extends KeywordToken  {
 	
 	public MessageInTransitExpr_LeftParenthesisKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5022,7 +5023,7 @@ protected class MessageInTransitExpr_MessageAssignment_2 extends AssignmentToken
 	}	
 }
 
-// ")"
+// ')'
 protected class MessageInTransitExpr_RightParenthesisKeyword_3 extends KeywordToken  {
 	
 	public MessageInTransitExpr_RightParenthesisKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5050,12 +5051,12 @@ protected class MessageInTransitExpr_RightParenthesisKeyword_3 extends KeywordTo
 
 /************ begin Rule MessageInBufferExpr ****************
  *
- * MessageInBufferExpr returns mtctl::MessageInBufferExpr:
- * 	"messageInBuffer" "(" message=MessageMapExpr "," buffer=BufferMapExpr ")";
+ * MessageInBufferExpr mtctl::MessageInBufferExpr:
+ * 	'messageInBuffer' '(' message=MessageMapExpr ',' buffer=BufferMapExpr ')'
  *
  **/
 
-// "messageInBuffer" "(" message=MessageMapExpr "," buffer=BufferMapExpr ")"
+// 'messageInBuffer' '(' message=MessageMapExpr ',' buffer=BufferMapExpr ')'
 protected class MessageInBufferExpr_Group extends GroupToken {
 	
 	public MessageInBufferExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5084,7 +5085,7 @@ protected class MessageInBufferExpr_Group extends GroupToken {
 
 }
 
-// "messageInBuffer"
+// 'messageInBuffer'
 protected class MessageInBufferExpr_MessageInBufferKeyword_0 extends KeywordToken  {
 	
 	public MessageInBufferExpr_MessageInBufferKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5105,7 +5106,7 @@ protected class MessageInBufferExpr_MessageInBufferKeyword_0 extends KeywordToke
 
 }
 
-// "("
+// '('
 protected class MessageInBufferExpr_LeftParenthesisKeyword_1 extends KeywordToken  {
 	
 	public MessageInBufferExpr_LeftParenthesisKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5173,7 +5174,7 @@ protected class MessageInBufferExpr_MessageAssignment_2 extends AssignmentToken 
 	}	
 }
 
-// ","
+// ','
 protected class MessageInBufferExpr_CommaKeyword_3 extends KeywordToken  {
 	
 	public MessageInBufferExpr_CommaKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5241,7 +5242,7 @@ protected class MessageInBufferExpr_BufferAssignment_4 extends AssignmentToken  
 	}	
 }
 
-// ")"
+// ')'
 protected class MessageInBufferExpr_RightParenthesisKeyword_5 extends KeywordToken  {
 	
 	public MessageInBufferExpr_RightParenthesisKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5269,12 +5270,12 @@ protected class MessageInBufferExpr_RightParenthesisKeyword_5 extends KeywordTok
 
 /************ begin Rule MessageDiscardedExpr ****************
  *
- * MessageDiscardedExpr returns mtctl::MessageDiscardedExpr:
- * 	"messageDiscarded" "(" buffer=BufferMapExpr ")";
+ * MessageDiscardedExpr mtctl::MessageDiscardedExpr:
+ * 	'messageDiscarded' '(' buffer=BufferMapExpr ')'
  *
  **/
 
-// "messageDiscarded" "(" buffer=BufferMapExpr ")"
+// 'messageDiscarded' '(' buffer=BufferMapExpr ')'
 protected class MessageDiscardedExpr_Group extends GroupToken {
 	
 	public MessageDiscardedExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5303,7 +5304,7 @@ protected class MessageDiscardedExpr_Group extends GroupToken {
 
 }
 
-// "messageDiscarded"
+// 'messageDiscarded'
 protected class MessageDiscardedExpr_MessageDiscardedKeyword_0 extends KeywordToken  {
 	
 	public MessageDiscardedExpr_MessageDiscardedKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5324,7 +5325,7 @@ protected class MessageDiscardedExpr_MessageDiscardedKeyword_0 extends KeywordTo
 
 }
 
-// "("
+// '('
 protected class MessageDiscardedExpr_LeftParenthesisKeyword_1 extends KeywordToken  {
 	
 	public MessageDiscardedExpr_LeftParenthesisKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5392,7 +5393,7 @@ protected class MessageDiscardedExpr_BufferAssignment_2 extends AssignmentToken 
 	}	
 }
 
-// ")"
+// ')'
 protected class MessageDiscardedExpr_RightParenthesisKeyword_3 extends KeywordToken  {
 	
 	public MessageDiscardedExpr_RightParenthesisKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5420,8 +5421,8 @@ protected class MessageDiscardedExpr_RightParenthesisKeyword_3 extends KeywordTo
 
 /************ begin Rule TransitionExpr ****************
  *
- * TransitionExpr returns mtctl::PredicateExpr:
- * 	TransitionFiringExpr;
+ * TransitionExpr mtctl::PredicateExpr:
+ * 	TransitionFiringExpr
  *
  **/
 
@@ -5466,12 +5467,12 @@ protected class TransitionExpr_TransitionFiringExprParserRuleCall extends RuleCa
 
 /************ begin Rule TransitionFiringExpr ****************
  *
- * TransitionFiringExpr returns mtctl::TransitionFiringExpr:
- * 	"transitionFiring" "(" transition=TransitionMapExpr ")";
+ * TransitionFiringExpr mtctl::TransitionFiringExpr:
+ * 	'transitionFiring' '(' transition=TransitionMapExpr ')'
  *
  **/
 
-// "transitionFiring" "(" transition=TransitionMapExpr ")"
+// 'transitionFiring' '(' transition=TransitionMapExpr ')'
 protected class TransitionFiringExpr_Group extends GroupToken {
 	
 	public TransitionFiringExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5500,7 +5501,7 @@ protected class TransitionFiringExpr_Group extends GroupToken {
 
 }
 
-// "transitionFiring"
+// 'transitionFiring'
 protected class TransitionFiringExpr_TransitionFiringKeyword_0 extends KeywordToken  {
 	
 	public TransitionFiringExpr_TransitionFiringKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5521,7 +5522,7 @@ protected class TransitionFiringExpr_TransitionFiringKeyword_0 extends KeywordTo
 
 }
 
-// "("
+// '('
 protected class TransitionFiringExpr_LeftParenthesisKeyword_1 extends KeywordToken  {
 	
 	public TransitionFiringExpr_LeftParenthesisKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5589,7 +5590,7 @@ protected class TransitionFiringExpr_TransitionAssignment_2 extends AssignmentTo
 	}	
 }
 
-// ")"
+// ')'
 protected class TransitionFiringExpr_RightParenthesisKeyword_3 extends KeywordToken  {
 	
 	public TransitionFiringExpr_RightParenthesisKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5618,8 +5619,8 @@ protected class TransitionFiringExpr_RightParenthesisKeyword_3 extends KeywordTo
 /************ begin Rule ComparisonExpr ****************
  *
  * //Comparisons
- * ComparisonExpr returns mtctl::Expression:
- * 	{mtctl::ComparisonExpr} lhs=MapExpr op=ComparisonOp rhs=MapExpr;
+ * ComparisonExpr mtctl::Expression:
+ * 	{mtctl::ComparisonExpr} lhs=MapExpr op=ComparisonOp rhs=MapExpr
  *
  **/
 
@@ -5811,8 +5812,8 @@ protected class ComparisonExpr_RhsAssignment_3 extends AssignmentToken  {
 /************ begin Rule MapExpr ****************
  *
  * //Expressions usable in comparisons. Starting with MapExpressions arranged by return type
- * MapExpr returns mtctl::MapExpr:
- * 	MumlElemExpr | BufferMessageCountExpr | ConstExpr | SourceStateExpr | TargetStateExpr;
+ * MapExpr mtctl::MapExpr:
+ * 	MumlElemExpr | BufferMessageCountExpr | ConstExpr | SourceStateExpr | TargetStateExpr
  *
  **/
 
@@ -6039,8 +6040,8 @@ protected class MapExpr_TargetStateExprParserRuleCall_4 extends RuleCallToken {
 
 /************ begin Rule IntegerMapExpr ****************
  *
- * IntegerMapExpr returns mtctl::MapExpr:
- * 	MumlElemExpr | BufferMessageCountExpr | ConstExpr;
+ * IntegerMapExpr mtctl::MapExpr:
+ * 	MumlElemExpr | BufferMessageCountExpr | ConstExpr
  *
  **/
 
@@ -6191,8 +6192,8 @@ protected class IntegerMapExpr_ConstExprParserRuleCall_2 extends RuleCallToken {
 
 /************ begin Rule TransitionMapExpr ****************
  *
- * TransitionMapExpr returns mtctl::MapExpr:
- * 	MumlElemExpr;
+ * TransitionMapExpr mtctl::MapExpr:
+ * 	MumlElemExpr
  *
  **/
 
@@ -6237,8 +6238,8 @@ protected class TransitionMapExpr_MumlElemExprParserRuleCall extends RuleCallTok
 
 /************ begin Rule StateMapExpr ****************
  *
- * StateMapExpr returns mtctl::MapExpr:
- * 	MumlElemExpr | SourceStateExpr | TargetStateExpr;
+ * StateMapExpr mtctl::MapExpr:
+ * 	MumlElemExpr | SourceStateExpr | TargetStateExpr
  *
  **/
 
@@ -6389,8 +6390,8 @@ protected class StateMapExpr_TargetStateExprParserRuleCall_2 extends RuleCallTok
 
 /************ begin Rule StatechartMapExpr ****************
  *
- * StatechartMapExpr returns mtctl::MapExpr:
- * 	MumlElemExpr;
+ * StatechartMapExpr mtctl::MapExpr:
+ * 	MumlElemExpr
  *
  **/
 
@@ -6435,8 +6436,8 @@ protected class StatechartMapExpr_MumlElemExprParserRuleCall extends RuleCallTok
 
 /************ begin Rule BufferMapExpr ****************
  *
- * BufferMapExpr returns mtctl::MapExpr:
- * 	MumlElemExpr;
+ * BufferMapExpr mtctl::MapExpr:
+ * 	MumlElemExpr
  *
  **/
 
@@ -6481,8 +6482,8 @@ protected class BufferMapExpr_MumlElemExprParserRuleCall extends RuleCallToken {
 
 /************ begin Rule MessageMapExpr ****************
  *
- * MessageMapExpr returns mtctl::MapExpr:
- * 	MumlElemExpr;
+ * MessageMapExpr mtctl::MapExpr:
+ * 	MumlElemExpr
  *
  **/
 
@@ -6527,12 +6528,12 @@ protected class MessageMapExpr_MumlElemExprParserRuleCall extends RuleCallToken 
 
 /************ begin Rule BufferMessageCountExpr ****************
  *
- * BufferMessageCountExpr returns mtctl::BufferMsgCountExpr:
- * 	"bufferMessageCount" "(" buffer=BufferMapExpr ")";
+ * BufferMessageCountExpr mtctl::BufferMsgCountExpr:
+ * 	'bufferMessageCount' '(' buffer=BufferMapExpr ')'
  *
  **/
 
-// "bufferMessageCount" "(" buffer=BufferMapExpr ")"
+// 'bufferMessageCount' '(' buffer=BufferMapExpr ')'
 protected class BufferMessageCountExpr_Group extends GroupToken {
 	
 	public BufferMessageCountExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6561,7 +6562,7 @@ protected class BufferMessageCountExpr_Group extends GroupToken {
 
 }
 
-// "bufferMessageCount"
+// 'bufferMessageCount'
 protected class BufferMessageCountExpr_BufferMessageCountKeyword_0 extends KeywordToken  {
 	
 	public BufferMessageCountExpr_BufferMessageCountKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6582,7 +6583,7 @@ protected class BufferMessageCountExpr_BufferMessageCountKeyword_0 extends Keywo
 
 }
 
-// "("
+// '('
 protected class BufferMessageCountExpr_LeftParenthesisKeyword_1 extends KeywordToken  {
 	
 	public BufferMessageCountExpr_LeftParenthesisKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6650,7 +6651,7 @@ protected class BufferMessageCountExpr_BufferAssignment_2 extends AssignmentToke
 	}	
 }
 
-// ")"
+// ')'
 protected class BufferMessageCountExpr_RightParenthesisKeyword_3 extends KeywordToken  {
 	
 	public BufferMessageCountExpr_RightParenthesisKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6678,12 +6679,12 @@ protected class BufferMessageCountExpr_RightParenthesisKeyword_3 extends Keyword
 
 /************ begin Rule SourceStateExpr ****************
  *
- * SourceStateExpr returns mtctl::SourceStateExpr:
- * 	"sourceState" "(" transition=TransitionMapExpr ")";
+ * SourceStateExpr mtctl::SourceStateExpr:
+ * 	'sourceState' '(' transition=TransitionMapExpr ')'
  *
  **/
 
-// "sourceState" "(" transition=TransitionMapExpr ")"
+// 'sourceState' '(' transition=TransitionMapExpr ')'
 protected class SourceStateExpr_Group extends GroupToken {
 	
 	public SourceStateExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6712,7 +6713,7 @@ protected class SourceStateExpr_Group extends GroupToken {
 
 }
 
-// "sourceState"
+// 'sourceState'
 protected class SourceStateExpr_SourceStateKeyword_0 extends KeywordToken  {
 	
 	public SourceStateExpr_SourceStateKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6733,7 +6734,7 @@ protected class SourceStateExpr_SourceStateKeyword_0 extends KeywordToken  {
 
 }
 
-// "("
+// '('
 protected class SourceStateExpr_LeftParenthesisKeyword_1 extends KeywordToken  {
 	
 	public SourceStateExpr_LeftParenthesisKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6801,7 +6802,7 @@ protected class SourceStateExpr_TransitionAssignment_2 extends AssignmentToken  
 	}	
 }
 
-// ")"
+// ')'
 protected class SourceStateExpr_RightParenthesisKeyword_3 extends KeywordToken  {
 	
 	public SourceStateExpr_RightParenthesisKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6829,12 +6830,12 @@ protected class SourceStateExpr_RightParenthesisKeyword_3 extends KeywordToken  
 
 /************ begin Rule TargetStateExpr ****************
  *
- * TargetStateExpr returns mtctl::TargetStateExpr:
- * 	"targetState" "(" transition=TransitionMapExpr ")";
+ * TargetStateExpr mtctl::TargetStateExpr:
+ * 	'targetState' '(' transition=TransitionMapExpr ')'
  *
  **/
 
-// "targetState" "(" transition=TransitionMapExpr ")"
+// 'targetState' '(' transition=TransitionMapExpr ')'
 protected class TargetStateExpr_Group extends GroupToken {
 	
 	public TargetStateExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6863,7 +6864,7 @@ protected class TargetStateExpr_Group extends GroupToken {
 
 }
 
-// "targetState"
+// 'targetState'
 protected class TargetStateExpr_TargetStateKeyword_0 extends KeywordToken  {
 	
 	public TargetStateExpr_TargetStateKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6884,7 +6885,7 @@ protected class TargetStateExpr_TargetStateKeyword_0 extends KeywordToken  {
 
 }
 
-// "("
+// '('
 protected class TargetStateExpr_LeftParenthesisKeyword_1 extends KeywordToken  {
 	
 	public TargetStateExpr_LeftParenthesisKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6952,7 +6953,7 @@ protected class TargetStateExpr_TransitionAssignment_2 extends AssignmentToken  
 	}	
 }
 
-// ")"
+// ')'
 protected class TargetStateExpr_RightParenthesisKeyword_3 extends KeywordToken  {
 	
 	public TargetStateExpr_RightParenthesisKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6980,12 +6981,12 @@ protected class TargetStateExpr_RightParenthesisKeyword_3 extends KeywordToken  
 
 /************ begin Rule MumlElemExpr ****************
  *
- * MumlElemExpr returns mtctl::MumlElemExpr:
- * 	elem=[ecore::EObject|QualifiedName] ("[" instance=[ecore::EObject|QualifiedName] "]")?;
+ * MumlElemExpr mtctl::MumlElemExpr:
+ * 	elem=[ecore::EObject|QualifiedName] ('[' instance=[ecore::EObject|QualifiedName] ']')?
  *
  **/
 
-// elem=[ecore::EObject|QualifiedName] ("[" instance=[ecore::EObject|QualifiedName] "]")?
+// elem=[ecore::EObject|QualifiedName] ('[' instance=[ecore::EObject|QualifiedName] ']')?
 protected class MumlElemExpr_Group extends GroupToken {
 	
 	public MumlElemExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7051,7 +7052,7 @@ protected class MumlElemExpr_ElemAssignment_0 extends AssignmentToken  {
 
 }
 
-// ("[" instance=[ecore::EObject|QualifiedName] "]")?
+// ('[' instance=[ecore::EObject|QualifiedName] ']')?
 protected class MumlElemExpr_Group_1 extends GroupToken {
 	
 	public MumlElemExpr_Group_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7073,7 +7074,7 @@ protected class MumlElemExpr_Group_1 extends GroupToken {
 
 }
 
-// "["
+// '['
 protected class MumlElemExpr_LeftSquareBracketKeyword_1_0 extends KeywordToken  {
 	
 	public MumlElemExpr_LeftSquareBracketKeyword_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7132,7 +7133,7 @@ protected class MumlElemExpr_InstanceAssignment_1_1 extends AssignmentToken  {
 
 }
 
-// "]"
+// ']'
 protected class MumlElemExpr_RightSquareBracketKeyword_1_2 extends KeywordToken  {
 	
 	public MumlElemExpr_RightSquareBracketKeyword_1_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7161,8 +7162,8 @@ protected class MumlElemExpr_RightSquareBracketKeyword_1_2 extends KeywordToken 
 
 /************ begin Rule ConstExpr ****************
  *
- * ConstExpr returns mtctl::ConstExpr:
- * 	val=EInt timeUnit=TimeUnitExpr?;
+ * ConstExpr mtctl::ConstExpr:
+ * 	val=EInt timeUnit=TimeUnitExpr?
  *
  **/
 
@@ -7271,16 +7272,16 @@ protected class ConstExpr_TimeUnitAssignment_1 extends AssignmentToken  {
 /************ begin Rule SetExpr ****************
  *
  * //Sets
- * SetExpr returns mtctl::SetExpr:
- * 	InstanceSetExpr | SubinstanceSetExpr | IntervalSetExpr | {mtctl::StateSetExpr} "States" | {mtctl::TransitionSetExpr}
- * 	"Transitions" | {mtctl::MessageSetExpr} "MessageTypes" | {mtctl::ClockSetExpr} "Clocks" | {mtctl::BufferSetExpr}
- * 	"Buffers";
+ * SetExpr mtctl::SetExpr:
+ * 	InstanceSetExpr | SubinstanceSetExpr | IntervalSetExpr | {mtctl::StateSetExpr} 'States' | {mtctl::TransitionSetExpr}
+ * 	'Transitions' | {mtctl::MessageSetExpr} 'MessageTypes' | {mtctl::ClockSetExpr} 'Clocks' | {mtctl::BufferSetExpr}
+ * 	'Buffers'
  *
  **/
 
-// InstanceSetExpr | SubinstanceSetExpr | IntervalSetExpr | {mtctl::StateSetExpr} "States" | {mtctl::TransitionSetExpr}
-// "Transitions" | {mtctl::MessageSetExpr} "MessageTypes" | {mtctl::ClockSetExpr} "Clocks" | {mtctl::BufferSetExpr}
-// "Buffers"
+// InstanceSetExpr | SubinstanceSetExpr | IntervalSetExpr | {mtctl::StateSetExpr} 'States' | {mtctl::TransitionSetExpr}
+// 'Transitions' | {mtctl::MessageSetExpr} 'MessageTypes' | {mtctl::ClockSetExpr} 'Clocks' | {mtctl::BufferSetExpr}
+// 'Buffers'
 protected class SetExpr_Alternatives extends AlternativesToken {
 
 	public SetExpr_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7431,7 +7432,7 @@ protected class SetExpr_IntervalSetExprParserRuleCall_2 extends RuleCallToken {
 	}	
 }
 
-// {mtctl::StateSetExpr} "States"
+// {mtctl::StateSetExpr} 'States'
 protected class SetExpr_Group_3 extends GroupToken {
 	
 	public SetExpr_Group_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7486,7 +7487,7 @@ protected class SetExpr_StateSetExprAction_3_0 extends ActionToken  {
 	}
 }
 
-// "States"
+// 'States'
 protected class SetExpr_StatesKeyword_3_1 extends KeywordToken  {
 	
 	public SetExpr_StatesKeyword_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7509,7 +7510,7 @@ protected class SetExpr_StatesKeyword_3_1 extends KeywordToken  {
 }
 
 
-// {mtctl::TransitionSetExpr} "Transitions"
+// {mtctl::TransitionSetExpr} 'Transitions'
 protected class SetExpr_Group_4 extends GroupToken {
 	
 	public SetExpr_Group_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7564,7 +7565,7 @@ protected class SetExpr_TransitionSetExprAction_4_0 extends ActionToken  {
 	}
 }
 
-// "Transitions"
+// 'Transitions'
 protected class SetExpr_TransitionsKeyword_4_1 extends KeywordToken  {
 	
 	public SetExpr_TransitionsKeyword_4_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7587,7 +7588,7 @@ protected class SetExpr_TransitionsKeyword_4_1 extends KeywordToken  {
 }
 
 
-// {mtctl::MessageSetExpr} "MessageTypes"
+// {mtctl::MessageSetExpr} 'MessageTypes'
 protected class SetExpr_Group_5 extends GroupToken {
 	
 	public SetExpr_Group_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7642,7 +7643,7 @@ protected class SetExpr_MessageSetExprAction_5_0 extends ActionToken  {
 	}
 }
 
-// "MessageTypes"
+// 'MessageTypes'
 protected class SetExpr_MessageTypesKeyword_5_1 extends KeywordToken  {
 	
 	public SetExpr_MessageTypesKeyword_5_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7665,7 +7666,7 @@ protected class SetExpr_MessageTypesKeyword_5_1 extends KeywordToken  {
 }
 
 
-// {mtctl::ClockSetExpr} "Clocks"
+// {mtctl::ClockSetExpr} 'Clocks'
 protected class SetExpr_Group_6 extends GroupToken {
 	
 	public SetExpr_Group_6(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7720,7 +7721,7 @@ protected class SetExpr_ClockSetExprAction_6_0 extends ActionToken  {
 	}
 }
 
-// "Clocks"
+// 'Clocks'
 protected class SetExpr_ClocksKeyword_6_1 extends KeywordToken  {
 	
 	public SetExpr_ClocksKeyword_6_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7743,7 +7744,7 @@ protected class SetExpr_ClocksKeyword_6_1 extends KeywordToken  {
 }
 
 
-// {mtctl::BufferSetExpr} "Buffers"
+// {mtctl::BufferSetExpr} 'Buffers'
 protected class SetExpr_Group_7 extends GroupToken {
 	
 	public SetExpr_Group_7(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7798,7 +7799,7 @@ protected class SetExpr_BufferSetExprAction_7_0 extends ActionToken  {
 	}
 }
 
-// "Buffers"
+// 'Buffers'
 protected class SetExpr_BuffersKeyword_7_1 extends KeywordToken  {
 	
 	public SetExpr_BuffersKeyword_7_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7827,12 +7828,12 @@ protected class SetExpr_BuffersKeyword_7_1 extends KeywordToken  {
 
 /************ begin Rule IntervalSetExpr ****************
  *
- * IntervalSetExpr returns mtctl::SetExpr:
- * 	{mtctl::IntervalSetExpr} "[" lowerVal=INT "," upperVal=INT "]";
+ * IntervalSetExpr mtctl::SetExpr:
+ * 	{mtctl::IntervalSetExpr} '[' lowerVal=INT ',' upperVal=INT ']'
  *
  **/
 
-// {mtctl::IntervalSetExpr} "[" lowerVal=INT "," upperVal=INT "]"
+// {mtctl::IntervalSetExpr} '[' lowerVal=INT ',' upperVal=INT ']'
 protected class IntervalSetExpr_Group extends GroupToken {
 	
 	public IntervalSetExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7887,7 +7888,7 @@ protected class IntervalSetExpr_IntervalSetExprAction_0 extends ActionToken  {
 	}
 }
 
-// "["
+// '['
 protected class IntervalSetExpr_LeftSquareBracketKeyword_1 extends KeywordToken  {
 	
 	public IntervalSetExpr_LeftSquareBracketKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7943,7 +7944,7 @@ protected class IntervalSetExpr_LowerValAssignment_2 extends AssignmentToken  {
 
 }
 
-// ","
+// ','
 protected class IntervalSetExpr_CommaKeyword_3 extends KeywordToken  {
 	
 	public IntervalSetExpr_CommaKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7999,7 +8000,7 @@ protected class IntervalSetExpr_UpperValAssignment_4 extends AssignmentToken  {
 
 }
 
-// "]"
+// ']'
 protected class IntervalSetExpr_RightSquareBracketKeyword_5 extends KeywordToken  {
 	
 	public IntervalSetExpr_RightSquareBracketKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8027,12 +8028,12 @@ protected class IntervalSetExpr_RightSquareBracketKeyword_5 extends KeywordToken
 
 /************ begin Rule InstanceSetExpr ****************
  *
- * InstanceSetExpr returns mtctl::SetExpr:
- * 	{mtctl::InstanceSetExpr} "Instances" "<" type=MumlElemExpr ">";
+ * InstanceSetExpr mtctl::SetExpr:
+ * 	{mtctl::InstanceSetExpr} 'Instances' '<' type=MumlElemExpr '>'
  *
  **/
 
-// {mtctl::InstanceSetExpr} "Instances" "<" type=MumlElemExpr ">"
+// {mtctl::InstanceSetExpr} 'Instances' '<' type=MumlElemExpr '>'
 protected class InstanceSetExpr_Group extends GroupToken {
 	
 	public InstanceSetExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8087,7 +8088,7 @@ protected class InstanceSetExpr_InstanceSetExprAction_0 extends ActionToken  {
 	}
 }
 
-// "Instances"
+// 'Instances'
 protected class InstanceSetExpr_InstancesKeyword_1 extends KeywordToken  {
 	
 	public InstanceSetExpr_InstancesKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8109,7 +8110,7 @@ protected class InstanceSetExpr_InstancesKeyword_1 extends KeywordToken  {
 
 }
 
-// "<"
+// '<'
 protected class InstanceSetExpr_LessThanSignKeyword_2 extends KeywordToken  {
 	
 	public InstanceSetExpr_LessThanSignKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8177,7 +8178,7 @@ protected class InstanceSetExpr_TypeAssignment_3 extends AssignmentToken  {
 	}	
 }
 
-// ">"
+// '>'
 protected class InstanceSetExpr_GreaterThanSignKeyword_4 extends KeywordToken  {
 	
 	public InstanceSetExpr_GreaterThanSignKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8205,12 +8206,12 @@ protected class InstanceSetExpr_GreaterThanSignKeyword_4 extends KeywordToken  {
 
 /************ begin Rule SubinstanceSetExpr ****************
  *
- * SubinstanceSetExpr returns mtctl::SetExpr:
- * 	{mtctl::SubinstanceSetExpr} "Subinstances" "<" type=MumlElemExpr ">";
+ * SubinstanceSetExpr mtctl::SetExpr:
+ * 	{mtctl::SubinstanceSetExpr} 'Subinstances' '<' type=MumlElemExpr '>'
  *
  **/
 
-// {mtctl::SubinstanceSetExpr} "Subinstances" "<" type=MumlElemExpr ">"
+// {mtctl::SubinstanceSetExpr} 'Subinstances' '<' type=MumlElemExpr '>'
 protected class SubinstanceSetExpr_Group extends GroupToken {
 	
 	public SubinstanceSetExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8265,7 +8266,7 @@ protected class SubinstanceSetExpr_SubinstanceSetExprAction_0 extends ActionToke
 	}
 }
 
-// "Subinstances"
+// 'Subinstances'
 protected class SubinstanceSetExpr_SubinstancesKeyword_1 extends KeywordToken  {
 	
 	public SubinstanceSetExpr_SubinstancesKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8287,7 +8288,7 @@ protected class SubinstanceSetExpr_SubinstancesKeyword_1 extends KeywordToken  {
 
 }
 
-// "<"
+// '<'
 protected class SubinstanceSetExpr_LessThanSignKeyword_2 extends KeywordToken  {
 	
 	public SubinstanceSetExpr_LessThanSignKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8355,7 +8356,7 @@ protected class SubinstanceSetExpr_TypeAssignment_3 extends AssignmentToken  {
 	}	
 }
 
-// ">"
+// '>'
 protected class SubinstanceSetExpr_GreaterThanSignKeyword_4 extends KeywordToken  {
 	
 	public SubinstanceSetExpr_GreaterThanSignKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {

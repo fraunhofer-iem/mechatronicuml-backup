@@ -11,7 +11,7 @@ import com.google.inject.Binder;
 import com.google.inject.name.Names;
 
 /**
- * Manual modifications go to {org.muml.uppaal.adapter.mtctlRuntimeModule}
+ * Manual modifications go to {org.muml.uppaal.adapter.mtctl.xtext.MtctlRuntimeModule}
  */
 @SuppressWarnings("all")
 public abstract class AbstractMtctlRuntimeModule extends org.eclipse.xtext.common.types.DefaultCommonTypesRuntimeModule {
@@ -20,12 +20,12 @@ public abstract class AbstractMtctlRuntimeModule extends org.eclipse.xtext.commo
 
 	@Override
 	public void configure(Binder binder) {
-		properties = tryBindProperties(binder, "de/uni_paderborn/fujaba/muml/verification/uppaal/Mtctl.properties");
+		properties = tryBindProperties(binder, "org/muml/uppaal/adapter/mtctl/xtext/Mtctl.properties");
 		super.configure(binder);
 	}
 	
 	public void configureLanguageName(Binder binder) {
-		binder.bind(String.class).annotatedWith(Names.named(Constants.LANGUAGE_NAME)).toInstance("org.muml.uppaal.adapter.mtctl");
+		binder.bind(String.class).annotatedWith(Names.named(Constants.LANGUAGE_NAME)).toInstance("org.muml.uppaal.adapter.mtctl.xtext.Mtctl");
 	}
 	
 	public void configureFileExtensions(Binder binder) {

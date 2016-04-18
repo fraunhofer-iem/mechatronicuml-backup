@@ -9,7 +9,7 @@ options {
 }
 
 @lexer::header {
-package org.muml.uppaal.adapter.ui.contentassist.antlr.internal;
+package org.muml.uppaal.adapter.mtctl.xtext.ui.contentassist.antlr.internal;
 
 // Hack: Use our own Lexer superclass by means of import. 
 // Currently there is no other way to specify the superclass for the lexer.
@@ -17,7 +17,7 @@ import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.Lexer;
 }
 
 @parser::header {
-package org.muml.uppaal.adapter.ui.contentassist.antlr.internal; 
+package org.muml.uppaal.adapter.mtctl.xtext.ui.contentassist.antlr.internal; 
 
 import java.io.InputStream;
 import org.eclipse.xtext.*;
@@ -29,7 +29,7 @@ import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.DFA;
-import org.muml.uppaal.adapter.services.MtctlGrammarAccess;
+import org.muml.uppaal.adapter.mtctl.xtext.services.MtctlGrammarAccess;
 
 }
 
@@ -1989,7 +1989,7 @@ rule__TimeUnitExpr__Alternatives
     |(
 { before(grammarAccess.getTimeUnitExprAccess().getSecsKeyword_5()); }
 
-	'\u00C2\u00B5secs' 
+	'\u00B5secs' 
 
 { after(grammarAccess.getTimeUnitExprAccess().getSecsKeyword_5()); }
 )

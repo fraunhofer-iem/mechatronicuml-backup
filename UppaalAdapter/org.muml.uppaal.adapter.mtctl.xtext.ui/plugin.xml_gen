@@ -10,7 +10,7 @@
             contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
             default="true"
             extensions="mtctl"
-            id="org.muml.uppaal.adapter.mtctl"
+            id="org.muml.uppaal.adapter.mtctl.xtext.Mtctl"
             name="Mtctl Editor">
         </editor>
     </extension>
@@ -21,16 +21,16 @@
             commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
             <activeWhen>
                 <reference
-                    definitionId="org.muml.uppaal.adapter.mtctl.Editor.opened">
+                    definitionId="org.muml.uppaal.adapter.mtctl.xtext.Mtctl.Editor.opened">
                 </reference>
             </activeWhen>
         </handler>
         <handler
             class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
-            commandId="org.muml.uppaal.adapter.mtctl.validate">
+            commandId="org.muml.uppaal.adapter.mtctl.xtext.Mtctl.validate">
          <activeWhen>
             <reference
-                    definitionId="org.muml.uppaal.adapter.mtctl.Editor.opened">
+                    definitionId="org.muml.uppaal.adapter.mtctl.xtext.Mtctl.Editor.opened">
             </reference>
          </activeWhen>
       	</handler>
@@ -39,7 +39,7 @@
             class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
             commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName">
             <activeWhen>
-				<reference definitionId="org.muml.uppaal.adapter.mtctl.Editor.opened" />
+				<reference definitionId="org.muml.uppaal.adapter.mtctl.xtext.Mtctl.Editor.opened" />
             </activeWhen>
         </handler>
         <handler
@@ -47,7 +47,7 @@
             commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName">
             <activeWhen>
             	<and>
-            		<reference definitionId="org.muml.uppaal.adapter.mtctl.XtextEditor.opened" />
+            		<reference definitionId="org.muml.uppaal.adapter.mtctl.xtext.Mtctl.XtextEditor.opened" />
 	                <iterate>
 						<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 					</iterate>
@@ -56,22 +56,22 @@
         </handler>
     </extension>
     <extension point="org.eclipse.core.expressions.definitions">
-        <definition id="org.muml.uppaal.adapter.mtctl.Editor.opened">
+        <definition id="org.muml.uppaal.adapter.mtctl.xtext.Mtctl.Editor.opened">
             <and>
                 <reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
                 <with variable="activeEditor">
                     <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
-                        value="org.muml.uppaal.adapter.mtctl" 
+                        value="org.muml.uppaal.adapter.mtctl.xtext.Mtctl" 
                         forcePluginActivation="true"/>
                 </with>        
             </and>
         </definition>
-        <definition id="org.muml.uppaal.adapter.mtctl.XtextEditor.opened">
+        <definition id="org.muml.uppaal.adapter.mtctl.xtext.Mtctl.XtextEditor.opened">
             <and>
                 <reference definitionId="isXtextEditorActive"/>
                 <with variable="activeEditor">
                     <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
-                        value="org.muml.uppaal.adapter.mtctl" 
+                        value="org.muml.uppaal.adapter.mtctl.xtext.Mtctl" 
                         forcePluginActivation="true"/>
                 </with>        
             </and>
@@ -81,32 +81,32 @@
             point="org.eclipse.ui.preferencePages">
         <page
             class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-            id="org.muml.uppaal.adapter.mtctl"
+            id="org.muml.uppaal.adapter.mtctl.xtext.Mtctl"
             name="Mtctl">
-            <keywordReference id="org.muml.uppaal.adapter.ui.keyword_Mtctl"/>
+            <keywordReference id="org.muml.uppaal.adapter.mtctl.xtext.ui.keyword_Mtctl"/>
         </page>
         <page
-            category="org.muml.uppaal.adapter.mtctl"
+            category="org.muml.uppaal.adapter.mtctl.xtext.Mtctl"
             class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
-            id="org.muml.uppaal.adapter.mtctl.coloring"
+            id="org.muml.uppaal.adapter.mtctl.xtext.Mtctl.coloring"
             name="Syntax Coloring">
-            <keywordReference id="org.muml.uppaal.adapter.ui.keyword_Mtctl"/>
+            <keywordReference id="org.muml.uppaal.adapter.mtctl.xtext.ui.keyword_Mtctl"/>
         </page>
         <page
-            category="org.muml.uppaal.adapter.mtctl"
+            category="org.muml.uppaal.adapter.mtctl.xtext.Mtctl"
             class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
-            id="org.muml.uppaal.adapter.mtctl.templates"
+            id="org.muml.uppaal.adapter.mtctl.xtext.Mtctl.templates"
             name="Templates">
-            <keywordReference id="org.muml.uppaal.adapter.ui.keyword_Mtctl"/>
+            <keywordReference id="org.muml.uppaal.adapter.mtctl.xtext.ui.keyword_Mtctl"/>
         </page>
     </extension>
     <extension
             point="org.eclipse.ui.propertyPages">
         <page
             class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-            id="org.muml.uppaal.adapter.mtctl"
+            id="org.muml.uppaal.adapter.mtctl.xtext.Mtctl"
             name="Mtctl">
-            <keywordReference id="org.muml.uppaal.adapter.ui.keyword_Mtctl"/>
+            <keywordReference id="org.muml.uppaal.adapter.mtctl.xtext.ui.keyword_Mtctl"/>
             <enabledWhen>
 	            <adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -116,14 +116,14 @@
     <extension
         point="org.eclipse.ui.keywords">
         <keyword
-            id="org.muml.uppaal.adapter.ui.keyword_Mtctl"
+            id="org.muml.uppaal.adapter.mtctl.xtext.ui.keyword_Mtctl"
             label="Mtctl"/>
     </extension>
     <extension
          point="org.eclipse.ui.commands">
       <command
             description="Trigger expensive validation"
-            id="org.muml.uppaal.adapter.mtctl.validate"
+            id="org.muml.uppaal.adapter.mtctl.xtext.Mtctl.validate"
             name="Validate">
       </command>
       <!-- copy qualified name -->
@@ -144,12 +144,12 @@
         <menuContribution
             locationURI="popup:#TextEditorContext?after=group.edit">
              <command
-                 commandId="org.muml.uppaal.adapter.mtctl.validate"
+                 commandId="org.muml.uppaal.adapter.mtctl.xtext.Mtctl.validate"
                  style="push"
                  tooltip="Trigger expensive validation">
             <visibleWhen checkEnabled="false">
                 <reference
-                    definitionId="org.muml.uppaal.adapter.mtctl.Editor.opened">
+                    definitionId="org.muml.uppaal.adapter.mtctl.xtext.Mtctl.Editor.opened">
                 </reference>
             </visibleWhen>
          </command>  
@@ -159,7 +159,7 @@
          	<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName" 
          		style="push" tooltip="Copy Qualified Name">
             	<visibleWhen checkEnabled="false">
-                	<reference definitionId="org.muml.uppaal.adapter.mtctl.Editor.opened" />
+                	<reference definitionId="org.muml.uppaal.adapter.mtctl.xtext.Mtctl.Editor.opened" />
             	</visibleWhen>
          	</command>  
          </menuContribution>
@@ -167,7 +167,7 @@
          	<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
             	style="push" tooltip="Copy Qualified Name">
             	<visibleWhen checkEnabled="false">
-                	<reference definitionId="org.muml.uppaal.adapter.mtctl.Editor.opened" />
+                	<reference definitionId="org.muml.uppaal.adapter.mtctl.xtext.Mtctl.Editor.opened" />
             	</visibleWhen>
          	</command>  
          </menuContribution>
@@ -176,7 +176,7 @@
 				style="push" tooltip="Copy Qualified Name">
          		<visibleWhen checkEnabled="false">
 	            	<and>
-	            		<reference definitionId="org.muml.uppaal.adapter.mtctl.XtextEditor.opened" />
+	            		<reference definitionId="org.muml.uppaal.adapter.mtctl.xtext.Mtctl.XtextEditor.opened" />
 						<iterate>
 							<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 						</iterate>
@@ -189,7 +189,7 @@
 		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
 			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
 				<visibleWhen checkEnabled="false">
-                	<reference definitionId="org.muml.uppaal.adapter.mtctl.Editor.opened">
+                	<reference definitionId="org.muml.uppaal.adapter.mtctl.xtext.Mtctl.Editor.opened">
                 	</reference>
             	</visibleWhen>
 			</command>
@@ -201,7 +201,7 @@
             commandId="org.eclipse.xtext.ui.editor.FindReferences">
             <activeWhen>
                 <reference
-                    definitionId="org.muml.uppaal.adapter.mtctl.Editor.opened">
+                    definitionId="org.muml.uppaal.adapter.mtctl.xtext.Mtctl.Editor.opened">
                 </reference>
             </activeWhen>
         </handler>
@@ -224,7 +224,7 @@
     </extension>
 
 
-    <!-- marker definitions for org.muml.uppaal.adapter.mtctl -->
+    <!-- marker definitions for org.muml.uppaal.adapter.mtctl.xtext.Mtctl -->
     <extension
             id="mtctl.check.fast"
             name="Mtctl Problem"
@@ -255,7 +255,7 @@
 			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
 			<activeWhen>
 				<reference
-					definitionId="org.muml.uppaal.adapter.mtctl.Editor.opened">
+					definitionId="org.muml.uppaal.adapter.mtctl.xtext.Mtctl.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -275,17 +275,17 @@
 				style="push"
 				tooltip="Open Quick Outline">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="org.muml.uppaal.adapter.mtctl.Editor.opened"/>
+					<reference definitionId="org.muml.uppaal.adapter.mtctl.xtext.Mtctl.Editor.opened"/>
 				</visibleWhen>
 			</command>
 		</menuContribution>
 	</extension>
-    <!-- quickfix marker resolution generator for org.muml.uppaal.adapter.mtctl -->
+    <!-- quickfix marker resolution generator for org.muml.uppaal.adapter.mtctl.xtext.Mtctl -->
     <extension
             point="org.eclipse.ui.ide.markerResolution">
         <markerResolutionGenerator
             class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="org.muml.uppaal.adapter.ui.mtctl.check.fast">
+            markerType="org.muml.uppaal.adapter.mtctl.xtext.ui.mtctl.check.fast">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
@@ -293,7 +293,7 @@
         </markerResolutionGenerator>
         <markerResolutionGenerator
             class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="org.muml.uppaal.adapter.ui.mtctl.check.normal">
+            markerType="org.muml.uppaal.adapter.mtctl.xtext.ui.mtctl.check.normal">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
@@ -301,7 +301,7 @@
         </markerResolutionGenerator>
         <markerResolutionGenerator
             class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="org.muml.uppaal.adapter.ui.mtctl.check.expensive">
+            markerType="org.muml.uppaal.adapter.mtctl.xtext.ui.mtctl.check.expensive">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
@@ -315,7 +315,7 @@
 			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
 			<activeWhen>
 				<reference
-					definitionId="org.muml.uppaal.adapter.mtctl.Editor.opened">
+					definitionId="org.muml.uppaal.adapter.mtctl.xtext.Mtctl.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -327,7 +327,7 @@
                style="push">
             <visibleWhen checkEnabled="false">
                <reference
-                     definitionId="org.muml.uppaal.adapter.mtctl.Editor.opened">
+                     definitionId="org.muml.uppaal.adapter.mtctl.xtext.Mtctl.Editor.opened">
                </reference>
             </visibleWhen>
          </command>
@@ -335,28 +335,28 @@
    </extension>
    <extension point="org.eclipse.ui.preferencePages">
 	    <page
-	        category="org.muml.uppaal.adapter.mtctl"
+	        category="org.muml.uppaal.adapter.mtctl.xtext.Mtctl"
 	        class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
-	        id="org.muml.uppaal.adapter.mtctl.refactoring"
+	        id="org.muml.uppaal.adapter.mtctl.xtext.Mtctl.refactoring"
 	        name="Refactoring">
-	        <keywordReference id="org.muml.uppaal.adapter.ui.keyword_Mtctl"/>
+	        <keywordReference id="org.muml.uppaal.adapter.mtctl.xtext.ui.keyword_Mtctl"/>
 	    </page>
 	</extension>
 
   <extension point="org.eclipse.compare.contentViewers">
-    <viewer id="org.muml.uppaal.adapter.mtctl.compare.contentViewers"
+    <viewer id="org.muml.uppaal.adapter.mtctl.xtext.Mtctl.compare.contentViewers"
             class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
             extensions="mtctl">
     </viewer>
   </extension>
   <extension point="org.eclipse.compare.contentMergeViewers">
-    <viewer id="org.muml.uppaal.adapter.mtctl.compare.contentMergeViewers"
+    <viewer id="org.muml.uppaal.adapter.mtctl.xtext.Mtctl.compare.contentMergeViewers"
             class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
             extensions="mtctl" label="Mtctl Compare">
      </viewer>
   </extension>
   <extension point="org.eclipse.ui.editors.documentProviders">
-    <provider id="org.muml.uppaal.adapter.mtctl.editors.documentProviders"
+    <provider id="org.muml.uppaal.adapter.mtctl.xtext.Mtctl.editors.documentProviders"
             class="org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
             extensions="mtctl">
     </provider>

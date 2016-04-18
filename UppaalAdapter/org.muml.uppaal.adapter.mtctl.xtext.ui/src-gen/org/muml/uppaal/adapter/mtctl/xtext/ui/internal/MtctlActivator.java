@@ -23,7 +23,7 @@ import com.google.inject.Module;
  */
 public class MtctlActivator extends AbstractUIPlugin {
 	
-	public static final String DE_UNI_PADERBORN_FUJABA_MUML_VERIFICATION_UPPAAL_MTCTL = "org.muml.uppaal.adapter.mtctl";
+	public static final String ORG_MUML_UPPAAL_ADAPTER_MTCTL_XTEXT_MTCTL = "org.muml.uppaal.adapter.mtctl.xtext.Mtctl";
 	
 	private static final Logger logger = Logger.getLogger(MtctlActivator.class);
 	
@@ -73,7 +73,7 @@ public class MtctlActivator extends AbstractUIPlugin {
 	}
 
 	protected Module getRuntimeModule(String grammar) {
-		if (DE_UNI_PADERBORN_FUJABA_MUML_VERIFICATION_UPPAAL_MTCTL.equals(grammar)) {
+		if (ORG_MUML_UPPAAL_ADAPTER_MTCTL_XTEXT_MTCTL.equals(grammar)) {
 			return new org.muml.uppaal.adapter.mtctl.xtext.MtctlRuntimeModule();
 		}
 		
@@ -81,7 +81,7 @@ public class MtctlActivator extends AbstractUIPlugin {
 	}
 	
 	protected Module getUiModule(String grammar) {
-		if (DE_UNI_PADERBORN_FUJABA_MUML_VERIFICATION_UPPAAL_MTCTL.equals(grammar)) {
+		if (ORG_MUML_UPPAAL_ADAPTER_MTCTL_XTEXT_MTCTL.equals(grammar)) {
 			return new org.muml.uppaal.adapter.mtctl.xtext.ui.MtctlUiModule(this);
 		}
 		

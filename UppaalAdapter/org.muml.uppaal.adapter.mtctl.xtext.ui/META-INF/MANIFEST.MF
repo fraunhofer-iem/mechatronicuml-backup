@@ -33,5 +33,6 @@ Export-Package: org.muml.uppaal.adapter.mtctl.xtext.ui,
  org.muml.uppaal.adapter.mtctl.xtext.ui.contentassist.antlr,
  org.muml.uppaal.adapter.mtctl.xtext.ui.internal,
  org.muml.uppaal.adapter.mtctl.xtext.ui.properties,
- org.muml.uppaal.adapter.mtctl.xtext.ui.quickfix
+ org.muml.uppaal.adapter.mtctl.xtext.ui.quickfix,
+ org.muml.uppaal.adapter.mtctl.xtext.ui.contentassist.antlr.internal
 Bundle-Activator: org.muml.uppaal.adapter.mtctl.xtext.ui.internal.MtctlActivator

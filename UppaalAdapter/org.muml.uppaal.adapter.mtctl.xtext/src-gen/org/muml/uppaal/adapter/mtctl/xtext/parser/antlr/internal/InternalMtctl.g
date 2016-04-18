@@ -9,7 +9,7 @@ options {
 }
 
 @lexer::header {
-package org.muml.uppaal.adapter.parser.antlr.internal;
+package org.muml.uppaal.adapter.mtctl.xtext.parser.antlr.internal;
 
 // Hack: Use our own Lexer superclass by means of import. 
 // Currently there is no other way to specify the superclass for the lexer.
@@ -17,7 +17,7 @@ import org.eclipse.xtext.parser.antlr.Lexer;
 }
 
 @parser::header {
-package org.muml.uppaal.adapter.parser.antlr.internal; 
+package org.muml.uppaal.adapter.mtctl.xtext.parser.antlr.internal; 
 
 import org.eclipse.xtext.*;
 import org.eclipse.xtext.parser.*;
@@ -29,7 +29,7 @@ import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
 import org.eclipse.xtext.parser.antlr.AntlrDatatypeRuleToken;
-import org.muml.uppaal.adapter.services.MtctlGrammarAccess;
+import org.muml.uppaal.adapter.mtctl.xtext.services.MtctlGrammarAccess;
 
 }
 
@@ -91,7 +91,7 @@ rulePropertyRepository returns [EObject current=null]
        			$current, 
        			"properties",
         		lv_properties_0_0, 
-        		"Property");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.Property");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -137,7 +137,7 @@ ruleProperty returns [EObject current=null]
        			$current, 
        			"expression",
         		lv_expression_0_0, 
-        		"Expression");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.Expression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -160,7 +160,7 @@ ruleProperty returns [EObject current=null]
        			$current, 
        			"comment",
         		lv_comment_2_0, 
-        		"SL_COMMENT");
+        		"org.eclipse.xtext.common.Terminals.SL_COMMENT");
 	    }
 
 )
@@ -250,7 +250,7 @@ ruleLeadsToExpr returns [EObject current=null]
        			$current, 
        			"rightOpd",
         		lv_rightOpd_3_0, 
-        		"ImplyExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.ImplyExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -308,7 +308,7 @@ ruleImplyExpr returns [EObject current=null]
        			$current, 
        			"rightOpd",
         		lv_rightOpd_3_0, 
-        		"AndExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.AndExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -366,7 +366,7 @@ ruleAndExpr returns [EObject current=null]
        			$current, 
        			"rightOpd",
         		lv_rightOpd_3_0, 
-        		"OrExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.OrExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -424,7 +424,7 @@ ruleOrExpr returns [EObject current=null]
        			$current, 
        			"rightOpd",
         		lv_rightOpd_3_0, 
-        		"NotExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.NotExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -473,7 +473,7 @@ ruleNotExpr returns [EObject current=null]
        			$current, 
        			"opd",
         		lv_opd_2_0, 
-        		"NotExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.NotExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -596,7 +596,7 @@ ruleUniversalQuantExpr returns [EObject current=null]
        			$current, 
        			"var",
         		lv_var_3_0, 
-        		"VariableBinding");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.VariableBinding");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -618,7 +618,7 @@ ruleUniversalQuantExpr returns [EObject current=null]
        			$current, 
        			"formula",
         		lv_formula_5_0, 
-        		"NotExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.NotExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -671,7 +671,7 @@ ruleExistentialQuantExpr returns [EObject current=null]
        			$current, 
        			"var",
         		lv_var_3_0, 
-        		"VariableBinding");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.VariableBinding");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -693,7 +693,7 @@ ruleExistentialQuantExpr returns [EObject current=null]
        			$current, 
        			"formula",
         		lv_formula_5_0, 
-        		"NotExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.NotExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -733,7 +733,7 @@ ruleVariableBinding returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_0_0, 
-        		"ID");
+        		"org.eclipse.xtext.common.Terminals.ID");
 	    }
 
 )
@@ -754,7 +754,7 @@ ruleVariableBinding returns [EObject current=null]
        			$current, 
        			"set",
         		lv_set_2_0, 
-        		"SetExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.SetExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -868,7 +868,7 @@ ruleEFExpr returns [EObject current=null]
        			$current, 
        			"expr",
         		lv_expr_3_0, 
-        		"NotExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.NotExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -922,7 +922,7 @@ ruleAFExpr returns [EObject current=null]
        			$current, 
        			"expr",
         		lv_expr_3_0, 
-        		"NotExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.NotExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -976,7 +976,7 @@ ruleEGExpr returns [EObject current=null]
        			$current, 
        			"expr",
         		lv_expr_3_0, 
-        		"NotExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.NotExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1030,7 +1030,7 @@ ruleAGExpr returns [EObject current=null]
        			$current, 
        			"expr",
         		lv_expr_3_0, 
-        		"NotExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.NotExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1399,7 +1399,7 @@ ruleStateActiveExpr returns [EObject current=null]
        			$current, 
        			"state",
         		lv_state_2_0, 
-        		"StateMapExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.StateMapExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1450,7 +1450,7 @@ ruleSubstateOfExpr returns [EObject current=null]
        			$current, 
        			"state",
         		lv_state_2_0, 
-        		"StateMapExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.StateMapExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1472,7 +1472,7 @@ ruleSubstateOfExpr returns [EObject current=null]
        			$current, 
        			"superstate",
         		lv_superstate_4_0, 
-        		"StateMapExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.StateMapExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1523,7 +1523,7 @@ ruleStateInStatechartExpr returns [EObject current=null]
        			$current, 
        			"state",
         		lv_state_2_0, 
-        		"StateMapExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.StateMapExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1545,7 +1545,7 @@ ruleStateInStatechartExpr returns [EObject current=null]
        			$current, 
        			"statechart",
         		lv_statechart_4_0, 
-        		"StatechartMapExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.StatechartMapExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1646,7 +1646,7 @@ ruleMessageInTransitExpr returns [EObject current=null]
        			$current, 
        			"message",
         		lv_message_2_0, 
-        		"MessageMapExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.MessageMapExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1697,7 +1697,7 @@ ruleMessageInBufferExpr returns [EObject current=null]
        			$current, 
        			"message",
         		lv_message_2_0, 
-        		"MessageMapExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.MessageMapExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1719,7 +1719,7 @@ ruleMessageInBufferExpr returns [EObject current=null]
        			$current, 
        			"buffer",
         		lv_buffer_4_0, 
-        		"BufferMapExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.BufferMapExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1770,7 +1770,7 @@ ruleMessageDiscardedExpr returns [EObject current=null]
        			$current, 
        			"buffer",
         		lv_buffer_2_0, 
-        		"BufferMapExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.BufferMapExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1851,7 +1851,7 @@ ruleTransitionFiringExpr returns [EObject current=null]
        			$current, 
        			"transition",
         		lv_transition_2_0, 
-        		"TransitionMapExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.TransitionMapExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1900,7 +1900,7 @@ ruleComparisonExpr returns [EObject current=null]
        			$current, 
        			"lhs",
         		lv_lhs_1_0, 
-        		"MapExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.MapExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1918,7 +1918,7 @@ ruleComparisonExpr returns [EObject current=null]
        			$current, 
        			"op",
         		lv_op_2_0, 
-        		"ComparisonOp");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.ComparisonOp");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1936,7 +1936,7 @@ ruleComparisonExpr returns [EObject current=null]
        			$current, 
        			"rhs",
         		lv_rhs_3_0, 
-        		"MapExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.MapExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2225,7 +2225,7 @@ ruleBufferMessageCountExpr returns [EObject current=null]
        			$current, 
        			"buffer",
         		lv_buffer_2_0, 
-        		"BufferMapExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.BufferMapExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2276,7 +2276,7 @@ ruleSourceStateExpr returns [EObject current=null]
        			$current, 
        			"transition",
         		lv_transition_2_0, 
-        		"TransitionMapExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.TransitionMapExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2327,7 +2327,7 @@ ruleTargetStateExpr returns [EObject current=null]
        			$current, 
        			"transition",
         		lv_transition_2_0, 
-        		"TransitionMapExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.TransitionMapExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2429,7 +2429,7 @@ ruleConstExpr returns [EObject current=null]
        			$current, 
        			"val",
         		lv_val_0_0, 
-        		"EInt");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.EInt");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2447,7 +2447,7 @@ ruleConstExpr returns [EObject current=null]
        			$current, 
        			"timeUnit",
         		lv_timeUnit_1_0, 
-        		"TimeUnitExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.TimeUnitExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2509,7 +2509,7 @@ ruleTimeUnitExpr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTo
     }
 
     |
-	kw='\u00C2\u00B5secs' 
+	kw='\u00B5secs' 
     {
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getSecsKeyword_5()); 
@@ -2671,7 +2671,7 @@ ruleIntervalSetExpr returns [EObject current=null]
        			$current, 
        			"lowerVal",
         		lv_lowerVal_2_0, 
-        		"INT");
+        		"org.eclipse.xtext.common.Terminals.INT");
 	    }
 
 )
@@ -2693,7 +2693,7 @@ ruleIntervalSetExpr returns [EObject current=null]
        			$current, 
        			"upperVal",
         		lv_upperVal_4_0, 
-        		"INT");
+        		"org.eclipse.xtext.common.Terminals.INT");
 	    }
 
 )
@@ -2749,7 +2749,7 @@ ruleInstanceSetExpr returns [EObject current=null]
        			$current, 
        			"type",
         		lv_type_3_0, 
-        		"MumlElemExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.MumlElemExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2806,7 +2806,7 @@ ruleSubinstanceSetExpr returns [EObject current=null]
        			$current, 
        			"type",
         		lv_type_3_0, 
-        		"MumlElemExpr");
+        		"org.muml.uppaal.adapter.mtctl.xtext.Mtctl.MumlElemExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 

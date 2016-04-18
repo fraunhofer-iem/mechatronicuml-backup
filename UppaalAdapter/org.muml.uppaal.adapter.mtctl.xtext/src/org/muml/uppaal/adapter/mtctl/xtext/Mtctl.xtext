@@ -1,11 +1,11 @@
 grammar org.muml.uppaal.adapter.mtctl.xtext.Mtctl with org.eclipse.xtext.common.Terminals
 
-import "platform:/resource/org.muml.uppaal.adapter.mtctl.xtext/model/Mtctl.ecore" as mtctl
-import "platform:/resource/org.muml.uppaal.adapter.mtctl.xtext/model/Mtctl.ecore#//BooleanLogic" as mtctl
-import "platform:/resource/org.muml.uppaal.adapter.mtctl.xtext/model/Mtctl.ecore#//Comparables" as mtctl
-import "platform:/resource/org.muml.uppaal.adapter.mtctl.xtext/model/Mtctl.ecore#//Predicates" as mtctl
-import "platform:/resource/org.muml.uppaal.adapter.mtctl.xtext/model/Mtctl.ecore#//Quantifiers" as mtctl
-import "platform:/resource/org.muml.uppaal.adapter.mtctl.xtext/model/Mtctl.ecore#//Sets" as mtctl
+import "platform:/resource/org.muml.uppaal.adapter.mtctl/model/Mtctl.ecore" as mtctl
+import "platform:/resource/org.muml.uppaal.adapter.mtctl/model/Mtctl.ecore#//booleanlogic" as mtctl
+import "platform:/resource/org.muml.uppaal.adapter.mtctl/model/Mtctl.ecore#//comparables" as mtctl
+import "platform:/resource/org.muml.uppaal.adapter.mtctl/model/Mtctl.ecore#//predicates" as mtctl
+import "platform:/resource/org.muml.uppaal.adapter.mtctl/model/Mtctl.ecore#//quantifiers" as mtctl
+import "platform:/resource/org.muml.uppaal.adapter.mtctl/model/Mtctl.ecore#//sets" as mtctl
 
 import "platform:/resource/org.muml.pim/model/pim.ecore#//valuetype" as valuetype
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
