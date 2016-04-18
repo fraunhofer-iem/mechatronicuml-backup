@@ -26,6 +26,7 @@ import org.muml.pim.instance.DiscreteSinglePortInstance;
 import org.muml.pim.instance.PortConnectorInstance;
 import org.muml.pim.instance.PortInstance;
 import org.muml.pim.types.DataType;
+import org.muml.verification.core.runtime.*;
 import org.muml.verification.core.runtime.MessageOnConnector;
 import org.muml.verification.core.runtime.MultiRoleInstance;
 import org.muml.verification.core.runtime.RealtimeStatechartInstance;

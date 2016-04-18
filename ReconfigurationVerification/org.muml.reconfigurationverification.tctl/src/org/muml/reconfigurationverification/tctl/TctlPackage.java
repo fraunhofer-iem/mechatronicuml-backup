@@ -73,15 +73,6 @@ public interface TctlPackage extends EPackage {
 	int FORMULA_DEFINITION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORMULA_DEFINITION__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -118,15 +109,6 @@ public interface TctlPackage extends EPackage {
 	 * @generated
 	 */
 	int ATOMIC_FORMULA = 1;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATOMIC_FORMULA__ANNOTATIONS = FORMULA_DEFINITION__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -166,15 +148,6 @@ public interface TctlPackage extends EPackage {
 	int UNARY_FORMULA = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_FORMULA__ANNOTATIONS = FORMULA_DEFINITION__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -210,15 +183,6 @@ public interface TctlPackage extends EPackage {
 	 * @generated
 	 */
 	int BINARY_FORMULA = 3;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_FORMULA__ANNOTATIONS = FORMULA_DEFINITION__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -267,15 +231,6 @@ public interface TctlPackage extends EPackage {
 	int NOT_FORMULA = 4;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NOT_FORMULA__ANNOTATIONS = UNARY_FORMULA__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -311,15 +266,6 @@ public interface TctlPackage extends EPackage {
 	 * @generated
 	 */
 	int UNARY_TEMPORAL_FORMULA = 5;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_TEMPORAL_FORMULA__ANNOTATIONS = UNARY_FORMULA__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -386,15 +332,6 @@ public interface TctlPackage extends EPackage {
 	int BINARY_LOGIC_FORMULA = 6;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_LOGIC_FORMULA__ANNOTATIONS = BINARY_FORMULA__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -448,15 +385,6 @@ public interface TctlPackage extends EPackage {
 	 * @generated
 	 */
 	int BINARY_TEMPORAL_FORMULA = 7;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_TEMPORAL_FORMULA__ANNOTATIONS = BINARY_FORMULA__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -532,15 +460,6 @@ public interface TctlPackage extends EPackage {
 	int TEMPORAL_FORMULA = 8;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPORAL_FORMULA__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -596,15 +515,6 @@ public interface TctlPackage extends EPackage {
 	int TERM = 9;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TERM__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -633,15 +543,6 @@ public interface TctlPackage extends EPackage {
 	int ATOMIC_PROPOSITION = 10;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATOMIC_PROPOSITION__ANNOTATIONS = TERM__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -667,15 +568,6 @@ public interface TctlPackage extends EPackage {
 	 * @ordered
 	 */
 	int ATOMIC_PROPOSITION_FEATURE_COUNT = TERM_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCTL_FORMULA__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.

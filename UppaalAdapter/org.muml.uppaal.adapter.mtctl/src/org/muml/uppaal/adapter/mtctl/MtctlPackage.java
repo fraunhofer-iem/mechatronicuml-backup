@@ -69,15 +69,6 @@ public interface MtctlPackage extends EPackage {
 	int PROPERTY_REPOSITORY = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY_REPOSITORY__ANNOTATIONS = ConstraintPackage.VERIFICATION_CONSTRAINT_REPOSITORY__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -105,6 +96,15 @@ public interface MtctlPackage extends EPackage {
 	int PROPERTY_REPOSITORY_FEATURE_COUNT = ConstraintPackage.VERIFICATION_CONSTRAINT_REPOSITORY_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_REPOSITORY___GET_EXTENSION__ECLASS = ConstraintPackage.VERIFICATION_CONSTRAINT_REPOSITORY___GET_EXTENSION__ECLASS;
+
+	/**
 	 * The number of operations of the '<em>Property Repository</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -122,15 +122,6 @@ public interface MtctlPackage extends EPackage {
 	 * @generated
 	 */
 	int PROPERTY = 1;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -167,6 +158,15 @@ public interface MtctlPackage extends EPackage {
 	 * @ordered
 	 */
 	int PROPERTY_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY___GET_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>Property</em>' class.

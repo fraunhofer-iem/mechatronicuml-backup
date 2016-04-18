@@ -71,15 +71,6 @@ public interface PathbridgePackage extends EPackage
    int PATH_EXPRESSION_BRIDGE = 0;
 
    /**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATH_EXPRESSION_BRIDGE__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
-
-			/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

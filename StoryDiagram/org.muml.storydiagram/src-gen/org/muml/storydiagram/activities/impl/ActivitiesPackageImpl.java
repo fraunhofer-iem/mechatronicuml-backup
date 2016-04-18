@@ -942,8 +942,6 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 		// Create annotations
 		// http://www.eclipse.org/uml2/1.1.0/GenModel
 		createGenModel_1Annotations();
-		// redefines
-		createRedefinesAnnotations();
 		// subsets
 		createSubsetsAnnotations();
 		// union
@@ -963,24 +961,6 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 		   source, 
 		   new String[] {
 			 "body", "self.oclAsType(calls::Callable).outParameter->size() <= 1"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>redefines</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createRedefinesAnnotations() {
-		String source = "redefines";	
-		addAnnotation
-		  (getOperationExtension_Operation(), 
-		   source, 
-		   new String[] {
-		   },
-		   new URI[] {
-			 URI.createURI(CorePackage.eNS_URI).appendFragment("//Extension/base")
 		   });
 	}
 

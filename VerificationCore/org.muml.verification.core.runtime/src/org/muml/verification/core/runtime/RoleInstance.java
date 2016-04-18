@@ -37,7 +37,7 @@ public interface RoleInstance extends RuntimeDiscreteInteractionEndpointInstance
 	 * @return the value of the '<em>Role</em>' reference.
 	 * @see org.muml.verification.core.runtime.RuntimePackage#getRoleInstance_Role()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.type.oclAsType(muml::protocol::Role)'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.type.oclAsType(pim::protocol::Role)'"
 	 * @generated
 	 */
 	Role getRole();
@@ -53,7 +53,7 @@ public interface RoleInstance extends RuntimeDiscreteInteractionEndpointInstance
 	 * @return the value of the '<em>Assembly</em>' reference.
 	 * @see org.muml.verification.core.runtime.RuntimePackage#getRoleInstance_Assembly()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not self.oclAsType(muml::connector::ConnectorEndpointInstance).connectorInstances->isEmpty() then\r\n\tself.oclAsType(muml::connector::ConnectorEndpointInstance).connectorInstances->first().oclAsType(RuntimeRoleConnectorInstance)\r\nelse\r\n\tnull\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not self.oclAsType(pim::connector::ConnectorEndpointInstance).connectorInstances->isEmpty() then\r\n\tself.oclAsType(pim::connector::ConnectorEndpointInstance).connectorInstances->first().oclAsType(RuntimeRoleConnectorInstance)\r\nelse\r\n\tnull\r\nendif'"
 	 * @generated
 	 */
 	RuntimeRoleConnectorInstance getAssembly();

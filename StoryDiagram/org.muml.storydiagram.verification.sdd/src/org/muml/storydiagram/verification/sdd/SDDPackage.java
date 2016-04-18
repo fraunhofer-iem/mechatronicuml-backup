@@ -73,15 +73,6 @@ public interface SDDPackage extends EPackage {
 	int ABSTRACT_STORY_DECISION_DIAGRAM = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_STORY_DECISION_DIAGRAM__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -127,141 +118,6 @@ public interface SDDPackage extends EPackage {
 	int ABSTRACT_STORY_DECISION_DIAGRAM_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The operation id for the '<em>EClass</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_STORY_DECISION_DIAGRAM___ECLASS = CorePackage.NAMED_ELEMENT___ECLASS;
-
-	/**
-	 * The operation id for the '<em>EIs Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_STORY_DECISION_DIAGRAM___EIS_PROXY = CorePackage.NAMED_ELEMENT___EIS_PROXY;
-
-	/**
-	 * The operation id for the '<em>EResource</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_STORY_DECISION_DIAGRAM___ERESOURCE = CorePackage.NAMED_ELEMENT___ERESOURCE;
-
-	/**
-	 * The operation id for the '<em>EContainer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_STORY_DECISION_DIAGRAM___ECONTAINER = CorePackage.NAMED_ELEMENT___ECONTAINER;
-
-	/**
-	 * The operation id for the '<em>EContaining Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_STORY_DECISION_DIAGRAM___ECONTAINING_FEATURE = CorePackage.NAMED_ELEMENT___ECONTAINING_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContainment Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_STORY_DECISION_DIAGRAM___ECONTAINMENT_FEATURE = CorePackage.NAMED_ELEMENT___ECONTAINMENT_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_STORY_DECISION_DIAGRAM___ECONTENTS = CorePackage.NAMED_ELEMENT___ECONTENTS;
-
-	/**
-	 * The operation id for the '<em>EAll Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_STORY_DECISION_DIAGRAM___EALL_CONTENTS = CorePackage.NAMED_ELEMENT___EALL_CONTENTS;
-
-	/**
-	 * The operation id for the '<em>ECross References</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_STORY_DECISION_DIAGRAM___ECROSS_REFERENCES = CorePackage.NAMED_ELEMENT___ECROSS_REFERENCES;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_STORY_DECISION_DIAGRAM___EGET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_STORY_DECISION_DIAGRAM___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>ESet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_STORY_DECISION_DIAGRAM___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.NAMED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-	/**
-	 * The operation id for the '<em>EIs Set</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_STORY_DECISION_DIAGRAM___EIS_SET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EUnset</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_STORY_DECISION_DIAGRAM___EUNSET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EInvoke</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_STORY_DECISION_DIAGRAM___EINVOKE__EOPERATION_ELIST = CorePackage.NAMED_ELEMENT___EINVOKE__EOPERATION_ELIST;
-
-	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -269,33 +125,6 @@ public interface SDDPackage extends EPackage {
 	 * @ordered
 	 */
 	int ABSTRACT_STORY_DECISION_DIAGRAM___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Provide Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_STORY_DECISION_DIAGRAM___PROVIDE_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_STORY_DECISION_DIAGRAM___GET_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
-
-	/**
-	 * The operation id for the '<em>Provide Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_STORY_DECISION_DIAGRAM___PROVIDE_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Abstract Story Decision Diagram</em>' class.
@@ -491,22 +320,13 @@ public interface SDDPackage extends EPackage {
 	int PATTERN_NODE__INCOMING_EDGES = NODE__INCOMING_EDGES;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN_NODE__ANNOTATIONS = NODE_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PATTERN_NODE__EXTENSIONS = NODE_FEATURE_COUNT + 1;
+	int PATTERN_NODE__EXTENSIONS = NODE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -515,7 +335,7 @@ public interface SDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATTERN_NODE__NAME = NODE_FEATURE_COUNT + 2;
+	int PATTERN_NODE__NAME = NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -524,7 +344,7 @@ public interface SDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATTERN_NODE__TYPE = NODE_FEATURE_COUNT + 3;
+	int PATTERN_NODE__TYPE = NODE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Pattern Node</em>' class.
@@ -533,142 +353,7 @@ public interface SDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATTERN_NODE_FEATURE_COUNT = NODE_FEATURE_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>EClass</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN_NODE___ECLASS = NODE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>EIs Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN_NODE___EIS_PROXY = NODE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>EResource</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN_NODE___ERESOURCE = NODE_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>EContainer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN_NODE___ECONTAINER = NODE_OPERATION_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>EContaining Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN_NODE___ECONTAINING_FEATURE = NODE_OPERATION_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>EContainment Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN_NODE___ECONTAINMENT_FEATURE = NODE_OPERATION_COUNT + 5;
-
-	/**
-	 * The operation id for the '<em>EContents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN_NODE___ECONTENTS = NODE_OPERATION_COUNT + 6;
-
-	/**
-	 * The operation id for the '<em>EAll Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN_NODE___EALL_CONTENTS = NODE_OPERATION_COUNT + 7;
-
-	/**
-	 * The operation id for the '<em>ECross References</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN_NODE___ECROSS_REFERENCES = NODE_OPERATION_COUNT + 8;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN_NODE___EGET__ESTRUCTURALFEATURE = NODE_OPERATION_COUNT + 9;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN = NODE_OPERATION_COUNT + 10;
-
-	/**
-	 * The operation id for the '<em>ESet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN_NODE___ESET__ESTRUCTURALFEATURE_OBJECT = NODE_OPERATION_COUNT + 11;
-
-	/**
-	 * The operation id for the '<em>EIs Set</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN_NODE___EIS_SET__ESTRUCTURALFEATURE = NODE_OPERATION_COUNT + 12;
-
-	/**
-	 * The operation id for the '<em>EUnset</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN_NODE___EUNSET__ESTRUCTURALFEATURE = NODE_OPERATION_COUNT + 13;
-
-	/**
-	 * The operation id for the '<em>EInvoke</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN_NODE___EINVOKE__EOPERATION_ELIST = NODE_OPERATION_COUNT + 14;
+	int PATTERN_NODE_FEATURE_COUNT = NODE_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -677,34 +362,7 @@ public interface SDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATTERN_NODE___GET_EXTENSION__ECLASS = NODE_OPERATION_COUNT + 15;
-
-	/**
-	 * The operation id for the '<em>Provide Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN_NODE___PROVIDE_EXTENSION__ECLASS = NODE_OPERATION_COUNT + 16;
-
-	/**
-	 * The operation id for the '<em>Get Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN_NODE___GET_ANNOTATION__STRING = NODE_OPERATION_COUNT + 17;
-
-	/**
-	 * The operation id for the '<em>Provide Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN_NODE___PROVIDE_ANNOTATION__STRING = NODE_OPERATION_COUNT + 18;
+	int PATTERN_NODE___GET_EXTENSION__ECLASS = NODE_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Pattern Node</em>' class.
@@ -713,7 +371,7 @@ public interface SDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATTERN_NODE_OPERATION_COUNT = NODE_OPERATION_COUNT + 19;
+	int PATTERN_NODE_OPERATION_COUNT = NODE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.muml.storydiagram.verification.sdd.EdgeType <em>Edge Type</em>}' enum.

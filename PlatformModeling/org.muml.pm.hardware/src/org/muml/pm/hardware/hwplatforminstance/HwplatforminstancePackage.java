@@ -74,15 +74,6 @@ public interface HwplatforminstancePackage extends EPackage {
 	int HW_PLATFORM_INSTANCE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_INSTANCE__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -172,15 +163,6 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 */
 	int HW_PLATFORM_INSTANCE_CONFIGURATION = 1;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_INSTANCE_CONFIGURATION__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -281,15 +263,6 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 */
 	int HW_PORT_INSTANCE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT_INSTANCE__ANNOTATIONS = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -466,15 +439,6 @@ public interface HwplatforminstancePackage extends EPackage {
 	int BUS_INSTANCE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_INSTANCE__ANNOTATIONS = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -583,15 +547,6 @@ public interface HwplatforminstancePackage extends EPackage {
 	int BUS_INSTANCE_OPERATION_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKING_HARDWARE_INSTANCE__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -626,15 +581,6 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int NETWORKING_HARDWARE_INSTANCE_OPERATION_COUNT = CorePackage.EXTENDABLE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORK_BRIDGE_INSTANCE__ANNOTATIONS = NETWORKING_HARDWARE_INSTANCE__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -737,15 +683,6 @@ public interface HwplatforminstancePackage extends EPackage {
 	int DELEGATION_HW_PORT_INSTANCE = 6;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION_HW_PORT_INSTANCE__ANNOTATIONS = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -836,15 +773,6 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 */
 	int NETWORK_CONNECTOR_INSTANCE = 7;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORK_CONNECTOR_INSTANCE__ANNOTATIONS = ConnectorPackage.CONNECTOR_INSTANCE__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.

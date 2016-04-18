@@ -118,7 +118,6 @@ public class PatternNodeItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATIONS);
 			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS);
 		}
 		return childrenFeatures;
@@ -178,7 +177,6 @@ public class PatternNodeItemProvider
 			case SDDPackage.PATTERN_NODE__TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case SDDPackage.PATTERN_NODE__ANNOTATIONS:
 			case SDDPackage.PATTERN_NODE__EXTENSIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

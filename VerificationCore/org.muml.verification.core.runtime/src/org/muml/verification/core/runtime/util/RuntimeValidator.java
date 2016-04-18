@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.muml.pim.connector.util.ConnectorValidator;
 import org.muml.pim.instance.util.InstanceValidator;
+import org.muml.verification.core.runtime.*;
 import org.muml.verification.core.runtime.MessageOnConnector;
 import org.muml.verification.core.runtime.MultiRoleInstance;
 import org.muml.verification.core.runtime.RealtimeStatechartInstance;

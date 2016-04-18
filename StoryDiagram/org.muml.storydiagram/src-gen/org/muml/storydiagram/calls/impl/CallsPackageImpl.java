@@ -6,7 +6,6 @@
  */
 package org.muml.storydiagram.calls.impl;
 
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
@@ -465,8 +464,6 @@ public class CallsPackageImpl extends EPackageImpl implements CallsPackage {
 		createDuplicatesAnnotations();
 		// http://www.eclipse.org/uml2/1.1.0/GenModel
 		createGenModel_1Annotations();
-		// redefines
-		createRedefinesAnnotations();
 	}
 
 	/**
@@ -497,24 +494,6 @@ public class CallsPackageImpl extends EPackageImpl implements CallsPackage {
 		   source, 
 		   new String[] {
 			 "body", "self.oclAsType(Callable).out->size() <= 1"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>redefines</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createRedefinesAnnotations() {
-		String source = "redefines";	
-		addAnnotation
-		  (getParameterExtension_Parameter(), 
-		   source, 
-		   new String[] {
-		   },
-		   new URI[] {
-			 URI.createURI(CorePackage.eNS_URI).appendFragment("//Extension/modelBase")
 		   });
 	}
 

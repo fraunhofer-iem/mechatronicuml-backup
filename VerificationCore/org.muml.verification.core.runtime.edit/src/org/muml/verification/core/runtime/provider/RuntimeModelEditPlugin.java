@@ -15,6 +15,7 @@ package org.muml.verification.core.runtime.provider;
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.muml.core.provider.CoreEditPlugin;
+import org.muml.pim.provider.MumlEditPlugin;
 
 /**
  * This is the central singleton for the RuntimeModel edit plugin.
@@ -48,7 +49,7 @@ public final class RuntimeModelEditPlugin extends EMFPlugin {
 	public RuntimeModelEditPlugin() {
 		super
 		  (new ResourceLocator [] {
-		     org.muml.pim.provider.MumlEditPlugin.INSTANCE,
+		     MumlEditPlugin.INSTANCE,
 		     CoreEditPlugin.INSTANCE,
 		   });
 	}

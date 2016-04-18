@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.muml.verification.core.runtime.*;
 import org.muml.verification.core.runtime.MessageOnConnector;
 import org.muml.verification.core.runtime.MultiRoleInstance;
 import org.muml.verification.core.runtime.RealtimeStatechartInstance;

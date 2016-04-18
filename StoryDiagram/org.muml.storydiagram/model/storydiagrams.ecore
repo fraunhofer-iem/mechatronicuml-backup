@@ -166,7 +166,6 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The EOperation whose behavior is defined by the Activity. The property is derived because the actual value is determined by the utility class OperationsExtensionOperation."/>
         </eAnnotations>
-        <eAnnotations source="redefines" references="../../org.muml.core/model/core.ecore#//Extension/base"/>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="returnValue" ordered="false"
           eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
@@ -419,9 +418,7 @@
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" ordered="false"
           eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
-          volatile="true" transient="true" unsettable="true" derived="true" resolveProxies="false">
-        <eAnnotations source="redefines" references="../../org.muml.core/model/core.ecore#//Extension/modelBase"/>
-      </eStructuralFeatures>
+          volatile="true" transient="true" unsettable="true" derived="true" resolveProxies="false"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Callable" abstract="true" eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

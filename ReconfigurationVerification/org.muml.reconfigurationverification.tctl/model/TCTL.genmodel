@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.reconfigurationverification.tctl/src"
-    modelPluginID="org.muml.reconfigurationverification.tctl" modelName="TCTL"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    usedGenPackages="../../org.muml.core/model/core.genmodel#//core">
+    modelPluginID="org.muml.reconfigurationverification.tctl" modelName="TCTL" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../org.muml.core/model/core.genmodel#//core">
   <foreignModel>TCTL.ecore</foreignModel>
-  <genPackages prefix="Tctl" basePackage="org.muml.reconfigurationverification"
-      disposableProviderFactory="true" ecorePackage="TCTL.ecore#/">
+  <genPackages prefix="Tctl" basePackage="org.muml.reconfigurationverification" disposableProviderFactory="true"
+      ecorePackage="TCTL.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="TCTL.ecore#//ComparisonOperator">
       <genEnumLiterals ecoreEnumLiteral="TCTL.ecore#//ComparisonOperator/LESS"/>
       <genEnumLiterals ecoreEnumLiteral="TCTL.ecore#//ComparisonOperator/LESS_OR_EQUAL"/>

@@ -74,15 +74,6 @@ public interface HwresourceinstancePackage extends EPackage {
 	int RESOURCE_INSTANCE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_INSTANCE__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -154,15 +145,6 @@ public interface HwresourceinstancePackage extends EPackage {
 	 * @generated
 	 */
 	int ATOMIC_RESOURCE_INSTANCE = 9;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATOMIC_RESOURCE_INSTANCE__ANNOTATIONS = RESOURCE_INSTANCE__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -245,15 +227,6 @@ public interface HwresourceinstancePackage extends EPackage {
 	 * @generated
 	 */
 	int COMPUTING_RESOURCE_INSTANCE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPUTING_RESOURCE_INSTANCE__ANNOTATIONS = ATOMIC_RESOURCE_INSTANCE__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -345,15 +318,6 @@ public interface HwresourceinstancePackage extends EPackage {
 	 * @generated
 	 */
 	int MEMORY_RESOURCE_INSTANCE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEMORY_RESOURCE_INSTANCE__ANNOTATIONS = ATOMIC_RESOURCE_INSTANCE__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -465,15 +429,6 @@ public interface HwresourceinstancePackage extends EPackage {
 	int DEVICE_INSTANCE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEVICE_INSTANCE__ANNOTATIONS = RESOURCE_INSTANCE__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -545,15 +500,6 @@ public interface HwresourceinstancePackage extends EPackage {
 	 * @generated
 	 */
 	int STORAGE_MEMORY_INSTANCE = 4;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STORAGE_MEMORY_INSTANCE__ANNOTATIONS = MEMORY_RESOURCE_INSTANCE__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -665,15 +611,6 @@ public interface HwresourceinstancePackage extends EPackage {
 	int PROCESSING_MEMORY_INSTANCE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESSING_MEMORY_INSTANCE__ANNOTATIONS = MEMORY_RESOURCE_INSTANCE__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -781,15 +718,6 @@ public interface HwresourceinstancePackage extends EPackage {
 	 * @generated
 	 */
 	int CACHE_INSTANCE = 6;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CACHE_INSTANCE__ANNOTATIONS = MEMORY_RESOURCE_INSTANCE__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -901,15 +829,6 @@ public interface HwresourceinstancePackage extends EPackage {
 	int PROGRAMMABLE_LOGIC_DEVICE_INSTANCE = 7;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROGRAMMABLE_LOGIC_DEVICE_INSTANCE__ANNOTATIONS = COMPUTING_RESOURCE_INSTANCE__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -999,15 +918,6 @@ public interface HwresourceinstancePackage extends EPackage {
 	 * @generated
 	 */
 	int PROCESSOR_INSTANCE = 8;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESSOR_INSTANCE__ANNOTATIONS = COMPUTING_RESOURCE_INSTANCE__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -1128,15 +1038,6 @@ public interface HwresourceinstancePackage extends EPackage {
 	int STRUCTURED_RESOURCE_INSTANCE = 10;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURED_RESOURCE_INSTANCE__ANNOTATIONS = RESOURCE_INSTANCE__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1219,15 +1120,6 @@ public interface HwresourceinstancePackage extends EPackage {
 	int SENSOR_INSTANCE = 11;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SENSOR_INSTANCE__ANNOTATIONS = DEVICE_INSTANCE__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1299,15 +1191,6 @@ public interface HwresourceinstancePackage extends EPackage {
 	 * @generated
 	 */
 	int ACTUATOR_INSTANCE = 12;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTUATOR_INSTANCE__ANNOTATIONS = DEVICE_INSTANCE__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -1383,15 +1266,6 @@ public interface HwresourceinstancePackage extends EPackage {
 	int RESOURCE_INSTANCE_REPOSITORY = 13;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_INSTANCE_REPOSITORY__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1455,15 +1329,6 @@ public interface HwresourceinstancePackage extends EPackage {
 	 * @generated
 	 */
 	int HW_PORT = 14;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.

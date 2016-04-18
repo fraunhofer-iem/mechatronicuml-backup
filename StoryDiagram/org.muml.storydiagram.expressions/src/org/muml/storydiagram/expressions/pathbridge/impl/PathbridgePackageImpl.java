@@ -83,7 +83,6 @@ public class PathbridgePackageImpl extends EPackageImpl implements PathbridgePac
 
 		// Initialize simple dependencies
 		CorePackage.eINSTANCE.eClass();
-		EcorePackage.eINSTANCE.eClass();
 		PathExpressionsPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects

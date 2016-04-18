@@ -459,40 +459,13 @@ public interface CallsPackage extends EPackage {
 	int PARAMETER_EXTENSION__VARIABLE_NAME = StorydiagramPackage.VARIABLE__VARIABLE_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Base</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER_EXTENSION__BASE = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Model Base</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER_EXTENSION__MODEL_BASE = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Owning Annotation</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER_EXTENSION__OWNING_ANNOTATION = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Extendable Base</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION__EXTENDABLE_BASE = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 3;
+	int PARAMETER_EXTENSION__EXTENDABLE_BASE = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' reference.
@@ -501,7 +474,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION__PARAMETER = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 4;
+	int PARAMETER_EXTENSION__PARAMETER = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Parameter Extension</em>' class.
@@ -510,7 +483,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION_FEATURE_COUNT = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 5;
+	int PARAMETER_EXTENSION_FEATURE_COUNT = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.

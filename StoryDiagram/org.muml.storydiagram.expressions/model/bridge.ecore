@@ -3,7 +3,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="pathbridge" nsURI="http://www.muml.org/storydiagram/patterns/expressions/pathbridge/1.0"
     nsPrefix="spep">
   <eClassifiers xsi:type="ecore:EClass" name="PathExpressionBridge" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pathExpression" eType="ecore:EClass ../src-gen/org/storydriven/storydiagrams/expressions/PathExpressions.ecore#//PathExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pathExpression" eType="ecore:EClass ../src-gen/org/muml/storydiagram/expressions/PathExpressions.ecore#//PathExpression"
         containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

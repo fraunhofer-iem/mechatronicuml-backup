@@ -69,15 +69,6 @@ public interface ComponentsddPackage extends EPackage {
 	int COMPONENT_STORY_DECISION_DIAGRAM = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_DECISION_DIAGRAM__ANNOTATIONS = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -159,141 +150,6 @@ public interface ComponentsddPackage extends EPackage {
 	int COMPONENT_STORY_DECISION_DIAGRAM_FEATURE_COUNT = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM_FEATURE_COUNT + 4;
 
 	/**
-	 * The operation id for the '<em>EClass</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_DECISION_DIAGRAM___ECLASS = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___ECLASS;
-
-	/**
-	 * The operation id for the '<em>EIs Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_DECISION_DIAGRAM___EIS_PROXY = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___EIS_PROXY;
-
-	/**
-	 * The operation id for the '<em>EResource</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_DECISION_DIAGRAM___ERESOURCE = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___ERESOURCE;
-
-	/**
-	 * The operation id for the '<em>EContainer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_DECISION_DIAGRAM___ECONTAINER = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___ECONTAINER;
-
-	/**
-	 * The operation id for the '<em>EContaining Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_DECISION_DIAGRAM___ECONTAINING_FEATURE = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___ECONTAINING_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContainment Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_DECISION_DIAGRAM___ECONTAINMENT_FEATURE = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___ECONTAINMENT_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_DECISION_DIAGRAM___ECONTENTS = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___ECONTENTS;
-
-	/**
-	 * The operation id for the '<em>EAll Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_DECISION_DIAGRAM___EALL_CONTENTS = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___EALL_CONTENTS;
-
-	/**
-	 * The operation id for the '<em>ECross References</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_DECISION_DIAGRAM___ECROSS_REFERENCES = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___ECROSS_REFERENCES;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_DECISION_DIAGRAM___EGET__ESTRUCTURALFEATURE = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___EGET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_DECISION_DIAGRAM___EGET__ESTRUCTURALFEATURE_BOOLEAN = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>ESet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_DECISION_DIAGRAM___ESET__ESTRUCTURALFEATURE_OBJECT = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-	/**
-	 * The operation id for the '<em>EIs Set</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_DECISION_DIAGRAM___EIS_SET__ESTRUCTURALFEATURE = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___EIS_SET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EUnset</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_DECISION_DIAGRAM___EUNSET__ESTRUCTURALFEATURE = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___EUNSET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EInvoke</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_DECISION_DIAGRAM___EINVOKE__EOPERATION_ELIST = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___EINVOKE__EOPERATION_ELIST;
-
-	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -301,33 +157,6 @@ public interface ComponentsddPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPONENT_STORY_DECISION_DIAGRAM___GET_EXTENSION__ECLASS = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___GET_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Provide Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_DECISION_DIAGRAM___PROVIDE_EXTENSION__ECLASS = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___PROVIDE_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_DECISION_DIAGRAM___GET_ANNOTATION__STRING = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___GET_ANNOTATION__STRING;
-
-	/**
-	 * The operation id for the '<em>Provide Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_DECISION_DIAGRAM___PROVIDE_ANNOTATION__STRING = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Component Story Decision Diagram</em>' class.
@@ -365,15 +194,6 @@ public interface ComponentsddPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPONENT_STORY_PATTERN_NODE__INCOMING_EDGES = SDDPackage.PATTERN_NODE__INCOMING_EDGES;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_PATTERN_NODE__ANNOTATIONS = SDDPackage.PATTERN_NODE__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -421,141 +241,6 @@ public interface ComponentsddPackage extends EPackage {
 	int COMPONENT_STORY_PATTERN_NODE_FEATURE_COUNT = SDDPackage.PATTERN_NODE_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>EClass</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_PATTERN_NODE___ECLASS = SDDPackage.PATTERN_NODE___ECLASS;
-
-	/**
-	 * The operation id for the '<em>EIs Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_PATTERN_NODE___EIS_PROXY = SDDPackage.PATTERN_NODE___EIS_PROXY;
-
-	/**
-	 * The operation id for the '<em>EResource</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_PATTERN_NODE___ERESOURCE = SDDPackage.PATTERN_NODE___ERESOURCE;
-
-	/**
-	 * The operation id for the '<em>EContainer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_PATTERN_NODE___ECONTAINER = SDDPackage.PATTERN_NODE___ECONTAINER;
-
-	/**
-	 * The operation id for the '<em>EContaining Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_PATTERN_NODE___ECONTAINING_FEATURE = SDDPackage.PATTERN_NODE___ECONTAINING_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContainment Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_PATTERN_NODE___ECONTAINMENT_FEATURE = SDDPackage.PATTERN_NODE___ECONTAINMENT_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_PATTERN_NODE___ECONTENTS = SDDPackage.PATTERN_NODE___ECONTENTS;
-
-	/**
-	 * The operation id for the '<em>EAll Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_PATTERN_NODE___EALL_CONTENTS = SDDPackage.PATTERN_NODE___EALL_CONTENTS;
-
-	/**
-	 * The operation id for the '<em>ECross References</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_PATTERN_NODE___ECROSS_REFERENCES = SDDPackage.PATTERN_NODE___ECROSS_REFERENCES;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_PATTERN_NODE___EGET__ESTRUCTURALFEATURE = SDDPackage.PATTERN_NODE___EGET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_PATTERN_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN = SDDPackage.PATTERN_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>ESet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_PATTERN_NODE___ESET__ESTRUCTURALFEATURE_OBJECT = SDDPackage.PATTERN_NODE___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-	/**
-	 * The operation id for the '<em>EIs Set</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_PATTERN_NODE___EIS_SET__ESTRUCTURALFEATURE = SDDPackage.PATTERN_NODE___EIS_SET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EUnset</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_PATTERN_NODE___EUNSET__ESTRUCTURALFEATURE = SDDPackage.PATTERN_NODE___EUNSET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EInvoke</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_PATTERN_NODE___EINVOKE__EOPERATION_ELIST = SDDPackage.PATTERN_NODE___EINVOKE__EOPERATION_ELIST;
-
-	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -563,33 +248,6 @@ public interface ComponentsddPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPONENT_STORY_PATTERN_NODE___GET_EXTENSION__ECLASS = SDDPackage.PATTERN_NODE___GET_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Provide Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_PATTERN_NODE___PROVIDE_EXTENSION__ECLASS = SDDPackage.PATTERN_NODE___PROVIDE_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_PATTERN_NODE___GET_ANNOTATION__STRING = SDDPackage.PATTERN_NODE___GET_ANNOTATION__STRING;
-
-	/**
-	 * The operation id for the '<em>Provide Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_PATTERN_NODE___PROVIDE_ANNOTATION__STRING = SDDPackage.PATTERN_NODE___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Component Story Pattern Node</em>' class.
@@ -609,15 +267,6 @@ public interface ComponentsddPackage extends EPackage {
 	 * @generated
 	 */
 	int EVALUATE_COMPONENT_SDD_EXPRESSION = 2;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVALUATE_COMPONENT_SDD_EXPRESSION__ANNOTATIONS = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -666,141 +315,6 @@ public interface ComponentsddPackage extends EPackage {
 
 
 	/**
-	 * The operation id for the '<em>EClass</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVALUATE_COMPONENT_SDD_EXPRESSION___ECLASS = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION___ECLASS;
-
-	/**
-	 * The operation id for the '<em>EIs Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVALUATE_COMPONENT_SDD_EXPRESSION___EIS_PROXY = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION___EIS_PROXY;
-
-	/**
-	 * The operation id for the '<em>EResource</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVALUATE_COMPONENT_SDD_EXPRESSION___ERESOURCE = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION___ERESOURCE;
-
-	/**
-	 * The operation id for the '<em>EContainer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVALUATE_COMPONENT_SDD_EXPRESSION___ECONTAINER = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION___ECONTAINER;
-
-	/**
-	 * The operation id for the '<em>EContaining Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVALUATE_COMPONENT_SDD_EXPRESSION___ECONTAINING_FEATURE = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION___ECONTAINING_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContainment Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVALUATE_COMPONENT_SDD_EXPRESSION___ECONTAINMENT_FEATURE = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION___ECONTAINMENT_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVALUATE_COMPONENT_SDD_EXPRESSION___ECONTENTS = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION___ECONTENTS;
-
-	/**
-	 * The operation id for the '<em>EAll Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVALUATE_COMPONENT_SDD_EXPRESSION___EALL_CONTENTS = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION___EALL_CONTENTS;
-
-	/**
-	 * The operation id for the '<em>ECross References</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVALUATE_COMPONENT_SDD_EXPRESSION___ECROSS_REFERENCES = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION___ECROSS_REFERENCES;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVALUATE_COMPONENT_SDD_EXPRESSION___EGET__ESTRUCTURALFEATURE = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION___EGET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVALUATE_COMPONENT_SDD_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>ESet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVALUATE_COMPONENT_SDD_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-	/**
-	 * The operation id for the '<em>EIs Set</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVALUATE_COMPONENT_SDD_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EUnset</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVALUATE_COMPONENT_SDD_EXPRESSION___EUNSET__ESTRUCTURALFEATURE = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION___EUNSET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EInvoke</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVALUATE_COMPONENT_SDD_EXPRESSION___EINVOKE__EOPERATION_ELIST = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION___EINVOKE__EOPERATION_ELIST;
-
-	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -808,33 +322,6 @@ public interface ComponentsddPackage extends EPackage {
 	 * @ordered
 	 */
 	int EVALUATE_COMPONENT_SDD_EXPRESSION___GET_EXTENSION__ECLASS = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION___GET_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Provide Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVALUATE_COMPONENT_SDD_EXPRESSION___PROVIDE_EXTENSION__ECLASS = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION___PROVIDE_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVALUATE_COMPONENT_SDD_EXPRESSION___GET_ANNOTATION__STRING = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION___GET_ANNOTATION__STRING;
-
-	/**
-	 * The operation id for the '<em>Provide Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVALUATE_COMPONENT_SDD_EXPRESSION___PROVIDE_ANNOTATION__STRING = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Evaluate Component SDD Expression</em>' class.
