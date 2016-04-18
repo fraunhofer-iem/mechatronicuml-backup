@@ -118,7 +118,6 @@ public class PatternsExpressionsPackageImpl extends EPackageImpl implements
 
 		// Initialize simple dependencies
 		CorePackage.eINSTANCE.eClass();
-		EcorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		StorydiagramPackageImpl theStorydiagramPackage = (StorydiagramPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StorydiagramPackage.eNS_URI) instanceof StorydiagramPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StorydiagramPackage.eNS_URI) : StorydiagramPackage.eINSTANCE);

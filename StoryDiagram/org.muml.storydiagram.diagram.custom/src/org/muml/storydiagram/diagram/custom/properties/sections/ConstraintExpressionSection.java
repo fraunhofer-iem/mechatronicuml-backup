@@ -19,7 +19,7 @@ public class ConstraintExpressionSection extends AbstractExtendedExpressionSecti
 	@Override
 	protected EClassifier getContextClassifier() {
 		if (getElement().getObjectVariable() != null) {
-			return getElement().getObjectVariable().getType();
+			return getElement().getObjectVariable().getClassifier();
 		}
 		return super.getContextClassifier();
 	}

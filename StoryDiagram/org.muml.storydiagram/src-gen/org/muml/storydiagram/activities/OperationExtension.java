@@ -11,7 +11,7 @@ import java.util.Map;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EParameter;
-import org.muml.core.Extension;
+import org.muml.storydiagram.SDMExtension;
 import org.muml.storydiagram.calls.Callable;
 
 /**
@@ -36,7 +36,7 @@ import org.muml.storydiagram.calls.Callable;
  * @model
  * @generated
  */
-public interface OperationExtension extends Extension, Callable {
+public interface OperationExtension extends SDMExtension, Callable {
 	/**
 	 * Returns the value of the '<em><b>Operation</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -45,49 +45,12 @@ public interface OperationExtension extends Extension, Callable {
 	 * The EOperation whose behavior is defined by the Activity. The property is derived because the actual value is determined by the utility class OperationsExtensionOperation.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Operation</em>' reference.
-	 * @see #isSetOperation()
-	 * @see #unsetOperation()
-	 * @see #setOperation(EOperation)
 	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getOperationExtension_Operation()
-	 * @model resolveProxies="false" unsettable="true" transient="true" volatile="true" derived="true" ordered="false"
+	 * @model resolveProxies="false" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.getModelBase() <> null and self.getModelBase().oclIsKindOf(ecore::EOperation)) then self.getModelBase().oclAsType(ecore::EOperation) else null endif'"
 	 * @generated
 	 */
 	EOperation getOperation();
-
-	/**
-	 * Sets the value of the '{@link org.muml.storydiagram.activities.OperationExtension#getOperation <em>Operation</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Operation</em>' reference.
-	 * @see #isSetOperation()
-	 * @see #unsetOperation()
-	 * @see #getOperation()
-	 * @generated
-	 */
-	void setOperation(EOperation value);
-
-	/**
-	 * Unsets the value of the '{@link org.muml.storydiagram.activities.OperationExtension#getOperation <em>Operation</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isSetOperation()
-	 * @see #getOperation()
-	 * @see #setOperation(EOperation)
-	 * @generated
-	 */
-	void unsetOperation();
-
-	/**
-	 * Returns whether the value of the '{@link org.muml.storydiagram.activities.OperationExtension#getOperation <em>Operation</em>}' reference is set.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return whether the value of the '<em>Operation</em>' reference is set.
-	 * @see #unsetOperation()
-	 * @see #getOperation()
-	 * @see #setOperation(EOperation)
-	 * @generated
-	 */
-	boolean isSetOperation();
 
 	/**
 	 * Returns the value of the '<em><b>Return Value</b></em>' containment reference.

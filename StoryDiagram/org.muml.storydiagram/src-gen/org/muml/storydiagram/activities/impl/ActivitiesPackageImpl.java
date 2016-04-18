@@ -221,7 +221,6 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 
 		// Initialize simple dependencies
 		CorePackage.eINSTANCE.eClass();
-		EcorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		StorydiagramPackageImpl theStorydiagramPackage = (StorydiagramPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StorydiagramPackage.eNS_URI) instanceof StorydiagramPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StorydiagramPackage.eNS_URI) : StorydiagramPackage.eINSTANCE);
@@ -302,17 +301,8 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExceptionVariable_ExceptionTypes() {
-		return (EReference)exceptionVariableEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getExceptionVariable_GenericExceptionTypes() {
-		return (EReference)exceptionVariableEClass.getEStructuralFeatures().get(3);
+		return (EReference)exceptionVariableEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -466,6 +456,15 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 	 */
 	public EReference getActivity_OwnedActivityNodes() {
 		return (EReference)activityEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getActivity_Annotations() {
+		return (EReference)activityEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -733,7 +732,6 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 		exceptionVariableEClass = createEClass(EXCEPTION_VARIABLE);
 		createEReference(exceptionVariableEClass, EXCEPTION_VARIABLE__ACTIVITY_EDGE);
 		createEAttribute(exceptionVariableEClass, EXCEPTION_VARIABLE__NAME);
-		createEReference(exceptionVariableEClass, EXCEPTION_VARIABLE__EXCEPTION_TYPES);
 		createEReference(exceptionVariableEClass, EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPES);
 
 		activityEdgeEClass = createEClass(ACTIVITY_EDGE);
@@ -755,6 +753,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 		createEReference(activityEClass, ACTIVITY__OWNED_ACTIVITY_EDGES);
 		createEReference(activityEClass, ACTIVITY__PRECONDITION);
 		createEReference(activityEClass, ACTIVITY__OWNED_ACTIVITY_NODES);
+		createEReference(activityEClass, ACTIVITY__ANNOTATIONS);
 
 		operationExtensionEClass = createEClass(OPERATION_EXTENSION);
 		createEReference(operationExtensionEClass, OPERATION_EXTENSION__OPERATION);
@@ -842,7 +841,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 		activityNodeEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		activityEClass.getESuperTypes().add(theCallsPackage.getCallable());
 		activityEClass.getESuperTypes().add(theCorePackage.getNamedElement());
-		operationExtensionEClass.getESuperTypes().add(theCorePackage.getExtension());
+		operationExtensionEClass.getESuperTypes().add(theStorydiagramPackage.getSDMExtension());
 		operationExtensionEClass.getESuperTypes().add(theCallsPackage.getCallable());
 		matchingStoryNodeEClass.getESuperTypes().add(this.getStoryNode());
 		storyNodeEClass.getESuperTypes().add(this.getActivityNode());
@@ -860,7 +859,6 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 		initEClass(exceptionVariableEClass, ExceptionVariable.class, "ExceptionVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExceptionVariable_ActivityEdge(), this.getActivityEdge(), this.getActivityEdge_GuardExceptions(), "activityEdge", null, 1, 1, ExceptionVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getExceptionVariable_Name(), ecorePackage.getEString(), "name", null, 1, 1, ExceptionVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getExceptionVariable_ExceptionTypes(), theEcorePackage.getEClassifier(), null, "exceptionTypes", null, 0, -1, ExceptionVariable.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getExceptionVariable_GenericExceptionTypes(), theEcorePackage.getEGenericType(), null, "genericExceptionTypes", null, 0, -1, ExceptionVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(activityEdgeEClass, ActivityEdge.class, "ActivityEdge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -882,9 +880,10 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 		initEReference(getActivity_OwnedActivityEdges(), this.getActivityEdge(), this.getActivityEdge_OwningActivity(), "ownedActivityEdges", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActivity_Precondition(), this.getMatchingStoryNode(), null, "precondition", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getActivity_OwnedActivityNodes(), this.getActivityNode(), this.getActivityNode_OwningActivity(), "ownedActivityNodes", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getActivity_Annotations(), theEcorePackage.getEAnnotation(), null, "annotations", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationExtensionEClass, OperationExtension.class, "OperationExtension", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOperationExtension_Operation(), theEcorePackage.getEOperation(), null, "operation", null, 0, 1, OperationExtension.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getOperationExtension_Operation(), theEcorePackage.getEOperation(), null, "operation", null, 0, 1, OperationExtension.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getOperationExtension_ReturnValue(), theEcorePackage.getEParameter(), null, "returnValue", null, 0, 1, OperationExtension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getOperationExtension_OwnedActivity(), this.getActivity(), this.getActivity_OwningOperation(), "ownedActivity", null, 0, 1, OperationExtension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
@@ -942,6 +941,8 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 		// Create annotations
 		// http://www.eclipse.org/uml2/1.1.0/GenModel
 		createGenModel_1Annotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
 		// subsets
 		createSubsetsAnnotations();
 		// union
@@ -961,6 +962,22 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 		   source, 
 		   new String[] {
 			 "body", "self.oclAsType(calls::Callable).outParameter->size() <= 1"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
+		addAnnotation
+		  (getOperationExtension_Operation(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if (self.getModelBase() <> null and self.getModelBase().oclIsKindOf(ecore::EOperation)) then self.getModelBase().oclAsType(ecore::EOperation) else null endif"
 		   });
 	}
 

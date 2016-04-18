@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EDataType;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.muml.storydiagram.patterns.PrimitiveVariable#getClassifier <em>Classifier</em>}</li>
+ *   <li>{@link org.muml.storydiagram.patterns.PrimitiveVariable#getDataType <em>Data Type</em>}</li>
  * </ul>
  *
  * @see org.muml.storydiagram.patterns.PatternsPackage#getPrimitiveVariable()
@@ -30,28 +30,29 @@ import org.eclipse.emf.ecore.EDataType;
  */
 public interface PrimitiveVariable extends AbstractVariable {
 	/**
-	 * Returns the value of the '<em><b>Classifier</b></em>' reference.
+	 * Returns the value of the '<em><b>Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The type of the primitive variable which must be an EDataType.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Classifier</em>' reference.
-	 * @see #setClassifier(EDataType)
-	 * @see org.muml.storydiagram.patterns.PatternsPackage#getPrimitiveVariable_Classifier()
-	 * @model required="true" ordered="false"
+	 * @return the value of the '<em>Data Type</em>' reference.
+	 * @see #setDataType(EDataType)
+	 * @see org.muml.storydiagram.patterns.PatternsPackage#getPrimitiveVariable_DataType()
+	 * @model required="true" transient="true" volatile="true" derived="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (classifier <> null and classifier.oclIsKindOf(ecore::EDataType)) then classifier.oclAsType(ecore::EDataType) else null endif'"
 	 * @generated
 	 */
-	EDataType getClassifier();
+	EDataType getDataType();
 
 	/**
-	 * Sets the value of the '{@link org.muml.storydiagram.patterns.PrimitiveVariable#getClassifier <em>Classifier</em>}' reference.
+	 * Sets the value of the '{@link org.muml.storydiagram.patterns.PrimitiveVariable#getDataType <em>Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Classifier</em>' reference.
-	 * @see #getClassifier()
+	 * @param value the new value of the '<em>Data Type</em>' reference.
+	 * @see #getDataType()
 	 * @generated
 	 */
-	void setClassifier(EDataType value);
+	void setDataType(EDataType value);
 
 } // PrimitiveVariable

@@ -18,10 +18,8 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.CorePackage;
 import org.muml.core.provider.NamedElementItemProvider;
-import org.muml.storydiagram.activities.ActivitiesFactory;
 import org.muml.storydiagram.activities.ActivitiesPackage;
 import org.muml.storydiagram.activities.ActivityNode;
-import org.muml.storydiagram.calls.CallsFactory;
 import org.muml.storydiagram.provider.StorydiagramsEditPlugin;
 
 /**
@@ -180,16 +178,6 @@ public class ActivityNodeItemProvider extends NamedElementItemProvider {
 	protected void collectNewChildDescriptors(
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
 	}
 
 }

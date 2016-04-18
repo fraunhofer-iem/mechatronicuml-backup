@@ -25,8 +25,6 @@ public class PrimitiveVariableEditor extends org.muml.ape.runtime.editors.ClassP
 
 			addPropertyEditor(createEditorIncomingLinks_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorClassifier_property_tab_generalTab_Editor(), false);
-
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
@@ -49,29 +47,12 @@ public class PrimitiveVariableEditor extends org.muml.ape.runtime.editors.ClassP
 
 			addPropertyEditor(createEditorIncomingLinks_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorClassifier_property_tab_generalTab_Editor(), false);
-
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
 		} else {
 		}
-	}
-
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorClassifier_property_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorClassifier_property_tab_generalTab_Editor() {
-		if (this.editorClassifier_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.patterns.PatternsPackage.eINSTANCE
-					.getPrimitiveVariable_Classifier();
-			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage("The type of the primitive variable which must be an EDataType.");
-
-			this.editorClassifier_property_tab_generalTab = editor;
-		}
-		return this.editorClassifier_property_tab_generalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBindingState_property_tab_generalTab;
@@ -126,8 +107,7 @@ public class PrimitiveVariableEditor extends org.muml.ape.runtime.editors.ClassP
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general", "property.tab.general", "property.tab.general"})
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general"})
 					.contains(tab);
 		}
 	}

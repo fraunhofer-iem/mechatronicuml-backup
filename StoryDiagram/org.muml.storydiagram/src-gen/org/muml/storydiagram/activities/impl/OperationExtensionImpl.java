@@ -26,19 +26,20 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.muml.core.CommentableElement;
 import org.muml.core.CorePackage;
-import org.muml.core.impl.ExtensionImpl;
-import org.muml.core.util.ExtensionOperations;
+import org.muml.core.ExtendableElement;
+import org.muml.core.Extension;
 import org.muml.storydiagram.activities.ActivitiesPackage;
 import org.muml.storydiagram.activities.Activity;
 import org.muml.storydiagram.activities.OperationExtension;
 import org.muml.storydiagram.activities.util.ActivitiesValidator;
-import org.muml.storydiagram.activities.util.OperationExtensionOperations;
 import org.muml.storydiagram.calls.Callable;
 import org.muml.storydiagram.calls.CallsPackage;
+import org.muml.storydiagram.impl.SDMExtensionImpl;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Operation Extension</b></em>'. <!-- end-user-doc -->
@@ -46,6 +47,7 @@ import org.muml.storydiagram.calls.CallsPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.muml.storydiagram.activities.impl.OperationExtensionImpl#getExtensions <em>Extensions</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.impl.OperationExtensionImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.impl.OperationExtensionImpl#getInParameters <em>In Parameters</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.impl.OperationExtensionImpl#getOutParameters <em>Out Parameters</em>}</li>
@@ -57,8 +59,17 @@ import org.muml.storydiagram.calls.CallsPackage;
  *
  * @generated
  */
-public class OperationExtensionImpl extends ExtensionImpl implements
+public class OperationExtensionImpl extends SDMExtensionImpl implements
 		OperationExtension {
+	/**
+	 * The cached value of the '{@link #getExtensions() <em>Extensions</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExtensions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Extension> extensions;
 	/**
 	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -136,6 +147,18 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Extension> getExtensions() {
+		if (extensions == null) {
+			extensions = new EObjectContainmentWithInverseEList<Extension>(Extension.class, this, ActivitiesPackage.OPERATION_EXTENSION__EXTENSIONS, CorePackage.EXTENSION__EXTENDABLE_BASE);
+		}
+		return extensions;
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -163,6 +186,17 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 			containedParameters = new EObjectContainmentEList<EParameter>(EParameter.class, this, ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS);
 		}
 		return containedParameters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getOperation() {
+		// TODO: implement this method to return the 'Operation' reference
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -202,42 +236,6 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 
 		return new BasicEList.UnmodifiableEList<EParameter>(1,
 				new EParameter[] { getReturnValue() });
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	public EOperation getOperation() {
-		return OperationExtensionOperations.getOperation(this);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	public void setOperation(EOperation newOperation) {
-		OperationExtensionOperations.setOperation(this, newOperation);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	public void unsetOperation() {
-		OperationExtensionOperations.unsetOperation(this);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	public boolean isSetOperation() {
-		return OperationExtensionOperations.isSetOperation(this);
 	}
 
 	/**
@@ -348,13 +346,31 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Extension getExtension(final EClass type) {
+		EList<Extension> extensions = this.getExtensions();
+						for (Extension extension : extensions) {
+							if (type.isInstance(extension)) {
+								return extension;
+							}
+						}
+						return null;
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case ActivitiesPackage.OPERATION_EXTENSION__EXTENSIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getExtensions()).basicAdd(otherEnd, msgs);
 			case ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY:
 				if (ownedActivity != null)
 					msgs = ((InternalEObject)ownedActivity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY, null, msgs);
@@ -371,6 +387,8 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case ActivitiesPackage.OPERATION_EXTENSION__EXTENSIONS:
+				return ((InternalEList<?>)getExtensions()).basicRemove(otherEnd, msgs);
 			case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
 				return ((InternalEList<?>)getContainedParameters()).basicRemove(otherEnd, msgs);
 			case ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE:
@@ -388,6 +406,8 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ActivitiesPackage.OPERATION_EXTENSION__EXTENSIONS:
+				return getExtensions();
 			case ActivitiesPackage.OPERATION_EXTENSION__COMMENT:
 				return getComment();
 			case ActivitiesPackage.OPERATION_EXTENSION__IN_PARAMETERS:
@@ -414,6 +434,10 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ActivitiesPackage.OPERATION_EXTENSION__EXTENSIONS:
+				getExtensions().clear();
+				getExtensions().addAll((Collection<? extends Extension>)newValue);
+				return;
 			case ActivitiesPackage.OPERATION_EXTENSION__COMMENT:
 				setComment((String)newValue);
 				return;
@@ -428,9 +452,6 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 			case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
 				getContainedParameters().clear();
 				getContainedParameters().addAll((Collection<? extends EParameter>)newValue);
-				return;
-			case ActivitiesPackage.OPERATION_EXTENSION__OPERATION:
-				setOperation((EOperation)newValue);
 				return;
 			case ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE:
 				setReturnValue((EParameter)newValue);
@@ -449,6 +470,9 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ActivitiesPackage.OPERATION_EXTENSION__EXTENSIONS:
+				getExtensions().clear();
+				return;
 			case ActivitiesPackage.OPERATION_EXTENSION__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
@@ -460,9 +484,6 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 				return;
 			case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
 				getContainedParameters().clear();
-				return;
-			case ActivitiesPackage.OPERATION_EXTENSION__OPERATION:
-				unsetOperation();
 				return;
 			case ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE:
 				setReturnValue((EParameter)null);
@@ -481,6 +502,8 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ActivitiesPackage.OPERATION_EXTENSION__EXTENSIONS:
+				return extensions != null && !extensions.isEmpty();
 			case ActivitiesPackage.OPERATION_EXTENSION__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case ActivitiesPackage.OPERATION_EXTENSION__IN_PARAMETERS:
@@ -490,7 +513,7 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 			case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
 				return containedParameters != null && !containedParameters.isEmpty();
 			case ActivitiesPackage.OPERATION_EXTENSION__OPERATION:
-				return isSetOperation();
+				return getOperation() != null;
 			case ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE:
 				return returnValue != null;
 			case ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY:
@@ -505,6 +528,12 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == ExtendableElement.class) {
+			switch (derivedFeatureID) {
+				case ActivitiesPackage.OPERATION_EXTENSION__EXTENSIONS: return CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
+				default: return -1;
+			}
+		}
 		if (baseClass == CommentableElement.class) {
 			switch (derivedFeatureID) {
 				case ActivitiesPackage.OPERATION_EXTENSION__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
@@ -528,6 +557,12 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == ExtendableElement.class) {
+			switch (baseFeatureID) {
+				case CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS: return ActivitiesPackage.OPERATION_EXTENSION__EXTENSIONS;
+				default: return -1;
+			}
+		}
 		if (baseClass == CommentableElement.class) {
 			switch (baseFeatureID) {
 				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return ActivitiesPackage.OPERATION_EXTENSION__COMMENT;
@@ -546,6 +581,32 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == ExtendableElement.class) {
+			switch (baseOperationID) {
+				case CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS: return ActivitiesPackage.OPERATION_EXTENSION___GET_EXTENSION__ECLASS;
+				default: return -1;
+			}
+		}
+		if (baseClass == CommentableElement.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == Callable.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -556,6 +617,8 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 		switch (operationID) {
 			case ActivitiesPackage.OPERATION_EXTENSION___NUMBER_OF_OUT_PARAMS__DIAGNOSTICCHAIN_MAP:
 				return NumberOfOutParams((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case ActivitiesPackage.OPERATION_EXTENSION___GET_EXTENSION__ECLASS:
+				return getExtension((EClass)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -575,14 +638,5 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 		return result.toString();
 	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public boolean isSetModelBase() {
-		return ExtensionOperations.isSetModelBase(this);
-	}
 
 } // OperationExtensionImpl

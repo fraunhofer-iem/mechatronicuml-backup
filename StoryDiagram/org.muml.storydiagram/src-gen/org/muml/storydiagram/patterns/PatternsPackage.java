@@ -87,15 +87,6 @@ public interface PatternsPackage extends EPackage {
 	int ABSTRACT_VARIABLE__EXTENSIONS = StorydiagramPackage.VARIABLE__EXTENSIONS;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_VARIABLE__TYPE = StorydiagramPackage.VARIABLE__TYPE;
-
-	/**
 	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -103,6 +94,15 @@ public interface PatternsPackage extends EPackage {
 	 * @ordered
 	 */
 	int ABSTRACT_VARIABLE__GENERIC_TYPE = StorydiagramPackage.VARIABLE__GENERIC_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Classifier</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_VARIABLE__CLASSIFIER = StorydiagramPackage.VARIABLE__CLASSIFIER;
 
 	/**
 	 * The feature id for the '<em><b>Variable Name</b></em>' attribute.
@@ -186,6 +186,15 @@ public interface PatternsPackage extends EPackage {
 	int ABSTRACT_VARIABLE___GET_EXTENSION__ECLASS = StorydiagramPackage.VARIABLE___GET_EXTENSION__ECLASS;
 
 	/**
+	 * The operation id for the '<em>Set Classifier</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_VARIABLE___SET_CLASSIFIER__ECLASSIFIER = StorydiagramPackage.VARIABLE___SET_CLASSIFIER__ECLASSIFIER;
+
+	/**
 	 * The number of operations of the '<em>Abstract Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -214,15 +223,6 @@ public interface PatternsPackage extends EPackage {
 	int OBJECT_VARIABLE__EXTENSIONS = ABSTRACT_VARIABLE__EXTENSIONS;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBJECT_VARIABLE__TYPE = ABSTRACT_VARIABLE__TYPE;
-
-	/**
 	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -230,6 +230,15 @@ public interface PatternsPackage extends EPackage {
 	 * @ordered
 	 */
 	int OBJECT_VARIABLE__GENERIC_TYPE = ABSTRACT_VARIABLE__GENERIC_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Classifier</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VARIABLE__CLASSIFIER = ABSTRACT_VARIABLE__CLASSIFIER;
 
 	/**
 	 * The feature id for the '<em><b>Variable Name</b></em>' attribute.
@@ -340,22 +349,13 @@ public interface PatternsPackage extends EPackage {
 	int OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENTS = ABSTRACT_VARIABLE_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Classifier</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBJECT_VARIABLE__CLASSIFIER = ABSTRACT_VARIABLE_FEATURE_COUNT + 5;
-
-	/**
 	 * The number of structural features of the '<em>Object Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_VARIABLE_FEATURE_COUNT = ABSTRACT_VARIABLE_FEATURE_COUNT + 6;
+	int OBJECT_VARIABLE_FEATURE_COUNT = ABSTRACT_VARIABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -365,6 +365,15 @@ public interface PatternsPackage extends EPackage {
 	 * @ordered
 	 */
 	int OBJECT_VARIABLE___GET_EXTENSION__ECLASS = ABSTRACT_VARIABLE___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Set Classifier</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VARIABLE___SET_CLASSIFIER__ECLASSIFIER = ABSTRACT_VARIABLE___SET_CLASSIFIER__ECLASSIFIER;
 
 	/**
 	 * The number of operations of the '<em>Object Variable</em>' class.
@@ -723,15 +732,6 @@ public interface PatternsPackage extends EPackage {
 	int COLLECTION_VARIABLE__EXTENSIONS = OBJECT_VARIABLE__EXTENSIONS;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COLLECTION_VARIABLE__TYPE = OBJECT_VARIABLE__TYPE;
-
-	/**
 	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -739,6 +739,15 @@ public interface PatternsPackage extends EPackage {
 	 * @ordered
 	 */
 	int COLLECTION_VARIABLE__GENERIC_TYPE = OBJECT_VARIABLE__GENERIC_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Classifier</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLLECTION_VARIABLE__CLASSIFIER = OBJECT_VARIABLE__CLASSIFIER;
 
 	/**
 	 * The feature id for the '<em><b>Variable Name</b></em>' attribute.
@@ -849,15 +858,6 @@ public interface PatternsPackage extends EPackage {
 	int COLLECTION_VARIABLE__ATTRIBUTE_ASSIGNMENTS = OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENTS;
 
 	/**
-	 * The feature id for the '<em><b>Classifier</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COLLECTION_VARIABLE__CLASSIFIER = OBJECT_VARIABLE__CLASSIFIER;
-
-	/**
 	 * The feature id for the '<em><b>At Least One</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -894,6 +894,15 @@ public interface PatternsPackage extends EPackage {
 	int COLLECTION_VARIABLE___GET_EXTENSION__ECLASS = OBJECT_VARIABLE___GET_EXTENSION__ECLASS;
 
 	/**
+	 * The operation id for the '<em>Set Classifier</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLLECTION_VARIABLE___SET_CLASSIFIER__ECLASSIFIER = OBJECT_VARIABLE___SET_CLASSIFIER__ECLASSIFIER;
+
+	/**
 	 * The number of operations of the '<em>Collection Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -922,15 +931,6 @@ public interface PatternsPackage extends EPackage {
 	int PRIMITIVE_VARIABLE__EXTENSIONS = ABSTRACT_VARIABLE__EXTENSIONS;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRIMITIVE_VARIABLE__TYPE = ABSTRACT_VARIABLE__TYPE;
-
-	/**
 	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -938,6 +938,15 @@ public interface PatternsPackage extends EPackage {
 	 * @ordered
 	 */
 	int PRIMITIVE_VARIABLE__GENERIC_TYPE = ABSTRACT_VARIABLE__GENERIC_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Classifier</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_VARIABLE__CLASSIFIER = ABSTRACT_VARIABLE__CLASSIFIER;
 
 	/**
 	 * The feature id for the '<em><b>Variable Name</b></em>' attribute.
@@ -1003,13 +1012,13 @@ public interface PatternsPackage extends EPackage {
 	int PRIMITIVE_VARIABLE__INCOMING_LINKS = ABSTRACT_VARIABLE__INCOMING_LINKS;
 
 	/**
-	 * The feature id for the '<em><b>Classifier</b></em>' reference.
+	 * The feature id for the '<em><b>Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE__CLASSIFIER = ABSTRACT_VARIABLE_FEATURE_COUNT + 0;
+	int PRIMITIVE_VARIABLE__DATA_TYPE = ABSTRACT_VARIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Primitive Variable</em>' class.
@@ -1028,6 +1037,15 @@ public interface PatternsPackage extends EPackage {
 	 * @ordered
 	 */
 	int PRIMITIVE_VARIABLE___GET_EXTENSION__ECLASS = ABSTRACT_VARIABLE___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Set Classifier</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_VARIABLE___SET_CLASSIFIER__ECLASSIFIER = ABSTRACT_VARIABLE___SET_CLASSIFIER__ECLASSIFIER;
 
 	/**
 	 * The number of operations of the '<em>Primitive Variable</em>' class.
@@ -1897,17 +1915,6 @@ public interface PatternsPackage extends EPackage {
 	EReference getObjectVariable_AttributeAssignments();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.muml.storydiagram.patterns.ObjectVariable#getClassifier <em>Classifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Classifier</em>'.
-	 * @see org.muml.storydiagram.patterns.ObjectVariable#getClassifier()
-	 * @see #getObjectVariable()
-	 * @generated
-	 */
-	EReference getObjectVariable_Classifier();
-
-	/**
 	 * Returns the meta object for class '{@link org.muml.storydiagram.patterns.AbstractVariable <em>Abstract Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2264,15 +2271,15 @@ public interface PatternsPackage extends EPackage {
 	EClass getPrimitiveVariable();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.muml.storydiagram.patterns.PrimitiveVariable#getClassifier <em>Classifier</em>}'.
+	 * Returns the meta object for the reference '{@link org.muml.storydiagram.patterns.PrimitiveVariable#getDataType <em>Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Classifier</em>'.
-	 * @see org.muml.storydiagram.patterns.PrimitiveVariable#getClassifier()
+	 * @return the meta object for the reference '<em>Data Type</em>'.
+	 * @see org.muml.storydiagram.patterns.PrimitiveVariable#getDataType()
 	 * @see #getPrimitiveVariable()
 	 * @generated
 	 */
-	EReference getPrimitiveVariable_Classifier();
+	EReference getPrimitiveVariable_DataType();
 
 	/**
 	 * Returns the meta object for class '{@link org.muml.storydiagram.patterns.Path <em>Path</em>}'.
@@ -2578,14 +2585,6 @@ public interface PatternsPackage extends EPackage {
 		EReference OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENTS = eINSTANCE.getObjectVariable_AttributeAssignments();
 
 		/**
-		 * The meta object literal for the '<em><b>Classifier</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OBJECT_VARIABLE__CLASSIFIER = eINSTANCE.getObjectVariable_Classifier();
-
-		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.patterns.impl.AbstractVariableImpl <em>Abstract Variable</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2864,12 +2863,12 @@ public interface PatternsPackage extends EPackage {
 		EClass PRIMITIVE_VARIABLE = eINSTANCE.getPrimitiveVariable();
 
 		/**
-		 * The meta object literal for the '<em><b>Classifier</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Data Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PRIMITIVE_VARIABLE__CLASSIFIER = eINSTANCE.getPrimitiveVariable_Classifier();
+		EReference PRIMITIVE_VARIABLE__DATA_TYPE = eINSTANCE.getPrimitiveVariable_DataType();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.patterns.impl.PathImpl <em>Path</em>}' class.

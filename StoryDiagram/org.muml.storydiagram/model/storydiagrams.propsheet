@@ -23,6 +23,9 @@
     <classes>
       <genClass href="storydiagrams.genmodel#//storydiagram/Variable"/>
     </classes>
+    <classes>
+      <genClass href="storydiagrams.genmodel#//storydiagram/SDMExtension"/>
+    </classes>
   </packages>
   <packages xmi:id="_RnvK8s1gEeSIgPDefa6ZBw">
     <genPackage href="storydiagrams.genmodel#//storydiagram/activities"/>
@@ -34,16 +37,11 @@
         <editor xsi:type="org.muml:TextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property">
-        <genFeature href="storydiagrams.genmodel#//storydiagram/activities/ExceptionVariable/exceptionTypes"/>
-        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="org.muml:ListPropertyEditor"/>
-      </orderedElements>
-      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="storydiagrams.genmodel#//storydiagram/activities/ExceptionVariable/genericExceptionTypes"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:ListPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="org.muml:PropertyCategory" title="Lists" properties="//@packages.1/@classes.0/@orderedElements.1 //@packages.1/@classes.0/@orderedElements.2"/>
+      <orderedElements xsi:type="org.muml:PropertyCategory" title="Lists" properties="//@packages.1/@classes.0/@orderedElements.1"/>
     </classes>
     <classes>
       <genClass href="storydiagrams.genmodel#//storydiagram/activities/ActivityEdge"/>
@@ -85,7 +83,7 @@
         <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
-    <classes superClasses="//@packages.2/@classes.4">
+    <classes superClasses="//@packages.2/@classes.4 //@packages.0/@classes.1">
       <genClass href="storydiagrams.genmodel#//storydiagram/activities/OperationExtension"/>
     </classes>
     <classes superClasses="//@packages.1/@classes.6">
@@ -160,7 +158,7 @@
         <editor xsi:type="org.muml:TextPropertyEditor"/>
       </orderedElements>
     </classes>
-    <classes superClasses="//@packages.0/@classes.0">
+    <classes superClasses="//@packages.0/@classes.0 //@packages.0/@classes.1">
       <genClass href="storydiagrams.genmodel#//storydiagram/calls/ParameterExtension"/>
     </classes>
     <classes>
@@ -185,7 +183,7 @@
       <orderedElements xsi:type="org.muml:Property">
         <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/ObjectVariable/linkOrderConstraints"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="org.muml:RadioPropertyEditor"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property">
         <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/ObjectVariable/bindingSemantics"/>
@@ -196,11 +194,6 @@
         <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/ObjectVariable/bindingOperator"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:RadioPropertyEditor"/>
-      </orderedElements>
-      <orderedElements xsi:type="org.muml:Property">
-        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/ObjectVariable/classifier"/>
-        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property">
         <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/ObjectVariable/outgoingLinks"/>
@@ -310,11 +303,6 @@
     </classes>
     <classes superClasses="//@packages.3/@classes.1">
       <genClass href="storydiagrams.genmodel#//storydiagram/patterns/PrimitiveVariable"/>
-      <orderedElements xsi:type="org.muml:Property">
-        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/PrimitiveVariable/classifier"/>
-        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
-      </orderedElements>
     </classes>
     <classes superClasses="//@packages.3/@classes.3">
       <genClass href="storydiagrams.genmodel#//storydiagram/patterns/Path"/>

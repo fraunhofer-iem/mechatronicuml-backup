@@ -31,8 +31,6 @@ public class ObjectVariableEditor extends org.muml.ape.runtime.editors.ClassProp
 
 			addPropertyEditor(createEditorBindingOperator_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorClassifier_property_tab_generalTab_Editor(), false);
-
 			addPropertyEditor(createEditorOutgoingLinks_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
@@ -63,8 +61,6 @@ public class ObjectVariableEditor extends org.muml.ape.runtime.editors.ClassProp
 
 			addPropertyEditor(createEditorBindingOperator_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorClassifier_property_tab_generalTab_Editor(), false);
-
 			addPropertyEditor(createEditorOutgoingLinks_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
@@ -80,7 +76,7 @@ public class ObjectVariableEditor extends org.muml.ape.runtime.editors.ClassProp
 		if (this.editorLinkOrderConstraints_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.patterns.PatternsPackage.eINSTANCE
 					.getObjectVariable_LinkOrderConstraints();
-			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.OptionPropertyEditor(
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
 			this.editorLinkOrderConstraints_property_tab_generalTab = editor;
@@ -118,21 +114,6 @@ public class ObjectVariableEditor extends org.muml.ape.runtime.editors.ClassProp
 			this.editorBindingOperator_property_tab_generalTab = editor;
 		}
 		return this.editorBindingOperator_property_tab_generalTab;
-	}
-
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorClassifier_property_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorClassifier_property_tab_generalTab_Editor() {
-		if (this.editorClassifier_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.patterns.PatternsPackage.eINSTANCE
-					.getObjectVariable_Classifier();
-			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage("The type of this ObjectVariable, given as an EClass.");
-
-			this.editorClassifier_property_tab_generalTab = editor;
-		}
-		return this.editorClassifier_property_tab_generalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOutgoingLinks_property_tab_generalTab;
@@ -201,8 +182,8 @@ public class ObjectVariableEditor extends org.muml.ape.runtime.editors.ClassProp
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
-					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.general",
-					"property.tab.general"}).contains(tab);
+					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

@@ -6,7 +6,6 @@
  */
 package org.muml.storydiagram.patterns.impl;
 
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -237,7 +236,6 @@ public class PatternsPackageImpl extends EPackageImpl implements
 
 		// Initialize simple dependencies
 		CorePackage.eINSTANCE.eClass();
-		EcorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		StorydiagramPackageImpl theStorydiagramPackage = (StorydiagramPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StorydiagramPackage.eNS_URI) instanceof StorydiagramPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StorydiagramPackage.eNS_URI) : StorydiagramPackage.eINSTANCE);
@@ -338,15 +336,6 @@ public class PatternsPackageImpl extends EPackageImpl implements
 	 */
 	public EReference getObjectVariable_AttributeAssignments() {
 		return (EReference)objectVariableEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getObjectVariable_Classifier() {
-		return (EReference)objectVariableEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -651,7 +640,7 @@ public class PatternsPackageImpl extends EPackageImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPrimitiveVariable_Classifier() {
+	public EReference getPrimitiveVariable_DataType() {
 		return (EReference)primitiveVariableEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -887,7 +876,6 @@ public class PatternsPackageImpl extends EPackageImpl implements
 		createEAttribute(objectVariableEClass, OBJECT_VARIABLE__BINDING_SEMANTICS);
 		createEAttribute(objectVariableEClass, OBJECT_VARIABLE__BINDING_OPERATOR);
 		createEReference(objectVariableEClass, OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENTS);
-		createEReference(objectVariableEClass, OBJECT_VARIABLE__CLASSIFIER);
 
 		abstractVariableEClass = createEClass(ABSTRACT_VARIABLE);
 		createEReference(abstractVariableEClass, ABSTRACT_VARIABLE__PATTERN);
@@ -928,7 +916,7 @@ public class PatternsPackageImpl extends EPackageImpl implements
 		createEAttribute(collectionVariableEClass, COLLECTION_VARIABLE__UNIQUE);
 
 		primitiveVariableEClass = createEClass(PRIMITIVE_VARIABLE);
-		createEReference(primitiveVariableEClass, PRIMITIVE_VARIABLE__CLASSIFIER);
+		createEReference(primitiveVariableEClass, PRIMITIVE_VARIABLE__DATA_TYPE);
 
 		pathEClass = createEClass(PATH);
 		createEReference(pathEClass, PATH__PATH_EXPRESSION);
@@ -986,10 +974,10 @@ public class PatternsPackageImpl extends EPackageImpl implements
 
 		// Obtain other dependent packages
 		PatternsExpressionsPackage thePatternsExpressionsPackage = (PatternsExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(PatternsExpressionsPackage.eNS_URI);
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		StorydiagramPackage theStorydiagramPackage = (StorydiagramPackage)EPackage.Registry.INSTANCE.getEPackage(StorydiagramPackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		TemplatesPackage theTemplatesPackage = (TemplatesPackage)EPackage.Registry.INSTANCE.getEPackage(TemplatesPackage.eNS_URI);
 
 		// Add subpackages
@@ -1021,7 +1009,6 @@ public class PatternsPackageImpl extends EPackageImpl implements
 		initEAttribute(getObjectVariable_BindingSemantics(), this.getBindingSemantics(), "bindingSemantics", "MANDATORY", 1, 1, ObjectVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getObjectVariable_BindingOperator(), this.getBindingOperator(), "bindingOperator", "CHECK_ONLY", 1, 1, ObjectVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getObjectVariable_AttributeAssignments(), this.getAttributeAssignment(), this.getAttributeAssignment_ObjectVariable(), "attributeAssignments", null, 0, -1, ObjectVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getObjectVariable_Classifier(), theEcorePackage.getEClass(), null, "classifier", null, 1, 1, ObjectVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(abstractVariableEClass, AbstractVariable.class, "AbstractVariable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAbstractVariable_Pattern(), this.getStoryPattern(), this.getStoryPattern_Variables(), "pattern", null, 1, 1, AbstractVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1062,7 +1049,7 @@ public class PatternsPackageImpl extends EPackageImpl implements
 		initEAttribute(getCollectionVariable_Unique(), theEcorePackage.getEBoolean(), "unique", "", 1, 1, CollectionVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(primitiveVariableEClass, PrimitiveVariable.class, "PrimitiveVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPrimitiveVariable_Classifier(), theEcorePackage.getEDataType(), null, "classifier", null, 1, 1, PrimitiveVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getPrimitiveVariable_DataType(), theEcorePackage.getEDataType(), null, "dataType", null, 1, 1, PrimitiveVariable.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
 		initEClass(pathEClass, Path.class, "Path", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPath_PathExpression(), theExpressionsPackage.getExpression(), null, "pathExpression", null, 1, 1, Path.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1122,8 +1109,26 @@ public class PatternsPackageImpl extends EPackageImpl implements
 		// Create annotations
 		// subsets
 		createSubsetsAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
 		// http://www.eclipse.org/uml2/1.1.0/GenModel
 		createGenModel_1Annotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
+		addAnnotation
+		  (getPrimitiveVariable_DataType(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if (classifier <> null and classifier.oclIsKindOf(ecore::EDataType)) then classifier.oclAsType(ecore::EDataType) else null endif"
+		   });
 	}
 
 	/**
@@ -1135,20 +1140,9 @@ public class PatternsPackageImpl extends EPackageImpl implements
 	protected void createSubsetsAnnotations() {
 		String source = "subsets";	
 		addAnnotation
-		  (getObjectVariable_Classifier(), 
+		  (getPrimitiveVariable_DataType(), 
 		   source, 
 		   new String[] {
-		   },
-		   new URI[] {
-			 URI.createURI(CorePackage.eNS_URI).appendFragment("//TypedElement/type")
-		   });	
-		addAnnotation
-		  (getPrimitiveVariable_Classifier(), 
-		   source, 
-		   new String[] {
-		   },
-		   new URI[] {
-			 URI.createURI(CorePackage.eNS_URI).appendFragment("//TypedElement/type")
 		   });
 	}
 

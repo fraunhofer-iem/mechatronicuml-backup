@@ -7,7 +7,6 @@
 package org.muml.storydiagram.activities;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EGenericType;
 import org.muml.storydiagram.Variable;
 
@@ -26,7 +25,6 @@ import org.muml.storydiagram.Variable;
  * <ul>
  *   <li>{@link org.muml.storydiagram.activities.ExceptionVariable#getActivityEdge <em>Activity Edge</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.ExceptionVariable#getName <em>Name</em>}</li>
- *   <li>{@link org.muml.storydiagram.activities.ExceptionVariable#getExceptionTypes <em>Exception Types</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.ExceptionVariable#getGenericExceptionTypes <em>Generic Exception Types</em>}</li>
  * </ul>
  *
@@ -86,21 +84,6 @@ public interface ExceptionVariable extends Variable {
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Exception Types</b></em>' reference list.
-	 * The list contents are of type {@link org.eclipse.emf.ecore.EClassifier}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Specifies the type of the declared exception variable.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Exception Types</em>' reference list.
-	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getExceptionVariable_ExceptionTypes()
-	 * @model transient="true" ordered="false"
-	 * @generated
-	 */
-	EList<EClassifier> getExceptionTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Generic Exception Types</b></em>' reference list.

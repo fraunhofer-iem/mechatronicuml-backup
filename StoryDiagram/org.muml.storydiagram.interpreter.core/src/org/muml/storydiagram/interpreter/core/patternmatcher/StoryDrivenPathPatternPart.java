@@ -277,7 +277,7 @@ public class StoryDrivenPathPatternPart extends
 			results.addAll(tmp);
 		}
 
-		return new Variable<EClassifier>(this.link.getName() == null ? "path" : this.link.getName(), this.link.getTarget().getType(), results);
+		return new Variable<EClassifier>(this.link.getName() == null ? "path" : this.link.getName(), this.link.getTarget().getClassifier(), results);
 	}
 
 	private List<EObject> applySearchForPathAlternative(

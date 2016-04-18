@@ -91,7 +91,12 @@ public class ResourceManager {
 		};
 		activity.eResource().getResourceSet().eAdapters().add(resourceSetAdapter);
 		activity.eAdapters().add(resourceSetAdapter);
-		EAnnotation annotation = activity.getAnnotation(SOURCE_TYPES);
+		EAnnotation annotation = null;
+		for (EAnnotation currentAnnotation : activity.getAnnotations()) {
+			if (SOURCE_TYPES.equals(annotation.getSource())) {
+				annotation = currentAnnotation;
+			}
+		}
 		if (annotation != null) {
 			annotation.eAdapters().add(resourceSetAdapter);
 		}
@@ -190,7 +195,13 @@ public class ResourceManager {
 		eClasses.clear();
 		eDataTypes.clear();
 
-		EAnnotation annotation = activity.getAnnotation(SOURCE_TYPES);
+		EAnnotation annotation = null;
+		for (EAnnotation currentAnnotation : activity.getAnnotations()) {
+			if (ResourceManager.SOURCE_TYPES.equals(annotation.getSource())) {
+				annotation = currentAnnotation;
+			}
+		}
+		
 		if (annotation != null) {
 			// collect directly referenced packages
 			for (EObject reference : annotation.getReferences()) {
@@ -263,7 +274,13 @@ public class ResourceManager {
 	private void dispose() {
 		activity.eResource().getResourceSet().eAdapters().remove(resourceSetAdapter);
 		activity.eAdapters().remove(resourceSetAdapter);
-		EAnnotation annotation = activity.getAnnotation(SOURCE_TYPES);
+		EAnnotation annotation = null;
+		for (EAnnotation currentAnnotation : activity.getAnnotations()) {
+			if (ResourceManager.SOURCE_TYPES.equals(annotation.getSource())) {
+				annotation = currentAnnotation;
+			}
+		}
+		
 		if (annotation != null) {
 			annotation.eAdapters().remove(resourceSetAdapter);
 		}

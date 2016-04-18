@@ -19,12 +19,11 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.CorePackage;
-import org.muml.core.provider.ExtensionItemProvider;
 import org.muml.storydiagram.activities.ActivitiesFactory;
 import org.muml.storydiagram.activities.ActivitiesPackage;
 import org.muml.storydiagram.activities.OperationExtension;
-import org.muml.storydiagram.calls.CallsFactory;
 import org.muml.storydiagram.calls.CallsPackage;
+import org.muml.storydiagram.provider.SDMExtensionItemProvider;
 import org.muml.storydiagram.provider.StorydiagramsEditPlugin;
 
 /**
@@ -33,7 +32,7 @@ import org.muml.storydiagram.provider.StorydiagramsEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class OperationExtensionItemProvider extends ExtensionItemProvider {
+public class OperationExtensionItemProvider extends SDMExtensionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -189,6 +188,7 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider {
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS);
 			childrenFeatures.add(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS);
 			childrenFeatures.add(ActivitiesPackage.Literals.OPERATION_EXTENSION__RETURN_VALUE);
 			childrenFeatures.add(ActivitiesPackage.Literals.OPERATION_EXTENSION__OWNED_ACTIVITY);
@@ -225,6 +225,7 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider {
 			case ActivitiesPackage.OPERATION_EXTENSION__COMMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case ActivitiesPackage.OPERATION_EXTENSION__EXTENSIONS:
 			case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
 			case ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE:
 			case ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY:
@@ -282,16 +283,6 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider {
 	protected void collectNewChildDescriptors(
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
 
 		newChildDescriptors.add
 			(createChildParameter

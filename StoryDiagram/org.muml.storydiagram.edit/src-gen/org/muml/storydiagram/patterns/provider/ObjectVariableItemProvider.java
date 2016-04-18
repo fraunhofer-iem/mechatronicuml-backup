@@ -51,7 +51,6 @@ public class ObjectVariableItemProvider extends AbstractVariableItemProvider {
 			addOutgoingLinksPropertyDescriptor(object);
 			addBindingSemanticsPropertyDescriptor(object);
 			addBindingOperatorPropertyDescriptor(object);
-			addClassifierPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -118,28 +117,6 @@ public class ObjectVariableItemProvider extends AbstractVariableItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Classifier feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addClassifierPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ObjectVariable_classifier_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ObjectVariable_classifier_feature", "_UI_ObjectVariable_type"),
-				 PatternsPackage.Literals.OBJECT_VARIABLE__CLASSIFIER,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}

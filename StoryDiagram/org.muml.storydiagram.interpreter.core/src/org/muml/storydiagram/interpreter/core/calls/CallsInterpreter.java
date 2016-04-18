@@ -123,7 +123,7 @@ public class CallsInterpreter extends ExpressionInterpreter<Expression, EClassif
 
       if (var == null)
       {
-         EClassifier type = expression.getParameter().getType();
+         EClassifier type = expression.getParameter().getClassifier();
          var = new Variable<EClassifier>(SDMInterpreterConstants.INTERNAL_VAR_NAME, type, null);
       }
 
@@ -343,7 +343,7 @@ public class CallsInterpreter extends ExpressionInterpreter<Expression, EClassif
 
 		if (var == null)
 		{
-			EClassifier type = expression.getObject().getType();
+			EClassifier type = expression.getObject().getClassifier();
 			var = new Variable<EClassifier>(SDMInterpreterConstants.INTERNAL_VAR_NAME, type, null);
 		}
 

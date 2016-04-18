@@ -13,6 +13,19 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" changeable="false"
         volatile="true" transient="true" derived="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDMExtension">
+    <eOperations name="getModelBase" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EModelElement">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="if (getEContainer() instanceof EAnnotation &amp;&amp; getEContainer().getEContainer() instanceof EModelElement) {&#xA;&#x9;return (EModelElement) getEContainer().getEContainer();&#xA;}&#xA;return null;"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="setModelBase">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="EAnnotation annotation = null;&#xA;if (modelBase != null) {&#xA;&#x9;// Find annotation via source&#xA;&#x9;for (EAnnotation currentAnnotation : modelBase.getAnnotations()) {&#xA;&#x9;&#x9;if (&quot;uri&quot;.equals(currentAnnotation.getSource()) {&#xA;&#x9;&#x9;&#x9;annotation = currentAnnotation;&#xA;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#xA;&#x9;// Create annotation if not found&#xA;&#x9;if (annotation == null) {&#xA;&#x9;&#x9;annotation = EcoreFactory.eINSTANCE.createEAnnotation();&#xA;&#x9;&#x9;annotation.setSource(&quot;uri&quot;);&#xA;&#x9;&#x9;modelBase.getAnnotations().add(annotation);&#xA;&#x9;}&#xA;}&#xA;&#xA;// Add to references of annotation&#xA;annotation.getReferences().add(this);"/>
+      </eAnnotations>
+      <eParameters name="modelBase" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EModelElement"/>
+    </eOperations>
+  </eClassifiers>
   <eSubpackages name="activities" nsURI="http://www.muml.org/storydiagram/activities/1.0.0"
       nsPrefix="sda">
     <eClassifiers xsi:type="ecore:EClass" name="ExceptionVariable" eSuperTypes="#//Variable">
@@ -31,15 +44,8 @@
           <details key="documentation" value="Specifies the name of the declared exception variable."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="exceptionTypes" ordered="false"
-          upperBound="-1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"
-          transient="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Specifies the type of the declared exception variable."/>
-        </eAnnotations>
-      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="genericExceptionTypes"
-          ordered="false" upperBound="-1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EGenericType"/>
+          ordered="false" upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EGenericType"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ActivityEdge" eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -136,8 +142,11 @@
           <details key="documentation" value="The activity contains all activity nodes via this reference."/>
         </eAnnotations>
       </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1"
+          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAnnotation"
+          containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="OperationExtension" eSuperTypes="../../org.muml.core/model/core.ecore#//Extension #//calls/Callable">
+    <eClassifiers xsi:type="ecore:EClass" name="OperationExtension" eSuperTypes="#//SDMExtension #//calls/Callable">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An OperationExtension is a stand-in for an EOperation in our model. It is necessary because we cannot change the type EOperation. Thus, OperationExtension points to an EOperation but adds the reference to an Activity that describes the operations behavior."/>
       </eAnnotations>
@@ -161,14 +170,17 @@
         </eParameters>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="operation" ordered="false"
-          eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EOperation"
-          volatile="true" transient="true" unsettable="true" derived="true" resolveProxies="false">
+          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EOperation"
+          changeable="false" volatile="true" transient="true" derived="true" resolveProxies="false">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The EOperation whose behavior is defined by the Activity. The property is derived because the actual value is determined by the utility class OperationsExtensionOperation."/>
         </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if (self.getModelBase() &lt;> null and self.getModelBase().oclIsKindOf(ecore::EOperation)) then self.getModelBase().oclAsType(ecore::EOperation) else null endif"/>
+        </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="returnValue" ordered="false"
-          eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
+          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The return value of the referenced operation."/>
@@ -371,7 +383,7 @@
           lowerBound="1" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
           containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" ordered="false"
-          eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"/>
+          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="invocation" ordered="false"
           lowerBound="1" eType="#//calls/Invocation" eOpposite="#//calls/Invocation/ownedParameterBindings"/>
     </eClassifiers>
@@ -380,11 +392,11 @@
         <details key="documentation" value="An OpaqueCallable represents an external method which is not explicitly modeled (e.g. a method in an external library). Because it is not contained anywhere in the model it is directly referenced by and contained in the MethodCallExpression."/>
       </eAnnotations>
       <eAnnotations source="duplicates">
-        <contents xsi:type="ecore:EReference" name="inParameter" upperBound="-1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter">
+        <contents xsi:type="ecore:EReference" name="inParameter" upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter">
           <eAnnotations source="redefines" references="#//calls/Callable/inParameters"/>
         </contents>
         <contents xsi:type="ecore:EReference" name="outParameter" upperBound="-1"
-            eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter">
+            eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter">
           <eAnnotations source="redefines" references="#//calls/Callable/outParameters"/>
         </contents>
       </eAnnotations>
@@ -412,32 +424,36 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="callExpression" ordered="false"
           lowerBound="1" eType="#//calls/expressions/MethodCallExpression" eOpposite="#//calls/expressions/MethodCallExpression/opaqueCallable"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ParameterExtension" eSuperTypes="#//Variable ../../org.muml.core/model/core.ecore#//Extension">
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterExtension" eSuperTypes="#//Variable #//SDMExtension">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Represents an EParameter and adds functionality to it, especially beiing subtype of Variable."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" ordered="false"
-          eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
-          volatile="true" transient="true" unsettable="true" derived="true" resolveProxies="false"/>
+          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
+          changeable="false" volatile="true" transient="true" derived="true" resolveProxies="false">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if (self.getModelBase() &lt;> null and self.getModelBase().oclIsKindOf(ecore::EParameter)) then self.getModelBase().oclAsType(ecore::EParameter) else null endif"/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Callable" abstract="true" eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An entity which can be called by an Invocation. A Callable can have a number of (ordered) parameters which are either in or out parameters. In the case of activities, the number of in and out parameters is unbounded, whereas OperationExtensions and OpaqueCallables can only have one out parameter (This is enforced by an OCL constraint)."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="inParameters" upperBound="-1"
-          eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter">
+          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The ordered set of in parameters of this Callable. The parameters will not be contained in this reference, if parameters have to be contained in the callable, they also have to be added to the containedParameters reference."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="outParameters" upperBound="-1"
-          eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter">
+          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The ordered set of out parameters of this Callable. The parameters will not be contained in this reference, if parameters have to be contained in the callable, they also have to be added to the containedParameters reference."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="containedParameters"
-          upperBound="-1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
+          upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This reference is used to contain the parameters of a Callable if they are not already contained in another container. If the parameter is contained in another container as it is the case for parameters of a EOperation, they must not be added to this container!"/>
@@ -501,13 +517,6 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="attributeAssignments"
           upperBound="-1" eType="#//patterns/AttributeAssignment" containment="true"
           eOpposite="#//patterns/AttributeAssignment/objectVariable"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="classifier" ordered="false"
-          lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The type of this ObjectVariable, given as an EClass."/>
-        </eAnnotations>
-        <eAnnotations source="subsets" references="../../org.muml.core/model/core.ecore#//TypedElement/type"/>
-      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AbstractVariable" abstract="true"
         eSuperTypes="#//Variable ../../org.muml.core/model/core.ecore#//NamedElement">
@@ -694,7 +703,7 @@
         <details key="documentation" value="An AttributeAssignment is used to set the value of a certain attribute of an object. It references the attribute that is to be set and the value. The value can be an expression to allow for calculations or calls that determine the final value. AttributeAssignments are carried out during the final phase of pattern application, i.e. after the matching and destruction are completed."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" ordered="false"
-          lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EAttribute">
+          lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAttribute">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The attribute whose value is set. It has to be an attribute of the objectVariable that contains the AttributeAssignment."/>
         </eAnnotations>
@@ -716,19 +725,23 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="atLeastOne" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="unique" lowerBound="1"
-          eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+          eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
           defaultValueLiteral=""/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="PrimitiveVariable" eSuperTypes="#//patterns/AbstractVariable">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Represents a variable that holds a value of a primitive type, e.g. integer, boolean, String."/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="classifier" ordered="false"
-          lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EDataType">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" ordered="false"
+          lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDataType"
+          volatile="true" transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The type of the primitive variable which must be an EDataType."/>
         </eAnnotations>
-        <eAnnotations source="subsets" references="../../org.muml.core/model/core.ecore#//TypedElement/type"/>
+        <eAnnotations source="subsets"/>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if (classifier &lt;> null and classifier.oclIsKindOf(ecore::EDataType)) then classifier.oclAsType(ecore::EDataType) else null endif"/>
+        </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Path" eSuperTypes="#//patterns/AbstractLinkVariable">
@@ -748,14 +761,14 @@
         <details key="documentation" value="A link variable represents one link between two object variables. It is typed over one of the associations between the classes of those objects. Because EMF only directly supports references, the two link ends are typed over these references. In case of a uni-directional association, only the targetEnd is typed. In case of a bi-directional association, the reference that types the source end is automatically determined."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="sourceEnd" ordered="false"
-          eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EReference"
+          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EReference"
           volatile="true" transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The source end of a link variable can only be determined when the link is typed over a bi-directional association. In this case, it points to the &quot;reverse&quot; direction of the association. If the reference is only uni-directional, the source end is null. The value of this attribute is derived automatically."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="targetEnd" ordered="false"
-          lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EReference">
+          lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EReference">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The target end points to the reference that types this direction of the link (the &quot;normal&quot; direction). This link end must be set always."/>
         </eAnnotations>
@@ -835,7 +848,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" ordered="false"
-            lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EAttribute">
+            lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAttribute">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Specifies the object's attribute whose attribute value is represented by this expression."/>
           </eAnnotations>
@@ -876,7 +889,7 @@
       nsPrefix="sdt">
     <eClassifiers xsi:type="ecore:EClass" name="TemplateBinding" eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="boundParameter" ordered="false"
-          lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"/>
+          lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="bindingExpression" ordered="false"
           lowerBound="1" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
           containment="true"/>
@@ -888,7 +901,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="PropertyBinding" eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="boundProperty" ordered="false"
-          lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
+          lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="bindingExpression" ordered="false"
           lowerBound="1" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
           containment="true"/>
@@ -900,7 +913,7 @@
           upperBound="-1" eType="#//templates/TemplateBinding" containment="true"
           eOpposite="#//templates/TemplateBinding/template"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="typeParameters" ordered="false"
-          upperBound="-1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"
+          upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"
           containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" ordered="false"
           lowerBound="1" eType="#//patterns/StoryPattern" eOpposite="#//patterns/StoryPattern/templateSignature"/>

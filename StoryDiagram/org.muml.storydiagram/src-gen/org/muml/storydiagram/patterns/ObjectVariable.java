@@ -7,7 +7,6 @@
 package org.muml.storydiagram.patterns;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +26,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.muml.storydiagram.patterns.ObjectVariable#getBindingSemantics <em>Binding Semantics</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.ObjectVariable#getBindingOperator <em>Binding Operator</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.ObjectVariable#getAttributeAssignments <em>Attribute Assignments</em>}</li>
- *   <li>{@link org.muml.storydiagram.patterns.ObjectVariable#getClassifier <em>Classifier</em>}</li>
  * </ul>
  *
  * @see org.muml.storydiagram.patterns.PatternsPackage#getObjectVariable()
@@ -146,30 +144,5 @@ public interface ObjectVariable extends AbstractVariable {
 	 * @generated
 	 */
 	EList<AttributeAssignment> getAttributeAssignments();
-
-	/**
-	 * Returns the value of the '<em><b>Classifier</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The type of this ObjectVariable, given as an EClass.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Classifier</em>' reference.
-	 * @see #setClassifier(EClass)
-	 * @see org.muml.storydiagram.patterns.PatternsPackage#getObjectVariable_Classifier()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	EClass getClassifier();
-
-	/**
-	 * Sets the value of the '{@link org.muml.storydiagram.patterns.ObjectVariable#getClassifier <em>Classifier</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Classifier</em>' reference.
-	 * @see #getClassifier()
-	 * @generated
-	 */
-	void setClassifier(EClass value);
 
 } // ObjectVariable

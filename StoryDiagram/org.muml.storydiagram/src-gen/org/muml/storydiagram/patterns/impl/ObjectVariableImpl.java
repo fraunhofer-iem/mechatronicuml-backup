@@ -12,13 +12,11 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.muml.core.util.CoreUtil;
 import org.muml.storydiagram.patterns.AbstractLinkVariable;
 import org.muml.storydiagram.patterns.AttributeAssignment;
 import org.muml.storydiagram.patterns.BindingOperator;
@@ -38,7 +36,6 @@ import org.muml.storydiagram.patterns.PatternsPackage;
  *   <li>{@link org.muml.storydiagram.patterns.impl.ObjectVariableImpl#getBindingSemantics <em>Binding Semantics</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.impl.ObjectVariableImpl#getBindingOperator <em>Binding Operator</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.impl.ObjectVariableImpl#getAttributeAssignments <em>Attribute Assignments</em>}</li>
- *   <li>{@link org.muml.storydiagram.patterns.impl.ObjectVariableImpl#getClassifier <em>Classifier</em>}</li>
  * </ul>
  *
  * @generated
@@ -104,15 +101,6 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 	 * @ordered
 	 */
 	protected EList<AttributeAssignment> attributeAssignments;
-	/**
-	 * The cached value of the '{@link #getClassifier() <em>Classifier</em>}' reference.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getClassifier()
-	 * @generated
-	 * @ordered
-	 */
-	protected EClass classifier;
-
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
@@ -208,46 +196,6 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getClassifier() {
-		if (classifier != null && classifier.eIsProxy()) {
-			InternalEObject oldClassifier = (InternalEObject)classifier;
-			classifier = (EClass)eResolveProxy(oldClassifier);
-			if (classifier != oldClassifier) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternsPackage.OBJECT_VARIABLE__CLASSIFIER, oldClassifier, classifier));
-			}
-		}
-		return classifier;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass basicGetClassifier() {
-		return classifier;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	public void setClassifier(EClass newClassifier) {
-		EClass oldClassifier = this.classifier;
-		this.classifier = newClassifier;
-		NotificationChain msgs = updateGenericType(newClassifier, null);
-		CoreUtil.dispatch(msgs,
-				eNotificationRequired() ? new ENotificationImpl(this,
-						Notification.SET,
-						PatternsPackage.OBJECT_VARIABLE__CLASSIFIER,
-						oldClassifier, this.classifier) : null);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd,
@@ -298,9 +246,6 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 				return getBindingOperator();
 			case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENTS:
 				return getAttributeAssignments();
-			case PatternsPackage.OBJECT_VARIABLE__CLASSIFIER:
-				if (resolve) return getClassifier();
-				return basicGetClassifier();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -331,9 +276,6 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 				getAttributeAssignments().clear();
 				getAttributeAssignments().addAll((Collection<? extends AttributeAssignment>)newValue);
 				return;
-			case PatternsPackage.OBJECT_VARIABLE__CLASSIFIER:
-				setClassifier((EClass)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -360,9 +302,6 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 			case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENTS:
 				getAttributeAssignments().clear();
 				return;
-			case PatternsPackage.OBJECT_VARIABLE__CLASSIFIER:
-				setClassifier((EClass)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -384,8 +323,6 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 				return bindingOperator != BINDING_OPERATOR_EDEFAULT;
 			case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENTS:
 				return attributeAssignments != null && !attributeAssignments.isEmpty();
-			case PatternsPackage.OBJECT_VARIABLE__CLASSIFIER:
-				return classifier != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -407,20 +344,5 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 		return result.toString();
 	}
 
-	/**
-	 * @generated NOT
-	 */
-	@Override
-	protected NotificationChain basicSetType(EClassifier newType,
-			NotificationChain msgs) {
-		EClass oldClassifier = this.classifier;
-		this.classifier = (EClass) newType;
-		if (eNotificationRequired()) {
-			return CoreUtil.chain(msgs, new ENotificationImpl(this,
-					Notification.SET,
-					PatternsPackage.OBJECT_VARIABLE__CLASSIFIER, oldClassifier,
-					this.classifier));
-		}
-		return msgs;
-	}
+
 } // ObjectVariableImpl

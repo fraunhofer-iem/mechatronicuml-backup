@@ -95,7 +95,7 @@ public final class BoundUtil {
 	}
 
 	private static void collect(Map<String, EClassifier> map, AbstractVariable variable) {
-		collect(map, variable.getName(), variable.getType());
+		collect(map, variable.getName(), variable.getClassifier());
 	}
 
 	private static void collect(Map<String, EClassifier> map, Activity activity) {

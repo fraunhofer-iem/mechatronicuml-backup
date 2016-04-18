@@ -6,30 +6,24 @@
  */
 package org.muml.storydiagram.verification.sdd.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.muml.core.CorePackage;
 import org.muml.core.ExtendableElement;
 import org.muml.core.Extension;
 import org.muml.core.NamedElement;
-import org.muml.core.util.ExtendableElementOperations;
 import org.muml.storydiagram.verification.sdd.PatternNode;
 import org.muml.storydiagram.verification.sdd.PatternNodeType;
 import org.muml.storydiagram.verification.sdd.SDDPackage;
-
-import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->

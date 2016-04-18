@@ -12,9 +12,9 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
-import org.muml.core.Extension;
 import org.muml.core.NamedElement;
 import org.muml.core.TypedElement;
+import org.muml.storydiagram.SDMExtension;
 import org.muml.storydiagram.Variable;
 import org.muml.storydiagram.activities.*;
 import org.muml.storydiagram.calls.Callable;
@@ -160,8 +160,8 @@ public class ActivitiesAdapterFactory extends AdapterFactoryImpl {
 				return createCallableAdapter();
 			}
 			@Override
-			public Adapter caseExtension(Extension object) {
-				return createExtensionAdapter();
+			public Adapter caseSDMExtension(SDMExtension object) {
+				return createSDMExtensionAdapter();
 			}
 			@Override
 			public Adapter caseInvocation(Invocation object) {
@@ -481,16 +481,16 @@ public class ActivitiesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.muml.core.Extension <em>Extension</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.SDMExtension <em>SDM Extension</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.muml.core.Extension
+	 * @see org.muml.storydiagram.SDMExtension
 	 * @generated
 	 */
-	public Adapter createExtensionAdapter() {
+	public Adapter createSDMExtensionAdapter() {
 		return null;
 	}
 

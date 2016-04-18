@@ -7,6 +7,7 @@
 package org.muml.storydiagram.activities;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EAnnotation;
 import org.muml.core.NamedElement;
 import org.muml.storydiagram.calls.Callable;
 
@@ -27,6 +28,7 @@ import org.muml.storydiagram.calls.Callable;
  *   <li>{@link org.muml.storydiagram.activities.Activity#getOwnedActivityEdges <em>Owned Activity Edges</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.Activity#getPrecondition <em>Precondition</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.Activity#getOwnedActivityNodes <em>Owned Activity Nodes</em>}</li>
+ *   <li>{@link org.muml.storydiagram.activities.Activity#getAnnotations <em>Annotations</em>}</li>
  * </ul>
  *
  * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivity()
@@ -120,5 +122,21 @@ public interface Activity extends Callable, NamedElement {
 	 * @generated
 	 */
 	EList<ActivityNode> getOwnedActivityNodes();
+
+	/**
+	 * Returns the value of the '<em><b>Annotations</b></em>' containment reference list.
+	 * The list contents are of type {@link org.eclipse.emf.ecore.EAnnotation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Annotations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Annotations</em>' containment reference list.
+	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivity_Annotations()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<EAnnotation> getAnnotations();
 
 } // Activity

@@ -220,7 +220,7 @@ public abstract class TransformationTest {
 			if (variable instanceof ObjectVariable)
 			{
 				BindingOperator operator = ((ObjectVariable) variable).getBindingOperator();
-				EClassifier classifier = variable.getType();
+				EClassifier classifier = variable.getClassifier();
 				if(classifier.getName().equals("StepGraph"))
 				{
 					stepGraphFound = true;

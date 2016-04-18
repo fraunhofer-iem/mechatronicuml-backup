@@ -7,7 +7,7 @@
 package org.muml.storydiagram.calls;
 
 import org.eclipse.emf.ecore.EParameter;
-import org.muml.core.Extension;
+import org.muml.storydiagram.SDMExtension;
 import org.muml.storydiagram.Variable;
 
 /**
@@ -30,7 +30,7 @@ import org.muml.storydiagram.Variable;
  * @model
  * @generated
  */
-public interface ParameterExtension extends Variable, Extension {
+public interface ParameterExtension extends Variable, SDMExtension {
 	/**
 	 * Returns the value of the '<em><b>Parameter</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -40,48 +40,11 @@ public interface ParameterExtension extends Variable, Extension {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parameter</em>' reference.
-	 * @see #isSetParameter()
-	 * @see #unsetParameter()
-	 * @see #setParameter(EParameter)
 	 * @see org.muml.storydiagram.calls.CallsPackage#getParameterExtension_Parameter()
-	 * @model resolveProxies="false" unsettable="true" transient="true" volatile="true" derived="true" ordered="false"
+	 * @model resolveProxies="false" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.getModelBase() <> null and self.getModelBase().oclIsKindOf(ecore::EParameter)) then self.getModelBase().oclAsType(ecore::EParameter) else null endif'"
 	 * @generated
 	 */
 	EParameter getParameter();
-
-	/**
-	 * Sets the value of the '{@link org.muml.storydiagram.calls.ParameterExtension#getParameter <em>Parameter</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parameter</em>' reference.
-	 * @see #isSetParameter()
-	 * @see #unsetParameter()
-	 * @see #getParameter()
-	 * @generated
-	 */
-	void setParameter(EParameter value);
-
-	/**
-	 * Unsets the value of the '{@link org.muml.storydiagram.calls.ParameterExtension#getParameter <em>Parameter</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isSetParameter()
-	 * @see #getParameter()
-	 * @see #setParameter(EParameter)
-	 * @generated
-	 */
-	void unsetParameter();
-
-	/**
-	 * Returns whether the value of the '{@link org.muml.storydiagram.calls.ParameterExtension#getParameter <em>Parameter</em>}' reference is set.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return whether the value of the '<em>Parameter</em>' reference is set.
-	 * @see #unsetParameter()
-	 * @see #getParameter()
-	 * @see #setParameter(EParameter)
-	 * @generated
-	 */
-	boolean isSetParameter();
 
 } // ParameterExtension

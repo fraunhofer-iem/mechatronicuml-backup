@@ -33,6 +33,11 @@
     <propertyEditors>
     
        <propertyEditor
+             factory="org.muml.storydiagram.properties.storydiagram.editor.SDMExtensionEditor$Factory"
+             type="http://www.muml.org/storydiagram/1.0.0#SDMExtension">
+       </propertyEditor>
+    
+       <propertyEditor
              factory="org.muml.storydiagram.properties.activities.editor.ExceptionVariableEditor$Factory"
              type="http://www.muml.org/storydiagram/activities/1.0.0#ExceptionVariable">
        </propertyEditor>

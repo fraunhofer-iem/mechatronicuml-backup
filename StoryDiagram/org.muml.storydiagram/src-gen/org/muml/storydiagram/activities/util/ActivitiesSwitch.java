@@ -11,9 +11,9 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
-import org.muml.core.Extension;
 import org.muml.core.NamedElement;
 import org.muml.core.TypedElement;
+import org.muml.storydiagram.SDMExtension;
 import org.muml.storydiagram.Variable;
 import org.muml.storydiagram.activities.*;
 import org.muml.storydiagram.calls.Callable;
@@ -114,7 +114,7 @@ public class ActivitiesSwitch<T> extends Switch<T> {
 			case ActivitiesPackage.OPERATION_EXTENSION: {
 				OperationExtension operationExtension = (OperationExtension)theEObject;
 				T result = caseOperationExtension(operationExtension);
-				if (result == null) result = caseExtension(operationExtension);
+				if (result == null) result = caseSDMExtension(operationExtension);
 				if (result == null) result = caseCallable(operationExtension);
 				if (result == null) result = caseCommentableElement(operationExtension);
 				if (result == null) result = caseExtendableElement(operationExtension);
@@ -545,17 +545,17 @@ public class ActivitiesSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Extension</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>SDM Extension</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Extension</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>SDM Extension</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseExtension(Extension object) {
+	public T caseSDMExtension(SDMExtension object) {
 		return null;
 	}
 

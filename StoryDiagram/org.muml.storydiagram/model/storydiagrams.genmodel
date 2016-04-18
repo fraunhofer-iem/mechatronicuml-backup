@@ -3,13 +3,19 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.storydiagram/src-gen" editDirectory="/org.muml.storydiagram.edit/src-gen"
     modelPluginID="org.muml.storydiagram" modelName="Storydiagrams" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    usedGenPackages="../../org.muml.core/model/core.genmodel#//core ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    usedGenPackages="../../org.muml.core/model/core.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
     operationReflection="true" importOrganizing="true">
   <foreignModel>storydiagrams.ecore</foreignModel>
   <genPackages prefix="Storydiagram" basePackage="org.muml" disposableProviderFactory="true"
       ecorePackage="storydiagrams.ecore#/">
     <genClasses image="false" ecoreClass="storydiagrams.ecore#//Variable">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//Variable/variableName"/>
+    </genClasses>
+    <genClasses ecoreClass="storydiagrams.ecore#//SDMExtension">
+      <genOperations ecoreOperation="storydiagrams.ecore#//SDMExtension/getModelBase"/>
+      <genOperations ecoreOperation="storydiagrams.ecore#//SDMExtension/setModelBase">
+        <genParameters ecoreParameter="storydiagrams.ecore#//SDMExtension/setModelBase/modelBase"/>
+      </genOperations>
     </genClasses>
     <nestedGenPackages prefix="Activities" basePackage="org.muml.storydiagram" disposableProviderFactory="true"
         ecorePackage="storydiagrams.ecore#//activities">
@@ -27,8 +33,6 @@
       <genClasses ecoreClass="storydiagrams.ecore#//activities/ExceptionVariable">
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ExceptionVariable/activityEdge"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//activities/ExceptionVariable/name"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ExceptionVariable/exceptionTypes"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ExceptionVariable/genericExceptionTypes"/>
       </genClasses>
@@ -178,8 +182,6 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//patterns/ObjectVariable/bindingSemantics"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//patterns/ObjectVariable/bindingOperator"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/ObjectVariable/attributeAssignments"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/ObjectVariable/classifier"/>
       </genClasses>
       <genClasses image="false" ecoreClass="storydiagrams.ecore#//patterns/AbstractVariable">
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AbstractVariable/pattern"/>
@@ -229,7 +231,7 @@
       </genClasses>
       <genClasses ecoreClass="storydiagrams.ecore#//patterns/PrimitiveVariable">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/PrimitiveVariable/classifier"/>
+            ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/PrimitiveVariable/dataType"/>
       </genClasses>
       <genClasses ecoreClass="storydiagrams.ecore#//patterns/Path">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/Path/pathExpression"/>

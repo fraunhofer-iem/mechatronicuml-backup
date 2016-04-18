@@ -36,7 +36,7 @@ public class StoryDrivenObjectVariableFacade implements
 	{
 		assert spo != null;
 
-		return spo.getType();
+		return spo.getClassifier();
 	}
 
 	@Override

@@ -12,8 +12,8 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
-import org.muml.core.Extension;
 import org.muml.core.TypedElement;
+import org.muml.storydiagram.SDMExtension;
 import org.muml.storydiagram.Variable;
 import org.muml.storydiagram.calls.*;
 
@@ -109,8 +109,8 @@ public class CallsAdapterFactory extends AdapterFactoryImpl {
 				return createVariableAdapter();
 			}
 			@Override
-			public Adapter caseExtension(Extension object) {
-				return createExtensionAdapter();
+			public Adapter caseSDMExtension(SDMExtension object) {
+				return createSDMExtensionAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -230,20 +230,6 @@ public class CallsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.muml.core.Extension <em>Extension</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.core.Extension
-	 * @generated
-	 */
-	public Adapter createExtensionAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.muml.core.TypedElement <em>Typed Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -268,6 +254,20 @@ public class CallsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createVariableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.SDMExtension <em>SDM Extension</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.muml.storydiagram.SDMExtension
+	 * @generated
+	 */
+	public Adapter createSDMExtensionAdapter() {
 		return null;
 	}
 

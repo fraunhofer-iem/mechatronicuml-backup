@@ -26,9 +26,6 @@ public class ExceptionVariableEditor extends org.muml.ape.runtime.editors.ClassP
 			addSubCategory("org.muml.ape.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 			addEditorToCategory("org.muml.ape.category.Lists",
-					createEditorExceptionTypes_property_tab_generalTab_Editor(), false);
-
-			addEditorToCategory("org.muml.ape.category.Lists",
 					createEditorGenericExceptionTypes_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
@@ -54,9 +51,6 @@ public class ExceptionVariableEditor extends org.muml.ape.runtime.editors.ClassP
 			addSubCategory("org.muml.ape.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 			addEditorToCategory("org.muml.ape.category.Lists",
-					createEditorExceptionTypes_property_tab_generalTab_Editor(), false);
-
-			addEditorToCategory("org.muml.ape.category.Lists",
 					createEditorGenericExceptionTypes_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
@@ -80,21 +74,6 @@ public class ExceptionVariableEditor extends org.muml.ape.runtime.editors.ClassP
 			this.editorName_property_tab_generalTab = editor;
 		}
 		return this.editorName_property_tab_generalTab;
-	}
-
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExceptionTypes_property_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExceptionTypes_property_tab_generalTab_Editor() {
-		if (this.editorExceptionTypes_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.activities.ActivitiesPackage.eINSTANCE
-					.getExceptionVariable_ExceptionTypes();
-			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage("Specifies the type of the declared exception variable.");
-
-			this.editorExceptionTypes_property_tab_generalTab = editor;
-		}
-		return this.editorExceptionTypes_property_tab_generalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorGenericExceptionTypes_property_tab_generalTab;
@@ -133,8 +112,7 @@ public class ExceptionVariableEditor extends org.muml.ape.runtime.editors.ClassP
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general", "property.tab.general", "property.tab.general"})
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general"})
 					.contains(tab);
 		}
 	}

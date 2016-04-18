@@ -11,8 +11,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
-import org.muml.core.Extension;
 import org.muml.core.TypedElement;
+import org.muml.storydiagram.SDMExtension;
 import org.muml.storydiagram.Variable;
 import org.muml.storydiagram.calls.*;
 
@@ -102,7 +102,7 @@ public class CallsSwitch<T> extends Switch<T> {
 				ParameterExtension parameterExtension = (ParameterExtension)theEObject;
 				T result = caseParameterExtension(parameterExtension);
 				if (result == null) result = caseVariable(parameterExtension);
-				if (result == null) result = caseExtension(parameterExtension);
+				if (result == null) result = caseSDMExtension(parameterExtension);
 				if (result == null) result = caseTypedElement(parameterExtension);
 				if (result == null) result = caseExtendableElement(parameterExtension);
 				if (result == null) result = defaultCase(theEObject);
@@ -226,21 +226,6 @@ public class CallsSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Extension</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Extension</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseExtension(Extension object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Typed Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -267,6 +252,21 @@ public class CallsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseVariable(Variable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>SDM Extension</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>SDM Extension</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSDMExtension(SDMExtension object) {
 		return null;
 	}
 

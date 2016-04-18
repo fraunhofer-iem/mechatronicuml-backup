@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.muml.core.CorePackage;
 import org.muml.storydiagram.diagram.custom.ResourceManager;
 import org.muml.storydiagram.diagram.custom.util.ActivityUtil;
 import org.muml.storydiagram.diagram.custom.util.EcoreTextUtil;
@@ -30,7 +31,7 @@ public class PrimitiveVariableClassifierSection extends AbstractComboSection<EDa
 
 	@Override
 	protected EStructuralFeature getFeature() {
-		return PatternsPackage.Literals.PRIMITIVE_VARIABLE__CLASSIFIER;
+		return CorePackage.Literals.TYPED_ELEMENT__GENERIC_TYPE;
 	}
 
 	@Override

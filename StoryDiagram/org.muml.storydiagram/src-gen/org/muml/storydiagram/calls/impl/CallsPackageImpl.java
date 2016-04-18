@@ -130,7 +130,6 @@ public class CallsPackageImpl extends EPackageImpl implements CallsPackage {
 
 		// Initialize simple dependencies
 		CorePackage.eINSTANCE.eClass();
-		EcorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		StorydiagramPackageImpl theStorydiagramPackage = (StorydiagramPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StorydiagramPackage.eNS_URI) instanceof StorydiagramPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StorydiagramPackage.eNS_URI) : StorydiagramPackage.eINSTANCE);
@@ -425,7 +424,7 @@ public class CallsPackageImpl extends EPackageImpl implements CallsPackage {
 		parameterBindingEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		opaqueCallableEClass.getESuperTypes().add(this.getCallable());
 		parameterExtensionEClass.getESuperTypes().add(theStorydiagramPackage.getVariable());
-		parameterExtensionEClass.getESuperTypes().add(theCorePackage.getExtension());
+		parameterExtensionEClass.getESuperTypes().add(theStorydiagramPackage.getSDMExtension());
 		callableEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 
 		// Initialize classes, features, and operations; add parameters
@@ -452,7 +451,7 @@ public class CallsPackageImpl extends EPackageImpl implements CallsPackage {
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(parameterExtensionEClass, ParameterExtension.class, "ParameterExtension", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getParameterExtension_Parameter(), theEcorePackage.getEParameter(), null, "parameter", null, 0, 1, ParameterExtension.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getParameterExtension_Parameter(), theEcorePackage.getEParameter(), null, "parameter", null, 0, 1, ParameterExtension.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
 		initEClass(callableEClass, Callable.class, "Callable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCallable_InParameters(), theEcorePackage.getEParameter(), null, "inParameters", null, 0, -1, Callable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -464,6 +463,8 @@ public class CallsPackageImpl extends EPackageImpl implements CallsPackage {
 		createDuplicatesAnnotations();
 		// http://www.eclipse.org/uml2/1.1.0/GenModel
 		createGenModel_1Annotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
 	}
 
 	/**
@@ -494,6 +495,22 @@ public class CallsPackageImpl extends EPackageImpl implements CallsPackage {
 		   source, 
 		   new String[] {
 			 "body", "self.oclAsType(Callable).out->size() <= 1"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
+		addAnnotation
+		  (getParameterExtension_Parameter(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if (self.getModelBase() <> null and self.getModelBase().oclIsKindOf(ecore::EParameter)) then self.getModelBase().oclAsType(ecore::EParameter) else null endif"
 		   });
 	}
 

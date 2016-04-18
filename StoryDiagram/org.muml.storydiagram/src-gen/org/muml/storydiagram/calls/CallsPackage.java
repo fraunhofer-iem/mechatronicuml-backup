@@ -432,15 +432,6 @@ public interface CallsPackage extends EPackage {
 	int PARAMETER_EXTENSION__EXTENSIONS = StorydiagramPackage.VARIABLE__EXTENSIONS;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER_EXTENSION__TYPE = StorydiagramPackage.VARIABLE__TYPE;
-
-	/**
 	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -448,6 +439,15 @@ public interface CallsPackage extends EPackage {
 	 * @ordered
 	 */
 	int PARAMETER_EXTENSION__GENERIC_TYPE = StorydiagramPackage.VARIABLE__GENERIC_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Classifier</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_EXTENSION__CLASSIFIER = StorydiagramPackage.VARIABLE__CLASSIFIER;
 
 	/**
 	 * The feature id for the '<em><b>Variable Name</b></em>' attribute.
@@ -459,22 +459,13 @@ public interface CallsPackage extends EPackage {
 	int PARAMETER_EXTENSION__VARIABLE_NAME = StorydiagramPackage.VARIABLE__VARIABLE_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Extendable Base</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER_EXTENSION__EXTENDABLE_BASE = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION__PARAMETER = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 1;
+	int PARAMETER_EXTENSION__PARAMETER = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Parameter Extension</em>' class.
@@ -483,7 +474,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION_FEATURE_COUNT = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 2;
+	int PARAMETER_EXTENSION_FEATURE_COUNT = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -495,13 +486,40 @@ public interface CallsPackage extends EPackage {
 	int PARAMETER_EXTENSION___GET_EXTENSION__ECLASS = StorydiagramPackage.VARIABLE___GET_EXTENSION__ECLASS;
 
 	/**
+	 * The operation id for the '<em>Set Classifier</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_EXTENSION___SET_CLASSIFIER__ECLASSIFIER = StorydiagramPackage.VARIABLE___SET_CLASSIFIER__ECLASSIFIER;
+
+	/**
+	 * The operation id for the '<em>Get Model Base</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_EXTENSION___GET_MODEL_BASE = StorydiagramPackage.VARIABLE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Set Model Base</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_EXTENSION___SET_MODEL_BASE__EMODELELEMENT = StorydiagramPackage.VARIABLE_OPERATION_COUNT + 1;
+
+	/**
 	 * The number of operations of the '<em>Parameter Extension</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION_OPERATION_COUNT = StorydiagramPackage.VARIABLE_OPERATION_COUNT + 0;
+	int PARAMETER_EXTENSION_OPERATION_COUNT = StorydiagramPackage.VARIABLE_OPERATION_COUNT + 2;
 
 	/**
 	 * Returns the meta object for class '{@link org.muml.storydiagram.calls.Invocation <em>Invocation</em>}'.

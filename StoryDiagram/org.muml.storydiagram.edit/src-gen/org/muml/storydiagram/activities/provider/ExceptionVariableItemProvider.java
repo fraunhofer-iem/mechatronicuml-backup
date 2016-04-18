@@ -50,7 +50,6 @@ public class ExceptionVariableItemProvider extends VariableItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addExceptionTypesPropertyDescriptor(object);
 			addGenericExceptionTypesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -74,28 +73,6 @@ public class ExceptionVariableItemProvider extends VariableItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Exception Types feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addExceptionTypesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ExceptionVariable_exceptionTypes_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ExceptionVariable_exceptionTypes_feature", "_UI_ExceptionVariable_type"),
-				 ActivitiesPackage.Literals.EXCEPTION_VARIABLE__EXCEPTION_TYPES,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}

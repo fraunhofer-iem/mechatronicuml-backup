@@ -104,7 +104,12 @@ public class ActivityTypeModelSection extends AbstractPropertySection {
 					if (element instanceof EPackage) {
 						EPackage ePackage = (EPackage) element;
 						Activity activity = (Activity) getElement();
-						EAnnotation annotation = activity.getAnnotation(ResourceManager.SOURCE_TYPES);
+						EAnnotation annotation = null;
+						for (EAnnotation currentAnnotation : activity.getAnnotations()) {
+							if (ResourceManager.SOURCE_TYPES.equals(annotation.getSource())) {
+								annotation = currentAnnotation;
+							}
+						}
 						annotation.getReferences().remove(ePackage);
 						annotation.getDetails().remove(ePackage.getNsURI());
 					}
@@ -223,7 +228,12 @@ public class ActivityTypeModelSection extends AbstractPropertySection {
 							@Override
 							protected void doExecute() {
 								Activity activity = (Activity) getElement();
-								EAnnotation annotation = activity.getAnnotation(ResourceManager.SOURCE_TYPES);
+								EAnnotation annotation = null;
+								for (EAnnotation currentAnnotation : activity.getAnnotations()) {
+									if (ResourceManager.SOURCE_TYPES.equals(annotation.getSource())) {
+										annotation = currentAnnotation;
+									}
+								}
 								if (annotation == null) {
 									annotation = EcoreFactory.eINSTANCE.createEAnnotation();
 									annotation.setSource(ResourceManager.SOURCE_TYPES);
@@ -274,8 +284,12 @@ public class ActivityTypeModelSection extends AbstractPropertySection {
 									for (EPackage ePackage : ePackages) {
 										if (ePackage != null) {
 											Activity activity = getElement();
-											EAnnotation annotation = activity
-													.getAnnotation(ResourceManager.SOURCE_TYPES);
+											EAnnotation annotation = null;
+											for (EAnnotation currentAnnotation : activity.getAnnotations()) {
+												if (ResourceManager.SOURCE_TYPES.equals(annotation.getSource())) {
+													annotation = currentAnnotation;
+												}
+											}
 											if (annotation == null) {
 												annotation = EcoreFactory.eINSTANCE.createEAnnotation();
 												annotation.setSource(ResourceManager.SOURCE_TYPES);

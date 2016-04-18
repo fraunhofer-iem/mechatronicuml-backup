@@ -9,7 +9,9 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.emf.edit,
  org.muml.storydiagram,
  org.muml.storydiagram.edit,
- org.muml.ape.runtime
+ org.muml.ape.runtime,
+ org.muml.pim.edit,
+ org.muml.pim.edit.properties
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.storydiagram.properties.metamodel, org.muml.storydiagram.properties.constraint,

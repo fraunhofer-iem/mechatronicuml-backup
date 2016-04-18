@@ -22,7 +22,13 @@ public class ResourcesContentProvider extends ArrayContentProvider implements IT
 	@Override
 	public Object[] getChildren(Object element) {
 		if (element instanceof Activity) {
-			EAnnotation annotation = ((Activity) element).getAnnotation(ResourceManager.SOURCE_TYPES);
+			Activity activity = (Activity) element;
+			EAnnotation annotation = null;
+			for (EAnnotation currentAnnotation : activity.getAnnotations()) {
+				if (ResourceManager.SOURCE_TYPES.equals(annotation.getSource())) {
+					annotation = currentAnnotation;
+				}
+			}
 			return getChildren(annotation);
 		}
 		if (element instanceof EAnnotation) {

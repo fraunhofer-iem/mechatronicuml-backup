@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -42,6 +43,7 @@ import org.muml.storydiagram.calls.impl.CallableImpl;
  *   <li>{@link org.muml.storydiagram.activities.impl.ActivityImpl#getOwnedActivityEdges <em>Owned Activity Edges</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.impl.ActivityImpl#getPrecondition <em>Precondition</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.impl.ActivityImpl#getOwnedActivityNodes <em>Owned Activity Nodes</em>}</li>
+ *   <li>{@link org.muml.storydiagram.activities.impl.ActivityImpl#getAnnotations <em>Annotations</em>}</li>
  * </ul>
  *
  * @generated
@@ -95,6 +97,16 @@ public class ActivityImpl extends CallableImpl implements Activity {
 	 * @ordered
 	 */
 	protected EList<ActivityNode> ownedActivityNodes;
+
+	/**
+	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAnnotations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EAnnotation> annotations;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -246,6 +258,18 @@ public class ActivityImpl extends CallableImpl implements Activity {
 		return ownedActivityNodes;
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<EAnnotation> getAnnotations() {
+		if (annotations == null) {
+			annotations = new EObjectContainmentEList<EAnnotation>(EAnnotation.class, this, ActivitiesPackage.ACTIVITY__ANNOTATIONS);
+		}
+		return annotations;
+	}
+
 	protected EAnnotation getOwningOperationAnnotation() {
 		if (eContainmentFeature() == EcorePackage.Literals.EANNOTATION__CONTENTS) {
 			EAnnotation annotation = (EAnnotation) eContainer();
@@ -291,6 +315,8 @@ public class ActivityImpl extends CallableImpl implements Activity {
 				return ((InternalEList<?>)getOwnedActivityEdges()).basicRemove(otherEnd, msgs);
 			case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODES:
 				return ((InternalEList<?>)getOwnedActivityNodes()).basicRemove(otherEnd, msgs);
+			case ActivitiesPackage.ACTIVITY__ANNOTATIONS:
+				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -327,6 +353,8 @@ public class ActivityImpl extends CallableImpl implements Activity {
 				return basicGetPrecondition();
 			case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODES:
 				return getOwnedActivityNodes();
+			case ActivitiesPackage.ACTIVITY__ANNOTATIONS:
+				return getAnnotations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -356,6 +384,10 @@ public class ActivityImpl extends CallableImpl implements Activity {
 				getOwnedActivityNodes().clear();
 				getOwnedActivityNodes().addAll((Collection<? extends ActivityNode>)newValue);
 				return;
+			case ActivitiesPackage.ACTIVITY__ANNOTATIONS:
+				getAnnotations().clear();
+				getAnnotations().addAll((Collection<? extends EAnnotation>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -382,6 +414,9 @@ public class ActivityImpl extends CallableImpl implements Activity {
 			case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODES:
 				getOwnedActivityNodes().clear();
 				return;
+			case ActivitiesPackage.ACTIVITY__ANNOTATIONS:
+				getAnnotations().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -403,6 +438,8 @@ public class ActivityImpl extends CallableImpl implements Activity {
 				return precondition != null;
 			case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODES:
 				return ownedActivityNodes != null && !ownedActivityNodes.isEmpty();
+			case ActivitiesPackage.ACTIVITY__ANNOTATIONS:
+				return annotations != null && !annotations.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
