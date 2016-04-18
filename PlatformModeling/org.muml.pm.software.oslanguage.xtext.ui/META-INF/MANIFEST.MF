@@ -21,8 +21,7 @@ Require-Bundle: org.eclipse.xtext.ui,
  org.eclipse.compare;bundle-version="3.5.500",
  org.muml.pm.software.oslanguage.xtext;bundle-version="0.5.0"
 Import-Package: org.apache.log4j,
- org.eclipse.xtext.xbase.lib,
- org.muml.core.modelinstance
+ org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Activator: org.muml.pm.software.oslanguage.xtext.ui.internal.OperatingSystemLanguageActivator
 Export-Package: org.muml.pm.software.oslanguage.xtext.ui.contentassist,
