@@ -23,7 +23,6 @@ import org.muml.core.CorePackage;
 import org.muml.core.ExtendableElement;
 import org.muml.core.Extension;
 import org.muml.core.expressions.Expression;
-import org.muml.core.util.ExtendableElementOperations;
 import org.muml.pim.actionlanguage.ActionlanguagePackage;
 import org.muml.pim.actionlanguage.AssignOperator;
 import org.muml.pim.actionlanguage.Assignment;
@@ -390,34 +389,13 @@ public class DataAssignmentEffectImpl extends EffectImpl implements DataAssignme
 	 * @generated
 	 */
 	public Extension getExtension(final EClass type) {
-		return ExtendableElementOperations.getExtension(this, type);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Extension provideExtension(final EClass type) {
-		return ExtendableElementOperations.provideExtension(this, type);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAnnotation getAnnotation(final String source) {
-		return ExtendableElementOperations.getAnnotation(this, source);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAnnotation provideAnnotation(final String source) {
-		return ExtendableElementOperations.provideAnnotation(this, source);
+		EList<Extension> extensions = this.getExtensions();
+						for (Extension extension : extensions) {
+							if (type.isInstance(extension)) {
+								return extension;
+							}
+						}
+						return null;
 	}
 
 	/**
@@ -670,9 +648,6 @@ public class DataAssignmentEffectImpl extends EffectImpl implements DataAssignme
 		if (baseClass == ExtendableElement.class) {
 			switch (baseOperationID) {
 				case CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS: return DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT___GET_EXTENSION__ECLASS;
-				case CorePackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS: return DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT___PROVIDE_EXTENSION__ECLASS;
-				case CorePackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING: return DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT___GET_ANNOTATION__STRING;
-				case CorePackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING: return DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT___PROVIDE_ANNOTATION__STRING;
 				default: return -1;
 			}
 		}
@@ -704,12 +679,6 @@ public class DataAssignmentEffectImpl extends EffectImpl implements DataAssignme
 		switch (operationID) {
 			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT___GET_EXTENSION__ECLASS:
 				return getExtension((EClass)arguments.get(0));
-			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT___PROVIDE_EXTENSION__ECLASS:
-				return provideExtension((EClass)arguments.get(0));
-			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT___GET_ANNOTATION__STRING:
-				return getAnnotation((String)arguments.get(0));
-			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT___PROVIDE_ANNOTATION__STRING:
-				return provideAnnotation((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

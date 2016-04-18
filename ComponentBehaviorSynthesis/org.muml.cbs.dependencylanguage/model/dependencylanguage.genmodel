@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.cbs.dependencylanguage/src"
-    modelPluginID="org.muml.cbs.dependencylanguage" modelName="Dependencylanguage"
-    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="7.0" copyrightFields="false" usedGenPackages="../../org.muml.pim.actionlanguage/model/actionlanguage.genmodel#//actionlanguage ../../org.muml.core/model/core.genmodel#//core ../../org.muml.pim/model/pim.genmodel#//pim"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.cbs.dependencylanguage/src" modelPluginID="org.muml.cbs.dependencylanguage"
+    modelName="Dependencylanguage" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    usedGenPackages="../../org.muml.pim.actionlanguage/model/actionlanguage.genmodel#//actionlanguage ../../org.muml.core/model/core.genmodel#//core ../../org.muml.pim/model/pim.genmodel#//pim"
     operationReflection="true" importOrganizing="true">
   <foreignModel>dependencylanguage.ecore</foreignModel>
-  <genPackages prefix="Dependencylanguage" basePackage="org.muml.cbs"
-      disposableProviderFactory="true" ecorePackage="dependencylanguage.ecore#/">
+  <genPackages prefix="Dependencylanguage" basePackage="org.muml.cbs" disposableProviderFactory="true"
+      ecorePackage="dependencylanguage.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="dependencylanguage.ecore#//AssignmentDirection">
       <genEnumLiterals ecoreEnumLiteral="dependencylanguage.ecore#//AssignmentDirection/PUSH"/>
       <genEnumLiterals ecoreEnumLiteral="dependencylanguage.ecore#//AssignmentDirection/PULL"/>
@@ -52,6 +52,7 @@
     <genClasses ecoreClass="dependencylanguage.ecore#//DataMerge">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//DataMerge/variables"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dependencylanguage.ecore#//DataMerge/variableName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//DataMerge/port"/>
     </genClasses>
     <genClasses ecoreClass="dependencylanguage.ecore#//ConditionalDependency">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//ConditionalDependency/event"/>
@@ -138,6 +139,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dependencylanguage.ecore#//MessageEvent/kind"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//MessageEvent/type"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//MessageEvent/port"/>
+    </genClasses>
+    <genClasses ecoreClass="dependencylanguage.ecore#//TriggerMessage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//TriggerMessage/effects"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dependencylanguage.ecore#//TriggerMessage/messageEvent"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

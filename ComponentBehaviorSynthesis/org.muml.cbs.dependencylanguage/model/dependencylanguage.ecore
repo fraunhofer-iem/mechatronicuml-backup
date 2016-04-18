@@ -330,8 +330,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
-        eType="ecore:EEnum ../../org.muml.core/model/core.ecore#//expressions/common/ComparingOperator"
-        defaultValueLiteral="">
+        eType="ecore:EEnum ../../org.muml.core/model/core.ecore#//expressions/common/ComparingOperator">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=" "/>
       </eAnnotations>

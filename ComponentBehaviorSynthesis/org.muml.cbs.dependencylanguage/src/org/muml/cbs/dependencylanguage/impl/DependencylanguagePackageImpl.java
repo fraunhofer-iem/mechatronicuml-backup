@@ -1553,7 +1553,7 @@ public class DependencylanguagePackageImpl extends EPackageImpl implements Depen
 		initEClass(hybridClockConditionEClass, HybridClockCondition.class, "HybridClockCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHybridClockCondition_Condition(), this.getCondition(), null, "condition", null, 1, 1, HybridClockCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHybridClockCondition_Bound(), theValuetypePackage.getTimeValue(), null, "bound", null, 1, 1, HybridClockCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHybridClockCondition_Operator(), theCommonExpressionsPackage.getComparingOperator(), "operator", "", 1, 1, HybridClockCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHybridClockCondition_Operator(), theCommonExpressionsPackage.getComparingOperator(), "operator", null, 1, 1, HybridClockCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(basicClockConditionEClass, BasicClockCondition.class, "BasicClockCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

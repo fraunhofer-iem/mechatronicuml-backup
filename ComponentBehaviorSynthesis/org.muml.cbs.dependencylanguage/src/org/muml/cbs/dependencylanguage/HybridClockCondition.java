@@ -92,7 +92,6 @@ public interface HybridClockCondition extends ClockCondition {
 
 	/**
 	 * Returns the value of the '<em><b>Operator</b></em>' attribute.
-	 * The default value is <code>""</code>.
 	 * The literals are from the enumeration {@link org.muml.core.expressions.common.ComparingOperator}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -107,7 +106,7 @@ public interface HybridClockCondition extends ClockCondition {
 	 * @see org.muml.core.expressions.common.ComparingOperator
 	 * @see #setOperator(ComparingOperator)
 	 * @see org.muml.cbs.dependencylanguage.DependencylanguagePackage#getHybridClockCondition_Operator()
-	 * @model default="" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	ComparingOperator getOperator();
