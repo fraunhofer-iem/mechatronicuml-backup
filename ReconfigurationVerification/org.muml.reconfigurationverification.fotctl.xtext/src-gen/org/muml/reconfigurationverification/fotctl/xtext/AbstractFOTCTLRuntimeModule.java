@@ -6,27 +6,26 @@ package org.muml.reconfigurationverification.fotctl.xtext;
 import java.util.Properties;
 
 import org.eclipse.xtext.Constants;
-import org.eclipse.xtext.service.DefaultRuntimeModule;
 
 import com.google.inject.Binder;
 import com.google.inject.name.Names;
 
 /**
- * Manual modifications go to {de.uni_paderborn.fujaba.muml.verification.FOTCTLRuntimeModule}
+ * Manual modifications go to {org.muml.reconfigurationverification.fotctl.xtext.FOTCTLRuntimeModule}
  */
- @SuppressWarnings("all")
-public abstract class AbstractFOTCTLRuntimeModule extends DefaultRuntimeModule {
+@SuppressWarnings("all")
+public abstract class AbstractFOTCTLRuntimeModule extends org.eclipse.xtext.service.DefaultRuntimeModule {
 
 	protected Properties properties = null;
 
 	@Override
 	public void configure(Binder binder) {
-		properties = tryBindProperties(binder, "de/uni_paderborn/fujaba/muml/verification/FOTCTL.properties");
+		properties = tryBindProperties(binder, "org/muml/reconfigurationverification/fotctl/xtext/FOTCTL.properties");
 		super.configure(binder);
 	}
 	
 	public void configureLanguageName(Binder binder) {
-		binder.bind(String.class).annotatedWith(Names.named(Constants.LANGUAGE_NAME)).toInstance("de.uni_paderborn.fujaba.muml.verification.FOTCTL");
+		binder.bind(String.class).annotatedWith(Names.named(Constants.LANGUAGE_NAME)).toInstance("org.muml.reconfigurationverification.fotctl.xtext.FOTCTL");
 	}
 	
 	public void configureFileExtensions(Binder binder) {

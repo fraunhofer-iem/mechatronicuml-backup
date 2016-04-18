@@ -4,10 +4,11 @@
 package org.muml.reconfigurationverification.fotctl.xtext.ui;
 
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
-import org.muml.reconfigurationverification.fotctl.xtext.ui.internal.FOTCTLActivator;
 import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
+
+import org.muml.reconfigurationverification.fotctl.xtext.ui.internal.FOTCTLActivator;
 
 /**
  * This class was generated. Customizations should only happen in a newly
@@ -22,7 +23,7 @@ public class FOTCTLExecutableExtensionFactory extends AbstractGuiceAwareExecutab
 	
 	@Override
 	protected Injector getInjector() {
-		return FOTCTLActivator.getInstance().getInjector(FOTCTLActivator.DE_UNI_PADERBORN_FUJABA_MUML_VERIFICATION_FOTCTL);
+		return FOTCTLActivator.getInstance().getInjector(FOTCTLActivator.ORG_MUML_RECONFIGURATIONVERIFICATION_FOTCTL_XTEXT_FOTCTL);
 	}
 	
 }

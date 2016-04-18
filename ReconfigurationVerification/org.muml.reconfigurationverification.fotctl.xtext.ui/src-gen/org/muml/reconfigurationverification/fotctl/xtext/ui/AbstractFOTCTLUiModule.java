@@ -4,14 +4,13 @@
  */
 package org.muml.reconfigurationverification.fotctl.xtext.ui;
 
-import org.eclipse.xtext.ui.DefaultUiModule;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
- * Manual modifications go to {de.uni_paderborn.fujaba.muml.verification.ui.FOTCTLUiModule}
+ * Manual modifications go to {org.muml.reconfigurationverification.fotctl.xtext.ui.FOTCTLUiModule}
  */
 @SuppressWarnings("all")
-public abstract class AbstractFOTCTLUiModule extends DefaultUiModule {
+public abstract class AbstractFOTCTLUiModule extends org.eclipse.xtext.ui.DefaultUiModule {
 	
 	public AbstractFOTCTLUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
@@ -106,6 +105,11 @@ public abstract class AbstractFOTCTLUiModule extends DefaultUiModule {
 	// contributed by org.eclipse.xtext.generator.builder.BuilderIntegrationFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.IXtextEditorCallback> bindIXtextEditorCallback() {
 		return org.eclipse.xtext.builder.nature.NatureAddingEditorCallback.class;
+	}
+
+	// contributed by org.eclipse.xtext.generator.builder.BuilderIntegrationFragment
+	public Class<? extends org.eclipse.xtext.generator.IContextualOutputConfigurationProvider> bindIContextualOutputConfigurationProvider() {
+		return org.eclipse.xtext.builder.EclipseOutputConfigurationProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.builder.BuilderIntegrationFragment

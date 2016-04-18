@@ -10,7 +10,7 @@
             contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
             default="true"
             extensions="fotctl"
-            id="de.uni_paderborn.fujaba.muml.verification.FOTCTL"
+            id="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL"
             name="FOTCTL Editor">
         </editor>
     </extension>
@@ -21,16 +21,16 @@
             commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
             <activeWhen>
                 <reference
-                    definitionId="de.uni_paderborn.fujaba.muml.verification.FOTCTL.Editor.opened">
+                    definitionId="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL.Editor.opened">
                 </reference>
             </activeWhen>
         </handler>
         <handler
             class="org.muml.reconfigurationverification.fotctl.xtext.ui.FOTCTLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
-            commandId="de.uni_paderborn.fujaba.muml.verification.FOTCTL.validate">
+            commandId="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL.validate">
          <activeWhen>
             <reference
-                    definitionId="de.uni_paderborn.fujaba.muml.verification.FOTCTL.Editor.opened">
+                    definitionId="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL.Editor.opened">
             </reference>
          </activeWhen>
       	</handler>
@@ -39,7 +39,7 @@
             class="org.muml.reconfigurationverification.fotctl.xtext.ui.FOTCTLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
             commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName">
             <activeWhen>
-				<reference definitionId="de.uni_paderborn.fujaba.muml.verification.FOTCTL.Editor.opened" />
+				<reference definitionId="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL.Editor.opened" />
             </activeWhen>
         </handler>
         <handler
@@ -47,7 +47,7 @@
             commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName">
             <activeWhen>
             	<and>
-            		<reference definitionId="org.muml.reconfigurationverification.fotctl.xtextEditor.opened" />
+            		<reference definitionId="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL.XtextEditor.opened" />
 	                <iterate>
 						<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 					</iterate>
@@ -56,22 +56,22 @@
         </handler>
     </extension>
     <extension point="org.eclipse.core.expressions.definitions">
-        <definition id="de.uni_paderborn.fujaba.muml.verification.FOTCTL.Editor.opened">
+        <definition id="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL.Editor.opened">
             <and>
                 <reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
                 <with variable="activeEditor">
                     <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
-                        value="de.uni_paderborn.fujaba.muml.verification.FOTCTL" 
+                        value="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL" 
                         forcePluginActivation="true"/>
                 </with>        
             </and>
         </definition>
-        <definition id="org.muml.reconfigurationverification.fotctl.xtextEditor.opened">
+        <definition id="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL.XtextEditor.opened">
             <and>
                 <reference definitionId="isXtextEditorActive"/>
                 <with variable="activeEditor">
                     <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
-                        value="de.uni_paderborn.fujaba.muml.verification.FOTCTL" 
+                        value="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL" 
                         forcePluginActivation="true"/>
                 </with>        
             </and>
@@ -81,32 +81,32 @@
             point="org.eclipse.ui.preferencePages">
         <page
             class="org.muml.reconfigurationverification.fotctl.xtext.ui.FOTCTLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-            id="de.uni_paderborn.fujaba.muml.verification.FOTCTL"
+            id="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL"
             name="FOTCTL">
-            <keywordReference id="de.uni_paderborn.fujaba.muml.verification.ui.keyword_FOTCTL"/>
+            <keywordReference id="org.muml.reconfigurationverification.fotctl.xtext.ui.keyword_FOTCTL"/>
         </page>
         <page
-            category="de.uni_paderborn.fujaba.muml.verification.FOTCTL"
+            category="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL"
             class="org.muml.reconfigurationverification.fotctl.xtext.ui.FOTCTLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
-            id="de.uni_paderborn.fujaba.muml.verification.FOTCTL.coloring"
+            id="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL.coloring"
             name="Syntax Coloring">
-            <keywordReference id="de.uni_paderborn.fujaba.muml.verification.ui.keyword_FOTCTL"/>
+            <keywordReference id="org.muml.reconfigurationverification.fotctl.xtext.ui.keyword_FOTCTL"/>
         </page>
         <page
-            category="de.uni_paderborn.fujaba.muml.verification.FOTCTL"
+            category="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL"
             class="org.muml.reconfigurationverification.fotctl.xtext.ui.FOTCTLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
-            id="de.uni_paderborn.fujaba.muml.verification.FOTCTL.templates"
+            id="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL.templates"
             name="Templates">
-            <keywordReference id="de.uni_paderborn.fujaba.muml.verification.ui.keyword_FOTCTL"/>
+            <keywordReference id="org.muml.reconfigurationverification.fotctl.xtext.ui.keyword_FOTCTL"/>
         </page>
     </extension>
     <extension
             point="org.eclipse.ui.propertyPages">
         <page
             class="org.muml.reconfigurationverification.fotctl.xtext.ui.FOTCTLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-            id="de.uni_paderborn.fujaba.muml.verification.FOTCTL"
+            id="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL"
             name="FOTCTL">
-            <keywordReference id="de.uni_paderborn.fujaba.muml.verification.ui.keyword_FOTCTL"/>
+            <keywordReference id="org.muml.reconfigurationverification.fotctl.xtext.ui.keyword_FOTCTL"/>
             <enabledWhen>
 	            <adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -116,14 +116,14 @@
     <extension
         point="org.eclipse.ui.keywords">
         <keyword
-            id="de.uni_paderborn.fujaba.muml.verification.ui.keyword_FOTCTL"
+            id="org.muml.reconfigurationverification.fotctl.xtext.ui.keyword_FOTCTL"
             label="FOTCTL"/>
     </extension>
     <extension
          point="org.eclipse.ui.commands">
       <command
             description="Trigger expensive validation"
-            id="de.uni_paderborn.fujaba.muml.verification.FOTCTL.validate"
+            id="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL.validate"
             name="Validate">
       </command>
       <!-- copy qualified name -->
@@ -144,12 +144,12 @@
         <menuContribution
             locationURI="popup:#TextEditorContext?after=group.edit">
              <command
-                 commandId="de.uni_paderborn.fujaba.muml.verification.FOTCTL.validate"
+                 commandId="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL.validate"
                  style="push"
                  tooltip="Trigger expensive validation">
             <visibleWhen checkEnabled="false">
                 <reference
-                    definitionId="de.uni_paderborn.fujaba.muml.verification.FOTCTL.Editor.opened">
+                    definitionId="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL.Editor.opened">
                 </reference>
             </visibleWhen>
          </command>  
@@ -159,7 +159,7 @@
          	<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName" 
          		style="push" tooltip="Copy Qualified Name">
             	<visibleWhen checkEnabled="false">
-                	<reference definitionId="de.uni_paderborn.fujaba.muml.verification.FOTCTL.Editor.opened" />
+                	<reference definitionId="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL.Editor.opened" />
             	</visibleWhen>
          	</command>  
          </menuContribution>
@@ -167,7 +167,7 @@
          	<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
             	style="push" tooltip="Copy Qualified Name">
             	<visibleWhen checkEnabled="false">
-                	<reference definitionId="de.uni_paderborn.fujaba.muml.verification.FOTCTL.Editor.opened" />
+                	<reference definitionId="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL.Editor.opened" />
             	</visibleWhen>
          	</command>  
          </menuContribution>
@@ -176,7 +176,7 @@
 				style="push" tooltip="Copy Qualified Name">
          		<visibleWhen checkEnabled="false">
 	            	<and>
-	            		<reference definitionId="org.muml.reconfigurationverification.fotctl.xtextEditor.opened" />
+	            		<reference definitionId="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL.XtextEditor.opened" />
 						<iterate>
 							<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 						</iterate>
@@ -189,7 +189,7 @@
 		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
 			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
 				<visibleWhen checkEnabled="false">
-                	<reference definitionId="de.uni_paderborn.fujaba.muml.verification.FOTCTL.Editor.opened">
+                	<reference definitionId="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL.Editor.opened">
                 	</reference>
             	</visibleWhen>
 			</command>
@@ -201,7 +201,7 @@
             commandId="org.eclipse.xtext.ui.editor.FindReferences">
             <activeWhen>
                 <reference
-                    definitionId="de.uni_paderborn.fujaba.muml.verification.FOTCTL.Editor.opened">
+                    definitionId="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL.Editor.opened">
                 </reference>
             </activeWhen>
         </handler>
@@ -224,7 +224,7 @@
     </extension>
 
 
-    <!-- marker definitions for de.uni_paderborn.fujaba.muml.verification.FOTCTL -->
+    <!-- marker definitions for org.muml.reconfigurationverification.fotctl.xtext.FOTCTL -->
     <extension
             id="fotctl.check.fast"
             name="FOTCTL Problem"
@@ -255,7 +255,7 @@
 			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
 			<activeWhen>
 				<reference
-					definitionId="de.uni_paderborn.fujaba.muml.verification.FOTCTL.Editor.opened">
+					definitionId="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -275,36 +275,42 @@
 				style="push"
 				tooltip="Open Quick Outline">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="de.uni_paderborn.fujaba.muml.verification.FOTCTL.Editor.opened"/>
+					<reference definitionId="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL.Editor.opened"/>
 				</visibleWhen>
 			</command>
 		</menuContribution>
 	</extension>
 
   <extension point="org.eclipse.compare.contentViewers">
-    <viewer id="de.uni_paderborn.fujaba.muml.verification.FOTCTL.compare.contentViewers"
+    <viewer id="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL.compare.contentViewers"
             class="org.muml.reconfigurationverification.fotctl.xtext.ui.FOTCTLExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
             extensions="fotctl">
     </viewer>
   </extension>
   <extension point="org.eclipse.compare.contentMergeViewers">
-    <viewer id="de.uni_paderborn.fujaba.muml.verification.FOTCTL.compare.contentMergeViewers"
+    <viewer id="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL.compare.contentMergeViewers"
             class="org.muml.reconfigurationverification.fotctl.xtext.ui.FOTCTLExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
             extensions="fotctl" label="FOTCTL Compare">
      </viewer>
   </extension>
   <extension point="org.eclipse.ui.editors.documentProviders">
-    <provider id="de.uni_paderborn.fujaba.muml.verification.FOTCTL.editors.documentProviders"
+    <provider id="org.muml.reconfigurationverification.fotctl.xtext.FOTCTL.editors.documentProviders"
             class="org.muml.reconfigurationverification.fotctl.xtext.ui.FOTCTLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
             extensions="fotctl">
     </provider>
   </extension>
-    <!-- quickfix marker resolution generator for de.uni_paderborn.fujaba.muml.verification.FOTCTL -->
+  <extension point="org.eclipse.team.core.fileTypes">
+    <fileTypes
+            extension="fotctl"
+            type="text">
+    </fileTypes>
+  </extension>
+    <!-- quickfix marker resolution generator for org.muml.reconfigurationverification.fotctl.xtext.FOTCTL -->
     <extension
             point="org.eclipse.ui.ide.markerResolution">
         <markerResolutionGenerator
             class="org.muml.reconfigurationverification.fotctl.xtext.ui.FOTCTLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="de.uni_paderborn.fujaba.muml.verification.ui.fotctl.check.fast">
+            markerType="org.muml.reconfigurationverification.fotctl.xtext.ui.fotctl.check.fast">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
@@ -312,7 +318,7 @@
         </markerResolutionGenerator>
         <markerResolutionGenerator
             class="org.muml.reconfigurationverification.fotctl.xtext.ui.FOTCTLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="de.uni_paderborn.fujaba.muml.verification.ui.fotctl.check.normal">
+            markerType="org.muml.reconfigurationverification.fotctl.xtext.ui.fotctl.check.normal">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
@@ -320,7 +326,7 @@
         </markerResolutionGenerator>
         <markerResolutionGenerator
             class="org.muml.reconfigurationverification.fotctl.xtext.ui.FOTCTLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="de.uni_paderborn.fujaba.muml.verification.ui.fotctl.check.expensive">
+            markerType="org.muml.reconfigurationverification.fotctl.xtext.ui.fotctl.check.expensive">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">

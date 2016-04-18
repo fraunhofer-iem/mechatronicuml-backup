@@ -20,5 +20,6 @@ Import-Package: org.apache.commons.logging,
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.muml.reconfigurationverification.fotctl.xtext.ui.contentassist,
  org.muml.reconfigurationverification.fotctl.xtext.ui.contentassist.antlr,
- org.muml.reconfigurationverification.fotctl.xtext.ui.quickfix
+ org.muml.reconfigurationverification.fotctl.xtext.ui.quickfix,
+ org.muml.reconfigurationverification.fotctl.xtext.ui.contentassist.antlr.internal
 Bundle-Activator: org.muml.reconfigurationverification.fotctl.xtext.ui.internal.FOTCTLActivator

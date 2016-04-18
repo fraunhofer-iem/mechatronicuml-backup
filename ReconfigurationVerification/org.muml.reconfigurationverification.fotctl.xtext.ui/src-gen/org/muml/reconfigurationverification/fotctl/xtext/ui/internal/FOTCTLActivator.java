@@ -23,7 +23,7 @@ import com.google.inject.Module;
  */
 public class FOTCTLActivator extends AbstractUIPlugin {
 	
-	public static final String DE_UNI_PADERBORN_FUJABA_MUML_VERIFICATION_FOTCTL = "de.uni_paderborn.fujaba.muml.verification.FOTCTL";
+	public static final String ORG_MUML_RECONFIGURATIONVERIFICATION_FOTCTL_XTEXT_FOTCTL = "org.muml.reconfigurationverification.fotctl.xtext.FOTCTL";
 	
 	private static final Logger logger = Logger.getLogger(FOTCTLActivator.class);
 	
@@ -73,7 +73,7 @@ public class FOTCTLActivator extends AbstractUIPlugin {
 	}
 
 	protected Module getRuntimeModule(String grammar) {
-		if (DE_UNI_PADERBORN_FUJABA_MUML_VERIFICATION_FOTCTL.equals(grammar)) {
+		if (ORG_MUML_RECONFIGURATIONVERIFICATION_FOTCTL_XTEXT_FOTCTL.equals(grammar)) {
 			return new org.muml.reconfigurationverification.fotctl.xtext.FOTCTLRuntimeModule();
 		}
 		
@@ -81,7 +81,7 @@ public class FOTCTLActivator extends AbstractUIPlugin {
 	}
 	
 	protected Module getUiModule(String grammar) {
-		if (DE_UNI_PADERBORN_FUJABA_MUML_VERIFICATION_FOTCTL.equals(grammar)) {
+		if (ORG_MUML_RECONFIGURATIONVERIFICATION_FOTCTL_XTEXT_FOTCTL.equals(grammar)) {
 			return new org.muml.reconfigurationverification.fotctl.xtext.ui.FOTCTLUiModule(this);
 		}
 		

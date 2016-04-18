@@ -4,7 +4,7 @@ import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
-var grammarURI = "classpath:/de/uni_paderborn/fujaba/muml/verification/FOTCTL.xtext"
+var grammarURI = "classpath:/org/muml/reconfigurationverification/fotctl/xtext/FOTCTL.xtext"
 var file.extensions = "fotctl"
 var projectName = "org.muml.reconfigurationverification.fotctl.xtext"
 var runtimeProject = "../${projectName}"
@@ -13,7 +13,7 @@ Workflow {
 	bean = StandaloneSetup {
 		scanClassPath  = true
 		platformUri = "${runtimeProject}/.."
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.verification.fotctl.FotctlPackage"
+		registerGeneratedEPackage = "org.muml.reconfigurationverification.fotctl.FotctlPackage"
 	
 		// registerGenModelFile = "platform:/resource/de.uni_paderborn.fujaba.muml.verification.fotctl/model/FOTCTL.genmodel"
 	
