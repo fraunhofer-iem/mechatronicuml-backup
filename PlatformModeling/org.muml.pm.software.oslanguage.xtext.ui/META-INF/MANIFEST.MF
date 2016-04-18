@@ -23,7 +23,7 @@ Require-Bundle: org.eclipse.xtext.ui,
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib,
  org.muml.core.modelinstance
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Activator: org.muml.pm.software.oslanguage.xtext.ui.internal.OperatingSystemLanguageActivator
 Export-Package: org.muml.pm.software.oslanguage.xtext.ui.contentassist,
  org.muml.pm.software.oslanguage.xtext.ui.contentassist.antlr,
