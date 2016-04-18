@@ -3,7 +3,6 @@ package org.muml.psm.api.apimappinglanguage.xtext.parser.antlr.internal;
 import org.eclipse.xtext.*;
 import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
-import org.muml.psm.api.apimappinglanguage.xtext.services.APIMappingLanguageGrammarAccess;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.common.util.Enumerator;
@@ -11,6 +10,10 @@ import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
 import org.eclipse.xtext.parser.antlr.AntlrDatatypeRuleToken;
+import org.muml.psm.api.apimappinglanguage.xtext.services.APIMappingLanguageGrammarAccess;
+
+
+
 import org.antlr.runtime.*;
 import java.util.Stack;
 import java.util.List;
@@ -224,7 +227,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
             	           			current, 
             	           			"imports",
             	            		lv_imports_0_0, 
-            	            		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Import");
+            	            		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.Import");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -265,7 +268,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                    			current, 
                    			"name",
                     		lv_name_2_0, 
-                    		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.EString");
+                    		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.EString");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -311,7 +314,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                            			current, 
                            			"portApiMappings",
                             		lv_portApiMappings_4_0, 
-                            		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.PortApiMapping");
+                            		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.PortApiMapping");
                     	        afterParserOrEnumRuleCall();
                     	    
 
@@ -361,7 +364,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     	           			current, 
                     	           			"portApiMappings",
                     	            		lv_portApiMappings_6_0, 
-                    	            		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.PortApiMapping");
+                    	            		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.PortApiMapping");
                     	    	        afterParserOrEnumRuleCall();
                     	    	    
 
@@ -426,7 +429,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                            			current, 
                            			"comment",
                             		lv_comment_9_0, 
-                            		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.EString");
+                            		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.EString");
                     	        afterParserOrEnumRuleCall();
                     	    
 
@@ -1116,7 +1119,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                            			current, 
                            			"parameterBindings",
                             		lv_parameterBindings_3_0, 
-                            		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.ParamaterBinding");
+                            		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.ParamaterBinding");
                     	        afterParserOrEnumRuleCall();
                     	    
 
@@ -1166,7 +1169,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     	           			current, 
                     	           			"parameterBindings",
                     	            		lv_parameterBindings_5_0, 
-                    	            		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.ParamaterBinding");
+                    	            		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.ParamaterBinding");
                     	    	        afterParserOrEnumRuleCall();
                     	    	    
 
@@ -1374,7 +1377,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                            			current, 
                            			"value",
                             		lv_value_3_1, 
-                            		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Expression");
+                            		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.Expression");
                     	        afterParserOrEnumRuleCall();
                     	    
 
@@ -1399,7 +1402,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                            			current, 
                            			"value",
                             		lv_value_3_2, 
-                            		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.EnumerationValueExpression");
+                            		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.EnumerationValueExpression");
                     	        afterParserOrEnumRuleCall();
                     	    
 
@@ -1424,7 +1427,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                            			current, 
                            			"value",
                             		lv_value_3_3, 
-                            		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.ContiniousPortExpressions");
+                            		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.ContiniousPortExpressions");
                     	        afterParserOrEnumRuleCall();
                     	    
 
@@ -2341,7 +2344,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
             	           			current, 
             	           			"expressions",
             	            		lv_expressions_2_0, 
-            	            		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.ExpressionStartRule");
+            	            		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.ExpressionStartRule");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -2507,7 +2510,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                    			current, 
                    			"loopTest",
                     		lv_loopTest_3_0, 
-                    		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Expression");
+                    		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.Expression");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -2809,7 +2812,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                            			current, 
                            			"rhs_assignExpression",
                             		lv_rhs_assignExpression_3_0, 
-                            		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Expression");
+                            		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.Expression");
                     	        afterParserOrEnumRuleCall();
                     	    
 
@@ -2935,7 +2938,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                    			current, 
                    			"loopTest",
                     		lv_loopTest_2_0, 
-                    		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Expression");
+                    		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.Expression");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -3123,7 +3126,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                    			current, 
                    			"loopTest",
                     		lv_loopTest_4_0, 
-                    		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Expression");
+                    		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.Expression");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -3249,7 +3252,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                    			current, 
                    			"ifCondition",
                     		lv_ifCondition_2_0, 
-                    		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Expression");
+                    		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.Expression");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -3502,7 +3505,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                    			current, 
                    			"elseIfCondition",
                     		lv_elseIfCondition_2_0, 
-                    		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Expression");
+                    		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.Expression");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -3658,7 +3661,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                    			current, 
                    			"expression",
                     		lv_expression_2_0, 
-                    		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Expression");
+                    		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.Expression");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -8490,7 +8493,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                            			current, 
                            			"parameterBinding",
                             		lv_parameterBinding_2_0, 
-                            		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.ParamaterBinding");
+                            		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.ParamaterBinding");
                     	        afterParserOrEnumRuleCall();
                     	    
 
@@ -8540,7 +8543,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     	           			current, 
                     	           			"parameterBinding",
                     	            		lv_parameterBinding_4_0, 
-                    	            		"org.muml.psm.api.apimappinglanguage.APIMappingLanguage.ParamaterBinding");
+                    	            		"org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.ParamaterBinding");
                     	    	        afterParserOrEnumRuleCall();
                     	    	    
 

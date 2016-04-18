@@ -4,10 +4,11 @@
 package org.muml.psm.api.apimappinglanguage.xtext.ui;
 
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
-import org.muml.psm.api.apimappinglanguage.xtext.ui.internal.APIMappingLanguageActivator;
 import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
+
+import org.muml.psm.api.apimappinglanguage.xtext.ui.internal.APIMappingLanguageActivator;
 
 /**
  * This class was generated. Customizations should only happen in a newly
@@ -22,7 +23,7 @@ public class APIMappingLanguageExecutableExtensionFactory extends AbstractGuiceA
 	
 	@Override
 	protected Injector getInjector() {
-		return APIMappingLanguageActivator.getInstance().getInjector(APIMappingLanguageActivator.ORG_MUML_PSM_API_APIMAPPINGLANGUAGE_APIMAPPINGLANGUAGE);
+		return APIMappingLanguageActivator.getInstance().getInjector(APIMappingLanguageActivator.ORG_MUML_PSM_API_APIMAPPINGLANGUAGE_XTEXT_APIMAPPINGLANGUAGE);
 	}
 	
 }

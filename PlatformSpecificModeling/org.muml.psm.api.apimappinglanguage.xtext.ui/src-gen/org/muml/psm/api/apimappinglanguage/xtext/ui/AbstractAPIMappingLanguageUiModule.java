@@ -7,7 +7,7 @@ package org.muml.psm.api.apimappinglanguage.xtext.ui;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
- * Manual modifications go to {org.muml.psm.api.apimappinglanguage.ui.APIMappingLanguageUiModule}
+ * Manual modifications go to {org.muml.psm.api.apimappinglanguage.xtext.ui.APIMappingLanguageUiModule}
  */
 @SuppressWarnings("all")
 public abstract class AbstractAPIMappingLanguageUiModule extends org.eclipse.xtext.ui.DefaultUiModule {

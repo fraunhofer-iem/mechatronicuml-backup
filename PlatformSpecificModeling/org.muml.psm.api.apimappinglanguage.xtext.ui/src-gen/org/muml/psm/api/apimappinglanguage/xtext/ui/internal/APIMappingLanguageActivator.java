@@ -23,7 +23,7 @@ import com.google.inject.Module;
  */
 public class APIMappingLanguageActivator extends AbstractUIPlugin {
 	
-	public static final String ORG_MUML_PSM_API_APIMAPPINGLANGUAGE_APIMAPPINGLANGUAGE = "org.muml.psm.api.apimappinglanguage.APIMappingLanguage";
+	public static final String ORG_MUML_PSM_API_APIMAPPINGLANGUAGE_XTEXT_APIMAPPINGLANGUAGE = "org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage";
 	
 	private static final Logger logger = Logger.getLogger(APIMappingLanguageActivator.class);
 	
@@ -73,7 +73,7 @@ public class APIMappingLanguageActivator extends AbstractUIPlugin {
 	}
 
 	protected Module getRuntimeModule(String grammar) {
-		if (ORG_MUML_PSM_API_APIMAPPINGLANGUAGE_APIMAPPINGLANGUAGE.equals(grammar)) {
+		if (ORG_MUML_PSM_API_APIMAPPINGLANGUAGE_XTEXT_APIMAPPINGLANGUAGE.equals(grammar)) {
 			return new org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguageRuntimeModule();
 		}
 		
@@ -81,7 +81,7 @@ public class APIMappingLanguageActivator extends AbstractUIPlugin {
 	}
 	
 	protected Module getUiModule(String grammar) {
-		if (ORG_MUML_PSM_API_APIMAPPINGLANGUAGE_APIMAPPINGLANGUAGE.equals(grammar)) {
+		if (ORG_MUML_PSM_API_APIMAPPINGLANGUAGE_XTEXT_APIMAPPINGLANGUAGE.equals(grammar)) {
 			return new org.muml.psm.api.apimappinglanguage.xtext.ui.APIMappingLanguageUiModule(this);
 		}
 		

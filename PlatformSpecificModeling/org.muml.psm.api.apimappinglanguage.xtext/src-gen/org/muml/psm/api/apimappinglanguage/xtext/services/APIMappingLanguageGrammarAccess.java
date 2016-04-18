@@ -20,7 +20,7 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	
 	
 	public class MappingRepositoryElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.psm.api.apimappinglanguage.APIMappingLanguage.MappingRepository");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.MappingRepository");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cImportsAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cImportsImportParserRuleCall_0_0 = (RuleCall)cImportsAssignment_0.eContents().get(0);
@@ -111,7 +111,7 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	public class ImportElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Import");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.Import");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cImportURIAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -135,7 +135,7 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	public class PortApiMappingElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.psm.api.apimappinglanguage.APIMappingLanguage.PortApiMapping");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.PortApiMapping");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cPortInstanceKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cPortAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -205,7 +205,7 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.psm.api.apimappinglanguage.APIMappingLanguage.Expression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.Expression");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cAPICallExpressionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cLogicalExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
@@ -225,7 +225,7 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	public class EnumerationValueExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.psm.api.apimappinglanguage.APIMappingLanguage.EnumerationValueExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.EnumerationValueExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cEnumKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cEnumValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -253,7 +253,7 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	public class APICallExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.psm.api.apimappinglanguage.APIMappingLanguage.APICallExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.APICallExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cAPI_CallKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cApiCommandAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -320,7 +320,7 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	public class ParamaterBindingElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.psm.api.apimappinglanguage.APIMappingLanguage.ParamaterBinding");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.ParamaterBinding");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cParameterBindingAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cParameterAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -374,7 +374,7 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	public class ContiniousPortExpressionsElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.psm.api.apimappinglanguage.APIMappingLanguage.ContiniousPortExpressions");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.ContiniousPortExpressions");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cPortKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cContinuousPortAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -402,7 +402,7 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	public class ExpressionStartRuleElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.psm.api.apimappinglanguage.APIMappingLanguage.ExpressionStartRule");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.ExpressionStartRule");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cAssignmentParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cForLoopParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
@@ -452,7 +452,7 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	public class EStringElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.psm.api.apimappinglanguage.APIMappingLanguage.EString");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.EString");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cQualifiedNameParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
@@ -472,7 +472,7 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.psm.api.apimappinglanguage.APIMappingLanguage.QualifiedName");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage.QualifiedName");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
@@ -541,7 +541,7 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
 		Grammar grammar = grammarProvider.getGrammar(this);
 		while (grammar != null) {
-			if ("org.muml.psm.api.apimappinglanguage.APIMappingLanguage".equals(grammar.getName())) {
+			if ("org.muml.psm.api.apimappinglanguage.xtext.APIMappingLanguage".equals(grammar.getName())) {
 				return grammar;
 			}
 			List<Grammar> grammars = grammar.getUsedGrammars();

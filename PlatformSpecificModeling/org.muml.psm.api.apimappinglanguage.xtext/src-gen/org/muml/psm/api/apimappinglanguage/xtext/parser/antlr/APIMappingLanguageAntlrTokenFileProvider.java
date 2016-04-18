@@ -11,6 +11,6 @@ public class APIMappingLanguageAntlrTokenFileProvider implements IAntlrTokenFile
 	@Override
 	public InputStream getAntlrTokenFile() {
 		ClassLoader classLoader = getClass().getClassLoader();
-    	return classLoader.getResourceAsStream("org/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.tokens");
+    	return classLoader.getResourceAsStream("org/muml/psm/api/apimappinglanguage/xtext/parser/antlr/internal/InternalAPIMappingLanguage.tokens");
 	}
 }
