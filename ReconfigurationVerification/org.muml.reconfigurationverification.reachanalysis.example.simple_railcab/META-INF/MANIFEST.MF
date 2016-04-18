@@ -26,6 +26,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.muml.reconfigurationverification.fotctl;bundle-version="1.0.0",
  org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling;bundle-version="1.0.0",
  org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.kronos.generator;bundle-version="1.0.0",
- org.muml.core.modelinstance;bundle-version="0.3.1",
+ org.muml.core,
  org.junit;bundle-version="4.10.0"
 Bundle-ActivationPolicy: lazy

@@ -17,6 +17,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm;bundle-version="0.4.0",
  org.muml.core.reachanalysis.core;bundle-version="0.4.0",
  org.muml.storydiagram.reachanalysis.sdm;bundle-version="0.4.0",
- org.muml.core.modelinstance;bundle-version="0.3.1",
+ org.muml.core,
  org.junit;bundle-version="4.10.0"
 Bundle-ActivationPolicy: lazy

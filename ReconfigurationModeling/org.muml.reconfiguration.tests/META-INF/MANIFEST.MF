@@ -10,7 +10,7 @@ Require-Bundle: org.eclipse.ui,
  org.muml.pim;bundle-version="0.4.0",
  org.muml.reconfiguration.componentstorydiagram;bundle-version="0.4.0",
  org.muml.reconfiguration.componentstorypattern;bundle-version="0.4.0",
- org.muml.core.modelinstance;bundle-version="0.4.0",
+ org.muml.core,
  org.muml.core.tests;bundle-version="0.3.1"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
