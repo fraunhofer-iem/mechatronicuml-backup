@@ -7,9 +7,12 @@ import org.eclipse.emf.common.notify.Notifier;
 
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
+import org.eclipse.emf.ecore.EAnnotation;
+import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
+import org.muml.core.Extension;
 import org.muml.modelica.transform.*;
 import org.muml.pim.realtimestatechart.PrioritizedElement;
 import org.muml.pim.realtimestatechart.Region;
@@ -95,6 +98,10 @@ public class TransformAdapterFactory extends AdapterFactoryImpl {
 				return createRealtimeStatechartTransformationRootObjectAdapter();
 			}
 			@Override
+			public Adapter casePositionExtension(PositionExtension object) {
+				return createPositionExtensionAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -109,6 +116,18 @@ public class TransformAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseRegion(Region object) {
 				return createRegionAdapter();
+			}
+			@Override
+			public Adapter caseExtension(Extension object) {
+				return createExtensionAdapter();
+			}
+			@Override
+			public Adapter caseEModelElement(EModelElement object) {
+				return createEModelElementAdapter();
+			}
+			@Override
+			public Adapter caseEAnnotation(EAnnotation object) {
+				return createEAnnotationAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -215,6 +234,20 @@ public class TransformAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.muml.modelica.transform.PositionExtension <em>Position Extension</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.muml.modelica.transform.PositionExtension
+	 * @generated
+	 */
+	public Adapter createPositionExtensionAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.muml.core.ExtendableElement <em>Extendable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -267,6 +300,48 @@ public class TransformAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRegionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.muml.core.Extension <em>Extension</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.muml.core.Extension
+	 * @generated
+	 */
+	public Adapter createExtensionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.ecore.EModelElement <em>EModel Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.emf.ecore.EModelElement
+	 * @generated
+	 */
+	public Adapter createEModelElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.ecore.EAnnotation <em>EAnnotation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.emf.ecore.EAnnotation
+	 * @generated
+	 */
+	public Adapter createEAnnotationAdapter() {
 		return null;
 	}
 

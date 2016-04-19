@@ -61,6 +61,7 @@ public class TransformFactoryImpl extends EFactoryImpl implements TransformFacto
 			case TransformPackage.REGION_INSTANCE: return createRegionInstance();
 			case TransformPackage.TRANSFORMATION_ROOT_OBJECT: return createTransformationRootObject();
 			case TransformPackage.REALTIME_STATECHART_TRANSFORMATION_ROOT_OBJECT: return createRealtimeStatechartTransformationRootObject();
+			case TransformPackage.POSITION_EXTENSION: return createPositionExtension();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -124,6 +125,16 @@ public class TransformFactoryImpl extends EFactoryImpl implements TransformFacto
 	public RealtimeStatechartTransformationRootObject createRealtimeStatechartTransformationRootObject() {
 		RealtimeStatechartTransformationRootObjectImpl realtimeStatechartTransformationRootObject = new RealtimeStatechartTransformationRootObjectImpl();
 		return realtimeStatechartTransformationRootObject;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PositionExtension createPositionExtension() {
+		PositionExtensionImpl positionExtension = new PositionExtensionImpl();
+		return positionExtension;
 	}
 
 	/**

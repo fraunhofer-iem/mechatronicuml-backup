@@ -52,4 +52,5 @@
       <eTypeArguments eClassifier="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/RealtimeStatechart"/>
     </eGenericSuperTypes>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PositionExtension" eSuperTypes="../../org.muml.core/model/core.ecore#//Extension http://www.eclipse.org/emf/2002/Ecore#//EAnnotation"/>
 </ecore:EPackage>

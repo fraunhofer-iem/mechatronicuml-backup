@@ -12,8 +12,10 @@ import org.eclipse.emf.ecore.ETypeParameter;
 import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.muml.core.CorePackage;
 import org.muml.modelica.transform.Entry;
 import org.muml.modelica.transform.Map;
+import org.muml.modelica.transform.PositionExtension;
 import org.muml.modelica.transform.RealtimeStatechartTransformationRootObject;
 import org.muml.modelica.transform.RegionInstance;
 import org.muml.modelica.transform.Root;
@@ -82,6 +84,13 @@ public class TransformPackageImpl extends EPackageImpl implements TransformPacka
 	private EClass realtimeStatechartTransformationRootObjectEClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass positionExtensionEClass = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -128,7 +137,6 @@ public class TransformPackageImpl extends EPackageImpl implements TransformPacka
 		isInited = true;
 
 		// Initialize simple dependencies
-		EcorePackage.eINSTANCE.eClass();
 		PimPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -286,6 +294,15 @@ public class TransformPackageImpl extends EPackageImpl implements TransformPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getPositionExtension() {
+		return positionExtensionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public TransformFactory getTransformFactory() {
 		return (TransformFactory)getEFactoryInstance();
 	}
@@ -329,6 +346,8 @@ public class TransformPackageImpl extends EPackageImpl implements TransformPacka
 		createEReference(transformationRootObjectEClass, TRANSFORMATION_ROOT_OBJECT__EOBJECT);
 
 		realtimeStatechartTransformationRootObjectEClass = createEClass(REALTIME_STATECHART_TRANSFORMATION_ROOT_OBJECT);
+
+		positionExtensionEClass = createEClass(POSITION_EXTENSION);
 	}
 
 	/**
@@ -357,6 +376,7 @@ public class TransformPackageImpl extends EPackageImpl implements TransformPacka
 		// Obtain other dependent packages
 		RealtimestatechartPackage theRealtimestatechartPackage = (RealtimestatechartPackage)EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 
 		// Create type parameters
 		ETypeParameter transformationRootObjectEClass_T = addETypeParameter(transformationRootObjectEClass, "T");
@@ -369,6 +389,8 @@ public class TransformPackageImpl extends EPackageImpl implements TransformPacka
 		EGenericType g2 = createEGenericType(theRealtimestatechartPackage.getRealtimeStatechart());
 		g1.getETypeArguments().add(g2);
 		realtimeStatechartTransformationRootObjectEClass.getEGenericSuperTypes().add(g1);
+		positionExtensionEClass.getESuperTypes().add(theCorePackage.getExtension());
+		positionExtensionEClass.getESuperTypes().add(ecorePackage.getEAnnotation());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(mapEClass, Map.class, "Map", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -394,6 +416,8 @@ public class TransformPackageImpl extends EPackageImpl implements TransformPacka
 		initEReference(getTransformationRootObject_EObject(), g1, null, "eObject", null, 1, 1, TransformationRootObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(realtimeStatechartTransformationRootObjectEClass, RealtimeStatechartTransformationRootObject.class, "RealtimeStatechartTransformationRootObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(positionExtensionEClass, PositionExtension.class, "PositionExtension", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

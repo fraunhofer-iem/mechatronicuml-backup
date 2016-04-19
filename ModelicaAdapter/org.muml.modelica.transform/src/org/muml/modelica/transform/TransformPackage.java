@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.muml.core.CorePackage;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
 
 /**
@@ -382,6 +383,125 @@ public interface TransformPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.muml.modelica.transform.impl.PositionExtensionImpl <em>Position Extension</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.muml.modelica.transform.impl.PositionExtensionImpl
+	 * @see org.muml.modelica.transform.impl.TransformPackageImpl#getPositionExtension()
+	 * @generated
+	 */
+	int POSITION_EXTENSION = 6;
+
+	/**
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSITION_EXTENSION__EXTENSIONS = CorePackage.EXTENSION__EXTENSIONS;
+
+	/**
+	 * The feature id for the '<em><b>Extendable Base</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSITION_EXTENSION__EXTENDABLE_BASE = CorePackage.EXTENSION__EXTENDABLE_BASE;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSITION_EXTENSION__EANNOTATIONS = CorePackage.EXTENSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSITION_EXTENSION__SOURCE = CorePackage.EXTENSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Details</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSITION_EXTENSION__DETAILS = CorePackage.EXTENSION_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>EModel Element</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSITION_EXTENSION__EMODEL_ELEMENT = CorePackage.EXTENSION_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Contents</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSITION_EXTENSION__CONTENTS = CorePackage.EXTENSION_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>References</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSITION_EXTENSION__REFERENCES = CorePackage.EXTENSION_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of structural features of the '<em>Position Extension</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSITION_EXTENSION_FEATURE_COUNT = CorePackage.EXTENSION_FEATURE_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSITION_EXTENSION___GET_EXTENSION__ECLASS = CorePackage.EXTENSION___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSITION_EXTENSION___GET_EANNOTATION__STRING = CorePackage.EXTENSION_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Position Extension</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSITION_EXTENSION_OPERATION_COUNT = CorePackage.EXTENSION_OPERATION_COUNT + 1;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.muml.modelica.transform.Map <em>Map</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -540,6 +660,16 @@ public interface TransformPackage extends EPackage {
 	EClass getRealtimeStatechartTransformationRootObject();
 
 	/**
+	 * Returns the meta object for class '{@link org.muml.modelica.transform.PositionExtension <em>Position Extension</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Position Extension</em>'.
+	 * @see org.muml.modelica.transform.PositionExtension
+	 * @generated
+	 */
+	EClass getPositionExtension();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -693,6 +823,16 @@ public interface TransformPackage extends EPackage {
 		 * @generated
 		 */
 		EClass REALTIME_STATECHART_TRANSFORMATION_ROOT_OBJECT = eINSTANCE.getRealtimeStatechartTransformationRootObject();
+
+		/**
+		 * The meta object literal for the '{@link org.muml.modelica.transform.impl.PositionExtensionImpl <em>Position Extension</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.muml.modelica.transform.impl.PositionExtensionImpl
+		 * @see org.muml.modelica.transform.impl.TransformPackageImpl#getPositionExtension()
+		 * @generated
+		 */
+		EClass POSITION_EXTENSION = eINSTANCE.getPositionExtension();
 
 	}
 

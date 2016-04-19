@@ -76,6 +76,15 @@ public interface TransformFactory extends EFactory {
 	RealtimeStatechartTransformationRootObject createRealtimeStatechartTransformationRootObject();
 
 	/**
+	 * Returns a new object of class '<em>Position Extension</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Position Extension</em>'.
+	 * @generated
+	 */
+	PositionExtension createPositionExtension();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
