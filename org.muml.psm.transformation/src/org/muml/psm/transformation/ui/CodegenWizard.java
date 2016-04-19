@@ -114,7 +114,7 @@ public class CodegenWizard extends AbstractFujabaExportWizard {
 			protected IStatus doExecute(IProgressMonitor progressMonitor) {
 
 				Injector injector = APIMappingLanguageActivator.getInstance().getInjector(
-						APIMappingLanguageActivator.ORG_MUML_PSM_API_APIMAPPINGLANGUAGE_APIMAPPINGLANGUAGE);
+						APIMappingLanguageActivator.ORG_MUML_PSM_API_APIMAPPINGLANGUAGE_XTEXT_APIMAPPINGLANGUAGE);
 				FujabaResourceServiceProvider serviceProvider = new FujabaResourceServiceProvider();
 
 				injector.injectMembers(serviceProvider);
