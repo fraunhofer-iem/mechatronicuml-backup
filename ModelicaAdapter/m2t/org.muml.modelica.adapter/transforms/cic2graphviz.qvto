@@ -41,7 +41,7 @@ query DOT::getOrphans() : Set(Element) {
 	the "main" graph just connects nodes from the subgraphs
 */
 mapping ComponentInstanceConfiguration::cic2graphviz() : DotGraph
-	inherits EObject::initialGraphSettings, EObject::initialNodeSettings, EObject::initialEdgeSettings
+	inherits OclAny::initialGraphSettings, OclAny::initialNodeSettings, OclAny::initialEdgeSettings
 {
 	if (not self.parentStructuredComponentInstance.oclIsUndefined()) then {
 		nodes := self.parentStructuredComponentInstance.portInstances->map portInstance2node()->flatten();
@@ -143,7 +143,7 @@ mapping PortConnectorInstance::discreteConnectorInstance2edge(messageType : Mess
 	init {
 		var sender : PortInstance := if isSourceSender then self.portInstances->at(1) else self.portInstances->at(2) endif;
 		var receiver : PortInstance := if isSourceSender then self.portInstances->at(2) else self.portInstances->at(1) endif;
-		result := new DotEdge(
+		result := new UndirectedDotEdge(
 			//sender.map outPortInstance2node(messageType),
 			self.getSenderNode(sender, isSourceSender, messageType),
 			self.getReceiverNode(receiver, isSourceSender, messageType)
@@ -184,16 +184,11 @@ mapping PortConnectorInstance::contOrHybConnectorInstance2edges() : Sequence(Dot
 }
 
 // only needed to do an easier invresolve in dot2cicAnnotation.qvto
-mapping PortConnectorInstance::contOrHybConnectorInstance2edge() : DotEdge {
+mapping PortConnectorInstance::contOrHybConnectorInstance2edge() : UndirectedDotEdge {
 	init {
-		result := new DotEdge(
+		result := new UndirectedDotEdge(
 			self.portInstances->at(1).map contOrHybPortInstance2node(),
 			self.portInstances->at(2).map contOrHybPortInstance2node()
 		);
 	}
-}
-
-constructor DotEdge::DotEdge(source : DotNode, target : DotNode) {
-	result.source := source;
-	result.target := target;
 }

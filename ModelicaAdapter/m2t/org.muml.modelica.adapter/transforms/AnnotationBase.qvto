@@ -5,6 +5,7 @@ modeltype COMMON uses common("http://www.muml.org/graphviz/common/1.0.0");
 modeltype UTIL uses util("http://www.muml.org/graphviz/util/1.0.0");
 modeltype CORE uses core("http://www.muml.org/core/1.0.0");
 modeltype ECORE uses ecore("http://www.eclipse.org/emf/2002/Ecore");
+modeltype transform uses transform("http://www.muml.de/modelica/transform/1.0.0");
 
 library AnnotationBase access Naming;
 
@@ -78,12 +79,12 @@ query getNodeSet() : Set(Node) {
 	return Set{}; // never reached
 }
 
-mapping inout ExtendableElement::getOrCreateAnnotation(src : String) : EAnnotation {
+mapping inout ExtendableElement::getOrCreateAnnotation(src : String) : PositionExtension {
 	init {
-		result := self.annotation->select(source = src)->any(true);
+		result := self.extensions->selectByKind(PositionExtension)->any(true);
 	}
-	if (not self.annotation->includes(result)) then {
-		self.annotation := self.annotation->union(Set{result});
+	if (not self.extensions->includes(result)) then {
+		self.extensions := self.extensions->union(Set{result});
 	} endif;
 	result.source := src;
 }

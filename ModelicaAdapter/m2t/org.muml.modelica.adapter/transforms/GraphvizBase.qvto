@@ -11,21 +11,21 @@ modeltype ECORE uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 
 library GraphvizBase;
 
-constructor DotEdge::DotEdge(source : DotNode, target : DotNode) {
+constructor UndirectedDotEdge::UndirectedDotEdge(source : DotNode, target : DotNode) {
 	result.source := source;
 	result.target := target;
 }
 
 // using OclAny instead of EObject does not work
-mapping EObject::initialGraphSettings() : DotGraph {
+mapping OclAny::initialGraphSettings() : DotGraph {
 	graphSettings := createInitialGraphSettings();
 }
 
-mapping EObject::initialNodeSettings() : DotGraph {
+mapping OclAny::initialNodeSettings() : DotGraph {
 	nodeSettings := createInitialNodeSettings();
 }
 
-mapping EObject::initialEdgeSettings() : DotGraph {
+mapping OclAny::initialEdgeSettings() : DotGraph {
 	edgeSettings := createInitialEdgeSettings();
 }
 

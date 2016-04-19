@@ -36,16 +36,16 @@ mapping RealtimeStatechart::fixupPortOrRoleDataTypes() {
 
 mapping inout Variable::fixupPortOrRoleDataType()
 	when { self.dataType.oclIsKindOf(Port) or self.dataType.oclIsKindOf(Role) }
-{
+{	
 	// simply convert it to an integer
 	// (that is how selector expressions are transformed)
-	self.dataType := self.getDataType(INT);
+	self.dataType := self.oclAsType(EObject).getDataType(INT);
 }
 
 helper normalize(inout ep : DiscreteInteractionEndpointReference, root : RealtimeStatechart, sub : RealtimeStatechart, lastIdx : Integer) {
-	var feature : EStructuralFeature := ep.eContainingFeature();
+	var feature : EStructuralFeature := ep.oclAsType(EObject).eContainingFeature();
 	assert fatal (not feature.many) with log("unsupported expression");
-	var container : EObject := ep.eContainer();
+	var container : EObject := ep.oclAsType(EObject).eContainer();
 	var typedNamedElementExpression : TypedNamedElementExpression := ep.typedNamedElementExpression;
 	var positionSelector : PositionSelector := ep.position;
 	if (typedNamedElementExpression.oclIsUndefined()) then {
@@ -100,7 +100,7 @@ mapping createSelectorConstant(rtsc : RealtimeStatechart, name : String, idx : I
 	//variable.initializeExpression := new LiteralExpression(idx.toString());
 	//return variable;
 	init {
-		result := createVariable(rtsc, name, rtsc.getDataType(INT));
+		result := createVariable(rtsc, name, rtsc.oclAsType(EObject).getDataType(INT));
 	}
 	constant := true;
 	initializeExpression := new LiteralExpression(idx.toString());
@@ -141,7 +141,7 @@ query Set(Expression)::getDiscreteInteractionEndpointReferences() : Set(Discrete
 		if e.oclIsKindOf(DiscreteInteractionEndpointReference) then
 			e->asSet()
 		else
-			e.eContents()->select(oclIsKindOf(Expression))
+			e.oclAsType(EObject).eContents()->select(oclIsKindOf(Expression))
 		endif		
 	)->select(oclIsKindOf(DiscreteInteractionEndpointReference))->collect(oclAsType(DiscreteInteractionEndpointReference))->asSet()
 }

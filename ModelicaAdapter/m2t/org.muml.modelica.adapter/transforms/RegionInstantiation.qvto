@@ -30,7 +30,7 @@ mapping start() : Map {
 		assert fatal (rtsc.embeddedStatecharts()->collect(states)->collect(connectionPoints)->isEmpty()) with log("prev trans failed");
 		var clone : RealtimeStatechart = cloneRTSC(rtsc);
 		entries += object Entry {
-			key := comp;
+			key := comp.oclAsType(EObject);
 			value := clone;
 		};
 		clone.map transform(comp);

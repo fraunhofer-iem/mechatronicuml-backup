@@ -1,6 +1,7 @@
 import transforms.naming;
 import transforms.util;
 import transforms.GraphvizBase;
+import transforms.cic2graphviz;
 
 modeltype DOT uses dot("http://www.muml.org/graphviz/dot/1.0.0");
 modeltype RTSC uses pim::realtimestatechart("http://www.muml.org/pim/1.0.0");
@@ -31,7 +32,7 @@ query RTSC::getRootRTSCs() : Set(RealtimeStatechart) {
 }
 
 mapping RealtimeStatechart::rtsc2graphviz() : DotGraph
-	inherits EObject::initialGraphSettings, EObject::initialNodeSettings, EObject::initialEdgeSettings
+	inherits OclAny::initialGraphSettings, OclAny::initialNodeSettings, OclAny::initialEdgeSettings
 {
 	var nodeList : Sequence(DotNode) := self.states->map state2node();
 	self.transitions->transition2edge();
@@ -83,7 +84,7 @@ mapping Transition::transition2node() : DotNode {
 	name := self.getName();
 }
 
-mapping Transition::transition2edge(node : DotNode, isSource : Boolean) : DotEdge {
+mapping Transition::transition2edge(node : DotNode, isSource : Boolean) : UndirectedDotEdge {
 	if (isSource) {
 		source := self.source.resolveone(DotNode);
 		target := node;
@@ -98,13 +99,13 @@ helper RealtimeStatechart::addPortNodes(inout graph : DotGraph) {
 		var port : DotNode := ev.map toDelegationPort(true);
 		var mbox : DotNode := ev.map toMailbox();
 		graph.nodes += Set{port, mbox};
-		graph.edges += new DotEdge(port, mbox);
+		graph.edges += new UndirectedDotEdge(port, mbox);
 	};
 	self.allRaiseMessageEvents()->forEach(ev) {
 		var port : DotNode := ev.map toDelegationPort(false);
 		var msg : DotNode := ev.map toMessage();
 		graph.nodes += Set{port, msg};
-		graph.edges += new DotEdge(port, msg);
+		graph.edges += new UndirectedDotEdge(port, msg);
 	};
 }
 

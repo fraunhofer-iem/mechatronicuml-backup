@@ -71,7 +71,7 @@ ERROR: expected AtomicComponentInstance or StructuredComponentInstance
 */]
 [template private generateComponentInstance(componentInstance : AtomicComponentInstance, parentPackage : String, map : Map) ?
 	(componentInstance.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) {
-	behavior : RealtimeStatechart = map.get(componentInstance);
+	behavior : RealtimeStatechart = map.get(componentInstance.oclAsType(EObject));
      hybridPortInstanceSet : Set(HybridPortInstance) = componentInstance.portInstances->select(oclIsKindOf(HybridPortInstance))
 		->collect(oclAsType(HybridPortInstance))->asSet();
 }]
