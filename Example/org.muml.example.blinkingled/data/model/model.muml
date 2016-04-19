@@ -71,7 +71,7 @@
   <categories xmi:id="_yGgTv1L0EeWl58eUwm1Yvw" key="org.muml.pim.components.category" name="component">
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_2sZgwFL0EeWl58eUwm1Yvw" name="Main" behavior="_QbiYcFL1EeWl58eUwm1Yvw">
       <ports xsi:type="component:HybridPort" xmi:id="_86mIYFL0EeWl58eUwm1Yvw" name="LED_voltage" kind="OUT">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int8"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int8"/>
         <samplingInterval xmi:id="_LgNt8FL1EeWl58eUwm1Yvw">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_ME69gFL1EeWl58eUwm1Yvw" value="50"/>
         </samplingInterval>
@@ -79,7 +79,7 @@
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_46ZpYFL0EeWl58eUwm1Yvw" name="LED" componentKind="continuous component">
       <ports xsi:type="component:ContinuousPort" xmi:id="_6WB54FL0EeWl58eUwm1Yvw" name="voltage">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int8"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int8"/>
       </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_3g4m0FL2EeWl58eUwm1Yvw" name="System" componentKind="hybrid component">
