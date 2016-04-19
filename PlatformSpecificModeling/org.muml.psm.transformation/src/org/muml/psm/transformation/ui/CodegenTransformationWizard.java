@@ -116,7 +116,7 @@ public class CodegenTransformationWizard extends Wizard implements INewWizard {
 						Injector injector = APIMappingLanguageActivator
 								.getInstance()
 								.getInjector(
-										APIMappingLanguageActivator.ORG_MUML_PSM_API_APIMAPPINGLANGUAGE_APIMAPPINGLANGUAGE);
+										APIMappingLanguageActivator.ORG_MUML_PSM_API_APIMAPPINGLANGUAGE_XTEXT_APIMAPPINGLANGUAGE);
 						FujabaResourceServiceProvider serviceProvider = new FujabaResourceServiceProvider();
 
 						injector.injectMembers(serviceProvider);
