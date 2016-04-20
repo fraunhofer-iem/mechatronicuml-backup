@@ -1,6 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: Types
-Bundle-SymbolicName: de.fraunhofer.iem.m4a.iec61131.types
-Bundle-Version: 1.0.0.qualifier
-Bundle-Vendor: Fraunhofer IEM
