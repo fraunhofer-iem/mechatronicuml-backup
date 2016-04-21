@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--muml metamodel version 0.3.2 (r15221)-->
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BooleanLogic="http://www.muml.org/uppaal/adapter/mtctl/booleanlogic/1.0.0" xmlns:Comparables="http://www.muml.org/uppaal/adapter/mtctl/comparables/1.0.0" xmlns:Predicates="http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0" xmlns:Quantifiers="http://www.muml.org/uppaal/adapter/mtctl/quantifiers/1.0.0" xmlns:Sets="http://www.muml.org/uppaal/adapter/mtctl/sets/1.0.0" xmlns:actionlanguage="http://www.muml.org/pim/actionlanguage/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:mtctl="http://www.muml.org/uppaal/adapter/mtctl/1.0.0" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmlns:sdcec="http://www.muml.org/core/expressions/common/1.0.0" xmlns:types="http://www.muml.org/pim/types/1.0.0" xmi:id="_hjT_4IS6EeKrXO1iCP2aTw">
-  <categories xmi:id="_ZOIrYIS_EeKO9r0VL65xcg" key="org.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_ZOIrYIS_EeKO9r0VL65xcg" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_liNIQITDEeKO9r0VL65xcg" name="overtakee_Role" behavioralElement="_GRMY4oTCEeKO9r0VL65xcg">
       <variables xmi:id="_FxEZcM8uEeWiNvKFA70SzQ" name="accepted">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
       </variables>
       <transitions xmi:id="_tkWZwITDEeKO9r0VL65xcg" priority="2" target="_liNIQYTDEeKO9r0VL65xcg" source="_H6YLwCqbEeO22YgZcbz7_A">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_VKwrYJ2_EeKCPPYajybjTw" kind="TRIGGER">
@@ -68,7 +68,7 @@
               <expressions xsi:type="actionlanguage:Assignment" xmi:id="_Pqqigc8zEeW1U8aRHSre9A" assignOperator=":=">
                 <rhs_assignExpression xsi:type="actionlanguage:NondeterministicChoiceExpression" xmi:id="_Pqqigs8zEeW1U8aRHSre9A">
                   <range xmi:id="_Pqqig88zEeW1U8aRHSre9A"/>
-                  <dataType href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int8"/>
+                  <dataType href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int8"/>
                 </rhs_assignExpression>
                 <lhs_typedNamedElementExpression xmi:id="_PqqihM8zEeW1U8aRHSre9A" typedNamedElement="_FxEZcM8uEeWiNvKFA70SzQ"/>
               </expressions>
@@ -85,11 +85,11 @@
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_G2gx0OeIEeWOa7qYE7foIg" name="overtaker_Role" behavioralElement="_GQwUAITCEeKO9r0VL65xcg">
       <variables xmi:id="_G2gx0eeIEeWOa7qYE7foIg" name="speed">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int8"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int8"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_G2gx0ueIEeWOa7qYE7foIg" value="10"/>
       </variables>
       <variables xmi:id="_G2gx0-eIEeWOa7qYE7foIg" name="allAccept">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_G2gx1OeIEeWOa7qYE7foIg" value="true"/>
       </variables>
       <states xmi:id="_G2gx1eeIEeWOa7qYE7foIg" name="Main" initial="true">
@@ -398,7 +398,7 @@
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_9E-g8ITBEeKO9r0VL65xcg" name="Repository">
       <messageTypes xmi:id="_9xK4kITBEeKO9r0VL65xcg" name="request">
         <parameters xmi:id="_yzpYEM8rEeWiNvKFA70SzQ" name="speed">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int8"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int8"/>
         </parameters>
       </messageTypes>
       <messageTypes xmi:id="_--9hYITBEeKO9r0VL65xcg" name="accept"/>
@@ -407,7 +407,7 @@
       <messageTypes xmi:id="_mYhlsCqaEeO22YgZcbz7_A" name="laneChanged"/>
       <messageTypes xmi:id="_R2wRUNPuEeW0oNW54uyJfQ" name="answer">
         <parameters xmi:id="_S_6RwNPuEeW0oNW54uyJfQ" name="accept">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
         </parameters>
       </messageTypes>
     </modelElements>

@@ -10,7 +10,7 @@
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_P_fLJ8vpEeSqLp1EdST_nQ" name="LONG"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_P_fLKMvpEeSqLp1EdST_nQ" name="DOUBLE" primitiveType="DOUBLE"/>
   </categories>
-  <categories xmi:id="_P_fLKcvpEeSqLp1EdST_nQ" key="org.muml.realtimestatechart.category" name="realtimestatechart"/>
+  <categories xmi:id="_P_fLKcvpEeSqLp1EdST_nQ" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart"/>
   <categories xmi:id="_P_fLKsvpEeSqLp1EdST_nQ" key="org.muml.pim.protocol.category" name="protocol"/>
   <categories xmi:id="_P_fLK8vpEeSqLp1EdST_nQ" key="org.muml.pim.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_W-nc0OmrEeSE4Zrj1GnMCg" name="M1">
@@ -24,50 +24,50 @@
       <componentInstances xsi:type="instance:StructuredComponentInstance" xmi:id="_ERz3EOm5EeSyWM-b9FAU_g" name="car" componentType="_G-ulwOm4EeSE4Zrj1GnMCg">
         <embeddedCIC xmi:id="_Fd9hIOm5EeSyWM-b9FAU_g" name="CarSw">
           <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hIem5EeSyWM-b9FAU_g" name="sc6" componentType="_a4EskOmpEeSsPdK-DtuwOA" componentPart="_SOC94Om4EeSE4Zrj1GnMCg">
-            <extension xsi:type="properties:RequiredMemory" xmi:id="_Ua7BwO5xEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
+            <extensions xsi:type="properties:RequiredMemory" xmi:id="_Ua7BwO5xEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
               <requiredMemory xmi:id="_dX48wO5xEeSE6ppup-xcFg" value="1024.0" unit="KByte"/>
-            </extension>
+            </extensions>
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_Fd9hIum5EeSyWM-b9FAU_g" name="wheelSpin1" connectorInstances="_Fd9hXOm5EeSyWM-b9FAU_g" type="_Caj_YOmqEeSsPdK-DtuwOA"/>
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_Fd9hI-m5EeSyWM-b9FAU_g" name="brakePedalForce1" connectorInstances="_Fd9hX-m5EeSyWM-b9FAU_g" type="_CrySQOmqEeSsPdK-DtuwOA"/>
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_Fd9hJOm5EeSyWM-b9FAU_g" name="calliperForce1" connectorInstances="_Fd9hXem5EeSyWM-b9FAU_g" type="_CAercOmqEeSsPdK-DtuwOA"/>
           </componentInstances>
           <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hJem5EeSyWM-b9FAU_g" name="sc9" componentType="_cQep8OmpEeSsPdK-DtuwOA" componentPart="_UH2YIOm4EeSE4Zrj1GnMCg">
-            <extension xsi:type="properties:RequiredMemory" xmi:id="_oeJfgO5xEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
+            <extensions xsi:type="properties:RequiredMemory" xmi:id="_oeJfgO5xEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
               <requiredMemory xmi:id="_oeJfge5xEeSE6ppup-xcFg" value="128.0" unit="KByte"/>
-            </extension>
+            </extensions>
             <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Fd9hJum5EeSyWM-b9FAU_g" name="C1" connectorInstances="_Fd9hXum5EeSyWM-b9FAU_g" type="_5MOnkOmpEeSsPdK-DtuwOA"/>
           </componentInstances>
           <componentInstances xsi:type="instance:StructuredComponentInstance" xmi:id="_Fd9hJ-m5EeSyWM-b9FAU_g" name="calliper" componentType="_KyLJkOm1EeSE4Zrj1GnMCg" componentPart="_IQiL4Om4EeSE4Zrj1GnMCg">
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_Fd9hKOm5EeSyWM-b9FAU_g" name="D11" connectorInstances="_Fd9hPOm5EeSyWM-b9FAU_g _Fd9hXem5EeSyWM-b9FAU_g" type="_4HjBAOm1EeSE4Zrj1GnMCg"/>
             <embeddedCIC xmi:id="_Fd9hKem5EeSyWM-b9FAU_g" name="Calliper">
               <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hKum5EeSyWM-b9FAU_g" name="sc3" componentType="_LO8bkOmpEeSsPdK-DtuwOA" componentPart="_lZdKMOm1EeSE4Zrj1GnMCg">
-                <extension xsi:type="properties:RequiredMemory" xmi:id="__Ry2cO5xEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
+                <extensions xsi:type="properties:RequiredMemory" xmi:id="__Ry2cO5xEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
                   <requiredMemory xmi:id="__Ry2ce5xEeSE6ppup-xcFg" value="64.0" unit="KByte"/>
-                </extension>
+                </extensions>
                 <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Fd9hK-m5EeSyWM-b9FAU_g" name="C1" connectorInstances="_Fd9hOOm5EeSyWM-b9FAU_g" type="_-G_RYOmpEeSsPdK-DtuwOA"/>
               </componentInstances>
               <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hLOm5EeSyWM-b9FAU_g" name="sc1" componentType="_OcCpsOmpEeSsPdK-DtuwOA" componentPart="_noploOm1EeSE4Zrj1GnMCg">
-                <extension xsi:type="properties:RequiredMemory" xmi:id="_F0KXQO5yEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
+                <extensions xsi:type="properties:RequiredMemory" xmi:id="_F0KXQO5yEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
                   <requiredMemory xmi:id="_F0KXQe5yEeSE6ppup-xcFg" value="64.0" unit="KByte"/>
-                </extension>
+                </extensions>
                 <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Fd9hLem5EeSyWM-b9FAU_g" name="C1" connectorInstances="_Fd9hO-m5EeSyWM-b9FAU_g" type="_9Est8OmpEeSsPdK-DtuwOA"/>
               </componentInstances>
               <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hLum5EeSyWM-b9FAU_g" name="sc2" componentType="_QUA38OmpEeSsPdK-DtuwOA" componentPart="_pUBiUOm1EeSE4Zrj1GnMCg">
-                <extension xsi:type="properties:RequiredMemory" xmi:id="_VI_zQO5yEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
+                <extensions xsi:type="properties:RequiredMemory" xmi:id="_VI_zQO5yEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
                   <requiredMemory xmi:id="_VI_zQe5yEeSE6ppup-xcFg" value="128.0" unit="KByte"/>
-                </extension>
+                </extensions>
                 <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Fd9hL-m5EeSyWM-b9FAU_g" name="C1" connectorInstances="_Fd9hOum5EeSyWM-b9FAU_g" type="_6i11MOmpEeSsPdK-DtuwOA"/>
               </componentInstances>
               <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hMOm5EeSyWM-b9FAU_g" name="sc5" componentType="_Sun5MOmpEeSsPdK-DtuwOA" componentPart="_q3EpcOm1EeSE4Zrj1GnMCg">
-                <extension xsi:type="properties:RequiredMemory" xmi:id="_kXLNoO5yEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
+                <extensions xsi:type="properties:RequiredMemory" xmi:id="_kXLNoO5yEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
                   <requiredMemory xmi:id="_kXLNoe5yEeSE6ppup-xcFg" value="256.0" unit="KByte"/>
-                </extension>
+                </extensions>
                 <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Fd9hMem5EeSyWM-b9FAU_g" name="C1" connectorInstances="_Fd9hOem5EeSyWM-b9FAU_g" type="_8BMpkOmpEeSsPdK-DtuwOA"/>
               </componentInstances>
               <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hMum5EeSyWM-b9FAU_g" name="sc4" componentType="_ViMNAOmpEeSsPdK-DtuwOA" componentPart="_sNMu4Om1EeSE4Zrj1GnMCg">
-                <extension xsi:type="properties:RequiredMemory" xmi:id="_lmoDUO5yEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
+                <extensions xsi:type="properties:RequiredMemory" xmi:id="_lmoDUO5yEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
                   <requiredMemory xmi:id="_lmoDUe5yEeSE6ppup-xcFg" value="512.0" unit="KByte"/>
-                </extension>
+                </extensions>
                 <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hM-m5EeSyWM-b9FAU_g" name="c2" connectorInstances="_Fd9hOum5EeSyWM-b9FAU_g" type="_TngzkOmqEeSsPdK-DtuwOA"/>
                 <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hNOm5EeSyWM-b9FAU_g" name="c3" connectorInstances="_Fd9hOOm5EeSyWM-b9FAU_g" type="_ULIeAOmqEeSsPdK-DtuwOA"/>
                 <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hNem5EeSyWM-b9FAU_g" name="c4" connectorInstances="_Fd9hOem5EeSyWM-b9FAU_g" type="_WmBzIOmqEeSsPdK-DtuwOA"/>
@@ -85,30 +85,30 @@
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_Fd9hPum5EeSyWM-b9FAU_g" name="D11" connectorInstances="_Fd9hX-m5EeSyWM-b9FAU_g _dbCLQPpBEeS5tqGzVBMV0A" type="_cCDggem2EeSE4Zrj1GnMCg"/>
             <embeddedCIC xmi:id="_Fd9hP-m5EeSyWM-b9FAU_g" name="BrakePedal">
               <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hQOm5EeSyWM-b9FAU_g" name="sc12" componentType="_jzWlgOmpEeSsPdK-DtuwOA" componentPart="_cCDghem2EeSE4Zrj1GnMCg">
-                <extension xsi:type="properties:RequiredMemory" xmi:id="_oMBi0O5zEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
+                <extensions xsi:type="properties:RequiredMemory" xmi:id="_oMBi0O5zEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
                   <requiredMemory xmi:id="_oMBi0e5zEeSE6ppup-xcFg" value="128.0" unit="KByte"/>
-                </extension>
+                </extensions>
                 <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Fd9hQem5EeSyWM-b9FAU_g" name="C1" connectorInstances="_Fd9hS-m5EeSyWM-b9FAU_g" type="_8VN8UOmqEeSE4Zrj1GnMCg"/>
               </componentInstances>
               <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hQum5EeSyWM-b9FAU_g" name="sc11" componentType="_eEj2sOmpEeSsPdK-DtuwOA" componentPart="_cCDgium2EeSE4Zrj1GnMCg">
-                <extension xsi:type="properties:RequiredMemory" xmi:id="_vHdD4O5zEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
+                <extensions xsi:type="properties:RequiredMemory" xmi:id="_vHdD4O5zEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
                   <requiredMemory xmi:id="_vHdD4e5zEeSE6ppup-xcFg" value="64.0" unit="KByte"/>
-                </extension>
+                </extensions>
                 <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Fd9hQ-m5EeSyWM-b9FAU_g" name="C1" connectorInstances="_Fd9hTum5EeSyWM-b9FAU_g" type="_3QBZkOmpEeSsPdK-DtuwOA"/>
               </componentInstances>
               <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hROm5EeSyWM-b9FAU_g" name="sc10" componentType="_f1qn8OmpEeSsPdK-DtuwOA" componentPart="_cCDgj-m2EeSE4Zrj1GnMCg">
-                <extension xsi:type="properties:RequiredMemory" xmi:id="_y6sE8O5zEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
+                <extensions xsi:type="properties:RequiredMemory" xmi:id="_y6sE8O5zEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
                   <requiredMemory xmi:id="_y6sE8e5zEeSE6ppup-xcFg" value="512.0" unit="KByte"/>
-                </extension>
+                </extensions>
                 <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_Fd9hRem5EeSyWM-b9FAU_g" name="D11" connectorInstances="_dbCLQPpBEeS5tqGzVBMV0A" type="_FGbTQOmrEeSE4Zrj1GnMCg"/>
                 <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hRum5EeSyWM-b9FAU_g" name="H1" connectorInstances="_Fd9hS-m5EeSyWM-b9FAU_g" type="_Atm44OmrEeSE4Zrj1GnMCg"/>
                 <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hR-m5EeSyWM-b9FAU_g" name="H3" connectorInstances="_Fd9hTOm5EeSyWM-b9FAU_g" type="_CykaQOmrEeSE4Zrj1GnMCg"/>
                 <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hSOm5EeSyWM-b9FAU_g" name="H2" connectorInstances="_Fd9hTum5EeSyWM-b9FAU_g" type="_BmWewOmrEeSE4Zrj1GnMCg"/>
               </componentInstances>
               <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hSem5EeSyWM-b9FAU_g" name="sc13" componentType="_mV1wYOmpEeSsPdK-DtuwOA" componentPart="_cCDglOm2EeSE4Zrj1GnMCg">
-                <extension xsi:type="properties:RequiredMemory" xmi:id="_2K54gO5zEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
+                <extensions xsi:type="properties:RequiredMemory" xmi:id="_2K54gO5zEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
                   <requiredMemory xmi:id="_2K54ge5zEeSE6ppup-xcFg" value="64.0" unit="KByte"/>
-                </extension>
+                </extensions>
                 <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Fd9hSum5EeSyWM-b9FAU_g" name="C1" connectorInstances="_Fd9hTOm5EeSyWM-b9FAU_g" type="_1caG4OmpEeSsPdK-DtuwOA"/>
               </componentInstances>
               <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_Fd9hS-m5EeSyWM-b9FAU_g" type="_USORkOm3EeSE4Zrj1GnMCg" connectorEndpointInstances="_Fd9hRum5EeSyWM-b9FAU_g _Fd9hQem5EeSyWM-b9FAU_g"/>
@@ -121,17 +121,17 @@
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_Fd9hUem5EeSyWM-b9FAU_g" name="D11" connectorInstances="_Fd9hW-m5EeSyWM-b9FAU_g _Fd9hXOm5EeSyWM-b9FAU_g" type="_W8bOAem3EeSE4Zrj1GnMCg"/>
             <embeddedCIC xmi:id="_Fd9hUum5EeSyWM-b9FAU_g" name="Wheel">
               <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hU-m5EeSyWM-b9FAU_g" name="sc8" componentType="_heYSMOmpEeSsPdK-DtuwOA" componentPart="_W8bOBem3EeSE4Zrj1GnMCg">
-                <extension xsi:type="properties:RequiredMemory" xmi:id="_62Q0YO5zEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
+                <extensions xsi:type="properties:RequiredMemory" xmi:id="_62Q0YO5zEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
                   <requiredMemory xmi:id="_62Q0Ye5zEeSE6ppup-xcFg" value="128.0" unit="KByte"/>
-                </extension>
+                </extensions>
                 <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_Fd9hVOm5EeSyWM-b9FAU_g" name="D11" connectorInstances="_Fd9hW-m5EeSyWM-b9FAU_g" type="_LH1cEOmrEeSE4Zrj1GnMCg"/>
                 <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hVem5EeSyWM-b9FAU_g" name="H1" connectorInstances="_Fd9hWem5EeSyWM-b9FAU_g" type="_Iy9PYOmrEeSE4Zrj1GnMCg"/>
                 <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hVum5EeSyWM-b9FAU_g" name="H2" connectorInstances="_Fd9hWum5EeSyWM-b9FAU_g" type="_JKgMsOmrEeSE4Zrj1GnMCg"/>
               </componentInstances>
               <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hV-m5EeSyWM-b9FAU_g" name="sc7" componentType="_rrXDkOmpEeSsPdK-DtuwOA" componentPart="_W8bOCum3EeSE4Zrj1GnMCg">
-                <extension xsi:type="properties:RequiredMemory" xmi:id="_9iw24O5zEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
+                <extensions xsi:type="properties:RequiredMemory" xmi:id="_9iw24O5zEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
                   <requiredMemory xmi:id="_9iw24e5zEeSE6ppup-xcFg" value="64.0" unit="KByte"/>
-                </extension>
+                </extensions>
                 <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Fd9hWOm5EeSyWM-b9FAU_g" name="C1" connectorInstances="_Fd9hWum5EeSyWM-b9FAU_g" type="_uNawoOmpEeSsPdK-DtuwOA"/>
               </componentInstances>
               <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_Fd9hWem5EeSyWM-b9FAU_g" type="_21eDMOm3EeSE4Zrj1GnMCg" connectorEndpointInstances="_Fd9hVem5EeSyWM-b9FAU_g _Fd9hUOm5EeSyWM-b9FAU_g"/>

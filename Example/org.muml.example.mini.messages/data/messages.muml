@@ -209,7 +209,7 @@
       </messageTypes>
     </modelElements>
   </categories>
-  <categories xmi:id="_onxjXRyAEeSKP_lLzmbIVg" key="org.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_onxjXRyAEeSKP_lLzmbIVg" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_IazQEByBEeSKP_lLzmbIVg" name="senderRoleRTSC" behavioralElement="_Q7jJIByBEeSKP_lLzmbIVg">
       <transitions xmi:id="_ZmttAByCEeSKP_lLzmbIVg" priority="1" target="_YifP4ByCEeSKP_lLzmbIVg" source="_IazQERyBEeSKP_lLzmbIVg" urgent="false">
         <clockConstraints xmi:id="_5rDqQGZ8EeWMif2ccgn7Yw" clock="_xiAfgGZ8EeWMif2ccgn7Yw" operator="GREATER_OR_EQUAL">

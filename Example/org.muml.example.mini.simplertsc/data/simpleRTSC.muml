@@ -11,10 +11,10 @@
   </categories>
   <categories xmi:id="_Dwx8iRx3EeSKP_lLzmbIVg" key="org.muml.pim.protocol.category" name="protocol"/>
   <categories xmi:id="_Dwx8ihx3EeSKP_lLzmbIVg" key="org.muml.pim.messagetype.category" name="msgtype"/>
-  <categories xmi:id="_Dwx8ixx3EeSKP_lLzmbIVg" key="org.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_Dwx8ixx3EeSKP_lLzmbIVg" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_hmH0kBx3EeSKP_lLzmbIVg" name="simpleStatechart" behavioralElement="_LTjxcBx3EeSKP_lLzmbIVg">
       <variables xmi:id="_GEa9oBx4EeSKP_lLzmbIVg" name="myVariable">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_DHu28Ni2EeWxo7TBPzv5sQ" value="42"/>
       </variables>
       <states xmi:id="_hmH0kRx3EeSKP_lLzmbIVg" name="init" initial="true">

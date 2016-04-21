@@ -181,7 +181,7 @@
       <ports xsi:type="component:ContinuousPort" xmi:id="_ER3c0KK7EeKHT8i8WqTL9g" name="stopPlayingR2" dataType="_fLFNYZe3EeKIIefjcfllxA" kind="OUT"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_Dj8iEZvEEeKe1dmyo6HznA" key="org.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_Dj8iEZvEEeKe1dmyo6HznA" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_ObmBEJvEEeKe1dmyo6HznA" name="MainProcessing" behavioralElement="_S4NmMJe6EeKVX6r_GEFobQ">
       <variables xmi:id="_0cF8YJ0nEeKe1dmyo6HznA" name="posXReceivedBySP" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
       <variables xmi:id="_7B06QJ0nEeKe1dmyo6HznA" name="posXReceivedByRobot" dataType="_fLF0cZe3EeKIIefjcfllxA"/>

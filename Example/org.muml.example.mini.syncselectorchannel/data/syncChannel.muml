@@ -20,7 +20,7 @@
   </categories>
   <categories xmi:id="_5GPkGxyEEeSKP_lLzmbIVg" key="org.muml.pim.protocol.category" name="protocol"/>
   <categories xmi:id="_5GPkHByEEeSKP_lLzmbIVg" key="org.muml.pim.messagetype.category" name="msgtype"/>
-  <categories xmi:id="_5GQLIByEEeSKP_lLzmbIVg" key="org.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_5GQLIByEEeSKP_lLzmbIVg" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_-baR8ByEEeSKP_lLzmbIVg" name="testSync" behavioralElement="_AHpxUByFEeSKP_lLzmbIVg">
       <variables xmi:id="_XVVY4ByFEeSKP_lLzmbIVg" name="var1" dataType="_5GPkFhyEEeSKP_lLzmbIVg">
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_Y_NZsFiHEeWjIvmbZGR-Sw" value="2"/>

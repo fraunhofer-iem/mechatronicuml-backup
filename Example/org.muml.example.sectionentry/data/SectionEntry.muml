@@ -249,12 +249,12 @@
       <messageTypes xmi:id="_xKkMAM0QEeKgKa329oIpmg" name="requestSectionStatus"/>
       <messageTypes xmi:id="_BDS_QM0REeKgKa329oIpmg" name="sectionStatus">
         <parameters xmi:id="_CEA1YM0REeKgKa329oIpmg" name="free">
-          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
         </parameters>
       </messageTypes>
     </modelElements>
   </categories>
-  <categories xmi:id="_YPvEgMOsEeKtesZp-51dtg" key="org.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_YPvEgMOsEeKtesZp-51dtg" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_YPyu4MOsEeKtesZp-51dtg" name="railcab_role" behavioralElement="_JgQnEMOmEeKt4K__LJLJ8w">
       <transitions xmi:id="_G51nUMO6EeKtesZp-51dtg" priority="1" target="__EFzEMO5EeKtesZp-51dtg" source="_YPyu4cOsEeKtesZp-51dtg" clockResets="_OZ_mEMO6EeKtesZp-51dtg">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_L0Gh4MO6EeKtesZp-51dtg" kind="TRIGGER">
@@ -334,7 +334,7 @@
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_fu8LkMOtEeKtesZp-51dtg" name="section_role" behavioralElement="_JgTDUcOmEeKt4K__LJLJ8w">
       <variables xmi:id="_9b7Y4MOtEeKtesZp-51dtg" name="free">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="__4ceoMOtEeKtesZp-51dtg" value="true"/>
       </variables>
       <transitions xmi:id="_1Z3m8MOtEeKtesZp-51dtg" priority="1" target="_qObCMMOtEeKtesZp-51dtg" source="_fu8LkcOtEeKtesZp-51dtg" clockResets="_7wB3wMOtEeKtesZp-51dtg" urgent="false">
@@ -351,7 +351,7 @@
             <expressions xsi:type="actionlanguage:Assignment" xmi:id="_5NzpYdNVEeKG-K462XQPJQ" assignOperator=":=">
               <rhs_assignExpression xsi:type="actionlanguage:NondeterministicChoiceExpression" xmi:id="_5NzpYtNVEeKG-K462XQPJQ">
                 <range xmi:id="_5NzpY9NVEeKG-K462XQPJQ"/>
-                <dataType href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
+                <dataType href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
               </rhs_assignExpression>
               <lhs_typedNamedElementExpression xmi:id="_5NzpZNNVEeKG-K462XQPJQ" typedNamedElement="_9b7Y4MOtEeKtesZp-51dtg"/>
             </expressions>
@@ -418,7 +418,7 @@
             <expressions xsi:type="actionlanguage:Assignment" xmi:id="_4X4Q4fhKEeKdfbCFqruFzA" assignOperator=":=">
               <rhs_assignExpression xsi:type="actionlanguage:NondeterministicChoiceExpression" xmi:id="_4X4Q4vhKEeKdfbCFqruFzA">
                 <range xmi:id="_4X4Q4_hKEeKdfbCFqruFzA"/>
-                <dataType href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
+                <dataType href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
               </rhs_assignExpression>
               <lhs_typedNamedElementExpression xmi:id="_4X4Q5PhKEeKdfbCFqruFzA" typedNamedElement="_9b7Y4MOtEeKtesZp-51dtg"/>
             </expressions>
@@ -628,14 +628,14 @@
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_QLRrkMO8EeKtesZp-51dtg" name="NormalTrackSection" behavioralElement="_5r7wsMO7EeKtesZp-51dtg">
       <variables xmi:id="_WaFaoMzlEeKaH9EZVuAoDQ" name="sectionFree">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_qedu8MzlEeKaH9EZVuAoDQ" value="true"/>
       </variables>
       <states xmi:id="_QLRrkcO8EeKtesZp-51dtg" name="NormalTrackSection_Main" initial="true">
         <embeddedRegions xmi:id="__lLag8xXEeKo8fvz0BZxMg" priority="1">
           <embeddedStatechart xmi:id="__lLahMxXEeKo8fvz0BZxMg" name="section_role_left" behavioralElement="_oLg3UMxVEeKo8fvz0BZxMg">
             <variables xmi:id="__lLahcxXEeKo8fvz0BZxMg" name="free">
-              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
               <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="__lLahsxXEeKo8fvz0BZxMg" value="true"/>
             </variables>
             <transitions xmi:id="__lLah8xXEeKo8fvz0BZxMg" priority="1" target="__lLarcxXEeKo8fvz0BZxMg" source="__lLarMxXEeKo8fvz0BZxMg" clockResets="__lLav8xXEeKo8fvz0BZxMg" urgent="false">
@@ -769,7 +769,7 @@
         <embeddedRegions xmi:id="_GKDMkMzjEeKaH9EZVuAoDQ" priority="2">
           <embeddedStatechart xmi:id="_GKDMkczjEeKaH9EZVuAoDQ" name="section_role_right" behavioralElement="_oqTsIMxVEeKo8fvz0BZxMg">
             <variables xmi:id="_GKDMkszjEeKaH9EZVuAoDQ" name="free">
-              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
               <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_GKDMk8zjEeKaH9EZVuAoDQ" value="true"/>
             </variables>
             <transitions xmi:id="_GKDMlMzjEeKaH9EZVuAoDQ" priority="1" target="_GKDMuszjEeKaH9EZVuAoDQ" source="_GKDMuczjEeKaH9EZVuAoDQ" clockResets="_GKDMzMzjEeKaH9EZVuAoDQ" urgent="false">
@@ -931,7 +931,7 @@
         <embeddedRegions xmi:id="_kWJZ4M22EeKxKMJSVpn_4A" priority="4">
           <embeddedStatechart xmi:id="_kWJZ4c22EeKxKMJSVpn_4A" name="tracksection_role_precedingSwitch" behavioralElement="_qcRZAMxVEeKo8fvz0BZxMg">
             <variables xmi:id="_kWJZ4s22EeKxKMJSVpn_4A" name="free">
-              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
               <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_kWJZ4822EeKxKMJSVpn_4A" value="true"/>
             </variables>
             <transitions xmi:id="_kWJZ5M22EeKxKMJSVpn_4A" priority="1" target="_kWJZ8M22EeKxKMJSVpn_4A" source="_kWJZ7822EeKxKMJSVpn_4A" clockResets="_kWJZ-s22EeKxKMJSVpn_4A">
@@ -980,14 +980,14 @@
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_b6sgEMO8EeKtesZp-51dtg" name="RailRoadCrossing" behavioralElement="_7xwNsMO7EeKtesZp-51dtg">
       <variables xmi:id="_6OC-gMzrEeKaH9EZVuAoDQ" name="sectionFree">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_8D33sMzrEeKaH9EZVuAoDQ" value="true"/>
       </variables>
       <states xmi:id="_b6sgEcO8EeKtesZp-51dtg" name="RailRoadCrossing_Main" initial="true">
         <embeddedRegions xmi:id="_xdx_k8znEeKaH9EZVuAoDQ" priority="1">
           <embeddedStatechart xmi:id="_xdx_lMznEeKaH9EZVuAoDQ" name="section_role_left (incorrect)" behavioralElement="_4yf3sMxVEeKo8fvz0BZxMg">
             <variables xmi:id="_xdx_lcznEeKaH9EZVuAoDQ" name="free">
-              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
               <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_xdx_lsznEeKaH9EZVuAoDQ" value="true"/>
             </variables>
             <transitions xmi:id="_xdx_l8znEeKaH9EZVuAoDQ" priority="1" target="_xdx_vcznEeKaH9EZVuAoDQ" source="_xdx_vMznEeKaH9EZVuAoDQ" clockResets="_xdx_z8znEeKaH9EZVuAoDQ" urgent="false">
@@ -1129,7 +1129,7 @@
         <embeddedRegions xmi:id="_B6nhQMzvEeKaH9EZVuAoDQ" priority="2">
           <embeddedStatechart xmi:id="_B6nhQczvEeKaH9EZVuAoDQ" name="section_role_right (correct)" behavioralElement="_5x4REMxVEeKo8fvz0BZxMg">
             <variables xmi:id="_B6nhQszvEeKaH9EZVuAoDQ" name="free">
-              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
               <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_B6nhQ8zvEeKaH9EZVuAoDQ" value="true"/>
             </variables>
             <transitions xmi:id="_B6nhRMzvEeKaH9EZVuAoDQ" priority="1" target="_B6nhaszvEeKaH9EZVuAoDQ" source="_B6nhaczvEeKaH9EZVuAoDQ" clockResets="_B6nhfMzvEeKaH9EZVuAoDQ" urgent="false">
@@ -1362,7 +1362,7 @@
               <implementations xsi:type="actionlanguage:Block" xmi:id="_ppTw0P8zEeKo6OcNR6lqOw">
                 <expressions xsi:type="actionlanguage:LocalVariableDeclarationStatement" xmi:id="_ppTw0f8zEeKo6OcNR6lqOw">
                   <variable xmi:id="_ppTw0v8zEeKo6OcNR6lqOw" name="i">
-                    <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
+                    <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
                     <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_ppTw0_8zEeKo6OcNR6lqOw" value="0"/>
                   </variable>
                 </expressions>
@@ -1386,12 +1386,12 @@
                 </expressions>
               </implementations>
               <parameters xmi:id="_wZBRcP8wEeKbsOX7BPqNBQ" name="sectFree">
-                <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+                <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
               </parameters>
-              <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+              <returnType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
             </operations>
             <variables xmi:id="_PmVi8s22EeKxKMJSVpn_4A" name="free">
-              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
               <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_PmVi8822EeKxKMJSVpn_4A" value="true"/>
             </variables>
             <transitions xmi:id="_PmVi9M22EeKxKMJSVpn_4A" priority="1" target="_PmVjAM22EeKxKMJSVpn_4A" source="_PmVi_822EeKxKMJSVpn_4A" clockResets="_PmVjCs22EeKxKMJSVpn_4A">
@@ -1462,18 +1462,18 @@
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_jR9okMO8EeKtesZp-51dtg" name="Switch" behavioralElement="_9kMbsMO7EeKtesZp-51dtg">
       <variables xmi:id="_zPlRIM2nEeKxKMJSVpn_4A" name="sectionFree">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_1zYqoM2nEeKxKMJSVpn_4A" value="true"/>
       </variables>
       <states xmi:id="_jR9okcO8EeKtesZp-51dtg" name="Switch_Main" initial="true">
         <embeddedRegions xmi:id="_b0ITUM2nEeKxKMJSVpn_4A" priority="1">
           <embeddedStatechart xmi:id="_b0ITUc2nEeKxKMJSVpn_4A" name="section_role_left" behavioralElement="_BcOtoMxWEeKo8fvz0BZxMg">
             <variables xmi:id="_b0ITUs2nEeKxKMJSVpn_4A" name="free">
-              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
               <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_b0ITU82nEeKxKMJSVpn_4A" value="true"/>
             </variables>
             <variables xmi:id="_v8BOoM2nEeKxKMJSVpn_4A" name="_first">
-              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
               <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_xcHvcM2nEeKxKMJSVpn_4A" value="true"/>
             </variables>
             <transitions xmi:id="_b0ITVM2nEeKxKMJSVpn_4A" priority="1" target="_b0ITes2nEeKxKMJSVpn_4A" source="_b0ITec2nEeKxKMJSVpn_4A" clockResets="_b0ITjM2nEeKxKMJSVpn_4A" urgent="false">
@@ -1660,11 +1660,11 @@
         <embeddedRegions xmi:id="_yHZc4M2uEeKxKMJSVpn_4A" priority="2">
           <embeddedStatechart xmi:id="_yHZc4c2uEeKxKMJSVpn_4A" name="section_role_bottom" behavioralElement="_CiBRAMxWEeKo8fvz0BZxMg">
             <variables xmi:id="_yHZc4s2uEeKxKMJSVpn_4A" name="free">
-              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
               <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_yHZc482uEeKxKMJSVpn_4A" value="true"/>
             </variables>
             <variables xmi:id="_yHZc5s2uEeKxKMJSVpn_4A" name="_first">
-              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
               <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_yHZc582uEeKxKMJSVpn_4A" value="true"/>
             </variables>
             <transitions xmi:id="_yHZc6M2uEeKxKMJSVpn_4A" priority="1" target="_yHZdQ82uEeKxKMJSVpn_4A" source="_yHZdQs2uEeKxKMJSVpn_4A" clockResets="_yHZdX82uEeKxKMJSVpn_4A" urgent="false">
@@ -1855,11 +1855,11 @@
         <embeddedRegions xmi:id="_D8v4YM2wEeKxKMJSVpn_4A" priority="3">
           <embeddedStatechart xmi:id="_D8v4Yc2wEeKxKMJSVpn_4A" name="section_role_right" behavioralElement="_EtaxkMxWEeKo8fvz0BZxMg">
             <variables xmi:id="_D8v4Ys2wEeKxKMJSVpn_4A" name="free">
-              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
               <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_D8v4Y82wEeKxKMJSVpn_4A" value="true"/>
             </variables>
             <variables xmi:id="_D8v4Zs2wEeKxKMJSVpn_4A" name="_first">
-              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
               <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_D8v4Z82wEeKxKMJSVpn_4A" value="true"/>
             </variables>
             <transitions xmi:id="_D8v4aM2wEeKxKMJSVpn_4A" priority="1" target="_D8v4w82wEeKxKMJSVpn_4A" source="_D8v4ws2wEeKxKMJSVpn_4A" clockResets="_D8v4382wEeKxKMJSVpn_4A" urgent="false">
@@ -2078,7 +2078,7 @@
         <embeddedRegions xmi:id="_dFOwM83mEeKxKMJSVpn_4A" priority="5">
           <embeddedStatechart xmi:id="_dFOwNM3mEeKxKMJSVpn_4A" name="switch_role_followingSection1" behavioralElement="_GQzP4MxWEeKo8fvz0BZxMg">
             <variables xmi:id="_dFOwNc3mEeKxKMJSVpn_4A" name="status">
-              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
               <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_dFOwNs3mEeKxKMJSVpn_4A" value="true"/>
             </variables>
             <transitions xmi:id="_dFOwN83mEeKxKMJSVpn_4A" priority="1" target="_dFOwRs3mEeKxKMJSVpn_4A" source="_dFOwRc3mEeKxKMJSVpn_4A" clockResets="_dFOwSs3mEeKxKMJSVpn_4A" urgent="false">
@@ -2131,7 +2131,7 @@
         <embeddedRegions xmi:id="_HUcvA83nEeKxKMJSVpn_4A" priority="6">
           <embeddedStatechart xmi:id="_HUcvBM3nEeKxKMJSVpn_4A" name="switch_role_followingSection2" behavioralElement="_Ii5OUMxWEeKo8fvz0BZxMg">
             <variables xmi:id="_HUcvBc3nEeKxKMJSVpn_4A" name="status">
-              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+              <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
               <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_HUcvBs3nEeKxKMJSVpn_4A" value="true"/>
             </variables>
             <transitions xmi:id="_HUcvB83nEeKxKMJSVpn_4A" priority="1" target="_HUcvFs3nEeKxKMJSVpn_4A" source="_HUcvFc3nEeKxKMJSVpn_4A" clockResets="_HUcvGs3nEeKxKMJSVpn_4A" urgent="false">
@@ -2183,7 +2183,7 @@
         </embeddedRegions>
         <channels xmi:id="_hH7vQM2nEeKxKMJSVpn_4A" name="nextSectionFree"/>
         <channels xmi:id="_lJjxoM2nEeKxKMJSVpn_4A" name="sectionFree">
-          <selectorType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+          <selectorType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
         </channels>
         <channels xmi:id="_nC9jQM2nEeKxKMJSVpn_4A" name="acquire"/>
         <channels xmi:id="_nwCrsM2nEeKxKMJSVpn_4A" name="release"/>
@@ -2191,7 +2191,7 @@
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_fCWBYM0bEeKxKMJSVpn_4A" name="switch_role" behavioralElement="_7NW8FM0PEeKgKa329oIpmg">
       <variables xmi:id="_nrTCsM20EeKxKMJSVpn_4A" name="status">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_pyFwEM20EeKxKMJSVpn_4A" value="true"/>
       </variables>
       <transitions xmi:id="_ealsUM20EeKxKMJSVpn_4A" priority="1" target="_c_iqoM20EeKxKMJSVpn_4A" source="_fCWBYc0bEeKxKMJSVpn_4A" clockResets="_lvhSgM20EeKxKMJSVpn_4A" urgent="false">
@@ -2229,7 +2229,7 @@
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_rFb_0M0bEeKxKMJSVpn_4A" name="tracksection_role" behavioralElement="_7NW8EM0PEeKgKa329oIpmg">
       <variables xmi:id="_YoGT0M21EeKxKMJSVpn_4A" name="free">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_adB1IM21EeKxKMJSVpn_4A" value="true"/>
       </variables>
       <transitions xmi:id="_x-LLQM21EeKxKMJSVpn_4A" priority="1" target="_WRr2EM21EeKxKMJSVpn_4A" source="_rFb_0c0bEeKxKMJSVpn_4A" clockResets="_XcqbcM21EeKxKMJSVpn_4A">
@@ -2259,7 +2259,7 @@
               <expressions xsi:type="actionlanguage:Assignment" xmi:id="__xKqIbNsEeO6eKq9eCegig" assignOperator=":=">
                 <rhs_assignExpression xsi:type="actionlanguage:NondeterministicChoiceExpression" xmi:id="__xKqIrNsEeO6eKq9eCegig">
                   <range xmi:id="__xKqI7NsEeO6eKq9eCegig"/>
-                  <dataType href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#int32"/>
+                  <dataType href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
                 </rhs_assignExpression>
                 <lhs_typedNamedElementExpression xmi:id="__xKqJLNsEeO6eKq9eCegig" typedNamedElement="_YoGT0M21EeKxKMJSVpn_4A"/>
               </expressions>
@@ -2354,13 +2354,13 @@
         </receiverMessageBuffer>
       </ports>
       <ports xsi:type="component:HybridPort" xmi:id="_AJ1t4Mz0EeKaH9EZVuAoDQ" name="gateAction" kind="OUT">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
         <samplingInterval xmi:id="_ALLxsMz0EeKaH9EZVuAoDQ" unit="MILLISECONDS">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_NDF4QMz0EeKaH9EZVuAoDQ" value="1000"/>
         </samplingInterval>
       </ports>
       <ports xsi:type="component:HybridPort" xmi:id="_B1Z30Mz0EeKaH9EZVuAoDQ" name="gateStatus">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
         <samplingInterval xmi:id="_B1_tsMz0EeKaH9EZVuAoDQ" unit="MILLISECONDS">
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_LTNPAMz0EeKaH9EZVuAoDQ" value="300"/>
         </samplingInterval>
@@ -2415,13 +2415,13 @@
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_YbU68M3oEeKxKMJSVpn_4A" name="Gates" componentKind="continuous component">
       <ports xsi:type="component:ContinuousPort" xmi:id="_a9fVsM3oEeKxKMJSVpn_4A" name="status" kind="OUT">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
       </ports>
       <ports xsi:type="component:ContinuousPort" xmi:id="_cP5_0M3oEeKxKMJSVpn_4A" name="action">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
       </ports>
       <ports xsi:type="component:ContinuousPort" xmi:id="_24ycIP8uEeKbsOX7BPqNBQ" name="permanentClose">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
       </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_BuedoM3qEeKxKMJSVpn_4A" name="RailRoadCrossing" componentKind="hybrid component">
@@ -2453,7 +2453,7 @@
         </receiverMessageBuffer>
       </ports>
       <ports xsi:type="component:ContinuousPort" xmi:id="_5Yk4UP8uEeKbsOX7BPqNBQ" connectors="_W3XRkP8vEeKbsOX7BPqNBQ" name="permanentClose">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.core.types/model/predefined.mumltypes#boolean"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
       </ports>
       <embeddedComponentParts xmi:id="_sufnQM3qEeKRVKSK8yvkGg" name="infProcessing" componentType="_7xwNsMO7EeKtesZp-51dtg">
         <cardinality xmi:id="_supYQM3qEeKRVKSK8yvkGg">
