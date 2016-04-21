@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
-
  */
 package org.muml.storydiagram.expressions.pathExpressions.impl;
 
@@ -10,20 +6,12 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.muml.storydiagram.expressions.pathExpressions.ExplicitPathDescription;
-import org.muml.storydiagram.expressions.pathExpressions.ImplicitPathDescription;
-import org.muml.storydiagram.expressions.pathExpressions.ImplicitPathKind;
-import org.muml.storydiagram.expressions.pathExpressions.Path;
-import org.muml.storydiagram.expressions.pathExpressions.PathExpression;
-import org.muml.storydiagram.expressions.pathExpressions.PathExpressionsFactory;
-import org.muml.storydiagram.expressions.pathExpressions.PathExpressionsPackage;
-import org.muml.storydiagram.expressions.pathExpressions.PathSegment;
-import org.muml.storydiagram.expressions.pathExpressions.PathSegmentDescription;
-import org.muml.storydiagram.expressions.pathExpressions.RepeatOperator;
-import org.muml.storydiagram.expressions.pathExpressions.RestrictionList;
-import org.muml.storydiagram.expressions.pathExpressions.TypeRestriction;
+
+import org.muml.storydiagram.expressions.pathExpressions.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,7 +31,7 @@ public class PathExpressionsFactoryImpl extends EFactoryImpl implements PathExpr
   {
     try
     {
-      PathExpressionsFactory thePathExpressionsFactory = (PathExpressionsFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.storydriven.org/modeling/expressions/PathExpressions"); 
+      PathExpressionsFactory thePathExpressionsFactory = (PathExpressionsFactory)EPackage.Registry.INSTANCE.getEFactory(PathExpressionsPackage.eNS_URI);
       if (thePathExpressionsFactory != null)
       {
         return thePathExpressionsFactory;

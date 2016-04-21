@@ -15,7 +15,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.mwe2.launch;bundle-version="[2.0.0,3.0.0)";resolution:=optional,
  org.eclipse.xtext;bundle-version="[2.0.0,3.0.0)",
  org.eclipse.xtext.generator;bundle-version="[2.0.0,3.0.0)";resolution:=optional,
- org.eclipse.xtext.util;bundle-version="[2.0.0,3.0.0)"
+ org.eclipse.xtext.util;bundle-version="[2.0.0,3.0.0)",
+ org.eclipse.emf.common
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.storydiagram.expressions,
  org.muml.storydiagram.expressions.formatting,
@@ -31,4 +32,5 @@ Export-Package: org.muml.storydiagram.expressions,
  org.muml.storydiagram.expressions.scoping,
  org.muml.storydiagram.expressions.services,
  org.muml.storydiagram.expressions.validation
-
+Import-Package: org.apache.commons.logging,
+ org.apache.log4j

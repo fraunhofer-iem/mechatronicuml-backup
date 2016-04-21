@@ -8,6 +8,8 @@ import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
 
+import org.muml.storydiagram.expressions.ui.internal.PathExpressionsActivator;
+
 /**
  * This class was generated. Customizations should only happen in a newly
  * introduced subclass. 
@@ -16,12 +18,12 @@ public class PathExpressionsExecutableExtensionFactory extends AbstractGuiceAwar
 
 	@Override
 	protected Bundle getBundle() {
-		return org.muml.storydiagram.expressions.ui.internal.PathExpressionsActivator.getInstance().getBundle();
+		return PathExpressionsActivator.getInstance().getBundle();
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return org.muml.storydiagram.expressions.ui.internal.PathExpressionsActivator.getInstance().getInjector("org.muml.storydiagram.expressions.PathExpressions");
+		return PathExpressionsActivator.getInstance().getInjector(PathExpressionsActivator.ORG_MUML_STORYDIAGRAM_EXPRESSIONS_PATHEXPRESSIONS);
 	}
 	
 }

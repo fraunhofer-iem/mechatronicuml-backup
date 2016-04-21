@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
-
  */
 package org.muml.storydiagram.expressions.pathExpressions;
 
@@ -14,10 +10,10 @@ package org.muml.storydiagram.expressions.pathExpressions;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.expressions.pathExpressions.ImplicitPathDescription#getKind <em>Kind</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.expressions.pathExpressions.PathExpressionsPackage#getImplicitPathDescription()
  * @model

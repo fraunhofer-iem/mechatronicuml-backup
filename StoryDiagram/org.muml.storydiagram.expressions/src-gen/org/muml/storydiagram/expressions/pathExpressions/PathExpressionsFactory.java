@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
-
  */
 package org.muml.storydiagram.expressions.pathExpressions;
 

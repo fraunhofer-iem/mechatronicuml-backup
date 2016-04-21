@@ -1,43 +1,51 @@
 package org.muml.storydiagram.expressions.ui.contentassist.antlr.internal; 
 
-import org.antlr.runtime.BaseRecognizer;
-import org.antlr.runtime.BitSet;
-import org.antlr.runtime.NoViableAltException;
-import org.antlr.runtime.RecognitionException;
-import org.antlr.runtime.RecognizerSharedState;
-import org.antlr.runtime.TokenStream;
-import org.eclipse.xtext.Grammar;
+import java.io.InputStream;
+import org.eclipse.xtext.*;
+import org.eclipse.xtext.parser.*;
+import org.eclipse.xtext.parser.impl.*;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.parser.antlr.XtextTokenStream;
+import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.DFA;
 import org.muml.storydiagram.expressions.services.PathExpressionsGrammarAccess;
+
+
+
+import org.antlr.runtime.*;
+import java.util.Stack;
+import java.util.List;
+import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalPathExpressionsParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'NO_REPEAT'", "'+'", "'*'", "'-->'", "'<>-->'", "'--><>'", "'('", "')'", "'|'", "'.'", "'['", "']'", "','", "'!'"
     };
-    public static final int RULE_ML_COMMENT=7;
-    public static final int T__12=12;
-    public static final int RULE_ID=4;
-    public static final int T__23=23;
-    public static final int T__20=20;
-    public static final int T__13=13;
     public static final int RULE_STRING=6;
-    public static final int T__21=21;
-    public static final int T__19=19;
-    public static final int T__14=14;
-    public static final int T__11=11;
-    public static final int T__22=22;
-    public static final int RULE_WS=9;
-    public static final int T__17=17;
-    public static final int EOF=-1;
-    public static final int RULE_INT=5;
-    public static final int T__16=16;
-    public static final int T__24=24;
-    public static final int RULE_ANY_OTHER=10;
     public static final int RULE_SL_COMMENT=8;
-    public static final int T__18=18;
+    public static final int T__19=19;
     public static final int T__15=15;
+    public static final int T__16=16;
+    public static final int T__17=17;
+    public static final int T__18=18;
+    public static final int T__11=11;
+    public static final int T__12=12;
+    public static final int T__13=13;
+    public static final int T__14=14;
+    public static final int EOF=-1;
+    public static final int RULE_ID=4;
+    public static final int RULE_WS=9;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int RULE_INT=5;
+    public static final int T__22=22;
+    public static final int RULE_ML_COMMENT=7;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__20=20;
+    public static final int T__21=21;
 
     // delegates
     // delegators
@@ -53,7 +61,7 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
         
 
     public String[] getTokenNames() { return InternalPathExpressionsParser.tokenNames; }
-    public String getGrammarFileName() { return "../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g"; }
+    public String getGrammarFileName() { return "InternalPathExpressions.g"; }
 
 
      
@@ -77,20 +85,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "entryRulePathExpression"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:60:1: entryRulePathExpression : rulePathExpression EOF ;
+    // InternalPathExpressions.g:60:1: entryRulePathExpression : rulePathExpression EOF ;
     public final void entryRulePathExpression() throws RecognitionException {
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:61:1: ( rulePathExpression EOF )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:62:1: rulePathExpression EOF
+            // InternalPathExpressions.g:61:1: ( rulePathExpression EOF )
+            // InternalPathExpressions.g:62:1: rulePathExpression EOF
             {
              before(grammarAccess.getPathExpressionRule()); 
-            pushFollow(FOLLOW_rulePathExpression_in_entryRulePathExpression61);
+            pushFollow(FOLLOW_1);
             rulePathExpression();
 
             state._fsp--;
 
              after(grammarAccess.getPathExpressionRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePathExpression68); 
+            match(input,EOF,FOLLOW_2); 
 
             }
 
@@ -107,23 +115,23 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rulePathExpression"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:69:1: rulePathExpression : ( ( rule__PathExpression__Alternatives ) ) ;
+    // InternalPathExpressions.g:69:1: rulePathExpression : ( ( rule__PathExpression__Alternatives ) ) ;
     public final void rulePathExpression() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:73:2: ( ( ( rule__PathExpression__Alternatives ) ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:74:1: ( ( rule__PathExpression__Alternatives ) )
+            // InternalPathExpressions.g:73:2: ( ( ( rule__PathExpression__Alternatives ) ) )
+            // InternalPathExpressions.g:74:1: ( ( rule__PathExpression__Alternatives ) )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:74:1: ( ( rule__PathExpression__Alternatives ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:75:1: ( rule__PathExpression__Alternatives )
+            // InternalPathExpressions.g:74:1: ( ( rule__PathExpression__Alternatives ) )
+            // InternalPathExpressions.g:75:1: ( rule__PathExpression__Alternatives )
             {
              before(grammarAccess.getPathExpressionAccess().getAlternatives()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:76:1: ( rule__PathExpression__Alternatives )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:76:2: rule__PathExpression__Alternatives
+            // InternalPathExpressions.g:76:1: ( rule__PathExpression__Alternatives )
+            // InternalPathExpressions.g:76:2: rule__PathExpression__Alternatives
             {
-            pushFollow(FOLLOW_rule__PathExpression__Alternatives_in_rulePathExpression94);
+            pushFollow(FOLLOW_2);
             rule__PathExpression__Alternatives();
 
             state._fsp--;
@@ -154,20 +162,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "entryRulePath"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:88:1: entryRulePath : rulePath EOF ;
+    // InternalPathExpressions.g:88:1: entryRulePath : rulePath EOF ;
     public final void entryRulePath() throws RecognitionException {
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:89:1: ( rulePath EOF )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:90:1: rulePath EOF
+            // InternalPathExpressions.g:89:1: ( rulePath EOF )
+            // InternalPathExpressions.g:90:1: rulePath EOF
             {
              before(grammarAccess.getPathRule()); 
-            pushFollow(FOLLOW_rulePath_in_entryRulePath121);
+            pushFollow(FOLLOW_1);
             rulePath();
 
             state._fsp--;
 
              after(grammarAccess.getPathRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePath128); 
+            match(input,EOF,FOLLOW_2); 
 
             }
 
@@ -184,23 +192,23 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rulePath"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:97:1: rulePath : ( ( rule__Path__Group__0 ) ) ;
+    // InternalPathExpressions.g:97:1: rulePath : ( ( rule__Path__Group__0 ) ) ;
     public final void rulePath() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:101:2: ( ( ( rule__Path__Group__0 ) ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:102:1: ( ( rule__Path__Group__0 ) )
+            // InternalPathExpressions.g:101:2: ( ( ( rule__Path__Group__0 ) ) )
+            // InternalPathExpressions.g:102:1: ( ( rule__Path__Group__0 ) )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:102:1: ( ( rule__Path__Group__0 ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:103:1: ( rule__Path__Group__0 )
+            // InternalPathExpressions.g:102:1: ( ( rule__Path__Group__0 ) )
+            // InternalPathExpressions.g:103:1: ( rule__Path__Group__0 )
             {
              before(grammarAccess.getPathAccess().getGroup()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:104:1: ( rule__Path__Group__0 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:104:2: rule__Path__Group__0
+            // InternalPathExpressions.g:104:1: ( rule__Path__Group__0 )
+            // InternalPathExpressions.g:104:2: rule__Path__Group__0
             {
-            pushFollow(FOLLOW_rule__Path__Group__0_in_rulePath154);
+            pushFollow(FOLLOW_2);
             rule__Path__Group__0();
 
             state._fsp--;
@@ -231,20 +239,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "entryRulePathSegment"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:116:1: entryRulePathSegment : rulePathSegment EOF ;
+    // InternalPathExpressions.g:116:1: entryRulePathSegment : rulePathSegment EOF ;
     public final void entryRulePathSegment() throws RecognitionException {
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:117:1: ( rulePathSegment EOF )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:118:1: rulePathSegment EOF
+            // InternalPathExpressions.g:117:1: ( rulePathSegment EOF )
+            // InternalPathExpressions.g:118:1: rulePathSegment EOF
             {
              before(grammarAccess.getPathSegmentRule()); 
-            pushFollow(FOLLOW_rulePathSegment_in_entryRulePathSegment181);
+            pushFollow(FOLLOW_1);
             rulePathSegment();
 
             state._fsp--;
 
              after(grammarAccess.getPathSegmentRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePathSegment188); 
+            match(input,EOF,FOLLOW_2); 
 
             }
 
@@ -261,23 +269,23 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rulePathSegment"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:125:1: rulePathSegment : ( ( rule__PathSegment__Group__0 ) ) ;
+    // InternalPathExpressions.g:125:1: rulePathSegment : ( ( rule__PathSegment__Group__0 ) ) ;
     public final void rulePathSegment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:129:2: ( ( ( rule__PathSegment__Group__0 ) ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:130:1: ( ( rule__PathSegment__Group__0 ) )
+            // InternalPathExpressions.g:129:2: ( ( ( rule__PathSegment__Group__0 ) ) )
+            // InternalPathExpressions.g:130:1: ( ( rule__PathSegment__Group__0 ) )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:130:1: ( ( rule__PathSegment__Group__0 ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:131:1: ( rule__PathSegment__Group__0 )
+            // InternalPathExpressions.g:130:1: ( ( rule__PathSegment__Group__0 ) )
+            // InternalPathExpressions.g:131:1: ( rule__PathSegment__Group__0 )
             {
              before(grammarAccess.getPathSegmentAccess().getGroup()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:132:1: ( rule__PathSegment__Group__0 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:132:2: rule__PathSegment__Group__0
+            // InternalPathExpressions.g:132:1: ( rule__PathSegment__Group__0 )
+            // InternalPathExpressions.g:132:2: rule__PathSegment__Group__0
             {
-            pushFollow(FOLLOW_rule__PathSegment__Group__0_in_rulePathSegment214);
+            pushFollow(FOLLOW_2);
             rule__PathSegment__Group__0();
 
             state._fsp--;
@@ -308,20 +316,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "entryRulePathSegmentDescription"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:144:1: entryRulePathSegmentDescription : rulePathSegmentDescription EOF ;
+    // InternalPathExpressions.g:144:1: entryRulePathSegmentDescription : rulePathSegmentDescription EOF ;
     public final void entryRulePathSegmentDescription() throws RecognitionException {
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:145:1: ( rulePathSegmentDescription EOF )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:146:1: rulePathSegmentDescription EOF
+            // InternalPathExpressions.g:145:1: ( rulePathSegmentDescription EOF )
+            // InternalPathExpressions.g:146:1: rulePathSegmentDescription EOF
             {
              before(grammarAccess.getPathSegmentDescriptionRule()); 
-            pushFollow(FOLLOW_rulePathSegmentDescription_in_entryRulePathSegmentDescription241);
+            pushFollow(FOLLOW_1);
             rulePathSegmentDescription();
 
             state._fsp--;
 
              after(grammarAccess.getPathSegmentDescriptionRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePathSegmentDescription248); 
+            match(input,EOF,FOLLOW_2); 
 
             }
 
@@ -338,23 +346,23 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rulePathSegmentDescription"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:153:1: rulePathSegmentDescription : ( ( rule__PathSegmentDescription__Group__0 ) ) ;
+    // InternalPathExpressions.g:153:1: rulePathSegmentDescription : ( ( rule__PathSegmentDescription__Group__0 ) ) ;
     public final void rulePathSegmentDescription() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:157:2: ( ( ( rule__PathSegmentDescription__Group__0 ) ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:158:1: ( ( rule__PathSegmentDescription__Group__0 ) )
+            // InternalPathExpressions.g:157:2: ( ( ( rule__PathSegmentDescription__Group__0 ) ) )
+            // InternalPathExpressions.g:158:1: ( ( rule__PathSegmentDescription__Group__0 ) )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:158:1: ( ( rule__PathSegmentDescription__Group__0 ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:159:1: ( rule__PathSegmentDescription__Group__0 )
+            // InternalPathExpressions.g:158:1: ( ( rule__PathSegmentDescription__Group__0 ) )
+            // InternalPathExpressions.g:159:1: ( rule__PathSegmentDescription__Group__0 )
             {
              before(grammarAccess.getPathSegmentDescriptionAccess().getGroup()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:160:1: ( rule__PathSegmentDescription__Group__0 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:160:2: rule__PathSegmentDescription__Group__0
+            // InternalPathExpressions.g:160:1: ( rule__PathSegmentDescription__Group__0 )
+            // InternalPathExpressions.g:160:2: rule__PathSegmentDescription__Group__0
             {
-            pushFollow(FOLLOW_rule__PathSegmentDescription__Group__0_in_rulePathSegmentDescription274);
+            pushFollow(FOLLOW_2);
             rule__PathSegmentDescription__Group__0();
 
             state._fsp--;
@@ -385,20 +393,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "entryRuleRestrictionList"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:172:1: entryRuleRestrictionList : ruleRestrictionList EOF ;
+    // InternalPathExpressions.g:172:1: entryRuleRestrictionList : ruleRestrictionList EOF ;
     public final void entryRuleRestrictionList() throws RecognitionException {
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:173:1: ( ruleRestrictionList EOF )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:174:1: ruleRestrictionList EOF
+            // InternalPathExpressions.g:173:1: ( ruleRestrictionList EOF )
+            // InternalPathExpressions.g:174:1: ruleRestrictionList EOF
             {
              before(grammarAccess.getRestrictionListRule()); 
-            pushFollow(FOLLOW_ruleRestrictionList_in_entryRuleRestrictionList301);
+            pushFollow(FOLLOW_1);
             ruleRestrictionList();
 
             state._fsp--;
 
              after(grammarAccess.getRestrictionListRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRestrictionList308); 
+            match(input,EOF,FOLLOW_2); 
 
             }
 
@@ -415,23 +423,23 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "ruleRestrictionList"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:181:1: ruleRestrictionList : ( ( rule__RestrictionList__Group__0 ) ) ;
+    // InternalPathExpressions.g:181:1: ruleRestrictionList : ( ( rule__RestrictionList__Group__0 ) ) ;
     public final void ruleRestrictionList() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:185:2: ( ( ( rule__RestrictionList__Group__0 ) ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:186:1: ( ( rule__RestrictionList__Group__0 ) )
+            // InternalPathExpressions.g:185:2: ( ( ( rule__RestrictionList__Group__0 ) ) )
+            // InternalPathExpressions.g:186:1: ( ( rule__RestrictionList__Group__0 ) )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:186:1: ( ( rule__RestrictionList__Group__0 ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:187:1: ( rule__RestrictionList__Group__0 )
+            // InternalPathExpressions.g:186:1: ( ( rule__RestrictionList__Group__0 ) )
+            // InternalPathExpressions.g:187:1: ( rule__RestrictionList__Group__0 )
             {
              before(grammarAccess.getRestrictionListAccess().getGroup()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:188:1: ( rule__RestrictionList__Group__0 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:188:2: rule__RestrictionList__Group__0
+            // InternalPathExpressions.g:188:1: ( rule__RestrictionList__Group__0 )
+            // InternalPathExpressions.g:188:2: rule__RestrictionList__Group__0
             {
-            pushFollow(FOLLOW_rule__RestrictionList__Group__0_in_ruleRestrictionList334);
+            pushFollow(FOLLOW_2);
             rule__RestrictionList__Group__0();
 
             state._fsp--;
@@ -462,20 +470,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "entryRuleImplicitPathDescription"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:200:1: entryRuleImplicitPathDescription : ruleImplicitPathDescription EOF ;
+    // InternalPathExpressions.g:200:1: entryRuleImplicitPathDescription : ruleImplicitPathDescription EOF ;
     public final void entryRuleImplicitPathDescription() throws RecognitionException {
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:201:1: ( ruleImplicitPathDescription EOF )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:202:1: ruleImplicitPathDescription EOF
+            // InternalPathExpressions.g:201:1: ( ruleImplicitPathDescription EOF )
+            // InternalPathExpressions.g:202:1: ruleImplicitPathDescription EOF
             {
              before(grammarAccess.getImplicitPathDescriptionRule()); 
-            pushFollow(FOLLOW_ruleImplicitPathDescription_in_entryRuleImplicitPathDescription361);
+            pushFollow(FOLLOW_1);
             ruleImplicitPathDescription();
 
             state._fsp--;
 
              after(grammarAccess.getImplicitPathDescriptionRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleImplicitPathDescription368); 
+            match(input,EOF,FOLLOW_2); 
 
             }
 
@@ -492,23 +500,23 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "ruleImplicitPathDescription"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:209:1: ruleImplicitPathDescription : ( ( rule__ImplicitPathDescription__KindAssignment ) ) ;
+    // InternalPathExpressions.g:209:1: ruleImplicitPathDescription : ( ( rule__ImplicitPathDescription__KindAssignment ) ) ;
     public final void ruleImplicitPathDescription() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:213:2: ( ( ( rule__ImplicitPathDescription__KindAssignment ) ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:214:1: ( ( rule__ImplicitPathDescription__KindAssignment ) )
+            // InternalPathExpressions.g:213:2: ( ( ( rule__ImplicitPathDescription__KindAssignment ) ) )
+            // InternalPathExpressions.g:214:1: ( ( rule__ImplicitPathDescription__KindAssignment ) )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:214:1: ( ( rule__ImplicitPathDescription__KindAssignment ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:215:1: ( rule__ImplicitPathDescription__KindAssignment )
+            // InternalPathExpressions.g:214:1: ( ( rule__ImplicitPathDescription__KindAssignment ) )
+            // InternalPathExpressions.g:215:1: ( rule__ImplicitPathDescription__KindAssignment )
             {
              before(grammarAccess.getImplicitPathDescriptionAccess().getKindAssignment()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:216:1: ( rule__ImplicitPathDescription__KindAssignment )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:216:2: rule__ImplicitPathDescription__KindAssignment
+            // InternalPathExpressions.g:216:1: ( rule__ImplicitPathDescription__KindAssignment )
+            // InternalPathExpressions.g:216:2: rule__ImplicitPathDescription__KindAssignment
             {
-            pushFollow(FOLLOW_rule__ImplicitPathDescription__KindAssignment_in_ruleImplicitPathDescription394);
+            pushFollow(FOLLOW_2);
             rule__ImplicitPathDescription__KindAssignment();
 
             state._fsp--;
@@ -539,20 +547,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "entryRuleExplicitPathDescription"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:228:1: entryRuleExplicitPathDescription : ruleExplicitPathDescription EOF ;
+    // InternalPathExpressions.g:228:1: entryRuleExplicitPathDescription : ruleExplicitPathDescription EOF ;
     public final void entryRuleExplicitPathDescription() throws RecognitionException {
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:229:1: ( ruleExplicitPathDescription EOF )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:230:1: ruleExplicitPathDescription EOF
+            // InternalPathExpressions.g:229:1: ( ruleExplicitPathDescription EOF )
+            // InternalPathExpressions.g:230:1: ruleExplicitPathDescription EOF
             {
              before(grammarAccess.getExplicitPathDescriptionRule()); 
-            pushFollow(FOLLOW_ruleExplicitPathDescription_in_entryRuleExplicitPathDescription421);
+            pushFollow(FOLLOW_1);
             ruleExplicitPathDescription();
 
             state._fsp--;
 
              after(grammarAccess.getExplicitPathDescriptionRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExplicitPathDescription428); 
+            match(input,EOF,FOLLOW_2); 
 
             }
 
@@ -569,23 +577,23 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "ruleExplicitPathDescription"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:237:1: ruleExplicitPathDescription : ( ( rule__ExplicitPathDescription__AssociationNameAssignment ) ) ;
+    // InternalPathExpressions.g:237:1: ruleExplicitPathDescription : ( ( rule__ExplicitPathDescription__AssociationNameAssignment ) ) ;
     public final void ruleExplicitPathDescription() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:241:2: ( ( ( rule__ExplicitPathDescription__AssociationNameAssignment ) ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:242:1: ( ( rule__ExplicitPathDescription__AssociationNameAssignment ) )
+            // InternalPathExpressions.g:241:2: ( ( ( rule__ExplicitPathDescription__AssociationNameAssignment ) ) )
+            // InternalPathExpressions.g:242:1: ( ( rule__ExplicitPathDescription__AssociationNameAssignment ) )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:242:1: ( ( rule__ExplicitPathDescription__AssociationNameAssignment ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:243:1: ( rule__ExplicitPathDescription__AssociationNameAssignment )
+            // InternalPathExpressions.g:242:1: ( ( rule__ExplicitPathDescription__AssociationNameAssignment ) )
+            // InternalPathExpressions.g:243:1: ( rule__ExplicitPathDescription__AssociationNameAssignment )
             {
              before(grammarAccess.getExplicitPathDescriptionAccess().getAssociationNameAssignment()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:244:1: ( rule__ExplicitPathDescription__AssociationNameAssignment )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:244:2: rule__ExplicitPathDescription__AssociationNameAssignment
+            // InternalPathExpressions.g:244:1: ( rule__ExplicitPathDescription__AssociationNameAssignment )
+            // InternalPathExpressions.g:244:2: rule__ExplicitPathDescription__AssociationNameAssignment
             {
-            pushFollow(FOLLOW_rule__ExplicitPathDescription__AssociationNameAssignment_in_ruleExplicitPathDescription454);
+            pushFollow(FOLLOW_2);
             rule__ExplicitPathDescription__AssociationNameAssignment();
 
             state._fsp--;
@@ -616,20 +624,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "entryRuleTypeRestriction"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:256:1: entryRuleTypeRestriction : ruleTypeRestriction EOF ;
+    // InternalPathExpressions.g:256:1: entryRuleTypeRestriction : ruleTypeRestriction EOF ;
     public final void entryRuleTypeRestriction() throws RecognitionException {
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:257:1: ( ruleTypeRestriction EOF )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:258:1: ruleTypeRestriction EOF
+            // InternalPathExpressions.g:257:1: ( ruleTypeRestriction EOF )
+            // InternalPathExpressions.g:258:1: ruleTypeRestriction EOF
             {
              before(grammarAccess.getTypeRestrictionRule()); 
-            pushFollow(FOLLOW_ruleTypeRestriction_in_entryRuleTypeRestriction481);
+            pushFollow(FOLLOW_1);
             ruleTypeRestriction();
 
             state._fsp--;
 
              after(grammarAccess.getTypeRestrictionRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTypeRestriction488); 
+            match(input,EOF,FOLLOW_2); 
 
             }
 
@@ -646,23 +654,23 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "ruleTypeRestriction"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:265:1: ruleTypeRestriction : ( ( rule__TypeRestriction__Group__0 ) ) ;
+    // InternalPathExpressions.g:265:1: ruleTypeRestriction : ( ( rule__TypeRestriction__Group__0 ) ) ;
     public final void ruleTypeRestriction() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:269:2: ( ( ( rule__TypeRestriction__Group__0 ) ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:270:1: ( ( rule__TypeRestriction__Group__0 ) )
+            // InternalPathExpressions.g:269:2: ( ( ( rule__TypeRestriction__Group__0 ) ) )
+            // InternalPathExpressions.g:270:1: ( ( rule__TypeRestriction__Group__0 ) )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:270:1: ( ( rule__TypeRestriction__Group__0 ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:271:1: ( rule__TypeRestriction__Group__0 )
+            // InternalPathExpressions.g:270:1: ( ( rule__TypeRestriction__Group__0 ) )
+            // InternalPathExpressions.g:271:1: ( rule__TypeRestriction__Group__0 )
             {
              before(grammarAccess.getTypeRestrictionAccess().getGroup()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:272:1: ( rule__TypeRestriction__Group__0 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:272:2: rule__TypeRestriction__Group__0
+            // InternalPathExpressions.g:272:1: ( rule__TypeRestriction__Group__0 )
+            // InternalPathExpressions.g:272:2: rule__TypeRestriction__Group__0
             {
-            pushFollow(FOLLOW_rule__TypeRestriction__Group__0_in_ruleTypeRestriction514);
+            pushFollow(FOLLOW_2);
             rule__TypeRestriction__Group__0();
 
             state._fsp--;
@@ -693,23 +701,23 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "ruleRepeatOperator"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:285:1: ruleRepeatOperator : ( ( rule__RepeatOperator__Alternatives ) ) ;
+    // InternalPathExpressions.g:285:1: ruleRepeatOperator : ( ( rule__RepeatOperator__Alternatives ) ) ;
     public final void ruleRepeatOperator() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:289:1: ( ( ( rule__RepeatOperator__Alternatives ) ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:290:1: ( ( rule__RepeatOperator__Alternatives ) )
+            // InternalPathExpressions.g:289:1: ( ( ( rule__RepeatOperator__Alternatives ) ) )
+            // InternalPathExpressions.g:290:1: ( ( rule__RepeatOperator__Alternatives ) )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:290:1: ( ( rule__RepeatOperator__Alternatives ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:291:1: ( rule__RepeatOperator__Alternatives )
+            // InternalPathExpressions.g:290:1: ( ( rule__RepeatOperator__Alternatives ) )
+            // InternalPathExpressions.g:291:1: ( rule__RepeatOperator__Alternatives )
             {
              before(grammarAccess.getRepeatOperatorAccess().getAlternatives()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:292:1: ( rule__RepeatOperator__Alternatives )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:292:2: rule__RepeatOperator__Alternatives
+            // InternalPathExpressions.g:292:1: ( rule__RepeatOperator__Alternatives )
+            // InternalPathExpressions.g:292:2: rule__RepeatOperator__Alternatives
             {
-            pushFollow(FOLLOW_rule__RepeatOperator__Alternatives_in_ruleRepeatOperator551);
+            pushFollow(FOLLOW_2);
             rule__RepeatOperator__Alternatives();
 
             state._fsp--;
@@ -740,23 +748,23 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "ruleImplicitPathKind"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:304:1: ruleImplicitPathKind : ( ( rule__ImplicitPathKind__Alternatives ) ) ;
+    // InternalPathExpressions.g:304:1: ruleImplicitPathKind : ( ( rule__ImplicitPathKind__Alternatives ) ) ;
     public final void ruleImplicitPathKind() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:308:1: ( ( ( rule__ImplicitPathKind__Alternatives ) ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:309:1: ( ( rule__ImplicitPathKind__Alternatives ) )
+            // InternalPathExpressions.g:308:1: ( ( ( rule__ImplicitPathKind__Alternatives ) ) )
+            // InternalPathExpressions.g:309:1: ( ( rule__ImplicitPathKind__Alternatives ) )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:309:1: ( ( rule__ImplicitPathKind__Alternatives ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:310:1: ( rule__ImplicitPathKind__Alternatives )
+            // InternalPathExpressions.g:309:1: ( ( rule__ImplicitPathKind__Alternatives ) )
+            // InternalPathExpressions.g:310:1: ( rule__ImplicitPathKind__Alternatives )
             {
              before(grammarAccess.getImplicitPathKindAccess().getAlternatives()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:311:1: ( rule__ImplicitPathKind__Alternatives )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:311:2: rule__ImplicitPathKind__Alternatives
+            // InternalPathExpressions.g:311:1: ( rule__ImplicitPathKind__Alternatives )
+            // InternalPathExpressions.g:311:2: rule__ImplicitPathKind__Alternatives
             {
-            pushFollow(FOLLOW_rule__ImplicitPathKind__Alternatives_in_ruleImplicitPathKind587);
+            pushFollow(FOLLOW_2);
             rule__ImplicitPathKind__Alternatives();
 
             state._fsp--;
@@ -787,27 +795,27 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathExpression__Alternatives"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:322:1: rule__PathExpression__Alternatives : ( ( ( rule__PathExpression__PathAlternativesAssignment_0 ) ) | ( ( rule__PathExpression__Group_1__0 ) ) );
+    // InternalPathExpressions.g:322:1: rule__PathExpression__Alternatives : ( ( ( rule__PathExpression__PathAlternativesAssignment_0 ) ) | ( ( rule__PathExpression__Group_1__0 ) ) );
     public final void rule__PathExpression__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:326:1: ( ( ( rule__PathExpression__PathAlternativesAssignment_0 ) ) | ( ( rule__PathExpression__Group_1__0 ) ) )
+            // InternalPathExpressions.g:326:1: ( ( ( rule__PathExpression__PathAlternativesAssignment_0 ) ) | ( ( rule__PathExpression__Group_1__0 ) ) )
             int alt1=2;
             alt1 = dfa1.predict(input);
             switch (alt1) {
                 case 1 :
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:327:1: ( ( rule__PathExpression__PathAlternativesAssignment_0 ) )
+                    // InternalPathExpressions.g:327:1: ( ( rule__PathExpression__PathAlternativesAssignment_0 ) )
                     {
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:327:1: ( ( rule__PathExpression__PathAlternativesAssignment_0 ) )
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:328:1: ( rule__PathExpression__PathAlternativesAssignment_0 )
+                    // InternalPathExpressions.g:327:1: ( ( rule__PathExpression__PathAlternativesAssignment_0 ) )
+                    // InternalPathExpressions.g:328:1: ( rule__PathExpression__PathAlternativesAssignment_0 )
                     {
                      before(grammarAccess.getPathExpressionAccess().getPathAlternativesAssignment_0()); 
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:329:1: ( rule__PathExpression__PathAlternativesAssignment_0 )
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:329:2: rule__PathExpression__PathAlternativesAssignment_0
+                    // InternalPathExpressions.g:329:1: ( rule__PathExpression__PathAlternativesAssignment_0 )
+                    // InternalPathExpressions.g:329:2: rule__PathExpression__PathAlternativesAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__PathExpression__PathAlternativesAssignment_0_in_rule__PathExpression__Alternatives622);
+                    pushFollow(FOLLOW_2);
                     rule__PathExpression__PathAlternativesAssignment_0();
 
                     state._fsp--;
@@ -823,16 +831,16 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 2 :
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:333:6: ( ( rule__PathExpression__Group_1__0 ) )
+                    // InternalPathExpressions.g:333:6: ( ( rule__PathExpression__Group_1__0 ) )
                     {
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:333:6: ( ( rule__PathExpression__Group_1__0 ) )
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:334:1: ( rule__PathExpression__Group_1__0 )
+                    // InternalPathExpressions.g:333:6: ( ( rule__PathExpression__Group_1__0 ) )
+                    // InternalPathExpressions.g:334:1: ( rule__PathExpression__Group_1__0 )
                     {
                      before(grammarAccess.getPathExpressionAccess().getGroup_1()); 
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:335:1: ( rule__PathExpression__Group_1__0 )
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:335:2: rule__PathExpression__Group_1__0
+                    // InternalPathExpressions.g:335:1: ( rule__PathExpression__Group_1__0 )
+                    // InternalPathExpressions.g:335:2: rule__PathExpression__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__PathExpression__Group_1__0_in_rule__PathExpression__Alternatives640);
+                    pushFollow(FOLLOW_2);
                     rule__PathExpression__Group_1__0();
 
                     state._fsp--;
@@ -865,13 +873,13 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathSegment__Alternatives_0"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:344:1: rule__PathSegment__Alternatives_0 : ( ( ( rule__PathSegment__AlternativesAssignment_0_0 ) ) | ( ( rule__PathSegment__Group_0_1__0 ) ) );
+    // InternalPathExpressions.g:344:1: rule__PathSegment__Alternatives_0 : ( ( ( rule__PathSegment__AlternativesAssignment_0_0 ) ) | ( ( rule__PathSegment__Group_0_1__0 ) ) );
     public final void rule__PathSegment__Alternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:348:1: ( ( ( rule__PathSegment__AlternativesAssignment_0_0 ) ) | ( ( rule__PathSegment__Group_0_1__0 ) ) )
+            // InternalPathExpressions.g:348:1: ( ( ( rule__PathSegment__AlternativesAssignment_0_0 ) ) | ( ( rule__PathSegment__Group_0_1__0 ) ) )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -889,16 +897,16 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
             }
             switch (alt2) {
                 case 1 :
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:349:1: ( ( rule__PathSegment__AlternativesAssignment_0_0 ) )
+                    // InternalPathExpressions.g:349:1: ( ( rule__PathSegment__AlternativesAssignment_0_0 ) )
                     {
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:349:1: ( ( rule__PathSegment__AlternativesAssignment_0_0 ) )
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:350:1: ( rule__PathSegment__AlternativesAssignment_0_0 )
+                    // InternalPathExpressions.g:349:1: ( ( rule__PathSegment__AlternativesAssignment_0_0 ) )
+                    // InternalPathExpressions.g:350:1: ( rule__PathSegment__AlternativesAssignment_0_0 )
                     {
                      before(grammarAccess.getPathSegmentAccess().getAlternativesAssignment_0_0()); 
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:351:1: ( rule__PathSegment__AlternativesAssignment_0_0 )
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:351:2: rule__PathSegment__AlternativesAssignment_0_0
+                    // InternalPathExpressions.g:351:1: ( rule__PathSegment__AlternativesAssignment_0_0 )
+                    // InternalPathExpressions.g:351:2: rule__PathSegment__AlternativesAssignment_0_0
                     {
-                    pushFollow(FOLLOW_rule__PathSegment__AlternativesAssignment_0_0_in_rule__PathSegment__Alternatives_0673);
+                    pushFollow(FOLLOW_2);
                     rule__PathSegment__AlternativesAssignment_0_0();
 
                     state._fsp--;
@@ -914,16 +922,16 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 2 :
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:355:6: ( ( rule__PathSegment__Group_0_1__0 ) )
+                    // InternalPathExpressions.g:355:6: ( ( rule__PathSegment__Group_0_1__0 ) )
                     {
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:355:6: ( ( rule__PathSegment__Group_0_1__0 ) )
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:356:1: ( rule__PathSegment__Group_0_1__0 )
+                    // InternalPathExpressions.g:355:6: ( ( rule__PathSegment__Group_0_1__0 ) )
+                    // InternalPathExpressions.g:356:1: ( rule__PathSegment__Group_0_1__0 )
                     {
                      before(grammarAccess.getPathSegmentAccess().getGroup_0_1()); 
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:357:1: ( rule__PathSegment__Group_0_1__0 )
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:357:2: rule__PathSegment__Group_0_1__0
+                    // InternalPathExpressions.g:357:1: ( rule__PathSegment__Group_0_1__0 )
+                    // InternalPathExpressions.g:357:2: rule__PathSegment__Group_0_1__0
                     {
-                    pushFollow(FOLLOW_rule__PathSegment__Group_0_1__0_in_rule__PathSegment__Alternatives_0691);
+                    pushFollow(FOLLOW_2);
                     rule__PathSegment__Group_0_1__0();
 
                     state._fsp--;
@@ -956,13 +964,13 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathSegmentDescription__Alternatives_0"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:366:1: rule__PathSegmentDescription__Alternatives_0 : ( ( ruleImplicitPathDescription ) | ( ruleExplicitPathDescription ) );
+    // InternalPathExpressions.g:366:1: rule__PathSegmentDescription__Alternatives_0 : ( ( ruleImplicitPathDescription ) | ( ruleExplicitPathDescription ) );
     public final void rule__PathSegmentDescription__Alternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:370:1: ( ( ruleImplicitPathDescription ) | ( ruleExplicitPathDescription ) )
+            // InternalPathExpressions.g:370:1: ( ( ruleImplicitPathDescription ) | ( ruleExplicitPathDescription ) )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -980,13 +988,13 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
             }
             switch (alt3) {
                 case 1 :
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:371:1: ( ruleImplicitPathDescription )
+                    // InternalPathExpressions.g:371:1: ( ruleImplicitPathDescription )
                     {
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:371:1: ( ruleImplicitPathDescription )
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:372:1: ruleImplicitPathDescription
+                    // InternalPathExpressions.g:371:1: ( ruleImplicitPathDescription )
+                    // InternalPathExpressions.g:372:1: ruleImplicitPathDescription
                     {
                      before(grammarAccess.getPathSegmentDescriptionAccess().getImplicitPathDescriptionParserRuleCall_0_0()); 
-                    pushFollow(FOLLOW_ruleImplicitPathDescription_in_rule__PathSegmentDescription__Alternatives_0724);
+                    pushFollow(FOLLOW_2);
                     ruleImplicitPathDescription();
 
                     state._fsp--;
@@ -999,13 +1007,13 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 2 :
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:377:6: ( ruleExplicitPathDescription )
+                    // InternalPathExpressions.g:377:6: ( ruleExplicitPathDescription )
                     {
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:377:6: ( ruleExplicitPathDescription )
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:378:1: ruleExplicitPathDescription
+                    // InternalPathExpressions.g:377:6: ( ruleExplicitPathDescription )
+                    // InternalPathExpressions.g:378:1: ruleExplicitPathDescription
                     {
                      before(grammarAccess.getPathSegmentDescriptionAccess().getExplicitPathDescriptionParserRuleCall_0_1()); 
-                    pushFollow(FOLLOW_ruleExplicitPathDescription_in_rule__PathSegmentDescription__Alternatives_0741);
+                    pushFollow(FOLLOW_2);
                     ruleExplicitPathDescription();
 
                     state._fsp--;
@@ -1035,13 +1043,13 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__RepeatOperator__Alternatives"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:388:1: rule__RepeatOperator__Alternatives : ( ( ( 'NO_REPEAT' ) ) | ( ( '+' ) ) | ( ( '*' ) ) );
+    // InternalPathExpressions.g:388:1: rule__RepeatOperator__Alternatives : ( ( ( 'NO_REPEAT' ) ) | ( ( '+' ) ) | ( ( '*' ) ) );
     public final void rule__RepeatOperator__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:392:1: ( ( ( 'NO_REPEAT' ) ) | ( ( '+' ) ) | ( ( '*' ) ) )
+            // InternalPathExpressions.g:392:1: ( ( ( 'NO_REPEAT' ) ) | ( ( '+' ) ) | ( ( '*' ) ) )
             int alt4=3;
             switch ( input.LA(1) ) {
             case 11:
@@ -1068,16 +1076,16 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
             switch (alt4) {
                 case 1 :
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:393:1: ( ( 'NO_REPEAT' ) )
+                    // InternalPathExpressions.g:393:1: ( ( 'NO_REPEAT' ) )
                     {
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:393:1: ( ( 'NO_REPEAT' ) )
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:394:1: ( 'NO_REPEAT' )
+                    // InternalPathExpressions.g:393:1: ( ( 'NO_REPEAT' ) )
+                    // InternalPathExpressions.g:394:1: ( 'NO_REPEAT' )
                     {
                      before(grammarAccess.getRepeatOperatorAccess().getNO_REPEATEnumLiteralDeclaration_0()); 
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:395:1: ( 'NO_REPEAT' )
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:395:3: 'NO_REPEAT'
+                    // InternalPathExpressions.g:395:1: ( 'NO_REPEAT' )
+                    // InternalPathExpressions.g:395:3: 'NO_REPEAT'
                     {
-                    match(input,11,FOLLOW_11_in_rule__RepeatOperator__Alternatives774); 
+                    match(input,11,FOLLOW_2); 
 
                     }
 
@@ -1089,16 +1097,16 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 2 :
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:400:6: ( ( '+' ) )
+                    // InternalPathExpressions.g:400:6: ( ( '+' ) )
                     {
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:400:6: ( ( '+' ) )
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:401:1: ( '+' )
+                    // InternalPathExpressions.g:400:6: ( ( '+' ) )
+                    // InternalPathExpressions.g:401:1: ( '+' )
                     {
                      before(grammarAccess.getRepeatOperatorAccess().getAT_LEAST_ONCEEnumLiteralDeclaration_1()); 
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:402:1: ( '+' )
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:402:3: '+'
+                    // InternalPathExpressions.g:402:1: ( '+' )
+                    // InternalPathExpressions.g:402:3: '+'
                     {
-                    match(input,12,FOLLOW_12_in_rule__RepeatOperator__Alternatives795); 
+                    match(input,12,FOLLOW_2); 
 
                     }
 
@@ -1110,16 +1118,16 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 3 :
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:407:6: ( ( '*' ) )
+                    // InternalPathExpressions.g:407:6: ( ( '*' ) )
                     {
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:407:6: ( ( '*' ) )
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:408:1: ( '*' )
+                    // InternalPathExpressions.g:407:6: ( ( '*' ) )
+                    // InternalPathExpressions.g:408:1: ( '*' )
                     {
                      before(grammarAccess.getRepeatOperatorAccess().getARBITRARYEnumLiteralDeclaration_2()); 
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:409:1: ( '*' )
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:409:3: '*'
+                    // InternalPathExpressions.g:409:1: ( '*' )
+                    // InternalPathExpressions.g:409:3: '*'
                     {
-                    match(input,13,FOLLOW_13_in_rule__RepeatOperator__Alternatives816); 
+                    match(input,13,FOLLOW_2); 
 
                     }
 
@@ -1148,13 +1156,13 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ImplicitPathKind__Alternatives"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:419:1: rule__ImplicitPathKind__Alternatives : ( ( ( '-->' ) ) | ( ( '<>-->' ) ) | ( ( '--><>' ) ) );
+    // InternalPathExpressions.g:419:1: rule__ImplicitPathKind__Alternatives : ( ( ( '-->' ) ) | ( ( '<>-->' ) ) | ( ( '--><>' ) ) );
     public final void rule__ImplicitPathKind__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:423:1: ( ( ( '-->' ) ) | ( ( '<>-->' ) ) | ( ( '--><>' ) ) )
+            // InternalPathExpressions.g:423:1: ( ( ( '-->' ) ) | ( ( '<>-->' ) ) | ( ( '--><>' ) ) )
             int alt5=3;
             switch ( input.LA(1) ) {
             case 14:
@@ -1181,16 +1189,16 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
             switch (alt5) {
                 case 1 :
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:424:1: ( ( '-->' ) )
+                    // InternalPathExpressions.g:424:1: ( ( '-->' ) )
                     {
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:424:1: ( ( '-->' ) )
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:425:1: ( '-->' )
+                    // InternalPathExpressions.g:424:1: ( ( '-->' ) )
+                    // InternalPathExpressions.g:425:1: ( '-->' )
                     {
                      before(grammarAccess.getImplicitPathKindAccess().getANYEnumLiteralDeclaration_0()); 
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:426:1: ( '-->' )
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:426:3: '-->'
+                    // InternalPathExpressions.g:426:1: ( '-->' )
+                    // InternalPathExpressions.g:426:3: '-->'
                     {
-                    match(input,14,FOLLOW_14_in_rule__ImplicitPathKind__Alternatives852); 
+                    match(input,14,FOLLOW_2); 
 
                     }
 
@@ -1202,16 +1210,16 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 2 :
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:431:6: ( ( '<>-->' ) )
+                    // InternalPathExpressions.g:431:6: ( ( '<>-->' ) )
                     {
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:431:6: ( ( '<>-->' ) )
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:432:1: ( '<>-->' )
+                    // InternalPathExpressions.g:431:6: ( ( '<>-->' ) )
+                    // InternalPathExpressions.g:432:1: ( '<>-->' )
                     {
                      before(grammarAccess.getImplicitPathKindAccess().getCONTAINMENT_SOURCEEnumLiteralDeclaration_1()); 
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:433:1: ( '<>-->' )
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:433:3: '<>-->'
+                    // InternalPathExpressions.g:433:1: ( '<>-->' )
+                    // InternalPathExpressions.g:433:3: '<>-->'
                     {
-                    match(input,15,FOLLOW_15_in_rule__ImplicitPathKind__Alternatives873); 
+                    match(input,15,FOLLOW_2); 
 
                     }
 
@@ -1223,16 +1231,16 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 3 :
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:438:6: ( ( '--><>' ) )
+                    // InternalPathExpressions.g:438:6: ( ( '--><>' ) )
                     {
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:438:6: ( ( '--><>' ) )
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:439:1: ( '--><>' )
+                    // InternalPathExpressions.g:438:6: ( ( '--><>' ) )
+                    // InternalPathExpressions.g:439:1: ( '--><>' )
                     {
                      before(grammarAccess.getImplicitPathKindAccess().getCONTAINMENT_TARGETEnumLiteralDeclaration_2()); 
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:440:1: ( '--><>' )
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:440:3: '--><>'
+                    // InternalPathExpressions.g:440:1: ( '--><>' )
+                    // InternalPathExpressions.g:440:3: '--><>'
                     {
-                    match(input,16,FOLLOW_16_in_rule__ImplicitPathKind__Alternatives894); 
+                    match(input,16,FOLLOW_2); 
 
                     }
 
@@ -1261,21 +1269,21 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathExpression__Group_1__0"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:452:1: rule__PathExpression__Group_1__0 : rule__PathExpression__Group_1__0__Impl rule__PathExpression__Group_1__1 ;
+    // InternalPathExpressions.g:452:1: rule__PathExpression__Group_1__0 : rule__PathExpression__Group_1__0__Impl rule__PathExpression__Group_1__1 ;
     public final void rule__PathExpression__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:456:1: ( rule__PathExpression__Group_1__0__Impl rule__PathExpression__Group_1__1 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:457:2: rule__PathExpression__Group_1__0__Impl rule__PathExpression__Group_1__1
+            // InternalPathExpressions.g:456:1: ( rule__PathExpression__Group_1__0__Impl rule__PathExpression__Group_1__1 )
+            // InternalPathExpressions.g:457:2: rule__PathExpression__Group_1__0__Impl rule__PathExpression__Group_1__1
             {
-            pushFollow(FOLLOW_rule__PathExpression__Group_1__0__Impl_in_rule__PathExpression__Group_1__0927);
+            pushFollow(FOLLOW_3);
             rule__PathExpression__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PathExpression__Group_1__1_in_rule__PathExpression__Group_1__0930);
+            pushFollow(FOLLOW_2);
             rule__PathExpression__Group_1__1();
 
             state._fsp--;
@@ -1299,20 +1307,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathExpression__Group_1__0__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:464:1: rule__PathExpression__Group_1__0__Impl : ( '(' ) ;
+    // InternalPathExpressions.g:464:1: rule__PathExpression__Group_1__0__Impl : ( '(' ) ;
     public final void rule__PathExpression__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:468:1: ( ( '(' ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:469:1: ( '(' )
+            // InternalPathExpressions.g:468:1: ( ( '(' ) )
+            // InternalPathExpressions.g:469:1: ( '(' )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:469:1: ( '(' )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:470:1: '('
+            // InternalPathExpressions.g:469:1: ( '(' )
+            // InternalPathExpressions.g:470:1: '('
             {
              before(grammarAccess.getPathExpressionAccess().getLeftParenthesisKeyword_1_0()); 
-            match(input,17,FOLLOW_17_in_rule__PathExpression__Group_1__0__Impl958); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getPathExpressionAccess().getLeftParenthesisKeyword_1_0()); 
 
             }
@@ -1336,21 +1344,21 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathExpression__Group_1__1"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:483:1: rule__PathExpression__Group_1__1 : rule__PathExpression__Group_1__1__Impl rule__PathExpression__Group_1__2 ;
+    // InternalPathExpressions.g:483:1: rule__PathExpression__Group_1__1 : rule__PathExpression__Group_1__1__Impl rule__PathExpression__Group_1__2 ;
     public final void rule__PathExpression__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:487:1: ( rule__PathExpression__Group_1__1__Impl rule__PathExpression__Group_1__2 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:488:2: rule__PathExpression__Group_1__1__Impl rule__PathExpression__Group_1__2
+            // InternalPathExpressions.g:487:1: ( rule__PathExpression__Group_1__1__Impl rule__PathExpression__Group_1__2 )
+            // InternalPathExpressions.g:488:2: rule__PathExpression__Group_1__1__Impl rule__PathExpression__Group_1__2
             {
-            pushFollow(FOLLOW_rule__PathExpression__Group_1__1__Impl_in_rule__PathExpression__Group_1__1989);
+            pushFollow(FOLLOW_4);
             rule__PathExpression__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PathExpression__Group_1__2_in_rule__PathExpression__Group_1__1992);
+            pushFollow(FOLLOW_2);
             rule__PathExpression__Group_1__2();
 
             state._fsp--;
@@ -1374,23 +1382,23 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathExpression__Group_1__1__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:495:1: rule__PathExpression__Group_1__1__Impl : ( ( rule__PathExpression__PathAlternativesAssignment_1_1 ) ) ;
+    // InternalPathExpressions.g:495:1: rule__PathExpression__Group_1__1__Impl : ( ( rule__PathExpression__PathAlternativesAssignment_1_1 ) ) ;
     public final void rule__PathExpression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:499:1: ( ( ( rule__PathExpression__PathAlternativesAssignment_1_1 ) ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:500:1: ( ( rule__PathExpression__PathAlternativesAssignment_1_1 ) )
+            // InternalPathExpressions.g:499:1: ( ( ( rule__PathExpression__PathAlternativesAssignment_1_1 ) ) )
+            // InternalPathExpressions.g:500:1: ( ( rule__PathExpression__PathAlternativesAssignment_1_1 ) )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:500:1: ( ( rule__PathExpression__PathAlternativesAssignment_1_1 ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:501:1: ( rule__PathExpression__PathAlternativesAssignment_1_1 )
+            // InternalPathExpressions.g:500:1: ( ( rule__PathExpression__PathAlternativesAssignment_1_1 ) )
+            // InternalPathExpressions.g:501:1: ( rule__PathExpression__PathAlternativesAssignment_1_1 )
             {
              before(grammarAccess.getPathExpressionAccess().getPathAlternativesAssignment_1_1()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:502:1: ( rule__PathExpression__PathAlternativesAssignment_1_1 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:502:2: rule__PathExpression__PathAlternativesAssignment_1_1
+            // InternalPathExpressions.g:502:1: ( rule__PathExpression__PathAlternativesAssignment_1_1 )
+            // InternalPathExpressions.g:502:2: rule__PathExpression__PathAlternativesAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__PathExpression__PathAlternativesAssignment_1_1_in_rule__PathExpression__Group_1__1__Impl1019);
+            pushFollow(FOLLOW_2);
             rule__PathExpression__PathAlternativesAssignment_1_1();
 
             state._fsp--;
@@ -1421,21 +1429,21 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathExpression__Group_1__2"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:512:1: rule__PathExpression__Group_1__2 : rule__PathExpression__Group_1__2__Impl rule__PathExpression__Group_1__3 ;
+    // InternalPathExpressions.g:512:1: rule__PathExpression__Group_1__2 : rule__PathExpression__Group_1__2__Impl rule__PathExpression__Group_1__3 ;
     public final void rule__PathExpression__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:516:1: ( rule__PathExpression__Group_1__2__Impl rule__PathExpression__Group_1__3 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:517:2: rule__PathExpression__Group_1__2__Impl rule__PathExpression__Group_1__3
+            // InternalPathExpressions.g:516:1: ( rule__PathExpression__Group_1__2__Impl rule__PathExpression__Group_1__3 )
+            // InternalPathExpressions.g:517:2: rule__PathExpression__Group_1__2__Impl rule__PathExpression__Group_1__3
             {
-            pushFollow(FOLLOW_rule__PathExpression__Group_1__2__Impl_in_rule__PathExpression__Group_1__21049);
+            pushFollow(FOLLOW_5);
             rule__PathExpression__Group_1__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PathExpression__Group_1__3_in_rule__PathExpression__Group_1__21052);
+            pushFollow(FOLLOW_2);
             rule__PathExpression__Group_1__3();
 
             state._fsp--;
@@ -1459,20 +1467,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathExpression__Group_1__2__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:524:1: rule__PathExpression__Group_1__2__Impl : ( ')' ) ;
+    // InternalPathExpressions.g:524:1: rule__PathExpression__Group_1__2__Impl : ( ')' ) ;
     public final void rule__PathExpression__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:528:1: ( ( ')' ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:529:1: ( ')' )
+            // InternalPathExpressions.g:528:1: ( ( ')' ) )
+            // InternalPathExpressions.g:529:1: ( ')' )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:529:1: ( ')' )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:530:1: ')'
+            // InternalPathExpressions.g:529:1: ( ')' )
+            // InternalPathExpressions.g:530:1: ')'
             {
              before(grammarAccess.getPathExpressionAccess().getRightParenthesisKeyword_1_2()); 
-            match(input,18,FOLLOW_18_in_rule__PathExpression__Group_1__2__Impl1080); 
+            match(input,18,FOLLOW_2); 
              after(grammarAccess.getPathExpressionAccess().getRightParenthesisKeyword_1_2()); 
 
             }
@@ -1496,16 +1504,16 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathExpression__Group_1__3"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:543:1: rule__PathExpression__Group_1__3 : rule__PathExpression__Group_1__3__Impl ;
+    // InternalPathExpressions.g:543:1: rule__PathExpression__Group_1__3 : rule__PathExpression__Group_1__3__Impl ;
     public final void rule__PathExpression__Group_1__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:547:1: ( rule__PathExpression__Group_1__3__Impl )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:548:2: rule__PathExpression__Group_1__3__Impl
+            // InternalPathExpressions.g:547:1: ( rule__PathExpression__Group_1__3__Impl )
+            // InternalPathExpressions.g:548:2: rule__PathExpression__Group_1__3__Impl
             {
-            pushFollow(FOLLOW_rule__PathExpression__Group_1__3__Impl_in_rule__PathExpression__Group_1__31111);
+            pushFollow(FOLLOW_2);
             rule__PathExpression__Group_1__3__Impl();
 
             state._fsp--;
@@ -1529,26 +1537,26 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathExpression__Group_1__3__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:554:1: rule__PathExpression__Group_1__3__Impl : ( ( ( rule__PathExpression__Group_1_3__0 ) ) ( ( rule__PathExpression__Group_1_3__0 )* ) ) ;
+    // InternalPathExpressions.g:554:1: rule__PathExpression__Group_1__3__Impl : ( ( ( rule__PathExpression__Group_1_3__0 ) ) ( ( rule__PathExpression__Group_1_3__0 )* ) ) ;
     public final void rule__PathExpression__Group_1__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:558:1: ( ( ( ( rule__PathExpression__Group_1_3__0 ) ) ( ( rule__PathExpression__Group_1_3__0 )* ) ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:559:1: ( ( ( rule__PathExpression__Group_1_3__0 ) ) ( ( rule__PathExpression__Group_1_3__0 )* ) )
+            // InternalPathExpressions.g:558:1: ( ( ( ( rule__PathExpression__Group_1_3__0 ) ) ( ( rule__PathExpression__Group_1_3__0 )* ) ) )
+            // InternalPathExpressions.g:559:1: ( ( ( rule__PathExpression__Group_1_3__0 ) ) ( ( rule__PathExpression__Group_1_3__0 )* ) )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:559:1: ( ( ( rule__PathExpression__Group_1_3__0 ) ) ( ( rule__PathExpression__Group_1_3__0 )* ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:560:1: ( ( rule__PathExpression__Group_1_3__0 ) ) ( ( rule__PathExpression__Group_1_3__0 )* )
+            // InternalPathExpressions.g:559:1: ( ( ( rule__PathExpression__Group_1_3__0 ) ) ( ( rule__PathExpression__Group_1_3__0 )* ) )
+            // InternalPathExpressions.g:560:1: ( ( rule__PathExpression__Group_1_3__0 ) ) ( ( rule__PathExpression__Group_1_3__0 )* )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:560:1: ( ( rule__PathExpression__Group_1_3__0 ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:561:1: ( rule__PathExpression__Group_1_3__0 )
+            // InternalPathExpressions.g:560:1: ( ( rule__PathExpression__Group_1_3__0 ) )
+            // InternalPathExpressions.g:561:1: ( rule__PathExpression__Group_1_3__0 )
             {
              before(grammarAccess.getPathExpressionAccess().getGroup_1_3()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:562:1: ( rule__PathExpression__Group_1_3__0 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:562:2: rule__PathExpression__Group_1_3__0
+            // InternalPathExpressions.g:562:1: ( rule__PathExpression__Group_1_3__0 )
+            // InternalPathExpressions.g:562:2: rule__PathExpression__Group_1_3__0
             {
-            pushFollow(FOLLOW_rule__PathExpression__Group_1_3__0_in_rule__PathExpression__Group_1__3__Impl1140);
+            pushFollow(FOLLOW_6);
             rule__PathExpression__Group_1_3__0();
 
             state._fsp--;
@@ -1560,11 +1568,11 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
             }
 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:565:1: ( ( rule__PathExpression__Group_1_3__0 )* )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:566:1: ( rule__PathExpression__Group_1_3__0 )*
+            // InternalPathExpressions.g:565:1: ( ( rule__PathExpression__Group_1_3__0 )* )
+            // InternalPathExpressions.g:566:1: ( rule__PathExpression__Group_1_3__0 )*
             {
              before(grammarAccess.getPathExpressionAccess().getGroup_1_3()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:567:1: ( rule__PathExpression__Group_1_3__0 )*
+            // InternalPathExpressions.g:567:1: ( rule__PathExpression__Group_1_3__0 )*
             loop6:
             do {
                 int alt6=2;
@@ -1577,9 +1585,9 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
                 switch (alt6) {
             	case 1 :
-            	    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:567:2: rule__PathExpression__Group_1_3__0
+            	    // InternalPathExpressions.g:567:2: rule__PathExpression__Group_1_3__0
             	    {
-            	    pushFollow(FOLLOW_rule__PathExpression__Group_1_3__0_in_rule__PathExpression__Group_1__3__Impl1152);
+            	    pushFollow(FOLLOW_6);
             	    rule__PathExpression__Group_1_3__0();
 
             	    state._fsp--;
@@ -1619,21 +1627,21 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathExpression__Group_1_3__0"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:586:1: rule__PathExpression__Group_1_3__0 : rule__PathExpression__Group_1_3__0__Impl rule__PathExpression__Group_1_3__1 ;
+    // InternalPathExpressions.g:586:1: rule__PathExpression__Group_1_3__0 : rule__PathExpression__Group_1_3__0__Impl rule__PathExpression__Group_1_3__1 ;
     public final void rule__PathExpression__Group_1_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:590:1: ( rule__PathExpression__Group_1_3__0__Impl rule__PathExpression__Group_1_3__1 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:591:2: rule__PathExpression__Group_1_3__0__Impl rule__PathExpression__Group_1_3__1
+            // InternalPathExpressions.g:590:1: ( rule__PathExpression__Group_1_3__0__Impl rule__PathExpression__Group_1_3__1 )
+            // InternalPathExpressions.g:591:2: rule__PathExpression__Group_1_3__0__Impl rule__PathExpression__Group_1_3__1
             {
-            pushFollow(FOLLOW_rule__PathExpression__Group_1_3__0__Impl_in_rule__PathExpression__Group_1_3__01193);
+            pushFollow(FOLLOW_7);
             rule__PathExpression__Group_1_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PathExpression__Group_1_3__1_in_rule__PathExpression__Group_1_3__01196);
+            pushFollow(FOLLOW_2);
             rule__PathExpression__Group_1_3__1();
 
             state._fsp--;
@@ -1657,20 +1665,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathExpression__Group_1_3__0__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:598:1: rule__PathExpression__Group_1_3__0__Impl : ( '|' ) ;
+    // InternalPathExpressions.g:598:1: rule__PathExpression__Group_1_3__0__Impl : ( '|' ) ;
     public final void rule__PathExpression__Group_1_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:602:1: ( ( '|' ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:603:1: ( '|' )
+            // InternalPathExpressions.g:602:1: ( ( '|' ) )
+            // InternalPathExpressions.g:603:1: ( '|' )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:603:1: ( '|' )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:604:1: '|'
+            // InternalPathExpressions.g:603:1: ( '|' )
+            // InternalPathExpressions.g:604:1: '|'
             {
              before(grammarAccess.getPathExpressionAccess().getVerticalLineKeyword_1_3_0()); 
-            match(input,19,FOLLOW_19_in_rule__PathExpression__Group_1_3__0__Impl1224); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getPathExpressionAccess().getVerticalLineKeyword_1_3_0()); 
 
             }
@@ -1694,21 +1702,21 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathExpression__Group_1_3__1"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:617:1: rule__PathExpression__Group_1_3__1 : rule__PathExpression__Group_1_3__1__Impl rule__PathExpression__Group_1_3__2 ;
+    // InternalPathExpressions.g:617:1: rule__PathExpression__Group_1_3__1 : rule__PathExpression__Group_1_3__1__Impl rule__PathExpression__Group_1_3__2 ;
     public final void rule__PathExpression__Group_1_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:621:1: ( rule__PathExpression__Group_1_3__1__Impl rule__PathExpression__Group_1_3__2 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:622:2: rule__PathExpression__Group_1_3__1__Impl rule__PathExpression__Group_1_3__2
+            // InternalPathExpressions.g:621:1: ( rule__PathExpression__Group_1_3__1__Impl rule__PathExpression__Group_1_3__2 )
+            // InternalPathExpressions.g:622:2: rule__PathExpression__Group_1_3__1__Impl rule__PathExpression__Group_1_3__2
             {
-            pushFollow(FOLLOW_rule__PathExpression__Group_1_3__1__Impl_in_rule__PathExpression__Group_1_3__11255);
+            pushFollow(FOLLOW_3);
             rule__PathExpression__Group_1_3__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PathExpression__Group_1_3__2_in_rule__PathExpression__Group_1_3__11258);
+            pushFollow(FOLLOW_2);
             rule__PathExpression__Group_1_3__2();
 
             state._fsp--;
@@ -1732,20 +1740,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathExpression__Group_1_3__1__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:629:1: rule__PathExpression__Group_1_3__1__Impl : ( '(' ) ;
+    // InternalPathExpressions.g:629:1: rule__PathExpression__Group_1_3__1__Impl : ( '(' ) ;
     public final void rule__PathExpression__Group_1_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:633:1: ( ( '(' ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:634:1: ( '(' )
+            // InternalPathExpressions.g:633:1: ( ( '(' ) )
+            // InternalPathExpressions.g:634:1: ( '(' )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:634:1: ( '(' )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:635:1: '('
+            // InternalPathExpressions.g:634:1: ( '(' )
+            // InternalPathExpressions.g:635:1: '('
             {
              before(grammarAccess.getPathExpressionAccess().getLeftParenthesisKeyword_1_3_1()); 
-            match(input,17,FOLLOW_17_in_rule__PathExpression__Group_1_3__1__Impl1286); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getPathExpressionAccess().getLeftParenthesisKeyword_1_3_1()); 
 
             }
@@ -1769,21 +1777,21 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathExpression__Group_1_3__2"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:648:1: rule__PathExpression__Group_1_3__2 : rule__PathExpression__Group_1_3__2__Impl rule__PathExpression__Group_1_3__3 ;
+    // InternalPathExpressions.g:648:1: rule__PathExpression__Group_1_3__2 : rule__PathExpression__Group_1_3__2__Impl rule__PathExpression__Group_1_3__3 ;
     public final void rule__PathExpression__Group_1_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:652:1: ( rule__PathExpression__Group_1_3__2__Impl rule__PathExpression__Group_1_3__3 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:653:2: rule__PathExpression__Group_1_3__2__Impl rule__PathExpression__Group_1_3__3
+            // InternalPathExpressions.g:652:1: ( rule__PathExpression__Group_1_3__2__Impl rule__PathExpression__Group_1_3__3 )
+            // InternalPathExpressions.g:653:2: rule__PathExpression__Group_1_3__2__Impl rule__PathExpression__Group_1_3__3
             {
-            pushFollow(FOLLOW_rule__PathExpression__Group_1_3__2__Impl_in_rule__PathExpression__Group_1_3__21317);
+            pushFollow(FOLLOW_4);
             rule__PathExpression__Group_1_3__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PathExpression__Group_1_3__3_in_rule__PathExpression__Group_1_3__21320);
+            pushFollow(FOLLOW_2);
             rule__PathExpression__Group_1_3__3();
 
             state._fsp--;
@@ -1807,23 +1815,23 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathExpression__Group_1_3__2__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:660:1: rule__PathExpression__Group_1_3__2__Impl : ( ( rule__PathExpression__PathAlternativesAssignment_1_3_2 ) ) ;
+    // InternalPathExpressions.g:660:1: rule__PathExpression__Group_1_3__2__Impl : ( ( rule__PathExpression__PathAlternativesAssignment_1_3_2 ) ) ;
     public final void rule__PathExpression__Group_1_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:664:1: ( ( ( rule__PathExpression__PathAlternativesAssignment_1_3_2 ) ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:665:1: ( ( rule__PathExpression__PathAlternativesAssignment_1_3_2 ) )
+            // InternalPathExpressions.g:664:1: ( ( ( rule__PathExpression__PathAlternativesAssignment_1_3_2 ) ) )
+            // InternalPathExpressions.g:665:1: ( ( rule__PathExpression__PathAlternativesAssignment_1_3_2 ) )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:665:1: ( ( rule__PathExpression__PathAlternativesAssignment_1_3_2 ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:666:1: ( rule__PathExpression__PathAlternativesAssignment_1_3_2 )
+            // InternalPathExpressions.g:665:1: ( ( rule__PathExpression__PathAlternativesAssignment_1_3_2 ) )
+            // InternalPathExpressions.g:666:1: ( rule__PathExpression__PathAlternativesAssignment_1_3_2 )
             {
              before(grammarAccess.getPathExpressionAccess().getPathAlternativesAssignment_1_3_2()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:667:1: ( rule__PathExpression__PathAlternativesAssignment_1_3_2 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:667:2: rule__PathExpression__PathAlternativesAssignment_1_3_2
+            // InternalPathExpressions.g:667:1: ( rule__PathExpression__PathAlternativesAssignment_1_3_2 )
+            // InternalPathExpressions.g:667:2: rule__PathExpression__PathAlternativesAssignment_1_3_2
             {
-            pushFollow(FOLLOW_rule__PathExpression__PathAlternativesAssignment_1_3_2_in_rule__PathExpression__Group_1_3__2__Impl1347);
+            pushFollow(FOLLOW_2);
             rule__PathExpression__PathAlternativesAssignment_1_3_2();
 
             state._fsp--;
@@ -1854,16 +1862,16 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathExpression__Group_1_3__3"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:677:1: rule__PathExpression__Group_1_3__3 : rule__PathExpression__Group_1_3__3__Impl ;
+    // InternalPathExpressions.g:677:1: rule__PathExpression__Group_1_3__3 : rule__PathExpression__Group_1_3__3__Impl ;
     public final void rule__PathExpression__Group_1_3__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:681:1: ( rule__PathExpression__Group_1_3__3__Impl )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:682:2: rule__PathExpression__Group_1_3__3__Impl
+            // InternalPathExpressions.g:681:1: ( rule__PathExpression__Group_1_3__3__Impl )
+            // InternalPathExpressions.g:682:2: rule__PathExpression__Group_1_3__3__Impl
             {
-            pushFollow(FOLLOW_rule__PathExpression__Group_1_3__3__Impl_in_rule__PathExpression__Group_1_3__31377);
+            pushFollow(FOLLOW_2);
             rule__PathExpression__Group_1_3__3__Impl();
 
             state._fsp--;
@@ -1887,20 +1895,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathExpression__Group_1_3__3__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:688:1: rule__PathExpression__Group_1_3__3__Impl : ( ')' ) ;
+    // InternalPathExpressions.g:688:1: rule__PathExpression__Group_1_3__3__Impl : ( ')' ) ;
     public final void rule__PathExpression__Group_1_3__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:692:1: ( ( ')' ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:693:1: ( ')' )
+            // InternalPathExpressions.g:692:1: ( ( ')' ) )
+            // InternalPathExpressions.g:693:1: ( ')' )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:693:1: ( ')' )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:694:1: ')'
+            // InternalPathExpressions.g:693:1: ( ')' )
+            // InternalPathExpressions.g:694:1: ')'
             {
              before(grammarAccess.getPathExpressionAccess().getRightParenthesisKeyword_1_3_3()); 
-            match(input,18,FOLLOW_18_in_rule__PathExpression__Group_1_3__3__Impl1405); 
+            match(input,18,FOLLOW_2); 
              after(grammarAccess.getPathExpressionAccess().getRightParenthesisKeyword_1_3_3()); 
 
             }
@@ -1924,21 +1932,21 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Path__Group__0"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:715:1: rule__Path__Group__0 : rule__Path__Group__0__Impl rule__Path__Group__1 ;
+    // InternalPathExpressions.g:715:1: rule__Path__Group__0 : rule__Path__Group__0__Impl rule__Path__Group__1 ;
     public final void rule__Path__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:719:1: ( rule__Path__Group__0__Impl rule__Path__Group__1 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:720:2: rule__Path__Group__0__Impl rule__Path__Group__1
+            // InternalPathExpressions.g:719:1: ( rule__Path__Group__0__Impl rule__Path__Group__1 )
+            // InternalPathExpressions.g:720:2: rule__Path__Group__0__Impl rule__Path__Group__1
             {
-            pushFollow(FOLLOW_rule__Path__Group__0__Impl_in_rule__Path__Group__01444);
+            pushFollow(FOLLOW_8);
             rule__Path__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Path__Group__1_in_rule__Path__Group__01447);
+            pushFollow(FOLLOW_2);
             rule__Path__Group__1();
 
             state._fsp--;
@@ -1962,23 +1970,23 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Path__Group__0__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:727:1: rule__Path__Group__0__Impl : ( ( rule__Path__SegmentsAssignment_0 ) ) ;
+    // InternalPathExpressions.g:727:1: rule__Path__Group__0__Impl : ( ( rule__Path__SegmentsAssignment_0 ) ) ;
     public final void rule__Path__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:731:1: ( ( ( rule__Path__SegmentsAssignment_0 ) ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:732:1: ( ( rule__Path__SegmentsAssignment_0 ) )
+            // InternalPathExpressions.g:731:1: ( ( ( rule__Path__SegmentsAssignment_0 ) ) )
+            // InternalPathExpressions.g:732:1: ( ( rule__Path__SegmentsAssignment_0 ) )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:732:1: ( ( rule__Path__SegmentsAssignment_0 ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:733:1: ( rule__Path__SegmentsAssignment_0 )
+            // InternalPathExpressions.g:732:1: ( ( rule__Path__SegmentsAssignment_0 ) )
+            // InternalPathExpressions.g:733:1: ( rule__Path__SegmentsAssignment_0 )
             {
              before(grammarAccess.getPathAccess().getSegmentsAssignment_0()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:734:1: ( rule__Path__SegmentsAssignment_0 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:734:2: rule__Path__SegmentsAssignment_0
+            // InternalPathExpressions.g:734:1: ( rule__Path__SegmentsAssignment_0 )
+            // InternalPathExpressions.g:734:2: rule__Path__SegmentsAssignment_0
             {
-            pushFollow(FOLLOW_rule__Path__SegmentsAssignment_0_in_rule__Path__Group__0__Impl1474);
+            pushFollow(FOLLOW_2);
             rule__Path__SegmentsAssignment_0();
 
             state._fsp--;
@@ -2009,16 +2017,16 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Path__Group__1"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:744:1: rule__Path__Group__1 : rule__Path__Group__1__Impl ;
+    // InternalPathExpressions.g:744:1: rule__Path__Group__1 : rule__Path__Group__1__Impl ;
     public final void rule__Path__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:748:1: ( rule__Path__Group__1__Impl )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:749:2: rule__Path__Group__1__Impl
+            // InternalPathExpressions.g:748:1: ( rule__Path__Group__1__Impl )
+            // InternalPathExpressions.g:749:2: rule__Path__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Path__Group__1__Impl_in_rule__Path__Group__11504);
+            pushFollow(FOLLOW_2);
             rule__Path__Group__1__Impl();
 
             state._fsp--;
@@ -2042,20 +2050,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Path__Group__1__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:755:1: rule__Path__Group__1__Impl : ( ( rule__Path__Group_1__0 )* ) ;
+    // InternalPathExpressions.g:755:1: rule__Path__Group__1__Impl : ( ( rule__Path__Group_1__0 )* ) ;
     public final void rule__Path__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:759:1: ( ( ( rule__Path__Group_1__0 )* ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:760:1: ( ( rule__Path__Group_1__0 )* )
+            // InternalPathExpressions.g:759:1: ( ( ( rule__Path__Group_1__0 )* ) )
+            // InternalPathExpressions.g:760:1: ( ( rule__Path__Group_1__0 )* )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:760:1: ( ( rule__Path__Group_1__0 )* )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:761:1: ( rule__Path__Group_1__0 )*
+            // InternalPathExpressions.g:760:1: ( ( rule__Path__Group_1__0 )* )
+            // InternalPathExpressions.g:761:1: ( rule__Path__Group_1__0 )*
             {
              before(grammarAccess.getPathAccess().getGroup_1()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:762:1: ( rule__Path__Group_1__0 )*
+            // InternalPathExpressions.g:762:1: ( rule__Path__Group_1__0 )*
             loop7:
             do {
                 int alt7=2;
@@ -2068,9 +2076,9 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:762:2: rule__Path__Group_1__0
+            	    // InternalPathExpressions.g:762:2: rule__Path__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__Path__Group_1__0_in_rule__Path__Group__1__Impl1531);
+            	    pushFollow(FOLLOW_9);
             	    rule__Path__Group_1__0();
 
             	    state._fsp--;
@@ -2107,21 +2115,21 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Path__Group_1__0"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:776:1: rule__Path__Group_1__0 : rule__Path__Group_1__0__Impl rule__Path__Group_1__1 ;
+    // InternalPathExpressions.g:776:1: rule__Path__Group_1__0 : rule__Path__Group_1__0__Impl rule__Path__Group_1__1 ;
     public final void rule__Path__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:780:1: ( rule__Path__Group_1__0__Impl rule__Path__Group_1__1 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:781:2: rule__Path__Group_1__0__Impl rule__Path__Group_1__1
+            // InternalPathExpressions.g:780:1: ( rule__Path__Group_1__0__Impl rule__Path__Group_1__1 )
+            // InternalPathExpressions.g:781:2: rule__Path__Group_1__0__Impl rule__Path__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Path__Group_1__0__Impl_in_rule__Path__Group_1__01566);
+            pushFollow(FOLLOW_3);
             rule__Path__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Path__Group_1__1_in_rule__Path__Group_1__01569);
+            pushFollow(FOLLOW_2);
             rule__Path__Group_1__1();
 
             state._fsp--;
@@ -2145,20 +2153,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Path__Group_1__0__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:788:1: rule__Path__Group_1__0__Impl : ( '.' ) ;
+    // InternalPathExpressions.g:788:1: rule__Path__Group_1__0__Impl : ( '.' ) ;
     public final void rule__Path__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:792:1: ( ( '.' ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:793:1: ( '.' )
+            // InternalPathExpressions.g:792:1: ( ( '.' ) )
+            // InternalPathExpressions.g:793:1: ( '.' )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:793:1: ( '.' )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:794:1: '.'
+            // InternalPathExpressions.g:793:1: ( '.' )
+            // InternalPathExpressions.g:794:1: '.'
             {
              before(grammarAccess.getPathAccess().getFullStopKeyword_1_0()); 
-            match(input,20,FOLLOW_20_in_rule__Path__Group_1__0__Impl1597); 
+            match(input,20,FOLLOW_2); 
              after(grammarAccess.getPathAccess().getFullStopKeyword_1_0()); 
 
             }
@@ -2182,16 +2190,16 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Path__Group_1__1"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:807:1: rule__Path__Group_1__1 : rule__Path__Group_1__1__Impl ;
+    // InternalPathExpressions.g:807:1: rule__Path__Group_1__1 : rule__Path__Group_1__1__Impl ;
     public final void rule__Path__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:811:1: ( rule__Path__Group_1__1__Impl )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:812:2: rule__Path__Group_1__1__Impl
+            // InternalPathExpressions.g:811:1: ( rule__Path__Group_1__1__Impl )
+            // InternalPathExpressions.g:812:2: rule__Path__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__Path__Group_1__1__Impl_in_rule__Path__Group_1__11628);
+            pushFollow(FOLLOW_2);
             rule__Path__Group_1__1__Impl();
 
             state._fsp--;
@@ -2215,23 +2223,23 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Path__Group_1__1__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:818:1: rule__Path__Group_1__1__Impl : ( ( rule__Path__SegmentsAssignment_1_1 ) ) ;
+    // InternalPathExpressions.g:818:1: rule__Path__Group_1__1__Impl : ( ( rule__Path__SegmentsAssignment_1_1 ) ) ;
     public final void rule__Path__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:822:1: ( ( ( rule__Path__SegmentsAssignment_1_1 ) ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:823:1: ( ( rule__Path__SegmentsAssignment_1_1 ) )
+            // InternalPathExpressions.g:822:1: ( ( ( rule__Path__SegmentsAssignment_1_1 ) ) )
+            // InternalPathExpressions.g:823:1: ( ( rule__Path__SegmentsAssignment_1_1 ) )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:823:1: ( ( rule__Path__SegmentsAssignment_1_1 ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:824:1: ( rule__Path__SegmentsAssignment_1_1 )
+            // InternalPathExpressions.g:823:1: ( ( rule__Path__SegmentsAssignment_1_1 ) )
+            // InternalPathExpressions.g:824:1: ( rule__Path__SegmentsAssignment_1_1 )
             {
              before(grammarAccess.getPathAccess().getSegmentsAssignment_1_1()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:825:1: ( rule__Path__SegmentsAssignment_1_1 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:825:2: rule__Path__SegmentsAssignment_1_1
+            // InternalPathExpressions.g:825:1: ( rule__Path__SegmentsAssignment_1_1 )
+            // InternalPathExpressions.g:825:2: rule__Path__SegmentsAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__Path__SegmentsAssignment_1_1_in_rule__Path__Group_1__1__Impl1655);
+            pushFollow(FOLLOW_2);
             rule__Path__SegmentsAssignment_1_1();
 
             state._fsp--;
@@ -2262,21 +2270,21 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathSegment__Group__0"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:839:1: rule__PathSegment__Group__0 : rule__PathSegment__Group__0__Impl rule__PathSegment__Group__1 ;
+    // InternalPathExpressions.g:839:1: rule__PathSegment__Group__0 : rule__PathSegment__Group__0__Impl rule__PathSegment__Group__1 ;
     public final void rule__PathSegment__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:843:1: ( rule__PathSegment__Group__0__Impl rule__PathSegment__Group__1 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:844:2: rule__PathSegment__Group__0__Impl rule__PathSegment__Group__1
+            // InternalPathExpressions.g:843:1: ( rule__PathSegment__Group__0__Impl rule__PathSegment__Group__1 )
+            // InternalPathExpressions.g:844:2: rule__PathSegment__Group__0__Impl rule__PathSegment__Group__1
             {
-            pushFollow(FOLLOW_rule__PathSegment__Group__0__Impl_in_rule__PathSegment__Group__01689);
+            pushFollow(FOLLOW_10);
             rule__PathSegment__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PathSegment__Group__1_in_rule__PathSegment__Group__01692);
+            pushFollow(FOLLOW_2);
             rule__PathSegment__Group__1();
 
             state._fsp--;
@@ -2300,23 +2308,23 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathSegment__Group__0__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:851:1: rule__PathSegment__Group__0__Impl : ( ( rule__PathSegment__Alternatives_0 ) ) ;
+    // InternalPathExpressions.g:851:1: rule__PathSegment__Group__0__Impl : ( ( rule__PathSegment__Alternatives_0 ) ) ;
     public final void rule__PathSegment__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:855:1: ( ( ( rule__PathSegment__Alternatives_0 ) ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:856:1: ( ( rule__PathSegment__Alternatives_0 ) )
+            // InternalPathExpressions.g:855:1: ( ( ( rule__PathSegment__Alternatives_0 ) ) )
+            // InternalPathExpressions.g:856:1: ( ( rule__PathSegment__Alternatives_0 ) )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:856:1: ( ( rule__PathSegment__Alternatives_0 ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:857:1: ( rule__PathSegment__Alternatives_0 )
+            // InternalPathExpressions.g:856:1: ( ( rule__PathSegment__Alternatives_0 ) )
+            // InternalPathExpressions.g:857:1: ( rule__PathSegment__Alternatives_0 )
             {
              before(grammarAccess.getPathSegmentAccess().getAlternatives_0()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:858:1: ( rule__PathSegment__Alternatives_0 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:858:2: rule__PathSegment__Alternatives_0
+            // InternalPathExpressions.g:858:1: ( rule__PathSegment__Alternatives_0 )
+            // InternalPathExpressions.g:858:2: rule__PathSegment__Alternatives_0
             {
-            pushFollow(FOLLOW_rule__PathSegment__Alternatives_0_in_rule__PathSegment__Group__0__Impl1719);
+            pushFollow(FOLLOW_2);
             rule__PathSegment__Alternatives_0();
 
             state._fsp--;
@@ -2347,16 +2355,16 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathSegment__Group__1"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:868:1: rule__PathSegment__Group__1 : rule__PathSegment__Group__1__Impl ;
+    // InternalPathExpressions.g:868:1: rule__PathSegment__Group__1 : rule__PathSegment__Group__1__Impl ;
     public final void rule__PathSegment__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:872:1: ( rule__PathSegment__Group__1__Impl )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:873:2: rule__PathSegment__Group__1__Impl
+            // InternalPathExpressions.g:872:1: ( rule__PathSegment__Group__1__Impl )
+            // InternalPathExpressions.g:873:2: rule__PathSegment__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__PathSegment__Group__1__Impl_in_rule__PathSegment__Group__11749);
+            pushFollow(FOLLOW_2);
             rule__PathSegment__Group__1__Impl();
 
             state._fsp--;
@@ -2380,20 +2388,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathSegment__Group__1__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:879:1: rule__PathSegment__Group__1__Impl : ( ( rule__PathSegment__RepeatOperatorAssignment_1 )? ) ;
+    // InternalPathExpressions.g:879:1: rule__PathSegment__Group__1__Impl : ( ( rule__PathSegment__RepeatOperatorAssignment_1 )? ) ;
     public final void rule__PathSegment__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:883:1: ( ( ( rule__PathSegment__RepeatOperatorAssignment_1 )? ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:884:1: ( ( rule__PathSegment__RepeatOperatorAssignment_1 )? )
+            // InternalPathExpressions.g:883:1: ( ( ( rule__PathSegment__RepeatOperatorAssignment_1 )? ) )
+            // InternalPathExpressions.g:884:1: ( ( rule__PathSegment__RepeatOperatorAssignment_1 )? )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:884:1: ( ( rule__PathSegment__RepeatOperatorAssignment_1 )? )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:885:1: ( rule__PathSegment__RepeatOperatorAssignment_1 )?
+            // InternalPathExpressions.g:884:1: ( ( rule__PathSegment__RepeatOperatorAssignment_1 )? )
+            // InternalPathExpressions.g:885:1: ( rule__PathSegment__RepeatOperatorAssignment_1 )?
             {
              before(grammarAccess.getPathSegmentAccess().getRepeatOperatorAssignment_1()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:886:1: ( rule__PathSegment__RepeatOperatorAssignment_1 )?
+            // InternalPathExpressions.g:886:1: ( rule__PathSegment__RepeatOperatorAssignment_1 )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -2402,9 +2410,9 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
             }
             switch (alt8) {
                 case 1 :
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:886:2: rule__PathSegment__RepeatOperatorAssignment_1
+                    // InternalPathExpressions.g:886:2: rule__PathSegment__RepeatOperatorAssignment_1
                     {
-                    pushFollow(FOLLOW_rule__PathSegment__RepeatOperatorAssignment_1_in_rule__PathSegment__Group__1__Impl1776);
+                    pushFollow(FOLLOW_2);
                     rule__PathSegment__RepeatOperatorAssignment_1();
 
                     state._fsp--;
@@ -2438,21 +2446,21 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathSegment__Group_0_1__0"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:900:1: rule__PathSegment__Group_0_1__0 : rule__PathSegment__Group_0_1__0__Impl rule__PathSegment__Group_0_1__1 ;
+    // InternalPathExpressions.g:900:1: rule__PathSegment__Group_0_1__0 : rule__PathSegment__Group_0_1__0__Impl rule__PathSegment__Group_0_1__1 ;
     public final void rule__PathSegment__Group_0_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:904:1: ( rule__PathSegment__Group_0_1__0__Impl rule__PathSegment__Group_0_1__1 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:905:2: rule__PathSegment__Group_0_1__0__Impl rule__PathSegment__Group_0_1__1
+            // InternalPathExpressions.g:904:1: ( rule__PathSegment__Group_0_1__0__Impl rule__PathSegment__Group_0_1__1 )
+            // InternalPathExpressions.g:905:2: rule__PathSegment__Group_0_1__0__Impl rule__PathSegment__Group_0_1__1
             {
-            pushFollow(FOLLOW_rule__PathSegment__Group_0_1__0__Impl_in_rule__PathSegment__Group_0_1__01811);
+            pushFollow(FOLLOW_11);
             rule__PathSegment__Group_0_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PathSegment__Group_0_1__1_in_rule__PathSegment__Group_0_1__01814);
+            pushFollow(FOLLOW_2);
             rule__PathSegment__Group_0_1__1();
 
             state._fsp--;
@@ -2476,20 +2484,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathSegment__Group_0_1__0__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:912:1: rule__PathSegment__Group_0_1__0__Impl : ( '(' ) ;
+    // InternalPathExpressions.g:912:1: rule__PathSegment__Group_0_1__0__Impl : ( '(' ) ;
     public final void rule__PathSegment__Group_0_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:916:1: ( ( '(' ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:917:1: ( '(' )
+            // InternalPathExpressions.g:916:1: ( ( '(' ) )
+            // InternalPathExpressions.g:917:1: ( '(' )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:917:1: ( '(' )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:918:1: '('
+            // InternalPathExpressions.g:917:1: ( '(' )
+            // InternalPathExpressions.g:918:1: '('
             {
              before(grammarAccess.getPathSegmentAccess().getLeftParenthesisKeyword_0_1_0()); 
-            match(input,17,FOLLOW_17_in_rule__PathSegment__Group_0_1__0__Impl1842); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getPathSegmentAccess().getLeftParenthesisKeyword_0_1_0()); 
 
             }
@@ -2513,21 +2521,21 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathSegment__Group_0_1__1"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:931:1: rule__PathSegment__Group_0_1__1 : rule__PathSegment__Group_0_1__1__Impl rule__PathSegment__Group_0_1__2 ;
+    // InternalPathExpressions.g:931:1: rule__PathSegment__Group_0_1__1 : rule__PathSegment__Group_0_1__1__Impl rule__PathSegment__Group_0_1__2 ;
     public final void rule__PathSegment__Group_0_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:935:1: ( rule__PathSegment__Group_0_1__1__Impl rule__PathSegment__Group_0_1__2 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:936:2: rule__PathSegment__Group_0_1__1__Impl rule__PathSegment__Group_0_1__2
+            // InternalPathExpressions.g:935:1: ( rule__PathSegment__Group_0_1__1__Impl rule__PathSegment__Group_0_1__2 )
+            // InternalPathExpressions.g:936:2: rule__PathSegment__Group_0_1__1__Impl rule__PathSegment__Group_0_1__2
             {
-            pushFollow(FOLLOW_rule__PathSegment__Group_0_1__1__Impl_in_rule__PathSegment__Group_0_1__11873);
+            pushFollow(FOLLOW_5);
             rule__PathSegment__Group_0_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PathSegment__Group_0_1__2_in_rule__PathSegment__Group_0_1__11876);
+            pushFollow(FOLLOW_2);
             rule__PathSegment__Group_0_1__2();
 
             state._fsp--;
@@ -2551,23 +2559,23 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathSegment__Group_0_1__1__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:943:1: rule__PathSegment__Group_0_1__1__Impl : ( ( rule__PathSegment__AlternativesAssignment_0_1_1 ) ) ;
+    // InternalPathExpressions.g:943:1: rule__PathSegment__Group_0_1__1__Impl : ( ( rule__PathSegment__AlternativesAssignment_0_1_1 ) ) ;
     public final void rule__PathSegment__Group_0_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:947:1: ( ( ( rule__PathSegment__AlternativesAssignment_0_1_1 ) ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:948:1: ( ( rule__PathSegment__AlternativesAssignment_0_1_1 ) )
+            // InternalPathExpressions.g:947:1: ( ( ( rule__PathSegment__AlternativesAssignment_0_1_1 ) ) )
+            // InternalPathExpressions.g:948:1: ( ( rule__PathSegment__AlternativesAssignment_0_1_1 ) )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:948:1: ( ( rule__PathSegment__AlternativesAssignment_0_1_1 ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:949:1: ( rule__PathSegment__AlternativesAssignment_0_1_1 )
+            // InternalPathExpressions.g:948:1: ( ( rule__PathSegment__AlternativesAssignment_0_1_1 ) )
+            // InternalPathExpressions.g:949:1: ( rule__PathSegment__AlternativesAssignment_0_1_1 )
             {
              before(grammarAccess.getPathSegmentAccess().getAlternativesAssignment_0_1_1()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:950:1: ( rule__PathSegment__AlternativesAssignment_0_1_1 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:950:2: rule__PathSegment__AlternativesAssignment_0_1_1
+            // InternalPathExpressions.g:950:1: ( rule__PathSegment__AlternativesAssignment_0_1_1 )
+            // InternalPathExpressions.g:950:2: rule__PathSegment__AlternativesAssignment_0_1_1
             {
-            pushFollow(FOLLOW_rule__PathSegment__AlternativesAssignment_0_1_1_in_rule__PathSegment__Group_0_1__1__Impl1903);
+            pushFollow(FOLLOW_2);
             rule__PathSegment__AlternativesAssignment_0_1_1();
 
             state._fsp--;
@@ -2598,21 +2606,21 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathSegment__Group_0_1__2"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:960:1: rule__PathSegment__Group_0_1__2 : rule__PathSegment__Group_0_1__2__Impl rule__PathSegment__Group_0_1__3 ;
+    // InternalPathExpressions.g:960:1: rule__PathSegment__Group_0_1__2 : rule__PathSegment__Group_0_1__2__Impl rule__PathSegment__Group_0_1__3 ;
     public final void rule__PathSegment__Group_0_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:964:1: ( rule__PathSegment__Group_0_1__2__Impl rule__PathSegment__Group_0_1__3 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:965:2: rule__PathSegment__Group_0_1__2__Impl rule__PathSegment__Group_0_1__3
+            // InternalPathExpressions.g:964:1: ( rule__PathSegment__Group_0_1__2__Impl rule__PathSegment__Group_0_1__3 )
+            // InternalPathExpressions.g:965:2: rule__PathSegment__Group_0_1__2__Impl rule__PathSegment__Group_0_1__3
             {
-            pushFollow(FOLLOW_rule__PathSegment__Group_0_1__2__Impl_in_rule__PathSegment__Group_0_1__21933);
+            pushFollow(FOLLOW_4);
             rule__PathSegment__Group_0_1__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PathSegment__Group_0_1__3_in_rule__PathSegment__Group_0_1__21936);
+            pushFollow(FOLLOW_2);
             rule__PathSegment__Group_0_1__3();
 
             state._fsp--;
@@ -2636,26 +2644,26 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathSegment__Group_0_1__2__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:972:1: rule__PathSegment__Group_0_1__2__Impl : ( ( ( rule__PathSegment__Group_0_1_2__0 ) ) ( ( rule__PathSegment__Group_0_1_2__0 )* ) ) ;
+    // InternalPathExpressions.g:972:1: rule__PathSegment__Group_0_1__2__Impl : ( ( ( rule__PathSegment__Group_0_1_2__0 ) ) ( ( rule__PathSegment__Group_0_1_2__0 )* ) ) ;
     public final void rule__PathSegment__Group_0_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:976:1: ( ( ( ( rule__PathSegment__Group_0_1_2__0 ) ) ( ( rule__PathSegment__Group_0_1_2__0 )* ) ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:977:1: ( ( ( rule__PathSegment__Group_0_1_2__0 ) ) ( ( rule__PathSegment__Group_0_1_2__0 )* ) )
+            // InternalPathExpressions.g:976:1: ( ( ( ( rule__PathSegment__Group_0_1_2__0 ) ) ( ( rule__PathSegment__Group_0_1_2__0 )* ) ) )
+            // InternalPathExpressions.g:977:1: ( ( ( rule__PathSegment__Group_0_1_2__0 ) ) ( ( rule__PathSegment__Group_0_1_2__0 )* ) )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:977:1: ( ( ( rule__PathSegment__Group_0_1_2__0 ) ) ( ( rule__PathSegment__Group_0_1_2__0 )* ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:978:1: ( ( rule__PathSegment__Group_0_1_2__0 ) ) ( ( rule__PathSegment__Group_0_1_2__0 )* )
+            // InternalPathExpressions.g:977:1: ( ( ( rule__PathSegment__Group_0_1_2__0 ) ) ( ( rule__PathSegment__Group_0_1_2__0 )* ) )
+            // InternalPathExpressions.g:978:1: ( ( rule__PathSegment__Group_0_1_2__0 ) ) ( ( rule__PathSegment__Group_0_1_2__0 )* )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:978:1: ( ( rule__PathSegment__Group_0_1_2__0 ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:979:1: ( rule__PathSegment__Group_0_1_2__0 )
+            // InternalPathExpressions.g:978:1: ( ( rule__PathSegment__Group_0_1_2__0 ) )
+            // InternalPathExpressions.g:979:1: ( rule__PathSegment__Group_0_1_2__0 )
             {
              before(grammarAccess.getPathSegmentAccess().getGroup_0_1_2()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:980:1: ( rule__PathSegment__Group_0_1_2__0 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:980:2: rule__PathSegment__Group_0_1_2__0
+            // InternalPathExpressions.g:980:1: ( rule__PathSegment__Group_0_1_2__0 )
+            // InternalPathExpressions.g:980:2: rule__PathSegment__Group_0_1_2__0
             {
-            pushFollow(FOLLOW_rule__PathSegment__Group_0_1_2__0_in_rule__PathSegment__Group_0_1__2__Impl1965);
+            pushFollow(FOLLOW_6);
             rule__PathSegment__Group_0_1_2__0();
 
             state._fsp--;
@@ -2667,11 +2675,11 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
             }
 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:983:1: ( ( rule__PathSegment__Group_0_1_2__0 )* )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:984:1: ( rule__PathSegment__Group_0_1_2__0 )*
+            // InternalPathExpressions.g:983:1: ( ( rule__PathSegment__Group_0_1_2__0 )* )
+            // InternalPathExpressions.g:984:1: ( rule__PathSegment__Group_0_1_2__0 )*
             {
              before(grammarAccess.getPathSegmentAccess().getGroup_0_1_2()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:985:1: ( rule__PathSegment__Group_0_1_2__0 )*
+            // InternalPathExpressions.g:985:1: ( rule__PathSegment__Group_0_1_2__0 )*
             loop9:
             do {
                 int alt9=2;
@@ -2684,9 +2692,9 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
                 switch (alt9) {
             	case 1 :
-            	    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:985:2: rule__PathSegment__Group_0_1_2__0
+            	    // InternalPathExpressions.g:985:2: rule__PathSegment__Group_0_1_2__0
             	    {
-            	    pushFollow(FOLLOW_rule__PathSegment__Group_0_1_2__0_in_rule__PathSegment__Group_0_1__2__Impl1977);
+            	    pushFollow(FOLLOW_6);
             	    rule__PathSegment__Group_0_1_2__0();
 
             	    state._fsp--;
@@ -2726,16 +2734,16 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathSegment__Group_0_1__3"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:996:1: rule__PathSegment__Group_0_1__3 : rule__PathSegment__Group_0_1__3__Impl ;
+    // InternalPathExpressions.g:996:1: rule__PathSegment__Group_0_1__3 : rule__PathSegment__Group_0_1__3__Impl ;
     public final void rule__PathSegment__Group_0_1__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1000:1: ( rule__PathSegment__Group_0_1__3__Impl )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1001:2: rule__PathSegment__Group_0_1__3__Impl
+            // InternalPathExpressions.g:1000:1: ( rule__PathSegment__Group_0_1__3__Impl )
+            // InternalPathExpressions.g:1001:2: rule__PathSegment__Group_0_1__3__Impl
             {
-            pushFollow(FOLLOW_rule__PathSegment__Group_0_1__3__Impl_in_rule__PathSegment__Group_0_1__32010);
+            pushFollow(FOLLOW_2);
             rule__PathSegment__Group_0_1__3__Impl();
 
             state._fsp--;
@@ -2759,20 +2767,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathSegment__Group_0_1__3__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1007:1: rule__PathSegment__Group_0_1__3__Impl : ( ')' ) ;
+    // InternalPathExpressions.g:1007:1: rule__PathSegment__Group_0_1__3__Impl : ( ')' ) ;
     public final void rule__PathSegment__Group_0_1__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1011:1: ( ( ')' ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1012:1: ( ')' )
+            // InternalPathExpressions.g:1011:1: ( ( ')' ) )
+            // InternalPathExpressions.g:1012:1: ( ')' )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1012:1: ( ')' )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1013:1: ')'
+            // InternalPathExpressions.g:1012:1: ( ')' )
+            // InternalPathExpressions.g:1013:1: ')'
             {
              before(grammarAccess.getPathSegmentAccess().getRightParenthesisKeyword_0_1_3()); 
-            match(input,18,FOLLOW_18_in_rule__PathSegment__Group_0_1__3__Impl2038); 
+            match(input,18,FOLLOW_2); 
              after(grammarAccess.getPathSegmentAccess().getRightParenthesisKeyword_0_1_3()); 
 
             }
@@ -2796,21 +2804,21 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathSegment__Group_0_1_2__0"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1034:1: rule__PathSegment__Group_0_1_2__0 : rule__PathSegment__Group_0_1_2__0__Impl rule__PathSegment__Group_0_1_2__1 ;
+    // InternalPathExpressions.g:1034:1: rule__PathSegment__Group_0_1_2__0 : rule__PathSegment__Group_0_1_2__0__Impl rule__PathSegment__Group_0_1_2__1 ;
     public final void rule__PathSegment__Group_0_1_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1038:1: ( rule__PathSegment__Group_0_1_2__0__Impl rule__PathSegment__Group_0_1_2__1 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1039:2: rule__PathSegment__Group_0_1_2__0__Impl rule__PathSegment__Group_0_1_2__1
+            // InternalPathExpressions.g:1038:1: ( rule__PathSegment__Group_0_1_2__0__Impl rule__PathSegment__Group_0_1_2__1 )
+            // InternalPathExpressions.g:1039:2: rule__PathSegment__Group_0_1_2__0__Impl rule__PathSegment__Group_0_1_2__1
             {
-            pushFollow(FOLLOW_rule__PathSegment__Group_0_1_2__0__Impl_in_rule__PathSegment__Group_0_1_2__02077);
+            pushFollow(FOLLOW_11);
             rule__PathSegment__Group_0_1_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PathSegment__Group_0_1_2__1_in_rule__PathSegment__Group_0_1_2__02080);
+            pushFollow(FOLLOW_2);
             rule__PathSegment__Group_0_1_2__1();
 
             state._fsp--;
@@ -2834,20 +2842,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathSegment__Group_0_1_2__0__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1046:1: rule__PathSegment__Group_0_1_2__0__Impl : ( '|' ) ;
+    // InternalPathExpressions.g:1046:1: rule__PathSegment__Group_0_1_2__0__Impl : ( '|' ) ;
     public final void rule__PathSegment__Group_0_1_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1050:1: ( ( '|' ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1051:1: ( '|' )
+            // InternalPathExpressions.g:1050:1: ( ( '|' ) )
+            // InternalPathExpressions.g:1051:1: ( '|' )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1051:1: ( '|' )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1052:1: '|'
+            // InternalPathExpressions.g:1051:1: ( '|' )
+            // InternalPathExpressions.g:1052:1: '|'
             {
              before(grammarAccess.getPathSegmentAccess().getVerticalLineKeyword_0_1_2_0()); 
-            match(input,19,FOLLOW_19_in_rule__PathSegment__Group_0_1_2__0__Impl2108); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getPathSegmentAccess().getVerticalLineKeyword_0_1_2_0()); 
 
             }
@@ -2871,16 +2879,16 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathSegment__Group_0_1_2__1"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1065:1: rule__PathSegment__Group_0_1_2__1 : rule__PathSegment__Group_0_1_2__1__Impl ;
+    // InternalPathExpressions.g:1065:1: rule__PathSegment__Group_0_1_2__1 : rule__PathSegment__Group_0_1_2__1__Impl ;
     public final void rule__PathSegment__Group_0_1_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1069:1: ( rule__PathSegment__Group_0_1_2__1__Impl )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1070:2: rule__PathSegment__Group_0_1_2__1__Impl
+            // InternalPathExpressions.g:1069:1: ( rule__PathSegment__Group_0_1_2__1__Impl )
+            // InternalPathExpressions.g:1070:2: rule__PathSegment__Group_0_1_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__PathSegment__Group_0_1_2__1__Impl_in_rule__PathSegment__Group_0_1_2__12139);
+            pushFollow(FOLLOW_2);
             rule__PathSegment__Group_0_1_2__1__Impl();
 
             state._fsp--;
@@ -2904,23 +2912,23 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathSegment__Group_0_1_2__1__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1076:1: rule__PathSegment__Group_0_1_2__1__Impl : ( ( rule__PathSegment__AlternativesAssignment_0_1_2_1 ) ) ;
+    // InternalPathExpressions.g:1076:1: rule__PathSegment__Group_0_1_2__1__Impl : ( ( rule__PathSegment__AlternativesAssignment_0_1_2_1 ) ) ;
     public final void rule__PathSegment__Group_0_1_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1080:1: ( ( ( rule__PathSegment__AlternativesAssignment_0_1_2_1 ) ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1081:1: ( ( rule__PathSegment__AlternativesAssignment_0_1_2_1 ) )
+            // InternalPathExpressions.g:1080:1: ( ( ( rule__PathSegment__AlternativesAssignment_0_1_2_1 ) ) )
+            // InternalPathExpressions.g:1081:1: ( ( rule__PathSegment__AlternativesAssignment_0_1_2_1 ) )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1081:1: ( ( rule__PathSegment__AlternativesAssignment_0_1_2_1 ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1082:1: ( rule__PathSegment__AlternativesAssignment_0_1_2_1 )
+            // InternalPathExpressions.g:1081:1: ( ( rule__PathSegment__AlternativesAssignment_0_1_2_1 ) )
+            // InternalPathExpressions.g:1082:1: ( rule__PathSegment__AlternativesAssignment_0_1_2_1 )
             {
              before(grammarAccess.getPathSegmentAccess().getAlternativesAssignment_0_1_2_1()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1083:1: ( rule__PathSegment__AlternativesAssignment_0_1_2_1 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1083:2: rule__PathSegment__AlternativesAssignment_0_1_2_1
+            // InternalPathExpressions.g:1083:1: ( rule__PathSegment__AlternativesAssignment_0_1_2_1 )
+            // InternalPathExpressions.g:1083:2: rule__PathSegment__AlternativesAssignment_0_1_2_1
             {
-            pushFollow(FOLLOW_rule__PathSegment__AlternativesAssignment_0_1_2_1_in_rule__PathSegment__Group_0_1_2__1__Impl2166);
+            pushFollow(FOLLOW_2);
             rule__PathSegment__AlternativesAssignment_0_1_2_1();
 
             state._fsp--;
@@ -2951,21 +2959,21 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathSegmentDescription__Group__0"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1097:1: rule__PathSegmentDescription__Group__0 : rule__PathSegmentDescription__Group__0__Impl rule__PathSegmentDescription__Group__1 ;
+    // InternalPathExpressions.g:1097:1: rule__PathSegmentDescription__Group__0 : rule__PathSegmentDescription__Group__0__Impl rule__PathSegmentDescription__Group__1 ;
     public final void rule__PathSegmentDescription__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1101:1: ( rule__PathSegmentDescription__Group__0__Impl rule__PathSegmentDescription__Group__1 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1102:2: rule__PathSegmentDescription__Group__0__Impl rule__PathSegmentDescription__Group__1
+            // InternalPathExpressions.g:1101:1: ( rule__PathSegmentDescription__Group__0__Impl rule__PathSegmentDescription__Group__1 )
+            // InternalPathExpressions.g:1102:2: rule__PathSegmentDescription__Group__0__Impl rule__PathSegmentDescription__Group__1
             {
-            pushFollow(FOLLOW_rule__PathSegmentDescription__Group__0__Impl_in_rule__PathSegmentDescription__Group__02200);
+            pushFollow(FOLLOW_12);
             rule__PathSegmentDescription__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PathSegmentDescription__Group__1_in_rule__PathSegmentDescription__Group__02203);
+            pushFollow(FOLLOW_2);
             rule__PathSegmentDescription__Group__1();
 
             state._fsp--;
@@ -2989,23 +2997,23 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathSegmentDescription__Group__0__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1109:1: rule__PathSegmentDescription__Group__0__Impl : ( ( rule__PathSegmentDescription__Alternatives_0 ) ) ;
+    // InternalPathExpressions.g:1109:1: rule__PathSegmentDescription__Group__0__Impl : ( ( rule__PathSegmentDescription__Alternatives_0 ) ) ;
     public final void rule__PathSegmentDescription__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1113:1: ( ( ( rule__PathSegmentDescription__Alternatives_0 ) ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1114:1: ( ( rule__PathSegmentDescription__Alternatives_0 ) )
+            // InternalPathExpressions.g:1113:1: ( ( ( rule__PathSegmentDescription__Alternatives_0 ) ) )
+            // InternalPathExpressions.g:1114:1: ( ( rule__PathSegmentDescription__Alternatives_0 ) )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1114:1: ( ( rule__PathSegmentDescription__Alternatives_0 ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1115:1: ( rule__PathSegmentDescription__Alternatives_0 )
+            // InternalPathExpressions.g:1114:1: ( ( rule__PathSegmentDescription__Alternatives_0 ) )
+            // InternalPathExpressions.g:1115:1: ( rule__PathSegmentDescription__Alternatives_0 )
             {
              before(grammarAccess.getPathSegmentDescriptionAccess().getAlternatives_0()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1116:1: ( rule__PathSegmentDescription__Alternatives_0 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1116:2: rule__PathSegmentDescription__Alternatives_0
+            // InternalPathExpressions.g:1116:1: ( rule__PathSegmentDescription__Alternatives_0 )
+            // InternalPathExpressions.g:1116:2: rule__PathSegmentDescription__Alternatives_0
             {
-            pushFollow(FOLLOW_rule__PathSegmentDescription__Alternatives_0_in_rule__PathSegmentDescription__Group__0__Impl2230);
+            pushFollow(FOLLOW_2);
             rule__PathSegmentDescription__Alternatives_0();
 
             state._fsp--;
@@ -3036,16 +3044,16 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathSegmentDescription__Group__1"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1126:1: rule__PathSegmentDescription__Group__1 : rule__PathSegmentDescription__Group__1__Impl ;
+    // InternalPathExpressions.g:1126:1: rule__PathSegmentDescription__Group__1 : rule__PathSegmentDescription__Group__1__Impl ;
     public final void rule__PathSegmentDescription__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1130:1: ( rule__PathSegmentDescription__Group__1__Impl )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1131:2: rule__PathSegmentDescription__Group__1__Impl
+            // InternalPathExpressions.g:1130:1: ( rule__PathSegmentDescription__Group__1__Impl )
+            // InternalPathExpressions.g:1131:2: rule__PathSegmentDescription__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__PathSegmentDescription__Group__1__Impl_in_rule__PathSegmentDescription__Group__12260);
+            pushFollow(FOLLOW_2);
             rule__PathSegmentDescription__Group__1__Impl();
 
             state._fsp--;
@@ -3069,20 +3077,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathSegmentDescription__Group__1__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1137:1: rule__PathSegmentDescription__Group__1__Impl : ( ( rule__PathSegmentDescription__RestrictionListAssignment_1 )? ) ;
+    // InternalPathExpressions.g:1137:1: rule__PathSegmentDescription__Group__1__Impl : ( ( rule__PathSegmentDescription__RestrictionListAssignment_1 )? ) ;
     public final void rule__PathSegmentDescription__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1141:1: ( ( ( rule__PathSegmentDescription__RestrictionListAssignment_1 )? ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1142:1: ( ( rule__PathSegmentDescription__RestrictionListAssignment_1 )? )
+            // InternalPathExpressions.g:1141:1: ( ( ( rule__PathSegmentDescription__RestrictionListAssignment_1 )? ) )
+            // InternalPathExpressions.g:1142:1: ( ( rule__PathSegmentDescription__RestrictionListAssignment_1 )? )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1142:1: ( ( rule__PathSegmentDescription__RestrictionListAssignment_1 )? )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1143:1: ( rule__PathSegmentDescription__RestrictionListAssignment_1 )?
+            // InternalPathExpressions.g:1142:1: ( ( rule__PathSegmentDescription__RestrictionListAssignment_1 )? )
+            // InternalPathExpressions.g:1143:1: ( rule__PathSegmentDescription__RestrictionListAssignment_1 )?
             {
              before(grammarAccess.getPathSegmentDescriptionAccess().getRestrictionListAssignment_1()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1144:1: ( rule__PathSegmentDescription__RestrictionListAssignment_1 )?
+            // InternalPathExpressions.g:1144:1: ( rule__PathSegmentDescription__RestrictionListAssignment_1 )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -3091,9 +3099,9 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1144:2: rule__PathSegmentDescription__RestrictionListAssignment_1
+                    // InternalPathExpressions.g:1144:2: rule__PathSegmentDescription__RestrictionListAssignment_1
                     {
-                    pushFollow(FOLLOW_rule__PathSegmentDescription__RestrictionListAssignment_1_in_rule__PathSegmentDescription__Group__1__Impl2287);
+                    pushFollow(FOLLOW_2);
                     rule__PathSegmentDescription__RestrictionListAssignment_1();
 
                     state._fsp--;
@@ -3127,21 +3135,21 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__RestrictionList__Group__0"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1158:1: rule__RestrictionList__Group__0 : rule__RestrictionList__Group__0__Impl rule__RestrictionList__Group__1 ;
+    // InternalPathExpressions.g:1158:1: rule__RestrictionList__Group__0 : rule__RestrictionList__Group__0__Impl rule__RestrictionList__Group__1 ;
     public final void rule__RestrictionList__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1162:1: ( rule__RestrictionList__Group__0__Impl rule__RestrictionList__Group__1 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1163:2: rule__RestrictionList__Group__0__Impl rule__RestrictionList__Group__1
+            // InternalPathExpressions.g:1162:1: ( rule__RestrictionList__Group__0__Impl rule__RestrictionList__Group__1 )
+            // InternalPathExpressions.g:1163:2: rule__RestrictionList__Group__0__Impl rule__RestrictionList__Group__1
             {
-            pushFollow(FOLLOW_rule__RestrictionList__Group__0__Impl_in_rule__RestrictionList__Group__02322);
+            pushFollow(FOLLOW_13);
             rule__RestrictionList__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__RestrictionList__Group__1_in_rule__RestrictionList__Group__02325);
+            pushFollow(FOLLOW_2);
             rule__RestrictionList__Group__1();
 
             state._fsp--;
@@ -3165,20 +3173,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__RestrictionList__Group__0__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1170:1: rule__RestrictionList__Group__0__Impl : ( '[' ) ;
+    // InternalPathExpressions.g:1170:1: rule__RestrictionList__Group__0__Impl : ( '[' ) ;
     public final void rule__RestrictionList__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1174:1: ( ( '[' ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1175:1: ( '[' )
+            // InternalPathExpressions.g:1174:1: ( ( '[' ) )
+            // InternalPathExpressions.g:1175:1: ( '[' )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1175:1: ( '[' )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1176:1: '['
+            // InternalPathExpressions.g:1175:1: ( '[' )
+            // InternalPathExpressions.g:1176:1: '['
             {
              before(grammarAccess.getRestrictionListAccess().getLeftSquareBracketKeyword_0()); 
-            match(input,21,FOLLOW_21_in_rule__RestrictionList__Group__0__Impl2353); 
+            match(input,21,FOLLOW_2); 
              after(grammarAccess.getRestrictionListAccess().getLeftSquareBracketKeyword_0()); 
 
             }
@@ -3202,21 +3210,21 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__RestrictionList__Group__1"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1189:1: rule__RestrictionList__Group__1 : rule__RestrictionList__Group__1__Impl rule__RestrictionList__Group__2 ;
+    // InternalPathExpressions.g:1189:1: rule__RestrictionList__Group__1 : rule__RestrictionList__Group__1__Impl rule__RestrictionList__Group__2 ;
     public final void rule__RestrictionList__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1193:1: ( rule__RestrictionList__Group__1__Impl rule__RestrictionList__Group__2 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1194:2: rule__RestrictionList__Group__1__Impl rule__RestrictionList__Group__2
+            // InternalPathExpressions.g:1193:1: ( rule__RestrictionList__Group__1__Impl rule__RestrictionList__Group__2 )
+            // InternalPathExpressions.g:1194:2: rule__RestrictionList__Group__1__Impl rule__RestrictionList__Group__2
             {
-            pushFollow(FOLLOW_rule__RestrictionList__Group__1__Impl_in_rule__RestrictionList__Group__12384);
+            pushFollow(FOLLOW_14);
             rule__RestrictionList__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__RestrictionList__Group__2_in_rule__RestrictionList__Group__12387);
+            pushFollow(FOLLOW_2);
             rule__RestrictionList__Group__2();
 
             state._fsp--;
@@ -3240,23 +3248,23 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__RestrictionList__Group__1__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1201:1: rule__RestrictionList__Group__1__Impl : ( ( rule__RestrictionList__RestrictionsAssignment_1 ) ) ;
+    // InternalPathExpressions.g:1201:1: rule__RestrictionList__Group__1__Impl : ( ( rule__RestrictionList__RestrictionsAssignment_1 ) ) ;
     public final void rule__RestrictionList__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1205:1: ( ( ( rule__RestrictionList__RestrictionsAssignment_1 ) ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1206:1: ( ( rule__RestrictionList__RestrictionsAssignment_1 ) )
+            // InternalPathExpressions.g:1205:1: ( ( ( rule__RestrictionList__RestrictionsAssignment_1 ) ) )
+            // InternalPathExpressions.g:1206:1: ( ( rule__RestrictionList__RestrictionsAssignment_1 ) )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1206:1: ( ( rule__RestrictionList__RestrictionsAssignment_1 ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1207:1: ( rule__RestrictionList__RestrictionsAssignment_1 )
+            // InternalPathExpressions.g:1206:1: ( ( rule__RestrictionList__RestrictionsAssignment_1 ) )
+            // InternalPathExpressions.g:1207:1: ( rule__RestrictionList__RestrictionsAssignment_1 )
             {
              before(grammarAccess.getRestrictionListAccess().getRestrictionsAssignment_1()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1208:1: ( rule__RestrictionList__RestrictionsAssignment_1 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1208:2: rule__RestrictionList__RestrictionsAssignment_1
+            // InternalPathExpressions.g:1208:1: ( rule__RestrictionList__RestrictionsAssignment_1 )
+            // InternalPathExpressions.g:1208:2: rule__RestrictionList__RestrictionsAssignment_1
             {
-            pushFollow(FOLLOW_rule__RestrictionList__RestrictionsAssignment_1_in_rule__RestrictionList__Group__1__Impl2414);
+            pushFollow(FOLLOW_2);
             rule__RestrictionList__RestrictionsAssignment_1();
 
             state._fsp--;
@@ -3287,21 +3295,21 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__RestrictionList__Group__2"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1218:1: rule__RestrictionList__Group__2 : rule__RestrictionList__Group__2__Impl rule__RestrictionList__Group__3 ;
+    // InternalPathExpressions.g:1218:1: rule__RestrictionList__Group__2 : rule__RestrictionList__Group__2__Impl rule__RestrictionList__Group__3 ;
     public final void rule__RestrictionList__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1222:1: ( rule__RestrictionList__Group__2__Impl rule__RestrictionList__Group__3 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1223:2: rule__RestrictionList__Group__2__Impl rule__RestrictionList__Group__3
+            // InternalPathExpressions.g:1222:1: ( rule__RestrictionList__Group__2__Impl rule__RestrictionList__Group__3 )
+            // InternalPathExpressions.g:1223:2: rule__RestrictionList__Group__2__Impl rule__RestrictionList__Group__3
             {
-            pushFollow(FOLLOW_rule__RestrictionList__Group__2__Impl_in_rule__RestrictionList__Group__22444);
+            pushFollow(FOLLOW_14);
             rule__RestrictionList__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__RestrictionList__Group__3_in_rule__RestrictionList__Group__22447);
+            pushFollow(FOLLOW_2);
             rule__RestrictionList__Group__3();
 
             state._fsp--;
@@ -3325,20 +3333,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__RestrictionList__Group__2__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1230:1: rule__RestrictionList__Group__2__Impl : ( ( rule__RestrictionList__Group_2__0 )* ) ;
+    // InternalPathExpressions.g:1230:1: rule__RestrictionList__Group__2__Impl : ( ( rule__RestrictionList__Group_2__0 )* ) ;
     public final void rule__RestrictionList__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1234:1: ( ( ( rule__RestrictionList__Group_2__0 )* ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1235:1: ( ( rule__RestrictionList__Group_2__0 )* )
+            // InternalPathExpressions.g:1234:1: ( ( ( rule__RestrictionList__Group_2__0 )* ) )
+            // InternalPathExpressions.g:1235:1: ( ( rule__RestrictionList__Group_2__0 )* )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1235:1: ( ( rule__RestrictionList__Group_2__0 )* )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1236:1: ( rule__RestrictionList__Group_2__0 )*
+            // InternalPathExpressions.g:1235:1: ( ( rule__RestrictionList__Group_2__0 )* )
+            // InternalPathExpressions.g:1236:1: ( rule__RestrictionList__Group_2__0 )*
             {
              before(grammarAccess.getRestrictionListAccess().getGroup_2()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1237:1: ( rule__RestrictionList__Group_2__0 )*
+            // InternalPathExpressions.g:1237:1: ( rule__RestrictionList__Group_2__0 )*
             loop11:
             do {
                 int alt11=2;
@@ -3351,9 +3359,9 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
                 switch (alt11) {
             	case 1 :
-            	    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1237:2: rule__RestrictionList__Group_2__0
+            	    // InternalPathExpressions.g:1237:2: rule__RestrictionList__Group_2__0
             	    {
-            	    pushFollow(FOLLOW_rule__RestrictionList__Group_2__0_in_rule__RestrictionList__Group__2__Impl2474);
+            	    pushFollow(FOLLOW_15);
             	    rule__RestrictionList__Group_2__0();
 
             	    state._fsp--;
@@ -3390,16 +3398,16 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__RestrictionList__Group__3"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1247:1: rule__RestrictionList__Group__3 : rule__RestrictionList__Group__3__Impl ;
+    // InternalPathExpressions.g:1247:1: rule__RestrictionList__Group__3 : rule__RestrictionList__Group__3__Impl ;
     public final void rule__RestrictionList__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1251:1: ( rule__RestrictionList__Group__3__Impl )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1252:2: rule__RestrictionList__Group__3__Impl
+            // InternalPathExpressions.g:1251:1: ( rule__RestrictionList__Group__3__Impl )
+            // InternalPathExpressions.g:1252:2: rule__RestrictionList__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__RestrictionList__Group__3__Impl_in_rule__RestrictionList__Group__32505);
+            pushFollow(FOLLOW_2);
             rule__RestrictionList__Group__3__Impl();
 
             state._fsp--;
@@ -3423,20 +3431,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__RestrictionList__Group__3__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1258:1: rule__RestrictionList__Group__3__Impl : ( ']' ) ;
+    // InternalPathExpressions.g:1258:1: rule__RestrictionList__Group__3__Impl : ( ']' ) ;
     public final void rule__RestrictionList__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1262:1: ( ( ']' ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1263:1: ( ']' )
+            // InternalPathExpressions.g:1262:1: ( ( ']' ) )
+            // InternalPathExpressions.g:1263:1: ( ']' )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1263:1: ( ']' )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1264:1: ']'
+            // InternalPathExpressions.g:1263:1: ( ']' )
+            // InternalPathExpressions.g:1264:1: ']'
             {
              before(grammarAccess.getRestrictionListAccess().getRightSquareBracketKeyword_3()); 
-            match(input,22,FOLLOW_22_in_rule__RestrictionList__Group__3__Impl2533); 
+            match(input,22,FOLLOW_2); 
              after(grammarAccess.getRestrictionListAccess().getRightSquareBracketKeyword_3()); 
 
             }
@@ -3460,21 +3468,21 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__RestrictionList__Group_2__0"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1285:1: rule__RestrictionList__Group_2__0 : rule__RestrictionList__Group_2__0__Impl rule__RestrictionList__Group_2__1 ;
+    // InternalPathExpressions.g:1285:1: rule__RestrictionList__Group_2__0 : rule__RestrictionList__Group_2__0__Impl rule__RestrictionList__Group_2__1 ;
     public final void rule__RestrictionList__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1289:1: ( rule__RestrictionList__Group_2__0__Impl rule__RestrictionList__Group_2__1 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1290:2: rule__RestrictionList__Group_2__0__Impl rule__RestrictionList__Group_2__1
+            // InternalPathExpressions.g:1289:1: ( rule__RestrictionList__Group_2__0__Impl rule__RestrictionList__Group_2__1 )
+            // InternalPathExpressions.g:1290:2: rule__RestrictionList__Group_2__0__Impl rule__RestrictionList__Group_2__1
             {
-            pushFollow(FOLLOW_rule__RestrictionList__Group_2__0__Impl_in_rule__RestrictionList__Group_2__02572);
+            pushFollow(FOLLOW_13);
             rule__RestrictionList__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__RestrictionList__Group_2__1_in_rule__RestrictionList__Group_2__02575);
+            pushFollow(FOLLOW_2);
             rule__RestrictionList__Group_2__1();
 
             state._fsp--;
@@ -3498,20 +3506,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__RestrictionList__Group_2__0__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1297:1: rule__RestrictionList__Group_2__0__Impl : ( ',' ) ;
+    // InternalPathExpressions.g:1297:1: rule__RestrictionList__Group_2__0__Impl : ( ',' ) ;
     public final void rule__RestrictionList__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1301:1: ( ( ',' ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1302:1: ( ',' )
+            // InternalPathExpressions.g:1301:1: ( ( ',' ) )
+            // InternalPathExpressions.g:1302:1: ( ',' )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1302:1: ( ',' )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1303:1: ','
+            // InternalPathExpressions.g:1302:1: ( ',' )
+            // InternalPathExpressions.g:1303:1: ','
             {
              before(grammarAccess.getRestrictionListAccess().getCommaKeyword_2_0()); 
-            match(input,23,FOLLOW_23_in_rule__RestrictionList__Group_2__0__Impl2603); 
+            match(input,23,FOLLOW_2); 
              after(grammarAccess.getRestrictionListAccess().getCommaKeyword_2_0()); 
 
             }
@@ -3535,16 +3543,16 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__RestrictionList__Group_2__1"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1316:1: rule__RestrictionList__Group_2__1 : rule__RestrictionList__Group_2__1__Impl ;
+    // InternalPathExpressions.g:1316:1: rule__RestrictionList__Group_2__1 : rule__RestrictionList__Group_2__1__Impl ;
     public final void rule__RestrictionList__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1320:1: ( rule__RestrictionList__Group_2__1__Impl )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1321:2: rule__RestrictionList__Group_2__1__Impl
+            // InternalPathExpressions.g:1320:1: ( rule__RestrictionList__Group_2__1__Impl )
+            // InternalPathExpressions.g:1321:2: rule__RestrictionList__Group_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__RestrictionList__Group_2__1__Impl_in_rule__RestrictionList__Group_2__12634);
+            pushFollow(FOLLOW_2);
             rule__RestrictionList__Group_2__1__Impl();
 
             state._fsp--;
@@ -3568,23 +3576,23 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__RestrictionList__Group_2__1__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1327:1: rule__RestrictionList__Group_2__1__Impl : ( ( rule__RestrictionList__RestrictionsAssignment_2_1 ) ) ;
+    // InternalPathExpressions.g:1327:1: rule__RestrictionList__Group_2__1__Impl : ( ( rule__RestrictionList__RestrictionsAssignment_2_1 ) ) ;
     public final void rule__RestrictionList__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1331:1: ( ( ( rule__RestrictionList__RestrictionsAssignment_2_1 ) ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1332:1: ( ( rule__RestrictionList__RestrictionsAssignment_2_1 ) )
+            // InternalPathExpressions.g:1331:1: ( ( ( rule__RestrictionList__RestrictionsAssignment_2_1 ) ) )
+            // InternalPathExpressions.g:1332:1: ( ( rule__RestrictionList__RestrictionsAssignment_2_1 ) )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1332:1: ( ( rule__RestrictionList__RestrictionsAssignment_2_1 ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1333:1: ( rule__RestrictionList__RestrictionsAssignment_2_1 )
+            // InternalPathExpressions.g:1332:1: ( ( rule__RestrictionList__RestrictionsAssignment_2_1 ) )
+            // InternalPathExpressions.g:1333:1: ( rule__RestrictionList__RestrictionsAssignment_2_1 )
             {
              before(grammarAccess.getRestrictionListAccess().getRestrictionsAssignment_2_1()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1334:1: ( rule__RestrictionList__RestrictionsAssignment_2_1 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1334:2: rule__RestrictionList__RestrictionsAssignment_2_1
+            // InternalPathExpressions.g:1334:1: ( rule__RestrictionList__RestrictionsAssignment_2_1 )
+            // InternalPathExpressions.g:1334:2: rule__RestrictionList__RestrictionsAssignment_2_1
             {
-            pushFollow(FOLLOW_rule__RestrictionList__RestrictionsAssignment_2_1_in_rule__RestrictionList__Group_2__1__Impl2661);
+            pushFollow(FOLLOW_2);
             rule__RestrictionList__RestrictionsAssignment_2_1();
 
             state._fsp--;
@@ -3615,21 +3623,21 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__TypeRestriction__Group__0"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1348:1: rule__TypeRestriction__Group__0 : rule__TypeRestriction__Group__0__Impl rule__TypeRestriction__Group__1 ;
+    // InternalPathExpressions.g:1348:1: rule__TypeRestriction__Group__0 : rule__TypeRestriction__Group__0__Impl rule__TypeRestriction__Group__1 ;
     public final void rule__TypeRestriction__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1352:1: ( rule__TypeRestriction__Group__0__Impl rule__TypeRestriction__Group__1 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1353:2: rule__TypeRestriction__Group__0__Impl rule__TypeRestriction__Group__1
+            // InternalPathExpressions.g:1352:1: ( rule__TypeRestriction__Group__0__Impl rule__TypeRestriction__Group__1 )
+            // InternalPathExpressions.g:1353:2: rule__TypeRestriction__Group__0__Impl rule__TypeRestriction__Group__1
             {
-            pushFollow(FOLLOW_rule__TypeRestriction__Group__0__Impl_in_rule__TypeRestriction__Group__02695);
+            pushFollow(FOLLOW_13);
             rule__TypeRestriction__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TypeRestriction__Group__1_in_rule__TypeRestriction__Group__02698);
+            pushFollow(FOLLOW_2);
             rule__TypeRestriction__Group__1();
 
             state._fsp--;
@@ -3653,20 +3661,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__TypeRestriction__Group__0__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1360:1: rule__TypeRestriction__Group__0__Impl : ( ( rule__TypeRestriction__ForbiddenAssignment_0 )? ) ;
+    // InternalPathExpressions.g:1360:1: rule__TypeRestriction__Group__0__Impl : ( ( rule__TypeRestriction__ForbiddenAssignment_0 )? ) ;
     public final void rule__TypeRestriction__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1364:1: ( ( ( rule__TypeRestriction__ForbiddenAssignment_0 )? ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1365:1: ( ( rule__TypeRestriction__ForbiddenAssignment_0 )? )
+            // InternalPathExpressions.g:1364:1: ( ( ( rule__TypeRestriction__ForbiddenAssignment_0 )? ) )
+            // InternalPathExpressions.g:1365:1: ( ( rule__TypeRestriction__ForbiddenAssignment_0 )? )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1365:1: ( ( rule__TypeRestriction__ForbiddenAssignment_0 )? )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1366:1: ( rule__TypeRestriction__ForbiddenAssignment_0 )?
+            // InternalPathExpressions.g:1365:1: ( ( rule__TypeRestriction__ForbiddenAssignment_0 )? )
+            // InternalPathExpressions.g:1366:1: ( rule__TypeRestriction__ForbiddenAssignment_0 )?
             {
              before(grammarAccess.getTypeRestrictionAccess().getForbiddenAssignment_0()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1367:1: ( rule__TypeRestriction__ForbiddenAssignment_0 )?
+            // InternalPathExpressions.g:1367:1: ( rule__TypeRestriction__ForbiddenAssignment_0 )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -3675,9 +3683,9 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
             }
             switch (alt12) {
                 case 1 :
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1367:2: rule__TypeRestriction__ForbiddenAssignment_0
+                    // InternalPathExpressions.g:1367:2: rule__TypeRestriction__ForbiddenAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__TypeRestriction__ForbiddenAssignment_0_in_rule__TypeRestriction__Group__0__Impl2725);
+                    pushFollow(FOLLOW_2);
                     rule__TypeRestriction__ForbiddenAssignment_0();
 
                     state._fsp--;
@@ -3711,16 +3719,16 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__TypeRestriction__Group__1"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1377:1: rule__TypeRestriction__Group__1 : rule__TypeRestriction__Group__1__Impl ;
+    // InternalPathExpressions.g:1377:1: rule__TypeRestriction__Group__1 : rule__TypeRestriction__Group__1__Impl ;
     public final void rule__TypeRestriction__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1381:1: ( rule__TypeRestriction__Group__1__Impl )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1382:2: rule__TypeRestriction__Group__1__Impl
+            // InternalPathExpressions.g:1381:1: ( rule__TypeRestriction__Group__1__Impl )
+            // InternalPathExpressions.g:1382:2: rule__TypeRestriction__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__TypeRestriction__Group__1__Impl_in_rule__TypeRestriction__Group__12756);
+            pushFollow(FOLLOW_2);
             rule__TypeRestriction__Group__1__Impl();
 
             state._fsp--;
@@ -3744,23 +3752,23 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__TypeRestriction__Group__1__Impl"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1388:1: rule__TypeRestriction__Group__1__Impl : ( ( rule__TypeRestriction__TypeNameAssignment_1 ) ) ;
+    // InternalPathExpressions.g:1388:1: rule__TypeRestriction__Group__1__Impl : ( ( rule__TypeRestriction__TypeNameAssignment_1 ) ) ;
     public final void rule__TypeRestriction__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1392:1: ( ( ( rule__TypeRestriction__TypeNameAssignment_1 ) ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1393:1: ( ( rule__TypeRestriction__TypeNameAssignment_1 ) )
+            // InternalPathExpressions.g:1392:1: ( ( ( rule__TypeRestriction__TypeNameAssignment_1 ) ) )
+            // InternalPathExpressions.g:1393:1: ( ( rule__TypeRestriction__TypeNameAssignment_1 ) )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1393:1: ( ( rule__TypeRestriction__TypeNameAssignment_1 ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1394:1: ( rule__TypeRestriction__TypeNameAssignment_1 )
+            // InternalPathExpressions.g:1393:1: ( ( rule__TypeRestriction__TypeNameAssignment_1 ) )
+            // InternalPathExpressions.g:1394:1: ( rule__TypeRestriction__TypeNameAssignment_1 )
             {
              before(grammarAccess.getTypeRestrictionAccess().getTypeNameAssignment_1()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1395:1: ( rule__TypeRestriction__TypeNameAssignment_1 )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1395:2: rule__TypeRestriction__TypeNameAssignment_1
+            // InternalPathExpressions.g:1395:1: ( rule__TypeRestriction__TypeNameAssignment_1 )
+            // InternalPathExpressions.g:1395:2: rule__TypeRestriction__TypeNameAssignment_1
             {
-            pushFollow(FOLLOW_rule__TypeRestriction__TypeNameAssignment_1_in_rule__TypeRestriction__Group__1__Impl2783);
+            pushFollow(FOLLOW_2);
             rule__TypeRestriction__TypeNameAssignment_1();
 
             state._fsp--;
@@ -3791,20 +3799,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathExpression__PathAlternativesAssignment_0"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1410:1: rule__PathExpression__PathAlternativesAssignment_0 : ( rulePath ) ;
+    // InternalPathExpressions.g:1410:1: rule__PathExpression__PathAlternativesAssignment_0 : ( rulePath ) ;
     public final void rule__PathExpression__PathAlternativesAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1414:1: ( ( rulePath ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1415:1: ( rulePath )
+            // InternalPathExpressions.g:1414:1: ( ( rulePath ) )
+            // InternalPathExpressions.g:1415:1: ( rulePath )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1415:1: ( rulePath )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1416:1: rulePath
+            // InternalPathExpressions.g:1415:1: ( rulePath )
+            // InternalPathExpressions.g:1416:1: rulePath
             {
              before(grammarAccess.getPathExpressionAccess().getPathAlternativesPathParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_rulePath_in_rule__PathExpression__PathAlternativesAssignment_02822);
+            pushFollow(FOLLOW_2);
             rulePath();
 
             state._fsp--;
@@ -3832,20 +3840,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathExpression__PathAlternativesAssignment_1_1"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1425:1: rule__PathExpression__PathAlternativesAssignment_1_1 : ( rulePath ) ;
+    // InternalPathExpressions.g:1425:1: rule__PathExpression__PathAlternativesAssignment_1_1 : ( rulePath ) ;
     public final void rule__PathExpression__PathAlternativesAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1429:1: ( ( rulePath ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1430:1: ( rulePath )
+            // InternalPathExpressions.g:1429:1: ( ( rulePath ) )
+            // InternalPathExpressions.g:1430:1: ( rulePath )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1430:1: ( rulePath )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1431:1: rulePath
+            // InternalPathExpressions.g:1430:1: ( rulePath )
+            // InternalPathExpressions.g:1431:1: rulePath
             {
              before(grammarAccess.getPathExpressionAccess().getPathAlternativesPathParserRuleCall_1_1_0()); 
-            pushFollow(FOLLOW_rulePath_in_rule__PathExpression__PathAlternativesAssignment_1_12853);
+            pushFollow(FOLLOW_2);
             rulePath();
 
             state._fsp--;
@@ -3873,20 +3881,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathExpression__PathAlternativesAssignment_1_3_2"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1440:1: rule__PathExpression__PathAlternativesAssignment_1_3_2 : ( rulePath ) ;
+    // InternalPathExpressions.g:1440:1: rule__PathExpression__PathAlternativesAssignment_1_3_2 : ( rulePath ) ;
     public final void rule__PathExpression__PathAlternativesAssignment_1_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1444:1: ( ( rulePath ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1445:1: ( rulePath )
+            // InternalPathExpressions.g:1444:1: ( ( rulePath ) )
+            // InternalPathExpressions.g:1445:1: ( rulePath )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1445:1: ( rulePath )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1446:1: rulePath
+            // InternalPathExpressions.g:1445:1: ( rulePath )
+            // InternalPathExpressions.g:1446:1: rulePath
             {
              before(grammarAccess.getPathExpressionAccess().getPathAlternativesPathParserRuleCall_1_3_2_0()); 
-            pushFollow(FOLLOW_rulePath_in_rule__PathExpression__PathAlternativesAssignment_1_3_22884);
+            pushFollow(FOLLOW_2);
             rulePath();
 
             state._fsp--;
@@ -3914,20 +3922,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Path__SegmentsAssignment_0"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1455:1: rule__Path__SegmentsAssignment_0 : ( rulePathSegment ) ;
+    // InternalPathExpressions.g:1455:1: rule__Path__SegmentsAssignment_0 : ( rulePathSegment ) ;
     public final void rule__Path__SegmentsAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1459:1: ( ( rulePathSegment ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1460:1: ( rulePathSegment )
+            // InternalPathExpressions.g:1459:1: ( ( rulePathSegment ) )
+            // InternalPathExpressions.g:1460:1: ( rulePathSegment )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1460:1: ( rulePathSegment )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1461:1: rulePathSegment
+            // InternalPathExpressions.g:1460:1: ( rulePathSegment )
+            // InternalPathExpressions.g:1461:1: rulePathSegment
             {
              before(grammarAccess.getPathAccess().getSegmentsPathSegmentParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_rulePathSegment_in_rule__Path__SegmentsAssignment_02915);
+            pushFollow(FOLLOW_2);
             rulePathSegment();
 
             state._fsp--;
@@ -3955,20 +3963,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Path__SegmentsAssignment_1_1"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1470:1: rule__Path__SegmentsAssignment_1_1 : ( rulePathSegment ) ;
+    // InternalPathExpressions.g:1470:1: rule__Path__SegmentsAssignment_1_1 : ( rulePathSegment ) ;
     public final void rule__Path__SegmentsAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1474:1: ( ( rulePathSegment ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1475:1: ( rulePathSegment )
+            // InternalPathExpressions.g:1474:1: ( ( rulePathSegment ) )
+            // InternalPathExpressions.g:1475:1: ( rulePathSegment )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1475:1: ( rulePathSegment )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1476:1: rulePathSegment
+            // InternalPathExpressions.g:1475:1: ( rulePathSegment )
+            // InternalPathExpressions.g:1476:1: rulePathSegment
             {
              before(grammarAccess.getPathAccess().getSegmentsPathSegmentParserRuleCall_1_1_0()); 
-            pushFollow(FOLLOW_rulePathSegment_in_rule__Path__SegmentsAssignment_1_12946);
+            pushFollow(FOLLOW_2);
             rulePathSegment();
 
             state._fsp--;
@@ -3996,20 +4004,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathSegment__AlternativesAssignment_0_0"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1485:1: rule__PathSegment__AlternativesAssignment_0_0 : ( rulePathSegmentDescription ) ;
+    // InternalPathExpressions.g:1485:1: rule__PathSegment__AlternativesAssignment_0_0 : ( rulePathSegmentDescription ) ;
     public final void rule__PathSegment__AlternativesAssignment_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1489:1: ( ( rulePathSegmentDescription ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1490:1: ( rulePathSegmentDescription )
+            // InternalPathExpressions.g:1489:1: ( ( rulePathSegmentDescription ) )
+            // InternalPathExpressions.g:1490:1: ( rulePathSegmentDescription )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1490:1: ( rulePathSegmentDescription )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1491:1: rulePathSegmentDescription
+            // InternalPathExpressions.g:1490:1: ( rulePathSegmentDescription )
+            // InternalPathExpressions.g:1491:1: rulePathSegmentDescription
             {
              before(grammarAccess.getPathSegmentAccess().getAlternativesPathSegmentDescriptionParserRuleCall_0_0_0()); 
-            pushFollow(FOLLOW_rulePathSegmentDescription_in_rule__PathSegment__AlternativesAssignment_0_02977);
+            pushFollow(FOLLOW_2);
             rulePathSegmentDescription();
 
             state._fsp--;
@@ -4037,20 +4045,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathSegment__AlternativesAssignment_0_1_1"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1500:1: rule__PathSegment__AlternativesAssignment_0_1_1 : ( rulePathSegmentDescription ) ;
+    // InternalPathExpressions.g:1500:1: rule__PathSegment__AlternativesAssignment_0_1_1 : ( rulePathSegmentDescription ) ;
     public final void rule__PathSegment__AlternativesAssignment_0_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1504:1: ( ( rulePathSegmentDescription ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1505:1: ( rulePathSegmentDescription )
+            // InternalPathExpressions.g:1504:1: ( ( rulePathSegmentDescription ) )
+            // InternalPathExpressions.g:1505:1: ( rulePathSegmentDescription )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1505:1: ( rulePathSegmentDescription )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1506:1: rulePathSegmentDescription
+            // InternalPathExpressions.g:1505:1: ( rulePathSegmentDescription )
+            // InternalPathExpressions.g:1506:1: rulePathSegmentDescription
             {
              before(grammarAccess.getPathSegmentAccess().getAlternativesPathSegmentDescriptionParserRuleCall_0_1_1_0()); 
-            pushFollow(FOLLOW_rulePathSegmentDescription_in_rule__PathSegment__AlternativesAssignment_0_1_13008);
+            pushFollow(FOLLOW_2);
             rulePathSegmentDescription();
 
             state._fsp--;
@@ -4078,20 +4086,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathSegment__AlternativesAssignment_0_1_2_1"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1515:1: rule__PathSegment__AlternativesAssignment_0_1_2_1 : ( rulePathSegmentDescription ) ;
+    // InternalPathExpressions.g:1515:1: rule__PathSegment__AlternativesAssignment_0_1_2_1 : ( rulePathSegmentDescription ) ;
     public final void rule__PathSegment__AlternativesAssignment_0_1_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1519:1: ( ( rulePathSegmentDescription ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1520:1: ( rulePathSegmentDescription )
+            // InternalPathExpressions.g:1519:1: ( ( rulePathSegmentDescription ) )
+            // InternalPathExpressions.g:1520:1: ( rulePathSegmentDescription )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1520:1: ( rulePathSegmentDescription )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1521:1: rulePathSegmentDescription
+            // InternalPathExpressions.g:1520:1: ( rulePathSegmentDescription )
+            // InternalPathExpressions.g:1521:1: rulePathSegmentDescription
             {
              before(grammarAccess.getPathSegmentAccess().getAlternativesPathSegmentDescriptionParserRuleCall_0_1_2_1_0()); 
-            pushFollow(FOLLOW_rulePathSegmentDescription_in_rule__PathSegment__AlternativesAssignment_0_1_2_13039);
+            pushFollow(FOLLOW_2);
             rulePathSegmentDescription();
 
             state._fsp--;
@@ -4119,20 +4127,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathSegment__RepeatOperatorAssignment_1"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1530:1: rule__PathSegment__RepeatOperatorAssignment_1 : ( ruleRepeatOperator ) ;
+    // InternalPathExpressions.g:1530:1: rule__PathSegment__RepeatOperatorAssignment_1 : ( ruleRepeatOperator ) ;
     public final void rule__PathSegment__RepeatOperatorAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1534:1: ( ( ruleRepeatOperator ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1535:1: ( ruleRepeatOperator )
+            // InternalPathExpressions.g:1534:1: ( ( ruleRepeatOperator ) )
+            // InternalPathExpressions.g:1535:1: ( ruleRepeatOperator )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1535:1: ( ruleRepeatOperator )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1536:1: ruleRepeatOperator
+            // InternalPathExpressions.g:1535:1: ( ruleRepeatOperator )
+            // InternalPathExpressions.g:1536:1: ruleRepeatOperator
             {
              before(grammarAccess.getPathSegmentAccess().getRepeatOperatorRepeatOperatorEnumRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleRepeatOperator_in_rule__PathSegment__RepeatOperatorAssignment_13070);
+            pushFollow(FOLLOW_2);
             ruleRepeatOperator();
 
             state._fsp--;
@@ -4160,20 +4168,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PathSegmentDescription__RestrictionListAssignment_1"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1545:1: rule__PathSegmentDescription__RestrictionListAssignment_1 : ( ruleRestrictionList ) ;
+    // InternalPathExpressions.g:1545:1: rule__PathSegmentDescription__RestrictionListAssignment_1 : ( ruleRestrictionList ) ;
     public final void rule__PathSegmentDescription__RestrictionListAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1549:1: ( ( ruleRestrictionList ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1550:1: ( ruleRestrictionList )
+            // InternalPathExpressions.g:1549:1: ( ( ruleRestrictionList ) )
+            // InternalPathExpressions.g:1550:1: ( ruleRestrictionList )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1550:1: ( ruleRestrictionList )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1551:1: ruleRestrictionList
+            // InternalPathExpressions.g:1550:1: ( ruleRestrictionList )
+            // InternalPathExpressions.g:1551:1: ruleRestrictionList
             {
              before(grammarAccess.getPathSegmentDescriptionAccess().getRestrictionListRestrictionListParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleRestrictionList_in_rule__PathSegmentDescription__RestrictionListAssignment_13101);
+            pushFollow(FOLLOW_2);
             ruleRestrictionList();
 
             state._fsp--;
@@ -4201,20 +4209,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__RestrictionList__RestrictionsAssignment_1"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1560:1: rule__RestrictionList__RestrictionsAssignment_1 : ( ruleTypeRestriction ) ;
+    // InternalPathExpressions.g:1560:1: rule__RestrictionList__RestrictionsAssignment_1 : ( ruleTypeRestriction ) ;
     public final void rule__RestrictionList__RestrictionsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1564:1: ( ( ruleTypeRestriction ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1565:1: ( ruleTypeRestriction )
+            // InternalPathExpressions.g:1564:1: ( ( ruleTypeRestriction ) )
+            // InternalPathExpressions.g:1565:1: ( ruleTypeRestriction )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1565:1: ( ruleTypeRestriction )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1566:1: ruleTypeRestriction
+            // InternalPathExpressions.g:1565:1: ( ruleTypeRestriction )
+            // InternalPathExpressions.g:1566:1: ruleTypeRestriction
             {
              before(grammarAccess.getRestrictionListAccess().getRestrictionsTypeRestrictionParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleTypeRestriction_in_rule__RestrictionList__RestrictionsAssignment_13132);
+            pushFollow(FOLLOW_2);
             ruleTypeRestriction();
 
             state._fsp--;
@@ -4242,20 +4250,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__RestrictionList__RestrictionsAssignment_2_1"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1575:1: rule__RestrictionList__RestrictionsAssignment_2_1 : ( ruleTypeRestriction ) ;
+    // InternalPathExpressions.g:1575:1: rule__RestrictionList__RestrictionsAssignment_2_1 : ( ruleTypeRestriction ) ;
     public final void rule__RestrictionList__RestrictionsAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1579:1: ( ( ruleTypeRestriction ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1580:1: ( ruleTypeRestriction )
+            // InternalPathExpressions.g:1579:1: ( ( ruleTypeRestriction ) )
+            // InternalPathExpressions.g:1580:1: ( ruleTypeRestriction )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1580:1: ( ruleTypeRestriction )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1581:1: ruleTypeRestriction
+            // InternalPathExpressions.g:1580:1: ( ruleTypeRestriction )
+            // InternalPathExpressions.g:1581:1: ruleTypeRestriction
             {
              before(grammarAccess.getRestrictionListAccess().getRestrictionsTypeRestrictionParserRuleCall_2_1_0()); 
-            pushFollow(FOLLOW_ruleTypeRestriction_in_rule__RestrictionList__RestrictionsAssignment_2_13163);
+            pushFollow(FOLLOW_2);
             ruleTypeRestriction();
 
             state._fsp--;
@@ -4283,20 +4291,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ImplicitPathDescription__KindAssignment"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1590:1: rule__ImplicitPathDescription__KindAssignment : ( ruleImplicitPathKind ) ;
+    // InternalPathExpressions.g:1590:1: rule__ImplicitPathDescription__KindAssignment : ( ruleImplicitPathKind ) ;
     public final void rule__ImplicitPathDescription__KindAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1594:1: ( ( ruleImplicitPathKind ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1595:1: ( ruleImplicitPathKind )
+            // InternalPathExpressions.g:1594:1: ( ( ruleImplicitPathKind ) )
+            // InternalPathExpressions.g:1595:1: ( ruleImplicitPathKind )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1595:1: ( ruleImplicitPathKind )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1596:1: ruleImplicitPathKind
+            // InternalPathExpressions.g:1595:1: ( ruleImplicitPathKind )
+            // InternalPathExpressions.g:1596:1: ruleImplicitPathKind
             {
              before(grammarAccess.getImplicitPathDescriptionAccess().getKindImplicitPathKindEnumRuleCall_0()); 
-            pushFollow(FOLLOW_ruleImplicitPathKind_in_rule__ImplicitPathDescription__KindAssignment3194);
+            pushFollow(FOLLOW_2);
             ruleImplicitPathKind();
 
             state._fsp--;
@@ -4324,20 +4332,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ExplicitPathDescription__AssociationNameAssignment"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1605:1: rule__ExplicitPathDescription__AssociationNameAssignment : ( RULE_ID ) ;
+    // InternalPathExpressions.g:1605:1: rule__ExplicitPathDescription__AssociationNameAssignment : ( RULE_ID ) ;
     public final void rule__ExplicitPathDescription__AssociationNameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1609:1: ( ( RULE_ID ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1610:1: ( RULE_ID )
+            // InternalPathExpressions.g:1609:1: ( ( RULE_ID ) )
+            // InternalPathExpressions.g:1610:1: ( RULE_ID )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1610:1: ( RULE_ID )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1611:1: RULE_ID
+            // InternalPathExpressions.g:1610:1: ( RULE_ID )
+            // InternalPathExpressions.g:1611:1: RULE_ID
             {
              before(grammarAccess.getExplicitPathDescriptionAccess().getAssociationNameIDTerminalRuleCall_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ExplicitPathDescription__AssociationNameAssignment3225); 
+            match(input,RULE_ID,FOLLOW_2); 
              after(grammarAccess.getExplicitPathDescriptionAccess().getAssociationNameIDTerminalRuleCall_0()); 
 
             }
@@ -4361,24 +4369,24 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__TypeRestriction__ForbiddenAssignment_0"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1620:1: rule__TypeRestriction__ForbiddenAssignment_0 : ( ( '!' ) ) ;
+    // InternalPathExpressions.g:1620:1: rule__TypeRestriction__ForbiddenAssignment_0 : ( ( '!' ) ) ;
     public final void rule__TypeRestriction__ForbiddenAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1624:1: ( ( ( '!' ) ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1625:1: ( ( '!' ) )
+            // InternalPathExpressions.g:1624:1: ( ( ( '!' ) ) )
+            // InternalPathExpressions.g:1625:1: ( ( '!' ) )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1625:1: ( ( '!' ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1626:1: ( '!' )
-            {
-             before(grammarAccess.getTypeRestrictionAccess().getForbiddenExclamationMarkKeyword_0_0()); 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1627:1: ( '!' )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1628:1: '!'
+            // InternalPathExpressions.g:1625:1: ( ( '!' ) )
+            // InternalPathExpressions.g:1626:1: ( '!' )
             {
              before(grammarAccess.getTypeRestrictionAccess().getForbiddenExclamationMarkKeyword_0_0()); 
-            match(input,24,FOLLOW_24_in_rule__TypeRestriction__ForbiddenAssignment_03261); 
+            // InternalPathExpressions.g:1627:1: ( '!' )
+            // InternalPathExpressions.g:1628:1: '!'
+            {
+             before(grammarAccess.getTypeRestrictionAccess().getForbiddenExclamationMarkKeyword_0_0()); 
+            match(input,24,FOLLOW_2); 
              after(grammarAccess.getTypeRestrictionAccess().getForbiddenExclamationMarkKeyword_0_0()); 
 
             }
@@ -4406,20 +4414,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__TypeRestriction__TypeNameAssignment_1"
-    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1643:1: rule__TypeRestriction__TypeNameAssignment_1 : ( RULE_ID ) ;
+    // InternalPathExpressions.g:1643:1: rule__TypeRestriction__TypeNameAssignment_1 : ( RULE_ID ) ;
     public final void rule__TypeRestriction__TypeNameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1647:1: ( ( RULE_ID ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1648:1: ( RULE_ID )
+            // InternalPathExpressions.g:1647:1: ( ( RULE_ID ) )
+            // InternalPathExpressions.g:1648:1: ( RULE_ID )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1648:1: ( RULE_ID )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1649:1: RULE_ID
+            // InternalPathExpressions.g:1648:1: ( RULE_ID )
+            // InternalPathExpressions.g:1649:1: RULE_ID
             {
              before(grammarAccess.getTypeRestrictionAccess().getTypeNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__TypeRestriction__TypeNameAssignment_13300); 
+            match(input,RULE_ID,FOLLOW_2); 
              after(grammarAccess.getTypeRestrictionAccess().getTypeNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -4445,19 +4453,12 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
 
 
     protected DFA1 dfa1 = new DFA1(this);
-    static final String DFA1_eotS =
-        "\17\uffff";
-    static final String DFA1_eofS =
-        "\17\uffff";
-    static final String DFA1_minS =
-        "\1\4\1\uffff\1\4\4\13\1\uffff\2\4\1\26\1\4\1\13\1\4\1\26";
-    static final String DFA1_maxS =
-        "\1\21\1\uffff\1\21\4\25\1\uffff\1\30\1\4\1\27\1\30\1\24\1\4\1\27";
-    static final String DFA1_acceptS =
-        "\1\uffff\1\1\5\uffff\1\2\7\uffff";
-    static final String DFA1_specialS =
-        "\17\uffff}>";
-    static final String[] DFA1_transitionS = {
+    static final String dfa_1s = "\17\uffff";
+    static final String dfa_2s = "\1\4\1\uffff\1\4\4\13\1\uffff\2\4\1\26\1\4\1\13\1\4\1\26";
+    static final String dfa_3s = "\1\21\1\uffff\1\21\4\25\1\uffff\1\30\1\4\1\27\1\30\1\24\1\4\1\27";
+    static final String dfa_4s = "\1\uffff\1\1\5\uffff\1\2\7\uffff";
+    static final String dfa_5s = "\17\uffff}>";
+    static final String[] dfa_6s = {
             "\1\1\11\uffff\3\1\1\2",
             "",
             "\1\6\11\uffff\1\3\1\4\1\5\1\7",
@@ -4475,34 +4476,25 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
             "\1\14\1\13"
     };
 
-    static final short[] DFA1_eot = DFA.unpackEncodedString(DFA1_eotS);
-    static final short[] DFA1_eof = DFA.unpackEncodedString(DFA1_eofS);
-    static final char[] DFA1_min = DFA.unpackEncodedStringToUnsignedChars(DFA1_minS);
-    static final char[] DFA1_max = DFA.unpackEncodedStringToUnsignedChars(DFA1_maxS);
-    static final short[] DFA1_accept = DFA.unpackEncodedString(DFA1_acceptS);
-    static final short[] DFA1_special = DFA.unpackEncodedString(DFA1_specialS);
-    static final short[][] DFA1_transition;
-
-    static {
-        int numStates = DFA1_transitionS.length;
-        DFA1_transition = new short[numStates][];
-        for (int i=0; i<numStates; i++) {
-            DFA1_transition[i] = DFA.unpackEncodedString(DFA1_transitionS[i]);
-        }
-    }
+    static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);
+    static final char[] dfa_2 = DFA.unpackEncodedStringToUnsignedChars(dfa_2s);
+    static final char[] dfa_3 = DFA.unpackEncodedStringToUnsignedChars(dfa_3s);
+    static final short[] dfa_4 = DFA.unpackEncodedString(dfa_4s);
+    static final short[] dfa_5 = DFA.unpackEncodedString(dfa_5s);
+    static final short[][] dfa_6 = unpackEncodedStringArray(dfa_6s);
 
     class DFA1 extends DFA {
 
         public DFA1(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
             this.decisionNumber = 1;
-            this.eot = DFA1_eot;
-            this.eof = DFA1_eof;
-            this.min = DFA1_min;
-            this.max = DFA1_max;
-            this.accept = DFA1_accept;
-            this.special = DFA1_special;
-            this.transition = DFA1_transition;
+            this.eot = dfa_1;
+            this.eof = dfa_1;
+            this.min = dfa_2;
+            this.max = dfa_3;
+            this.accept = dfa_4;
+            this.special = dfa_5;
+            this.transition = dfa_6;
         }
         public String getDescription() {
             return "322:1: rule__PathExpression__Alternatives : ( ( ( rule__PathExpression__PathAlternativesAssignment_0 ) ) | ( ( rule__PathExpression__Group_1__0 ) ) );";
@@ -4510,140 +4502,20 @@ public class InternalPathExpressionsParser extends AbstractInternalContentAssist
     }
  
 
-    public static final BitSet FOLLOW_rulePathExpression_in_entryRulePathExpression61 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePathExpression68 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathExpression__Alternatives_in_rulePathExpression94 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePath_in_entryRulePath121 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePath128 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Path__Group__0_in_rulePath154 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePathSegment_in_entryRulePathSegment181 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePathSegment188 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathSegment__Group__0_in_rulePathSegment214 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePathSegmentDescription_in_entryRulePathSegmentDescription241 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePathSegmentDescription248 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathSegmentDescription__Group__0_in_rulePathSegmentDescription274 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRestrictionList_in_entryRuleRestrictionList301 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRestrictionList308 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RestrictionList__Group__0_in_ruleRestrictionList334 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleImplicitPathDescription_in_entryRuleImplicitPathDescription361 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleImplicitPathDescription368 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ImplicitPathDescription__KindAssignment_in_ruleImplicitPathDescription394 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExplicitPathDescription_in_entryRuleExplicitPathDescription421 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExplicitPathDescription428 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ExplicitPathDescription__AssociationNameAssignment_in_ruleExplicitPathDescription454 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeRestriction_in_entryRuleTypeRestriction481 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTypeRestriction488 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeRestriction__Group__0_in_ruleTypeRestriction514 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RepeatOperator__Alternatives_in_ruleRepeatOperator551 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ImplicitPathKind__Alternatives_in_ruleImplicitPathKind587 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathExpression__PathAlternativesAssignment_0_in_rule__PathExpression__Alternatives622 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathExpression__Group_1__0_in_rule__PathExpression__Alternatives640 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathSegment__AlternativesAssignment_0_0_in_rule__PathSegment__Alternatives_0673 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathSegment__Group_0_1__0_in_rule__PathSegment__Alternatives_0691 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleImplicitPathDescription_in_rule__PathSegmentDescription__Alternatives_0724 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExplicitPathDescription_in_rule__PathSegmentDescription__Alternatives_0741 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_11_in_rule__RepeatOperator__Alternatives774 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_rule__RepeatOperator__Alternatives795 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_rule__RepeatOperator__Alternatives816 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_rule__ImplicitPathKind__Alternatives852 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__ImplicitPathKind__Alternatives873 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__ImplicitPathKind__Alternatives894 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathExpression__Group_1__0__Impl_in_rule__PathExpression__Group_1__0927 = new BitSet(new long[]{0x000000000003C010L});
-    public static final BitSet FOLLOW_rule__PathExpression__Group_1__1_in_rule__PathExpression__Group_1__0930 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__PathExpression__Group_1__0__Impl958 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathExpression__Group_1__1__Impl_in_rule__PathExpression__Group_1__1989 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_rule__PathExpression__Group_1__2_in_rule__PathExpression__Group_1__1992 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathExpression__PathAlternativesAssignment_1_1_in_rule__PathExpression__Group_1__1__Impl1019 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathExpression__Group_1__2__Impl_in_rule__PathExpression__Group_1__21049 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_rule__PathExpression__Group_1__3_in_rule__PathExpression__Group_1__21052 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_rule__PathExpression__Group_1__2__Impl1080 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathExpression__Group_1__3__Impl_in_rule__PathExpression__Group_1__31111 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathExpression__Group_1_3__0_in_rule__PathExpression__Group_1__3__Impl1140 = new BitSet(new long[]{0x0000000000080002L});
-    public static final BitSet FOLLOW_rule__PathExpression__Group_1_3__0_in_rule__PathExpression__Group_1__3__Impl1152 = new BitSet(new long[]{0x0000000000080002L});
-    public static final BitSet FOLLOW_rule__PathExpression__Group_1_3__0__Impl_in_rule__PathExpression__Group_1_3__01193 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_rule__PathExpression__Group_1_3__1_in_rule__PathExpression__Group_1_3__01196 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__PathExpression__Group_1_3__0__Impl1224 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathExpression__Group_1_3__1__Impl_in_rule__PathExpression__Group_1_3__11255 = new BitSet(new long[]{0x000000000003C010L});
-    public static final BitSet FOLLOW_rule__PathExpression__Group_1_3__2_in_rule__PathExpression__Group_1_3__11258 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__PathExpression__Group_1_3__1__Impl1286 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathExpression__Group_1_3__2__Impl_in_rule__PathExpression__Group_1_3__21317 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_rule__PathExpression__Group_1_3__3_in_rule__PathExpression__Group_1_3__21320 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathExpression__PathAlternativesAssignment_1_3_2_in_rule__PathExpression__Group_1_3__2__Impl1347 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathExpression__Group_1_3__3__Impl_in_rule__PathExpression__Group_1_3__31377 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_rule__PathExpression__Group_1_3__3__Impl1405 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Path__Group__0__Impl_in_rule__Path__Group__01444 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_rule__Path__Group__1_in_rule__Path__Group__01447 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Path__SegmentsAssignment_0_in_rule__Path__Group__0__Impl1474 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Path__Group__1__Impl_in_rule__Path__Group__11504 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Path__Group_1__0_in_rule__Path__Group__1__Impl1531 = new BitSet(new long[]{0x0000000000100002L});
-    public static final BitSet FOLLOW_rule__Path__Group_1__0__Impl_in_rule__Path__Group_1__01566 = new BitSet(new long[]{0x000000000003C010L});
-    public static final BitSet FOLLOW_rule__Path__Group_1__1_in_rule__Path__Group_1__01569 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__Path__Group_1__0__Impl1597 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Path__Group_1__1__Impl_in_rule__Path__Group_1__11628 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Path__SegmentsAssignment_1_1_in_rule__Path__Group_1__1__Impl1655 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathSegment__Group__0__Impl_in_rule__PathSegment__Group__01689 = new BitSet(new long[]{0x0000000000003800L});
-    public static final BitSet FOLLOW_rule__PathSegment__Group__1_in_rule__PathSegment__Group__01692 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathSegment__Alternatives_0_in_rule__PathSegment__Group__0__Impl1719 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathSegment__Group__1__Impl_in_rule__PathSegment__Group__11749 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathSegment__RepeatOperatorAssignment_1_in_rule__PathSegment__Group__1__Impl1776 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathSegment__Group_0_1__0__Impl_in_rule__PathSegment__Group_0_1__01811 = new BitSet(new long[]{0x000000000001C010L});
-    public static final BitSet FOLLOW_rule__PathSegment__Group_0_1__1_in_rule__PathSegment__Group_0_1__01814 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__PathSegment__Group_0_1__0__Impl1842 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathSegment__Group_0_1__1__Impl_in_rule__PathSegment__Group_0_1__11873 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_rule__PathSegment__Group_0_1__2_in_rule__PathSegment__Group_0_1__11876 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathSegment__AlternativesAssignment_0_1_1_in_rule__PathSegment__Group_0_1__1__Impl1903 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathSegment__Group_0_1__2__Impl_in_rule__PathSegment__Group_0_1__21933 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_rule__PathSegment__Group_0_1__3_in_rule__PathSegment__Group_0_1__21936 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathSegment__Group_0_1_2__0_in_rule__PathSegment__Group_0_1__2__Impl1965 = new BitSet(new long[]{0x0000000000080002L});
-    public static final BitSet FOLLOW_rule__PathSegment__Group_0_1_2__0_in_rule__PathSegment__Group_0_1__2__Impl1977 = new BitSet(new long[]{0x0000000000080002L});
-    public static final BitSet FOLLOW_rule__PathSegment__Group_0_1__3__Impl_in_rule__PathSegment__Group_0_1__32010 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_rule__PathSegment__Group_0_1__3__Impl2038 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathSegment__Group_0_1_2__0__Impl_in_rule__PathSegment__Group_0_1_2__02077 = new BitSet(new long[]{0x000000000001C010L});
-    public static final BitSet FOLLOW_rule__PathSegment__Group_0_1_2__1_in_rule__PathSegment__Group_0_1_2__02080 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__PathSegment__Group_0_1_2__0__Impl2108 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathSegment__Group_0_1_2__1__Impl_in_rule__PathSegment__Group_0_1_2__12139 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathSegment__AlternativesAssignment_0_1_2_1_in_rule__PathSegment__Group_0_1_2__1__Impl2166 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathSegmentDescription__Group__0__Impl_in_rule__PathSegmentDescription__Group__02200 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_rule__PathSegmentDescription__Group__1_in_rule__PathSegmentDescription__Group__02203 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathSegmentDescription__Alternatives_0_in_rule__PathSegmentDescription__Group__0__Impl2230 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathSegmentDescription__Group__1__Impl_in_rule__PathSegmentDescription__Group__12260 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PathSegmentDescription__RestrictionListAssignment_1_in_rule__PathSegmentDescription__Group__1__Impl2287 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RestrictionList__Group__0__Impl_in_rule__RestrictionList__Group__02322 = new BitSet(new long[]{0x0000000001000010L});
-    public static final BitSet FOLLOW_rule__RestrictionList__Group__1_in_rule__RestrictionList__Group__02325 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__RestrictionList__Group__0__Impl2353 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RestrictionList__Group__1__Impl_in_rule__RestrictionList__Group__12384 = new BitSet(new long[]{0x0000000000C00000L});
-    public static final BitSet FOLLOW_rule__RestrictionList__Group__2_in_rule__RestrictionList__Group__12387 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RestrictionList__RestrictionsAssignment_1_in_rule__RestrictionList__Group__1__Impl2414 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RestrictionList__Group__2__Impl_in_rule__RestrictionList__Group__22444 = new BitSet(new long[]{0x0000000000C00000L});
-    public static final BitSet FOLLOW_rule__RestrictionList__Group__3_in_rule__RestrictionList__Group__22447 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RestrictionList__Group_2__0_in_rule__RestrictionList__Group__2__Impl2474 = new BitSet(new long[]{0x0000000000800002L});
-    public static final BitSet FOLLOW_rule__RestrictionList__Group__3__Impl_in_rule__RestrictionList__Group__32505 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__RestrictionList__Group__3__Impl2533 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RestrictionList__Group_2__0__Impl_in_rule__RestrictionList__Group_2__02572 = new BitSet(new long[]{0x0000000001000010L});
-    public static final BitSet FOLLOW_rule__RestrictionList__Group_2__1_in_rule__RestrictionList__Group_2__02575 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__RestrictionList__Group_2__0__Impl2603 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RestrictionList__Group_2__1__Impl_in_rule__RestrictionList__Group_2__12634 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RestrictionList__RestrictionsAssignment_2_1_in_rule__RestrictionList__Group_2__1__Impl2661 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeRestriction__Group__0__Impl_in_rule__TypeRestriction__Group__02695 = new BitSet(new long[]{0x0000000001000010L});
-    public static final BitSet FOLLOW_rule__TypeRestriction__Group__1_in_rule__TypeRestriction__Group__02698 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeRestriction__ForbiddenAssignment_0_in_rule__TypeRestriction__Group__0__Impl2725 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeRestriction__Group__1__Impl_in_rule__TypeRestriction__Group__12756 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeRestriction__TypeNameAssignment_1_in_rule__TypeRestriction__Group__1__Impl2783 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePath_in_rule__PathExpression__PathAlternativesAssignment_02822 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePath_in_rule__PathExpression__PathAlternativesAssignment_1_12853 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePath_in_rule__PathExpression__PathAlternativesAssignment_1_3_22884 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePathSegment_in_rule__Path__SegmentsAssignment_02915 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePathSegment_in_rule__Path__SegmentsAssignment_1_12946 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePathSegmentDescription_in_rule__PathSegment__AlternativesAssignment_0_02977 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePathSegmentDescription_in_rule__PathSegment__AlternativesAssignment_0_1_13008 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePathSegmentDescription_in_rule__PathSegment__AlternativesAssignment_0_1_2_13039 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRepeatOperator_in_rule__PathSegment__RepeatOperatorAssignment_13070 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRestrictionList_in_rule__PathSegmentDescription__RestrictionListAssignment_13101 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeRestriction_in_rule__RestrictionList__RestrictionsAssignment_13132 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeRestriction_in_rule__RestrictionList__RestrictionsAssignment_2_13163 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleImplicitPathKind_in_rule__ImplicitPathDescription__KindAssignment3194 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ExplicitPathDescription__AssociationNameAssignment3225 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__TypeRestriction__ForbiddenAssignment_03261 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__TypeRestriction__TypeNameAssignment_13300 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x000000000003C010L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000080002L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000100002L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000003800L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x000000000001C010L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000001000010L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000C00000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000800002L});
 
 }

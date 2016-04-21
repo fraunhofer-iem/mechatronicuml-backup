@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
-
  */
 package org.muml.storydiagram.expressions.pathExpressions;
 
@@ -124,6 +120,8 @@ public enum ImplicitPathKind implements Enumerator
    * Returns the '<em><b>Implicit Path Kind</b></em>' literal with the specified literal value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @param literal the literal.
+   * @return the matching enumerator or <code>null</code>.
    * @generated
    */
   public static ImplicitPathKind get(String literal)
@@ -143,6 +141,8 @@ public enum ImplicitPathKind implements Enumerator
    * Returns the '<em><b>Implicit Path Kind</b></em>' literal with the specified name.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @param name the name.
+   * @return the matching enumerator or <code>null</code>.
    * @generated
    */
   public static ImplicitPathKind getByName(String name)
@@ -162,6 +162,8 @@ public enum ImplicitPathKind implements Enumerator
    * Returns the '<em><b>Implicit Path Kind</b></em>' literal with the specified integer value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @param value the integer value.
+   * @return the matching enumerator or <code>null</code>.
    * @generated
    */
   public static ImplicitPathKind get(int value)

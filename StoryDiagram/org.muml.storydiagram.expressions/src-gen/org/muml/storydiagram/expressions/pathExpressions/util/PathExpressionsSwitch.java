@@ -1,23 +1,13 @@
 /**
- * <copyright>
- * </copyright>
- *
-
  */
 package org.muml.storydiagram.expressions.pathExpressions.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.util.Switch;
-import org.muml.storydiagram.expressions.pathExpressions.ExplicitPathDescription;
-import org.muml.storydiagram.expressions.pathExpressions.ImplicitPathDescription;
-import org.muml.storydiagram.expressions.pathExpressions.Path;
-import org.muml.storydiagram.expressions.pathExpressions.PathExpression;
-import org.muml.storydiagram.expressions.pathExpressions.PathExpressionsPackage;
-import org.muml.storydiagram.expressions.pathExpressions.PathSegment;
-import org.muml.storydiagram.expressions.pathExpressions.PathSegmentDescription;
-import org.muml.storydiagram.expressions.pathExpressions.RestrictionList;
-import org.muml.storydiagram.expressions.pathExpressions.TypeRestriction;
+
+import org.muml.storydiagram.expressions.pathExpressions.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -60,7 +50,7 @@ public class PathExpressionsSwitch<T> extends Switch<T>
    * Checks whether this is a switch for the given package.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @parameter ePackage the package in question.
+   * @param ePackage the package in question.
    * @return whether this is a switch for the given package.
    * @generated
    */

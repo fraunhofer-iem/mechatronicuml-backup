@@ -1,20 +1,21 @@
 /**
- * <copyright>
- * </copyright>
- *
-
  */
 package org.muml.storydiagram.expressions.pathExpressions.impl;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.muml.storydiagram.expressions.pathExpressions.PathExpressionsPackage;
 import org.muml.storydiagram.expressions.pathExpressions.RestrictionList;
 import org.muml.storydiagram.expressions.pathExpressions.TypeRestriction;
@@ -25,10 +26,10 @@ import org.muml.storydiagram.expressions.pathExpressions.TypeRestriction;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.expressions.pathExpressions.impl.RestrictionListImpl#getRestrictions <em>Restrictions</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

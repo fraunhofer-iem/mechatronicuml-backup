@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
-
  */
 package org.muml.storydiagram.expressions.pathExpressions.impl;
 
@@ -11,7 +7,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import org.muml.storydiagram.expressions.pathExpressions.ExplicitPathDescription;
 import org.muml.storydiagram.expressions.pathExpressions.ImplicitPathDescription;
 import org.muml.storydiagram.expressions.pathExpressions.ImplicitPathKind;

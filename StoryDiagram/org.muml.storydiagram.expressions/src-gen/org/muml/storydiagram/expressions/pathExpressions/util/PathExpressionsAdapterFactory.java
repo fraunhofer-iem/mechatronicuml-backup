@@ -1,24 +1,15 @@
 /**
- * <copyright>
- * </copyright>
- *
-
  */
 package org.muml.storydiagram.expressions.pathExpressions.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
 import org.eclipse.emf.ecore.EObject;
-import org.muml.storydiagram.expressions.pathExpressions.ExplicitPathDescription;
-import org.muml.storydiagram.expressions.pathExpressions.ImplicitPathDescription;
-import org.muml.storydiagram.expressions.pathExpressions.Path;
-import org.muml.storydiagram.expressions.pathExpressions.PathExpression;
-import org.muml.storydiagram.expressions.pathExpressions.PathExpressionsPackage;
-import org.muml.storydiagram.expressions.pathExpressions.PathSegment;
-import org.muml.storydiagram.expressions.pathExpressions.PathSegmentDescription;
-import org.muml.storydiagram.expressions.pathExpressions.RestrictionList;
-import org.muml.storydiagram.expressions.pathExpressions.TypeRestriction;
+
+import org.muml.storydiagram.expressions.pathExpressions.*;
 
 /**
  * <!-- begin-user-doc -->

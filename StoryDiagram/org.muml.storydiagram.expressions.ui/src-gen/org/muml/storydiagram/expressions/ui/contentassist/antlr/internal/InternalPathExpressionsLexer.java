@@ -2,41 +2,38 @@ package org.muml.storydiagram.expressions.ui.contentassist.antlr.internal;
 
 // Hack: Use our own Lexer superclass by means of import. 
 // Currently there is no other way to specify the superclass for the lexer.
-import org.antlr.runtime.BaseRecognizer;
-import org.antlr.runtime.CharStream;
-import org.antlr.runtime.DFA;
-import org.antlr.runtime.EarlyExitException;
-import org.antlr.runtime.IntStream;
-import org.antlr.runtime.MismatchedSetException;
-import org.antlr.runtime.NoViableAltException;
-import org.antlr.runtime.RecognitionException;
-import org.antlr.runtime.RecognizerSharedState;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.Lexer;
+
+
+import org.antlr.runtime.*;
+import java.util.Stack;
+import java.util.List;
+import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalPathExpressionsLexer extends Lexer {
-    public static final int RULE_ML_COMMENT=7;
-    public static final int RULE_ID=4;
-    public static final int T__12=12;
-    public static final int T__23=23;
-    public static final int T__20=20;
-    public static final int T__13=13;
     public static final int RULE_STRING=6;
-    public static final int T__21=21;
-    public static final int T__19=19;
-    public static final int T__14=14;
-    public static final int T__11=11;
-    public static final int T__22=22;
-    public static final int RULE_WS=9;
-    public static final int T__17=17;
-    public static final int EOF=-1;
-    public static final int RULE_INT=5;
-    public static final int T__16=16;
-    public static final int T__24=24;
-    public static final int RULE_ANY_OTHER=10;
     public static final int RULE_SL_COMMENT=8;
-    public static final int T__18=18;
+    public static final int T__19=19;
     public static final int T__15=15;
+    public static final int T__16=16;
+    public static final int T__17=17;
+    public static final int T__18=18;
+    public static final int T__11=11;
+    public static final int T__12=12;
+    public static final int T__13=13;
+    public static final int T__14=14;
+    public static final int EOF=-1;
+    public static final int RULE_ID=4;
+    public static final int RULE_WS=9;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int RULE_INT=5;
+    public static final int T__22=22;
+    public static final int RULE_ML_COMMENT=7;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__20=20;
+    public static final int T__21=21;
 
     // delegates
     // delegators
@@ -49,15 +46,15 @@ public class InternalPathExpressionsLexer extends Lexer {
         super(input,state);
 
     }
-    public String getGrammarFileName() { return "../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g"; }
+    public String getGrammarFileName() { return "InternalPathExpressions.g"; }
 
     // $ANTLR start "T__11"
     public final void mT__11() throws RecognitionException {
         try {
             int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:11:7: ( 'NO_REPEAT' )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:11:9: 'NO_REPEAT'
+            // InternalPathExpressions.g:11:7: ( 'NO_REPEAT' )
+            // InternalPathExpressions.g:11:9: 'NO_REPEAT'
             {
             match("NO_REPEAT"); 
 
@@ -77,8 +74,8 @@ public class InternalPathExpressionsLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:12:7: ( '+' )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:12:9: '+'
+            // InternalPathExpressions.g:12:7: ( '+' )
+            // InternalPathExpressions.g:12:9: '+'
             {
             match('+'); 
 
@@ -97,8 +94,8 @@ public class InternalPathExpressionsLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:13:7: ( '*' )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:13:9: '*'
+            // InternalPathExpressions.g:13:7: ( '*' )
+            // InternalPathExpressions.g:13:9: '*'
             {
             match('*'); 
 
@@ -117,8 +114,8 @@ public class InternalPathExpressionsLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:14:7: ( '-->' )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:14:9: '-->'
+            // InternalPathExpressions.g:14:7: ( '-->' )
+            // InternalPathExpressions.g:14:9: '-->'
             {
             match("-->"); 
 
@@ -138,8 +135,8 @@ public class InternalPathExpressionsLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:15:7: ( '<>-->' )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:15:9: '<>-->'
+            // InternalPathExpressions.g:15:7: ( '<>-->' )
+            // InternalPathExpressions.g:15:9: '<>-->'
             {
             match("<>-->"); 
 
@@ -159,8 +156,8 @@ public class InternalPathExpressionsLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:16:7: ( '--><>' )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:16:9: '--><>'
+            // InternalPathExpressions.g:16:7: ( '--><>' )
+            // InternalPathExpressions.g:16:9: '--><>'
             {
             match("--><>"); 
 
@@ -180,8 +177,8 @@ public class InternalPathExpressionsLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:17:7: ( '(' )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:17:9: '('
+            // InternalPathExpressions.g:17:7: ( '(' )
+            // InternalPathExpressions.g:17:9: '('
             {
             match('('); 
 
@@ -200,8 +197,8 @@ public class InternalPathExpressionsLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:18:7: ( ')' )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:18:9: ')'
+            // InternalPathExpressions.g:18:7: ( ')' )
+            // InternalPathExpressions.g:18:9: ')'
             {
             match(')'); 
 
@@ -220,8 +217,8 @@ public class InternalPathExpressionsLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:19:7: ( '|' )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:19:9: '|'
+            // InternalPathExpressions.g:19:7: ( '|' )
+            // InternalPathExpressions.g:19:9: '|'
             {
             match('|'); 
 
@@ -240,8 +237,8 @@ public class InternalPathExpressionsLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:20:7: ( '.' )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:20:9: '.'
+            // InternalPathExpressions.g:20:7: ( '.' )
+            // InternalPathExpressions.g:20:9: '.'
             {
             match('.'); 
 
@@ -260,8 +257,8 @@ public class InternalPathExpressionsLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:21:7: ( '[' )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:21:9: '['
+            // InternalPathExpressions.g:21:7: ( '[' )
+            // InternalPathExpressions.g:21:9: '['
             {
             match('['); 
 
@@ -280,8 +277,8 @@ public class InternalPathExpressionsLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:22:7: ( ']' )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:22:9: ']'
+            // InternalPathExpressions.g:22:7: ( ']' )
+            // InternalPathExpressions.g:22:9: ']'
             {
             match(']'); 
 
@@ -300,8 +297,8 @@ public class InternalPathExpressionsLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:23:7: ( ',' )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:23:9: ','
+            // InternalPathExpressions.g:23:7: ( ',' )
+            // InternalPathExpressions.g:23:9: ','
             {
             match(','); 
 
@@ -320,8 +317,8 @@ public class InternalPathExpressionsLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:24:7: ( '!' )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:24:9: '!'
+            // InternalPathExpressions.g:24:7: ( '!' )
+            // InternalPathExpressions.g:24:9: '!'
             {
             match('!'); 
 
@@ -340,10 +337,10 @@ public class InternalPathExpressionsLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1659:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1659:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalPathExpressions.g:1659:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalPathExpressions.g:1659:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1659:11: ( '^' )?
+            // InternalPathExpressions.g:1659:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -352,7 +349,7 @@ public class InternalPathExpressionsLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1659:11: '^'
+                    // InternalPathExpressions.g:1659:11: '^'
                     {
                     match('^'); 
 
@@ -370,7 +367,7 @@ public class InternalPathExpressionsLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1659:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalPathExpressions.g:1659:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -383,7 +380,7 @@ public class InternalPathExpressionsLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:
+            	    // InternalPathExpressions.g:
             	    {
             	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
             	        input.consume();
@@ -419,10 +416,10 @@ public class InternalPathExpressionsLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1661:10: ( ( '0' .. '9' )+ )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1661:12: ( '0' .. '9' )+
+            // InternalPathExpressions.g:1661:10: ( ( '0' .. '9' )+ )
+            // InternalPathExpressions.g:1661:12: ( '0' .. '9' )+
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1661:12: ( '0' .. '9' )+
+            // InternalPathExpressions.g:1661:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -436,7 +433,7 @@ public class InternalPathExpressionsLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1661:13: '0' .. '9'
+            	    // InternalPathExpressions.g:1661:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -468,10 +465,10 @@ public class InternalPathExpressionsLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1663:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1663:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalPathExpressions.g:1663:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalPathExpressions.g:1663:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1663:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalPathExpressions.g:1663:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -489,10 +486,10 @@ public class InternalPathExpressionsLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1663:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalPathExpressions.g:1663:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1663:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalPathExpressions.g:1663:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -508,23 +505,15 @@ public class InternalPathExpressionsLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1663:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // InternalPathExpressions.g:1663:21: '\\\\' .
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
-                    	        input.consume();
-
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
-
+                    	    matchAny(); 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1663:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalPathExpressions.g:1663:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -549,10 +538,10 @@ public class InternalPathExpressionsLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1663:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalPathExpressions.g:1663:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1663:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalPathExpressions.g:1663:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -568,23 +557,15 @@ public class InternalPathExpressionsLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1663:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // InternalPathExpressions.g:1663:54: '\\\\' .
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
-                    	        input.consume();
-
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
-
+                    	    matchAny(); 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1663:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalPathExpressions.g:1663:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -627,12 +608,12 @@ public class InternalPathExpressionsLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1665:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1665:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalPathExpressions.g:1665:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalPathExpressions.g:1665:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1665:24: ( options {greedy=false; } : . )*
+            // InternalPathExpressions.g:1665:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -657,7 +638,7 @@ public class InternalPathExpressionsLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1665:52: .
+            	    // InternalPathExpressions.g:1665:52: .
             	    {
             	    matchAny(); 
 
@@ -687,12 +668,12 @@ public class InternalPathExpressionsLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1667:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1667:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalPathExpressions.g:1667:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalPathExpressions.g:1667:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1667:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalPathExpressions.g:1667:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -705,7 +686,7 @@ public class InternalPathExpressionsLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1667:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalPathExpressions.g:1667:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -725,7 +706,7 @@ public class InternalPathExpressionsLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1667:40: ( ( '\\r' )? '\\n' )?
+            // InternalPathExpressions.g:1667:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -734,9 +715,9 @@ public class InternalPathExpressionsLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1667:41: ( '\\r' )? '\\n'
+                    // InternalPathExpressions.g:1667:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1667:41: ( '\\r' )?
+                    // InternalPathExpressions.g:1667:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -745,7 +726,7 @@ public class InternalPathExpressionsLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1667:41: '\\r'
+                            // InternalPathExpressions.g:1667:41: '\\r'
                             {
                             match('\r'); 
 
@@ -777,10 +758,10 @@ public class InternalPathExpressionsLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1669:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1669:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalPathExpressions.g:1669:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalPathExpressions.g:1669:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1669:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalPathExpressions.g:1669:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -794,7 +775,7 @@ public class InternalPathExpressionsLexer extends Lexer {
 
                 switch (alt11) {
             	case 1 :
-            	    // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:
+            	    // InternalPathExpressions.g:
             	    {
             	    if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
             	        input.consume();
@@ -834,8 +815,8 @@ public class InternalPathExpressionsLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1671:16: ( . )
-            // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1671:18: .
+            // InternalPathExpressions.g:1671:16: ( . )
+            // InternalPathExpressions.g:1671:18: .
             {
             matchAny(); 
 
@@ -850,152 +831,152 @@ public class InternalPathExpressionsLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        // InternalPathExpressions.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
         int alt12=21;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
-                // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1:10: T__11
+                // InternalPathExpressions.g:1:10: T__11
                 {
                 mT__11(); 
 
                 }
                 break;
             case 2 :
-                // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1:16: T__12
+                // InternalPathExpressions.g:1:16: T__12
                 {
                 mT__12(); 
 
                 }
                 break;
             case 3 :
-                // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1:22: T__13
+                // InternalPathExpressions.g:1:22: T__13
                 {
                 mT__13(); 
 
                 }
                 break;
             case 4 :
-                // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1:28: T__14
+                // InternalPathExpressions.g:1:28: T__14
                 {
                 mT__14(); 
 
                 }
                 break;
             case 5 :
-                // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1:34: T__15
+                // InternalPathExpressions.g:1:34: T__15
                 {
                 mT__15(); 
 
                 }
                 break;
             case 6 :
-                // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1:40: T__16
+                // InternalPathExpressions.g:1:40: T__16
                 {
                 mT__16(); 
 
                 }
                 break;
             case 7 :
-                // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1:46: T__17
+                // InternalPathExpressions.g:1:46: T__17
                 {
                 mT__17(); 
 
                 }
                 break;
             case 8 :
-                // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1:52: T__18
+                // InternalPathExpressions.g:1:52: T__18
                 {
                 mT__18(); 
 
                 }
                 break;
             case 9 :
-                // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1:58: T__19
+                // InternalPathExpressions.g:1:58: T__19
                 {
                 mT__19(); 
 
                 }
                 break;
             case 10 :
-                // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1:64: T__20
+                // InternalPathExpressions.g:1:64: T__20
                 {
                 mT__20(); 
 
                 }
                 break;
             case 11 :
-                // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1:70: T__21
+                // InternalPathExpressions.g:1:70: T__21
                 {
                 mT__21(); 
 
                 }
                 break;
             case 12 :
-                // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1:76: T__22
+                // InternalPathExpressions.g:1:76: T__22
                 {
                 mT__22(); 
 
                 }
                 break;
             case 13 :
-                // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1:82: T__23
+                // InternalPathExpressions.g:1:82: T__23
                 {
                 mT__23(); 
 
                 }
                 break;
             case 14 :
-                // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1:88: T__24
+                // InternalPathExpressions.g:1:88: T__24
                 {
                 mT__24(); 
 
                 }
                 break;
             case 15 :
-                // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1:94: RULE_ID
+                // InternalPathExpressions.g:1:94: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
             case 16 :
-                // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1:102: RULE_INT
+                // InternalPathExpressions.g:1:102: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
             case 17 :
-                // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1:111: RULE_STRING
+                // InternalPathExpressions.g:1:111: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
             case 18 :
-                // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1:123: RULE_ML_COMMENT
+                // InternalPathExpressions.g:1:123: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
             case 19 :
-                // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1:139: RULE_SL_COMMENT
+                // InternalPathExpressions.g:1:139: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
             case 20 :
-                // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1:155: RULE_WS
+                // InternalPathExpressions.g:1:155: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
             case 21 :
-                // ../org.muml.storydiagram.expressions.ui/src-gen/org/storydriven/modeling/expressions/ui/contentassist/antlr/internal/InternalPathExpressions.g:1:163: RULE_ANY_OTHER
+                // InternalPathExpressions.g:1:163: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1009,29 +990,19 @@ public class InternalPathExpressionsLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\1\27\2\uffff\2\25\10\uffff\1\25\2\uffff\3\25\2\uffff\1"+
-        "\27\22\uffff\1\27\1\55\1\27\2\uffff\4\27\1\63\1\uffff";
+        "\1\uffff\1\27\2\uffff\2\25\10\uffff\1\25\2\uffff\3\25\2\uffff\1\27\22\uffff\1\27\1\55\1\27\2\uffff\4\27\1\63\1\uffff";
     static final String DFA12_eofS =
         "\64\uffff";
     static final String DFA12_minS =
-        "\1\0\1\117\2\uffff\1\55\1\76\10\uffff\1\101\2\uffff\2\0\1\52\2"+
-        "\uffff\1\137\3\uffff\1\76\16\uffff\1\122\1\74\1\105\2\uffff\1\120"+
-        "\1\105\1\101\1\124\1\60\1\uffff";
+        "\1\0\1\117\2\uffff\1\55\1\76\10\uffff\1\101\2\uffff\2\0\1\52\2\uffff\1\137\3\uffff\1\76\16\uffff\1\122\1\74\1\105\2\uffff\1\120\1\105\1\101\1\124\1\60\1\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\117\2\uffff\1\55\1\76\10\uffff\1\172\2\uffff\2\uffff"+
-        "\1\57\2\uffff\1\137\3\uffff\1\76\16\uffff\1\122\1\74\1\105\2\uffff"+
-        "\1\120\1\105\1\101\1\124\1\172\1\uffff";
+        "\1\uffff\1\117\2\uffff\1\55\1\76\10\uffff\1\172\2\uffff\2\uffff\1\57\2\uffff\1\137\3\uffff\1\76\16\uffff\1\122\1\74\1\105\2\uffff\1\120\1\105\1\101\1\124\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\2\uffff\1\2\1\3\2\uffff\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16"+
-        "\1\uffff\1\17\1\20\3\uffff\1\24\1\25\1\uffff\1\17\1\2\1\3\1\uffff"+
-        "\1\5\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\20\1\21\1\22\1\23"+
-        "\1\24\3\uffff\1\6\1\4\5\uffff\1\1";
+        "\2\uffff\1\2\1\3\2\uffff\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\uffff\1\17\1\20\3\uffff\1\24\1\25\1\uffff\1\17\1\2\1\3\1\uffff\1\5\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\20\1\21\1\22\1\23\1\24\3\uffff\1\6\1\4\5\uffff\1\1";
     static final String DFA12_specialS =
-        "\1\0\20\uffff\1\1\1\2\41\uffff}>";
+        "\1\2\20\uffff\1\0\1\1\41\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\25\2\24\2\25\1\24\22\25\1\24\1\15\1\21\4\25\1\22\1\6\1"+
-            "\7\1\3\1\2\1\14\1\4\1\11\1\23\12\20\2\25\1\5\4\25\15\17\1\1"+
-            "\14\17\1\12\1\25\1\13\1\16\1\17\1\25\32\17\1\25\1\10\uff83\25",
+            "\11\25\2\24\2\25\1\24\22\25\1\24\1\15\1\21\4\25\1\22\1\6\1\7\1\3\1\2\1\14\1\4\1\11\1\23\12\20\2\25\1\5\4\25\15\17\1\1\14\17\1\12\1\25\1\13\1\16\1\17\1\25\32\17\1\25\1\10\uff83\25",
             "\1\26",
             "",
             "",
@@ -1122,6 +1093,26 @@ public class InternalPathExpressionsLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
+                        int LA12_17 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_17>='\u0000' && LA12_17<='\uFFFF')) ) {s = 37;}
+
+                        else s = 21;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA12_18 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_18>='\u0000' && LA12_18<='\uFFFF')) ) {s = 37;}
+
+                        else s = 21;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
                         int LA12_0 = input.LA(1);
 
                         s = -1;
@@ -1166,26 +1157,6 @@ public class InternalPathExpressionsLexer extends Lexer {
                         else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 20;}
 
                         else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||(LA12_0>='#' && LA12_0<='&')||(LA12_0>=':' && LA12_0<=';')||(LA12_0>='=' && LA12_0<='@')||LA12_0=='\\'||LA12_0=='`'||LA12_0=='{'||(LA12_0>='}' && LA12_0<='\uFFFF')) ) {s = 21;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA12_17 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_17>='\u0000' && LA12_17<='\uFFFF')) ) {s = 37;}
-
-                        else s = 21;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA12_18 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_18>='\u0000' && LA12_18<='\uFFFF')) ) {s = 37;}
-
-                        else s = 21;
 
                         if ( s>=0 ) return s;
                         break;

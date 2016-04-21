@@ -1,12 +1,9 @@
 /**
- * <copyright>
- * </copyright>
- *
-
  */
 package org.muml.storydiagram.expressions.pathExpressions;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,11 +13,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.expressions.pathExpressions.PathSegment#getAlternatives <em>Alternatives</em>}</li>
  *   <li>{@link org.muml.storydiagram.expressions.pathExpressions.PathSegment#getRepeatOperator <em>Repeat Operator</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.expressions.pathExpressions.PathExpressionsPackage#getPathSegment()
  * @model

@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
-
  */
 package org.muml.storydiagram.expressions.pathExpressions;
 
@@ -15,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.expressions.pathExpressions.TypeRestriction#isForbidden <em>Forbidden</em>}</li>
  *   <li>{@link org.muml.storydiagram.expressions.pathExpressions.TypeRestriction#getTypeName <em>Type Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.expressions.pathExpressions.PathExpressionsPackage#getTypeRestriction()
  * @model
