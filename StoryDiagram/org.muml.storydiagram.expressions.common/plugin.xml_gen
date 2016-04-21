@@ -7,10 +7,9 @@
     <package 
        uri = "http://www.muml.org/storydiagram/expressions/common/expressions/1.0" 
        class = "org.muml.storydiagram.expressions.common.expressions.ExpressionsPackage"
-       genModel = "org/storydriven/modeling/expressions/common/Expressions.genmodel" /> 
+       genModel = "org/muml/storydiagram/expressions/common/Expressions.genmodel" /> 
 	
   </extension>
-
 
 
 

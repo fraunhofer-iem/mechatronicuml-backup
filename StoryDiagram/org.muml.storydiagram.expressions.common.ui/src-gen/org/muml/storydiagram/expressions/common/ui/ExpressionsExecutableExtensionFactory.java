@@ -8,6 +8,8 @@ import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
 
+import org.muml.storydiagram.expressions.common.ui.internal.ExpressionsActivator;
+
 /**
  * This class was generated. Customizations should only happen in a newly
  * introduced subclass. 
@@ -16,12 +18,12 @@ public class ExpressionsExecutableExtensionFactory extends AbstractGuiceAwareExe
 
 	@Override
 	protected Bundle getBundle() {
-		return org.muml.storydiagram.expressions.common.ui.internal.ExpressionsActivator.getInstance().getBundle();
+		return ExpressionsActivator.getInstance().getBundle();
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return org.muml.storydiagram.expressions.common.ui.internal.ExpressionsActivator.getInstance().getInjector("org.muml.storydiagram.expressions.common.Expressions");
+		return ExpressionsActivator.getInstance().getInjector(ExpressionsActivator.ORG_MUML_STORYDIAGRAM_EXPRESSIONS_COMMON_EXPRESSIONS);
 	}
 	
 }

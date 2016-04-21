@@ -1,13 +1,11 @@
 /**
- * <copyright>
- * </copyright>
- *
-
  */
 package org.muml.storydiagram.expressions.common.expressions.impl;
 
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.muml.storydiagram.expressions.common.expressions.ExpressionsPackage;
 import org.muml.storydiagram.expressions.common.expressions.LExpression;
 
@@ -21,24 +19,24 @@ import org.muml.storydiagram.expressions.common.expressions.LExpression;
 public class LExpressionImpl extends MinimalEObjectImpl.Container implements LExpression
 {
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected LExpressionImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return ExpressionsPackage.Literals.LEXPRESSION;
-	}
+    return ExpressionsPackage.Literals.LEXPRESSION;
+  }
 
 } //LExpressionImpl

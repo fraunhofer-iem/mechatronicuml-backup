@@ -1,44 +1,15 @@
 /**
- * <copyright>
- * </copyright>
- *
-
  */
 package org.muml.storydiagram.expressions.common.expressions.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
 import org.eclipse.emf.ecore.EObject;
+
 import org.muml.storydiagram.expressions.common.expressions.*;
-import org.muml.storydiagram.expressions.common.expressions.AExpression;
-import org.muml.storydiagram.expressions.common.expressions.And;
-import org.muml.storydiagram.expressions.common.expressions.Approx;
-import org.muml.storydiagram.expressions.common.expressions.BooleanValue;
-import org.muml.storydiagram.expressions.common.expressions.CExpression;
-import org.muml.storydiagram.expressions.common.expressions.Div;
-import org.muml.storydiagram.expressions.common.expressions.Equal;
-import org.muml.storydiagram.expressions.common.expressions.Equivalent;
-import org.muml.storydiagram.expressions.common.expressions.ExpressionsPackage;
-import org.muml.storydiagram.expressions.common.expressions.Greater;
-import org.muml.storydiagram.expressions.common.expressions.GreaterOrEqual;
-import org.muml.storydiagram.expressions.common.expressions.Imply;
-import org.muml.storydiagram.expressions.common.expressions.LExpression;
-import org.muml.storydiagram.expressions.common.expressions.Less;
-import org.muml.storydiagram.expressions.common.expressions.LessOrEqual;
-import org.muml.storydiagram.expressions.common.expressions.Minus;
-import org.muml.storydiagram.expressions.common.expressions.Mod;
-import org.muml.storydiagram.expressions.common.expressions.Multi;
-import org.muml.storydiagram.expressions.common.expressions.Not;
-import org.muml.storydiagram.expressions.common.expressions.NumberValue;
-import org.muml.storydiagram.expressions.common.expressions.Or;
-import org.muml.storydiagram.expressions.common.expressions.Plus;
-import org.muml.storydiagram.expressions.common.expressions.Pow;
-import org.muml.storydiagram.expressions.common.expressions.SomeValue;
-import org.muml.storydiagram.expressions.common.expressions.StringValue;
-import org.muml.storydiagram.expressions.common.expressions.Unequal;
-import org.muml.storydiagram.expressions.common.expressions.Variable;
-import org.muml.storydiagram.expressions.common.expressions.Xor;
 
 /**
  * <!-- begin-user-doc -->
@@ -51,599 +22,631 @@ import org.muml.storydiagram.expressions.common.expressions.Xor;
 public class ExpressionsAdapterFactory extends AdapterFactoryImpl
 {
   /**
-	 * The cached model package.
-	 * <!-- begin-user-doc -->
+   * The cached model package.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected static ExpressionsPackage modelPackage;
 
   /**
-	 * Creates an instance of the adapter factory.
-	 * <!-- begin-user-doc -->
+   * Creates an instance of the adapter factory.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public ExpressionsAdapterFactory()
   {
-		if (modelPackage == null) {
-			modelPackage = ExpressionsPackage.eINSTANCE;
-		}
-	}
+    if (modelPackage == null)
+    {
+      modelPackage = ExpressionsPackage.eINSTANCE;
+    }
+  }
 
   /**
-	 * Returns whether this factory is applicable for the type of the object.
-	 * <!-- begin-user-doc -->
+   * Returns whether this factory is applicable for the type of the object.
+   * <!-- begin-user-doc -->
    * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
    * <!-- end-user-doc -->
-	 * @return whether this factory is applicable for the type of the object.
-	 * @generated
-	 */
+   * @return whether this factory is applicable for the type of the object.
+   * @generated
+   */
   @Override
   public boolean isFactoryForType(Object object)
   {
-		if (object == modelPackage) {
-			return true;
-		}
-		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
-		}
-		return false;
-	}
+    if (object == modelPackage)
+    {
+      return true;
+    }
+    if (object instanceof EObject)
+    {
+      return ((EObject)object).eClass().getEPackage() == modelPackage;
+    }
+    return false;
+  }
 
   /**
-	 * The switch that delegates to the <code>createXXX</code> methods.
-	 * <!-- begin-user-doc -->
+   * The switch that delegates to the <code>createXXX</code> methods.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected ExpressionsSwitch<Adapter> modelSwitch =
-    new ExpressionsSwitch<Adapter>() {
-			@Override
-			public Adapter caseLExpression(LExpression object) {
-				return createLExpressionAdapter();
-			}
-			@Override
-			public Adapter caseCExpression(CExpression object) {
-				return createCExpressionAdapter();
-			}
-			@Override
-			public Adapter caseSomeValue(SomeValue object) {
-				return createSomeValueAdapter();
-			}
-			@Override
-			public Adapter caseAExpression(AExpression object) {
-				return createAExpressionAdapter();
-			}
-			@Override
-			public Adapter caseNumberValue(NumberValue object) {
-				return createNumberValueAdapter();
-			}
-			@Override
-			public Adapter caseBooleanValue(BooleanValue object) {
-				return createBooleanValueAdapter();
-			}
-			@Override
-			public Adapter caseStringValue(StringValue object) {
-				return createStringValueAdapter();
-			}
-			@Override
-			public Adapter caseVariable(Variable object) {
-				return createVariableAdapter();
-			}
-			@Override
-			public Adapter caseEquivalent(Equivalent object) {
-				return createEquivalentAdapter();
-			}
-			@Override
-			public Adapter caseImply(Imply object) {
-				return createImplyAdapter();
-			}
-			@Override
-			public Adapter caseOr(Or object) {
-				return createOrAdapter();
-			}
-			@Override
-			public Adapter caseXor(Xor object) {
-				return createXorAdapter();
-			}
-			@Override
-			public Adapter caseAnd(And object) {
-				return createAndAdapter();
-			}
-			@Override
-			public Adapter caseNot(Not object) {
-				return createNotAdapter();
-			}
-			@Override
-			public Adapter caseLessOrEqual(LessOrEqual object) {
-				return createLessOrEqualAdapter();
-			}
-			@Override
-			public Adapter caseLess(Less object) {
-				return createLessAdapter();
-			}
-			@Override
-			public Adapter caseGreaterOrEqual(GreaterOrEqual object) {
-				return createGreaterOrEqualAdapter();
-			}
-			@Override
-			public Adapter caseGreater(Greater object) {
-				return createGreaterAdapter();
-			}
-			@Override
-			public Adapter caseEqual(Equal object) {
-				return createEqualAdapter();
-			}
-			@Override
-			public Adapter caseUnequal(Unequal object) {
-				return createUnequalAdapter();
-			}
-			@Override
-			public Adapter caseApprox(Approx object) {
-				return createApproxAdapter();
-			}
-			@Override
-			public Adapter casePlus(Plus object) {
-				return createPlusAdapter();
-			}
-			@Override
-			public Adapter caseMinus(Minus object) {
-				return createMinusAdapter();
-			}
-			@Override
-			public Adapter caseMulti(Multi object) {
-				return createMultiAdapter();
-			}
-			@Override
-			public Adapter caseDiv(Div object) {
-				return createDivAdapter();
-			}
-			@Override
-			public Adapter caseMod(Mod object) {
-				return createModAdapter();
-			}
-			@Override
-			public Adapter casePow(Pow object) {
-				return createPowAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+    new ExpressionsSwitch<Adapter>()
+    {
+      @Override
+      public Adapter caseLExpression(LExpression object)
+      {
+        return createLExpressionAdapter();
+      }
+      @Override
+      public Adapter caseCExpression(CExpression object)
+      {
+        return createCExpressionAdapter();
+      }
+      @Override
+      public Adapter caseSomeValue(SomeValue object)
+      {
+        return createSomeValueAdapter();
+      }
+      @Override
+      public Adapter caseAExpression(AExpression object)
+      {
+        return createAExpressionAdapter();
+      }
+      @Override
+      public Adapter caseNumberValue(NumberValue object)
+      {
+        return createNumberValueAdapter();
+      }
+      @Override
+      public Adapter caseBooleanValue(BooleanValue object)
+      {
+        return createBooleanValueAdapter();
+      }
+      @Override
+      public Adapter caseStringValue(StringValue object)
+      {
+        return createStringValueAdapter();
+      }
+      @Override
+      public Adapter caseVariable(Variable object)
+      {
+        return createVariableAdapter();
+      }
+      @Override
+      public Adapter caseEquivalent(Equivalent object)
+      {
+        return createEquivalentAdapter();
+      }
+      @Override
+      public Adapter caseImply(Imply object)
+      {
+        return createImplyAdapter();
+      }
+      @Override
+      public Adapter caseOr(Or object)
+      {
+        return createOrAdapter();
+      }
+      @Override
+      public Adapter caseXor(Xor object)
+      {
+        return createXorAdapter();
+      }
+      @Override
+      public Adapter caseAnd(And object)
+      {
+        return createAndAdapter();
+      }
+      @Override
+      public Adapter caseNot(Not object)
+      {
+        return createNotAdapter();
+      }
+      @Override
+      public Adapter caseLessOrEqual(LessOrEqual object)
+      {
+        return createLessOrEqualAdapter();
+      }
+      @Override
+      public Adapter caseLess(Less object)
+      {
+        return createLessAdapter();
+      }
+      @Override
+      public Adapter caseGreaterOrEqual(GreaterOrEqual object)
+      {
+        return createGreaterOrEqualAdapter();
+      }
+      @Override
+      public Adapter caseGreater(Greater object)
+      {
+        return createGreaterAdapter();
+      }
+      @Override
+      public Adapter caseEqual(Equal object)
+      {
+        return createEqualAdapter();
+      }
+      @Override
+      public Adapter caseUnequal(Unequal object)
+      {
+        return createUnequalAdapter();
+      }
+      @Override
+      public Adapter caseApprox(Approx object)
+      {
+        return createApproxAdapter();
+      }
+      @Override
+      public Adapter casePlus(Plus object)
+      {
+        return createPlusAdapter();
+      }
+      @Override
+      public Adapter caseMinus(Minus object)
+      {
+        return createMinusAdapter();
+      }
+      @Override
+      public Adapter caseMulti(Multi object)
+      {
+        return createMultiAdapter();
+      }
+      @Override
+      public Adapter caseDiv(Div object)
+      {
+        return createDivAdapter();
+      }
+      @Override
+      public Adapter caseMod(Mod object)
+      {
+        return createModAdapter();
+      }
+      @Override
+      public Adapter casePow(Pow object)
+      {
+        return createPowAdapter();
+      }
+      @Override
+      public Adapter defaultCase(EObject object)
+      {
+        return createEObjectAdapter();
+      }
+    };
 
   /**
-	 * Creates an adapter for the <code>target</code>.
-	 * <!-- begin-user-doc -->
+   * Creates an adapter for the <code>target</code>.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param target the object to adapt.
-	 * @return the adapter for the <code>target</code>.
-	 * @generated
-	 */
+   * @param target the object to adapt.
+   * @return the adapter for the <code>target</code>.
+   * @generated
+   */
   @Override
   public Adapter createAdapter(Notifier target)
   {
-		return modelSwitch.doSwitch((EObject)target);
-	}
+    return modelSwitch.doSwitch((EObject)target);
+  }
 
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.LExpression <em>LExpression</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.LExpression <em>LExpression</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.storydiagram.expressions.common.expressions.LExpression
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.muml.storydiagram.expressions.common.expressions.LExpression
+   * @generated
+   */
   public Adapter createLExpressionAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.CExpression <em>CExpression</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.CExpression <em>CExpression</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.storydiagram.expressions.common.expressions.CExpression
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.muml.storydiagram.expressions.common.expressions.CExpression
+   * @generated
+   */
   public Adapter createCExpressionAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.SomeValue <em>Some Value</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.SomeValue <em>Some Value</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.storydiagram.expressions.common.expressions.SomeValue
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.muml.storydiagram.expressions.common.expressions.SomeValue
+   * @generated
+   */
   public Adapter createSomeValueAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.AExpression <em>AExpression</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.AExpression <em>AExpression</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.storydiagram.expressions.common.expressions.AExpression
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.muml.storydiagram.expressions.common.expressions.AExpression
+   * @generated
+   */
   public Adapter createAExpressionAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.NumberValue <em>Number Value</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.NumberValue <em>Number Value</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.storydiagram.expressions.common.expressions.NumberValue
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.muml.storydiagram.expressions.common.expressions.NumberValue
+   * @generated
+   */
   public Adapter createNumberValueAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.BooleanValue <em>Boolean Value</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.BooleanValue <em>Boolean Value</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.storydiagram.expressions.common.expressions.BooleanValue
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.muml.storydiagram.expressions.common.expressions.BooleanValue
+   * @generated
+   */
   public Adapter createBooleanValueAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.StringValue <em>String Value</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.StringValue <em>String Value</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.storydiagram.expressions.common.expressions.StringValue
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.muml.storydiagram.expressions.common.expressions.StringValue
+   * @generated
+   */
   public Adapter createStringValueAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Variable <em>Variable</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Variable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.storydiagram.expressions.common.expressions.Variable
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.muml.storydiagram.expressions.common.expressions.Variable
+   * @generated
+   */
   public Adapter createVariableAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Equivalent <em>Equivalent</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Equivalent <em>Equivalent</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.storydiagram.expressions.common.expressions.Equivalent
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.muml.storydiagram.expressions.common.expressions.Equivalent
+   * @generated
+   */
   public Adapter createEquivalentAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Imply <em>Imply</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Imply <em>Imply</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.storydiagram.expressions.common.expressions.Imply
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.muml.storydiagram.expressions.common.expressions.Imply
+   * @generated
+   */
   public Adapter createImplyAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Or <em>Or</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Or <em>Or</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.storydiagram.expressions.common.expressions.Or
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.muml.storydiagram.expressions.common.expressions.Or
+   * @generated
+   */
   public Adapter createOrAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Xor <em>Xor</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Xor <em>Xor</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.storydiagram.expressions.common.expressions.Xor
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.muml.storydiagram.expressions.common.expressions.Xor
+   * @generated
+   */
   public Adapter createXorAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.And <em>And</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.And <em>And</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.storydiagram.expressions.common.expressions.And
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.muml.storydiagram.expressions.common.expressions.And
+   * @generated
+   */
   public Adapter createAndAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Not <em>Not</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Not <em>Not</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.storydiagram.expressions.common.expressions.Not
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.muml.storydiagram.expressions.common.expressions.Not
+   * @generated
+   */
   public Adapter createNotAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.LessOrEqual <em>Less Or Equal</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.LessOrEqual <em>Less Or Equal</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.storydiagram.expressions.common.expressions.LessOrEqual
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.muml.storydiagram.expressions.common.expressions.LessOrEqual
+   * @generated
+   */
   public Adapter createLessOrEqualAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Less <em>Less</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Less <em>Less</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.storydiagram.expressions.common.expressions.Less
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.muml.storydiagram.expressions.common.expressions.Less
+   * @generated
+   */
   public Adapter createLessAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.GreaterOrEqual <em>Greater Or Equal</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.GreaterOrEqual <em>Greater Or Equal</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.storydiagram.expressions.common.expressions.GreaterOrEqual
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.muml.storydiagram.expressions.common.expressions.GreaterOrEqual
+   * @generated
+   */
   public Adapter createGreaterOrEqualAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Greater <em>Greater</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Greater <em>Greater</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.storydiagram.expressions.common.expressions.Greater
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.muml.storydiagram.expressions.common.expressions.Greater
+   * @generated
+   */
   public Adapter createGreaterAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Equal <em>Equal</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Equal <em>Equal</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.storydiagram.expressions.common.expressions.Equal
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.muml.storydiagram.expressions.common.expressions.Equal
+   * @generated
+   */
   public Adapter createEqualAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Unequal <em>Unequal</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Unequal <em>Unequal</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.storydiagram.expressions.common.expressions.Unequal
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.muml.storydiagram.expressions.common.expressions.Unequal
+   * @generated
+   */
   public Adapter createUnequalAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Approx <em>Approx</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Approx <em>Approx</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.storydiagram.expressions.common.expressions.Approx
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.muml.storydiagram.expressions.common.expressions.Approx
+   * @generated
+   */
   public Adapter createApproxAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Plus <em>Plus</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Plus <em>Plus</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.storydiagram.expressions.common.expressions.Plus
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.muml.storydiagram.expressions.common.expressions.Plus
+   * @generated
+   */
   public Adapter createPlusAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Minus <em>Minus</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Minus <em>Minus</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.storydiagram.expressions.common.expressions.Minus
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.muml.storydiagram.expressions.common.expressions.Minus
+   * @generated
+   */
   public Adapter createMinusAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Multi <em>Multi</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Multi <em>Multi</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.storydiagram.expressions.common.expressions.Multi
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.muml.storydiagram.expressions.common.expressions.Multi
+   * @generated
+   */
   public Adapter createMultiAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Div <em>Div</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Div <em>Div</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.storydiagram.expressions.common.expressions.Div
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.muml.storydiagram.expressions.common.expressions.Div
+   * @generated
+   */
   public Adapter createDivAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Mod <em>Mod</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Mod <em>Mod</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.storydiagram.expressions.common.expressions.Mod
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.muml.storydiagram.expressions.common.expressions.Mod
+   * @generated
+   */
   public Adapter createModAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Pow <em>Pow</em>}'.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for an object of class '{@link org.muml.storydiagram.expressions.common.expressions.Pow <em>Pow</em>}'.
+   * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.muml.storydiagram.expressions.common.expressions.Pow
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @see org.muml.storydiagram.expressions.common.expressions.Pow
+   * @generated
+   */
   public Adapter createPowAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
   /**
-	 * Creates a new adapter for the default case.
-	 * <!-- begin-user-doc -->
+   * Creates a new adapter for the default case.
+   * <!-- begin-user-doc -->
    * This default implementation returns null.
    * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @generated
-	 */
+   * @return the new adapter.
+   * @generated
+   */
   public Adapter createEObjectAdapter()
   {
-		return null;
-	}
+    return null;
+  }
 
 } //ExpressionsAdapterFactory

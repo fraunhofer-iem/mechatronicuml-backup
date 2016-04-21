@@ -3,19 +3,17 @@
  */
 package org.muml.storydiagram.expressions.common.ui.internal;
 
-import static com.google.inject.Guice.createInjector;
-import static com.google.inject.util.Modules.override;
-
-import java.util.concurrent.ExecutionException;
+import java.util.Collections;
+import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtext.ui.shared.SharedStateModule;
+import org.eclipse.xtext.util.Modules2;
 import org.osgi.framework.BundleContext;
 
-import com.google.common.cache.Cache;
-import com.google.common.cache.CacheBuilder;
-import com.google.common.cache.CacheLoader;
+import com.google.common.collect.Maps;
+import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.google.inject.Module;
 
@@ -25,27 +23,13 @@ import com.google.inject.Module;
  */
 public class ExpressionsActivator extends AbstractUIPlugin {
 	
-	private static final Logger logger = Logger.getLogger(ExpressionsActivator.class);
+	public static final String ORG_MUML_STORYDIAGRAM_EXPRESSIONS_COMMON_EXPRESSIONS = "org.muml.storydiagram.expressions.common.Expressions";
 	
-	private Cache<String, Injector> injectors = CacheBuilder.newBuilder().build(new CacheLoader<String, Injector>() {
-		@Override
-		public Injector load(String language) throws Exception {
-			Module runtimeModule = getRuntimeModule(language);
-			Module sharedStateModule = getSharedStateModule();
-			Module uiModule = getUiModule(language);
-			Module mergedModule = override(override(runtimeModule).with(sharedStateModule)).with(uiModule);
-			return createInjector(mergedModule);
-		}
-	});
+	private static final Logger logger = Logger.getLogger(ExpressionsActivator.class);
 	
 	private static ExpressionsActivator INSTANCE;
 	
-	public static final String ORG_STORYDRIVEN_MODELING_EXPRESSIONS_COMMON_EXPRESSIONS = "org.muml.storydiagram.expressions.common.Expressions";
-	
-	public Injector getInjector(String languageName) {
-		return injectors.getIfPresent(languageName);
-		
-	}
+	private Map<String, Injector> injectors = Collections.synchronizedMap(Maps.<String, Injector> newHashMapWithExpectedSize(1));
 	
 	@Override
 	public void start(BundleContext context) throws Exception {
@@ -55,8 +39,7 @@ public class ExpressionsActivator extends AbstractUIPlugin {
 	
 	@Override
 	public void stop(BundleContext context) throws Exception {
-		injectors.invalidateAll();
-		injectors.cleanUp();
+		injectors.clear();
 		INSTANCE = null;
 		super.stop(context);
 	}
@@ -65,8 +48,32 @@ public class ExpressionsActivator extends AbstractUIPlugin {
 		return INSTANCE;
 	}
 	
+	public Injector getInjector(String language) {
+		synchronized (injectors) {
+			Injector injector = injectors.get(language);
+			if (injector == null) {
+				injectors.put(language, injector = createInjector(language));
+			}
+			return injector;
+		}
+	}
+	
+	protected Injector createInjector(String language) {
+		try {
+			Module runtimeModule = getRuntimeModule(language);
+			Module sharedStateModule = getSharedStateModule();
+			Module uiModule = getUiModule(language);
+			Module mergedModule = Modules2.mixin(runtimeModule, sharedStateModule, uiModule);
+			return Guice.createInjector(mergedModule);
+		} catch (Exception e) {
+			logger.error("Failed to create injector for " + language);
+			logger.error(e.getMessage(), e);
+			throw new RuntimeException("Failed to create injector for " + language, e);
+		}
+	}
+
 	protected Module getRuntimeModule(String grammar) {
-		if (ORG_STORYDRIVEN_MODELING_EXPRESSIONS_COMMON_EXPRESSIONS.equals(grammar)) {
+		if (ORG_MUML_STORYDIAGRAM_EXPRESSIONS_COMMON_EXPRESSIONS.equals(grammar)) {
 			return new org.muml.storydiagram.expressions.common.ExpressionsRuntimeModule();
 		}
 		
@@ -74,7 +81,7 @@ public class ExpressionsActivator extends AbstractUIPlugin {
 	}
 	
 	protected Module getUiModule(String grammar) {
-		if (ORG_STORYDRIVEN_MODELING_EXPRESSIONS_COMMON_EXPRESSIONS.equals(grammar)) {
+		if (ORG_MUML_STORYDIAGRAM_EXPRESSIONS_COMMON_EXPRESSIONS.equals(grammar)) {
 			return new org.muml.storydiagram.expressions.common.ui.ExpressionsUiModule(this);
 		}
 		

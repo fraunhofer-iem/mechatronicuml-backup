@@ -1,12 +1,9 @@
 /**
- * <copyright>
- * </copyright>
- *
-
  */
 package org.muml.storydiagram.expressions.common.expressions.impl;
 
 import org.eclipse.emf.ecore.EClass;
+
 import org.muml.storydiagram.expressions.common.expressions.AExpression;
 import org.muml.storydiagram.expressions.common.expressions.ExpressionsPackage;
 
@@ -20,24 +17,24 @@ import org.muml.storydiagram.expressions.common.expressions.ExpressionsPackage;
 public class AExpressionImpl extends SomeValueImpl implements AExpression
 {
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected AExpressionImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return ExpressionsPackage.Literals.AEXPRESSION;
-	}
+    return ExpressionsPackage.Literals.AEXPRESSION;
+  }
 
 } //AExpressionImpl

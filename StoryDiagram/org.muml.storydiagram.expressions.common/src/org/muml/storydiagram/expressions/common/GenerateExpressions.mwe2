@@ -4,7 +4,7 @@ import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
-var grammarURI = "classpath:/org/storydriven/modeling/expressions/common/Expressions.xtext"
+var grammarURI = "classpath:/org/muml/storydiagram/expressions/common/Expressions.xtext"
 var file.extensions = "exp"
 var projectName = "org.muml.storydiagram.expressions.common"
 var runtimeProject = "../${projectName}"

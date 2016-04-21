@@ -1,12 +1,9 @@
 /**
- * <copyright>
- * </copyright>
- *
-
  */
 package org.muml.storydiagram.expressions.common.expressions.impl;
 
 import org.eclipse.emf.ecore.EClass;
+
 import org.muml.storydiagram.expressions.common.expressions.CExpression;
 import org.muml.storydiagram.expressions.common.expressions.ExpressionsPackage;
 
@@ -20,24 +17,24 @@ import org.muml.storydiagram.expressions.common.expressions.ExpressionsPackage;
 public class CExpressionImpl extends LExpressionImpl implements CExpression
 {
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected CExpressionImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return ExpressionsPackage.Literals.CEXPRESSION;
-	}
+    return ExpressionsPackage.Literals.CEXPRESSION;
+  }
 
 } //CExpressionImpl

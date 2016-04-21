@@ -7,7 +7,12 @@ Bundle-SymbolicName: org.muml.storydiagram.expressions.common;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.10.1",
  org.eclipse.xtext.generator;bundle-version="[2.0.0,3.0.0)";resolution:=optional,
- org.eclipse.emf.mwe2.launch;bundle-version="[2.0.0,3.0.0)";resolution:=optional
+ org.eclipse.emf.mwe2.launch;bundle-version="[2.0.0,3.0.0)";resolution:=optional,
+ org.eclipse.core.runtime;bundle-version="3.11.1",
+ org.eclipse.xtext,
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.antlr.runtime
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.storydiagram.expressions.common,
  org.muml.storydiagram.expressions.common.expressions,
@@ -20,4 +25,5 @@ Export-Package: org.muml.storydiagram.expressions.common,
  org.muml.storydiagram.expressions.common.scoping,
  org.muml.storydiagram.expressions.common.services,
  org.muml.storydiagram.expressions.common.validation
-
+Import-Package: org.apache.commons.logging,
+ org.apache.log4j;version="1.2.15"

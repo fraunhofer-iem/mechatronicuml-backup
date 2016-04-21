@@ -1,12 +1,9 @@
 /**
- * <copyright>
- * </copyright>
- *
-
  */
 package org.muml.storydiagram.expressions.common.expressions.impl;
 
 import org.eclipse.emf.ecore.EClass;
+
 import org.muml.storydiagram.expressions.common.expressions.ExpressionsPackage;
 import org.muml.storydiagram.expressions.common.expressions.SomeValue;
 
@@ -20,24 +17,24 @@ import org.muml.storydiagram.expressions.common.expressions.SomeValue;
 public class SomeValueImpl extends CExpressionImpl implements SomeValue
 {
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected SomeValueImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return ExpressionsPackage.Literals.SOME_VALUE;
-	}
+    return ExpressionsPackage.Literals.SOME_VALUE;
+  }
 
 } //SomeValueImpl
