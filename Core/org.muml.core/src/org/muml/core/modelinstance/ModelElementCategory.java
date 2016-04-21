@@ -115,7 +115,7 @@ public interface ModelElementCategory extends EObject {
 	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='isValidEClass(object.oclAsType(ecore::EObject).eClass())'"
 	 * @generated
 	 */
-	boolean isValidElement(EObject object);
+	boolean isValidElement(ExtendableElement object);
 
 	/**
 	 * <!-- begin-user-doc -->

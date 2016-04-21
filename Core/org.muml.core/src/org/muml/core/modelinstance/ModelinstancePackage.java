@@ -153,7 +153,7 @@ public interface ModelinstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ELEMENT_CATEGORY___IS_VALID_ELEMENT__EOBJECT = 0;
+	int MODEL_ELEMENT_CATEGORY___IS_VALID_ELEMENT__EXTENDABLEELEMENT = 0;
 
 	/**
 	 * The operation id for the '<em>Is Valid EClass</em>' operation.
@@ -239,14 +239,14 @@ public interface ModelinstancePackage extends EPackage {
 	EAttribute getModelElementCategory_Name();
 
 	/**
-	 * Returns the meta object for the '{@link org.muml.core.modelinstance.ModelElementCategory#isValidElement(org.eclipse.emf.ecore.EObject) <em>Is Valid Element</em>}' operation.
+	 * Returns the meta object for the '{@link org.muml.core.modelinstance.ModelElementCategory#isValidElement(org.muml.core.ExtendableElement) <em>Is Valid Element</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Is Valid Element</em>' operation.
-	 * @see org.muml.core.modelinstance.ModelElementCategory#isValidElement(org.eclipse.emf.ecore.EObject)
+	 * @see org.muml.core.modelinstance.ModelElementCategory#isValidElement(org.muml.core.ExtendableElement)
 	 * @generated
 	 */
-	EOperation getModelElementCategory__IsValidElement__EObject();
+	EOperation getModelElementCategory__IsValidElement__ExtendableElement();
 
 	/**
 	 * Returns the meta object for the '{@link org.muml.core.modelinstance.ModelElementCategory#isValidEClass(org.eclipse.emf.ecore.EClass) <em>Is Valid EClass</em>}' operation.
@@ -339,7 +339,7 @@ public interface ModelinstancePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation MODEL_ELEMENT_CATEGORY___IS_VALID_ELEMENT__EOBJECT = eINSTANCE.getModelElementCategory__IsValidElement__EObject();
+		EOperation MODEL_ELEMENT_CATEGORY___IS_VALID_ELEMENT__EXTENDABLEELEMENT = eINSTANCE.getModelElementCategory__IsValidElement__ExtendableElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Valid EClass</b></em>' operation.

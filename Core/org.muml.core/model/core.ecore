@@ -68,7 +68,7 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="body" value="EGenericType genericType = getGenericType();&#xA;if (genericType == null) {&#xA;&#x9;genericType = org.eclipse.emf.ecore.EcoreFactory.eINSTANCE.createEGenericType();&#xA;&#x9;setGenericType(genericType);&#xA;}&#xA;genericType.setEClassifier(classifier);"/>
       </eAnnotations>
-      <eParameters name="classifier" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"/>
+      <eParameters name="classifier" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="genericType" ordered="false"
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EGenericType"
@@ -78,7 +78,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="classifier" ordered="false"
-        lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"
         changeable="false" volatile="true" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The type of this ObjectVariable, given as an EClass."/>
@@ -305,7 +305,7 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="body" value="isValidEClass(object.oclAsType(ecore::EObject).eClass())"/>
         </eAnnotations>
-        <eParameters name="object" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject">
+        <eParameters name="object" eType="#//ExtendableElement">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The passed object that we check whether it is a valid model element for this &#xD;&#xA;ModelElementCategory."/>
           </eAnnotations>

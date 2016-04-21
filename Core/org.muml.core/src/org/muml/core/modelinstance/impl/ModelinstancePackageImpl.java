@@ -195,7 +195,7 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getModelElementCategory__IsValidElement__EObject() {
+	public EOperation getModelElementCategory__IsValidElement__ExtendableElement() {
 		return modelElementCategoryEClass.getEOperations().get(0);
 	}
 
@@ -243,7 +243,7 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 		createEReference(modelElementCategoryEClass, MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS);
 		createEAttribute(modelElementCategoryEClass, MODEL_ELEMENT_CATEGORY__KEY);
 		createEAttribute(modelElementCategoryEClass, MODEL_ELEMENT_CATEGORY__NAME);
-		createEOperation(modelElementCategoryEClass, MODEL_ELEMENT_CATEGORY___IS_VALID_ELEMENT__EOBJECT);
+		createEOperation(modelElementCategoryEClass, MODEL_ELEMENT_CATEGORY___IS_VALID_ELEMENT__EXTENDABLEELEMENT);
 		createEOperation(modelElementCategoryEClass, MODEL_ELEMENT_CATEGORY___IS_VALID_ECLASS__ECLASS);
 	}
 
@@ -288,8 +288,8 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 		initEAttribute(getModelElementCategory_Key(), ecorePackage.getEString(), "key", null, 0, 1, ModelElementCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getModelElementCategory_Name(), ecorePackage.getEString(), "name", null, 0, 1, ModelElementCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = initEOperation(getModelElementCategory__IsValidElement__EObject(), ecorePackage.getEBoolean(), "isValidElement", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "object", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getModelElementCategory__IsValidElement__ExtendableElement(), ecorePackage.getEBoolean(), "isValidElement", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theCorePackage.getExtendableElement(), "object", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getModelElementCategory__IsValidEClass__EClass(), ecorePackage.getEBoolean(), "isValidEClass", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEClass(), "eClass", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -340,7 +340,7 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 			 "ExclusivelyContainsValidElements", "self.modelElements->select (e | not isValidElement(e))->isEmpty()"
 		   });	
 		addAnnotation
-		  (getModelElementCategory__IsValidElement__EObject(), 
+		  (getModelElementCategory__IsValidElement__ExtendableElement(), 
 		   source, 
 		   new String[] {
 			 "body", "isValidEClass(object.oclAsType(ecore::EObject).eClass())"

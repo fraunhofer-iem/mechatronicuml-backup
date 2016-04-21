@@ -14,7 +14,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.WrappedException;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -171,23 +170,23 @@ public class ModelElementCategoryImpl extends MinimalEObjectImpl.Container imple
 	}
 
 	/**
-	 * The cached invocation delegate for the '{@link #isValidElement(org.eclipse.emf.ecore.EObject) <em>Is Valid Element</em>}' operation.
+	 * The cached invocation delegate for the '{@link #isValidElement(org.muml.core.ExtendableElement) <em>Is Valid Element</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isValidElement(org.eclipse.emf.ecore.EObject)
+	 * @see #isValidElement(org.muml.core.ExtendableElement)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate IS_VALID_ELEMENT_EOBJECT__EINVOCATION_DELEGATE = ((EOperation.Internal)ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY___IS_VALID_ELEMENT__EOBJECT).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate IS_VALID_ELEMENT_EXTENDABLE_ELEMENT__EINVOCATION_DELEGATE = ((EOperation.Internal)ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY___IS_VALID_ELEMENT__EXTENDABLEELEMENT).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isValidElement(EObject object) {
+	public boolean isValidElement(ExtendableElement object) {
 		try {
-			return (Boolean)IS_VALID_ELEMENT_EOBJECT__EINVOCATION_DELEGATE.dynamicInvoke(this, new BasicEList.UnmodifiableEList<Object>(1, new Object[]{object}));
+			return (Boolean)IS_VALID_ELEMENT_EXTENDABLE_ELEMENT__EINVOCATION_DELEGATE.dynamicInvoke(this, new BasicEList.UnmodifiableEList<Object>(1, new Object[]{object}));
 		}
 		catch (InvocationTargetException ite) {
 			throw new WrappedException(ite);
@@ -310,8 +309,8 @@ public class ModelElementCategoryImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case ModelinstancePackage.MODEL_ELEMENT_CATEGORY___IS_VALID_ELEMENT__EOBJECT:
-				return isValidElement((EObject)arguments.get(0));
+			case ModelinstancePackage.MODEL_ELEMENT_CATEGORY___IS_VALID_ELEMENT__EXTENDABLEELEMENT:
+				return isValidElement((ExtendableElement)arguments.get(0));
 			case ModelinstancePackage.MODEL_ELEMENT_CATEGORY___IS_VALID_ECLASS__ECLASS:
 				return isValidEClass((EClass)arguments.get(0));
 		}
