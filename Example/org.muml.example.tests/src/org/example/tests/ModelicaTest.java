@@ -144,7 +144,7 @@ public class ModelicaTest {
 				throw new Exception(buffer.toString());
 			}
 		} finally {
-			project.delete(true, new NullProgressMonitor());
+			//project.delete(true, new NullProgressMonitor());
 		}
 	}
 
