@@ -31,17 +31,17 @@ import org.eclipse.m2m.qvt.oml.util.Log;
 import org.eclipse.m2m.qvt.oml.util.WriterLog;
 import org.muml.core.common.DiagramEditorUtil;
 import org.muml.core.common.edit.commands.ExecuteQvtoTransformationCommand;
-import org.muml.psm.muml_container.SystemConfiguration;
+import org.muml.psm.muml_container.DeploymentConfiguration;
 
 public class DDSContainerGenerationJob extends Job {
 
-	private SystemConfiguration systemConfiguration;
+	private DeploymentConfiguration systemConfiguration;
 
 	private URI destinationURI;
 
 	private EditingDomain editingDomain;
 
-	public DDSContainerGenerationJob(SystemConfiguration allocation, URI directoryPath, EditingDomain editingDomain) {
+	public DDSContainerGenerationJob(DeploymentConfiguration allocation, URI directoryPath, EditingDomain editingDomain) {
 		super("DDS-Container C-Transformation");
 		this.systemConfiguration = allocation;
 		this.editingDomain = editingDomain;

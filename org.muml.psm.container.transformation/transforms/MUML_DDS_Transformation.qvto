@@ -56,11 +56,11 @@ property dummyDomain : domain  = object domain{
 
 main() {
 
-	containerModel.rootObjects()[SystemConfiguration]->map mapSystemConfiguration2DDSModel();
+	containerModel.rootObjects()[DeploymentConfiguration]->map mapSystemConfiguration2DDSModel();
 	
 }
 
-mapping SystemConfiguration::mapSystemConfiguration2DDSModel():OpenDDSModel@ddsModel{
+mapping DeploymentConfiguration::mapSystemConfiguration2DDSModel():OpenDDSModel@ddsModel{
 	name:="MUML_DDS";
 	
 

@@ -1,29 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.2"?>
 <plugin>
-   <extension point="org.eclipse.ui.popupMenus">
-      <objectContribution
-            adaptable="true"
-            objectClass="org.eclipse.core.resources.IFile"
-            nameFilter="*.*"
-            id="org.muml.codegen.componenttype.c.ui.popupMenus.contribution.IFile">
-         <menu id="org.eclipse.acceleo.module.menu" label="Acceleo Model to Text" path="additionsAcceleo">
-               <groupMarker name="acceleo"/> 
-         </menu>
-         <action
-               class="org.muml.codegen.componenttype.c.ui.popupMenus.AcceleoGenerateComponentTypeCodeAction"
-               enablesFor="+"
-               id="org.muml.codegen.componenttype.c.ui.popupMenus.acceleoGenerateComponentTypeCodeAction"
-               icon="icons/default.gif"
-               label="Generate ComponentType Code"
-               menubarPath="org.eclipse.acceleo.module.menu/acceleo"/>
-      </objectContribution>
-      <extension
-             point="de.uni_paderborn.fujaba.muml.codegen.targetPlatformExtension">
-          <targetPlatform
-                class="org.muml.codegen.componenttype.c.ui.export.C99SourceCodeExport"
-                name="Component Type ANSI C99">
-          </targetPlatform>
-       </extension>
-   </extension>
+   
+        <extension
+              point="org.muml.codegen.targetPlatformExtension">
+           <targetPlatform
+                 class="org.muml.codegen.componenttype.c.ui.export.C99SourceCodeExport"
+                 name="Component Type ANSI C99">
+           </targetPlatform>
+        </extension>
 </plugin>

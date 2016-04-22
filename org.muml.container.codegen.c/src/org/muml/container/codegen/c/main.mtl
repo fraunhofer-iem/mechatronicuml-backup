@@ -17,7 +17,7 @@
 [import org::muml::container::codegen::c::container::Container/]
 [import org::muml::container::codegen::c::container::ECUIdentifier/]
 [import org::muml::container::codegen::c::container::ContainerHeader/]
-[template public generate(systemConfig : SystemConfiguration)]
+[template public generate(systemConfig : DeploymentConfiguration)]
 	
 	[comment @main /]
 	[for (ecuCfg : ECUConfiguration | systemConfig.ecuConfigurations)]

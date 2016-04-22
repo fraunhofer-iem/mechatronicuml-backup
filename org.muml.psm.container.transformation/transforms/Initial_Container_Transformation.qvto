@@ -48,7 +48,7 @@ main() {
 
 
 
-mapping SystemAllocation::mapSystemAllocation():SystemConfiguration{
+mapping SystemAllocation::mapSystemAllocation():DeploymentConfiguration{
 	systemAllocation:=self;
 	ecuConfigurations+=self.allocations.resourceInstance->map mapECUConfiguration();	
 }

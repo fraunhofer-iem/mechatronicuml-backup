@@ -21,7 +21,7 @@ import org.muml.core.export.pages.AbstractFujabaExportTargetPage;
 import org.muml.core.export.pages.ElementSelectionMode;
 import org.muml.core.export.wizard.AbstractFujabaExportWizard;
 import org.muml.psm.allocation.SystemAllocation;
-import org.muml.psm.muml_container.SystemConfiguration;
+import org.muml.psm.muml_container.DeploymentConfiguration;
 
 public class ContainerWizard extends AbstractFujabaExportWizard {
 	private AbstractFujabaExportSourcePage sourcePage;
@@ -97,7 +97,7 @@ public class ContainerWizard extends AbstractFujabaExportWizard {
 					ResourceSet resSet = new ResourceSetImpl();
 					Resource res = resSet.getResource(newContinaerFile, true);
 
-					final SystemConfiguration systemConfig = (SystemConfiguration) res.getContents().get(0);
+					final DeploymentConfiguration systemConfig = (DeploymentConfiguration) res.getContents().get(0);
 
 					EditingDomain editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(systemConfig);
 					if (editingDomain == null) {

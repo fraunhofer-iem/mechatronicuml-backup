@@ -29,8 +29,8 @@ import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.muml.psm.muml_container.DeploymentConfiguration;
 import org.muml.psm.muml_container.ECUConfiguration;
-import org.muml.psm.muml_container.SystemConfiguration;
 import org.osgi.framework.Bundle;
 
 /**
@@ -118,7 +118,7 @@ public class GenerateAll {
 		}
 		Resource resource = new ResourceSetImpl().getResource(this.modelURI, true);
 		if (!resource.getContents().isEmpty()) {
-			for (ECUConfiguration ecu : ((SystemConfiguration) resource.getContents().get(0)).getEcuConfigurations()) {
+			for (ECUConfiguration ecu : ((DeploymentConfiguration) resource.getContents().get(0)).getEcuConfigurations()) {
 				File target = new File(targetFolder.getLocationURI().toString().substring(5) + File.separator
 						+ ecu.getStructuredResourceInstance().getName());
 				FileUtils.copyDirectory(sourceFolder, target);
