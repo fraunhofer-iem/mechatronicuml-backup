@@ -166,6 +166,6 @@ end [componentInstance.getModelName()/];
 
 [query public normalizeRtsc(rtsc : RealtimeStatechart) : OclAny =
 	invoke('org.muml.modelica.adapter.rtsc.transformation.RealtimeStatechartNormalizations',
-		'normalize(org.muml.modelica.adapter.rtsc.transformation.RealtimeStatechartNormalizations)',
+		'normalize(org.muml.pim.realtimestatechart.RealtimeStatechart)',
 		Sequence{rtsc})
 /]
