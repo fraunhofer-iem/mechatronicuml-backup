@@ -118,9 +118,9 @@ public class Muml_containerSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Muml_containerPackage.SYSTEM_CONFIGURATION: {
-				SystemConfiguration systemConfiguration = (SystemConfiguration)theEObject;
-				T result = caseSystemConfiguration(systemConfiguration);
+			case Muml_containerPackage.DEPLOYMENT_CONFIGURATION: {
+				DeploymentConfiguration deploymentConfiguration = (DeploymentConfiguration)theEObject;
+				T result = caseDeploymentConfiguration(deploymentConfiguration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -234,17 +234,17 @@ public class Muml_containerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>System Configuration</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Deployment Configuration</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>System Configuration</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Deployment Configuration</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSystemConfiguration(SystemConfiguration object) {
+	public T caseDeploymentConfiguration(DeploymentConfiguration object) {
 		return null;
 	}
 

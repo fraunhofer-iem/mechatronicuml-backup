@@ -210,26 +210,26 @@ public class Muml_containerItemProviderAdapterFactory extends Muml_containerAdap
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.muml.psm.muml_container.SystemConfiguration} instances.
+	 * This keeps track of the one adapter used for all {@link org.muml.psm.muml_container.DeploymentConfiguration} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SystemConfigurationItemProvider systemConfigurationItemProvider;
+	protected DeploymentConfigurationItemProvider deploymentConfigurationItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.muml.psm.muml_container.SystemConfiguration}.
+	 * This creates an adapter for a {@link org.muml.psm.muml_container.DeploymentConfiguration}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createSystemConfigurationAdapter() {
-		if (systemConfigurationItemProvider == null) {
-			systemConfigurationItemProvider = new SystemConfigurationItemProvider(this);
+	public Adapter createDeploymentConfigurationAdapter() {
+		if (deploymentConfigurationItemProvider == null) {
+			deploymentConfigurationItemProvider = new DeploymentConfigurationItemProvider(this);
 		}
 
-		return systemConfigurationItemProvider;
+		return deploymentConfigurationItemProvider;
 	}
 
 	/**
@@ -337,7 +337,7 @@ public class Muml_containerItemProviderAdapterFactory extends Muml_containerAdap
 		if (portInstanceConfiguration_DDSItemProvider != null) portInstanceConfiguration_DDSItemProvider.dispose();
 		if (ecuConfigurationItemProvider != null) ecuConfigurationItemProvider.dispose();
 		if (multiPortInstanceConfigurationItemProvider != null) multiPortInstanceConfigurationItemProvider.dispose();
-		if (systemConfigurationItemProvider != null) systemConfigurationItemProvider.dispose();
+		if (deploymentConfigurationItemProvider != null) deploymentConfigurationItemProvider.dispose();
 	}
 
 }

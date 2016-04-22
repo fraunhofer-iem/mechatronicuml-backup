@@ -6,6 +6,7 @@ import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 import org.muml.core.provider.CoreEditPlugin;
 
 import org.muml.pim.actionlanguage.provider.ActionlanguageEditPlugin;
@@ -59,6 +60,7 @@ public final class Muml_containerEditPlugin extends EMFPlugin {
 		     OpenDDSEditPlugin.INSTANCE,
 		     PsmEditPlugin.INSTANCE,
 		     SoftwareEditPlugin.INSTANCE,
+		     EcoreEditPlugin.INSTANCE,
 		   });
 	}
 

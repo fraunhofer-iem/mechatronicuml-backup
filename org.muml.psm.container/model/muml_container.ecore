@@ -50,7 +50,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="portInstanceConfigurations"
         upperBound="-1" eType="#//PortInstanceConfiguration"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SystemConfiguration">
+  <eClassifiers xsi:type="ecore:EClass" name="DeploymentConfiguration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="systemAllocation" ordered="false"
         eType="ecore:EClass ../../org.muml.psm/model/psm.ecore#//allocation/SystemAllocation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ecuConfigurations" ordered="false"

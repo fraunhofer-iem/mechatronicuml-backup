@@ -62,7 +62,7 @@ public class Muml_containerFactoryImpl extends EFactoryImpl implements Muml_cont
 			case Muml_containerPackage.PORT_INSTANCE_CONFIGURATION_DDS: return createPortInstanceConfiguration_DDS();
 			case Muml_containerPackage.ECU_CONFIGURATION: return createECUConfiguration();
 			case Muml_containerPackage.MULTI_PORT_INSTANCE_CONFIGURATION: return createMultiPortInstanceConfiguration();
-			case Muml_containerPackage.SYSTEM_CONFIGURATION: return createSystemConfiguration();
+			case Muml_containerPackage.DEPLOYMENT_CONFIGURATION: return createDeploymentConfiguration();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -133,9 +133,9 @@ public class Muml_containerFactoryImpl extends EFactoryImpl implements Muml_cont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SystemConfiguration createSystemConfiguration() {
-		SystemConfigurationImpl systemConfiguration = new SystemConfigurationImpl();
-		return systemConfiguration;
+	public DeploymentConfiguration createDeploymentConfiguration() {
+		DeploymentConfigurationImpl deploymentConfiguration = new DeploymentConfigurationImpl();
+		return deploymentConfiguration;
 	}
 
 	/**

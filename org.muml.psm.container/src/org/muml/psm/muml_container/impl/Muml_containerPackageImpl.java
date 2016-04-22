@@ -23,6 +23,7 @@ import org.muml.psm.allocation.AllocationPackage;
 
 import org.muml.psm.muml_container.ComponentContainer;
 import org.muml.psm.muml_container.ContainerComponentInstanceConfiguration;
+import org.muml.psm.muml_container.DeploymentConfiguration;
 import org.muml.psm.muml_container.ECUConfiguration;
 import org.muml.psm.muml_container.MultiPortInstanceConfiguration;
 import org.muml.psm.muml_container.Muml_containerFactory;
@@ -30,8 +31,6 @@ import org.muml.psm.muml_container.Muml_containerPackage;
 import org.muml.psm.muml_container.PortInstanceConfiguration;
 import org.muml.psm.muml_container.PortInstanceConfiguration_DDS;
 import org.muml.psm.muml_container.PortInstanceConfiguration_Local;
-import org.muml.psm.muml_container.SystemConfiguration;
-
 import org.opendds.modeling.model.application.ApplicationPackage;
 
 import org.opendds.modeling.model.core.CorePackage;
@@ -111,7 +110,7 @@ public class Muml_containerPackageImpl extends EPackageImpl implements Muml_cont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass systemConfigurationEClass = null;
+	private EClass deploymentConfigurationEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -416,8 +415,8 @@ public class Muml_containerPackageImpl extends EPackageImpl implements Muml_cont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSystemConfiguration() {
-		return systemConfigurationEClass;
+	public EClass getDeploymentConfiguration() {
+		return deploymentConfigurationEClass;
 	}
 
 	/**
@@ -425,8 +424,8 @@ public class Muml_containerPackageImpl extends EPackageImpl implements Muml_cont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSystemConfiguration_SystemAllocation() {
-		return (EReference)systemConfigurationEClass.getEStructuralFeatures().get(0);
+	public EReference getDeploymentConfiguration_SystemAllocation() {
+		return (EReference)deploymentConfigurationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -434,8 +433,8 @@ public class Muml_containerPackageImpl extends EPackageImpl implements Muml_cont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSystemConfiguration_EcuConfigurations() {
-		return (EReference)systemConfigurationEClass.getEStructuralFeatures().get(1);
+	public EReference getDeploymentConfiguration_EcuConfigurations() {
+		return (EReference)deploymentConfigurationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -498,9 +497,9 @@ public class Muml_containerPackageImpl extends EPackageImpl implements Muml_cont
 		multiPortInstanceConfigurationEClass = createEClass(MULTI_PORT_INSTANCE_CONFIGURATION);
 		createEReference(multiPortInstanceConfigurationEClass, MULTI_PORT_INSTANCE_CONFIGURATION__PORT_INSTANCE_CONFIGURATIONS);
 
-		systemConfigurationEClass = createEClass(SYSTEM_CONFIGURATION);
-		createEReference(systemConfigurationEClass, SYSTEM_CONFIGURATION__SYSTEM_ALLOCATION);
-		createEReference(systemConfigurationEClass, SYSTEM_CONFIGURATION__ECU_CONFIGURATIONS);
+		deploymentConfigurationEClass = createEClass(DEPLOYMENT_CONFIGURATION);
+		createEReference(deploymentConfigurationEClass, DEPLOYMENT_CONFIGURATION__SYSTEM_ALLOCATION);
+		createEReference(deploymentConfigurationEClass, DEPLOYMENT_CONFIGURATION__ECU_CONFIGURATIONS);
 	}
 
 	/**
@@ -579,9 +578,9 @@ public class Muml_containerPackageImpl extends EPackageImpl implements Muml_cont
 		initEClass(multiPortInstanceConfigurationEClass, MultiPortInstanceConfiguration.class, "MultiPortInstanceConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMultiPortInstanceConfiguration_PortInstanceConfigurations(), this.getPortInstanceConfiguration(), null, "portInstanceConfigurations", null, 0, -1, MultiPortInstanceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(systemConfigurationEClass, SystemConfiguration.class, "SystemConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSystemConfiguration_SystemAllocation(), theAllocationPackage.getSystemAllocation(), null, "systemAllocation", null, 0, 1, SystemConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getSystemConfiguration_EcuConfigurations(), this.getECUConfiguration(), null, "ecuConfigurations", null, 0, -1, SystemConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(deploymentConfigurationEClass, DeploymentConfiguration.class, "DeploymentConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDeploymentConfiguration_SystemAllocation(), theAllocationPackage.getSystemAllocation(), null, "systemAllocation", null, 0, 1, DeploymentConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getDeploymentConfiguration_EcuConfigurations(), this.getECUConfiguration(), null, "ecuConfigurations", null, 0, -1, DeploymentConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

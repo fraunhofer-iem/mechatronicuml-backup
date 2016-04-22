@@ -76,13 +76,13 @@ public interface Muml_containerFactory extends EFactory {
 	MultiPortInstanceConfiguration createMultiPortInstanceConfiguration();
 
 	/**
-	 * Returns a new object of class '<em>System Configuration</em>'.
+	 * Returns a new object of class '<em>Deployment Configuration</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>System Configuration</em>'.
+	 * @return a new object of class '<em>Deployment Configuration</em>'.
 	 * @generated
 	 */
-	SystemConfiguration createSystemConfiguration();
+	DeploymentConfiguration createDeploymentConfiguration();
 
 	/**
 	 * Returns the package supported by this factory.

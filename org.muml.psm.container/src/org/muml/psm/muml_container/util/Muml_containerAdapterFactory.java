@@ -99,8 +99,8 @@ public class Muml_containerAdapterFactory extends AdapterFactoryImpl {
 				return createMultiPortInstanceConfigurationAdapter();
 			}
 			@Override
-			public Adapter caseSystemConfiguration(SystemConfiguration object) {
-				return createSystemConfigurationAdapter();
+			public Adapter caseDeploymentConfiguration(DeploymentConfiguration object) {
+				return createDeploymentConfigurationAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -229,16 +229,16 @@ public class Muml_containerAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.muml.psm.muml_container.SystemConfiguration <em>System Configuration</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.psm.muml_container.DeploymentConfiguration <em>Deployment Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.muml.psm.muml_container.SystemConfiguration
+	 * @see org.muml.psm.muml_container.DeploymentConfiguration
 	 * @generated
 	 */
-	public Adapter createSystemConfigurationAdapter() {
+	public Adapter createDeploymentConfigurationAdapter() {
 		return null;
 	}
 

@@ -70,15 +70,6 @@ public interface Muml_containerPackage extends EPackage {
 	int COMPONENT_CONTAINER = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_CONTAINER__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -417,15 +408,6 @@ public interface Muml_containerPackage extends EPackage {
 	int ECU_CONFIGURATION = 5;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECU_CONFIGURATION__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -544,14 +526,14 @@ public interface Muml_containerPackage extends EPackage {
 	int MULTI_PORT_INSTANCE_CONFIGURATION_OPERATION_COUNT = PORT_INSTANCE_CONFIGURATION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.muml.psm.muml_container.impl.SystemConfigurationImpl <em>System Configuration</em>}' class.
+	 * The meta object id for the '{@link org.muml.psm.muml_container.impl.DeploymentConfigurationImpl <em>Deployment Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.psm.muml_container.impl.SystemConfigurationImpl
-	 * @see org.muml.psm.muml_container.impl.Muml_containerPackageImpl#getSystemConfiguration()
+	 * @see org.muml.psm.muml_container.impl.DeploymentConfigurationImpl
+	 * @see org.muml.psm.muml_container.impl.Muml_containerPackageImpl#getDeploymentConfiguration()
 	 * @generated
 	 */
-	int SYSTEM_CONFIGURATION = 7;
+	int DEPLOYMENT_CONFIGURATION = 7;
 
 	/**
 	 * The feature id for the '<em><b>System Allocation</b></em>' reference.
@@ -560,7 +542,7 @@ public interface Muml_containerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_CONFIGURATION__SYSTEM_ALLOCATION = 0;
+	int DEPLOYMENT_CONFIGURATION__SYSTEM_ALLOCATION = 0;
 
 	/**
 	 * The feature id for the '<em><b>Ecu Configurations</b></em>' containment reference list.
@@ -569,26 +551,25 @@ public interface Muml_containerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_CONFIGURATION__ECU_CONFIGURATIONS = 1;
+	int DEPLOYMENT_CONFIGURATION__ECU_CONFIGURATIONS = 1;
 
 	/**
-	 * The number of structural features of the '<em>System Configuration</em>' class.
+	 * The number of structural features of the '<em>Deployment Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_CONFIGURATION_FEATURE_COUNT = 2;
+	int DEPLOYMENT_CONFIGURATION_FEATURE_COUNT = 2;
 
 	/**
-	 * The number of operations of the '<em>System Configuration</em>' class.
+	 * The number of operations of the '<em>Deployment Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_CONFIGURATION_OPERATION_COUNT = 0;
-
+	int DEPLOYMENT_CONFIGURATION_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link org.muml.psm.muml_container.ComponentContainer <em>Component Container</em>}'.
@@ -859,36 +840,36 @@ public interface Muml_containerPackage extends EPackage {
 	EReference getMultiPortInstanceConfiguration_PortInstanceConfigurations();
 
 	/**
-	 * Returns the meta object for class '{@link org.muml.psm.muml_container.SystemConfiguration <em>System Configuration</em>}'.
+	 * Returns the meta object for class '{@link org.muml.psm.muml_container.DeploymentConfiguration <em>Deployment Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>System Configuration</em>'.
-	 * @see org.muml.psm.muml_container.SystemConfiguration
+	 * @return the meta object for class '<em>Deployment Configuration</em>'.
+	 * @see org.muml.psm.muml_container.DeploymentConfiguration
 	 * @generated
 	 */
-	EClass getSystemConfiguration();
+	EClass getDeploymentConfiguration();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.muml.psm.muml_container.SystemConfiguration#getSystemAllocation <em>System Allocation</em>}'.
+	 * Returns the meta object for the reference '{@link org.muml.psm.muml_container.DeploymentConfiguration#getSystemAllocation <em>System Allocation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>System Allocation</em>'.
-	 * @see org.muml.psm.muml_container.SystemConfiguration#getSystemAllocation()
-	 * @see #getSystemConfiguration()
+	 * @see org.muml.psm.muml_container.DeploymentConfiguration#getSystemAllocation()
+	 * @see #getDeploymentConfiguration()
 	 * @generated
 	 */
-	EReference getSystemConfiguration_SystemAllocation();
+	EReference getDeploymentConfiguration_SystemAllocation();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.muml.psm.muml_container.SystemConfiguration#getEcuConfigurations <em>Ecu Configurations</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.muml.psm.muml_container.DeploymentConfiguration#getEcuConfigurations <em>Ecu Configurations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Ecu Configurations</em>'.
-	 * @see org.muml.psm.muml_container.SystemConfiguration#getEcuConfigurations()
-	 * @see #getSystemConfiguration()
+	 * @see org.muml.psm.muml_container.DeploymentConfiguration#getEcuConfigurations()
+	 * @see #getDeploymentConfiguration()
 	 * @generated
 	 */
-	EReference getSystemConfiguration_EcuConfigurations();
+	EReference getDeploymentConfiguration_EcuConfigurations();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1128,14 +1109,14 @@ public interface Muml_containerPackage extends EPackage {
 		EReference MULTI_PORT_INSTANCE_CONFIGURATION__PORT_INSTANCE_CONFIGURATIONS = eINSTANCE.getMultiPortInstanceConfiguration_PortInstanceConfigurations();
 
 		/**
-		 * The meta object literal for the '{@link org.muml.psm.muml_container.impl.SystemConfigurationImpl <em>System Configuration</em>}' class.
+		 * The meta object literal for the '{@link org.muml.psm.muml_container.impl.DeploymentConfigurationImpl <em>Deployment Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.muml.psm.muml_container.impl.SystemConfigurationImpl
-		 * @see org.muml.psm.muml_container.impl.Muml_containerPackageImpl#getSystemConfiguration()
+		 * @see org.muml.psm.muml_container.impl.DeploymentConfigurationImpl
+		 * @see org.muml.psm.muml_container.impl.Muml_containerPackageImpl#getDeploymentConfiguration()
 		 * @generated
 		 */
-		EClass SYSTEM_CONFIGURATION = eINSTANCE.getSystemConfiguration();
+		EClass DEPLOYMENT_CONFIGURATION = eINSTANCE.getDeploymentConfiguration();
 
 		/**
 		 * The meta object literal for the '<em><b>System Allocation</b></em>' reference feature.
@@ -1143,7 +1124,7 @@ public interface Muml_containerPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SYSTEM_CONFIGURATION__SYSTEM_ALLOCATION = eINSTANCE.getSystemConfiguration_SystemAllocation();
+		EReference DEPLOYMENT_CONFIGURATION__SYSTEM_ALLOCATION = eINSTANCE.getDeploymentConfiguration_SystemAllocation();
 
 		/**
 		 * The meta object literal for the '<em><b>Ecu Configurations</b></em>' containment reference list feature.
@@ -1151,7 +1132,7 @@ public interface Muml_containerPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SYSTEM_CONFIGURATION__ECU_CONFIGURATIONS = eINSTANCE.getSystemConfiguration_EcuConfigurations();
+		EReference DEPLOYMENT_CONFIGURATION__ECU_CONFIGURATIONS = eINSTANCE.getDeploymentConfiguration_EcuConfigurations();
 
 	}
 
