@@ -47,7 +47,6 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 		resultingElement.messageType := self.messageType;
 		resultingElement.parameter := self.parameter;
 		
-		resultingElement.annotations := self._annotations.map transform().oclAsType(EAnnotation);
 	    resultingElement._extensions := self._extensions.map transform().oclAsType(Extension);
 	    	
 		element.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
@@ -64,7 +63,6 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 		resultingElement.messageType := self.messageType;
 		resultingElement.parameter := self.parameter;
 		
-		resultingElement.annotations := self._annotations.map transform(container).oclAsType(EAnnotation);
 	    resultingElement._extensions := self._extensions.map transform(container).oclAsType(Extension);
 	    	
 		element.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
@@ -81,7 +79,6 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 		resultingElement.range := self.range.map transform().oclAsType(Range);
 		resultingElement.dataType := self.dataType;
 		
-		resultingElement.annotations := self._annotations.map transform().oclAsType(EAnnotation);
 	    resultingElement._extensions := self._extensions.map transform().oclAsType(Extension);
 	    	
 		element.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
@@ -98,7 +95,6 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 		resultingElement.range := self.range.map transform(container).oclAsType(Range);
 		resultingElement.dataType := self.dataType;
 		
-		resultingElement.annotations := self._annotations.map transform(container).oclAsType(EAnnotation);
 	    resultingElement._extensions := self._extensions.map transform(container).oclAsType(Extension);
 	    	
 		element.oclAsType(EObject).eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
@@ -118,7 +114,6 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 		
 				resultingElement.dataType := self.dataType;
 				resultingElement.initializeExpression := self.initializeExpression.map transform(result).oclAsType(Expression);
-				resultingElement.annotations := self._annotations.map transform().oclAsType(EAnnotation);
 			    resultingElement._extensions := self._extensions.map transform().oclAsType(Extension);
 				
 				var element := self.oclAsType(behavior::Variable);	    	
@@ -148,7 +143,6 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 				resultingElement.returnType := self.returnType;
 				
 				resultingElement.implementations := self.implementations->map transform().oclAsType(Expression);
-				resultingElement.annotations := self._annotations.map transform().oclAsType(EAnnotation);
 			    resultingElement._extensions := self._extensions.map transform().oclAsType(Extension);
 			    resultingElement.parameters := self.parameters -> map transform().oclAsType(Parameter);
 			    
@@ -197,7 +191,6 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 				
 				var resultingElement : SynchronizationChannel := result.oclAsType(SynchronizationChannel);		
 		
-				resultingElement.annotations := self._annotations.map transform().oclAsType(EAnnotation);
 			    resultingElement._extensions := self._extensions.map transform().oclAsType(Extension);
 				resultingElement.selectorType := self.selectorType;
 				resultingElement.state := self.state.map transform().oclAsType(State);
@@ -228,7 +221,6 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 				
 				var resultingElement : Clock := result.oclAsType(Clock);		
 		
-				resultingElement.annotations := self._annotations.map transform().oclAsType(EAnnotation);
 			    resultingElement._extensions := self._extensions.map transform().oclAsType(Extension);
 			 	//resultingElement.statechart := self.statechart.map transform().oclAsType(RealtimeStatechart);
 			    
@@ -277,7 +269,6 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 		}
 		
 		var resultingElement : Message := result.oclAsType(Message);
-		resultingElement.annotations := self._annotations.map transform().oclAsType(EAnnotation);
 		resultingElement._extensions := self._extensions.map transform().oclAsType(Extension);
 		resultingElement.instanceOf := self.instanceOf;
 		resultingElement.parameterBinding := self.parameterBinding.map transform().oclAsType(ParameterBinding);
@@ -296,7 +287,6 @@ property internalSynchronizations	: Set(SynchronizationChannel);
 		var resultingElement : ParameterBinding := result.oclAsType(ParameterBinding);
 		resultingElement.parameter := self.parameter;
 		resultingElement.value := self.value.map transform().oclAsType(Expression);
-		resultingElement.annotations := self._annotations.map transform().oclAsType(EAnnotation);
 		resultingElement._extensions := self._extensions.map transform().oclAsType(Extension);		
 	}
 	
