@@ -38,7 +38,6 @@ mapping ParameterBinding :: transform() : EObject {
 		var resultingBinding := result.oclAsType(ParameterBinding);
 		resultingBinding.parameter := self.parameter.map transform().oclAsType(Parameter);
 		resultingBinding.value := self.value.map transform().oclAsType(core::expressions::Expression);
-		resultingBinding.annotations := self.annotations.map transform().oclAsType(EAnnotation);
 		resultingBinding.extensions := self.extensions.map transform().oclAsType(core::Extension);		
 	}
 }
