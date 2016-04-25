@@ -66,7 +66,7 @@ mapping pim::protocol::CoordinationProtocol:: CoordinationProtocol2CoordinationP
 {
 	result.name := self.name + timeStamp;
 	result.comment := self.comment;
-	result.annotations := self.annotations.map transform().oclAsType(EAnnotation);		
+	result.extensions := self.extensions.map transform().oclAsType(Extension);		
 	//var statechartCategory : ModelElementCategory := getRealtimeStatechartCategory(theRootNode);	
 	result.patternParameters := variablesToParameter.map transform().oclAsType(Parameter);
 	self.roles->forEach(role)
@@ -89,7 +89,6 @@ mapping Variable::Variable2Parameter(): Parameter
 		_name := self._name;
 		_comment := self._comment;
 		_dataType := self.dataType;
-		annotations := self.annotations.map transform().oclAsType(EAnnotation);
 		extensions := self.extensions.map transform().oclAsType(core::Extension);
 }
 mapping pim::realtimestatechart::RealtimeStatechart :: transform() : EObject{
@@ -107,7 +106,6 @@ mapping pim::realtimestatechart::RealtimeStatechart :: transform() : EObject{
     	
     	resultingRTSC._name := self._name + timeStamp;
     	resultingRTSC._comment := self._comment;
-    	resultingRTSC._annotations := self._annotations.map transform().oclAsType(EAnnotation);
     	resultingRTSC._extensions := self._extensions.map transform().oclAsType(core::Extension);
    
     	resultingRTSC._operations := self._operations.map transform().oclAsType(Operation);

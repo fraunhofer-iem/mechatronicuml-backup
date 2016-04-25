@@ -79,7 +79,7 @@ mapping pim::pattern::AbstractCoordinationPattern :: AbstractCoordinationPattern
 {	
 	result.name := self.name + timeStamp;
 	result.comment := self.comment;
-	result.annotations := self.annotations.map transform().oclAsType(EAnnotation);		
+	result.extensions := self.extensions.map transform().oclAsType(Extension);		
 	
 
 	self.roles->forEach(role)

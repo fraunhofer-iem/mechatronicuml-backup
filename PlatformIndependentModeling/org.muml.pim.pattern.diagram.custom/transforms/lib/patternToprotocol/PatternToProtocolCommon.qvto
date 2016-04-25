@@ -65,7 +65,6 @@ mapping actionlanguage::TypedNamedElementExpression :: transform() : EObject {
 			
 		
 			var resultingExpression : TypedNamedElementExpression := result.oclAsType(TypedNamedElementExpression);
-			resultingExpression._annotations := self._annotations.map transform().oclAsType(EAnnotation);
 			resultingExpression._extensions := self._extensions.map transform().oclAsType(core::Extension);
 			resultingExpression.typedNamedElement := self.typedNamedElement.map transform().oclAsType(TypedNamedElement);
 			
