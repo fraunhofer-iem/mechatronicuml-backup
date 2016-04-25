@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.muml.modelcopy.feature"
+      label="ModelCopy Feature"
       version="0.5.0.qualifier"
       provider-name="Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, Germany  Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany">
 
