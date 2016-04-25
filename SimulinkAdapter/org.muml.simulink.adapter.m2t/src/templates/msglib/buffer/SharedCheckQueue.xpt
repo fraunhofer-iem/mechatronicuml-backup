@@ -1,7 +1,7 @@
 «IMPORT simulink»
-«IMPORT model::stateflow»
-«IMPORT model::msglib»
-«IMPORT model::msglib::buffer»
+«IMPORT simulink::stateflow»
+«IMPORT simulink::msglib»
+«IMPORT simulink::msglib::buffer»
 
 «EXTENSION extensions::msglib::buffer::SharedCheckQueue»
 

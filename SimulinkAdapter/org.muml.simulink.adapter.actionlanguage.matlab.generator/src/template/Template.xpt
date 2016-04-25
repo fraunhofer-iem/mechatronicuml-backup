@@ -1,9 +1,11 @@
+«IMPORT core»
 «IMPORT core::expressions»
 «IMPORT actionlanguage»
-«IMPORT muml::realtimestatechart»
-«IMPORT muml::behavior»
-«IMPORT muml::types»
+«IMPORT pim::realtimestatechart»
+«IMPORT pim::behavior»
+«IMPORT pim::types»
 «IMPORT core::expressions::common»
+«IMPORT extension»
 
 «EXTENSION extension::extensionMatlab»
 
@@ -16,7 +18,7 @@
 «DEFINE main FOR List[Object]»
 «FILE ((String) GLOBALVAR output)-»
 «EXPAND expression FOREACH this SEPARATOR "»»"-»
-«ENDFILE»
+«ENDFILE» 
 «ENDDEFINE»
 
 «DEFINE expression FOR realtimestatechart::Action»
@@ -164,7 +166,7 @@ xor(
 
 
 «DEFINE expression FOR actionlanguage::Block»
-«IF this.eContainer().metaType == realtimestatechart::Transition»
+«IF this.eContainer.metaType == realtimestatechart::Transition»
 «EXPAND expression FOREACH expressions SEPARATOR " && "-»
 «ELSE»
 «EXPAND expression FOREACH expressions SEPARATOR "; \n "-»
@@ -257,8 +259,8 @@ if («EXPAND expression FOR ifCondition») \n «EXPAND expression FOR ifBlock»;\n
 
 
 «DEFINE expression FOR actionlanguage::TriggerMessageExpression»
-«IF messageType.parameters.select(e|e.name == parameter.name).annotation.exists(e|e.source == 'tmp_var')»
-«messageType.parameters.select(e|e.name == parameter.name).annotation.select(e|e.source == 'tmp_var').details.get(0).value»
+«IF messageType.parameters.select(e|e.name == parameter.name).extensions.typeSelect(extension::SimulinkAnnotationExtension).exists(e|e.source == 'tmp_var')»
+«messageType.parameters.select(e|e.name == parameter.name).extensions.typeSelect(extension::SimulinkAnnotationExtension).select(e|e.source == 'tmp_var').details.get(0).value»
 «ENDIF»
 «ENDDEFINE»
 

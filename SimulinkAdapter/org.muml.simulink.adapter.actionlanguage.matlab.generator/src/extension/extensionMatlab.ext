@@ -2,8 +2,8 @@
 import core::expressions::common;
 import core::expressions;
 import actionlanguage;
-import muml::types;
-import muml::behavior;
+import pim::types;  
+import pim::behavior;
 
 
 String logicOp(LogicOperator op):
@@ -93,7 +93,7 @@ String dataType(PrimitiveDataType type):
 ;
 // recursively traverse expression upwards until the Operation is reached...
 String getOperationName(ReturnStatement retState):
-	let opName = getOperationName(retState.eContainer()):
+	let opName = getOperationName(retState.eContainer):
 	if opName == null 
 	then null
 	else opName
@@ -103,7 +103,7 @@ String getOperationName(ReturnStatement retState):
 String getOperationName(Operation op): op.name;
 
 //for any expression traverse to eContainer
-String getOperationName(Expression exp): getOperationName(exp.eContainer());
+String getOperationName(Expression exp): getOperationName(exp.eContainer);
 
 //if any other object has been reached, return null
 String getOperationName(Object obj) : null;

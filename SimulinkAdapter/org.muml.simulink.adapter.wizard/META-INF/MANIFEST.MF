@@ -13,7 +13,8 @@ Require-Bundle: org.eclipse.ui,
  org.muml.core;visibility:=reexport,
  org.muml.simulink.adapter.m2t;bundle-version="0.4.0",
  org.muml.simulink.adapter.actionlanguage.matlab.generator;bundle-version="0.4.0",
- org.muml.pim;bundle-version="0.4.0"
+ org.muml.pim;bundle-version="0.4.0",
+ org.muml.simulink.adapter.extension
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: org.eclipse.emf.common.util,

@@ -1,6 +1,6 @@
 «IMPORT simulink»
-«IMPORT model::stateflow»
-«IMPORT model::msglib::buffer»
+«IMPORT simulink::stateflow»
+«IMPORT simulink::msglib::buffer»
 
 «EXTENSION extensions::stateflow::StateflowElement»
 «EXTENSION extensions::stateflow::Node»

@@ -1,5 +1,5 @@
 «IMPORT simulink»
-«IMPORT model::msglib»
+«IMPORT simulink::msglib»
 
 «EXTENSION org::eclipse::xtend::util::stdlib::counter»
 

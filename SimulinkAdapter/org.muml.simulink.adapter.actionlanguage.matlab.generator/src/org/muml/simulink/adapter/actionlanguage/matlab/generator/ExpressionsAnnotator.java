@@ -14,6 +14,8 @@ import org.eclipse.xpand2.Generator;
 import org.eclipse.xpand2.output.Outlet;
 import org.eclipse.xtend.expression.AbstractExpressionsUsingWorkflowComponent.GlobalVarDef;
 import org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel;
+import org.muml.core.CoreFactory;
+import org.muml.core.CorePackage;
 import org.muml.core.ExtendableElement;
 import org.muml.core.expressions.Expression;
 import org.muml.core.expressions.TextualExpression;
@@ -22,6 +24,8 @@ import org.muml.pim.behavior.Operation;
 import org.muml.pim.behavior.ParameterBinding;
 import org.muml.pim.behavior.Variable;
 import org.muml.pim.realtimestatechart.*;
+import org.muml.simulink.adapter.extension.ExtensionFactory;
+import org.muml.simulink.adapter.extension.SimulinkAnnotationExtension;
 
 @Deprecated
 public class ExpressionsAnnotator extends AbstractWorkflowComponent {
@@ -153,12 +157,14 @@ public class ExpressionsAnnotator extends AbstractWorkflowComponent {
 				reader.close();
 				
 				ExtendableElement extendableElement = (ExtendableElement) ctx.get(slotName);
+				
+				SimulinkAnnotationExtension annotation = ExtensionFactory.eINSTANCE.createSimulinkAnnotationExtension();
+				
 								
-				EAnnotation annotation = EcoreFactory.eINSTANCE.createEAnnotation();
 				annotation.setSource("ActionLanguage");
 				annotation.getDetails().put("matlab", buffer.toString());
 				
-				extendableElement.getAnnotations().add(annotation);
+				extendableElement.getExtensions().add(annotation);
 							
 //				extendableElement.eResource().save(Collections.EMPTY_MAP);
 								

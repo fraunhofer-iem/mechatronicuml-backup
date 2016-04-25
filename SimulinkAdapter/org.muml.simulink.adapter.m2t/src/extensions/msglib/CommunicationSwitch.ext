@@ -4,7 +4,7 @@ import simulink::msglib;
 extension org::eclipse::xtend::util::stdlib::globalvar;
 
 cached Bus generateBus(CommunicationSwitch communicationBus, Integer size):
-	JAVA org.muml.simulink.adapter.m2t.xtend.CommunicationSwitch.generateBus(de.uni_paderborn.fujaba.simulink.model.msglib.CommunicationSwitch, java.lang.Integer)
+	JAVA org.muml.simulink.adapter.m2t.xtend.CommunicationSwitch.generateBus(org.muml.simulink.msglib.CommunicationSwitch, java.lang.Integer)
 ;
 
 Integer getDebugValue(CommunicationSwitch cs):

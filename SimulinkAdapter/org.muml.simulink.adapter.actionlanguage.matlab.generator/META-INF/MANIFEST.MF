@@ -22,7 +22,10 @@ Require-Bundle: org.eclipse.jdt.core;bundle-version="3.5.0",
  org.muml.core.common;bundle-version="0.4.0",
  org.muml.core,
  org.muml.pim.actionlanguage;bundle-version="0.4.0",
- org.muml.pim;bundle-version="0.4.0"
+ org.muml.pim;bundle-version="0.4.0",
+ org.muml.simulink.adapter.extension,
+ org.eclipse.core.expressions,
+ org.muml.uppaal.adapter.extension;bundle-version="0.5.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.simulink.adapter.actionlanguage.matlab.generator
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

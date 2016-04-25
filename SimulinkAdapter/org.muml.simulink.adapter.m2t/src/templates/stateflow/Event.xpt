@@ -1,5 +1,5 @@
 «IMPORT simulink»
-«IMPORT model::stateflow»
+«IMPORT simulink::stateflow»
 
 «EXTENSION extensions::stateflow::StateflowElement»
 «EXTENSION extensions::stateflow::Event»

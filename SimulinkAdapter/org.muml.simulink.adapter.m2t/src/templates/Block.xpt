@@ -1,5 +1,5 @@
 «IMPORT simulink»
-«IMPORT model::msglib»
+«IMPORT simulink::msglib»
 
 «EXTENSION extensions::Block»
 
