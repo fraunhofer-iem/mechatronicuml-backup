@@ -14,7 +14,6 @@ extern "C" {
 
 
 //FIXME: HandleTypes
-//FIXME: typedef PortStatus
 typedef enum {
 	PORT_HANDLE_TYPE_DDS, PORT_HANDLE_TYPE_LOCAL
 } HandleType;

@@ -94,12 +94,23 @@
 [if ((component.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (component.componentKind = ComponentKind::HYBRID_COMPONENT))]
 
 
-	[if component.oclIsKindOf(AtomicComponent) and component.componentKind<>ComponentKind::CONTINUOUS_COMPONENT]
+[if component.oclIsKindOf(AtomicComponent) and component.componentKind<>ComponentKind::CONTINUOUS_COMPONENT]
 	[let rtsc : RealtimeStatechart = component.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart)]
-		[if ((rtsc.eAllContents(Operation)->asSet() - rtsc.eAllContents(APICall)->asSet())->size() > 0)]#include "../operations/operations.h"[/if]
 		[if (rtsc.eAllContents(APICall)->size() > 0)]#include "../apiCallCode/implementations.h"[/if]
-	[/let]	
+
+	//include Operation Repositories
+		[let opRepos : OrderedSet(OperationRepository) = rtsc.usedOperationRepositories]
+			[for (opRep: OperationRepository | opRepos)]
+			[comment generate includes for each repository /]
+			#include "../[opRep.getFileName(true, useSubDir)/]"
+
+			[/for]
+		[/let]
+[/let]	
 [/if]
+
+
+
 	[if (component.eAllContents(HybridPort)->size() > 0)]
 		//#include "[if (useSubDir)]../[/if][getFileName4ContinuousImpl(true, useSubDir)/]"	
 [/if]
@@ -110,5 +121,11 @@
 	[/let]
 	[/if]
 	[/if]
+
+
+
+
+
+
 [/template]
 

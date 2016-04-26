@@ -49,6 +49,18 @@
 
 
 
+[template public generateRTSCOperationsDeclarations(component : Component, rtsc : RealtimeStatechart) post(cdtbeautifier())]
+[comment generate operation declarations for the RTSC/]
+//definition for RTSC internal operations
+[let allOperation : Set(Operation) = rtsc.eAllContents(Operation)->select(op| not op.isRepositoryOperation())->asSet()]
+[for (operation : Operation | allOperation)]
+[operation.returnType.getTypeName()/] [operation.getName()/]([rtsc.getClassName()/]* stateChart[if (operation.parameters->size() >0)],[/if][for (p: Parameter | operation.parameters)separator (', ')][p.dataType.getTypeName()/] [p.getName()/][/for]);
+[/for]
+[/let]
+	
+[/template]
+
+
 [**
  * Generates the enum for the statechart.
  * 

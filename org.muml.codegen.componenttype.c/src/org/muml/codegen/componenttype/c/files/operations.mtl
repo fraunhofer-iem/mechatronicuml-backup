@@ -21,12 +21,6 @@
  * @param anAbsoluteDeadline
  */]
 [template public generateOperationFiles(COs : OrderedSet(Component), path : String, useSubDir: Boolean)]
-[file (path+getFileName4Operations(true, useSubDir), false, 'UTF-8')]
-#ifndef OPERATIONS_H_
-#define OPERATIONS_H_
-#ifdef __cplusplus
-  extern "C" {
-#endif
 [let opRepos : Sequence(OperationRepository) = COs->selectByKind(AtomicComponent).behavior.oclAsType(RealtimeStatechart).usedOperationRepositories]
 [for (opRep: OperationRepository | opRepos)]
 	[comment generate separate files for each repository /]	
@@ -38,12 +32,6 @@
 
 [/for]
 [/let]
-
-#ifdef __cplusplus
-  }
-#endif
-#endif /*OPERATIONS_H_ */
-[/file]
 
 [/template]
 
@@ -93,7 +81,7 @@
 
 [file (path+getFileName(opRep, false, useSubDir), false, 'UTF-8')]
 
-#include "operations.h"
+#include "[getFileName(opRep, true, false)/]"
 /** [protected ('User includes **/')] 
 
 

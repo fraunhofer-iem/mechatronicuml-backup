@@ -20,7 +20,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.muml.codegen.c.beautifier;bundle-version="0.4.0",
  org.muml.pim.common;bundle-version="0.5.0",
  org.muml.psm;bundle-version="1.0.0"
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
 Export-Package: org.muml.codegen.componenttype.c;uses:="org.osgi.framework,org.eclipse.core.runtime",
@@ -39,4 +38,5 @@ Export-Package: org.muml.codegen.componenttype.c;uses:="org.osgi.framework,org.e
  org.muml.codegen.componenttype.c.queries,
  org.muml.codegen.componenttype.c.rtsc,
  org.muml.codegen.componenttype.c.types
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 

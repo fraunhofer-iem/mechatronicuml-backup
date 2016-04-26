@@ -6,7 +6,7 @@
  */
 #ifndef CLOCK_H_
 #define CLOCK_H_
-#include "../Middleware/OS.h"
+//#include "../Middleware/OS.h"
 
 
 #ifdef NXTOSEK
