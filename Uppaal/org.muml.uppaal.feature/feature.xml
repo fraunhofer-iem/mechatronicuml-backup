@@ -151,27 +151,6 @@
          unpack="false"/>
 
    <plugin
-         id="org.muml.uppaal.adapter.options"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.muml.uppaal.adapter.options.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.muml.uppaal.adapter.options.edit.properties"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.muml.uppaal.preferences"
          download-size="0"
          install-size="0"
