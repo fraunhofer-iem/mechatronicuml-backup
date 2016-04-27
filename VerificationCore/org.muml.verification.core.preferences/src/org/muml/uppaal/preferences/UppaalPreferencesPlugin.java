@@ -1,4 +1,4 @@
-package org.muml.verification.core.preferences;
+package org.muml.uppaal.preferences;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
@@ -6,20 +6,20 @@ import org.osgi.framework.BundleContext;
 /**
  * The activator class controls the plug-in life cycle
  */
-public class VerificationPreferencesPlugin extends AbstractUIPlugin {
+public class UppaalPreferencesPlugin extends AbstractUIPlugin {
 
 	// The plug-in ID
 
 
 	// The shared instance
-	private static VerificationPreferencesPlugin plugin;
+	private static UppaalPreferencesPlugin plugin;
 	
 	public static final String VERIFYTA_KEY = "verifyta";
 
 	/**
 	 * The constructor
 	 */
-	public VerificationPreferencesPlugin() {
+	public UppaalPreferencesPlugin() {
 	}
 
 	/*
@@ -51,7 +51,7 @@ public class VerificationPreferencesPlugin extends AbstractUIPlugin {
 	 * 
 	 * @return the shared instance
 	 */
-	public static VerificationPreferencesPlugin getDefault() {
+	public static UppaalPreferencesPlugin getDefault() {
 		return plugin;
 	}
 

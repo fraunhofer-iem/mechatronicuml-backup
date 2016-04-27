@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 import org.muml.uppaal.adapter.mtctl.xtext.MtctlStandaloneSetup;
-import org.muml.verification.core.preferences.VerificationPreferencesPlugin;
+import org.muml.uppaal.preferences.UppaalPreferencesPlugin;
 
 @RunWith(Suite.class)
 @SuiteClasses({ RunTestCases.class })
@@ -18,9 +18,9 @@ public class TestLanguageTestSuite {
 		MtctlStandaloneSetup.doSetup();
 
 		// Set path to the UPPAAL verifyta tool.
-		IPreferenceStore preferenceStore = VerificationPreferencesPlugin
+		IPreferenceStore preferenceStore = UppaalPreferencesPlugin
 				.getDefault().getPreferenceStore();
-		preferenceStore.setValue(VerificationPreferencesPlugin.VERIFYTA_KEY,
+		preferenceStore.setValue(UppaalPreferencesPlugin.VERIFYTA_KEY,
 				"/data/jenkins/uppaal64-4.1.19/bin-Linux/verifyta");
 	}
 

@@ -5,7 +5,7 @@
          point="org.eclipse.ui.preferencePages">
       <page
             category="org.muml.preferences"
-            class="org.muml.verification.core.preferences.VerificationPreferencePage"
+            class="org.muml.uppaal.preferences.UppaalPreferencePage"
             id="de.uni_paderborn.fujaba.muml.verification.preferences"
             name="Verification">
       </page>

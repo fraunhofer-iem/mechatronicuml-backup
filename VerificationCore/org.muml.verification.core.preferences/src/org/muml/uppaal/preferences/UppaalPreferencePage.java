@@ -1,4 +1,4 @@
-package org.muml.verification.core.preferences;
+package org.muml.uppaal.preferences;
 
 import java.io.File;
 
@@ -10,10 +10,10 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 
-public class VerificationPreferencePage extends FieldEditorPreferencePage
+public class UppaalPreferencePage extends FieldEditorPreferencePage
 		implements IWorkbenchPreferencePage {
 
-	public VerificationPreferencePage() {
+	public UppaalPreferencePage() {
 		super(GRID);
 
 	}
@@ -28,7 +28,7 @@ public class VerificationPreferencePage extends FieldEditorPreferencePage
 		Composite parent = getFieldEditorParent();
 
 		StringFieldEditor uppaalPathEditor = new FileFieldEditor(
-				VerificationPreferencesPlugin.VERIFYTA_KEY, "&UPPAAL verifyta path:", parent) {
+				UppaalPreferencesPlugin.VERIFYTA_KEY, "&UPPAAL verifyta path:", parent) {
 			protected boolean doCheckState() {
 				// Allow empty string
 				String fileName = getStringValue();
@@ -69,8 +69,8 @@ public class VerificationPreferencePage extends FieldEditorPreferencePage
 
 	@Override
 	public void init(IWorkbench workbench) {
-		setPreferenceStore(VerificationPreferencesPlugin.getDefault()
+		setPreferenceStore(UppaalPreferencesPlugin.getDefault()
 				.getPreferenceStore());
-		setDescription("MechatronicUML Verification Preferences");
+		setDescription("UPPAAL Preferences");
 	}
 }
