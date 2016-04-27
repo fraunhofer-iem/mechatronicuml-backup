@@ -18,17 +18,12 @@
    </license>
 
    <requires>
-      <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="org.eclipse.emf.edit"/>
       <import plugin="org.eclipse.emf.ecore.edit"/>
-      <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.emf.edit.ui"/>
-      <import plugin="org.eclipse.ui.ide"/>
       <import plugin="org.eclipse.ui"/>
-      <import plugin="org.eclipse.core.runtime" version="3.7.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.xtend" version="1.1.0" match="greaterOrEqual"/>
       <import plugin="org.antlr.runtime" version="3.2.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ocl.ecore" version="3.1.2" match="greaterOrEqual"/>
       <import plugin="org.eclipse.xtend.lib" version="2.4.3" match="greaterOrEqual"/>
@@ -42,7 +37,6 @@
       <import plugin="org.apache.log4j"/>
       <import plugin="org.eclipse.xtext.ui" version="2.6.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.editors" version="3.5.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ui.ide" version="3.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.xtext.ui.shared"/>
       <import plugin="org.eclipse.xtext.builder"/>
       <import plugin="org.eclipse.xtext.common.types.ui"/>
@@ -70,7 +64,6 @@
       <import plugin="org.muml.core.edit"/>
       <import plugin="org.muml.ape.runtime"/>
       <import plugin="org.muml.core.edit.properties"/>
-      <import plugin="org.muml.uppaal" version="0.1.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
