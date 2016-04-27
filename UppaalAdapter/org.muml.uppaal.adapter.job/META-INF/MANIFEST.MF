@@ -34,6 +34,6 @@ Export-Package: org.muml.uppaal.adapter.job,
  org.muml.uppaal.adapter.job.interfaces
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Import-Package: org.muml.uppaal.options
+Import-Package: org.muml.uppaal.adapter.options
 Bundle-Activator: org.muml.uppaal.adapter.job.Activator
 Bundle-ActivationPolicy: lazy

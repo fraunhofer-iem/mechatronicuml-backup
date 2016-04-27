@@ -8,7 +8,7 @@ modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
 modeltype muml_instance uses pim::instance('http://www.muml.org/pim/1.0.0');
 modeltype verification_extension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
 modeltype muml uses 'http://www.muml.org/pim/1.0.0';
-modeltype verification_options uses 'http://www.muml.org/uppaal/options/1.0.0';
+modeltype verification_options uses 'http://www.muml.org/uppaal/adapter/options/1.0.0';
 
 
 /*

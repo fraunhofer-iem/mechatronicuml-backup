@@ -19,8 +19,8 @@ import org.muml.pim.constraint.VerifiableElement;
 import org.muml.pim.protocol.CoordinationProtocol;
 import org.muml.uppaal.adapter.job.Muml2UppaalModelJob;
 import org.muml.uppaal.adapter.job.interfaces.VerificationOptionsProvider;
+import org.muml.uppaal.adapter.options.Options;
 import org.muml.uppaal.adapter.ui.ExportJobChangeAdapter;
-import org.muml.uppaal.options.Options;
 
 public class MUML2UppaalExportWizard extends AbstractFujabaExportWizard {
 

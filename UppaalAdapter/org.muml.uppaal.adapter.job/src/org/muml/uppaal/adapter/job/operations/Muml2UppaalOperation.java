@@ -13,7 +13,7 @@ import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.muml.pim.constraint.VerifiableElement;
 import org.muml.uppaal.NTA;
 import org.muml.uppaal.adapter.job.interfaces.VerificationOptionsProvider;
-import org.muml.uppaal.options.Options;
+import org.muml.uppaal.adapter.options.Options;
 import org.muml.uppaal.requirements.PropertyRepository;
 import org.muml.uppaal.requirements.impl.RequirementsFactoryImpl;
 

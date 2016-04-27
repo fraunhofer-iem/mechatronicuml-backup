@@ -19,7 +19,7 @@ Require-Bundle: org.eclipse.core.resources;bundle-version="3.8.1",
  org.muml.uppaal.cmd;bundle-version="0.5.0",
  org.muml.core.common;bundle-version="0.5.0",
  org.muml.core;bundle-version="1.0.0",
- org.muml.uppaal.options;bundle-version="0.5.0"
+ org.muml.uppaal.adapter.options;bundle-version="0.5.0"
 Export-Package: org.muml.uppaal.job,
  org.muml.uppaal.job.layout
 Bundle-Vendor: %providerName

@@ -98,7 +98,7 @@ public class CheckMTCTLImpl extends NodeSpecificationImpl implements CheckMTCTL 
 	public void initialize() {
 		this.setLabel("Check MTCTL");
 		this.addPortSpecification(PortType.IN, "muml", false, org.muml.core.modelinstance.RootNode.class);
-		this.addPortSpecification(PortType.IN, "options", true, org.muml.uppaal.options.Options.class);
+		this.addPortSpecification(PortType.IN, "options", true, org.muml.uppaal.adapter.options.Options.class);
 		this.addPortSpecification(PortType.OUT, "results", false);
 	}
 
@@ -221,12 +221,12 @@ public class CheckMTCTLImpl extends NodeSpecificationImpl implements CheckMTCTL 
 		context = new org.eclipse.m2m.qvt.oml.ExecutionContextImpl();
 
 		// Check if we have custom options or use the default ones.
-		org.muml.uppaal.options.CoordinationProtocolOptions options;
+		org.muml.uppaal.adapter.options.CoordinationProtocolOptions options;
 		if (inputs.containsKey("options") && inputs.get("options") != null) {
-			options = (org.muml.uppaal.options.CoordinationProtocolOptions) inputs.get("options");
+			options = (org.muml.uppaal.adapter.options.CoordinationProtocolOptions) inputs.get("options");
 		} else {
-			options = org.muml.uppaal.options.OptionsFactory.eINSTANCE.createCoordinationProtocolOptions();
-			options.setTraceOptions(org.muml.uppaal.options.TraceOptions.NONE);
+			options = org.muml.uppaal.adapter.options.OptionsFactory.eINSTANCE.createCoordinationProtocolOptions();
+			options.setTraceOptions(org.muml.uppaal.adapter.options.TraceOptions.NONE);
 		}
 
 		// Create the extents.

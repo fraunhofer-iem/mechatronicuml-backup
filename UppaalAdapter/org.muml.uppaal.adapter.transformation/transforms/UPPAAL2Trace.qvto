@@ -4,7 +4,7 @@ transformation UPPAAL2Trace(in input:uppaal, in inputReq:uppaal_requirements, in
 import org.muml.uppaal.adapter._blackbox.TraceLibUnit;
 import org.muml.uppaal.adapter._blackbox.ProgressUnit;
 
-modeltype verification_options uses 'http://www.muml.org/uppaal/options/1.0.0';
+modeltype verification_options uses 'http://www.muml.org/uppaal/adapter/options/1.0.0';
 
 modeltype uppaal uses 'http://www.muml.org/uppaal/1.0.0';
 modeltype uppaal_requirements uses 'http://www.muml.org/uppaal/requirements/1.0.0';

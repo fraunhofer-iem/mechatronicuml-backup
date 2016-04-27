@@ -18,7 +18,7 @@ import org.muml.uppaal.adapter.job.interfaces.VerificationOptionsProvider;
 import org.muml.uppaal.adapter.job.interfaces.VerificationPropertyChoiceProvider;
 import org.muml.uppaal.adapter.mtctl.Property;
 import org.muml.uppaal.adapter.mtctl.PropertyRepository;
-import org.muml.uppaal.options.Options;
+import org.muml.uppaal.adapter.options.Options;
 
 /**
  * Wizards for the "verify one simple property for a trace" option

@@ -13,9 +13,9 @@ import org.muml.testlanguage.specification.PortType;
 import org.muml.testlanguage.specification.SpecificationPackage;
 import org.muml.testlanguage.specification.custom.ExecutionException;
 import org.muml.uppaal.NTA;
-import org.muml.uppaal.options.CoordinationProtocolOptions;
-import org.muml.uppaal.options.OptionsFactory;
-import org.muml.uppaal.options.TraceOptions;
+import org.muml.uppaal.adapter.options.CoordinationProtocolOptions;
+import org.muml.uppaal.adapter.options.OptionsFactory;
+import org.muml.uppaal.adapter.options.TraceOptions;
 import org.muml.uppaal.requirements.PropertyRepository;
 
 /**
@@ -55,7 +55,7 @@ public class ExecuteUPPAALImpl extends NodeSpecificationImpl implements ExecuteU
 		this.addPortSpecification(PortType.IN, "nta", false, org.muml.uppaal.NTA.class);
 		this.addPortSpecification(PortType.IN, "property_repository", false,
 				org.muml.uppaal.requirements.PropertyRepository.class);
-		this.addPortSpecification(PortType.IN, "options", true, org.muml.uppaal.options.Options.class);
+		this.addPortSpecification(PortType.IN, "options", true, org.muml.uppaal.adapter.options.Options.class);
 		this.addPortSpecification(PortType.OUT, "trace_repository", false);
 	}
 

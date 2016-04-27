@@ -3,14 +3,14 @@
   <reconciler xmi:id="_RnViUc1gEeSIgPDefa6ZBw"/>
   <genModel href="options.genmodel#/"/>
   <referencedGenerators href="../../org.muml.core/model/core.propsheet#_i_I4kOHNEeS5Putgio2lkg"/>
-  <plugin xmi:id="_RnViUs1gEeSIgPDefa6ZBw" id="org.muml.uppaal.options.edit.properties" name="Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.5.0.qualifier">
+  <plugin xmi:id="_RnViUs1gEeSIgPDefa6ZBw" id="org.muml.uppaal.adapter.options.edit.properties" name="Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.5.0.qualifier">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
     <requiredBundles>org.eclipse.emf.edit</requiredBundles>
     <requiredBundles>org.eclipse.ui</requiredBundles>
-    <requiredBundles>org.muml.uppaal.options.edit</requiredBundles>
+    <requiredBundles>org.muml.uppaal.adapter.options.edit</requiredBundles>
     <requiredBundles>org.muml.ape.runtime</requiredBundles>
-    <requiredBundles>org.muml.uppaal.options</requiredBundles>
+    <requiredBundles>org.muml.uppaal.adapter.options</requiredBundles>
     <requiredBundles>org.muml.core.edit</requiredBundles>
     <requiredBundles>org.muml.core.edit.properties</requiredBundles>
   </plugin>

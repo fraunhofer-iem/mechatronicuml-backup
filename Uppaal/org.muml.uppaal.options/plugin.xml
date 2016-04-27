@@ -9,8 +9,8 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated options -->
       <package
-            uri="http://www.muml.org/uppaal/options/1.0.0"
-            class="org.muml.uppaal.options.OptionsPackage"
+            uri="http://www.muml.org/uppaal/adapter/options/1.0.0"
+            class="org.muml.uppaal.adapter.options.OptionsPackage"
             genModel="model/options.genmodel"/>
    </extension>
 

@@ -24,7 +24,7 @@ import org.muml.pim.protocol.CoordinationProtocol;
 import org.muml.pim.protocol.Role;
 import org.muml.uppaal.adapter.job.Muml2UppaalXMLJob;
 import org.muml.uppaal.adapter.job.interfaces.VerificationOptionsProvider;
-import org.muml.uppaal.options.Options;
+import org.muml.uppaal.adapter.options.Options;
 
 public class ExportUppaalXMLAction extends AbstractUppaalAction {
 

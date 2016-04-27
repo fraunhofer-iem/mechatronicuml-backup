@@ -17,7 +17,7 @@ Require-Bundle: org.muml.uppaal;bundle-version="0.4.0",
  org.muml.verification.core.reachanalysis.reachabilitygraph.cic;bundle-version="0.4.0",
  org.eclipse.emf.ecore,
  org.muml.uppaal.adapter.mtctl,
- org.muml.uppaal.options,
+ org.muml.uppaal.adapter.options,
  org.muml.uppaal.job;bundle-version="0.5.0"
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
 Bundle-Localization: plugin

@@ -1,16 +1,16 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: org.muml.uppaal.options.edit;singleton:=true
+Bundle-SymbolicName: org.muml.uppaal.adapter.options.edit;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: org.muml.uppaal.options.provider.OptionsEditPlugin$Implementation
+Bundle-Activator: org.muml.uppaal.adapter.options.provider.OptionsEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.muml.uppaal.options.provider
+Export-Package: org.muml.uppaal.adapter.options.provider
 Require-Bundle: org.eclipse.core.runtime,
- org.muml.uppaal.options;visibility:=reexport,
+ org.muml.uppaal.adapter.options;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
  org.muml.core;visibility:=reexport,
  org.muml.core.edit;visibility:=reexport

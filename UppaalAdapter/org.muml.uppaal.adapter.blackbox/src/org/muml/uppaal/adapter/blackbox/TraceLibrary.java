@@ -6,8 +6,8 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.m2m.qvt.oml.blackbox.java.Operation;
 import org.eclipse.m2m.qvt.oml.util.IContext;
 import org.muml.uppaal.NTA;
+import org.muml.uppaal.adapter.options.Options;
 import org.muml.uppaal.job.VerifyTAOperation;
-import org.muml.uppaal.options.Options;
 import org.muml.uppaal.requirements.PropertyRepository;
 import org.muml.uppaal.trace.diagnostictrace.TraceRepository;
 

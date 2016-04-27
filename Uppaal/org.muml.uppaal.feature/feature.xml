@@ -53,7 +53,7 @@
       <import plugin="org.muml.uppaal.cmd" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="org.muml.core.common" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="org.muml.core" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.uppaal.options" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.uppaal.adapter.options" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.ide" version="3.6.2" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui"/>
       <import plugin="org.eclipse.jface"/>
@@ -151,21 +151,21 @@
          unpack="false"/>
 
    <plugin
-         id="org.muml.uppaal.options"
+         id="org.muml.uppaal.adapter.options"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.muml.uppaal.options.edit"
+         id="org.muml.uppaal.adapter.options.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.muml.uppaal.options.edit.properties"
+         id="org.muml.uppaal.adapter.options.edit.properties"
          download-size="0"
          install-size="0"
          version="0.0.0"

@@ -21,8 +21,8 @@ import org.muml.uppaal.adapter.job.interfaces.VerificationPropertyResultAcceptor
 import org.muml.uppaal.adapter.job.operations.PrepareModelOperation;
 import org.muml.uppaal.adapter.job.operations.TransformationOperation;
 import org.muml.uppaal.adapter.mtctl.Property;
+import org.muml.uppaal.adapter.options.Options;
 import org.muml.uppaal.adapter.results.PropertyResultRepository;
-import org.muml.uppaal.options.Options;
 
 public class VerifyForResultsJob extends Job {
 	

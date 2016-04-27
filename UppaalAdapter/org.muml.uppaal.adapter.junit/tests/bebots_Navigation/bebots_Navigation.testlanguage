@@ -8,11 +8,11 @@
   </nodes>
   <nodes label="Check MTCTL" specificationClassName="CheckMTCTL">
     <inputs name="muml" source="//@nodes.0/@outputs[name='model']" dataType="org.eclipse.emf.ecore.EObject"/>
-    <inputs name="options" optional="true" dataType="org.muml.uppaal.options.Options"/>
+    <inputs name="options" optional="true" dataType="org.muml.uppaal.adapter.options.Options"/>
     <outputs name="results" targets="//@nodes.2/@inputs[name='property_result_repository']"/>
     <specification xsi:type="org.muml.testlanguage.specification:CheckMTCTL" label="Check MTCTL" properties="AG not deadlock; //a deadlock never occurs&#xD;&#xA;forall(t : Transitions) EF transitionFiring(t); //there is no transition that can never be fired&#xD;&#xA;forall(s : States) EF stateActive(s); //there is no state that can never be active&#xD;&#xA;forall(m : MessageTypes) exists(b : Buffers) EF messageInBuffer(m, b); //there is no message type that cannot possibly arrive in a buffer&#xD;&#xA;forall(m : MessageTypes) EF messageInTransit(m); //there is no message type that cannot possibly be in transit&#xD;&#xA;forall(b : Buffers) EF bufferMessageCount(b) >= 1; //there is no buffer that is always empty">
       <portSpecifications name="muml" dataType="org.eclipse.emf.ecore.EObject"/>
-      <portSpecifications name="options" optional="true" dataType="org.muml.uppaal.options.Options"/>
+      <portSpecifications name="options" optional="true" dataType="org.muml.uppaal.adapter.options.Options"/>
       <portSpecifications name="results" type="OUT"/>
     </specification>
   </nodes>

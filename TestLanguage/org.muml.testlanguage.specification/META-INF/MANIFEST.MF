@@ -24,7 +24,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.muml.uppaal.adapter.mtctl.xtext,
  org.muml.uppaal.adapter.extension;bundle-version="0.4.0",
  org.muml.core,
- org.muml.uppaal.options;bundle-version="0.4.0",
+ org.muml.uppaal.adapter.options;bundle-version="0.4.0",
  org.muml.uppaal.job
 Bundle-ActivationPolicy: lazy
 Import-Package: org.eclipse.emf.ecore.xmi.impl
