@@ -31,13 +31,6 @@
          unpack="false"/>
 
    <plugin
-         id="org.muml.uppaal.adapter.cmd"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.muml.uppaal.adapter.job"
          download-size="0"
          install-size="0"
@@ -98,7 +91,7 @@
          download-size="0"
          install-size="0"
          version="0.0.0"/>
-  
+
    <plugin
          id="org.muml.uppaal.adapter.mtctl.english"
          download-size="0"
@@ -123,6 +116,7 @@
    <plugin
          id="org.muml.uppaal.adapter.extension"
          download-size="0"
+         install-size="0"
          version="0.0.0"
          unpack="false"/>
 
