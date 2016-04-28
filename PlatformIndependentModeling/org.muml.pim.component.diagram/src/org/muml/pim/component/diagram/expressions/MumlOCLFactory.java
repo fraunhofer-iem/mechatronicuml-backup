@@ -17,10 +17,10 @@ import java.util.Map;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.ocl.Environment;
-import org.eclipse.ocl.EvaluationEnvironment;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.EcoreFactory;
 import org.eclipse.ocl.ecore.OCL.Helper;
@@ -62,12 +62,12 @@ public class MumlOCLFactory {
 				"-- DEACTIVATED FOR #941:\n-- Assembly must only connect PortParts at different ComponentParts of the same type\ntrue\n--self.oclIsKindOf(component::PortPart) and\n--not oppositeEnd.oclAsType(component::PortPart).componentPart.parentComponent.componentKind.oclIsUndefined() and\n--not self.oclAsType(component::PortPart).componentPart.parentComponent.oclIsUndefined() and\n--oppositeEnd.oclAsType(component::PortPart).componentPart <> self.oclAsType(component::PortPart).componentPart and\n--oppositeEnd.oclAsType(component::PortPart).componentPart.parentComponent = self.oclAsType(component::PortPart).componentPart.parentComponent", //$NON-NLS-1$
 				"-- Only Ports or PortParts may be the source of a DelegationConnector\ntrue\n-- or self.oclIsKindOf(component::PortPart) or self.oclIsKindOf(component::Port)", //$NON-NLS-1$
 				"-- DelegationConnector must only connect Port at StructuredComponent and PortPart at embedded ComponentPart\nlet portPart : component::PortPart = if self.oclIsKindOf(component::PortPart) then self else if oppositeEnd.oclIsKindOf(component::PortPart) then oppositeEnd else null endif endif.oclAsType(component::PortPart) in\nlet portType : component::Port = if self.oclIsKindOf(component::Port) then self else if oppositeEnd.oclIsKindOf(component::Port) then oppositeEnd else null endif endif.oclAsType(component::Port) in\nnot portPart.oclIsUndefined() and\nnot portType.oclIsUndefined() and\nnot portPart.componentPart.parentComponent.oclIsUndefined() and\nnot portType.component.oclIsUndefined() and\nportPart.componentPart.parentComponent = portType.component", //$NON-NLS-1$
-				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
-				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
-				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
-				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
-				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
-				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclType().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclType().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclType().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclType().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclType().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclType().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
 		};
 	}
 
@@ -130,28 +130,57 @@ public class MumlOCLFactory {
 		/**
 		 * @generated
 		 */
-		private final org.eclipse.ocl.ecore.OCL oclInstance;
+//		private final org.eclipse.ocl.ecore.OCL oclInstance;
+		
+		/**
+		 * @generated
+		 */
+//		private OCLExpression oclExpression;
 
 		/**
 		 * @generated
 		 */
-		private OCLExpression oclExpression;
+		private org.eclipse.ocl.pivot.utilities.OCL pivotOclInstance;
 
+		/**
+		 * @generated
+		 */
+		private org.eclipse.ocl.pivot.ExpressionInOCL pivotExpression = null;
+		
 		/**
 		 * @generated
 		 */
 		public Expression(String body, EClassifier context, Map<String, EClassifier> environment) {
 			super(body, context);
-			oclInstance = org.eclipse.ocl.ecore.OCL.newInstance();
-			initCustomEnv(oclInstance.getEnvironment(), environment);
-			Helper oclHelper = oclInstance.createOCLHelper();
-			oclHelper.setContext(context());
-			try {
-				oclExpression = oclHelper.createQuery(body());
+			pivotOclInstance = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+			org.eclipse.ocl.pivot.utilities.OCLHelper pivotHelper = pivotOclInstance.createOCLHelper(context);
+						try {
+				pivotExpression = pivotHelper.createQuery(body());
 				setStatus(IStatus.OK, null, null);
-			} catch (ParserException e) {
-				setStatus(IStatus.ERROR, e.getMessage(), e);
+			} catch (org.eclipse.ocl.pivot.utilities.ParserException e1) {
+				e1.printStackTrace();
+				setStatus(IStatus.ERROR, e1.getMessage(), e1);
 			}
+	
+//			oclInstance = org.eclipse.ocl.ecore.OCL.newInstance();
+//			initCustomEnv(oclInstance.getEnvironment(), environment);
+//			Helper oclHelper = oclInstance.createOCLHelper();
+//			oclHelper.setContext(context());
+//			try {
+//				oclExpression = oclHelper.createQuery(body());
+//				setStatus(IStatus.OK, null, null);
+//			} catch (ParserException e) {
+//				setStatus(IStatus.ERROR, e.getMessage(), e);
+//			}
+						
+						
+
+//			XXX initCustomEnv() calls the following code, which must be executed somehow pivot like:
+//			for (String varName : environment.keySet()) {
+//				EClassifier varType = environment.get(varName);
+//				ecoreEnv.addElement(varName, createVar(ecoreEnv, varName, varType), false);
+//			}
+
 		}
 
 		/**
@@ -159,47 +188,54 @@ public class MumlOCLFactory {
 		 */
 		@SuppressWarnings("rawtypes")
 		protected Object doEvaluate(Object context, Map env) {
-			if (oclExpression == null) {
+	
+			if (pivotExpression == null) {
 				return null;
 			}
-			// on the first call, both evalEnvironment and extentMap are clear, for later we have finally, below.
-			EvaluationEnvironment<?, ?, ?, ?, ?> evalEnv = oclInstance.getEvaluationEnvironment();
-			// initialize environment
-			for (Object nextKey : env.keySet()) {
-				evalEnv.replace((String) nextKey, env.get(nextKey));
-			}
+			
 			try {
-				Object result = oclInstance.evaluate(context, oclExpression);
-				return oclInstance.isInvalid(result) ? null : result;
+				Object pivotResult = pivotOclInstance.evaluate(context, pivotExpression);
+				// XXX Check for invalid and return null:
+				// return oclInstance.isInvalid(result) ? null : result;
+				return pivotResult;
 			} finally {
-				evalEnv.clear();
-				oclInstance.setExtentMap(null); // clear allInstances cache, and get the oclInstance ready for the next call
+				// XXX
+//				evalEnv.clear();
+//				oclInstance.setExtentMap(null); // clear allInstances cache, and get the oclInstance ready for the next call
 			}
-		}
 
-		/**
-		 * @generated
-		 */
-		private static void initCustomEnv(Environment<?, EClassifier, ?, ?, ?, EParameter, ?, ?, ?, ?, ?, ?> ecoreEnv,
-				Map<String, EClassifier> environment) {
-			// Use EObject as implicit root class for any object, to allow eContainer() and other EObject operations from OCL expressions
-			ParsingOptions.setOption(ecoreEnv, ParsingOptions.implicitRootClass(ecoreEnv),
-					EcorePackage.eINSTANCE.getEObject());
-			for (String varName : environment.keySet()) {
-				EClassifier varType = environment.get(varName);
-				ecoreEnv.addElement(varName, createVar(ecoreEnv, varName, varType), false);
-			}
+			// XXX
+//			// on the first call, both evalEnvironment and extentMap are clear, for later we have finally, below.
+//			EvaluationEnvironment<?, ?, ?, ?, ?> evalEnv = oclInstance.getEvaluationEnvironment();
+//			// initialize environment
+//			for (Object nextKey : env.keySet()) {
+//				evalEnv.replace((String) nextKey, env.get(nextKey));
+//			}
 		}
-
-		/**
-		 * @generated
-		 */
-		private static Variable createVar(Environment<?, EClassifier, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?> ecoreEnv,
-				String name, EClassifier type) {
-			Variable var = EcoreFactory.eINSTANCE.createVariable();
-			var.setName(name);
-			var.setType(ecoreEnv.getUMLReflection().getOCLType(type));
-			return var;
-		}
+//
+//		/**
+//		 * @generated
+//		 */
+//		private static void initCustomEnv(Environment<?, EClassifier, ?, ?, ?, EParameter, ?, ?, ?, ?, ?, ?> ecoreEnv,
+//				Map<String, EClassifier> environment) {
+//			// Use EObject as implicit root class for any object, to allow eContainer() and other EObject operations from OCL expressions
+//			ParsingOptions.setOption(ecoreEnv, ParsingOptions.implicitRootClass(ecoreEnv),
+//					EcorePackage.eINSTANCE.getEObject());
+//			for (String varName : environment.keySet()) {
+//				EClassifier varType = environment.get(varName);
+//				ecoreEnv.addElement(varName, createVar(ecoreEnv, varName, varType), false);
+//			}
+//		}
+//
+//		/**
+//		 * @generated
+//		 */
+//		private static Variable createVar(Environment<?, EClassifier, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?> ecoreEnv,
+//				String name, EClassifier type) {
+//			Variable var = EcoreFactory.eINSTANCE.createVariable();
+//			var.setName(name);
+//			var.setType(ecoreEnv.getUMLReflection().getOCLType(type));
+//			return var;
+//		}
 	}
 }
