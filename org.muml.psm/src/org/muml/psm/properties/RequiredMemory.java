@@ -2,7 +2,7 @@
  */
 package org.muml.psm.properties;
 
-import org.muml.mumlcore.Extension;
+import org.muml.core.Extension;
 import org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance;
 import org.muml.pm.hardware.hwvaluetype.DataSize;
 

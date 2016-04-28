@@ -11,7 +11,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.muml.mumlcore.CorePackage;
+import org.muml.core.CorePackage;
 import org.muml.pm.hardware.hwresourceinstance.provider.StructuredResourceInstanceItemProvider;
 import org.muml.psm.codegen.CodegenPackage;
 import org.muml.psm.codegen.RefinedStructuredResourceInstance;

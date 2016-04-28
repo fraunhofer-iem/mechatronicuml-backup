@@ -6,7 +6,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.muml.mumlcore.expressions.ExpressionsPackage;
+import org.muml.core.expressions.ExpressionsPackage;
 import org.muml.pim.actionlanguage.ActionlanguagePackage;
 import org.muml.pim.instance.InstancePackage;
 import org.muml.pim.valuetype.ValuetypePackage;

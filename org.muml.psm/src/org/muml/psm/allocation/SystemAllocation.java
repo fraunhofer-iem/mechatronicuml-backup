@@ -3,7 +3,7 @@
 package org.muml.psm.allocation;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.mumlcore.ExtendableElement;
+import org.muml.core.ExtendableElement;
 import org.muml.pim.instance.ComponentInstanceConfiguration;
 import org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
 
