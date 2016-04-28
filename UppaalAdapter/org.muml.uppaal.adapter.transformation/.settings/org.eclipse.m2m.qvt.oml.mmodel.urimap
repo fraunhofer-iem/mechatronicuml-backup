@@ -20,7 +20,7 @@
   <mapping sourceURI="http://www.muml.org/uppaal/adapter/mtctl/sets/1.0.0" targetURI="platform:/resource/org.muml.uppaal.adapter.mtctl/model/Mtctl.ecore"/>
   <mapping sourceURI="http://www.muml.org/uppaal/adapter/mtctl/booleanlogic/1.0.0" targetURI="platform:/resource/org.muml.uppaal.adapter.mtctl/model/Mtctl.ecore"/>
   <mapping sourceURI="http://www.muml.org/uppaal/adapter/mtctl/comparables/1.0.0" targetURI="platform:/resource/org.muml.uppaal.adapter.mtctl/model/Mtctl.ecore"/>
-  <mapping sourceURI="http://www.muml.org/uppaal/adapter/options/1.0.0" targetURI="platform:/resource/org.muml.uppaal.adapter.options/model/options.ecore"/>
+  <mapping sourceURI="http://www.muml.org/uppaal/options/1.0.0" targetURI="platform:/resource/org.muml.uppaal.options/model/options.ecore"/>
   <mapping sourceURI="http://www.muml.org/pim/behavior/1.0.0" targetURI="platform:/resource/org.muml.pim/model/pim.ecore"/>
   <mapping sourceURI="http://www.muml.org/uppaal/adapter/results/1.0.0" targetURI="platform:/resource/org.muml.uppaal.adapter.results/model/results.ecore"/>
 </uriMap:MappingContainer>

@@ -18,7 +18,7 @@ import org.muml.uppaal.adapter.job.interfaces.VerificationOptionsProvider;
 import org.muml.uppaal.adapter.job.interfaces.VerificationPropertyChoiceProvider;
 import org.muml.uppaal.adapter.mtctl.Property;
 import org.muml.uppaal.adapter.mtctl.PropertyRepository;
-import org.muml.uppaal.adapter.options.Options;
+import org.muml.uppaal.options.Options;
 
 /**
  * Wizard for the "verify multiple properties and show results" option

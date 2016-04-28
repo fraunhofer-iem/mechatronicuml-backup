@@ -8,11 +8,11 @@
   </nodes>
   <nodes label="Check MTCTL" specificationClassName="CheckMTCTL">
     <inputs name="muml" source="//@nodes.0/@outputs[name='model']" dataType="org.muml.core.modelinstance.RootNode"/>
-    <inputs name="options" optional="true" dataType="org.muml.uppaal.adapter.options.Options"/>
+    <inputs name="options" optional="true" dataType="org.muml.uppaal.options.Options"/>
     <outputs name="results" targets="//@nodes.2/@inputs[name='property_result_repository']"/>
     <specification xsi:type="org.muml.testlanguage.specification:CheckMTCTL" label="Check MTCTL" properties="forall(s: States) EF stateActive(s);">
       <portSpecifications name="muml" dataType="org.muml.core.modelinstance.RootNode"/>
-      <portSpecifications name="options" optional="true" dataType="org.muml.uppaal.adapter.options.Options"/>
+      <portSpecifications name="options" optional="true" dataType="org.muml.uppaal.options.Options"/>
       <portSpecifications name="results" type="OUT"/>
     </specification>
   </nodes>

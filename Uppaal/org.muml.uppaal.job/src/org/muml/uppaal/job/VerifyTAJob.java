@@ -8,7 +8,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 import org.muml.uppaal.NTA;
-import org.muml.uppaal.adapter.options.Options;
+import org.muml.uppaal.options.Options;
 import org.muml.uppaal.requirements.PropertyRepository;
 
 public class VerifyTAJob extends Job {

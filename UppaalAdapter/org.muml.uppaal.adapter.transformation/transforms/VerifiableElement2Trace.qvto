@@ -8,7 +8,7 @@ modeltype uppaal uses 'http://www.muml.org/uppaal/1.0.0';
 modeltype uppaal_requirements uses 'http://www.muml.org/uppaal/requirements/1.0.0';
 modeltype uppaal_trace uses 'http://www.muml.org/uppaal/trace/1.0.0';
 modeltype reachability_rtsc uses 'http://www.muml.org/verification/core/reachanalysis/reachabilitygraph/rtsc/1.0.0';
-modeltype verification_options uses 'http://www.muml.org/uppaal/adapter/options/1.0.0';
+modeltype verification_options uses 'http://www.muml.org/uppaal/options/1.0.0';
 
 /*
 * Transforms a model with a VerifiableElement into a MUML Trace

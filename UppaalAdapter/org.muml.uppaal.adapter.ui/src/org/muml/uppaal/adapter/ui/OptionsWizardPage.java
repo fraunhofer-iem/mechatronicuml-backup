@@ -15,9 +15,9 @@ import org.muml.ape.runtime.editors.ObjectPropertyEditor;
 import org.muml.ape.runtime.wizard.PropertyEditorWizardPage;
 import org.muml.pim.constraint.VerifiableElement;
 import org.muml.pim.protocol.CoordinationProtocol;
-import org.muml.uppaal.adapter.options.HideOptionExtension;
-import org.muml.uppaal.adapter.options.Options;
-import org.muml.uppaal.adapter.options.OptionsFactory;
+import org.muml.uppaal.options.HideOptionExtension;
+import org.muml.uppaal.options.Options;
+import org.muml.uppaal.options.OptionsFactory;
 
 public class OptionsWizardPage extends PropertyEditorWizardPage {	
 	Options options = null;

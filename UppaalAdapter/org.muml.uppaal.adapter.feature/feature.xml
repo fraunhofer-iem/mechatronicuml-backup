@@ -203,21 +203,21 @@
          unpack="false"/>
 
    <plugin
-         id="org.muml.uppaal.adapter.options"
+         id="org.muml.uppaal.options"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.muml.uppaal.adapter.options.edit"
+         id="org.muml.uppaal.options.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.muml.uppaal.adapter.options.edit.properties"
+         id="org.muml.uppaal.options.edit.properties"
          download-size="0"
          install-size="0"
          version="0.0.0"

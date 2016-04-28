@@ -35,7 +35,7 @@ modeltype storydriven_actionLanguage uses 'http://www.muml.org/pim/actionlanguag
 modeltype storydriven_common uses core::expressions::common('http://www.muml.org/core/1.0.0');
 modeltype storydriven_expressions uses core::expressions('http://www.muml.org/core/1.0.0');
 modeltype extension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
-modeltype verification_options uses 'http://www.muml.org/uppaal/adapter/options/1.0.0';
+modeltype verification_options uses 'http://www.muml.org/uppaal/options/1.0.0';
 
 /**
 * 

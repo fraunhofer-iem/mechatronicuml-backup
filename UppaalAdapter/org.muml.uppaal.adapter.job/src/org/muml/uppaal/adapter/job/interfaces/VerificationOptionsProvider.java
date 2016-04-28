@@ -1,7 +1,7 @@
 package org.muml.uppaal.adapter.job.interfaces;
 
 import org.muml.pim.constraint.VerifiableElement;
-import org.muml.uppaal.adapter.options.Options;
+import org.muml.uppaal.options.Options;
 
 public interface VerificationOptionsProvider {
 	/**

@@ -11,7 +11,7 @@
             nsURI="http://www.muml.org/uppaal/requirements/1.0.0">
       </metamodel>
       <metamodel
-            nsURI="http://www.muml.org/uppaal/adapter/options/1.0.0">
+            nsURI="http://www.muml.org/uppaal/options/1.0.0">
       </metamodel>
     </library>
     </unit>

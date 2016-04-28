@@ -21,7 +21,7 @@ public interface ExecuteUPPAAL extends NodeSpecification {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @model annotation=
-	 *        "http://www.eclipse.org/emf/2002/GenModel body='\t\tthis.setLabel(\"Check UPPAAL\");\r\n\t\tthis.addPortSpecification(PortType.IN, \"nta\", false,\r\n\t\t\t\torg.muml.uppaal.NTA.class);\r\n\t\tthis.addPortSpecification(PortType.IN, \"property_repository\", false,\r\n\t\t\t\torg.muml.uppaal.requirements.PropertyRepository.class);\r\n\t\tthis.addPortSpecification(\r\n\t\t\t\tPortType.IN,\r\n\t\t\t\t\"options\",\r\n\t\t\t\ttrue,\r\n\t\t\t\torg.muml.uppaal.adapter.options.Options.class);\r\n\t\tthis.addPortSpecification(PortType.OUT, \"trace_repository\", false);'"
+	 *        "http://www.eclipse.org/emf/2002/GenModel body='\t\tthis.setLabel(\"Check UPPAAL\");\r\n\t\tthis.addPortSpecification(PortType.IN, \"nta\", false,\r\n\t\t\t\torg.muml.uppaal.NTA.class);\r\n\t\tthis.addPortSpecification(PortType.IN, \"property_repository\", false,\r\n\t\t\t\torg.muml.uppaal.requirements.PropertyRepository.class);\r\n\t\tthis.addPortSpecification(\r\n\t\t\t\tPortType.IN,\r\n\t\t\t\t\"options\",\r\n\t\t\t\ttrue,\r\n\t\t\t\torg.muml.uppaal.options.Options.class);\r\n\t\tthis.addPortSpecification(PortType.OUT, \"trace_repository\", false);'"
 	 * @generated
 	 */
 	void initialize();

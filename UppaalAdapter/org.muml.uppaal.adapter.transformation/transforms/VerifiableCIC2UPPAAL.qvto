@@ -14,7 +14,7 @@ import org.muml.uppaal.adapter._blackbox.ProgressUnit;
 modeltype muml uses 'http://www.muml.org/pim/1.0.0';
 modeltype uppaal uses 'http://www.muml.org/uppaal/1.0.0';
 modeltype uppaal_requirements uses 'http://www.muml.org/uppaal/requirements/1.0.0';
-modeltype verification_options uses 'http://www.muml.org/uppaal/adapter/options/1.0.0';
+modeltype verification_options uses 'http://www.muml.org/uppaal/options/1.0.0';
 
 /*
 * Transforms a property-normalized CIC to UPPAAL

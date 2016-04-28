@@ -41,7 +41,7 @@
       <propertySections contributorId="">
           <propertySection
             class="org.muml.ape.runtime.sections.ObjectPropertySection"
-            filter="org.muml.uppaal.adapter.options.properties.tabs.OptionsTabElementFilter"
+            filter="org.muml.uppaal.options.properties.tabs.OptionsTabElementFilter"
             id="options"
             tab="options">
              <input
@@ -58,18 +58,18 @@
     <propertyEditors>
     
        <propertyEditor
-             factory="org.muml.uppaal.adapter.options.properties.options.editor.OptionsEditor$Factory"
-             type="http://www.muml.org/uppaal/adapter/options/1.0.0#Options">
+             factory="org.muml.uppaal.options.properties.editor.OptionsEditor$Factory"
+             type="http://www.muml.org/uppaal/options/1.0.0#Options">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.uppaal.adapter.options.properties.options.editor.CoordinationProtocolOptionsEditor$Factory"
-             type="http://www.muml.org/uppaal/adapter/options/1.0.0#CoordinationProtocolOptions">
+             factory="org.muml.uppaal.options.properties.editor.CoordinationProtocolOptionsEditor$Factory"
+             type="http://www.muml.org/uppaal/options/1.0.0#CoordinationProtocolOptions">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.uppaal.adapter.options.properties.options.editor.HideOptionExtensionEditor$Factory"
-             type="http://www.muml.org/uppaal/adapter/options/1.0.0#HideOptionExtension">
+             factory="org.muml.uppaal.options.properties.editor.HideOptionExtensionEditor$Factory"
+             type="http://www.muml.org/uppaal/options/1.0.0#HideOptionExtension">
        </propertyEditor>
     
     </propertyEditors>
@@ -79,7 +79,7 @@
  <extension
        point="org.muml.ape.runtime.metamodelContributor">
     <metamodel
-          contributor="org.muml.uppaal.adapter.options.properties.metamodel.MetamodelContributor">
+          contributor="org.muml.uppaal.options.properties.metamodel.MetamodelContributor">
     </metamodel>
  </extension>
 
@@ -87,7 +87,7 @@
  <extension
        point="org.muml.ape.runtime.creationConstraintContributor">
     <constraint
-          contributor="org.muml.uppaal.adapter.options.properties.constraint.CreationConstraintContributor">
+          contributor="org.muml.uppaal.options.properties.constraint.CreationConstraintContributor">
     </constraint>
  </extension>
 
