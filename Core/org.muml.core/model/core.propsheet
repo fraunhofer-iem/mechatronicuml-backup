@@ -38,7 +38,7 @@
     </classes>
     <classes xmi:id="_i_QNU-HNEeS5Putgio2lkg" superClasses="_i_PmQuHNEeS5Putgio2lkg">
       <genClass href="core.genmodel#//core/NamedElement"/>
-      <orderedElements xsi:type="org.muml:Property" xmi:id="_i_QNVOHNEeS5Putgio2lkg" tab="_i_NxEOHNEeS5Putgio2lkg" tooltip="" initializeOCLExpression="let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)">
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_i_QNVOHNEeS5Putgio2lkg" tab="_i_NxEOHNEeS5Putgio2lkg" tooltip="" initializeOCLExpression="let prefix : String = self.oclType().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)">
         <genFeature href="core.genmodel#//core/NamedElement/name"/>
         <editor xsi:type="org.muml:TextPropertyEditor" xmi:id="_i_QNVeHNEeS5Putgio2lkg"/>
       </orderedElements>
