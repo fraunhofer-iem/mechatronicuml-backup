@@ -2,9 +2,9 @@ package org.muml.psm.api.transformation.blackbox;
 
 import java.util.concurrent.TimeUnit;
 
-import org.muml.core.expressions.Expression;
-import org.muml.core.expressions.common.CommonExpressionsFactory;
-import org.muml.core.expressions.common.LiteralExpression;
+import org.muml.mumlcore.expressions.Expression;
+import org.muml.mumlcore.expressions.common.CommonExpressionsFactory;
+import org.muml.mumlcore.expressions.common.LiteralExpression;
 import org.muml.pim.valuetype.TimeValue;
 import org.muml.pim.valuetype.ValuetypeFactory;
 

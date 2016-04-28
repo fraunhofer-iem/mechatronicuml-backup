@@ -2,7 +2,7 @@
  */
 package org.muml.psm.apiexpressions;
 
-import org.muml.core.expressions.Expression;
+import org.muml.mumlcore.expressions.Expression;
 import org.muml.pm.software.EnumerationValue;
 
 /**

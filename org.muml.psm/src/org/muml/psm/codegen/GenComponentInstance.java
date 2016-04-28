@@ -4,7 +4,7 @@ package org.muml.psm.codegen;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.muml.core.expressions.Expression;
+import org.muml.mumlcore.expressions.Expression;
 import org.muml.pim.instance.ComponentInstance;
 
 /**
@@ -54,7 +54,7 @@ public interface GenComponentInstance extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Init Commands</b></em>' reference list.
-	 * The list contents are of type {@link org.muml.core.expressions.Expression}.
+	 * The list contents are of type {@link org.muml.mumlcore.expressions.Expression}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Init Commands</em>' reference list isn't clear,

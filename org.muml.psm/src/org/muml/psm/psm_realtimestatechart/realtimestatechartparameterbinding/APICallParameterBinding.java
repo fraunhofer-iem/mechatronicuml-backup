@@ -2,7 +2,7 @@
  */
 package org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding;
 
-import org.muml.core.expressions.Expression;
+import org.muml.mumlcore.expressions.Expression;
 import org.muml.pim.behavior.Operation;
 
 /**

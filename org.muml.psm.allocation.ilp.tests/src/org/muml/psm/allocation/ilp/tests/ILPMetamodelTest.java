@@ -12,9 +12,9 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-import org.muml.core.CorePackage;
 import org.muml.core.tests.MetamodelTest;
 import org.muml.core.tests.TestUtilities;
+import org.muml.mumlcore.CorePackage;
 
 @RunWith(Parameterized.class)
 public class ILPMetamodelTest extends MetamodelTest {
