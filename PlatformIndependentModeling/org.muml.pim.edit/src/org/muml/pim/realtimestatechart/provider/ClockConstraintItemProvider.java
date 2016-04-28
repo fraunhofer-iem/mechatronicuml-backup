@@ -22,8 +22,8 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.common.descriptor.DefaultChainedPropertyDescriptor;
 import org.muml.core.common.descriptor.IChainedPropertyDescriptor;
-import org.muml.core.expressions.common.ComparingOperator;
 import org.muml.core.provider.ExtendableElementItemProvider;
+import org.muml.mumlcore.expressions.common.ComparingOperator;
 import org.muml.pim.provider.MumlEditPlugin;
 import org.muml.pim.realtimestatechart.ClockConstraint;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
@@ -174,8 +174,8 @@ public class ClockConstraintItemProvider extends ExtendableElementItemProvider {
 					public Collection<?> getChoiceOfValues(Object object) {
 						if (object instanceof EObject && ((EObject) object).eContainer() instanceof State) {
 							List<Enumerator> enumerators = new ArrayList<Enumerator>();
-							enumerators.add(org.muml.core.expressions.common.ComparingOperator.LESS);
-							enumerators.add(org.muml.core.expressions.common.ComparingOperator.LESS_OR_EQUAL);
+							enumerators.add(org.muml.mumlcore.expressions.common.ComparingOperator.LESS);
+							enumerators.add(org.muml.mumlcore.expressions.common.ComparingOperator.LESS_OR_EQUAL);
 							return enumerators;
 						}
 						return super.getChoiceOfValues(object);

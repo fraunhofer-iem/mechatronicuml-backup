@@ -23,7 +23,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.core.expressions.common.ComparingOperator;
+import org.muml.mumlcore.expressions.common.ComparingOperator;
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceConstraint;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage;
 

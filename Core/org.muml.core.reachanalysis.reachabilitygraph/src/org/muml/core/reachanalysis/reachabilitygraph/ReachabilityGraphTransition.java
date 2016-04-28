@@ -6,7 +6,7 @@
  */
 package org.muml.core.reachanalysis.reachabilitygraph;
 
-import org.muml.core.ExtendableElement;
+import org.muml.mumlcore.ExtendableElement;
 
 /**
  * <!-- begin-user-doc -->

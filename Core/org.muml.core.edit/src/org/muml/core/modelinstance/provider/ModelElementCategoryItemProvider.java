@@ -23,18 +23,14 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import org.muml.core.expressions.ExpressionsFactory;
-
-import org.muml.core.expressions.common.CommonExpressionsFactory;
-
-import org.muml.core.modelinstance.ModelElementCategory;
-import org.muml.core.modelinstance.ModelinstancePackage;
-
 import org.muml.core.provider.CoreEditPlugin;
+import org.muml.mumlcore.expressions.ExpressionsFactory;
+import org.muml.mumlcore.expressions.common.CommonExpressionsFactory;
+import org.muml.mumlcore.modelinstance.ModelElementCategory;
+import org.muml.mumlcore.modelinstance.ModelinstancePackage;
 
 /**
- * This is the item provider adapter for a {@link org.muml.core.modelinstance.ModelElementCategory} object.
+ * This is the item provider adapter for a {@link org.muml.mumlcore.modelinstance.ModelElementCategory} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

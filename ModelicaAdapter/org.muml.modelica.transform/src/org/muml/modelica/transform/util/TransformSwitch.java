@@ -8,10 +8,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
-import org.muml.core.CommentableElement;
-import org.muml.core.ExtendableElement;
-import org.muml.core.Extension;
 import org.muml.modelica.transform.*;
+import org.muml.mumlcore.CommentableElement;
+import org.muml.mumlcore.ExtendableElement;
+import org.muml.mumlcore.Extension;
 import org.muml.pim.realtimestatechart.PrioritizedElement;
 import org.muml.pim.realtimestatechart.Region;
 

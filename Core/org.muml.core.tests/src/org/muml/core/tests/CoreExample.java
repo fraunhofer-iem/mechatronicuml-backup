@@ -11,8 +11,8 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.Diagnostician;
-import org.muml.core.CorePackage;
-import org.muml.core.util.CoreResourceFactoryImpl;
+import org.muml.mumlcore.CorePackage;
+import org.muml.mumlcore.util.CoreResourceFactoryImpl;
 
 /**
  * <!-- begin-user-doc -->

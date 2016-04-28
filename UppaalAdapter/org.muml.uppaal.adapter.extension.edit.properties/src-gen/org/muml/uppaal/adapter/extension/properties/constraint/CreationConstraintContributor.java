@@ -10,9 +10,9 @@ public class CreationConstraintContributor
 		{
 			final org.eclipse.emf.ecore.EClass myClass = org.muml.uppaal.adapter.extension.verificationextension.VerificationExtensionPackage.eINSTANCE
 					.getCommittedExtension();
-			final org.eclipse.emf.ecore.EReference opposite = org.muml.core.CorePackage.eINSTANCE
+			final org.eclipse.emf.ecore.EReference opposite = org.muml.mumlcore.CorePackage.eINSTANCE
 					.getExtendableElement_Extensions();
-			final org.eclipse.emf.ecore.EClass oppositeClass = org.muml.core.CorePackage.eINSTANCE
+			final org.eclipse.emf.ecore.EClass oppositeClass = org.muml.mumlcore.CorePackage.eINSTANCE
 					.getExtendableElement();
 			final org.eclipse.ocl.ecore.OCLExpression expression = org.muml.ape.runtime.RuntimePlugin
 					.createOCLExpression("false", opposite, oppositeClass);
@@ -37,9 +37,9 @@ public class CreationConstraintContributor
 		{
 			final org.eclipse.emf.ecore.EClass myClass = org.muml.uppaal.adapter.extension.verificationextension.VerificationExtensionPackage.eINSTANCE
 					.getElementToVerifyExtension();
-			final org.eclipse.emf.ecore.EReference opposite = org.muml.core.CorePackage.eINSTANCE
+			final org.eclipse.emf.ecore.EReference opposite = org.muml.mumlcore.CorePackage.eINSTANCE
 					.getExtendableElement_Extensions();
-			final org.eclipse.emf.ecore.EClass oppositeClass = org.muml.core.CorePackage.eINSTANCE
+			final org.eclipse.emf.ecore.EClass oppositeClass = org.muml.mumlcore.CorePackage.eINSTANCE
 					.getExtendableElement();
 			final org.eclipse.ocl.ecore.OCLExpression expression = org.muml.ape.runtime.RuntimePlugin
 					.createOCLExpression("false", opposite, oppositeClass);
@@ -64,9 +64,9 @@ public class CreationConstraintContributor
 		{
 			final org.eclipse.emf.ecore.EClass myClass = org.muml.uppaal.adapter.extension.verificationextension.VerificationExtensionPackage.eINSTANCE
 					.getClockBindingsExtension();
-			final org.eclipse.emf.ecore.EReference opposite = org.muml.core.CorePackage.eINSTANCE
+			final org.eclipse.emf.ecore.EReference opposite = org.muml.mumlcore.CorePackage.eINSTANCE
 					.getExtendableElement_Extensions();
-			final org.eclipse.emf.ecore.EClass oppositeClass = org.muml.core.CorePackage.eINSTANCE
+			final org.eclipse.emf.ecore.EClass oppositeClass = org.muml.mumlcore.CorePackage.eINSTANCE
 					.getExtendableElement();
 			final org.eclipse.ocl.ecore.OCLExpression expression = org.muml.ape.runtime.RuntimePlugin
 					.createOCLExpression("false", opposite, oppositeClass);

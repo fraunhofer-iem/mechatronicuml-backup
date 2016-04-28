@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.muml.core.impl.ExtendableElementImpl;
+import org.muml.mumlcore.impl.ExtendableElementImpl;
 import org.muml.pim.behavior.ParameterBinding;
 import org.muml.pim.msgtype.MessageType;
 import org.muml.pim.realtimestatechart.Message;

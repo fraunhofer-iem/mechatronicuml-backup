@@ -2,7 +2,7 @@
  */
 package org.muml.pm.hardware.hwplatforminstance;
 
-import org.muml.core.ExtendableElement;
+import org.muml.mumlcore.ExtendableElement;
 
 /**
  * <!-- begin-user-doc -->

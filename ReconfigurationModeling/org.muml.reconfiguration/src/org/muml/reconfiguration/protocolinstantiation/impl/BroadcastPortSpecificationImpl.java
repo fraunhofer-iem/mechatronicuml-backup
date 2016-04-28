@@ -3,7 +3,7 @@
 package org.muml.reconfiguration.protocolinstantiation.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.muml.core.impl.ExtendableElementImpl;
+import org.muml.mumlcore.impl.ExtendableElementImpl;
 import org.muml.reconfiguration.protocolinstantiation.BroadcastPortSpecification;
 import org.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationPackage;
 

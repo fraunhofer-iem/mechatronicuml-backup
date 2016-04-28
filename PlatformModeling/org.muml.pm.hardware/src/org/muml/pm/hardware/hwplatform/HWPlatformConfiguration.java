@@ -3,7 +3,7 @@
 package org.muml.pm.hardware.hwplatform;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.core.ExtendableElement;
+import org.muml.mumlcore.ExtendableElement;
 
 /**
  * <!-- begin-user-doc -->

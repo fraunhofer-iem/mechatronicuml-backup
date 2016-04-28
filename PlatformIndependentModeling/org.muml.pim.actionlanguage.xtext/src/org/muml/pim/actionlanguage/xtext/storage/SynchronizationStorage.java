@@ -6,7 +6,7 @@ import java.io.InputStream;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.muml.core.expressions.Expression;
+import org.muml.mumlcore.expressions.Expression;
 import org.muml.pim.actionlanguage.xtext.common.LanguageResource;
 import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;

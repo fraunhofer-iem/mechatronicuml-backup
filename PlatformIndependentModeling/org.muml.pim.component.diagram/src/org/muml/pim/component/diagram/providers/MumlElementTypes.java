@@ -25,7 +25,7 @@ import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypeImages;
 import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypes;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
-import org.muml.core.modelinstance.ModelinstancePackage;
+import org.muml.mumlcore.modelinstance.ModelinstancePackage;
 import org.muml.pim.component.ComponentPackage;
 import org.muml.pim.component.diagram.edit.parts.AssemblyConnectorEditPart;
 import org.muml.pim.component.diagram.edit.parts.ComponentPartEditPart;

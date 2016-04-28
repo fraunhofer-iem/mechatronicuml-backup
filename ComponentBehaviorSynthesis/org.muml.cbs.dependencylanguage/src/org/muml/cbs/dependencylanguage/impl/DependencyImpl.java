@@ -5,7 +5,7 @@ package org.muml.cbs.dependencylanguage.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.muml.cbs.dependencylanguage.Dependency;
 import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
-import org.muml.core.impl.CommentableElementImpl;
+import org.muml.mumlcore.impl.CommentableElementImpl;
 
 /**
  * <!-- begin-user-doc -->

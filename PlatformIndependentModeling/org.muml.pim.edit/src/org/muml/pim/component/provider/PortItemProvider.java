@@ -17,7 +17,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.core.CorePackage;
+import org.muml.mumlcore.CorePackage;
 import org.muml.pim.component.ComponentPackage;
 import org.muml.pim.component.Port;
 import org.muml.pim.connector.provider.ConnectorEndpointItemProvider;

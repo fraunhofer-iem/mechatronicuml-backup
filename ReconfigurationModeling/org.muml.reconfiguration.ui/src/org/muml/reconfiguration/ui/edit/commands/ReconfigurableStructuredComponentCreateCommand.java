@@ -39,7 +39,7 @@ public class ReconfigurableStructuredComponentCreateCommand extends EditElementC
 		org.muml.reconfiguration.ReconfigurableStructuredComponent newElement = org.muml.reconfiguration.ReconfigurationFactory.eINSTANCE
 				.createReconfigurableStructuredComponent();
 
-		org.muml.core.modelinstance.ModelElementCategory owner = (org.muml.core.modelinstance.ModelElementCategory) getElementToEdit();
+		org.muml.mumlcore.modelinstance.ModelElementCategory owner = (org.muml.mumlcore.modelinstance.ModelElementCategory) getElementToEdit();
 		owner.getModelElements().add(newElement);
 
 		doConfigure(newElement, monitor, info);

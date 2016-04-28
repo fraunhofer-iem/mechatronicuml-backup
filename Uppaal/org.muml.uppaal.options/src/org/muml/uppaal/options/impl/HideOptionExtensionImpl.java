@@ -7,7 +7,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.muml.core.impl.ExtensionImpl;
+import org.muml.mumlcore.impl.ExtensionImpl;
 import org.muml.uppaal.options.HideOptionExtension;
 import org.muml.uppaal.options.OptionsPackage;
 

@@ -3,8 +3,7 @@
 package org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton;
 
 import org.eclipse.emf.ecore.EObject;
-
-import org.muml.core.expressions.common.ComparingOperator;
+import org.muml.mumlcore.expressions.common.ComparingOperator;
 
 /**
  * <!-- begin-user-doc -->
@@ -53,7 +52,7 @@ public interface GtAutomatonClockConstraint extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Operator</b></em>' attribute.
-	 * The literals are from the enumeration {@link org.muml.core.expressions.common.ComparingOperator}.
+	 * The literals are from the enumeration {@link org.muml.mumlcore.expressions.common.ComparingOperator}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Operator</em>' attribute isn't clear,
@@ -61,7 +60,7 @@ public interface GtAutomatonClockConstraint extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Operator</em>' attribute.
-	 * @see org.muml.core.expressions.common.ComparingOperator
+	 * @see org.muml.mumlcore.expressions.common.ComparingOperator
 	 * @see #setOperator(ComparingOperator)
 	 * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtautomatonPackage#getGtAutomatonClockConstraint_Operator()
 	 * @model
@@ -74,7 +73,7 @@ public interface GtAutomatonClockConstraint extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Operator</em>' attribute.
-	 * @see org.muml.core.expressions.common.ComparingOperator
+	 * @see org.muml.mumlcore.expressions.common.ComparingOperator
 	 * @see #getOperator()
 	 * @generated
 	 */

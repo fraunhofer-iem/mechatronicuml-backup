@@ -13,7 +13,7 @@
 package org.muml.pim.pattern;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.core.Extension;
+import org.muml.mumlcore.Extension;
 
 /**
  * <!-- begin-user-doc -->

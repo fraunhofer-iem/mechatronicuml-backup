@@ -2,7 +2,7 @@ package org.muml.pim.common.elementinitializer;
 
 import org.eclipse.emf.ecore.EObject;
 import org.muml.core.common.emf.edit.ui.elementinitializer.IElementInitializer;
-import org.muml.core.expressions.common.ComparingOperator;
+import org.muml.mumlcore.expressions.common.ComparingOperator;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
 
 /**

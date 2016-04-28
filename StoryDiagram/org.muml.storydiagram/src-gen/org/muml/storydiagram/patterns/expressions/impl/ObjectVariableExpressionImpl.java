@@ -10,7 +10,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.muml.core.expressions.impl.ExpressionImpl;
+import org.muml.mumlcore.expressions.impl.ExpressionImpl;
 import org.muml.storydiagram.patterns.ObjectVariable;
 import org.muml.storydiagram.patterns.expressions.ObjectVariableExpression;
 import org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage;

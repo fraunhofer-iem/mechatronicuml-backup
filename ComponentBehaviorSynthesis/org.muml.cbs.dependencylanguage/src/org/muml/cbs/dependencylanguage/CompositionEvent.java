@@ -2,7 +2,7 @@
  */
 package org.muml.cbs.dependencylanguage;
 
-import org.muml.core.expressions.common.LogicOperator;
+import org.muml.mumlcore.expressions.common.LogicOperator;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,7 +59,7 @@ public interface CompositionEvent extends Event {
 
 	/**
 	 * Returns the value of the '<em><b>Kind</b></em>' attribute.
-	 * The literals are from the enumeration {@link org.muml.core.expressions.common.LogicOperator}.
+	 * The literals are from the enumeration {@link org.muml.mumlcore.expressions.common.LogicOperator}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Kind</em>' attribute isn't clear,
@@ -70,7 +70,7 @@ public interface CompositionEvent extends Event {
 	 *  
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Kind</em>' attribute.
-	 * @see org.muml.core.expressions.common.LogicOperator
+	 * @see org.muml.mumlcore.expressions.common.LogicOperator
 	 * @see #setKind(LogicOperator)
 	 * @see org.muml.cbs.dependencylanguage.DependencylanguagePackage#getCompositionEvent_Kind()
 	 * @model required="true"
@@ -83,7 +83,7 @@ public interface CompositionEvent extends Event {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Kind</em>' attribute.
-	 * @see org.muml.core.expressions.common.LogicOperator
+	 * @see org.muml.mumlcore.expressions.common.LogicOperator
 	 * @see #getKind()
 	 * @generated
 	 */

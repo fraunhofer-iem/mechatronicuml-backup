@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.muml.core.expressions.impl.ExpressionImpl;
+import org.muml.mumlcore.expressions.impl.ExpressionImpl;
 import org.muml.pim.behavior.ParameterBinding;
 import org.muml.reconfiguration.ReconfigurationRule;
 import org.muml.reconfiguration.expression.ExpressionPackage;

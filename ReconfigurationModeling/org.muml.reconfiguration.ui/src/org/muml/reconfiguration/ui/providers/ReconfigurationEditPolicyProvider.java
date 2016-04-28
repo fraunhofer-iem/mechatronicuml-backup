@@ -9,7 +9,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.services.editpolicy.CreateEditPoliciesOperation;
 import org.eclipse.gmf.runtime.diagram.ui.services.editpolicy.IEditPolicyProvider;
-import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.mumlcore.modelinstance.ModelElementCategory;
 import org.muml.pim.component.ComponentPart;
 import org.muml.pim.component.PortPart;
 import org.muml.pim.component.diagram.custom.edit.parts.CustomPortPartEditPart;

@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.muml.core.expressions.Expression;
+import org.muml.mumlcore.expressions.Expression;
 import org.muml.pim.realtimestatechart.Action;
 import org.muml.pim.realtimestatechart.AsynchronousMessageEvent;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;

@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.muml.core.impl.ExtendableElementImpl;
+import org.muml.mumlcore.impl.ExtendableElementImpl;
 import org.muml.pim.connector.MessageBuffer;
 import org.muml.verification.core.runtime.RuntimeBehavioralElement;
 import org.muml.verification.core.runtime.RuntimeMessage;

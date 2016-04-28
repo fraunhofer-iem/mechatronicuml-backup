@@ -2,7 +2,7 @@
  */
 package org.muml.core.tests;
 
-import org.muml.core.Repository;
+import org.muml.mumlcore.Repository;
 
 /**
  * <!-- begin-user-doc -->

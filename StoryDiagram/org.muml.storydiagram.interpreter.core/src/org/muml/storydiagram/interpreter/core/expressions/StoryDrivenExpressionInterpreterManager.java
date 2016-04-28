@@ -2,7 +2,7 @@ package org.muml.storydiagram.interpreter.core.expressions;
 
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.muml.core.expressions.Expression;
+import org.muml.mumlcore.expressions.Expression;
 import org.muml.storydiagram.activities.Activity;
 import org.muml.storydiagram.activities.ActivityEdge;
 import org.muml.storydiagram.activities.ActivityNode;

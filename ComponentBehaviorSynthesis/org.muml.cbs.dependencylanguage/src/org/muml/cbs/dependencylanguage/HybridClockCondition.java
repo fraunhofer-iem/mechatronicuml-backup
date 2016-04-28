@@ -2,7 +2,7 @@
  */
 package org.muml.cbs.dependencylanguage;
 
-import org.muml.core.expressions.common.ComparingOperator;
+import org.muml.mumlcore.expressions.common.ComparingOperator;
 import org.muml.pim.valuetype.TimeValue;
 
 /**
@@ -92,7 +92,7 @@ public interface HybridClockCondition extends ClockCondition {
 
 	/**
 	 * Returns the value of the '<em><b>Operator</b></em>' attribute.
-	 * The literals are from the enumeration {@link org.muml.core.expressions.common.ComparingOperator}.
+	 * The literals are from the enumeration {@link org.muml.mumlcore.expressions.common.ComparingOperator}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Operator</em>' attribute isn't clear,
@@ -103,7 +103,7 @@ public interface HybridClockCondition extends ClockCondition {
 	 *  
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Operator</em>' attribute.
-	 * @see org.muml.core.expressions.common.ComparingOperator
+	 * @see org.muml.mumlcore.expressions.common.ComparingOperator
 	 * @see #setOperator(ComparingOperator)
 	 * @see org.muml.cbs.dependencylanguage.DependencylanguagePackage#getHybridClockCondition_Operator()
 	 * @model required="true"
@@ -116,7 +116,7 @@ public interface HybridClockCondition extends ClockCondition {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Operator</em>' attribute.
-	 * @see org.muml.core.expressions.common.ComparingOperator
+	 * @see org.muml.mumlcore.expressions.common.ComparingOperator
 	 * @see #getOperator()
 	 * @generated
 	 */

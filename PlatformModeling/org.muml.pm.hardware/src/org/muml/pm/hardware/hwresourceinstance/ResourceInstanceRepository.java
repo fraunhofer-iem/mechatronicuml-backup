@@ -3,7 +3,7 @@
 package org.muml.pm.hardware.hwresourceinstance;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.core.CommentableElement;
+import org.muml.mumlcore.CommentableElement;
 
 /**
  * <!-- begin-user-doc -->

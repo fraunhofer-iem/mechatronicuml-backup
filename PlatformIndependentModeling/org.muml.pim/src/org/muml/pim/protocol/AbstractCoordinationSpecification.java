@@ -3,8 +3,8 @@
 package org.muml.pim.protocol;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.core.CommentableElement;
-import org.muml.core.NamedElement;
+import org.muml.mumlcore.CommentableElement;
+import org.muml.mumlcore.NamedElement;
 import org.muml.pim.connector.MessageBuffer;
 import org.muml.pim.constraint.VerifiableElement;
 import org.muml.pim.pattern.AbstractCoordinationPattern;

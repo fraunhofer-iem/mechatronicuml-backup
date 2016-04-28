@@ -2,7 +2,7 @@
  */
 package org.muml.core.tests;
 
-import org.muml.core.NamedElement;
+import org.muml.mumlcore.NamedElement;
 
 /**
  * <!-- begin-user-doc -->

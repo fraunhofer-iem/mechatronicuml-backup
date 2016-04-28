@@ -13,7 +13,7 @@
 package org.muml.pim.behavior;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.core.Repository;
+import org.muml.mumlcore.Repository;
 
 /**
  * <!-- begin-user-doc -->

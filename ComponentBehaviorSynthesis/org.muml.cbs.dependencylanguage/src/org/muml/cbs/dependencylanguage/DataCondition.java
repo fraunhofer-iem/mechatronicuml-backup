@@ -2,7 +2,7 @@
  */
 package org.muml.cbs.dependencylanguage;
 
-import org.muml.core.expressions.Expression;
+import org.muml.mumlcore.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->

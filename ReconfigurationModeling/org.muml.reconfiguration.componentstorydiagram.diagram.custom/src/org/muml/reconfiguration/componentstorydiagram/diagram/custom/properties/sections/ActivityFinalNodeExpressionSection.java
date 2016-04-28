@@ -3,9 +3,9 @@ package org.muml.reconfiguration.componentstorydiagram.diagram.custom.properties
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.muml.core.expressions.Expression;
-import org.muml.core.expressions.ExpressionsFactory;
-import org.muml.core.expressions.TextualExpression;
+import org.muml.mumlcore.expressions.Expression;
+import org.muml.mumlcore.expressions.ExpressionsFactory;
+import org.muml.mumlcore.expressions.TextualExpression;
 import org.muml.reconfiguration.componentstorydiagram.diagram.custom.properties.AbstractExpressionSection;
 import org.muml.storydiagram.activities.Activity;
 import org.muml.storydiagram.activities.ActivityFinalNode;

@@ -46,7 +46,7 @@ public class UnaryExpressionEditor extends org.muml.ape.runtime.editors.ClassPro
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOperator_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorOperator_property_tab_generalTab_Editor() {
 		if (this.editorOperator_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.expressions.common.CommonExpressionsPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.mumlcore.expressions.common.CommonExpressionsPackage.eINSTANCE
 					.getUnaryExpression_Operator();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.OptionPropertyEditor(
 					adapterFactory, feature);
@@ -61,7 +61,7 @@ public class UnaryExpressionEditor extends org.muml.ape.runtime.editors.ClassPro
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_property_tab_documentationTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComment_property_tab_documentationTab_Editor() {
 		if (this.editorComment_property_tab_documentationTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.CorePackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.mumlcore.CorePackage.eINSTANCE
 					.getCommentableElement_Comment();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
@@ -77,7 +77,7 @@ public class UnaryExpressionEditor extends org.muml.ape.runtime.editors.ClassPro
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtensions_property_tab_extensionsTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtensions_property_tab_extensionsTab_Editor() {
 		if (this.editorExtensions_property_tab_extensionsTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.CorePackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.mumlcore.CorePackage.eINSTANCE
 					.getExtendableElement_Extensions();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.FlattenedListPropertyEditor(
 					adapterFactory, feature);
@@ -98,7 +98,7 @@ public class UnaryExpressionEditor extends org.muml.ape.runtime.editors.ClassPro
 	 */
 	public UnaryExpressionEditor(String tab) {
 		this(tab, org.muml.core.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
-				org.muml.core.expressions.common.CommonExpressionsPackage.eINSTANCE.getUnaryExpression());
+				org.muml.mumlcore.expressions.common.CommonExpressionsPackage.eINSTANCE.getUnaryExpression());
 	}
 
 	/**

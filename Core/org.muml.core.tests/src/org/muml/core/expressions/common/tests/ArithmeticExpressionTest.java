@@ -2,8 +2,8 @@
  */
 package org.muml.core.expressions.common.tests;
 
-import org.muml.core.expressions.common.ArithmeticExpression;
-import org.muml.core.expressions.common.CommonExpressionsFactory;
+import org.muml.mumlcore.expressions.common.ArithmeticExpression;
+import org.muml.mumlcore.expressions.common.CommonExpressionsFactory;
 
 import junit.textui.TestRunner;
 

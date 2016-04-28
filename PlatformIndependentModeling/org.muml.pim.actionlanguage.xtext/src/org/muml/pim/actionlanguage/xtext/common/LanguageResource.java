@@ -4,7 +4,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.muml.core.common.xtext.AbstractLanguageResource;
 import org.muml.core.common.xtext.ILoadResult;
-import org.muml.core.expressions.Expression;
+import org.muml.mumlcore.expressions.Expression;
 import org.muml.pim.actionlanguage.xtext.ActionLanguageStandaloneSetup;
 import org.muml.pim.actionlanguage.xtext.scoping.ActionLanguageScopeProviderFactory;
 

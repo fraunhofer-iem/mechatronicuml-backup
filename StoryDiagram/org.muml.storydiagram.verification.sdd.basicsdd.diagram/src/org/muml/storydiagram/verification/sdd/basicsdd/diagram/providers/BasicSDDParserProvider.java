@@ -13,7 +13,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.parsers.EnumParser;
-import org.muml.core.CorePackage;
+import org.muml.mumlcore.CorePackage;
 import org.muml.storydiagram.verification.sdd.SDDPackage;
 import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableNameEditPart;
 import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableNameEditPart;

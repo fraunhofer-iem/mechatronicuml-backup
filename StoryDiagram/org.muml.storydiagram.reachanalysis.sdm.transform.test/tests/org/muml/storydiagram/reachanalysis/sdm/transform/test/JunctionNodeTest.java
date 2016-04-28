@@ -7,7 +7,7 @@ import java.util.HashSet;
 
 import org.eclipse.emf.ecore.EClass;
 import org.junit.Test;
-import org.muml.core.expressions.TextualExpression;
+import org.muml.mumlcore.expressions.TextualExpression;
 import org.muml.storydiagram.activities.Activity;
 import org.muml.storydiagram.activities.ActivityEdge;
 import org.muml.storydiagram.activities.ActivityNode;

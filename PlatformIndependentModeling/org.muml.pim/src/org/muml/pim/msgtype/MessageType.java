@@ -7,8 +7,8 @@
 package org.muml.pim.msgtype;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.core.CommentableElement;
-import org.muml.core.NamedElement;
+import org.muml.mumlcore.CommentableElement;
+import org.muml.mumlcore.NamedElement;
 import org.muml.pim.behavior.Parameter;
 
 /**

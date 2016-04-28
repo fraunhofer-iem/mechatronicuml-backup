@@ -13,8 +13,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.cbs.dependencylanguage.DataCondition;
 import org.muml.cbs.dependencylanguage.DependencylanguageFactory;
 import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
-import org.muml.core.expressions.ExpressionsFactory;
-import org.muml.core.expressions.common.CommonExpressionsFactory;
+import org.muml.mumlcore.expressions.ExpressionsFactory;
+import org.muml.mumlcore.expressions.common.CommonExpressionsFactory;
 import org.muml.pim.actionlanguage.ActionlanguageFactory;
 
 /**

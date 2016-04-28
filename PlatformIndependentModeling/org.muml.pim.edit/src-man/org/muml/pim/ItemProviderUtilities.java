@@ -7,8 +7,8 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EcorePackage;
-import org.muml.core.NamedElement;
-import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.mumlcore.NamedElement;
+import org.muml.mumlcore.modelinstance.ModelElementCategory;
 import org.muml.pim.component.PortPart;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
 

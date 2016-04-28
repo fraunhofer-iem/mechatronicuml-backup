@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.muml.core.CorePackage;
+import org.muml.mumlcore.CorePackage;
 
 /**
  * <!-- begin-user-doc -->

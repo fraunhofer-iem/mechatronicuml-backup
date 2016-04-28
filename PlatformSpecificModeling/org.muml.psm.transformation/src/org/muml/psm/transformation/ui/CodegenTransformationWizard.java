@@ -32,7 +32,7 @@ import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.resource.XtextResourceSet;
 import org.eclipse.xtext.util.CancelIndicator;
-import org.muml.core.modelinstance.RootNode;
+import org.muml.mumlcore.modelinstance.RootNode;
 import org.muml.pm.common.xtext.FujabaResourceServiceProvider;
 import org.muml.psm.allocation.SystemAllocation;
 import org.muml.psm.api.apimappinglanguage.xtext.ui.internal.APIMappingLanguageActivator;

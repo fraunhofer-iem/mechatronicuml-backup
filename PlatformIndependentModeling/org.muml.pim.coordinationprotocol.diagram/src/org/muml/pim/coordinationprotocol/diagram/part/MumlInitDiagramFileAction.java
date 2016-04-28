@@ -31,8 +31,8 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
-import org.muml.core.modelinstance.ModelinstanceFactory;
 import org.muml.core.modelinstance.ui.handlers.AbstractCreateDiagramFileCommand;
+import org.muml.mumlcore.modelinstance.ModelinstanceFactory;
 
 /**
  * @generated

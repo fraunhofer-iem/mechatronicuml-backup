@@ -13,7 +13,7 @@
 package org.muml.pim.constraint.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.muml.core.impl.ExtendableElementImpl;
+import org.muml.mumlcore.impl.ExtendableElementImpl;
 import org.muml.pim.constraint.ConstraintPackage;
 import org.muml.pim.constraint.VerificationConstraintRepository;
 

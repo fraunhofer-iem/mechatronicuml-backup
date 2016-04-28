@@ -7,7 +7,7 @@
 package org.muml.pim.realtimestatechart;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.core.ExtendableElement;
+import org.muml.mumlcore.ExtendableElement;
 import org.muml.pim.behavior.ParameterBinding;
 import org.muml.pim.msgtype.MessageType;
 

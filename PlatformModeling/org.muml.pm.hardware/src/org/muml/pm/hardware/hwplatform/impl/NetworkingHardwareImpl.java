@@ -4,7 +4,7 @@
 package org.muml.pm.hardware.hwplatform.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.muml.core.impl.ExtendableElementImpl;
+import org.muml.mumlcore.impl.ExtendableElementImpl;
 import org.muml.pm.hardware.hwplatform.HwplatformPackage;
 import org.muml.pm.hardware.hwplatform.NetworkingHardware;
 

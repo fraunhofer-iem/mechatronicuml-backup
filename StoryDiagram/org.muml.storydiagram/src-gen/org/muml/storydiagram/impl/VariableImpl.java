@@ -7,7 +7,7 @@
 package org.muml.storydiagram.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.muml.core.impl.TypedElementImpl;
+import org.muml.mumlcore.impl.TypedElementImpl;
 import org.muml.storydiagram.StorydiagramPackage;
 import org.muml.storydiagram.Variable;
 

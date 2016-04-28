@@ -13,7 +13,7 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
-import org.muml.core.modelinstance.RootNode;
+import org.muml.mumlcore.modelinstance.RootNode;
 import org.muml.pm.hardware.hwresource.HwresourcePackage;
 import org.muml.pm.hardware.hwresource.Resource;
 import org.muml.pm.hardware.resourceinstance.diagram.custom.part.Activator;

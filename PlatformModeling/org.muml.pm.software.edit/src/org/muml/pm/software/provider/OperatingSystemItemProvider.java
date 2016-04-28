@@ -17,11 +17,8 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import org.muml.core.CorePackage;
-
 import org.muml.core.provider.NamedElementItemProvider;
-
+import org.muml.mumlcore.CorePackage;
 import org.muml.pm.software.OperatingSystem;
 import org.muml.pm.software.SoftwareFactory;
 import org.muml.pm.software.SoftwarePackage;

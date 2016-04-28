@@ -21,13 +21,13 @@ import org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocument
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
-import org.muml.core.ExtendableElement;
 import org.muml.core.common.DiagramEditorUtil;
 import org.muml.core.common.Messages;
-import org.muml.core.modelinstance.ModelElementCategory;
-import org.muml.core.modelinstance.ModelinstanceFactory;
-import org.muml.core.modelinstance.RootNode;
 import org.muml.core.modelinstance.ui.ModelinstanceUiPlugin;
+import org.muml.mumlcore.ExtendableElement;
+import org.muml.mumlcore.modelinstance.ModelElementCategory;
+import org.muml.mumlcore.modelinstance.ModelinstanceFactory;
+import org.muml.mumlcore.modelinstance.RootNode;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
 
 public class RtscTestExporter {

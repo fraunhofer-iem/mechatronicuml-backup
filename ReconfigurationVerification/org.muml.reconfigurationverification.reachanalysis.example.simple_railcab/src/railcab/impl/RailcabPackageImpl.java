@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.muml.core.CorePackage;
+import org.muml.mumlcore.CorePackage;
 
 import railcab.RailCab;
 import railcab.RailcabFactory;

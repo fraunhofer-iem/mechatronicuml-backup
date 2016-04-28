@@ -6,7 +6,7 @@ import java.util.List;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.jface.window.Window;
-import org.muml.core.CorePackage;
+import org.muml.mumlcore.CorePackage;
 import org.muml.storydiagram.diagram.custom.ResourceManager;
 import org.muml.storydiagram.diagram.custom.dialogs.SelectEClassDialog;
 import org.muml.storydiagram.diagram.custom.util.ActivityUtil;

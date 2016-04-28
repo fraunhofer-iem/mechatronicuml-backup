@@ -1,8 +1,8 @@
 package org.muml.reconfigurationverification.timedstorychart.transform;
 
 import org.eclipse.emf.ecore.EObject;
-import org.muml.core.expressions.Expression;
-import org.muml.core.expressions.common.LiteralExpression;
+import org.muml.mumlcore.expressions.Expression;
+import org.muml.mumlcore.expressions.common.LiteralExpression;
 import org.muml.pim.behavior.Variable;
 import org.muml.pim.protocol.Role;
 import org.muml.pim.protocol.RoleConnector;

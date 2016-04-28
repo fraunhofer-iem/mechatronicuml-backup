@@ -20,8 +20,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.cbs.dependencylanguage.DependencylanguageFactory;
 import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
 import org.muml.cbs.dependencylanguage.SynthesizableBehavior;
-import org.muml.core.CorePackage;
 import org.muml.core.provider.ExtensionItemProvider;
+import org.muml.mumlcore.CorePackage;
 import org.muml.pim.behavior.BehaviorPackage;
 
 /**

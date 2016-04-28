@@ -1,6 +1,6 @@
 package org.muml.storydiagram.diagram.custom.util;
 
-import org.muml.core.expressions.Expression;
+import org.muml.mumlcore.expressions.Expression;
 import org.muml.storydiagram.activities.ActivityEdge;
 import org.muml.storydiagram.activities.EdgeGuard;
 

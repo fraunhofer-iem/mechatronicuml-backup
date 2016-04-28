@@ -6,7 +6,7 @@
  */
 package org.muml.reconfigurationverification.tctl;
 
-import org.muml.core.NamedElement;
+import org.muml.mumlcore.NamedElement;
 
 
 /**

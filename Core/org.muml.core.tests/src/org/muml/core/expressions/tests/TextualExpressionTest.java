@@ -2,8 +2,8 @@
  */
 package org.muml.core.expressions.tests;
 
-import org.muml.core.expressions.ExpressionsFactory;
-import org.muml.core.expressions.TextualExpression;
+import org.muml.mumlcore.expressions.ExpressionsFactory;
+import org.muml.mumlcore.expressions.TextualExpression;
 
 import junit.textui.TestRunner;
 

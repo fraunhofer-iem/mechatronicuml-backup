@@ -6,7 +6,7 @@
  */
 package org.muml.storydiagram;
 
-import org.muml.core.TypedElement;
+import org.muml.mumlcore.TypedElement;
 
 /**
  * <!-- begin-user-doc -->

@@ -80,10 +80,10 @@ public class ReconfigurationVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE
+		if (org.muml.mumlcore.modelinstance.ModelinstancePackage.eINSTANCE
 				.getModelElementCategory()
 				.isSuperTypeOf(domainElement.eClass())
-				&& isDiagram((org.muml.core.modelinstance.ModelElementCategory) domainElement)) {
+				&& isDiagram((org.muml.mumlcore.modelinstance.ModelElementCategory) domainElement)) {
 			return org.muml.pim.component.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID;
 		}
 		return -1;
@@ -459,7 +459,7 @@ public class ReconfigurationVisualIDRegistry {
 	}
 
 	private static boolean isDiagram(
-			org.muml.core.modelinstance.ModelElementCategory element) {
+			org.muml.mumlcore.modelinstance.ModelElementCategory element) {
 		return true;
 	}
 

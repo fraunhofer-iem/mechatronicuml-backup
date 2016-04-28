@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.muml.core.impl.CommentableElementImpl;
+import org.muml.mumlcore.impl.CommentableElementImpl;
 import org.muml.reconfiguration.ReconfigurableComponent;
 import org.muml.reconfiguration.ReconfigurationPackage;
 import org.muml.reconfiguration.ReconfigurationRule;

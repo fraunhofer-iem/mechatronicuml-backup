@@ -61,8 +61,8 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.FileEditorInput;
-import org.muml.core.modelinstance.ModelElementCategory;
-import org.muml.core.modelinstance.ModelinstanceFactory;
+import org.muml.mumlcore.modelinstance.ModelElementCategory;
+import org.muml.mumlcore.modelinstance.ModelinstanceFactory;
 import org.muml.pim.coordinationprotocol.diagram.edit.parts.ModelElementCategoryEditPart;
 
 /**

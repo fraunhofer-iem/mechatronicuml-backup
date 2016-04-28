@@ -1,7 +1,7 @@
 package org.muml.storydiagram.diagram.custom.properties.sections;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.muml.core.CorePackage;
+import org.muml.mumlcore.CorePackage;
 
 import de.upb.swt.core.ui.properties.sections.AbstractTextSection;
 

@@ -16,7 +16,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.core.CorePackage;
+import org.muml.mumlcore.CorePackage;
 import org.muml.pim.types.provider.StructureDataTypeItemProvider;
 import org.muml.reconfiguration.provider.MumlReconfigurationEditPlugin;
 import org.muml.reconfiguration.structdatatype.StructType;

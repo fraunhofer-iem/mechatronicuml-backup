@@ -6,7 +6,7 @@
  */
 package org.muml.storydiagram.activities;
 
-import org.muml.core.expressions.Expression;
+import org.muml.mumlcore.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->

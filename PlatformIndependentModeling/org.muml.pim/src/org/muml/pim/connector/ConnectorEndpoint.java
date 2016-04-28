@@ -7,7 +7,7 @@
 package org.muml.pim.connector;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.core.CommentableElement;
+import org.muml.mumlcore.CommentableElement;
 
 /**
  * <!-- begin-user-doc -->

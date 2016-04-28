@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.cbs.dependencylanguage.CompositionCondition;
 import org.muml.cbs.dependencylanguage.Condition;
 import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
-import org.muml.core.expressions.common.LogicOperator;
+import org.muml.mumlcore.expressions.common.LogicOperator;
 
 /**
  * <!-- begin-user-doc -->

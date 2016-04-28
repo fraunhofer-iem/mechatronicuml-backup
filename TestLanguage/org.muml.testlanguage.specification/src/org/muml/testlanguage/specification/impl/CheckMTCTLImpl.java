@@ -97,7 +97,7 @@ public class CheckMTCTLImpl extends NodeSpecificationImpl implements CheckMTCTL 
 	 */
 	public void initialize() {
 		this.setLabel("Check MTCTL");
-		this.addPortSpecification(PortType.IN, "muml", false, org.muml.core.modelinstance.RootNode.class);
+		this.addPortSpecification(PortType.IN, "muml", false, org.muml.mumlcore.modelinstance.RootNode.class);
 		this.addPortSpecification(PortType.IN, "options", true, org.muml.uppaal.options.Options.class);
 		this.addPortSpecification(PortType.OUT, "results", false);
 	}
@@ -117,16 +117,16 @@ public class CheckMTCTLImpl extends NodeSpecificationImpl implements CheckMTCTL 
 		// Copy the MUML model so we do not destroy it.
 		// Copier copier = new Copier();
 
-		org.muml.core.modelinstance.RootNode muml = null;
+		org.muml.mumlcore.modelinstance.RootNode muml = null;
 		org.muml.pim.protocol.CoordinationProtocol protocol = null;
 
-		org.muml.core.Extension extension = null;
+		org.muml.mumlcore.Extension extension = null;
 
-		org.muml.core.modelinstance.RootNode rootNode = null;
+		org.muml.mumlcore.modelinstance.RootNode rootNode = null;
 		// EObject rootNode = null;
 
-		if (inputs.get("muml") instanceof org.muml.core.modelinstance.RootNode) {
-			rootNode = (org.muml.core.modelinstance.RootNode) inputs.get("muml");
+		if (inputs.get("muml") instanceof org.muml.mumlcore.modelinstance.RootNode) {
+			rootNode = (org.muml.mumlcore.modelinstance.RootNode) inputs.get("muml");
 		} else if (inputs.get("muml") instanceof org.muml.pim.protocol.CoordinationProtocol) {
 
 			protocol = (org.muml.pim.protocol.CoordinationProtocol) inputs.get("muml");
@@ -135,8 +135,8 @@ public class CheckMTCTLImpl extends NodeSpecificationImpl implements CheckMTCTL 
 			// inputs.get("muml")).eContainer().eContainer();
 
 			if ((org.eclipse.emf.ecore.util.EcoreUtil
-					.getRootContainer(protocol) instanceof org.muml.core.modelinstance.RootNode)) {
-				rootNode = (org.muml.core.modelinstance.RootNode) org.eclipse.emf.ecore.util.EcoreUtil
+					.getRootContainer(protocol) instanceof org.muml.mumlcore.modelinstance.RootNode)) {
+				rootNode = (org.muml.mumlcore.modelinstance.RootNode) org.eclipse.emf.ecore.util.EcoreUtil
 						.getRootContainer(protocol);
 			} else {
 				throw new ExecutionException("The coordination protocol doesn't have correct RootContainer");
@@ -156,12 +156,12 @@ public class CheckMTCTLImpl extends NodeSpecificationImpl implements CheckMTCTL 
 
 		// Copy the MUML model so we do not destroy it.
 		org.eclipse.emf.ecore.util.EcoreUtil.Copier copier = new org.eclipse.emf.ecore.util.EcoreUtil.Copier();
-		muml = (org.muml.core.modelinstance.RootNode) copier.copy(rootNode);
+		muml = (org.muml.mumlcore.modelinstance.RootNode) copier.copy(rootNode);
 		copier.copyReferences();
 
 		// Get the CoordinationProtocol category.
-		org.muml.core.modelinstance.ModelElementCategory category = null;
-		for (org.muml.core.modelinstance.ModelElementCategory cur : muml.getCategories()) {
+		org.muml.mumlcore.modelinstance.ModelElementCategory category = null;
+		for (org.muml.mumlcore.modelinstance.ModelElementCategory cur : muml.getCategories()) {
 			if (cur.getKey().equals("org.muml.pim.protocol.category")) {
 				category = cur;
 				break;
@@ -175,7 +175,7 @@ public class CheckMTCTLImpl extends NodeSpecificationImpl implements CheckMTCTL 
 		// Look for a CoordinationProtocol that asks for a verification,
 		// otherwise just choose any.
 
-		for (org.muml.core.ExtendableElement cur : category.getModelElements()) {
+		for (org.muml.mumlcore.ExtendableElement cur : category.getModelElements()) {
 			protocol = (org.muml.pim.protocol.CoordinationProtocol) cur;
 
 			if (protocol.getExtension(

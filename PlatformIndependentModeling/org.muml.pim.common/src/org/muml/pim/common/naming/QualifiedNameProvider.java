@@ -1,8 +1,8 @@
 package org.muml.pim.common.naming;
 
 import org.eclipse.emf.ecore.EObject;
-import org.muml.core.NamedElement;
-import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.mumlcore.NamedElement;
+import org.muml.mumlcore.modelinstance.ModelElementCategory;
 
 /**
  * Main class for computing QualifiedNames for EObjects and superclass of all concrete implementations

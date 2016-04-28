@@ -54,7 +54,7 @@ public class TextualExpressionEditor extends org.muml.ape.runtime.editors.ClassP
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExpressionText_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExpressionText_property_tab_generalTab_Editor() {
 		if (this.editorExpressionText_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.expressions.ExpressionsPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.mumlcore.expressions.ExpressionsPackage.eINSTANCE
 					.getTextualExpression_ExpressionText();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, false);
@@ -69,7 +69,7 @@ public class TextualExpressionEditor extends org.muml.ape.runtime.editors.ClassP
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLanguage_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLanguage_property_tab_generalTab_Editor() {
 		if (this.editorLanguage_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.expressions.ExpressionsPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.mumlcore.expressions.ExpressionsPackage.eINSTANCE
 					.getTextualExpression_Language();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, false);
@@ -85,7 +85,7 @@ public class TextualExpressionEditor extends org.muml.ape.runtime.editors.ClassP
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLanguageVersion_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLanguageVersion_property_tab_generalTab_Editor() {
 		if (this.editorLanguageVersion_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.expressions.ExpressionsPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.mumlcore.expressions.ExpressionsPackage.eINSTANCE
 					.getTextualExpression_LanguageVersion();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, false);
@@ -101,7 +101,7 @@ public class TextualExpressionEditor extends org.muml.ape.runtime.editors.ClassP
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_property_tab_documentationTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComment_property_tab_documentationTab_Editor() {
 		if (this.editorComment_property_tab_documentationTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.CorePackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.mumlcore.CorePackage.eINSTANCE
 					.getCommentableElement_Comment();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
@@ -117,7 +117,7 @@ public class TextualExpressionEditor extends org.muml.ape.runtime.editors.ClassP
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtensions_property_tab_extensionsTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtensions_property_tab_extensionsTab_Editor() {
 		if (this.editorExtensions_property_tab_extensionsTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.CorePackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.mumlcore.CorePackage.eINSTANCE
 					.getExtendableElement_Extensions();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.FlattenedListPropertyEditor(
 					adapterFactory, feature);
@@ -138,7 +138,7 @@ public class TextualExpressionEditor extends org.muml.ape.runtime.editors.ClassP
 	 */
 	public TextualExpressionEditor(String tab) {
 		this(tab, org.muml.core.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
-				org.muml.core.expressions.ExpressionsPackage.eINSTANCE.getTextualExpression());
+				org.muml.mumlcore.expressions.ExpressionsPackage.eINSTANCE.getTextualExpression());
 	}
 
 	/**

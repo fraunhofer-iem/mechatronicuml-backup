@@ -7,8 +7,8 @@
 package org.muml.pim.realtimestatechart;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.core.CommentableElement;
-import org.muml.core.NamedElement;
+import org.muml.mumlcore.CommentableElement;
+import org.muml.mumlcore.NamedElement;
 import org.muml.pim.behavior.Behavior;
 import org.muml.pim.behavior.Operation;
 import org.muml.pim.behavior.OperationRepository;

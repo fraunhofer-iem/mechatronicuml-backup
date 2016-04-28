@@ -12,7 +12,7 @@ import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
-import org.muml.core.NamedElement;
+import org.muml.mumlcore.NamedElement;
 import org.muml.pim.constraint.VerifiableElement;
 import org.muml.pim.constraint.VerificationConstraintRepository;
 import org.muml.uppaal.adapter.job.interfaces.VerificationOptionsProvider;

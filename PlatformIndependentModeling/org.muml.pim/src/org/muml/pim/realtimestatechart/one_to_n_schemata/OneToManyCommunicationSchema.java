@@ -13,7 +13,7 @@
 package org.muml.pim.realtimestatechart.one_to_n_schemata;
 
 import org.eclipse.emf.ecore.EObject;
-import org.muml.core.expressions.Expression;
+import org.muml.mumlcore.expressions.Expression;
 import org.muml.pim.realtimestatechart.Action;
 import org.muml.pim.realtimestatechart.AsynchronousMessageEvent;
 

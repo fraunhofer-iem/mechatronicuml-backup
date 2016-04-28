@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.muml.core.CorePackage;
+import org.muml.mumlcore.CorePackage;
 import org.muml.pim.PimPackage;
 import org.muml.pim.behavior.BehaviorPackage;
 import org.muml.pim.connector.ConnectorPackage;

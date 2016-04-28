@@ -19,9 +19,9 @@ import org.muml.core.common.ui.ExtensibleModelSelectionPage;
 import org.muml.core.common.ui.ModelSelectionPageExtension;
 import org.muml.core.common.ui.PredefinedModelExtension;
 import org.muml.core.common.ui.ResourceLocationProvider;
-import org.muml.core.modelinstance.ModelElementCategory;
-import org.muml.core.modelinstance.RootNode;
 import org.muml.core.modelinstance.ui.diagrams.IDiagramInformation;
+import org.muml.mumlcore.modelinstance.ModelElementCategory;
+import org.muml.mumlcore.modelinstance.RootNode;
 
 /**
  * A Wizard Page that allows selecting the Diagram Element within an

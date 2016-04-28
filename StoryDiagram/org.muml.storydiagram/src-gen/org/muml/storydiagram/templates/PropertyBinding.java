@@ -7,8 +7,8 @@
 package org.muml.storydiagram.templates;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.muml.core.ExtendableElement;
-import org.muml.core.expressions.Expression;
+import org.muml.mumlcore.ExtendableElement;
+import org.muml.mumlcore.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->

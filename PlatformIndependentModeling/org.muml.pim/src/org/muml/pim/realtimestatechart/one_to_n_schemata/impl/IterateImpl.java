@@ -17,7 +17,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.muml.core.expressions.Expression;
+import org.muml.mumlcore.expressions.Expression;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.Iterate;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage;
 import org.muml.pim.valuetype.TimeValue;

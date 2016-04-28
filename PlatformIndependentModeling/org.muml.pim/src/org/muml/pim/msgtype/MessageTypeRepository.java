@@ -7,7 +7,7 @@
 package org.muml.pim.msgtype;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.core.Repository;
+import org.muml.mumlcore.Repository;
 
 /**
  * <!-- begin-user-doc -->

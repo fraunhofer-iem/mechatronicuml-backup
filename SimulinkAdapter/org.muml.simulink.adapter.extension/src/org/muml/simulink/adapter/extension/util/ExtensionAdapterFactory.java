@@ -10,10 +10,8 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
-
-import org.muml.core.ExtendableElement;
-import org.muml.core.Extension;
-
+import org.muml.mumlcore.ExtendableElement;
+import org.muml.mumlcore.Extension;
 import org.muml.simulink.adapter.extension.*;
 
 /**
@@ -127,13 +125,13 @@ public class ExtensionAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.muml.core.ExtendableElement <em>Extendable Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.mumlcore.ExtendableElement <em>Extendable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.muml.core.ExtendableElement
+	 * @see org.muml.mumlcore.ExtendableElement
 	 * @generated
 	 */
 	public Adapter createExtendableElementAdapter() {
@@ -141,13 +139,13 @@ public class ExtensionAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.muml.core.Extension <em>Extension</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.mumlcore.Extension <em>Extension</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.muml.core.Extension
+	 * @see org.muml.mumlcore.Extension
 	 * @generated
 	 */
 	public Adapter createExtensionAdapter() {

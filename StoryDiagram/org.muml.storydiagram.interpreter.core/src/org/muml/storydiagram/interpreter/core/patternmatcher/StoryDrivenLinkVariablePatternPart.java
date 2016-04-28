@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreEMap;
-import org.muml.core.expressions.Expression;
+import org.muml.mumlcore.expressions.Expression;
 import org.muml.storydiagram.interpreter.core.mdelab.SDMException;
 import org.muml.storydiagram.interpreter.core.mdelab.expressions.ExpressionInterpreterManager;
 import org.muml.storydiagram.interpreter.core.mdelab.patternmatcher.patternPartBased.ECheckResult;

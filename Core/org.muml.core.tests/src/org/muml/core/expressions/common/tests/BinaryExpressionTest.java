@@ -2,8 +2,8 @@
  */
 package org.muml.core.expressions.common.tests;
 
-import org.muml.core.expressions.common.BinaryExpression;
 import org.muml.core.expressions.tests.ExpressionTest;
+import org.muml.mumlcore.expressions.common.BinaryExpression;
 
 /**
  * <!-- begin-user-doc -->

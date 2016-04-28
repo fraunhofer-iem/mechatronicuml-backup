@@ -9,8 +9,8 @@ package org.muml.storydiagram.verification.sdd.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
-import org.muml.core.ExtendableElement;
-import org.muml.core.NamedElement;
+import org.muml.mumlcore.ExtendableElement;
+import org.muml.mumlcore.NamedElement;
 import org.muml.storydiagram.verification.sdd.*;
 
 /**

@@ -17,19 +17,16 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import org.muml.core.expressions.ExpressionsFactory;
-
-import org.muml.core.expressions.common.CommonExpressionsFactory;
-import org.muml.core.expressions.common.CommonExpressionsPackage;
-import org.muml.core.expressions.common.UnaryExpression;
-
 import org.muml.core.expressions.provider.ExpressionItemProvider;
 
 import org.muml.core.provider.CoreEditPlugin;
+import org.muml.mumlcore.expressions.ExpressionsFactory;
+import org.muml.mumlcore.expressions.common.CommonExpressionsFactory;
+import org.muml.mumlcore.expressions.common.CommonExpressionsPackage;
+import org.muml.mumlcore.expressions.common.UnaryExpression;
 
 /**
- * This is the item provider adapter for a {@link org.muml.core.expressions.common.UnaryExpression} object.
+ * This is the item provider adapter for a {@link org.muml.mumlcore.expressions.common.UnaryExpression} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

@@ -11,9 +11,9 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
-import org.muml.core.ExtendableElement;
-import org.muml.core.modelinstance.ModelElementCategory;
-import org.muml.core.modelinstance.RootNode;
+import org.muml.mumlcore.ExtendableElement;
+import org.muml.mumlcore.modelinstance.ModelElementCategory;
+import org.muml.mumlcore.modelinstance.RootNode;
 import org.muml.pim.instance.ComponentInstanceConfiguration;
 
 public class SelectInstanceConfigurationPage extends WizardPage{

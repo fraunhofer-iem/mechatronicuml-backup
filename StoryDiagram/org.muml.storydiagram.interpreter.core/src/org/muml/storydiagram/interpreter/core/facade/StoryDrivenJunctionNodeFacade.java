@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.muml.core.expressions.Expression;
+import org.muml.mumlcore.expressions.Expression;
 import org.muml.storydiagram.activities.ActivityEdge;
 import org.muml.storydiagram.activities.ActivityNode;
 import org.muml.storydiagram.activities.EdgeGuard;

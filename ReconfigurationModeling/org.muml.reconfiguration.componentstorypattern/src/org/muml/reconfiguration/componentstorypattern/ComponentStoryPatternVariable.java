@@ -2,8 +2,8 @@
  */
 package org.muml.reconfiguration.componentstorypattern;
 
-import org.muml.core.CommentableElement;
-import org.muml.core.NamedElement;
+import org.muml.mumlcore.CommentableElement;
+import org.muml.mumlcore.NamedElement;
 import org.muml.storydiagram.patterns.BindingOperator;
 import org.muml.storydiagram.patterns.BindingSemantics;
 import org.muml.storydiagram.patterns.BindingState;

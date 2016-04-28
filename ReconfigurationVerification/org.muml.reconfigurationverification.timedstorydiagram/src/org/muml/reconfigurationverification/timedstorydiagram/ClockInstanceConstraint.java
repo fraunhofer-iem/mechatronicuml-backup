@@ -7,7 +7,7 @@
 package org.muml.reconfigurationverification.timedstorydiagram;
 
 import org.eclipse.emf.ecore.EObject;
-import org.muml.core.expressions.common.ComparingOperator;
+import org.muml.mumlcore.expressions.common.ComparingOperator;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,7 +59,7 @@ public interface ClockInstanceConstraint extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Operator</b></em>' attribute.
 	 * The default value is <code>"LESS_OR_EQUAL"</code>.
-	 * The literals are from the enumeration {@link org.muml.core.expressions.common.ComparingOperator}.
+	 * The literals are from the enumeration {@link org.muml.mumlcore.expressions.common.ComparingOperator}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Operator</em>' attribute isn't clear,
@@ -67,7 +67,7 @@ public interface ClockInstanceConstraint extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Operator</em>' attribute.
-	 * @see org.muml.core.expressions.common.ComparingOperator
+	 * @see org.muml.mumlcore.expressions.common.ComparingOperator
 	 * @see #setOperator(ComparingOperator)
 	 * @see org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage#getClockInstanceConstraint_Operator()
 	 * @model default="LESS_OR_EQUAL"
@@ -80,7 +80,7 @@ public interface ClockInstanceConstraint extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Operator</em>' attribute.
-	 * @see org.muml.core.expressions.common.ComparingOperator
+	 * @see org.muml.mumlcore.expressions.common.ComparingOperator
 	 * @see #getOperator()
 	 * @generated
 	 */

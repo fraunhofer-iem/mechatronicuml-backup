@@ -14,7 +14,7 @@
       <!-- @generated core -->
       <package
             uri="http://www.muml.org/core/1.0.0"
-            class="org.muml.core.CorePackage"
+            class="org.muml.mumlcore.CorePackage"
             genModel="model/core.genmodel"/>
    </extension>
 
@@ -22,14 +22,14 @@
       <!-- @generated core -->
       <parser
             type="muml"
-            class="org.muml.core.util.CoreResourceFactoryImpl"/>
+            class="org.muml.mumlcore.util.CoreResourceFactoryImpl"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated core -->
       <package
             uri="http://www.muml.org/core/expressions/1.0.0"
-            class="org.muml.core.expressions.ExpressionsPackage"
+            class="org.muml.mumlcore.expressions.ExpressionsPackage"
             genModel="model/core.genmodel"/>
    </extension>
 
@@ -37,7 +37,7 @@
       <!-- @generated core -->
       <package
             uri="http://www.muml.org/core/expressions/common/1.0.0"
-            class="org.muml.core.expressions.common.CommonExpressionsPackage"
+            class="org.muml.mumlcore.expressions.common.CommonExpressionsPackage"
             genModel="model/core.genmodel"/>
    </extension>
 
@@ -45,7 +45,7 @@
       <!-- @generated core -->
       <package
             uri="http://www.muml.org/modelinstance/1.0.0"
-            class="org.muml.core.modelinstance.ModelinstancePackage"
+            class="org.muml.mumlcore.modelinstance.ModelinstancePackage"
             genModel="model/core.genmodel"/>
    </extension>
 
@@ -53,13 +53,13 @@
 <extension-point id="version" name="version" schema="schema/version.exsd"/>
 
    <extension point="org.eclipse.emf.ecore.extension_parser">
-      <parser class="org.muml.core.util.CoreResourceFactoryImpl" type="muml"/>
+      <parser class="org.muml.mumlcore.util.CoreResourceFactoryImpl" type="muml"/>
    </extension>
 
 
 
    <extension point="org.eclipse.emf.ecore.extension_parser">
-      <parser class="org.muml.core.util.CoreResourceFactoryImpl" type="fujaba"/>
+      <parser class="org.muml.mumlcore.util.CoreResourceFactoryImpl" type="fujaba"/>
    </extension>
    
    

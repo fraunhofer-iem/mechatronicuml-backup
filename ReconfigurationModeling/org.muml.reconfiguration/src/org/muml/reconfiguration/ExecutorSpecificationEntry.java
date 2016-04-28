@@ -6,7 +6,7 @@
  */
 package org.muml.reconfiguration;
 
-import org.muml.core.ExtendableElement;
+import org.muml.mumlcore.ExtendableElement;
 import org.muml.pim.valuetype.TimeValue;
 
 /**

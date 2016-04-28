@@ -42,7 +42,7 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
 import org.muml.core.common.edit.policies.IDiagramCanonicalEditPolicy;
-import org.muml.core.modelinstance.ModelinstancePackage;
+import org.muml.mumlcore.modelinstance.ModelinstancePackage;
 import org.muml.pim.component.diagram.edit.parts.AssemblyConnectorEditPart;
 import org.muml.pim.component.diagram.edit.parts.ComponentPartEditPart;
 import org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart;

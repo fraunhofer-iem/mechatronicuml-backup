@@ -12,14 +12,11 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
-
-import org.muml.core.ExtendableElement;
-
 import org.muml.core.reachanalysis.reachabilitygraph.ActionTransition;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraph;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphTransition;
-
+import org.muml.mumlcore.ExtendableElement;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.*;
 
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceStoryDiagram;
@@ -281,13 +278,13 @@ public class GtautomatonAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.muml.core.ExtendableElement <em>Extendable Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.mumlcore.ExtendableElement <em>Extendable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.muml.core.ExtendableElement
+	 * @see org.muml.mumlcore.ExtendableElement
 	 * @generated
 	 */
 	public Adapter createExtendableElementAdapter() {

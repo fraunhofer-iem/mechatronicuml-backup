@@ -13,12 +13,11 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import org.muml.core.expressions.ExpressionsPackage;
-import org.muml.core.expressions.TextualExpression;
+import org.muml.mumlcore.expressions.ExpressionsPackage;
+import org.muml.mumlcore.expressions.TextualExpression;
 
 /**
- * This is the item provider adapter for a {@link org.muml.core.expressions.TextualExpression} object.
+ * This is the item provider adapter for a {@link org.muml.mumlcore.expressions.TextualExpression} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

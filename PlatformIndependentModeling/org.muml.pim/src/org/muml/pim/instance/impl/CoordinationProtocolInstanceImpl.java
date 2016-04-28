@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.muml.core.impl.NamedElementImpl;
+import org.muml.mumlcore.impl.NamedElementImpl;
 import org.muml.pim.component.CoordinationProtocolPart;
 import org.muml.pim.instance.CoordinationProtocolInstance;
 import org.muml.pim.instance.InstancePackage;

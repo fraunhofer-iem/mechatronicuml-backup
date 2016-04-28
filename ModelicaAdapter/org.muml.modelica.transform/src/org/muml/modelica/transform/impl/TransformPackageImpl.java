@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.ETypeParameter;
 import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.muml.core.CorePackage;
 import org.muml.modelica.transform.Entry;
 import org.muml.modelica.transform.Map;
 import org.muml.modelica.transform.PositionExtension;
@@ -22,6 +21,7 @@ import org.muml.modelica.transform.Root;
 import org.muml.modelica.transform.TransformFactory;
 import org.muml.modelica.transform.TransformPackage;
 import org.muml.modelica.transform.TransformationRootObject;
+import org.muml.mumlcore.CorePackage;
 import org.muml.pim.PimPackage;
 import org.muml.pim.behavior.BehaviorPackage;
 import org.muml.pim.component.ComponentPackage;

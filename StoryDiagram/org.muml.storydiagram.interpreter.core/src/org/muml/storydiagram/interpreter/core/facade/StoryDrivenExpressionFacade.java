@@ -1,7 +1,7 @@
 package org.muml.storydiagram.interpreter.core.facade;
 
-import org.muml.core.expressions.Expression;
-import org.muml.core.expressions.TextualExpression;
+import org.muml.mumlcore.expressions.Expression;
+import org.muml.mumlcore.expressions.TextualExpression;
 import org.muml.storydiagram.interpreter.core.mdelab.facade.IExpressionFacade;
 
 public class StoryDrivenExpressionFacade implements IExpressionFacade<Expression>

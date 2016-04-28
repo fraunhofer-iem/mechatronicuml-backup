@@ -13,12 +13,11 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import org.muml.core.CommentableElement;
-import org.muml.core.CorePackage;
+import org.muml.mumlcore.CommentableElement;
+import org.muml.mumlcore.CorePackage;
 
 /**
- * This is the item provider adapter for a {@link org.muml.core.CommentableElement} object.
+ * This is the item provider adapter for a {@link org.muml.mumlcore.CommentableElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

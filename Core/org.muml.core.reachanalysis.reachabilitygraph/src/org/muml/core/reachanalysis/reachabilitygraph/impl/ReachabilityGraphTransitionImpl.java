@@ -12,11 +12,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.muml.core.impl.ExtendableElementImpl;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraph;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphPackage;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphTransition;
+import org.muml.mumlcore.impl.ExtendableElementImpl;
 
 /**
  * <!-- begin-user-doc -->

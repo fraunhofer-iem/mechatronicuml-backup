@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.core.CorePackage;
+import org.muml.mumlcore.CorePackage;
 import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
 import org.muml.pim.types.provider.DataTypeItemProvider;
 import org.muml.reconfiguration.ReconfigurationManagementSpecificationEntry;

@@ -14,12 +14,11 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import org.muml.core.CorePackage;
-import org.muml.core.TypedElement;
+import org.muml.mumlcore.CorePackage;
+import org.muml.mumlcore.TypedElement;
 
 /**
- * This is the item provider adapter for a {@link org.muml.core.TypedElement} object.
+ * This is the item provider adapter for a {@link org.muml.mumlcore.TypedElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

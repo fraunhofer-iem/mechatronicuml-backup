@@ -2,7 +2,7 @@
  */
 package org.muml.core.tests;
 
-import org.muml.core.ExtendableElement;
+import org.muml.mumlcore.ExtendableElement;
 
 import junit.framework.TestCase;
 

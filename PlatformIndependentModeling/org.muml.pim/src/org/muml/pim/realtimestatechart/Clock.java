@@ -6,7 +6,7 @@
  */
 package org.muml.pim.realtimestatechart;
 
-import org.muml.core.NamedElement;
+import org.muml.mumlcore.NamedElement;
 
 /**
  * <!-- begin-user-doc -->

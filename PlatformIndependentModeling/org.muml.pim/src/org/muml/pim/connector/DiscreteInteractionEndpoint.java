@@ -7,7 +7,7 @@
 package org.muml.pim.connector;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.core.NamedElement;
+import org.muml.mumlcore.NamedElement;
 import org.muml.pim.behavior.Behavior;
 import org.muml.pim.behavior.BehavioralElement;
 import org.muml.pim.msgtype.MessageType;

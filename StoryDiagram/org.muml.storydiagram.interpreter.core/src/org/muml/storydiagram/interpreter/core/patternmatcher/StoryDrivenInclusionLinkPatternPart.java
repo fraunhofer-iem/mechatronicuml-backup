@@ -6,7 +6,7 @@ import java.util.Map;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
-import org.muml.core.expressions.Expression;
+import org.muml.mumlcore.expressions.Expression;
 import org.muml.storydiagram.interpreter.core.mdelab.SDMException;
 import org.muml.storydiagram.interpreter.core.mdelab.patternmatcher.patternPartBased.ECheckResult;
 import org.muml.storydiagram.interpreter.core.mdelab.patternmatcher.patternPartBased.EMatchType;

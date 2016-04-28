@@ -17,7 +17,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ContainerSelectionDialog;
-import org.muml.core.NamedElement;
+import org.muml.mumlcore.NamedElement;
 import org.muml.pim.constraint.VerifiableElement;
 import org.muml.pim.pattern.AbstractCoordinationPattern;
 import org.muml.pim.protocol.CoordinationProtocol;

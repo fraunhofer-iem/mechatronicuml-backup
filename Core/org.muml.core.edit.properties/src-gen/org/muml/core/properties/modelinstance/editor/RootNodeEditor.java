@@ -40,7 +40,7 @@ public class RootNodeEditor extends org.muml.ape.runtime.editors.ClassPropertyEd
 	 */
 	public RootNodeEditor(String tab) {
 		this(tab, org.muml.core.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
-				org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE.getRootNode());
+				org.muml.mumlcore.modelinstance.ModelinstancePackage.eINSTANCE.getRootNode());
 	}
 
 	/**

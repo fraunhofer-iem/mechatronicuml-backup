@@ -14,7 +14,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.muml.core.CorePackage;
+import org.muml.mumlcore.CorePackage;
 import org.muml.pim.component.ComponentPackage;
 import org.muml.pim.component.provider.ComponentItemProvider;
 import org.muml.reconfiguration.ReconfigurableComponent;

@@ -13,7 +13,7 @@
 package org.muml.pim.actionlanguage.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.muml.core.expressions.impl.ExpressionImpl;
+import org.muml.mumlcore.expressions.impl.ExpressionImpl;
 import org.muml.pim.actionlanguage.ActionlanguagePackage;
 import org.muml.pim.actionlanguage.ElementAccessorExpression;
 

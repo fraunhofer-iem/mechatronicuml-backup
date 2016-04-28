@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.muml.core.impl.NamedElementImpl;
+import org.muml.mumlcore.impl.NamedElementImpl;
 import org.muml.reconfiguration.Executor;
 import org.muml.reconfiguration.reconfInstance.ExecutorInstance;
 import org.muml.reconfiguration.reconfInstance.ReconfInstancePackage;

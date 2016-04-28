@@ -14,7 +14,7 @@ import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.muml.core.common.xtext.ILoadResult;
-import org.muml.core.expressions.Expression;
+import org.muml.mumlcore.expressions.Expression;
 import org.muml.pim.actionlanguage.xtext.common.LanguageResource;
 
 public abstract class ModelStorage<T extends EObject> implements IModelStorage {

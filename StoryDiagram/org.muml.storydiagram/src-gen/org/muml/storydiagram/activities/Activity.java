@@ -8,7 +8,7 @@ package org.muml.storydiagram.activities;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
-import org.muml.core.NamedElement;
+import org.muml.mumlcore.NamedElement;
 import org.muml.storydiagram.calls.Callable;
 
 /**

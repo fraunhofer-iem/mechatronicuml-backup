@@ -15,16 +15,14 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import org.muml.core.expressions.common.CommonExpressionsPackage;
-import org.muml.core.expressions.common.LiteralExpression;
-
 import org.muml.core.expressions.provider.ExpressionItemProvider;
 
 import org.muml.core.provider.CoreEditPlugin;
+import org.muml.mumlcore.expressions.common.CommonExpressionsPackage;
+import org.muml.mumlcore.expressions.common.LiteralExpression;
 
 /**
- * This is the item provider adapter for a {@link org.muml.core.expressions.common.LiteralExpression} object.
+ * This is the item provider adapter for a {@link org.muml.mumlcore.expressions.common.LiteralExpression} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

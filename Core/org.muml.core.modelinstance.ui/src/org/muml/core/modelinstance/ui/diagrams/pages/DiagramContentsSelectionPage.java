@@ -22,8 +22,8 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
-import org.muml.core.modelinstance.ModelElementCategory;
 import org.muml.core.modelinstance.ui.diagrams.IDiagramElementValidator;
+import org.muml.mumlcore.modelinstance.ModelElementCategory;
 
 public class DiagramContentsSelectionPage extends WizardPage implements
 		IResourceChangedListener {

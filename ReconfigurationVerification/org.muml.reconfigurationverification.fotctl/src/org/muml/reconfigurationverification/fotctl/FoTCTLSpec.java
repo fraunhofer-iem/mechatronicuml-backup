@@ -7,7 +7,7 @@
 package org.muml.reconfigurationverification.fotctl;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.core.ExtendableElement;
+import org.muml.mumlcore.ExtendableElement;
 
 /**
  * <!-- begin-user-doc -->

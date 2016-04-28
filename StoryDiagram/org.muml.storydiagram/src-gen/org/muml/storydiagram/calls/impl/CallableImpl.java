@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.muml.core.impl.CommentableElementImpl;
+import org.muml.mumlcore.impl.CommentableElementImpl;
 import org.muml.storydiagram.activities.OperationExtension;
 import org.muml.storydiagram.calls.Callable;
 import org.muml.storydiagram.calls.CallsPackage;

@@ -2,8 +2,8 @@ package org.muml.pim.coordinationprotocol.diagram.custom.parsers;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
-import org.muml.core.expressions.Expression;
-import org.muml.core.expressions.TextualExpression;
+import org.muml.mumlcore.expressions.Expression;
+import org.muml.mumlcore.expressions.TextualExpression;
 import org.muml.pim.actionlanguage.xtext.common.LanguageResource;
 import org.muml.pim.coordinationprotocol.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5021;
 import org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions;

@@ -7,7 +7,7 @@
 package org.muml.reconfiguration;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.core.CommentableElement;
+import org.muml.mumlcore.CommentableElement;
 import org.muml.pim.behavior.BehavioralElement;
 
 

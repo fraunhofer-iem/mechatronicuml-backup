@@ -2,8 +2,8 @@
  */
 package org.muml.core.expressions.tests;
 
-import org.muml.core.expressions.Expression;
 import org.muml.core.tests.CommentableElementTest;
+import org.muml.mumlcore.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->

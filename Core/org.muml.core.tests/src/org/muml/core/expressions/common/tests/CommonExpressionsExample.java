@@ -13,9 +13,9 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.muml.core.expressions.common.CommonExpressionsFactory;
-import org.muml.core.expressions.common.CommonExpressionsPackage;
-import org.muml.core.expressions.common.UnaryExpression;
+import org.muml.mumlcore.expressions.common.CommonExpressionsFactory;
+import org.muml.mumlcore.expressions.common.CommonExpressionsPackage;
+import org.muml.mumlcore.expressions.common.UnaryExpression;
 
 /**
  * <!-- begin-user-doc -->

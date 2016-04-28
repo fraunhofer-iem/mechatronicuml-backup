@@ -35,7 +35,7 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.muml.core.common.edit.policies.IDiagramCanonicalEditPolicy;
-import org.muml.core.modelinstance.ModelinstancePackage;
+import org.muml.mumlcore.modelinstance.ModelinstancePackage;
 import org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryEditPart;
 import org.muml.pim.messagetype.diagram.part.MumlDiagramUpdater;
 import org.muml.pim.messagetype.diagram.part.MumlNodeDescriptor;

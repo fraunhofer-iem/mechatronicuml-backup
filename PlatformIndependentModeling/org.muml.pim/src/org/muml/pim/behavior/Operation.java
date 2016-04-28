@@ -7,9 +7,9 @@
 package org.muml.pim.behavior;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.core.CommentableElement;
-import org.muml.core.NamedElement;
-import org.muml.core.expressions.Expression;
+import org.muml.mumlcore.CommentableElement;
+import org.muml.mumlcore.NamedElement;
+import org.muml.mumlcore.expressions.Expression;
 import org.muml.pim.types.DataType;
 
 /**
@@ -62,7 +62,7 @@ public interface Operation extends NamedElement, CommentableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Implementations</b></em>' containment reference list.
-	 * The list contents are of type {@link org.muml.core.expressions.Expression}.
+	 * The list contents are of type {@link org.muml.mumlcore.expressions.Expression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->

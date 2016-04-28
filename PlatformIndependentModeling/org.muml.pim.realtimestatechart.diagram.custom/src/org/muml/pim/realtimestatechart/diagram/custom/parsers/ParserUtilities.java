@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
-import org.muml.core.expressions.Expression;
+import org.muml.mumlcore.expressions.Expression;
 import org.muml.pim.actionlanguage.xtext.common.LanguageResource;
 import org.muml.pim.valuetype.TimeValue;
 import org.muml.pim.valuetype.impl.TimeValueImpl;

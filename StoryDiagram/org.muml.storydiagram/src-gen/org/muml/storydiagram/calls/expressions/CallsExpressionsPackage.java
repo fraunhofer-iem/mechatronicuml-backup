@@ -9,7 +9,7 @@ package org.muml.storydiagram.calls.expressions;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.muml.core.expressions.ExpressionsPackage;
+import org.muml.mumlcore.expressions.ExpressionsPackage;
 
 /**
  * <!-- begin-user-doc -->

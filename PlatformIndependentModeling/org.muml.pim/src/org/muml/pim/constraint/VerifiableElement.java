@@ -13,7 +13,7 @@
 package org.muml.pim.constraint;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.core.ExtendableElement;
+import org.muml.mumlcore.ExtendableElement;
 
 /**
  * <!-- begin-user-doc -->

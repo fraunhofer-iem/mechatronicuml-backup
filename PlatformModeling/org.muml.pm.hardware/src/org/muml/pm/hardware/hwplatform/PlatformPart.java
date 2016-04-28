@@ -3,7 +3,7 @@
 package org.muml.pm.hardware.hwplatform;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.core.NamedElement;
+import org.muml.mumlcore.NamedElement;
 import org.muml.pim.valuetype.Cardinality;
 
 /**

@@ -2,9 +2,9 @@
  */
 package org.muml.core.expressions.common.tests;
 
-import org.muml.core.expressions.common.CommonExpressionsFactory;
-import org.muml.core.expressions.common.UnaryExpression;
 import org.muml.core.expressions.tests.ExpressionTest;
+import org.muml.mumlcore.expressions.common.CommonExpressionsFactory;
+import org.muml.mumlcore.expressions.common.UnaryExpression;
 
 import junit.textui.TestRunner;
 

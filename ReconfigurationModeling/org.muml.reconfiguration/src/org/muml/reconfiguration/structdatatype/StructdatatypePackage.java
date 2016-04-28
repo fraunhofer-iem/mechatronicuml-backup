@@ -9,7 +9,7 @@ package org.muml.reconfiguration.structdatatype;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.muml.core.CorePackage;
+import org.muml.mumlcore.CorePackage;
 import org.muml.pim.types.TypesPackage;
 
 /**

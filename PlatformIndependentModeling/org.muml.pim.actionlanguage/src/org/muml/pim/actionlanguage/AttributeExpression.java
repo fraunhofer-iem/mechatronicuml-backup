@@ -7,7 +7,7 @@
 package org.muml.pim.actionlanguage;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.core.expressions.Expression;
+import org.muml.mumlcore.expressions.Expression;
 import org.muml.pim.behavior.Variable;
 
 /**
@@ -63,7 +63,7 @@ public interface AttributeExpression extends Expression {
 
 	/**
 	 * Returns the value of the '<em><b>Indices</b></em>' containment reference list.
-	 * The list contents are of type {@link org.muml.core.expressions.Expression}.
+	 * The list contents are of type {@link org.muml.mumlcore.expressions.Expression}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Indices</em>' reference list isn't clear,

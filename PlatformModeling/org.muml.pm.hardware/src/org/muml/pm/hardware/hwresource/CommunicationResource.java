@@ -2,7 +2,7 @@
  */
 package org.muml.pm.hardware.hwresource;
 
-import org.muml.core.NamedElement;
+import org.muml.mumlcore.NamedElement;
 import org.muml.pim.valuetype.Cardinality;
 
 /**

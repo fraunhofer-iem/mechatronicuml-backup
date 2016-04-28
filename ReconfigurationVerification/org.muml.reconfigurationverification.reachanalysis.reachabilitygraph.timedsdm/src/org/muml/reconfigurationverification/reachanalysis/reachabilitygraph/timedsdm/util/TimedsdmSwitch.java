@@ -6,12 +6,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.muml.core.ExtendableElement;
-
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphTransition;
-
+import org.muml.mumlcore.ExtendableElement;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.*;
 
 import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.StepGraph;

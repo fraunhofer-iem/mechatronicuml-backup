@@ -37,13 +37,13 @@ import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.muml.core.common.DiagramEditorUtil;
 import org.muml.core.common.Messages;
 import org.muml.core.common.ui.ResourceLocationProvider;
-import org.muml.core.modelinstance.ModelinstancePackage;
 import org.muml.core.modelinstance.ui.ModelinstanceUiPlugin;
 import org.muml.core.modelinstance.ui.commands.CreateDiagramCommand;
 import org.muml.core.modelinstance.ui.diagrams.pages.DiagramContentsSelectionPage;
 import org.muml.core.modelinstance.ui.diagrams.pages.DiagramElementSelectionPage;
 import org.muml.core.modelinstance.ui.diagrams.pages.DiagramModelSelectionPage;
 import org.muml.core.modelinstance.ui.diagrams.pages.NewExtendedFileCreationPage;
+import org.muml.mumlcore.modelinstance.ModelinstancePackage;
 
 /**
  * A fujaba diagram new-wizard suitable for usage by editors; it has to supply

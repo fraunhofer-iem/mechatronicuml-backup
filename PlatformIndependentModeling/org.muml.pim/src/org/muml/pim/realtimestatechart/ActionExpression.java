@@ -6,8 +6,8 @@
  */
 package org.muml.pim.realtimestatechart;
 
-import org.muml.core.NamedElement;
-import org.muml.core.expressions.Expression;
+import org.muml.mumlcore.NamedElement;
+import org.muml.mumlcore.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->

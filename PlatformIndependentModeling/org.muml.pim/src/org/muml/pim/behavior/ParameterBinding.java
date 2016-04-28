@@ -6,8 +6,8 @@
  */
 package org.muml.pim.behavior;
 
-import org.muml.core.ExtendableElement;
-import org.muml.core.expressions.Expression;
+import org.muml.mumlcore.ExtendableElement;
+import org.muml.mumlcore.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->

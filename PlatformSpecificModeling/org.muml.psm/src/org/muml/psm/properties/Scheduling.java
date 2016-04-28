@@ -2,7 +2,7 @@
  */
 package org.muml.psm.properties;
 
-import org.muml.core.Extension;
+import org.muml.mumlcore.Extension;
 import org.muml.pim.valuetype.NaturalNumber;
 import org.muml.pim.valuetype.TimeValue;
 

@@ -13,9 +13,9 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.muml.core.modelinstance.ModelinstanceFactory;
-import org.muml.core.modelinstance.ModelinstancePackage;
-import org.muml.core.modelinstance.RootNode;
+import org.muml.mumlcore.modelinstance.ModelinstanceFactory;
+import org.muml.mumlcore.modelinstance.ModelinstancePackage;
+import org.muml.mumlcore.modelinstance.RootNode;
 
 /**
  * <!-- begin-user-doc -->

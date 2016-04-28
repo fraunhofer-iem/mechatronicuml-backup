@@ -2,7 +2,7 @@
  */
 package org.muml.uppaal.options;
 
-import org.muml.core.Extension;
+import org.muml.mumlcore.Extension;
 
 /**
  * <!-- begin-user-doc -->

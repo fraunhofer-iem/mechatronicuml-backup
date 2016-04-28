@@ -8,8 +8,8 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-import org.muml.core.CorePackage;
 import org.muml.core.tests.gmf.GMFMapTest;
+import org.muml.mumlcore.CorePackage;
 import org.muml.pim.PimPackage;
 import org.muml.pm.hardware.HardwarePackage;
 

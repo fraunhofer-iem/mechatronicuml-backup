@@ -2,7 +2,7 @@
  */
 package org.muml.psm.allocation;
 
-import org.muml.core.ExtendableElement;
+import org.muml.mumlcore.ExtendableElement;
 import org.muml.pim.instance.ComponentInstance;
 import org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance;
 

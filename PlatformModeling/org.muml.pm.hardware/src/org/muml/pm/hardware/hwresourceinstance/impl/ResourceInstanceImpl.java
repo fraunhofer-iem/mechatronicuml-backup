@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.muml.core.impl.NamedElementImpl;
+import org.muml.mumlcore.impl.NamedElementImpl;
 import org.muml.pm.hardware.hwresource.Resource;
 import org.muml.pm.hardware.hwresourceinstance.HWPort;
 import org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage;

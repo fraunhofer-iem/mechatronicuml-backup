@@ -7,7 +7,7 @@
 package org.muml.storydiagram.patterns;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.core.NamedElement;
+import org.muml.mumlcore.NamedElement;
 
 /**
  * <!-- begin-user-doc -->

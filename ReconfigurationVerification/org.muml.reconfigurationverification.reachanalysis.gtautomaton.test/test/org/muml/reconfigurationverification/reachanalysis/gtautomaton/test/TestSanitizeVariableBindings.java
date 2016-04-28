@@ -2,8 +2,8 @@ package org.muml.reconfigurationverification.reachanalysis.gtautomaton.test;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.muml.core.expressions.common.CommonExpressionsFactory;
-import org.muml.core.expressions.common.LiteralExpression;
+import org.muml.mumlcore.expressions.common.CommonExpressionsFactory;
+import org.muml.mumlcore.expressions.common.LiteralExpression;
 import org.muml.pim.behavior.BehaviorFactory;
 import org.muml.pim.behavior.Variable;
 import org.muml.pim.types.PrimitiveDataType;

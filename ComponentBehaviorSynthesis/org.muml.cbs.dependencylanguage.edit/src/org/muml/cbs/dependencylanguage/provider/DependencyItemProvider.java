@@ -13,8 +13,8 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.muml.cbs.dependencylanguage.Dependency;
 import org.muml.cbs.dependencylanguage.DependencylanguageFactory;
-import org.muml.core.CorePackage;
 import org.muml.core.provider.CommentableElementItemProvider;
+import org.muml.mumlcore.CorePackage;
 
 /**
  * This is the item provider adapter for a {@link org.muml.cbs.dependencylanguage.Dependency} object.

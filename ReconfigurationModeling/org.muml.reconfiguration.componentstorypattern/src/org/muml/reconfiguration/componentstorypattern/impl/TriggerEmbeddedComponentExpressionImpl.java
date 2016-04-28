@@ -3,7 +3,7 @@
 package org.muml.reconfiguration.componentstorypattern.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.muml.core.expressions.impl.ExpressionImpl;
+import org.muml.mumlcore.expressions.impl.ExpressionImpl;
 import org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage;
 import org.muml.reconfiguration.componentstorypattern.TriggerEmbeddedComponentExpression;
 

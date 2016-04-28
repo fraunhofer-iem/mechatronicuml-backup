@@ -10,8 +10,8 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.muml.core.CorePackage;
 import org.muml.core.provider.ExtendableElementItemProvider;
+import org.muml.mumlcore.CorePackage;
 import org.muml.storydiagram.activities.ActivitiesFactory;
 import org.muml.storydiagram.calls.CallsFactory;
 

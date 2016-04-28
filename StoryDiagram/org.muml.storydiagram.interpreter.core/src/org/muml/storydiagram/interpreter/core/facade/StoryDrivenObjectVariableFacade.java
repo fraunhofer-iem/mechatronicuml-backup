@@ -8,7 +8,7 @@ import java.util.Map;
 
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.muml.core.expressions.Expression;
+import org.muml.mumlcore.expressions.Expression;
 import org.muml.storydiagram.interpreter.core.mdelab.facade.IStoryPatternObjectFacade;
 import org.muml.storydiagram.patterns.AbstractLinkVariable;
 import org.muml.storydiagram.patterns.AbstractVariable;

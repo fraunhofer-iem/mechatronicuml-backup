@@ -20,8 +20,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
-import org.muml.core.modelinstance.util.ModelinstanceAdapterFactory;
+import org.muml.mumlcore.modelinstance.util.ModelinstanceAdapterFactory;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -72,7 +71,7 @@ public class ModelinstanceItemProviderAdapterFactory extends ModelinstanceAdapte
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.muml.core.modelinstance.RootNode} instances.
+	 * This keeps track of the one adapter used for all {@link org.muml.mumlcore.modelinstance.RootNode} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -80,7 +79,7 @@ public class ModelinstanceItemProviderAdapterFactory extends ModelinstanceAdapte
 	protected RootNodeItemProvider rootNodeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.muml.core.modelinstance.RootNode}.
+	 * This creates an adapter for a {@link org.muml.mumlcore.modelinstance.RootNode}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -95,7 +94,7 @@ public class ModelinstanceItemProviderAdapterFactory extends ModelinstanceAdapte
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.muml.core.modelinstance.ModelElementCategory} instances.
+	 * This keeps track of the one adapter used for all {@link org.muml.mumlcore.modelinstance.ModelElementCategory} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -103,7 +102,7 @@ public class ModelinstanceItemProviderAdapterFactory extends ModelinstanceAdapte
 	protected ModelElementCategoryItemProvider modelElementCategoryItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.muml.core.modelinstance.ModelElementCategory}.
+	 * This creates an adapter for a {@link org.muml.mumlcore.modelinstance.ModelElementCategory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

@@ -2,8 +2,8 @@
  */
 package org.muml.core.modelinstance.tests;
 
-import org.muml.core.modelinstance.ModelElementCategory;
-import org.muml.core.modelinstance.ModelinstanceFactory;
+import org.muml.mumlcore.modelinstance.ModelElementCategory;
+import org.muml.mumlcore.modelinstance.ModelinstanceFactory;
 
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
@@ -15,8 +15,8 @@ import junit.textui.TestRunner;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link org.muml.core.modelinstance.ModelElementCategory#isValidElement(org.eclipse.emf.ecore.EObject) <em>Is Valid Element</em>}</li>
- *   <li>{@link org.muml.core.modelinstance.ModelElementCategory#isValidEClass(org.eclipse.emf.ecore.EClass) <em>Is Valid EClass</em>}</li>
+ *   <li>{@link org.muml.mumlcore.modelinstance.ModelElementCategory#isValidElement(org.eclipse.emf.ecore.EObject) <em>Is Valid Element</em>}</li>
+ *   <li>{@link org.muml.mumlcore.modelinstance.ModelElementCategory#isValidEClass(org.eclipse.emf.ecore.EClass) <em>Is Valid EClass</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -93,10 +93,10 @@ public class ModelElementCategoryTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link org.muml.core.modelinstance.ModelElementCategory#isValidElement(org.eclipse.emf.ecore.EObject) <em>Is Valid Element</em>}' operation.
+	 * Tests the '{@link org.muml.mumlcore.modelinstance.ModelElementCategory#isValidElement(org.eclipse.emf.ecore.EObject) <em>Is Valid Element</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.core.modelinstance.ModelElementCategory#isValidElement(org.eclipse.emf.ecore.EObject)
+	 * @see org.muml.mumlcore.modelinstance.ModelElementCategory#isValidElement(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
 	public void testIsValidElement__EObject() {
@@ -106,10 +106,10 @@ public class ModelElementCategoryTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link org.muml.core.modelinstance.ModelElementCategory#isValidEClass(org.eclipse.emf.ecore.EClass) <em>Is Valid EClass</em>}' operation.
+	 * Tests the '{@link org.muml.mumlcore.modelinstance.ModelElementCategory#isValidEClass(org.eclipse.emf.ecore.EClass) <em>Is Valid EClass</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.core.modelinstance.ModelElementCategory#isValidEClass(org.eclipse.emf.ecore.EClass)
+	 * @see org.muml.mumlcore.modelinstance.ModelElementCategory#isValidEClass(org.eclipse.emf.ecore.EClass)
 	 * @generated
 	 */
 	public void testIsValidEClass__EClass() {

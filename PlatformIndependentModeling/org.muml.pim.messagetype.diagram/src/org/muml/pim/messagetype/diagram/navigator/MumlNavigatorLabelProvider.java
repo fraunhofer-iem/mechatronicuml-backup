@@ -15,7 +15,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
-import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.mumlcore.modelinstance.ModelElementCategory;
 import org.muml.pim.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart;
 import org.muml.pim.messagetype.diagram.edit.parts.MessageTypeEditPart;
 import org.muml.pim.messagetype.diagram.edit.parts.MessageTypeNameEditPart;

@@ -6,12 +6,12 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
-import org.muml.core.ExtendableElement;
-import org.muml.core.NamedElement;
 import org.muml.graphviz.common.Edge;
 import org.muml.graphviz.common.Graph;
 import org.muml.graphviz.common.Node;
 import org.muml.graphviz.dot.*;
+import org.muml.mumlcore.ExtendableElement;
+import org.muml.mumlcore.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -232,13 +232,13 @@ public class DotAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.muml.core.ExtendableElement <em>Extendable Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.mumlcore.ExtendableElement <em>Extendable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.muml.core.ExtendableElement
+	 * @see org.muml.mumlcore.ExtendableElement
 	 * @generated
 	 */
 	public Adapter createExtendableElementAdapter() {
@@ -246,13 +246,13 @@ public class DotAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.muml.core.NamedElement <em>Named Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.mumlcore.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.muml.core.NamedElement
+	 * @see org.muml.mumlcore.NamedElement
 	 * @generated
 	 */
 	public Adapter createNamedElementAdapter() {

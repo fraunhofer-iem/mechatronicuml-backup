@@ -28,9 +28,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.muml.core.impl.ExtensionImpl;
-
+import org.muml.mumlcore.impl.ExtensionImpl;
 import org.muml.simulink.adapter.extension.ExtensionPackage;
 import org.muml.simulink.adapter.extension.SimulinkAnnotationExtension;
 

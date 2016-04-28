@@ -7,7 +7,7 @@
 package org.muml.pim.actionlanguage;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.core.expressions.Expression;
+import org.muml.mumlcore.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->

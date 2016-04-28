@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.muml.core.impl.CommentableElementImpl;
+import org.muml.mumlcore.impl.CommentableElementImpl;
 import org.muml.pim.msgtype.MessageType;
 import org.muml.pim.valuetype.TimeValue;
 import org.muml.reconfiguration.Manager;

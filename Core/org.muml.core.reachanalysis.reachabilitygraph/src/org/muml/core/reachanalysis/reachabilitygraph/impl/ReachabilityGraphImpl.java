@@ -19,13 +19,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.muml.core.impl.ExtendableElementImpl;
 import org.muml.core.reachanalysis.reachabilitygraph.HashToStateList;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraph;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphFactory;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphPackage;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphTransition;
+import org.muml.mumlcore.impl.ExtendableElementImpl;
 
 /**
  * <!-- begin-user-doc -->

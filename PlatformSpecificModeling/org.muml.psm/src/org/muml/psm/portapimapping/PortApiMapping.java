@@ -2,8 +2,8 @@
  */
 package org.muml.psm.portapimapping;
 
-import org.muml.core.CommentableElement;
-import org.muml.core.expressions.Expression;
+import org.muml.mumlcore.CommentableElement;
+import org.muml.mumlcore.expressions.Expression;
 import org.muml.pim.instance.ContinuousPortInstance;
 
 /**

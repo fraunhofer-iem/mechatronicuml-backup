@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.muml.core.impl.RepositoryImpl;
+import org.muml.mumlcore.impl.RepositoryImpl;
 import org.muml.pim.msgtype.MessageType;
 import org.muml.pim.msgtype.MessageTypeRepository;
 import org.muml.pim.msgtype.MsgtypePackage;
