@@ -15,6 +15,8 @@ import org.eclipse.ocl.ecore.OCL.Helper;
 import org.eclipse.ocl.ecore.OCLExpression;
 import org.eclipse.ocl.ecore.Variable;
 import org.eclipse.ocl.options.ParsingOptions;
+import org.eclipse.ocl.pivot.ExpressionInOCL;
+import org.eclipse.ocl.pivot.utilities.OCLHelper;
 import org.muml.pim.pattern.diagram.part.MumlDiagramEditorPlugin;
 
 /**
@@ -49,7 +51,7 @@ public class MumlOCLFactory {
 				"\'0\'", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
-				"(\r\nif self.oclAsType(ecore::EObject).eContainer().oclAsType(msgtype::MessageType).parameters->first() = self then\r\n\t\t\'\'\r\n\telse\r\n\t\t\' \'\r\n\tendif\r\n).concat(\r\n\tif self.dataType.name.oclIsUndefined() then\r\n\t\t\'\'\r\n\telse\r\n\t\tself.dataType.name\r\n\tendif\t\r\n\r\n).concat(\r\n\tif self.name.oclIsUndefined() then\r\n\t\t\'null\'\r\n\telse\r\n\t\t\' \'.concat(self.name)\r\n\tendif\r\n).concat(\r\n\tif self.oclAsType(ecore::EObject).eContainer().oclAsType(msgtype::MessageType).parameters->last() = self then\r\n\t\t\'\'\r\n\telse\r\n\t\t\',\'\r\n\tendif\r\n)\r\n\r\n", //$NON-NLS-1$
+				"(\r\nif self.oclContainer().oclAsType(msgtype::MessageType).parameters->first() = self then\r\n\t\t\'\'\r\n\telse\r\n\t\t\' \'\r\n\tendif\r\n).concat(\r\n\tif self.dataType.name.oclIsUndefined() then\r\n\t\t\'\'\r\n\telse\r\n\t\tself.dataType.name\r\n\tendif\t\r\n\r\n).concat(\r\n\tif self.name.oclIsUndefined() then\r\n\t\t\'null\'\r\n\telse\r\n\t\t\' \'.concat(self.name)\r\n\tendif\r\n).concat(\r\n\tif self.oclContainer().oclAsType(msgtype::MessageType).parameters->last() = self then\r\n\t\t\'\'\r\n\telse\r\n\t\t\',\'\r\n\tendif\r\n)\r\n\r\n", //$NON-NLS-1$
 				"if self.name.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tself.name\r\nendif", //$NON-NLS-1$
 				"\'Size: \'.concat(if(self.bufferSize.oclIsUndefined()) \r\nthen \'null\' else self.bufferSize.toString() endif)", //$NON-NLS-1$
 				"\'Discard: \'.concat(if (self.bufferOverflowAvoidanceStrategy = BufferOverflowAvoidanceStrategy::DISCARD_INCOMING_MESSAGE)\r\nthen \'Incoming Msgs\' else \'Oldest Msgs\' endif)", //$NON-NLS-1$
@@ -132,27 +134,26 @@ public class MumlOCLFactory {
 		/**
 		* @generated
 		*/
-		private final org.eclipse.ocl.ecore.OCL oclInstance;
+		private final org.eclipse.ocl.pivot.utilities.OCL pivotOclInstance;
 
 		/**
 		* @generated
 		*/
-		private OCLExpression oclExpression;
+		private ExpressionInOCL pivotOclExpression;
 
 		/**
-		* @generated
-		*/
+			* @generated
+			*/
 		public Expression(String body, EClassifier context, Map<String, EClassifier> environment) {
 			super(body, context);
-			oclInstance = org.eclipse.ocl.ecore.OCL.newInstance();
-			initCustomEnv(oclInstance.getEnvironment(), environment);
-			Helper oclHelper = oclInstance.createOCLHelper();
-			oclHelper.setContext(context());
+			pivotOclInstance = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+			OCLHelper pivotHelper = pivotOclInstance.createOCLHelper(context);
 			try {
-				oclExpression = oclHelper.createQuery(body());
+				pivotOclExpression = pivotHelper.createQuery(body());
 				setStatus(IStatus.OK, null, null);
-			} catch (ParserException e) {
-				setStatus(IStatus.ERROR, e.getMessage(), e);
+			} catch (org.eclipse.ocl.pivot.utilities.ParserException e1) {
+				e1.printStackTrace();
+				setStatus(IStatus.ERROR, e1.getMessage(), e1);
 			}
 		}
 
@@ -161,21 +162,18 @@ public class MumlOCLFactory {
 		*/
 		@SuppressWarnings("rawtypes")
 		protected Object doEvaluate(Object context, Map env) {
-			if (oclExpression == null) {
+			if (pivotOclExpression == null) {
 				return null;
 			}
-			// on the first call, both evalEnvironment and extentMap are clear, for later we have finally, below.
-			EvaluationEnvironment<?, ?, ?, ?, ?> evalEnv = oclInstance.getEvaluationEnvironment();
-			// initialize environment
-			for (Object nextKey : env.keySet()) {
-				evalEnv.replace((String) nextKey, env.get(nextKey));
-			}
 			try {
-				Object result = oclInstance.evaluate(context, oclExpression);
-				return oclInstance.isInvalid(result) ? null : result;
+				Object pivotResult = pivotOclInstance.evaluate(context, pivotOclExpression);
+				// XXX Check for invalid and return null:
+				// return oclInstance.isInvalid(result) ? null : result;
+				return pivotResult;
 			} finally {
-				evalEnv.clear();
-				oclInstance.setExtentMap(null); // clear allInstances cache, and get the oclInstance ready for the next call
+				// XXX
+				//				evalEnv.clear();
+				//				oclInstance.setExtentMap(null); // clear allInstances cache, and get the oclInstance ready for the next call
 			}
 		}
 

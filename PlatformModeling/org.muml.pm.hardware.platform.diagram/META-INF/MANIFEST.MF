@@ -47,7 +47,8 @@ Require-Bundle: org.eclipse.core.expressions,
  org.eclipse.ocl.ecore;visibility:=reexport,
  org.eclipse.emf.validation;visibility:=reexport,
  org.eclipse.gef;visibility:=reexport,
- org.muml.core.common.editingdomain;visibility:=reexport
+ org.muml.core.common.editingdomain;visibility:=reexport,
+ org.eclipse.ocl.pivot;visibility:=reexport
 Bundle-ClassPath: .
 Bundle-Activator: org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin
 Bundle-Vendor: %providerName

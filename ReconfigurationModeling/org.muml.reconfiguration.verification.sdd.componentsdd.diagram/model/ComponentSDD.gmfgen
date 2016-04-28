@@ -1418,6 +1418,7 @@
   <plugin
       name="Component Story Decision Diagram Editor"
       provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn">
+	<requiredPlugins>org.eclipse.ocl.pivot</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>

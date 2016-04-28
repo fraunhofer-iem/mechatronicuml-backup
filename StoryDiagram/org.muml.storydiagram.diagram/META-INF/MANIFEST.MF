@@ -42,7 +42,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.muml.core.edit;visibility:=reexport,
  org.eclipse.gmf.runtime.diagram.ui.printing,
  org.eclipse.gmf.runtime.diagram.ui.printing.render,
- org.eclipse.gmf.tooling.runtime;visibility:=reexport
+ org.eclipse.gmf.tooling.runtime;visibility:=reexport,
+ org.eclipse.ocl.pivot;visibility:=reexport
 Export-Package: org.muml.storydiagram.diagram.edit.commands,
  org.muml.storydiagram.diagram.edit.parts,
  org.muml.storydiagram.diagram.part,

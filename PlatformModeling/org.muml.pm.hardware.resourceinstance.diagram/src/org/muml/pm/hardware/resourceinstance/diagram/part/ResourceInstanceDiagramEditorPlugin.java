@@ -7,6 +7,7 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
@@ -176,6 +177,7 @@ public class ResourceInstanceDiagramEditorPlugin extends AbstractUIPlugin {
 		factories.add(new BehaviorItemProviderAdapterFactory());
 		factories.add(new ComponentItemProviderAdapterFactory());
 		factories.add(new PatternItemProviderAdapterFactory());
+		factories.add(new EcoreItemProviderAdapterFactory());
 
 		// Custom Factories with negative priority
 		factories.addAll(negativePriorityFactories);

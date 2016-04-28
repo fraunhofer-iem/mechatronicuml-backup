@@ -42,7 +42,9 @@ Require-Bundle: org.eclipse.ui,
  org.muml.ape.runtime;visibility:=reexport,
  org.muml.core.edit.properties;visibility:=reexport,
  org.muml.pim.edit.properties;visibility:=reexport,
- org.muml.core.common.editingdomain;visibility:=reexport
+ org.muml.core.common.editingdomain;visibility:=reexport,
+ org.eclipse.emf.ecore.edit;visibility:=reexport,
+ org.eclipse.ocl.pivot;visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .

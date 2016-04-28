@@ -1839,6 +1839,7 @@
       name="Component Story Diagram Editor"
       provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn"
       version="0.4.0.qualifier">
+    <requiredPlugins>org.eclipse.ocl.pivot</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>

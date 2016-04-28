@@ -19,6 +19,7 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
@@ -178,6 +179,7 @@ public class ComponentinstanceconfigurationDiagramEditorPlugin extends AbstractU
 		factories.add(new ExpressionsItemProviderAdapterFactory());
 		factories.add(new CommonExpressionsItemProviderAdapterFactory());
 		factories.add(new ModelinstanceItemProviderAdapterFactory());
+		factories.add(new EcoreItemProviderAdapterFactory());
 
 		// Custom Factories with negative priority
 		factories.addAll(negativePriorityFactories);

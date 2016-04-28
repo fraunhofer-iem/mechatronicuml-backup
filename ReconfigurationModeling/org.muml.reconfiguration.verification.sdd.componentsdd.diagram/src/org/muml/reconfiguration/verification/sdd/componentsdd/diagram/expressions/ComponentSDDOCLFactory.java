@@ -27,6 +27,8 @@ import org.eclipse.ocl.ecore.OCL.Helper;
 import org.eclipse.ocl.ecore.OCLExpression;
 import org.eclipse.ocl.ecore.Variable;
 import org.eclipse.ocl.options.ParsingOptions;
+import org.eclipse.ocl.pivot.ExpressionInOCL;
+import org.eclipse.ocl.pivot.utilities.OCLHelper;
 import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin;
 
 /**
@@ -134,29 +136,28 @@ public class ComponentSDDOCLFactory {
 	private static class Expression extends ComponentSDDAbstractExpression {
 
 		/**
-		 * @generated
-		 */
-		private final org.eclipse.ocl.ecore.OCL oclInstance;
+		* @generated
+		*/
+		private final org.eclipse.ocl.pivot.utilities.OCL pivotOclInstance;
 
 		/**
-		 * @generated
-		 */
-		private OCLExpression oclExpression;
+		* @generated
+		*/
+		private ExpressionInOCL pivotOclExpression;
 
 		/**
-		 * @generated
-		 */
+			 * @generated
+			 */
 		public Expression(String body, EClassifier context, Map<String, EClassifier> environment) {
 			super(body, context);
-			oclInstance = org.eclipse.ocl.ecore.OCL.newInstance();
-			initCustomEnv(oclInstance.getEnvironment(), environment);
-			Helper oclHelper = oclInstance.createOCLHelper();
-			oclHelper.setContext(context());
+			pivotOclInstance = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+			OCLHelper pivotHelper = pivotOclInstance.createOCLHelper(context);
 			try {
-				oclExpression = oclHelper.createQuery(body());
+				pivotOclExpression = pivotHelper.createQuery(body());
 				setStatus(IStatus.OK, null, null);
-			} catch (ParserException e) {
-				setStatus(IStatus.ERROR, e.getMessage(), e);
+			} catch (org.eclipse.ocl.pivot.utilities.ParserException e1) {
+				e1.printStackTrace();
+				setStatus(IStatus.ERROR, e1.getMessage(), e1);
 			}
 		}
 
@@ -165,21 +166,18 @@ public class ComponentSDDOCLFactory {
 		 */
 		@SuppressWarnings("rawtypes")
 		protected Object doEvaluate(Object context, Map env) {
-			if (oclExpression == null) {
+			if (pivotOclExpression == null) {
 				return null;
 			}
-			// on the first call, both evalEnvironment and extentMap are clear, for later we have finally, below.
-			EvaluationEnvironment<?, ?, ?, ?, ?> evalEnv = oclInstance.getEvaluationEnvironment();
-			// initialize environment
-			for (Object nextKey : env.keySet()) {
-				evalEnv.replace((String) nextKey, env.get(nextKey));
-			}
 			try {
-				Object result = oclInstance.evaluate(context, oclExpression);
-				return oclInstance.isInvalid(result) ? null : result;
+				Object pivotResult = pivotOclInstance.evaluate(context, pivotOclExpression);
+				// XXX Check for invalid and return null:
+				// return oclInstance.isInvalid(result) ? null : result;
+				return pivotResult;
 			} finally {
-				evalEnv.clear();
-				oclInstance.setExtentMap(null); // clear allInstances cache, and get the oclInstance ready for the next call
+				// XXX
+				//				evalEnv.clear();
+				//				oclInstance.setExtentMap(null); // clear allInstances cache, and get the oclInstance ready for the next call
 			}
 		}
 

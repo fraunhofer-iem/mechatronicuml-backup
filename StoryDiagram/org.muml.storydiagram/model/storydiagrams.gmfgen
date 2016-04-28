@@ -1359,6 +1359,7 @@
       provider="www.storydriven.org"
       version="0.3.0.qualifier"
       printingEnabled="true">
+    <requiredPlugins>org.eclipse.ocl.pivot</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>

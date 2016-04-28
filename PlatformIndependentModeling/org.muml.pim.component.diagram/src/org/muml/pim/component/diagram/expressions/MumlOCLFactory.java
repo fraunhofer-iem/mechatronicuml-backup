@@ -27,6 +27,8 @@ import org.eclipse.ocl.ecore.OCL.Helper;
 import org.eclipse.ocl.ecore.OCLExpression;
 import org.eclipse.ocl.ecore.Variable;
 import org.eclipse.ocl.options.ParsingOptions;
+import org.eclipse.ocl.pivot.ExpressionInOCL;
+import org.eclipse.ocl.pivot.utilities.OCLHelper;
 import org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin;
 
 /**
@@ -130,57 +132,37 @@ public class MumlOCLFactory {
 		/**
 		 * @generated
 		 */
-//		private final org.eclipse.ocl.ecore.OCL oclInstance;
-		
-		/**
-		 * @generated
-		 */
-//		private OCLExpression oclExpression;
+		//		private final org.eclipse.ocl.ecore.OCL oclInstance;
 
 		/**
 		 * @generated
 		 */
-		private org.eclipse.ocl.pivot.utilities.OCL pivotOclInstance;
+		//		private OCLExpression oclExpression;
 
 		/**
 		 * @generated
 		 */
-		private org.eclipse.ocl.pivot.ExpressionInOCL pivotExpression = null;
-		
+		private final org.eclipse.ocl.pivot.utilities.OCL pivotOclInstance;
+
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
+		private ExpressionInOCL pivotOclExpression;
+
+		/**
+			 * @generated
+			 */
 		public Expression(String body, EClassifier context, Map<String, EClassifier> environment) {
 			super(body, context);
 			pivotOclInstance = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
-			org.eclipse.ocl.pivot.utilities.OCLHelper pivotHelper = pivotOclInstance.createOCLHelper(context);
-						try {
-				pivotExpression = pivotHelper.createQuery(body());
+			OCLHelper pivotHelper = pivotOclInstance.createOCLHelper(context);
+			try {
+				pivotOclExpression = pivotHelper.createQuery(body());
 				setStatus(IStatus.OK, null, null);
 			} catch (org.eclipse.ocl.pivot.utilities.ParserException e1) {
 				e1.printStackTrace();
 				setStatus(IStatus.ERROR, e1.getMessage(), e1);
 			}
-	
-//			oclInstance = org.eclipse.ocl.ecore.OCL.newInstance();
-//			initCustomEnv(oclInstance.getEnvironment(), environment);
-//			Helper oclHelper = oclInstance.createOCLHelper();
-//			oclHelper.setContext(context());
-//			try {
-//				oclExpression = oclHelper.createQuery(body());
-//				setStatus(IStatus.OK, null, null);
-//			} catch (ParserException e) {
-//				setStatus(IStatus.ERROR, e.getMessage(), e);
-//			}
-						
-						
-
-//			XXX initCustomEnv() calls the following code, which must be executed somehow pivot like:
-//			for (String varName : environment.keySet()) {
-//				EClassifier varType = environment.get(varName);
-//				ecoreEnv.addElement(varName, createVar(ecoreEnv, varName, varType), false);
-//			}
-
 		}
 
 		/**
@@ -188,54 +170,69 @@ public class MumlOCLFactory {
 		 */
 		@SuppressWarnings("rawtypes")
 		protected Object doEvaluate(Object context, Map env) {
-	
-			if (pivotExpression == null) {
+			if (pivotOclExpression == null) {
 				return null;
 			}
-			
 			try {
-				Object pivotResult = pivotOclInstance.evaluate(context, pivotExpression);
+				Object pivotResult = pivotOclInstance.evaluate(context, pivotOclExpression);
 				// XXX Check for invalid and return null:
 				// return oclInstance.isInvalid(result) ? null : result;
 				return pivotResult;
 			} finally {
 				// XXX
-//				evalEnv.clear();
-//				oclInstance.setExtentMap(null); // clear allInstances cache, and get the oclInstance ready for the next call
+				//				evalEnv.clear();
+				//				oclInstance.setExtentMap(null); // clear allInstances cache, and get the oclInstance ready for the next call
 			}
-
-			// XXX
-//			// on the first call, both evalEnvironment and extentMap are clear, for later we have finally, below.
-//			EvaluationEnvironment<?, ?, ?, ?, ?> evalEnv = oclInstance.getEvaluationEnvironment();
-//			// initialize environment
-//			for (Object nextKey : env.keySet()) {
-//				evalEnv.replace((String) nextKey, env.get(nextKey));
-//			}
 		}
-//
-//		/**
-//		 * @generated
-//		 */
-//		private static void initCustomEnv(Environment<?, EClassifier, ?, ?, ?, EParameter, ?, ?, ?, ?, ?, ?> ecoreEnv,
-//				Map<String, EClassifier> environment) {
-//			// Use EObject as implicit root class for any object, to allow eContainer() and other EObject operations from OCL expressions
-//			ParsingOptions.setOption(ecoreEnv, ParsingOptions.implicitRootClass(ecoreEnv),
-//					EcorePackage.eINSTANCE.getEObject());
-//			for (String varName : environment.keySet()) {
-//				EClassifier varType = environment.get(varName);
-//				ecoreEnv.addElement(varName, createVar(ecoreEnv, varName, varType), false);
-//			}
-//		}
-//
-//		/**
-//		 * @generated
-//		 */
-//		private static Variable createVar(Environment<?, EClassifier, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?> ecoreEnv,
-//				String name, EClassifier type) {
-//			Variable var = EcoreFactory.eINSTANCE.createVariable();
-//			var.setName(name);
-//			var.setType(ecoreEnv.getUMLReflection().getOCLType(type));
-//			return var;
-//		}
+
+		/**
+		* @generated
+		*/
+		private static void initCustomEnv(Environment<?, EClassifier, ?, ?, ?, EParameter, ?, ?, ?, ?, ?, ?> ecoreEnv,
+				Map<String, EClassifier> environment) {
+			// Use EObject as implicit root class for any object, to allow eContainer() and other EObject operations from OCL expressions
+			ParsingOptions.setOption(ecoreEnv, ParsingOptions.implicitRootClass(ecoreEnv),
+					EcorePackage.eINSTANCE.getEObject());
+			for (String varName : environment.keySet()) {
+				EClassifier varType = environment.get(varName);
+				ecoreEnv.addElement(varName, createVar(ecoreEnv, varName, varType), false);
+			}
+		}
+
+		/**
+		* @generated
+		*/
+		private static Variable createVar(Environment<?, EClassifier, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?> ecoreEnv,
+				String name, EClassifier type) {
+			Variable var = EcoreFactory.eINSTANCE.createVariable();
+			var.setName(name);
+			var.setType(ecoreEnv.getUMLReflection().getOCLType(type));
+			return var;
+		}
+		//
+		//		/**
+		//		 * @generated
+		//		 */
+		//		private static void initCustomEnv(Environment<?, EClassifier, ?, ?, ?, EParameter, ?, ?, ?, ?, ?, ?> ecoreEnv,
+		//				Map<String, EClassifier> environment) {
+		//			// Use EObject as implicit root class for any object, to allow eContainer() and other EObject operations from OCL expressions
+		//			ParsingOptions.setOption(ecoreEnv, ParsingOptions.implicitRootClass(ecoreEnv),
+		//					EcorePackage.eINSTANCE.getEObject());
+		//			for (String varName : environment.keySet()) {
+		//				EClassifier varType = environment.get(varName);
+		//				ecoreEnv.addElement(varName, createVar(ecoreEnv, varName, varType), false);
+		//			}
+		//		}
+		//
+		//		/**
+		//		 * @generated
+		//		 */
+		//		private static Variable createVar(Environment<?, EClassifier, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?> ecoreEnv,
+		//				String name, EClassifier type) {
+		//			Variable var = EcoreFactory.eINSTANCE.createVariable();
+		//			var.setName(name);
+		//			var.setType(ecoreEnv.getUMLReflection().getOCLType(type));
+		//			return var;
+		//		}
 	}
 }

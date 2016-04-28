@@ -33,6 +33,7 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.muml.core.common.FujabaCommonPlugin;
 import org.muml.core.expressions.common.provider.CommonExpressionsItemProviderAdapterFactory;
 import org.muml.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
+import org.muml.core.modelinstance.provider.ModelinstanceItemProviderAdapterFactory;
 import org.muml.core.provider.CoreItemProviderAdapterFactory;
 import org.muml.pim.behavior.provider.BehaviorItemProviderAdapterFactory;
 import org.muml.pim.component.provider.ComponentItemProviderAdapterFactory;
@@ -180,6 +181,7 @@ public class ComponentSDDDiagramEditorPlugin extends AbstractUIPlugin {
 		factories.add(new CoreItemProviderAdapterFactory());
 		factories.add(new ExpressionsItemProviderAdapterFactory());
 		factories.add(new CommonExpressionsItemProviderAdapterFactory());
+		factories.add(new ModelinstanceItemProviderAdapterFactory());
 		factories.add(new EcoreItemProviderAdapterFactory());
 		factories.add(new PimItemProviderAdapterFactory());
 		factories.add(new ConstraintItemProviderAdapterFactory());

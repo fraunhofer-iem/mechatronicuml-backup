@@ -31,6 +31,7 @@ parser.className.concat(parser._uses->first().container().oclAsType(GenCommonBas
     model.plugin.requiredPlugins += "org.muml.core.edit.properties";
     model.plugin.requiredPlugins += "org.muml.pim.edit.properties";
     model.plugin.requiredPlugins += "org.muml.core.common.editingdomain";
+    model.plugin.requiredPlugins += "org.eclipse.ocl.pivot";
     
     -- For Custom Property Tab (MUML #459)
     model.plugin.requiredPlugins += "org.muml.ape.runtime";

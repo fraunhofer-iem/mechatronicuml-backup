@@ -15,6 +15,8 @@ import org.eclipse.ocl.ecore.OCL.Helper;
 import org.eclipse.ocl.ecore.OCLExpression;
 import org.eclipse.ocl.ecore.Variable;
 import org.eclipse.ocl.options.ParsingOptions;
+import org.eclipse.ocl.pivot.ExpressionInOCL;
+import org.eclipse.ocl.pivot.utilities.OCLHelper;
 import org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin;
 
 /**
@@ -54,10 +56,10 @@ public class HardwareOCLFactory {
 				"\'Enter cardinality in form of:  lowerBound..upperBound\'", //$NON-NLS-1$
 				"let isStructuredResourceInstance : Boolean = if self.resourceType.oclIsUndefined() then false else\n self.resourceType.oclIsTypeOf(hwresourceinstance::StructuredResourceInstance) endif in\nlet memory : Set(hwresourceinstance::MemoryResourceInstance) = if (isStructuredResourceInstance) then self.resourceType.oclAsType(hwresourceinstance::StructuredResourceInstance).embeddedAtomicResourceInstances->select(r|r.oclIsKindOf(hwresourceinstance::MemoryResourceInstance) and not r.oclIsTypeOf(hwresourceinstance::CacheInstance)).oclAsType(hwresourceinstance::MemoryResourceInstance)->asOrderedSet()\nelse Set(hwresourceinstance::MemoryResourceInstance){}  endif in\nlet memoryString : String = if memory->isEmpty() then \'Memory:\' else memory->iterate(m; result : String = \'Memory:\' | result.concat(m.memorySize.toString().concat(\' \').concat(m.memoryType.toString()).concat(\', \'))) endif in\nmemoryString", //$NON-NLS-1$
 				"let isStructuredResourceInstance : Boolean = if self.resourceType.oclIsUndefined() then false else\n self.resourceType.oclIsTypeOf(hwresourceinstance::StructuredResourceInstance) endif in\nlet processor : Set(hwresourceinstance::ComputingResourceInstance) = if (isStructuredResourceInstance) then self.resourceType.oclAsType(hwresourceinstance::StructuredResourceInstance).embeddedAtomicResourceInstances->select(r|r.oclIsKindOf(hwresourceinstance::ComputingResourceInstance)).oclAsType(hwresourceinstance::ComputingResourceInstance)->asOrderedSet()\nelse Set(hwresourceinstance::ComputingResourceInstance){}  endif in\nlet processorString : String = if processor->isEmpty() then \'Processor:\' else processor->iterate(p; result : String = \'Processor:\' | result.concat(p.frequency.toString().concat(\', \'))) endif in\nprocessorString", //$NON-NLS-1$
-				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
-				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
-				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
-				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclType().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclType().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclType().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclType().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
 		};
 	}
 
@@ -118,29 +120,28 @@ public class HardwareOCLFactory {
 	private static class Expression extends HardwareAbstractExpression {
 
 		/**
-		 * @generated
-		 */
-		private final org.eclipse.ocl.ecore.OCL oclInstance;
+		* @generated
+		*/
+		private final org.eclipse.ocl.pivot.utilities.OCL pivotOclInstance;
 
 		/**
-		 * @generated
-		 */
-		private OCLExpression oclExpression;
+		* @generated
+		*/
+		private ExpressionInOCL pivotOclExpression;
 
 		/**
-		 * @generated
-		 */
+			 * @generated
+			 */
 		public Expression(String body, EClassifier context, Map<String, EClassifier> environment) {
 			super(body, context);
-			oclInstance = org.eclipse.ocl.ecore.OCL.newInstance();
-			initCustomEnv(oclInstance.getEnvironment(), environment);
-			Helper oclHelper = oclInstance.createOCLHelper();
-			oclHelper.setContext(context());
+			pivotOclInstance = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+			OCLHelper pivotHelper = pivotOclInstance.createOCLHelper(context);
 			try {
-				oclExpression = oclHelper.createQuery(body());
+				pivotOclExpression = pivotHelper.createQuery(body());
 				setStatus(IStatus.OK, null, null);
-			} catch (ParserException e) {
-				setStatus(IStatus.ERROR, e.getMessage(), e);
+			} catch (org.eclipse.ocl.pivot.utilities.ParserException e1) {
+				e1.printStackTrace();
+				setStatus(IStatus.ERROR, e1.getMessage(), e1);
 			}
 		}
 
@@ -149,21 +150,18 @@ public class HardwareOCLFactory {
 		 */
 		@SuppressWarnings("rawtypes")
 		protected Object doEvaluate(Object context, Map env) {
-			if (oclExpression == null) {
+			if (pivotOclExpression == null) {
 				return null;
 			}
-			// on the first call, both evalEnvironment and extentMap are clear, for later we have finally, below.
-			EvaluationEnvironment<?, ?, ?, ?, ?> evalEnv = oclInstance.getEvaluationEnvironment();
-			// initialize environment
-			for (Object nextKey : env.keySet()) {
-				evalEnv.replace((String) nextKey, env.get(nextKey));
-			}
 			try {
-				Object result = oclInstance.evaluate(context, oclExpression);
-				return oclInstance.isInvalid(result) ? null : result;
+				Object pivotResult = pivotOclInstance.evaluate(context, pivotOclExpression);
+				// XXX Check for invalid and return null:
+				// return oclInstance.isInvalid(result) ? null : result;
+				return pivotResult;
 			} finally {
-				evalEnv.clear();
-				oclInstance.setExtentMap(null); // clear allInstances cache, and get the oclInstance ready for the next call
+				// XXX
+				//				evalEnv.clear();
+				//				oclInstance.setExtentMap(null); // clear allInstances cache, and get the oclInstance ready for the next call
 			}
 		}
 

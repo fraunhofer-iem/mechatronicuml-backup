@@ -22,6 +22,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.muml.core.expressions.common.provider.CommonExpressionsItemProviderAdapterFactory;
 import org.muml.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
+import org.muml.core.modelinstance.provider.ModelinstanceItemProviderAdapterFactory;
 import org.muml.core.provider.CoreItemProviderAdapterFactory;
 import org.muml.storydiagram.activities.expressions.provider.ActivitiesExpressionsItemProviderAdapterFactory;
 import org.muml.storydiagram.activities.provider.ActivitiesItemProviderAdapterFactory;
@@ -141,6 +142,7 @@ public class StorydiagramsDiagramEditorPlugin extends AbstractUIPlugin {
 		factories.add(new CoreItemProviderAdapterFactory());
 		factories.add(new ExpressionsItemProviderAdapterFactory());
 		factories.add(new CommonExpressionsItemProviderAdapterFactory());
+		factories.add(new ModelinstanceItemProviderAdapterFactory());
 		factories.add(new EcoreItemProviderAdapterFactory());
 		factories.add(new ResourceItemProviderAdapterFactory());
 		factories.add(new ReflectiveItemProviderAdapterFactory());

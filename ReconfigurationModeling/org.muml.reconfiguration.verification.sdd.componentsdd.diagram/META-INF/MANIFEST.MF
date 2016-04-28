@@ -57,7 +57,8 @@ Require-Bundle: org.eclipse.ui,
  org.muml.ape.runtime;visibility:=reexport,
  org.muml.pim.common;bundle-version="0.4.0",
  org.muml.reconfiguration.common;bundle-version="0.4.0",
- org.muml.core.common;visibility:=reexport
+ org.muml.core.common;visibility:=reexport,
+ org.eclipse.ocl.pivot;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName

@@ -49,6 +49,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.validation;visibility:=reexport,
  org.eclipse.gef;visibility:=reexport,
  org.eclipse.emf.ecore.editor;bundle-version="2.10.0",
- org.muml.core.common.editingdomain;visibility:=reexport
+ org.muml.core.common.editingdomain;visibility:=reexport,
+ org.eclipse.ocl.pivot;visibility:=reexport,
+ org.eclipse.emf.ecore.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
