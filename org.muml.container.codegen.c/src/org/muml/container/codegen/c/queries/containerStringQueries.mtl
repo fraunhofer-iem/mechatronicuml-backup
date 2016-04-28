@@ -21,6 +21,13 @@
 [query public getDDSFileName (dummy:OclAny) : String = 'MUML_DDS' /]
 
 
+[query public isDDSused(container:ComponentContainer) : Boolean = 		
+if (container.componentInstanceConfigurations.portInstanceConfigurations->exists(c|c.oclIsKindOf(PortInstanceConfiguration_DDS))) then
+		true
+else
+		false
+endif
+/]
 
 
 [**

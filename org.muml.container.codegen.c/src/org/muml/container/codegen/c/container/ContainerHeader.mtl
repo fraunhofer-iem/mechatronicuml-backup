@@ -56,16 +56,15 @@
 	//Identifier of this ECU
 	#include "[if (useSubDir)]../[/if][getFileNameECU_Identifier()/]"
 
-	//DDS Specific includes
-//DDS SPECIFIC including flag
+[if isDDSused(container)]
+//DDS Specific includes
 [comment FIXME: Depends on DDS File */]
 	#include "../container_lib/DDS_Custom_Lib.h"
 	#include "../dds/[getDDSFileName()/].h"
 	#include "../dds/[getDDSFileName()/]Plugin.h"
 	#include "../dds/[getDDSFileName()/]Support.h"
 	#include "ndds/ndds_c.h"
-//DDS SPECIFIC including flag
-	
+[/if]	
 	//include the component_interfache header
 	#include "../[getFileNameComponentInterface(container.componentType,useSubDir)/]"
 [/template]
