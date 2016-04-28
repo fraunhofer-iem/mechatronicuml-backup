@@ -7,7 +7,7 @@
 package org.muml.reconfigurationverification.fotctl.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.muml.mumlcore.impl.NamedElementImpl;
+import org.muml.core.impl.NamedElementImpl;
 import org.muml.reconfigurationverification.fotctl.FotctlPackage;
 import org.muml.reconfigurationverification.fotctl.NodeLabelPredicateDecl;
 

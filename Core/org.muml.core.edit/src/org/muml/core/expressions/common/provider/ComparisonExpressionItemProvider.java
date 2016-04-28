@@ -13,11 +13,12 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.mumlcore.expressions.common.CommonExpressionsPackage;
-import org.muml.mumlcore.expressions.common.ComparisonExpression;
+
+import org.muml.core.expressions.common.CommonExpressionsPackage;
+import org.muml.core.expressions.common.ComparisonExpression;
 
 /**
- * This is the item provider adapter for a {@link org.muml.mumlcore.expressions.common.ComparisonExpression} object.
+ * This is the item provider adapter for a {@link org.muml.core.expressions.common.ComparisonExpression} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

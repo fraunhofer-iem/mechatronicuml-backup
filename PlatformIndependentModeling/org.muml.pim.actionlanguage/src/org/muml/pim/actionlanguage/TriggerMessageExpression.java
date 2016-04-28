@@ -6,7 +6,7 @@
  */
 package org.muml.pim.actionlanguage;
 
-import org.muml.mumlcore.expressions.Expression;
+import org.muml.core.expressions.Expression;
 import org.muml.pim.behavior.Parameter;
 import org.muml.pim.msgtype.MessageType;
 

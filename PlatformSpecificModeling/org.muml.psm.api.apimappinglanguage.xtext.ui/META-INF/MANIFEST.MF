@@ -23,7 +23,7 @@ Require-Bundle: org.muml.psm.api.apimappinglanguage.xtext;visibility:=reexport,
  org.eclipse.xtext.xbase.lib
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib,
- org.muml.mumlcore.modelinstance
+ org.muml.core.modelinstance
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.muml.psm.api.apimappinglanguage.xtext.ui.contentassist,
  org.muml.psm.api.apimappinglanguage.xtext.ui.contentassist.antlr,

@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.muml.mumlcore.impl.CommentableElementImpl;
+import org.muml.core.impl.CommentableElementImpl;
 import org.muml.pm.hardware.hwresource.CommunicationProtocolRepository;
 import org.muml.pm.hardware.hwresource.HwresourcePackage;
 import org.muml.pm.hardware.hwresource.Resource;

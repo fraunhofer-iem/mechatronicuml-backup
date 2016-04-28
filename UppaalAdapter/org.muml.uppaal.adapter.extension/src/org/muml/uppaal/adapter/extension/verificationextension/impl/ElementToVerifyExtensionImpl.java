@@ -13,7 +13,7 @@
 package org.muml.uppaal.adapter.extension.verificationextension.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.muml.mumlcore.impl.ExtensionImpl;
+import org.muml.core.impl.ExtensionImpl;
 import org.muml.uppaal.adapter.extension.verificationextension.ElementToVerifyExtension;
 import org.muml.uppaal.adapter.extension.verificationextension.VerificationExtensionPackage;
 

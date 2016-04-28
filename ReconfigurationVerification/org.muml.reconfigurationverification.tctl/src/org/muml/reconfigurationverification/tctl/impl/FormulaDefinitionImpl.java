@@ -7,7 +7,7 @@
 package org.muml.reconfigurationverification.tctl.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.muml.mumlcore.impl.ExtendableElementImpl;
+import org.muml.core.impl.ExtendableElementImpl;
 import org.muml.reconfigurationverification.tctl.FormulaDefinition;
 import org.muml.reconfigurationverification.tctl.TctlPackage;
 

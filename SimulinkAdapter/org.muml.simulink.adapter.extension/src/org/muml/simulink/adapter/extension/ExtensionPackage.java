@@ -4,7 +4,8 @@ package org.muml.simulink.adapter.extension;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
-import org.muml.mumlcore.CorePackage;
+
+import org.muml.core.CorePackage;
 
 /**
  * <!-- begin-user-doc -->

@@ -29,9 +29,11 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import org.muml.core.impl.ExtensionImpl;
+
 import org.muml.modelica.transform.PositionExtension;
 import org.muml.modelica.transform.TransformPackage;
-import org.muml.mumlcore.impl.ExtensionImpl;
 
 /**
  * <!-- begin-user-doc -->

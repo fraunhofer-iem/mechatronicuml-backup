@@ -14,7 +14,7 @@ import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.muml.core.common.edit.commands.ExecuteQvtoTransformationCommand;
-import org.muml.mumlcore.modelinstance.RootNode;
+import org.muml.core.modelinstance.RootNode;
 import org.muml.pm.hardware.hwresource.Resource;
 import org.muml.pm.hardware.hwresourceinstance.ResourceInstance;
 import org.osgi.framework.BundleContext;

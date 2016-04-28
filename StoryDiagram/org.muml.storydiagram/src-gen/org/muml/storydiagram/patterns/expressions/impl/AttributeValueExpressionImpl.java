@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.muml.mumlcore.expressions.impl.ExpressionImpl;
+import org.muml.core.expressions.impl.ExpressionImpl;
 import org.muml.storydiagram.patterns.ObjectVariable;
 import org.muml.storydiagram.patterns.expressions.AttributeValueExpression;
 import org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage;

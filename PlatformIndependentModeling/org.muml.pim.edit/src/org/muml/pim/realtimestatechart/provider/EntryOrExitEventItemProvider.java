@@ -108,7 +108,7 @@ public class EntryOrExitEventItemProvider
 						getResourceLocator(),
 						"Action Name",
 						"The Name of the Action",
-				org.muml.mumlcore.CorePackage.Literals.NAMED_ELEMENT__NAME,
+				org.muml.core.CorePackage.Literals.NAMED_ELEMENT__NAME,
 						true,
 						false,
 						false,

@@ -12,7 +12,7 @@
  */
 package org.muml.ontology;
 
-import org.muml.mumlcore.Extension;
+import org.muml.core.Extension;
 
 /**
  * <!-- begin-user-doc -->

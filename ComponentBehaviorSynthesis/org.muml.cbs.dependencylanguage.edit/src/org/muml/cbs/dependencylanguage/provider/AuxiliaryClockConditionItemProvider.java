@@ -18,7 +18,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.cbs.dependencylanguage.AuxiliaryClockCondition;
 import org.muml.cbs.dependencylanguage.DependencylanguageFactory;
 import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
-import org.muml.mumlcore.expressions.common.ComparingOperator;
+import org.muml.core.expressions.common.ComparingOperator;
 import org.muml.pim.valuetype.ValuetypeFactory;
 
 /**

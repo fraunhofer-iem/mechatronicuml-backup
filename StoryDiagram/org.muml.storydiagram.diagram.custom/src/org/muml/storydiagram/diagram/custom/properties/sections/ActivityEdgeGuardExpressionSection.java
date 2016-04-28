@@ -2,7 +2,7 @@ package org.muml.storydiagram.diagram.custom.properties.sections;
 
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EcorePackage;
-import org.muml.mumlcore.expressions.Expression;
+import org.muml.core.expressions.Expression;
 import org.muml.storydiagram.activities.ActivityEdge;
 import org.muml.storydiagram.ui.properties.AbstractExtendedExpressionSection;
 

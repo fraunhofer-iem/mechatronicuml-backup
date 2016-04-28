@@ -42,15 +42,15 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+import org.muml.core.NamedElement;
 import org.muml.core.common.DiagramEditorUtil;
 import org.muml.core.common.Messages;
+import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.core.modelinstance.ModelinstancePackage;
+import org.muml.core.modelinstance.RootNode;
 import org.muml.core.modelinstance.ui.ModelinstanceUiPlugin;
 import org.muml.core.modelinstance.ui.commands.CreateDiagramCommand;
 import org.muml.core.modelinstance.ui.diagrams.IDiagramInformation;
-import org.muml.mumlcore.NamedElement;
-import org.muml.mumlcore.modelinstance.ModelElementCategory;
-import org.muml.mumlcore.modelinstance.ModelinstancePackage;
-import org.muml.mumlcore.modelinstance.RootNode;
 
 public class BatchDiagramCreationWizard extends Wizard implements INewWizard {
 	private TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE

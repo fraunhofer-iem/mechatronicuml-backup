@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-import org.muml.mumlcore.expressions.common.ComparingOperator;
+import org.muml.core.expressions.common.ComparingOperator;
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceConstraint;
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceVariable;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage;

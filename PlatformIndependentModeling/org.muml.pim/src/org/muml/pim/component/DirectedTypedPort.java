@@ -6,7 +6,7 @@
  */
 package org.muml.pim.component;
 
-import org.muml.mumlcore.expressions.Expression;
+import org.muml.core.expressions.Expression;
 import org.muml.pim.behavior.TypedNamedElement;
 
 /**

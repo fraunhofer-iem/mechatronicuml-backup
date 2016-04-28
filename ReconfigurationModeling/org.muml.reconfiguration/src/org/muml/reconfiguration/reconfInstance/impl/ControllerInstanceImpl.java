@@ -3,7 +3,7 @@
 package org.muml.reconfiguration.reconfInstance.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.muml.mumlcore.impl.ExtendableElementImpl;
+import org.muml.core.impl.ExtendableElementImpl;
 import org.muml.reconfiguration.reconfInstance.ControllerInstance;
 import org.muml.reconfiguration.reconfInstance.ReconfInstancePackage;
 

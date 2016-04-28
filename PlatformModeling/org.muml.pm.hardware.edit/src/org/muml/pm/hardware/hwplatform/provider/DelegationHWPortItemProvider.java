@@ -12,7 +12,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.mumlcore.CorePackage;
+import org.muml.core.CorePackage;
 import org.muml.pim.connector.provider.ConnectorEndpointItemProvider;
 import org.muml.pm.hardware.hwplatform.DelegationHWPort;
 import org.muml.pm.hardware.hwplatform.HwplatformPackage;

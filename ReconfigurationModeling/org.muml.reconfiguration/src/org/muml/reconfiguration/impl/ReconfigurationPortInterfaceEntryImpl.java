@@ -10,7 +10,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.muml.mumlcore.impl.ExtendableElementImpl;
+import org.muml.core.impl.ExtendableElementImpl;
 import org.muml.pim.msgtype.MessageType;
 import org.muml.reconfiguration.ReconfigurationPackage;
 import org.muml.reconfiguration.ReconfigurationPortInterfaceEntry;

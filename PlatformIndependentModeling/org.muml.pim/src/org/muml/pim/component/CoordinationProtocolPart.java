@@ -7,7 +7,7 @@
 package org.muml.pim.component;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.mumlcore.CommentableElement;
+import org.muml.core.CommentableElement;
 import org.muml.pim.protocol.CoordinationProtocol;
 
 /**

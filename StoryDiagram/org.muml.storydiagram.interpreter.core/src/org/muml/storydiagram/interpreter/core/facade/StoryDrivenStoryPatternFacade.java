@@ -3,7 +3,7 @@ package org.muml.storydiagram.interpreter.core.facade;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import org.muml.mumlcore.expressions.Expression;
+import org.muml.core.expressions.Expression;
 import org.muml.storydiagram.activities.StoryNode;
 import org.muml.storydiagram.interpreter.core.mdelab.facade.IStoryPatternFacade;
 import org.muml.storydiagram.patterns.AbstractLinkVariable;

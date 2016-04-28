@@ -5,7 +5,7 @@ package org.muml.psm.allocation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.muml.mumlcore.CorePackage;
+import org.muml.core.CorePackage;
 
 /**
  * <!-- begin-user-doc -->

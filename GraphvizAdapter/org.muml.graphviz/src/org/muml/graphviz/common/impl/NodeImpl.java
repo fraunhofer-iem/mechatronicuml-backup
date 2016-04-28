@@ -3,9 +3,9 @@
 package org.muml.graphviz.common.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.muml.core.impl.NamedElementImpl;
 import org.muml.graphviz.common.CommonPackage;
 import org.muml.graphviz.common.Node;
-import org.muml.mumlcore.impl.NamedElementImpl;
 
 /**
  * <!-- begin-user-doc -->

@@ -8,7 +8,7 @@ package org.muml.storydiagram.calls;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EParameter;
-import org.muml.mumlcore.CommentableElement;
+import org.muml.core.CommentableElement;
 
 /**
  * <!-- begin-user-doc -->

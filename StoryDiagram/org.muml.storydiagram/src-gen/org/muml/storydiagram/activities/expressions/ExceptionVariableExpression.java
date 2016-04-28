@@ -6,7 +6,7 @@
  */
 package org.muml.storydiagram.activities.expressions;
 
-import org.muml.mumlcore.expressions.Expression;
+import org.muml.core.expressions.Expression;
 import org.muml.storydiagram.activities.ExceptionVariable;
 
 /**

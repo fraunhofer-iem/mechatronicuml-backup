@@ -19,12 +19,12 @@ import org.eclipse.m2m.qvt.oml.ExecutionContext;
 import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
+import org.muml.core.ExtendableElement;
 import org.muml.core.common.DiagramEditorUtil;
+import org.muml.core.modelinstance.ModelElementCategory;
 import org.muml.core.modelinstance.ModelInstancePlugin;
+import org.muml.core.modelinstance.RootNode;
 import org.muml.core.modelinstance.categories.ModelElementCategoryRegistry;
-import org.muml.mumlcore.ExtendableElement;
-import org.muml.mumlcore.modelinstance.ModelElementCategory;
-import org.muml.mumlcore.modelinstance.RootNode;
 
 public class StoringExecuteQvtoTransformationCommand extends
 		ExecuteQvtoTransformationCommand {

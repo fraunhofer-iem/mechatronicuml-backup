@@ -9,7 +9,7 @@ package org.muml.pim.valuetype.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
-import org.muml.mumlcore.ExtendableElement;
+import org.muml.core.ExtendableElement;
 import org.muml.pim.valuetype.*;
 import org.muml.pim.valuetype.Cardinality;
 import org.muml.pim.valuetype.NaturalNumber;

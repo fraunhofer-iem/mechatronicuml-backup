@@ -7,7 +7,7 @@
 package org.muml.reconfigurationverification.fotctl;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.mumlcore.NamedElement;
+import org.muml.core.NamedElement;
 import org.muml.reconfigurationverification.tctl.UnaryFormula;
 
 /**

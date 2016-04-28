@@ -4,7 +4,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.IExportWizard;
 import org.eclipse.ui.IWorkbench;
-import org.muml.mumlcore.modelinstance.RootNode;
+import org.muml.core.modelinstance.RootNode;
 import org.muml.pim.instance.ComponentInstanceConfiguration;
 import org.muml.simulink.adapter.wizard.pages.SelectDebugOptionsPage;
 import org.muml.simulink.adapter.wizard.pages.SelectDestinationPage;

@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.muml.mumlcore.CorePackage;
+import org.muml.core.CorePackage;
 import org.muml.storydiagram.SDMExtension;
 import org.muml.storydiagram.StorydiagramFactory;
 import org.muml.storydiagram.StorydiagramPackage;

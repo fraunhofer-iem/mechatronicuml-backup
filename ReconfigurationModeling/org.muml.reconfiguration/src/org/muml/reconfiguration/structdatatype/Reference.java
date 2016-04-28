@@ -6,7 +6,7 @@
  */
 package org.muml.reconfiguration.structdatatype;
 
-import org.muml.mumlcore.NamedElement;
+import org.muml.core.NamedElement;
 import org.muml.pim.types.DataType;
 import org.muml.pim.valuetype.Cardinality;
 

@@ -3,7 +3,7 @@
 package org.muml.simulink.adapter.extension;
 
 import org.eclipse.emf.ecore.EAnnotation;
-import org.muml.mumlcore.Extension;
+import org.muml.core.Extension;
 
 /**
  * <!-- begin-user-doc -->

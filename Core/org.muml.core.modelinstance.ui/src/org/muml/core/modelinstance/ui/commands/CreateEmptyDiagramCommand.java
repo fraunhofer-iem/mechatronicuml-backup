@@ -15,12 +15,12 @@ import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.muml.core.ExtendableElement;
+import org.muml.core.modelinstance.ModelElementCategory;
 import org.muml.core.modelinstance.ModelInstancePlugin;
+import org.muml.core.modelinstance.ModelinstancePackage;
+import org.muml.core.modelinstance.RootNode;
 import org.muml.core.modelinstance.ui.ModelinstanceUiPlugin;
-import org.muml.mumlcore.ExtendableElement;
-import org.muml.mumlcore.modelinstance.ModelElementCategory;
-import org.muml.mumlcore.modelinstance.ModelinstancePackage;
-import org.muml.mumlcore.modelinstance.RootNode;
 
 /**
  * Creates a new empty Diagram.

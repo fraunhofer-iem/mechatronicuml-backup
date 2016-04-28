@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.muml.mumlcore.expressions.impl.ExpressionImpl;
+import org.muml.core.expressions.impl.ExpressionImpl;
 import org.muml.pim.actionlanguage.ActionlanguagePackage;
 import org.muml.pim.actionlanguage.Block;
 import org.muml.pim.actionlanguage.LocalVariableDeclarationStatement;

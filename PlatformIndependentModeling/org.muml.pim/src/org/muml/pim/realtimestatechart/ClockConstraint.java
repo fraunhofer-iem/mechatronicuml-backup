@@ -6,8 +6,8 @@
  */
 package org.muml.pim.realtimestatechart;
 
-import org.muml.mumlcore.ExtendableElement;
-import org.muml.mumlcore.expressions.common.ComparingOperator;
+import org.muml.core.ExtendableElement;
+import org.muml.core.expressions.common.ComparingOperator;
 import org.muml.pim.valuetype.TimeValue;
 
 /**
@@ -94,7 +94,7 @@ public interface ClockConstraint extends ExtendableElement {
 	/**
 	 * Returns the value of the '<em><b>Operator</b></em>' attribute.
 	 * The default value is <code>"LESS_OR_EQUAL"</code>.
-	 * The literals are from the enumeration {@link org.muml.mumlcore.expressions.common.ComparingOperator}.
+	 * The literals are from the enumeration {@link org.muml.core.expressions.common.ComparingOperator}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Operator</em>' attribute isn't clear,
@@ -105,7 +105,7 @@ public interface ClockConstraint extends ExtendableElement {
 	 * The operator that is used in this clock constraint.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Operator</em>' attribute.
-	 * @see org.muml.mumlcore.expressions.common.ComparingOperator
+	 * @see org.muml.core.expressions.common.ComparingOperator
 	 * @see #setOperator(ComparingOperator)
 	 * @see org.muml.pim.realtimestatechart.RealtimestatechartPackage#getClockConstraint_Operator()
 	 * @model default="LESS_OR_EQUAL" required="true"
@@ -118,7 +118,7 @@ public interface ClockConstraint extends ExtendableElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Operator</em>' attribute.
-	 * @see org.muml.mumlcore.expressions.common.ComparingOperator
+	 * @see org.muml.core.expressions.common.ComparingOperator
 	 * @see #getOperator()
 	 * @generated
 	 */

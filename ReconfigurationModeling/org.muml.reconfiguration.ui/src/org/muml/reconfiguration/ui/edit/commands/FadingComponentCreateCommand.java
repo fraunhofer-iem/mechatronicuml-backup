@@ -39,7 +39,7 @@ public class FadingComponentCreateCommand extends EditElementCommand {
 		org.muml.reconfiguration.FadingComponent newElement = org.muml.reconfiguration.ReconfigurationFactory.eINSTANCE
 				.createFadingComponent();
 
-		org.muml.mumlcore.modelinstance.ModelElementCategory owner = (org.muml.mumlcore.modelinstance.ModelElementCategory) getElementToEdit();
+		org.muml.core.modelinstance.ModelElementCategory owner = (org.muml.core.modelinstance.ModelElementCategory) getElementToEdit();
 		owner.getModelElements().add(newElement);
 
 		doConfigure(newElement, monitor, info);

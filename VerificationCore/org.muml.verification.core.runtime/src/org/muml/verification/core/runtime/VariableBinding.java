@@ -6,7 +6,7 @@
  */
 package org.muml.verification.core.runtime;
 
-import org.muml.mumlcore.ExtendableElement;
+import org.muml.core.ExtendableElement;
 import org.muml.pim.behavior.Variable;
 
 /**

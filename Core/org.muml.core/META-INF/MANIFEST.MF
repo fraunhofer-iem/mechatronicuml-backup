@@ -7,21 +7,21 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: org.muml.core.modelinstance.categories,
- org.muml.mumlcore,
- org.muml.mumlcore.expressions,
- org.muml.mumlcore.expressions.common,
- org.muml.mumlcore.expressions.common.impl,
- org.muml.mumlcore.expressions.common.util,
- org.muml.mumlcore.expressions.impl,
- org.muml.mumlcore.expressions.util,
- org.muml.mumlcore.impl,
- org.muml.mumlcore.modelinstance,
- org.muml.mumlcore.modelinstance.impl,
- org.muml.mumlcore.modelinstance.util,
- org.muml.mumlcore.util
+Export-Package: org.muml.core,
+ org.muml.core.expressions,
+ org.muml.core.expressions.common,
+ org.muml.core.expressions.common.impl,
+ org.muml.core.expressions.common.util,
+ org.muml.core.expressions.impl,
+ org.muml.core.expressions.util,
+ org.muml.core.impl,
+ org.muml.core.modelinstance,
+ org.muml.core.modelinstance.categories,
+ org.muml.core.modelinstance.impl,
+ org.muml.core.modelinstance.util,
+ org.muml.core.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport
 Bundle-ActivationPolicy: lazy
-Bundle-Activator: org.muml.mumlcore.modelinstance.ModelInstancePlugin
+Bundle-Activator: org.muml.core.modelinstance.ModelInstancePlugin

@@ -1,10 +1,10 @@
 package org.muml.pim.common.modelinitializer;
 
 import org.eclipse.emf.ecore.EObject;
+import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.core.modelinstance.ModelinstanceFactory;
+import org.muml.core.modelinstance.RootNode;
 import org.muml.core.modelinstance.ui.initializer.IModelInitializer;
-import org.muml.mumlcore.modelinstance.ModelElementCategory;
-import org.muml.mumlcore.modelinstance.ModelinstanceFactory;
-import org.muml.mumlcore.modelinstance.RootNode;
 import org.muml.pim.types.PrimitiveDataType;
 import org.muml.pim.types.PrimitiveTypes;
 import org.muml.pim.types.TypesFactory;

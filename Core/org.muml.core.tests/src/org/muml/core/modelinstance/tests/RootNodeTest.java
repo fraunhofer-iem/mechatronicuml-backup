@@ -2,8 +2,8 @@
  */
 package org.muml.core.modelinstance.tests;
 
-import org.muml.mumlcore.modelinstance.ModelinstanceFactory;
-import org.muml.mumlcore.modelinstance.RootNode;
+import org.muml.core.modelinstance.ModelinstanceFactory;
+import org.muml.core.modelinstance.RootNode;
 
 import junit.framework.TestCase;
 import junit.textui.TestRunner;

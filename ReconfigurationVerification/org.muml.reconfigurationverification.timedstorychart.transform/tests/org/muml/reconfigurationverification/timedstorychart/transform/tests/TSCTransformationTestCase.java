@@ -1,8 +1,8 @@
 package org.muml.reconfigurationverification.timedstorychart.transform.tests;
 
 import org.junit.Before;
-import org.muml.mumlcore.expressions.common.CommonExpressionsFactory;
-import org.muml.mumlcore.expressions.common.LiteralExpression;
+import org.muml.core.expressions.common.CommonExpressionsFactory;
+import org.muml.core.expressions.common.LiteralExpression;
 import org.muml.pim.actionlanguage.ActionlanguageFactory;
 import org.muml.pim.actionlanguage.DiscreteInteractionEndpointReference;
 import org.muml.pim.actionlanguage.PositionSelector;

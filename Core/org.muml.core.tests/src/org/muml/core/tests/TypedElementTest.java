@@ -2,7 +2,7 @@
  */
 package org.muml.core.tests;
 
-import org.muml.mumlcore.TypedElement;
+import org.muml.core.TypedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -11,7 +11,7 @@ import org.muml.mumlcore.TypedElement;
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link org.muml.mumlcore.TypedElement#getType() <em>Type</em>}</li>
+ *   <li>{@link org.muml.core.TypedElement#getType() <em>Type</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -40,10 +40,10 @@ public abstract class TypedElementTest extends ExtendableElementTest {
 	}
 
 	/**
-	 * Tests the '{@link org.muml.mumlcore.TypedElement#getType() <em>Type</em>}' feature getter.
+	 * Tests the '{@link org.muml.core.TypedElement#getType() <em>Type</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.mumlcore.TypedElement#getType()
+	 * @see org.muml.core.TypedElement#getType()
 	 * @generated
 	 */
 	public void testGetType() {

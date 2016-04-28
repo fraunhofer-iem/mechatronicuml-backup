@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.muml.mumlcore.impl.NamedElementImpl;
+import org.muml.core.impl.NamedElementImpl;
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceStoryDiagram;
 import org.muml.reconfigurationverification.timedstorydiagram.InvariantStoryDiagram;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedGraphTransformationSystem;

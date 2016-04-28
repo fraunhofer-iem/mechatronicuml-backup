@@ -18,7 +18,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.cbs.dependencylanguage.CompositionEvent;
 import org.muml.cbs.dependencylanguage.DependencylanguageFactory;
 import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
-import org.muml.mumlcore.expressions.common.LogicOperator;
+import org.muml.core.expressions.common.LogicOperator;
 
 /**
  * This is the item provider adapter for a {@link org.muml.cbs.dependencylanguage.CompositionEvent} object.

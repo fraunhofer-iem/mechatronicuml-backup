@@ -17,10 +17,10 @@ import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
+import org.muml.core.expressions.Expression;
+import org.muml.core.expressions.TextualExpression;
 import org.muml.core.ui.IExpressionEditor;
 import org.muml.core.ui.util.ExpressionEditorUtil;
-import org.muml.mumlcore.expressions.Expression;
-import org.muml.mumlcore.expressions.TextualExpression;
 import org.muml.storydiagram.diagram.custom.util.BoundUtil;
 import org.muml.storydiagram.diagram.custom.util.EcoreTextUtil;
 

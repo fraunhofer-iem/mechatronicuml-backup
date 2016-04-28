@@ -6,7 +6,7 @@ import java.util.Map;
 
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.muml.mumlcore.expressions.Expression;
+import org.muml.core.expressions.Expression;
 import org.muml.storydiagram.activities.Activity;
 import org.muml.storydiagram.activities.ActivityCallNode;
 import org.muml.storydiagram.activities.ActivityEdge;

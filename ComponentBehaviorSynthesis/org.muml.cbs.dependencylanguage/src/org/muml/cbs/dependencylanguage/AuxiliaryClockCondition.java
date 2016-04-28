@@ -2,7 +2,7 @@
  */
 package org.muml.cbs.dependencylanguage;
 
-import org.muml.mumlcore.expressions.common.ComparingOperator;
+import org.muml.core.expressions.common.ComparingOperator;
 import org.muml.pim.valuetype.TimeValue;
 
 /**
@@ -89,7 +89,7 @@ public interface AuxiliaryClockCondition extends ClockCondition {
 
 	/**
 	 * Returns the value of the '<em><b>Operator</b></em>' attribute.
-	 * The literals are from the enumeration {@link org.muml.mumlcore.expressions.common.ComparingOperator}.
+	 * The literals are from the enumeration {@link org.muml.core.expressions.common.ComparingOperator}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Operator</em>' attribute isn't clear,
@@ -100,7 +100,7 @@ public interface AuxiliaryClockCondition extends ClockCondition {
 	 *  
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Operator</em>' attribute.
-	 * @see org.muml.mumlcore.expressions.common.ComparingOperator
+	 * @see org.muml.core.expressions.common.ComparingOperator
 	 * @see #setOperator(ComparingOperator)
 	 * @see org.muml.cbs.dependencylanguage.DependencylanguagePackage#getAuxiliaryClockCondition_Operator()
 	 * @model required="true"
@@ -113,7 +113,7 @@ public interface AuxiliaryClockCondition extends ClockCondition {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Operator</em>' attribute.
-	 * @see org.muml.mumlcore.expressions.common.ComparingOperator
+	 * @see org.muml.core.expressions.common.ComparingOperator
 	 * @see #getOperator()
 	 * @generated
 	 */

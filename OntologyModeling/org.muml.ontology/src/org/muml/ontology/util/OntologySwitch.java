@@ -16,8 +16,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
-import org.muml.mumlcore.ExtendableElement;
-import org.muml.mumlcore.Extension;
+import org.muml.core.ExtendableElement;
+import org.muml.core.Extension;
 import org.muml.ontology.*;
 
 /**

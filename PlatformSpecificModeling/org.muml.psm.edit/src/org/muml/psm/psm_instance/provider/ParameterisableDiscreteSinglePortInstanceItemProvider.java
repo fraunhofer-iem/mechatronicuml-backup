@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.mumlcore.CorePackage;
+import org.muml.core.CorePackage;
 import org.muml.pim.instance.provider.DiscreteSinglePortInstanceItemProvider;
 import org.muml.psm.properties.PropertiesFactory;
 import org.muml.psm.provider.PsmEditPlugin;

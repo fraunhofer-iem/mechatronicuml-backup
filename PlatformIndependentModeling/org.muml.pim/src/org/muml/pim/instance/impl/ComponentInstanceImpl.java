@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.muml.mumlcore.impl.NamedElementImpl;
+import org.muml.core.impl.NamedElementImpl;
 import org.muml.pim.component.Component;
 import org.muml.pim.component.ComponentPart;
 import org.muml.pim.instance.ComponentInstance;

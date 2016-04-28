@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.muml.mumlcore.impl.CommentableElementImpl;
+import org.muml.core.impl.CommentableElementImpl;
 import org.muml.pim.component.ComponentPackage;
 import org.muml.pim.component.CoordinationProtocolPart;
 import org.muml.pim.component.PortPart;

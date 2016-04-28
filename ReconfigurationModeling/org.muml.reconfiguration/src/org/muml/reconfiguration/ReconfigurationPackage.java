@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.muml.mumlcore.CorePackage;
+import org.muml.core.CorePackage;
 import org.muml.pim.component.ComponentPackage;
 import org.muml.pim.types.TypesPackage;
 

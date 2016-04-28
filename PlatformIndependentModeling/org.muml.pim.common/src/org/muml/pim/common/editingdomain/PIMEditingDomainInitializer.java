@@ -10,8 +10,8 @@ public class PIMEditingDomainInitializer implements IEditingDomainInitializer {
 	private boolean hasPrimitiveTypes(EditingDomain editingDomain) {
 		for (Resource resource : editingDomain.getResourceSet().getResources()) {
 			for (Object rootNode : resource.getContents()) {
-				if (rootNode instanceof org.muml.mumlcore.modelinstance.RootNode) {
-					for (org.muml.mumlcore.modelinstance.ModelElementCategory category : ((org.muml.mumlcore.modelinstance.RootNode) rootNode)
+				if (rootNode instanceof org.muml.core.modelinstance.RootNode) {
+					for (org.muml.core.modelinstance.ModelElementCategory category : ((org.muml.core.modelinstance.RootNode) rootNode)
 							.getCategories()) {
 						if ("org.muml.types.category".equals(category.getKey())) {
 							for (Object modelElement : category.getModelElements()) {

@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.muml.mumlcore.impl.NamedElementImpl;
+import org.muml.core.impl.NamedElementImpl;
 import org.muml.pm.hardware.hwplatform.HWPlatform;
 import org.muml.pm.hardware.hwplatforminstance.DelegationHWPortInstance;
 import org.muml.pm.hardware.hwplatforminstance.HWPlatformInstance;

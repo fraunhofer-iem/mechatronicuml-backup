@@ -6,8 +6,8 @@
  */
 package org.muml.pim.types;
 
-import org.muml.mumlcore.CommentableElement;
-import org.muml.mumlcore.NamedElement;
+import org.muml.core.CommentableElement;
+import org.muml.core.NamedElement;
 
 /**
  * <!-- begin-user-doc -->

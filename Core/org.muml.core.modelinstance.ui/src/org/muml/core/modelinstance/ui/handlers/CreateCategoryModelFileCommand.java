@@ -18,10 +18,10 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 import org.muml.core.common.DiagramEditorUtil;
+import org.muml.core.modelinstance.ModelElementCategory;
 import org.muml.core.modelinstance.ModelInstancePlugin;
+import org.muml.core.modelinstance.ModelinstanceFactory;
 import org.muml.core.modelinstance.ui.ModelinstanceUiPlugin;
-import org.muml.mumlcore.modelinstance.ModelElementCategory;
-import org.muml.mumlcore.modelinstance.ModelinstanceFactory;
 
 public class CreateCategoryModelFileCommand extends AbstractCreateFileCommand {
 

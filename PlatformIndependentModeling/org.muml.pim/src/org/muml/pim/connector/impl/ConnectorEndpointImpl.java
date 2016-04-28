@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.muml.mumlcore.impl.CommentableElementImpl;
+import org.muml.core.impl.CommentableElementImpl;
 import org.muml.pim.connector.Connector;
 import org.muml.pim.connector.ConnectorEndpoint;
 import org.muml.pim.connector.ConnectorPackage;

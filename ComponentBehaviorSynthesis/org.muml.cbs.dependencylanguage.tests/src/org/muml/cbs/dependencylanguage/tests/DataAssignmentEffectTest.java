@@ -20,10 +20,10 @@ import junit.textui.TestRunner;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link org.muml.mumlcore.ExtendableElement#getExtension(org.eclipse.emf.ecore.EClass) <em>Get Extension</em>}</li>
- *   <li>{@link org.muml.mumlcore.ExtendableElement#provideExtension(org.eclipse.emf.ecore.EClass) <em>Provide Extension</em>}</li>
- *   <li>{@link org.muml.mumlcore.ExtendableElement#getAnnotation(java.lang.String) <em>Get Annotation</em>}</li>
- *   <li>{@link org.muml.mumlcore.ExtendableElement#provideAnnotation(java.lang.String) <em>Provide Annotation</em>}</li>
+ *   <li>{@link org.muml.core.ExtendableElement#getExtension(org.eclipse.emf.ecore.EClass) <em>Get Extension</em>}</li>
+ *   <li>{@link org.muml.core.ExtendableElement#provideExtension(org.eclipse.emf.ecore.EClass) <em>Provide Extension</em>}</li>
+ *   <li>{@link org.muml.core.ExtendableElement#getAnnotation(java.lang.String) <em>Get Annotation</em>}</li>
+ *   <li>{@link org.muml.core.ExtendableElement#provideAnnotation(java.lang.String) <em>Provide Annotation</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -109,10 +109,10 @@ public class DataAssignmentEffectTest extends EffectTest {
 	}
 
 	/**
-	 * Tests the '{@link org.muml.mumlcore.ExtendableElement#getExtension(org.eclipse.emf.ecore.EClass) <em>Get Extension</em>}' operation.
+	 * Tests the '{@link org.muml.core.ExtendableElement#getExtension(org.eclipse.emf.ecore.EClass) <em>Get Extension</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.mumlcore.ExtendableElement#getExtension(org.eclipse.emf.ecore.EClass)
+	 * @see org.muml.core.ExtendableElement#getExtension(org.eclipse.emf.ecore.EClass)
 	 * @generated
 	 */
 	public void testGetExtension__EClass() {
@@ -122,10 +122,10 @@ public class DataAssignmentEffectTest extends EffectTest {
 	}
 
 	/**
-	 * Tests the '{@link org.muml.mumlcore.ExtendableElement#provideExtension(org.eclipse.emf.ecore.EClass) <em>Provide Extension</em>}' operation.
+	 * Tests the '{@link org.muml.core.ExtendableElement#provideExtension(org.eclipse.emf.ecore.EClass) <em>Provide Extension</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.mumlcore.ExtendableElement#provideExtension(org.eclipse.emf.ecore.EClass)
+	 * @see org.muml.core.ExtendableElement#provideExtension(org.eclipse.emf.ecore.EClass)
 	 * @generated
 	 */
 	public void testProvideExtension__EClass() {
@@ -135,10 +135,10 @@ public class DataAssignmentEffectTest extends EffectTest {
 	}
 
 	/**
-	 * Tests the '{@link org.muml.mumlcore.ExtendableElement#getAnnotation(java.lang.String) <em>Get Annotation</em>}' operation.
+	 * Tests the '{@link org.muml.core.ExtendableElement#getAnnotation(java.lang.String) <em>Get Annotation</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.mumlcore.ExtendableElement#getAnnotation(java.lang.String)
+	 * @see org.muml.core.ExtendableElement#getAnnotation(java.lang.String)
 	 * @generated
 	 */
 	public void testGetAnnotation__String() {
@@ -148,10 +148,10 @@ public class DataAssignmentEffectTest extends EffectTest {
 	}
 
 	/**
-	 * Tests the '{@link org.muml.mumlcore.ExtendableElement#provideAnnotation(java.lang.String) <em>Provide Annotation</em>}' operation.
+	 * Tests the '{@link org.muml.core.ExtendableElement#provideAnnotation(java.lang.String) <em>Provide Annotation</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.mumlcore.ExtendableElement#provideAnnotation(java.lang.String)
+	 * @see org.muml.core.ExtendableElement#provideAnnotation(java.lang.String)
 	 * @generated
 	 */
 	public void testProvideAnnotation__String() {

@@ -12,7 +12,7 @@
  */
 package org.muml.uppaal.adapter.extension.verificationextension;
 
-import org.muml.mumlcore.Extension;
+import org.muml.core.Extension;
 
 /**
  * <!-- begin-user-doc -->

@@ -11,7 +11,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.SubProgressMonitor;
-import org.muml.mumlcore.modelinstance.RootNode;
+import org.muml.core.modelinstance.RootNode;
 import org.muml.pim.instance.ComponentInstanceConfiguration;
 import org.muml.simulink.SimulinkContainer;
 import org.muml.simulink.SimulinkLibrary;

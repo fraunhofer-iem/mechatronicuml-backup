@@ -1,9 +1,9 @@
 package org.muml.simulink.adapter.reconfiguration.analysis.pre.reach.state;
 
-import org.muml.mumlcore.ExtendableElement;
-import org.muml.mumlcore.modelinstance.ModelElementCategory;
-import org.muml.mumlcore.modelinstance.ModelinstanceFactory;
-import org.muml.mumlcore.modelinstance.RootNode;
+import org.muml.core.ExtendableElement;
+import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.core.modelinstance.ModelinstanceFactory;
+import org.muml.core.modelinstance.RootNode;
 import org.muml.pim.component.AtomicComponent;
 import org.muml.pim.component.ComponentFactory;
 import org.muml.pim.component.ComponentPart;

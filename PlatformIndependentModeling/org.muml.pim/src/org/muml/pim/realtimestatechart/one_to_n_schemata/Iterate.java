@@ -12,7 +12,7 @@
  */
 package org.muml.pim.realtimestatechart.one_to_n_schemata;
 
-import org.muml.mumlcore.expressions.Expression;
+import org.muml.core.expressions.Expression;
 import org.muml.pim.valuetype.TimeValue;
 
 /**

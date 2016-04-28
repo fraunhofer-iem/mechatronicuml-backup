@@ -12,12 +12,14 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+
+import org.muml.core.expressions.Expression;
+
 import org.muml.core.provider.CommentableElementItemProvider;
 import org.muml.core.provider.CoreEditPlugin;
-import org.muml.mumlcore.expressions.Expression;
 
 /**
- * This is the item provider adapter for a {@link org.muml.mumlcore.expressions.Expression} object.
+ * This is the item provider adapter for a {@link org.muml.core.expressions.Expression} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

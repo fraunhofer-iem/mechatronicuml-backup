@@ -9,8 +9,8 @@ package org.muml.reconfigurationverification.tctl.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.muml.mumlcore.CorePackage;
-import org.muml.mumlcore.NamedElement;
+import org.muml.core.CorePackage;
+import org.muml.core.NamedElement;
 import org.muml.reconfigurationverification.tctl.AtomicProposition;
 import org.muml.reconfigurationverification.tctl.TctlPackage;
 

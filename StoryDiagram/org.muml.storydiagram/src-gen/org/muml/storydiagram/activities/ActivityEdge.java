@@ -7,8 +7,8 @@
 package org.muml.storydiagram.activities;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.mumlcore.ExtendableElement;
-import org.muml.mumlcore.expressions.Expression;
+import org.muml.core.ExtendableElement;
+import org.muml.core.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->

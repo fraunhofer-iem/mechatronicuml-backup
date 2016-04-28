@@ -15,7 +15,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
-import org.muml.mumlcore.modelinstance.ModelElementCategory;
+import org.muml.core.modelinstance.ModelElementCategory;
 import org.muml.pim.pattern.CoordinationPattern;
 import org.muml.pim.pattern.CoordinationPatternVariant;
 import org.muml.pim.pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart;

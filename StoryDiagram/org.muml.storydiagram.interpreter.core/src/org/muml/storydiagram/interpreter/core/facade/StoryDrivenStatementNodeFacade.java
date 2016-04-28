@@ -3,7 +3,7 @@ package org.muml.storydiagram.interpreter.core.facade;
 import java.util.Collection;
 import java.util.Collections;
 
-import org.muml.mumlcore.expressions.Expression;
+import org.muml.core.expressions.Expression;
 import org.muml.storydiagram.activities.ActivityEdge;
 import org.muml.storydiagram.activities.ActivityNode;
 import org.muml.storydiagram.activities.StatementNode;

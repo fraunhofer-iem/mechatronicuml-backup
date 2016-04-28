@@ -17,9 +17,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.muml.mumlcore.CommentableElement;
-import org.muml.mumlcore.CorePackage;
-import org.muml.mumlcore.impl.NamedElementImpl;
+
+import org.muml.core.CommentableElement;
+import org.muml.core.CorePackage;
+
+import org.muml.core.impl.NamedElementImpl;
+
 import org.muml.pm.software.APIRepository;
 import org.muml.pm.software.EnumerationDataType;
 import org.muml.pm.software.Import;

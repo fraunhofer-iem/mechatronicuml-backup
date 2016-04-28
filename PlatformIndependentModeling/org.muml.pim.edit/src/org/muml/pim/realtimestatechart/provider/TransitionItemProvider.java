@@ -19,13 +19,13 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.muml.core.CorePackage;
 import org.muml.core.common.descriptor.DefaultChainedPropertyDescriptor;
 import org.muml.core.common.descriptor.IChainedPropertyDescriptor;
 import org.muml.core.common.utils.FujabaEcoreUtil;
-import org.muml.mumlcore.CorePackage;
-import org.muml.mumlcore.expressions.ExpressionsFactory;
-import org.muml.mumlcore.expressions.ExpressionsPackage;
-import org.muml.mumlcore.expressions.common.CommonExpressionsFactory;
+import org.muml.core.expressions.ExpressionsFactory;
+import org.muml.core.expressions.ExpressionsPackage;
+import org.muml.core.expressions.common.CommonExpressionsFactory;
 import org.muml.pim.behavior.BehavioralElement;
 import org.muml.pim.component.DiscretePort;
 import org.muml.pim.msgtype.MessageType;
@@ -667,7 +667,7 @@ public class TransitionItemProvider extends PrioritizedElementItemProvider {
 						getString("_UI_PropertyDescriptor_description",
 								"_UI_TextualExpression_expressionText_feature",
 								"_UI_TextualExpression_type"),
-						org.muml.mumlcore.expressions.ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__EXPRESSION_TEXT,
+						org.muml.core.expressions.ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__EXPRESSION_TEXT,
 						true, false, false, null,
 						getString("_UI_GuardPropertyCategory"), null,
 						rootPropertyDescriptor));
@@ -681,7 +681,7 @@ public class TransitionItemProvider extends PrioritizedElementItemProvider {
 						getString("_UI_PropertyDescriptor_description",
 								"_UI_TextualExpression_language_feature",
 								"_UI_TextualExpression_type"),
-						org.muml.mumlcore.expressions.ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE,
+						org.muml.core.expressions.ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE,
 						true, false, false, null,
 						getString("_UI_GuardPropertyCategory"), null,
 						rootPropertyDescriptor));
@@ -696,7 +696,7 @@ public class TransitionItemProvider extends PrioritizedElementItemProvider {
 								"_UI_PropertyDescriptor_description",
 								"_UI_TextualExpression_languageVersion_feature",
 								"_UI_TextualExpression_type"),
-						org.muml.mumlcore.expressions.ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE_VERSION,
+						org.muml.core.expressions.ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE_VERSION,
 						true, false, false, null,
 						getString("_UI_GuardPropertyCategory"), null,
 						rootPropertyDescriptor));
@@ -749,7 +749,7 @@ public class TransitionItemProvider extends PrioritizedElementItemProvider {
 						"_UI_PropertyDescriptor_description",
 						"_UI_NamedElement_name_feature",
 						"_UI_NamedElement_type"),
-				org.muml.mumlcore.CorePackage.Literals.NAMED_ELEMENT__NAME,
+				org.muml.core.CorePackage.Literals.NAMED_ELEMENT__NAME,
 				true, false, false,
 				null, getString("_UI_ActionPropertyCategory"), null,
 				rootPropertyDescriptor));

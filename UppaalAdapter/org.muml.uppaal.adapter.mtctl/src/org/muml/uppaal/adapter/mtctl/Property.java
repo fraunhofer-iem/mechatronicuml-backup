@@ -2,7 +2,7 @@
  */
 package org.muml.uppaal.adapter.mtctl;
 
-import org.muml.mumlcore.CommentableElement;
+import org.muml.core.CommentableElement;
 
 /**
  * <!-- begin-user-doc -->

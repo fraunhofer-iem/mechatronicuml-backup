@@ -3,7 +3,7 @@
 package org.muml.psm.codegen;
 
 import org.eclipse.emf.ecore.EObject;
-import org.muml.mumlcore.expressions.Expression;
+import org.muml.core.expressions.Expression;
 import org.muml.pim.instance.PortInstance;
 import org.muml.pim.valuetype.TimeValue;
 

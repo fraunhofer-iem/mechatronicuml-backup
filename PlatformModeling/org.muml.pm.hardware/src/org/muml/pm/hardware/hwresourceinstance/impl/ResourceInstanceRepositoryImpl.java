@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.muml.mumlcore.impl.CommentableElementImpl;
+import org.muml.core.impl.CommentableElementImpl;
 import org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage;
 import org.muml.pm.hardware.hwresourceinstance.ResourceInstance;
 import org.muml.pm.hardware.hwresourceinstance.ResourceInstanceRepository;

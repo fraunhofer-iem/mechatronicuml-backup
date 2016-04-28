@@ -7,7 +7,7 @@
 package org.muml.pim.instance;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.mumlcore.NamedElement;
+import org.muml.core.NamedElement;
 import org.muml.pim.component.Component;
 import org.muml.pim.component.ComponentPart;
 

@@ -2,7 +2,7 @@
  */
 package org.muml.cbs.dependencylanguage;
 
-import org.muml.mumlcore.Extension;
+import org.muml.core.Extension;
 import org.muml.pim.behavior.BehavioralElement;
 
 /**

@@ -3,7 +3,7 @@
 package org.muml.cbs.dependencylanguage;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.mumlcore.expressions.Expression;
+import org.muml.core.expressions.Expression;
 import org.muml.pim.types.DataType;
 
 /**

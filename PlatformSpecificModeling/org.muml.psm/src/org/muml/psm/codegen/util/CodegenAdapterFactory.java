@@ -6,8 +6,8 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
-import org.muml.mumlcore.ExtendableElement;
-import org.muml.mumlcore.NamedElement;
+import org.muml.core.ExtendableElement;
+import org.muml.core.NamedElement;
 import org.muml.pim.instance.AtomicComponentInstance;
 import org.muml.pim.instance.ComponentInstance;
 import org.muml.pm.hardware.hwresourceinstance.ResourceInstance;
@@ -267,13 +267,13 @@ public class CodegenAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.muml.mumlcore.ExtendableElement <em>Extendable Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.core.ExtendableElement <em>Extendable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.muml.mumlcore.ExtendableElement
+	 * @see org.muml.core.ExtendableElement
 	 * @generated
 	 */
 	public Adapter createExtendableElementAdapter() {
@@ -281,13 +281,13 @@ public class CodegenAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.muml.mumlcore.NamedElement <em>Named Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.core.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.muml.mumlcore.NamedElement
+	 * @see org.muml.core.NamedElement
 	 * @generated
 	 */
 	public Adapter createNamedElementAdapter() {

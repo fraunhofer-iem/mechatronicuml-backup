@@ -8,7 +8,7 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.View;
-import org.muml.mumlcore.ExtendableElement;
+import org.muml.core.ExtendableElement;
 import org.muml.reconfiguration.ReconfigurationPort;
 
 /**
@@ -50,7 +50,7 @@ public class ReconfigurationDiagramUpdater {
 			return Collections.emptyList();
 
 		}
-		org.muml.mumlcore.modelinstance.ModelElementCategory modelElement = (org.muml.mumlcore.modelinstance.ModelElementCategory) view
+		org.muml.core.modelinstance.ModelElementCategory modelElement = (org.muml.core.modelinstance.ModelElementCategory) view
 				.getElement();
 		LinkedList<org.muml.pim.component.diagram.part.MumlNodeDescriptor> result = new LinkedList<org.muml.pim.component.diagram.part.MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getModelElements().iterator(); it

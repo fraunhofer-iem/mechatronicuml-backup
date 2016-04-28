@@ -8,7 +8,7 @@ package org.muml.core.reachanalysis.reachabilitygraph;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
-import org.muml.mumlcore.ExtendableElement;
+import org.muml.core.ExtendableElement;
 
 /**
  * <!-- begin-user-doc -->

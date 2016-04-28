@@ -2,7 +2,7 @@
  */
 package org.muml.reconfiguration.componentstorypattern;
 
-import org.muml.mumlcore.expressions.Expression;
+import org.muml.core.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->

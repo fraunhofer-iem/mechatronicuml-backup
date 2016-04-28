@@ -6,7 +6,7 @@ package org.muml.uppaal.adapter.mtctl.xtext.validation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.scoping.IScopeProvider;
 import org.eclipse.xtext.validation.Check;
-import org.muml.mumlcore.NamedElement;
+import org.muml.core.NamedElement;
 import org.muml.pim.behavior.Variable;
 import org.muml.pim.common.naming.QualifiedNameProvider;
 import org.muml.pim.component.AtomicComponent;

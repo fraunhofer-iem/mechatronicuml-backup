@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.muml.mumlcore.impl.NamedElementImpl;
+import org.muml.core.impl.NamedElementImpl;
 import org.muml.pim.msgtype.MessageType;
 import org.muml.verification.core.runtime.RuntimeMessage;
 import org.muml.verification.core.runtime.RuntimePackage;

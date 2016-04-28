@@ -7,7 +7,7 @@
 package org.muml.simulink.adapter.corrmodel;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.mumlcore.modelinstance.RootNode;
+import org.muml.core.modelinstance.RootNode;
 import org.muml.simulink.Bus;
 import org.muml.simulink.SimulinkContainer;
 import org.muml.simulink.SimulinkLibrary;

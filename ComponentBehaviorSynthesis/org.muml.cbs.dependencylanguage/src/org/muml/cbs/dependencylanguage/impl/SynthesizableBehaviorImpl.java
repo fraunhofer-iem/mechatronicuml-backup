@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.cbs.dependencylanguage.DependencyModel;
 import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
 import org.muml.cbs.dependencylanguage.SynthesizableBehavior;
-import org.muml.mumlcore.impl.ExtensionImpl;
+import org.muml.core.impl.ExtensionImpl;
 import org.muml.pim.behavior.Behavior;
 import org.muml.pim.behavior.BehaviorPackage;
 import org.muml.pim.behavior.BehavioralElement;

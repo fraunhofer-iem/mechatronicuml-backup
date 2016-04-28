@@ -7,8 +7,8 @@
 package org.muml.storydiagram.patterns;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.mumlcore.NamedElement;
-import org.muml.mumlcore.expressions.Expression;
+import org.muml.core.NamedElement;
+import org.muml.core.expressions.Expression;
 import org.muml.storydiagram.Variable;
 
 /**

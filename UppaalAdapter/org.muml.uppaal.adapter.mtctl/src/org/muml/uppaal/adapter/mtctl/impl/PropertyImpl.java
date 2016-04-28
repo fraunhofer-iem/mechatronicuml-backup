@@ -8,7 +8,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.muml.mumlcore.impl.CommentableElementImpl;
+import org.muml.core.impl.CommentableElementImpl;
 import org.muml.uppaal.adapter.mtctl.Expression;
 import org.muml.uppaal.adapter.mtctl.MtctlPackage;
 import org.muml.uppaal.adapter.mtctl.Property;

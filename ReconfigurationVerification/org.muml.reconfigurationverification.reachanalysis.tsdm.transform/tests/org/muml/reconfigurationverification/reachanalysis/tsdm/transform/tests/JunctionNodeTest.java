@@ -7,7 +7,7 @@ import java.util.HashSet;
 
 import org.eclipse.emf.ecore.EClass;
 import org.junit.Test;
-import org.muml.mumlcore.expressions.TextualExpression;
+import org.muml.core.expressions.TextualExpression;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedActivityNode;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedStoryDiagram;
 import org.muml.storydiagram.activities.ActivityEdge;

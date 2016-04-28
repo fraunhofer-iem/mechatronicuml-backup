@@ -6,7 +6,7 @@
  */
 package org.muml.pim.behavior;
 
-import org.muml.mumlcore.NamedElement;
+import org.muml.core.NamedElement;
 import org.muml.pim.types.DataType;
 
 /**

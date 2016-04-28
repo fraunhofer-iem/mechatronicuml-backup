@@ -6,7 +6,7 @@
  */
 package org.muml.storydiagram.calls.expressions;
 
-import org.muml.mumlcore.expressions.Expression;
+import org.muml.core.expressions.Expression;
 import org.muml.storydiagram.calls.ParameterExtension;
 
 /**

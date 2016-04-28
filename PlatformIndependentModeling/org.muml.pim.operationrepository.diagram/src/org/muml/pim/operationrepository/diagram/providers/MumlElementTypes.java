@@ -13,7 +13,7 @@ import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypeImages;
 import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypes;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
-import org.muml.mumlcore.modelinstance.ModelinstancePackage;
+import org.muml.core.modelinstance.ModelinstancePackage;
 import org.muml.pim.behavior.BehaviorPackage;
 import org.muml.pim.operationrepository.diagram.edit.parts.ModelElementCategoryEditPart;
 import org.muml.pim.operationrepository.diagram.edit.parts.OperationEditPart;

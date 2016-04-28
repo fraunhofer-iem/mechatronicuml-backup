@@ -7,7 +7,7 @@
 package org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.mumlcore.Extension;
+import org.muml.core.Extension;
 import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.StepGraph;
 
 /**

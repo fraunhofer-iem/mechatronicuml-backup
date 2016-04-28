@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.muml.mumlcore.impl.ExtensionImpl;
+import org.muml.core.impl.ExtensionImpl;
 import org.muml.uppaal.adapter.extension.verificationextension.ClockBinding;
 import org.muml.uppaal.adapter.extension.verificationextension.ClockBindingsExtension;
 import org.muml.uppaal.adapter.extension.verificationextension.VerificationExtensionPackage;

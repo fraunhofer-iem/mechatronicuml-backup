@@ -30,7 +30,7 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
 import org.muml.core.common.edit.policies.IDiagramCanonicalEditPolicy;
-import org.muml.mumlcore.modelinstance.ModelinstancePackage;
+import org.muml.core.modelinstance.ModelinstancePackage;
 import org.muml.pim.pattern.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart;
 import org.muml.pim.pattern.diagram.edit.parts.CoordinationPattern2EditPart;
 import org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternEditPart;

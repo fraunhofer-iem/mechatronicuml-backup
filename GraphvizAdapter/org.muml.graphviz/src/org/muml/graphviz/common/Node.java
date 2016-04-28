@@ -2,7 +2,7 @@
  */
 package org.muml.graphviz.common;
 
-import org.muml.mumlcore.NamedElement;
+import org.muml.core.NamedElement;
 
 /**
  * <!-- begin-user-doc -->

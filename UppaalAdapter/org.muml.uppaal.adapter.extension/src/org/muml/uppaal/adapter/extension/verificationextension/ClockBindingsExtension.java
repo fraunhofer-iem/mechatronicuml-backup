@@ -13,7 +13,7 @@
 package org.muml.uppaal.adapter.extension.verificationextension;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.mumlcore.Extension;
+import org.muml.core.Extension;
 
 /**
  * <!-- begin-user-doc -->

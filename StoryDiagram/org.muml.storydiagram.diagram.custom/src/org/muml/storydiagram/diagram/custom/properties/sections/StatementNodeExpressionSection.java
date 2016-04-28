@@ -2,9 +2,9 @@ package org.muml.storydiagram.diagram.custom.properties.sections;
 
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.muml.mumlcore.expressions.Expression;
-import org.muml.mumlcore.expressions.ExpressionsFactory;
-import org.muml.mumlcore.expressions.TextualExpression;
+import org.muml.core.expressions.Expression;
+import org.muml.core.expressions.ExpressionsFactory;
+import org.muml.core.expressions.TextualExpression;
 import org.muml.storydiagram.activities.StatementNode;
 import org.muml.storydiagram.diagram.custom.properties.AbstractExpressionSection;
 

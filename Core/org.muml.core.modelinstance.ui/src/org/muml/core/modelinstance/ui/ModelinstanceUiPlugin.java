@@ -30,11 +30,11 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.muml.core.common.DiagramEditorUtil;
+import org.muml.core.modelinstance.ModelinstanceFactory;
+import org.muml.core.modelinstance.RootNode;
 import org.muml.core.modelinstance.ui.diagrams.DiagramInformation;
 import org.muml.core.modelinstance.ui.diagrams.IDiagramInformation;
 import org.muml.core.modelinstance.ui.initializer.IModelInitializer;
-import org.muml.mumlcore.modelinstance.ModelinstanceFactory;
-import org.muml.mumlcore.modelinstance.RootNode;
 import org.osgi.framework.BundleContext;
 
 /**

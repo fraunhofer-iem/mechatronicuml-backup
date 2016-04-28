@@ -6,7 +6,7 @@
  */
 package org.muml.simulink.adapter.corrmodel;
 
-import org.muml.mumlcore.modelinstance.ModelElementCategory;
+import org.muml.core.modelinstance.ModelElementCategory;
 
 /**
  * <!-- begin-user-doc -->

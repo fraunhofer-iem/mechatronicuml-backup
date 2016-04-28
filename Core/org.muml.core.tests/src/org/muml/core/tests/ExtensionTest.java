@@ -2,7 +2,7 @@
  */
 package org.muml.core.tests;
 
-import org.muml.mumlcore.Extension;
+import org.muml.core.Extension;
 
 /**
  * <!-- begin-user-doc -->
@@ -11,9 +11,9 @@ import org.muml.mumlcore.Extension;
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link org.muml.mumlcore.Extension#getBase() <em>Base</em>}</li>
- *   <li>{@link org.muml.mumlcore.Extension#getModelBase() <em>Model Base</em>}</li>
- *   <li>{@link org.muml.mumlcore.Extension#getOwningAnnotation() <em>Owning Annotation</em>}</li>
+ *   <li>{@link org.muml.core.Extension#getBase() <em>Base</em>}</li>
+ *   <li>{@link org.muml.core.Extension#getModelBase() <em>Model Base</em>}</li>
+ *   <li>{@link org.muml.core.Extension#getOwningAnnotation() <em>Owning Annotation</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -42,10 +42,10 @@ public abstract class ExtensionTest extends ExtendableElementTest {
 	}
 
 	/**
-	 * Tests the '{@link org.muml.mumlcore.Extension#getBase() <em>Base</em>}' feature getter.
+	 * Tests the '{@link org.muml.core.Extension#getBase() <em>Base</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.mumlcore.Extension#getBase()
+	 * @see org.muml.core.Extension#getBase()
 	 * @generated
 	 */
 	public void testGetBase() {
@@ -55,10 +55,10 @@ public abstract class ExtensionTest extends ExtendableElementTest {
 	}
 
 	/**
-	 * Tests the '{@link org.muml.mumlcore.Extension#getModelBase() <em>Model Base</em>}' feature getter.
+	 * Tests the '{@link org.muml.core.Extension#getModelBase() <em>Model Base</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.mumlcore.Extension#getModelBase()
+	 * @see org.muml.core.Extension#getModelBase()
 	 * @generated
 	 */
 	public void testGetModelBase() {
@@ -68,10 +68,10 @@ public abstract class ExtensionTest extends ExtendableElementTest {
 	}
 
 	/**
-	 * Tests the '{@link org.muml.mumlcore.Extension#setModelBase(org.eclipse.emf.ecore.EModelElement) <em>Model Base</em>}' feature setter.
+	 * Tests the '{@link org.muml.core.Extension#setModelBase(org.eclipse.emf.ecore.EModelElement) <em>Model Base</em>}' feature setter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.mumlcore.Extension#setModelBase(org.eclipse.emf.ecore.EModelElement)
+	 * @see org.muml.core.Extension#setModelBase(org.eclipse.emf.ecore.EModelElement)
 	 * @generated
 	 */
 	public void testSetModelBase() {
@@ -81,10 +81,10 @@ public abstract class ExtensionTest extends ExtendableElementTest {
 	}
 
 	/**
-	 * Tests the '{@link org.muml.mumlcore.Extension#unsetModelBase() <em>unsetModelBase()</em>}' method.
+	 * Tests the '{@link org.muml.core.Extension#unsetModelBase() <em>unsetModelBase()</em>}' method.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.mumlcore.Extension#unsetModelBase()
+	 * @see org.muml.core.Extension#unsetModelBase()
 	 * @generated
 	 */
 	public void testUnsetModelBase() {
@@ -94,10 +94,10 @@ public abstract class ExtensionTest extends ExtendableElementTest {
 	}
 
 	/**
-	 * Tests the '{@link org.muml.mumlcore.Extension#isSetModelBase() <em>isSetModelBase()</em>}' method.
+	 * Tests the '{@link org.muml.core.Extension#isSetModelBase() <em>isSetModelBase()</em>}' method.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.mumlcore.Extension#isSetModelBase()
+	 * @see org.muml.core.Extension#isSetModelBase()
 	 * @generated
 	 */
 	public void testIsSetModelBase() {
@@ -107,10 +107,10 @@ public abstract class ExtensionTest extends ExtendableElementTest {
 	}
 
 	/**
-	 * Tests the '{@link org.muml.mumlcore.Extension#getOwningAnnotation() <em>Owning Annotation</em>}' feature getter.
+	 * Tests the '{@link org.muml.core.Extension#getOwningAnnotation() <em>Owning Annotation</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.mumlcore.Extension#getOwningAnnotation()
+	 * @see org.muml.core.Extension#getOwningAnnotation()
 	 * @generated
 	 */
 	public void testGetOwningAnnotation() {
@@ -120,10 +120,10 @@ public abstract class ExtensionTest extends ExtendableElementTest {
 	}
 
 	/**
-	 * Tests the '{@link org.muml.mumlcore.Extension#setOwningAnnotation(org.eclipse.emf.ecore.EAnnotation) <em>Owning Annotation</em>}' feature setter.
+	 * Tests the '{@link org.muml.core.Extension#setOwningAnnotation(org.eclipse.emf.ecore.EAnnotation) <em>Owning Annotation</em>}' feature setter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.mumlcore.Extension#setOwningAnnotation(org.eclipse.emf.ecore.EAnnotation)
+	 * @see org.muml.core.Extension#setOwningAnnotation(org.eclipse.emf.ecore.EAnnotation)
 	 * @generated
 	 */
 	public void testSetOwningAnnotation() {
@@ -133,10 +133,10 @@ public abstract class ExtensionTest extends ExtendableElementTest {
 	}
 
 	/**
-	 * Tests the '{@link org.muml.mumlcore.Extension#unsetOwningAnnotation() <em>unsetOwningAnnotation()</em>}' method.
+	 * Tests the '{@link org.muml.core.Extension#unsetOwningAnnotation() <em>unsetOwningAnnotation()</em>}' method.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.mumlcore.Extension#unsetOwningAnnotation()
+	 * @see org.muml.core.Extension#unsetOwningAnnotation()
 	 * @generated
 	 */
 	public void testUnsetOwningAnnotation() {
@@ -146,10 +146,10 @@ public abstract class ExtensionTest extends ExtendableElementTest {
 	}
 
 	/**
-	 * Tests the '{@link org.muml.mumlcore.Extension#isSetOwningAnnotation() <em>isSetOwningAnnotation()</em>}' method.
+	 * Tests the '{@link org.muml.core.Extension#isSetOwningAnnotation() <em>isSetOwningAnnotation()</em>}' method.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.mumlcore.Extension#isSetOwningAnnotation()
+	 * @see org.muml.core.Extension#isSetOwningAnnotation()
 	 * @generated
 	 */
 	public void testIsSetOwningAnnotation() {

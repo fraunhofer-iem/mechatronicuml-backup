@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.muml.mumlcore.CorePackage;
+import org.muml.core.CorePackage;
 import org.muml.pim.PimPackage;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
 import org.muml.uppaal.adapter.extension.verificationextension.ClockBinding;

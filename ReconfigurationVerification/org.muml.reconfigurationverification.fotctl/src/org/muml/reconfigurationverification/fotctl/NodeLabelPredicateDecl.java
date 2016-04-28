@@ -6,7 +6,7 @@
  */
 package org.muml.reconfigurationverification.fotctl;
 
-import org.muml.mumlcore.NamedElement;
+import org.muml.core.NamedElement;
 
 /**
  * <!-- begin-user-doc -->

@@ -4,9 +4,9 @@ import java.util.Collection;
 import java.util.concurrent.TimeUnit;
 
 import org.eclipse.emf.ecore.EcorePackage;
-import org.muml.mumlcore.expressions.common.CommonExpressionsFactory;
-import org.muml.mumlcore.expressions.common.CommonExpressionsPackage;
-import org.muml.mumlcore.expressions.common.LiteralExpression;
+import org.muml.core.expressions.common.CommonExpressionsFactory;
+import org.muml.core.expressions.common.CommonExpressionsPackage;
+import org.muml.core.expressions.common.LiteralExpression;
 import org.muml.pim.connector.ConnectorEndpoint;
 import org.muml.pim.pattern.CoordinationPattern;
 import org.muml.pim.pattern.CoordinationPatternVariant;

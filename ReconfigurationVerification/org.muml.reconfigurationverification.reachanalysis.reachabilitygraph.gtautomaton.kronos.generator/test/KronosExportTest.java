@@ -1,6 +1,6 @@
 import org.junit.Before;
 import org.junit.Test;
-import org.muml.mumlcore.expressions.common.ComparingOperator;
+import org.muml.core.expressions.common.ComparingOperator;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomaton;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomatonClockConstraint;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.GtAutomatonTransition;

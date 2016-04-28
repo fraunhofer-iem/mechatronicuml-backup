@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.junit.Before;
 import org.junit.Test;
-import org.muml.mumlcore.modelinstance.ModelinstancePackage;
+import org.muml.core.modelinstance.ModelinstancePackage;
 import org.muml.reconfigurationverification.fotctl.ConstantSymbolDecl;
 import org.muml.reconfigurationverification.fotctl.FoTCTLFormula;
 import org.muml.reconfigurationverification.fotctl.FoTCTLSpec;

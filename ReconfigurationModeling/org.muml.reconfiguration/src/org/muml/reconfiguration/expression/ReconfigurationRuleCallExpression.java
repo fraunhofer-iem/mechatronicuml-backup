@@ -7,7 +7,7 @@
 package org.muml.reconfiguration.expression;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.mumlcore.expressions.Expression;
+import org.muml.core.expressions.Expression;
 import org.muml.pim.behavior.ParameterBinding;
 import org.muml.reconfiguration.ReconfigurationRule;
 

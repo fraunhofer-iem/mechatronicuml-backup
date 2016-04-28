@@ -3,7 +3,7 @@
 package org.muml.storydiagram.verification.sdd;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.mumlcore.NamedElement;
+import org.muml.core.NamedElement;
 
 /**
  * <!-- begin-user-doc -->

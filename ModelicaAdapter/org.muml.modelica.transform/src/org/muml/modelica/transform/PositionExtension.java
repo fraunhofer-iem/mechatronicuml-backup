@@ -3,7 +3,8 @@
 package org.muml.modelica.transform;
 
 import org.eclipse.emf.ecore.EAnnotation;
-import org.muml.mumlcore.Extension;
+
+import org.muml.core.Extension;
 
 /**
  * <!-- begin-user-doc -->

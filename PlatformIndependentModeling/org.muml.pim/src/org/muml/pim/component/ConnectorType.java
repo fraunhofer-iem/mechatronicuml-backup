@@ -6,7 +6,7 @@
  */
 package org.muml.pim.component;
 
-import org.muml.mumlcore.ExtendableElement;
+import org.muml.core.ExtendableElement;
 
 
 /**

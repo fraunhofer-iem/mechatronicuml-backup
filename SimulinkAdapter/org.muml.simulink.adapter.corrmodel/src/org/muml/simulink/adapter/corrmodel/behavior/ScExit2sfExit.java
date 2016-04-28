@@ -6,7 +6,7 @@
  */
 package org.muml.simulink.adapter.corrmodel.behavior;
 
-import org.muml.mumlcore.expressions.Expression;
+import org.muml.core.expressions.Expression;
 import org.muml.pim.realtimestatechart.Action;
 import org.muml.pim.realtimestatechart.Clock;
 import org.muml.pim.realtimestatechart.ExitEvent;

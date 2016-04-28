@@ -15,16 +15,19 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import org.muml.core.expressions.ExpressionsFactory;
+
+import org.muml.core.expressions.common.BinaryExpression;
+import org.muml.core.expressions.common.CommonExpressionsFactory;
+import org.muml.core.expressions.common.CommonExpressionsPackage;
+
 import org.muml.core.expressions.provider.ExpressionItemProvider;
 
 import org.muml.core.provider.CoreEditPlugin;
-import org.muml.mumlcore.expressions.ExpressionsFactory;
-import org.muml.mumlcore.expressions.common.BinaryExpression;
-import org.muml.mumlcore.expressions.common.CommonExpressionsFactory;
-import org.muml.mumlcore.expressions.common.CommonExpressionsPackage;
 
 /**
- * This is the item provider adapter for a {@link org.muml.mumlcore.expressions.common.BinaryExpression} object.
+ * This is the item provider adapter for a {@link org.muml.core.expressions.common.BinaryExpression} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

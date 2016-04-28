@@ -6,7 +6,7 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.muml.mumlcore.expressions.Expression;
+import org.muml.core.expressions.Expression;
 import org.muml.storydiagram.interpreter.core.mdelab.SDMException;
 import org.muml.storydiagram.interpreter.core.mdelab.patternmatcher.patternPartBased.EMatchType;
 import org.muml.storydiagram.interpreter.core.mdelab.patternmatcher.patternPartBased.PatternPart;

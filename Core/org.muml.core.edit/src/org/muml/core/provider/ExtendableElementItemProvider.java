@@ -21,11 +21,12 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.mumlcore.CorePackage;
-import org.muml.mumlcore.ExtendableElement;
+
+import org.muml.core.CorePackage;
+import org.muml.core.ExtendableElement;
 
 /**
- * This is the item provider adapter for a {@link org.muml.mumlcore.ExtendableElement} object.
+ * This is the item provider adapter for a {@link org.muml.core.ExtendableElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

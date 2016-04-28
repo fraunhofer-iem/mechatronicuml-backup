@@ -68,9 +68,12 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ISetSelectionTarget;
+
+import org.muml.core.modelinstance.ModelinstanceFactory;
+import org.muml.core.modelinstance.ModelinstancePackage;
 import org.muml.core.provider.CoreEditPlugin;
-import org.muml.mumlcore.modelinstance.ModelinstanceFactory;
-import org.muml.mumlcore.modelinstance.ModelinstancePackage;
+
+
 import org.eclipse.core.runtime.Path;
 
 import org.eclipse.jface.viewers.ISelection;

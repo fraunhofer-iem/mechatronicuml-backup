@@ -2,7 +2,7 @@
  */
 package org.muml.pm.hardware.hwresource;
 
-import org.muml.mumlcore.CommentableElement;
+import org.muml.core.CommentableElement;
 import org.muml.pm.hardware.hwvaluetype.DataRate;
 import org.muml.pm.hardware.hwvaluetype.DataSize;
 

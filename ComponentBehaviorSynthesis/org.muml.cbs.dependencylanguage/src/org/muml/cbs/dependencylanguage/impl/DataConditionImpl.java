@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.cbs.dependencylanguage.DataCondition;
 import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
-import org.muml.mumlcore.expressions.Expression;
+import org.muml.core.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->

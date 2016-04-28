@@ -14,10 +14,10 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.muml.core.modelinstance.ModelElementCategory;
 import org.muml.core.modelinstance.ModelInstancePlugin;
-import org.muml.mumlcore.modelinstance.ModelElementCategory;
-import org.muml.mumlcore.modelinstance.ModelinstanceFactory;
-import org.muml.mumlcore.modelinstance.RootNode;
+import org.muml.core.modelinstance.ModelinstanceFactory;
+import org.muml.core.modelinstance.RootNode;
 
 public class ModelElementCategoryRegistry {
 

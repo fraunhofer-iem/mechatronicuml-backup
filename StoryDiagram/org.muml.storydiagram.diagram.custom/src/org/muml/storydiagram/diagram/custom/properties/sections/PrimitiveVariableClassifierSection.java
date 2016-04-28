@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.muml.mumlcore.CorePackage;
+import org.muml.core.CorePackage;
 import org.muml.storydiagram.diagram.custom.ResourceManager;
 import org.muml.storydiagram.diagram.custom.util.ActivityUtil;
 import org.muml.storydiagram.diagram.custom.util.EcoreTextUtil;

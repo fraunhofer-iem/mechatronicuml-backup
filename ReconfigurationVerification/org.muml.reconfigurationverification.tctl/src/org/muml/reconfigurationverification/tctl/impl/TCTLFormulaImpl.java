@@ -11,7 +11,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.muml.mumlcore.impl.CommentableElementImpl;
+import org.muml.core.impl.CommentableElementImpl;
 import org.muml.reconfigurationverification.tctl.FormulaDefinition;
 import org.muml.reconfigurationverification.tctl.TCTLFormula;
 import org.muml.reconfigurationverification.tctl.TctlPackage;

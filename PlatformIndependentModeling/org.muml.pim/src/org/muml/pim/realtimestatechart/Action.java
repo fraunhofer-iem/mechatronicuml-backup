@@ -7,8 +7,8 @@
 package org.muml.pim.realtimestatechart;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.mumlcore.NamedElement;
-import org.muml.mumlcore.expressions.Expression;
+import org.muml.core.NamedElement;
+import org.muml.core.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,7 +36,7 @@ import org.muml.mumlcore.expressions.Expression;
 public interface Action extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Expressions</b></em>' containment reference list.
-	 * The list contents are of type {@link org.muml.mumlcore.expressions.Expression}.
+	 * The list contents are of type {@link org.muml.core.expressions.Expression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->

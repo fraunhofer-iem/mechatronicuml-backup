@@ -20,7 +20,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.mumlcore.CorePackage;
+import org.muml.core.CorePackage;
 import org.muml.storydiagram.activities.ActivitiesFactory;
 import org.muml.storydiagram.calls.CallsFactory;
 import org.muml.storydiagram.patterns.PatternsFactory;

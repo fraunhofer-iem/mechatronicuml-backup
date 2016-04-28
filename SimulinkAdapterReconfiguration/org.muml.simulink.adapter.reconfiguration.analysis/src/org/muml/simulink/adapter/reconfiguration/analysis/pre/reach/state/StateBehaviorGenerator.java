@@ -1,10 +1,10 @@
 package org.muml.simulink.adapter.reconfiguration.analysis.pre.reach.state;
 
-import org.muml.mumlcore.ExtendableElement;
-import org.muml.mumlcore.expressions.ExpressionsFactory;
-import org.muml.mumlcore.expressions.TextualExpression;
-import org.muml.mumlcore.modelinstance.ModelElementCategory;
-import org.muml.mumlcore.modelinstance.RootNode;
+import org.muml.core.ExtendableElement;
+import org.muml.core.expressions.ExpressionsFactory;
+import org.muml.core.expressions.TextualExpression;
+import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.core.modelinstance.RootNode;
 import org.muml.pim.behavior.BehaviorFactory;
 import org.muml.pim.behavior.Operation;
 import org.muml.pim.behavior.Variable;

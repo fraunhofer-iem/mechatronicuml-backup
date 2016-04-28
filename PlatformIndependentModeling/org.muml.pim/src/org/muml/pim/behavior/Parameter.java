@@ -6,7 +6,7 @@
  */
 package org.muml.pim.behavior;
 
-import org.muml.mumlcore.CommentableElement;
+import org.muml.core.CommentableElement;
 
 /**
  * <!-- begin-user-doc -->

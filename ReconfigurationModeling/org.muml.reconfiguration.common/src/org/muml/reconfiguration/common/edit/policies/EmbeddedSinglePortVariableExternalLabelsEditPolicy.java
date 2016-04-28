@@ -16,7 +16,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
 import org.muml.core.common.edit.policies.NotifyingGraphicalEditPolicy;
-import org.muml.mumlcore.impl.CorePackageImpl;
+import org.muml.core.impl.CorePackageImpl;
 import org.muml.reconfiguration.componentstorypattern.MultiPortPositionConstraint;
 import org.muml.reconfiguration.componentstorypattern.MultiPortPositionConstraintType;
 import org.muml.reconfiguration.componentstorypattern.SinglePortVariable;

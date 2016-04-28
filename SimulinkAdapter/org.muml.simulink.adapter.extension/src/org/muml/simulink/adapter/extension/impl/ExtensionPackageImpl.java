@@ -7,7 +7,9 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.muml.mumlcore.CorePackage;
+
+import org.muml.core.CorePackage;
+
 import org.muml.simulink.adapter.extension.ExtensionFactory;
 import org.muml.simulink.adapter.extension.ExtensionPackage;
 import org.muml.simulink.adapter.extension.SimulinkAnnotationExtension;

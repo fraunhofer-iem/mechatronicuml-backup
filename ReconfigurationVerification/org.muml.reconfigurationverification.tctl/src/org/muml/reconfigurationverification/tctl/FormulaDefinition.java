@@ -6,7 +6,7 @@
  */
 package org.muml.reconfigurationverification.tctl;
 
-import org.muml.mumlcore.ExtendableElement;
+import org.muml.core.ExtendableElement;
 
 /**
  * <!-- begin-user-doc -->

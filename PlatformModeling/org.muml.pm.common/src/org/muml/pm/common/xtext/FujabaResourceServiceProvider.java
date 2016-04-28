@@ -22,7 +22,7 @@ import org.eclipse.xtext.util.CancelIndicator;
 import org.eclipse.xtext.validation.CheckMode;
 import org.eclipse.xtext.validation.IResourceValidator;
 import org.eclipse.xtext.validation.Issue;
-import org.muml.mumlcore.NamedElement;
+import org.muml.core.NamedElement;
 
 public class FujabaResourceServiceProvider extends DefaultResourceServiceProvider{
 

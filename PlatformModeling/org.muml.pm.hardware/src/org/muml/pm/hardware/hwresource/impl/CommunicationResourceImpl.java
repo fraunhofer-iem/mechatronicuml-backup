@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.muml.core.common.adapter.DerivedAttributeAdapter;
-import org.muml.mumlcore.impl.NamedElementImpl;
+import org.muml.core.impl.NamedElementImpl;
 import org.muml.pim.valuetype.Cardinality;
 import org.muml.pm.hardware.hwresource.CommunicationKind;
 import org.muml.pm.hardware.hwresource.CommunicationProtocol;

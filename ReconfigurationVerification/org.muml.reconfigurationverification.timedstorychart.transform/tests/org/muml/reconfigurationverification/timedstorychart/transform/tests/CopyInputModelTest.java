@@ -14,7 +14,7 @@ import org.eclipse.m2m.qvt.oml.ExecutionDiagnostic;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.junit.Test;
-import org.muml.mumlcore.expressions.common.LiteralExpression;
+import org.muml.core.expressions.common.LiteralExpression;
 import org.muml.pim.protocol.CoordinationProtocol;
 import org.muml.pim.protocol.Role;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;

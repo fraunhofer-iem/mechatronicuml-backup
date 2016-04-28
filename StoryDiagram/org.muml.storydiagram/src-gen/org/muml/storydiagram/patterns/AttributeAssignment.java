@@ -8,7 +8,7 @@ package org.muml.storydiagram.patterns;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
-import org.muml.mumlcore.expressions.Expression;
+import org.muml.core.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->

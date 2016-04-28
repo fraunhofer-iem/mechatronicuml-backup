@@ -14,8 +14,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.muml.mumlcore.expressions.Expression;
-import org.muml.mumlcore.expressions.impl.ExpressionImpl;
+import org.muml.core.expressions.Expression;
+import org.muml.core.expressions.impl.ExpressionImpl;
 import org.muml.pim.actionlanguage.ActionlanguagePackage;
 import org.muml.pim.actionlanguage.ArrayInitializeExpression;
 

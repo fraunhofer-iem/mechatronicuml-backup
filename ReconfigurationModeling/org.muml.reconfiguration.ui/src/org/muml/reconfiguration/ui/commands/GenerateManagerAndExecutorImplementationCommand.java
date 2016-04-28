@@ -23,8 +23,8 @@ import org.eclipse.m2m.qvt.oml.ExecutionDiagnostic;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.ui.handlers.HandlerUtil;
-import org.muml.mumlcore.modelinstance.ModelElementCategory;
-import org.muml.mumlcore.modelinstance.RootNode;
+import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.core.modelinstance.RootNode;
 import org.muml.reconfiguration.ReconfigurableStructuredComponent;
 import org.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart;
 

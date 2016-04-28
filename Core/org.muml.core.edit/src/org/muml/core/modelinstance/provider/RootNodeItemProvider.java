@@ -21,13 +21,15 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import org.muml.core.modelinstance.ModelinstanceFactory;
+import org.muml.core.modelinstance.ModelinstancePackage;
+import org.muml.core.modelinstance.RootNode;
+
 import org.muml.core.provider.CoreEditPlugin;
-import org.muml.mumlcore.modelinstance.ModelinstanceFactory;
-import org.muml.mumlcore.modelinstance.ModelinstancePackage;
-import org.muml.mumlcore.modelinstance.RootNode;
 
 /**
- * This is the item provider adapter for a {@link org.muml.mumlcore.modelinstance.RootNode} object.
+ * This is the item provider adapter for a {@link org.muml.core.modelinstance.RootNode} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

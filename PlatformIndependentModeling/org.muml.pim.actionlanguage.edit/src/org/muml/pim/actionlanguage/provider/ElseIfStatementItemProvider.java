@@ -25,9 +25,9 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.muml.core.expressions.ExpressionsFactory;
+import org.muml.core.expressions.common.CommonExpressionsFactory;
 import org.muml.core.provider.CommentableElementItemProvider;
-import org.muml.mumlcore.expressions.ExpressionsFactory;
-import org.muml.mumlcore.expressions.common.CommonExpressionsFactory;
 import org.muml.pim.actionlanguage.ActionlanguageFactory;
 import org.muml.pim.actionlanguage.ActionlanguagePackage;
 import org.muml.pim.actionlanguage.ElseIfStatement;

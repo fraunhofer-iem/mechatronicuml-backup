@@ -5,6 +5,8 @@ package org.muml.graphviz.plain.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import org.muml.core.ExtendableElement;
+import org.muml.core.NamedElement;
 import org.muml.graphviz.common.Edge;
 import org.muml.graphviz.common.Graph;
 import org.muml.graphviz.common.Node;
@@ -12,8 +14,6 @@ import org.muml.graphviz.plain.PlainEdge;
 import org.muml.graphviz.plain.PlainGraph;
 import org.muml.graphviz.plain.PlainNode;
 import org.muml.graphviz.plain.PlainPackage;
-import org.muml.mumlcore.ExtendableElement;
-import org.muml.mumlcore.NamedElement;
 
 /**
  * <!-- begin-user-doc -->

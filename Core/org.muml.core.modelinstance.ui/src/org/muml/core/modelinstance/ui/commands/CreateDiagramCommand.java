@@ -39,16 +39,16 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalC
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Node;
+import org.muml.core.ExtendableElement;
 import org.muml.core.common.DiagramEditorUtil;
+import org.muml.core.modelinstance.ModelElementCategory;
 import org.muml.core.modelinstance.ModelInstancePlugin;
+import org.muml.core.modelinstance.ModelinstanceFactory;
+import org.muml.core.modelinstance.ModelinstancePackage;
+import org.muml.core.modelinstance.RootNode;
 import org.muml.core.modelinstance.categories.ModelElementCategoryRegistry;
 import org.muml.core.modelinstance.ui.ModelinstanceUiPlugin;
 import org.muml.core.modelinstance.ui.diagrams.IDiagramInformation;
-import org.muml.mumlcore.ExtendableElement;
-import org.muml.mumlcore.modelinstance.ModelElementCategory;
-import org.muml.mumlcore.modelinstance.ModelinstanceFactory;
-import org.muml.mumlcore.modelinstance.ModelinstancePackage;
-import org.muml.mumlcore.modelinstance.RootNode;
 
 /**
  * Creates a new Diagram with initial contents.

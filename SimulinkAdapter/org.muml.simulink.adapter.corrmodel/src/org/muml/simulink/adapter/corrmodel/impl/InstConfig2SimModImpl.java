@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.muml.mumlcore.modelinstance.ModelElementCategory;
+import org.muml.core.modelinstance.ModelElementCategory;
 import org.muml.pim.instance.ComponentInstanceConfiguration;
 import org.muml.simulink.BusCreator;
 import org.muml.simulink.BusSelector;

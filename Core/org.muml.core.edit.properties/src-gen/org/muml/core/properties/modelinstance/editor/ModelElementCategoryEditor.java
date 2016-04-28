@@ -42,7 +42,7 @@ public class ModelElementCategoryEditor extends org.muml.ape.runtime.editors.Cla
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorKey_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorKey_property_tab_generalTab_Editor() {
 		if (this.editorKey_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.mumlcore.modelinstance.ModelinstancePackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE
 					.getModelElementCategory_Key();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, false);
@@ -58,7 +58,7 @@ public class ModelElementCategoryEditor extends org.muml.ape.runtime.editors.Cla
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_property_tab_generalTab_Editor() {
 		if (this.editorName_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.mumlcore.modelinstance.ModelinstancePackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE
 					.getModelElementCategory_Name();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, false);
@@ -79,7 +79,7 @@ public class ModelElementCategoryEditor extends org.muml.ape.runtime.editors.Cla
 	 */
 	public ModelElementCategoryEditor(String tab) {
 		this(tab, org.muml.core.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
-				org.muml.mumlcore.modelinstance.ModelinstancePackage.eINSTANCE.getModelElementCategory());
+				org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE.getModelElementCategory());
 	}
 
 	/**

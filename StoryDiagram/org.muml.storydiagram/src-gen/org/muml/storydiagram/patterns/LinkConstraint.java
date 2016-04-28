@@ -6,7 +6,7 @@
  */
 package org.muml.storydiagram.patterns;
 
-import org.muml.mumlcore.ExtendableElement;
+import org.muml.core.ExtendableElement;
 
 /**
  * <!-- begin-user-doc -->

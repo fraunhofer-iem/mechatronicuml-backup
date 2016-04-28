@@ -13,9 +13,9 @@ import org.eclipse.gmf.runtime.diagram.core.services.view.CreateDiagramViewOpera
 import org.eclipse.gmf.runtime.diagram.core.services.view.CreateNodeViewOperation;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.core.modelinstance.ModelinstancePackage;
 import org.muml.core.modelinstance.ui.diagrams.IDiagramInformation;
-import org.muml.mumlcore.modelinstance.ModelElementCategory;
-import org.muml.mumlcore.modelinstance.ModelinstancePackage;
 
 public class ElementInformation {
 	public IDiagramInformation diagramInformation;

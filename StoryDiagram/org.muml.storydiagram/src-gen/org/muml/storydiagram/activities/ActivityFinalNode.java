@@ -7,7 +7,7 @@
 package org.muml.storydiagram.activities;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.mumlcore.expressions.Expression;
+import org.muml.core.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,7 +48,7 @@ public interface ActivityFinalNode extends ActivityNode {
 
 	/**
 	 * Returns the value of the '<em><b>Return Values</b></em>' containment reference list.
-	 * The list contents are of type {@link org.muml.mumlcore.expressions.Expression}.
+	 * The list contents are of type {@link org.muml.core.expressions.Expression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->

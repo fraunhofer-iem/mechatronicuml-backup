@@ -7,8 +7,8 @@ import java.util.List;
 
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
-import org.muml.mumlcore.ExtendableElement;
-import org.muml.mumlcore.modelinstance.ModelElementCategory;
+import org.muml.core.ExtendableElement;
+import org.muml.core.modelinstance.ModelElementCategory;
 import org.muml.pim.behavior.Parameter;
 import org.muml.pim.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart;
 import org.muml.pim.messagetype.diagram.edit.parts.MessageTypeEditPart;

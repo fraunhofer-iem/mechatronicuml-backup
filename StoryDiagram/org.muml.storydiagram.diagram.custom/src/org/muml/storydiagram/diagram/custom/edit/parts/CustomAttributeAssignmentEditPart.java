@@ -2,7 +2,7 @@ package org.muml.storydiagram.diagram.custom.edit.parts;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
-import org.muml.mumlcore.expressions.TextualExpression;
+import org.muml.core.expressions.TextualExpression;
 import org.muml.storydiagram.diagram.custom.util.SdmUtility;
 import org.muml.storydiagram.diagram.edit.parts.AttributeAssignmentEditPart;
 import org.muml.storydiagram.patterns.AttributeAssignment;

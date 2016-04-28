@@ -4,7 +4,7 @@ package org.muml.simulink.adapter.wizard;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.muml.mumlcore.NamedElement;
+import org.muml.core.NamedElement;
 import org.muml.pim.behavior.Parameter;
 import org.muml.pim.component.Component;
 import org.muml.pim.component.Port;

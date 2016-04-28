@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.muml.core.CorePackage;
 import org.muml.core.reachanalysis.reachabilitygraph.ActionTransition;
 import org.muml.core.reachanalysis.reachabilitygraph.HashToStateList;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraph;
@@ -21,7 +22,6 @@ import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphFactory;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphPackage;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphTransition;
-import org.muml.mumlcore.CorePackage;
 
 /**
  * <!-- begin-user-doc -->

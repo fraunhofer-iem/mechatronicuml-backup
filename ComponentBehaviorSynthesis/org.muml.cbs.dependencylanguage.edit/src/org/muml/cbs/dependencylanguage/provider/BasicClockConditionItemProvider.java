@@ -13,8 +13,8 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.muml.cbs.dependencylanguage.BasicClockCondition;
 import org.muml.cbs.dependencylanguage.DependencylanguageFactory;
-import org.muml.mumlcore.CorePackage;
-import org.muml.mumlcore.expressions.common.ComparingOperator;
+import org.muml.core.CorePackage;
+import org.muml.core.expressions.common.ComparingOperator;
 import org.muml.pim.realtimestatechart.provider.ClockConstraintItemProvider;
 
 /**

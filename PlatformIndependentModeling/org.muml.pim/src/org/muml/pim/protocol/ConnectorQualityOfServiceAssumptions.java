@@ -6,7 +6,7 @@
  */
 package org.muml.pim.protocol;
 
-import org.muml.mumlcore.CommentableElement;
+import org.muml.core.CommentableElement;
 import org.muml.pim.valuetype.TimeValue;
 
 /**

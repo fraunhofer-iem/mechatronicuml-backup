@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
 import org.muml.cbs.dependencylanguage.Event;
 import org.muml.cbs.dependencylanguage.Synchronization;
-import org.muml.mumlcore.expressions.Expression;
+import org.muml.core.expressions.Expression;
 import org.muml.pim.types.DataType;
 
 /**

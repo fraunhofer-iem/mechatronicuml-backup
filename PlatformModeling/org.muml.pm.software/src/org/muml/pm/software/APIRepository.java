@@ -3,8 +3,9 @@
 package org.muml.pm.software;
 
 import org.eclipse.emf.common.util.EList;
-import org.muml.mumlcore.CommentableElement;
-import org.muml.mumlcore.NamedElement;
+
+import org.muml.core.CommentableElement;
+import org.muml.core.NamedElement;
 
 /**
  * <!-- begin-user-doc -->

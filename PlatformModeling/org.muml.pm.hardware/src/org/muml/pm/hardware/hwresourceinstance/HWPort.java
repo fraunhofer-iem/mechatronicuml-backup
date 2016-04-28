@@ -3,7 +3,7 @@
  */
 package org.muml.pm.hardware.hwresourceinstance;
 
-import org.muml.mumlcore.NamedElement;
+import org.muml.core.NamedElement;
 import org.muml.pim.valuetype.Cardinality;
 import org.muml.pm.hardware.hwresource.CommunicationKind;
 import org.muml.pm.hardware.hwresource.CommunicationProtocol;

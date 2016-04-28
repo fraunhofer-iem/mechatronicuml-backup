@@ -14,7 +14,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.mumlcore.CorePackage;
+import org.muml.core.CorePackage;
 import org.muml.pim.behavior.BehaviorFactory;
 import org.muml.reconfiguration.ReconfigurationPackage;
 import org.muml.reconfiguration.verification.sdd.componentsdd.ComponentStoryDecisionDiagram;

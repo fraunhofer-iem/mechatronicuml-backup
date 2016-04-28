@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.muml.mumlcore.modelinstance.ModelElementCategory;
+import org.muml.core.modelinstance.ModelElementCategory;
 import org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage;
 import org.muml.simulink.adapter.corrmodel.behavior.Behavior_modelPackage;
 import org.muml.simulink.adapter.corrmodel.behavior.RtScCat2SfM;

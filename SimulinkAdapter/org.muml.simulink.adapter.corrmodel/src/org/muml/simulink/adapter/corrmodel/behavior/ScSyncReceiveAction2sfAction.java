@@ -6,7 +6,7 @@
  */
 package org.muml.simulink.adapter.corrmodel.behavior;
 
-import org.muml.mumlcore.expressions.TextualExpression;
+import org.muml.core.expressions.TextualExpression;
 import org.muml.pim.realtimestatechart.Action;
 import org.muml.simulink.adapter.corrmodel.AbstractContainerCorrespondenceNode;
 

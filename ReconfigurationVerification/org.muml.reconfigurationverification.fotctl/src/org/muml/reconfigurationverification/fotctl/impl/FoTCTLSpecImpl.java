@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.muml.mumlcore.impl.ExtendableElementImpl;
+import org.muml.core.impl.ExtendableElementImpl;
 import org.muml.reconfigurationverification.fotctl.ConstantSymbolDecl;
 import org.muml.reconfigurationverification.fotctl.EdgeLabelPredicate;
 import org.muml.reconfigurationverification.fotctl.EdgeLabelPredicateDecl;

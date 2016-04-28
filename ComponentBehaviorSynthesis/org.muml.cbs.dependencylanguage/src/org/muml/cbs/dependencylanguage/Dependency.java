@@ -2,7 +2,7 @@
  */
 package org.muml.cbs.dependencylanguage;
 
-import org.muml.mumlcore.CommentableElement;
+import org.muml.core.CommentableElement;
 
 /**
  * <!-- begin-user-doc -->

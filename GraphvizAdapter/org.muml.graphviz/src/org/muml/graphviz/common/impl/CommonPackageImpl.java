@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.ETypeParameter;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.muml.core.CorePackage;
 import org.muml.graphviz.GraphvizPackage;
 import org.muml.graphviz.common.CommonFactory;
 import org.muml.graphviz.common.CommonPackage;
@@ -21,7 +22,6 @@ import org.muml.graphviz.plain.PlainPackage;
 import org.muml.graphviz.plain.impl.PlainPackageImpl;
 import org.muml.graphviz.util.UtilPackage;
 import org.muml.graphviz.util.impl.UtilPackageImpl;
-import org.muml.mumlcore.CorePackage;
 
 /**
  * <!-- begin-user-doc -->

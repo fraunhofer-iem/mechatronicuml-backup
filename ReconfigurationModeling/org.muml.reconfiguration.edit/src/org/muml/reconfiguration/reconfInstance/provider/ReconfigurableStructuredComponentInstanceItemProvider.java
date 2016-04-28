@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.muml.mumlcore.CorePackage;
+import org.muml.core.CorePackage;
 import org.muml.pim.instance.InstancePackage;
 import org.muml.pim.instance.provider.StructuredComponentInstanceItemProvider;
 import org.muml.reconfiguration.provider.MumlReconfigurationEditPlugin;

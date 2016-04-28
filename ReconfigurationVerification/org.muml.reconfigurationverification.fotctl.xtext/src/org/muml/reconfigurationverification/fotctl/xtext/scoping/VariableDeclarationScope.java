@@ -5,7 +5,7 @@ import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.resource.EObjectDescription;
 import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.scoping.IScope;
-import org.muml.mumlcore.NamedElement;
+import org.muml.core.NamedElement;
 import org.muml.reconfigurationverification.fotctl.FoTCTLFormula;
 import org.muml.reconfigurationverification.fotctl.QuantifiedFormula;
 import org.muml.reconfigurationverification.fotctl.Variable;
