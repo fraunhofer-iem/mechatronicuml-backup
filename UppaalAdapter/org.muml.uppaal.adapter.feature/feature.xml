@@ -89,6 +89,8 @@
       <import feature="org.muml.pim.feature" version="0.5.0.qualifier"/>
       <import feature="org.muml.core.feature" version="0.5.0.qualifier"/>
       <import feature="org.muml.emm.feature" version="0.1.0.qualifier"/>
+      <import plugin="org.muml.uppaal.options"/>
+      <import plugin="org.muml.uppaal.options.edit.properties"/>
    </requires>
 
    <plugin
@@ -197,27 +199,6 @@
 
    <plugin
          id="org.muml.uppaal.adapter.extension.edit.properties"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.muml.uppaal.options"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.muml.uppaal.options.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.muml.uppaal.options.edit.properties"
          download-size="0"
          install-size="0"
          version="0.0.0"
