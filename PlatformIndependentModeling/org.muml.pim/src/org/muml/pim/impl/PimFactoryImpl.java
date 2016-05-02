@@ -55,11 +55,15 @@ public class PimFactoryImpl extends EFactoryImpl implements PimFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		switch (eClass.getClassifierID()) {
+			case PimPackage.TEST: return createTest();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
 	}
 
 
