@@ -31,6 +31,7 @@ public class PropertiesCheck {
     	String filename=args[0];
     	if(filename.endsWith("feature.xml")){
     		propCheck.fixFeatureXML(filename);
+    		propCheck.fixFeatureXMLVersion("feature.xml");
     		propCheck.fixFeatureProperties(filename.replace("feature.xml", "feature.properties"));
     		propCheck.fixBuildProperties(filename.replace("feature.xml", "build.properties"));
     	}
@@ -83,6 +84,24 @@ public class PropertiesCheck {
 		setAttribute(getNode(new String[] { "feature", "copyright" }, document), "url", "%copyrightURL", document);
 		setText(getNode(new String[] { "feature", "license" }, document), "\n      %license\n   ", document);
 		setText(getNode(new String[] { "feature", "copyright" }, document), "\n      %copyright\n   ", document);
+
+		// Use a Transformer for output
+		TransformerFactory tFactory = TransformerFactory.newInstance();
+		Transformer transformer = tFactory.newTransformer();
+
+		DOMSource source = new DOMSource(document);
+		StreamResult result = new StreamResult(new FileOutputStream(file));
+		transformer.transform(source, result);
+	}
+	
+	public void fixFeatureXMLVersion(String filename) throws TransformerException, ParserConfigurationException, SAXException, IOException {
+		File file = new File(filename);
+		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+		DocumentBuilder db = dbf.newDocumentBuilder();
+		Document document = db.parse(file);
+
+		
+		setAttribute(getNode(new String[] { "feature" }, document), "version", "1.0.0.qualifier", document);
 
 		// Use a Transformer for output
 		TransformerFactory tFactory = TransformerFactory.newInstance();
