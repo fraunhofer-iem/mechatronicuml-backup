@@ -29,7 +29,8 @@ public class PropertiesCheck {
     	PropertiesCheck propCheck = new PropertiesCheck();
        
     	String filename=args[0];
-    	if(filename.endsWith("feature.xml")){
+    	//do not modify the feature.xml of buckminster projects
+    	if(filename.endsWith("feature.xml") && !(filename.contains("buckminster"))){
     		propCheck.fixFeatureXML(filename);
     		propCheck.fixFeatureXMLVersion(filename);
     		propCheck.fixFeatureProperties(filename.replace("feature.xml", "feature.properties"));
