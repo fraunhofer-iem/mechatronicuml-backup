@@ -31,7 +31,7 @@ public class PropertiesCheck {
     	String filename=args[0];
     	if(filename.endsWith("feature.xml")){
     		propCheck.fixFeatureXML(filename);
-    		propCheck.fixFeatureXMLVersion("feature.xml");
+    		propCheck.fixFeatureXMLVersion(filename);
     		propCheck.fixFeatureProperties(filename.replace("feature.xml", "feature.properties"));
     		propCheck.fixBuildProperties(filename.replace("feature.xml", "build.properties"));
     	}
