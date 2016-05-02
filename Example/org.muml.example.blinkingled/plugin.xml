@@ -5,7 +5,7 @@
          point="org.eclipse.ui.newWizards">
       <wizard
             category="org.eclipse.ui.Examples/org.muml.example"
-            class="org.muml.example.ui.wizard.ExampleCreationWizard"
+            class="org.muml.core.example.ui.wizard.ExampleCreationWizard"
             icon="images/muml.png"
             id="org.muml.example.blinkingLEDCreationWizard"
             name="Blinking LED Example"
