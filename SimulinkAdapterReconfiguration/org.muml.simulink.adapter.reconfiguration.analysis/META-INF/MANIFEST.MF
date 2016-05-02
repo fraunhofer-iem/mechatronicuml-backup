@@ -24,7 +24,8 @@ Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.9.1",
  de.upb.swt.qvt.tgg;bundle-version="0.5.0",
  de.upb.swt.qvt.tgg.interpreter;bundle-version="0.5.1",
  org.muml.simulink.adapter.wizard;bundle-version="0.4.0",
- org.muml.reconfiguration
+ org.muml.reconfiguration,
+ org.muml.simulink.adapter.extension;bundle-version="0.1.0"
 Import-Package: org.apache.commons.logging;version="1.0.4",
  org.eclipse.emf.diffmerge.api,
  org.eclipse.emf.diffmerge.api.diff,

@@ -20,6 +20,9 @@ import org.muml.pim.instance.DelegationConnectorInstance;
 import org.muml.pim.instance.PortConnectorInstance;
 import org.muml.pim.instance.PortInstance;
 import org.muml.pim.instance.StructuredComponentInstance;
+import org.muml.simulink.adapter.extension.ExtensionFactory;
+import org.muml.simulink.adapter.extension.SimulinkAnnotationExtension;
+import org.muml.simulink.adapter.reconfiguration.analysis.pre.ReconfigurationMUMLAnalysis;
 import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SDMTransition;
 import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.StepGraph;
 import org.muml.storydiagram.reachanalysis.sdm.SDMReachabilityComputation;
@@ -263,12 +266,12 @@ public class CICMerge extends ReachGraphVisitor
 	 * Helper method to add an annotation (key='Reconfiguration') to the given element
 	 */
 	private void addReconfigurationAnnotation(ExtendableElement element, String key, String val) {
-		EAnnotation annotation = element.getAnnotation("Reconfiguration");
+		SimulinkAnnotationExtension annotation = ReconfigurationMUMLAnalysis.getAnnotation(element, "Reconfiguration");
 		if(annotation == null)
 		{
-			annotation = EcoreFactory.eINSTANCE.createEAnnotation();
+			annotation = ExtensionFactory.eINSTANCE.createSimulinkAnnotationExtension();
 			annotation.setSource("Reconfiguration");
-			element.getAnnotations().add(annotation);	
+			element.getExtensions().add(annotation);	
 		}						
 		annotation.getDetails().put(key, val);	
 	}

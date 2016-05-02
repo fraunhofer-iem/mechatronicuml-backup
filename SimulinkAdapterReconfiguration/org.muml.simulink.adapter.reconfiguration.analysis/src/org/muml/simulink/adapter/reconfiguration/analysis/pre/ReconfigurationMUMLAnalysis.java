@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.muml.core.ExtendableElement;
+import org.muml.core.Extension;
 import org.muml.core.expressions.Expression;
 import org.muml.core.expressions.TextualExpression;
 import org.muml.core.expressions.common.ComparingOperator;
@@ -78,6 +79,8 @@ import org.muml.reconfiguration.Manager;
 import org.muml.reconfiguration.ReconfigurableStructuredComponent;
 import org.muml.reconfiguration.ReconfigurationPort;
 import org.muml.simulink.adapter.actionlanguage.matlab.generator.ExpressionTransformation;
+import org.muml.simulink.adapter.extension.ExtensionFactory;
+import org.muml.simulink.adapter.extension.SimulinkAnnotationExtension;
 import org.muml.simulink.msglib.LinkLayer;
 import org.muml.simulink.msglib.MsglibFactory;
 
@@ -86,8 +89,6 @@ import org.muml.simulink.msglib.MsglibFactory;
  * Forked from MUMLAnalysis @ r1236
  */
 public class ReconfigurationMUMLAnalysis {
-	
-	private EcoreFactory ecoreFactory = new EcoreFactoryImpl();	
 	
 	private final int DEFAULT_BUFFER_SIZE = 10;
 	
@@ -116,6 +117,19 @@ public class ReconfigurationMUMLAnalysis {
 		DEFAULT_MIN_MSG_DELAY = tmpLinkLayer.getDelayMin();
 		DEFAULT_MAX_MSG_DELAY = tmpLinkLayer.getDelayMax();
 	}
+
+	public static SimulinkAnnotationExtension getAnnotation(ExtendableElement obj, String source) {
+		for(Extension ext : obj.getExtensions()){
+			if (ext instanceof SimulinkAnnotationExtension) {
+				SimulinkAnnotationExtension an = (SimulinkAnnotationExtension) ext;
+				if(an.getSource().equals(source)){
+					return an;
+				}
+			}
+		}
+		return null;
+	}
+	
 	
 	public void MUML_Analysis(String file, boolean save) {
 				
@@ -218,9 +232,9 @@ public class ReconfigurationMUMLAnalysis {
 			//structured component instance
 			moveDelegationConnectorInstances(cic);
 			
-			EAnnotation cic_eAnnotation = ecoreFactory.createEAnnotation();					
+			SimulinkAnnotationExtension cic_eAnnotation = ExtensionFactory.eINSTANCE.createSimulinkAnnotationExtension();					
 			cic_eAnnotation.setSource("CIC");			
-			cic.getAnnotations().add(cic_eAnnotation);
+			cic.getExtensions().add(cic_eAnnotation);
 			 
 			//mark the chosen component instance configuration
 			if(cic==chosenCIC)
@@ -269,7 +283,7 @@ public class ReconfigurationMUMLAnalysis {
 //								stateChartContainsStateChart(rtsc, (RealtimeStatechart) dp.getBehavior());						
 
 						// create an annotation for the embedded Matlab functions of the Stateflow-chart  
-						EAnnotation eAnnotation = ecoreFactory.createEAnnotation();					
+						SimulinkAnnotationExtension eAnnotation = ExtensionFactory.eINSTANCE.createSimulinkAnnotationExtension();					
 						eAnnotation.setSource("EMF");					
 											
 						if(correctStatechart){
@@ -294,14 +308,14 @@ public class ReconfigurationMUMLAnalysis {
 							eAnnotation.getDetails().put(dp.getName(), String.valueOf(bufferSize));
 							
 							// Put the buffer size and the message mapping in a new port-annotation 				
-							EAnnotation port_eAnnotation = ecoreFactory.createEAnnotation();							
+							SimulinkAnnotationExtension port_eAnnotation = ExtensionFactory.eINSTANCE.createSimulinkAnnotationExtension();					
 							port_eAnnotation.setSource("DiscretePort");
 							port_eAnnotation.getDetails().put("sourceBufferSize", String.valueOf(sourceBufferSize));
 							port_eAnnotation.getDetails().put("bufferSize", String.valueOf(bufferSize));	
 							port_eAnnotation.getDetails().put("messageMapping", messageMappingString);
 							port_eAnnotation.getDetails().put("minMsgDelay", getMinMsgDelay(dp));
 							port_eAnnotation.getDetails().put("maxMsgDelay", getMaxMsgDelay(dp));
-							dp.getAnnotations().add(port_eAnnotation);
+							dp.getExtensions().add(port_eAnnotation);
 							
 							// Creating String for the transition in the DataInit-State
 							String portName = dp.getName();
@@ -312,26 +326,26 @@ public class ReconfigurationMUMLAnalysis {
 								portName+"ParamReadOut" +  " = " + portName+"ParamReadIn;\n";
 						}
 						
-						rtsc.getAnnotations().add(eAnnotation);
+						rtsc.getExtensions().add(eAnnotation);
 					}		
 				}
 				if(correctStatechart){
 					statecharts.add(  rtsc  );
 					
-					if(rtsc.getAnnotation("dataInit")==null){						
-						EAnnotation eAnnotation = ecoreFactory.createEAnnotation();					
+					if(getAnnotation(rtsc, "dataInit")==null){						
+						SimulinkAnnotationExtension eAnnotation = ExtensionFactory.eINSTANCE.createSimulinkAnnotationExtension();					
 						eAnnotation.setSource("dataInit");				
 						eAnnotation.getDetails().put("queues", dataInit);
-						rtsc.getAnnotations().add(eAnnotation);
+						rtsc.getExtensions().add(eAnnotation);
 					}
 					
 					if(paramNumber>0){
-						EAnnotation paramEAnnotation = ecoreFactory.createEAnnotation();					
+						SimulinkAnnotationExtension paramEAnnotation = ExtensionFactory.eINSTANCE.createSimulinkAnnotationExtension();					
 						paramEAnnotation.setSource("tmp_variables");				
 						for(int i=1; i<=paramNumber; i++){							
 							paramEAnnotation.getDetails().put(String.valueOf(i), "tmp_var_"+i);							
 						}
-						rtsc.getAnnotations().add(paramEAnnotation);
+						rtsc.getExtensions().add(paramEAnnotation);
 					}
 				}
 			}
@@ -377,7 +391,7 @@ public class ReconfigurationMUMLAnalysis {
 			portStatecharts.put((RealtimeStatechart) port.getBehavior(), port);
 			
 			//1. Add 'EMF' annotation to rtsc
-			EAnnotation eAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();					
+			SimulinkAnnotationExtension eAnnotation = ExtensionFactory.eINSTANCE.createSimulinkAnnotationExtension();					
 			eAnnotation.setSource("EMF");	
 			
 			int portParamNumber = this.getMaxParamNumber(port);	
@@ -398,7 +412,7 @@ public class ReconfigurationMUMLAnalysis {
 			// Put the buffer size in the "EMF"-annotation	
 			eAnnotation.getDetails().put(port.getName(), String.valueOf(bufferSize));
 			
-			rtsc.getAnnotations().add(eAnnotation);
+			rtsc.getExtensions().add(eAnnotation);
 			
 			//2. Add 'DiscretePort' annotation to port
 			
@@ -413,20 +427,20 @@ public class ReconfigurationMUMLAnalysis {
 		
 		statecharts.add(rtsc);
 		
-		if(rtsc.getAnnotation("dataInit")==null){						
-			EAnnotation eAnnotation = ecoreFactory.createEAnnotation();					
+		if(getAnnotation(rtsc, "dataInit")==null){						
+			SimulinkAnnotationExtension eAnnotation = ExtensionFactory.eINSTANCE.createSimulinkAnnotationExtension();					
 			eAnnotation.setSource("dataInit");				
 			eAnnotation.getDetails().put("queues", dataInit);
-			rtsc.getAnnotations().add(eAnnotation);
+			rtsc.getExtensions().add(eAnnotation);
 		}
 		
 		if(paramNumber>0){
-			EAnnotation paramEAnnotation = ecoreFactory.createEAnnotation();					
+			SimulinkAnnotationExtension paramEAnnotation = ExtensionFactory.eINSTANCE.createSimulinkAnnotationExtension();
 			paramEAnnotation.setSource("tmp_variables");				
 			for(int i=1; i<=paramNumber; i++){							
 				paramEAnnotation.getDetails().put(String.valueOf(i), "tmp_var_"+i);							
 			}
-			rtsc.getAnnotations().add(paramEAnnotation);
+			rtsc.getExtensions().add(paramEAnnotation);
 		}		
 		
 	}	
@@ -439,7 +453,7 @@ public class ReconfigurationMUMLAnalysis {
 				DiscretePort port = (DiscretePort)rtsc.getBehavioralElement();
 				Component component = port.getComponent();
 				
-				EAnnotation eAnnotation = ecoreFactory.createEAnnotation();					
+				SimulinkAnnotationExtension eAnnotation = ExtensionFactory.eINSTANCE.createSimulinkAnnotationExtension();
 				eAnnotation.setSource("portStatechart");				
 				if(portInstanceInCIC(chosenCIC, component, port)){
 					eAnnotation.getDetails().put("portInCIC", "true");
@@ -447,7 +461,7 @@ public class ReconfigurationMUMLAnalysis {
 				else{
 					eAnnotation.getDetails().put("portInCIC", "false");
 				}
-				rtsc.getAnnotations().add(eAnnotation);
+				rtsc.getExtensions().add(eAnnotation);
 			}
 		}
 	}
@@ -530,20 +544,23 @@ public class ReconfigurationMUMLAnalysis {
 				EAnnotation actionAn = null;
 				EAnnotation asyncSendAn = null;
 				EAnnotation asyncRecAn = null;
-				for(EAnnotation an : newTrans.getAnnotations()){
-					if(an.getSource().equals("ActionLanguage")){
-						actionAn = an;
-					}
-					else if(an.getSource().equals("async")){
-						for(String details : an.getDetails().keySet()){
-							if(details.equals("receive")){
-								asyncRecAn = an;
+				for(Extension ex : newTrans.getExtensions()){
+					if (ex instanceof SimulinkAnnotationExtension) {
+						SimulinkAnnotationExtension an = (SimulinkAnnotationExtension) ex;
+						if(an.getSource().equals("ActionLanguage")){
+							actionAn = an;
+						}
+						else if(an.getSource().equals("async")){
+							for(String details : an.getDetails().keySet()){
+								if(details.equals("receive")){
+									asyncRecAn = an;
+								}
 							}
 						}
 					}
 				}
 				if(actionAn != null){
-					newTrans.getAnnotations().remove(actionAn);
+					newTrans.getExtensions().remove(actionAn);
 				}
 				if(asyncRecAn != null){
 					asyncRecAn.getDetails().remove("receive");
@@ -551,20 +568,23 @@ public class ReconfigurationMUMLAnalysis {
 				}
 				
 				//Deletion of not required annotations of first transition
-				for(EAnnotation an : trans.getAnnotations()){
-					if(an.getSource().equals("async")){
-						for(String details : an.getDetails().keySet()){
-							if(details.equals("send")){
-								asyncSendAn = an;
-							}
-							else if(details.equals("dequeue")){
-								asyncRecAn = an;
+				for(Extension ex : trans.getExtensions()){
+					if (ex instanceof SimulinkAnnotationExtension) {
+						SimulinkAnnotationExtension an = (SimulinkAnnotationExtension) ex;
+						if(an.getSource().equals("async")){
+							for(String details : an.getDetails().keySet()){
+								if(details.equals("send")){
+									asyncSendAn = an;
+								}
+								else if(details.equals("dequeue")){
+									asyncRecAn = an;
+								}
 							}
 						}
 					}
 				}
 				if(asyncSendAn != null){
-					trans.getAnnotations().remove(asyncSendAn);
+					trans.getExtensions().remove(asyncSendAn);
 				}
 				if(asyncRecAn != null){
 					asyncRecAn.getDetails().remove("dequeue");
@@ -650,9 +670,9 @@ public class ReconfigurationMUMLAnalysis {
 			
 			// Create new Annotation			
 			if (t.getTriggerMessageEvent() != null || t.getRaiseMessageEvent() != null){
-				EAnnotation eAnnotation = null;
-				if(t.getAnnotation("async")==null){
-					eAnnotation = ecoreFactory.createEAnnotation();
+				SimulinkAnnotationExtension eAnnotation = null;
+				if(getAnnotation(t, "async")==null){
+					eAnnotation = ExtensionFactory.eINSTANCE.createSimulinkAnnotationExtension();
 					eAnnotation.getReferences().add(port);	
 					eAnnotation.setSource("async");
 					if(!send.equals("")) {
@@ -664,7 +684,7 @@ public class ReconfigurationMUMLAnalysis {
 					}			
 				}
 				else{
-					eAnnotation = t.getAnnotation("async");
+					eAnnotation = getAnnotation(t, "async");
 					if(eAnnotation.getDetails().get("send")==null && !send.equals("")){
 						eAnnotation.getDetails().put("send", send);
 					}
@@ -673,7 +693,7 @@ public class ReconfigurationMUMLAnalysis {
 						eAnnotation.getDetails().put("dequeue", dequeue);
 					}
 				}
-				t.getAnnotations().add(eAnnotation);	
+				t.getExtensions().add(eAnnotation);	
 			}
 		}
 	}
@@ -681,10 +701,10 @@ public class ReconfigurationMUMLAnalysis {
 	public void invariantAnalysis(){
 		
 		for(RealtimeStatechart r : statecharts){
-			EAnnotation eAnnotation = ecoreFactory.createEAnnotation();
+			SimulinkAnnotationExtension eAnnotation = ExtensionFactory.eINSTANCE.createSimulinkAnnotationExtension();
 			eAnnotation.setSource("invariant");				
 			eAnnotation.getDetails().put("error", "function invariant() \n error('Simulation stopped in Error State. An invariant is violated');");
-			r.getAnnotations().add(eAnnotation);
+			r.getExtensions().add(eAnnotation);
 		}
 	}
 	
@@ -766,16 +786,21 @@ public class ReconfigurationMUMLAnalysis {
 				EObject regionObject = (EObject) trans2reg.get(concreteReceivers.get(i));
 				boolean regionIsContained = false;
 				
-				for(EAnnotation a : sender.getAnnotations())
-					if (a.getReferences().contains(regionObject))
-						regionIsContained = true;
+				for(Extension e : sender.getExtensions()) {
+					if (e instanceof SimulinkAnnotationExtension) {
+						SimulinkAnnotationExtension a = (SimulinkAnnotationExtension) e;
+						if (a.getReferences().contains(regionObject)) {
+							regionIsContained = true;
+						}
+					}
+				}
 				
 				if (!regionIsContained) {
-					EAnnotation eAnnotation = ecoreFactory.createEAnnotation();
+					SimulinkAnnotationExtension eAnnotation = ExtensionFactory.eINSTANCE.createSimulinkAnnotationExtension();
 					eAnnotation.setSource("prio");
 					eAnnotation.getReferences().add(regionObject);					
 					eAnnotation.getDetails().put("prio", "" + (i + 1));
-					sender.getAnnotations().add(eAnnotation);
+					sender.getExtensions().add(eAnnotation);
 				}
 			}			
 		}
@@ -806,10 +831,10 @@ public class ReconfigurationMUMLAnalysis {
 		}
 		for(State state : syncVariables.keySet()){
 			for(String variableName : syncVariables.get(state)){
-				EAnnotation eAnnotation = ecoreFactory.createEAnnotation();									
+				SimulinkAnnotationExtension eAnnotation = ExtensionFactory.eINSTANCE.createSimulinkAnnotationExtension();
 				eAnnotation.setSource("sync_variable");
 				eAnnotation.getDetails().put("variableName", variableName);
-				state.getAnnotations().add(eAnnotation);
+				state.getExtensions().add(eAnnotation);
 			}
 		}
 	}
@@ -818,20 +843,23 @@ public class ReconfigurationMUMLAnalysis {
 		HashMap<State, HashMap<SynchronizationChannel, HashMap<Transition, String>>> sourceStates = new HashMap<State, HashMap<SynchronizationChannel,HashMap<Transition,String>>>();
 		for(Transition trans : statechart_receivers){
 			String conditions = "";
-			for(EAnnotation an : trans.getAnnotations()){
-				if(an.getSource().equals("async")){
-					for(String details : an.getDetails().keySet()){
-						if(details.equals("receive")){
-							conditions = conditions + an.getDetails().get(details) + " && ";
-						}
-					}	
-				}
-				else if(an.getSource().equals("ActionLanguage")){
-					for(String details : an.getDetails().keySet()){
-						if(details.equals("matlab")){
-							conditions = conditions + an.getDetails().get(details) + " && ";
-						}
-					}	
+			for (Extension ex : trans.getExtensions()){
+				if (ex instanceof SimulinkAnnotationExtension) {
+					SimulinkAnnotationExtension an = (SimulinkAnnotationExtension) ex;
+					if(an.getSource().equals("async")){
+						for(String details : an.getDetails().keySet()){
+							if(details.equals("receive")){
+								conditions = conditions + an.getDetails().get(details) + " && ";
+							}
+						}	
+					}
+					else if(an.getSource().equals("ActionLanguage")){
+						for(String details : an.getDetails().keySet()){
+							if(details.equals("matlab")){
+								conditions = conditions + an.getDetails().get(details) + " && ";
+							}
+						}	
+					}
 				}
 			}
 			
@@ -878,11 +906,11 @@ public class ReconfigurationMUMLAnalysis {
 							+ target.getName().substring(1, target.getName().length())
 							+ t.getPriority();
 					conditionString = conditionList.get(t);
-					EAnnotation eAnnotation = ecoreFactory.createEAnnotation();									
+					SimulinkAnnotationExtension eAnnotation = ExtensionFactory.eINSTANCE.createSimulinkAnnotationExtension();
 					eAnnotation.setSource("sync_conditions");
 					eAnnotation.getDetails().put("conditions", conditionString);
 					eAnnotation.getDetails().put("variableName", variableName);
-					sourceState.getAnnotations().add(eAnnotation);
+					sourceState.getExtensions().add(eAnnotation);
 				}
 				}	
 			}
@@ -956,13 +984,16 @@ public class ReconfigurationMUMLAnalysis {
 									 + ((Vertex)trans.getTarget()).getName().substring(1, ((Vertex)trans.getTarget()).getName().length())
 									 + trans.getPriority() + " = ";
 				
-				for(EAnnotation an : trans.getSynchronization().getAnnotations()){
-					if(an.getSource().equals("ActionLanguage")){
-						for(String details : an.getDetails().keySet()){
-							if(details.equals("matlab")){
-								condition = condition + an.getDetails().get(details);
-							}
-						}	
+				for(Extension ex : trans.getSynchronization().getExtensions()){
+					if (ex instanceof SimulinkAnnotationExtension) {
+						SimulinkAnnotationExtension an = (SimulinkAnnotationExtension) ex;
+						if(an.getSource().equals("ActionLanguage")){
+							for(String details : an.getDetails().keySet()){
+								if(details.equals("matlab")){
+									condition = condition + an.getDetails().get(details);
+								}
+							}	
+						}
 					}
 				}
 				
@@ -971,10 +1002,10 @@ public class ReconfigurationMUMLAnalysis {
 		}
 		
 		for(String condition : selectorConditions.keySet()){
-			EAnnotation eAnnotation = ecoreFactory.createEAnnotation();									
+			SimulinkAnnotationExtension eAnnotation = ExtensionFactory.eINSTANCE.createSimulinkAnnotationExtension();
 			eAnnotation.setSource("selector_condition");
 			eAnnotation.getDetails().put("condition", condition);
-			selectorConditions.get(condition).getAnnotations().add(eAnnotation);
+			selectorConditions.get(condition).getExtensions().add(eAnnotation);
 		}
 		
 	}
@@ -984,13 +1015,16 @@ public class ReconfigurationMUMLAnalysis {
 		for(Transition sendTrans : statechart_senders){
 			HashMap<Region, String> guardList = new HashMap<Region, String>();
 			String ownSelCond = "";
-			for(EAnnotation an : sendTrans.getSynchronization().getAnnotations()){
-				if(an.getSource().equals("ActionLanguage")){
-					for(String details : an.getDetails().keySet()){
-						if(details.equals("matlab")){
-							ownSelCond =an.getDetails().get(details);
-						}
-					}	
+			for(Extension ex : sendTrans.getSynchronization().getExtensions()){
+				if (ex instanceof SimulinkAnnotationExtension) {
+					SimulinkAnnotationExtension an = (SimulinkAnnotationExtension) ex;
+					if(an.getSource().equals("ActionLanguage")){
+						for(String details : an.getDetails().keySet()){
+							if(details.equals("matlab")){
+								ownSelCond =an.getDetails().get(details);
+							}
+						}	
+					}
 				}
 			}
 			HashMap<Region, ArrayList<Transition>> regions = new HashMap<Region, ArrayList<Transition>>();
@@ -1045,11 +1079,11 @@ public class ReconfigurationMUMLAnalysis {
 		}
 		for(Transition trans: guards.keySet()){
 			for(Region r : guards.get(trans).keySet()){
-				EAnnotation eAnnotation = ecoreFactory.createEAnnotation();									
+				SimulinkAnnotationExtension eAnnotation = ExtensionFactory.eINSTANCE.createSimulinkAnnotationExtension();
 				eAnnotation.setSource("syncsend_guard");
 				eAnnotation.getDetails().put("guard", guards.get(trans).get(r));
 				eAnnotation.getReferences().add(r);
-				trans.getSynchronization().getAnnotations().add(eAnnotation);
+				trans.getSynchronization().getExtensions().add(eAnnotation);
 			}			
 		}
 	}
@@ -1067,7 +1101,7 @@ public class ReconfigurationMUMLAnalysis {
 		int counter = 1;
 		for(ComponentInstance ci : cic.getComponentInstances()){
 			for(PortInstance portInstance : ci.getPortInstances()){
-				EAnnotation eAnnotation = ecoreFactory.createEAnnotation();									
+				SimulinkAnnotationExtension eAnnotation = ExtensionFactory.eINSTANCE.createSimulinkAnnotationExtension();
 				eAnnotation.setSource("PortInstance");
 				// create ids only for instances of discrete ports which doesn't have delegations to upper components 
 				if(needsPortID(portInstance,cic)){					
@@ -1077,7 +1111,7 @@ public class ReconfigurationMUMLAnalysis {
 				else{
 					eAnnotation.getDetails().put("ID", "noID");
 				}
-				portInstance.getAnnotations().add(eAnnotation);
+				portInstance.getExtensions().add(eAnnotation);
 			}
 		}		
 	}
@@ -1120,10 +1154,10 @@ public class ReconfigurationMUMLAnalysis {
 						
 						messageMapping.put(mtc, 1);
 						
-						EAnnotation eAnnotation = ecoreFactory.createEAnnotation();
+						SimulinkAnnotationExtension eAnnotation = ExtensionFactory.eINSTANCE.createSimulinkAnnotationExtension();
 						eAnnotation.setSource("msgID");
 						eAnnotation.getDetails().put(String.valueOf(mtc), String.valueOf(mtc));
-						mt.getAnnotations().add(eAnnotation);
+						mt.getExtensions().add(eAnnotation);
 						mtc++;						
 					}
 					// If the message type has parameters
@@ -1133,16 +1167,16 @@ public class ReconfigurationMUMLAnalysis {
 						for(int i=0; i<mt.getParameters().size(); i++){
 							Parameter par = mt.getParameters().get(i);
 							
-							EAnnotation msgID = ecoreFactory.createEAnnotation();
+							SimulinkAnnotationExtension msgID = ExtensionFactory.eINSTANCE.createSimulinkAnnotationExtension();
 							msgID.setSource("msgID");
 							msgID.getDetails().put(String.valueOf(mtc), String.valueOf(mtc));	
-							par.getAnnotations().add(msgID);
+							par.getExtensions().add(msgID);
 							mtc++;
 							
-							EAnnotation paramID = ecoreFactory.createEAnnotation();					
+							SimulinkAnnotationExtension paramID = ExtensionFactory.eINSTANCE.createSimulinkAnnotationExtension();
 							paramID.setSource("tmp_var");	
 							paramID.getDetails().put(String.valueOf(i+1), "tmp_var_"+(i+1));
-							par.getAnnotations().add(paramID);						
+							par.getExtensions().add(paramID);						
 						}
 					}
 				}
@@ -1269,7 +1303,7 @@ public class ReconfigurationMUMLAnalysis {
 					String constant = "EVT_"+mt.getName().toUpperCase()+"_"+par.getName().toUpperCase();
 					
 					// get the tmp var for the parameter
-					String tmpVar = par.getAnnotation("tmp_var").getDetails().get(0).getValue();
+					String tmpVar = getAnnotation(par, "tmp_var").getDetails().get(0).getValue();
 					
 					if(i==mt.getParameters().size()-1){						
 						checkQueue += port.getName()+"_checkQueue("+constant+", "+evtQueue+")";
@@ -1323,7 +1357,7 @@ public class ReconfigurationMUMLAnalysis {
 						String parBindingValue = "";				
 						
 						try{
-							parBindingValue = parBinding.getAnnotation("ActionLanguage").getDetails().get("matlab");
+							parBindingValue = getAnnotation(parBinding, "ActionLanguage").getDetails().get("matlab");
 						}
 						catch(Exception e){
 							parBindingValue = "0";
@@ -1355,7 +1389,7 @@ public class ReconfigurationMUMLAnalysis {
 				return true;
 			}
 			// if pi is a port instance of a structured component on the main component instance configuration, pi needs a port id
-			else if(portType.getComponent() instanceof StructuredComponent && cic.getAnnotation("CIC").getDetails().get("chosen")=="true")
+			else if(portType.getComponent() instanceof StructuredComponent && getAnnotation(cic, "CIC").getDetails().get("chosen")=="true")
 				return true;	       	
 			// if pi is a port instance of a structured component in an embedded CIC and it is not connected through a delegation to a 
 			// port instance of the "upper" structured component, then it needs an id.
@@ -1439,7 +1473,7 @@ public class ReconfigurationMUMLAnalysis {
 	
 	private void addMatlabAnnotation(ExtendableElement element, String expression)
 	{
-		EAnnotation annotation = EcoreFactory.eINSTANCE.createEAnnotation();
+		SimulinkAnnotationExtension annotation = ExtensionFactory.eINSTANCE.createSimulinkAnnotationExtension();
 		annotation.setSource("ActionLanguage");
 		
 		//treat HybridPorts specially because they have two expressions that were translated
@@ -1456,7 +1490,7 @@ public class ReconfigurationMUMLAnalysis {
 		} else {
 			annotation.getDetails().put("matlab",expression);
 		}
-		element.getAnnotations().add(annotation);	
+		element.getExtensions().add(annotation);	
 	}
 		
 	/**
@@ -1464,13 +1498,16 @@ public class ReconfigurationMUMLAnalysis {
 	 * @param obj
 	 */
 	private String getMatlabAnnotationValue(ExtendableElement obj){
-		for(EAnnotation an : obj.getAnnotations()){
-			if(an.getSource().equals("ActionLanguage")){
-				for(String details : an.getDetails().keySet()){
-					if(details.equals("matlab")){
-						return an.getDetails().get(details);
-					}
-				}	
+		for(Extension ex : obj.getExtensions()){
+			if (ex instanceof SimulinkAnnotationExtension) {
+				SimulinkAnnotationExtension an = (SimulinkAnnotationExtension) ex;
+				if(an.getSource().equals("ActionLanguage")){
+					for(String details : an.getDetails().keySet()){
+						if(details.equals("matlab")){
+							return an.getDetails().get(details);
+						}
+					}	
+				}
 			}
 		}
 		
