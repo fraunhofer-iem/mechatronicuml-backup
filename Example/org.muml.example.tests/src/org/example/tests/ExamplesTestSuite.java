@@ -10,7 +10,7 @@ import org.muml.core.modelinstance.ModelinstancePackage;
 import org.muml.pim.PimPackage;
 import org.muml.pim.actionlanguage.ActionlanguagePackage;
 import org.muml.uppaal.adapter.mtctl.xtext.MtctlStandaloneSetup;
-import org.muml.verification.core.preferences.VerificationPreferencesPlugin;
+import org.muml.uppaal.preferences.UppaalPreferencesPlugin;
 
 @RunWith(Suite.class)
 @SuiteClasses({  CodegenTest.class,
@@ -31,8 +31,8 @@ public class ExamplesTestSuite {
 		ActionlanguagePackage.eINSTANCE.eClass();
 
 		// Set path to the UPPAAL verifyta tool.
-		IPreferenceStore preferenceStore = VerificationPreferencesPlugin.getDefault().getPreferenceStore();
-		preferenceStore.setValue(VerificationPreferencesPlugin.VERIFYTA_KEY,
+		IPreferenceStore preferenceStore = UppaalPreferencesPlugin.getDefault().getPreferenceStore();
+		preferenceStore.setValue(UppaalPreferencesPlugin.VERIFYTA_KEY,
 				"/data/jenkins/uppaal64-4.1.19/bin-Linux/verifyta");
 	}
 }
