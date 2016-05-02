@@ -4,7 +4,7 @@
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider
-            class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.custom.providers.CustomSDDEditPartProvider">
+            class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.custom.providers.CustomSDDEditPartProvider">
          <Priority
                name="Medium">
          </Priority>

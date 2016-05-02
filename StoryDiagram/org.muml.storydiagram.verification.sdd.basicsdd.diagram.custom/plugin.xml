@@ -2,7 +2,7 @@
 <?eclipse version="3.0"?>
 <plugin>
    <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
-      <editpartProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.custom.providers.CustomSDDEditPartProvider">
+      <editpartProvider class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.custom.providers.CustomSDDEditPartProvider">
          <Priority name="Low"/>
       </editpartProvider>
    </extension>
