@@ -12,7 +12,7 @@
             projectName="org.muml.example.blindovertaking"
             projectPageDescription="Create a plug-in containing the Blind Overtaking example models"
             projectPageTitle="Blind Overtaking Example">
-         <source bundle="org.muml.example.blindOvertaking" path="data" />
+         <source bundle="org.muml.example.blindovertaking" path="data" />
          <description>
             Create the Models of the Blind Overtaking Example
          </description>
