@@ -23,11 +23,11 @@ public class ReconfigurationTGGTransformation extends TGGTransformation{
 		
 		// If the .tgg-files are in the runtime-Workspace (for developers)
 		try{
-			reconfTransformation = InterpreterconfigurationUtil.loadAndInitTripleGraphGrammar(URI.createPlatformResourceURI("/de.uni_paderborn.fujaba.simulink.reconfiguration.m2m/tgg/SimulinkReconfiguration.tgg",true), resourceSet);
+			reconfTransformation = InterpreterconfigurationUtil.loadAndInitTripleGraphGrammar(URI.createPlatformResourceURI("/org.muml.simulink.adapter.reconfiguration.m2m/tgg/SimulinkReconfiguration.tgg",true), resourceSet);
 		}
 		// else
 		catch(Exception e){
-			reconfTransformation = InterpreterconfigurationUtil.loadAndInitTripleGraphGrammar(URI.createPlatformPluginURI("de.uni_paderborn.fujaba.simulink.reconfiguration.m2m/tgg/SimulinkReconfiguration.tgg",true), resourceSet);
+			reconfTransformation = InterpreterconfigurationUtil.loadAndInitTripleGraphGrammar(URI.createPlatformPluginURI("org.muml.simulink.adapter.reconfiguration.m2m/tgg/SimulinkReconfiguration.tgg",true), resourceSet);
 		}
 		
 		basicTransformation.getChildTransformation().add(reconfTransformation);
