@@ -42,7 +42,6 @@ public class GraphvizPlainGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEdgesEdgeParserRuleCall_5_0 = (RuleCall)cEdgesAssignment_5.eContents().get(0);
 		private final Keyword cStopKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
-		////import "http://www.fujaba.de/graphviz/output/0.1.0" 
 		//Graph returns plain::PlainGraph:
 		//	"graph" scale=Number width=Number height=Number nodes+=Node* edges+=Edge* "stop";
 		public ParserRule getRule() { return rule; }
@@ -356,7 +355,6 @@ public class GraphvizPlainGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
-	////import "http://www.fujaba.de/graphviz/output/0.1.0" 
 	//Graph returns plain::PlainGraph:
 	//	"graph" scale=Number width=Number height=Number nodes+=Node* edges+=Edge* "stop";
 	public GraphElements getGraphAccess() {
