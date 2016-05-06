@@ -4,6 +4,7 @@
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="The hardware package contains the  meta-model for the specification of a hardware platform.&#xA;The subpackage resourcetype defines the base classes for the Resource Type Viewpoint.&#xA;The subpackage platform defines the base classes for the Platform Type Viewpoint.&#xA;The subpackage platforminstance defines the base classes for the Platform Instance Viewpoint.&#xA;The subpackage hwvaluetype defines the classes to specify attributes of  hardware resources.&#x9;"/>
   </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Test"/>
   <eSubpackages name="hwplatform" nsURI="http://www.muml.org/pm/hardware/hwplatform/1.0.0"
       nsPrefix="hwplatform">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

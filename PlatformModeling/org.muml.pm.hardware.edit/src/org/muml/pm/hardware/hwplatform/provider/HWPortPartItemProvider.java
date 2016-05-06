@@ -16,6 +16,7 @@ import org.muml.pim.connector.provider.ConnectorEndpointItemProvider;
 import org.muml.pm.hardware.hwplatform.HWPortPart;
 import org.muml.pm.hardware.hwplatform.HwplatformPackage;
 import org.muml.pm.hardware.hwvaluetype.HwvaluetypeFactory;
+import org.muml.pm.hardware.provider.HardwareEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link org.muml.pm.hardware.hwplatform.HWPortPart} object.

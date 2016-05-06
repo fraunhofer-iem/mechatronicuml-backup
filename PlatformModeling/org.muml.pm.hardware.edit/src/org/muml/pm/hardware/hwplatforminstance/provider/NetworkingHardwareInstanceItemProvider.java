@@ -10,7 +10,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.muml.core.provider.ExtendableElementItemProvider;
-import org.muml.pm.hardware.hwplatform.provider.HardwareEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link org.muml.pm.hardware.hwplatforminstance.NetworkingHardwareInstance} object.
@@ -89,7 +88,7 @@ public class NetworkingHardwareInstanceItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return HardwareEditPlugin.INSTANCE;
+		return org.muml.pm.hardware.provider.HardwareEditPlugin.INSTANCE;
 	}
 
 }

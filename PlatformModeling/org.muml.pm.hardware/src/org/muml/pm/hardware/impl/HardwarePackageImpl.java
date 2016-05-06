@@ -12,12 +12,14 @@ import org.muml.pim.connector.ConnectorPackage;
 import org.muml.pim.constraint.ConstraintPackage;
 import org.muml.pim.instance.InstancePackage;
 import org.muml.pim.msgtype.MsgtypePackage;
+import org.muml.pim.pattern.PatternPackage;
 import org.muml.pim.protocol.ProtocolPackage;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
 import org.muml.pim.types.TypesPackage;
 import org.muml.pim.valuetype.ValuetypePackage;
 import org.muml.pm.hardware.HardwareFactory;
 import org.muml.pm.hardware.HardwarePackage;
+import org.muml.pm.hardware.Test;
 import org.muml.pm.hardware.hwplatform.HwplatformPackage;
 import org.muml.pm.hardware.hwplatform.impl.HwplatformPackageImpl;
 import org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage;
@@ -41,8 +43,7 @@ public class HardwarePackageImpl extends EPackageImpl implements HardwarePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass tEstEClass = null;
-
+	private EClass testEClass = null;
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
@@ -90,7 +91,6 @@ public class HardwarePackageImpl extends EPackageImpl implements HardwarePackage
 		isInited = true;
 
 		// Initialize simple dependencies
-		ComponentPackage.eINSTANCE.eClass();
 		ConstraintPackage.eINSTANCE.eClass();
 		InstancePackage.eINSTANCE.eClass();
 		ProtocolPackage.eINSTANCE.eClass();
@@ -100,6 +100,8 @@ public class HardwarePackageImpl extends EPackageImpl implements HardwarePackage
 		ConnectorPackage.eINSTANCE.eClass();
 		ValuetypePackage.eINSTANCE.eClass();
 		BehaviorPackage.eINSTANCE.eClass();
+		ComponentPackage.eINSTANCE.eClass();
+		PatternPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		HwplatformPackageImpl theHwplatformPackage = (HwplatformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwplatformPackage.eNS_URI) instanceof HwplatformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwplatformPackage.eNS_URI) : HwplatformPackage.eINSTANCE);
@@ -138,8 +140,8 @@ public class HardwarePackageImpl extends EPackageImpl implements HardwarePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTEst() {
-		return tEstEClass;
+	public EClass getTest() {
+		return testEClass;
 	}
 
 	/**
@@ -170,7 +172,7 @@ public class HardwarePackageImpl extends EPackageImpl implements HardwarePackage
 		isCreated = true;
 
 		// Create classes and their features
-		tEstEClass = createEClass(TEST);
+		testEClass = createEClass(TEST);
 	}
 
 	/**
@@ -217,6 +219,7 @@ public class HardwarePackageImpl extends EPackageImpl implements HardwarePackage
 		// Add supertypes to classes
 
 		// Initialize classes, features, and operations; add parameters
+		initEClass(testEClass, Test.class, "Test", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

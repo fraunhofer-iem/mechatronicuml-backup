@@ -16,7 +16,6 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.pim.connector.provider.ConnectorInstanceItemProvider;
-import org.muml.pm.hardware.hwplatform.provider.HardwareEditPlugin;
 import org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage;
 import org.muml.pm.hardware.hwplatforminstance.NetworkConnectorInstance;
 
@@ -144,7 +143,7 @@ public class NetworkConnectorInstanceItemProvider extends ConnectorInstanceItemP
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return HardwareEditPlugin.INSTANCE;
+		return org.muml.pm.hardware.provider.HardwareEditPlugin.INSTANCE;
 	}
 
 }

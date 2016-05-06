@@ -66,7 +66,10 @@ public class HardwareAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected HardwareSwitch<Adapter> modelSwitch =
 		new HardwareSwitch<Adapter>() {
-			
+			@Override
+			public Adapter caseTest(Test object) {
+				return createTestAdapter();
+			}
 			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
@@ -88,16 +91,16 @@ public class HardwareAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.muml.pm.hardware.TEst <em>TEst</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.pm.hardware.Test <em>Test</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.muml.pm.hardware.TEst
+	 * @see org.muml.pm.hardware.Test
 	 * @generated
 	 */
-	public Adapter createTEstAdapter() {
+	public Adapter createTestAdapter() {
 		return null;
 	}
 

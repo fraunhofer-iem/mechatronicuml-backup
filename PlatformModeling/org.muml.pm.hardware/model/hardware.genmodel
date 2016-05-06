@@ -9,6 +9,7 @@
   <foreignModel>hardware.ecore</foreignModel>
   <genPackages prefix="Hardware" basePackage="org.muml.pm" disposableProviderFactory="true"
       ecorePackage="hardware.ecore#/">
+    <genClasses ecoreClass="hardware.ecore#//Test"/>
     <nestedGenPackages prefix="Hwplatform" basePackage="org.muml.pm.hardware" disposableProviderFactory="true"
         ecorePackage="hardware.ecore#//hwplatform">
       <genClasses ecoreClass="hardware.ecore#//hwplatform/HWPlatform">

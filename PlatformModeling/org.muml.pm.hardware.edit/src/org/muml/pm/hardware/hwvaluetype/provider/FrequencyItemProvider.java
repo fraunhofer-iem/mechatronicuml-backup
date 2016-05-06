@@ -18,7 +18,6 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.pm.hardware.hwplatform.provider.HardwareEditPlugin;
 import org.muml.pm.hardware.hwvaluetype.Frequency;
 import org.muml.pm.hardware.hwvaluetype.HwvaluetypePackage;
 
@@ -170,7 +169,7 @@ public class FrequencyItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return HardwareEditPlugin.INSTANCE;
+		return org.muml.pm.hardware.provider.HardwareEditPlugin.INSTANCE;
 	}
 
 }

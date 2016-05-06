@@ -17,6 +17,7 @@ import org.muml.pim.valuetype.ValuetypeFactory;
 import org.muml.pm.hardware.hwplatform.HwplatformFactory;
 import org.muml.pm.hardware.hwplatform.HwplatformPackage;
 import org.muml.pm.hardware.hwplatform.PlatformPart;
+import org.muml.pm.hardware.provider.HardwareEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link org.muml.pm.hardware.hwplatform.PlatformPart} object.

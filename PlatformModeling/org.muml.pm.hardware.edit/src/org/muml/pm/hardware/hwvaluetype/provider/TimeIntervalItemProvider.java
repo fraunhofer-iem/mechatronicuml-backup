@@ -13,7 +13,6 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.pim.valuetype.provider.RangeItemProvider;
-import org.muml.pm.hardware.hwplatform.provider.HardwareEditPlugin;
 import org.muml.pm.hardware.hwvaluetype.HwvaluetypePackage;
 import org.muml.pm.hardware.hwvaluetype.TimeInterval;
 
@@ -135,7 +134,7 @@ public class TimeIntervalItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return HardwareEditPlugin.INSTANCE;
+		return org.muml.pm.hardware.provider.HardwareEditPlugin.INSTANCE;
 	}
 
 }

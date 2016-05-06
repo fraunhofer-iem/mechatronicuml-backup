@@ -9,9 +9,18 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.core.CorePackage;
-import org.muml.pim.PimPackage;
+import org.muml.pim.behavior.BehaviorPackage;
+import org.muml.pim.component.ComponentPackage;
 import org.muml.pim.connector.ConnectorPackage;
+import org.muml.pim.constraint.ConstraintPackage;
+import org.muml.pim.instance.InstancePackage;
+import org.muml.pim.msgtype.MsgtypePackage;
+import org.muml.pim.pattern.PatternPackage;
+import org.muml.pim.protocol.ProtocolPackage;
+import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
+import org.muml.pim.types.TypesPackage;
 import org.muml.pim.valuetype.ValuetypePackage;
+import org.muml.pm.hardware.HardwarePackage;
 import org.muml.pm.hardware.hwplatform.Bus;
 import org.muml.pm.hardware.hwplatform.DelegationHWPort;
 import org.muml.pm.hardware.hwplatform.HWPlatform;
@@ -33,6 +42,7 @@ import org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage;
 import org.muml.pm.hardware.hwresourceinstance.impl.HwresourceinstancePackageImpl;
 import org.muml.pm.hardware.hwvaluetype.HwvaluetypePackage;
 import org.muml.pm.hardware.hwvaluetype.impl.HwvaluetypePackageImpl;
+import org.muml.pm.hardware.impl.HardwarePackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -158,9 +168,20 @@ public class HwplatformPackageImpl extends EPackageImpl implements HwplatformPac
 		isInited = true;
 
 		// Initialize simple dependencies
-		PimPackage.eINSTANCE.eClass();
+		ConstraintPackage.eINSTANCE.eClass();
+		InstancePackage.eINSTANCE.eClass();
+		ProtocolPackage.eINSTANCE.eClass();
+		RealtimestatechartPackage.eINSTANCE.eClass();
+		MsgtypePackage.eINSTANCE.eClass();
+		TypesPackage.eINSTANCE.eClass();
+		ConnectorPackage.eINSTANCE.eClass();
+		ValuetypePackage.eINSTANCE.eClass();
+		BehaviorPackage.eINSTANCE.eClass();
+		ComponentPackage.eINSTANCE.eClass();
+		PatternPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
+		HardwarePackageImpl theHardwarePackage = (HardwarePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HardwarePackage.eNS_URI) instanceof HardwarePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HardwarePackage.eNS_URI) : HardwarePackage.eINSTANCE);
 		HwvaluetypePackageImpl theHwvaluetypePackage = (HwvaluetypePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwvaluetypePackage.eNS_URI) instanceof HwvaluetypePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwvaluetypePackage.eNS_URI) : HwvaluetypePackage.eINSTANCE);
 		HwplatforminstancePackageImpl theHwplatforminstancePackage = (HwplatforminstancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwplatforminstancePackage.eNS_URI) instanceof HwplatforminstancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwplatforminstancePackage.eNS_URI) : HwplatforminstancePackage.eINSTANCE);
 		HwresourcePackageImpl theHwresourcePackage = (HwresourcePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwresourcePackage.eNS_URI) instanceof HwresourcePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwresourcePackage.eNS_URI) : HwresourcePackage.eINSTANCE);
@@ -168,6 +189,7 @@ public class HwplatformPackageImpl extends EPackageImpl implements HwplatformPac
 
 		// Create package meta-data objects
 		theHwplatformPackage.createPackageContents();
+		theHardwarePackage.createPackageContents();
 		theHwvaluetypePackage.createPackageContents();
 		theHwplatforminstancePackage.createPackageContents();
 		theHwresourcePackage.createPackageContents();
@@ -175,6 +197,7 @@ public class HwplatformPackageImpl extends EPackageImpl implements HwplatformPac
 
 		// Initialize created meta-data
 		theHwplatformPackage.initializePackageContents();
+		theHardwarePackage.initializePackageContents();
 		theHwvaluetypePackage.initializePackageContents();
 		theHwplatforminstancePackage.initializePackageContents();
 		theHwresourcePackage.initializePackageContents();
@@ -682,9 +705,6 @@ public class HwplatformPackageImpl extends EPackageImpl implements HwplatformPac
 		initEReference(getNetworkConnector_HwportParts(), this.getHWPortPart(), null, "hwportParts", null, 0, 2, NetworkConnector.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNetworkConnector_ConnectorKind(), theHwresourcePackage.getCommunicationKind(), "connectorKind", null, 1, 1, NetworkConnector.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getNetworkConnector_DelegationHWPorts(), this.getDelegationHWPort(), null, "delegationHWPorts", null, 0, 2, NetworkConnector.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-
-		// Create resource
-		createResource(eNS_URI);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore

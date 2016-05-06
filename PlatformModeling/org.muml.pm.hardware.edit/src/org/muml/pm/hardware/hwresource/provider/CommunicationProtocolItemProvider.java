@@ -14,7 +14,6 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.provider.NamedElementItemProvider;
-import org.muml.pm.hardware.hwplatform.provider.HardwareEditPlugin;
 import org.muml.pm.hardware.hwresource.CommunicationProtocol;
 import org.muml.pm.hardware.hwresource.HwresourcePackage;
 import org.muml.pm.hardware.hwvaluetype.HwvaluetypeFactory;
@@ -315,7 +314,7 @@ public class CommunicationProtocolItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return HardwareEditPlugin.INSTANCE;
+		return org.muml.pm.hardware.provider.HardwareEditPlugin.INSTANCE;
 	}
 
 }

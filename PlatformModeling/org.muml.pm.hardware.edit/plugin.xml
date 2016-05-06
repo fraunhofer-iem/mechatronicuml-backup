@@ -12,6 +12,19 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated hardware -->
       <factory
+            uri="http://www.muml.org/pm/hardware/1.0.0"
+            class="org.muml.pm.hardware.provider.HardwareItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated hardware -->
+      <factory
             uri="http://www.muml.org/pm/hardware/hwplatform/1.0.0"
             class="org.muml.pm.hardware.hwplatform.provider.HwplatformItemProviderAdapterFactory"
             supportedTypes=

@@ -1,33 +1,32 @@
 /**
+ * Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany and Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT, Germany
  */
-package org.muml.pm.hardware.hwvaluetype.provider;
+package org.muml.pm.hardware.provider;
 
 
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
-import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.pm.hardware.hwvaluetype.DataSize;
-import org.muml.pm.hardware.hwvaluetype.HwvaluetypePackage;
 
 /**
- * This is the item provider adapter for a {@link org.muml.pm.hardware.hwvaluetype.DataSize} object.
+ * This is the item provider adapter for a {@link org.muml.pm.hardware.Test} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class DataSizeItemProvider
+public class TestItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -41,7 +40,7 @@ public class DataSizeItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataSizeItemProvider(AdapterFactory adapterFactory) {
+	public TestItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -56,65 +55,19 @@ public class DataSizeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addValuePropertyDescriptor(object);
-			addUnitPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Value feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DataSize_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DataSize_value_feature", "_UI_DataSize_type"),
-				 HwvaluetypePackage.Literals.DATA_SIZE__VALUE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Unit feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUnitPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DataSize_unit_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DataSize_unit_feature", "_UI_DataSize_type"),
-				 HwvaluetypePackage.Literals.DATA_SIZE__UNIT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns DataSize.gif.
+	 * This returns Test.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/DataSize"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Test"));
 	}
 
 	/**
@@ -125,9 +78,9 @@ public class DataSizeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		DataSize dataSize = (DataSize)object;
-		return getString("_UI_DataSize_type") + " " + dataSize.getValue();
+		return getString("_UI_Test_type");
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -139,13 +92,6 @@ public class DataSizeItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(DataSize.class)) {
-			case HwvaluetypePackage.DATA_SIZE__VALUE:
-			case HwvaluetypePackage.DATA_SIZE__UNIT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 
@@ -169,7 +115,7 @@ public class DataSizeItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pm.hardware.provider.HardwareEditPlugin.INSTANCE;
+		return HardwareEditPlugin.INSTANCE;
 	}
 
 }

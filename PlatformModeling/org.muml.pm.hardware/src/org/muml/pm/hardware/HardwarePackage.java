@@ -62,17 +62,17 @@ public interface HardwarePackage extends EPackage {
 	HardwarePackage eINSTANCE = org.muml.pm.hardware.impl.HardwarePackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.muml.pm.hardware.impl.TEstImpl <em>TEst</em>}' class.
+	 * The meta object id for the '{@link org.muml.pm.hardware.impl.TestImpl <em>Test</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.pm.hardware.impl.TEstImpl
-	 * @see org.muml.pm.hardware.impl.HardwarePackageImpl#getTEst()
+	 * @see org.muml.pm.hardware.impl.TestImpl
+	 * @see org.muml.pm.hardware.impl.HardwarePackageImpl#getTest()
 	 * @generated
 	 */
 	int TEST = 0;
 
 	/**
-	 * The number of structural features of the '<em>TEst</em>' class.
+	 * The number of structural features of the '<em>Test</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -81,7 +81,7 @@ public interface HardwarePackage extends EPackage {
 	int TEST_FEATURE_COUNT = 0;
 
 	/**
-	 * The number of operations of the '<em>TEst</em>' class.
+	 * The number of operations of the '<em>Test</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -91,14 +91,14 @@ public interface HardwarePackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link org.muml.pm.hardware.TEst <em>TEst</em>}'.
+	 * Returns the meta object for class '{@link org.muml.pm.hardware.Test <em>Test</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>TEst</em>'.
-	 * @see org.muml.pm.hardware.TEst
+	 * @return the meta object for class '<em>Test</em>'.
+	 * @see org.muml.pm.hardware.Test
 	 * @generated
 	 */
-	EClass getTEst();
+	EClass getTest();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -124,14 +124,14 @@ public interface HardwarePackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.muml.pm.hardware.impl.TEstImpl <em>TEst</em>}' class.
+		 * The meta object literal for the '{@link org.muml.pm.hardware.impl.TestImpl <em>Test</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.muml.pm.hardware.impl.TEstImpl
-		 * @see org.muml.pm.hardware.impl.HardwarePackageImpl#getTEst()
+		 * @see org.muml.pm.hardware.impl.TestImpl
+		 * @see org.muml.pm.hardware.impl.HardwarePackageImpl#getTest()
 		 * @generated
 		 */
-		EClass TEST = eINSTANCE.getTEst();
+		EClass TEST = eINSTANCE.getTest();
 
 	}
 

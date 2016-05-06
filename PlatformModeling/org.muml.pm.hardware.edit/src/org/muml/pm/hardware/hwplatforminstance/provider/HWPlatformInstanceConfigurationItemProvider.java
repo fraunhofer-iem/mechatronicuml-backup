@@ -13,7 +13,6 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.provider.CommentableElementItemProvider;
-import org.muml.pm.hardware.hwplatform.provider.HardwareEditPlugin;
 import org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
 import org.muml.pm.hardware.hwplatforminstance.HwplatforminstanceFactory;
 import org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage;
@@ -327,7 +326,7 @@ public class HWPlatformInstanceConfigurationItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return HardwareEditPlugin.INSTANCE;
+		return org.muml.pm.hardware.provider.HardwareEditPlugin.INSTANCE;
 	}
 
 }

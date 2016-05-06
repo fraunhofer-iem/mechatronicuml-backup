@@ -13,7 +13,6 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.pim.connector.provider.ConnectorEndpointInstanceItemProvider;
-import org.muml.pm.hardware.hwplatform.provider.HardwareEditPlugin;
 import org.muml.pm.hardware.hwplatforminstance.HWPortInstance;
 import org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage;
 import org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage;
@@ -212,7 +211,7 @@ public class HWPortInstanceItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return HardwareEditPlugin.INSTANCE;
+		return org.muml.pm.hardware.provider.HardwareEditPlugin.INSTANCE;
 	}
 
 }

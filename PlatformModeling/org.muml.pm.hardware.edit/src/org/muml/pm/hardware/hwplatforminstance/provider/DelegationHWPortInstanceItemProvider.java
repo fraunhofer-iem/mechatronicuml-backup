@@ -11,7 +11,6 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.muml.pim.connector.provider.ConnectorEndpointInstanceItemProvider;
-import org.muml.pm.hardware.hwplatform.provider.HardwareEditPlugin;
 import org.muml.pm.hardware.hwplatforminstance.DelegationHWPortInstance;
 import org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage;
 
@@ -129,7 +128,7 @@ public class DelegationHWPortInstanceItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return HardwareEditPlugin.INSTANCE;
+		return org.muml.pm.hardware.provider.HardwareEditPlugin.INSTANCE;
 	}
 
 }

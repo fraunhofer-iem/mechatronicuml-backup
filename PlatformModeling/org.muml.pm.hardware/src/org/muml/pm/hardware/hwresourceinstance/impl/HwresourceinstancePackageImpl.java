@@ -9,8 +9,18 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.core.CorePackage;
-import org.muml.pim.PimPackage;
+import org.muml.pim.behavior.BehaviorPackage;
+import org.muml.pim.component.ComponentPackage;
+import org.muml.pim.connector.ConnectorPackage;
+import org.muml.pim.constraint.ConstraintPackage;
+import org.muml.pim.instance.InstancePackage;
+import org.muml.pim.msgtype.MsgtypePackage;
+import org.muml.pim.pattern.PatternPackage;
+import org.muml.pim.protocol.ProtocolPackage;
+import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
+import org.muml.pim.types.TypesPackage;
 import org.muml.pim.valuetype.ValuetypePackage;
+import org.muml.pm.hardware.HardwarePackage;
 import org.muml.pm.hardware.hwplatform.HwplatformPackage;
 import org.muml.pm.hardware.hwplatform.impl.HwplatformPackageImpl;
 import org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage;
@@ -37,6 +47,7 @@ import org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance;
 import org.muml.pm.hardware.hwresourceinstance.util.HwresourceinstanceValidator;
 import org.muml.pm.hardware.hwvaluetype.HwvaluetypePackage;
 import org.muml.pm.hardware.hwvaluetype.impl.HwvaluetypePackageImpl;
+import org.muml.pm.hardware.impl.HardwarePackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -197,9 +208,20 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 		isInited = true;
 
 		// Initialize simple dependencies
-		PimPackage.eINSTANCE.eClass();
+		ConstraintPackage.eINSTANCE.eClass();
+		InstancePackage.eINSTANCE.eClass();
+		ProtocolPackage.eINSTANCE.eClass();
+		RealtimestatechartPackage.eINSTANCE.eClass();
+		MsgtypePackage.eINSTANCE.eClass();
+		TypesPackage.eINSTANCE.eClass();
+		ConnectorPackage.eINSTANCE.eClass();
+		ValuetypePackage.eINSTANCE.eClass();
+		BehaviorPackage.eINSTANCE.eClass();
+		ComponentPackage.eINSTANCE.eClass();
+		PatternPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
+		HardwarePackageImpl theHardwarePackage = (HardwarePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HardwarePackage.eNS_URI) instanceof HardwarePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HardwarePackage.eNS_URI) : HardwarePackage.eINSTANCE);
 		HwplatformPackageImpl theHwplatformPackage = (HwplatformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwplatformPackage.eNS_URI) instanceof HwplatformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwplatformPackage.eNS_URI) : HwplatformPackage.eINSTANCE);
 		HwvaluetypePackageImpl theHwvaluetypePackage = (HwvaluetypePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwvaluetypePackage.eNS_URI) instanceof HwvaluetypePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwvaluetypePackage.eNS_URI) : HwvaluetypePackage.eINSTANCE);
 		HwplatforminstancePackageImpl theHwplatforminstancePackage = (HwplatforminstancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwplatforminstancePackage.eNS_URI) instanceof HwplatforminstancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwplatforminstancePackage.eNS_URI) : HwplatforminstancePackage.eINSTANCE);
@@ -207,6 +229,7 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 
 		// Create package meta-data objects
 		theHwresourceinstancePackage.createPackageContents();
+		theHardwarePackage.createPackageContents();
 		theHwplatformPackage.createPackageContents();
 		theHwvaluetypePackage.createPackageContents();
 		theHwplatforminstancePackage.createPackageContents();
@@ -214,6 +237,7 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 
 		// Initialize created meta-data
 		theHwresourceinstancePackage.initializePackageContents();
+		theHardwarePackage.initializePackageContents();
 		theHwplatformPackage.initializePackageContents();
 		theHwvaluetypePackage.initializePackageContents();
 		theHwplatforminstancePackage.initializePackageContents();
@@ -709,9 +733,6 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 		initEReference(getHWPort_Cardinality(), theValuetypePackage.getCardinality(), null, "cardinality", null, 0, 1, HWPort.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHWPort_MultiHWPort(), ecorePackage.getEBoolean(), "multiHWPort", null, 0, 1, HWPort.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHWPort_PortKind(), theHwresourcePackage.getCommunicationKind(), "portKind", null, 1, 1, HWPort.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-
-		// Create resource
-		createResource(eNS_URI);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore

@@ -55,13 +55,23 @@ public class HardwareFactoryImpl extends EFactoryImpl implements HardwareFactory
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			
+			case HardwarePackage.TEST: return createTest();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Test createTest() {
+		TestImpl test = new TestImpl();
+		return test;
+	}
 
 	/**
 	 * <!-- begin-user-doc -->

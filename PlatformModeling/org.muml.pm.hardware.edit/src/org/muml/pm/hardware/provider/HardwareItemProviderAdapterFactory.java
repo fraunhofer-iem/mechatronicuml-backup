@@ -71,26 +71,26 @@ public class HardwareItemProviderAdapterFactory extends HardwareAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.muml.pm.hardware.TEst} instances.
+	 * This keeps track of the one adapter used for all {@link org.muml.pm.hardware.Test} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TEstItemProvider tEstItemProvider;
+	protected TestItemProvider testItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.muml.pm.hardware.TEst}.
+	 * This creates an adapter for a {@link org.muml.pm.hardware.Test}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createTEstAdapter() {
-		if (tEstItemProvider == null) {
-			tEstItemProvider = new TEstItemProvider(this);
+	public Adapter createTestAdapter() {
+		if (testItemProvider == null) {
+			testItemProvider = new TestItemProvider(this);
 		}
 
-		return tEstItemProvider;
+		return testItemProvider;
 	}
 
 	/**
@@ -192,7 +192,7 @@ public class HardwareItemProviderAdapterFactory extends HardwareAdapterFactory i
 	 * @generated
 	 */
 	public void dispose() {
-		if (tEstItemProvider != null) tEstItemProvider.dispose();
+		if (testItemProvider != null) testItemProvider.dispose();
 	}
 
 }
