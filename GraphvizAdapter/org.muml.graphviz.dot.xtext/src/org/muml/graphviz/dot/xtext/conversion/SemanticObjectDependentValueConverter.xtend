@@ -48,7 +48,7 @@ abstract class SemanticObjectDependentValueConverter<T> implements IValueConvert
 		semanticObject as T
 	}
 	
-	protected def <T> T findActualSemanticObjectFor(INode node) {
+	protected def T findActualSemanticObjectFor(INode node) {
 		val EObject object = NodeModelUtils.findActualSemanticObjectFor(node)
 		assertValidSemanticObject(object)
 		object as T
