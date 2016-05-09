@@ -165,7 +165,7 @@ public class TransitionEditor extends org.muml.ape.runtime.editors.ClassProperty
 								"if(self.statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint) and not self.statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsUndefined() )then\n	not  self.statechart->closure(s:RealtimeStatechart|   let parent : RealtimeStatechart = s.parentRegion.parentState.parentStatechart in \n		if(parent.oclIsInvalid()) \n			then self.statechart \n		else parent \n		 endif )->includes(self.statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior) \nelse \n	 	true \nendif",
 								feature, getEClass());
 				editor.setInput(input);
-				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+				editor.registerOCLAdapter(new org.eclipse.emf.common.notify.impl.AdapterImpl() {
 					@Override
 					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
 						boolean visibleBefore = editor.isVisible();
@@ -213,7 +213,7 @@ public class TransitionEditor extends org.muml.ape.runtime.editors.ClassProperty
 								"if(self.statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint) and not self.statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsUndefined() )then\n	not  self.statechart->closure(s:RealtimeStatechart|   let parent : RealtimeStatechart = s.parentRegion.parentState.parentStatechart in \n		if(parent.oclIsInvalid()) \n			then self.statechart \n		else parent \n		 endif )->includes(self.statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior) \nelse \n	 	true \nendif",
 								feature, getEClass());
 				editor.setInput(input);
-				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+				editor.registerOCLAdapter(new org.eclipse.emf.common.notify.impl.AdapterImpl() {
 					@Override
 					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
 						boolean visibleBefore = editor.isVisible();

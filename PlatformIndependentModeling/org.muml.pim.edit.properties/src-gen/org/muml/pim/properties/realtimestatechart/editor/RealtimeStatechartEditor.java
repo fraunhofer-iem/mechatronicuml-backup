@@ -1,6 +1,14 @@
 
 package org.muml.pim.properties.realtimestatechart.editor;
 
+import java.util.Map;
+
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.ocl.pivot.ExpressionInOCL;
+import org.eclipse.ocl.pivot.utilities.OCLHelper;
+import org.eclipse.ocl.pivot.utilities.ParserException;
+
 /**
  * @generated
  */
@@ -194,7 +202,7 @@ public class RealtimeStatechartEditor extends org.muml.ape.runtime.editors.Class
 								"let behavior : behavior::BehavioralElement = self.getPortOrRoleStatechart().behavioralElement in\n (not behavior.oclIsInvalid() and behavior.oclIsKindOf(connector::DiscreteInteractionEndpoint) implies  \n 	let die: connector::DiscreteInteractionEndpoint = behavior.oclAsType(connector::DiscreteInteractionEndpoint) in \n 						die.multi and die.subroleBehavior.oclIsUndefined() and die.coordinatorBehavior.oclIsUndefined()\n )",
 								feature, getEClass());
 				editor.setInput(input);
-				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+				editor.registerOCLAdapter(new org.eclipse.emf.common.notify.impl.AdapterImpl() {
 					@Override
 					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
 						boolean visibleBefore = editor.isVisible();
@@ -242,7 +250,7 @@ public class RealtimeStatechartEditor extends org.muml.ape.runtime.editors.Class
 								"let behavior : behavior::BehavioralElement = self.getPortOrRoleStatechart().behavioralElement in\n (not behavior.oclIsInvalid() and behavior.oclIsKindOf(connector::DiscreteInteractionEndpoint) implies  \n 	let die: connector::DiscreteInteractionEndpoint = behavior.oclAsType(connector::DiscreteInteractionEndpoint) in \n 						die.multi and die.subroleBehavior.oclIsUndefined() and die.coordinatorBehavior.oclIsUndefined()\n )",
 								feature, getEClass());
 				editor.setInput(input);
-				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+				editor.registerOCLAdapter(new org.eclipse.emf.common.notify.impl.AdapterImpl() {
 					@Override
 					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
 						boolean visibleBefore = editor.isVisible();
@@ -285,12 +293,8 @@ public class RealtimeStatechartEditor extends org.muml.ape.runtime.editors.Class
 					adapterFactory, feature);
 
 			{
-				final org.eclipse.ocl.ecore.OCLExpression expression = org.muml.ape.runtime.RuntimePlugin
-						.createOCLExpression(
-								"let behavior : behavior::BehavioralElement = self.getPortOrRoleStatechart().behavioralElement in\n (not behavior.oclIsInvalid() and behavior.oclIsKindOf(connector::DiscreteInteractionEndpoint) implies  \n 	let die: connector::DiscreteInteractionEndpoint = behavior.oclAsType(connector::DiscreteInteractionEndpoint) in \n 						die.multi and  die.subroleBehavior.oclIsUndefined() and die.coordinatorBehavior.oclIsUndefined()\n )",
-								feature, getEClass());
 				editor.setInput(input);
-				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+				editor.registerOCLAdapter(new org.eclipse.emf.common.notify.impl.AdapterImpl() {
 					@Override
 					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
 						boolean visibleBefore = editor.isVisible();
@@ -302,19 +306,27 @@ public class RealtimeStatechartEditor extends org.muml.ape.runtime.editors.Class
 						}
 					}
 				});
-				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = org.muml.ape.runtime.RuntimePlugin.OCL_ECORE
-						.createQuery(expression);
-				org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
+				
+				final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+				org.eclipse.ocl.pivot.utilities.OCLHelper pivotHelper = ocl.createOCLHelper(getEClass());
+				try {
+					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = pivotHelper.createQuery("");
+					
+					org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 
 					@Override
 					public boolean select(Object object) {
-						return object != null && Boolean.TRUE.equals(query.evaluate(object));
+						return object != null && Boolean.TRUE.equals(ocl.evaluate(object, oclExpression));
 					}
-
 				};
-				if (filter != null && expression != null) {
+				if (filter != null) {
 					editor.addVisibilityFilter(filter);
 				}
+				
+				} catch (ParserException e) {
+					e.printStackTrace();
+				}
+		
 			}
 
 			editor.setTooltipMessage("The set of operations that is available within each subrole instance.");
@@ -340,7 +352,7 @@ public class RealtimeStatechartEditor extends org.muml.ape.runtime.editors.Class
 				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = org.muml.ape.runtime.RuntimePlugin.OCL_ECORE
 						.createQuery(initExpression);
 				if (query != null) {
-					editor.setInitializeQuery(query);
+					// editor.setInitializeQuery(query);
 				}
 			}
 

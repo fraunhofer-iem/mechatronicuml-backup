@@ -12,7 +12,8 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.muml.pim,
  org.muml.core.edit,
  org.muml.pim.actionlanguage.xtext.ui,
- org.muml.core.edit.properties
+ org.muml.core.edit.properties,
+ org.eclipse.ocl.pivot
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.pim.properties.metamodel, org.muml.pim.properties.constraint,

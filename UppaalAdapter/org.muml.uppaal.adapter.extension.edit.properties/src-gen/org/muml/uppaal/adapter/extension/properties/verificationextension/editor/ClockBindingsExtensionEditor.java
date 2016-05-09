@@ -55,7 +55,7 @@ public class ClockBindingsExtensionEditor extends org.muml.ape.runtime.editors.C
 				final org.eclipse.ocl.ecore.OCLExpression expression = org.muml.ape.runtime.RuntimePlugin
 						.createOCLExpression("true", feature, getEClass());
 				editor.setInput(input);
-				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+				editor.registerOCLAdapter(new org.eclipse.emf.common.notify.impl.AdapterImpl() {
 					@Override
 					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
 						boolean visibleBefore = editor.isVisible();

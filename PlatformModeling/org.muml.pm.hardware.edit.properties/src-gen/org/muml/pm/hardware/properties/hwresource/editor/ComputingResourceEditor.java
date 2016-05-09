@@ -77,7 +77,7 @@ public abstract class ComputingResourceEditor extends org.muml.ape.runtime.edito
 				final org.eclipse.ocl.ecore.OCLExpression expression = org.muml.ape.runtime.RuntimePlugin
 						.createOCLExpression("true", feature, getEClass());
 				editor.setInput(input);
-				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+				editor.registerOCLAdapter(new org.eclipse.emf.common.notify.impl.AdapterImpl() {
 					@Override
 					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
 						boolean visibleBefore = editor.isVisible();
@@ -142,7 +142,7 @@ public abstract class ComputingResourceEditor extends org.muml.ape.runtime.edito
 				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = org.muml.ape.runtime.RuntimePlugin.OCL_ECORE
 						.createQuery(initExpression);
 				if (query != null) {
-					editor.setInitializeQuery(query);
+					// editor.setInitializeQuery(query);
 				}
 			}
 

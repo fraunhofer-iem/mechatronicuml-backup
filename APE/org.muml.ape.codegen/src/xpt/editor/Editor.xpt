@@ -183,31 +183,38 @@ new «fullyQualifiedClassName»(adapterFactory, «featureVar»);
 «DEFINE addVisibilityFilter(String editorVar, String featureVar) FOR Filter»«ENDDEFINE»
 «DEFINE addVisibilityFilter(String editorVar, String featureVar) FOR OCLFilter»
 	{
-		final org.eclipse.ocl.ecore.OCLExpression expression = org.muml.ape.runtime.RuntimePlugin.createOCLExpression("«expression.escapeString()»", «featureVar», getEClass());
-		«editorVar».setInput(input);
-		«editorVar».registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+		editor.setInput(input);
+		editor.registerOCLAdapter(new org.eclipse.emf.common.notify.impl.AdapterImpl() {
 			@Override
 			public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
-				boolean visibleBefore = «editorVar».isVisible();
-				«editorVar».updateVisibility(true);
+				boolean visibleBefore = editor.isVisible();
+				editor.updateVisibility(true);
 
 				// Set default value, if we are hiding the editor and it was not hidden before.
-				if (!«editorVar».isVisible() && visibleBefore) {
-					«editorVar».setDefaultValue();
+				if (!editor.isVisible() && visibleBefore) {
+					editor.setDefaultValue();
 				}
 			}
 		});
-		final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = org.muml.ape.runtime.RuntimePlugin.OCL_ECORE.createQuery(expression);
-		org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 
-			@Override
-			public boolean select(Object object) {
-				return object != null && Boolean.TRUE.equals(query.evaluate(object));
+		final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+		org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(«featureVar»);
+
+		try {
+			final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery("«expression.escapeString()»");
+
+			org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
+				@Override
+				public boolean select(Object object) {
+					return object != null && Boolean.TRUE.equals(ocl.evaluate(object, oclExpression));
+				}
+			};
+			if (filter != null) {
+				editor.addVisibilityFilter(filter);
 			}
 
-		};
-		if (filter != null && expression != null) {
-			«editorVar».addVisibilityFilter(filter);
+		} catch (ParserException e) {
+			e.printStackTrace();
 		}
 	}
 «ENDDEFINE»
@@ -216,41 +223,46 @@ new «fullyQualifiedClassName»(adapterFactory, «featureVar»);
 «DEFINE addReadOnlyFilter(String editorVar, String featureVar) FOR Filter»«ENDDEFINE»
 «DEFINE addReadOnlyFilter(String editorVar, String featureVar) FOR OCLFilter»
 	{
-		final org.eclipse.ocl.ecore.OCLExpression expression = org.muml.ape.runtime.RuntimePlugin.createOCLExpression("«expression.escapeString()»", «featureVar», getEClass());
-		«editorVar».setInput(input);
-		«editorVar».registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+		editor.setInput(input);
+		editor.registerOCLAdapter(new org.eclipse.emf.common.notify.impl.AdapterImpl() {
 			@Override
 			public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
-				boolean visibleBefore = «editorVar».isVisible();
-				«editorVar».updateVisibility(true);
-
-				// Set default value, if we are hiding the editor and it was not hidden before.
-				if (!«editorVar».isVisible() && visibleBefore) {
-					«editorVar».setDefaultValue();
-				}
+				editor.updateEnablement(true);
 			}
 		});
-		final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = org.muml.ape.runtime.RuntimePlugin.OCL_ECORE.createQuery(expression);
-		org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 
-			@Override
-			public boolean select(Object object) {
-				return object != null && Boolean.TRUE.equals(query.evaluate(object));
+		final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+		org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(«featureVar»);
+
+		try {
+			final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery("«expression.escapeString()»");
+
+			org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
+				@Override
+				public boolean select(Object object) {
+					return object != null && Boolean.TRUE.equals(ocl.evaluate(object, oclExpression));
+				}
+			};
+			if (filter != null) {
+				editor.addReadOnlyFilter(filter);
 			}
 
-		};
-		if (filter != null) {
-			«editorVar».addReadOnlyFilter(filter);
+		} catch (ParserException e) {
+			e.printStackTrace();
 		}
 	}
 «ENDDEFINE»
 
 «DEFINE setInitializeOCLExpression(String editorVar, String featureVar) FOR Property»
 	{
-		final org.eclipse.ocl.ecore.OCLExpression initExpression = org.muml.ape.runtime.RuntimePlugin.createOCLExpression("«initializeOCLExpression.toString().escapeString()»", «featureVar», getEClass());
-		final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = org.muml.ape.runtime.RuntimePlugin.OCL_ECORE.createQuery(initExpression);
-		if (query != null) {
-			«editorVar».setInitializeQuery(query);
+		final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+		org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(«featureVar»);
+
+		try {
+			final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery("«initializeOCLExpression.toString().escapeString()»");
+			«editorVar».setInitializeExpression(oclExpression);
+		} catch (ParserException e) {
+			e.printStackTrace();
 		}
 	}
 «ENDDEFINE»

@@ -131,7 +131,7 @@ public class StructuredResourceInstanceEditor extends org.muml.ape.runtime.edito
 				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = org.muml.ape.runtime.RuntimePlugin.OCL_ECORE
 						.createQuery(initExpression);
 				if (query != null) {
-					editor.setInitializeQuery(query);
+					// editor.setInitializeQuery(query);
 				}
 			}
 

@@ -67,7 +67,7 @@ public class OptionsEditor extends org.muml.ape.runtime.editors.ClassPropertyEdi
 								"not self.extension->exists(ext | ext.oclAsType(HideOptionExtension).option = 'connectorOutBufferSize')",
 								feature, getEClass());
 				editor.setInput(input);
-				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+				editor.registerOCLAdapter(new org.eclipse.emf.common.notify.impl.AdapterImpl() {
 					@Override
 					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
 						boolean visibleBefore = editor.isVisible();
@@ -115,7 +115,7 @@ public class OptionsEditor extends org.muml.ape.runtime.editors.ClassPropertyEdi
 								"not self.extension->exists(ext | ext.oclAsType(HideOptionExtension).option = 'hashTableSize')",
 								feature, getEClass());
 				editor.setInput(input);
-				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+				editor.registerOCLAdapter(new org.eclipse.emf.common.notify.impl.AdapterImpl() {
 					@Override
 					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
 						boolean visibleBefore = editor.isVisible();
@@ -163,7 +163,7 @@ public class OptionsEditor extends org.muml.ape.runtime.editors.ClassPropertyEdi
 								"not self.extension->exists(ext | ext.oclAsType(HideOptionExtension).option = 'stateSpaceReduction')",
 								feature, getEClass());
 				editor.setInput(input);
-				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+				editor.registerOCLAdapter(new org.eclipse.emf.common.notify.impl.AdapterImpl() {
 					@Override
 					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
 						boolean visibleBefore = editor.isVisible();
@@ -211,7 +211,7 @@ public class OptionsEditor extends org.muml.ape.runtime.editors.ClassPropertyEdi
 								"not self.extension->exists(ext | ext.oclAsType(HideOptionExtension).option = 'traceOptions')",
 								feature, getEClass());
 				editor.setInput(input);
-				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+				editor.registerOCLAdapter(new org.eclipse.emf.common.notify.impl.AdapterImpl() {
 					@Override
 					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
 						boolean visibleBefore = editor.isVisible();

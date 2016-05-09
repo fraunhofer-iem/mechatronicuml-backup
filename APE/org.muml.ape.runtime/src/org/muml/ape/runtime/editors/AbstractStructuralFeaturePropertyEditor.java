@@ -46,7 +46,7 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	
 	private Map<Adapter, ResourceSet> eventAdapters = new HashMap<Adapter, ResourceSet>();
 
-	private Map<Adapter, OCLExpression> oclAdapters = new HashMap<Adapter, OCLExpression>();
+	private List<Adapter> oclAdapters = new ArrayList<Adapter>();
 
 	protected EStructuralFeature feature = null;
 	
@@ -270,9 +270,8 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		
 		// Register those expressions that could not be registered before, because no editing domain was known before the first inputChanged() call
 		if (!oclAdapters.isEmpty()) {
-			for(Adapter adapter : oclAdapters.keySet()) {
-				OCLExpression expression = oclAdapters.get(adapter);
-				registerOCLAdapter(expression, adapter);
+			for(Adapter adapter : oclAdapters) {
+				registerOCLAdapter(adapter);
 			}
 		}
 	}
@@ -423,8 +422,10 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	}
 	
 
-	public boolean registerOCLAdapter(OCLExpression expression, Adapter adapter) {
-		oclAdapters.put(adapter, expression);
+	public boolean registerOCLAdapter(Adapter adapter) {
+		if (!oclAdapters.contains(adapter)) {
+			oclAdapters.add(adapter);
+		}
 
 		ResourceSet myResourceSet = getResourceSet();
 		if (myResourceSet == null || element == null) {
@@ -486,7 +487,7 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		return eClasses;
 	}
 
-	public void setInitializeQuery(Query<EClassifier, ?, ?> query) {
+	public void setInitializeExpression(org.eclipse.ocl.pivot.ExpressionInOCL expression) {
 		// TODO: Implement
 	}
 	

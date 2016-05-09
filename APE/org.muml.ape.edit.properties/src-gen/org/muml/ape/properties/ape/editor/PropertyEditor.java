@@ -112,7 +112,7 @@ public class PropertyEditor extends org.muml.ape.runtime.editors.ClassPropertyEd
 						.createOCLExpression("self.genFeature.ecoreFeature.oclIsKindOf(ecore::EAttribute)", feature,
 								getEClass());
 				editor.setInput(input);
-				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+				editor.registerOCLAdapter(new org.eclipse.emf.common.notify.impl.AdapterImpl() {
 					@Override
 					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
 						boolean visibleBefore = editor.isVisible();

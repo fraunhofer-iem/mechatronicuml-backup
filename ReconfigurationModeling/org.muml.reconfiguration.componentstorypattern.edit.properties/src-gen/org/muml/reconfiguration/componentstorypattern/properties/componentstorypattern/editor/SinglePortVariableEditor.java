@@ -127,7 +127,7 @@ public class SinglePortVariableEditor extends org.muml.ape.runtime.editors.Class
 								"-- only show this editor if SinglePortVariable is \"embedded\" in MultiPortVariable\nif \n	self.eContainer().oclIsUndefined() or not (self.eContainer().oclIsTypeOf(ComponentVariable) or self.eContainer().oclIsKindOf(PartVariable))\nthen\n	false\nelse\n	if\n		self.eContainer().oclIsTypeOf(ComponentVariable)\n	then\n		let container: ComponentVariable = self.eContainer().oclAsType(ComponentVariable) in\n		if\n			container.portVariables->select(oclIsTypeOf(MultiPortVariable))->exists(mPV |mPV.oclAsType(MultiPortVariable).gmfSubPortVariables->includes(self))\n		then\n			true\n		else\n			false\n		endif\n			\n	else \n		if\n			self.eContainer().oclIsKindOf(PartVariable)\n		then\n			let container: PartVariable = self.eContainer().oclAsType(PartVariable) in\n			if\n				container.portVariables->select(oclIsTypeOf(MultiPortVariable))->exists(mPV |mPV.oclAsType(MultiPortVariable).gmfSubPortVariables->includes(self))\n			then\n				true\n			else\n				false\n			endif\n			\n		else\n			false\n		endif\n	endif\n\nendif",
 								feature, getEClass());
 				editor.setInput(input);
-				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+				editor.registerOCLAdapter(new org.eclipse.emf.common.notify.impl.AdapterImpl() {
 					@Override
 					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
 						boolean visibleBefore = editor.isVisible();
@@ -203,7 +203,7 @@ public class SinglePortVariableEditor extends org.muml.ape.runtime.editors.Class
 				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = org.muml.ape.runtime.RuntimePlugin.OCL_ECORE
 						.createQuery(initExpression);
 				if (query != null) {
-					editor.setInitializeQuery(query);
+					// editor.setInitializeQuery(query);
 				}
 			}
 
@@ -256,7 +256,7 @@ public class SinglePortVariableEditor extends org.muml.ape.runtime.editors.Class
 								"let\n	parents : OrderedSet(OclAny) = self.eContainer()->closure(eContainer())->asOrderedSet()\nin\n	not parents->select(oclIsTypeOf(componentstorydiagram::ComponentStoryNode))->isEmpty()",
 								feature, getEClass());
 				editor.setInput(input);
-				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+				editor.registerOCLAdapter(new org.eclipse.emf.common.notify.impl.AdapterImpl() {
 					@Override
 					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
 						boolean visibleBefore = editor.isVisible();
