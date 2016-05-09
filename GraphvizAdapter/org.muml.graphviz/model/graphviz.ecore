@@ -22,6 +22,9 @@
           eType="#//dot/Setting" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           defaultValueLiteral=""/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="cluster" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="false"/>
       <eGenericSuperTypes eClassifier="#//common/Graph">
         <eTypeArguments eClassifier="#//dot/DotNode"/>
         <eTypeArguments eClassifier="#//dot/DotEdge"/>

@@ -232,6 +232,15 @@ public class DotPackageImpl extends EPackageImpl implements DotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getDotGraph_Cluster() {
+		return (EAttribute)dotGraphEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDotNode() {
 		return dotNodeEClass;
 	}
@@ -344,6 +353,7 @@ public class DotPackageImpl extends EPackageImpl implements DotPackage {
 		createEReference(dotGraphEClass, DOT_GRAPH__NODE_SETTINGS);
 		createEReference(dotGraphEClass, DOT_GRAPH__EDGE_SETTINGS);
 		createEAttribute(dotGraphEClass, DOT_GRAPH__ID);
+		createEAttribute(dotGraphEClass, DOT_GRAPH__CLUSTER);
 
 		dotNodeEClass = createEClass(DOT_NODE);
 		createEReference(dotNodeEClass, DOT_NODE__SETTINGS);
@@ -414,6 +424,7 @@ public class DotPackageImpl extends EPackageImpl implements DotPackage {
 		initEReference(getDotGraph_NodeSettings(), this.getSetting(), null, "nodeSettings", null, 0, -1, DotGraph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDotGraph_EdgeSettings(), this.getSetting(), null, "edgeSettings", null, 0, -1, DotGraph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDotGraph_Id(), ecorePackage.getEString(), "id", "", 0, 1, DotGraph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDotGraph_Cluster(), ecorePackage.getEBoolean(), "cluster", "false", 1, 1, DotGraph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dotNodeEClass, DotNode.class, "DotNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDotNode_Settings(), this.getSetting(), null, "settings", null, 0, -1, DotNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

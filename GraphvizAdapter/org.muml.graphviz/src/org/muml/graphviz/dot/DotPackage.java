@@ -153,13 +153,22 @@ public interface DotPackage extends EPackage {
 	int DOT_GRAPH__ID = CommonPackage.GRAPH_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>Cluster</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOT_GRAPH__CLUSTER = CommonPackage.GRAPH_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>Graph</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOT_GRAPH_FEATURE_COUNT = CommonPackage.GRAPH_FEATURE_COUNT + 7;
+	int DOT_GRAPH_FEATURE_COUNT = CommonPackage.GRAPH_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Graph</em>' class.
@@ -533,6 +542,17 @@ public interface DotPackage extends EPackage {
 	EAttribute getDotGraph_Id();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.muml.graphviz.dot.DotGraph#isCluster <em>Cluster</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Cluster</em>'.
+	 * @see org.muml.graphviz.dot.DotGraph#isCluster()
+	 * @see #getDotGraph()
+	 * @generated
+	 */
+	EAttribute getDotGraph_Cluster();
+
+	/**
 	 * Returns the meta object for class '{@link org.muml.graphviz.dot.DotNode <em>Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -714,6 +734,14 @@ public interface DotPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DOT_GRAPH__ID = eINSTANCE.getDotGraph_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Cluster</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DOT_GRAPH__CLUSTER = eINSTANCE.getDotGraph_Cluster();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.graphviz.dot.impl.DotNodeImpl <em>Node</em>}' class.

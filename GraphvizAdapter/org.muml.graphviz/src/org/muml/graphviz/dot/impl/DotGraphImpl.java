@@ -36,6 +36,7 @@ import org.muml.graphviz.dot.Setting;
  *   <li>{@link org.muml.graphviz.dot.impl.DotGraphImpl#getNodeSettings <em>Node Settings</em>}</li>
  *   <li>{@link org.muml.graphviz.dot.impl.DotGraphImpl#getEdgeSettings <em>Edge Settings</em>}</li>
  *   <li>{@link org.muml.graphviz.dot.impl.DotGraphImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.muml.graphviz.dot.impl.DotGraphImpl#isCluster <em>Cluster</em>}</li>
  * </ul>
  *
  * @generated
@@ -120,6 +121,26 @@ public class DotGraphImpl extends GraphImpl<DotNode, DotEdge> implements DotGrap
 	 * @ordered
 	 */
 	protected String id = ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isCluster() <em>Cluster</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCluster()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean CLUSTER_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isCluster() <em>Cluster</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCluster()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean cluster = CLUSTER_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -304,6 +325,27 @@ public class DotGraphImpl extends GraphImpl<DotNode, DotEdge> implements DotGrap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isCluster() {
+		return cluster;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCluster(boolean newCluster) {
+		boolean oldCluster = cluster;
+		cluster = newCluster;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DotPackage.DOT_GRAPH__CLUSTER, oldCluster, cluster));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -376,6 +418,8 @@ public class DotGraphImpl extends GraphImpl<DotNode, DotEdge> implements DotGrap
 				return getEdgeSettings();
 			case DotPackage.DOT_GRAPH__ID:
 				return getId();
+			case DotPackage.DOT_GRAPH__CLUSTER:
+				return isCluster();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -414,6 +458,9 @@ public class DotGraphImpl extends GraphImpl<DotNode, DotEdge> implements DotGrap
 			case DotPackage.DOT_GRAPH__ID:
 				setId((String)newValue);
 				return;
+			case DotPackage.DOT_GRAPH__CLUSTER:
+				setCluster((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -447,6 +494,9 @@ public class DotGraphImpl extends GraphImpl<DotNode, DotEdge> implements DotGrap
 			case DotPackage.DOT_GRAPH__ID:
 				setId(ID_EDEFAULT);
 				return;
+			case DotPackage.DOT_GRAPH__CLUSTER:
+				setCluster(CLUSTER_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -473,6 +523,8 @@ public class DotGraphImpl extends GraphImpl<DotNode, DotEdge> implements DotGrap
 				return edgeSettings != null && !edgeSettings.isEmpty();
 			case DotPackage.DOT_GRAPH__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case DotPackage.DOT_GRAPH__CLUSTER:
+				return cluster != CLUSTER_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -491,6 +543,8 @@ public class DotGraphImpl extends GraphImpl<DotNode, DotEdge> implements DotGrap
 		result.append(directedGraph);
 		result.append(", id: ");
 		result.append(id);
+		result.append(", cluster: ");
+		result.append(cluster);
 		result.append(')');
 		return result.toString();
 	}

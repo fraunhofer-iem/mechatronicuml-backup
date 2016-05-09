@@ -21,6 +21,7 @@ import org.muml.graphviz.common.Graph;
  *   <li>{@link org.muml.graphviz.dot.DotGraph#getNodeSettings <em>Node Settings</em>}</li>
  *   <li>{@link org.muml.graphviz.dot.DotGraph#getEdgeSettings <em>Edge Settings</em>}</li>
  *   <li>{@link org.muml.graphviz.dot.DotGraph#getId <em>Id</em>}</li>
+ *   <li>{@link org.muml.graphviz.dot.DotGraph#isCluster <em>Cluster</em>}</li>
  * </ul>
  *
  * @see org.muml.graphviz.dot.DotPackage#getDotGraph()
@@ -175,5 +176,32 @@ public interface DotGraph extends Graph<DotNode, DotEdge> {
 	 * @generated
 	 */
 	void setId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Cluster</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Cluster</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Cluster</em>' attribute.
+	 * @see #setCluster(boolean)
+	 * @see org.muml.graphviz.dot.DotPackage#getDotGraph_Cluster()
+	 * @model default="false" required="true"
+	 * @generated
+	 */
+	boolean isCluster();
+
+	/**
+	 * Sets the value of the '{@link org.muml.graphviz.dot.DotGraph#isCluster <em>Cluster</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Cluster</em>' attribute.
+	 * @see #isCluster()
+	 * @generated
+	 */
+	void setCluster(boolean value);
 
 } // DotGraph

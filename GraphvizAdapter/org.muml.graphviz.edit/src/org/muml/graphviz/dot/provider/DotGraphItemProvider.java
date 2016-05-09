@@ -51,6 +51,7 @@ public class DotGraphItemProvider
 
 			addDirectedGraphPropertyDescriptor(object);
 			addIdPropertyDescriptor(object);
+			addClusterPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -95,6 +96,28 @@ public class DotGraphItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Cluster feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addClusterPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DotGraph_cluster_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DotGraph_cluster_feature", "_UI_DotGraph_type"),
+				 DotPackage.Literals.DOT_GRAPH__CLUSTER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -181,6 +204,7 @@ public class DotGraphItemProvider
 		switch (notification.getFeatureID(DotGraph.class)) {
 			case DotPackage.DOT_GRAPH__DIRECTED_GRAPH:
 			case DotPackage.DOT_GRAPH__ID:
+			case DotPackage.DOT_GRAPH__CLUSTER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case DotPackage.DOT_GRAPH__SUBGRAPHS:
