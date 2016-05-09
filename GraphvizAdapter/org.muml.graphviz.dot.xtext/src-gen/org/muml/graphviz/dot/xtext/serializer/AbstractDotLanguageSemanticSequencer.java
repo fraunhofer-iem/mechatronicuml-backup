@@ -40,8 +40,15 @@ public abstract class AbstractDotLanguageSemanticSequencer extends AbstractDeleg
 				sequence_DirectedDotEdge(context, (DirectedDotEdge) semanticObject); 
 				return; 
 			case DotPackage.DOT_GRAPH:
-				sequence_DotGraph(context, (DotGraph) semanticObject); 
-				return; 
+				if (rule == grammarAccess.getDotGraphRule()) {
+					sequence_DotGraph(context, (DotGraph) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getDotSubGraphRule()) {
+					sequence_DotSubGraph(context, (DotGraph) semanticObject); 
+					return; 
+				}
+				else break;
 			case DotPackage.DOT_NODE:
 				sequence_DotNode(context, (DotNode) semanticObject); 
 				return; 
@@ -75,9 +82,10 @@ public abstract class AbstractDotLanguageSemanticSequencer extends AbstractDeleg
 	 *
 	 * Constraint:
 	 *     (
-	 *         ((directedGraph?='digraph'? id=DotID?) | id=DotID)? 
+	 *         directedGraph?='digraph'? 
+	 *         id=DotGraphID? 
 	 *         (
-	 *             (subgraphs+=DotGraph | nodes+=DotNode | edges+=DotEdge)? 
+	 *             (subgraphs+=DotSubGraph | nodes+=DotNode | edges+=DotEdge)? 
 	 *             (graphSettings+=Setting graphSettings+=Setting*)? 
 	 *             (nodeSettings+=Setting nodeSettings+=Setting*)? 
 	 *             (edgeSettings+=Setting edgeSettings+=Setting*)?
@@ -97,6 +105,28 @@ public abstract class AbstractDotLanguageSemanticSequencer extends AbstractDeleg
 	 *     (name=DotID (settings+=Setting settings+=Setting*)?)
 	 */
 	protected void sequence_DotNode(ISerializationContext context, DotNode semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     DotSubGraph returns DotGraph
+	 *
+	 * Constraint:
+	 *     (
+	 *         id=DotGraphID? 
+	 *         (
+	 *             (graphSettings+=Setting graphSettings+=Setting*) | 
+	 *             (nodeSettings+=Setting nodeSettings+=Setting*) | 
+	 *             (edgeSettings+=Setting edgeSettings+=Setting*) | 
+	 *             subgraphs+=DotSubGraph | 
+	 *             nodes+=DotNode | 
+	 *             edges+=DotEdge
+	 *         )+
+	 *     )
+	 */
+	protected void sequence_DotSubGraph(ISerializationContext context, DotGraph semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

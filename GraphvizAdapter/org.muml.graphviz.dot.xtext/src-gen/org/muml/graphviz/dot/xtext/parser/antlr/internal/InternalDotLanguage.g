@@ -83,11 +83,11 @@ ruleDotGraph returns [EObject current=null]
             grammarAccess.getDotGraphAccess().getDotGraphAction_0(),
             $current);
     }
-)((((
+)((
 (
 		lv_directedGraph_1_0=	'digraph' 
     {
-        newLeafNode(lv_directedGraph_1_0, grammarAccess.getDotGraphAccess().getDirectedGraphDigraphKeyword_1_0_0_0_0());
+        newLeafNode(lv_directedGraph_1_0, grammarAccess.getDotGraphAccess().getDirectedGraphDigraphKeyword_1_0_0());
     }
  
 	    {
@@ -101,14 +101,14 @@ ruleDotGraph returns [EObject current=null]
 )
     |	otherlv_2='graph' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getDotGraphAccess().getGraphKeyword_1_0_0_1());
+    	newLeafNode(otherlv_2, grammarAccess.getDotGraphAccess().getGraphKeyword_1_1());
     }
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDotGraphAccess().getIdDotIDParserRuleCall_1_0_1_0()); 
+	        newCompositeNode(grammarAccess.getDotGraphAccess().getIdDotGraphIDParserRuleCall_2_0()); 
 	    }
-		lv_id_3_0=ruleDotID		{
+		lv_id_3_0=ruleDotGraphID		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDotGraphRule());
 	        }
@@ -116,50 +116,49 @@ ruleDotGraph returns [EObject current=null]
        			$current, 
        			"id",
         		lv_id_3_0, 
-        		"org.muml.graphviz.dot.xtext.DotLanguage.DotID");
+        		"org.muml.graphviz.dot.xtext.DotLanguage.DotGraphID");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)?)
-    |(	otherlv_4='subgraph' 
+)?	otherlv_4='{' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getDotGraphAccess().getSubgraphKeyword_1_1_0());
+    	newLeafNode(otherlv_4, grammarAccess.getDotGraphAccess().getLeftCurlyBracketKeyword_3());
+    }
+((	otherlv_5='graph' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getDotGraphAccess().getGraphKeyword_4_0_0());
+    }
+	otherlv_6='[' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getDotGraphAccess().getLeftSquareBracketKeyword_4_0_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDotGraphAccess().getIdDotIDParserRuleCall_1_1_1_0()); 
+	        newCompositeNode(grammarAccess.getDotGraphAccess().getGraphSettingsSettingParserRuleCall_4_0_2_0()); 
 	    }
-		lv_id_5_0=ruleDotID		{
+		lv_graphSettings_7_0=ruleSetting		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDotGraphRule());
 	        }
-       		set(
+       		add(
        			$current, 
-       			"id",
-        		lv_id_5_0, 
-        		"org.muml.graphviz.dot.xtext.DotLanguage.DotID");
+       			"graphSettings",
+        		lv_graphSettings_7_0, 
+        		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)?))	otherlv_6='{' 
+)(	otherlv_8=',' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getDotGraphAccess().getLeftCurlyBracketKeyword_2());
-    }
-((	otherlv_7='graph' 
-    {
-    	newLeafNode(otherlv_7, grammarAccess.getDotGraphAccess().getGraphKeyword_3_0_0());
-    }
-	otherlv_8='[' 
-    {
-    	newLeafNode(otherlv_8, grammarAccess.getDotGraphAccess().getLeftSquareBracketKeyword_3_0_1());
+    	newLeafNode(otherlv_8, grammarAccess.getDotGraphAccess().getCommaKeyword_4_0_3_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDotGraphAccess().getGraphSettingsSettingParserRuleCall_3_0_2_0()); 
+	        newCompositeNode(grammarAccess.getDotGraphAccess().getGraphSettingsSettingParserRuleCall_4_0_3_1_0()); 
 	    }
 		lv_graphSettings_9_0=ruleSetting		{
 	        if ($current==null) {
@@ -174,49 +173,49 @@ ruleDotGraph returns [EObject current=null]
 	    }
 
 )
-)(	otherlv_10=',' 
+))*	otherlv_10=']' 
     {
-    	newLeafNode(otherlv_10, grammarAccess.getDotGraphAccess().getCommaKeyword_3_0_3_0());
+    	newLeafNode(otherlv_10, grammarAccess.getDotGraphAccess().getRightSquareBracketKeyword_4_0_4());
+    }
+(	otherlv_11=';' 
+    {
+    	newLeafNode(otherlv_11, grammarAccess.getDotGraphAccess().getSemicolonKeyword_4_0_5());
+    }
+)?)
+    |(	otherlv_12='node' 
+    {
+    	newLeafNode(otherlv_12, grammarAccess.getDotGraphAccess().getNodeKeyword_4_1_0());
+    }
+	otherlv_13='[' 
+    {
+    	newLeafNode(otherlv_13, grammarAccess.getDotGraphAccess().getLeftSquareBracketKeyword_4_1_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDotGraphAccess().getGraphSettingsSettingParserRuleCall_3_0_3_1_0()); 
+	        newCompositeNode(grammarAccess.getDotGraphAccess().getNodeSettingsSettingParserRuleCall_4_1_2_0()); 
 	    }
-		lv_graphSettings_11_0=ruleSetting		{
+		lv_nodeSettings_14_0=ruleSetting		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDotGraphRule());
 	        }
        		add(
        			$current, 
-       			"graphSettings",
-        		lv_graphSettings_11_0, 
+       			"nodeSettings",
+        		lv_nodeSettings_14_0, 
         		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))*	otherlv_12=']' 
+)(	otherlv_15=',' 
     {
-    	newLeafNode(otherlv_12, grammarAccess.getDotGraphAccess().getRightSquareBracketKeyword_3_0_4());
-    }
-(	otherlv_13=';' 
-    {
-    	newLeafNode(otherlv_13, grammarAccess.getDotGraphAccess().getSemicolonKeyword_3_0_5());
-    }
-)?)
-    |(	otherlv_14='node' 
-    {
-    	newLeafNode(otherlv_14, grammarAccess.getDotGraphAccess().getNodeKeyword_3_1_0());
-    }
-	otherlv_15='[' 
-    {
-    	newLeafNode(otherlv_15, grammarAccess.getDotGraphAccess().getLeftSquareBracketKeyword_3_1_1());
+    	newLeafNode(otherlv_15, grammarAccess.getDotGraphAccess().getCommaKeyword_4_1_3_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDotGraphAccess().getNodeSettingsSettingParserRuleCall_3_1_2_0()); 
+	        newCompositeNode(grammarAccess.getDotGraphAccess().getNodeSettingsSettingParserRuleCall_4_1_3_1_0()); 
 	    }
 		lv_nodeSettings_16_0=ruleSetting		{
 	        if ($current==null) {
@@ -231,49 +230,49 @@ ruleDotGraph returns [EObject current=null]
 	    }
 
 )
-)(	otherlv_17=',' 
+))*	otherlv_17=']' 
     {
-    	newLeafNode(otherlv_17, grammarAccess.getDotGraphAccess().getCommaKeyword_3_1_3_0());
+    	newLeafNode(otherlv_17, grammarAccess.getDotGraphAccess().getRightSquareBracketKeyword_4_1_4());
+    }
+(	otherlv_18=';' 
+    {
+    	newLeafNode(otherlv_18, grammarAccess.getDotGraphAccess().getSemicolonKeyword_4_1_5());
+    }
+)?)
+    |(	otherlv_19='edge' 
+    {
+    	newLeafNode(otherlv_19, grammarAccess.getDotGraphAccess().getEdgeKeyword_4_2_0());
+    }
+	otherlv_20='[' 
+    {
+    	newLeafNode(otherlv_20, grammarAccess.getDotGraphAccess().getLeftSquareBracketKeyword_4_2_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDotGraphAccess().getNodeSettingsSettingParserRuleCall_3_1_3_1_0()); 
+	        newCompositeNode(grammarAccess.getDotGraphAccess().getEdgeSettingsSettingParserRuleCall_4_2_2_0()); 
 	    }
-		lv_nodeSettings_18_0=ruleSetting		{
+		lv_edgeSettings_21_0=ruleSetting		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDotGraphRule());
 	        }
        		add(
        			$current, 
-       			"nodeSettings",
-        		lv_nodeSettings_18_0, 
+       			"edgeSettings",
+        		lv_edgeSettings_21_0, 
         		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))*	otherlv_19=']' 
+)(	otherlv_22=',' 
     {
-    	newLeafNode(otherlv_19, grammarAccess.getDotGraphAccess().getRightSquareBracketKeyword_3_1_4());
-    }
-(	otherlv_20=';' 
-    {
-    	newLeafNode(otherlv_20, grammarAccess.getDotGraphAccess().getSemicolonKeyword_3_1_5());
-    }
-)?)
-    |(	otherlv_21='edge' 
-    {
-    	newLeafNode(otherlv_21, grammarAccess.getDotGraphAccess().getEdgeKeyword_3_2_0());
-    }
-	otherlv_22='[' 
-    {
-    	newLeafNode(otherlv_22, grammarAccess.getDotGraphAccess().getLeftSquareBracketKeyword_3_2_1());
+    	newLeafNode(otherlv_22, grammarAccess.getDotGraphAccess().getCommaKeyword_4_2_3_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDotGraphAccess().getEdgeSettingsSettingParserRuleCall_3_2_2_0()); 
+	        newCompositeNode(grammarAccess.getDotGraphAccess().getEdgeSettingsSettingParserRuleCall_4_2_3_1_0()); 
 	    }
 		lv_edgeSettings_23_0=ruleSetting		{
 	        if ($current==null) {
@@ -288,51 +287,29 @@ ruleDotGraph returns [EObject current=null]
 	    }
 
 )
-)(	otherlv_24=',' 
+))*	otherlv_24=']' 
     {
-    	newLeafNode(otherlv_24, grammarAccess.getDotGraphAccess().getCommaKeyword_3_2_3_0());
+    	newLeafNode(otherlv_24, grammarAccess.getDotGraphAccess().getRightSquareBracketKeyword_4_2_4());
     }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getDotGraphAccess().getEdgeSettingsSettingParserRuleCall_3_2_3_1_0()); 
-	    }
-		lv_edgeSettings_25_0=ruleSetting		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getDotGraphRule());
-	        }
-       		add(
-       			$current, 
-       			"edgeSettings",
-        		lv_edgeSettings_25_0, 
-        		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))*	otherlv_26=']' 
+(	otherlv_25=';' 
     {
-    	newLeafNode(otherlv_26, grammarAccess.getDotGraphAccess().getRightSquareBracketKeyword_3_2_4());
-    }
-(	otherlv_27=';' 
-    {
-    	newLeafNode(otherlv_27, grammarAccess.getDotGraphAccess().getSemicolonKeyword_3_2_5());
+    	newLeafNode(otherlv_25, grammarAccess.getDotGraphAccess().getSemicolonKeyword_4_2_5());
     }
 )?)
     |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDotGraphAccess().getSubgraphsDotGraphParserRuleCall_3_3_0()); 
+	        newCompositeNode(grammarAccess.getDotGraphAccess().getSubgraphsDotSubGraphParserRuleCall_4_3_0()); 
 	    }
-		lv_subgraphs_28_0=ruleDotGraph		{
+		lv_subgraphs_26_0=ruleDotSubGraph		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDotGraphRule());
 	        }
        		add(
        			$current, 
        			"subgraphs",
-        		lv_subgraphs_28_0, 
-        		"org.muml.graphviz.dot.xtext.DotLanguage.DotGraph");
+        		lv_subgraphs_26_0, 
+        		"org.muml.graphviz.dot.xtext.DotLanguage.DotSubGraph");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -341,16 +318,16 @@ ruleDotGraph returns [EObject current=null]
     |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDotGraphAccess().getNodesDotNodeParserRuleCall_3_4_0()); 
+	        newCompositeNode(grammarAccess.getDotGraphAccess().getNodesDotNodeParserRuleCall_4_4_0()); 
 	    }
-		lv_nodes_29_0=ruleDotNode		{
+		lv_nodes_27_0=ruleDotNode		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDotGraphRule());
 	        }
        		add(
        			$current, 
        			"nodes",
-        		lv_nodes_29_0, 
+        		lv_nodes_27_0, 
         		"org.muml.graphviz.dot.xtext.DotLanguage.DotNode");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -360,24 +337,308 @@ ruleDotGraph returns [EObject current=null]
     |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDotGraphAccess().getEdgesDotEdgeParserRuleCall_3_5_0()); 
+	        newCompositeNode(grammarAccess.getDotGraphAccess().getEdgesDotEdgeParserRuleCall_4_5_0()); 
 	    }
-		lv_edges_30_0=ruleDotEdge		{
+		lv_edges_28_0=ruleDotEdge		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDotGraphRule());
 	        }
        		add(
        			$current, 
        			"edges",
-        		lv_edges_30_0, 
+        		lv_edges_28_0, 
         		"org.muml.graphviz.dot.xtext.DotLanguage.DotEdge");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))*	otherlv_31='}' 
+))*	otherlv_29='}' 
     {
-    	newLeafNode(otherlv_31, grammarAccess.getDotGraphAccess().getRightCurlyBracketKeyword_4());
+    	newLeafNode(otherlv_29, grammarAccess.getDotGraphAccess().getRightCurlyBracketKeyword_5());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleDotSubGraph
+entryRuleDotSubGraph returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getDotSubGraphRule()); }
+	 iv_ruleDotSubGraph=ruleDotSubGraph 
+	 { $current=$iv_ruleDotSubGraph.current; } 
+	 EOF 
+;
+
+// Rule DotSubGraph
+ruleDotSubGraph returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getDotSubGraphAccess().getDotGraphAction_0(),
+            $current);
+    }
+)	otherlv_1='subgraph' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getDotSubGraphAccess().getSubgraphKeyword_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDotSubGraphAccess().getIdDotGraphIDParserRuleCall_2_0()); 
+	    }
+		lv_id_2_0=ruleDotGraphID		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDotSubGraphRule());
+	        }
+       		set(
+       			$current, 
+       			"id",
+        		lv_id_2_0, 
+        		"org.muml.graphviz.dot.xtext.DotLanguage.DotGraphID");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)?	otherlv_3='{' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getDotSubGraphAccess().getLeftCurlyBracketKeyword_3());
+    }
+((	otherlv_4='graph' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getDotSubGraphAccess().getGraphKeyword_4_0_0());
+    }
+	otherlv_5='[' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getDotSubGraphAccess().getLeftSquareBracketKeyword_4_0_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDotSubGraphAccess().getGraphSettingsSettingParserRuleCall_4_0_2_0()); 
+	    }
+		lv_graphSettings_6_0=ruleSetting		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDotSubGraphRule());
+	        }
+       		add(
+       			$current, 
+       			"graphSettings",
+        		lv_graphSettings_6_0, 
+        		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_7=',' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getDotSubGraphAccess().getCommaKeyword_4_0_3_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDotSubGraphAccess().getGraphSettingsSettingParserRuleCall_4_0_3_1_0()); 
+	    }
+		lv_graphSettings_8_0=ruleSetting		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDotSubGraphRule());
+	        }
+       		add(
+       			$current, 
+       			"graphSettings",
+        		lv_graphSettings_8_0, 
+        		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*	otherlv_9=']' 
+    {
+    	newLeafNode(otherlv_9, grammarAccess.getDotSubGraphAccess().getRightSquareBracketKeyword_4_0_4());
+    }
+(	otherlv_10=';' 
+    {
+    	newLeafNode(otherlv_10, grammarAccess.getDotSubGraphAccess().getSemicolonKeyword_4_0_5());
+    }
+)?)
+    |(	otherlv_11='node' 
+    {
+    	newLeafNode(otherlv_11, grammarAccess.getDotSubGraphAccess().getNodeKeyword_4_1_0());
+    }
+	otherlv_12='[' 
+    {
+    	newLeafNode(otherlv_12, grammarAccess.getDotSubGraphAccess().getLeftSquareBracketKeyword_4_1_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDotSubGraphAccess().getNodeSettingsSettingParserRuleCall_4_1_2_0()); 
+	    }
+		lv_nodeSettings_13_0=ruleSetting		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDotSubGraphRule());
+	        }
+       		add(
+       			$current, 
+       			"nodeSettings",
+        		lv_nodeSettings_13_0, 
+        		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_14=',' 
+    {
+    	newLeafNode(otherlv_14, grammarAccess.getDotSubGraphAccess().getCommaKeyword_4_1_3_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDotSubGraphAccess().getNodeSettingsSettingParserRuleCall_4_1_3_1_0()); 
+	    }
+		lv_nodeSettings_15_0=ruleSetting		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDotSubGraphRule());
+	        }
+       		add(
+       			$current, 
+       			"nodeSettings",
+        		lv_nodeSettings_15_0, 
+        		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*	otherlv_16=']' 
+    {
+    	newLeafNode(otherlv_16, grammarAccess.getDotSubGraphAccess().getRightSquareBracketKeyword_4_1_4());
+    }
+(	otherlv_17=';' 
+    {
+    	newLeafNode(otherlv_17, grammarAccess.getDotSubGraphAccess().getSemicolonKeyword_4_1_5());
+    }
+)?)
+    |(	otherlv_18='edge' 
+    {
+    	newLeafNode(otherlv_18, grammarAccess.getDotSubGraphAccess().getEdgeKeyword_4_2_0());
+    }
+	otherlv_19='[' 
+    {
+    	newLeafNode(otherlv_19, grammarAccess.getDotSubGraphAccess().getLeftSquareBracketKeyword_4_2_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDotSubGraphAccess().getEdgeSettingsSettingParserRuleCall_4_2_2_0()); 
+	    }
+		lv_edgeSettings_20_0=ruleSetting		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDotSubGraphRule());
+	        }
+       		add(
+       			$current, 
+       			"edgeSettings",
+        		lv_edgeSettings_20_0, 
+        		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_21=',' 
+    {
+    	newLeafNode(otherlv_21, grammarAccess.getDotSubGraphAccess().getCommaKeyword_4_2_3_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDotSubGraphAccess().getEdgeSettingsSettingParserRuleCall_4_2_3_1_0()); 
+	    }
+		lv_edgeSettings_22_0=ruleSetting		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDotSubGraphRule());
+	        }
+       		add(
+       			$current, 
+       			"edgeSettings",
+        		lv_edgeSettings_22_0, 
+        		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*	otherlv_23=']' 
+    {
+    	newLeafNode(otherlv_23, grammarAccess.getDotSubGraphAccess().getRightSquareBracketKeyword_4_2_4());
+    }
+(	otherlv_24=';' 
+    {
+    	newLeafNode(otherlv_24, grammarAccess.getDotSubGraphAccess().getSemicolonKeyword_4_2_5());
+    }
+)?)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDotSubGraphAccess().getSubgraphsDotSubGraphParserRuleCall_4_3_0()); 
+	    }
+		lv_subgraphs_25_0=ruleDotSubGraph		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDotSubGraphRule());
+	        }
+       		add(
+       			$current, 
+       			"subgraphs",
+        		lv_subgraphs_25_0, 
+        		"org.muml.graphviz.dot.xtext.DotLanguage.DotSubGraph");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDotSubGraphAccess().getNodesDotNodeParserRuleCall_4_4_0()); 
+	    }
+		lv_nodes_26_0=ruleDotNode		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDotSubGraphRule());
+	        }
+       		add(
+       			$current, 
+       			"nodes",
+        		lv_nodes_26_0, 
+        		"org.muml.graphviz.dot.xtext.DotLanguage.DotNode");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDotSubGraphAccess().getEdgesDotEdgeParserRuleCall_4_5_0()); 
+	    }
+		lv_edges_27_0=ruleDotEdge		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDotSubGraphRule());
+	        }
+       		add(
+       			$current, 
+       			"edges",
+        		lv_edges_27_0, 
+        		"org.muml.graphviz.dot.xtext.DotLanguage.DotEdge");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))+	otherlv_28='}' 
+    {
+    	newLeafNode(otherlv_28, grammarAccess.getDotSubGraphAccess().getRightCurlyBracketKeyword_5());
     }
 )
 ;
@@ -787,6 +1048,38 @@ ruleSetting returns [EObject current=null]
 )
 ))
 ;
+
+
+
+
+
+// Entry rule entryRuleDotGraphID
+entryRuleDotGraphID returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getDotGraphIDRule()); } 
+	 iv_ruleDotGraphID=ruleDotGraphID 
+	 { $current=$iv_ruleDotGraphID.current.getText(); }  
+	 EOF 
+;
+
+// Rule DotGraphID
+ruleDotGraphID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+
+    { 
+        newCompositeNode(grammarAccess.getDotGraphIDAccess().getDotIDParserRuleCall()); 
+    }
+    this_DotID_0=ruleDotID    {
+		$current.merge(this_DotID_0);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+
+    ;
 
 
 

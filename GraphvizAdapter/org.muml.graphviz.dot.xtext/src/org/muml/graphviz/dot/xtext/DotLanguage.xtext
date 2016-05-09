@@ -9,17 +9,30 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 //import "platform:/resource/org.muml.graphviz/model/graphviz.ecore#//common" as common
 
 DotGraph returns dot::DotGraph:
+	// XXX: if you change this rule, check if the DotSubGraph rule has to be adjusted
+	// as well 
 	{dot::DotGraph}
-	(
-		((directedGraph ?= 'digraph') | 'graph') (id=DotID)?
-		| ('subgraph' (id=DotID)?)
-	)
+	((directedGraph ?= 'digraph') | 'graph') (id=DotGraphID)?
 	'{'
 		(('graph' '[' graphSettings += Setting  (',' graphSettings += Setting)* ']' ';'?)
 			| ('node' '[' nodeSettings += Setting (',' nodeSettings += Setting)* ']' ';'?)
 			| ('edge' '[' edgeSettings += Setting (',' edgeSettings += Setting)* ']' ';'?)
-			| subgraphs += DotGraph | nodes += DotNode | edges += DotEdge
+			| subgraphs += DotSubGraph | nodes += DotNode | edges += DotEdge
 		)*
+	'}'	
+;
+
+DotSubGraph returns dot::DotGraph:
+	// XXX: if you change this rule, check if the DotGraph rule has to be adjusted
+	// as well
+	{dot::DotGraph}
+	'subgraph' (id=DotGraphID)?
+	'{'
+		(('graph' '[' graphSettings += Setting  (',' graphSettings += Setting)* ']' ';'?)
+			| ('node' '[' nodeSettings += Setting (',' nodeSettings += Setting)* ']' ';'?)
+			| ('edge' '[' edgeSettings += Setting (',' edgeSettings += Setting)* ']' ';'?)
+			| subgraphs += DotSubGraph | nodes += DotNode | edges += DotEdge
+		)+
 	'}'
 ;
 
@@ -43,6 +56,10 @@ UndirectedDotEdge returns dot::UndirectedDotEdge:
 
 Setting returns dot::Setting:
 	attribute=DotID '=' value=DotID
+;
+
+DotGraphID returns ecore::EString:
+	DotID
 ;
 
 DotID returns ecore::EString:

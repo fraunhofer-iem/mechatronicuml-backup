@@ -10,7 +10,6 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
@@ -22,22 +21,26 @@ public abstract class AbstractDotLanguageSyntacticSequencer extends AbstractSynt
 
 	protected DotLanguageGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_DirectedDotEdge_SemicolonKeyword_4_q;
-	protected AbstractElementAlias match_DotGraph_GraphKeyword_1_0_0_1_or_SubgraphKeyword_1_1_0;
-	protected AbstractElementAlias match_DotGraph_SemicolonKeyword_3_0_5_q;
-	protected AbstractElementAlias match_DotGraph_SemicolonKeyword_3_1_5_q;
-	protected AbstractElementAlias match_DotGraph_SemicolonKeyword_3_2_5_q;
+	protected AbstractElementAlias match_DotGraph_SemicolonKeyword_4_0_5_q;
+	protected AbstractElementAlias match_DotGraph_SemicolonKeyword_4_1_5_q;
+	protected AbstractElementAlias match_DotGraph_SemicolonKeyword_4_2_5_q;
 	protected AbstractElementAlias match_DotNode_SemicolonKeyword_2_q;
+	protected AbstractElementAlias match_DotSubGraph_SemicolonKeyword_4_0_5_q;
+	protected AbstractElementAlias match_DotSubGraph_SemicolonKeyword_4_1_5_q;
+	protected AbstractElementAlias match_DotSubGraph_SemicolonKeyword_4_2_5_q;
 	protected AbstractElementAlias match_UndirectedDotEdge_SemicolonKeyword_4_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (DotLanguageGrammarAccess) access;
 		match_DirectedDotEdge_SemicolonKeyword_4_q = new TokenAlias(false, true, grammarAccess.getDirectedDotEdgeAccess().getSemicolonKeyword_4());
-		match_DotGraph_GraphKeyword_1_0_0_1_or_SubgraphKeyword_1_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getDotGraphAccess().getGraphKeyword_1_0_0_1()), new TokenAlias(false, false, grammarAccess.getDotGraphAccess().getSubgraphKeyword_1_1_0()));
-		match_DotGraph_SemicolonKeyword_3_0_5_q = new TokenAlias(false, true, grammarAccess.getDotGraphAccess().getSemicolonKeyword_3_0_5());
-		match_DotGraph_SemicolonKeyword_3_1_5_q = new TokenAlias(false, true, grammarAccess.getDotGraphAccess().getSemicolonKeyword_3_1_5());
-		match_DotGraph_SemicolonKeyword_3_2_5_q = new TokenAlias(false, true, grammarAccess.getDotGraphAccess().getSemicolonKeyword_3_2_5());
+		match_DotGraph_SemicolonKeyword_4_0_5_q = new TokenAlias(false, true, grammarAccess.getDotGraphAccess().getSemicolonKeyword_4_0_5());
+		match_DotGraph_SemicolonKeyword_4_1_5_q = new TokenAlias(false, true, grammarAccess.getDotGraphAccess().getSemicolonKeyword_4_1_5());
+		match_DotGraph_SemicolonKeyword_4_2_5_q = new TokenAlias(false, true, grammarAccess.getDotGraphAccess().getSemicolonKeyword_4_2_5());
 		match_DotNode_SemicolonKeyword_2_q = new TokenAlias(false, true, grammarAccess.getDotNodeAccess().getSemicolonKeyword_2());
+		match_DotSubGraph_SemicolonKeyword_4_0_5_q = new TokenAlias(false, true, grammarAccess.getDotSubGraphAccess().getSemicolonKeyword_4_0_5());
+		match_DotSubGraph_SemicolonKeyword_4_1_5_q = new TokenAlias(false, true, grammarAccess.getDotSubGraphAccess().getSemicolonKeyword_4_1_5());
+		match_DotSubGraph_SemicolonKeyword_4_2_5_q = new TokenAlias(false, true, grammarAccess.getDotSubGraphAccess().getSemicolonKeyword_4_2_5());
 		match_UndirectedDotEdge_SemicolonKeyword_4_q = new TokenAlias(false, true, grammarAccess.getUndirectedDotEdgeAccess().getSemicolonKeyword_4());
 	}
 	
@@ -55,16 +58,20 @@ public abstract class AbstractDotLanguageSyntacticSequencer extends AbstractSynt
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if (match_DirectedDotEdge_SemicolonKeyword_4_q.equals(syntax))
 				emit_DirectedDotEdge_SemicolonKeyword_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_DotGraph_GraphKeyword_1_0_0_1_or_SubgraphKeyword_1_1_0.equals(syntax))
-				emit_DotGraph_GraphKeyword_1_0_0_1_or_SubgraphKeyword_1_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_DotGraph_SemicolonKeyword_3_0_5_q.equals(syntax))
-				emit_DotGraph_SemicolonKeyword_3_0_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_DotGraph_SemicolonKeyword_3_1_5_q.equals(syntax))
-				emit_DotGraph_SemicolonKeyword_3_1_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_DotGraph_SemicolonKeyword_3_2_5_q.equals(syntax))
-				emit_DotGraph_SemicolonKeyword_3_2_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_DotGraph_SemicolonKeyword_4_0_5_q.equals(syntax))
+				emit_DotGraph_SemicolonKeyword_4_0_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_DotGraph_SemicolonKeyword_4_1_5_q.equals(syntax))
+				emit_DotGraph_SemicolonKeyword_4_1_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_DotGraph_SemicolonKeyword_4_2_5_q.equals(syntax))
+				emit_DotGraph_SemicolonKeyword_4_2_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_DotNode_SemicolonKeyword_2_q.equals(syntax))
 				emit_DotNode_SemicolonKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_DotSubGraph_SemicolonKeyword_4_0_5_q.equals(syntax))
+				emit_DotSubGraph_SemicolonKeyword_4_0_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_DotSubGraph_SemicolonKeyword_4_1_5_q.equals(syntax))
+				emit_DotSubGraph_SemicolonKeyword_4_1_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_DotSubGraph_SemicolonKeyword_4_2_5_q.equals(syntax))
+				emit_DotSubGraph_SemicolonKeyword_4_2_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_UndirectedDotEdge_SemicolonKeyword_4_q.equals(syntax))
 				emit_UndirectedDotEdge_SemicolonKeyword_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
@@ -85,23 +92,6 @@ public abstract class AbstractDotLanguageSyntacticSequencer extends AbstractSynt
 	
 	/**
 	 * Ambiguous syntax:
-	 *     'graph' | 'subgraph'
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) '{' 'edge' '[' edgeSettings+=Setting
-	 *     (rule start) (ambiguity) '{' 'graph' '[' graphSettings+=Setting
-	 *     (rule start) (ambiguity) '{' 'node' '[' nodeSettings+=Setting
-	 *     (rule start) (ambiguity) '{' '}' (rule start)
-	 *     (rule start) (ambiguity) '{' edges+=DotEdge
-	 *     (rule start) (ambiguity) '{' nodes+=DotNode
-	 *     (rule start) (ambiguity) '{' subgraphs+=DotGraph
-	 */
-	protected void emit_DotGraph_GraphKeyword_1_0_0_1_or_SubgraphKeyword_1_1_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
 	 *     ';'?
 	 *
 	 * This ambiguous syntax occurs at:
@@ -111,9 +101,9 @@ public abstract class AbstractDotLanguageSyntacticSequencer extends AbstractSynt
 	 *     graphSettings+=Setting ']' (ambiguity) '}' (rule end)
 	 *     graphSettings+=Setting ']' (ambiguity) edges+=DotEdge
 	 *     graphSettings+=Setting ']' (ambiguity) nodes+=DotNode
-	 *     graphSettings+=Setting ']' (ambiguity) subgraphs+=DotGraph
+	 *     graphSettings+=Setting ']' (ambiguity) subgraphs+=DotSubGraph
 	 */
-	protected void emit_DotGraph_SemicolonKeyword_3_0_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_DotGraph_SemicolonKeyword_4_0_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -128,9 +118,9 @@ public abstract class AbstractDotLanguageSyntacticSequencer extends AbstractSynt
 	 *     nodeSettings+=Setting ']' (ambiguity) '}' (rule end)
 	 *     nodeSettings+=Setting ']' (ambiguity) edges+=DotEdge
 	 *     nodeSettings+=Setting ']' (ambiguity) nodes+=DotNode
-	 *     nodeSettings+=Setting ']' (ambiguity) subgraphs+=DotGraph
+	 *     nodeSettings+=Setting ']' (ambiguity) subgraphs+=DotSubGraph
 	 */
-	protected void emit_DotGraph_SemicolonKeyword_3_1_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_DotGraph_SemicolonKeyword_4_1_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -145,9 +135,9 @@ public abstract class AbstractDotLanguageSyntacticSequencer extends AbstractSynt
 	 *     edgeSettings+=Setting ']' (ambiguity) '}' (rule end)
 	 *     edgeSettings+=Setting ']' (ambiguity) edges+=DotEdge
 	 *     edgeSettings+=Setting ']' (ambiguity) nodes+=DotNode
-	 *     edgeSettings+=Setting ']' (ambiguity) subgraphs+=DotGraph
+	 *     edgeSettings+=Setting ']' (ambiguity) subgraphs+=DotSubGraph
 	 */
-	protected void emit_DotGraph_SemicolonKeyword_3_2_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_DotGraph_SemicolonKeyword_4_2_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -160,6 +150,57 @@ public abstract class AbstractDotLanguageSyntacticSequencer extends AbstractSynt
 	 *     settings+=Setting ']' (ambiguity) (rule end)
 	 */
 	protected void emit_DotNode_SemicolonKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     graphSettings+=Setting ']' (ambiguity) 'edge' '[' edgeSettings+=Setting
+	 *     graphSettings+=Setting ']' (ambiguity) 'graph' '[' graphSettings+=Setting
+	 *     graphSettings+=Setting ']' (ambiguity) 'node' '[' nodeSettings+=Setting
+	 *     graphSettings+=Setting ']' (ambiguity) '}' (rule end)
+	 *     graphSettings+=Setting ']' (ambiguity) edges+=DotEdge
+	 *     graphSettings+=Setting ']' (ambiguity) nodes+=DotNode
+	 *     graphSettings+=Setting ']' (ambiguity) subgraphs+=DotSubGraph
+	 */
+	protected void emit_DotSubGraph_SemicolonKeyword_4_0_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     nodeSettings+=Setting ']' (ambiguity) 'edge' '[' edgeSettings+=Setting
+	 *     nodeSettings+=Setting ']' (ambiguity) 'graph' '[' graphSettings+=Setting
+	 *     nodeSettings+=Setting ']' (ambiguity) 'node' '[' nodeSettings+=Setting
+	 *     nodeSettings+=Setting ']' (ambiguity) '}' (rule end)
+	 *     nodeSettings+=Setting ']' (ambiguity) edges+=DotEdge
+	 *     nodeSettings+=Setting ']' (ambiguity) nodes+=DotNode
+	 *     nodeSettings+=Setting ']' (ambiguity) subgraphs+=DotSubGraph
+	 */
+	protected void emit_DotSubGraph_SemicolonKeyword_4_1_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     edgeSettings+=Setting ']' (ambiguity) 'edge' '[' edgeSettings+=Setting
+	 *     edgeSettings+=Setting ']' (ambiguity) 'graph' '[' graphSettings+=Setting
+	 *     edgeSettings+=Setting ']' (ambiguity) 'node' '[' nodeSettings+=Setting
+	 *     edgeSettings+=Setting ']' (ambiguity) '}' (rule end)
+	 *     edgeSettings+=Setting ']' (ambiguity) edges+=DotEdge
+	 *     edgeSettings+=Setting ']' (ambiguity) nodes+=DotNode
+	 *     edgeSettings+=Setting ']' (ambiguity) subgraphs+=DotSubGraph
+	 */
+	protected void emit_DotSubGraph_SemicolonKeyword_4_2_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

@@ -6,7 +6,7 @@ import org.eclipse.xtext.conversion.ValueConverterException
 
 class DotIDValueConverter implements IValueConverter<String> {
 	
-	override toValue(String string, INode node) throws ValueConverterException {
+	override def toValue(String string, INode node) throws ValueConverterException {
 		return if (string != null && string.length >= 2
 			&& string.startsWith("\"") && string.endsWith("\"")
 		)
@@ -15,7 +15,7 @@ class DotIDValueConverter implements IValueConverter<String> {
 			string
 	}
 	
-	override String toString(String value) {
+	override def String toString(String value) {
 		val quote = !#["!", " "].filter[s | value != null && value.indexOf(s) > 0].isEmpty
 		return if (quote) "\"" + value + "\"" else value
 	}

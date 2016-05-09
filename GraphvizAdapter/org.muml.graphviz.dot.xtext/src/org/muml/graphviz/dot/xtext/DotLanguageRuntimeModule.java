@@ -3,7 +3,11 @@
  */
 package org.muml.graphviz.dot.xtext;
 
+import org.eclipse.xtext.parsetree.reconstr.ITransientValueService;
+import org.eclipse.xtext.serializer.tokens.IValueSerializer;
 import org.muml.graphviz.dot.xtext.conversion.DotIDValueConverter;
+import org.muml.graphviz.dot.xtext.serializer.DotLanguageValueSerializer;
+import org.muml.graphviz.dot.xtext.service.DotLanguageTransientValueService;
 import org.muml.graphviz.dot.xtext.service.DotLanguageValueConverterService;
 
 /**
@@ -16,5 +20,13 @@ public class DotLanguageRuntimeModule extends org.muml.graphviz.dot.xtext.Abstra
 	
 	public Class<? extends DotIDValueConverter> bindDOTSTRINGValueConverter() {
 		return DotIDValueConverter.class;
+	}
+	
+	public Class<? extends IValueSerializer> bindIValueSerializer() {
+		return DotLanguageValueSerializer.class;
+	}
+	
+	public Class<? extends ITransientValueService> bindITransientValueService() {
+		return DotLanguageTransientValueService.class;
 	}
 }

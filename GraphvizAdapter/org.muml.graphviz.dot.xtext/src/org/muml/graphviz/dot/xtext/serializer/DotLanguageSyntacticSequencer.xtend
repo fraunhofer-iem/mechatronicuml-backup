@@ -9,36 +9,70 @@ import org.eclipse.xtext.nodemodel.INode
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable
 
 class DotLanguageSyntacticSequencer extends AbstractDotLanguageSyntacticSequencer {
-	protected override void emit_DotGraph_SemicolonKeyword_3_0_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	
+	protected override void emit_DotSubGraph_SemicolonKeyword_4_0_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		if (nodes != null) {
-			super.emit_DotGraph_SemicolonKeyword_3_0_5_q(semanticObject, transition, nodes)
+			super.emit_DotSubGraph_SemicolonKeyword_4_0_5_q(semanticObject, transition, nodes)
 			return
 		}
 		// emit semicolon
-		acceptUnassignedKeyword(grammarAccess.getDotGraphAccess()
-			.getSemicolonKeyword_3_0_5(), ";", null
+		acceptUnassignedKeyword(grammarAccess.getDotSubGraphAccess()
+			.getSemicolonKeyword_4_0_5(), ";", null
 		)
 	}
 	
-	protected override void emit_DotGraph_SemicolonKeyword_3_1_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected override void emit_DotSubGraph_SemicolonKeyword_4_1_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		if (nodes != null) {
-			super.emit_DotGraph_SemicolonKeyword_3_1_5_q(semanticObject, transition, nodes)
+			super.emit_DotSubGraph_SemicolonKeyword_4_1_5_q(semanticObject, transition, nodes)
 			return
 		}
 		// emit semicolon
-		acceptUnassignedKeyword(grammarAccess.getDotGraphAccess()
-			.getSemicolonKeyword_3_1_5(), ";", null
+		acceptUnassignedKeyword(grammarAccess.getDotSubGraphAccess()
+			.getSemicolonKeyword_4_1_5(), ";", null
 		)
 	}
 	
-	protected override void emit_DotGraph_SemicolonKeyword_3_2_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected override void emit_DotSubGraph_SemicolonKeyword_4_2_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		if (nodes != null) {
-			super.emit_DotGraph_SemicolonKeyword_3_2_5_q(semanticObject, transition, nodes)
+			super.emit_DotSubGraph_SemicolonKeyword_4_2_5_q(semanticObject, transition, nodes)
+			return
+		}
+		// emit semicolon
+		acceptUnassignedKeyword(grammarAccess.getDotSubGraphAccess()
+			.getSemicolonKeyword_4_2_5(), ";", null
+		)
+	}
+	
+	protected override void emit_DotGraph_SemicolonKeyword_4_0_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		if (nodes != null) {
+			super.emit_DotGraph_SemicolonKeyword_4_0_5_q(semanticObject, transition, nodes)
 			return
 		}
 		// emit semicolon
 		acceptUnassignedKeyword(grammarAccess.getDotGraphAccess()
-			.getSemicolonKeyword_3_2_5(), ";", null
+			.getSemicolonKeyword_4_0_5(), ";", null
+		)
+	}
+	
+	protected override void emit_DotGraph_SemicolonKeyword_4_1_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		if (nodes != null) {
+			super.emit_DotGraph_SemicolonKeyword_4_1_5_q(semanticObject, transition, nodes)
+			return
+		}
+		// emit semicolon
+		acceptUnassignedKeyword(grammarAccess.getDotGraphAccess()
+			.getSemicolonKeyword_4_1_5(), ";", null
+		)
+	}
+	
+	protected override void emit_DotGraph_SemicolonKeyword_4_2_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		if (nodes != null) {
+			super.emit_DotGraph_SemicolonKeyword_4_2_5_q(semanticObject, transition, nodes)
+			return
+		}
+		// emit semicolon
+		acceptUnassignedKeyword(grammarAccess.getDotGraphAccess()
+			.getSemicolonKeyword_4_2_5(), ";", null
 		)
 	}
 }
