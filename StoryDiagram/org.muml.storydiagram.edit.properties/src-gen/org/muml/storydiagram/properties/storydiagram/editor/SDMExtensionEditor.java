@@ -4,7 +4,7 @@ package org.muml.storydiagram.properties.storydiagram.editor;
 /**
  * @generated
  */
-public class SDMExtensionEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
+public abstract class SDMExtensionEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -44,33 +44,6 @@ public class SDMExtensionEditor extends org.muml.ape.runtime.editors.ClassProper
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
 		} else {
-		}
-	}
-
-	//
-	// instantiation
-	//
-
-	/**
-	 * @generated
-	 */
-	public SDMExtensionEditor(String tab) {
-		this(tab, org.muml.storydiagram.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
-				org.muml.storydiagram.StorydiagramPackage.eINSTANCE.getSDMExtension());
-	}
-
-	/**
-	 * @generated
-	 */
-	public static class Factory implements org.muml.ape.runtime.factory.IPropertyEditorFactory {
-		@Override
-		public org.muml.ape.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
-			return new SDMExtensionEditor(tab);
-		}
-
-		@Override
-		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{}).contains(tab);
 		}
 	}
 

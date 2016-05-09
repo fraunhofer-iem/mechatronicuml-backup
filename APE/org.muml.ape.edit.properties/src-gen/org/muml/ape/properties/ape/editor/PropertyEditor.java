@@ -1,8 +1,6 @@
 
 package org.muml.ape.properties.ape.editor;
 
-import org.eclipse.ocl.pivot.utilities.ParserException;
-
 /**
  * @generated
  */

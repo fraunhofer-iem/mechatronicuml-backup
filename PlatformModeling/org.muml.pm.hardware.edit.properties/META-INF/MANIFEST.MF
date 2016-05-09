@@ -22,5 +22,6 @@ Export-Package: org.muml.pm.hardware.properties.metamodel, org.muml.pm.hardware.
  org.muml.pm.hardware.properties.hwvaluetype.editor,
  org.muml.pm.hardware.properties.hwresourceinstance.editor,
  org.muml.pm.hardware.properties.hwplatforminstance.editor,
+ org.muml.pm.hardware.properties.hardware.editor,
  org.muml.pm.hardware.properties.tabs
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

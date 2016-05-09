@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Properties
-Bundle-SymbolicName: org.muml.uppaal.options.edit.properties;singleton:=true
+Bundle-SymbolicName: org.muml.uppaal.options.edit.properties; singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.core.runtime,
@@ -14,8 +14,7 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.muml.core.edit.properties
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.muml.uppaal.options.properties.constraint,
- org.muml.uppaal.options.properties.editor,
- org.muml.uppaal.options.properties.metamodel,
+Export-Package: org.muml.uppaal.options.properties.metamodel, org.muml.uppaal.options.properties.constraint,
+ org.muml.uppaal.options.properties.options.editor,
  org.muml.uppaal.options.properties.tabs
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

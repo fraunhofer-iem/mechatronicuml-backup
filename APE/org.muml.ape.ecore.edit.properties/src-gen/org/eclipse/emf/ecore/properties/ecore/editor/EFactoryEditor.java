@@ -50,33 +50,32 @@ public class EFactoryEditor extends org.muml.ape.runtime.editors.ClassPropertyEd
 					adapterFactory, feature);
 
 			{
-				final org.eclipse.ocl.ecore.OCLExpression expression = org.muml.ape.runtime.RuntimePlugin
-						.createOCLExpression("true", feature, getEClass());
 				editor.setInput(input);
 				editor.registerOCLAdapter(new org.eclipse.emf.common.notify.impl.AdapterImpl() {
 					@Override
 					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
-						boolean visibleBefore = editor.isVisible();
-						editor.updateVisibility(true);
-
-						// Set default value, if we are hiding the editor and it was not hidden before.
-						if (!editor.isVisible() && visibleBefore) {
-							editor.setDefaultValue();
-						}
+						editor.updateEnablement(true);
 					}
 				});
-				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = org.muml.ape.runtime.RuntimePlugin.OCL_ECORE
-						.createQuery(expression);
-				org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 
-					@Override
-					public boolean select(Object object) {
-						return object != null && Boolean.TRUE.equals(query.evaluate(object));
+				final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+				org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(feature);
+
+				try {
+					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery("true");
+
+					org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
+						@Override
+						public boolean select(Object object) {
+							return object != null && Boolean.TRUE.equals(ocl.evaluate(object, oclExpression));
+						}
+					};
+					if (filter != null) {
+						editor.addReadOnlyFilter(filter);
 					}
 
-				};
-				if (filter != null) {
-					editor.addReadOnlyFilter(filter);
+				} catch (org.eclipse.ocl.pivot.utilities.ParserException e) {
+					e.printStackTrace();
 				}
 			}
 

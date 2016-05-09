@@ -144,14 +144,15 @@ public class ReconfigurationPortInstanceEditor extends org.muml.ape.runtime.edit
 					adapterFactory, feature, false);
 
 			{
-				final org.eclipse.ocl.ecore.OCLExpression initExpression = org.muml.ape.runtime.RuntimePlugin
-						.createOCLExpression(
-								"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n	let provisionalName : String = prefix.concat(e.toString()) in\n	if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n		e + 1\n	else\n		e\n	endif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)",
-								feature, getEClass());
-				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = org.muml.ape.runtime.RuntimePlugin.OCL_ECORE
-						.createQuery(initExpression);
-				if (query != null) {
-					// editor.setInitializeQuery(query);
+				final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+				org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(feature);
+
+				try {
+					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery(
+							"let prefix : String = self.oclType().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n	let provisionalName : String = prefix.concat(e.toString()) in\n	if self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n		e + 1\n	else\n		e\n	endif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)");
+					editor.setInitializeExpression(oclExpression);
+				} catch (org.eclipse.ocl.pivot.utilities.ParserException e) {
+					e.printStackTrace();
 				}
 			}
 

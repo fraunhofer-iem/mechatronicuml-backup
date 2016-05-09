@@ -627,4 +627,10 @@
       <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZXuOMwbEeSjx7OWZCcdLw"/>
     </classes>
   </packages>
+  <packages>
+    <genPackage href="hardware.genmodel#//hardware"/>
+    <classes>
+      <genClass href="hardware.genmodel#//hardware/Test"/>
+    </classes>
+  </packages>
 </org.muml:PropertyGenerator>

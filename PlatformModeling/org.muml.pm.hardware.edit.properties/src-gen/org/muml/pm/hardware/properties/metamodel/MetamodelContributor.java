@@ -29,6 +29,8 @@ public class MetamodelContributor implements org.muml.ape.runtime.metamodel.IMet
 		factories.add(
 				new org.muml.pm.hardware.hwplatforminstance.provider.HwplatforminstanceItemProviderAdapterFactory());
 
+		factories.add(new org.muml.pm.hardware.provider.HardwareItemProviderAdapterFactory());
+
 	}
 
 }

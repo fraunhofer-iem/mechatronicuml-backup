@@ -258,6 +258,11 @@
              type="http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0#NetworkConnectorInstance">
        </propertyEditor>
     
+       <propertyEditor
+             factory="org.muml.pm.hardware.properties.hardware.editor.TestEditor$Factory"
+             type="http://www.muml.org/pm/hardware/1.0.0#Test">
+       </propertyEditor>
+    
     </propertyEditors>
  </extension>
 
