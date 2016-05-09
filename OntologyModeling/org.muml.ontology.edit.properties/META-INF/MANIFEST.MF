@@ -16,7 +16,6 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.muml.core.edit.properties,
  org.muml.pim.edit,
  org.muml.pim.edit.properties,
- org.muml.external.ontology.owlapi,
  org.muml.pim.common,
  org.muml.external.owlapi
 Bundle-ActivationPolicy: lazy
