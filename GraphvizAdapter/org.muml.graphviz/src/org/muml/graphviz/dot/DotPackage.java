@@ -26,6 +26,7 @@ import org.muml.graphviz.common.CommonPackage;
  * <!-- end-model-doc -->
  * @see org.muml.graphviz.dot.DotFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */
 public interface DotPackage extends EPackage {

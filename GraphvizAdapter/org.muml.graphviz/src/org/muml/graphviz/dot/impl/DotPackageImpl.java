@@ -2,18 +2,23 @@
  */
 package org.muml.graphviz.dot.impl;
 
-import static org.muml.graphviz.dot.DotPackage.SETTING;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import org.muml.core.CorePackage;
+
 import org.muml.graphviz.GraphvizPackage;
+
 import org.muml.graphviz.common.CommonPackage;
+
 import org.muml.graphviz.common.impl.CommonPackageImpl;
+
 import org.muml.graphviz.dot.DirectedDotEdge;
 import org.muml.graphviz.dot.DotEdge;
 import org.muml.graphviz.dot.DotFactory;
@@ -22,10 +27,17 @@ import org.muml.graphviz.dot.DotNode;
 import org.muml.graphviz.dot.DotPackage;
 import org.muml.graphviz.dot.Setting;
 import org.muml.graphviz.dot.UndirectedDotEdge;
+
+import org.muml.graphviz.dot.util.DotValidator;
+
 import org.muml.graphviz.impl.GraphvizPackageImpl;
+
 import org.muml.graphviz.plain.PlainPackage;
+
 import org.muml.graphviz.plain.impl.PlainPackageImpl;
+
 import org.muml.graphviz.util.UtilPackage;
+
 import org.muml.graphviz.util.impl.UtilPackageImpl;
 
 /**
@@ -145,6 +157,15 @@ public class DotPackageImpl extends EPackageImpl implements DotPackage {
 		thePlainPackage.initializePackageContents();
 		theCommonPackage.initializePackageContents();
 		theUtilPackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theDotPackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return DotValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theDotPackage.freeze();
@@ -439,6 +460,52 @@ public class DotPackageImpl extends EPackageImpl implements DotPackage {
 		initEClass(directedDotEdgeEClass, DirectedDotEdge.class, "DirectedDotEdge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(undirectedDotEdgeEClass, UndirectedDotEdge.class, "UndirectedDotEdge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
+		   });	
+		addAnnotation
+		  (dotGraphEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "validId"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
+		addAnnotation
+		  (dotGraphEClass, 
+		   source, 
+		   new String[] {
+			 "validId", "not self.id.oclIsUndefined() and (\n\tself.id.size() >= 7 implies self.id.substring(1, 7).toLowerCase() <> \'cluster\'\n)"
+		   });
 	}
 
 } //DotPackageImpl

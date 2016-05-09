@@ -5,12 +5,17 @@ package org.muml.graphviz.dot.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.muml.graphviz.common.impl.NodeImpl;
+
 import org.muml.graphviz.dot.DotNode;
 import org.muml.graphviz.dot.DotPackage;
 import org.muml.graphviz.dot.Setting;

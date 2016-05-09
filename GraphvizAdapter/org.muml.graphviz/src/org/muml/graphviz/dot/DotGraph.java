@@ -25,7 +25,8 @@ import org.muml.graphviz.common.Graph;
  * </ul>
  *
  * @see org.muml.graphviz.dot.DotPackage#getDotGraph()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='validId'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL validId='not self.id.oclIsUndefined() and (\n\tself.id.size() >= 7 implies self.id.substring(1, 7).toLowerCase() <> \'cluster\'\n)'"
  * @generated
  */
 public interface DotGraph extends Graph<DotNode, DotEdge> {
