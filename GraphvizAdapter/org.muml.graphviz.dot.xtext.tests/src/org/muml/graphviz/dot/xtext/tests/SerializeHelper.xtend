@@ -23,8 +23,6 @@ class SerializeHelper {
 	
 	protected def Resource getResource() {
 		val ResourceSet resSet = resourceSetProvider.get
-		println(resSet)
-		println(resSet.getResource(URI.createURI("dummy." + fileExtension), false))
 		resSet.createResource(
 			URI.createURI("dummy." + fileExtension)
 		)
