@@ -13,6 +13,9 @@ import org.junit.runner.RunWith
 
 import static org.junit.Assert.*
 import org.muml.graphviz.dot.DotFactory
+import org.eclipse.emf.ecore.util.Diagnostician
+import org.eclipse.emf.common.util.Diagnostic
+import org.eclipse.emf.ecore.EObject
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(DotLanguageInjectorProvider))
@@ -22,7 +25,7 @@ class GraphvizDotTest {
 	
 	@Inject
 	SerializeHelper serializer
-
+	
 	@Test 
 	def void parseSimpleDot() {
   		val graph = parser.parse(
@@ -83,7 +86,7 @@ class GraphvizDotTest {
 				graph [margin=0, splines=polyline, pad=0];
 				node [label="\N", width="0.5!", height="0.5!", fixedsize=true, shape=rect];
 				graph [bb="0,0,182,140"];
-				subgraph cluster_Y {
+				subgraph clusterY {
 					graph [bb="8,80,114,132"];
 					yp1 [width="0.5", height="0.5", pos="88,106"];
 					yp2 [width="0.5", height="0.5", pos="34,106"];
@@ -93,8 +96,12 @@ class GraphvizDotTest {
 					rp1 [width="0.5", height="0.5", pos="88,34"];
 					rp2 [width="0.5", height="0.5", pos="34,34"];
 				}
-				subgraph cluster_Z {
+				subgraph kluster_Z {
 					graph [bb="122,80,174,132"];
+					"z p" [width="0.5", height="0.5", pos="148,106"];
+				}
+				subgraph cluster_cluster_foo {
+					graph [bb="222,280,274,232"];
 					"z p" [width="0.5", height="0.5", pos="148,106"];
 				}
 				yp1 -- rp1 [pos="88,87.831 88,77 88,63.288 88,52.413"];
@@ -111,7 +118,7 @@ class GraphvizDotTest {
   		assertTrue(graph.edgeSettings.isEmpty)
   		assertTrue(graph.nodes.isEmpty)
   		assertEquals(2, graph.edges.size)
-  		assertEquals(3, graph.subgraphs.size)
+  		assertEquals(4, graph.subgraphs.size)
   		// check graph settings
   		assertEquals("splines", graph.graphSettings.get(1).attribute)
   		assertEquals("bb", graph.graphSettings.get(3).attribute)
@@ -122,15 +129,29 @@ class GraphvizDotTest {
   		assertEquals("rp1", edge.target.name)
   		assertEquals(1, edge.settings.size)
   		assertEquals("88,87.831 88,77 88,63.288 88,52.413", edge.settings.get(0).value)
+  		// check first subgraph
+  		var subgraph = graph.subgraphs.get(0)
+  		// cluster_ is not part of the subgraph's id, but the subgraph is a cluster
+  		assertEquals("Y", subgraph.id)
+  		assertTrue(subgraph.isCluster)
   		// check second subgraph
-  		val subgraph = graph.subgraphs.get(1)
-  		// cluster_ is not part of the subgraph's id
-  		assertEquals("cluster_R", subgraph.id)
+  		subgraph = graph.subgraphs.get(1)
+  		// cluster_ is not part of the subgraph's id, but the subgraph is a cluster
+  		assertEquals("_R", subgraph.id)
+  		assertTrue(subgraph.isCluster)
   		assertEquals(2, subgraph.nodes.size)
   		assertTrue(subgraph.edges.isEmpty)
   		assertEquals("rp1", subgraph.nodes.get(0).name)
   		assertEquals("rp2", subgraph.nodes.get(1).name)
   		assertEquals("34,34", subgraph.nodes.get(1).settings.get(2).value)
+  		// check third subgraph
+  		subgraph = graph.subgraphs.get(2)
+  		assertEquals("kluster_Z", subgraph.id)
+  		assertFalse(subgraph.isCluster)
+  		// check fourth subgraph
+  		subgraph = graph.subgraphs.get(3)
+  		assertEquals("_cluster_foo", subgraph.id)
+  		assertTrue(subgraph.isCluster)
   	}
   	
   	@Test
@@ -248,7 +269,6 @@ class GraphvizDotTest {
   		edge.source = graph.nodes.get(0)
   		edge.target = graph.nodes.get(1)
   		graph.edges += edge
-  		serializer.serialize(graph)
   		assertEquals(
   			'''
   			graph {
@@ -264,5 +284,124 @@ class GraphvizDotTest {
   		)
   	}
   	
-  	// TODO: testcase(s) for subgraph serialization
+  	@Test
+  	def void validSubgraphSerialization() {
+  		var graph = DotFactory.eINSTANCE.createDotGraph
+  		graph.id = "foobar"
+  		graph.directedGraph = false
+  		// first subgraph (cluster)
+  		var subgraph = DotFactory.eINSTANCE.createDotGraph
+  		subgraph.id = "foo"
+  		subgraph.cluster = true
+  		var node = DotFactory.eINSTANCE.createDotNode
+  		node.name = "clusterfooNode"
+  		subgraph.nodes += node
+  		graph.subgraphs += subgraph
+  		// second subgraph (no cluster)
+  		subgraph = DotFactory.eINSTANCE.createDotGraph
+  		subgraph.id = "bar"
+  		subgraph.cluster = false
+  		node = DotFactory.eINSTANCE.createDotNode
+  		node.name = "cluster_barNode"
+  		subgraph.nodes += node
+  		graph.subgraphs += subgraph
+  		// third subgraph (cluster)
+  		subgraph = DotFactory.eINSTANCE.createDotGraph
+  		subgraph.id = "baz"
+  		subgraph.cluster = true
+  		node = DotFactory.eINSTANCE.createDotNode
+  		node.name = "bazNode"
+  		subgraph.nodes += node
+  		graph.subgraphs += subgraph
+  		// fourth subgraph (no cluster)
+  		subgraph = DotFactory.eINSTANCE.createDotGraph
+  		subgraph.id = "_cluster_crusty"
+  		subgraph.cluster = false
+  		node = DotFactory.eINSTANCE.createDotNode
+  		node.name = "clustercrustyNode"
+  		subgraph.nodes += node
+  		graph.subgraphs += subgraph
+  		assertValidDotGraph(graph)
+  		// expected serialization
+  		val expected = '''
+  		graph foobar {
+  			subgraph clusterfoo {
+  				clusterfooNode
+  			}
+  			subgraph bar {
+  				cluster_barNode
+  			}
+  			subgraph clusterbaz {
+  				bazNode
+  			}
+  			subgraph _cluster_crusty {
+  				clustercrustyNode
+  			}
+  		}'''
+  		assertEquals(expected, serializer.serialize(graph))
+  		// check if we stick to the xtext contract: parsing expected
+  		// should yield the same graph
+  		graph = parser.parse(expected)
+  		assertEquals(4, graph.subgraphs.size)
+  		subgraph = graph.subgraphs.get(0)
+  		assertEquals("foo", subgraph.id)
+  		assertTrue(subgraph.isCluster)
+  		assertEquals("clusterfooNode", subgraph.nodes.get(0).name)
+  		subgraph = graph.subgraphs.get(1)
+  		assertEquals("bar", subgraph.id)
+  		assertFalse(subgraph.isCluster)
+  		assertEquals("cluster_barNode", subgraph.nodes.get(0).name)
+  		subgraph = graph.subgraphs.get(2)
+  		assertEquals("baz", subgraph.id)
+  		assertTrue(subgraph.isCluster)
+  		assertEquals("bazNode", subgraph.nodes.get(0).name)
+  		subgraph = graph.subgraphs.get(3)
+  		assertEquals("_cluster_crusty", subgraph.id)
+  		assertFalse(subgraph.isCluster)
+  		assertEquals("clustercrustyNode", subgraph.nodes.get(0).name)
+  	}
+  	
+  	@Test
+  	def void invalidSubGraphSerialization() {
+  		var graph = DotFactory.eINSTANCE.createDotGraph
+  		graph.id = "foobar"
+  		graph.directedGraph = false
+  		// first subgraph (with illegal id)
+  		var subgraph = DotFactory.eINSTANCE.createDotGraph
+  		subgraph.id = "cluster_cluster_foo"
+  		subgraph.cluster = true
+  		var node = DotFactory.eINSTANCE.createDotNode
+  		node.name = "foo"
+  		subgraph.nodes += node
+  		graph.subgraphs += subgraph
+  		assertInvalidDotGraph(graph)
+  		// expected serialization
+  		val expected = '''
+		graph foobar {
+			subgraph clustercluster_cluster_foo {
+				foo
+			}
+		}'''
+  		assertEquals(expected, serializer.serialize(graph))
+  		// here the xtext contract broke
+  		// (parsing of the serialization yields a different graph)
+  		graph = parser.parse(expected)
+  		subgraph = graph.subgraphs.get(0)
+  		assertEquals("_cluster_foo", subgraph.id)
+  		// there are a bit more grammar <-> valid metamodel discrepancies
+	  	// (e.g., the metamodel supports no nodes in a subgraph etc.
+	  	// (will be fixed/documented later))
+  	}
+  	
+  	def static void assertValidDotGraph(DotGraph graph) {
+  		assertEquals(Diagnostic.OK, validate(graph).severity)
+  	}
+  	
+  	def static void assertInvalidDotGraph(DotGraph graph) {
+  		assertEquals(Diagnostic.ERROR, validate(graph).severity)
+  	}
+  	
+  	def static Diagnostic validate(EObject object) {
+  		Diagnostician.INSTANCE.validate(object)	
+  	}
 }
