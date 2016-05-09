@@ -213,7 +213,7 @@ new «fullyQualifiedClassName»(adapterFactory, «featureVar»);
 				editor.addVisibilityFilter(filter);
 			}
 
-		} catch (ParserException e) {
+		} catch (org.eclipse.ocl.pivot.utilities.ParserException e) {
 			e.printStackTrace();
 		}
 	}
@@ -247,7 +247,7 @@ new «fullyQualifiedClassName»(adapterFactory, «featureVar»);
 				editor.addReadOnlyFilter(filter);
 			}
 
-		} catch (ParserException e) {
+		} catch (org.eclipse.ocl.pivot.utilities.ParserException e) {
 			e.printStackTrace();
 		}
 	}
@@ -261,7 +261,7 @@ new «fullyQualifiedClassName»(adapterFactory, «featureVar»);
 		try {
 			final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery("«initializeOCLExpression.toString().escapeString()»");
 			«editorVar».setInitializeExpression(oclExpression);
-		} catch (ParserException e) {
+		} catch (org.eclipse.ocl.pivot.utilities.ParserException e) {
 			e.printStackTrace();
 		}
 	}
