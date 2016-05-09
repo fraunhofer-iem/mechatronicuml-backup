@@ -59,6 +59,7 @@ mapping ComponentInstanceConfiguration::structuredComponentInstancePortInstances
 
 mapping ComponentInstance::componentInstance2graph() : DotGraph {
 	id := self.getName();
+	cluster := true;
 	nodes := self.portInstances->map portInstance2node()->flatten();
 }
 

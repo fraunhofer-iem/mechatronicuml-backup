@@ -53,7 +53,7 @@ helper DotGraph::layout() {
 }
 
 query DotGraph::getComponentInstance() : ComponentInstance {
-	var componentInstance : ComponentInstance := getGraphSet()->any(id = self.id.replaceFirst('cluster_', '')).invresolveone(ComponentInstance);
+	var componentInstance : ComponentInstance := getGraphSet()->any(id = self.id).invresolveone(ComponentInstance);
 	assert fatal (not componentInstance.oclIsUndefined()) with log("error: cannot invresolveone " + self.toString());
 	return componentInstance;
 }
