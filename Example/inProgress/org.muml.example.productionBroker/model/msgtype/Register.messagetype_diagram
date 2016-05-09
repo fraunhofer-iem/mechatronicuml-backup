@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xsi:schemaLocation="http://www.muml.org/modelinstance/1.0.0 http://www.muml.org/core/1.0.0#//modelinstance http://www.muml.org/pim/msgtype/1.0.0 http://www.muml.org/pim/1.0.0#//msgtype" xmi:id="_BVLckBWxEea4t_vvK_A9tw" type="Message Type" name="Register.messagetype_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_BVMDoBWxEea4t_vvK_A9tw" type="2008" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_BVMqsBWxEea4t_vvK_A9tw" type="5017"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_BVMqsRWxEea4t_vvK_A9tw" type="7010">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_BVMqshWxEea4t_vvK_A9tw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_BVMqsxWxEea4t_vvK_A9tw"/>
+    </children>
+    <element xmi:type="msgtype:MessageTypeRepository" href="../productionBroker.muml#_niLXENxhEeW-N_z6XJQq2w"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BVMDoRWxEea4t_vvK_A9tw"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_BVLckRWxEea4t_vvK_A9tw"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../productionBroker.muml#_soLPQtxbEeW-N_z6XJQq2w"/>
+</notation:Diagram>

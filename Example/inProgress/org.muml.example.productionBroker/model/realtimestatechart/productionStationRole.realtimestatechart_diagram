@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xsi:schemaLocation="http://www.muml.org/pim/realtimestatechart/1.0.0 http://www.muml.org/pim/1.0.0#//realtimestatechart" xmi:id="_BPedMBWxEea4t_vvK_A9tw" type="Real-Time Statechart" name="productionStationRole.realtimestatechart_diagram" measurementUnit="Pixel">
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_BPfEQBWxEea4t_vvK_A9tw"/>
+  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../productionBroker.muml#_p1yiUOwhEeWTKqLnMSJAUw"/>
+</notation:Diagram>
