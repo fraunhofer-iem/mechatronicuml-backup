@@ -855,8 +855,8 @@
       </roles>
       <roles xmi:id="_lPVmgewfEeWTKqLnMSJAUw" connectors="_lPWNkewfEeWTKqLnMSJAUw" behavior="_p1yiUOwhEeWTKqLnMSJAUw" name="productionStation" senderMessageTypes="_wsJowNxgEeW-N_z6XJQq2w _UTgXMNxrEeW-N_z6XJQq2w" receiverMessageTypes="_dtJysNxhEeW-N_z6XJQq2w _P-BxAOa5EeWyd6JHVas6Kw">
         <cardinality xmi:id="_lPVmguwfEeWTKqLnMSJAUw">
-          <lowerBound xmi:id="_lPVmg-wfEeWTKqLnMSJAUw"/>
-          <upperBound xmi:id="_lPWNkOwfEeWTKqLnMSJAUw"/>
+          <lowerBound/>
+          <upperBound/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_IwiOIOwgEeWTKqLnMSJAUw" name="buffer_for_noOrder" messageType="_dtJysNxhEeW-N_z6XJQq2w">
           <bufferSize xmi:id="_IwiOIewgEeWTKqLnMSJAUw"/>
@@ -885,8 +885,8 @@
       </roles>
       <roles xmi:id="_KUakROw3EeWTKqLnMSJAUw" connectors="_KUakSOw3EeWTKqLnMSJAUw" behavior="_gcw7cOw3EeWTKqLnMSJAUw" name="receiverRole" receiverMessageTypes="_fAYHYNxcEeW-N_z6XJQq2w">
         <cardinality xmi:id="_KUakRew3EeWTKqLnMSJAUw">
-          <lowerBound xmi:id="_KUakRuw3EeWTKqLnMSJAUw"/>
-          <upperBound xmi:id="_KUakR-w3EeWTKqLnMSJAUw"/>
+          <lowerBound/>
+          <upperBound/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_Rp_qsOw3EeWTKqLnMSJAUw" name="buffer_for_simpleOrder" messageType="_fAYHYNxcEeW-N_z6XJQq2w">
           <bufferSize xmi:id="_Rp_qsew3EeWTKqLnMSJAUw"/>
@@ -1041,15 +1041,15 @@
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_4isGFuVGEeWTk8L1nP577g" name="RecipeGenerator" componentType="_QVSL8NxcEeW-N_z6XJQq2w">
         <cardinality xmi:id="_4isGF-VGEeWTk8L1nP577g">
-          <lowerBound xmi:id="_4isGGOVGEeWTk8L1nP577g"/>
-          <upperBound xmi:id="_4isGGeVGEeWTk8L1nP577g"/>
+          <lowerBound/>
+          <upperBound/>
         </cardinality>
         <portParts xmi:id="_4isGGuVGEeWTk8L1nP577g" connectors="_7Jr9gOVGEeWTk8L1nP577g" portType="_blyP0NxcEeW-N_z6XJQq2w" coordinationProtocolPart="_4f-c0Ow3EeWTKqLnMSJAUw"/>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_Xa7asOapEeWyd6JHVas6Kw" name="ProductionStation" componentType="_vwAi4NxbEeW-N_z6XJQq2w">
         <cardinality xmi:id="_XbA6QOapEeWyd6JHVas6Kw">
-          <lowerBound xmi:id="_XbA6QeapEeWyd6JHVas6Kw"/>
-          <upperBound xmi:id="_XbCIYOapEeWyd6JHVas6Kw"/>
+          <lowerBound/>
+          <upperBound/>
         </cardinality>
         <portParts xmi:id="_X8E_8OapEeWyd6JHVas6Kw" connectors="_OpjKAOa8EeWyd6JHVas6Kw" portType="_Y-2CwNxcEeW-N_z6XJQq2w" coordinationProtocolPart="_T3DNkOw2EeWTKqLnMSJAUw"/>
       </embeddedComponentParts>
@@ -1165,7 +1165,7 @@
       <hwplatformInstances xmi:id="_5xZ7YOwqEeWTKqLnMSJAUw" name="Platform.0" hwplatformType="_ozx8oOwqEeWTKqLnMSJAUw">
         <embeddedHPIC xmi:id="_6TU8sOwqEeWTKqLnMSJAUw">
           <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_6Tq68OwqEeWTKqLnMSJAUw" name="cx.0.1" resourceType="_2uYWu-wnEeWTKqLnMSJAUw">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6Tq68ewqEeWTKqLnMSJAUw" name="ethernet" connectorInstances="_6TZOIOwqEeWTKqLnMSJAUw" type="_xG6QcOwqEeWTKqLnMSJAUw" communicationResource="_2uYWvOwnEeWTKqLnMSJAUw"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6Tq68ewqEeWTKqLnMSJAUw" name="ethernet" connectorInstances="//@categories.7/@modelElements.1/@hwplatformInstances.0/@embeddedHPIC/@networkConnectorInstances.0" type="_xG6QcOwqEeWTKqLnMSJAUw" communicationResource="_2uYWvOwnEeWTKqLnMSJAUw"/>
             <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_6Tq68uwqEeWTKqLnMSJAUw" name="Intel Core i7" resourceType="_2uYWyOwnEeWTKqLnMSJAUw">
               <frequency xmi:id="_6Tq68-wqEeWTKqLnMSJAUw" value="1.7" unit="GHz"/>
             </embeddedAtomicResourceInstances>
@@ -1177,7 +1177,7 @@
             </embeddedAtomicResourceInstances>
           </resources>
           <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_6TriAOwqEeWTKqLnMSJAUw" name="rpi.0.1" resourceType="_2uXvsOwnEeWTKqLnMSJAUw">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6TriAewqEeWTKqLnMSJAUw" name="ethernet" connectorInstances="_6TXY8OwqEeWTKqLnMSJAUw" type="_qcm7oOwqEeWTKqLnMSJAUw" communicationResource="_2uXvuewnEeWTKqLnMSJAUw"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6TriAewqEeWTKqLnMSJAUw" name="ethernet" connectorInstances="//@categories.7/@modelElements.1/@hwplatformInstances.0/@embeddedHPIC/@networkConnectorInstances.2" type="_qcm7oOwqEeWTKqLnMSJAUw" communicationResource="_2uXvuewnEeWTKqLnMSJAUw"/>
             <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_6TriAuwqEeWTKqLnMSJAUw" name="DDR2" resourceType="_2uXvw-wnEeWTKqLnMSJAUw">
               <memorySize xmi:id="_6TriA-wqEeWTKqLnMSJAUw" value="1.0" unit="GByte"/>
             </embeddedAtomicResourceInstances>
@@ -1186,7 +1186,7 @@
             </embeddedAtomicResourceInstances>
           </resources>
           <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_6TriBuwqEeWTKqLnMSJAUw" name="mx.0.1" resourceType="_2uXv4-wnEeWTKqLnMSJAUw">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6TriB-wqEeWTKqLnMSJAUw" name="ethernet" connectorInstances="_6TZ1MOwqEeWTKqLnMSJAUw" type="_vI_LMOwqEeWTKqLnMSJAUw" communicationResource="_2uXv5OwnEeWTKqLnMSJAUw"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6TriB-wqEeWTKqLnMSJAUw" name="ethernet" connectorInstances="//@categories.7/@modelElements.1/@hwplatformInstances.0/@embeddedHPIC/@networkConnectorInstances.1" type="_vI_LMOwqEeWTKqLnMSJAUw" communicationResource="_2uXv5OwnEeWTKqLnMSJAUw"/>
             <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_6TriCOwqEeWTKqLnMSJAUw" name="Freescale i.MX6" resourceType="_2uXv9OwnEeWTKqLnMSJAUw">
               <frequency xmi:id="_6TriCewqEeWTKqLnMSJAUw" value="800.0"/>
             </embeddedAtomicResourceInstances>
@@ -1198,16 +1198,16 @@
             </embeddedAtomicResourceInstances>
           </resources>
           <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_6TriDuwqEeWTKqLnMSJAUw" name="router.0.1" resourceType="_eBU8IOwpEeWTKqLnMSJAUw">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6TriD-wqEeWTKqLnMSJAUw" name="et4" connectorInstances="_6TZ1MOwqEeWTKqLnMSJAUw" type="_sVrWEOwqEeWTKqLnMSJAUw" communicationResource="_sS91wOwpEeWTKqLnMSJAUw"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6TriEOwqEeWTKqLnMSJAUw" name="et2" connectorInstances="_6TZOIOwqEeWTKqLnMSJAUw" type="_sVkoYOwqEeWTKqLnMSJAUw" communicationResource="_our2sOwpEeWTKqLnMSJAUw"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6TriEewqEeWTKqLnMSJAUw" name="et1" connectorInstances="_6TXY8OwqEeWTKqLnMSJAUw" type="_sVskMOwqEeWTKqLnMSJAUw" communicationResource="_hmiIQOwpEeWTKqLnMSJAUw"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6TriD-wqEeWTKqLnMSJAUw" name="et4" connectorInstances="//@categories.7/@modelElements.1/@hwplatformInstances.0/@embeddedHPIC/@networkConnectorInstances.1" type="_sVrWEOwqEeWTKqLnMSJAUw" communicationResource="_sS91wOwpEeWTKqLnMSJAUw"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6TriEOwqEeWTKqLnMSJAUw" name="et2" connectorInstances="//@categories.7/@modelElements.1/@hwplatformInstances.0/@embeddedHPIC/@networkConnectorInstances.0" type="_sVkoYOwqEeWTKqLnMSJAUw" communicationResource="_our2sOwpEeWTKqLnMSJAUw"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_6TriEewqEeWTKqLnMSJAUw" name="et1" connectorInstances="//@categories.7/@modelElements.1/@hwplatformInstances.0/@embeddedHPIC/@networkConnectorInstances.2" type="_sVskMOwqEeWTKqLnMSJAUw" communicationResource="_hmiIQOwpEeWTKqLnMSJAUw"/>
             <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_6TriEuwqEeWTKqLnMSJAUw" name="cpu" resourceType="_la2ucOwpEeWTKqLnMSJAUw">
               <frequency xmi:id="_6TriE-wqEeWTKqLnMSJAUw"/>
             </embeddedAtomicResourceInstances>
           </resources>
-          <networkConnectorInstances xmi:id="_6TXY8OwqEeWTKqLnMSJAUw" type="_22pacOwqEeWTKqLnMSJAUw" connectorEndpointInstances="_6TriAewqEeWTKqLnMSJAUw _6TriEewqEeWTKqLnMSJAUw"/>
-          <networkConnectorInstances xmi:id="_6TZOIOwqEeWTKqLnMSJAUw" type="_0TJi8OwqEeWTKqLnMSJAUw" connectorEndpointInstances="_6TriEOwqEeWTKqLnMSJAUw _6Tq68ewqEeWTKqLnMSJAUw"/>
-          <networkConnectorInstances xmi:id="_6TZ1MOwqEeWTKqLnMSJAUw" type="_2AoYcOwqEeWTKqLnMSJAUw" connectorEndpointInstances="_6TriD-wqEeWTKqLnMSJAUw _6TriB-wqEeWTKqLnMSJAUw"/>
+          <networkConnectorInstances connectorEndpointInstances="_6Tq68ewqEeWTKqLnMSJAUw _6TriEOwqEeWTKqLnMSJAUw"/>
+          <networkConnectorInstances connectorEndpointInstances="_6TriD-wqEeWTKqLnMSJAUw _6TriB-wqEeWTKqLnMSJAUw"/>
+          <networkConnectorInstances connectorEndpointInstances="_6TriEewqEeWTKqLnMSJAUw _6TriAewqEeWTKqLnMSJAUw"/>
         </embeddedHPIC>
       </hwplatformInstances>
     </modelElements>

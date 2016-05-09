@@ -7,7 +7,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_BT97oxWxEea4t_vvK_A9tw"/>
     </children>
     <element xmi:type="behavior:OperationRepository" href="../productionBroker.muml#_JTILAORjEeW6HsQsL2ADFA"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BT6RQRWxEea4t_vvK_A9tw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BT6RQRWxEea4t_vvK_A9tw" x="72" y="24" width="493" height="181"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_BT5DIRWxEea4t_vvK_A9tw"/>
   <element xmi:type="modelinstance:ModelElementCategory" href="../productionBroker.muml#_A42REN02EeW-N_z6XJQq2w"/>

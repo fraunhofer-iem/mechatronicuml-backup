@@ -1,5 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:instance="http://www.muml.org/pim/instance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xsi:schemaLocation="http://www.muml.org/pim/instance/1.0.0 http://www.muml.org/pim/1.0.0#//instance" xmi:id="_BR44ABWxEea4t_vvK_A9tw" type="Component Instance Configuration" name="root-cic.componentinstanceconfiguration_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_DoOdQBWxEea4t_vvK_A9tw" type="2015" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_DoQ5gBWxEea4t_vvK_A9tw" type="5026"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_DoQ5gRWxEea4t_vvK_A9tw" type="7012">
+      <children xmi:type="notation:Shape" xmi:id="_EDIQkBWxEea4t_vvK_A9tw" type="3023" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_EDI3oBWxEea4t_vvK_A9tw" type="7013">
+          <children xmi:type="notation:Shape" xmi:id="_EDW6EBWxEea4t_vvK_A9tw" type="3024" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_EDW6EhWxEea4t_vvK_A9tw" type="5028"/>
+            <children xmi:type="notation:Shape" xmi:id="_EOvDoBWxEea4t_vvK_A9tw" type="3032" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_EOvqsBWxEea4t_vvK_A9tw" type="5044">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_EOvqsRWxEea4t_vvK_A9tw" y="5"/>
+              </children>
+              <children xmi:type="notation:DecorationNode" xmi:id="_EOwRwBWxEea4t_vvK_A9tw" type="5050">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_EOwRwRWxEea4t_vvK_A9tw" y="5"/>
+              </children>
+              <element xmi:type="instance:DiscreteSinglePortInstance" href="../productionBroker.muml#_ClUoouVHEeWTk8L1nP577g"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EOvDoRWxEea4t_vvK_A9tw" x="-12" y="72"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_EOwRwhWxEea4t_vvK_A9tw" type="3032" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_EOw40BWxEea4t_vvK_A9tw" type="5044">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_EOw40RWxEea4t_vvK_A9tw" y="5"/>
+              </children>
+              <children xmi:type="notation:DecorationNode" xmi:id="_EOw40hWxEea4t_vvK_A9tw" type="5050">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_EOw40xWxEea4t_vvK_A9tw" y="5"/>
+              </children>
+              <element xmi:type="instance:DiscreteSinglePortInstance" href="../productionBroker.muml#_9JlTMOa7EeWyd6JHVas6Kw"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EOwRwxWxEea4t_vvK_A9tw" x="120" y="107"/>
+            </children>
+            <element xmi:type="instance:AtomicComponentInstance" href="../productionBroker.muml#_ClUooeVHEeWTk8L1nP577g"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EDW6ERWxEea4t_vvK_A9tw" x="465" y="135" width="361" height="119"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_EDXhIBWxEea4t_vvK_A9tw" type="3024" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_EDXhIhWxEea4t_vvK_A9tw" type="5028"/>
+            <children xmi:type="notation:Shape" xmi:id="_Ecd9oBWxEea4t_vvK_A9tw" type="3032" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_EceksRWxEea4t_vvK_A9tw" type="5044">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_EcekshWxEea4t_vvK_A9tw" y="5"/>
+              </children>
+              <children xmi:type="notation:DecorationNode" xmi:id="_EceksxWxEea4t_vvK_A9tw" type="5050">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_EcektBWxEea4t_vvK_A9tw" y="5"/>
+              </children>
+              <element xmi:type="instance:DiscreteSinglePortInstance" href="../productionBroker.muml#_ClUopOVHEeWTk8L1nP577g"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EceksBWxEea4t_vvK_A9tw" x="316" y="12"/>
+            </children>
+            <element xmi:type="instance:AtomicComponentInstance" href="../productionBroker.muml#_ClUoo-VHEeWTk8L1nP577g"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EDXhIRWxEea4t_vvK_A9tw" x="9" y="183" width="364"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_EDXhIxWxEea4t_vvK_A9tw" type="3024" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_EDYIMBWxEea4t_vvK_A9tw" type="5028"/>
+            <children xmi:type="notation:Shape" xmi:id="_EdSdABWxEea4t_vvK_A9tw" type="3032" fontName="Segoe UI" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_EdTEEBWxEea4t_vvK_A9tw" type="5044">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_EdTEERWxEea4t_vvK_A9tw" x="-84" y="-12"/>
+              </children>
+              <children xmi:type="notation:DecorationNode" xmi:id="_EdTEEhWxEea4t_vvK_A9tw" type="5050">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_EdTEExWxEea4t_vvK_A9tw" x="48" y="-24"/>
+              </children>
+              <element xmi:type="instance:DiscreteSinglePortInstance" href="../productionBroker.muml#_ZCvGAeapEeWyd6JHVas6Kw"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EdSdARWxEea4t_vvK_A9tw"/>
+            </children>
+            <element xmi:type="instance:AtomicComponentInstance" href="../productionBroker.muml#_ZCvGAOapEeWyd6JHVas6Kw"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EDXhJBWxEea4t_vvK_A9tw" x="333" y="339" width="481"/>
+          </children>
+        </children>
+        <element xmi:type="instance:ComponentInstanceConfiguration" href="../productionBroker.muml#_ClUooOVHEeWTk8L1nP577g"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EDIQkRWxEea4t_vvK_A9tw"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_DoQ5ghWxEea4t_vvK_A9tw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_DoQ5gxWxEea4t_vvK_A9tw"/>
+    </children>
+    <element xmi:type="instance:StructuredComponentInstance" href="../productionBroker.muml#_BfisUOVHEeWTk8L1nP577g"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DoPEUBWxEea4t_vvK_A9tw" width="937" height="529"/>
+  </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_BR44ARWxEea4t_vvK_A9tw"/>
   <element xmi:type="instance:ComponentInstanceConfiguration" href="../productionBroker.muml#_AZXucOVHEeWTk8L1nP577g"/>
 </notation:Diagram>
