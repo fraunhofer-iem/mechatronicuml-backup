@@ -786,9 +786,8 @@
           xsi:type="gmfgen:MetamodelType"
           editHelperClassName="NetworkConnectorInstanceEditHelper"/>
       <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="LinkFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class LinkFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureLinkCommentFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public LinkFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureLinkCommentFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureLinkCommentFigure.setText(&quot;&lt;...>&quot;);fFigureLinkCommentFigure.setTextWrap(true);&#xA;&#xA;&#xA;this.add(fFigureLinkCommentFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureLinkCommentFigure() {&#xA;&#x9;&#x9;return fFigureLinkCommentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx"/>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
@@ -949,7 +948,6 @@
       name="Platform Instance Diagram Editor"
       provider="Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT"
       activatorClassName="PlatformInstanceDiagramEditorPlugin">
-    <requiredPlugins>org.eclipse.ocl.pivot</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
@@ -958,6 +956,7 @@
     <requiredPlugins>org.muml.core.edit.properties</requiredPlugins>
     <requiredPlugins>org.muml.pim.edit.properties</requiredPlugins>
     <requiredPlugins>org.muml.core.common.editingdomain</requiredPlugins>
+    <requiredPlugins>org.eclipse.ocl.pivot</requiredPlugins>
     <requiredPlugins>org.muml.ape.runtime</requiredPlugins>
   </plugin>
   <editor

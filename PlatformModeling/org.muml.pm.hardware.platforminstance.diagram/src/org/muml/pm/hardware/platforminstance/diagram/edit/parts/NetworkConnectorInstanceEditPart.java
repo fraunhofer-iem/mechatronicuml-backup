@@ -77,55 +77,14 @@ public class NetworkConnectorInstanceEditPart extends ConnectionNodeEditPart imp
 	 */
 
 	protected Connection createConnectionFigure() {
-		return new LinkFigure();
+		return new PolylineConnectionEx();
 	}
 
 	/**
 	 * @generated
 	 */
-	public LinkFigure getPrimaryShape() {
-		return (LinkFigure) getFigure();
-	}
-
-	/**
-	 * @generated
-	 */
-	public class LinkFigure extends PolylineConnectionEx {
-
-		/**
-		 * @generated
-		 */
-		private WrappingLabel fFigureLinkCommentFigure;
-
-		/**
-		 * @generated
-		 */
-		public LinkFigure() {
-
-			createContents();
-		}
-
-		/**
-		 * @generated
-		 */
-		private void createContents() {
-
-			fFigureLinkCommentFigure = new WrappingLabel();
-
-			fFigureLinkCommentFigure.setText("<...>");
-			fFigureLinkCommentFigure.setTextWrap(true);
-
-			this.add(fFigureLinkCommentFigure);
-
-		}
-
-		/**
-		 * @generated
-		 */
-		public WrappingLabel getFigureLinkCommentFigure() {
-			return fFigureLinkCommentFigure;
-		}
-
+	public PolylineConnectionEx getPrimaryShape() {
+		return (PolylineConnectionEx) getFigure();
 	}
 
 	/**

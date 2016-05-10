@@ -43,6 +43,7 @@ import org.muml.pm.hardware.hwvaluetype.provider.HwvaluetypeItemProviderAdapterF
 import org.muml.pm.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy;
 import org.muml.pm.hardware.platforminstance.diagram.expressions.HardwareOCLFactory;
 import org.muml.pm.hardware.platforminstance.diagram.providers.ElementInitializers;
+import org.muml.pm.hardware.provider.HardwareItemProviderAdapterFactory;
 import org.osgi.framework.BundleContext;
 
 /**
@@ -154,6 +155,7 @@ public class PlatformInstanceDiagramEditorPlugin extends AbstractUIPlugin {
 		factories.addAll(positivePriorityFactories);
 
 		// Default Factories
+		factories.add(new HardwareItemProviderAdapterFactory());
 		factories.add(new HwplatformItemProviderAdapterFactory());
 		factories.add(new HwvaluetypeItemProviderAdapterFactory());
 		factories.add(new HwplatforminstanceItemProviderAdapterFactory());

@@ -11,14 +11,7 @@
         name="LinkFigure">
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
-          name="LinkFigure">
-        <children
-            xsi:type="gmfgraph:Label"
-            name="LinkCommentFigure"
-            text="&lt;...>"/>
-      </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+          name="LinkFigure"/>
     </descriptors>
     <descriptors
         name="BridgeFigure">
@@ -98,8 +91,7 @@
   <labels
       name="LinkComment"
       figure="LinkFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.0/@accessors.0">
+      elementIcon="false">
     <facets
         xsi:type="gmfgraph:LabelOffsetFacet"
         x="5"

@@ -743,7 +743,6 @@
       name="Platform Diagram Editor"
       provider="Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT"
       activatorClassName="PlatformDiagramEditorPlugin">
-    <requiredPlugins>org.eclipse.ocl.pivot</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
@@ -752,6 +751,7 @@
     <requiredPlugins>org.muml.core.edit.properties</requiredPlugins>
     <requiredPlugins>org.muml.pim.edit.properties</requiredPlugins>
     <requiredPlugins>org.muml.core.common.editingdomain</requiredPlugins>
+    <requiredPlugins>org.eclipse.ocl.pivot</requiredPlugins>
     <requiredPlugins>org.muml.ape.runtime</requiredPlugins>
   </plugin>
   <editor/>
