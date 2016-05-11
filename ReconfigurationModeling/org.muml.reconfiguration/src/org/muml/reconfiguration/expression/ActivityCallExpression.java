@@ -47,7 +47,7 @@ public interface ActivityCallExpression extends Expression, Invocation {
 	 * @see #setActivity(Activity)
 	 * @see org.muml.reconfiguration.expression.ExpressionPackage#getActivityCallExpression_Activity()
 	 * @model required="true" transient="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.callee.oclAsType(storydiagrams::activities::Activity)'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.callee.oclAsType(storydiagram::activities::Activity)'"
 	 * @generated
 	 */
 	Activity getActivity();

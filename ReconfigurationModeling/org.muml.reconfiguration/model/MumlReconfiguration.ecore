@@ -604,7 +604,7 @@
           eType="ecore:EClass ../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/Activity"
           volatile="true" transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self.callee.oclAsType(storydiagrams::activities::Activity)"/>
+          <details key="derivation" value="self.callee.oclAsType(storydiagram::activities::Activity)"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The story diagram that is called by this expression."/>

@@ -338,7 +338,7 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		  (getActivityCallExpression_Activity(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.callee.oclAsType(storydiagrams::activities::Activity)"
+			 "derivation", "self.callee.oclAsType(storydiagram::activities::Activity)"
 		   });
 	}
 

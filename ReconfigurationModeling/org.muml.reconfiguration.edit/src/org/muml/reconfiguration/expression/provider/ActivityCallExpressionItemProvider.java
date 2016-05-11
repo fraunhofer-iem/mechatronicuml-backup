@@ -17,12 +17,10 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.core.CorePackage;
 import org.muml.core.expressions.provider.ExpressionItemProvider;
 import org.muml.reconfiguration.expression.ActivityCallExpression;
 import org.muml.reconfiguration.expression.ExpressionPackage;
 import org.muml.reconfiguration.provider.MumlReconfigurationEditPlugin;
-import org.muml.storydiagram.activities.ActivitiesFactory;
 import org.muml.storydiagram.calls.CallsFactory;
 import org.muml.storydiagram.calls.CallsPackage;
 
@@ -189,16 +187,6 @@ public class ActivityCallExpressionItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
 
 		newChildDescriptors.add
 			(createChildParameter

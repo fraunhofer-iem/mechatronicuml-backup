@@ -13,15 +13,12 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.muml.core.CorePackage;
 import org.muml.pim.instance.InstancePackage;
 import org.muml.pim.instance.provider.StructuredComponentInstanceItemProvider;
 import org.muml.reconfiguration.provider.MumlReconfigurationEditPlugin;
 import org.muml.reconfiguration.reconfInstance.ReconfInstanceFactory;
 import org.muml.reconfiguration.reconfInstance.ReconfInstancePackage;
 import org.muml.reconfiguration.reconfInstance.ReconfigurableStructuredComponentInstance;
-import org.muml.storydiagram.activities.ActivitiesFactory;
-import org.muml.storydiagram.calls.CallsFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.reconfiguration.reconfInstance.ReconfigurableStructuredComponentInstance} object.
@@ -127,16 +124,6 @@ public class ReconfigurableStructuredComponentInstanceItemProvider extends Struc
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
 
 		newChildDescriptors.add
 			(createChildParameter

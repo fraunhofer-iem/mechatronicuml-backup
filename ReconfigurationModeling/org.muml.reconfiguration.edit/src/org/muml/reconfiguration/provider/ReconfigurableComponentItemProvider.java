@@ -14,14 +14,11 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.muml.core.CorePackage;
 import org.muml.pim.component.ComponentPackage;
 import org.muml.pim.component.provider.ComponentItemProvider;
 import org.muml.reconfiguration.ReconfigurableComponent;
 import org.muml.reconfiguration.ReconfigurationFactory;
 import org.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationFactory;
-import org.muml.storydiagram.activities.ActivitiesFactory;
-import org.muml.storydiagram.calls.CallsFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.reconfiguration.ReconfigurableComponent} object.
@@ -93,16 +90,6 @@ public class ReconfigurableComponentItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
 
 		newChildDescriptors.add
 			(createChildParameter

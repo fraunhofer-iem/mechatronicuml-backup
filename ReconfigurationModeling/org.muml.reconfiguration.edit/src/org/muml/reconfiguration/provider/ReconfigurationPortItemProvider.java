@@ -18,7 +18,6 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.core.CorePackage;
 import org.muml.pim.behavior.BehaviorPackage;
 import org.muml.pim.component.provider.PortItemProvider;
 import org.muml.pim.connector.ConnectorFactory;
@@ -26,8 +25,6 @@ import org.muml.pim.connector.ConnectorPackage;
 import org.muml.pim.valuetype.ValuetypeFactory;
 import org.muml.reconfiguration.ReconfigurationPackage;
 import org.muml.reconfiguration.ReconfigurationPort;
-import org.muml.storydiagram.activities.ActivitiesFactory;
-import org.muml.storydiagram.calls.CallsFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.reconfiguration.ReconfigurationPort} object.
@@ -335,16 +332,6 @@ public class ReconfigurationPortItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
 
 		newChildDescriptors.add
 			(createChildParameter
