@@ -93,13 +93,10 @@ public abstract class StoryNodeImpl extends ActivityNodeImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public StoryPattern basicGetStoryPattern() {
-		// TODO: implement this method to return the 'Story Pattern' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return null;
 	}
 
 	/**
