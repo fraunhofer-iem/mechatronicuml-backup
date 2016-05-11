@@ -438,7 +438,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		  (getTypedElement_Classifier(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if (self.genericType <> null) then self.genericType.eClassifier else null endif"
+			 "derivation", "if (self.genericType <> null) then self.genericType.eClassifier.oclAsType(ecore::EClass) else null endif"
 		   });
 	}
 
