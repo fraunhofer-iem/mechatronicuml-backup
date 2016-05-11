@@ -317,15 +317,15 @@ public class ActionlanguageValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String LOCAL_VARIABLE_DECLARATION_STATEMENT__UNIQUE_NAME__EEXPRESSION = "-- check if no variable with the same name was defined before\n" +
-		"self.allSurroundingBlocks->collect(\n" +
-		"\texpressions\n" +
-		")->select(\n" +
-		"\toclIsKindOf(LocalVariableDeclarationStatement)\n" +
-		")->collect(\n" +
-		"\toclAsType(LocalVariableDeclarationStatement)\n" +
-		")->one(\n" +
-		"\tvariable.name = self.variable.name\n" +
+	protected static final String LOCAL_VARIABLE_DECLARATION_STATEMENT__UNIQUE_NAME__EEXPRESSION = "-- check if no variable with the same name was defined before\r\n" +
+		"self.allSurroundingBlocks->collect(\r\n" +
+		"\texpressions\r\n" +
+		")->select(\r\n" +
+		"\toclIsKindOf(LocalVariableDeclarationStatement)\r\n" +
+		")->collect(\r\n" +
+		"\toclAsType(LocalVariableDeclarationStatement)\r\n" +
+		")->one(\r\n" +
+		"\tvariable.name = self.variable.name\r\n" +
 		")";
 
 	/**

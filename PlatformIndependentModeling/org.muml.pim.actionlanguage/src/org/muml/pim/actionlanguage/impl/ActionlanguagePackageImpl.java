@@ -1201,13 +1201,13 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		  (localVariableDeclarationStatementEClass, 
 		   source, 
 		   new String[] {
-			 "UniqueName", "-- check if no variable with the same name was defined before\nself.allSurroundingBlocks->collect(\n\texpressions\n)->select(\n\toclIsKindOf(LocalVariableDeclarationStatement)\n)->collect(\n\toclAsType(LocalVariableDeclarationStatement)\n)->one(\n\tvariable.name = self.variable.name\n)"
+			 "UniqueName", "-- check if no variable with the same name was defined before\r\nself.allSurroundingBlocks->collect(\r\n\texpressions\r\n)->select(\r\n\toclIsKindOf(LocalVariableDeclarationStatement)\r\n)->collect(\r\n\toclAsType(LocalVariableDeclarationStatement)\r\n)->one(\r\n\tvariable.name = self.variable.name\r\n)"
 		   });	
 		addAnnotation
 		  (getLocalVariableDeclarationStatement_AllSurroundingBlocks(), 
 		   source, 
 		   new String[] {
-			 "derivation", "-- collect all blocks which surround this LocalVariableDeclarationStatement\nself.eContainer()->closure(c : ecore::EObject |\n\tif c.eContainer().oclIsKindOf(core::expressions::Expression) then\n\t\tc.eContainer()\n\telse\n\t\tc\n\tendif\n)->union(\n\tSet{eContainer()}\n)->select(oclIsKindOf(Block))->collect(\n\toclAsType(Block)\n)->asOrderedSet()"
+			 "derivation", "-- collect all blocks which surround this LocalVariableDeclarationStatement\nself.oclAsType(ecore::EObject).eContainer()->closure(c : ecore::EObject |\n\tif c.eContainer().oclIsKindOf(core::expressions::Expression) then\n\t\tc.eContainer()\n\telse\n\t\tc\n\tendif\n)->union(\n\tSet{self.oclAsType(ecore::EObject)}\n)->select(oclIsKindOf(Block))->collect(\n\toclAsType(Block)\n)->asOrderedSet()"
 		   });
 	}
 

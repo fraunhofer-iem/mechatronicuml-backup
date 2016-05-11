@@ -285,7 +285,7 @@
       <details key="constraints" value="UniqueName"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-      <details key="UniqueName" value="-- check if no variable with the same name was defined before&#xA;self.allSurroundingBlocks->collect(&#xA;&#x9;expressions&#xA;)->select(&#xA;&#x9;oclIsKindOf(LocalVariableDeclarationStatement)&#xA;)->collect(&#xA;&#x9;oclAsType(LocalVariableDeclarationStatement)&#xA;)->one(&#xA;&#x9;variable.name = self.variable.name&#xA;)"/>
+      <details key="UniqueName" value="-- check if no variable with the same name was defined before&#xD;&#xA;self.allSurroundingBlocks->collect(&#xD;&#xA;&#x9;expressions&#xD;&#xA;)->select(&#xD;&#xA;&#x9;oclIsKindOf(LocalVariableDeclarationStatement)&#xD;&#xA;)->collect(&#xD;&#xA;&#x9;oclAsType(LocalVariableDeclarationStatement)&#xD;&#xA;)->one(&#xD;&#xA;&#x9;variable.name = self.variable.name&#xD;&#xA;)"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Enables to declare a local variable inside a Block. Local variables are declared &#xD;&#xA;according to the C-rule and have the scope of the block they are defined in.&#xD;&#xA;Local variables may not have the same name as a variable that is declared in the&#xD;&#xA;real-time statechart."/>
@@ -300,7 +300,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="allSurroundingBlocks" upperBound="-1"
         eType="#//Block" changeable="false" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="-- collect all blocks which surround this LocalVariableDeclarationStatement&#xA;self.eContainer()->closure(c : ecore::EObject |&#xA;&#x9;if c.eContainer().oclIsKindOf(core::expressions::Expression) then&#xA;&#x9;&#x9;c.eContainer()&#xA;&#x9;else&#xA;&#x9;&#x9;c&#xA;&#x9;endif&#xA;)->union(&#xA;&#x9;Set{eContainer()}&#xA;)->select(oclIsKindOf(Block))->collect(&#xA;&#x9;oclAsType(Block)&#xA;)->asOrderedSet()"/>
+        <details key="derivation" value="-- collect all blocks which surround this LocalVariableDeclarationStatement&#xA;self.oclAsType(ecore::EObject).eContainer()->closure(c : ecore::EObject |&#xA;&#x9;if c.eContainer().oclIsKindOf(core::expressions::Expression) then&#xA;&#x9;&#x9;c.eContainer()&#xA;&#x9;else&#xA;&#x9;&#x9;c&#xA;&#x9;endif&#xA;)->union(&#xA;&#x9;Set{self.oclAsType(ecore::EObject)}&#xA;)->select(oclIsKindOf(Block))->collect(&#xA;&#x9;oclAsType(Block)&#xA;)->asOrderedSet()"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This derived feature returns all blocks that surround this local variable declaration.&#xD;&#xA;This is a helper feature for ensuring that the names of local variables are unique."/>

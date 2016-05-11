@@ -32,7 +32,7 @@ import org.muml.pim.behavior.Variable;
  *
  * @see org.muml.pim.actionlanguage.ActionlanguagePackage#getLocalVariableDeclarationStatement()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueName'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueName='-- check if no variable with the same name was defined before\nself.allSurroundingBlocks->collect(\n\texpressions\n)->select(\n\toclIsKindOf(LocalVariableDeclarationStatement)\n)->collect(\n\toclAsType(LocalVariableDeclarationStatement)\n)->one(\n\tvariable.name = self.variable.name\n)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueName='-- check if no variable with the same name was defined before\r\nself.allSurroundingBlocks->collect(\r\n\texpressions\r\n)->select(\r\n\toclIsKindOf(LocalVariableDeclarationStatement)\r\n)->collect(\r\n\toclAsType(LocalVariableDeclarationStatement)\r\n)->one(\r\n\tvariable.name = self.variable.name\r\n)'"
  * @generated
  */
 public interface LocalVariableDeclarationStatement extends Expression {
@@ -82,7 +82,7 @@ public interface LocalVariableDeclarationStatement extends Expression {
 	 * @return the value of the '<em>All Surrounding Blocks</em>' reference list.
 	 * @see org.muml.pim.actionlanguage.ActionlanguagePackage#getLocalVariableDeclarationStatement_AllSurroundingBlocks()
 	 * @model transient="true" changeable="false" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- collect all blocks which surround this LocalVariableDeclarationStatement\nself.eContainer()->closure(c : ecore::EObject |\n\tif c.eContainer().oclIsKindOf(core::expressions::Expression) then\n\t\tc.eContainer()\n\telse\n\t\tc\n\tendif\n)->union(\n\tSet{eContainer()}\n)->select(oclIsKindOf(Block))->collect(\n\toclAsType(Block)\n)->asOrderedSet()'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- collect all blocks which surround this LocalVariableDeclarationStatement\nself.oclAsType(ecore::EObject).eContainer()->closure(c : ecore::EObject |\n\tif c.eContainer().oclIsKindOf(core::expressions::Expression) then\n\t\tc.eContainer()\n\telse\n\t\tc\n\tendif\n)->union(\n\tSet{self.oclAsType(ecore::EObject)}\n)->select(oclIsKindOf(Block))->collect(\n\toclAsType(Block)\n)->asOrderedSet()'"
 	 * @generated
 	 */
 	EList<Block> getAllSurroundingBlocks();

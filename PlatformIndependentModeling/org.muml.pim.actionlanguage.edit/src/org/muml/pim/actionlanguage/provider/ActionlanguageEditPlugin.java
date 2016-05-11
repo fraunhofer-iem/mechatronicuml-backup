@@ -46,6 +46,7 @@ public final class ActionlanguageEditPlugin extends EMFPlugin {
 		  (new ResourceLocator [] {
 		     org.muml.pim.provider.MumlEditPlugin.INSTANCE,
 		     CoreEditPlugin.INSTANCE,
+		     EcoreEditPlugin.INSTANCE,
 		   });
 	}
 
