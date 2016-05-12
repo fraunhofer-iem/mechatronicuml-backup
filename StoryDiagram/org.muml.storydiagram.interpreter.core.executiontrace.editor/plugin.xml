@@ -32,4 +32,31 @@
       </editor>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated executionTrace -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.muml.storydiagram.interpreter.core.executiontrace.presentation.ExecutiontraceModelWizardID"
+            name="%_UI_ExecutiontraceModelWizard_label"
+            class="org.muml.storydiagram.interpreter.core.executiontrace.presentation.ExecutiontraceModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ExecutiontraceModelFile.gif">
+         <description>%_UI_ExecutiontraceModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated executionTrace -->
+      <editor
+            id="org.muml.storydiagram.interpreter.core.executiontrace.presentation.ExecutiontraceEditorID"
+            name="%_UI_ExecutiontraceEditor_label"
+            icon="icons/full/obj16/ExecutiontraceModelFile.gif"
+            extensions="executiontrace"
+            class="org.muml.storydiagram.interpreter.core.executiontrace.presentation.ExecutiontraceEditor"
+            contributorClass="org.muml.storydiagram.interpreter.core.executiontrace.presentation.ExecutiontraceActionBarContributor">
+      </editor>
+   </extension>
 </plugin>

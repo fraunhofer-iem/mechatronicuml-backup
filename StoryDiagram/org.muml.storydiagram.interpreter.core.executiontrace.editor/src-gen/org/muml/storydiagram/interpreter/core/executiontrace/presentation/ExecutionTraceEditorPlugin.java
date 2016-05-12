@@ -42,10 +42,10 @@ public final class ExecutionTraceEditorPlugin extends EMFPlugin
 	 */
 	public ExecutionTraceEditorPlugin()
 	{
-		super(new ResourceLocator[]
-		{
-			EcoreEditPlugin.INSTANCE,
-		});
+		super
+			(new ResourceLocator [] {
+				EcoreEditPlugin.INSTANCE,
+			});
 	}
 
 	/**
@@ -90,7 +90,7 @@ public final class ExecutionTraceEditorPlugin extends EMFPlugin
 		public Implementation()
 		{
 			super();
-
+	
 			// Remember the static instance.
 			//
 			plugin = this;
