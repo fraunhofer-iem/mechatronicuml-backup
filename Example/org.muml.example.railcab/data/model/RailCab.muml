@@ -14181,69 +14181,69 @@
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_gxay4-5kEeO0hMrCmuqTKA" name="create roles instances" outgoings="_gxay2u5kEeO0hMrCmuqTKA" incomings="_gxay2e5kEeO0hMrCmuqTKA">
         <ownedRule xmi:id="_gxay5O5kEeO0hMrCmuqTKA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxay5e5kEeO0hMrCmuqTKA" name="multiRoleInstance" bindingState="BOUND" incomingLinks="_gxazCe5kEeO0hMrCmuqTKA" outgoingLinks="_gxazAu5kEeO0hMrCmuqTKA _gxazA-5kEeO0hMrCmuqTKA _gxazBe5kEeO0hMrCmuqTKA _gxazC-5kEeO0hMrCmuqTKA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//MultiRoleInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//MultiRoleInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxay5u5kEeO0hMrCmuqTKA" name="parentRTSCInstance" incomingLinks="_gxazAu5kEeO0hMrCmuqTKA _gxazDe5kEeO0hMrCmuqTKA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxay5-5kEeO0hMrCmuqTKA" name="multiRole" incomingLinks="_gxazA-5kEeO0hMrCmuqTKA _gxazCu5kEeO0hMrCmuqTKA" outgoingLinks="_gxazBO5kEeO0hMrCmuqTKA _gxazEO5kEeO0hMrCmuqTKA">
-            <genericType href="http://www.muml.org/pim/protocol/1.0.0#//Role"/>
+            <classifier href="http://www.muml.org/pim/protocol/1.0.0#//Role"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxay6O5kEeO0hMrCmuqTKA" name="subRoleRTSC" incomingLinks="_gxazBO5kEeO0hMrCmuqTKA _gxazBu5kEeO0hMrCmuqTKA _gxazDu5kEeO0hMrCmuqTKA">
-            <genericType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
+            <classifier href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxay6e5kEeO0hMrCmuqTKA" name="existingSubRoleInstance" incomingLinks="_gxazBe5kEeO0hMrCmuqTKA _gxazCO5kEeO0hMrCmuqTKA" bindingSemantics="OPTIONAL">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxay6u5kEeO0hMrCmuqTKA" name="subRoleInitialState" incomingLinks="_gxazD-5kEeO0hMrCmuqTKA" outgoingLinks="_gxazBu5kEeO0hMrCmuqTKA">
             <constraints xmi:id="_gxay6-5kEeO0hMrCmuqTKA">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_gxay7O5kEeO0hMrCmuqTKA" expressionText="self.initial" language="OCL" languageVersion="1.0"/>
             </constraints>
-            <genericType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
+            <classifier href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxay7e5kEeO0hMrCmuqTKA" name="messageBufferSubRole" outgoingLinks="_gxazB-5kEeO0hMrCmuqTKA" bindingOperator="CREATE">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeMessageBuffer"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeMessageBuffer"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxay8O5kEeO0hMrCmuqTKA" name="subRoleInstance" incomingLinks="_gxazB-5kEeO0hMrCmuqTKA _gxazC-5kEeO0hMrCmuqTKA" outgoingLinks="_gxazCO5kEeO0hMrCmuqTKA _gxazCe5kEeO0hMrCmuqTKA _gxazCu5kEeO0hMrCmuqTKA _gxazDO5kEeO0hMrCmuqTKA _gxazEe5kEeO0hMrCmuqTKA" bindingOperator="CREATE">
             <attributeAssignments xmi:id="_gxay8e5kEeO0hMrCmuqTKA">
               <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_gxay8u5kEeO0hMrCmuqTKA" expressionText="'subRoleInstance_'.concat(multiRoleInstance.name).concat('_').concat(multiRoleInstance.subInteractionEndpointInstances->size().toString())" language="OCL" languageVersion="1.0"/>
             </attributeAssignments>
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxay8-5kEeO0hMrCmuqTKA" name="subRoleRTSCInstance" incomingLinks="_gxazDO5kEeO0hMrCmuqTKA" outgoingLinks="_gxazDe5kEeO0hMrCmuqTKA _gxazDu5kEeO0hMrCmuqTKA _gxazD-5kEeO0hMrCmuqTKA" bindingOperator="CREATE">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxay9O5kEeO0hMrCmuqTKA" name="roleConnector" incomingLinks="_gxazEO5kEeO0hMrCmuqTKA _gxazEu5kEeO0hMrCmuqTKA" outgoingLinks="_gxazE-5kEeO0hMrCmuqTKA">
-            <genericType href="http://www.muml.org/pim/protocol/1.0.0#//RoleConnector"/>
+            <classifier href="http://www.muml.org/pim/protocol/1.0.0#//RoleConnector"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxay9e5kEeO0hMrCmuqTKA" name="roleConnectorInstance" incomingLinks="_gxazEe5kEeO0hMrCmuqTKA _gxazGO5kEeO0hMrCmuqTKA" outgoingLinks="_gxazEu5kEeO0hMrCmuqTKA" bindingOperator="CREATE">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeRoleConnectorInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeRoleConnectorInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxay9u5kEeO0hMrCmuqTKA" name="singleRolInitialState" incomingLinks="_gxazFu5kEeO0hMrCmuqTKA" outgoingLinks="_gxazFe5kEeO0hMrCmuqTKA">
             <constraints xmi:id="_gxay9-5kEeO0hMrCmuqTKA">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_gxay-O5kEeO0hMrCmuqTKA" expressionText="self.initial" language="OCL" languageVersion="1.0"/>
             </constraints>
-            <genericType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
+            <classifier href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxay-e5kEeO0hMrCmuqTKA" name="singleRole" incomingLinks="_gxazE-5kEeO0hMrCmuqTKA _gxazFO5kEeO0hMrCmuqTKA _gxazGe5kEeO0hMrCmuqTKA">
-            <genericType href="http://www.muml.org/pim/protocol/1.0.0#//Role"/>
+            <classifier href="http://www.muml.org/pim/protocol/1.0.0#//Role"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxay-u5kEeO0hMrCmuqTKA" name="singleRoleRTSC" incomingLinks="_gxazFe5kEeO0hMrCmuqTKA _gxazF-5kEeO0hMrCmuqTKA" outgoingLinks="_gxazFO5kEeO0hMrCmuqTKA">
-            <genericType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
+            <classifier href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxay--5kEeO0hMrCmuqTKA" name="singleRoleRTSCInstance" incomingLinks="_gxazGu5kEeO0hMrCmuqTKA" outgoingLinks="_gxazFu5kEeO0hMrCmuqTKA _gxazF-5kEeO0hMrCmuqTKA" bindingOperator="CREATE">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxay_O5kEeO0hMrCmuqTKA" name="singleRoleInstance" outgoingLinks="_gxazGO5kEeO0hMrCmuqTKA _gxazGe5kEeO0hMrCmuqTKA _gxazGu5kEeO0hMrCmuqTKA _gxazG-5kEeO0hMrCmuqTKA" bindingOperator="CREATE">
             <attributeAssignments xmi:id="_gxay_e5kEeO0hMrCmuqTKA">
               <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_gxay_u5kEeO0hMrCmuqTKA" expressionText="singleRole.name.concat(multiRoleInstance.subInteractionEndpointInstances->size().toString())" language="OCL" languageVersion="1.0"/>
             </attributeAssignments>
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxay_-5kEeO0hMrCmuqTKA" name="messageBufferSingleRoleInstance" incomingLinks="_gxazG-5kEeO0hMrCmuqTKA" bindingOperator="CREATE">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeMessageBuffer"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeMessageBuffer"/>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazAu5kEeO0hMrCmuqTKA" name="link" source="_gxay5e5kEeO0hMrCmuqTKA" target="_gxay5u5kEeO0hMrCmuqTKA">
             <targetEnd href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeBehavioralElement/statechartInstance"/>
@@ -14331,10 +14331,10 @@
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_gxazHu5kEeO0hMrCmuqTKA" name="Get first subrole" outgoings="_gxay2-5kEeO0hMrCmuqTKA _gxay3O5kEeO0hMrCmuqTKA" incomings="_gxay2u5kEeO0hMrCmuqTKA">
         <ownedRule xmi:id="_gxazH-5kEeO0hMrCmuqTKA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxazIO5kEeO0hMrCmuqTKA" name="multiRoleInstance" bindingState="BOUND" outgoingLinks="_gxazIu5kEeO0hMrCmuqTKA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//MultiRoleInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//MultiRoleInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxazIe5kEeO0hMrCmuqTKA" name="firstSubrole" incomingLinks="_gxazIu5kEeO0hMrCmuqTKA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazIu5kEeO0hMrCmuqTKA" name="link" source="_gxazIO5kEeO0hMrCmuqTKA" target="_gxazIe5kEeO0hMrCmuqTKA">
             <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//DiscreteMultiInteractionEndpointInstance/first"/>
@@ -14344,10 +14344,10 @@
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_gxazI-5kEeO0hMrCmuqTKA" name="Set first subrole" outgoings="_gxay3e5kEeO0hMrCmuqTKA" incomings="_gxay2-5kEeO0hMrCmuqTKA">
         <ownedRule xmi:id="_gxazJO5kEeO0hMrCmuqTKA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxazJe5kEeO0hMrCmuqTKA" name="multiRoleInstance" outgoingLinks="_gxazJ-5kEeO0hMrCmuqTKA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//MultiRoleInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//MultiRoleInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxazJu5kEeO0hMrCmuqTKA" name="subRoleInstance" incomingLinks="_gxazJ-5kEeO0hMrCmuqTKA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazJ-5kEeO0hMrCmuqTKA" name="link" bindingOperator="CREATE" source="_gxazJe5kEeO0hMrCmuqTKA" target="_gxazJu5kEeO0hMrCmuqTKA">
             <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//DiscreteMultiInteractionEndpointInstance/first"/>
@@ -14357,20 +14357,20 @@
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_gxazKO5kEeO0hMrCmuqTKA" name="Add Variable Bindings to Subrole" outgoings="_gxay3u5kEeO0hMrCmuqTKA _gxay3-5kEeO0hMrCmuqTKA" incomings="_gxay3O5kEeO0hMrCmuqTKA _gxay3e5kEeO0hMrCmuqTKA _gxay3u5kEeO0hMrCmuqTKA" forEach="true">
         <ownedRule xmi:id="_gxazKe5kEeO0hMrCmuqTKA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxazKu5kEeO0hMrCmuqTKA" name="subRoleRTSC" bindingState="BOUND" outgoingLinks="_gxazMO5kEeO0hMrCmuqTKA">
-            <genericType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
+            <classifier href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxazK-5kEeO0hMrCmuqTKA" name="variable" incomingLinks="_gxazMO5kEeO0hMrCmuqTKA _gxazMe5kEeO0hMrCmuqTKA">
-            <genericType href="http://www.muml.org/pim/behavior/1.0.0#//Variable"/>
+            <classifier href="http://www.muml.org/pim/behavior/1.0.0#//Variable"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxazLO5kEeO0hMrCmuqTKA" name="subRoleRTSCInstance" bindingState="BOUND" outgoingLinks="_gxazMu5kEeO0hMrCmuqTKA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxazLe5kEeO0hMrCmuqTKA" name="variableBinding" incomingLinks="_gxazMu5kEeO0hMrCmuqTKA" outgoingLinks="_gxazMe5kEeO0hMrCmuqTKA" bindingOperator="CREATE">
             <attributeAssignments xmi:id="_gxazLu5kEeO0hMrCmuqTKA">
               <attribute href="http://www.muml.org/verification/core/runtime/1.0.0#//VariableBinding/value"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_gxazL-5kEeO0hMrCmuqTKA" expressionText="variable.initializeExpression" language="OCL" languageVersion="1.0"/>
             </attributeAssignments>
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//VariableBinding"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//VariableBinding"/>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazMO5kEeO0hMrCmuqTKA" name="link" source="_gxazKu5kEeO0hMrCmuqTKA" target="_gxazK-5kEeO0hMrCmuqTKA">
             <targetEnd href="http://www.muml.org/pim/behavior/1.0.0#//Behavior/variables"/>
@@ -14386,20 +14386,20 @@
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_gxazM-5kEeO0hMrCmuqTKA" name="Add variable bindings to single role" outgoings="_gxay4O5kEeO0hMrCmuqTKA _gxay4e5kEeO0hMrCmuqTKA" incomings="_gxay3-5kEeO0hMrCmuqTKA _gxay4e5kEeO0hMrCmuqTKA" forEach="true">
         <ownedRule xmi:id="_gxazNO5kEeO0hMrCmuqTKA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxazNe5kEeO0hMrCmuqTKA" name="singleRoleRTSC" bindingState="BOUND" outgoingLinks="_gxazO-5kEeO0hMrCmuqTKA">
-            <genericType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
+            <classifier href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxazNu5kEeO0hMrCmuqTKA" name="variable2" incomingLinks="_gxazO-5kEeO0hMrCmuqTKA _gxazPe5kEeO0hMrCmuqTKA">
-            <genericType href="http://www.muml.org/pim/behavior/1.0.0#//Variable"/>
+            <classifier href="http://www.muml.org/pim/behavior/1.0.0#//Variable"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxazN-5kEeO0hMrCmuqTKA" name="singleRoleRTSCInstance" bindingState="BOUND" outgoingLinks="_gxazPO5kEeO0hMrCmuqTKA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxazOO5kEeO0hMrCmuqTKA" name="variableBinding2" incomingLinks="_gxazPO5kEeO0hMrCmuqTKA" outgoingLinks="_gxazPe5kEeO0hMrCmuqTKA" bindingOperator="CREATE">
             <attributeAssignments xmi:id="_gxazOe5kEeO0hMrCmuqTKA">
               <attribute href="http://www.muml.org/verification/core/runtime/1.0.0#//VariableBinding/value"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_gxazOu5kEeO0hMrCmuqTKA" expressionText="variable2.initializeExpression" language="OCL" languageVersion="1.0"/>
             </attributeAssignments>
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//VariableBinding"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//VariableBinding"/>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazO-5kEeO0hMrCmuqTKA" name="link" source="_gxazNe5kEeO0hMrCmuqTKA" target="_gxazNu5kEeO0hMrCmuqTKA">
             <targetEnd href="http://www.muml.org/pim/behavior/1.0.0#//Behavior/variables"/>
@@ -14442,69 +14442,69 @@
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_uuWph_STEeOKmIQk3FL8KA" name="Create Subrole Instance" outgoings="_uuWpfvSTEeOKmIQk3FL8KA" incomings="_uuWpffSTEeOKmIQk3FL8KA">
         <ownedRule xmi:id="_uuWpiPSTEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpifSTEeOKmIQk3FL8KA" name="multiRoleInstance" bindingState="BOUND" outgoingLinks="_uuWpqPSTEeOKmIQk3FL8KA _uuWpqfSTEeOKmIQk3FL8KA _uuWpufSTEeOKmIQk3FL8KA _uuWpu_STEeOKmIQk3FL8KA _uuWpvPSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//MultiRoleInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//MultiRoleInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpivSTEeOKmIQk3FL8KA" name="roleConnectorInstance" outgoingLinks="_uuWppvSTEeOKmIQk3FL8KA _uuWpp_STEeOKmIQk3FL8KA _uuWpuPSTEeOKmIQk3FL8KA" bindingOperator="CREATE">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeRoleConnectorInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeRoleConnectorInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpi_STEeOKmIQk3FL8KA" name="singleRoleInstance" incomingLinks="_uuWppvSTEeOKmIQk3FL8KA" outgoingLinks="_uuWprfSTEeOKmIQk3FL8KA _uuWpt_STEeOKmIQk3FL8KA _uuWpv_STEeOKmIQk3FL8KA" bindingOperator="CREATE">
             <attributeAssignments xmi:id="_uuWpjPSTEeOKmIQk3FL8KA">
               <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_uuWpjfSTEeOKmIQk3FL8KA" expressionText="'memberInstance_'.concat(multiRoleInstance.subInteractionEndpointInstances->size().toString())" language="OCL" languageVersion="1.0"/>
             </attributeAssignments>
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpjvSTEeOKmIQk3FL8KA" name="subRoleInstance" incomingLinks="_uuWpp_STEeOKmIQk3FL8KA _uuWpqPSTEeOKmIQk3FL8KA _uuWpuvSTEeOKmIQk3FL8KA _uuWpu_STEeOKmIQk3FL8KA" outgoingLinks="_uuWpqvSTEeOKmIQk3FL8KA _uuWpr_STEeOKmIQk3FL8KA _uuWpvvSTEeOKmIQk3FL8KA" bindingOperator="CREATE">
             <attributeAssignments xmi:id="_uuWpj_STEeOKmIQk3FL8KA">
               <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_uuWpkPSTEeOKmIQk3FL8KA" expressionText="'subRoleInstance_'.concat(multiRoleInstance.name).concat('_').concat(multiRoleInstance.subInteractionEndpointInstances->size().toString())" language="OCL" languageVersion="1.0"/>
             </attributeAssignments>
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpkfSTEeOKmIQk3FL8KA" name="multiRole" incomingLinks="_uuWpqfSTEeOKmIQk3FL8KA _uuWpqvSTEeOKmIQk3FL8KA" outgoingLinks="_uuWpq_STEeOKmIQk3FL8KA _uuWprvSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/pim/protocol/1.0.0#//Role"/>
+            <classifier href="http://www.muml.org/pim/protocol/1.0.0#//Role"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpkvSTEeOKmIQk3FL8KA" name="roleConnector" incomingLinks="_uuWpq_STEeOKmIQk3FL8KA _uuWpuPSTEeOKmIQk3FL8KA" outgoingLinks="_uuWprPSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/pim/protocol/1.0.0#//RoleConnector"/>
+            <classifier href="http://www.muml.org/pim/protocol/1.0.0#//RoleConnector"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpk_STEeOKmIQk3FL8KA" name="singleRole" incomingLinks="_uuWprPSTEeOKmIQk3FL8KA _uuWprfSTEeOKmIQk3FL8KA _uuWps_STEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/pim/protocol/1.0.0#//Role"/>
+            <classifier href="http://www.muml.org/pim/protocol/1.0.0#//Role"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWplPSTEeOKmIQk3FL8KA" name="subRoleRTSC" incomingLinks="_uuWprvSTEeOKmIQk3FL8KA _uuWpsPSTEeOKmIQk3FL8KA" outgoingLinks="_uuWpsfSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
+            <classifier href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWplfSTEeOKmIQk3FL8KA" name="subRoleRTSCInstance" incomingLinks="_uuWpr_STEeOKmIQk3FL8KA _uuWpvfSTEeOKmIQk3FL8KA" outgoingLinks="_uuWpsPSTEeOKmIQk3FL8KA _uuWpsvSTEeOKmIQk3FL8KA" bindingOperator="CREATE">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWplvSTEeOKmIQk3FL8KA" name="subRoleInitialState" incomingLinks="_uuWpsfSTEeOKmIQk3FL8KA _uuWpsvSTEeOKmIQk3FL8KA">
             <constraints xmi:id="_uuWpl_STEeOKmIQk3FL8KA">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_uuWpmPSTEeOKmIQk3FL8KA" expressionText="self.initial" language="OCL" languageVersion="1.0"/>
             </constraints>
-            <genericType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
+            <classifier href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpmfSTEeOKmIQk3FL8KA" name="singleRoleRTSC" incomingLinks="_uuWptPSTEeOKmIQk3FL8KA" outgoingLinks="_uuWps_STEeOKmIQk3FL8KA _uuWptfSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
+            <classifier href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpmvSTEeOKmIQk3FL8KA" name="singleRoleRTSCInstance" incomingLinks="_uuWpt_STEeOKmIQk3FL8KA" outgoingLinks="_uuWptPSTEeOKmIQk3FL8KA _uuWptvSTEeOKmIQk3FL8KA" bindingOperator="CREATE">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpm_STEeOKmIQk3FL8KA" name="singleRoleInitialState" incomingLinks="_uuWptfSTEeOKmIQk3FL8KA _uuWptvSTEeOKmIQk3FL8KA">
             <constraints xmi:id="_uuWpnPSTEeOKmIQk3FL8KA">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_uuWpnfSTEeOKmIQk3FL8KA" expressionText="self.initial" language="OCL" languageVersion="1.0"/>
             </constraints>
-            <genericType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
+            <classifier href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpnvSTEeOKmIQk3FL8KA" name="existingSubRoleInstance" incomingLinks="_uuWpufSTEeOKmIQk3FL8KA" outgoingLinks="_uuWpuvSTEeOKmIQk3FL8KA" bindingSemantics="OPTIONAL">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpn_STEeOKmIQk3FL8KA" name="parentRTSCInstance" incomingLinks="_uuWpvPSTEeOKmIQk3FL8KA" outgoingLinks="_uuWpvfSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpoPSTEeOKmIQk3FL8KA" name="messageBufferSubRole" incomingLinks="_uuWpvvSTEeOKmIQk3FL8KA" bindingOperator="CREATE">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeMessageBuffer"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeMessageBuffer"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpo_STEeOKmIQk3FL8KA" name="messageBufferSingleRoleInstance" incomingLinks="_uuWpv_STEeOKmIQk3FL8KA" bindingOperator="CREATE">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeMessageBuffer"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeMessageBuffer"/>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWppvSTEeOKmIQk3FL8KA" name="roleConnectorInstance_2_singleRoleInstance" bindingOperator="CREATE" source="_uuWpivSTEeOKmIQk3FL8KA" target="_uuWpi_STEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//ConnectorInstance/connectorEndpointInstances"/>
@@ -14592,20 +14592,20 @@
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_uuWpwvSTEeOKmIQk3FL8KA" name="4444" outgoings="_uuWpf_STEeOKmIQk3FL8KA _uuWpgPSTEeOKmIQk3FL8KA" incomings="_uuWpf_STEeOKmIQk3FL8KA _uuWpg_STEeOKmIQk3FL8KA _uuWphfSTEeOKmIQk3FL8KA" forEach="true">
         <ownedRule xmi:id="_uuWpw_STEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpxPSTEeOKmIQk3FL8KA" name="subRoleRTSC" bindingState="BOUND" outgoingLinks="_uuWpyvSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
+            <classifier href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpxfSTEeOKmIQk3FL8KA" name="variable" incomingLinks="_uuWpyvSTEeOKmIQk3FL8KA _uuWpy_STEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/pim/behavior/1.0.0#//Variable"/>
+            <classifier href="http://www.muml.org/pim/behavior/1.0.0#//Variable"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpxvSTEeOKmIQk3FL8KA" name="subRoleRTSCInstance" bindingState="BOUND" outgoingLinks="_uuWpzPSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpx_STEeOKmIQk3FL8KA" name="variableBinding" incomingLinks="_uuWpzPSTEeOKmIQk3FL8KA" outgoingLinks="_uuWpy_STEeOKmIQk3FL8KA" bindingOperator="CREATE">
             <attributeAssignments xmi:id="_uuWpyPSTEeOKmIQk3FL8KA">
               <attribute href="http://www.muml.org/verification/core/runtime/1.0.0#//VariableBinding/value"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_uuWpyfSTEeOKmIQk3FL8KA" expressionText="variable.initializeExpression" language="OCL" languageVersion="1.0"/>
             </attributeAssignments>
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//VariableBinding"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//VariableBinding"/>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWpyvSTEeOKmIQk3FL8KA" name="subRoleRTSC_2_variable" source="_uuWpxPSTEeOKmIQk3FL8KA" target="_uuWpxfSTEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/pim/behavior/1.0.0#//Behavior/variables"/>
@@ -14621,20 +14621,20 @@
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_uuWpzfSTEeOKmIQk3FL8KA" name="444444" outgoings="_uuWpgfSTEeOKmIQk3FL8KA _uuWpgvSTEeOKmIQk3FL8KA" incomings="_uuWpgPSTEeOKmIQk3FL8KA _uuWpgfSTEeOKmIQk3FL8KA" forEach="true">
         <ownedRule xmi:id="_uuWpzvSTEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpz_STEeOKmIQk3FL8KA" name="singleRoleRTSC" bindingState="BOUND" outgoingLinks="_uuWp1fSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
+            <classifier href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWp0PSTEeOKmIQk3FL8KA" name="variable2" incomingLinks="_uuWp1fSTEeOKmIQk3FL8KA _uuWp1_STEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/pim/behavior/1.0.0#//Variable"/>
+            <classifier href="http://www.muml.org/pim/behavior/1.0.0#//Variable"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWp0fSTEeOKmIQk3FL8KA" name="singleRoleRTSCInstance" bindingState="BOUND" outgoingLinks="_uuWp1vSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWp0vSTEeOKmIQk3FL8KA" name="variableBinding2" incomingLinks="_uuWp1vSTEeOKmIQk3FL8KA" outgoingLinks="_uuWp1_STEeOKmIQk3FL8KA" bindingOperator="CREATE">
             <attributeAssignments xmi:id="_uuWp0_STEeOKmIQk3FL8KA">
               <attribute href="http://www.muml.org/verification/core/runtime/1.0.0#//VariableBinding/value"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_uuWp1PSTEeOKmIQk3FL8KA" expressionText="variable2.initializeExpression" language="OCL" languageVersion="1.0"/>
             </attributeAssignments>
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//VariableBinding"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//VariableBinding"/>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWp1fSTEeOKmIQk3FL8KA" name="singleRoleRTSC_2_variable2" source="_uuWpz_STEeOKmIQk3FL8KA" target="_uuWp0PSTEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/pim/behavior/1.0.0#//Behavior/variables"/>
@@ -14650,10 +14650,10 @@
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_uuWp2PSTEeOKmIQk3FL8KA" name="Get first subrole" outgoings="_uuWpg_STEeOKmIQk3FL8KA _uuWphPSTEeOKmIQk3FL8KA" incomings="_uuWpfvSTEeOKmIQk3FL8KA">
         <ownedRule xmi:id="_uuWp2fSTEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWp2vSTEeOKmIQk3FL8KA" name="multiRoleInstance" bindingState="BOUND" outgoingLinks="_uuWp3PSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//MultiRoleInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//MultiRoleInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWp2_STEeOKmIQk3FL8KA" name="firstSubrole" incomingLinks="_uuWp3PSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWp3PSTEeOKmIQk3FL8KA" name="link" source="_uuWp2vSTEeOKmIQk3FL8KA" target="_uuWp2_STEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//DiscreteMultiInteractionEndpointInstance/first"/>
@@ -14663,10 +14663,10 @@
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_uuWp3fSTEeOKmIQk3FL8KA" name="Set first subrole" outgoings="_uuWphfSTEeOKmIQk3FL8KA" incomings="_uuWphPSTEeOKmIQk3FL8KA">
         <ownedRule xmi:id="_uuWp3vSTEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWp3_STEeOKmIQk3FL8KA" name="multiRoleInstance" bindingState="BOUND" outgoingLinks="_uuWp4fSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//MultiRoleInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//MultiRoleInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWp4PSTEeOKmIQk3FL8KA" name="subRoleInstance" bindingState="BOUND" incomingLinks="_uuWp4fSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWp4fSTEeOKmIQk3FL8KA" name="link" bindingOperator="CREATE" source="_uuWp3_STEeOKmIQk3FL8KA" target="_uuWp4PSTEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//DiscreteMultiInteractionEndpointInstance/first"/>
@@ -14693,23 +14693,23 @@
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_uuWp7_STEeOKmIQk3FL8KA" name="Create Iterator Object" outgoings="_uuWp6_STEeOKmIQk3FL8KA" incomings="_uuWp6vSTEeOKmIQk3FL8KA">
         <ownedRule xmi:id="_uuWp8PSTEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWp8fSTEeOKmIQk3FL8KA" name="iterator" bindingOperator="CREATE">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//ProfileIterator"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//ProfileIterator"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWp8vSTEeOKmIQk3FL8KA" name="profiles" bindingState="BOUND">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//ProfileList"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//ProfileList"/>
           </variables>
         </ownedRule>
       </ownedActivityNodes>
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_uuWp8_STEeOKmIQk3FL8KA" name="Add Links" outgoings="_uuWp7PSTEeOKmIQk3FL8KA _uuWp7fSTEeOKmIQk3FL8KA" incomings="_uuWp6_STEeOKmIQk3FL8KA _uuWp7fSTEeOKmIQk3FL8KA" forEach="true">
         <ownedRule xmi:id="_uuWp9PSTEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWp9fSTEeOKmIQk3FL8KA" name="iterator" bindingState="BOUND" outgoingLinks="_uuWp-fSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//ProfileIterator"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//ProfileIterator"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWp9vSTEeOKmIQk3FL8KA" name="profiles" bindingState="BOUND" outgoingLinks="_uuWp-PSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//ProfileList"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//ProfileList"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWp9_STEeOKmIQk3FL8KA" name="p" incomingLinks="_uuWp-PSTEeOKmIQk3FL8KA _uuWp-fSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//Profile"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//Profile"/>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWp-PSTEeOKmIQk3FL8KA" name="profiles_2_p" source="_uuWp9vSTEeOKmIQk3FL8KA" target="_uuWp9_STEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//ProfileList/profiles"/>
@@ -14744,10 +14744,10 @@
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_uuWqC_STEeOKmIQk3FL8KA" name="Create Profile" outgoings="_uuWqB_STEeOKmIQk3FL8KA _uuWqCPSTEeOKmIQk3FL8KA" incomings="_uuWqBvSTEeOKmIQk3FL8KA _uuWqCPSTEeOKmIQk3FL8KA" forEach="true">
         <ownedRule xmi:id="_uuWqDPSTEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqDfSTEeOKmIQk3FL8KA" name="profileList" bindingState="BOUND" outgoingLinks="_uuWqFPSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//ProfileList"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//ProfileList"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqDvSTEeOKmIQk3FL8KA" name="p" incomingLinks="_uuWqFPSTEeOKmIQk3FL8KA" bindingOperator="CREATE">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//Profile"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//Profile"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqD_STEeOKmIQk3FL8KA" name="numberOfProfilesWrapper" bindingState="BOUND">
             <constraints xmi:id="_uuWqEPSTEeOKmIQk3FL8KA">
@@ -14757,7 +14757,7 @@
               <attribute href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//IntWrapper/intValue"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_uuWqE_STEeOKmIQk3FL8KA" expressionText="intValue - 1" language="OCL" languageVersion="1.0"/>
             </attributeAssignments>
-            <genericType href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//IntWrapper"/>
+            <classifier href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//IntWrapper"/>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWqFPSTEeOKmIQk3FL8KA" name="profileList_2_p" bindingOperator="CREATE" source="_uuWqDfSTEeOKmIQk3FL8KA" target="_uuWqDvSTEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//ProfileList/profiles"/>
@@ -14770,21 +14770,21 @@
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_uuWqF_STEeOKmIQk3FL8KA" name="Create ProfileList" outgoings="_uuWqBvSTEeOKmIQk3FL8KA" incomings="_uuWqBfSTEeOKmIQk3FL8KA">
         <ownedRule xmi:id="_uuWqGPSTEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqGfSTEeOKmIQk3FL8KA" name="profileList" bindingOperator="CREATE">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//ProfileList"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//ProfileList"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqGvSTEeOKmIQk3FL8KA" name="numberOfProfilesWrapper" bindingOperator="CREATE">
             <attributeAssignments xmi:id="_uuWqG_STEeOKmIQk3FL8KA">
               <attribute href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//IntWrapper/intValue"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_uuWqHPSTEeOKmIQk3FL8KA" expressionText="numberOfProfilesObject" language="OCL" languageVersion="1.0"/>
             </attributeAssignments>
-            <genericType href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//IntWrapper"/>
+            <classifier href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//IntWrapper"/>
           </variables>
         </ownedRule>
       </ownedActivityNodes>
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_uuWqHfSTEeOKmIQk3FL8KA" name="Delete Int Wrapper" outgoings="_uuWqCfSTEeOKmIQk3FL8KA" incomings="_uuWqB_STEeOKmIQk3FL8KA">
         <ownedRule xmi:id="_uuWqHvSTEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqH_STEeOKmIQk3FL8KA" name="numberOfProfilesWrapper" bindingState="BOUND" bindingOperator="DESTROY">
-            <genericType href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//IntWrapper"/>
+            <classifier href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//IntWrapper"/>
           </variables>
         </ownedRule>
       </ownedActivityNodes>
@@ -14808,28 +14808,28 @@
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_uuWqLvSTEeOKmIQk3FL8KA" name="Delete SubRole Instance" outgoings="_uuWqJ_STEeOKmIQk3FL8KA" incomings="_uuWqK_STEeOKmIQk3FL8KA">
         <ownedRule xmi:id="_uuWqL_STEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqMPSTEeOKmIQk3FL8KA" name="multiRoleInstance" incomingLinks="_uuWqOPSTEeOKmIQk3FL8KA" outgoingLinks="_uuWqPfSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//MultiRoleInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//MultiRoleInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqMfSTEeOKmIQk3FL8KA" name="subRoleInstance" bindingState="BOUND" incomingLinks="_uuWqOfSTEeOKmIQk3FL8KA _uuWqPfSTEeOKmIQk3FL8KA" outgoingLinks="_uuWqOPSTEeOKmIQk3FL8KA _uuWqOvSTEeOKmIQk3FL8KA _uuWqPvSTEeOKmIQk3FL8KA" bindingOperator="DESTROY">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqMvSTEeOKmIQk3FL8KA" name="subRoleRTSCInstance" bindingState="BOUND" outgoingLinks="_uuWqOfSTEeOKmIQk3FL8KA" bindingOperator="DESTROY">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqM_STEeOKmIQk3FL8KA" name="connectorInstance" bindingState="BOUND" incomingLinks="_uuWqOvSTEeOKmIQk3FL8KA" outgoingLinks="_uuWqO_STEeOKmIQk3FL8KA" bindingOperator="DESTROY">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeRoleConnectorInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeRoleConnectorInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqNPSTEeOKmIQk3FL8KA" name="singleRoleInstance" bindingState="BOUND" incomingLinks="_uuWqO_STEeOKmIQk3FL8KA _uuWqPPSTEeOKmIQk3FL8KA" outgoingLinks="_uuWqP_STEeOKmIQk3FL8KA" bindingOperator="DESTROY">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqNfSTEeOKmIQk3FL8KA" name="singleRoleRTSCInstance" bindingState="BOUND" outgoingLinks="_uuWqPPSTEeOKmIQk3FL8KA" bindingOperator="DESTROY">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqNvSTEeOKmIQk3FL8KA" name="subRoleMessageBuffer" incomingLinks="_uuWqPvSTEeOKmIQk3FL8KA" bindingOperator="DESTROY">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeMessageBuffer"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeMessageBuffer"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqN_STEeOKmIQk3FL8KA" name="singleRoleMessageBuffer" incomingLinks="_uuWqP_STEeOKmIQk3FL8KA" bindingOperator="DESTROY">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeMessageBuffer"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeMessageBuffer"/>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWqOPSTEeOKmIQk3FL8KA" name="subRoleInstance_2_multiRoleInstance" bindingOperator="DESTROY" source="_uuWqMfSTEeOKmIQk3FL8KA" target="_uuWqMPSTEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"/>
@@ -14863,19 +14863,19 @@
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_uuWqQvSTEeOKmIQk3FL8KA" name="Bind RTSC Instances" outgoings="_uuWqLPSTEeOKmIQk3FL8KA" incomings="_uuWqJvSTEeOKmIQk3FL8KA">
         <ownedRule xmi:id="_uuWqQ_STEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqRPSTEeOKmIQk3FL8KA" name="subRoleInstance" bindingState="BOUND" outgoingLinks="_uuWqSfSTEeOKmIQk3FL8KA _uuWqSvSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqRfSTEeOKmIQk3FL8KA" name="subRoleRTSCInstance" incomingLinks="_uuWqSfSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqRvSTEeOKmIQk3FL8KA" name="connectorInstance" incomingLinks="_uuWqSvSTEeOKmIQk3FL8KA" outgoingLinks="_uuWqS_STEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeRoleConnectorInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeRoleConnectorInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqR_STEeOKmIQk3FL8KA" name="singleRoleInstance" incomingLinks="_uuWqS_STEeOKmIQk3FL8KA" outgoingLinks="_uuWqTPSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqSPSTEeOKmIQk3FL8KA" name="singleRoleRTSCInstance" incomingLinks="_uuWqTPSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWqSfSTEeOKmIQk3FL8KA" name="subRoleRTSCInstance_runtimeBehavioralElement" source="_uuWqRPSTEeOKmIQk3FL8KA" target="_uuWqRfSTEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeBehavioralElement/statechartInstance"/>
@@ -14894,10 +14894,10 @@
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_uuWqTfSTEeOKmIQk3FL8KA" name="Delete Variable Bindings of Subrole" outgoings="_uuWqKPSTEeOKmIQk3FL8KA _uuWqKfSTEeOKmIQk3FL8KA" incomings="_uuWqKPSTEeOKmIQk3FL8KA _uuWqLPSTEeOKmIQk3FL8KA" forEach="true">
         <ownedRule xmi:id="_uuWqTvSTEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqT_STEeOKmIQk3FL8KA" name="subRoleRTSCInstance" bindingState="BOUND" outgoingLinks="_uuWqUfSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqUPSTEeOKmIQk3FL8KA" name="variableBinding" incomingLinks="_uuWqUfSTEeOKmIQk3FL8KA" bindingOperator="DESTROY">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//VariableBinding"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//VariableBinding"/>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWqUfSTEeOKmIQk3FL8KA" name="varBindings" bindingOperator="DESTROY" source="_uuWqT_STEeOKmIQk3FL8KA" target="_uuWqUPSTEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance/variableBindings"/>
@@ -14907,10 +14907,10 @@
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_uuWqUvSTEeOKmIQk3FL8KA" name="Delete Variable Bindings of Member" outgoings="_uuWqKvSTEeOKmIQk3FL8KA _uuWqK_STEeOKmIQk3FL8KA" incomings="_uuWqKfSTEeOKmIQk3FL8KA _uuWqKvSTEeOKmIQk3FL8KA" forEach="true">
         <ownedRule xmi:id="_uuWqU_STEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqVPSTEeOKmIQk3FL8KA" name="singleRoleRTSCInstance" bindingState="BOUND" outgoingLinks="_uuWqVvSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqVfSTEeOKmIQk3FL8KA" name="variableBinding" incomingLinks="_uuWqVvSTEeOKmIQk3FL8KA" bindingOperator="DESTROY">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//VariableBinding"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//VariableBinding"/>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWqVvSTEeOKmIQk3FL8KA" name="varBindings" bindingOperator="DESTROY" source="_uuWqVPSTEeOKmIQk3FL8KA" target="_uuWqVfSTEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance/variableBindings"/>
@@ -14942,7 +14942,7 @@
               <attribute href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//BoolWrapper/boolValue"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_uuWqafSTEeOKmIQk3FL8KA" expressionText="false" language="OCL" languageVersion="1.0"/>
             </attributeAssignments>
-            <genericType href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//BoolWrapper"/>
+            <classifier href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//BoolWrapper"/>
           </variables>
         </ownedRule>
       </ownedActivityNodes>
@@ -14953,7 +14953,7 @@
               <attribute href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//BoolWrapper/boolValue"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_uuWqbvSTEeOKmIQk3FL8KA" expressionText="true" language="OCL" languageVersion="1.0"/>
             </attributeAssignments>
-            <genericType href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//BoolWrapper"/>
+            <classifier href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//BoolWrapper"/>
           </variables>
         </ownedRule>
       </ownedActivityNodes>
@@ -14966,10 +14966,10 @@
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_uuWqc_STEeOKmIQk3FL8KA" name="Bind Profile" outgoings="_uuWqYfSTEeOKmIQk3FL8KA _uuWqYPSTEeOKmIQk3FL8KA" incomings="_uuWqX_STEeOKmIQk3FL8KA">
         <ownedRule xmi:id="_uuWqdPSTEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqdfSTEeOKmIQk3FL8KA" name="profile" incomingLinks="_uuWqd_STEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//Profile"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//Profile"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqdvSTEeOKmIQk3FL8KA" name="iterator" bindingState="BOUND" outgoingLinks="_uuWqd_STEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//ProfileIterator"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//ProfileIterator"/>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWqd_STEeOKmIQk3FL8KA" name="iterator_2_profile" source="_uuWqdvSTEeOKmIQk3FL8KA" target="_uuWqdfSTEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//ProfileIterator/profilesToDo"/>
@@ -14993,10 +14993,10 @@
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_uuWqgvSTEeOKmIQk3FL8KA" name="Match Profile" outgoings="_uuWqgPSTEeOKmIQk3FL8KA" incomings="_uuWqf_STEeOKmIQk3FL8KA">
         <ownedRule xmi:id="_uuWqg_STEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqhPSTEeOKmIQk3FL8KA" name="iter" bindingState="BOUND" outgoingLinks="_uuWqhvSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//ProfileIterator"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//ProfileIterator"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqhfSTEeOKmIQk3FL8KA" name="p" incomingLinks="_uuWqhvSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//Profile"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//Profile"/>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWqhvSTEeOKmIQk3FL8KA" name="iter_2_p" bindingOperator="DESTROY" source="_uuWqhPSTEeOKmIQk3FL8KA" target="_uuWqhfSTEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//ProfileIterator/profilesToDo"/>
@@ -15020,7 +15020,7 @@
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_uuWqkfSTEeOKmIQk3FL8KA" name="Delete Iterator" outgoings="_uuWqj_STEeOKmIQk3FL8KA" incomings="_uuWqjvSTEeOKmIQk3FL8KA">
         <ownedRule xmi:id="_uuWqkvSTEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqk_STEeOKmIQk3FL8KA" name="iterator" bindingState="BOUND" bindingOperator="DESTROY">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//ProfileIterator"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//ProfileIterator"/>
           </variables>
         </ownedRule>
       </ownedActivityNodes>
@@ -15041,7 +15041,7 @@
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_uuWqnvSTEeOKmIQk3FL8KA" name="Create Objects" outgoings="_uuWqnPSTEeOKmIQk3FL8KA" incomings="_uuWqm_STEeOKmIQk3FL8KA">
         <ownedRule xmi:id="_uuWqn_STEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqoPSTEeOKmIQk3FL8KA" name="store" bindingOperator="CREATE">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore"/>
           </variables>
         </ownedRule>
       </ownedActivityNodes>
@@ -15066,13 +15066,13 @@
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_uuWqrvSTEeOKmIQk3FL8KA" name="Create List" outgoings="_uuWqrPSTEeOKmIQk3FL8KA" incomings="_uuWqq_STEeOKmIQk3FL8KA">
         <ownedRule xmi:id="_uuWqr_STEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqsPSTEeOKmIQk3FL8KA" name="store" bindingState="BOUND" outgoingLinks="_uuWqs_STEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqsfSTEeOKmIQk3FL8KA" name="r" incomingLinks="_uuWqs_STEeOKmIQk3FL8KA" outgoingLinks="_uuWqtPSTEeOKmIQk3FL8KA" bindingOperator="CREATE">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqsvSTEeOKmIQk3FL8KA" name="role" bindingState="BOUND" incomingLinks="_uuWqtPSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWqs_STEeOKmIQk3FL8KA" name="store_2_r" bindingOperator="CREATE" source="_uuWqsPSTEeOKmIQk3FL8KA" target="_uuWqsfSTEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore/roleProfiles"/>
@@ -15107,16 +15107,16 @@
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_uuWqxfSTEeOKmIQk3FL8KA" name="add Profile" outgoings="_uuWqw_STEeOKmIQk3FL8KA" incomings="_uuWqwfSTEeOKmIQk3FL8KA">
         <ownedRule xmi:id="_uuWqxvSTEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqx_STEeOKmIQk3FL8KA" name="allProfiles" bindingState="BOUND" outgoingLinks="_uuWqy_STEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqyPSTEeOKmIQk3FL8KA" name="role" bindingState="BOUND" incomingLinks="_uuWqzPSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqyfSTEeOKmIQk3FL8KA" name="r" incomingLinks="_uuWqy_STEeOKmIQk3FL8KA" outgoingLinks="_uuWqzPSTEeOKmIQk3FL8KA _uuWqzfSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqyvSTEeOKmIQk3FL8KA" name="profile" bindingState="BOUND" incomingLinks="_uuWqzfSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//Profile"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//Profile"/>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWqy_STEeOKmIQk3FL8KA" name="allProfiles_2_r" source="_uuWqx_STEeOKmIQk3FL8KA" target="_uuWqyfSTEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore/roleProfiles"/>
@@ -15135,10 +15135,10 @@
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_uuWq0PSTEeOKmIQk3FL8KA" name="Set current Profile if not already set" outgoings="_uuWqwvSTEeOKmIQk3FL8KA" incomings="_uuWqw_STEeOKmIQk3FL8KA">
         <ownedRule xmi:id="_uuWq0fSTEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWq0vSTEeOKmIQk3FL8KA" name="r" bindingState="BOUND" outgoingLinks="_uuWq1vSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWq0_STEeOKmIQk3FL8KA" name="profile" bindingState="BOUND" incomingLinks="_uuWq1vSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//Profile"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//Profile"/>
           </variables>
           <constraints xmi:id="_uuWq1PSTEeOKmIQk3FL8KA">
             <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_uuWq1fSTEeOKmIQk3FL8KA" expressionText="r.currentProfile.oclIsUndefined()" language="OCL" languageVersion="1.0"/>
@@ -15171,16 +15171,16 @@
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_uuWq5PSTEeOKmIQk3FL8KA" name="Get Profile" outgoings="_uuWq4vSTEeOKmIQk3FL8KA _FftvMHyNEeSgTeWUASugdw" incomings="_uuWq4fSTEeOKmIQk3FL8KA">
         <ownedRule xmi:id="_uuWq5fSTEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWq5vSTEeOKmIQk3FL8KA" name="allProfiles" bindingState="BOUND" outgoingLinks="_uuWq6vSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWq5_STEeOKmIQk3FL8KA" name="role" bindingState="BOUND" incomingLinks="_uuWq6_STEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWq6PSTEeOKmIQk3FL8KA" name="r" incomingLinks="_uuWq6vSTEeOKmIQk3FL8KA" outgoingLinks="_uuWq6_STEeOKmIQk3FL8KA _uuWq7PSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWq6fSTEeOKmIQk3FL8KA" name="profile" incomingLinks="_uuWq7PSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//Profile"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//Profile"/>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWq6vSTEeOKmIQk3FL8KA" name="allProfiles_2_r" source="_uuWq5vSTEeOKmIQk3FL8KA" target="_uuWq6PSTEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore/roleProfiles"/>
@@ -15199,16 +15199,16 @@
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_jPoKIHyMEeSgTeWUASugdw" name="Try second roleInstance" outgoings="_INrxUHyNEeSgTeWUASugdw" incomings="_FftvMHyNEeSgTeWUASugdw">
         <ownedRule xmi:id="_jQCZ0HyMEeSgTeWUASugdw" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_m-JqUHyMEeSgTeWUASugdw" name="allProfiles" bindingState="BOUND" outgoingLinks="_7Zd38HyMEeSgTeWUASugdw">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_sFc7UHyMEeSgTeWUASugdw" name="r" incomingLinks="_7Zd38HyMEeSgTeWUASugdw" outgoingLinks="_8s85EHyMEeSgTeWUASugdw _-PEzIHyMEeSgTeWUASugdw">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_vnnagHyMEeSgTeWUASugdw" name="profile" incomingLinks="_8s85EHyMEeSgTeWUASugdw">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//Profile"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//Profile"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_x0TUgHyMEeSgTeWUASugdw" name="role" bindingState="BOUND" incomingLinks="_-PEzIHyMEeSgTeWUASugdw">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_7Zd38HyMEeSgTeWUASugdw" name="l" source="_m-JqUHyMEeSgTeWUASugdw" target="_sFc7UHyMEeSgTeWUASugdw">
             <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore/roleProfiles"/>
@@ -15242,13 +15242,13 @@
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_uuWq-vSTEeOKmIQk3FL8KA" name="Delete All Profiles" outgoings="_uuWq-PSTEeOKmIQk3FL8KA" incomings="_uuWq9_STEeOKmIQk3FL8KA">
         <ownedRule xmi:id="_uuWq-_STEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWq_PSTEeOKmIQk3FL8KA" name="subRole" bindingState="BOUND" incomingLinks="_uuWrAPSTEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWq_fSTEeOKmIQk3FL8KA" name="allProfiles" bindingState="BOUND" outgoingLinks="_uuWq__STEeOKmIQk3FL8KA">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWq_vSTEeOKmIQk3FL8KA" name="profiles" incomingLinks="_uuWq__STEeOKmIQk3FL8KA" outgoingLinks="_uuWrAPSTEeOKmIQk3FL8KA" bindingOperator="DESTROY">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles"/>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWq__STEeOKmIQk3FL8KA" name="link" bindingOperator="DESTROY" source="_uuWq_fSTEeOKmIQk3FL8KA" target="_uuWq_vSTEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore/roleProfiles"/>
@@ -15282,16 +15282,16 @@
       <ownedActivityNodes xsi:type="sda:ModifyingStoryNode" xmi:id="_OIJUC3iwEeSM8KwkAFk8ZA" name="Create List" outgoings="_OIJUCXiwEeSM8KwkAFk8ZA" incomings="_OIJUCHiwEeSM8KwkAFk8ZA">
         <ownedRule xmi:id="_OIJUDHiwEeSM8KwkAFk8ZA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_OIJUDXiwEeSM8KwkAFk8ZA" name="store" bindingState="BOUND" outgoingLinks="_OIJUEHiwEeSM8KwkAFk8ZA">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_OIJUDniwEeSM8KwkAFk8ZA" name="r" incomingLinks="_OIJUEHiwEeSM8KwkAFk8ZA" outgoingLinks="_OIJUEXiwEeSM8KwkAFk8ZA _ojFFQHixEeSM8KwkAFk8ZA" bindingOperator="CREATE">
-            <genericType href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles"/>
+            <classifier href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_OIJUD3iwEeSM8KwkAFk8ZA" name="role" bindingState="BOUND" incomingLinks="_OIJUEXiwEeSM8KwkAFk8ZA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeDiscreteInteractionEndpointInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeDiscreteInteractionEndpointInstance"/>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_iih4EHixEeSM8KwkAFk8ZA" name="secondRole" bindingState="BOUND" incomingLinks="_ojFFQHixEeSM8KwkAFk8ZA">
-            <genericType href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeDiscreteInteractionEndpointInstance"/>
+            <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeDiscreteInteractionEndpointInstance"/>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_OIJUEHiwEeSM8KwkAFk8ZA" name="store_2_r" bindingOperator="CREATE" source="_OIJUDXiwEeSM8KwkAFk8ZA" target="_OIJUDniwEeSM8KwkAFk8ZA">
             <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore/roleProfiles"/>
