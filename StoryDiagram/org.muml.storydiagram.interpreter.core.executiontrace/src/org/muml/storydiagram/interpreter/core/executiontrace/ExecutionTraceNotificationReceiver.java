@@ -14,7 +14,7 @@ import org.muml.storydiagram.interpreter.core.executiontrace.ActivityNodeExecuti
 import org.muml.storydiagram.interpreter.core.executiontrace.AttributeValueSet;
 import org.muml.storydiagram.interpreter.core.executiontrace.Execution;
 import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTrace;
-import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTraceFactory;
+import org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontraceFactory;
 import org.muml.storydiagram.interpreter.core.executiontrace.ExpressionEvaluation;
 import org.muml.storydiagram.interpreter.core.executiontrace.InstanceLinkCreation;
 import org.muml.storydiagram.interpreter.core.executiontrace.InstanceLinkDeletion;
@@ -107,7 +107,7 @@ public class ExecutionTraceNotificationReceiver<ActivityType, ActivityNodeType, 
 
 	public void reset()
 	{
-		this.executionTrace = ExecutionTraceFactory.eINSTANCE.createExecutionTrace();
+		this.executionTrace = ExecutiontraceFactory.eINSTANCE.createExecutionTrace();
 		this.currentContainerStack = new Stack<Execution>();
 		this.containerToChildrenMap = new HashMap<Execution, List<Execution>>();
 		this.executionTraceChildren = new LinkedList<Execution>();
@@ -341,7 +341,7 @@ public class ExecutionTraceNotificationReceiver<ActivityType, ActivityNodeType, 
 	private void handleActivityNodeExecutionStarted(
 			final ActivityNodeExecutionStartedNotification<ActivityNodeType, ClassifierType> notification)
 	{
-		final ActivityNodeExecution<ActivityNodeType> a = ExecutionTraceFactory.eINSTANCE.createActivityNodeExecution();
+		final ActivityNodeExecution<ActivityNodeType> a = ExecutiontraceFactory.eINSTANCE.createActivityNodeExecution();
 
 		a.setActivityNode(notification.getActivityNode());
 		a.setExecutionStartedTimeStamp(System.nanoTime());
@@ -366,7 +366,7 @@ public class ExecutionTraceNotificationReceiver<ActivityType, ActivityNodeType, 
 
 	private void handleTraversingActivityEdge(final TraversingActivityEdgeNotification<ActivityEdgeType, ClassifierType> notification)
 	{
-		final ActivityEdgeTraversal<ActivityEdgeType> a = ExecutionTraceFactory.eINSTANCE.createActivityEdgeTraversal();
+		final ActivityEdgeTraversal<ActivityEdgeType> a = ExecutiontraceFactory.eINSTANCE.createActivityEdgeTraversal();
 		a.setActivityEdge(notification.getActivityEdge());
 		a.setExecutionStartedTimeStamp(System.nanoTime());
 		a.setExecutionFinishedTimeStamp(a.getExecutionStartedTimeStamp());
@@ -377,7 +377,7 @@ public class ExecutionTraceNotificationReceiver<ActivityType, ActivityNodeType, 
 	private void handleStoryPatternInitializationStarted(
 			final StoryPatternInitializationStartedNotification<StoryPatternType, ClassifierType> notification)
 	{
-		final StoryPatternInitialization<StoryPatternType> s = ExecutionTraceFactory.eINSTANCE.createStoryPatternInitialization();
+		final StoryPatternInitialization<StoryPatternType> s = ExecutiontraceFactory.eINSTANCE.createStoryPatternInitialization();
 		s.setExecutionStartedTimeStamp(System.nanoTime());
 		s.setStoryPattern(notification.getStoryPattern());
 
@@ -403,7 +403,7 @@ public class ExecutionTraceNotificationReceiver<ActivityType, ActivityNodeType, 
 	private void handleStoryPatternMatchingStarted(
 			final StoryPatternMatchingStartedNotification<StoryPatternType, ClassifierType> notification)
 	{
-		final StoryPatternMatching<StoryPatternType> s = ExecutionTraceFactory.eINSTANCE.createStoryPatternMatching();
+		final StoryPatternMatching<StoryPatternType> s = ExecutiontraceFactory.eINSTANCE.createStoryPatternMatching();
 		s.setExecutionStartedTimeStamp(System.nanoTime());
 		s.setStoryPattern(notification.getStoryPattern());
 
@@ -443,7 +443,7 @@ public class ExecutionTraceNotificationReceiver<ActivityType, ActivityNodeType, 
 	private void handleStoryPatternApplicationStarted(
 			final StoryPatternApplicationStartedNotification<StoryPatternType, ClassifierType> notification)
 	{
-		final StoryPatternApplication<StoryPatternType> s = ExecutionTraceFactory.eINSTANCE.createStoryPatternApplication();
+		final StoryPatternApplication<StoryPatternType> s = ExecutiontraceFactory.eINSTANCE.createStoryPatternApplication();
 		s.setExecutionStartedTimeStamp(System.nanoTime());
 		s.setStoryPattern(notification.getStoryPattern());
 
@@ -468,7 +468,7 @@ public class ExecutionTraceNotificationReceiver<ActivityType, ActivityNodeType, 
 	private void handleStoryPatternObjectBound(
 			final StoryPatternObjectBoundNotification<StoryPatternObjectType, ClassifierType> notification)
 	{
-		final StoryPatternObjectBound<StoryPatternObjectType> s = ExecutionTraceFactory.eINSTANCE.createStoryPatternObjectBound();
+		final StoryPatternObjectBound<StoryPatternObjectType> s = ExecutiontraceFactory.eINSTANCE.createStoryPatternObjectBound();
 		s.setExecutionStartedTimeStamp(System.nanoTime());
 		s.setExecutionFinishedTimeStamp(s.getExecutionStartedTimeStamp());
 		s.setStoryPatternObject(notification.getStoryPatternObject());
@@ -480,7 +480,7 @@ public class ExecutionTraceNotificationReceiver<ActivityType, ActivityNodeType, 
 	private void handleStoryPatternObjectNotBound(
 			final StoryPatternObjectNotBoundNotification<StoryPatternObjectType, ClassifierType> notification)
 	{
-		final StoryPatternObjectNotBound<StoryPatternObjectType> s = ExecutionTraceFactory.eINSTANCE.createStoryPatternObjectNotBound();
+		final StoryPatternObjectNotBound<StoryPatternObjectType> s = ExecutiontraceFactory.eINSTANCE.createStoryPatternObjectNotBound();
 		s.setExecutionStartedTimeStamp(System.nanoTime());
 		s.setExecutionFinishedTimeStamp(s.getExecutionStartedTimeStamp());
 		s.setStoryPatternObject(notification.getStoryPatternObject());
@@ -491,7 +491,7 @@ public class ExecutionTraceNotificationReceiver<ActivityType, ActivityNodeType, 
 	private void handleStoryPatternObjectBindingRevoked(
 			final StoryPatternObjectBindingRevokedNotification<StoryPatternObjectType, ClassifierType> notification)
 	{
-		final StoryPatternObjectBindingRevoked<StoryPatternObjectType> s = ExecutionTraceFactory.eINSTANCE
+		final StoryPatternObjectBindingRevoked<StoryPatternObjectType> s = ExecutiontraceFactory.eINSTANCE
 				.createStoryPatternObjectBindingRevoked();
 		s.setExecutionStartedTimeStamp(System.nanoTime());
 		s.setExecutionFinishedTimeStamp(s.getExecutionStartedTimeStamp());
@@ -504,7 +504,7 @@ public class ExecutionTraceNotificationReceiver<ActivityType, ActivityNodeType, 
 	private void handleTraversingLink(
 			final TraversingLinkNotification<StoryPatternObjectType, StoryPatternLinkType, ClassifierType> notification)
 	{
-		final TraversingLink<StoryPatternLinkType, StoryPatternObjectType> e = ExecutionTraceFactory.eINSTANCE.createTraversingLink();
+		final TraversingLink<StoryPatternLinkType, StoryPatternObjectType> e = ExecutiontraceFactory.eINSTANCE.createTraversingLink();
 		e.setExecutionStartedTimeStamp(System.nanoTime());
 		e.setExecutionFinishedTimeStamp(e.getExecutionStartedTimeStamp());
 		e.setStoryPatternLink(notification.getLink());
@@ -518,7 +518,7 @@ public class ExecutionTraceNotificationReceiver<ActivityType, ActivityNodeType, 
 	private void handleLinkCheckSuccessful(
 			final LinkCheckSuccessfulNotification<StoryPatternObjectType, StoryPatternLinkType, ClassifierType> notification)
 	{
-		final LinkCheckSuccessful<StoryPatternLinkType, StoryPatternObjectType> e = ExecutionTraceFactory.eINSTANCE
+		final LinkCheckSuccessful<StoryPatternLinkType, StoryPatternObjectType> e = ExecutiontraceFactory.eINSTANCE
 				.createLinkCheckSuccessful();
 		e.setExecutionStartedTimeStamp(System.nanoTime());
 		e.setExecutionFinishedTimeStamp(e.getExecutionStartedTimeStamp());
@@ -534,7 +534,7 @@ public class ExecutionTraceNotificationReceiver<ActivityType, ActivityNodeType, 
 	private void handleLinkCheckFailed(
 			final LinkCheckFailedNotification<StoryPatternObjectType, StoryPatternLinkType, ClassifierType> notification)
 	{
-		final LinkCheckFailed<StoryPatternLinkType, StoryPatternObjectType> e = ExecutionTraceFactory.eINSTANCE.createLinkCheckFailed();
+		final LinkCheckFailed<StoryPatternLinkType, StoryPatternObjectType> e = ExecutiontraceFactory.eINSTANCE.createLinkCheckFailed();
 		e.setExecutionStartedTimeStamp(System.nanoTime());
 		e.setExecutionFinishedTimeStamp(e.getExecutionStartedTimeStamp());
 		e.setSourceStoryPatternObject(notification.getSourceStoryPatternObject());
@@ -548,7 +548,7 @@ public class ExecutionTraceNotificationReceiver<ActivityType, ActivityNodeType, 
 
 	private void handleEvaluatingExpression(final EvaluatingExpressionNotification<ClassifierType, ExpressionType> notification)
 	{
-		final ExpressionEvaluation<ExpressionType> e = ExecutionTraceFactory.eINSTANCE.createExpressionEvaluation();
+		final ExpressionEvaluation<ExpressionType> e = ExecutiontraceFactory.eINSTANCE.createExpressionEvaluation();
 		e.setExecutionStartedTimeStamp(System.nanoTime());
 		e.setExpression(notification.getExpression());
 
@@ -579,7 +579,7 @@ public class ExecutionTraceNotificationReceiver<ActivityType, ActivityNodeType, 
 
 	private void handleInstanceObjectCreated(final InstanceObjectCreatedNotification<StoryPatternObjectType, ClassifierType> notification)
 	{
-		final InstanceObjectCreation<StoryPatternObjectType> i = ExecutionTraceFactory.eINSTANCE.createInstanceObjectCreation();
+		final InstanceObjectCreation<StoryPatternObjectType> i = ExecutiontraceFactory.eINSTANCE.createInstanceObjectCreation();
 
 		i.setExecutionStartedTimeStamp(System.nanoTime());
 		i.setExecutionFinishedTimeStamp(i.getExecutionFinishedTimeStamp());
@@ -592,7 +592,7 @@ public class ExecutionTraceNotificationReceiver<ActivityType, ActivityNodeType, 
 	private void handleInstanceObjectDesctroyed(
 			final InstanceObjectDestroyedNotification<StoryPatternObjectType, ClassifierType> notification)
 	{
-		final InstanceObjectDeletion<StoryPatternObjectType> i = ExecutionTraceFactory.eINSTANCE.createInstanceObjectDeletion();
+		final InstanceObjectDeletion<StoryPatternObjectType> i = ExecutiontraceFactory.eINSTANCE.createInstanceObjectDeletion();
 
 		i.setExecutionStartedTimeStamp(System.nanoTime());
 		i.setExecutionFinishedTimeStamp(i.getExecutionFinishedTimeStamp());
@@ -605,7 +605,7 @@ public class ExecutionTraceNotificationReceiver<ActivityType, ActivityNodeType, 
 	private void handleInstanceLinkCreated(
 			final InstanceLinkCreatedNotification<StoryPatternObjectType, StoryPatternLinkType, ClassifierType> notification)
 	{
-		final InstanceLinkCreation<StoryPatternLinkType, StoryPatternObjectType> i = ExecutionTraceFactory.eINSTANCE
+		final InstanceLinkCreation<StoryPatternLinkType, StoryPatternObjectType> i = ExecutiontraceFactory.eINSTANCE
 				.createInstanceLinkCreation();
 
 		i.setExecutionStartedTimeStamp(System.nanoTime());
@@ -621,7 +621,7 @@ public class ExecutionTraceNotificationReceiver<ActivityType, ActivityNodeType, 
 	private void handleInstanceLinkDestroyed(
 			final InstanceLinkDestroyedNotification<StoryPatternObjectType, StoryPatternLinkType, ClassifierType> notification)
 	{
-		final InstanceLinkDeletion<StoryPatternLinkType, StoryPatternObjectType> i = ExecutionTraceFactory.eINSTANCE
+		final InstanceLinkDeletion<StoryPatternLinkType, StoryPatternObjectType> i = ExecutiontraceFactory.eINSTANCE
 				.createInstanceLinkDeletion();
 
 		i.setExecutionStartedTimeStamp(System.nanoTime());
@@ -636,7 +636,7 @@ public class ExecutionTraceNotificationReceiver<ActivityType, ActivityNodeType, 
 
 	private void handleVariableCreated(final VariableCreatedNotification<ClassifierType> notification)
 	{
-		final VariableCreated<ClassifierType> v = ExecutionTraceFactory.eINSTANCE.createVariableCreated();
+		final VariableCreated<ClassifierType> v = ExecutiontraceFactory.eINSTANCE.createVariableCreated();
 		v.setExecutionStartedTimeStamp(System.nanoTime());
 		v.setExecutionFinishedTimeStamp(v.getExecutionStartedTimeStamp());
 
@@ -658,7 +658,7 @@ public class ExecutionTraceNotificationReceiver<ActivityType, ActivityNodeType, 
 
 	private void handleVariableDeleted(final VariableDeletedNotification<ClassifierType> notification)
 	{
-		final VariableDeleted<ClassifierType> v = ExecutionTraceFactory.eINSTANCE.createVariableDeleted();
+		final VariableDeleted<ClassifierType> v = ExecutiontraceFactory.eINSTANCE.createVariableDeleted();
 		v.setExecutionStartedTimeStamp(System.nanoTime());
 		v.setExecutionFinishedTimeStamp(v.getExecutionStartedTimeStamp());
 
@@ -680,7 +680,7 @@ public class ExecutionTraceNotificationReceiver<ActivityType, ActivityNodeType, 
 
 	private void handleVariableValueChanged(final VariableValueChangedNotification<ClassifierType> notification)
 	{
-		final VariableChanged<ClassifierType> v = ExecutionTraceFactory.eINSTANCE.createVariableChanged();
+		final VariableChanged<ClassifierType> v = ExecutiontraceFactory.eINSTANCE.createVariableChanged();
 		v.setExecutionStartedTimeStamp(System.nanoTime());
 		v.setExecutionFinishedTimeStamp(v.getExecutionStartedTimeStamp());
 
@@ -712,7 +712,7 @@ public class ExecutionTraceNotificationReceiver<ActivityType, ActivityNodeType, 
 	private void handleAttributeValueSet(
 			final AttributeValueSetNotification<StoryPatternObjectType, ClassifierType, FeatureType> notification)
 	{
-		final AttributeValueSet<StoryPatternObjectType, FeatureType> a = ExecutionTraceFactory.eINSTANCE.createAttributeValueSet();
+		final AttributeValueSet<StoryPatternObjectType, FeatureType> a = ExecutiontraceFactory.eINSTANCE.createAttributeValueSet();
 		a.setExecutionStartedTimeStamp(System.nanoTime());
 		a.setExecutionFinishedTimeStamp(a.getExecutionStartedTimeStamp());
 		a.setFeature(notification.getFeature());
@@ -734,7 +734,7 @@ public class ExecutionTraceNotificationReceiver<ActivityType, ActivityNodeType, 
 	private void handleStoryPatternConstraintHolds(
 			final StoryPatternConstraintHoldsNotification<StoryPatternType, ClassifierType, ExpressionType> notification)
 	{
-		final StoryPatternConstraintHolds<StoryPatternType, ExpressionType> s = ExecutionTraceFactory.eINSTANCE
+		final StoryPatternConstraintHolds<StoryPatternType, ExpressionType> s = ExecutiontraceFactory.eINSTANCE
 				.createStoryPatternConstraintHolds();
 		s.setExecutionStartedTimeStamp(System.nanoTime());
 		s.setExecutionFinishedTimeStamp(s.getExecutionStartedTimeStamp());
@@ -747,7 +747,7 @@ public class ExecutionTraceNotificationReceiver<ActivityType, ActivityNodeType, 
 	private void handleStoryPatternConstraintViolated(
 			final StoryPatternConstraintViolatedNotification<StoryPatternType, ClassifierType, ExpressionType> notification)
 	{
-		final StoryPatternConstraintViolated<StoryPatternType, ExpressionType> s = ExecutionTraceFactory.eINSTANCE
+		final StoryPatternConstraintViolated<StoryPatternType, ExpressionType> s = ExecutiontraceFactory.eINSTANCE
 				.createStoryPatternConstraintViolated();
 		s.setExecutionStartedTimeStamp(System.nanoTime());
 		s.setExecutionFinishedTimeStamp(s.getExecutionStartedTimeStamp());
@@ -760,7 +760,7 @@ public class ExecutionTraceNotificationReceiver<ActivityType, ActivityNodeType, 
 	private void handleStoryPatternObjectConstraintHolds(
 			final StoryPatternObjectConstraintHoldsNotification<StoryPatternObjectType, ClassifierType, ExpressionType> notification)
 	{
-		final StoryPatternObjectConstraintHolds<StoryPatternObjectType, ExpressionType> s = ExecutionTraceFactory.eINSTANCE
+		final StoryPatternObjectConstraintHolds<StoryPatternObjectType, ExpressionType> s = ExecutiontraceFactory.eINSTANCE
 				.createStoryPatternObjectConstraintHolds();
 		s.setExecutionStartedTimeStamp(System.nanoTime());
 		s.setExecutionFinishedTimeStamp(s.getExecutionStartedTimeStamp());
@@ -773,7 +773,7 @@ public class ExecutionTraceNotificationReceiver<ActivityType, ActivityNodeType, 
 	private void handleStoryPatternObjectConstraintViolated(
 			final StoryPatternObjectConstraintViolatedNotification<StoryPatternObjectType, ClassifierType, ExpressionType> notification)
 	{
-		final StoryPatternObjectConstraintViolated<StoryPatternObjectType, ExpressionType> s = ExecutionTraceFactory.eINSTANCE
+		final StoryPatternObjectConstraintViolated<StoryPatternObjectType, ExpressionType> s = ExecutiontraceFactory.eINSTANCE
 				.createStoryPatternObjectConstraintViolated();
 		s.setExecutionStartedTimeStamp(System.nanoTime());
 		s.setExecutionFinishedTimeStamp(s.getExecutionStartedTimeStamp());
@@ -785,7 +785,7 @@ public class ExecutionTraceNotificationReceiver<ActivityType, ActivityNodeType, 
 
 	private void handleActivityExecutionStarted(final ActivityExecutionStartedNotification<ActivityType, ClassifierType> notification)
 	{
-		final ActivityExecution<ActivityType> a = ExecutionTraceFactory.eINSTANCE.createActivityExecution();
+		final ActivityExecution<ActivityType> a = ExecutiontraceFactory.eINSTANCE.createActivityExecution();
 		a.setActivity(notification.getActivity());
 		a.setExecutionStartedTimeStamp(System.nanoTime());
 
