@@ -786,13 +786,13 @@
          <propertySection
             id="property.section.general" 
             tab="property.tab.general"
-            filter="org.muml.core.properties.tabs.GeneralTabElementFilter"
+            filter="org.muml.core.properties.tabs.Property_tab_generalTabElementFilter"
             class="org.muml.ape.runtime.sections.ObjectPropertySection">
          </propertySection>
          <propertySection
             id="property.section.documentation" 
             tab="property.tab.documentation"
-            filter="org.muml.core.properties.tabs.DocumentationTabElementFilter"
+            filter="org.muml.core.properties.tabs.Property_tab_documentationTabElementFilter"
             class="org.muml.ape.runtime.sections.ObjectPropertySection">
          </propertySection>
       </propertySections>
