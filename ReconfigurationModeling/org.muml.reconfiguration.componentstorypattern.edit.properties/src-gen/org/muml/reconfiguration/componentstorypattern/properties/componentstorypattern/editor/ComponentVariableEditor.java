@@ -31,11 +31,11 @@ public class ComponentVariableEditor extends org.muml.ape.runtime.editors.ClassP
 
 			addPropertyEditor(createEditorBindingSemantics_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorBindingOperator_property_tab_generalTab_Editor(), false);
-
 			addPropertyEditor(createEditorBindingState_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorBindingOperator_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -45,11 +45,11 @@ public class ComponentVariableEditor extends org.muml.ape.runtime.editors.ClassP
 
 			addPropertyEditor(createEditorBindingSemantics_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorBindingOperator_property_tab_generalTab_Editor(), false);
-
 			addPropertyEditor(createEditorBindingState_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorBindingOperator_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -96,19 +96,6 @@ public class ComponentVariableEditor extends org.muml.ape.runtime.editors.ClassP
 		return this.editorType_property_tab_generalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBindingSemantics_property_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBindingSemantics_property_tab_generalTab_Editor() {
-		if (this.editorBindingSemantics_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-					.getComponentStoryPatternVariable_BindingSemantics();
-			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.OptionPropertyEditor(
-					adapterFactory, feature);
-
-			this.editorBindingSemantics_property_tab_generalTab = editor;
-		}
-		return this.editorBindingSemantics_property_tab_generalTab;
-	}
-
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBindingOperator_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBindingOperator_property_tab_generalTab_Editor() {
 		if (this.editorBindingOperator_property_tab_generalTab == null) {
@@ -136,8 +123,7 @@ public class ComponentVariableEditor extends org.muml.ape.runtime.editors.ClassP
 				org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(feature);
 
 				try {
-					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery(
-							"let\n	parents : OrderedSet(OclAny) = self.eContainer()->closure(eContainer())->asOrderedSet()\nin\n	not parents->select(oclIsTypeOf(componentstorydiagram::ComponentStoryNode))->isEmpty()");
+					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery("false");
 
 					org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 						@Override
@@ -157,6 +143,19 @@ public class ComponentVariableEditor extends org.muml.ape.runtime.editors.ClassP
 			this.editorBindingOperator_property_tab_generalTab = editor;
 		}
 		return this.editorBindingOperator_property_tab_generalTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBindingSemantics_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBindingSemantics_property_tab_generalTab_Editor() {
+		if (this.editorBindingSemantics_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+					.getComponentStoryPatternVariable_BindingSemantics();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.OptionPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorBindingSemantics_property_tab_generalTab = editor;
+		}
+		return this.editorBindingSemantics_property_tab_generalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBindingState_property_tab_generalTab;
@@ -257,9 +256,11 @@ public class ComponentVariableEditor extends org.muml.ape.runtime.editors.ClassP
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
-					"property.tab.general", "property.tab.general", "property.tab.documentation",
-					"property.tab.extensions", "property.tab.general"}).contains(tab);
+			return java.util.Arrays
+					.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+							"property.tab.general", "property.tab.general", "property.tab.general",
+							"property.tab.documentation", "property.tab.extensions", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

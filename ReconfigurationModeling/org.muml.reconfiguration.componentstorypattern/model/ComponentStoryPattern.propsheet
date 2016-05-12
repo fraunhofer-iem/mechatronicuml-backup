@@ -41,7 +41,6 @@
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property" xmi:id="_Rk55YM1gEeSIgPDefa6ZBw" tooltip="" initializeOCLExpression="">
         <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingOperator"/>
-        <visibilityFilters xsi:type="org.muml:OCLFilter" xmi:id="_Rk55Yc1gEeSIgPDefa6ZBw" expression="let&#xD;&#xA;&#x9;parents : OrderedSet(OclAny) = self.eContainer()->closure(eContainer())->asOrderedSet()&#xD;&#xA;in&#xD;&#xA;&#x9;not parents->select(oclIsTypeOf(componentstorydiagram::ComponentStoryNode))->isEmpty()"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_Rk55Ys1gEeSIgPDefa6ZBw"/>
       </orderedElements>
@@ -59,6 +58,12 @@
         <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/type"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_Rk6gcc1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingOperator"/>
+        <visibilityFilters xsi:type="org.muml:OCLFilter" expression="false"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes xmi:id="_Rk6gcs1gEeSIgPDefa6ZBw">
@@ -97,7 +102,7 @@
       <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
       <orderedElements xsi:type="org.muml:Property" xmi:id="_Rk7Hh81gEeSIgPDefa6ZBw" tooltip="" initializeOCLExpression="">
         <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable/positionConstraints"/>
-        <visibilityFilters xsi:type="org.muml:OCLFilter" xmi:id="_Rk7ukM1gEeSIgPDefa6ZBw" expression="-- only show this editor if SinglePortVariable is &quot;embedded&quot; in MultiPortVariable&#xD;&#xA;if &#xD;&#xA;&#x9;self.eContainer().oclIsUndefined() or not (self.eContainer().oclIsTypeOf(ComponentVariable) or self.eContainer().oclIsKindOf(PartVariable))&#xD;&#xA;then&#xD;&#xA;&#x9;false&#xD;&#xA;else&#xD;&#xA;&#x9;if&#xD;&#xA;&#x9;&#x9;self.eContainer().oclIsTypeOf(ComponentVariable)&#xD;&#xA;&#x9;then&#xD;&#xA;&#x9;&#x9;let container: ComponentVariable = self.eContainer().oclAsType(ComponentVariable) in&#xD;&#xA;&#x9;&#x9;if&#xD;&#xA;&#x9;&#x9;&#x9;container.portVariables->select(oclIsTypeOf(MultiPortVariable))->exists(mPV |mPV.oclAsType(MultiPortVariable).gmfSubPortVariables->includes(self))&#xD;&#xA;&#x9;&#x9;then&#xD;&#xA;&#x9;&#x9;&#x9;true&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;false&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;else &#xD;&#xA;&#x9;&#x9;if&#xD;&#xA;&#x9;&#x9;&#x9;self.eContainer().oclIsKindOf(PartVariable)&#xD;&#xA;&#x9;&#x9;then&#xD;&#xA;&#x9;&#x9;&#x9;let container: PartVariable = self.eContainer().oclAsType(PartVariable) in&#xD;&#xA;&#x9;&#x9;&#x9;if&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;container.portVariables->select(oclIsTypeOf(MultiPortVariable))->exists(mPV |mPV.oclAsType(MultiPortVariable).gmfSubPortVariables->includes(self))&#xD;&#xA;&#x9;&#x9;&#x9;then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;true&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;false&#xD;&#xA;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;false&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;endif&#xD;&#xA;&#xD;&#xA;endif"/>
+        <visibilityFilters xsi:type="org.muml:OCLFilter" xmi:id="_Rk7ukM1gEeSIgPDefa6ZBw" expression="-- only show this editor if SinglePortVariable is &quot;embedded&quot; in MultiPortVariable&#xD;&#xA;if &#xD;&#xA;&#x9;self.oclAsType(ecore::EObject).eContainer().oclIsUndefined() or not (self.oclAsType(ecore::EObject).eContainer().oclIsTypeOf(ComponentVariable) or self.eContainer().oclIsKindOf(PartVariable))&#xD;&#xA;then&#xD;&#xA;&#x9;false&#xD;&#xA;else&#xD;&#xA;&#x9;if&#xD;&#xA;&#x9;&#x9;self.oclAsType(ecore::EObject).eContainer().oclIsTypeOf(ComponentVariable)&#xD;&#xA;&#x9;then&#xD;&#xA;&#x9;&#x9;let container : ComponentVariable = self.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentVariable) in&#xD;&#xA;&#x9;&#x9;if&#xD;&#xA;&#x9;&#x9;&#x9;container.portVariables->select(oclIsTypeOf(MultiPortVariable))->exists(mPV |mPV.oclAsType(MultiPortVariable).gmfSubPortVariables->includes(self))&#xD;&#xA;&#x9;&#x9;then&#xD;&#xA;&#x9;&#x9;&#x9;true&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;false&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;else &#xD;&#xA;&#x9;&#x9;if&#xD;&#xA;&#x9;&#x9;&#x9;self.oclAsType(ecore::EObject).eContainer().oclIsKindOf(PartVariable)&#xD;&#xA;&#x9;&#x9;then&#xD;&#xA;&#x9;&#x9;&#x9;let container: PartVariable = self.eContainer().oclAsType(PartVariable) in&#xD;&#xA;&#x9;&#x9;&#x9;if&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;container.portVariables->select(oclIsTypeOf(MultiPortVariable))->exists(mPV |mPV.oclAsType(MultiPortVariable).gmfSubPortVariables->includes(self))&#xD;&#xA;&#x9;&#x9;&#x9;then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;true&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;false&#xD;&#xA;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;false&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;endif&#xD;&#xA;&#xD;&#xA;endif"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_Rk7ukc1gEeSIgPDefa6ZBw"/>
       </orderedElements>

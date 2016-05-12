@@ -178,43 +178,6 @@ public abstract class PortVariableEditor extends org.muml.ape.runtime.editors.Cl
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.OptionPropertyEditor(
 					adapterFactory, feature);
 
-			{
-				editor.setInput(input);
-				editor.registerOCLAdapter(new org.eclipse.emf.common.notify.impl.AdapterImpl() {
-					@Override
-					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
-						boolean visibleBefore = editor.isVisible();
-						editor.updateVisibility(true);
-
-						// Set default value, if we are hiding the editor and it was not hidden before.
-						if (!editor.isVisible() && visibleBefore) {
-							editor.setDefaultValue();
-						}
-					}
-				});
-
-				final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
-				org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(feature);
-
-				try {
-					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery(
-							"let\n	parents : OrderedSet(OclAny) = self.eContainer()->closure(eContainer())->asOrderedSet()\nin\n	not parents->select(oclIsTypeOf(componentstorydiagram::ComponentStoryNode))->isEmpty()");
-
-					org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
-						@Override
-						public boolean select(Object object) {
-							return object != null && Boolean.TRUE.equals(ocl.evaluate(object, oclExpression));
-						}
-					};
-					if (filter != null) {
-						editor.addVisibilityFilter(filter);
-					}
-
-				} catch (org.eclipse.ocl.pivot.utilities.ParserException e) {
-					e.printStackTrace();
-				}
-			}
-
 			this.editorBindingOperator_property_tab_generalTab = editor;
 		}
 		return this.editorBindingOperator_property_tab_generalTab;
