@@ -77,10 +77,10 @@ public class ComponentSDDPaletteFactory {
 		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(Messages.Edge1CreationTool_title,
 				Messages.Edge1CreationTool_desc, Collections.singletonList(ComponentSDDElementTypes.Edge_4001));
 		entry.setId("createEdge1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(ComponentSDDDiagramEditorPlugin
-				.findImageDescriptor("/org.muml.storydiagram.verification.sdd.edit/icons/full/obj16/Edge.gif")); //$NON-NLS-1$
-		entry.setLargeIcon(ComponentSDDDiagramEditorPlugin
-				.findImageDescriptor("/org.muml.storydiagram.verification.sdd.edit/icons/full/obj16/Edge.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(ComponentSDDDiagramEditorPlugin.findImageDescriptor(
+				"/de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd/icons/edge.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(ComponentSDDDiagramEditorPlugin.findImageDescriptor(
+				"/de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd/icons/edge.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -91,10 +91,10 @@ public class ComponentSDDPaletteFactory {
 		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.LeafNode2CreationTool_title,
 				Messages.LeafNode2CreationTool_desc, Collections.singletonList(ComponentSDDElementTypes.LeafNode_2002));
 		entry.setId("createLeafNode2CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(ComponentSDDDiagramEditorPlugin
-				.findImageDescriptor("/org.muml.storydiagram.verification.sdd.edit/icons/full/obj16/LeafNode.gif")); //$NON-NLS-1$
-		entry.setLargeIcon(ComponentSDDDiagramEditorPlugin
-				.findImageDescriptor("/org.muml.storydiagram.verification.sdd.edit/icons/full/obj16/LeafNode.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(ComponentSDDDiagramEditorPlugin.findImageDescriptor(
+				"/de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd/icons/leaf_node.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(ComponentSDDDiagramEditorPlugin.findImageDescriptor(
+				"/de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd/icons/leaf_node.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -106,10 +106,10 @@ public class ComponentSDDPaletteFactory {
 				Messages.PatternNode3CreationTool_desc,
 				Collections.singletonList(ComponentSDDElementTypes.ComponentStoryPatternNode_2003));
 		entry.setId("createPatternNode3CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(ComponentSDDDiagramEditorPlugin
-				.findImageDescriptor("/org.muml.storydiagram.verification.sdd.edit/icons/full/obj16/PatternNode.gif")); //$NON-NLS-1$
-		entry.setLargeIcon(ComponentSDDDiagramEditorPlugin
-				.findImageDescriptor("/org.muml.storydiagram.verification.sdd.edit/icons/full/obj16/PatternNode.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(ComponentSDDDiagramEditorPlugin.findImageDescriptor(
+				"/de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd/icons/pattern_node.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(ComponentSDDDiagramEditorPlugin.findImageDescriptor(
+				"/de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd/icons/pattern_node.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
