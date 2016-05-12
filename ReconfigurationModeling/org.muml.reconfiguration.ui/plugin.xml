@@ -364,7 +364,7 @@
              </metamodelType>
           </metamodel>
           <metamodel
-                nsURI="http://www.fujaba.de/muml/reconfiguration/protocolinstantiation/0.4.0">
+                nsURI="http://www.muml.org/reconfiguration/protocolinstantiation/1.0.0">
              <metamodelType
                    eclass="BroadcastPort"
                    edithelper="org.muml.reconfiguration.ui.edit.helpers.BroadcastPortEditHelper"
