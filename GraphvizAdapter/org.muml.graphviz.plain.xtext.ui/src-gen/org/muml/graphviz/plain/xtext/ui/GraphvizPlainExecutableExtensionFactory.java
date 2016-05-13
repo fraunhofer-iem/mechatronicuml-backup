@@ -4,10 +4,11 @@
 package org.muml.graphviz.plain.xtext.ui;
 
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
-import org.muml.graphviz.plain.xtext.ui.internal.GraphvizPlainActivator;
 import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
+
+import org.muml.graphviz.plain.xtext.ui.internal.GraphvizPlainActivator;
 
 /**
  * This class was generated. Customizations should only happen in a newly
@@ -22,7 +23,7 @@ public class GraphvizPlainExecutableExtensionFactory extends AbstractGuiceAwareE
 	
 	@Override
 	protected Injector getInjector() {
-		return GraphvizPlainActivator.getInstance().getInjector(GraphvizPlainActivator.DE_UNI_PADERBORN_FUJABA_GRAPHVIZ_PLAIN_XTEXT_GRAPHVIZPLAIN);
+		return GraphvizPlainActivator.getInstance().getInjector(GraphvizPlainActivator.ORG_MUML_GRAPHVIZ_PLAIN_XTEXT_GRAPHVIZPLAIN);
 	}
 	
 }

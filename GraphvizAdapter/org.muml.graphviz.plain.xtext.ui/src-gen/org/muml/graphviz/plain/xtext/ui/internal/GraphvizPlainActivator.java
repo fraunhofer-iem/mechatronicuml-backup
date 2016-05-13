@@ -23,7 +23,7 @@ import com.google.inject.Module;
  */
 public class GraphvizPlainActivator extends AbstractUIPlugin {
 	
-	public static final String DE_UNI_PADERBORN_FUJABA_GRAPHVIZ_PLAIN_XTEXT_GRAPHVIZPLAIN = "org.muml.graphviz.plain.xtext.GraphvizPlain";
+	public static final String ORG_MUML_GRAPHVIZ_PLAIN_XTEXT_GRAPHVIZPLAIN = "org.muml.graphviz.plain.xtext.GraphvizPlain";
 	
 	private static final Logger logger = Logger.getLogger(GraphvizPlainActivator.class);
 	
@@ -73,7 +73,7 @@ public class GraphvizPlainActivator extends AbstractUIPlugin {
 	}
 
 	protected Module getRuntimeModule(String grammar) {
-		if (DE_UNI_PADERBORN_FUJABA_GRAPHVIZ_PLAIN_XTEXT_GRAPHVIZPLAIN.equals(grammar)) {
+		if (ORG_MUML_GRAPHVIZ_PLAIN_XTEXT_GRAPHVIZPLAIN.equals(grammar)) {
 			return new org.muml.graphviz.plain.xtext.GraphvizPlainRuntimeModule();
 		}
 		
@@ -81,7 +81,7 @@ public class GraphvizPlainActivator extends AbstractUIPlugin {
 	}
 	
 	protected Module getUiModule(String grammar) {
-		if (DE_UNI_PADERBORN_FUJABA_GRAPHVIZ_PLAIN_XTEXT_GRAPHVIZPLAIN.equals(grammar)) {
+		if (ORG_MUML_GRAPHVIZ_PLAIN_XTEXT_GRAPHVIZPLAIN.equals(grammar)) {
 			return new org.muml.graphviz.plain.xtext.ui.GraphvizPlainUiModule(this);
 		}
 		

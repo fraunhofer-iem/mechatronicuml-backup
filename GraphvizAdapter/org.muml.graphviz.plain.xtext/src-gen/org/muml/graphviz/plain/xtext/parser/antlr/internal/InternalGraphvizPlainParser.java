@@ -1,15 +1,22 @@
 package org.muml.graphviz.plain.xtext.parser.antlr.internal; 
 
-import org.antlr.runtime.BitSet;
-import org.antlr.runtime.NoViableAltException;
-import org.antlr.runtime.RecognitionException;
-import org.antlr.runtime.RecognizerSharedState;
-import org.antlr.runtime.Token;
-import org.antlr.runtime.TokenStream;
+import org.eclipse.xtext.*;
+import org.eclipse.xtext.parser.*;
+import org.eclipse.xtext.parser.impl.*;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
+import org.eclipse.xtext.parser.antlr.XtextTokenStream;
+import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
 import org.eclipse.xtext.parser.antlr.AntlrDatatypeRuleToken;
 import org.muml.graphviz.plain.xtext.services.GraphvizPlainGrammarAccess;
+
+
+
+import org.antlr.runtime.*;
+import java.util.Stack;
+import java.util.List;
+import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
@@ -17,19 +24,19 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_DOUBLE", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'graph'", "'stop'", "'node'", "'edge'", "'-'"
     };
     public static final int RULE_ID=4;
-    public static final int RULE_STRING=7;
-    public static final int T__16=16;
-    public static final int T__15=15;
-    public static final int T__12=12;
-    public static final int T__14=14;
-    public static final int T__13=13;
-    public static final int RULE_ANY_OTHER=11;
-    public static final int RULE_INT=5;
     public static final int RULE_WS=10;
+    public static final int RULE_STRING=7;
+    public static final int RULE_ANY_OTHER=11;
     public static final int RULE_SL_COMMENT=9;
-    public static final int EOF=-1;
+    public static final int T__15=15;
     public static final int RULE_DOUBLE=6;
+    public static final int T__16=16;
+    public static final int RULE_INT=5;
     public static final int RULE_ML_COMMENT=8;
+    public static final int T__12=12;
+    public static final int T__13=13;
+    public static final int T__14=14;
+    public static final int EOF=-1;
 
     // delegates
     // delegators
@@ -45,7 +52,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
         
 
     public String[] getTokenNames() { return InternalGraphvizPlainParser.tokenNames; }
-    public String getGrammarFileName() { return "../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g"; }
+    public String getGrammarFileName() { return "InternalGraphvizPlain.g"; }
 
 
 
@@ -70,7 +77,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGraph"
-    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:67:1: entryRuleGraph returns [EObject current=null] : iv_ruleGraph= ruleGraph EOF ;
+    // InternalGraphvizPlain.g:67:1: entryRuleGraph returns [EObject current=null] : iv_ruleGraph= ruleGraph EOF ;
     public final EObject entryRuleGraph() throws RecognitionException {
         EObject current = null;
 
@@ -78,17 +85,17 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:68:2: (iv_ruleGraph= ruleGraph EOF )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:69:2: iv_ruleGraph= ruleGraph EOF
+            // InternalGraphvizPlain.g:68:2: (iv_ruleGraph= ruleGraph EOF )
+            // InternalGraphvizPlain.g:69:2: iv_ruleGraph= ruleGraph EOF
             {
              newCompositeNode(grammarAccess.getGraphRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleGraph_in_entryRuleGraph75);
+            pushFollow(FollowSets000.FOLLOW_1);
             iv_ruleGraph=ruleGraph();
 
             state._fsp--;
 
              current =iv_ruleGraph; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleGraph85); 
+            match(input,EOF,FollowSets000.FOLLOW_2); 
 
             }
 
@@ -106,7 +113,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGraph"
-    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:76:1: ruleGraph returns [EObject current=null] : (otherlv_0= 'graph' ( (lv_scale_1_0= ruleNumber ) ) ( (lv_width_2_0= ruleNumber ) ) ( (lv_height_3_0= ruleNumber ) ) ( (lv_nodes_4_0= ruleNode ) )* ( (lv_edges_5_0= ruleEdge ) )* otherlv_6= 'stop' ) ;
+    // InternalGraphvizPlain.g:76:1: ruleGraph returns [EObject current=null] : (otherlv_0= 'graph' ( (lv_scale_1_0= ruleNumber ) ) ( (lv_width_2_0= ruleNumber ) ) ( (lv_height_3_0= ruleNumber ) ) ( (lv_nodes_4_0= ruleNode ) )* ( (lv_edges_5_0= ruleEdge ) )* otherlv_6= 'stop' ) ;
     public final EObject ruleGraph() throws RecognitionException {
         EObject current = null;
 
@@ -126,26 +133,26 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:79:28: ( (otherlv_0= 'graph' ( (lv_scale_1_0= ruleNumber ) ) ( (lv_width_2_0= ruleNumber ) ) ( (lv_height_3_0= ruleNumber ) ) ( (lv_nodes_4_0= ruleNode ) )* ( (lv_edges_5_0= ruleEdge ) )* otherlv_6= 'stop' ) )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:80:1: (otherlv_0= 'graph' ( (lv_scale_1_0= ruleNumber ) ) ( (lv_width_2_0= ruleNumber ) ) ( (lv_height_3_0= ruleNumber ) ) ( (lv_nodes_4_0= ruleNode ) )* ( (lv_edges_5_0= ruleEdge ) )* otherlv_6= 'stop' )
+            // InternalGraphvizPlain.g:79:28: ( (otherlv_0= 'graph' ( (lv_scale_1_0= ruleNumber ) ) ( (lv_width_2_0= ruleNumber ) ) ( (lv_height_3_0= ruleNumber ) ) ( (lv_nodes_4_0= ruleNode ) )* ( (lv_edges_5_0= ruleEdge ) )* otherlv_6= 'stop' ) )
+            // InternalGraphvizPlain.g:80:1: (otherlv_0= 'graph' ( (lv_scale_1_0= ruleNumber ) ) ( (lv_width_2_0= ruleNumber ) ) ( (lv_height_3_0= ruleNumber ) ) ( (lv_nodes_4_0= ruleNode ) )* ( (lv_edges_5_0= ruleEdge ) )* otherlv_6= 'stop' )
             {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:80:1: (otherlv_0= 'graph' ( (lv_scale_1_0= ruleNumber ) ) ( (lv_width_2_0= ruleNumber ) ) ( (lv_height_3_0= ruleNumber ) ) ( (lv_nodes_4_0= ruleNode ) )* ( (lv_edges_5_0= ruleEdge ) )* otherlv_6= 'stop' )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:80:3: otherlv_0= 'graph' ( (lv_scale_1_0= ruleNumber ) ) ( (lv_width_2_0= ruleNumber ) ) ( (lv_height_3_0= ruleNumber ) ) ( (lv_nodes_4_0= ruleNode ) )* ( (lv_edges_5_0= ruleEdge ) )* otherlv_6= 'stop'
+            // InternalGraphvizPlain.g:80:1: (otherlv_0= 'graph' ( (lv_scale_1_0= ruleNumber ) ) ( (lv_width_2_0= ruleNumber ) ) ( (lv_height_3_0= ruleNumber ) ) ( (lv_nodes_4_0= ruleNode ) )* ( (lv_edges_5_0= ruleEdge ) )* otherlv_6= 'stop' )
+            // InternalGraphvizPlain.g:80:3: otherlv_0= 'graph' ( (lv_scale_1_0= ruleNumber ) ) ( (lv_width_2_0= ruleNumber ) ) ( (lv_height_3_0= ruleNumber ) ) ( (lv_nodes_4_0= ruleNode ) )* ( (lv_edges_5_0= ruleEdge ) )* otherlv_6= 'stop'
             {
-            otherlv_0=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleGraph122); 
+            otherlv_0=(Token)match(input,12,FollowSets000.FOLLOW_3); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getGraphAccess().getGraphKeyword_0());
                 
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:84:1: ( (lv_scale_1_0= ruleNumber ) )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:85:1: (lv_scale_1_0= ruleNumber )
+            // InternalGraphvizPlain.g:84:1: ( (lv_scale_1_0= ruleNumber ) )
+            // InternalGraphvizPlain.g:85:1: (lv_scale_1_0= ruleNumber )
             {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:85:1: (lv_scale_1_0= ruleNumber )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:86:3: lv_scale_1_0= ruleNumber
+            // InternalGraphvizPlain.g:85:1: (lv_scale_1_0= ruleNumber )
+            // InternalGraphvizPlain.g:86:3: lv_scale_1_0= ruleNumber
             {
              
             	        newCompositeNode(grammarAccess.getGraphAccess().getScaleNumberParserRuleCall_1_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleNumber_in_ruleGraph143);
+            pushFollow(FollowSets000.FOLLOW_3);
             lv_scale_1_0=ruleNumber();
 
             state._fsp--;
@@ -158,7 +165,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
                    			current, 
                    			"scale",
                     		lv_scale_1_0, 
-                    		"Number");
+                    		"org.muml.graphviz.plain.xtext.GraphvizPlain.Number");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -167,16 +174,16 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:102:2: ( (lv_width_2_0= ruleNumber ) )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:103:1: (lv_width_2_0= ruleNumber )
+            // InternalGraphvizPlain.g:102:2: ( (lv_width_2_0= ruleNumber ) )
+            // InternalGraphvizPlain.g:103:1: (lv_width_2_0= ruleNumber )
             {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:103:1: (lv_width_2_0= ruleNumber )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:104:3: lv_width_2_0= ruleNumber
+            // InternalGraphvizPlain.g:103:1: (lv_width_2_0= ruleNumber )
+            // InternalGraphvizPlain.g:104:3: lv_width_2_0= ruleNumber
             {
              
             	        newCompositeNode(grammarAccess.getGraphAccess().getWidthNumberParserRuleCall_2_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleNumber_in_ruleGraph164);
+            pushFollow(FollowSets000.FOLLOW_3);
             lv_width_2_0=ruleNumber();
 
             state._fsp--;
@@ -189,7 +196,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
                    			current, 
                    			"width",
                     		lv_width_2_0, 
-                    		"Number");
+                    		"org.muml.graphviz.plain.xtext.GraphvizPlain.Number");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -198,16 +205,16 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:120:2: ( (lv_height_3_0= ruleNumber ) )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:121:1: (lv_height_3_0= ruleNumber )
+            // InternalGraphvizPlain.g:120:2: ( (lv_height_3_0= ruleNumber ) )
+            // InternalGraphvizPlain.g:121:1: (lv_height_3_0= ruleNumber )
             {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:121:1: (lv_height_3_0= ruleNumber )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:122:3: lv_height_3_0= ruleNumber
+            // InternalGraphvizPlain.g:121:1: (lv_height_3_0= ruleNumber )
+            // InternalGraphvizPlain.g:122:3: lv_height_3_0= ruleNumber
             {
              
             	        newCompositeNode(grammarAccess.getGraphAccess().getHeightNumberParserRuleCall_3_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleNumber_in_ruleGraph185);
+            pushFollow(FollowSets000.FOLLOW_4);
             lv_height_3_0=ruleNumber();
 
             state._fsp--;
@@ -220,7 +227,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
                    			current, 
                    			"height",
                     		lv_height_3_0, 
-                    		"Number");
+                    		"org.muml.graphviz.plain.xtext.GraphvizPlain.Number");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -229,7 +236,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:138:2: ( (lv_nodes_4_0= ruleNode ) )*
+            // InternalGraphvizPlain.g:138:2: ( (lv_nodes_4_0= ruleNode ) )*
             loop1:
             do {
                 int alt1=2;
@@ -242,15 +249,15 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:139:1: (lv_nodes_4_0= ruleNode )
+            	    // InternalGraphvizPlain.g:139:1: (lv_nodes_4_0= ruleNode )
             	    {
-            	    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:139:1: (lv_nodes_4_0= ruleNode )
-            	    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:140:3: lv_nodes_4_0= ruleNode
+            	    // InternalGraphvizPlain.g:139:1: (lv_nodes_4_0= ruleNode )
+            	    // InternalGraphvizPlain.g:140:3: lv_nodes_4_0= ruleNode
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getGraphAccess().getNodesNodeParserRuleCall_4_0()); 
             	    	    
-            	    pushFollow(FollowSets000.FOLLOW_ruleNode_in_ruleGraph206);
+            	    pushFollow(FollowSets000.FOLLOW_4);
             	    lv_nodes_4_0=ruleNode();
 
             	    state._fsp--;
@@ -263,7 +270,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
             	           			current, 
             	           			"nodes",
             	            		lv_nodes_4_0, 
-            	            		"Node");
+            	            		"org.muml.graphviz.plain.xtext.GraphvizPlain.Node");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -278,7 +285,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:156:3: ( (lv_edges_5_0= ruleEdge ) )*
+            // InternalGraphvizPlain.g:156:3: ( (lv_edges_5_0= ruleEdge ) )*
             loop2:
             do {
                 int alt2=2;
@@ -291,15 +298,15 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:157:1: (lv_edges_5_0= ruleEdge )
+            	    // InternalGraphvizPlain.g:157:1: (lv_edges_5_0= ruleEdge )
             	    {
-            	    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:157:1: (lv_edges_5_0= ruleEdge )
-            	    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:158:3: lv_edges_5_0= ruleEdge
+            	    // InternalGraphvizPlain.g:157:1: (lv_edges_5_0= ruleEdge )
+            	    // InternalGraphvizPlain.g:158:3: lv_edges_5_0= ruleEdge
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getGraphAccess().getEdgesEdgeParserRuleCall_5_0()); 
             	    	    
-            	    pushFollow(FollowSets000.FOLLOW_ruleEdge_in_ruleGraph228);
+            	    pushFollow(FollowSets000.FOLLOW_5);
             	    lv_edges_5_0=ruleEdge();
 
             	    state._fsp--;
@@ -312,7 +319,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
             	           			current, 
             	           			"edges",
             	            		lv_edges_5_0, 
-            	            		"Edge");
+            	            		"org.muml.graphviz.plain.xtext.GraphvizPlain.Edge");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -327,7 +334,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleGraph241); 
+            otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_2); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getGraphAccess().getStopKeyword_6());
                 
@@ -352,7 +359,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNode"
-    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:186:1: entryRuleNode returns [EObject current=null] : iv_ruleNode= ruleNode EOF ;
+    // InternalGraphvizPlain.g:186:1: entryRuleNode returns [EObject current=null] : iv_ruleNode= ruleNode EOF ;
     public final EObject entryRuleNode() throws RecognitionException {
         EObject current = null;
 
@@ -360,17 +367,17 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:187:2: (iv_ruleNode= ruleNode EOF )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:188:2: iv_ruleNode= ruleNode EOF
+            // InternalGraphvizPlain.g:187:2: (iv_ruleNode= ruleNode EOF )
+            // InternalGraphvizPlain.g:188:2: iv_ruleNode= ruleNode EOF
             {
              newCompositeNode(grammarAccess.getNodeRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleNode_in_entryRuleNode277);
+            pushFollow(FollowSets000.FOLLOW_1);
             iv_ruleNode=ruleNode();
 
             state._fsp--;
 
              current =iv_ruleNode; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleNode287); 
+            match(input,EOF,FollowSets000.FOLLOW_2); 
 
             }
 
@@ -388,7 +395,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNode"
-    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:195:1: ruleNode returns [EObject current=null] : (otherlv_0= 'node' ( (lv_name_1_0= ruleIdentifier ) ) ( (lv_position_2_0= rulePoint ) ) ( (lv_width_3_0= ruleNumber ) ) ( (lv_height_4_0= ruleNumber ) ) ruleIdentifier this_ID_6= RULE_ID this_ID_7= RULE_ID this_ID_8= RULE_ID this_ID_9= RULE_ID ) ;
+    // InternalGraphvizPlain.g:195:1: ruleNode returns [EObject current=null] : (otherlv_0= 'node' ( (lv_name_1_0= ruleIdentifier ) ) ( (lv_position_2_0= rulePoint ) ) ( (lv_width_3_0= ruleNumber ) ) ( (lv_height_4_0= ruleNumber ) ) ruleIdentifier this_ID_6= RULE_ID this_ID_7= RULE_ID this_ID_8= RULE_ID this_ID_9= RULE_ID ) ;
     public final EObject ruleNode() throws RecognitionException {
         EObject current = null;
 
@@ -409,26 +416,26 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:198:28: ( (otherlv_0= 'node' ( (lv_name_1_0= ruleIdentifier ) ) ( (lv_position_2_0= rulePoint ) ) ( (lv_width_3_0= ruleNumber ) ) ( (lv_height_4_0= ruleNumber ) ) ruleIdentifier this_ID_6= RULE_ID this_ID_7= RULE_ID this_ID_8= RULE_ID this_ID_9= RULE_ID ) )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:199:1: (otherlv_0= 'node' ( (lv_name_1_0= ruleIdentifier ) ) ( (lv_position_2_0= rulePoint ) ) ( (lv_width_3_0= ruleNumber ) ) ( (lv_height_4_0= ruleNumber ) ) ruleIdentifier this_ID_6= RULE_ID this_ID_7= RULE_ID this_ID_8= RULE_ID this_ID_9= RULE_ID )
+            // InternalGraphvizPlain.g:198:28: ( (otherlv_0= 'node' ( (lv_name_1_0= ruleIdentifier ) ) ( (lv_position_2_0= rulePoint ) ) ( (lv_width_3_0= ruleNumber ) ) ( (lv_height_4_0= ruleNumber ) ) ruleIdentifier this_ID_6= RULE_ID this_ID_7= RULE_ID this_ID_8= RULE_ID this_ID_9= RULE_ID ) )
+            // InternalGraphvizPlain.g:199:1: (otherlv_0= 'node' ( (lv_name_1_0= ruleIdentifier ) ) ( (lv_position_2_0= rulePoint ) ) ( (lv_width_3_0= ruleNumber ) ) ( (lv_height_4_0= ruleNumber ) ) ruleIdentifier this_ID_6= RULE_ID this_ID_7= RULE_ID this_ID_8= RULE_ID this_ID_9= RULE_ID )
             {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:199:1: (otherlv_0= 'node' ( (lv_name_1_0= ruleIdentifier ) ) ( (lv_position_2_0= rulePoint ) ) ( (lv_width_3_0= ruleNumber ) ) ( (lv_height_4_0= ruleNumber ) ) ruleIdentifier this_ID_6= RULE_ID this_ID_7= RULE_ID this_ID_8= RULE_ID this_ID_9= RULE_ID )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:199:3: otherlv_0= 'node' ( (lv_name_1_0= ruleIdentifier ) ) ( (lv_position_2_0= rulePoint ) ) ( (lv_width_3_0= ruleNumber ) ) ( (lv_height_4_0= ruleNumber ) ) ruleIdentifier this_ID_6= RULE_ID this_ID_7= RULE_ID this_ID_8= RULE_ID this_ID_9= RULE_ID
+            // InternalGraphvizPlain.g:199:1: (otherlv_0= 'node' ( (lv_name_1_0= ruleIdentifier ) ) ( (lv_position_2_0= rulePoint ) ) ( (lv_width_3_0= ruleNumber ) ) ( (lv_height_4_0= ruleNumber ) ) ruleIdentifier this_ID_6= RULE_ID this_ID_7= RULE_ID this_ID_8= RULE_ID this_ID_9= RULE_ID )
+            // InternalGraphvizPlain.g:199:3: otherlv_0= 'node' ( (lv_name_1_0= ruleIdentifier ) ) ( (lv_position_2_0= rulePoint ) ) ( (lv_width_3_0= ruleNumber ) ) ( (lv_height_4_0= ruleNumber ) ) ruleIdentifier this_ID_6= RULE_ID this_ID_7= RULE_ID this_ID_8= RULE_ID this_ID_9= RULE_ID
             {
-            otherlv_0=(Token)match(input,14,FollowSets000.FOLLOW_14_in_ruleNode324); 
+            otherlv_0=(Token)match(input,14,FollowSets000.FOLLOW_6); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getNodeAccess().getNodeKeyword_0());
                 
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:203:1: ( (lv_name_1_0= ruleIdentifier ) )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:204:1: (lv_name_1_0= ruleIdentifier )
+            // InternalGraphvizPlain.g:203:1: ( (lv_name_1_0= ruleIdentifier ) )
+            // InternalGraphvizPlain.g:204:1: (lv_name_1_0= ruleIdentifier )
             {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:204:1: (lv_name_1_0= ruleIdentifier )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:205:3: lv_name_1_0= ruleIdentifier
+            // InternalGraphvizPlain.g:204:1: (lv_name_1_0= ruleIdentifier )
+            // InternalGraphvizPlain.g:205:3: lv_name_1_0= ruleIdentifier
             {
              
             	        newCompositeNode(grammarAccess.getNodeAccess().getNameIdentifierParserRuleCall_1_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleIdentifier_in_ruleNode345);
+            pushFollow(FollowSets000.FOLLOW_3);
             lv_name_1_0=ruleIdentifier();
 
             state._fsp--;
@@ -441,7 +448,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
                    			current, 
                    			"name",
                     		lv_name_1_0, 
-                    		"Identifier");
+                    		"org.muml.graphviz.plain.xtext.GraphvizPlain.Identifier");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -450,16 +457,16 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:221:2: ( (lv_position_2_0= rulePoint ) )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:222:1: (lv_position_2_0= rulePoint )
+            // InternalGraphvizPlain.g:221:2: ( (lv_position_2_0= rulePoint ) )
+            // InternalGraphvizPlain.g:222:1: (lv_position_2_0= rulePoint )
             {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:222:1: (lv_position_2_0= rulePoint )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:223:3: lv_position_2_0= rulePoint
+            // InternalGraphvizPlain.g:222:1: (lv_position_2_0= rulePoint )
+            // InternalGraphvizPlain.g:223:3: lv_position_2_0= rulePoint
             {
              
             	        newCompositeNode(grammarAccess.getNodeAccess().getPositionPointParserRuleCall_2_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_rulePoint_in_ruleNode366);
+            pushFollow(FollowSets000.FOLLOW_3);
             lv_position_2_0=rulePoint();
 
             state._fsp--;
@@ -472,7 +479,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
                    			current, 
                    			"position",
                     		lv_position_2_0, 
-                    		"Point");
+                    		"org.muml.graphviz.plain.xtext.GraphvizPlain.Point");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -481,16 +488,16 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:239:2: ( (lv_width_3_0= ruleNumber ) )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:240:1: (lv_width_3_0= ruleNumber )
+            // InternalGraphvizPlain.g:239:2: ( (lv_width_3_0= ruleNumber ) )
+            // InternalGraphvizPlain.g:240:1: (lv_width_3_0= ruleNumber )
             {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:240:1: (lv_width_3_0= ruleNumber )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:241:3: lv_width_3_0= ruleNumber
+            // InternalGraphvizPlain.g:240:1: (lv_width_3_0= ruleNumber )
+            // InternalGraphvizPlain.g:241:3: lv_width_3_0= ruleNumber
             {
              
             	        newCompositeNode(grammarAccess.getNodeAccess().getWidthNumberParserRuleCall_3_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleNumber_in_ruleNode387);
+            pushFollow(FollowSets000.FOLLOW_3);
             lv_width_3_0=ruleNumber();
 
             state._fsp--;
@@ -503,7 +510,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
                    			current, 
                    			"width",
                     		lv_width_3_0, 
-                    		"Number");
+                    		"org.muml.graphviz.plain.xtext.GraphvizPlain.Number");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -512,16 +519,16 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:257:2: ( (lv_height_4_0= ruleNumber ) )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:258:1: (lv_height_4_0= ruleNumber )
+            // InternalGraphvizPlain.g:257:2: ( (lv_height_4_0= ruleNumber ) )
+            // InternalGraphvizPlain.g:258:1: (lv_height_4_0= ruleNumber )
             {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:258:1: (lv_height_4_0= ruleNumber )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:259:3: lv_height_4_0= ruleNumber
+            // InternalGraphvizPlain.g:258:1: (lv_height_4_0= ruleNumber )
+            // InternalGraphvizPlain.g:259:3: lv_height_4_0= ruleNumber
             {
              
             	        newCompositeNode(grammarAccess.getNodeAccess().getHeightNumberParserRuleCall_4_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleNumber_in_ruleNode408);
+            pushFollow(FollowSets000.FOLLOW_6);
             lv_height_4_0=ruleNumber();
 
             state._fsp--;
@@ -534,7 +541,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
                    			current, 
                    			"height",
                     		lv_height_4_0, 
-                    		"Number");
+                    		"org.muml.graphviz.plain.xtext.GraphvizPlain.Number");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -546,7 +553,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getNodeAccess().getIdentifierParserRuleCall_5()); 
                 
-            pushFollow(FollowSets000.FOLLOW_ruleIdentifier_in_ruleNode424);
+            pushFollow(FollowSets000.FOLLOW_7);
             ruleIdentifier();
 
             state._fsp--;
@@ -554,19 +561,19 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
              
                     afterParserOrEnumRuleCall();
                 
-            this_ID_6=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleNode434); 
+            this_ID_6=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_7); 
              
                 newLeafNode(this_ID_6, grammarAccess.getNodeAccess().getIDTerminalRuleCall_6()); 
                 
-            this_ID_7=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleNode444); 
+            this_ID_7=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_7); 
              
                 newLeafNode(this_ID_7, grammarAccess.getNodeAccess().getIDTerminalRuleCall_7()); 
                 
-            this_ID_8=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleNode454); 
+            this_ID_8=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_7); 
              
                 newLeafNode(this_ID_8, grammarAccess.getNodeAccess().getIDTerminalRuleCall_8()); 
                 
-            this_ID_9=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleNode464); 
+            this_ID_9=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_2); 
              
                 newLeafNode(this_ID_9, grammarAccess.getNodeAccess().getIDTerminalRuleCall_9()); 
                 
@@ -591,7 +598,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEdge"
-    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:307:1: entryRuleEdge returns [EObject current=null] : iv_ruleEdge= ruleEdge EOF ;
+    // InternalGraphvizPlain.g:307:1: entryRuleEdge returns [EObject current=null] : iv_ruleEdge= ruleEdge EOF ;
     public final EObject entryRuleEdge() throws RecognitionException {
         EObject current = null;
 
@@ -599,17 +606,17 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:308:2: (iv_ruleEdge= ruleEdge EOF )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:309:2: iv_ruleEdge= ruleEdge EOF
+            // InternalGraphvizPlain.g:308:2: (iv_ruleEdge= ruleEdge EOF )
+            // InternalGraphvizPlain.g:309:2: iv_ruleEdge= ruleEdge EOF
             {
              newCompositeNode(grammarAccess.getEdgeRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEdge_in_entryRuleEdge499);
+            pushFollow(FollowSets000.FOLLOW_1);
             iv_ruleEdge=ruleEdge();
 
             state._fsp--;
 
              current =iv_ruleEdge; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleEdge509); 
+            match(input,EOF,FollowSets000.FOLLOW_2); 
 
             }
 
@@ -627,7 +634,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEdge"
-    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:316:1: ruleEdge returns [EObject current=null] : (otherlv_0= 'edge' ( ( ruleIdentifier ) ) ( ( ruleIdentifier ) ) this_INT_3= RULE_INT ( (lv_splinePoints_4_0= rulePoint ) )* ( ruleIdentifier ruleNumber ruleNumber )? this_ID_8= RULE_ID this_ID_9= RULE_ID ) ;
+    // InternalGraphvizPlain.g:316:1: ruleEdge returns [EObject current=null] : (otherlv_0= 'edge' ( ( ruleIdentifier ) ) ( ( ruleIdentifier ) ) this_INT_3= RULE_INT ( (lv_splinePoints_4_0= rulePoint ) )* ( ruleIdentifier ruleNumber ruleNumber )? this_ID_8= RULE_ID this_ID_9= RULE_ID ) ;
     public final EObject ruleEdge() throws RecognitionException {
         EObject current = null;
 
@@ -641,21 +648,21 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:319:28: ( (otherlv_0= 'edge' ( ( ruleIdentifier ) ) ( ( ruleIdentifier ) ) this_INT_3= RULE_INT ( (lv_splinePoints_4_0= rulePoint ) )* ( ruleIdentifier ruleNumber ruleNumber )? this_ID_8= RULE_ID this_ID_9= RULE_ID ) )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:320:1: (otherlv_0= 'edge' ( ( ruleIdentifier ) ) ( ( ruleIdentifier ) ) this_INT_3= RULE_INT ( (lv_splinePoints_4_0= rulePoint ) )* ( ruleIdentifier ruleNumber ruleNumber )? this_ID_8= RULE_ID this_ID_9= RULE_ID )
+            // InternalGraphvizPlain.g:319:28: ( (otherlv_0= 'edge' ( ( ruleIdentifier ) ) ( ( ruleIdentifier ) ) this_INT_3= RULE_INT ( (lv_splinePoints_4_0= rulePoint ) )* ( ruleIdentifier ruleNumber ruleNumber )? this_ID_8= RULE_ID this_ID_9= RULE_ID ) )
+            // InternalGraphvizPlain.g:320:1: (otherlv_0= 'edge' ( ( ruleIdentifier ) ) ( ( ruleIdentifier ) ) this_INT_3= RULE_INT ( (lv_splinePoints_4_0= rulePoint ) )* ( ruleIdentifier ruleNumber ruleNumber )? this_ID_8= RULE_ID this_ID_9= RULE_ID )
             {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:320:1: (otherlv_0= 'edge' ( ( ruleIdentifier ) ) ( ( ruleIdentifier ) ) this_INT_3= RULE_INT ( (lv_splinePoints_4_0= rulePoint ) )* ( ruleIdentifier ruleNumber ruleNumber )? this_ID_8= RULE_ID this_ID_9= RULE_ID )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:320:3: otherlv_0= 'edge' ( ( ruleIdentifier ) ) ( ( ruleIdentifier ) ) this_INT_3= RULE_INT ( (lv_splinePoints_4_0= rulePoint ) )* ( ruleIdentifier ruleNumber ruleNumber )? this_ID_8= RULE_ID this_ID_9= RULE_ID
+            // InternalGraphvizPlain.g:320:1: (otherlv_0= 'edge' ( ( ruleIdentifier ) ) ( ( ruleIdentifier ) ) this_INT_3= RULE_INT ( (lv_splinePoints_4_0= rulePoint ) )* ( ruleIdentifier ruleNumber ruleNumber )? this_ID_8= RULE_ID this_ID_9= RULE_ID )
+            // InternalGraphvizPlain.g:320:3: otherlv_0= 'edge' ( ( ruleIdentifier ) ) ( ( ruleIdentifier ) ) this_INT_3= RULE_INT ( (lv_splinePoints_4_0= rulePoint ) )* ( ruleIdentifier ruleNumber ruleNumber )? this_ID_8= RULE_ID this_ID_9= RULE_ID
             {
-            otherlv_0=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleEdge546); 
+            otherlv_0=(Token)match(input,15,FollowSets000.FOLLOW_6); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getEdgeAccess().getEdgeKeyword_0());
                 
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:324:1: ( ( ruleIdentifier ) )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:325:1: ( ruleIdentifier )
+            // InternalGraphvizPlain.g:324:1: ( ( ruleIdentifier ) )
+            // InternalGraphvizPlain.g:325:1: ( ruleIdentifier )
             {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:325:1: ( ruleIdentifier )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:326:3: ruleIdentifier
+            // InternalGraphvizPlain.g:325:1: ( ruleIdentifier )
+            // InternalGraphvizPlain.g:326:3: ruleIdentifier
             {
 
             			if (current==null) {
@@ -665,7 +672,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getEdgeAccess().getSourcePlainNodeCrossReference_1_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleIdentifier_in_ruleEdge569);
+            pushFollow(FollowSets000.FOLLOW_6);
             ruleIdentifier();
 
             state._fsp--;
@@ -679,11 +686,11 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:339:2: ( ( ruleIdentifier ) )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:340:1: ( ruleIdentifier )
+            // InternalGraphvizPlain.g:339:2: ( ( ruleIdentifier ) )
+            // InternalGraphvizPlain.g:340:1: ( ruleIdentifier )
             {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:340:1: ( ruleIdentifier )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:341:3: ruleIdentifier
+            // InternalGraphvizPlain.g:340:1: ( ruleIdentifier )
+            // InternalGraphvizPlain.g:341:3: ruleIdentifier
             {
 
             			if (current==null) {
@@ -693,7 +700,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getEdgeAccess().getTargetPlainNodeCrossReference_2_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleIdentifier_in_ruleEdge592);
+            pushFollow(FollowSets000.FOLLOW_8);
             ruleIdentifier();
 
             state._fsp--;
@@ -707,11 +714,11 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_INT_3=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleEdge603); 
+            this_INT_3=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_9); 
              
                 newLeafNode(this_INT_3, grammarAccess.getEdgeAccess().getINTTerminalRuleCall_3()); 
                 
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:358:1: ( (lv_splinePoints_4_0= rulePoint ) )*
+            // InternalGraphvizPlain.g:358:1: ( (lv_splinePoints_4_0= rulePoint ) )*
             loop3:
             do {
                 int alt3=2;
@@ -724,15 +731,15 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:359:1: (lv_splinePoints_4_0= rulePoint )
+            	    // InternalGraphvizPlain.g:359:1: (lv_splinePoints_4_0= rulePoint )
             	    {
-            	    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:359:1: (lv_splinePoints_4_0= rulePoint )
-            	    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:360:3: lv_splinePoints_4_0= rulePoint
+            	    // InternalGraphvizPlain.g:359:1: (lv_splinePoints_4_0= rulePoint )
+            	    // InternalGraphvizPlain.g:360:3: lv_splinePoints_4_0= rulePoint
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getEdgeAccess().getSplinePointsPointParserRuleCall_4_0()); 
             	    	    
-            	    pushFollow(FollowSets000.FOLLOW_rulePoint_in_ruleEdge623);
+            	    pushFollow(FollowSets000.FOLLOW_9);
             	    lv_splinePoints_4_0=rulePoint();
 
             	    state._fsp--;
@@ -745,7 +752,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
             	           			current, 
             	           			"splinePoints",
             	            		lv_splinePoints_4_0, 
-            	            		"Point");
+            	            		"org.muml.graphviz.plain.xtext.GraphvizPlain.Point");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -760,7 +767,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:376:3: ( ruleIdentifier ruleNumber ruleNumber )?
+            // InternalGraphvizPlain.g:376:3: ( ruleIdentifier ruleNumber ruleNumber )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -776,12 +783,12 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
             }
             switch (alt4) {
                 case 1 :
-                    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:377:5: ruleIdentifier ruleNumber ruleNumber
+                    // InternalGraphvizPlain.g:377:5: ruleIdentifier ruleNumber ruleNumber
                     {
                      
                             newCompositeNode(grammarAccess.getEdgeAccess().getIdentifierParserRuleCall_5_0()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleIdentifier_in_ruleEdge641);
+                    pushFollow(FollowSets000.FOLLOW_3);
                     ruleIdentifier();
 
                     state._fsp--;
@@ -792,7 +799,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getEdgeAccess().getNumberParserRuleCall_5_1()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleNumber_in_ruleEdge656);
+                    pushFollow(FollowSets000.FOLLOW_3);
                     ruleNumber();
 
                     state._fsp--;
@@ -803,7 +810,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getEdgeAccess().getNumberParserRuleCall_5_2()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleNumber_in_ruleEdge671);
+                    pushFollow(FollowSets000.FOLLOW_7);
                     ruleNumber();
 
                     state._fsp--;
@@ -817,11 +824,11 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_ID_8=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleEdge683); 
+            this_ID_8=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_7); 
              
                 newLeafNode(this_ID_8, grammarAccess.getEdgeAccess().getIDTerminalRuleCall_6()); 
                 
-            this_ID_9=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleEdge693); 
+            this_ID_9=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_2); 
              
                 newLeafNode(this_ID_9, grammarAccess.getEdgeAccess().getIDTerminalRuleCall_7()); 
                 
@@ -846,7 +853,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePoint"
-    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:416:1: entryRulePoint returns [EObject current=null] : iv_rulePoint= rulePoint EOF ;
+    // InternalGraphvizPlain.g:416:1: entryRulePoint returns [EObject current=null] : iv_rulePoint= rulePoint EOF ;
     public final EObject entryRulePoint() throws RecognitionException {
         EObject current = null;
 
@@ -854,17 +861,17 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:417:2: (iv_rulePoint= rulePoint EOF )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:418:2: iv_rulePoint= rulePoint EOF
+            // InternalGraphvizPlain.g:417:2: (iv_rulePoint= rulePoint EOF )
+            // InternalGraphvizPlain.g:418:2: iv_rulePoint= rulePoint EOF
             {
              newCompositeNode(grammarAccess.getPointRule()); 
-            pushFollow(FollowSets000.FOLLOW_rulePoint_in_entryRulePoint728);
+            pushFollow(FollowSets000.FOLLOW_1);
             iv_rulePoint=rulePoint();
 
             state._fsp--;
 
              current =iv_rulePoint; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRulePoint738); 
+            match(input,EOF,FollowSets000.FOLLOW_2); 
 
             }
 
@@ -882,7 +889,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePoint"
-    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:425:1: rulePoint returns [EObject current=null] : ( ( (lv_x_0_0= ruleNumber ) ) ( (lv_y_1_0= ruleNumber ) ) ) ;
+    // InternalGraphvizPlain.g:425:1: rulePoint returns [EObject current=null] : ( ( (lv_x_0_0= ruleNumber ) ) ( (lv_y_1_0= ruleNumber ) ) ) ;
     public final EObject rulePoint() throws RecognitionException {
         EObject current = null;
 
@@ -894,22 +901,22 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:428:28: ( ( ( (lv_x_0_0= ruleNumber ) ) ( (lv_y_1_0= ruleNumber ) ) ) )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:429:1: ( ( (lv_x_0_0= ruleNumber ) ) ( (lv_y_1_0= ruleNumber ) ) )
+            // InternalGraphvizPlain.g:428:28: ( ( ( (lv_x_0_0= ruleNumber ) ) ( (lv_y_1_0= ruleNumber ) ) ) )
+            // InternalGraphvizPlain.g:429:1: ( ( (lv_x_0_0= ruleNumber ) ) ( (lv_y_1_0= ruleNumber ) ) )
             {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:429:1: ( ( (lv_x_0_0= ruleNumber ) ) ( (lv_y_1_0= ruleNumber ) ) )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:429:2: ( (lv_x_0_0= ruleNumber ) ) ( (lv_y_1_0= ruleNumber ) )
+            // InternalGraphvizPlain.g:429:1: ( ( (lv_x_0_0= ruleNumber ) ) ( (lv_y_1_0= ruleNumber ) ) )
+            // InternalGraphvizPlain.g:429:2: ( (lv_x_0_0= ruleNumber ) ) ( (lv_y_1_0= ruleNumber ) )
             {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:429:2: ( (lv_x_0_0= ruleNumber ) )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:430:1: (lv_x_0_0= ruleNumber )
+            // InternalGraphvizPlain.g:429:2: ( (lv_x_0_0= ruleNumber ) )
+            // InternalGraphvizPlain.g:430:1: (lv_x_0_0= ruleNumber )
             {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:430:1: (lv_x_0_0= ruleNumber )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:431:3: lv_x_0_0= ruleNumber
+            // InternalGraphvizPlain.g:430:1: (lv_x_0_0= ruleNumber )
+            // InternalGraphvizPlain.g:431:3: lv_x_0_0= ruleNumber
             {
              
             	        newCompositeNode(grammarAccess.getPointAccess().getXNumberParserRuleCall_0_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleNumber_in_rulePoint784);
+            pushFollow(FollowSets000.FOLLOW_3);
             lv_x_0_0=ruleNumber();
 
             state._fsp--;
@@ -922,7 +929,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
                    			current, 
                    			"x",
                     		lv_x_0_0, 
-                    		"Number");
+                    		"org.muml.graphviz.plain.xtext.GraphvizPlain.Number");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -931,16 +938,16 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:447:2: ( (lv_y_1_0= ruleNumber ) )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:448:1: (lv_y_1_0= ruleNumber )
+            // InternalGraphvizPlain.g:447:2: ( (lv_y_1_0= ruleNumber ) )
+            // InternalGraphvizPlain.g:448:1: (lv_y_1_0= ruleNumber )
             {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:448:1: (lv_y_1_0= ruleNumber )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:449:3: lv_y_1_0= ruleNumber
+            // InternalGraphvizPlain.g:448:1: (lv_y_1_0= ruleNumber )
+            // InternalGraphvizPlain.g:449:3: lv_y_1_0= ruleNumber
             {
              
             	        newCompositeNode(grammarAccess.getPointAccess().getYNumberParserRuleCall_1_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleNumber_in_rulePoint805);
+            pushFollow(FollowSets000.FOLLOW_2);
             lv_y_1_0=ruleNumber();
 
             state._fsp--;
@@ -953,7 +960,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
                    			current, 
                    			"y",
                     		lv_y_1_0, 
-                    		"Number");
+                    		"org.muml.graphviz.plain.xtext.GraphvizPlain.Number");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -983,7 +990,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNumber"
-    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:473:1: entryRuleNumber returns [String current=null] : iv_ruleNumber= ruleNumber EOF ;
+    // InternalGraphvizPlain.g:473:1: entryRuleNumber returns [String current=null] : iv_ruleNumber= ruleNumber EOF ;
     public final String entryRuleNumber() throws RecognitionException {
         String current = null;
 
@@ -991,17 +998,17 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:474:2: (iv_ruleNumber= ruleNumber EOF )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:475:2: iv_ruleNumber= ruleNumber EOF
+            // InternalGraphvizPlain.g:474:2: (iv_ruleNumber= ruleNumber EOF )
+            // InternalGraphvizPlain.g:475:2: iv_ruleNumber= ruleNumber EOF
             {
              newCompositeNode(grammarAccess.getNumberRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleNumber_in_entryRuleNumber842);
+            pushFollow(FollowSets000.FOLLOW_1);
             iv_ruleNumber=ruleNumber();
 
             state._fsp--;
 
              current =iv_ruleNumber.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleNumber853); 
+            match(input,EOF,FollowSets000.FOLLOW_2); 
 
             }
 
@@ -1019,7 +1026,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNumber"
-    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:482:1: ruleNumber returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? (this_DOUBLE_1= RULE_DOUBLE | this_INT_2= RULE_INT ) ) ;
+    // InternalGraphvizPlain.g:482:1: ruleNumber returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? (this_DOUBLE_1= RULE_DOUBLE | this_INT_2= RULE_INT ) ) ;
     public final AntlrDatatypeRuleToken ruleNumber() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1030,13 +1037,13 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:485:28: ( ( (kw= '-' )? (this_DOUBLE_1= RULE_DOUBLE | this_INT_2= RULE_INT ) ) )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:486:1: ( (kw= '-' )? (this_DOUBLE_1= RULE_DOUBLE | this_INT_2= RULE_INT ) )
+            // InternalGraphvizPlain.g:485:28: ( ( (kw= '-' )? (this_DOUBLE_1= RULE_DOUBLE | this_INT_2= RULE_INT ) ) )
+            // InternalGraphvizPlain.g:486:1: ( (kw= '-' )? (this_DOUBLE_1= RULE_DOUBLE | this_INT_2= RULE_INT ) )
             {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:486:1: ( (kw= '-' )? (this_DOUBLE_1= RULE_DOUBLE | this_INT_2= RULE_INT ) )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:486:2: (kw= '-' )? (this_DOUBLE_1= RULE_DOUBLE | this_INT_2= RULE_INT )
+            // InternalGraphvizPlain.g:486:1: ( (kw= '-' )? (this_DOUBLE_1= RULE_DOUBLE | this_INT_2= RULE_INT ) )
+            // InternalGraphvizPlain.g:486:2: (kw= '-' )? (this_DOUBLE_1= RULE_DOUBLE | this_INT_2= RULE_INT )
             {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:486:2: (kw= '-' )?
+            // InternalGraphvizPlain.g:486:2: (kw= '-' )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -1045,9 +1052,9 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
             }
             switch (alt5) {
                 case 1 :
-                    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:487:2: kw= '-'
+                    // InternalGraphvizPlain.g:487:2: kw= '-'
                     {
-                    kw=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleNumber892); 
+                    kw=(Token)match(input,16,FollowSets000.FOLLOW_10); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getNumberAccess().getHyphenMinusKeyword_0()); 
@@ -1058,7 +1065,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:492:3: (this_DOUBLE_1= RULE_DOUBLE | this_INT_2= RULE_INT )
+            // InternalGraphvizPlain.g:492:3: (this_DOUBLE_1= RULE_DOUBLE | this_INT_2= RULE_INT )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1076,9 +1083,9 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:492:8: this_DOUBLE_1= RULE_DOUBLE
+                    // InternalGraphvizPlain.g:492:8: this_DOUBLE_1= RULE_DOUBLE
                     {
-                    this_DOUBLE_1=(Token)match(input,RULE_DOUBLE,FollowSets000.FOLLOW_RULE_DOUBLE_in_ruleNumber910); 
+                    this_DOUBLE_1=(Token)match(input,RULE_DOUBLE,FollowSets000.FOLLOW_2); 
 
                     		current.merge(this_DOUBLE_1);
                         
@@ -1089,9 +1096,9 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:500:10: this_INT_2= RULE_INT
+                    // InternalGraphvizPlain.g:500:10: this_INT_2= RULE_INT
                     {
-                    this_INT_2=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleNumber936); 
+                    this_INT_2=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_2); 
 
                     		current.merge(this_INT_2);
                         
@@ -1125,7 +1132,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIdentifier"
-    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:515:1: entryRuleIdentifier returns [String current=null] : iv_ruleIdentifier= ruleIdentifier EOF ;
+    // InternalGraphvizPlain.g:515:1: entryRuleIdentifier returns [String current=null] : iv_ruleIdentifier= ruleIdentifier EOF ;
     public final String entryRuleIdentifier() throws RecognitionException {
         String current = null;
 
@@ -1133,17 +1140,17 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:516:2: (iv_ruleIdentifier= ruleIdentifier EOF )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:517:2: iv_ruleIdentifier= ruleIdentifier EOF
+            // InternalGraphvizPlain.g:516:2: (iv_ruleIdentifier= ruleIdentifier EOF )
+            // InternalGraphvizPlain.g:517:2: iv_ruleIdentifier= ruleIdentifier EOF
             {
              newCompositeNode(grammarAccess.getIdentifierRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleIdentifier_in_entryRuleIdentifier983);
+            pushFollow(FollowSets000.FOLLOW_1);
             iv_ruleIdentifier=ruleIdentifier();
 
             state._fsp--;
 
              current =iv_ruleIdentifier.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleIdentifier994); 
+            match(input,EOF,FollowSets000.FOLLOW_2); 
 
             }
 
@@ -1161,7 +1168,7 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIdentifier"
-    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:524:1: ruleIdentifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID | this_STRING_1= RULE_STRING ) ;
+    // InternalGraphvizPlain.g:524:1: ruleIdentifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID | this_STRING_1= RULE_STRING ) ;
     public final AntlrDatatypeRuleToken ruleIdentifier() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1171,10 +1178,10 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:527:28: ( (this_ID_0= RULE_ID | this_STRING_1= RULE_STRING ) )
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:528:1: (this_ID_0= RULE_ID | this_STRING_1= RULE_STRING )
+            // InternalGraphvizPlain.g:527:28: ( (this_ID_0= RULE_ID | this_STRING_1= RULE_STRING ) )
+            // InternalGraphvizPlain.g:528:1: (this_ID_0= RULE_ID | this_STRING_1= RULE_STRING )
             {
-            // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:528:1: (this_ID_0= RULE_ID | this_STRING_1= RULE_STRING )
+            // InternalGraphvizPlain.g:528:1: (this_ID_0= RULE_ID | this_STRING_1= RULE_STRING )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1192,9 +1199,9 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
             }
             switch (alt7) {
                 case 1 :
-                    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:528:6: this_ID_0= RULE_ID
+                    // InternalGraphvizPlain.g:528:6: this_ID_0= RULE_ID
                     {
-                    this_ID_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleIdentifier1034); 
+                    this_ID_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_2); 
 
                     		current.merge(this_ID_0);
                         
@@ -1205,9 +1212,9 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.muml.graphviz.plain.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/plain/xtext/parser/antlr/internal/InternalGraphvizPlain.g:536:10: this_STRING_1= RULE_STRING
+                    // InternalGraphvizPlain.g:536:10: this_STRING_1= RULE_STRING
                     {
-                    this_STRING_1=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleIdentifier1060); 
+                    this_STRING_1=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_2); 
 
                     		current.merge(this_STRING_1);
                         
@@ -1243,52 +1250,16 @@ public class InternalGraphvizPlainParser extends AbstractInternalAntlrParser {
 
     
     private static class FollowSets000 {
-        public static final BitSet FOLLOW_ruleGraph_in_entryRuleGraph75 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleGraph85 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_12_in_ruleGraph122 = new BitSet(new long[]{0x0000000000010060L});
-        public static final BitSet FOLLOW_ruleNumber_in_ruleGraph143 = new BitSet(new long[]{0x0000000000010060L});
-        public static final BitSet FOLLOW_ruleNumber_in_ruleGraph164 = new BitSet(new long[]{0x0000000000010060L});
-        public static final BitSet FOLLOW_ruleNumber_in_ruleGraph185 = new BitSet(new long[]{0x000000000000E000L});
-        public static final BitSet FOLLOW_ruleNode_in_ruleGraph206 = new BitSet(new long[]{0x000000000000E000L});
-        public static final BitSet FOLLOW_ruleEdge_in_ruleGraph228 = new BitSet(new long[]{0x000000000000A000L});
-        public static final BitSet FOLLOW_13_in_ruleGraph241 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleNode_in_entryRuleNode277 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleNode287 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_14_in_ruleNode324 = new BitSet(new long[]{0x0000000000000090L});
-        public static final BitSet FOLLOW_ruleIdentifier_in_ruleNode345 = new BitSet(new long[]{0x0000000000010060L});
-        public static final BitSet FOLLOW_rulePoint_in_ruleNode366 = new BitSet(new long[]{0x0000000000010060L});
-        public static final BitSet FOLLOW_ruleNumber_in_ruleNode387 = new BitSet(new long[]{0x0000000000010060L});
-        public static final BitSet FOLLOW_ruleNumber_in_ruleNode408 = new BitSet(new long[]{0x0000000000000090L});
-        public static final BitSet FOLLOW_ruleIdentifier_in_ruleNode424 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleNode434 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleNode444 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleNode454 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleNode464 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEdge_in_entryRuleEdge499 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleEdge509 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_15_in_ruleEdge546 = new BitSet(new long[]{0x0000000000000090L});
-        public static final BitSet FOLLOW_ruleIdentifier_in_ruleEdge569 = new BitSet(new long[]{0x0000000000000090L});
-        public static final BitSet FOLLOW_ruleIdentifier_in_ruleEdge592 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_RULE_INT_in_ruleEdge603 = new BitSet(new long[]{0x00000000000100F0L});
-        public static final BitSet FOLLOW_rulePoint_in_ruleEdge623 = new BitSet(new long[]{0x00000000000100F0L});
-        public static final BitSet FOLLOW_ruleIdentifier_in_ruleEdge641 = new BitSet(new long[]{0x0000000000010060L});
-        public static final BitSet FOLLOW_ruleNumber_in_ruleEdge656 = new BitSet(new long[]{0x0000000000010060L});
-        public static final BitSet FOLLOW_ruleNumber_in_ruleEdge671 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleEdge683 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleEdge693 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rulePoint_in_entryRulePoint728 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRulePoint738 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleNumber_in_rulePoint784 = new BitSet(new long[]{0x0000000000010060L});
-        public static final BitSet FOLLOW_ruleNumber_in_rulePoint805 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleNumber_in_entryRuleNumber842 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleNumber853 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_16_in_ruleNumber892 = new BitSet(new long[]{0x0000000000000060L});
-        public static final BitSet FOLLOW_RULE_DOUBLE_in_ruleNumber910 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_INT_in_ruleNumber936 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleIdentifier_in_entryRuleIdentifier983 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleIdentifier994 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleIdentifier1034 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_STRING_in_ruleIdentifier1060 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000010060L});
+        public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x000000000000E000L});
+        public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x000000000000A000L});
+        public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000090L});
+        public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000020L});
+        public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x00000000000100F0L});
+        public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000060L});
     }
 
 

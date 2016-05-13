@@ -4,7 +4,7 @@ import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
-var grammarURI = "classpath:/de/uni_paderborn/fujaba/graphviz/plain/xtext/GraphvizPlain.xtext"
+var grammarURI = "classpath:/org/muml/graphviz/plain/xtext/GraphvizPlain.xtext"
 var fileExtensions = "graphviz_plain"
 var projectName = "org.muml.graphviz.plain.xtext"
 var runtimeProject = "../${projectName}"
