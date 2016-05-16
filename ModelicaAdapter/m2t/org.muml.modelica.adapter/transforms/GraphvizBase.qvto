@@ -41,7 +41,7 @@ helper createInitialGraphSettings() : Set(Setting) {
 helper createInitialNodeSettings() : Set(Setting) {
 	return Set{
 		new Setting('shape', 'rect'),
-		new Setting('width', '"1!"'),
+		new Setting('width', '1!'),
 		new Setting('fixedsize', 'true')
 	}
 }
