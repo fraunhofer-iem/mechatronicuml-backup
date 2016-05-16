@@ -117,12 +117,10 @@ public abstract class AbstractDotLanguageSemanticSequencer extends AbstractDeleg
 	 *     (
 	 *         id=DotGraphID? 
 	 *         (
-	 *             (graphSettings+=Setting graphSettings+=Setting*) | 
-	 *             (nodeSettings+=Setting nodeSettings+=Setting*) | 
-	 *             (edgeSettings+=Setting edgeSettings+=Setting*) | 
-	 *             subgraphs+=DotSubGraph | 
-	 *             nodes+=DotNode | 
-	 *             edges+=DotEdge
+	 *             (subgraphs+=DotSubGraph | nodes+=DotNode | edges+=DotEdge)? 
+	 *             (graphSettings+=Setting graphSettings+=Setting*)? 
+	 *             (nodeSettings+=Setting nodeSettings+=Setting*)? 
+	 *             (edgeSettings+=Setting edgeSettings+=Setting*)?
 	 *         )+
 	 *     )
 	 */

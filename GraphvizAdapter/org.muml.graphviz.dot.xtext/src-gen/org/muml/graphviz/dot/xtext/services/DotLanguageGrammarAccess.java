@@ -293,13 +293,13 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//	'subgraph' id=DotGraphID?
 		//	'{' ('graph' '[' graphSettings+=Setting (',' graphSettings+=Setting)* ']' ';'? | 'node' '[' nodeSettings+=Setting (','
 		//	nodeSettings+=Setting)* ']' ';'? | 'edge' '[' edgeSettings+=Setting (',' edgeSettings+=Setting)* ']' ';'? |
-		//	subgraphs+=DotSubGraph | nodes+=DotNode | edges+=DotEdge)+
+		//	subgraphs+=DotSubGraph | nodes+=DotNode | edges+=DotEdge)*
 		//	'}'
 		@Override public ParserRule getRule() { return rule; }
 
 		//{dot::DotGraph} 'subgraph' id=DotGraphID? '{' ('graph' '[' graphSettings+=Setting (',' graphSettings+=Setting)* ']' ';'?
 		//| 'node' '[' nodeSettings+=Setting (',' nodeSettings+=Setting)* ']' ';'? | 'edge' '[' edgeSettings+=Setting (','
-		//edgeSettings+=Setting)* ']' ';'? | subgraphs+=DotSubGraph | nodes+=DotNode | edges+=DotEdge)+ '}'
+		//edgeSettings+=Setting)* ']' ';'? | subgraphs+=DotSubGraph | nodes+=DotNode | edges+=DotEdge)* '}'
 		public Group getGroup() { return cGroup; }
 
 		//{dot::DotGraph}
@@ -319,7 +319,7 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 		//('graph' '[' graphSettings+=Setting (',' graphSettings+=Setting)* ']' ';'? | 'node' '[' nodeSettings+=Setting (','
 		//nodeSettings+=Setting)* ']' ';'? | 'edge' '[' edgeSettings+=Setting (',' edgeSettings+=Setting)* ']' ';'? |
-		//subgraphs+=DotSubGraph | nodes+=DotNode | edges+=DotEdge)+
+		//subgraphs+=DotSubGraph | nodes+=DotNode | edges+=DotEdge)*
 		public Alternatives getAlternatives_4() { return cAlternatives_4; }
 
 		//'graph' '[' graphSettings+=Setting (',' graphSettings+=Setting)* ']' ';'?
@@ -878,7 +878,7 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	//	'subgraph' id=DotGraphID?
 	//	'{' ('graph' '[' graphSettings+=Setting (',' graphSettings+=Setting)* ']' ';'? | 'node' '[' nodeSettings+=Setting (','
 	//	nodeSettings+=Setting)* ']' ';'? | 'edge' '[' edgeSettings+=Setting (',' edgeSettings+=Setting)* ']' ';'? |
-	//	subgraphs+=DotSubGraph | nodes+=DotNode | edges+=DotEdge)+
+	//	subgraphs+=DotSubGraph | nodes+=DotNode | edges+=DotEdge)*
 	//	'}'
 	public DotSubGraphElements getDotSubGraphAccess() {
 		return pDotSubGraph;

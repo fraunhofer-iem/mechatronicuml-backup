@@ -882,7 +882,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDotSubGraph"
-    // InternalDotLanguage.g:376:1: ruleDotSubGraph returns [EObject current=null] : ( () otherlv_1= 'subgraph' ( (lv_id_2_0= ruleDotGraphID ) )? otherlv_3= '{' ( (otherlv_4= 'graph' otherlv_5= '[' ( (lv_graphSettings_6_0= ruleSetting ) ) (otherlv_7= ',' ( (lv_graphSettings_8_0= ruleSetting ) ) )* otherlv_9= ']' (otherlv_10= ';' )? ) | (otherlv_11= 'node' otherlv_12= '[' ( (lv_nodeSettings_13_0= ruleSetting ) ) (otherlv_14= ',' ( (lv_nodeSettings_15_0= ruleSetting ) ) )* otherlv_16= ']' (otherlv_17= ';' )? ) | (otherlv_18= 'edge' otherlv_19= '[' ( (lv_edgeSettings_20_0= ruleSetting ) ) (otherlv_21= ',' ( (lv_edgeSettings_22_0= ruleSetting ) ) )* otherlv_23= ']' (otherlv_24= ';' )? ) | ( (lv_subgraphs_25_0= ruleDotSubGraph ) ) | ( (lv_nodes_26_0= ruleDotNode ) ) | ( (lv_edges_27_0= ruleDotEdge ) ) )+ otherlv_28= '}' ) ;
+    // InternalDotLanguage.g:376:1: ruleDotSubGraph returns [EObject current=null] : ( () otherlv_1= 'subgraph' ( (lv_id_2_0= ruleDotGraphID ) )? otherlv_3= '{' ( (otherlv_4= 'graph' otherlv_5= '[' ( (lv_graphSettings_6_0= ruleSetting ) ) (otherlv_7= ',' ( (lv_graphSettings_8_0= ruleSetting ) ) )* otherlv_9= ']' (otherlv_10= ';' )? ) | (otherlv_11= 'node' otherlv_12= '[' ( (lv_nodeSettings_13_0= ruleSetting ) ) (otherlv_14= ',' ( (lv_nodeSettings_15_0= ruleSetting ) ) )* otherlv_16= ']' (otherlv_17= ';' )? ) | (otherlv_18= 'edge' otherlv_19= '[' ( (lv_edgeSettings_20_0= ruleSetting ) ) (otherlv_21= ',' ( (lv_edgeSettings_22_0= ruleSetting ) ) )* otherlv_23= ']' (otherlv_24= ';' )? ) | ( (lv_subgraphs_25_0= ruleDotSubGraph ) ) | ( (lv_nodes_26_0= ruleDotNode ) ) | ( (lv_edges_27_0= ruleDotEdge ) ) )* otherlv_28= '}' ) ;
     public final EObject ruleDotSubGraph() throws RecognitionException {
         EObject current = null;
 
@@ -928,11 +928,11 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // InternalDotLanguage.g:379:28: ( ( () otherlv_1= 'subgraph' ( (lv_id_2_0= ruleDotGraphID ) )? otherlv_3= '{' ( (otherlv_4= 'graph' otherlv_5= '[' ( (lv_graphSettings_6_0= ruleSetting ) ) (otherlv_7= ',' ( (lv_graphSettings_8_0= ruleSetting ) ) )* otherlv_9= ']' (otherlv_10= ';' )? ) | (otherlv_11= 'node' otherlv_12= '[' ( (lv_nodeSettings_13_0= ruleSetting ) ) (otherlv_14= ',' ( (lv_nodeSettings_15_0= ruleSetting ) ) )* otherlv_16= ']' (otherlv_17= ';' )? ) | (otherlv_18= 'edge' otherlv_19= '[' ( (lv_edgeSettings_20_0= ruleSetting ) ) (otherlv_21= ',' ( (lv_edgeSettings_22_0= ruleSetting ) ) )* otherlv_23= ']' (otherlv_24= ';' )? ) | ( (lv_subgraphs_25_0= ruleDotSubGraph ) ) | ( (lv_nodes_26_0= ruleDotNode ) ) | ( (lv_edges_27_0= ruleDotEdge ) ) )+ otherlv_28= '}' ) )
-            // InternalDotLanguage.g:380:1: ( () otherlv_1= 'subgraph' ( (lv_id_2_0= ruleDotGraphID ) )? otherlv_3= '{' ( (otherlv_4= 'graph' otherlv_5= '[' ( (lv_graphSettings_6_0= ruleSetting ) ) (otherlv_7= ',' ( (lv_graphSettings_8_0= ruleSetting ) ) )* otherlv_9= ']' (otherlv_10= ';' )? ) | (otherlv_11= 'node' otherlv_12= '[' ( (lv_nodeSettings_13_0= ruleSetting ) ) (otherlv_14= ',' ( (lv_nodeSettings_15_0= ruleSetting ) ) )* otherlv_16= ']' (otherlv_17= ';' )? ) | (otherlv_18= 'edge' otherlv_19= '[' ( (lv_edgeSettings_20_0= ruleSetting ) ) (otherlv_21= ',' ( (lv_edgeSettings_22_0= ruleSetting ) ) )* otherlv_23= ']' (otherlv_24= ';' )? ) | ( (lv_subgraphs_25_0= ruleDotSubGraph ) ) | ( (lv_nodes_26_0= ruleDotNode ) ) | ( (lv_edges_27_0= ruleDotEdge ) ) )+ otherlv_28= '}' )
+            // InternalDotLanguage.g:379:28: ( ( () otherlv_1= 'subgraph' ( (lv_id_2_0= ruleDotGraphID ) )? otherlv_3= '{' ( (otherlv_4= 'graph' otherlv_5= '[' ( (lv_graphSettings_6_0= ruleSetting ) ) (otherlv_7= ',' ( (lv_graphSettings_8_0= ruleSetting ) ) )* otherlv_9= ']' (otherlv_10= ';' )? ) | (otherlv_11= 'node' otherlv_12= '[' ( (lv_nodeSettings_13_0= ruleSetting ) ) (otherlv_14= ',' ( (lv_nodeSettings_15_0= ruleSetting ) ) )* otherlv_16= ']' (otherlv_17= ';' )? ) | (otherlv_18= 'edge' otherlv_19= '[' ( (lv_edgeSettings_20_0= ruleSetting ) ) (otherlv_21= ',' ( (lv_edgeSettings_22_0= ruleSetting ) ) )* otherlv_23= ']' (otherlv_24= ';' )? ) | ( (lv_subgraphs_25_0= ruleDotSubGraph ) ) | ( (lv_nodes_26_0= ruleDotNode ) ) | ( (lv_edges_27_0= ruleDotEdge ) ) )* otherlv_28= '}' ) )
+            // InternalDotLanguage.g:380:1: ( () otherlv_1= 'subgraph' ( (lv_id_2_0= ruleDotGraphID ) )? otherlv_3= '{' ( (otherlv_4= 'graph' otherlv_5= '[' ( (lv_graphSettings_6_0= ruleSetting ) ) (otherlv_7= ',' ( (lv_graphSettings_8_0= ruleSetting ) ) )* otherlv_9= ']' (otherlv_10= ';' )? ) | (otherlv_11= 'node' otherlv_12= '[' ( (lv_nodeSettings_13_0= ruleSetting ) ) (otherlv_14= ',' ( (lv_nodeSettings_15_0= ruleSetting ) ) )* otherlv_16= ']' (otherlv_17= ';' )? ) | (otherlv_18= 'edge' otherlv_19= '[' ( (lv_edgeSettings_20_0= ruleSetting ) ) (otherlv_21= ',' ( (lv_edgeSettings_22_0= ruleSetting ) ) )* otherlv_23= ']' (otherlv_24= ';' )? ) | ( (lv_subgraphs_25_0= ruleDotSubGraph ) ) | ( (lv_nodes_26_0= ruleDotNode ) ) | ( (lv_edges_27_0= ruleDotEdge ) ) )* otherlv_28= '}' )
             {
-            // InternalDotLanguage.g:380:1: ( () otherlv_1= 'subgraph' ( (lv_id_2_0= ruleDotGraphID ) )? otherlv_3= '{' ( (otherlv_4= 'graph' otherlv_5= '[' ( (lv_graphSettings_6_0= ruleSetting ) ) (otherlv_7= ',' ( (lv_graphSettings_8_0= ruleSetting ) ) )* otherlv_9= ']' (otherlv_10= ';' )? ) | (otherlv_11= 'node' otherlv_12= '[' ( (lv_nodeSettings_13_0= ruleSetting ) ) (otherlv_14= ',' ( (lv_nodeSettings_15_0= ruleSetting ) ) )* otherlv_16= ']' (otherlv_17= ';' )? ) | (otherlv_18= 'edge' otherlv_19= '[' ( (lv_edgeSettings_20_0= ruleSetting ) ) (otherlv_21= ',' ( (lv_edgeSettings_22_0= ruleSetting ) ) )* otherlv_23= ']' (otherlv_24= ';' )? ) | ( (lv_subgraphs_25_0= ruleDotSubGraph ) ) | ( (lv_nodes_26_0= ruleDotNode ) ) | ( (lv_edges_27_0= ruleDotEdge ) ) )+ otherlv_28= '}' )
-            // InternalDotLanguage.g:380:2: () otherlv_1= 'subgraph' ( (lv_id_2_0= ruleDotGraphID ) )? otherlv_3= '{' ( (otherlv_4= 'graph' otherlv_5= '[' ( (lv_graphSettings_6_0= ruleSetting ) ) (otherlv_7= ',' ( (lv_graphSettings_8_0= ruleSetting ) ) )* otherlv_9= ']' (otherlv_10= ';' )? ) | (otherlv_11= 'node' otherlv_12= '[' ( (lv_nodeSettings_13_0= ruleSetting ) ) (otherlv_14= ',' ( (lv_nodeSettings_15_0= ruleSetting ) ) )* otherlv_16= ']' (otherlv_17= ';' )? ) | (otherlv_18= 'edge' otherlv_19= '[' ( (lv_edgeSettings_20_0= ruleSetting ) ) (otherlv_21= ',' ( (lv_edgeSettings_22_0= ruleSetting ) ) )* otherlv_23= ']' (otherlv_24= ';' )? ) | ( (lv_subgraphs_25_0= ruleDotSubGraph ) ) | ( (lv_nodes_26_0= ruleDotNode ) ) | ( (lv_edges_27_0= ruleDotEdge ) ) )+ otherlv_28= '}'
+            // InternalDotLanguage.g:380:1: ( () otherlv_1= 'subgraph' ( (lv_id_2_0= ruleDotGraphID ) )? otherlv_3= '{' ( (otherlv_4= 'graph' otherlv_5= '[' ( (lv_graphSettings_6_0= ruleSetting ) ) (otherlv_7= ',' ( (lv_graphSettings_8_0= ruleSetting ) ) )* otherlv_9= ']' (otherlv_10= ';' )? ) | (otherlv_11= 'node' otherlv_12= '[' ( (lv_nodeSettings_13_0= ruleSetting ) ) (otherlv_14= ',' ( (lv_nodeSettings_15_0= ruleSetting ) ) )* otherlv_16= ']' (otherlv_17= ';' )? ) | (otherlv_18= 'edge' otherlv_19= '[' ( (lv_edgeSettings_20_0= ruleSetting ) ) (otherlv_21= ',' ( (lv_edgeSettings_22_0= ruleSetting ) ) )* otherlv_23= ']' (otherlv_24= ';' )? ) | ( (lv_subgraphs_25_0= ruleDotSubGraph ) ) | ( (lv_nodes_26_0= ruleDotNode ) ) | ( (lv_edges_27_0= ruleDotEdge ) ) )* otherlv_28= '}' )
+            // InternalDotLanguage.g:380:2: () otherlv_1= 'subgraph' ( (lv_id_2_0= ruleDotGraphID ) )? otherlv_3= '{' ( (otherlv_4= 'graph' otherlv_5= '[' ( (lv_graphSettings_6_0= ruleSetting ) ) (otherlv_7= ',' ( (lv_graphSettings_8_0= ruleSetting ) ) )* otherlv_9= ']' (otherlv_10= ';' )? ) | (otherlv_11= 'node' otherlv_12= '[' ( (lv_nodeSettings_13_0= ruleSetting ) ) (otherlv_14= ',' ( (lv_nodeSettings_15_0= ruleSetting ) ) )* otherlv_16= ']' (otherlv_17= ';' )? ) | (otherlv_18= 'edge' otherlv_19= '[' ( (lv_edgeSettings_20_0= ruleSetting ) ) (otherlv_21= ',' ( (lv_edgeSettings_22_0= ruleSetting ) ) )* otherlv_23= ']' (otherlv_24= ';' )? ) | ( (lv_subgraphs_25_0= ruleDotSubGraph ) ) | ( (lv_nodes_26_0= ruleDotNode ) ) | ( (lv_edges_27_0= ruleDotEdge ) ) )* otherlv_28= '}'
             {
             // InternalDotLanguage.g:380:2: ()
             // InternalDotLanguage.g:381:5: 
@@ -991,12 +991,11 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,16,FollowSets000.FOLLOW_10); 
+            otherlv_3=(Token)match(input,16,FollowSets000.FOLLOW_5); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getDotSubGraphAccess().getLeftCurlyBracketKeyword_3());
                 
-            // InternalDotLanguage.g:412:1: ( (otherlv_4= 'graph' otherlv_5= '[' ( (lv_graphSettings_6_0= ruleSetting ) ) (otherlv_7= ',' ( (lv_graphSettings_8_0= ruleSetting ) ) )* otherlv_9= ']' (otherlv_10= ';' )? ) | (otherlv_11= 'node' otherlv_12= '[' ( (lv_nodeSettings_13_0= ruleSetting ) ) (otherlv_14= ',' ( (lv_nodeSettings_15_0= ruleSetting ) ) )* otherlv_16= ']' (otherlv_17= ';' )? ) | (otherlv_18= 'edge' otherlv_19= '[' ( (lv_edgeSettings_20_0= ruleSetting ) ) (otherlv_21= ',' ( (lv_edgeSettings_22_0= ruleSetting ) ) )* otherlv_23= ']' (otherlv_24= ';' )? ) | ( (lv_subgraphs_25_0= ruleDotSubGraph ) ) | ( (lv_nodes_26_0= ruleDotNode ) ) | ( (lv_edges_27_0= ruleDotEdge ) ) )+
-            int cnt17=0;
+            // InternalDotLanguage.g:412:1: ( (otherlv_4= 'graph' otherlv_5= '[' ( (lv_graphSettings_6_0= ruleSetting ) ) (otherlv_7= ',' ( (lv_graphSettings_8_0= ruleSetting ) ) )* otherlv_9= ']' (otherlv_10= ';' )? ) | (otherlv_11= 'node' otherlv_12= '[' ( (lv_nodeSettings_13_0= ruleSetting ) ) (otherlv_14= ',' ( (lv_nodeSettings_15_0= ruleSetting ) ) )* otherlv_16= ']' (otherlv_17= ';' )? ) | (otherlv_18= 'edge' otherlv_19= '[' ( (lv_edgeSettings_20_0= ruleSetting ) ) (otherlv_21= ',' ( (lv_edgeSettings_22_0= ruleSetting ) ) )* otherlv_23= ']' (otherlv_24= ';' )? ) | ( (lv_subgraphs_25_0= ruleDotSubGraph ) ) | ( (lv_nodes_26_0= ruleDotNode ) ) | ( (lv_edges_27_0= ruleDotEdge ) ) )*
             loop17:
             do {
                 int alt17=7;
@@ -1520,12 +1519,8 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt17 >= 1 ) break loop17;
-                        EarlyExitException eee =
-                            new EarlyExitException(17, input);
-                        throw eee;
+            	    break loop17;
                 }
-                cnt17++;
             } while (true);
 
             otherlv_28=(Token)match(input,23,FollowSets000.FOLLOW_2); 
@@ -1622,7 +1617,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getDotNodeAccess().getNameDotIDParserRuleCall_0_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_11);
+            pushFollow(FollowSets000.FOLLOW_10);
             lv_name_0_0=ruleDotID();
 
             state._fsp--;
@@ -1749,7 +1744,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_5=(Token)match(input,19,FollowSets000.FOLLOW_12); 
+                    otherlv_5=(Token)match(input,19,FollowSets000.FOLLOW_11); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getDotNodeAccess().getRightSquareBracketKeyword_1_3());
                         
@@ -1859,11 +1854,11 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                 {
                 int LA21_1 = input.LA(2);
 
-                if ( (LA21_1==25) ) {
-                    alt21=1;
-                }
-                else if ( (LA21_1==26) ) {
+                if ( (LA21_1==26) ) {
                     alt21=2;
+                }
+                else if ( (LA21_1==25) ) {
+                    alt21=1;
                 }
                 else {
                     NoViableAltException nvae =
@@ -1898,11 +1893,11 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                 if ( (LA21_3==RULE_DOUBLE) ) {
                     int LA21_4 = input.LA(3);
 
-                    if ( (LA21_4==25) ) {
-                        alt21=1;
-                    }
-                    else if ( (LA21_4==26) ) {
+                    if ( (LA21_4==26) ) {
                         alt21=2;
+                    }
+                    else if ( (LA21_4==25) ) {
+                        alt21=1;
                     }
                     else {
                         NoViableAltException nvae =
@@ -1914,11 +1909,11 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                 else if ( (LA21_3==RULE_INT) ) {
                     int LA21_5 = input.LA(3);
 
-                    if ( (LA21_5==26) ) {
-                        alt21=2;
-                    }
-                    else if ( (LA21_5==25) ) {
+                    if ( (LA21_5==25) ) {
                         alt21=1;
+                    }
+                    else if ( (LA21_5==26) ) {
+                        alt21=2;
                     }
                     else {
                         NoViableAltException nvae =
@@ -1939,11 +1934,11 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                 {
                 int LA21_4 = input.LA(2);
 
-                if ( (LA21_4==25) ) {
-                    alt21=1;
-                }
-                else if ( (LA21_4==26) ) {
+                if ( (LA21_4==26) ) {
                     alt21=2;
+                }
+                else if ( (LA21_4==25) ) {
+                    alt21=1;
                 }
                 else {
                     NoViableAltException nvae =
@@ -1957,11 +1952,11 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                 {
                 int LA21_5 = input.LA(2);
 
-                if ( (LA21_5==26) ) {
-                    alt21=2;
-                }
-                else if ( (LA21_5==25) ) {
+                if ( (LA21_5==25) ) {
                     alt21=1;
+                }
+                else if ( (LA21_5==26) ) {
+                    alt21=2;
                 }
                 else {
                     NoViableAltException nvae =
@@ -2127,7 +2122,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getDirectedDotEdgeAccess().getSourceDotNodeCrossReference_0_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_13);
+            pushFollow(FollowSets000.FOLLOW_12);
             ruleDotID();
 
             state._fsp--;
@@ -2159,7 +2154,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getDirectedDotEdgeAccess().getTargetDotNodeCrossReference_2_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_11);
+            pushFollow(FollowSets000.FOLLOW_10);
             ruleDotID();
 
             state._fsp--;
@@ -2278,7 +2273,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_7=(Token)match(input,19,FollowSets000.FOLLOW_12); 
+                    otherlv_7=(Token)match(input,19,FollowSets000.FOLLOW_11); 
 
                         	newLeafNode(otherlv_7, grammarAccess.getDirectedDotEdgeAccess().getRightSquareBracketKeyword_3_3());
                         
@@ -2403,7 +2398,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getUndirectedDotEdgeAccess().getSourceDotNodeCrossReference_0_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_14);
+            pushFollow(FollowSets000.FOLLOW_13);
             ruleDotID();
 
             state._fsp--;
@@ -2435,7 +2430,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getUndirectedDotEdgeAccess().getTargetDotNodeCrossReference_2_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_11);
+            pushFollow(FollowSets000.FOLLOW_10);
             ruleDotID();
 
             state._fsp--;
@@ -2554,7 +2549,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_7=(Token)match(input,19,FollowSets000.FOLLOW_12); 
+                    otherlv_7=(Token)match(input,19,FollowSets000.FOLLOW_11); 
 
                         	newLeafNode(otherlv_7, grammarAccess.getUndirectedDotEdgeAccess().getRightSquareBracketKeyword_3_3());
                         
@@ -2670,7 +2665,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getSettingAccess().getAttributeDotIDParserRuleCall_0_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_15);
+            pushFollow(FollowSets000.FOLLOW_14);
             lv_attribute_0_0=ruleDotID();
 
             state._fsp--;
@@ -3058,7 +3053,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // InternalDotLanguage.g:1159:2: kw= '-'
                     {
-                    kw=(Token)match(input,28,FollowSets000.FOLLOW_16); 
+                    kw=(Token)match(input,28,FollowSets000.FOLLOW_15); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getNumberAccess().getHyphenMinusKeyword_0()); 
@@ -3142,7 +3137,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
     static final String dfa_1s = "\16\uffff";
     static final String dfa_2s = "\1\4\5\uffff\2\4\1\7\3\4\2\uffff";
     static final String dfa_3s = "\1\34\5\uffff\2\34\1\10\3\34\2\uffff";
-    static final String dfa_4s = "\1\uffff\1\7\1\1\1\2\1\3\1\4\6\uffff\1\6\1\5";
+    static final String dfa_4s = "\1\uffff\1\7\1\1\1\2\1\3\1\4\6\uffff\1\5\1\6";
     static final String dfa_5s = "\16\uffff}>";
     static final String[] dfa_6s = {
             "\1\6\1\7\1\13\1\11\1\12\6\uffff\1\2\5\uffff\1\3\1\4\1\1\1\5\3\uffff\1\10",
@@ -3151,12 +3146,12 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             "",
             "",
             "",
-            "\5\15\6\uffff\1\15\1\uffff\1\15\2\uffff\5\15\2\14\1\uffff\1\15",
-            "\5\15\6\uffff\1\15\1\uffff\1\15\2\uffff\5\15\2\14\1\uffff\1\15",
+            "\5\14\6\uffff\1\14\1\uffff\1\14\2\uffff\5\14\2\15\1\uffff\1\14",
+            "\5\14\6\uffff\1\14\1\uffff\1\14\2\uffff\5\14\2\15\1\uffff\1\14",
             "\1\11\1\12",
-            "\5\15\6\uffff\1\15\1\uffff\1\15\2\uffff\5\15\2\14\1\uffff\1\15",
-            "\5\15\6\uffff\1\15\1\uffff\1\15\2\uffff\5\15\2\14\1\uffff\1\15",
-            "\5\15\6\uffff\1\15\1\uffff\1\15\2\uffff\5\15\2\14\1\uffff\1\15",
+            "\5\14\6\uffff\1\14\1\uffff\1\14\2\uffff\5\14\2\15\1\uffff\1\14",
+            "\5\14\6\uffff\1\14\1\uffff\1\14\2\uffff\5\14\2\15\1\uffff\1\14",
+            "\5\14\6\uffff\1\14\1\uffff\1\14\2\uffff\5\14\2\15\1\uffff\1\14",
             "",
             ""
     };
@@ -3200,7 +3195,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             this.transition = dfa_6;
         }
         public String getDescription() {
-            return "()+ loopback of 412:1: ( (otherlv_4= 'graph' otherlv_5= '[' ( (lv_graphSettings_6_0= ruleSetting ) ) (otherlv_7= ',' ( (lv_graphSettings_8_0= ruleSetting ) ) )* otherlv_9= ']' (otherlv_10= ';' )? ) | (otherlv_11= 'node' otherlv_12= '[' ( (lv_nodeSettings_13_0= ruleSetting ) ) (otherlv_14= ',' ( (lv_nodeSettings_15_0= ruleSetting ) ) )* otherlv_16= ']' (otherlv_17= ';' )? ) | (otherlv_18= 'edge' otherlv_19= '[' ( (lv_edgeSettings_20_0= ruleSetting ) ) (otherlv_21= ',' ( (lv_edgeSettings_22_0= ruleSetting ) ) )* otherlv_23= ']' (otherlv_24= ';' )? ) | ( (lv_subgraphs_25_0= ruleDotSubGraph ) ) | ( (lv_nodes_26_0= ruleDotNode ) ) | ( (lv_edges_27_0= ruleDotEdge ) ) )+";
+            return "()* loopback of 412:1: ( (otherlv_4= 'graph' otherlv_5= '[' ( (lv_graphSettings_6_0= ruleSetting ) ) (otherlv_7= ',' ( (lv_graphSettings_8_0= ruleSetting ) ) )* otherlv_9= ']' (otherlv_10= ';' )? ) | (otherlv_11= 'node' otherlv_12= '[' ( (lv_nodeSettings_13_0= ruleSetting ) ) (otherlv_14= ',' ( (lv_nodeSettings_15_0= ruleSetting ) ) )* otherlv_16= ']' (otherlv_17= ';' )? ) | (otherlv_18= 'edge' otherlv_19= '[' ( (lv_edgeSettings_20_0= ruleSetting ) ) (otherlv_21= ',' ( (lv_edgeSettings_22_0= ruleSetting ) ) )* otherlv_23= ']' (otherlv_24= ';' )? ) | ( (lv_subgraphs_25_0= ruleDotSubGraph ) ) | ( (lv_nodes_26_0= ruleDotNode ) ) | ( (lv_edges_27_0= ruleDotEdge ) ) )*";
         }
     }
  
@@ -3216,13 +3211,12 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x00000000100001F0L});
         public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x00000000000C0000L});
         public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000011F081F0L});
-        public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x00000000116081F0L});
-        public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000120002L});
-        public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000100002L});
-        public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000002000000L});
-        public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000004000000L});
-        public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000008000000L});
-        public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000180L});
+        public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000120002L});
+        public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000100002L});
+        public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000002000000L});
+        public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000004000000L});
+        public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000008000000L});
+        public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000180L});
     }
 
 

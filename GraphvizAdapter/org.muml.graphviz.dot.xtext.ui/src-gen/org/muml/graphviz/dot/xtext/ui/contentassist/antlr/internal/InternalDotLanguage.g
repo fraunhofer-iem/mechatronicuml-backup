@@ -1632,16 +1632,9 @@ rule__DotSubGraph__Group__4__Impl
     }
 :
 (
-(
-{ before(grammarAccess.getDotSubGraphAccess().getAlternatives_4()); }
-(rule__DotSubGraph__Alternatives_4)
-{ after(grammarAccess.getDotSubGraphAccess().getAlternatives_4()); }
-)
-(
 { before(grammarAccess.getDotSubGraphAccess().getAlternatives_4()); }
 (rule__DotSubGraph__Alternatives_4)*
 { after(grammarAccess.getDotSubGraphAccess().getAlternatives_4()); }
-)
 )
 
 ;

@@ -636,7 +636,7 @@ ruleDotSubGraph returns [EObject current=null]
 	    }
 
 )
-))+	otherlv_28='}' 
+))*	otherlv_28='}' 
     {
     	newLeafNode(otherlv_28, grammarAccess.getDotSubGraphAccess().getRightCurlyBracketKeyword_5());
     }

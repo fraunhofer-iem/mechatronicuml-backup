@@ -32,7 +32,7 @@ DotSubGraph returns dot::DotGraph:
 			| ('node' '[' nodeSettings += Setting (',' nodeSettings += Setting)* ']' ';'?)
 			| ('edge' '[' edgeSettings += Setting (',' edgeSettings += Setting)* ']' ';'?)
 			| subgraphs += DotSubGraph | nodes += DotNode | edges += DotEdge
-		)+
+		)*
 	'}'
 ;
 
