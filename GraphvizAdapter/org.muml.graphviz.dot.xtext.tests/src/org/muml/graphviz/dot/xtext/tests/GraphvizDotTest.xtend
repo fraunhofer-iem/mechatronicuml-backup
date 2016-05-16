@@ -393,6 +393,33 @@ class GraphvizDotTest {
 	  	// (will be fixed/documented later))
   	}
   	
+  	@Test
+  	def void emptyGraphSerialization() {
+  		val graph = DotFactory.eINSTANCE.createDotGraph
+  		val expected = '''
+  		graph {
+  		}'''
+  		assertEquals(expected, serializer.serialize(graph))
+  	}
+  	
+  	@Test
+  	def void emptySubgraphSerialization() {
+  		val graph = DotFactory.eINSTANCE.createDotGraph
+  		graph.id = "foobar"
+  		graph.directedGraph = true
+  		val subgraph = DotFactory.eINSTANCE.createDotGraph
+  		subgraph.id = "bar"
+  		graph.subgraphs += subgraph
+  		assertValidDotGraph(graph)
+  		// expected serialization
+  		val expected = '''
+  		digraph foobar {
+  			subgraph bar {
+  			}
+  		}'''
+  		assertEquals(expected, serializer.serialize(graph))
+  	}
+  	
   	def static void assertValidDotGraph(DotGraph graph) {
   		assertEquals(Diagnostic.OK, validate(graph).severity)
   	}
