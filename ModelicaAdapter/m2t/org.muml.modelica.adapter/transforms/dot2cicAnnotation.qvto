@@ -1,5 +1,6 @@
 import transforms.naming;
 import transforms.AnnotationBase;
+import transforms.GraphvizBase;
 
 modeltype DOT uses dot("http://www.muml.org/graphviz/dot/1.0.0");
 //modeltype PLAIN uses plain("http://www.muml.org/graphviz/plain/1.0.0");
@@ -70,6 +71,18 @@ helper Set(Setting)::getSetting(name : String) : Setting {
 	return self->any(attribute = name);
 }
 
+helper Set(Setting)::getOrCreateBBSetting() : Setting {
+	-- a subgraph without nodes has no bounding box setting
+	-- (hence, we create a dummy bounding box setting)
+	return let bb : Setting = self->getSetting('bb')
+	in
+	if bb.oclIsUndefined() then
+		new Setting('bb', '0,0,0,0')
+	else
+		bb
+	endif
+}
+
 /* helper RealtimeStatechart::annotate(pGraph : PLAIN::Graph) {
 	this.ROOT_RTSC := self;
 	log("rtsc annotate: " + self.name);
@@ -136,14 +149,14 @@ query Setting::getBBValue() : String {
 }
 
 query DotGraph::getWidth() : Real {
-	var bbSplit : Sequence(String) := self.graphSettings->getSetting('bb').getBBValue().split(',', 4);
+	var bbSplit : Sequence(String) := self.graphSettings->getOrCreateBBSetting().getBBValue().split(',', 4);
 	var x_u : Real := bbSplit->at(3).toReal() * (1.0 / 72.0) * INCH_MM;
 	var x_l : Real := bbSplit->at(1).toReal() * (1.0 / 72.0) * INCH_MM;
 	return x_u - x_l;
 }
 
 query DotGraph::getHeight() : Real {
-	var bbSplit : Sequence(String) := self.graphSettings->getSetting('bb').getBBValue().split(',', 4);
+	var bbSplit : Sequence(String) := self.graphSettings->getOrCreateBBSetting().getBBValue().split(',', 4);
 	var y_u : Real := bbSplit->at(4).toReal() * (1.0 / 72.0) * INCH_MM;
 	var y_l : Real := bbSplit->at(2).toReal() * (1.0 / 72.0) * INCH_MM;
 	return y_u - y_l;
@@ -158,7 +171,7 @@ query DotGraph::getUpperPosition() : Point {
 }
 
 query DotGraph::getPosition(xIdx : Integer, yIdx : Integer) : Point {
-	var bbSplit : Sequence(String) := self.graphSettings->getSetting('bb').getBBValue().split(',', 4);
+	var bbSplit : Sequence(String) := self.graphSettings->getOrCreateBBSetting().getBBValue().split(',', 4);
 	return new Point(bbSplit->at(xIdx).toReal(), bbSplit->at(yIdx).toReal());
 }
 
