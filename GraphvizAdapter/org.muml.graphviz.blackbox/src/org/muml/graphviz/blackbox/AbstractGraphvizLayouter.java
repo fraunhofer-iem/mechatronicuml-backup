@@ -32,6 +32,7 @@ public abstract class AbstractGraphvizLayouter<I, O> {
 		ThreadPool threadPool = new ThreadPool();
 		try {
 			Process process = pb.start();
+			// FIXME: the dot grammar should ensure a trailing newline
 			process.getOutputStream().write((dotString + "\n").getBytes());
 			process.getOutputStream().close();
 			StdoutWorker<O> layouter = new StdoutWorker<O>(process.getInputStream());
