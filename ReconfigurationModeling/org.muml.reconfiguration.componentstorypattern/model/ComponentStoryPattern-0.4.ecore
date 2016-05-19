@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="componentstorypattern" nsURI="http://www.fujaba.de/muml/componentstorypattern/0.4.0"
+    nsPrefix="componentstorypattern">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentStoryPattern" eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement ../../org.muml.core.migrator/model/core-0.4.ecore#//CommentableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="thisVariable" lowerBound="1"
+        eType="#//ComponentVariable" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentStoryPatternVariable" eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement ../../org.muml.core.migrator/model/core-0.4.ecore#//CommentableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingSemantics" eType="ecore:EEnum ../../org.muml.storydiagram/model/storydiagrams-0.4.ecore#//patterns/BindingSemantics"
+        defaultValueLiteral="MANDATORY"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingOperator" eType="ecore:EEnum ../../org.muml.storydiagram/model/storydiagrams-0.4.ecore#//patterns/BindingOperator"
+        defaultValueLiteral="CHECK_ONLY"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingState" eType="ecore:EEnum ../../org.muml.storydiagram/model/storydiagrams-0.4.ecore#//patterns/BindingState"
+        defaultValueLiteral="UNBOUND"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentVariable" eSuperTypes="#//ComponentStoryPatternVariable">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="AtLeastOnePartVariableOrPortVariable" value="self.portVariables->size() > 0 or self.partVariables->size() > 0"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="AtLeastOnePartVariableOrPortVariable"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portVariables" upperBound="-1"
+        eType="#//PortVariable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="partVariables" upperBound="-1"
+        eType="#//PartVariable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectorVariables" upperBound="-1"
+        eType="#//ConnectorVariable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../org.muml.reconfiguration/model/MumlReconfiguration-0.4.ecore#//ReconfigurableComponent"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PortVariable" abstract="true" eSuperTypes="#//ComponentStoryPatternVariable ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/TypedNamedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="SameBindingOperatorAsParent" value="if self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator&lt;>storydiagrams::patterns::BindingOperator::CHECK_ONLY then&#xD;&#xA;&#x9;self.bindingOperator = self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
+      <details key="SameBindingSemanticsAsParent" value="if self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingSemantics=storydiagrams::patterns::BindingSemantics::OPTIONAL then&#xD;&#xA;&#x9;self.bindingSemantics = self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingSemantics&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
+      <details key="ValidTypeOfPortVariable" value="if self.eContainer().oclIsKindOf(ComponentVariable) then&#xD;&#xA;&#x9;if not self.eContainer().oclAsType(ComponentVariable).type.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;self.eContainer().oclAsType(ComponentVariable).type.oclAsType(muml::component::Component).ports->includes(self.dataType.oclAsType(muml::component::Port))&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;false&#xD;&#xA;&#x9;endif&#xD;&#xA;else&#xD;&#xA;&#x9;if self.eContainer().oclIsKindOf(PartVariable) then&#xD;&#xA;&#x9;&#x9;if not self.eContainer().oclAsType(PartVariable).dataType.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;self.eContainer().oclAsType(PartVariable).dataType.oclAsType(muml::component::ComponentPart).componentType.oclAsType(muml::component::Component).ports->includes(self.dataType.oclAsType(muml::component::Port))&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;false&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;true&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="SameBindingOperatorAsParent SameBindingSemanticsAsParent ValidTypeOfPortVariable"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.muml.org/emf/OCLFilter">
+      <details key="choices" value="if self.eContainer().oclIsKindOf(PartVariable)&#xD;&#xA;then self.eContainer().oclAsType(PartVariable).componentPartType.portParts.portType&#xD;&#xA;else&#xD;&#xA;&#x9;self.eContainer().oclAsType(ComponentVariable).type.ports&#xD;&#xA;endif"/>
+      <details key="feature" value="dataType"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portType" lowerBound="1"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/Port"
+        changeable="false" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="self.dataType.oclAsType(component::Port)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectorVariables" upperBound="-1"
+        eType="#//ConnectorVariable" changeable="false" volatile="true" transient="true"
+        derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="self.connectors->select(c | c.oclIsKindOf(ConnectorVariable)).oclAsType(ConnectorVariable)->asOrderedSet()"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PartVariable" abstract="true" eSuperTypes="#//ComponentStoryPatternVariable ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/TypedNamedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="SameBindingOperatorAsComponentVariable" value="if self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator&lt;>storydiagrams::patterns::BindingOperator::CHECK_ONLY then&#xD;&#xA;&#x9;self.bindingOperator = self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
+      <details key="ValidTypeOfPartVariable" value="if not self.eContainer().oclAsType(ComponentVariable).type.oclIsUndefined() then&#xD;&#xA;&#x9;if self.eContainer().oclAsType(ComponentVariable).type.oclIsKindOf(muml::component::StructuredComponent) then&#xD;&#xA;&#x9;&#x9;self.eContainer().oclAsType(ComponentVariable).type.oclAsType(muml::component::StructuredComponent).embeddedComponentParts->includes(self.dataType.oclAsType(muml::component::ComponentPart))&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;false&#xD;&#xA;&#x9;endif&#xD;&#xA;else&#xD;&#xA;&#x9;false&#xD;&#xA;endif"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="SameBindingOperatorAsComponentVariable ValidTypeOfPartVariable"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portVariables" upperBound="-1"
+        eType="#//PortVariable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="componentPartType" lowerBound="1"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/ComponentPart"
+        changeable="false" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="self.dataType.oclAsType(component::ComponentPart)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectorVariable" abstract="true" eSuperTypes="#//ComponentStoryPatternVariable ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="MustNotConnectCreateAndDestroyPorts" value="if self.portVariables->asOrderedSet()->first().oclAsType(ComponentStoryPatternVariable).bindingOperator=storydiagrams::patterns::BindingOperator::CREATE then&#xD;&#xA;&#x9;self.portVariables->asOrderedSet()->last().oclAsType(ComponentStoryPatternVariable).bindingOperator&lt;>storydiagrams::patterns::BindingOperator::DESTROY&#xD;&#xA;else&#xD;&#xA;&#x9;if self.portVariables->asOrderedSet()->first().oclAsType(ComponentStoryPatternVariable).bindingOperator=storydiagrams::patterns::BindingOperator::DESTROY then&#xD;&#xA;&#x9;&#x9;self.portVariables->asOrderedSet()->last().oclAsType(ComponentStoryPatternVariable).bindingOperator&lt;>storydiagrams::patterns::BindingOperator::CREATE&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;true&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
+      <details key="SameBindingOperatorAsPortVariable" value="if self.portVariables->asOrderedSet()->first().oclAsType(ComponentStoryPatternVariable).bindingOperator&lt;>storydiagrams::patterns::BindingOperator::CHECK_ONLY then&#xD;&#xA;&#x9;self.oclAsType(ComponentStoryPatternVariable).bindingOperator = self.portVariables->asOrderedSet()->first().oclAsType(ComponentStoryPatternVariable).bindingOperator&#xD;&#xA;else&#xD;&#xA;&#x9;if self.portVariables->asOrderedSet()->last().oclAsType(ComponentStoryPatternVariable).bindingOperator&lt;>storydiagrams::patterns::BindingOperator::CHECK_ONLY then&#xD;&#xA;&#x9;&#x9;self.oclAsType(ComponentStoryPatternVariable).bindingOperator = self.portVariables->asOrderedSet()->last().oclAsType(ComponentStoryPatternVariable).bindingOperator&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;true&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="MustNotConnectCreateAndDestroyPorts SameBindingOperatorAsPortVariable"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portVariables" upperBound="-1"
+        eType="#//PortVariable" changeable="false" volatile="true" transient="true"
+        derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="self.connectorEndpoints->select(i | i.oclIsKindOf(PortVariable)).oclAsType(PortVariable)->asOrderedSet()"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssemblyVariable" eSuperTypes="#//ConnectorVariable">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="ExistingAssemblyConnectorBetweenPortVariableTypes" value="if not self.type.oclIsUndefined() then&#xD;&#xA;&#x9;let selfPorts = self.portVariables.portType.oclAsType(muml::component::Port), typePorts = self.type.connectorEndpoints.oclAsType(muml::component::PortPart).portType in &#xD;&#xA;&#x9;selfPorts->intersection(typePorts)->size() = 2&#x9;&#x9;&#xD;&#xA;else&#xD;&#xA;&#x9;&#x9;false&#xD;&#xA;endif&#xD;&#xA;"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="ExistingConnectorBetweenPortVariableTypes"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/AssemblyConnector">
+      <eAnnotations source="http://www.muml.org/emf/OCLFilter">
+        <details key="choices" value="let this : ComponentVariable = self.eContainer().oclAsType(ComponentVariable),&#xD;&#xA;&#x9;assemblyConnectors : Collection(connector::Connector) = this.type.oclAsType(component::StructuredComponent).connectors->select(oclIsTypeOf(component::AssemblyConnector)),&#xD;&#xA;&#x9;portVariableTypes: Collection(component::Port) = self.portVariables.portType->excluding(null)&#xD;&#xA;in&#xD;&#xA;&#x9;assemblyConnectors->select(aC | portVariableTypes->forAll(p | aC.oclAsType(component::AssemblyConnector).portParts.portType->includes(p)))"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DelegationVariable" eSuperTypes="#//ConnectorVariable">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="ExistingDelegationConnectorBetweenPortVariableTypes" value="if not self.type.oclIsUndefined() then&#xD;&#xA;&#x9;let selfPorts : OrderedSet(muml::component::Port) = self.portVariables.portType.oclAsType(muml::component::Port)->asOrderedSet(),&#xD;&#xA;&#x9;typePorts: OrderedSet(muml::component::Port) = self.type.connectorEndpoints->collect( cE |&#xD;&#xA;&#x9;  if cE.oclIsTypeOf(muml::component::PortPart)&#x9;&#xD;&#xA;      then cE.oclAsType(muml::component::PortPart).portType&#xD;&#xA;&#x9;  else &#xD;&#xA;&#x9;  &#x9;if cE.oclIsKindOf(muml::component::Port)&#xD;&#xA;&#x9;  &#x9;then cE.oclAsType(muml::component::Port)&#xD;&#xA;&#x9;  &#x9;else  null&#xD;&#xA;&#x9;  &#x9;endif&#xD;&#xA;&#x9;  endif)->asOrderedSet()&#xD;&#xA;&#x9;in &#xD;&#xA;&#x9;selfPorts->intersection(typePorts)->size() = 2&#x9;&#x9;&#xD;&#xA;else&#xD;&#xA;&#x9;&#x9;false&#xD;&#xA;endif"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="ExistingDelegationConnectorBetweenPortVariableTypes"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/DelegationConnector">
+      <eAnnotations source="http://www.muml.org/emf/OCLFilter">
+        <details key="choices" value="let outerPort : muml::component::Port = self.portVariables->select(eContainer().oclIsTypeOf(ComponentVariable))->at(1).portType,&#xD;&#xA;&#x9;innerPort : muml::component::Port = self.portVariables.portType->excluding(outerPort)->at(1),&#xD;&#xA;&#x9;delegationConnectorsOuter : OrderedSet(muml::connector::Connector) = outerPort.connectors->select(oclIsTypeOf(muml::component::DelegationConnector))&#xD;&#xA;in&#xD;&#xA;&#x9;delegationConnectorsOuter->select(dC | dC.oclAsType(muml::component::DelegationConnector).portPart.portType = innerPort)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SinglePortVariable" eSuperTypes="#//PortVariable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="multiPortVariable" eType="#//MultiPortVariable"
+        eOpposite="#//MultiPortVariable/subPortVariables"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="positionConstraints" upperBound="-1"
+        eType="#//MultiPortPositionConstraint" containment="true" eOpposite="#//MultiPortPositionConstraint/subPortVariable"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MultiPortVariable" eSuperTypes="#//PortVariable">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="MultiPortCreatedOnlyIfParentCreated" value="-- Multi Port Variables may only be created if their parent is created as well&#xD;&#xA;if(self.bindingOperator = storydiagrams::patterns::BindingOperator::CREATE and self.eContainer().oclIsKindOf(ComponentStoryPatternVariable)) then&#xD;&#xA;&#x9;self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator = storydiagrams::patterns::BindingOperator::CREATE&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subPortVariables" upperBound="-1"
+        eType="#//SinglePortVariable" eOpposite="#//SinglePortVariable/multiPortVariable">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="These are all sub-portVariables of the multi-portVariable. The sub-portVariables are represented by SinglePortVariables. \todosd{Why is this not a containment reference?}&quot;"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gmfSubPortVariables" upperBound="-1"
+        eType="#//SinglePortVariable" derived="true" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This reference just derives the values of &quot;subPortVariables&quot; and specifies a containment. This containment reference is needed by the GMF tooling."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="self.subPortVariables"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="orderConstraints" upperBound="-1"
+        eType="#//MultiPortOrderConstraint" containment="true" eOpposite="#//MultiPortOrderConstraint/multiPortVariable"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TriggerEmbeddedComponentExpression"
+      abstract="true" eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//expressions/Expression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This expression is an abstract superclass for anything that can be triggered on an embedded component. &#xD;&#xA;Examples may include triggering reconfigurations on embedded components."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FadingComponentPartVariable" eSuperTypes="#//PartVariable">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A FadingComponentVariable refers to a FadingComponent and enables to &#xD;&#xA;specify a FadingFunction that needs to be carried out as part of the reconfiguration.&#xD;&#xA;FadingComponentVariables may only be contained in ControllerExchangeNodes."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="AppliedFadingFunctionIsContainedInType" value=" let fadingFunction : reconfiguration::FadingFunction = self.appliedFadingFunction.oclAsType(reconfiguration::FadingFunction) in&#xD;&#xA; &#x9;if fadingFunction.oclIsUndefined()&#xD;&#xA; &#x9;then true&#xD;&#xA; &#x9;else&#xD;&#xA;&#x9;&#x9;self.dataType.oclAsType(muml::component::ComponentPart).componentType.oclAsType(reconfiguration::FadingComponent).fadingFunction&#xD;&#xA;&#x9;&#x9;->select(curFadingFunction : reconfiguration::FadingFunction| curFadingFunction = fadingFunction)->size()=1&#xD;&#xA;&#x9;endif"/>
+      <details key="NotDefineAppliedFadingFunctionForVariableNotContainedInControllerExchangeNode"
+          value="if not self.eContainer().eContainer().eContainer().oclIsTypeOf(componentstorydiagram::ControllerExchangeNode)&#xD;&#xA;&#x9;then self.appliedFadingFunction.oclIsUndefined()&#xD;&#xA;else true&#xD;&#xA;endif"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="AppliedFadingFunctionIsContainedInType NotDefineAppliedFadingFunctionForVariableNotContainedInControllerExchangeNode"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.muml.org/emf/OCLFilter">
+      <details key="choices" value="let &#xD;&#xA;&#x9;component : component::StructuredComponent = self.eContainer().oclAsType(ComponentVariable).type.oclAsType(component::StructuredComponent)&#xD;&#xA;in&#xD;&#xA;&#x9;component.embeddedComponentParts->select(p | p.componentType.oclIsTypeOf(reconfiguration::FadingComponent))"/>
+      <details key="feature" value="dataType"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="appliedFadingFunction"
+        eType="ecore:EClass ../../org.muml.reconfiguration/model/MumlReconfiguration-0.4.ecore#//FadingFunction">
+      <eAnnotations source="http://www.muml.org/emf/OCLFilter">
+        <details key="choices" value="self.componentPartType.componentType.oclAsType(reconfiguration::FadingComponent).fadingFunction"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentPartVariable" eSuperTypes="#//PartVariable">
+    <eAnnotations source="http://www.muml.org/emf/OCLFilter">
+      <details key="choices" value="let &#xD;&#xA;&#x9;component : component::StructuredComponent = self.eContainer().oclAsType(ComponentVariable).type.oclAsType(component::StructuredComponent)&#xD;&#xA;in&#xD;&#xA;&#x9;component.embeddedComponentParts->select(p | not p.componentType.oclIsTypeOf(reconfiguration::FadingComponent))"/>
+      <details key="feature" value="dataType"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="triggerEmbeddedComponentExpressions"
+        eType="#//TriggerEmbeddedComponentExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MultiPortOrderConstraint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="multiPortVariable" lowerBound="1"
+        eType="#//MultiPortVariable" eOpposite="#//MultiPortVariable/orderConstraints"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="srcSubPortVariable" lowerBound="1"
+        eType="#//SinglePortVariable"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="orderConstraintType" eType="#//MultiPortOrderConstraintType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tgtSubPortVariable" lowerBound="1"
+        eType="#//SinglePortVariable"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MultiPortPositionConstraint">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="positionConstraintType"
+        eType="#//MultiPortPositionConstraintType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subPortVariable" lowerBound="1"
+        eType="#//SinglePortVariable" eOpposite="#//SinglePortVariable/positionConstraints"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MultiPortOrderConstraintType">
+    <eLiterals name="NEXT"/>
+    <eLiterals name="PREV" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MultiPortPositionConstraintType">
+    <eLiterals name="FIRST"/>
+    <eLiterals name="LAST" value="1"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -181,8 +181,8 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getClassifier() {
-		return (EClass)CLASSIFIER__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public EClassifier getClassifier() {
+		return (EClassifier)CLASSIFIER__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -190,8 +190,8 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass basicGetClassifier() {
-		return (EClass)CLASSIFIER__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	public EClassifier basicGetClassifier() {
+		return (EClassifier)CLASSIFIER__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**

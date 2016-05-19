@@ -391,7 +391,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
 		initEClass(typedElementEClass, TypedElement.class, "TypedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTypedElement_GenericType(), ecorePackage.getEGenericType(), null, "genericType", null, 0, 1, TypedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getTypedElement_Classifier(), theEcorePackage.getEClass(), null, "classifier", null, 1, 1, TypedElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getTypedElement_Classifier(), ecorePackage.getEClassifier(), null, "classifier", null, 1, 1, TypedElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
 		op = initEOperation(getTypedElement__SetClassifier__EClassifier(), null, "setClassifier", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEClassifier(), "classifier", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -438,7 +438,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		  (getTypedElement_Classifier(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if (self.genericType <> null) then self.genericType.eClassifier.oclAsType(ecore::EClass) else null endif"
+			 "derivation", "if (self.genericType <> null) then self.genericType.eClassifier else null endif"
 		   });
 	}
 

@@ -1,0 +1,800 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="reconfiguration" nsURI="http://www.fujaba.de/muml/reconfiguration/0.3.18"
+    nsPrefix="reconfiguration">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="This package contains all classes which are needed to define reconfigurable components in MechatronicUML. A reconfigurable component may change its ports and, in case of a structured component, its inner structure. The supported structural changes include adding or removing embedded component instances, adding or removing port instances, adding or removing or redirecting assemblies and delegations."/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurableComponent" abstract="true"
+      eSuperTypes="../../org.muml.pim/model/pim.ecore#//component/Component">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This abstract class needs to be implemented by all reconfigurable component types in order to distinguish them from static component types."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurableAtomicComponent" eSuperTypes="../../org.muml.pim/model/pim.ecore#//component/AtomicComponent #//ReconfigurableComponent">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A reconfigurable atomic component may change its internal structure at run-time. &#xD;&#xA;Therefore, it may instantiate or remove port instances."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="executionEntries" upperBound="-1"
+        eType="#//ReconfigurationExecutionSpecificationEntry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="managementEntries" upperBound="-1"
+        eType="#//ReconfigurationManagementSpecificationEntry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hybridPortMappings" upperBound="-1"
+        eType="#//HybridPortMapping" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurableStructuredComponent" eSuperTypes="../../org.muml.pim/model/pim.ecore#//component/StructuredComponent #//ReconfigurableComponent">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A reconfigurable structured component may change its internal structure at run-time. Therefore, it may instantiate or remove component instances that are typed over embedded component parts. In addition, assemblies and delegations in the structured component may be added, removed or redirected. The reconfiguration behavior in encapsulated in the reconfiguration controllers which are contained in the reconfigurable structured component."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controller" ordered="false"
+        eType="#//Controller" containment="true" eOpposite="#//Controller/structuredComponent">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Controllers extend the functionality of a structured component with additional behavior.&#xD;&#xA;In contrast to embedded components, controllers may access and modify the internal &#xD;&#xA;structure of a component. Currently, we only use reconfiguration controllers that enable&#xD;&#xA;to reconfigure a component."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="manager" eType="#//Manager"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="if self.controller.oclIsKindOf(RuleBasedReconfigurationController) then self.controller.oclAsType(RuleBasedReconfigurationController).manager else null endif"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Convenience reference that derives the manager of a RuleBasedReconfigurationController&#xD;&#xA;that belongs to this component."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="executor" eType="#//Executor"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="if self.controller.oclIsKindOf(RuleBasedReconfigurationController) then self.controller.oclAsType(RuleBasedReconfigurationController).executor else null endif"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Convenience reference that derives the executor of a RuleBasedReconfigurationController&#xD;&#xA;that belongs to this component."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialConfiguration" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//instance/ComponentInstanceConfiguration">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The initial configurations that are supported by this component. If a component&#xD;&#xA;is instantiated, it takes of its initial configurations."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationPort" abstract="true"
+      eSuperTypes="../../org.muml.pim/model/pim.ecore#//component/Port ../../org.muml.pim/model/pim.ecore#//connector/DiscreteInteractionEndpoint">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A reconfiguration port defines the external interface for accessing the reconfiguration capabilities of a reconfigurable structured component. In case of a reconfigurable structured component, they are delegated to one of the controllers of the component. In case of a reconfigurable atomic component, the reconfiguration port is directly implemented."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="ReconfigurationPortRequiresMessageTypes" value="self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()"/>
+      <details key="ReconfigurationPortAtStructuredComponentHasNoBehavior" value="(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(muml::component::StructuredComponent))&#xD;&#xA;&#x9;implies self.behavior.oclIsUndefined()"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="ReconfigurationPortRequiresMessageTypes ReconfigurationPortAtStructuredComponentHasNoBehavior"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationPortInterfaceEntry" eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A ReconfigurationPortInterfaceEntry is the abstract super class of the interface entries of ReconfigurationMessagePorts and ReconfigurationExecutionPorts."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A human readable description of this reconfiguration port interface entry. &#xD;&#xA;This description is to be used by a developer."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messageType" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//msgtype/MessageType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The reconfiguration message type that is specified by the reconfiguration &#xD;&#xA;port interface entry."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationMessagePort" eSuperTypes="#//ReconfigurationPort">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A component uses its ReconfigurationMessagePorts for sending information on situations that may require a reconfiguration to its parent. Consequently, RM ports are used for bottom-up information provision.&#xD;&#xA;The ReconfigurationMessagePorts are implemented in the Manager if a RuleBasedReconfigurationController is used."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceEntries" upperBound="-1"
+        eType="#//ReconfigurationMessagePortInterfaceEntry" containment="true" eOpposite="#//ReconfigurationMessagePortInterfaceEntry/reconfigurationMessagePort">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The interface entries of this reconfiguration message port. The interface entries&#xD;&#xA;define which messages the port may send and what kind of message is sent."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ReconfigurationMessageTypeEnum">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="If a reconfiguration message is sent by an embedded child, we distinguish to types of reconfiguration messages. These are info messages and requests. An info message just indicates that a certain situation has been monitored. A request is used if the embedded component knows that a reconfiguration needs to be performed, but it cannot perform the reconfiguration itself. A request needs to be answered by the parent component, an info message is not answered."/>
+    </eAnnotations>
+    <eLiterals name="INFO" literal="INFO"/>
+    <eLiterals name="REQUEST" value="1" literal="REQUEST"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationMessagePortInterfaceEntry"
+      eSuperTypes="#//ReconfigurationPortInterfaceEntry">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Each ReconfigurationMessagePortInterfaceEntry defines one reconfiguration &#xD;&#xA;message that is sent by a component to its parent. In addition to the message, &#xD;&#xA;it defines the ReconfigurationMessageType and, in case that it is a request, &#xD;&#xA;the expected response time for the parent."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="RequestRequiresExpectedResponseTime"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="RequestRequiresExpectedResponseTime" value="self.reconfigurationMessageType = ReconfigurationMessageTypeEnum::REQUEST implies (not self.expectedResponseTime.oclIsUndefined())"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reconfigurationMessageType"
+        eType="#//ReconfigurationMessageTypeEnum">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines whether the message is an info message or a request. A request needs&#xD;&#xA;to be answered by the parent within the expected response time."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expectedResponseTime" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="If the message is a request, then the expected response time denotes how long &#xD;&#xA;the parent has time to answer the request. For an info message, no answer of&#xD;&#xA;the parent is sent and, consequently, no expected response time is specified."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationMessagePort"
+        lowerBound="1" eType="#//ReconfigurationMessagePort" eOpposite="#//ReconfigurationMessagePort/interfaceEntries">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The reconfiguration message port that contains this interface entry."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationExecutionPort" eSuperTypes="#//ReconfigurationPort">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A component uses its ReconfigurationExecutionPorts for offering &#xD;&#xA;reconfiguration operations to its parent. The parent may trigger a &#xD;&#xA;reconfiguration operation on a child by sending a reconfiguration &#xD;&#xA;message to the ReconfigurationExecutionPort of that child. Thus, &#xD;&#xA;ReconfigurationExecutionPorts  are primarily used for top-down &#xD;&#xA;reconfiguration initiation. They are implemented by the Executor &#xD;&#xA;if a RuleBasedReconfigurationController is used."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceEntries" upperBound="-1"
+        eType="#//ReconfigurationExecutionPortInterfaceEntry" containment="true" eOpposite="#//ReconfigurationExecutionPortInterfaceEntry/reconfigurationExecutionPort">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The interface entries of this reconfiguration execution port. Each interface entry&#xD;&#xA;specifies one reconfiguration message that is offered to the parent."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationExecutionPortInterfaceEntry"
+      eSuperTypes="#//ReconfigurationPortInterfaceEntry">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Each ReconfigurationExecutionPortInterfaceEntry defines one reconfiguration &#xD;&#xA;message that may be sent by the parent component to initiate a reconfiguration&#xD;&#xA; on the component. In addition to the message, it defines the duration for &#xD;&#xA;deciding whether the requested reconfiguration can be executed and the &#xD;&#xA;duration for executing the reconfiguration."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timeForDecision" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The time that is needed by the component for deciding whether the reconfiguration&#xD;&#xA;that is offered by this interface entry can be executed."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timeForExecutionPhase"
+        lowerBound="1" eType="#//ExecutionTimingSpecification" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The time that is needed by the component for executing the reconfiguration&#xD;&#xA;that is offered by this interface entry. The time for execution is specified an&#xD;&#xA;ExecutionTimeSpecification because it depends on the particular execution&#xD;&#xA;procedure. Currently, we support single-phase and three-phase execution."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationExecutionPort"
+        lowerBound="1" eType="#//ReconfigurationExecutionPort" eOpposite="#//ReconfigurationExecutionPort/interfaceEntries">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The reconfiguration execution port that contains this interface entry."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="minimumCommitTime" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="If the component confirmed to the parent that it can execute the requested&#xD;&#xA;reconfiguration, the commit time denotes how long the component may stick&#xD;&#xA;to that confirmation. The minimum commit time sets a lower bound to this value.&#xD;&#xA;It is required for analyzing the reconfiguration behavior."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="returnValues" upperBound="-1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//behavior/Parameter"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="minimumRetryTime" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExecutionTimingSpecification" abstract="true"
+      eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This class serves as the abstract super class for all execution &#xD;&#xA;timing specifications. The execution timing specification specifies the duration that a component &#xD;&#xA;needs to execute a reconfiguration that has been requested by the parent &#xD;&#xA;component. The time to execute a reconfiguration, in turn, depends on the &#xD;&#xA;concrete execution procedure. Currently, we support single-phase and &#xD;&#xA;three-phase execution."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExecutionTimingSpecificationSinglePhase"
+      eSuperTypes="#//ExecutionTimingSpecification">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Defines the time for executing a reconfiguration according to single-phase&#xD;&#xA;execution. Consequently, it only provides one time value."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timeForExecution" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The time necessary for executing a reconfiguration."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExecutionTimingSpecificationThreePhase"
+      eSuperTypes="#//ExecutionTimingSpecification">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Defines the time for executing a reconfiguration according to three-phase&#xD;&#xA;execution. Consequently, it specifies three time values: one for each phase."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timeForSetup" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The time needed for executing the setup phase."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timeForFading" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The time needed for executing the fading function."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timeForTeardown" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The time needed for executing the teardown phase."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InternalReconfigurationCommunicationPort"
+      eSuperTypes="#//ReconfigurationPort">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An InternalReconfigurationCommunicationPort is used for the interaction&#xD;&#xA;of manager and executor within a structured component. We do not use&#xD;&#xA;DiscretePorts for this interaction, because the behavior is generated and does&#xD;&#xA;not utilize a real-time coordination protocol."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Controller" abstract="true" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.pim/model/pim.ecore#//behavior/BehavioralElement ../../org.muml.core/model/core.ecore#//CommentableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Controllers add additional behavior to a reconfigurable component. &#xD;&#xA;Since the behavior of the structured component is, in principle, defined by &#xD;&#xA;the execution of its embedded components, it has no own behavior &#xD;&#xA;specification. We use Controllers to add behavior that may access the &#xD;&#xA;embedded components of a structured components and use them, e.g., &#xD;&#xA;for specifying reconfiguration behavior."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="structuredComponent" lowerBound="1"
+        eType="#//ReconfigurableStructuredComponent" eOpposite="#//ReconfigurableStructuredComponent/controller">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The structured component containing this controller."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationController" abstract="true"
+      eSuperTypes="#//Controller">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Reconfiguration controllers encapsulate the reconfiguration behavior of &#xD;&#xA;a reconfigurable component.&#xD;&#xA;"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuleBasedReconfigurationController"
+      eSuperTypes="#//ReconfigurationController">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A RuleBasedReconfigurationController uses a declarative approach for &#xD;&#xA;defining the reconfiguration behavior. It consists of a manager and an executor.&#xD;&#xA;The manager decides when to execute which reconfiguration while the executor&#xD;&#xA;executes reconfiguration with respect to hierarchy."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="executor" lowerBound="1"
+        eType="#//Executor" containment="true" eOpposite="#//Executor/reconfigurationController">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The executor of this RuleBasedReconfigurationController that is responsible&#xD;&#xA;for executing reconfigurations with respect to hierarchy."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="manager" lowerBound="1"
+        eType="#//Manager" containment="true" eOpposite="#//Manager/reconfigurationController">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The manager of this RuleBasedReconfigurationController that is used for &#xD;&#xA;deciding when to execute which reconfiguration."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Manager" eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement ../../org.muml.pim/model/pim.ecore#//behavior/BehavioralElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The Manager is responsible for defining when to execute which reconfiguration rule. &#xD;&#xA;It reacts to reconfiguration messages that are provided by embedded components &#xD;&#xA;and indicates that a certain situation which may require reconfiguration has been monitored. &#xD;&#xA;The Manager is part of a RuleBasedReconfigurationController. It provides &#xD;&#xA;a declarative specification of its behavior using a set of ManagerSpecificationEntries.&#xD;&#xA;It has a real-time statechart which is automatically generated out of the declarative &#xD;&#xA;specification and provides an operational behavior specification."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="ImplementMessagesOfChildren ImplementMessagesOfferedToParent TreatAndNotPropagateMessagesOfferedToParent PropagatedMessageMustAppearInRMPort"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="ImplementMessagesOfChildren" value="-- The manager specification needs to have entries for all reconfiguration messages that are sent by embedded components.&#xD;&#xA;(self.reconfigurationController.structuredComponent.embeddedComponentParts.componentType.ports -> &#xD;&#xA;&#x9;&#x9;&#x9;select(oclIsTypeOf(ReconfigurationMessagePort))).oclAsType(ReconfigurationMessagePort).interfaceEntries.messageType&#xD;&#xA;&#x9;&#x9;&#x9;->forAll(mt : msgtype::MessageType | self.specificationEntries -> select(messageType = mt) -> size() > 0)"/>
+      <details key="ImplementMessagesOfferedToParent" value="-- The manager needs to contain ManagerSpecificationEntries for each reconfiguration message that is provided by the reconfiguration execution port.&#xD;&#xA;(self.reconfigurationController.structuredComponent.ports -> &#xD;&#xA;&#x9;&#x9;&#x9;select(oclIsTypeOf(ReconfigurationExecutionPort))).oclAsType(ReconfigurationExecutionPort).interfaceEntries.messageType&#xD;&#xA;&#x9;&#x9;&#x9;->forAll(mt : msgtype::MessageType | self.specificationEntries -> select(messageType = mt) -> size() > 0)"/>
+      <details key="TreatAndNotPropagateMessagesOfferedToParent" value="-- All reconfiguration messages offered to the parent in the reconfiguration execution port need to be treated and not propagated in the manager specification.&#xD;&#xA;self.specificationEntries -> select(entry : ManagerSpecificationEntry | self.reconfigurationController.structuredComponent.ports&#xD;&#xA;&#x9;-> select(oclIsTypeOf(ReconfigurationExecutionPort)).oclAsType(ReconfigurationExecutionPort).interfaceEntries &#xD;&#xA;&#x9;-> select(messageType = entry.messageType) -> size() > 0) -> forAll(treat = true and propagate = false)"/>
+      <details key="PropagatedMessageMustAppearInRMPort" value="let&#xD;&#xA;&#x9;rmTypes : OrderedSet(msgtype::MessageType) = self.reconfigurationController.structuredComponent.ports -> any(oclIsKindOf(ReconfigurationMessagePort)).oclAsType(ReconfigurationMessagePort).interfaceEntries.messageType->asOrderedSet(), -- messages in RM Port&#xD;&#xA;&#x9;propTypes: OrderedSet(msgtype::MessageType) = self.specificationEntries -> select(propagate = true).messageType->asOrderedSet() -- message propagated in manager specification&#xD;&#xA;in&#xD;&#xA;&#x9;rmTypes->includesAll(propTypes) and propTypes->includesAll(rmTypes)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specificationEntries" upperBound="-1"
+        eType="#//ManagerSpecificationEntry" containment="true" eOpposite="#//ManagerSpecificationEntry/manager">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The specification entries of the manager. Each specification entry defines one&#xD;&#xA;message type and how the component reacts to this message type."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationController"
+        lowerBound="1" eType="#//RuleBasedReconfigurationController" eOpposite="#//RuleBasedReconfigurationController/manager">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The reconfiguration controller that contains this manager."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
+        eType="#//ReconfigurationPort" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The ports of the manager. At present, the manager has one port implementing&#xD;&#xA;the reconfiguration message port of the parent, one multi-port for receiving &#xD;&#xA;messages from the children, and one port for interacting with the executor."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationMessagePorts"
+        unique="false" upperBound="-1" eType="#//ReconfigurationMessagePort" changeable="false"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="self.ports -> select(p | p.oclIsTypeOf(ReconfigurationMessagePort)).oclAsType(ReconfigurationMessagePort)"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Derives the set of reconfiguration message ports from the ports reference. &#xD;&#xA;This reference will return the port connected to the parent and the multi-port&#xD;&#xA;that receives reconfiguration messages from the embedded components."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ManagerSpecificationEntry" eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Each ManagerSpecificationEntry defines the reaction of the manager to a &#xD;&#xA;reconfiguration message which has either been sent by an embedded child &#xD;&#xA;or which is received from the executor as part of a hierarchical reconfiguration.&#xD;&#xA;Then, the manager decides whether to treat or propagate the message, the &#xD;&#xA;reconfiguration rule that is executed, and a set of conditions that need to be&#xD;&#xA;true in order to execute the reconfiguration."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="NotTreatAndPropagate InvokePlannerOnlyForTreatedMessage TimeForPlanningRequiresToInvokePlanner OnlyBlockTreatedMessage"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="NotTreatAndPropagate" value="not(self.treat and self.propagate)"/>
+      <details key="InvokePlannerOnlyForTreatedMessage" value="self.invokePlanner implies self.treat"/>
+      <details key="TimeForPlanningRequiresToInvokePlanner" value="(not self.timeForPlanning.oclIsUndefined()) implies self.invokePlanner"/>
+      <details key="OnlyBlockTreatedMessage" value="self.blockable implies self.treat"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="treat" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="If true, then message of the type referenced by this entry will be treated."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="propagate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="If true, then message of the type referenced by this entry will be propagated."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="manager" lowerBound="1"
+        eType="#//Manager" eOpposite="#//Manager/specificationEntries">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The manager containing this specification entry."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messageType" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//msgtype/MessageType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The message type which is processed by this entry. This message type either &#xD;&#xA;needs to be offered by the executor to the parent or it must be sent by one of&#xD;&#xA;the embedded components."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="structuralCondition" eType="#//StructuralCondition">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The structural condition is a condition on the embedded components and ports&#xD;&#xA;of the component that must evaluate to true for being able to execute the&#xD;&#xA;reconfiguration."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationRule" eType="#//ReconfigurationRule">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The reconfiguration rule that will be executed by the executor if this entry&#xD;&#xA;is treated and all conditions evaluate to true during run-time."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="invokePlanner" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="If true, then a planner will be invoke at run-time to determine whether it is &#xD;&#xA;useful to execute the requested reconfiguration."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timeForPlanning" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="If a planner should be invoke, then the time for planning denotes the maximum&#xD;&#xA;time that the planner may run before returning a result."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="blockable" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="If true, then the component checks whether it is safe to execute the reconfiguration&#xD;&#xA;using a run-time safety analysis."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Executor" eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement ../../org.muml.pim/model/pim.ecore#//behavior/BehavioralElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The Executor is responsible for executing reconfigurations in a reconfigurable &#xD;&#xA;component. It is part of a RuleBasedReconfigurationController and defines a &#xD;&#xA;set of ReconfigurationRules that it can execute."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specificationEntries" lowerBound="1"
+        upperBound="-1" eType="#//ExecutorSpecificationEntry" containment="true" eOpposite="#//ExecutorSpecificationEntry/executor">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="These are the specification entries that form the declarative specification of&#xD;&#xA;the executor. Each of the entries defines a reconfiguration rule that the executor&#xD;&#xA;can execute on the component."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationController"
+        lowerBound="1" eType="#//RuleBasedReconfigurationController" eOpposite="#//RuleBasedReconfigurationController/executor">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The reconfiguration controller that contains this executor."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
+        eType="#//ReconfigurationPort" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The ports of the executor. At present, the executor has one port implementing&#xD;&#xA;the reconfiguration execution port of the parent, one multi-port for sending &#xD;&#xA;messages to the children, and one port for interacting with the manager."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationExecutionPorts"
+        unique="false" upperBound="-1" eType="#//ReconfigurationExecutionPort" changeable="false"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="(self.ports -> select(p | p.oclIsTypeOf(ReconfigurationExecutionPort))).oclAsType(ReconfigurationExecutionPort)"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Derives the set of reconfiguration execution ports from the ports reference. &#xD;&#xA;This reference will return the port connected to the parent and the multi-port&#xD;&#xA;that sends reconfiguration messages to the embedded components."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExecutorSpecificationEntry" eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An ExecutorSpecificationEntry defines a ReconfigurationRule and an ID for the&#xD;&#xA;reconfiguration rule."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="UniqueIDofSpecificationEntryInExecutor" value="-- The ID of an ExecutorSpecificationEntry must be unique inside the executor's specification.&#xD;&#xA;self.executor.specificationEntries -> select(entry : ExecutorSpecificationEntry | entry.id = self.id) -> size() = 1"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="UniqueIDofSpecificationEntryInExecutor"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="executor" lowerBound="1"
+        eType="#//Executor" eOpposite="#//Executor/specificationEntries">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The executor that contains this specification entry."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationRule" lowerBound="1"
+        eType="#//ReconfigurationRule">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The reconfiguration rule specified by this entry."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="wcet" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The worst-case execution time of the reconfiguration rule that is associated&#xD;&#xA;to this specification entry. The worst-case &#xD;&#xA;execution time defines an upper bound on how long the execution of this&#xD;&#xA;reconfiguration rule may take."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The ID of this entry. In one executor specification, the IDs of the entries must&#xD;&#xA;be uniquely identifying. Specification entries of different executors, however, &#xD;&#xA;may use the same IDs."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationRule" abstract="true"
+      eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A reconfiguration rule describes a modification of the internal structure of a &#xD;&#xA;reconfigurable component. It has a Signature that defines the name of the &#xD;&#xA;reconfiguration rule as well as its input and output parameters."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reconfiguredComponent"
+        lowerBound="1" eType="#//ReconfigurableComponent">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The component on which the reconfiguration rule is to be applied."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signature" lowerBound="1"
+        eType="#//Signature" containment="true" eOpposite="#//Signature/reconfigurationRule">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The signature of the reconfiguration rule that defines the name as well as the&#xD;&#xA;input and output parameters of this reconfiguration rule."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="if self.signature.oclIsUndefined() then null else self.signature.name endif"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Derives the name of the reconfiguration rule from the signature."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Signature" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The class Signature defines the signature of a ReconfigurationRule. &#xD;&#xA;It defines the name of the ReconfigurationRule and its input and &#xD;&#xA;output parameters. When calling the reconfiguration rule, concrete values &#xD;&#xA;need to be provided for all input parameters. After the rule has been executed,&#xD;&#xA;values are bound to the output parameters."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//behavior/Parameter"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The set of input parameters of the reconfiguration rule."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="returnParameters" upperBound="-1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//behavior/Parameter"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The set of output parameters of the reconfiguration rule."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationRule" lowerBound="1"
+        eType="#//ReconfigurationRule" eOpposite="#//ReconfigurationRule/signature">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The reconfiguration rule that the signature belongs to."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StructuralCondition" abstract="true"
+      eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.core/model/core.ecore#//CommentableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A StructuralCondition is a condition on the embedded component instances &#xD;&#xA;of a reconfigurable structured component instance that is used by a &#xD;&#xA;ManagerSpecificationEntry for deciding whether a reconfiguration may be &#xD;&#xA;executed. For an atomic component, the structural condition only considers&#xD;&#xA;the ports of the component."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//behavior/Parameter"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Input parameters provided to the structural condition."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurableComponent"
+        lowerBound="1" eType="#//ReconfigurableComponent"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationPortAssemblyConnector"
+      eSuperTypes="../../org.muml.pim/model/pim.ecore#//component/PortConnector">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A ReconfigurationPortAssemblyConnector connects two ReconfigurationPorts with each other.&#xD;&#xA;In contrast to a normal assembly used for component parts within a structured&#xD;&#xA;component, the ReconfigurationPortAssemblyConnector connects two&#xD;&#xA;reconfiguration ports instead of two port parts."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="OnlyConnectReconfigurationPorts"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="OnlyConnectReconfigurationPorts" value="-- A reconfiguration Port Assembly may only connect reconfiguration ports or a port part typed by a reconfiguration port.&#xD;&#xA;(self.connectorEndpoints -> select(oclIsKindOf(ReconfigurationPort)) -> size() = 2) -- two reconfiguration ports&#xD;&#xA;or &#xD;&#xA;((self.connectorEndpoints -> select(oclIsKindOf(ReconfigurationPort)) -> size() = 1) and -- or one reconfiguration port and one port part&#xD;&#xA;(self.connectorEndpoints -> select(oclIsKindOf(muml::component::PortPart)) -> size() = 1) and &#xD;&#xA;(self.connectorEndpoints -> any(oclIsKindOf(muml::component::PortPart)).oclAsType(muml::component::PortPart).portType.oclIsKindOf(ReconfigurationPort))) -- that is typed over a reconfiguration port"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationPortDelegationConnector"
+      eSuperTypes="../../org.muml.pim/model/pim.ecore#//component/PortConnector">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A ReconfigurationPortDelegationConnector connects two ReconfigurationPorts with each other.&#xD;&#xA;In contrast to a normal delegation connector used for component parts within a structured&#xD;&#xA;component, the ReconfigurationPortDelegationConnector connects two&#xD;&#xA;reconfiguration ports instead of one port and one port part."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="OnlyConnectReconfigurationPorts"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="OnlyConnectReconfigurationPorts" value="-- A reconfiguration Port Delegation may only connect reconfiguration ports of structured component to reconfiguration ports of reconfiguration controller.&#xD;&#xA;(self.connectorEndpoints -> select(oclIsKindOf(ReconfigurationPort)) -> size() = 2)"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FadingComponent" eSuperTypes="../../org.muml.pim/model/pim.ecore#//component/AtomicComponent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fadingFunction" upperBound="-1"
+        eType="#//FadingFunction" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FadingFunction" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.core/model/core.ecore#//CommentableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fromPort" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//component/Port"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="toPort" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//component/Port"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationConstraint" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HybridPortMapping">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A HybridPortMapping maps a hybrid port to a function expressing the approximated development of the signal it receives"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hybridPort" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//component/HybridPort"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="function" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationExecutionSpecificationEntry"
+      eSuperTypes="../../org.muml.pim/model/pim.ecore#//types/DataType">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Each ReconfigurationExecutionSpecificationEntry defines which reconfiguration should be executed upon the reception of a reconfiguration message and which guards to respect when deciding whether the reconfiguration is executable or not."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guards" upperBound="-1"
+        eType="#//ReconfigurationConstraint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="message" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Message"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationRule" lowerBound="1"
+        eType="#//ReconfigurationRule"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hybridPortMappings" upperBound="-1"
+        eType="#//HybridPortMapping"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationManagementSpecificationEntry"
+      eSuperTypes="../../org.muml.pim/model/pim.ecore#//types/DataType">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Each ReconfigurationManagementSpecificationEntry defines under which&#xD;&#xA;conditions a ReconfigurableDiscreteAtomicComponentInstance sends a&#xD;&#xA;reconfiguration message."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditions" upperBound="-1"
+        eType="#//ReconfigurationConstraint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="message" lowerBound="1"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Message"
+        containment="true"/>
+  </eClassifiers>
+  <eSubpackages name="expression" nsURI="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7"
+      nsPrefix="expression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This package defines expressions that may used for calling reconfiguration operations&#xD;&#xA;in the action language."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityCallExpression" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression ../../org.muml.storydiagram/model/storydiagrams.ecore#//calls/Invocation">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="An ActivityCallExpression can be used for calling a story diagram from an expression specified by the MechatronicUML action language. &#xD;&#xA;In particular, it may be used for calling a story diagram in the action of a transition of a real-time statechart."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activity" lowerBound="1"
+          eType="ecore:EClass ../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/Activity"
+          volatile="true" transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.callee.oclAsType(storydiagrams::activities::Activity)"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The story diagram that is called by this expression."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationRuleCallExpression"
+        eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A ReconfigurationRuleCallExpression can be used for calling a ReconfigurationRule from an expression specified by the MechatronicUML action language. &#xD;&#xA;In particular, it may be used for calling a reconfiguration rule in the action of a transition of a real-time statechart."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationRule"
+          lowerBound="1" eType="#//ReconfigurationRule">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The reconfiguration rule that is called by this expression."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBindings" upperBound="-1"
+          eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//behavior/ParameterBinding"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The parameter bindings assign a value to each of the parameters of the &#xD;&#xA;reconfiguration rule that is called by this expression."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EvaluateStructuralConditionExpression"
+        eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="An EvaluateStructuralCondition Expression can be used for triggering the evaluation of a StructuralCondition from an expression specified by the MechatronicUML action language. &#xD;&#xA;In particular, it may be used for evaluating a StructuralCondition in the action of a transition of a real-time statechart."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBindings" upperBound="-1"
+          eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//behavior/ParameterBinding"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The parameter bindings assign a value to each of the parameters of the &#xD;&#xA;structural condition that is called by this expression."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="structuralCondition"
+          lowerBound="1" eType="#//StructuralCondition"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="structdatatype" nsURI="http://www.fujaba.de/muml/reconfiguration/structdatatype/0.3.18"
+      nsPrefix="structdatatype">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This package defines complex struct data types that are used by the&#xD;&#xA;reconfiguration behavior. "/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="StructType" eSuperTypes="../../org.muml.pim/model/pim.ecore#//types/StructureDataType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A StructType is a complex data type. It specifies a set of attributes and a set of (multi-valued) references, but provides no inheritance.&#xD;&#xA;\todoch{This type should be renamed! Maybe to SimpleClass}"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="references" upperBound="-1"
+          eType="#//structdatatype/Reference" containment="true" eOpposite="#//structdatatype/Reference/structType">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The set of references of this struct type. The type of the reference is either another&#xD;&#xA;struct type or an element of the MechatronicUML model such as a component &#xD;&#xA;or a port."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Reference" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A reference is a field of a StructType. It specifies a relation to another StructType or an element of the MechatronicUML meta-model such as a component or port. &#xD;&#xA;A reference specifies a cardinality that defines the minimum and maximum number of elements that need to be referenced."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="structType" lowerBound="1"
+          eType="#//structdatatype/StructType" eOpposite="#//structdatatype/StructType/references">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This is the containing struct type."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"
+          eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/Cardinality"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cardinality defines the minimum and maximum number of objects that&#xD;&#xA;need to be referenced by this reference at run-time."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
+          eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//types/DataType">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The data type of this reference. The data type needs to be another struct type&#xD;&#xA;or an element of the MechatronicUML model such as a component or port."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="protocolinstantiation" nsURI="http://www.fujaba.de/muml/reconfiguration/protocolinstantiation/0.4.0"
+      nsPrefix="protocolinstantiation">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This package contains classes for specifying the broadcast message exchange that &#xD;&#xA;is required for setting up a connection between two autonomous mechatronic&#xD;&#xA;systems."/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="BroadcastPort" eSuperTypes="../../org.muml.pim/model/pim.ecore#//component/Port ../../org.muml.pim/model/pim.ecore#//connector/DiscreteInteractionEndpoint">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A broadcast port is a discrete interaction endpoint that enables for the message&#xD;&#xA;based communication with an unknown number of other systems. A message&#xD;&#xA;send via a broadcast port is received by any other broadcast port that is &quot;in reach&quot;.&#xD;&#xA;Whether a broadcast port is &quot;in reach&quot; depends on the spatial distribution of&#xD;&#xA;the systems and the communication medium. MechatronicUML allows &#xD;&#xA;broadcast communication only for two purposes: (1) executing a discovery protocol&#xD;&#xA;that enables to identify systems that are in reach and (2) instantiating a &#xD;&#xA;real-time coordination protocol with another system."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="specification" eType="#//protocolinstantiation/BroadcastPortSpecification"
+          unsettable="true" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The specification of this broadcast port defines attributes that differ between &#xD;&#xA;the different kinds of ports."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1"
+          eType="#//protocolinstantiation/BroadcastPortKind" defaultValueLiteral="DISCOVERY">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Defines the kind of broadcast port. The kind either denotes that this port executes&#xD;&#xA;a discovery protocol or that it is used for instantiating real-time coordination &#xD;&#xA;protocols."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BroadcastPortSpecification" abstract="true"
+        eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class defines additional attributes for a broadcast port that depend on the&#xD;&#xA;kind of the broadcast port."/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="BroadcastPortKind">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This enumeration defines all possible kinds of broadcast ports that we allow for&#xD;&#xA;MechatronicUML. Currently, we only allow for two kinds of broadcast ports.&#xD;&#xA;These are (1) broadcast ports that run a discovery protocol and (2) broadcast &#xD;&#xA;ports that are used to instantiate a real-time coordination protocol."/>
+      </eAnnotations>
+      <eLiterals name="DISCOVERY"/>
+      <eLiterals name="PROTOCOL_INSTANTIATION" value="1"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProtocolInstantiationPortSpecification"
+        eSuperTypes="#//protocolinstantiation/BroadcastPortSpecification">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class defines the attributes for a broadcast port that is used for instantiating&#xD;&#xA;a real-time coordination protocol."/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DiscoveryPortSpecification" eSuperTypes="#//protocolinstantiation/BroadcastPortSpecification">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class defines the attributes for a broadcast port that is runs a discovery &#xD;&#xA;protocol."/>
+      </eAnnotations>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="reconfInstance" nsURI="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0"
+      nsPrefix="reconfInstance">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This package defines instances for reconfigurable components, the corresponding reconfiguration ports, and the reconfiguration controllers."/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="ReconfigurableComponentInstance" abstract="true"
+        eSuperTypes="../../org.muml.pim/model/pim.ecore#//instance/ComponentInstance"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationPortInstance" eSuperTypes="../../org.muml.pim/model/pim.ecore#//instance/PortInstance ../../org.muml.pim/model/pim.ecore#//connector/DiscreteInteractionEndpointInstance"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationMessagePortInstance"
+        eSuperTypes="#//reconfInstance/ReconfigurationPortInstance"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationExecutionPortInstance"
+        eSuperTypes="#//reconfInstance/ReconfigurationPortInstance"/>
+    <eClassifiers xsi:type="ecore:EClass" name="InternalReconfigurationCommunicationPortInstance"
+        eSuperTypes="#//reconfInstance/ReconfigurationPortInstance"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationControllerInstance"
+        abstract="true" eSuperTypes="#//reconfInstance/ControllerInstance"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ControllerInstance" abstract="true"
+        eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RuleBasedReconfigurationControllerInstance"
+        eSuperTypes="#//reconfInstance/ReconfigurationControllerInstance">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="managerInstance" lowerBound="1"
+          eType="#//reconfInstance/ManagerInstance" containment="true" eOpposite="#//reconfInstance/ManagerInstance/reconfigurationControllerInstance"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="executorInstance" lowerBound="1"
+          eType="#//reconfInstance/ExecutorInstance" containment="true" eOpposite="#//reconfInstance/ExecutorInstance/reconfigurationControllerInstance"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ManagerInstance" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="manager" lowerBound="1"
+          eType="#//Manager"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationControllerInstance"
+          eType="#//reconfInstance/RuleBasedReconfigurationControllerInstance" eOpposite="#//reconfInstance/RuleBasedReconfigurationControllerInstance/managerInstance"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances" upperBound="-1"
+          eType="#//reconfInstance/ReconfigurationPortInstance"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExecutorInstance" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="executor" lowerBound="1"
+          eType="#//Executor"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationControllerInstance"
+          eType="#//reconfInstance/RuleBasedReconfigurationControllerInstance" eOpposite="#//reconfInstance/RuleBasedReconfigurationControllerInstance/executorInstance"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances" upperBound="-1"
+          eType="#//reconfInstance/ReconfigurationPortInstance"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ReconfigurableAtomicComponentInstance"
+        eSuperTypes="../../org.muml.pim/model/pim.ecore#//instance/AtomicComponentInstance"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ReconfigurableStructuredComponentInstance"
+        eSuperTypes="../../org.muml.pim/model/pim.ecore#//instance/StructuredComponentInstance">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="controllerInstance" eType="#//reconfInstance/ControllerInstance"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

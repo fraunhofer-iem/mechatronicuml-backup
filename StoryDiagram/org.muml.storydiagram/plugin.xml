@@ -76,4 +76,10 @@
             class="org.muml.storydiagram.templates.TemplatesPackage"
             genModel="model/storydiagrams.genmodel"/>
    </extension>
+   <extension
+         point="org.muml.emm.migrator">
+      <Migrator
+            file="model/storydiagrams.migrator">
+      </Migrator>
+   </extension>
 </plugin>

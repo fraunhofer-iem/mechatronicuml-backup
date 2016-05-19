@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emm:Migrator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:emm="http://www.muml.org/emm/1.0.0">
+  <sourcePackages href="ComponentStoryPattern-0.4.ecore#/"/>
+  <targetPackages href="ComponentStoryPattern.ecore#/"/>
+  <mappings>
+    <targetClass href="ComponentStoryPattern.ecore#//MultiPortPositionConstraint"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="ComponentStoryPattern.ecore#//MultiPortPositionConstraint/positionConstraintType"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="ComponentStoryPattern-0.4.ecore#//MultiPortPositionConstraint/positionConstraintType"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="ComponentStoryPattern.ecore#//MultiPortPositionConstraint/subPortVariable"/>
+      <sourceFeature xsi:type="ecore:EReference" href="ComponentStoryPattern-0.4.ecore#//MultiPortPositionConstraint/subPortVariable"/>
+    </featureInitializers>
+    <sourceClass href="ComponentStoryPattern-0.4.ecore#//MultiPortPositionConstraint"/>
+  </mappings>
+  <mappings>
+    <targetClass href="ComponentStoryPattern.ecore#//MultiPortOrderConstraint"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="ComponentStoryPattern.ecore#//MultiPortOrderConstraint/orderConstraintType"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="ComponentStoryPattern-0.4.ecore#//MultiPortOrderConstraint/orderConstraintType"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="ComponentStoryPattern.ecore#//MultiPortOrderConstraint/multiPortVariable"/>
+      <sourceFeature xsi:type="ecore:EReference" href="ComponentStoryPattern-0.4.ecore#//MultiPortOrderConstraint/multiPortVariable"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="ComponentStoryPattern.ecore#//MultiPortOrderConstraint/srcSubPortVariable"/>
+      <sourceFeature xsi:type="ecore:EReference" href="ComponentStoryPattern-0.4.ecore#//MultiPortOrderConstraint/srcSubPortVariable"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="ComponentStoryPattern.ecore#//MultiPortOrderConstraint/tgtSubPortVariable"/>
+      <sourceFeature xsi:type="ecore:EReference" href="ComponentStoryPattern-0.4.ecore#//MultiPortOrderConstraint/tgtSubPortVariable"/>
+    </featureInitializers>
+    <sourceClass href="ComponentStoryPattern-0.4.ecore#//MultiPortOrderConstraint"/>
+  </mappings>
+  <mappings>
+    <targetClass href="ComponentStoryPattern.ecore#//ComponentPartVariable"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="ComponentStoryPattern.ecore#//ComponentPartVariable/triggerEmbeddedComponentExpressions"/>
+      <sourceFeature xsi:type="ecore:EReference" href="ComponentStoryPattern-0.4.ecore#//ComponentPartVariable/triggerEmbeddedComponentExpressions"/>
+    </featureInitializers>
+    <sourceClass href="ComponentStoryPattern-0.4.ecore#//ComponentPartVariable"/>
+  </mappings>
+  <mappings>
+    <targetClass href="ComponentStoryPattern.ecore#//FadingComponentPartVariable"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="ComponentStoryPattern.ecore#//FadingComponentPartVariable/appliedFadingFunction"/>
+      <sourceFeature xsi:type="ecore:EReference" href="ComponentStoryPattern-0.4.ecore#//FadingComponentPartVariable/appliedFadingFunction"/>
+    </featureInitializers>
+    <sourceClass href="ComponentStoryPattern-0.4.ecore#//FadingComponentPartVariable"/>
+  </mappings>
+  <mappings>
+    <targetClass href="ComponentStoryPattern.ecore#//MultiPortVariable"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="ComponentStoryPattern.ecore#//MultiPortVariable/subPortVariables"/>
+      <sourceFeature xsi:type="ecore:EReference" href="ComponentStoryPattern-0.4.ecore#//MultiPortVariable/subPortVariables"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="ComponentStoryPattern.ecore#//MultiPortVariable/orderConstraints"/>
+      <sourceFeature xsi:type="ecore:EReference" href="ComponentStoryPattern-0.4.ecore#//MultiPortVariable/orderConstraints"/>
+    </featureInitializers>
+    <sourceClass href="ComponentStoryPattern-0.4.ecore#//MultiPortVariable"/>
+  </mappings>
+  <mappings>
+    <targetClass href="ComponentStoryPattern.ecore#//SinglePortVariable"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="ComponentStoryPattern.ecore#//SinglePortVariable/multiPortVariable"/>
+      <sourceFeature xsi:type="ecore:EReference" href="ComponentStoryPattern-0.4.ecore#//SinglePortVariable/multiPortVariable"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="ComponentStoryPattern.ecore#//SinglePortVariable/positionConstraints"/>
+      <sourceFeature xsi:type="ecore:EReference" href="ComponentStoryPattern-0.4.ecore#//SinglePortVariable/positionConstraints"/>
+    </featureInitializers>
+    <sourceClass href="ComponentStoryPattern-0.4.ecore#//SinglePortVariable"/>
+  </mappings>
+  <mappings>
+    <targetClass href="ComponentStoryPattern.ecore#//DelegationVariable"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="ComponentStoryPattern.ecore#//DelegationVariable/type"/>
+      <sourceFeature xsi:type="ecore:EReference" href="ComponentStoryPattern-0.4.ecore#//DelegationVariable/type"/>
+    </featureInitializers>
+    <sourceClass href="ComponentStoryPattern-0.4.ecore#//DelegationVariable"/>
+  </mappings>
+  <mappings>
+    <targetClass href="ComponentStoryPattern.ecore#//AssemblyVariable"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="ComponentStoryPattern.ecore#//AssemblyVariable/type"/>
+      <sourceFeature xsi:type="ecore:EReference" href="ComponentStoryPattern-0.4.ecore#//AssemblyVariable/type"/>
+    </featureInitializers>
+    <sourceClass href="ComponentStoryPattern-0.4.ecore#//AssemblyVariable"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="ComponentStoryPattern-0.4.ecore#//ConnectorVariable"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="ComponentStoryPattern.ecore#//PartVariable/portVariables"/>
+      <sourceFeature xsi:type="ecore:EReference" href="ComponentStoryPattern-0.4.ecore#//PartVariable/portVariables"/>
+    </featureInitializers>
+    <sourceClass href="ComponentStoryPattern-0.4.ecore#//PartVariable"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="ComponentStoryPattern-0.4.ecore#//PortVariable"/>
+  </mappings>
+  <mappings>
+    <targetClass href="ComponentStoryPattern.ecore#//ComponentVariable"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="ComponentStoryPattern.ecore#//ComponentVariable/portVariables"/>
+      <sourceFeature xsi:type="ecore:EReference" href="ComponentStoryPattern-0.4.ecore#//ComponentVariable/portVariables"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="ComponentStoryPattern.ecore#//ComponentVariable/partVariables"/>
+      <sourceFeature xsi:type="ecore:EReference" href="ComponentStoryPattern-0.4.ecore#//ComponentVariable/partVariables"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="ComponentStoryPattern.ecore#//ComponentVariable/connectorVariables"/>
+      <sourceFeature xsi:type="ecore:EReference" href="ComponentStoryPattern-0.4.ecore#//ComponentVariable/connectorVariables"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="ComponentStoryPattern.ecore#//ComponentVariable/type"/>
+      <sourceFeature xsi:type="ecore:EReference" href="ComponentStoryPattern-0.4.ecore#//ComponentVariable/type"/>
+    </featureInitializers>
+    <sourceClass href="ComponentStoryPattern-0.4.ecore#//ComponentVariable"/>
+  </mappings>
+  <mappings>
+    <targetClass href="ComponentStoryPattern.ecore#//ComponentStoryPattern"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="ComponentStoryPattern.ecore#//ComponentStoryPattern/thisVariable"/>
+      <sourceFeature xsi:type="ecore:EReference" href="ComponentStoryPattern-0.4.ecore#//ComponentStoryPattern/thisVariable"/>
+    </featureInitializers>
+    <sourceClass href="ComponentStoryPattern-0.4.ecore#//ComponentStoryPattern"/>
+  </mappings>
+  <mappings>
+    <targetClass href="ComponentStoryPattern.ecore#//ComponentStoryPatternVariable"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="ComponentStoryPattern.ecore#//ComponentStoryPatternVariable/bindingSemantics"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="ComponentStoryPattern-0.4.ecore#//ComponentStoryPatternVariable/bindingSemantics"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="ComponentStoryPattern.ecore#//ComponentStoryPatternVariable/bindingOperator"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="ComponentStoryPattern-0.4.ecore#//ComponentStoryPatternVariable/bindingOperator"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="ComponentStoryPattern.ecore#//ComponentStoryPatternVariable/bindingState"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="ComponentStoryPattern-0.4.ecore#//ComponentStoryPatternVariable/bindingState"/>
+    </featureInitializers>
+    <sourceClass href="ComponentStoryPattern-0.4.ecore#//ComponentStoryPatternVariable"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="ComponentStoryPattern-0.4.ecore#//TriggerEmbeddedComponentExpression"/>
+  </mappings>
+  <release href="../../org.muml.core.migrator/model/muml.releaseset#//@releases.1"/>
+</emm:Migrator>

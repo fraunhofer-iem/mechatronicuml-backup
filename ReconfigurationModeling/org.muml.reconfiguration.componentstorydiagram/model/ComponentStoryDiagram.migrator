@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emm:Migrator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:emm="http://www.muml.org/emm/1.0.0">
+  <sourcePackages href="ComponentStoryDiagram.ecore#/"/>
+  <release href="../../org.muml.core.migrator/model/muml.releaseset#//@releases.1"/>
+</emm:Migrator>

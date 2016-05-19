@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emm:Migrator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:emm="http://www.muml.org/emm/1.0.0">
+  <sourcePackages href="storydiagrams-0.4.ecore#/"/>
+  <sourcePackages href="storydiagrams-0.4.ecore#//activities"/>
+  <sourcePackages href="storydiagrams-0.4.ecore#//activities/expressions"/>
+  <sourcePackages href="storydiagrams-0.4.ecore#//calls"/>
+  <sourcePackages href="storydiagrams-0.4.ecore#//calls/expressions"/>
+  <sourcePackages href="storydiagrams-0.4.ecore#//patterns"/>
+  <sourcePackages href="storydiagrams-0.4.ecore#//patterns/expressions"/>
+  <sourcePackages href="storydiagrams-0.4.ecore#//templates"/>
+  <targetPackages href="storydiagrams.ecore#/"/>
+  <targetPackages href="storydiagrams.ecore#//activities"/>
+  <targetPackages href="storydiagrams.ecore#//activities/expressions"/>
+  <targetPackages href="storydiagrams.ecore#//calls"/>
+  <targetPackages href="storydiagrams.ecore#//calls/expressions"/>
+  <targetPackages href="storydiagrams.ecore#//patterns"/>
+  <targetPackages href="storydiagrams.ecore#//patterns/expressions"/>
+  <targetPackages href="storydiagrams.ecore#//templates"/>
+  <targetPackages href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//templates/TemplateSignature"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//templates/TemplateSignature/templateBindings"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//templates/TemplateSignature/templateBinding"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//templates/TemplateSignature/typeParameters"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//templates/TemplateSignature/typeParameter"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//templates/TemplateSignature/pattern"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//templates/TemplateSignature/pattern"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//templates/TemplateSignature"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//templates/PropertyBinding"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//templates/PropertyBinding/boundProperty"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//templates/PropertyBinding/boundProperty"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//templates/PropertyBinding/bindingExpression"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//templates/PropertyBinding/bindingExpression"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//templates/PropertyBinding/templateBinding"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//templates/PropertyBinding/templateBinding"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//templates/PropertyBinding"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//templates/TemplateBinding"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//templates/TemplateBinding/boundParameter"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//templates/TemplateBinding/boundParameter"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//templates/TemplateBinding/bindingExpression"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//templates/TemplateBinding/bindingExpression"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//templates/TemplateBinding/template"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//templates/TemplateBinding/template"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//templates/TemplateBinding/propertyBindings"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//templates/TemplateBinding/propertyBinding"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//templates/TemplateBinding"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//patterns/expressions/PrimitiveVariableExpression"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/expressions/PrimitiveVariableExpression/primitiveVariable"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/expressions/PrimitiveVariableExpression/primitiveVariable"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//patterns/expressions/PrimitiveVariableExpression"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//patterns/expressions/CollectionSizeExpression"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/expressions/CollectionSizeExpression/set"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/expressions/CollectionSizeExpression/set"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//patterns/expressions/CollectionSizeExpression"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//patterns/expressions/ObjectVariableExpression"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/expressions/ObjectVariableExpression/object"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/expressions/ObjectVariableExpression/object"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//patterns/expressions/ObjectVariableExpression"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//patterns/expressions/AttributeValueExpression"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/expressions/AttributeValueExpression/object"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/expressions/AttributeValueExpression/object"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/expressions/AttributeValueExpression/attribute"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/expressions/AttributeValueExpression/attribute"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//patterns/expressions/AttributeValueExpression"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//patterns/StoryPattern"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="storydiagrams.ecore#//patterns/StoryPattern/bindingSemantics"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="storydiagrams-0.4.ecore#//patterns/StoryPattern/bindingSemantics"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/StoryPattern/variables"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/StoryPattern/variable"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/StoryPattern/constraints"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/StoryPattern/constraint"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/StoryPattern/linkVariables"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/StoryPattern/linkVariable"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/StoryPattern/parentPattern"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/StoryPattern/parentPattern"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/StoryPattern/containedPatterns"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/StoryPattern/containedPattern"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/StoryPattern/templateSignature"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/StoryPattern/templateSignature"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//patterns/StoryPattern"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//patterns/LinkVariable"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/LinkVariable/targetEnd"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/LinkVariable/targetEnd"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/LinkVariable/qualifierExpression"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/LinkVariable/qualifierExpression"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//patterns/LinkVariable"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//patterns/Path"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/Path/pathExpression"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/Path/pathExpression"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//patterns/Path"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//patterns/PrimitiveVariable"/>
+    <featureInitializers xsi:type="emm:CreateInitializer">
+      <targetClass href="http://www.eclipse.org/emf/2002/Ecore#//EGenericType"/>
+      <featureInitializers xsi:type="emm:SetFeatureInitializer" ocl="self.classifier">
+        <targetFeature xsi:type="ecore:EReference" href="http://www.eclipse.org/emf/2002/Ecore#//EGenericType/eClassifier"/>
+      </featureInitializers>
+      <targetFeature xsi:type="ecore:EReference" href="../../org.muml.core/model/core.ecore#//TypedElement/genericType"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//patterns/PrimitiveVariable"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//patterns/AttributeAssignment"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/AttributeAssignment/attribute"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/AttributeAssignment/attribute"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/AttributeAssignment/valueExpression"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/AttributeAssignment/valueExpression"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/AttributeAssignment/objectVariable"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/AttributeAssignment/objectVariable"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//patterns/AttributeAssignment"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//patterns/LinkConstraint"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="storydiagrams.ecore#//patterns/LinkConstraint/index"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="storydiagrams-0.4.ecore#//patterns/LinkConstraint/index"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="storydiagrams.ecore#//patterns/LinkConstraint/constraintType"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="storydiagrams-0.4.ecore#//patterns/LinkConstraint/constraintType"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="storydiagrams.ecore#//patterns/LinkConstraint/negative"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="storydiagrams-0.4.ecore#//patterns/LinkConstraint/negative"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/LinkConstraint/firstLink"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/LinkConstraint/firstLink"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/LinkConstraint/referencingObject"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/LinkConstraint/referencingObject"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/LinkConstraint/secondLink"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/LinkConstraint/secondLink"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//patterns/LinkConstraint"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="storydiagrams.ecore#//patterns/AbstractLinkVariable/bindingSemantics"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="storydiagrams-0.4.ecore#//patterns/AbstractLinkVariable/bindingSemantics"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="storydiagrams.ecore#//patterns/AbstractLinkVariable/bindingOperator"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="storydiagrams-0.4.ecore#//patterns/AbstractLinkVariable/bindingOperator"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/AbstractLinkVariable/source"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/AbstractLinkVariable/source"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/AbstractLinkVariable/secondLinkConstraints"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/AbstractLinkVariable/secondLinkConstraint"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/AbstractLinkVariable/firstLinkConstraints"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/AbstractLinkVariable/firstLinkConstraint"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/AbstractLinkVariable/pattern"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/AbstractLinkVariable/pattern"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/AbstractLinkVariable/target"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/AbstractLinkVariable/target"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//patterns/AbstractLinkVariable"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//patterns/Constraint"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/Constraint/constraintExpression"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/Constraint/constraintExpression"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/Constraint/pattern"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/Constraint/pattern"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/Constraint/objectVariable"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/Constraint/objectVariable"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//patterns/Constraint"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="storydiagrams.ecore#//patterns/AbstractVariable/bindingState"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="storydiagrams-0.4.ecore#//patterns/AbstractVariable/bindingState"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/AbstractVariable/pattern"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/AbstractVariable/pattern"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/AbstractVariable/bindingExpression"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/AbstractVariable/bindingExpression"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/AbstractVariable/constraints"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/AbstractVariable/constraint"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/AbstractVariable/incomingLinks"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/AbstractVariable/incomingLink"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//patterns/AbstractVariable"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//patterns/ObjectVariable"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="storydiagrams.ecore#//patterns/ObjectVariable/bindingSemantics"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="storydiagrams-0.4.ecore#//patterns/ObjectVariable/bindingSemantics"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="storydiagrams.ecore#//patterns/ObjectVariable/bindingOperator"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="storydiagrams-0.4.ecore#//patterns/ObjectVariable/bindingOperator"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/ObjectVariable/outgoingLinks"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/ObjectVariable/outgoingLink"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/ObjectVariable/linkOrderConstraints"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/ObjectVariable/linkOrderConstraint"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//patterns/ObjectVariable/attributeAssignments"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//patterns/ObjectVariable/attributeAssignment"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:CreateInitializer">
+      <targetClass href="http://www.eclipse.org/emf/2002/Ecore#//EGenericType"/>
+      <featureInitializers xsi:type="emm:SetFeatureInitializer" ocl="self.classifier">
+        <targetFeature xsi:type="ecore:EReference" href="http://www.eclipse.org/emf/2002/Ecore#//EGenericType/eClassifier"/>
+      </featureInitializers>
+      <targetFeature xsi:type="ecore:EReference" href="../../org.muml.core/model/core.ecore#//TypedElement/genericType"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//patterns/ObjectVariable"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//calls/expressions/ParameterExpression"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//calls/expressions/ParameterExpression/parameter"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//calls/expressions/ParameterExpression/parameter"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//calls/expressions/ParameterExpression"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//calls/expressions/MethodCallExpression"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//calls/expressions/MethodCallExpression/target"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//calls/expressions/MethodCallExpression/target"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//calls/expressions/MethodCallExpression/opaqueCallable"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//calls/expressions/MethodCallExpression/opaqueCallable"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//calls/expressions/MethodCallExpression"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//calls/Callable/inParameters"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//calls/Callable/inParameter"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//calls/Callable/outParameters"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//calls/Callable/outParameter"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//calls/Callable/containedParameters"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//calls/Callable/containedParameters"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//calls/Callable"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//calls/ParameterExtension"/>
+    <sourceClass href="storydiagrams-0.4.ecore#//calls/ParameterExtension"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//calls/OpaqueCallable"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="storydiagrams.ecore#//calls/OpaqueCallable/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="storydiagrams-0.4.ecore#//calls/OpaqueCallable/name"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//calls/OpaqueCallable/callExpression"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//calls/OpaqueCallable/callExpression"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//calls/OpaqueCallable"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//calls/ParameterBinding"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//calls/ParameterBinding/valueExpression"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//calls/ParameterBinding/valueExpression"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//calls/ParameterBinding/parameter"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//calls/ParameterBinding/parameter"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//calls/ParameterBinding/invocation"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//calls/ParameterBinding/invocation"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//calls/ParameterBinding"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//calls/Invocation/ownedParameterBindings"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//calls/Invocation/ownedParameterBindings"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//calls/Invocation/callee"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//calls/Invocation/callee"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//calls/Invocation"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//activities/expressions/ExceptionVariableExpression"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//activities/expressions/ExceptionVariableExpression/exceptionVariable"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//activities/expressions/ExceptionVariableExpression/exceptionVariable"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//activities/expressions/ExceptionVariableExpression"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//activities/ModifyingStoryNode"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//activities/ModifyingStoryNode/ownedRule"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//activities/ModifyingStoryNode/ownedRule"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//activities/ModifyingStoryNode"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//activities/ActivityCallNode"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//activities/ActivityCallNode/calledActivities"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//activities/ActivityCallNode/calledActivity"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//activities/ActivityCallNode"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//activities/ActivityFinalNode"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="storydiagrams.ecore#//activities/ActivityFinalNode/success"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="storydiagrams-0.4.ecore#//activities/ActivityFinalNode/success"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//activities/ActivityFinalNode/returnValues"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//activities/ActivityFinalNode/returnValues"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//activities/ActivityFinalNode"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//activities/StatementNode"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//activities/StatementNode/statementExpression"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//activities/StatementNode/statementExpression"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//activities/StatementNode"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//activities/StructuredNode"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//activities/StructuredNode/ownedActivityNodes"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//activities/StructuredNode/ownedActivityNode"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//activities/StructuredNode"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="storydiagrams.ecore#//activities/StoryNode/forEach"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="storydiagrams-0.4.ecore#//activities/StoryNode/forEach"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//activities/StoryNode"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//activities/MatchingStoryNode"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//activities/MatchingStoryNode/ownedPattern"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//activities/MatchingStoryNode/ownedPattern"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//activities/MatchingStoryNode"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//activities/OperationExtension"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//activities/OperationExtension/returnValue"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//activities/OperationExtension/returnValue"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//activities/OperationExtension/ownedActivity"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//activities/OperationExtension/ownedActivity"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//activities/OperationExtension"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//activities/Activity"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//activities/Activity/owningOperation"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//activities/Activity/owningOperation"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//activities/Activity/ownedActivityEdges"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//activities/Activity/ownedActivityEdge"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//activities/Activity/precondition"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//activities/Activity/precondition"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//activities/Activity/ownedActivityNodes"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//activities/Activity/ownedActivityNode"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//activities/Activity/annotations"/>
+      <sourceFeature xsi:type="ecore:EReference" href="../../org.muml.core.migrator/model/core-0.4.ecore#//ExtendableElement/annotation"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//activities/Activity"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//activities/ActivityNode/outgoings"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//activities/ActivityNode/outgoing"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//activities/ActivityNode/owningActivity"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//activities/ActivityNode/owningActivity"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//activities/ActivityNode/owningActivityNode"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//activities/ActivityNode/owningActivityNode"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//activities/ActivityNode/incomings"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//activities/ActivityNode/incoming"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//activities/ActivityNode"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//activities/ActivityEdge"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="storydiagrams.ecore#//activities/ActivityEdge/guard"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="storydiagrams-0.4.ecore#//activities/ActivityEdge/guard"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//activities/ActivityEdge/target"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//activities/ActivityEdge/target"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//activities/ActivityEdge/source"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//activities/ActivityEdge/source"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//activities/ActivityEdge/owningActivity"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//activities/ActivityEdge/owningActivity"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//activities/ActivityEdge/guardExpression"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//activities/ActivityEdge/guardExpression"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//activities/ActivityEdge/guardExceptions"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//activities/ActivityEdge/guardException"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//activities/ActivityEdge"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//activities/ExceptionVariable"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="storydiagrams.ecore#//activities/ExceptionVariable/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="storydiagrams-0.4.ecore#//activities/ExceptionVariable/name"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//activities/ExceptionVariable/activityEdge"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//activities/ExceptionVariable/activityEdge"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="storydiagrams.ecore#//activities/ExceptionVariable/genericExceptionTypes"/>
+      <sourceFeature xsi:type="ecore:EReference" href="storydiagrams-0.4.ecore#//activities/ExceptionVariable/genericExceptionType"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//activities/ExceptionVariable"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//patterns/CollectionVariable"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="storydiagrams.ecore#//patterns/CollectionVariable/atLeastOne"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="storydiagrams-0.4.ecore#//patterns/CollectionVariable/atLeastOne"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="storydiagrams.ecore#//patterns/CollectionVariable/unique"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="storydiagrams-0.4.ecore#//patterns/CollectionVariable/unique"/>
+    </featureInitializers>
+    <sourceClass href="storydiagrams-0.4.ecore#//patterns/CollectionVariable"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="storydiagrams-0.4.ecore#//Variable"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//activities/JunctionNode"/>
+    <sourceClass href="storydiagrams-0.4.ecore#//activities/JunctionNode"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//activities/InitialNode"/>
+    <sourceClass href="storydiagrams-0.4.ecore#//activities/InitialNode"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//activities/FlowFinalNode"/>
+    <sourceClass href="storydiagrams-0.4.ecore#//activities/FlowFinalNode"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//patterns/InclusionLink"/>
+    <sourceClass href="storydiagrams-0.4.ecore#//patterns/InclusionLink"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//patterns/MatchingPattern"/>
+    <sourceClass href="storydiagrams-0.4.ecore#//patterns/MatchingPattern"/>
+  </mappings>
+  <mappings>
+    <targetClass href="storydiagrams.ecore#//patterns/MaybeLink"/>
+    <sourceClass href="storydiagrams-0.4.ecore#//patterns/MaybeLink"/>
+  </mappings>
+  <release href="../../org.muml.core.migrator/model/muml.releaseset#//@releases.1"/>
+</emm:Migrator>

@@ -2,6 +2,7 @@ package org.muml.storydiagram.interpreter.core.patternmatcher;
 
 import java.util.Map;
 
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EFactory;
 import org.eclipse.emf.ecore.EObject;
@@ -114,13 +115,17 @@ public abstract class StoryDrivenPatternPart<AV extends AbstractVariable, ALV ex
 
 						EFactory factory = objectVariable.getClassifier().getEPackage().getEFactoryInstance();
 
-						EObject eObject = factory.create(objectVariable.getClassifier());
+						if (objectVariable.getClassifier() instanceof EClass) {
+							EObject eObject = factory.create((EClass) objectVariable.getClassifier());
 
-						this.patternMatcher.getVariablesScope().createVariable(objectVariable.getName(), objectVariable.getClassifier(),
-								eObject);
-
-						this.patternMatcher.getNotificationEmitter().instanceObjectCreated(var, eObject,
-								this.patternMatcher.getVariablesScope(), this.patternMatcher);
+							this.patternMatcher.getVariablesScope().createVariable(objectVariable.getName(), objectVariable.getClassifier(),
+									eObject);
+	
+							this.patternMatcher.getNotificationEmitter().instanceObjectCreated(var, eObject,
+									this.patternMatcher.getVariablesScope(), this.patternMatcher);
+						} else {
+							throw new SDMException("ObjectVariable.classifier (" + objectVariable.getName() + ") must be of type EClass!");
+						}
 					}
 				}
 			}

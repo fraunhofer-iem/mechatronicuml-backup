@@ -2,7 +2,6 @@
  */
 package org.muml.core;
 
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EGenericType;
 
@@ -90,10 +89,10 @@ public interface TypedElement extends ExtendableElement {
 	 * @return the value of the '<em>Classifier</em>' reference.
 	 * @see org.muml.core.CorePackage#getTypedElement_Classifier()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.genericType <> null) then self.genericType.eClassifier.oclAsType(ecore::EClass) else null endif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.genericType <> null) then self.genericType.eClassifier else null endif'"
 	 * @generated
 	 */
-	EClass getClassifier();
+	EClassifier getClassifier();
 
 	/**
 	 * <!-- begin-user-doc -->

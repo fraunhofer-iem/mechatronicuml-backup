@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="componentsdd" nsURI="http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0"
+    nsPrefix="componentsdd">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentStoryDecisionDiagram" eSuperTypes="platform:/plugin/org.muml.reconfiguration.verification.sdd/model/sdd-0.4.ecore#//AbstractStoryDecisionDiagram platform:/resource/org.muml.reconfiguration/model/MumlReconfiguration-0.4.ecore#//StructuralCondition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="invariantSDD" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines whether this ComponentStoryDecisionDiagram must hold invariantly for all instances of a ReconfigurableComponent. If invariantSDD is false, then this ComponentStoryDecisionDiagram may evaluate to false for some instances."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentStoryPatternNode" eSuperTypes="platform:/plugin/org.muml.reconfiguration.verification.sdd/model/sdd-0.4.ecore#//PatternNode">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="noNegativeVariables noVariableModifications"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="noNegativeVariables" value="let&#xD;&#xA;&#x9;partVariables : OrderedSet(componentstorypattern::PartVariable) = pattern.thisVariable.partVariables,&#xD;&#xA;&#x9;connectorVariables : OrderedSet(componentstorypattern::ConnectorVariable) = pattern.thisVariable.connectorVariables,&#xD;&#xA;&#x9;portVariable : OrderedSet(componentstorypattern::ComponentStoryPatternVariable) = partVariables->collect(portVariables)->asOrderedSet()&#xD;&#xA;in&#xD;&#xA;&#x9;portVariable->union(partVariables)->union(connectorVariables)->forAll(cV | cV.bindingSemantics = storydiagrams::patterns::BindingSemantics::MANDATORY)"/>
+      <details key="noVariableModifications" value="let&#xD;&#xA;&#x9;partVariables : OrderedSet(componentstorypattern::PartVariable) = pattern.thisVariable.partVariables,&#xD;&#xA;&#x9;connectorVariables : OrderedSet(componentstorypattern::ConnectorVariable) = pattern.thisVariable.connectorVariables,&#xD;&#xA;&#x9;portVariable : OrderedSet(componentstorypattern::ComponentStoryPatternVariable) = partVariables->collect(portVariables)->asOrderedSet()&#xD;&#xA;in&#xD;&#xA;&#x9;portVariable->union(partVariables)->union(connectorVariables)->forAll(cV | cV.bindingOperator = storydiagrams::patterns::BindingOperator::CHECK_ONLY)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" lowerBound="1"
+        eType="ecore:EClass platform:/resource/org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern-0.4.ecore#//ComponentStoryPattern"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EvaluateComponentSDDExpression" eSuperTypes="platform:/resource/org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern-0.4.ecore#//TriggerEmbeddedComponentExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="componentSDD" lowerBound="1"
+        eType="#//ComponentStoryDecisionDiagram">
+      <eAnnotations source="http://www.muml.org/emf/OCLFilter">
+        <details key="choices" value="let&#xD;&#xA;&#x9;category : modelinstance::ModelElementCategory =self.eContainer()->closure(eContainer())->select(oclIsTypeOf(modelinstance::ModelElementCategory))->any(true).oclAsType(modelinstance::ModelElementCategory),&#xD;&#xA;&#x9;csdds : Collection(core::ExtendableElement) = category.modelElements->select(oclIsTypeOf(componentsdd::ComponentStoryDecisionDiagram))&#xD;&#xA;in&#xD;&#xA;&#x9;csdds->select(csdd | csdd.oclAsType(componentsdd::ComponentStoryDecisionDiagram).reconfigurableComponent = self.eContainer().oclAsType(componentstorypattern::ComponentPartVariable).componentPartType.componentType)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBindings" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.muml.pim/model/muml-0.4.ecore#//behavior/ParameterBinding"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InitialNode" eSuperTypes="platform:/plugin/org.muml.reconfiguration.verification.sdd/model/sdd-0.4.ecore#//Node platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+</ecore:EPackage>
