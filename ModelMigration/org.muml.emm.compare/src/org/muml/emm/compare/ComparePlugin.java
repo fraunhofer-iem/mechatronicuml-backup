@@ -128,7 +128,11 @@ public class ComparePlugin extends AbstractUIPlugin {
 				EClass leftClass = (EClass) classMatch.getLeft();
 				EClass rightClass = (EClass) classMatch.getRight();
 				mapping.setSourceClass(leftClass);
-				mapping.setTargetClass(rightClass);
+				
+				if (!rightClass.isAbstract()) {
+					mapping.setTargetClass(rightClass);
+				}
+				
 //						for (Diff diff : classMatch.getDifferences()) {
 //							if (diff instanceof AttributeChange) {
 //							
