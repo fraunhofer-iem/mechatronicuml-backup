@@ -2,7 +2,6 @@ package org.example.tests;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FilenameFilter;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -142,16 +141,6 @@ public class ModelicaTest {
 				while (null != (line = br.readLine())) {
 					buffer.append(line);
 				}
-				br.close();
-				File file = new File("/data/jenkins/jobs/Example/workspace/junit-workspace/modelica/gen-folder/Root_cic/A1/A1.mo");
-				if (file.exists()) {
-					buffer.append("\n###\nA1.mo:\n###\n");
-					br = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
-					while (null != (line = br.readLine())) {
-						buffer.append(line);
-					}
-				}
-				br.close();
 				throw new Exception(buffer.toString());
 			}
 		} finally {
