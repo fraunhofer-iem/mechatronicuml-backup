@@ -18,7 +18,7 @@
         <acceleoCompiler 
             sourceFolder="${target.folder}"
             outputFolder="${target.folder}"
-            dependencies="${target.folder}/../../de.uni_paderborn.fujaba.modelica.graphviz;"
+            dependencies="${target.folder}/../../org.muml.graphviz;"
             binaryResource="false"
             packagesToRegister="">
         </acceleoCompiler>
