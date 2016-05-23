@@ -20,8 +20,14 @@ public class LinkVariableTargetEndSection extends AbstractComboSection<EReferenc
 		result.add(null);
 
 		if (getElement().getTarget() instanceof ObjectVariable) {
-			EClass sourceClassifier = getElement().getSource().getClassifier();
-			EClass targetClassifier = ((ObjectVariable) getElement().getTarget()).getClassifier();
+			EClass sourceClassifier = null;
+			if (getElement().getSource().getClassifier() instanceof EClass) {
+				sourceClassifier = (EClass) getElement().getSource().getClassifier();
+			}
+			EClass targetClassifier = null;
+			if (((ObjectVariable) getElement().getTarget()).getClassifier() instanceof EClass) {
+				targetClassifier = (EClass) ((ObjectVariable) getElement().getTarget()).getClassifier();
+			}
 
 			if (sourceClassifier != null && targetClassifier != null) {
 				// go through all possible references

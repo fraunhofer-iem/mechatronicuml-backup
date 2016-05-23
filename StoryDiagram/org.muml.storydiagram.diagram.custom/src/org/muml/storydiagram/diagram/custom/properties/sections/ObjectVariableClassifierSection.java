@@ -12,7 +12,6 @@ import org.muml.storydiagram.diagram.custom.dialogs.SelectEClassDialog;
 import org.muml.storydiagram.diagram.custom.util.ActivityUtil;
 import org.muml.storydiagram.diagram.custom.util.EcoreTextUtil;
 import org.muml.storydiagram.patterns.ObjectVariable;
-import org.muml.storydiagram.patterns.PatternsPackage;
 
 import de.upb.swt.core.ui.properties.sections.AbstractComboSection;
 
@@ -26,11 +25,14 @@ public class ObjectVariableClassifierSection extends AbstractComboSection<EClass
 	@Override
 	protected void handleButtonClicked() {
 		dialog.setActivity(ActivityUtil.getActivity(getElement()));
-		dialog.setSelectedElement(((ObjectVariable) getElement()).getClassifier());
-		if (dialog.open() == Window.OK) {
-			EClass result = dialog.getElement();
-			set(result);
-			refresh();
+		ObjectVariable objectVariable = ((ObjectVariable) getElement());
+		if (objectVariable.getClassifier() instanceof EClass) {
+			dialog.setSelectedElement((EClass) objectVariable.getClassifier());
+			if (dialog.open() == Window.OK) {
+				EClass result = dialog.getElement();
+				set(result);
+				refresh();
+			}
 		}
 	}
 

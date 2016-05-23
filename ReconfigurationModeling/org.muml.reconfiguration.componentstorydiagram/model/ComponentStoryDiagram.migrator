@@ -1,5 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<emm:Migrator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:emm="http://www.muml.org/emm/1.0.0">
-  <sourcePackages href="ComponentStoryDiagram.ecore#/"/>
+<emm:Migrator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:emm="http://www.muml.org/emm/1.0.0">
+  <sourcePackages href="ComponentStoryDiagram-0.4.ecore#/"/>
+  <targetPackages href="ComponentStoryDiagram.ecore#/"/>
+  <mappings>
+    <targetClass href="ComponentStoryDiagram.ecore#//SendReconfigurationMessageExpression"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="ComponentStoryDiagram.ecore#//SendReconfigurationMessageExpression/reconfigurationMessageType"/>
+      <sourceFeature xsi:type="ecore:EReference" href="ComponentStoryDiagram-0.4.ecore#//SendReconfigurationMessageExpression/reconfigurationMessageType"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="ComponentStoryDiagram.ecore#//SendReconfigurationMessageExpression/parameterBindings"/>
+      <sourceFeature xsi:type="ecore:EReference" href="ComponentStoryDiagram-0.4.ecore#//SendReconfigurationMessageExpression/parameterBindings"/>
+    </featureInitializers>
+    <sourceClass href="ComponentStoryDiagram-0.4.ecore#//SendReconfigurationMessageExpression"/>
+  </mappings>
+  <mappings>
+    <targetClass href="ComponentStoryDiagram.ecore#//ControllerExchangeNode"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="ComponentStoryDiagram.ecore#//ControllerExchangeNode/deadline"/>
+      <sourceFeature xsi:type="ecore:EReference" href="ComponentStoryDiagram-0.4.ecore#//ControllerExchangeNode/deadline"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="ComponentStoryDiagram.ecore#//ControllerExchangeNode/componentStoryPattern"/>
+      <sourceFeature xsi:type="ecore:EReference" href="ComponentStoryDiagram-0.4.ecore#//ControllerExchangeNode/componentStoryPattern"/>
+    </featureInitializers>
+    <sourceClass href="ComponentStoryDiagram-0.4.ecore#//ControllerExchangeNode"/>
+  </mappings>
+  <mappings>
+    <targetClass href="ComponentStoryDiagram.ecore#//ComponentStoryNode"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="ComponentStoryDiagram.ecore#//ComponentStoryNode/forEach"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="ComponentStoryDiagram-0.4.ecore#//ComponentStoryNode/forEach"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="ComponentStoryDiagram.ecore#//ComponentStoryNode/componentStoryPattern"/>
+      <sourceFeature xsi:type="ecore:EReference" href="ComponentStoryDiagram-0.4.ecore#//ComponentStoryNode/componentStoryPattern"/>
+    </featureInitializers>
+    <sourceClass href="ComponentStoryDiagram-0.4.ecore#//ComponentStoryNode"/>
+  </mappings>
+  <mappings>
+    <targetClass href="ComponentStoryDiagram.ecore#//ComponentStoryRule"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="ComponentStoryDiagram.ecore#//ComponentStoryRule/constructor"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="ComponentStoryDiagram-0.4.ecore#//ComponentStoryRule/constructor"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="ComponentStoryDiagram.ecore#//ComponentStoryRule/activity"/>
+      <sourceFeature xsi:type="ecore:EReference" href="ComponentStoryDiagram-0.4.ecore#//ComponentStoryRule/activity"/>
+    </featureInitializers>
+    <sourceClass href="ComponentStoryDiagram-0.4.ecore#//ComponentStoryRule"/>
+  </mappings>
   <release href="../../org.muml.core.migrator/model/muml.releaseset#//@releases.1"/>
 </emm:Migrator>

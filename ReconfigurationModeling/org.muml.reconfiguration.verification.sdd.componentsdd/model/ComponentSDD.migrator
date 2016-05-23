@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<emm:Migrator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:emm="http://www.muml.org/emm/1.0.0">
+<emm:Migrator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:emm="http://www.muml.org/emm/1.0.0">
+  <sourcePackages href="ComponentSDD-0.4.ecore#/"/>
   <targetPackages href="ComponentSDD.ecore#/"/>
+  <mappings>
+    <targetClass href="ComponentSDD.ecore#//EvaluateComponentSDDExpression"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="ComponentSDD.ecore#//EvaluateComponentSDDExpression/componentSDD"/>
+      <sourceFeature xsi:type="ecore:EReference" href="ComponentSDD-0.4.ecore#//EvaluateComponentSDDExpression/componentSDD"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="ComponentSDD.ecore#//EvaluateComponentSDDExpression/parameterBindings"/>
+      <sourceFeature xsi:type="ecore:EReference" href="ComponentSDD-0.4.ecore#//EvaluateComponentSDDExpression/parameterBindings"/>
+    </featureInitializers>
+    <sourceClass href="ComponentSDD-0.4.ecore#//EvaluateComponentSDDExpression"/>
+  </mappings>
+  <mappings>
+    <targetClass href="ComponentSDD.ecore#//ComponentStoryPatternNode"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="ComponentSDD.ecore#//ComponentStoryPatternNode/pattern"/>
+      <sourceFeature xsi:type="ecore:EReference" href="ComponentSDD-0.4.ecore#//ComponentStoryPatternNode/pattern"/>
+    </featureInitializers>
+    <sourceClass href="ComponentSDD-0.4.ecore#//ComponentStoryPatternNode"/>
+  </mappings>
+  <mappings>
+    <targetClass href="ComponentSDD.ecore#//ComponentStoryDecisionDiagram"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="ComponentSDD.ecore#//ComponentStoryDecisionDiagram/invariantSDD"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="ComponentSDD-0.4.ecore#//ComponentStoryDecisionDiagram/invariantSDD"/>
+    </featureInitializers>
+    <sourceClass href="ComponentSDD-0.4.ecore#//ComponentStoryDecisionDiagram"/>
+  </mappings>
+  <mappings>
+    <targetClass href="ComponentSDD.ecore#//InitialNode"/>
+    <sourceClass href="ComponentSDD-0.4.ecore#//InitialNode"/>
+  </mappings>
   <release href="../../org.muml.core.migrator/model/muml.releaseset#//@releases.1"/>
 </emm:Migrator>

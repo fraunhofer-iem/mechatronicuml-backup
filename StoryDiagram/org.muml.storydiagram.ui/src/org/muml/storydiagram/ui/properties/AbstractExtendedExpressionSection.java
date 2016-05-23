@@ -9,6 +9,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -787,9 +788,10 @@ public abstract class AbstractExtendedExpressionSection extends AbstractProperty
 		// clear
 		attributes.clear();
 
-		if (variable != null && variable.getClassifier() != null) {
+		if (variable != null && variable.getClassifier() instanceof EClass) {
+			EClass eClass = (EClass) variable.getClassifier();
 			// collect them
-			for (EAttribute attribute : variable.getClassifier().getEAllAttributes()) {
+			for (EAttribute attribute : eClass.getEAllAttributes()) {
 				String key = attribute.getName();
 				attributes.put(key, attribute);
 			}

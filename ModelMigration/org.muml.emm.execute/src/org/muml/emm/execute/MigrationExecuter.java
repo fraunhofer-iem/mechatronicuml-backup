@@ -65,6 +65,12 @@ public class MigrationExecuter {
 	protected IProgressMonitor monitor;
 	
 	public MigrationExecuter(List<URI> migratorURIs, IProgressMonitor monitor) {
+		resourceSet.getURIConverter().getURIMap().put(URI.createURI("platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore"), URI.createURI("http://www.eclipse.org/emf/2002/Ecore"));
+		resourceSet.getURIConverter().getURIMap().put(URI.createURI("platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore"), URI.createURI("http://www.eclipse.org/emf/2002/Ecore"));
+		((ResourceSetImpl)resourceSet).setURIResourceMap(new HashMap<URI, Resource>());
+		((ResourceSetImpl)resourceSet).getURIResourceMap().put(URI.createURI("http://www.eclipse.org/emf/2002/Ecore"), EcorePackage.eINSTANCE.eResource());
+		((ResourceSetImpl)resourceSet).getURIResourceMap().put(URI.createURI("platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore"), EcorePackage.eINSTANCE.eResource());
+		((ResourceSetImpl)resourceSet).getURIResourceMap().put(URI.createURI("platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore"), EcorePackage.eINSTANCE.eResource());
 		this.monitor = monitor;
 		monitor.beginTask("Migration", 2);
 		IProgressMonitor initializeMonitor = new SubProgressMonitor(monitor, 1);
@@ -117,6 +123,8 @@ public class MigrationExecuter {
 		} finally {
 			initializeMonitor.done();
 		}
+	
+		//resourceSet.setURIConverter(new URICon);
 	}
 
 	public List<Release> execute(ISelection selection) {
@@ -153,8 +161,6 @@ public class MigrationExecuter {
 			List<Release> releases = null;
 			Release currentRelease = null;
 			do {
-				List<Resource> resources = new ArrayList<Resource>();
-		
 				if (selection instanceof IStructuredSelection) {
 					Iterator<?> iterator = ((IStructuredSelection) selection)
 							.iterator();
@@ -168,8 +174,16 @@ public class MigrationExecuter {
 							m.put(iFile.getFileExtension(), xmiFactory);
 							URI uri = URI.createPlatformResourceURI(iFile.getFullPath()
 									.toString(), true);
-							resources.add(resourceSet.getResource(uri, true));
+							Resource resource = resourceSet.getResource(uri, true);
+							EcoreUtil.resolveAll(resource);
 						}
+					}
+				}
+				
+				List<Resource> resources = new ArrayList<Resource>();
+				for (Resource resource : resourceSet.getResources()) {
+					if (!initialResources.contains(resource)) {
+						resources.add(resource);
 					}
 				}
 	
@@ -275,10 +289,12 @@ public class MigrationExecuter {
 		copier.copyReferences();
 
 		for (Resource resource : targetResources) {
-			try {
-				resource.save(Collections.emptyMap());
-			} catch (IOException e) {
-				e.printStackTrace();
+			if (resource.getURI().isPlatformResource()) {
+				try {
+					resource.save(Collections.emptyMap());
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 		}
 		
@@ -341,6 +357,10 @@ public class MigrationExecuter {
 		public EObject copy(EObject source) {
 			if (source == null) {
 				return null;
+			}
+			
+			if (source.eClass().getName().equals("RealtimeStatechartInstance") || source.eClass().getEPackage().getName().contains("runtime")) {
+				System.out.println("test");
 			}
 
 			// Create Target

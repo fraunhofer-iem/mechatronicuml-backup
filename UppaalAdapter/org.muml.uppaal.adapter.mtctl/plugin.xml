@@ -54,4 +54,10 @@
             class="org.muml.uppaal.adapter.mtctl.comparables.ComparablesPackage"
             genModel="model/Mtctl.genmodel"/>
    </extension>
+   <extension
+         point="org.muml.emm.migrator">
+      <Migrator
+            file="model/Mtctl.migrator">
+      </Migrator>
+   </extension>
 </plugin>

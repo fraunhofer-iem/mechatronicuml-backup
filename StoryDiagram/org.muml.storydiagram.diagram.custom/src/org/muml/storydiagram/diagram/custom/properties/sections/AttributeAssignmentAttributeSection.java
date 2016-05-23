@@ -18,9 +18,11 @@ public class AttributeAssignmentAttributeSection extends AbstractComboSection<EA
 		List<EAttribute> items = new ArrayList<EAttribute>();
 		items.add(null);
 
-		EClass classifier = getElement().getObjectVariable().getClassifier();
-		if (classifier != null) {
-			items.addAll(classifier.getEAllAttributes());
+		if (getElement().getObjectVariable().getClassifier() instanceof EClass) {
+			EClass classifier = (EClass) getElement().getObjectVariable().getClassifier();
+			if (classifier != null) {
+				items.addAll(classifier.getEAllAttributes());
+			}
 		}
 		return items;
 	}

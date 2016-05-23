@@ -13,5 +13,11 @@
             class="org.muml.reconfiguration.componentstorydiagram.ComponentstorydiagramPackage"
             genModel="model/ComponentStoryDiagram.genmodel"/>
    </extension>
+   <extension
+         point="org.muml.emm.migrator">
+      <Migrator
+            file="model/ComponentStoryDiagram.migrator">
+      </Migrator>
+   </extension>
 
 </plugin>

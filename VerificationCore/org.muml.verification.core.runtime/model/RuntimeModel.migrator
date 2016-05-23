@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emm:Migrator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:emm="http://www.muml.org/emm/1.0.0">
+  <sourcePackages href="RuntimeModel-0.4.ecore#/"/>
+  <targetPackages href="RuntimeModel.ecore#/"/>
+  <mappings>
+    <targetClass href="RuntimeModel.ecore#//MessageOnConnector"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="RuntimeModel.ecore#//MessageOnConnector/receiver"/>
+      <sourceFeature xsi:type="ecore:EReference" href="RuntimeModel-0.4.ecore#//MessageOnConnector/receiver"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="RuntimeModel.ecore#//MessageOnConnector/message"/>
+      <sourceFeature xsi:type="ecore:EReference" href="RuntimeModel-0.4.ecore#//MessageOnConnector/message"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="RuntimeModel.ecore#//MessageOnConnector/runtimeConnectorInstance"/>
+      <sourceFeature xsi:type="ecore:EReference" href="RuntimeModel-0.4.ecore#//MessageOnConnector/runtimeConnectorInstance"/>
+    </featureInitializers>
+    <sourceClass href="RuntimeModel-0.4.ecore#//MessageOnConnector"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="RuntimeModel.ecore#//RuntimeConnectorInstance/transientMessages"/>
+      <sourceFeature xsi:type="ecore:EReference" href="RuntimeModel-0.4.ecore#//RuntimeConnectorInstance/transientMessages"/>
+    </featureInitializers>
+    <sourceClass href="RuntimeModel-0.4.ecore#//RuntimeConnectorInstance"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="RuntimeModel.ecore#//RuntimeBehavioralElement/statechartInstance"/>
+      <sourceFeature xsi:type="ecore:EReference" href="RuntimeModel-0.4.ecore#//RuntimeBehavioralElement/statechartInstance"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="RuntimeModel.ecore#//RuntimeBehavioralElement/messageBuffer"/>
+      <sourceFeature xsi:type="ecore:EReference" href="RuntimeModel-0.4.ecore#//RuntimeBehavioralElement/messageBuffer"/>
+    </featureInitializers>
+    <sourceClass href="RuntimeModel-0.4.ecore#//RuntimeBehavioralElement"/>
+  </mappings>
+  <mappings>
+    <targetClass href="RuntimeModel.ecore#//VariableBinding"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="RuntimeModel.ecore#//VariableBinding/value"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="RuntimeModel-0.4.ecore#//VariableBinding/value"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="RuntimeModel.ecore#//VariableBinding/variable"/>
+      <sourceFeature xsi:type="ecore:EReference" href="RuntimeModel-0.4.ecore#//VariableBinding/variable"/>
+    </featureInitializers>
+    <sourceClass href="RuntimeModel-0.4.ecore#//VariableBinding"/>
+  </mappings>
+  <mappings>
+    <targetClass href="RuntimeModel.ecore#//RuntimeParameter"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="RuntimeModel.ecore#//RuntimeParameter/value"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="RuntimeModel-0.4.ecore#//RuntimeParameter/value"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="RuntimeModel.ecore#//RuntimeParameter/message"/>
+      <sourceFeature xsi:type="ecore:EReference" href="RuntimeModel-0.4.ecore#//RuntimeParameter/message"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="RuntimeModel.ecore#//RuntimeParameter/parameter"/>
+      <sourceFeature xsi:type="ecore:EReference" href="RuntimeModel-0.4.ecore#//RuntimeParameter/parameter"/>
+    </featureInitializers>
+    <sourceClass href="RuntimeModel-0.4.ecore#//RuntimeParameter"/>
+  </mappings>
+  <mappings>
+    <targetClass href="RuntimeModel.ecore#//RuntimeMessage"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="RuntimeModel.ecore#//RuntimeMessage/parameters"/>
+      <sourceFeature xsi:type="ecore:EReference" href="RuntimeModel-0.4.ecore#//RuntimeMessage/parameters"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="RuntimeModel.ecore#//RuntimeMessage/type"/>
+      <sourceFeature xsi:type="ecore:EReference" href="RuntimeModel-0.4.ecore#//RuntimeMessage/type"/>
+    </featureInitializers>
+    <sourceClass href="RuntimeModel-0.4.ecore#//RuntimeMessage"/>
+  </mappings>
+  <mappings>
+    <targetClass href="RuntimeModel.ecore#//RealtimeStatechartInstance"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="RuntimeModel.ecore#//RealtimeStatechartInstance/runtimeBehavioralElement"/>
+      <sourceFeature xsi:type="ecore:EReference" href="RuntimeModel-0.4.ecore#//RealtimeStatechartInstance/runtimeBehavioralElement"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="RuntimeModel.ecore#//RealtimeStatechartInstance/instanceOf"/>
+      <sourceFeature xsi:type="ecore:EReference" href="RuntimeModel-0.4.ecore#//RealtimeStatechartInstance/instanceOf"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="RuntimeModel.ecore#//RealtimeStatechartInstance/activeVertex"/>
+      <sourceFeature xsi:type="ecore:EReference" href="RuntimeModel-0.4.ecore#//RealtimeStatechartInstance/activeVertex"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="RuntimeModel.ecore#//RealtimeStatechartInstance/subRealtimeStatechartInstances"/>
+      <sourceFeature xsi:type="ecore:EReference" href="RuntimeModel-0.4.ecore#//RealtimeStatechartInstance/subRealtimeStatechartInstances"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="RuntimeModel.ecore#//RealtimeStatechartInstance/parentRealtimeStatechartInstance"/>
+      <sourceFeature xsi:type="ecore:EReference" href="RuntimeModel-0.4.ecore#//RealtimeStatechartInstance/parentRealtimeStatechartInstance"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="RuntimeModel.ecore#//RealtimeStatechartInstance/variableBindings"/>
+      <sourceFeature xsi:type="ecore:EReference" href="RuntimeModel-0.4.ecore#//RealtimeStatechartInstance/variableBindings"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="RuntimeModel.ecore#//RealtimeStatechartInstance/activeTransition"/>
+      <sourceFeature xsi:type="ecore:EReference" href="RuntimeModel-0.4.ecore#//RealtimeStatechartInstance/activeTransition"/>
+    </featureInitializers>
+    <sourceClass href="RuntimeModel-0.4.ecore#//RealtimeStatechartInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="RuntimeModel.ecore#//RuntimeMessageBuffer"/>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="RuntimeModel.ecore#//RuntimeMessageBuffer/messages"/>
+      <sourceFeature xsi:type="ecore:EReference" href="RuntimeModel-0.4.ecore#//RuntimeMessageBuffer/messages"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="RuntimeModel.ecore#//RuntimeMessageBuffer/runtimeBehavioralElement"/>
+      <sourceFeature xsi:type="ecore:EReference" href="RuntimeModel-0.4.ecore#//RuntimeMessageBuffer/runtimeBehavioralElement"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="RuntimeModel.ecore#//RuntimeMessageBuffer/messageBuffer"/>
+      <sourceFeature xsi:type="ecore:EReference" href="RuntimeModel-0.4.ecore#//RuntimeMessageBuffer/messageBuffer"/>
+    </featureInitializers>
+    <sourceClass href="RuntimeModel-0.4.ecore#//RuntimeMessageBuffer"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="RuntimeModel-0.4.ecore#//RoleInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="RuntimeModel.ecore#//RuntimeComponentInstance"/>
+    <sourceClass href="RuntimeModel-0.4.ecore#//RuntimeComponentInstance"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="RuntimeModel-0.4.ecore#//RuntimeDiscretePortInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="RuntimeModel.ecore#//SingleRoleInstance"/>
+    <sourceClass href="RuntimeModel-0.4.ecore#//SingleRoleInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="RuntimeModel.ecore#//MultiRoleInstance"/>
+    <sourceClass href="RuntimeModel-0.4.ecore#//MultiRoleInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="RuntimeModel.ecore#//RuntimeRoleConnectorInstance"/>
+    <sourceClass href="RuntimeModel-0.4.ecore#//RuntimeRoleConnectorInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="RuntimeModel.ecore#//RuntimeAssemblyConnectorInstance"/>
+    <sourceClass href="RuntimeModel-0.4.ecore#//RuntimeAssemblyConnectorInstance"/>
+  </mappings>
+  <mappings>
+    <sourceClass href="RuntimeModel-0.4.ecore#//RuntimeDiscreteInteractionEndpointInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="RuntimeModel.ecore#//RuntimeDiscreteSinglePortInstance"/>
+    <sourceClass href="RuntimeModel-0.4.ecore#//RuntimeDiscreteSinglePortInstance"/>
+  </mappings>
+  <mappings>
+    <targetClass href="RuntimeModel.ecore#//RuntimeDiscreteMultiPortInstance"/>
+    <sourceClass href="RuntimeModel-0.4.ecore#//RuntimeDiscreteMultiPortInstance"/>
+  </mappings>
+  <release href="../../org.muml.core.migrator/model/muml.releaseset#//@releases.1"/>
+</emm:Migrator>

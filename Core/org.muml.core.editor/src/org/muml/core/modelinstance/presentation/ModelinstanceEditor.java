@@ -1012,6 +1012,7 @@ public class ModelinstanceEditor
 	public void createPages() {
 		// Creates the model from the editor input
 		//
+
 		createModel();
 
 		// Only creates the other pages if there is something that can be edited

@@ -13,5 +13,6 @@ Export-Package: org.muml.storydiagram.verification.sdd,
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.core;bundle-version="1.0.0";visibility:=reexport,
- org.muml.storydiagram;bundle-version="1.0.0"
+ org.muml.storydiagram;bundle-version="1.0.0",
+ org.muml.emm;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy

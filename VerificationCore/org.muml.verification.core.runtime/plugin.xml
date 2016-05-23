@@ -9,5 +9,11 @@
             class="org.muml.verification.core.runtime.RuntimePackage"
             genModel="model/RuntimeModel.genmodel"/>
    </extension>
+   <extension
+         point="org.muml.emm.migrator">
+      <Migrator
+            file="model/RuntimeModel.migrator">
+      </Migrator>
+   </extension>
 
 </plugin>

@@ -198,75 +198,75 @@ public class UnchangeableNodesIdentification {
 					if (abstractVariable instanceof ObjectVariable) {
 						
 						ObjectVariable objectVariable = (ObjectVariable) abstractVariable;
-						usedObjectVariableClasses.add(objectVariable.getClassifier());
-						
-						/* **********************************************************
-						 * Case 1: Object Variable has binding operator CREATE or DESTROY.
-						 * **********************************************************/	
-						if (BindingOperator.CREATE.equals(objectVariable.getBindingOperator())
-								|| BindingOperator.DESTROY.equals(objectVariable.getBindingOperator())) {
-							
-							changableClasses.add(objectVariable.getClassifier());
-
-						} else if(!objectVariable.getAttributeAssignments().isEmpty()){
+						if (objectVariable.getClassifier() instanceof EClass) {
 							/* **********************************************************
-							 * Case 2: Object Variable has attribute assignment.
+							 * Case 1: Object Variable has binding operator CREATE or DESTROY.
 							 * **********************************************************/	
-							changableClasses.add(objectVariable.getClassifier());
-						} else {
-							
-							//check link variables
-							
-							/* **********************************************************
-							 * Case 3: Object variable has outgoing link variable which 
-							 *         has binding operator CREATE or DESTROY.
-							 * **********************************************************/
-							if (!objectVariable.getOutgoingLinks().isEmpty()){
-								//iterate outgoing links
-								for (AbstractLinkVariable abstractLinkVariable : objectVariable
-										.getOutgoingLinks()) {
-									//link variable is created or destroyed...
-									if (abstractLinkVariable instanceof LinkVariable
-											&& (BindingOperator.CREATE
-													.equals(abstractLinkVariable
-															.getBindingOperator()) || BindingOperator.DESTROY
-													.equals(abstractLinkVariable
-															.getBindingOperator()))) {
-	
-										changableClasses.add(objectVariable.getClassifier());
-									}
-								}
-							} // End If (!objectVariable.getOutgoingLinks().isEmpty())
-							
-							/* **********************************************************
-							 * Case 4: Object variable has a link variable pointing to it
-							 *         which has binding operator CREATE or DESTROY and 
-							 *         which is bidirectional.
-							 * **********************************************************/
-							if(!objectVariable.getIncomingLinks().isEmpty()){
+							if (BindingOperator.CREATE.equals(objectVariable.getBindingOperator())
+									|| BindingOperator.DESTROY.equals(objectVariable.getBindingOperator())) {
 								
-								//iterate incoming links
-								for (AbstractLinkVariable abstractLinkVariable : objectVariable
-										.getIncomingLinks()) {
-									//link variable is created or destroyed...
-									if (abstractLinkVariable instanceof LinkVariable
-											&& (BindingOperator.CREATE
-													.equals(abstractLinkVariable
-															.getBindingOperator()) || BindingOperator.DESTROY
-													.equals(abstractLinkVariable
-															.getBindingOperator()))) {
+								changableClasses.add((EClass) objectVariable.getClassifier());
 	
-										EReference targetEndReference = ((LinkVariable) abstractLinkVariable)
-												.getTargetEnd();
-	
-										//... and the reference is bidirectional
-										if (targetEndReference.getEOpposite() != null) {
-											changableClasses.add(objectVariable.getClassifier());
+							} else if(!objectVariable.getAttributeAssignments().isEmpty()){
+								/* **********************************************************
+								 * Case 2: Object Variable has attribute assignment.
+								 * **********************************************************/	
+								changableClasses.add((EClass) objectVariable.getClassifier());
+							} else {
+								
+								//check link variables
+								
+								/* **********************************************************
+								 * Case 3: Object variable has outgoing link variable which 
+								 *         has binding operator CREATE or DESTROY.
+								 * **********************************************************/
+								if (!objectVariable.getOutgoingLinks().isEmpty()){
+									//iterate outgoing links
+									for (AbstractLinkVariable abstractLinkVariable : objectVariable
+											.getOutgoingLinks()) {
+										//link variable is created or destroyed...
+										if (abstractLinkVariable instanceof LinkVariable
+												&& (BindingOperator.CREATE
+														.equals(abstractLinkVariable
+																.getBindingOperator()) || BindingOperator.DESTROY
+														.equals(abstractLinkVariable
+																.getBindingOperator()))) {
+		
+											changableClasses.add((EClass) objectVariable.getClassifier());
 										}
 									}
-								}
-							} //End If (!objectVariable.getIncomingLinks().isEmpty())
-						} // End If (BindingOperator.CREATE ....)
+								} // End If (!objectVariable.getOutgoingLinks().isEmpty())
+								
+								/* **********************************************************
+								 * Case 4: Object variable has a link variable pointing to it
+								 *         which has binding operator CREATE or DESTROY and 
+								 *         which is bidirectional.
+								 * **********************************************************/
+								if(!objectVariable.getIncomingLinks().isEmpty()){
+									
+									//iterate incoming links
+									for (AbstractLinkVariable abstractLinkVariable : objectVariable
+											.getIncomingLinks()) {
+										//link variable is created or destroyed...
+										if (abstractLinkVariable instanceof LinkVariable
+												&& (BindingOperator.CREATE
+														.equals(abstractLinkVariable
+																.getBindingOperator()) || BindingOperator.DESTROY
+														.equals(abstractLinkVariable
+																.getBindingOperator()))) {
+		
+											EReference targetEndReference = ((LinkVariable) abstractLinkVariable)
+													.getTargetEnd();
+		
+											//... and the reference is bidirectional
+											if (targetEndReference.getEOpposite() != null) {
+												changableClasses.add((EClass) objectVariable.getClassifier());
+											}
+										}
+									}
+								} //End If (!objectVariable.getIncomingLinks().isEmpty())
+							} // End If (BindingOperator.CREATE ....)
+						}
 					} //End if (abstractVariable instanceof ObjectVariable)
 				}//End for (iteration of abstract variables)
 			} // End if (node instanceof ModifyingStoryNode)

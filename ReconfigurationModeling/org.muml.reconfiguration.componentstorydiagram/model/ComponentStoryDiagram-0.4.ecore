@@ -7,7 +7,7 @@
     <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="ComponentStoryRule" eSuperTypes="platform:/resource/org.muml.reconfiguration/model/MumlReconfiguration-0.4.ecore#//ReconfigurationRule">
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentStoryRule" eSuperTypes="../../org.muml.reconfiguration/model/MumlReconfiguration-0.4.ecore#//ReconfigurationRule">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This class represents a component story rule which is used to specifiy reconfiguration of a MechatronicUML component. The actual reconfiguration operation is encapsulated in the contained Activity in order to reuse the existing meta-model for story diagrams. The ComponentStoryRule contains an activity rather than inheriting from an activity to distinguish between the parameter sets."/>
     </eAnnotations>
@@ -18,7 +18,7 @@
       <details key="constraints" value="ComponentVariableHasToHaveSameTypeAsReconfiguredComponent"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="activity" lowerBound="1"
-        eType="ecore:EClass platform:/resource/org.muml.storydiagram/model/storydiagrams-0.4.ecore#//activities/Activity"
+        eType="ecore:EClass ../../org.muml.storydiagram/model/storydiagrams-0.4.ecore#//activities/Activity"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="constructor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="false">
@@ -27,17 +27,17 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ComponentStoryNode" eSuperTypes="platform:/resource/org.muml.storydiagram/model/storydiagrams-0.4.ecore#//activities/ActivityNode">
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentStoryNode" eSuperTypes="../../org.muml.storydiagram/model/storydiagrams-0.4.ecore#//activities/ActivityNode">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A component story nodes contains a component story pattern. In a component story rule, only component story pattern but no normal story pattern may be used."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="componentStoryPattern"
-        lowerBound="1" eType="ecore:EClass platform:/resource/org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern-0.4.ecore#//ComponentStoryPattern"
+        lowerBound="1" eType="ecore:EClass ../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern-0.4.ecore#//ComponentStoryPattern"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="forEach" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="false"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ControllerExchangeNode" eSuperTypes="platform:/resource/org.muml.storydiagram/model/storydiagrams-0.4.ecore#//activities/ActivityNode">
+  <eClassifiers xsi:type="ecore:EClass" name="ControllerExchangeNode" eSuperTypes="../../org.muml.storydiagram/model/storydiagrams-0.4.ecore#//activities/ActivityNode">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Controller Exchange Activity Nodes are used to exchange controllers modeled by continuous components. The controller exchange node either applies a fading function or a flat switching to the out-ports of the continuous component. "/>
     </eAnnotations>
@@ -48,25 +48,25 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="HasOnlyOneCreateAndOneDestroyPartVariable ContainsExactlyOneFadingComponentPartVariable"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="deadline" eType="ecore:EClass platform:/resource/org.muml.pim/model/pim.ecore#//realtimestatechart/RelativeDeadline"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deadline" eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//realtimestatechart/RelativeDeadline"
         containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The relative deadline denotes the minimum and maximum duration of the controller exchange. In case of a fading function, the deadline denotes the time interval in which both controllers are active and during which their out-ports are faded. In case of a flat switching, the deadline denotes the time interval in which the spline computing by the flat switching is used as a value of the out-port."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="componentStoryPattern"
-        lowerBound="1" eType="ecore:EClass platform:/resource/org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern-0.4.ecore#//ComponentStoryPattern"
+        lowerBound="1" eType="ecore:EClass ../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern-0.4.ecore#//ComponentStoryPattern"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SendReconfigurationMessageExpression"
-      eSuperTypes="platform:/resource/org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern-0.4.ecore#//TriggerEmbeddedComponentExpression">
+      eSuperTypes="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern-0.4.ecore#//TriggerEmbeddedComponentExpression">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This expression enables to send a reconfiguration message to an embedded&#xD;&#xA;component instance requiring the component instance to perform a reconfiguration."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationMessageType"
-        eType="ecore:EClass platform:/resource/org.muml.pim/model/pim.ecore#//msgtype/MessageType"/>
+        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//msgtype/MessageType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBindings" upperBound="-1"
-        eType="ecore:EClass platform:/resource/org.muml.pim/model/pim.ecore#//behavior/ParameterBinding"
+        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//behavior/ParameterBinding"
         containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

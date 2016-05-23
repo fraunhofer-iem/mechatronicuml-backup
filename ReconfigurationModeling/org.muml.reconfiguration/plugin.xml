@@ -38,5 +38,12 @@
             class="org.muml.reconfiguration.reconfInstance.ReconfInstancePackage"
             genModel="model/MumlReconfiguration.genmodel"/>
    </extension>
+   <extension
+         point="org.muml.emm.migrator">
+      <Migrator
+            file="model/MumlReconfiguration.migrator">
+      </Migrator>
+   </extension>
+
 
 </plugin>

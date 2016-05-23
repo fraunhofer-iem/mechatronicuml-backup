@@ -11,12 +11,12 @@
     <details key="documentation" value="This package contains all classes which are needed to define reconfigurable components in MechatronicUML. A reconfigurable component may change its ports and, in case of a structured component, its inner structure. The supported structural changes include adding or removing embedded component instances, adding or removing port instances, adding or removing or redirecting assemblies and delegations."/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="ReconfigurableComponent" abstract="true"
-      eSuperTypes="../../org.muml.pim/model/pim.ecore#//component/Component">
+      eSuperTypes="../../org.muml.pim/model/muml-0.4.ecore#//component/Component">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This abstract class needs to be implemented by all reconfigurable component types in order to distinguish them from static component types."/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurableAtomicComponent" eSuperTypes="../../org.muml.pim/model/pim.ecore#//component/AtomicComponent #//ReconfigurableComponent">
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurableAtomicComponent" eSuperTypes="../../org.muml.pim/model/muml-0.4.ecore#//component/AtomicComponent #//ReconfigurableComponent">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A reconfigurable atomic component may change its internal structure at run-time. &#xD;&#xA;Therefore, it may instantiate or remove port instances."/>
     </eAnnotations>
@@ -27,7 +27,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="hybridPortMappings" upperBound="-1"
         eType="#//HybridPortMapping" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurableStructuredComponent" eSuperTypes="../../org.muml.pim/model/pim.ecore#//component/StructuredComponent #//ReconfigurableComponent">
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurableStructuredComponent" eSuperTypes="../../org.muml.pim/model/muml-0.4.ecore#//component/StructuredComponent #//ReconfigurableComponent">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A reconfigurable structured component may change its internal structure at run-time. Therefore, it may instantiate or remove component instances that are typed over embedded component parts. In addition, assemblies and delegations in the structured component may be added, removed or redirected. The reconfiguration behavior in encapsulated in the reconfiguration controllers which are contained in the reconfigurable structured component."/>
     </eAnnotations>
@@ -55,14 +55,14 @@
         <details key="documentation" value="Convenience reference that derives the executor of a RuleBasedReconfigurationController&#xD;&#xA;that belongs to this component."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="initialConfiguration" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//instance/ComponentInstanceConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialConfiguration" eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//instance/ComponentInstanceConfiguration">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The initial configurations that are supported by this component. If a component&#xD;&#xA;is instantiated, it takes of its initial configurations."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationPort" abstract="true"
-      eSuperTypes="../../org.muml.pim/model/pim.ecore#//component/Port ../../org.muml.pim/model/pim.ecore#//connector/DiscreteInteractionEndpoint">
+      eSuperTypes="../../org.muml.pim/model/muml-0.4.ecore#//component/Port ../../org.muml.pim/model/muml-0.4.ecore#//connector/DiscreteInteractionEndpoint">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A reconfiguration port defines the external interface for accessing the reconfiguration capabilities of a reconfigurable structured component. In case of a reconfigurable structured component, they are delegated to one of the controllers of the component. In case of a reconfigurable atomic component, the reconfiguration port is directly implemented."/>
     </eAnnotations>
@@ -74,7 +74,7 @@
       <details key="constraints" value="ReconfigurationPortRequiresMessageTypes ReconfigurationPortAtStructuredComponentHasNoBehavior"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationPortInterfaceEntry" eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationPortInterfaceEntry" eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//ExtendableElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A ReconfigurationPortInterfaceEntry is the abstract super class of the interface entries of ReconfigurationMessagePorts and ReconfigurationExecutionPorts."/>
     </eAnnotations>
@@ -84,7 +84,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="messageType" lowerBound="1"
-        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//msgtype/MessageType">
+        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//msgtype/MessageType">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The reconfiguration message type that is specified by the reconfiguration &#xD;&#xA;port interface entry."/>
       </eAnnotations>
@@ -125,7 +125,7 @@
         <details key="documentation" value="Defines whether the message is an info message or a request. A request needs&#xD;&#xA;to be answered by the parent within the expected response time."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expectedResponseTime" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expectedResponseTime" eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//valuetype/TimeValue"
         containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="If the message is a request, then the expected response time denotes how long &#xD;&#xA;the parent has time to answer the request. For an info message, no answer of&#xD;&#xA;the parent is sent and, consequently, no expected response time is specified."/>
@@ -155,7 +155,7 @@
       <details key="documentation" value="Each ReconfigurationExecutionPortInterfaceEntry defines one reconfiguration &#xD;&#xA;message that may be sent by the parent component to initiate a reconfiguration&#xD;&#xA; on the component. In addition to the message, it defines the duration for &#xD;&#xA;deciding whether the requested reconfiguration can be executed and the &#xD;&#xA;duration for executing the reconfiguration."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="timeForDecision" lowerBound="1"
-        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//valuetype/TimeValue"
         containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The time that is needed by the component for deciding whether the reconfiguration&#xD;&#xA;that is offered by this interface entry can be executed."/>
@@ -174,20 +174,20 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="minimumCommitTime" lowerBound="1"
-        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//valuetype/TimeValue"
         containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="If the component confirmed to the parent that it can execute the requested&#xD;&#xA;reconfiguration, the commit time denotes how long the component may stick&#xD;&#xA;to that confirmation. The minimum commit time sets a lower bound to this value.&#xD;&#xA;It is required for analyzing the reconfiguration behavior."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnValues" upperBound="-1"
-        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//behavior/Parameter"
+        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//behavior/Parameter"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="minimumRetryTime" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="minimumRetryTime" eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//valuetype/TimeValue"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExecutionTimingSpecification" abstract="true"
-      eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
+      eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//ExtendableElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This class serves as the abstract super class for all execution &#xD;&#xA;timing specifications. The execution timing specification specifies the duration that a component &#xD;&#xA;needs to execute a reconfiguration that has been requested by the parent &#xD;&#xA;component. The time to execute a reconfiguration, in turn, depends on the &#xD;&#xA;concrete execution procedure. Currently, we support single-phase and &#xD;&#xA;three-phase execution."/>
     </eAnnotations>
@@ -198,7 +198,7 @@
       <details key="documentation" value="Defines the time for executing a reconfiguration according to single-phase&#xD;&#xA;execution. Consequently, it only provides one time value."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="timeForExecution" lowerBound="1"
-        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//valuetype/TimeValue"
         containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The time necessary for executing a reconfiguration."/>
@@ -211,21 +211,21 @@
       <details key="documentation" value="Defines the time for executing a reconfiguration according to three-phase&#xD;&#xA;execution. Consequently, it specifies three time values: one for each phase."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="timeForSetup" lowerBound="1"
-        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//valuetype/TimeValue"
         containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The time needed for executing the setup phase."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="timeForFading" lowerBound="1"
-        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//valuetype/TimeValue"
         containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The time needed for executing the fading function."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="timeForTeardown" lowerBound="1"
-        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//valuetype/TimeValue"
         containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The time needed for executing the teardown phase."/>
@@ -238,7 +238,7 @@
       <details key="documentation" value="An InternalReconfigurationCommunicationPort is used for the interaction&#xD;&#xA;of manager and executor within a structured component. We do not use&#xD;&#xA;DiscretePorts for this interaction, because the behavior is generated and does&#xD;&#xA;not utilize a real-time coordination protocol."/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Controller" abstract="true" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.pim/model/pim.ecore#//behavior/BehavioralElement ../../org.muml.core/model/core.ecore#//CommentableElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Controller" abstract="true" eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement ../../org.muml.pim/model/muml-0.4.ecore#//behavior/BehavioralElement ../../org.muml.core.migrator/model/core-0.4.ecore#//CommentableElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Controllers add additional behavior to a reconfigurable component. &#xD;&#xA;Since the behavior of the structured component is, in principle, defined by &#xD;&#xA;the execution of its embedded components, it has no own behavior &#xD;&#xA;specification. We use Controllers to add behavior that may access the &#xD;&#xA;embedded components of a structured components and use them, e.g., &#xD;&#xA;for specifying reconfiguration behavior."/>
     </eAnnotations>
@@ -273,7 +273,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Manager" eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement ../../org.muml.pim/model/pim.ecore#//behavior/BehavioralElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Manager" eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//CommentableElement ../../org.muml.pim/model/muml-0.4.ecore#//behavior/BehavioralElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The Manager is responsible for defining when to execute which reconfiguration rule. &#xD;&#xA;It reacts to reconfiguration messages that are provided by embedded components &#xD;&#xA;and indicates that a certain situation which may require reconfiguration has been monitored. &#xD;&#xA;The Manager is part of a RuleBasedReconfigurationController. It provides &#xD;&#xA;a declarative specification of its behavior using a set of ManagerSpecificationEntries.&#xD;&#xA;It has a real-time statechart which is automatically generated out of the declarative &#xD;&#xA;specification and provides an operational behavior specification."/>
     </eAnnotations>
@@ -315,7 +315,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ManagerSpecificationEntry" eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement">
+  <eClassifiers xsi:type="ecore:EClass" name="ManagerSpecificationEntry" eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//CommentableElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Each ManagerSpecificationEntry defines the reaction of the manager to a &#xD;&#xA;reconfiguration message which has either been sent by an embedded child &#xD;&#xA;or which is received from the executor as part of a hierarchical reconfiguration.&#xD;&#xA;Then, the manager decides whether to treat or propagate the message, the &#xD;&#xA;reconfiguration rule that is executed, and a set of conditions that need to be&#xD;&#xA;true in order to execute the reconfiguration."/>
     </eAnnotations>
@@ -347,7 +347,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="messageType" lowerBound="1"
-        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//msgtype/MessageType">
+        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//msgtype/MessageType">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The message type which is processed by this entry. This message type either &#xD;&#xA;needs to be offered by the executor to the parent or it must be sent by one of&#xD;&#xA;the embedded components."/>
       </eAnnotations>
@@ -367,7 +367,7 @@
         <details key="documentation" value="If true, then a planner will be invoke at run-time to determine whether it is &#xD;&#xA;useful to execute the requested reconfiguration."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="timeForPlanning" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timeForPlanning" eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//valuetype/TimeValue"
         containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="If a planner should be invoke, then the time for planning denotes the maximum&#xD;&#xA;time that the planner may run before returning a result."/>
@@ -380,7 +380,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Executor" eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement ../../org.muml.pim/model/pim.ecore#//behavior/BehavioralElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Executor" eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//CommentableElement ../../org.muml.pim/model/muml-0.4.ecore#//behavior/BehavioralElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The Executor is responsible for executing reconfigurations in a reconfigurable &#xD;&#xA;component. It is part of a RuleBasedReconfigurationController and defines a &#xD;&#xA;set of ReconfigurationRules that it can execute."/>
     </eAnnotations>
@@ -413,7 +413,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ExecutorSpecificationEntry" eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
+  <eClassifiers xsi:type="ecore:EClass" name="ExecutorSpecificationEntry" eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//ExtendableElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="An ExecutorSpecificationEntry defines a ReconfigurationRule and an ID for the&#xD;&#xA;reconfiguration rule."/>
     </eAnnotations>
@@ -435,7 +435,7 @@
         <details key="documentation" value="The reconfiguration rule specified by this entry."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="wcet" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="wcet" eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//valuetype/TimeValue"
         containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The worst-case execution time of the reconfiguration rule that is associated&#xD;&#xA;to this specification entry. The worst-case &#xD;&#xA;execution time defines an upper bound on how long the execution of this&#xD;&#xA;reconfiguration rule may take."/>
@@ -449,7 +449,7 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationRule" abstract="true"
-      eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement">
+      eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//CommentableElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A reconfiguration rule describes a modification of the internal structure of a &#xD;&#xA;reconfigurable component. It has a Signature that defines the name of the &#xD;&#xA;reconfiguration rule as well as its input and output parameters."/>
     </eAnnotations>
@@ -475,19 +475,19 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Signature" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Signature" eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The class Signature defines the signature of a ReconfigurationRule. &#xD;&#xA;It defines the name of the ReconfigurationRule and its input and &#xD;&#xA;output parameters. When calling the reconfiguration rule, concrete values &#xD;&#xA;need to be provided for all input parameters. After the rule has been executed,&#xD;&#xA;values are bound to the output parameters."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
-        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//behavior/Parameter"
+        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//behavior/Parameter"
         containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The set of input parameters of the reconfiguration rule."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnParameters" upperBound="-1"
-        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//behavior/Parameter"
+        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//behavior/Parameter"
         containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The set of output parameters of the reconfiguration rule."/>
@@ -501,12 +501,12 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StructuralCondition" abstract="true"
-      eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.core/model/core.ecore#//CommentableElement">
+      eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement ../../org.muml.core.migrator/model/core-0.4.ecore#//CommentableElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A StructuralCondition is a condition on the embedded component instances &#xD;&#xA;of a reconfigurable structured component instance that is used by a &#xD;&#xA;ManagerSpecificationEntry for deciding whether a reconfiguration may be &#xD;&#xA;executed. For an atomic component, the structural condition only considers&#xD;&#xA;the ports of the component."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
-        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//behavior/Parameter"
+        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//behavior/Parameter"
         containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Input parameters provided to the structural condition."/>
@@ -516,7 +516,7 @@
         lowerBound="1" eType="#//ReconfigurableComponent"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationPortAssemblyConnector"
-      eSuperTypes="../../org.muml.pim/model/pim.ecore#//component/PortConnector">
+      eSuperTypes="../../org.muml.pim/model/muml-0.4.ecore#//component/PortConnector">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A ReconfigurationPortAssemblyConnector connects two ReconfigurationPorts with each other.&#xD;&#xA;In contrast to a normal assembly used for component parts within a structured&#xD;&#xA;component, the ReconfigurationPortAssemblyConnector connects two&#xD;&#xA;reconfiguration ports instead of two port parts."/>
     </eAnnotations>
@@ -528,7 +528,7 @@
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationPortDelegationConnector"
-      eSuperTypes="../../org.muml.pim/model/pim.ecore#//component/PortConnector">
+      eSuperTypes="../../org.muml.pim/model/muml-0.4.ecore#//component/PortConnector">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A ReconfigurationPortDelegationConnector connects two ReconfigurationPorts with each other.&#xD;&#xA;In contrast to a normal delegation connector used for component parts within a structured&#xD;&#xA;component, the ReconfigurationPortDelegationConnector connects two&#xD;&#xA;reconfiguration ports instead of one port and one port part."/>
     </eAnnotations>
@@ -539,15 +539,15 @@
       <details key="OnlyConnectReconfigurationPorts" value="-- A reconfiguration Port Delegation may only connect reconfiguration ports of structured component to reconfiguration ports of reconfiguration controller.&#xD;&#xA;(self.connectorEndpoints -> select(oclIsKindOf(ReconfigurationPort)) -> size() = 2)"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FadingComponent" eSuperTypes="../../org.muml.pim/model/pim.ecore#//component/AtomicComponent">
+  <eClassifiers xsi:type="ecore:EClass" name="FadingComponent" eSuperTypes="../../org.muml.pim/model/muml-0.4.ecore#//component/AtomicComponent">
     <eStructuralFeatures xsi:type="ecore:EReference" name="fadingFunction" upperBound="-1"
         eType="#//FadingFunction" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FadingFunction" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.core/model/core.ecore#//CommentableElement">
+  <eClassifiers xsi:type="ecore:EClass" name="FadingFunction" eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement ../../org.muml.core.migrator/model/core-0.4.ecore#//CommentableElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="fromPort" lowerBound="1"
-        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//component/Port"/>
+        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//component/Port"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="toPort" lowerBound="1"
-        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//component/Port"/>
+        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//component/Port"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationConstraint" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="HybridPortMapping">
@@ -555,20 +555,20 @@
       <details key="documentation" value="A HybridPortMapping maps a hybrid port to a function expressing the approximated development of the signal it receives"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hybridPort" lowerBound="1"
-        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//component/HybridPort"/>
+        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//component/HybridPort"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="function" lowerBound="1"
-        eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
+        eType="ecore:EClass ../../org.muml.core.migrator/model/core-0.4.ecore#//expressions/Expression"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationExecutionSpecificationEntry"
-      eSuperTypes="../../org.muml.pim/model/pim.ecore#//types/DataType">
+      eSuperTypes="../../org.muml.pim/model/muml-0.4.ecore#//types/DataType">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Each ReconfigurationExecutionSpecificationEntry defines which reconfiguration should be executed upon the reception of a reconfiguration message and which guards to respect when deciding whether the reconfiguration is executable or not."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="guards" upperBound="-1"
         eType="#//ReconfigurationConstraint" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="message" lowerBound="1"
-        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Message"
+        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//realtimestatechart/Message"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationRule" lowerBound="1"
         eType="#//ReconfigurationRule"/>
@@ -576,14 +576,14 @@
         eType="#//HybridPortMapping"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationManagementSpecificationEntry"
-      eSuperTypes="../../org.muml.pim/model/pim.ecore#//types/DataType">
+      eSuperTypes="../../org.muml.pim/model/muml-0.4.ecore#//types/DataType">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Each ReconfigurationManagementSpecificationEntry defines under which&#xD;&#xA;conditions a ReconfigurableDiscreteAtomicComponentInstance sends a&#xD;&#xA;reconfiguration message."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="conditions" upperBound="-1"
         eType="#//ReconfigurationConstraint" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="message" lowerBound="1"
-        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Message"
+        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//realtimestatechart/Message"
         containment="true"/>
   </eClassifiers>
   <eSubpackages name="expression" nsURI="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7"
@@ -596,12 +596,12 @@
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     </eAnnotations>
-    <eClassifiers xsi:type="ecore:EClass" name="ActivityCallExpression" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression ../../org.muml.storydiagram/model/storydiagrams.ecore#//calls/Invocation">
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityCallExpression" eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//expressions/Expression ../../org.muml.storydiagram/model/storydiagrams-0.4.ecore#//calls/Invocation">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An ActivityCallExpression can be used for calling a story diagram from an expression specified by the MechatronicUML action language. &#xD;&#xA;In particular, it may be used for calling a story diagram in the action of a transition of a real-time statechart."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="activity" lowerBound="1"
-          eType="ecore:EClass ../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/Activity"
+          eType="ecore:EClass ../../org.muml.storydiagram/model/storydiagrams-0.4.ecore#//activities/Activity"
           volatile="true" transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="self.callee.oclAsType(storydiagrams::activities::Activity)"/>
@@ -612,7 +612,7 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationRuleCallExpression"
-        eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
+        eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//expressions/Expression">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A ReconfigurationRuleCallExpression can be used for calling a ReconfigurationRule from an expression specified by the MechatronicUML action language. &#xD;&#xA;In particular, it may be used for calling a reconfiguration rule in the action of a transition of a real-time statechart."/>
       </eAnnotations>
@@ -623,7 +623,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBindings" upperBound="-1"
-          eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//behavior/ParameterBinding"
+          eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//behavior/ParameterBinding"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The parameter bindings assign a value to each of the parameters of the &#xD;&#xA;reconfiguration rule that is called by this expression."/>
@@ -631,12 +631,12 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="EvaluateStructuralConditionExpression"
-        eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
+        eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//expressions/Expression">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An EvaluateStructuralCondition Expression can be used for triggering the evaluation of a StructuralCondition from an expression specified by the MechatronicUML action language. &#xD;&#xA;In particular, it may be used for evaluating a StructuralCondition in the action of a transition of a real-time statechart."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBindings" upperBound="-1"
-          eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//behavior/ParameterBinding"
+          eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//behavior/ParameterBinding"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The parameter bindings assign a value to each of the parameters of the &#xD;&#xA;structural condition that is called by this expression."/>
@@ -656,7 +656,7 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This package defines complex struct data types that are used by the&#xD;&#xA;reconfiguration behavior. "/>
     </eAnnotations>
-    <eClassifiers xsi:type="ecore:EClass" name="StructType" eSuperTypes="../../org.muml.pim/model/pim.ecore#//types/StructureDataType">
+    <eClassifiers xsi:type="ecore:EClass" name="StructType" eSuperTypes="../../org.muml.pim/model/muml-0.4.ecore#//types/StructureDataType">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A StructType is a complex data type. It specifies a set of attributes and a set of (multi-valued) references, but provides no inheritance.&#xD;&#xA;\todoch{This type should be renamed! Maybe to SimpleClass}"/>
       </eAnnotations>
@@ -667,7 +667,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Reference" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Reference" eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A reference is a field of a StructType. It specifies a relation to another StructType or an element of the MechatronicUML meta-model such as a component or port. &#xD;&#xA;A reference specifies a cardinality that defines the minimum and maximum number of elements that need to be referenced."/>
       </eAnnotations>
@@ -678,14 +678,14 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"
-          eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/Cardinality"
+          eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//valuetype/Cardinality"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The cardinality defines the minimum and maximum number of objects that&#xD;&#xA;need to be referenced by this reference at run-time."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
-          eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//types/DataType">
+          eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//types/DataType">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The data type of this reference. The data type needs to be another struct type&#xD;&#xA;or an element of the MechatronicUML model such as a component or port."/>
         </eAnnotations>
@@ -702,7 +702,7 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This package contains classes for specifying the broadcast message exchange that &#xD;&#xA;is required for setting up a connection between two autonomous mechatronic&#xD;&#xA;systems."/>
     </eAnnotations>
-    <eClassifiers xsi:type="ecore:EClass" name="BroadcastPort" eSuperTypes="../../org.muml.pim/model/pim.ecore#//component/Port ../../org.muml.pim/model/pim.ecore#//connector/DiscreteInteractionEndpoint">
+    <eClassifiers xsi:type="ecore:EClass" name="BroadcastPort" eSuperTypes="../../org.muml.pim/model/muml-0.4.ecore#//component/Port ../../org.muml.pim/model/muml-0.4.ecore#//connector/DiscreteInteractionEndpoint">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A broadcast port is a discrete interaction endpoint that enables for the message&#xD;&#xA;based communication with an unknown number of other systems. A message&#xD;&#xA;send via a broadcast port is received by any other broadcast port that is &quot;in reach&quot;.&#xD;&#xA;Whether a broadcast port is &quot;in reach&quot; depends on the spatial distribution of&#xD;&#xA;the systems and the communication medium. MechatronicUML allows &#xD;&#xA;broadcast communication only for two purposes: (1) executing a discovery protocol&#xD;&#xA;that enables to identify systems that are in reach and (2) instantiating a &#xD;&#xA;real-time coordination protocol with another system."/>
       </eAnnotations>
@@ -720,7 +720,7 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="BroadcastPortSpecification" abstract="true"
-        eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
+        eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//ExtendableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class defines additional attributes for a broadcast port that depend on the&#xD;&#xA;kind of the broadcast port."/>
       </eAnnotations>
@@ -755,8 +755,8 @@
       <details key="documentation" value="This package defines instances for reconfigurable components, the corresponding reconfiguration ports, and the reconfiguration controllers."/>
     </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="ReconfigurableComponentInstance" abstract="true"
-        eSuperTypes="../../org.muml.pim/model/pim.ecore#//instance/ComponentInstance"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationPortInstance" eSuperTypes="../../org.muml.pim/model/pim.ecore#//instance/PortInstance ../../org.muml.pim/model/pim.ecore#//connector/DiscreteInteractionEndpointInstance"/>
+        eSuperTypes="../../org.muml.pim/model/muml-0.4.ecore#//instance/ComponentInstance"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationPortInstance" eSuperTypes="../../org.muml.pim/model/muml-0.4.ecore#//instance/PortInstance ../../org.muml.pim/model/muml-0.4.ecore#//connector/DiscreteInteractionEndpointInstance"/>
     <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationMessagePortInstance"
         eSuperTypes="#//reconfInstance/ReconfigurationPortInstance"/>
     <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationExecutionPortInstance"
@@ -766,7 +766,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationControllerInstance"
         abstract="true" eSuperTypes="#//reconfInstance/ControllerInstance"/>
     <eClassifiers xsi:type="ecore:EClass" name="ControllerInstance" abstract="true"
-        eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement"/>
+        eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//ExtendableElement"/>
     <eClassifiers xsi:type="ecore:EClass" name="RuleBasedReconfigurationControllerInstance"
         eSuperTypes="#//reconfInstance/ReconfigurationControllerInstance">
       <eStructuralFeatures xsi:type="ecore:EReference" name="managerInstance" lowerBound="1"
@@ -774,7 +774,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="executorInstance" lowerBound="1"
           eType="#//reconfInstance/ExecutorInstance" containment="true" eOpposite="#//reconfInstance/ExecutorInstance/reconfigurationControllerInstance"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ManagerInstance" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
+    <eClassifiers xsi:type="ecore:EClass" name="ManagerInstance" eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="manager" lowerBound="1"
           eType="#//Manager"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationControllerInstance"
@@ -782,7 +782,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances" upperBound="-1"
           eType="#//reconfInstance/ReconfigurationPortInstance"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ExecutorInstance" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
+    <eClassifiers xsi:type="ecore:EClass" name="ExecutorInstance" eSuperTypes="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="executor" lowerBound="1"
           eType="#//Executor"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationControllerInstance"
@@ -791,9 +791,9 @@
           eType="#//reconfInstance/ReconfigurationPortInstance"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ReconfigurableAtomicComponentInstance"
-        eSuperTypes="../../org.muml.pim/model/pim.ecore#//instance/AtomicComponentInstance"/>
+        eSuperTypes="../../org.muml.pim/model/muml-0.4.ecore#//instance/AtomicComponentInstance"/>
     <eClassifiers xsi:type="ecore:EClass" name="ReconfigurableStructuredComponentInstance"
-        eSuperTypes="../../org.muml.pim/model/pim.ecore#//instance/StructuredComponentInstance">
+        eSuperTypes="../../org.muml.pim/model/muml-0.4.ecore#//instance/StructuredComponentInstance">
       <eStructuralFeatures xsi:type="ecore:EReference" name="controllerInstance" eType="#//reconfInstance/ControllerInstance"/>
     </eClassifiers>
   </eSubpackages>

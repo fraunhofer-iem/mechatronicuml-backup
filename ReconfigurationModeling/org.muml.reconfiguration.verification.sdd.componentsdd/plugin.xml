@@ -13,5 +13,11 @@
             class="org.muml.reconfiguration.verification.sdd.componentsdd.ComponentsddPackage"
             genModel="model/ComponentSDD.genmodel"/>
    </extension>
+   <extension
+         point="org.muml.emm.migrator">
+      <Migrator
+            file="model/ComponentSDD.migrator">
+      </Migrator>
+   </extension>
 
 </plugin>
