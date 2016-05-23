@@ -14156,12 +14156,12 @@
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxay5-5kEeO0hMrCmuqTKA" name="multiRole" incomingLinks="_gxazA-5kEeO0hMrCmuqTKA _gxazCu5kEeO0hMrCmuqTKA" outgoingLinks="_gxazBO5kEeO0hMrCmuqTKA _gxazEO5kEeO0hMrCmuqTKA">
             <genericType xmi:id="_4nYnJSD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/protocol/0.4.0#//Role"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/pim/protocol/1.0.0#//Role"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxay6O5kEeO0hMrCmuqTKA" name="subRoleRTSC" incomingLinks="_gxazBO5kEeO0hMrCmuqTKA _gxazBu5kEeO0hMrCmuqTKA _gxazDu5kEeO0hMrCmuqTKA">
             <genericType xmi:id="_4nYnJyD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxay6e5kEeO0hMrCmuqTKA" name="existingSubRoleInstance" incomingLinks="_gxazBe5kEeO0hMrCmuqTKA _gxazCO5kEeO0hMrCmuqTKA" bindingSemantics="OPTIONAL">
@@ -14171,7 +14171,7 @@
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxay6u5kEeO0hMrCmuqTKA" name="subRoleInitialState" incomingLinks="_gxazD-5kEeO0hMrCmuqTKA" outgoingLinks="_gxazBu5kEeO0hMrCmuqTKA">
             <genericType xmi:id="_4nYnKyD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
             </genericType>
             <constraints xmi:id="_gxay6-5kEeO0hMrCmuqTKA">
               <constraintExpression xsi:type="expressions:TextualExpression" xmi:id="_gxay7O5kEeO0hMrCmuqTKA" expressionText="self.initial" language="OCL" languageVersion="1.0"/>
@@ -14198,7 +14198,7 @@
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxay9O5kEeO0hMrCmuqTKA" name="roleConnector" incomingLinks="_gxazEO5kEeO0hMrCmuqTKA _gxazEu5kEeO0hMrCmuqTKA" outgoingLinks="_gxazE-5kEeO0hMrCmuqTKA">
             <genericType xmi:id="_4nYnNyD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/protocol/0.4.0#//RoleConnector"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/pim/protocol/1.0.0#//RoleConnector"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxay9e5kEeO0hMrCmuqTKA" name="roleConnectorInstance" incomingLinks="_gxazEe5kEeO0hMrCmuqTKA _gxazGO5kEeO0hMrCmuqTKA" outgoingLinks="_gxazEu5kEeO0hMrCmuqTKA" bindingOperator="CREATE">
@@ -14208,7 +14208,7 @@
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxay9u5kEeO0hMrCmuqTKA" name="singleRolInitialState" incomingLinks="_gxazFu5kEeO0hMrCmuqTKA" outgoingLinks="_gxazFe5kEeO0hMrCmuqTKA">
             <genericType xmi:id="_4nYnOyD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
             </genericType>
             <constraints xmi:id="_gxay9-5kEeO0hMrCmuqTKA">
               <constraintExpression xsi:type="expressions:TextualExpression" xmi:id="_gxay-O5kEeO0hMrCmuqTKA" expressionText="self.initial" language="OCL" languageVersion="1.0"/>
@@ -14216,12 +14216,12 @@
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxay-e5kEeO0hMrCmuqTKA" name="singleRole" incomingLinks="_gxazE-5kEeO0hMrCmuqTKA _gxazFO5kEeO0hMrCmuqTKA _gxazGe5kEeO0hMrCmuqTKA">
             <genericType xmi:id="_4nYnPyD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/protocol/0.4.0#//Role"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/pim/protocol/1.0.0#//Role"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxay-u5kEeO0hMrCmuqTKA" name="singleRoleRTSC" incomingLinks="_gxazFe5kEeO0hMrCmuqTKA _gxazF-5kEeO0hMrCmuqTKA" outgoingLinks="_gxazFO5kEeO0hMrCmuqTKA">
             <genericType xmi:id="_4nYnQSD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxay--5kEeO0hMrCmuqTKA" name="singleRoleRTSCInstance" incomingLinks="_gxazGu5kEeO0hMrCmuqTKA" outgoingLinks="_gxazFu5kEeO0hMrCmuqTKA _gxazF-5kEeO0hMrCmuqTKA" bindingOperator="CREATE">
@@ -14250,28 +14250,28 @@
             <targetEnd href="http://www.muml.org/verification/core/runtime/1.0.0#//RoleInstance/role"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazBO5kEeO0hMrCmuqTKA" name="link" source="_gxay5-5kEeO0hMrCmuqTKA" target="_gxay6O5kEeO0hMrCmuqTKA">
-            <targetEnd href="http://www.fujaba.de/muml/behavior/0.4.0#//BehavioralElement/behavior"/>
+            <targetEnd href="http://www.muml.org/pim/behavior/1.0.0#//BehavioralElement/behavior"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazBe5kEeO0hMrCmuqTKA" name="link" bindingSemantics="OPTIONAL" bindingOperator="DESTROY" source="_gxay5e5kEeO0hMrCmuqTKA" target="_gxay6e5kEeO0hMrCmuqTKA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//DiscreteMultiInteractionEndpointInstance/last"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//DiscreteMultiInteractionEndpointInstance/last"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazBu5kEeO0hMrCmuqTKA" name="link" source="_gxay6u5kEeO0hMrCmuqTKA" target="_gxay6O5kEeO0hMrCmuqTKA">
-            <targetEnd href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/parentStatechart"/>
+            <targetEnd href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State/parentStatechart"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazB-5kEeO0hMrCmuqTKA" name="link" bindingOperator="CREATE" source="_gxay7e5kEeO0hMrCmuqTKA" target="_gxay8O5kEeO0hMrCmuqTKA">
             <targetEnd href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeMessageBuffer/runtimeBehavioralElement"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazCO5kEeO0hMrCmuqTKA" name="link" bindingSemantics="OPTIONAL" bindingOperator="CREATE" source="_gxay8O5kEeO0hMrCmuqTKA" target="_gxay6e5kEeO0hMrCmuqTKA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//DiscreteSingleInteractionEndpointInstance/previous"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//DiscreteSingleInteractionEndpointInstance/previous"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazCe5kEeO0hMrCmuqTKA" name="link" bindingOperator="CREATE" source="_gxay8O5kEeO0hMrCmuqTKA" target="_gxay5e5kEeO0hMrCmuqTKA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazCu5kEeO0hMrCmuqTKA" name="link" bindingOperator="CREATE" source="_gxay8O5kEeO0hMrCmuqTKA" target="_gxay5-5kEeO0hMrCmuqTKA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorEndpointInstance/type"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//ConnectorEndpointInstance/type"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazC-5kEeO0hMrCmuqTKA" name="link" bindingOperator="CREATE" source="_gxay5e5kEeO0hMrCmuqTKA" target="_gxay8O5kEeO0hMrCmuqTKA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//DiscreteMultiInteractionEndpointInstance/last"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//DiscreteMultiInteractionEndpointInstance/last"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazDO5kEeO0hMrCmuqTKA" name="link" bindingOperator="CREATE" source="_gxay8O5kEeO0hMrCmuqTKA" target="_gxay8-5kEeO0hMrCmuqTKA">
             <targetEnd href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeBehavioralElement/statechartInstance"/>
@@ -14286,22 +14286,22 @@
             <targetEnd href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance/activeVertex"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazEO5kEeO0hMrCmuqTKA" name="link" source="_gxay5-5kEeO0hMrCmuqTKA" target="_gxay9O5kEeO0hMrCmuqTKA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorEndpoint/connectors"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//ConnectorEndpoint/connectors"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazEe5kEeO0hMrCmuqTKA" name="link" bindingOperator="CREATE" source="_gxay8O5kEeO0hMrCmuqTKA" target="_gxay9e5kEeO0hMrCmuqTKA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorEndpointInstance/connectorInstances"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//ConnectorEndpointInstance/connectorInstances"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazEu5kEeO0hMrCmuqTKA" name="link" bindingOperator="CREATE" source="_gxay9e5kEeO0hMrCmuqTKA" target="_gxay9O5kEeO0hMrCmuqTKA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorInstance/type"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//ConnectorInstance/type"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazE-5kEeO0hMrCmuqTKA" name="link" source="_gxay9O5kEeO0hMrCmuqTKA" target="_gxay-e5kEeO0hMrCmuqTKA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//Connector/connectorEndpoints"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//Connector/connectorEndpoints"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazFO5kEeO0hMrCmuqTKA" name="link" source="_gxay-u5kEeO0hMrCmuqTKA" target="_gxay-e5kEeO0hMrCmuqTKA">
-            <targetEnd href="http://www.fujaba.de/muml/behavior/0.4.0#//Behavior/behavioralElement"/>
+            <targetEnd href="http://www.muml.org/pim/behavior/1.0.0#//Behavior/behavioralElement"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazFe5kEeO0hMrCmuqTKA" name="link" source="_gxay9u5kEeO0hMrCmuqTKA" target="_gxay-u5kEeO0hMrCmuqTKA">
-            <targetEnd href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/parentStatechart"/>
+            <targetEnd href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State/parentStatechart"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazFu5kEeO0hMrCmuqTKA" name="link" bindingOperator="CREATE" source="_gxay--5kEeO0hMrCmuqTKA" target="_gxay9u5kEeO0hMrCmuqTKA">
             <targetEnd href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance/activeVertex"/>
@@ -14310,10 +14310,10 @@
             <targetEnd href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance/instanceOf"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazGO5kEeO0hMrCmuqTKA" name="link" bindingOperator="CREATE" source="_gxay_O5kEeO0hMrCmuqTKA" target="_gxay9e5kEeO0hMrCmuqTKA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorEndpointInstance/connectorInstances"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//ConnectorEndpointInstance/connectorInstances"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazGe5kEeO0hMrCmuqTKA" name="link" bindingOperator="CREATE" source="_gxay_O5kEeO0hMrCmuqTKA" target="_gxay-e5kEeO0hMrCmuqTKA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorEndpointInstance/type"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//ConnectorEndpointInstance/type"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazGu5kEeO0hMrCmuqTKA" name="link" bindingOperator="CREATE" source="_gxay_O5kEeO0hMrCmuqTKA" target="_gxay--5kEeO0hMrCmuqTKA">
             <targetEnd href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeBehavioralElement/statechartInstance"/>
@@ -14339,7 +14339,7 @@
             </genericType>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazIu5kEeO0hMrCmuqTKA" name="link" source="_gxazIO5kEeO0hMrCmuqTKA" target="_gxazIe5kEeO0hMrCmuqTKA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//DiscreteMultiInteractionEndpointInstance/first"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//DiscreteMultiInteractionEndpointInstance/first"/>
           </linkVariables>
         </ownedRule>
       </ownedActivityNodes>
@@ -14356,7 +14356,7 @@
             </genericType>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazJ-5kEeO0hMrCmuqTKA" name="link" bindingOperator="CREATE" source="_gxazJe5kEeO0hMrCmuqTKA" target="_gxazJu5kEeO0hMrCmuqTKA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//DiscreteMultiInteractionEndpointInstance/first"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//DiscreteMultiInteractionEndpointInstance/first"/>
           </linkVariables>
         </ownedRule>
       </ownedActivityNodes>
@@ -14364,12 +14364,12 @@
         <ownedRule xmi:id="_gxazKe5kEeO0hMrCmuqTKA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxazKu5kEeO0hMrCmuqTKA" name="subRoleRTSC" bindingState="BOUND" outgoingLinks="_gxazMO5kEeO0hMrCmuqTKA">
             <genericType xmi:id="_4nYndyD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxazK-5kEeO0hMrCmuqTKA" name="variable" incomingLinks="_gxazMO5kEeO0hMrCmuqTKA _gxazMe5kEeO0hMrCmuqTKA">
             <genericType xmi:id="_4nYneSD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/pim/behavior/1.0.0#//Variable"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxazLO5kEeO0hMrCmuqTKA" name="subRoleRTSCInstance" bindingState="BOUND" outgoingLinks="_gxazMu5kEeO0hMrCmuqTKA">
@@ -14387,7 +14387,7 @@
             </attributeAssignments>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazMO5kEeO0hMrCmuqTKA" name="link" source="_gxazKu5kEeO0hMrCmuqTKA" target="_gxazK-5kEeO0hMrCmuqTKA">
-            <targetEnd href="http://www.fujaba.de/muml/behavior/0.4.0#//Behavior/variables"/>
+            <targetEnd href="http://www.muml.org/pim/behavior/1.0.0#//Behavior/variables"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazMe5kEeO0hMrCmuqTKA" name="link" bindingOperator="CREATE" source="_gxazLe5kEeO0hMrCmuqTKA" target="_gxazK-5kEeO0hMrCmuqTKA">
             <targetEnd href="http://www.muml.org/verification/core/runtime/1.0.0#//VariableBinding/variable"/>
@@ -14401,12 +14401,12 @@
         <ownedRule xmi:id="_gxazNO5kEeO0hMrCmuqTKA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxazNe5kEeO0hMrCmuqTKA" name="singleRoleRTSC" bindingState="BOUND" outgoingLinks="_gxazO-5kEeO0hMrCmuqTKA">
             <genericType xmi:id="_4nYnhiD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxazNu5kEeO0hMrCmuqTKA" name="variable2" incomingLinks="_gxazO-5kEeO0hMrCmuqTKA _gxazPe5kEeO0hMrCmuqTKA">
             <genericType xmi:id="_4nYniCD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/pim/behavior/1.0.0#//Variable"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_gxazN-5kEeO0hMrCmuqTKA" name="singleRoleRTSCInstance" bindingState="BOUND" outgoingLinks="_gxazPO5kEeO0hMrCmuqTKA">
@@ -14424,7 +14424,7 @@
             </attributeAssignments>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazO-5kEeO0hMrCmuqTKA" name="link" source="_gxazNe5kEeO0hMrCmuqTKA" target="_gxazNu5kEeO0hMrCmuqTKA">
-            <targetEnd href="http://www.fujaba.de/muml/behavior/0.4.0#//Behavior/variables"/>
+            <targetEnd href="http://www.muml.org/pim/behavior/1.0.0#//Behavior/variables"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_gxazPO5kEeO0hMrCmuqTKA" name="link" bindingOperator="CREATE" source="_gxazN-5kEeO0hMrCmuqTKA" target="_gxazOO5kEeO0hMrCmuqTKA">
             <targetEnd href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance/variableBindings"/>
@@ -14435,7 +14435,7 @@
         </ownedRule>
       </ownedActivityNodes>
       <annotations xmi:id="_gxay0u5kEeO0hMrCmuqTKA" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_gxay0-5kEeO0hMrCmuqTKA" key="http://www.fujaba.de/muml/runtime/0.4.0" value="true"/>
+        <details xmi:id="_gxay0-5kEeO0hMrCmuqTKA" key="http://www.muml.org/verification/core/runtime/1.0.0" value="true"/>
         <details xmi:id="_gxay1O5kEeO0hMrCmuqTKA" key="http://www.fujaba.de/muml/0.4.0" value="true"/>
       </annotations>
     </modelElements>
@@ -14484,22 +14484,22 @@
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpkfSTEeOKmIQk3FL8KA" name="multiRole" incomingLinks="_uuWpqfSTEeOKmIQk3FL8KA _uuWpqvSTEeOKmIQk3FL8KA" outgoingLinks="_uuWpq_STEeOKmIQk3FL8KA _uuWprvSTEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nYnrCD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/protocol/0.4.0#//Role"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/pim/protocol/1.0.0#//Role"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpkvSTEeOKmIQk3FL8KA" name="roleConnector" incomingLinks="_uuWpq_STEeOKmIQk3FL8KA _uuWpuPSTEeOKmIQk3FL8KA" outgoingLinks="_uuWprPSTEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nYnriD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/protocol/0.4.0#//RoleConnector"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/pim/protocol/1.0.0#//RoleConnector"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpk_STEeOKmIQk3FL8KA" name="singleRole" incomingLinks="_uuWprPSTEeOKmIQk3FL8KA _uuWprfSTEeOKmIQk3FL8KA _uuWps_STEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nYnsCD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/protocol/0.4.0#//Role"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/pim/protocol/1.0.0#//Role"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWplPSTEeOKmIQk3FL8KA" name="subRoleRTSC" incomingLinks="_uuWprvSTEeOKmIQk3FL8KA _uuWpsPSTEeOKmIQk3FL8KA" outgoingLinks="_uuWpsfSTEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nYnsiD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWplfSTEeOKmIQk3FL8KA" name="subRoleRTSCInstance" incomingLinks="_uuWpr_STEeOKmIQk3FL8KA _uuWpvfSTEeOKmIQk3FL8KA" outgoingLinks="_uuWpsPSTEeOKmIQk3FL8KA _uuWpsvSTEeOKmIQk3FL8KA" bindingOperator="CREATE">
@@ -14509,7 +14509,7 @@
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWplvSTEeOKmIQk3FL8KA" name="subRoleInitialState" incomingLinks="_uuWpsfSTEeOKmIQk3FL8KA _uuWpsvSTEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nYntiD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
             </genericType>
             <constraints xmi:id="_uuWpl_STEeOKmIQk3FL8KA">
               <constraintExpression xsi:type="expressions:TextualExpression" xmi:id="_uuWpmPSTEeOKmIQk3FL8KA" expressionText="self.initial" language="OCL" languageVersion="1.0"/>
@@ -14517,7 +14517,7 @@
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpmfSTEeOKmIQk3FL8KA" name="singleRoleRTSC" incomingLinks="_uuWptPSTEeOKmIQk3FL8KA" outgoingLinks="_uuWps_STEeOKmIQk3FL8KA _uuWptfSTEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nYnuiD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpmvSTEeOKmIQk3FL8KA" name="singleRoleRTSCInstance" incomingLinks="_uuWpt_STEeOKmIQk3FL8KA" outgoingLinks="_uuWptPSTEeOKmIQk3FL8KA _uuWptvSTEeOKmIQk3FL8KA" bindingOperator="CREATE">
@@ -14527,7 +14527,7 @@
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpm_STEeOKmIQk3FL8KA" name="singleRoleInitialState" incomingLinks="_uuWptfSTEeOKmIQk3FL8KA _uuWptvSTEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nYnviD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
             </genericType>
             <constraints xmi:id="_uuWpnPSTEeOKmIQk3FL8KA">
               <constraintExpression xsi:type="expressions:TextualExpression" xmi:id="_uuWpnfSTEeOKmIQk3FL8KA" expressionText="self.initial" language="OCL" languageVersion="1.0"/>
@@ -14554,31 +14554,31 @@
             </genericType>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWppvSTEeOKmIQk3FL8KA" name="roleConnectorInstance_2_singleRoleInstance" bindingOperator="CREATE" source="_uuWpivSTEeOKmIQk3FL8KA" target="_uuWpi_STEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorInstance/connectorEndpointInstances"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//ConnectorInstance/connectorEndpointInstances"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWpp_STEeOKmIQk3FL8KA" name="roleConnectorInstance_2_subRoleInstance" bindingOperator="CREATE" source="_uuWpivSTEeOKmIQk3FL8KA" target="_uuWpjvSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorInstance/connectorEndpointInstances"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//ConnectorInstance/connectorEndpointInstances"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWpqPSTEeOKmIQk3FL8KA" name="multiRoleInstance_2_subRoleInstance" bindingOperator="CREATE" source="_uuWpifSTEeOKmIQk3FL8KA" target="_uuWpjvSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWpqfSTEeOKmIQk3FL8KA" name="multiRoleInstance_2_multiRole" source="_uuWpifSTEeOKmIQk3FL8KA" target="_uuWpkfSTEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/verification/core/runtime/1.0.0#//RoleInstance/role"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWpqvSTEeOKmIQk3FL8KA" name="subRoleInstance_2_multiRole" bindingOperator="CREATE" source="_uuWpjvSTEeOKmIQk3FL8KA" target="_uuWpkfSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorEndpointInstance/type"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//ConnectorEndpointInstance/type"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWpq_STEeOKmIQk3FL8KA" name="multiRole_2_roleConnector" source="_uuWpkfSTEeOKmIQk3FL8KA" target="_uuWpkvSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorEndpoint/connectors"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//ConnectorEndpoint/connectors"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWprPSTEeOKmIQk3FL8KA" name="roleConnector_2_singleRole" source="_uuWpkvSTEeOKmIQk3FL8KA" target="_uuWpk_STEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//Connector/connectorEndpoints"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//Connector/connectorEndpoints"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWprfSTEeOKmIQk3FL8KA" name="singleRoleInstance_2_singleRole" bindingOperator="CREATE" source="_uuWpi_STEeOKmIQk3FL8KA" target="_uuWpk_STEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorEndpointInstance/type"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//ConnectorEndpointInstance/type"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWprvSTEeOKmIQk3FL8KA" name="multiRole_2_subRoleRTSC" source="_uuWpkfSTEeOKmIQk3FL8KA" target="_uuWplPSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/behavior/0.4.0#//BehavioralElement/behavior"/>
+            <targetEnd href="http://www.muml.org/pim/behavior/1.0.0#//BehavioralElement/behavior"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWpr_STEeOKmIQk3FL8KA" name="subRoleInstance_2_subRoleRTSCInstance" bindingOperator="CREATE" source="_uuWpjvSTEeOKmIQk3FL8KA" target="_uuWplfSTEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeBehavioralElement/statechartInstance"/>
@@ -14587,19 +14587,19 @@
             <targetEnd href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance/instanceOf"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWpsfSTEeOKmIQk3FL8KA" name="subRoleRTSC_2_subRoleInitialState" source="_uuWplPSTEeOKmIQk3FL8KA" target="_uuWplvSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/states"/>
+            <targetEnd href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/states"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWpsvSTEeOKmIQk3FL8KA" name="subRoleRTSCInstance_2_subRoleInitialState" bindingOperator="CREATE" source="_uuWplfSTEeOKmIQk3FL8KA" target="_uuWplvSTEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance/activeVertex"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWps_STEeOKmIQk3FL8KA" name="singleRoleRTSC_2_singleRole" source="_uuWpmfSTEeOKmIQk3FL8KA" target="_uuWpk_STEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/behavior/0.4.0#//Behavior/behavioralElement"/>
+            <targetEnd href="http://www.muml.org/pim/behavior/1.0.0#//Behavior/behavioralElement"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWptPSTEeOKmIQk3FL8KA" name="singleRoleRTSCInstance_2_singleRoleRTSC" bindingOperator="CREATE" source="_uuWpmvSTEeOKmIQk3FL8KA" target="_uuWpmfSTEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance/instanceOf"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWptfSTEeOKmIQk3FL8KA" name="singleRoleRTSC_2_singleRoleInitialState" source="_uuWpmfSTEeOKmIQk3FL8KA" target="_uuWpm_STEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/states"/>
+            <targetEnd href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/states"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWptvSTEeOKmIQk3FL8KA" name="singleRoleRTSCInstance_2_singleRoleInitialState" bindingOperator="CREATE" source="_uuWpmvSTEeOKmIQk3FL8KA" target="_uuWpm_STEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance/activeVertex"/>
@@ -14608,16 +14608,16 @@
             <targetEnd href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeBehavioralElement/statechartInstance"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWpuPSTEeOKmIQk3FL8KA" name="roleConnectorInstance_2_roleConnector" bindingOperator="CREATE" source="_uuWpivSTEeOKmIQk3FL8KA" target="_uuWpkvSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorInstance/type"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//ConnectorInstance/type"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWpufSTEeOKmIQk3FL8KA" name="multiRoleInstance_2_existingSubRoleInstance" bindingSemantics="OPTIONAL" bindingOperator="DESTROY" source="_uuWpifSTEeOKmIQk3FL8KA" target="_uuWpnvSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//DiscreteMultiInteractionEndpointInstance/last"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//DiscreteMultiInteractionEndpointInstance/last"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWpuvSTEeOKmIQk3FL8KA" name="existingSubRoleInstance_2_subRoleInstance" bindingSemantics="OPTIONAL" bindingOperator="CREATE" source="_uuWpnvSTEeOKmIQk3FL8KA" target="_uuWpjvSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//DiscreteSingleInteractionEndpointInstance/next"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//DiscreteSingleInteractionEndpointInstance/next"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWpu_STEeOKmIQk3FL8KA" name="multiRoleInstance_2_subRoleInstance" bindingOperator="CREATE" source="_uuWpifSTEeOKmIQk3FL8KA" target="_uuWpjvSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//DiscreteMultiInteractionEndpointInstance/last"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//DiscreteMultiInteractionEndpointInstance/last"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWpvPSTEeOKmIQk3FL8KA" name="multiRoleInstance_2_parentRTSCInstance" source="_uuWpifSTEeOKmIQk3FL8KA" target="_uuWpn_STEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeBehavioralElement/statechartInstance"/>
@@ -14640,12 +14640,12 @@
         <ownedRule xmi:id="_uuWpw_STEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpxPSTEeOKmIQk3FL8KA" name="subRoleRTSC" bindingState="BOUND" outgoingLinks="_uuWpyvSTEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nYn6CD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpxfSTEeOKmIQk3FL8KA" name="variable" incomingLinks="_uuWpyvSTEeOKmIQk3FL8KA _uuWpy_STEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nYn6iD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/pim/behavior/1.0.0#//Variable"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpxvSTEeOKmIQk3FL8KA" name="subRoleRTSCInstance" bindingState="BOUND" outgoingLinks="_uuWpzPSTEeOKmIQk3FL8KA">
@@ -14663,7 +14663,7 @@
             </attributeAssignments>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWpyvSTEeOKmIQk3FL8KA" name="subRoleRTSC_2_variable" source="_uuWpxPSTEeOKmIQk3FL8KA" target="_uuWpxfSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/behavior/0.4.0#//Behavior/variables"/>
+            <targetEnd href="http://www.muml.org/pim/behavior/1.0.0#//Behavior/variables"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWpy_STEeOKmIQk3FL8KA" name="variableBinding_2_variable" bindingOperator="CREATE" source="_uuWpx_STEeOKmIQk3FL8KA" target="_uuWpxfSTEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/verification/core/runtime/1.0.0#//VariableBinding/variable"/>
@@ -14677,12 +14677,12 @@
         <ownedRule xmi:id="_uuWpzvSTEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWpz_STEeOKmIQk3FL8KA" name="singleRoleRTSC" bindingState="BOUND" outgoingLinks="_uuWp1fSTEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nYn9yD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWp0PSTEeOKmIQk3FL8KA" name="variable2" incomingLinks="_uuWp1fSTEeOKmIQk3FL8KA _uuWp1_STEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nYn-SD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/pim/behavior/1.0.0#//Variable"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWp0fSTEeOKmIQk3FL8KA" name="singleRoleRTSCInstance" bindingState="BOUND" outgoingLinks="_uuWp1vSTEeOKmIQk3FL8KA">
@@ -14700,7 +14700,7 @@
             </attributeAssignments>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWp1fSTEeOKmIQk3FL8KA" name="singleRoleRTSC_2_variable2" source="_uuWpz_STEeOKmIQk3FL8KA" target="_uuWp0PSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/behavior/0.4.0#//Behavior/variables"/>
+            <targetEnd href="http://www.muml.org/pim/behavior/1.0.0#//Behavior/variables"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWp1vSTEeOKmIQk3FL8KA" name="singleRoleRTSCInstance_2_variableBinding" bindingOperator="CREATE" source="_uuWp0fSTEeOKmIQk3FL8KA" target="_uuWp0vSTEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance/variableBindings"/>
@@ -14723,7 +14723,7 @@
             </genericType>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWp3PSTEeOKmIQk3FL8KA" name="link" source="_uuWp2vSTEeOKmIQk3FL8KA" target="_uuWp2_STEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//DiscreteMultiInteractionEndpointInstance/first"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//DiscreteMultiInteractionEndpointInstance/first"/>
           </linkVariables>
         </ownedRule>
       </ownedActivityNodes>
@@ -14740,16 +14740,16 @@
             </genericType>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWp4fSTEeOKmIQk3FL8KA" name="link" bindingOperator="CREATE" source="_uuWp3_STEeOKmIQk3FL8KA" target="_uuWp4PSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//DiscreteMultiInteractionEndpointInstance/first"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//DiscreteMultiInteractionEndpointInstance/first"/>
           </linkVariables>
         </ownedRule>
       </ownedActivityNodes>
       <annotations xmi:id="_uuWpcfSTEeOKmIQk3FL8KA" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_uuWpcvSTEeOKmIQk3FL8KA" key="http://www.fujaba.de/muml/runtime/0.4.0" value="true"/>
-        <details xmi:id="_uuWpc_STEeOKmIQk3FL8KA" key="http://www.fujaba.de/muml/protocol/0.4.0" value="true"/>
-        <details xmi:id="_uuWpdPSTEeOKmIQk3FL8KA" key="http://www.fujaba.de/muml/realtimestatechart/0.4.0" value="true"/>
-        <details xmi:id="_uuWpdfSTEeOKmIQk3FL8KA" key="http://www.fujaba.de/muml/behavior/0.4.0" value="true"/>
-        <details xmi:id="_uuWpdvSTEeOKmIQk3FL8KA" key="http://www.fujaba.de/muml/connector/0.4.0" value="true"/>
+        <details xmi:id="_uuWpcvSTEeOKmIQk3FL8KA" key="http://www.muml.org/verification/core/runtime/1.0.0" value="true"/>
+        <details xmi:id="_uuWpc_STEeOKmIQk3FL8KA" key="http://www.muml.org/pim/protocol/1.0.0" value="true"/>
+        <details xmi:id="_uuWpdPSTEeOKmIQk3FL8KA" key="http://www.muml.org/pim/realtimestatechart/1.0.0" value="true"/>
+        <details xmi:id="_uuWpdfSTEeOKmIQk3FL8KA" key="http://www.muml.org/pim/behavior/1.0.0" value="true"/>
+        <details xmi:id="_uuWpdvSTEeOKmIQk3FL8KA" key="http://www.muml.org/pim/connector/1.0.0" value="true"/>
         <details xmi:id="_uuWpd_STEeOKmIQk3FL8KA" key="http://www.storydriven.org/core/expressions/common/0.3.1" value="true"/>
         <details xmi:id="_uuWpePSTEeOKmIQk3FL8KA" key="http://www.storydriven.org/core/expressions/0.3.1" value="true"/>
       </annotations>
@@ -14766,12 +14766,12 @@
         <ownedRule xmi:id="_uuWp8PSTEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWp8fSTEeOKmIQk3FL8KA" name="iterator" bindingOperator="CREATE">
             <genericType xmi:id="_4nYoGiD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileIterator"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//ProfileIterator"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWp8vSTEeOKmIQk3FL8KA" name="profiles" bindingState="BOUND">
             <genericType xmi:id="_4nYoHCD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileList"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//ProfileList"/>
             </genericType>
           </variables>
         </ownedRule>
@@ -14780,24 +14780,24 @@
         <ownedRule xmi:id="_uuWp9PSTEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWp9fSTEeOKmIQk3FL8KA" name="iterator" bindingState="BOUND" outgoingLinks="_uuWp-fSTEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nYoICD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileIterator"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//ProfileIterator"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWp9vSTEeOKmIQk3FL8KA" name="profiles" bindingState="BOUND" outgoingLinks="_uuWp-PSTEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nYoIiD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileList"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//ProfileList"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWp9_STEeOKmIQk3FL8KA" name="p" incomingLinks="_uuWp-PSTEeOKmIQk3FL8KA _uuWp-fSTEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nYoJCD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//Profile"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//Profile"/>
             </genericType>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWp-PSTEeOKmIQk3FL8KA" name="profiles_2_p" source="_uuWp9vSTEeOKmIQk3FL8KA" target="_uuWp9_STEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileList/profiles"/>
+            <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//ProfileList/profiles"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWp-fSTEeOKmIQk3FL8KA" name="iterator_2_p" bindingOperator="CREATE" source="_uuWp9fSTEeOKmIQk3FL8KA" target="_uuWp9_STEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileIterator/profilesToDo"/>
+            <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//ProfileIterator/profilesToDo"/>
           </linkVariables>
         </ownedRule>
       </ownedActivityNodes>
@@ -14805,8 +14805,8 @@
         <returnValues xsi:type="expressions:TextualExpression" xmi:id="_uuWp-_STEeOKmIQk3FL8KA" expressionText="" language="OCL" languageVersion="1.0"/>
       </ownedActivityNodes>
       <annotations xmi:id="_uuWp4_STEeOKmIQk3FL8KA" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_uuWp5PSTEeOKmIQk3FL8KA" key="http://www.fujaba.de/muml/examples/profiles/0.3.2" value="true"/>
-        <details xmi:id="_uuWp5fSTEeOKmIQk3FL8KA" key="http://www.fujaba.de/muml/runtime/0.4.0" value="true"/>
+        <details xmi:id="_uuWp5PSTEeOKmIQk3FL8KA" key="http://www.muml.org/examples/profiles/1.0.0" value="true"/>
+        <details xmi:id="_uuWp5fSTEeOKmIQk3FL8KA" key="http://www.muml.org/verification/core/runtime/1.0.0" value="true"/>
       </annotations>
     </modelElements>
     <modelElements xsi:type="sda:Activity" xmi:id="_uuWp_PSTEeOKmIQk3FL8KA" inParameters="_uuWqAfSTEeOKmIQk3FL8KA" outParameters="_uuWqA_STEeOKmIQk3FL8KA" name="obtainProfiles">
@@ -14822,28 +14822,28 @@
         <ownedRule xmi:id="_uuWqDPSTEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqDfSTEeOKmIQk3FL8KA" name="profileList" bindingState="BOUND" outgoingLinks="_uuWqFPSTEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nYoMyD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileList"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//ProfileList"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqDvSTEeOKmIQk3FL8KA" name="p" incomingLinks="_uuWqFPSTEeOKmIQk3FL8KA" bindingOperator="CREATE">
             <genericType xmi:id="_4nYoNSD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//Profile"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//Profile"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqD_STEeOKmIQk3FL8KA" name="numberOfProfilesWrapper" bindingState="BOUND">
             <genericType xmi:id="_4nYoNyD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//IntWrapper"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//IntWrapper"/>
             </genericType>
             <constraints xmi:id="_uuWqEPSTEeOKmIQk3FL8KA">
               <constraintExpression xsi:type="expressions:TextualExpression" xmi:id="_uuWqEfSTEeOKmIQk3FL8KA" expressionText="intValue > 0" language="OCL" languageVersion="1.0"/>
             </constraints>
             <attributeAssignments xmi:id="_uuWqEvSTEeOKmIQk3FL8KA">
-              <attribute href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//IntWrapper/intValue"/>
+              <attribute href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//IntWrapper/intValue"/>
               <valueExpression xsi:type="expressions:TextualExpression" xmi:id="_uuWqE_STEeOKmIQk3FL8KA" expressionText="intValue - 1" language="OCL" languageVersion="1.0"/>
             </attributeAssignments>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWqFPSTEeOKmIQk3FL8KA" name="profileList_2_p" bindingOperator="CREATE" source="_uuWqDfSTEeOKmIQk3FL8KA" target="_uuWqDvSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileList/profiles"/>
+            <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//ProfileList/profiles"/>
           </linkVariables>
         </ownedRule>
       </ownedActivityNodes>
@@ -14854,15 +14854,15 @@
         <ownedRule xmi:id="_uuWqGPSTEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqGfSTEeOKmIQk3FL8KA" name="profileList" bindingOperator="CREATE">
             <genericType xmi:id="_4nYoQiD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileList"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//ProfileList"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqGvSTEeOKmIQk3FL8KA" name="numberOfProfilesWrapper" bindingOperator="CREATE">
             <genericType xmi:id="_4nYoRCD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//IntWrapper"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//IntWrapper"/>
             </genericType>
             <attributeAssignments xmi:id="_uuWqG_STEeOKmIQk3FL8KA">
-              <attribute href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//IntWrapper/intValue"/>
+              <attribute href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//IntWrapper/intValue"/>
               <valueExpression xsi:type="expressions:TextualExpression" xmi:id="_uuWqHPSTEeOKmIQk3FL8KA" expressionText="numberOfProfilesObject" language="OCL" languageVersion="1.0"/>
             </attributeAssignments>
           </variables>
@@ -14872,15 +14872,15 @@
         <ownedRule xmi:id="_uuWqHvSTEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqH_STEeOKmIQk3FL8KA" name="numberOfProfilesWrapper" bindingState="BOUND" bindingOperator="DESTROY">
             <genericType xmi:id="_4nYoSiD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//IntWrapper"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//IntWrapper"/>
             </genericType>
           </variables>
         </ownedRule>
       </ownedActivityNodes>
       <annotations xmi:id="_uuWp_fSTEeOKmIQk3FL8KA" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_uuWp_vSTEeOKmIQk3FL8KA" key="http://www.fujaba.de/muml/examples/profiles/0.3.2" value="true"/>
-        <details xmi:id="_uuWp__STEeOKmIQk3FL8KA" key="http://www.fujaba.de/muml/runtime/0.4.0" value="true"/>
-        <details xmi:id="_uuWqAPSTEeOKmIQk3FL8KA" key="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0" value="true"/>
+        <details xmi:id="_uuWp_vSTEeOKmIQk3FL8KA" key="http://www.muml.org/examples/profiles/1.0.0" value="true"/>
+        <details xmi:id="_uuWp__STEeOKmIQk3FL8KA" key="http://www.muml.org/verification/core/runtime/1.0.0" value="true"/>
+        <details xmi:id="_uuWqAPSTEeOKmIQk3FL8KA" key="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0" value="true"/>
       </annotations>
     </modelElements>
     <modelElements xsi:type="sda:Activity" xmi:id="_uuWqIPSTEeOKmIQk3FL8KA" inParameters="_uuWqJPSTEeOKmIQk3FL8KA" name="deleteSubRoleInstance">
@@ -14936,22 +14936,22 @@
             </genericType>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWqOPSTEeOKmIQk3FL8KA" name="subRoleInstance_2_multiRoleInstance" bindingOperator="DESTROY" source="_uuWqMfSTEeOKmIQk3FL8KA" target="_uuWqMPSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWqOfSTEeOKmIQk3FL8KA" name="subRoleRTSCInstance_2_subRoleInstance" bindingOperator="DESTROY" source="_uuWqMvSTEeOKmIQk3FL8KA" target="_uuWqMfSTEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance/runtimeBehavioralElement"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWqOvSTEeOKmIQk3FL8KA" name="subRoleInstance_2_connectorInstance" bindingOperator="DESTROY" source="_uuWqMfSTEeOKmIQk3FL8KA" target="_uuWqM_STEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorEndpointInstance/connectorInstances"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//ConnectorEndpointInstance/connectorInstances"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWqO_STEeOKmIQk3FL8KA" name="connectorInstance_2_singleRoleInstance" bindingOperator="DESTROY" source="_uuWqM_STEeOKmIQk3FL8KA" target="_uuWqNPSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorInstance/connectorEndpointInstances"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//ConnectorInstance/connectorEndpointInstances"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWqPPSTEeOKmIQk3FL8KA" name="singleRoleRTSCInstance_2_singleRoleInstance" bindingOperator="DESTROY" source="_uuWqNfSTEeOKmIQk3FL8KA" target="_uuWqNPSTEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/verification/core/runtime/1.0.0#//RealtimeStatechartInstance/runtimeBehavioralElement"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWqPfSTEeOKmIQk3FL8KA" name="link" bindingOperator="DESTROY" source="_uuWqMPSTEeOKmIQk3FL8KA" target="_uuWqMfSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//DiscreteMultiInteractionEndpointInstance/last"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//DiscreteMultiInteractionEndpointInstance/last"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWqPvSTEeOKmIQk3FL8KA" name="link" bindingOperator="DESTROY" source="_uuWqMfSTEeOKmIQk3FL8KA" target="_uuWqNvSTEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeBehavioralElement/messageBuffer"/>
@@ -14995,10 +14995,10 @@
             <targetEnd href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeBehavioralElement/statechartInstance"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWqSvSTEeOKmIQk3FL8KA" name="connectorEndpointInstances_connectorInstances" source="_uuWqRPSTEeOKmIQk3FL8KA" target="_uuWqRvSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorEndpointInstance/connectorInstances"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//ConnectorEndpointInstance/connectorInstances"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWqS_STEeOKmIQk3FL8KA" name="connectorEndpointInstances_connectorInstances" source="_uuWqRvSTEeOKmIQk3FL8KA" target="_uuWqR_STEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorInstance/connectorEndpointInstances"/>
+            <targetEnd href="http://www.muml.org/pim/connector/1.0.0#//ConnectorInstance/connectorEndpointInstances"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWqTPSTEeOKmIQk3FL8KA" name="statechartInstance_runtimeBehavioralElement" source="_uuWqR_STEeOKmIQk3FL8KA" target="_uuWqSPSTEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/verification/core/runtime/1.0.0#//RuntimeBehavioralElement/statechartInstance"/>
@@ -15040,8 +15040,8 @@
         </ownedRule>
       </ownedActivityNodes>
       <annotations xmi:id="_uuWqIfSTEeOKmIQk3FL8KA" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_uuWqIvSTEeOKmIQk3FL8KA" key="http://www.fujaba.de/muml/protocol/0.3.20" value="true"/>
-        <details xmi:id="_uuWqI_STEeOKmIQk3FL8KA" key="http://www.fujaba.de/muml/runtime/0.4.0" value="true"/>
+        <details xmi:id="_uuWqIvSTEeOKmIQk3FL8KA" key="http://www.muml.org/pim/protocol/1.0.0" value="true"/>
+        <details xmi:id="_uuWqI_STEeOKmIQk3FL8KA" key="http://www.muml.org/verification/core/runtime/1.0.0" value="true"/>
       </annotations>
     </modelElements>
     <modelElements xsi:type="sda:Activity" xmi:id="_uuWqV_STEeOKmIQk3FL8KA" inParameters="_uuWqW_STEeOKmIQk3FL8KA" outParameters="_uuWqXfSTEeOKmIQk3FL8KA" name="hasFurtherProfile">
@@ -15057,10 +15057,10 @@
         <ownedRule xmi:id="_uuWqZvSTEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqZ_STEeOKmIQk3FL8KA" name="result" bindingOperator="CREATE">
             <genericType xmi:id="_4nYomCD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//BoolWrapper"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//BoolWrapper"/>
             </genericType>
             <attributeAssignments xmi:id="_uuWqaPSTEeOKmIQk3FL8KA">
-              <attribute href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//BoolWrapper/boolValue"/>
+              <attribute href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//BoolWrapper/boolValue"/>
               <valueExpression xsi:type="expressions:TextualExpression" xmi:id="_uuWqafSTEeOKmIQk3FL8KA" expressionText="false" language="OCL" languageVersion="1.0"/>
             </attributeAssignments>
           </variables>
@@ -15070,10 +15070,10 @@
         <ownedRule xmi:id="_uuWqa_STEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqbPSTEeOKmIQk3FL8KA" name="result" bindingOperator="CREATE">
             <genericType xmi:id="_4nYoniD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//BoolWrapper"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//BoolWrapper"/>
             </genericType>
             <attributeAssignments xmi:id="_uuWqbfSTEeOKmIQk3FL8KA">
-              <attribute href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//BoolWrapper/boolValue"/>
+              <attribute href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//BoolWrapper/boolValue"/>
               <valueExpression xsi:type="expressions:TextualExpression" xmi:id="_uuWqbvSTEeOKmIQk3FL8KA" expressionText="true" language="OCL" languageVersion="1.0"/>
             </attributeAssignments>
           </variables>
@@ -15089,22 +15089,22 @@
         <ownedRule xmi:id="_uuWqdPSTEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqdfSTEeOKmIQk3FL8KA" name="profile" incomingLinks="_uuWqd_STEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nYoqCD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//Profile"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//Profile"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqdvSTEeOKmIQk3FL8KA" name="iterator" bindingState="BOUND" outgoingLinks="_uuWqd_STEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nYoqiD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileIterator"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//ProfileIterator"/>
             </genericType>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWqd_STEeOKmIQk3FL8KA" name="iterator_2_profile" source="_uuWqdvSTEeOKmIQk3FL8KA" target="_uuWqdfSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileIterator/profilesToDo"/>
+            <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//ProfileIterator/profilesToDo"/>
           </linkVariables>
         </ownedRule>
       </ownedActivityNodes>
       <annotations xmi:id="_uuWqWPSTEeOKmIQk3FL8KA" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_uuWqWfSTEeOKmIQk3FL8KA" key="http://www.fujaba.de/muml/examples/profiles/0.3.2" value="true"/>
-        <details xmi:id="_uuWqWvSTEeOKmIQk3FL8KA" key="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0" value="true"/>
+        <details xmi:id="_uuWqWfSTEeOKmIQk3FL8KA" key="http://www.muml.org/examples/profiles/1.0.0" value="true"/>
+        <details xmi:id="_uuWqWvSTEeOKmIQk3FL8KA" key="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0" value="true"/>
       </annotations>
     </modelElements>
     <modelElements xsi:type="sda:Activity" xmi:id="_uuWqePSTEeOKmIQk3FL8KA" inParameters="_uuWqe_STEeOKmIQk3FL8KA" outParameters="_uuWqffSTEeOKmIQk3FL8KA" name="getNextProfile">
@@ -15117,16 +15117,16 @@
         <ownedRule xmi:id="_uuWqg_STEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqhPSTEeOKmIQk3FL8KA" name="iter" bindingState="BOUND" outgoingLinks="_uuWqhvSTEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nYosyD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileIterator"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//ProfileIterator"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqhfSTEeOKmIQk3FL8KA" name="p" incomingLinks="_uuWqhvSTEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nYotSD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//Profile"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//Profile"/>
             </genericType>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWqhvSTEeOKmIQk3FL8KA" name="iter_2_p" bindingOperator="DESTROY" source="_uuWqhPSTEeOKmIQk3FL8KA" target="_uuWqhfSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileIterator/profilesToDo"/>
+            <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//ProfileIterator/profilesToDo"/>
           </linkVariables>
         </ownedRule>
       </ownedActivityNodes>
@@ -15134,7 +15134,7 @@
         <returnValues xsi:type="expressions:TextualExpression" xmi:id="_uuWqiPSTEeOKmIQk3FL8KA" expressionText="" language="OCL" languageVersion="1.0"/>
       </ownedActivityNodes>
       <annotations xmi:id="_uuWqefSTEeOKmIQk3FL8KA" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_uuWqevSTEeOKmIQk3FL8KA" key="http://www.fujaba.de/muml/examples/profiles/0.3.2" value="true"/>
+        <details xmi:id="_uuWqevSTEeOKmIQk3FL8KA" key="http://www.muml.org/examples/profiles/1.0.0" value="true"/>
       </annotations>
     </modelElements>
     <modelElements xsi:type="sda:Activity" xmi:id="_uuWqifSTEeOKmIQk3FL8KA" inParameters="_uuWqjPSTEeOKmIQk3FL8KA" name="deleteIterator">
@@ -15146,7 +15146,7 @@
         <ownedRule xmi:id="_uuWqkvSTEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqk_STEeOKmIQk3FL8KA" name="iterator" bindingState="BOUND" bindingOperator="DESTROY">
             <genericType xmi:id="_4nYowCD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileIterator"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//ProfileIterator"/>
             </genericType>
           </variables>
         </ownedRule>
@@ -15155,7 +15155,7 @@
         <returnValues xsi:type="expressions:TextualExpression" xmi:id="_uuWqlfSTEeOKmIQk3FL8KA" expressionText="" language="OCL" languageVersion="1.0"/>
       </ownedActivityNodes>
       <annotations xmi:id="_uuWqivSTEeOKmIQk3FL8KA" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_uuWqi_STEeOKmIQk3FL8KA" key="http://www.fujaba.de/muml/examples/profiles/0.3.2" value="true"/>
+        <details xmi:id="_uuWqi_STEeOKmIQk3FL8KA" key="http://www.muml.org/examples/profiles/1.0.0" value="true"/>
       </annotations>
     </modelElements>
     <modelElements xsi:type="sda:Activity" xmi:id="_uuWqlvSTEeOKmIQk3FL8KA" outParameters="_uuWqmfSTEeOKmIQk3FL8KA" name="initializeVariables">
@@ -15167,7 +15167,7 @@
         <ownedRule xmi:id="_uuWqn_STEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqoPSTEeOKmIQk3FL8KA" name="store" bindingOperator="CREATE">
             <genericType xmi:id="_4nYoyiD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore"/>
             </genericType>
           </variables>
         </ownedRule>
@@ -15176,7 +15176,7 @@
         <returnValues xsi:type="expressions:TextualExpression" xmi:id="_uuWqovSTEeOKmIQk3FL8KA" expressionText="" language="OCL" languageVersion="1.0"/>
       </ownedActivityNodes>
       <annotations xmi:id="_uuWql_STEeOKmIQk3FL8KA" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_uuWqmPSTEeOKmIQk3FL8KA" key="http://www.fujaba.de/muml/examples/profiles/0.3.2" value="true"/>
+        <details xmi:id="_uuWqmPSTEeOKmIQk3FL8KA" key="http://www.muml.org/examples/profiles/1.0.0" value="true"/>
       </annotations>
     </modelElements>
     <modelElements xsi:type="sda:Activity" xmi:id="_uuWqo_STEeOKmIQk3FL8KA" inParameters="_uuWqp_STEeOKmIQk3FL8KA _uuWqqfSTEeOKmIQk3FL8KA" name="createProfileList">
@@ -15189,12 +15189,12 @@
         <ownedRule xmi:id="_uuWqr_STEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqsPSTEeOKmIQk3FL8KA" name="store" bindingState="BOUND" outgoingLinks="_uuWqs_STEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nYo1CD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqsfSTEeOKmIQk3FL8KA" name="r" incomingLinks="_uuWqs_STEeOKmIQk3FL8KA" outgoingLinks="_uuWqtPSTEeOKmIQk3FL8KA" bindingOperator="CREATE">
             <genericType xmi:id="_4nYo1iD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqsvSTEeOKmIQk3FL8KA" name="role" bindingState="BOUND" incomingLinks="_uuWqtPSTEeOKmIQk3FL8KA">
@@ -15203,10 +15203,10 @@
             </genericType>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWqs_STEeOKmIQk3FL8KA" name="store_2_r" bindingOperator="CREATE" source="_uuWqsPSTEeOKmIQk3FL8KA" target="_uuWqsfSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore/roleProfiles"/>
+            <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore/roleProfiles"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWqtPSTEeOKmIQk3FL8KA" name="r_2_role" bindingOperator="CREATE" source="_uuWqsfSTEeOKmIQk3FL8KA" target="_uuWqsvSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles/roleInstance"/>
+            <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles/roleInstance"/>
           </linkVariables>
         </ownedRule>
       </ownedActivityNodes>
@@ -15214,8 +15214,8 @@
         <returnValues xsi:type="expressions:TextualExpression" xmi:id="_uuWqtvSTEeOKmIQk3FL8KA" expressionText="" language="OCL" languageVersion="1.0"/>
       </ownedActivityNodes>
       <annotations xmi:id="_uuWqpPSTEeOKmIQk3FL8KA" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_uuWqpfSTEeOKmIQk3FL8KA" key="http://www.fujaba.de/muml/examples/profiles/0.3.2" value="true"/>
-        <details xmi:id="_uuWqpvSTEeOKmIQk3FL8KA" key="http://www.fujaba.de/muml/runtime/0.4.0" value="true"/>
+        <details xmi:id="_uuWqpfSTEeOKmIQk3FL8KA" key="http://www.muml.org/examples/profiles/1.0.0" value="true"/>
+        <details xmi:id="_uuWqpvSTEeOKmIQk3FL8KA" key="http://www.muml.org/verification/core/runtime/1.0.0" value="true"/>
       </annotations>
     </modelElements>
     <modelElements xsi:type="sda:Activity" xmi:id="_uuWqt_STEeOKmIQk3FL8KA" inParameters="_uuWqu_STEeOKmIQk3FL8KA _uuWqvfSTEeOKmIQk3FL8KA _uuWqv_STEeOKmIQk3FL8KA" name="addProfile">
@@ -15230,7 +15230,7 @@
         <ownedRule xmi:id="_uuWqxvSTEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqx_STEeOKmIQk3FL8KA" name="allProfiles" bindingState="BOUND" outgoingLinks="_uuWqy_STEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nYo5SD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqyPSTEeOKmIQk3FL8KA" name="role" bindingState="BOUND" incomingLinks="_uuWqzPSTEeOKmIQk3FL8KA">
@@ -15240,22 +15240,22 @@
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqyfSTEeOKmIQk3FL8KA" name="r" incomingLinks="_uuWqy_STEeOKmIQk3FL8KA" outgoingLinks="_uuWqzPSTEeOKmIQk3FL8KA _uuWqzfSTEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nYo6SD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWqyvSTEeOKmIQk3FL8KA" name="profile" bindingState="BOUND" incomingLinks="_uuWqzfSTEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nYo6yD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//Profile"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//Profile"/>
             </genericType>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWqy_STEeOKmIQk3FL8KA" name="allProfiles_2_r" source="_uuWqx_STEeOKmIQk3FL8KA" target="_uuWqyfSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore/roleProfiles"/>
+            <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore/roleProfiles"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWqzPSTEeOKmIQk3FL8KA" name="r_2_role" source="_uuWqyfSTEeOKmIQk3FL8KA" target="_uuWqyPSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles/roleInstance"/>
+            <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles/roleInstance"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWqzfSTEeOKmIQk3FL8KA" name="r_2_profile" bindingOperator="CREATE" source="_uuWqyfSTEeOKmIQk3FL8KA" target="_uuWqyvSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles/allProfiles"/>
+            <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles/allProfiles"/>
           </linkVariables>
         </ownedRule>
       </ownedActivityNodes>
@@ -15266,25 +15266,25 @@
         <ownedRule xmi:id="_uuWq0fSTEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWq0vSTEeOKmIQk3FL8KA" name="r" bindingState="BOUND" outgoingLinks="_uuWq1vSTEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nYo9CD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWq0_STEeOKmIQk3FL8KA" name="profile" bindingState="BOUND" incomingLinks="_uuWq1vSTEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nYo9iD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//Profile"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//Profile"/>
             </genericType>
           </variables>
           <constraints xmi:id="_uuWq1PSTEeOKmIQk3FL8KA">
             <constraintExpression xsi:type="expressions:TextualExpression" xmi:id="_uuWq1fSTEeOKmIQk3FL8KA" expressionText="r.currentProfile.oclIsUndefined()" language="OCL" languageVersion="1.0"/>
           </constraints>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWq1vSTEeOKmIQk3FL8KA" name="r_2_profile2" bindingOperator="CREATE" source="_uuWq0vSTEeOKmIQk3FL8KA" target="_uuWq0_STEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles/currentProfile"/>
+            <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles/currentProfile"/>
           </linkVariables>
         </ownedRule>
       </ownedActivityNodes>
       <annotations xmi:id="_uuWquPSTEeOKmIQk3FL8KA" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_uuWqufSTEeOKmIQk3FL8KA" key="http://www.fujaba.de/muml/examples/profiles/0.3.2" value="true"/>
-        <details xmi:id="_uuWquvSTEeOKmIQk3FL8KA" key="http://www.fujaba.de/muml/runtime/0.4.0" value="true"/>
+        <details xmi:id="_uuWqufSTEeOKmIQk3FL8KA" key="http://www.muml.org/examples/profiles/1.0.0" value="true"/>
+        <details xmi:id="_uuWquvSTEeOKmIQk3FL8KA" key="http://www.muml.org/verification/core/runtime/1.0.0" value="true"/>
       </annotations>
     </modelElements>
     <modelElements xsi:type="sda:Activity" xmi:id="_uuWq1_STEeOKmIQk3FL8KA" inParameters="_uuWq2_STEeOKmIQk3FL8KA _uuWq3fSTEeOKmIQk3FL8KA" outParameters="_uuWq3_STEeOKmIQk3FL8KA" name="getProfile">
@@ -15300,7 +15300,7 @@
         <ownedRule xmi:id="_uuWq5fSTEeOKmIQk3FL8KA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWq5vSTEeOKmIQk3FL8KA" name="allProfiles" bindingState="BOUND" outgoingLinks="_uuWq6vSTEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nZM-CD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWq5_STEeOKmIQk3FL8KA" name="role" bindingState="BOUND" incomingLinks="_uuWq6_STEeOKmIQk3FL8KA">
@@ -15310,22 +15310,22 @@
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWq6PSTEeOKmIQk3FL8KA" name="r" incomingLinks="_uuWq6vSTEeOKmIQk3FL8KA" outgoingLinks="_uuWq6_STEeOKmIQk3FL8KA _uuWq7PSTEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nZM_CD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWq6fSTEeOKmIQk3FL8KA" name="profile" incomingLinks="_uuWq7PSTEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nZM_iD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//Profile"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//Profile"/>
             </genericType>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWq6vSTEeOKmIQk3FL8KA" name="allProfiles_2_r" source="_uuWq5vSTEeOKmIQk3FL8KA" target="_uuWq6PSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore/roleProfiles"/>
+            <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore/roleProfiles"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWq6_STEeOKmIQk3FL8KA" name="r_2_role" source="_uuWq6PSTEeOKmIQk3FL8KA" target="_uuWq5_STEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles/roleInstance"/>
+            <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles/roleInstance"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWq7PSTEeOKmIQk3FL8KA" name="r_2_profile" source="_uuWq6PSTEeOKmIQk3FL8KA" target="_uuWq6fSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles/currentProfile"/>
+            <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles/currentProfile"/>
           </linkVariables>
         </ownedRule>
       </ownedActivityNodes>
@@ -15336,17 +15336,17 @@
         <ownedRule xmi:id="_jQCZ0HyMEeSgTeWUASugdw" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_m-JqUHyMEeSgTeWUASugdw" name="allProfiles" bindingState="BOUND" outgoingLinks="_7Zd38HyMEeSgTeWUASugdw">
             <genericType xmi:id="_4nZNByD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_sFc7UHyMEeSgTeWUASugdw" name="r" incomingLinks="_7Zd38HyMEeSgTeWUASugdw" outgoingLinks="_8s85EHyMEeSgTeWUASugdw _-PEzIHyMEeSgTeWUASugdw">
             <genericType xmi:id="_4nZNCSD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_vnnagHyMEeSgTeWUASugdw" name="profile" incomingLinks="_8s85EHyMEeSgTeWUASugdw">
             <genericType xmi:id="_4nZNCyD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//Profile"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//Profile"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_x0TUgHyMEeSgTeWUASugdw" name="role" bindingState="BOUND" incomingLinks="_-PEzIHyMEeSgTeWUASugdw">
@@ -15355,13 +15355,13 @@
             </genericType>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_7Zd38HyMEeSgTeWUASugdw" name="l" source="_m-JqUHyMEeSgTeWUASugdw" target="_sFc7UHyMEeSgTeWUASugdw">
-            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore/roleProfiles"/>
+            <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore/roleProfiles"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_8s85EHyMEeSgTeWUASugdw" name="l" source="_sFc7UHyMEeSgTeWUASugdw" target="_vnnagHyMEeSgTeWUASugdw">
-            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles/currentProfile"/>
+            <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles/currentProfile"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_-PEzIHyMEeSgTeWUASugdw" name="l" source="_sFc7UHyMEeSgTeWUASugdw" target="_x0TUgHyMEeSgTeWUASugdw">
-            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles/secondInstance"/>
+            <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles/secondInstance"/>
           </linkVariables>
         </ownedRule>
       </ownedActivityNodes>
@@ -15369,8 +15369,8 @@
         <returnValues xsi:type="expressions:TextualExpression" xmi:id="_GiI1gHyNEeSgTeWUASugdw" expressionText="" language="OCL" languageVersion="1.0"/>
       </ownedActivityNodes>
       <annotations xmi:id="_uuWq2PSTEeOKmIQk3FL8KA" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_uuWq2fSTEeOKmIQk3FL8KA" key="http://www.fujaba.de/muml/examples/profiles/0.3.2" value="true"/>
-        <details xmi:id="_uuWq2vSTEeOKmIQk3FL8KA" key="http://www.fujaba.de/muml/runtime/0.4.0" value="true"/>
+        <details xmi:id="_uuWq2fSTEeOKmIQk3FL8KA" key="http://www.muml.org/examples/profiles/1.0.0" value="true"/>
+        <details xmi:id="_uuWq2vSTEeOKmIQk3FL8KA" key="http://www.muml.org/verification/core/runtime/1.0.0" value="true"/>
       </annotations>
     </modelElements>
     <modelElements xsi:type="sda:Activity" xmi:id="_uuWq7_STEeOKmIQk3FL8KA" inParameters="_uuWq9fSTEeOKmIQk3FL8KA _uuWq8_STEeOKmIQk3FL8KA" name="deleteSRProfiles">
@@ -15388,19 +15388,19 @@
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWq_fSTEeOKmIQk3FL8KA" name="allProfiles" bindingState="BOUND" outgoingLinks="_uuWq__STEeOKmIQk3FL8KA">
             <genericType xmi:id="_4nZNHCD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_uuWq_vSTEeOKmIQk3FL8KA" name="profiles" incomingLinks="_uuWq__STEeOKmIQk3FL8KA" outgoingLinks="_uuWrAPSTEeOKmIQk3FL8KA" bindingOperator="DESTROY">
             <genericType xmi:id="_4nZNHiD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles"/>
             </genericType>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWq__STEeOKmIQk3FL8KA" name="link" bindingOperator="DESTROY" source="_uuWq_fSTEeOKmIQk3FL8KA" target="_uuWq_vSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore/roleProfiles"/>
+            <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore/roleProfiles"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_uuWrAPSTEeOKmIQk3FL8KA" name="link" bindingOperator="DESTROY" source="_uuWq_vSTEeOKmIQk3FL8KA" target="_uuWq_PSTEeOKmIQk3FL8KA">
-            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles/roleInstance"/>
+            <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles/roleInstance"/>
           </linkVariables>
         </ownedRule>
       </ownedActivityNodes>
@@ -15408,8 +15408,8 @@
         <returnValues xsi:type="expressions:TextualExpression" xmi:id="_uuWrAvSTEeOKmIQk3FL8KA" expressionText="" language="OCL" languageVersion="1.0"/>
       </ownedActivityNodes>
       <annotations xmi:id="_uuWq8PSTEeOKmIQk3FL8KA" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_uuWq8fSTEeOKmIQk3FL8KA" key="http://www.fujaba.de/muml/runtime/0.4.0" value="true"/>
-        <details xmi:id="_uuWq8vSTEeOKmIQk3FL8KA" key="http://www.fujaba.de/muml/examples/profiles/0.3.2" value="true"/>
+        <details xmi:id="_uuWq8fSTEeOKmIQk3FL8KA" key="http://www.muml.org/verification/core/runtime/1.0.0" value="true"/>
+        <details xmi:id="_uuWq8vSTEeOKmIQk3FL8KA" key="http://www.muml.org/examples/profiles/1.0.0" value="true"/>
       </annotations>
     </modelElements>
     <modelElements xsi:type="sda:Activity" xmi:id="_OIJUAHiwEeSM8KwkAFk8ZA" inParameters="_OIJUBHiwEeSM8KwkAFk8ZA _OIJUBniwEeSM8KwkAFk8ZA _QnDmcHiwEeSM8KwkAFk8ZA" name="createProfileListCM">
@@ -15423,12 +15423,12 @@
         <ownedRule xmi:id="_OIJUDHiwEeSM8KwkAFk8ZA" comment="">
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_OIJUDXiwEeSM8KwkAFk8ZA" name="store" bindingState="BOUND" outgoingLinks="_OIJUEHiwEeSM8KwkAFk8ZA">
             <genericType xmi:id="_4nZNKiD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_OIJUDniwEeSM8KwkAFk8ZA" name="r" incomingLinks="_OIJUEHiwEeSM8KwkAFk8ZA" outgoingLinks="_OIJUEXiwEeSM8KwkAFk8ZA _ojFFQHixEeSM8KwkAFk8ZA" bindingOperator="CREATE">
             <genericType xmi:id="_4nZNLCD8Eeaozvc2KLeIcQ">
-              <eClassifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles"/>
+              <eClassifier xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles"/>
             </genericType>
           </variables>
           <variables xsi:type="sdp:ObjectVariable" xmi:id="_OIJUD3iwEeSM8KwkAFk8ZA" name="role" bindingState="BOUND" incomingLinks="_OIJUEXiwEeSM8KwkAFk8ZA">
@@ -15442,13 +15442,13 @@
             </genericType>
           </variables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_OIJUEHiwEeSM8KwkAFk8ZA" name="store_2_r" bindingOperator="CREATE" source="_OIJUDXiwEeSM8KwkAFk8ZA" target="_OIJUDniwEeSM8KwkAFk8ZA">
-            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore/roleProfiles"/>
+            <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//ProfileStore/roleProfiles"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_OIJUEXiwEeSM8KwkAFk8ZA" name="r_2_role" bindingOperator="CREATE" source="_OIJUDniwEeSM8KwkAFk8ZA" target="_OIJUD3iwEeSM8KwkAFk8ZA">
-            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles/roleInstance"/>
+            <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles/roleInstance"/>
           </linkVariables>
           <linkVariables xsi:type="sdp:LinkVariable" xmi:id="_ojFFQHixEeSM8KwkAFk8ZA" name="l" bindingOperator="CREATE" source="_OIJUDniwEeSM8KwkAFk8ZA" target="_iih4EHixEeSM8KwkAFk8ZA">
-            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles/secondInstance"/>
+            <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//RoleProfiles/secondInstance"/>
           </linkVariables>
         </ownedRule>
       </ownedActivityNodes>
@@ -15456,8 +15456,8 @@
         <returnValues xsi:type="expressions:TextualExpression" xmi:id="_OIJUE3iwEeSM8KwkAFk8ZA" expressionText="" language="OCL" languageVersion="1.0"/>
       </ownedActivityNodes>
       <annotations xmi:id="_OIJUAXiwEeSM8KwkAFk8ZA" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_OIJUAniwEeSM8KwkAFk8ZA" key="http://www.fujaba.de/muml/examples/profiles/0.3.2" value="true"/>
-        <details xmi:id="_OIJUA3iwEeSM8KwkAFk8ZA" key="http://www.fujaba.de/muml/runtime/0.4.0" value="true"/>
+        <details xmi:id="_OIJUAniwEeSM8KwkAFk8ZA" key="http://www.muml.org/examples/profiles/1.0.0" value="true"/>
+        <details xmi:id="_OIJUA3iwEeSM8KwkAFk8ZA" key="http://www.muml.org/verification/core/runtime/1.0.0" value="true"/>
       </annotations>
     </modelElements>
   </categories>
