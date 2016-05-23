@@ -4,23 +4,24 @@
     <cq:property key="target.arch" value="*"/>
     <cq:property key="target.os" value="*"/>
     <cq:property key="target.ws" value="*"/>
-    <cq:advisorNode namePattern="^org\.eclipse.*" useMaterialization="false" useTargetPlatform="true"/>
-	<cq:advisorNode namePattern="^org\.apache.*" useMaterialization="false" useTargetPlatform="true"/>
-	<cq:advisorNode namePattern="^org\.hamcrest.*" useMaterialization="false" useTargetPlatform="true"/>
-	<cq:advisorNode namePattern="^org\.junit.*" useMaterialization="false" useTargetPlatform="true"/>
-	<cq:advisorNode namePattern="^com\.google.*" useMaterialization="false" useTargetPlatform="true"/>
-	<cq:advisorNode namePattern="^com\.ibm.*" useMaterialization="false" useTargetPlatform="true"/>
-	<cq:advisorNode namePattern="^com\.sun.*" useMaterialization="false" useTargetPlatform="true"/>
-	<cq:advisorNode namePattern="^com\.jcraft.*" useMaterialization="false" useTargetPlatform="true"/>
-	<cq:advisorNode namePattern="^com\.javax.*" useMaterialization="false" useTargetPlatform="true"/>
-	<cq:advisorNode namePattern="^org\.antl.*" useMaterialization="false" useTargetPlatform="true"/>
-	<cq:advisorNode namePattern="^lpg\.runtime.*" useMaterialization="false" useTargetPlatform="true"/>
-	<cq:advisorNode namePattern="^org\.objectweb.*" useMaterialization="false" useTargetPlatform="true"/>
-	<cq:advisorNode namePattern="^org\.sat4j.*" useMaterialization="false" useTargetPlatform="true"/>
-	<cq:advisorNode namePattern="^org\.w3c.*" useMaterialization="false" useTargetPlatform="true"/>
-	<cq:advisorNode namePattern="^javax.*" useMaterialization="false" useTargetPlatform="true"/>
-	<cq:advisorNode namePattern="^org\.tukaani.*" useMaterialization="false" useTargetPlatform="true"/>
-	<cq:advisorNode namePattern="^.*\.source$" componentType="osgi.bundle" skipComponent="true"/>
-	<cq:advisorNode namePattern="^.*\.source\.feature$" componentType="eclipse.feature" skipComponent="true"/>
-	<cq:advisorNode namePattern=".*" useMaterialization="false" useTargetPlatform="false" useWorkspace="true"/>
+    <cq:advisorNode namePattern="^org\.eclipse.*" useMaterialization="false"/>
+    <cq:advisorNode namePattern="^org\.apache.*" useMaterialization="false"/>
+    <cq:advisorNode namePattern="^org\.junit.*" useMaterialization="false"/>
+    <cq:advisorNode namePattern="^com\.google.*" useMaterialization="false"/>
+    <cq:advisorNode namePattern="^com\.ibm.*" useMaterialization="false"/>
+    <cq:advisorNode namePattern="^com\.sun.*" useMaterialization="false"/>
+    <cq:advisorNode namePattern="^com\.jcraft.*" useMaterialization="false"/>
+    <cq:advisorNode namePattern="^com\.jcraft.*" useMaterialization="false"/>
+    <cq:advisorNode namePattern="^com\.javax.*" useMaterialization="false"/>
+    <cq:advisorNode namePattern="^org\.antl.*" useMaterialization="false"/>
+    <cq:advisorNode namePattern="^lpg\.runtime.*" useMaterialization="false"/>
+    <cq:advisorNode namePattern="^org\.objectweb.*" useMaterialization="false"/>
+    <cq:advisorNode namePattern="^org\.sat4j.*" useMaterialization="false"/>
+    <cq:advisorNode namePattern="^org\.w3c.*" useMaterialization="false"/>
+    <cq:advisorNode namePattern="^javax.*" useMaterialization="false"/>
+    <cq:advisorNode namePattern="^org\.hamcrest.*" useMaterialization="false"/>
+    <cq:advisorNode namePattern="^org\.tukaani.*" useMaterialization="false"/>
+    <cq:advisorNode namePattern="^.*\.source" componentType="osgi.bundle" skipComponent="true"/>
+    <cq:advisorNode namePattern="^.*\.source.feature" componentType="eclipse.feature" skipComponent="true"/>
+    <cq:advisorNode namePattern=".*" useMaterialization="false" useTargetPlatform="false"/>
 </cq:componentQuery>
