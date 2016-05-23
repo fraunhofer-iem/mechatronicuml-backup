@@ -28,6 +28,11 @@
   </eClassifiers>
   <eSubpackages name="activities" nsURI="http://www.muml.org/storydiagram/activities/1.0.0"
       nsPrefix="sda">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="ExceptionVariable" eSuperTypes="#//Variable">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Declares a variable representing an Exception that leads to firing a transition (ActivityEdge). Can only be applied to ActivityEdge whose guard is set to EXCEPTION."/>
@@ -193,6 +198,11 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A MatchingStoryNode may only contain a MatchingPattern which does not change the graph. I.e., no element contained in this activity carries a create or destroy annotation. Thus, after executing a MatchingStoryNode, the underlying graph is guaranteed to be unchanged."/>
       </eAnnotations>
+      <eOperations name="getStoryPattern" eType="#//patterns/StoryPattern">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="implementation" value="self.ownedPattern"/>
+        </eAnnotations>
+      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ownedPattern" ordered="false"
           lowerBound="1" eType="#//patterns/MatchingPattern" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -213,9 +223,7 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="storyPattern" ordered="false"
           lowerBound="1" eType="#//patterns/StoryPattern" changeable="false" volatile="true"
-          transient="true" derived="true">
-        <eAnnotations source="union"/>
-      </eStructuralFeatures>
+          transient="true" derived="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="StructuredNode" eSuperTypes="#//activities/ActivityNode">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -337,6 +345,11 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A ModifyingStoryNode contains a story pattern which may change the underlying graph upon execution."/>
       </eAnnotations>
+      <eOperations name="getStoryPattern" eType="#//patterns/StoryPattern">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="implementation" value="self.ownedRule"/>
+        </eAnnotations>
+      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ownedRule" ordered="false"
           lowerBound="1" eType="#//patterns/StoryPattern" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -493,6 +506,11 @@
       nsPrefix="sdp">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This package contains all classes for modeling story patterns that may be &#xD;&#xA;embedded into StoryActivityNodes of an Activity."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="ObjectVariable" eSuperTypes="#//patterns/AbstractVariable">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

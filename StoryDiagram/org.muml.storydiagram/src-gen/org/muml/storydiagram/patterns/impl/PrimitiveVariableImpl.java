@@ -8,7 +8,7 @@ package org.muml.storydiagram.patterns.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
-import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.muml.storydiagram.patterns.PatternsPackage;
 import org.muml.storydiagram.patterns.PrimitiveVariable;
 
@@ -25,6 +25,16 @@ import org.muml.storydiagram.patterns.PrimitiveVariable;
  */
 public class PrimitiveVariableImpl extends AbstractVariableImpl implements
 		PrimitiveVariable {
+	/**
+	 * The cached setting delegate for the '{@link #getDataType() <em>Data Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDataType()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate DATA_TYPE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PatternsPackage.Literals.PRIMITIVE_VARIABLE__DATA_TYPE).getSettingDelegate();
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
@@ -48,8 +58,7 @@ public class PrimitiveVariableImpl extends AbstractVariableImpl implements
 	 * @generated
 	 */
 	public EDataType getDataType() {
-		EDataType dataType = basicGetDataType();
-		return dataType != null && dataType.eIsProxy() ? (EDataType)eResolveProxy((InternalEObject)dataType) : dataType;
+		return (EDataType)DATA_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -58,10 +67,7 @@ public class PrimitiveVariableImpl extends AbstractVariableImpl implements
 	 * @generated
 	 */
 	public EDataType basicGetDataType() {
-		// TODO: implement this method to return the 'Data Type' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (EDataType)DATA_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -70,9 +76,7 @@ public class PrimitiveVariableImpl extends AbstractVariableImpl implements
 	 * @generated
 	 */
 	public void setDataType(EDataType newDataType) {
-		// TODO: implement this method to set the 'Data Type' reference
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		DATA_TYPE__ESETTING_DELEGATE.dynamicSet(this, null, 0, newDataType);
 	}
 
 	/**
@@ -125,7 +129,7 @@ public class PrimitiveVariableImpl extends AbstractVariableImpl implements
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case PatternsPackage.PRIMITIVE_VARIABLE__DATA_TYPE:
-				return basicGetDataType() != null;
+				return DATA_TYPE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

@@ -60,6 +60,7 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/Activity/precondition"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/Activity/ownedActivityNodes"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/Activity/annotations"/>
       </genClasses>
       <genClasses ecoreClass="storydiagrams.ecore#//activities/OperationExtension">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -73,6 +74,7 @@
       </genClasses>
       <genClasses ecoreClass="storydiagrams.ecore#//activities/MatchingStoryNode">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/MatchingStoryNode/ownedPattern"/>
+        <genOperations ecoreOperation="storydiagrams.ecore#//activities/MatchingStoryNode/getStoryPattern"/>
       </genClasses>
       <genClasses image="false" ecoreClass="storydiagrams.ecore#//activities/StoryNode">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//activities/StoryNode/forEach"/>
@@ -97,6 +99,7 @@
       </genClasses>
       <genClasses ecoreClass="storydiagrams.ecore#//activities/ModifyingStoryNode">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ModifyingStoryNode/ownedRule"/>
+        <genOperations ecoreOperation="storydiagrams.ecore#//activities/ModifyingStoryNode/getStoryPattern"/>
       </genClasses>
       <genClasses ecoreClass="storydiagrams.ecore#//activities/FlowFinalNode"/>
       <nestedGenPackages prefix="ActivitiesExpressions" basePackage="org.muml.storydiagram.activities"

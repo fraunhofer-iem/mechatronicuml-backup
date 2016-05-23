@@ -7,6 +7,7 @@
 package org.muml.storydiagram.activities;
 
 import org.muml.storydiagram.patterns.MatchingPattern;
+import org.muml.storydiagram.patterns.StoryPattern;
 
 /**
  * <!-- begin-user-doc -->
@@ -53,5 +54,14 @@ public interface MatchingStoryNode extends StoryNode {
 	 * @generated
 	 */
 	void setOwnedPattern(MatchingPattern value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL implementation='self.ownedPattern'"
+	 * @generated
+	 */
+	StoryPattern getStoryPattern();
 
 } // MatchingStoryNode

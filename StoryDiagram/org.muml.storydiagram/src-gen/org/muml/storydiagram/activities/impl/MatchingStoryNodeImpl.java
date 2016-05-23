@@ -6,14 +6,19 @@
  */
 package org.muml.storydiagram.activities.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.storydiagram.activities.ActivitiesPackage;
 import org.muml.storydiagram.activities.MatchingStoryNode;
 import org.muml.storydiagram.patterns.MatchingPattern;
+import org.muml.storydiagram.patterns.StoryPattern;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Matching Story Node</b></em>'. <!-- end-user-doc -->
@@ -96,6 +101,30 @@ public class MatchingStoryNodeImpl extends StoryNodeImpl implements
 	}
 
 	/**
+	 * The cached invocation delegate for the '{@link #getStoryPattern() <em>Get Story Pattern</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStoryPattern()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate GET_STORY_PATTERN__EINVOCATION_DELEGATE = ((EOperation.Internal)ActivitiesPackage.Literals.MATCHING_STORY_NODE___GET_STORY_PATTERN).getInvocationDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StoryPattern getStoryPattern() {
+		try {
+			return (StoryPattern)GET_STORY_PATTERN__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+		}
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -161,6 +190,20 @@ public class MatchingStoryNodeImpl extends StoryNodeImpl implements
 				return ownedPattern != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ActivitiesPackage.MATCHING_STORY_NODE___GET_STORY_PATTERN:
+				return getStoryPattern();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } // MatchingStoryNodeImpl

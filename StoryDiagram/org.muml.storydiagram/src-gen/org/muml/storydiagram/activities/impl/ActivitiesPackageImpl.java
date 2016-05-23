@@ -535,6 +535,15 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getMatchingStoryNode__GetStoryPattern() {
+		return matchingStoryNodeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getStoryNode() {
 		return storyNodeEClass;
 	}
@@ -688,6 +697,15 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getModifyingStoryNode__GetStoryPattern() {
+		return modifyingStoryNodeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getFlowFinalNode() {
 		return flowFinalNodeEClass;
 	}
@@ -763,6 +781,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 
 		matchingStoryNodeEClass = createEClass(MATCHING_STORY_NODE);
 		createEReference(matchingStoryNodeEClass, MATCHING_STORY_NODE__OWNED_PATTERN);
+		createEOperation(matchingStoryNodeEClass, MATCHING_STORY_NODE___GET_STORY_PATTERN);
 
 		storyNodeEClass = createEClass(STORY_NODE);
 		createEAttribute(storyNodeEClass, STORY_NODE__FOR_EACH);
@@ -788,6 +807,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 
 		modifyingStoryNodeEClass = createEClass(MODIFYING_STORY_NODE);
 		createEReference(modifyingStoryNodeEClass, MODIFYING_STORY_NODE__OWNED_RULE);
+		createEOperation(modifyingStoryNodeEClass, MODIFYING_STORY_NODE___GET_STORY_PATTERN);
 
 		flowFinalNodeEClass = createEClass(FLOW_FINAL_NODE);
 
@@ -899,6 +919,8 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 		initEClass(matchingStoryNodeEClass, MatchingStoryNode.class, "MatchingStoryNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMatchingStoryNode_OwnedPattern(), thePatternsPackage.getMatchingPattern(), null, "ownedPattern", null, 1, 1, MatchingStoryNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
+		initEOperation(getMatchingStoryNode__GetStoryPattern(), thePatternsPackage.getStoryPattern(), "getStoryPattern", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(storyNodeEClass, StoryNode.class, "StoryNode", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStoryNode_ForEach(), ecorePackage.getEBoolean(), "forEach", null, 1, 1, StoryNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getStoryNode_StoryPattern(), thePatternsPackage.getStoryPattern(), null, "storyPattern", null, 1, 1, StoryNode.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
@@ -924,6 +946,8 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 		initEClass(modifyingStoryNodeEClass, ModifyingStoryNode.class, "ModifyingStoryNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getModifyingStoryNode_OwnedRule(), thePatternsPackage.getStoryPattern(), null, "ownedRule", null, 1, 1, ModifyingStoryNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
+		initEOperation(getModifyingStoryNode__GetStoryPattern(), thePatternsPackage.getStoryPattern(), "getStoryPattern", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(flowFinalNodeEClass, FlowFinalNode.class, "FlowFinalNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
@@ -939,14 +963,32 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 		addEEnumLiteral(edgeGuardEEnum, EdgeGuard.FINALLY);
 
 		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
 		// http://www.eclipse.org/uml2/1.1.0/GenModel
 		createGenModel_1Annotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL
 		createOCLAnnotations();
 		// subsets
 		createSubsetsAnnotations();
-		// union
-		createUnionAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
+		   });
 	}
 
 	/**
@@ -978,6 +1020,18 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 		   source, 
 		   new String[] {
 			 "derivation", "if (self.getModelBase() <> null and self.getModelBase().oclIsKindOf(ecore::EOperation)) then self.getModelBase().oclAsType(ecore::EOperation) else null endif"
+		   });	
+		addAnnotation
+		  (getMatchingStoryNode__GetStoryPattern(), 
+		   source, 
+		   new String[] {
+			 "implementation", "self.ownedPattern"
+		   });	
+		addAnnotation
+		  (getModifyingStoryNode__GetStoryPattern(), 
+		   source, 
+		   new String[] {
+			 "implementation", "self.ownedRule"
 		   });
 	}
 
@@ -1004,21 +1058,6 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 		   },
 		   new URI[] {
 			 URI.createURI(StorydiagramPackage.eNS_URI).appendFragment("//activities/StoryNode/storyPattern")
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>union</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createUnionAnnotations() {
-		String source = "union";	
-		addAnnotation
-		  (getStoryNode_StoryPattern(), 
-		   source, 
-		   new String[] {
 		   });
 	}
 

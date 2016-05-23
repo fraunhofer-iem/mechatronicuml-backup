@@ -21,6 +21,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EParameter;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -113,6 +114,15 @@ public class OperationExtensionImpl extends SDMExtensionImpl implements
 	 */
 	protected EList<EParameter> containedParameters;
 	/**
+	 * The cached setting delegate for the '{@link #getOperation() <em>Operation</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOperation()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate OPERATION__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ActivitiesPackage.Literals.OPERATION_EXTENSION__OPERATION).getSettingDelegate();
+	/**
 	 * The cached value of the '{@link #getReturnValue() <em>Return Value</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getReturnValue()
@@ -194,9 +204,7 @@ public class OperationExtensionImpl extends SDMExtensionImpl implements
 	 * @generated
 	 */
 	public EOperation getOperation() {
-		// TODO: implement this method to return the 'Operation' reference
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (EOperation)OPERATION__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -513,7 +521,7 @@ public class OperationExtensionImpl extends SDMExtensionImpl implements
 			case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
 				return containedParameters != null && !containedParameters.isEmpty();
 			case ActivitiesPackage.OPERATION_EXTENSION__OPERATION:
-				return getOperation() != null;
+				return OPERATION__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE:
 				return returnValue != null;
 			case ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY:

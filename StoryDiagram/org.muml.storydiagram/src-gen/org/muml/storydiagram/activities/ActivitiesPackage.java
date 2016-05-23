@@ -29,6 +29,7 @@ import org.muml.storydiagram.calls.CallsPackage;
  * <!-- end-user-doc -->
  * @see org.muml.storydiagram.activities.ActivitiesFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */
 public interface ActivitiesPackage extends EPackage {
@@ -882,13 +883,22 @@ public interface ActivitiesPackage extends EPackage {
 	int MATCHING_STORY_NODE___GET_EXTENSION__ECLASS = STORY_NODE___GET_EXTENSION__ECLASS;
 
 	/**
+	 * The operation id for the '<em>Get Story Pattern</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCHING_STORY_NODE___GET_STORY_PATTERN = STORY_NODE_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Matching Story Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MATCHING_STORY_NODE_OPERATION_COUNT = STORY_NODE_OPERATION_COUNT + 0;
+	int MATCHING_STORY_NODE_OPERATION_COUNT = STORY_NODE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.muml.storydiagram.activities.impl.StructuredNodeImpl <em>Structured Node</em>}' class.
@@ -1681,13 +1691,22 @@ public interface ActivitiesPackage extends EPackage {
 	int MODIFYING_STORY_NODE___GET_EXTENSION__ECLASS = STORY_NODE___GET_EXTENSION__ECLASS;
 
 	/**
+	 * The operation id for the '<em>Get Story Pattern</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODIFYING_STORY_NODE___GET_STORY_PATTERN = STORY_NODE_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Modifying Story Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODIFYING_STORY_NODE_OPERATION_COUNT = STORY_NODE_OPERATION_COUNT + 0;
+	int MODIFYING_STORY_NODE_OPERATION_COUNT = STORY_NODE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.muml.storydiagram.activities.impl.FlowFinalNodeImpl <em>Flow Final Node</em>}' class.
@@ -2084,6 +2103,14 @@ public interface ActivitiesPackage extends EPackage {
 		EReference MATCHING_STORY_NODE__OWNED_PATTERN = eINSTANCE.getMatchingStoryNode_OwnedPattern();
 
 		/**
+		 * The meta object literal for the '<em><b>Get Story Pattern</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MATCHING_STORY_NODE___GET_STORY_PATTERN = eINSTANCE.getMatchingStoryNode__GetStoryPattern();
+
+		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.activities.impl.StoryNodeImpl <em>Story Node</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2234,6 +2261,14 @@ public interface ActivitiesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MODIFYING_STORY_NODE__OWNED_RULE = eINSTANCE.getModifyingStoryNode_OwnedRule();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Story Pattern</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MODIFYING_STORY_NODE___GET_STORY_PATTERN = eINSTANCE.getModifyingStoryNode__GetStoryPattern();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.activities.impl.FlowFinalNodeImpl <em>Flow Final Node</em>}' class.
@@ -2570,6 +2605,16 @@ public interface ActivitiesPackage extends EPackage {
 	EReference getMatchingStoryNode_OwnedPattern();
 
 	/**
+	 * Returns the meta object for the '{@link org.muml.storydiagram.activities.MatchingStoryNode#getStoryPattern() <em>Get Story Pattern</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Story Pattern</em>' operation.
+	 * @see org.muml.storydiagram.activities.MatchingStoryNode#getStoryPattern()
+	 * @generated
+	 */
+	EOperation getMatchingStoryNode__GetStoryPattern();
+
+	/**
 	 * Returns the meta object for class '{@link org.muml.storydiagram.activities.StoryNode <em>Story Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2747,6 +2792,16 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getModifyingStoryNode_OwnedRule();
+
+	/**
+	 * Returns the meta object for the '{@link org.muml.storydiagram.activities.ModifyingStoryNode#getStoryPattern() <em>Get Story Pattern</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Story Pattern</em>' operation.
+	 * @see org.muml.storydiagram.activities.ModifyingStoryNode#getStoryPattern()
+	 * @generated
+	 */
+	EOperation getModifyingStoryNode__GetStoryPattern();
 
 	/**
 	 * Returns the meta object for class '{@link org.muml.storydiagram.activities.FlowFinalNode <em>Flow Final Node</em>}'.
