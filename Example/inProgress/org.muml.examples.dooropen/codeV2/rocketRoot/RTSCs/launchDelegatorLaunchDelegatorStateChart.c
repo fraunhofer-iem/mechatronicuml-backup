@@ -23,6 +23,7 @@
 			//initialize clocks
 		
 			//initialize variables of the root statechart
+			stateChart->whoami = 1;
 		
 			//initialize init state
 			stateChart->currentStateOfLaunchDelegatorLaunchDelegator =
@@ -221,7 +222,47 @@
 						LaunchDelegatorComponent_getverifier(
 								stateChart->parentComponent))
 		
-								) {
+				&& stateChart->whoami == 2
+		
+				) {
+					M1AccessDenied_M1_Message msg_M1AccessDenied;
+					MCC_LaunchDelegatorComponent_verifier_recv_M1AccessDenied_M1_Message(
+							LaunchDelegatorComponent_getverifier(
+									stateChart->parentComponent), &msg_M1AccessDenied);
+		
+		#ifdef DEBUG
+					printDebugInformation("LaunchDelegator received message of typeM1AccessDenied_M1_Message");
+		#endif
+		
+					// execute exit actions
+					// nothing to do
+		
+					// Transition Effects (incl. clock resets)
+					// nothing to do
+		
+					// nothing to do			
+		
+					//release all created received events
+					//	free(mwMsg);
+		
+					//release all created sent events
+					// change the state
+					stateChart->currentStateOfLaunchDelegatorVerifierPeer_verifier =
+							STATE_LAUNCHDELEGATORVERIFIERWAITFORRESPONSE;
+		#ifdef DEBUG
+					printDebugInformation("currentStateOfLaunchDelegatorVerifierPeer_verifier switched state to STATE_LAUNCHDELEGATORVERIFIERWAITFORRESPONSE" );
+		#endif		
+		
+					// execute entry actions
+					// nothing to do
+		
+				} else if (MCC_LaunchDelegatorComponent_verifier_exists_M1AccessDenied_M1_Message(
+						LaunchDelegatorComponent_getverifier(
+								stateChart->parentComponent))
+		
+				&& stateChart->whoami == 1
+		
+				) {
 					M1AccessDenied_M1_Message msg_M1AccessDenied;
 					MCC_LaunchDelegatorComponent_verifier_recv_M1AccessDenied_M1_Message(
 							LaunchDelegatorComponent_getverifier(

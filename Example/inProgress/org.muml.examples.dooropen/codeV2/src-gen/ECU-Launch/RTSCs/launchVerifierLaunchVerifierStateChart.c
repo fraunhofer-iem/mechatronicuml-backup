@@ -14,6 +14,7 @@
 			// execute entry actions
 			stateChart->isOtherReady = false;
 			stateChart->peer1Tries = 0;
+			stateChart->newTry = false;
 			;
 		
 			stateChart->LaunchVerifierPeer1Master_peer1_isExecutable = true;
@@ -56,6 +57,8 @@
 			stateChart->isOtherReady = false;
 		
 			stateChart->peer1Tries = 0;
+		
+			stateChart->newTry = false;
 		
 			//initialize init state
 			stateChart->currentStateOfLaunchVerifierLaunchVerifier =
@@ -145,7 +148,8 @@
 		#endif		
 		
 					// execute entry actions
-					// nothing to do
+					stateChart->newTry = true;
+					;
 		
 				} else {
 		
@@ -216,7 +220,8 @@
 		#endif		
 		
 					// execute entry actions
-					// nothing to do
+					stateChart->newTry = false;
+					;
 		
 				} else {
 		
@@ -348,6 +353,7 @@
 					// execute entry actions
 					stateChart->isOtherReady = false;
 					stateChart->peer1Tries = 0;
+					stateChart->newTry = false;
 					;
 		
 				} else {
@@ -379,6 +385,7 @@
 					// execute entry actions
 					stateChart->isOtherReady = false;
 					stateChart->peer1Tries = 0;
+					stateChart->newTry = false;
 					;
 		
 				} else {
@@ -417,7 +424,8 @@
 		#endif		
 		
 					// execute entry actions
-					// nothing to do
+					stateChart->newTry = false;
+					;
 		
 				} else {
 		
@@ -474,7 +482,7 @@
 				} else if (
 		
 				stateChart->verifiedLaunch == false && stateChart->peer1Tries < 3
-						&& stateChart->peer1Tries > 0
+						&& stateChart->peer1Tries > 0 && stateChart->newTry == true
 		
 						) {
 		
@@ -851,43 +859,6 @@
 		}
 		
 		
-		void LaunchVerifierPeer1Master_peer1StateChart_exit(
-				LaunchVerifierLaunchVerifierStateChart* stateChart) {
-			switch (stateChart->currentStateOfLaunchVerifierPeer1Master_peer1) {
-			case STATE_LAUNCHVERIFIERPEER1MASTER_MAIN:
-				// nothing to do
-		
-				break;
-			case STATE_LAUNCHVERIFIERPEER1WAITFORSTART:
-				// nothing to do
-		
-				break;
-			case STATE_LAUNCHVERIFIERPEER1GETREADY:
-				// nothing to do
-		
-				break;
-			case STATE_LAUNCHVERIFIERPEER1WAITISCORRECT:
-				// nothing to do
-		
-				break;
-			case STATE_LAUNCHVERIFIERPEER1COMPLETEDENY:
-				// nothing to do
-		
-				break;
-			case STATE_LAUNCHVERIFIERPEER1ACCESSGRANTED:
-				// nothing to do
-		
-				break;
-			case STATE_LAUNCHVERIFIERPEER1ACCESDENY:
-				// nothing to do
-		
-				break;
-			default:
-				break;
-			}
-			stateChart->currentStateOfLaunchVerifierPeer1Master_peer1 =
-					LAUNCHVERIFIERLAUNCHVERIFIER_INACTIVE;
-		}
 		void LaunchVerifierPeer2Master_peer2StateChart_exit(
 				LaunchVerifierLaunchVerifierStateChart* stateChart) {
 			switch (stateChart->currentStateOfLaunchVerifierPeer2Master_peer2) {
@@ -938,15 +909,52 @@
 			stateChart->currentStateOfLaunchVerifierLaunchVerifier_mainStatechart =
 					LAUNCHVERIFIERLAUNCHVERIFIER_INACTIVE;
 		}
+		void LaunchVerifierPeer1Master_peer1StateChart_exit(
+				LaunchVerifierLaunchVerifierStateChart* stateChart) {
+			switch (stateChart->currentStateOfLaunchVerifierPeer1Master_peer1) {
+			case STATE_LAUNCHVERIFIERPEER1MASTER_MAIN:
+				// nothing to do
+		
+				break;
+			case STATE_LAUNCHVERIFIERPEER1WAITFORSTART:
+				// nothing to do
+		
+				break;
+			case STATE_LAUNCHVERIFIERPEER1GETREADY:
+				// nothing to do
+		
+				break;
+			case STATE_LAUNCHVERIFIERPEER1WAITISCORRECT:
+				// nothing to do
+		
+				break;
+			case STATE_LAUNCHVERIFIERPEER1COMPLETEDENY:
+				// nothing to do
+		
+				break;
+			case STATE_LAUNCHVERIFIERPEER1ACCESSGRANTED:
+				// nothing to do
+		
+				break;
+			case STATE_LAUNCHVERIFIERPEER1ACCESDENY:
+				// nothing to do
+		
+				break;
+			default:
+				break;
+			}
+			stateChart->currentStateOfLaunchVerifierPeer1Master_peer1 =
+					LAUNCHVERIFIERLAUNCHVERIFIER_INACTIVE;
+		}
 				
 			
 		bool_t LaunchVerifierLaunchVerifierStateChart_isInState(
 				LaunchVerifierLaunchVerifierStateChart* stateChart,
 				LaunchVerifierLaunchVerifierState state) {
-			return (stateChart->currentStateOfLaunchVerifierPeer1Master_peer1 == state
-					|| stateChart->currentStateOfLaunchVerifierPeer2Master_peer2
-							== state
+			return (stateChart->currentStateOfLaunchVerifierPeer2Master_peer2 == state
 					|| stateChart->currentStateOfLaunchVerifierLaunchVerifier_mainStatechart
+							== state
+					|| stateChart->currentStateOfLaunchVerifierPeer1Master_peer1
 							== state);
 		
 		}

@@ -46,6 +46,10 @@
         <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
         <initializeExpression xsi:type="common:LiteralExpression" value="0"/>
       </variables>
+      <variables name="newTry">
+        <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
+        <initializeExpression xsi:type="common:LiteralExpression" value="false"/>
+      </variables>
       <states xmi:id="_Yqrx0cjuEeW0gpRI-mS_yA" name="LaunchVerifier_main" initial="true">
         <embeddedRegions xmi:id="_Yqrx0sjuEeW0gpRI-mS_yA" priority="1">
           <embeddedStatechart xmi:id="_Yqrx08juEeW0gpRI-mS_yA" name="master_peer1" behavioralElement="_e6xXMMjrEeW0gpRI-mS_yA">
@@ -128,7 +132,18 @@
                 <message instanceOf="//@categories.3/@modelElements.0/@messageTypes.2"/>
               </events>
             </transitions>
-            <states xmi:id="_Yqrx18juEeW0gpRI-mS_yA" name="master_Main" outgoingTransitions="_Yqrx1MjuEeW0gpRI-mS_yA" incomingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.2 //@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.8"/>
+            <states xmi:id="_Yqrx18juEeW0gpRI-mS_yA" name="master_Main" outgoingTransitions="_Yqrx1MjuEeW0gpRI-mS_yA" incomingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.2 //@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.8">
+              <entryEvent>
+                <action name="setTry">
+                  <expressions xsi:type="actionlanguage:Block">
+                    <expressions xsi:type="actionlanguage:Assignment" assignOperator=":=">
+                      <rhs_assignExpression xsi:type="common:LiteralExpression" value="false"/>
+                      <lhs_typedNamedElementExpression typedNamedElement="//@categories.1/@modelElements.2/@variables.4"/>
+                    </expressions>
+                  </expressions>
+                </action>
+              </entryEvent>
+            </states>
             <states name="WaitForStart" outgoingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.1" incomingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.5 //@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.6" initial="true">
               <entryEvent>
                 <action name="setInitReady">
@@ -141,12 +156,27 @@
                       <rhs_assignExpression xsi:type="common:LiteralExpression" value="0"/>
                       <lhs_typedNamedElementExpression typedNamedElement="//@categories.1/@modelElements.2/@variables.3"/>
                     </expressions>
+                    <expressions xsi:type="actionlanguage:Assignment" assignOperator=":=">
+                      <rhs_assignExpression xsi:type="common:LiteralExpression" value="false"/>
+                      <lhs_typedNamedElementExpression typedNamedElement="//@categories.1/@modelElements.2/@variables.4"/>
+                    </expressions>
                   </expressions>
                 </action>
               </entryEvent>
             </states>
             <states name="GetReady" outgoingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.2" incomingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.1"/>
-            <states name="WaitIsCorrect" outgoingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.4 //@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.3 //@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.7" incomingTransitions="_Yqrx1MjuEeW0gpRI-mS_yA"/>
+            <states name="WaitIsCorrect" outgoingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.4 //@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.3 //@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.7" incomingTransitions="_Yqrx1MjuEeW0gpRI-mS_yA">
+              <entryEvent>
+                <action name="setTT">
+                  <expressions xsi:type="actionlanguage:Block">
+                    <expressions xsi:type="actionlanguage:Assignment" assignOperator=":=">
+                      <rhs_assignExpression xsi:type="common:LiteralExpression" value="true"/>
+                      <lhs_typedNamedElementExpression typedNamedElement="//@categories.1/@modelElements.2/@variables.4"/>
+                    </expressions>
+                  </expressions>
+                </action>
+              </entryEvent>
+            </states>
             <states name="CompleteDeny" outgoingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.5" incomingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.4"/>
             <states name="AccessGranted" outgoingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.6" incomingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.3"/>
             <states name="AccesDeny" outgoingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.8" incomingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.7"/>
@@ -212,18 +242,24 @@
             <transitions priority="3" target="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.1/@embeddedStatechart/@states.5" source="_ZvdolMjuEeW0gpRI-mS_yA">
               <guard xsi:type="common:LogicalExpression">
                 <leftExpression xsi:type="common:LogicalExpression">
-                  <leftExpression xsi:type="common:ComparisonExpression" operator="EQUAL">
-                    <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" typedNamedElement="_M0m3gMj1EeWzrcBaL-cniQ"/>
-                    <rightExpression xsi:type="common:LiteralExpression" value="false"/>
+                  <leftExpression xsi:type="common:LogicalExpression">
+                    <leftExpression xsi:type="common:ComparisonExpression" operator="EQUAL">
+                      <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" typedNamedElement="_M0m3gMj1EeWzrcBaL-cniQ"/>
+                      <rightExpression xsi:type="common:LiteralExpression" value="false"/>
+                    </leftExpression>
+                    <rightExpression xsi:type="common:ComparisonExpression">
+                      <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" typedNamedElement="//@categories.1/@modelElements.2/@variables.3"/>
+                      <rightExpression xsi:type="common:LiteralExpression" value="3"/>
+                    </rightExpression>
                   </leftExpression>
-                  <rightExpression xsi:type="common:ComparisonExpression">
+                  <rightExpression xsi:type="common:ComparisonExpression" operator="GREATER">
                     <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" typedNamedElement="//@categories.1/@modelElements.2/@variables.3"/>
-                    <rightExpression xsi:type="common:LiteralExpression" value="3"/>
+                    <rightExpression xsi:type="common:LiteralExpression" value="0"/>
                   </rightExpression>
                 </leftExpression>
-                <rightExpression xsi:type="common:ComparisonExpression" operator="GREATER">
-                  <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" typedNamedElement="//@categories.1/@modelElements.2/@variables.3"/>
-                  <rightExpression xsi:type="common:LiteralExpression" value="0"/>
+                <rightExpression xsi:type="common:ComparisonExpression" operator="EQUAL">
+                  <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" typedNamedElement="//@categories.1/@modelElements.2/@variables.4"/>
+                  <rightExpression xsi:type="common:LiteralExpression" value="true"/>
                 </rightExpression>
               </guard>
             </transitions>
@@ -314,6 +350,10 @@
       </states>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_bWFoIMjuEeW0gpRI-mS_yA" name="LaunchDelegator" behavioralElement="_QUHP0MjrEeW0gpRI-mS_yA">
+      <variables name="whoami">
+        <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        <initializeExpression xsi:type="common:LiteralExpression" value="1"/>
+      </variables>
       <states xmi:id="_bWFoIcjuEeW0gpRI-mS_yA" name="LaunchDelegator_main" initial="true">
         <embeddedRegions xmi:id="_bWFoIsjuEeW0gpRI-mS_yA" priority="1">
           <embeddedStatechart xmi:id="_bWFoI8juEeW0gpRI-mS_yA" name="peer_verifier" behavioralElement="_gPXyoMjrEeW0gpRI-mS_yA">
@@ -356,6 +396,19 @@
               </events>
             </transitions>
             <transitions priority="3" target="_bWGPNcjuEeW0gpRI-mS_yA" source="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.3">
+              <guard xsi:type="common:ComparisonExpression" operator="EQUAL">
+                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" typedNamedElement="//@categories.1/@modelElements.3/@variables.0"/>
+                <rightExpression xsi:type="common:LiteralExpression" value="1"/>
+              </guard>
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" kind="TRIGGER">
+                <message instanceOf="//@categories.3/@modelElements.0/@messageTypes.2"/>
+              </events>
+            </transitions>
+            <transitions priority="4" target="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.3" source="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.3">
+              <guard xsi:type="common:ComparisonExpression" operator="EQUAL">
+                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" typedNamedElement="//@categories.1/@modelElements.3/@variables.0"/>
+                <rightExpression xsi:type="common:LiteralExpression" value="2"/>
+              </guard>
               <events xsi:type="realtimestatechart:AsynchronousMessageEvent" kind="TRIGGER">
                 <message instanceOf="//@categories.3/@modelElements.0/@messageTypes.2"/>
               </events>
@@ -363,7 +416,7 @@
             <states xmi:id="_bWGPNcjuEeW0gpRI-mS_yA" name="InputState" outgoingTransitions="_bWGPMMjuEeW0gpRI-mS_yA" incomingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.3 //@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.8"/>
             <states name="Start" outgoingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.1 //@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.2" incomingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.4 //@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.5" initial="true"/>
             <states name="Ready" outgoingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.3" incomingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.1 //@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.2"/>
-            <states name="WaitForResponse" outgoingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.6 //@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.7 //@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.8" incomingTransitions="_bWGPMMjuEeW0gpRI-mS_yA"/>
+            <states name="WaitForResponse" outgoingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.6 //@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.7 //@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.8 //@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.9" incomingTransitions="_bWGPMMjuEeW0gpRI-mS_yA //@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.9"/>
             <states name="AccessOk" outgoingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.4" incomingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.6"/>
             <states name="CompleteDeny" outgoingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.5" incomingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.7"/>
           </embeddedStatechart>

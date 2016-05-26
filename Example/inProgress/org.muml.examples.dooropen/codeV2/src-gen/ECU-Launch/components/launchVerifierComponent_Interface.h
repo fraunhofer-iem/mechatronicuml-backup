@@ -223,6 +223,7 @@
 							int32_T peer2; /**< The Realtime-StateChart Variable: peer2 of Type: int32; */
 							bool_T isOtherReady; /**< The Realtime-StateChart Variable: isOtherReady of Type: boolean; */
 							int32_T peer1Tries; /**< The Realtime-StateChart Variable: peer1Tries of Type: int32; */
+							bool_T newTry; /**< The Realtime-StateChart Variable: newTry of Type: boolean; */
 				
 								bool_T verifiedLaunch;
 				
@@ -287,14 +288,6 @@
 					void LaunchVerifierLaunchVerifierStateChart_processStep(LaunchVerifierLaunchVerifierStateChart* rtsc);
 			
 				/**
-				 * @brief Leaves the Region: master_peer1 of the Realtime-StateChart: LaunchVerifierLaunchVerifier
-				 * @details This method is called, whenever a the Region: master_peer1 is left.
-				 * 			The correct State is set and all Exit-Events are executed.
-				 *
-				 * @param rtsc The specific LaunchVerifierLaunchVerifierStateChart whose Region: master_peer1 shall be exit
-				 */
-					void LaunchVerifierPeer1Master_peer1StateChart_exit(LaunchVerifierLaunchVerifierStateChart* rtsc);
-				/**
 				 * @brief Leaves the Region: master_peer2 of the Realtime-StateChart: LaunchVerifierLaunchVerifier
 				 * @details This method is called, whenever a the Region: master_peer2 is left.
 				 * 			The correct State is set and all Exit-Events are executed.
@@ -310,6 +303,14 @@
 				 * @param rtsc The specific LaunchVerifierLaunchVerifierStateChart whose Region: statechart shall be exit
 				 */
 					void LaunchVerifierLaunchVerifier_mainStatechartStateChart_exit(LaunchVerifierLaunchVerifierStateChart* rtsc);
+				/**
+				 * @brief Leaves the Region: master_peer1 of the Realtime-StateChart: LaunchVerifierLaunchVerifier
+				 * @details This method is called, whenever a the Region: master_peer1 is left.
+				 * 			The correct State is set and all Exit-Events are executed.
+				 *
+				 * @param rtsc The specific LaunchVerifierLaunchVerifierStateChart whose Region: master_peer1 shall be exit
+				 */
+					void LaunchVerifierPeer1Master_peer1StateChart_exit(LaunchVerifierLaunchVerifierStateChart* rtsc);
 						
 				/**
 				 * @brief Returns wether the Realtime-StateChart: LaunchVerifierLaunchVerifier is in a specific State

@@ -192,6 +192,7 @@
 				
 					
 				
+							int32_T whoami; /**< The Realtime-StateChart Variable: whoami of Type: int32; */
 				
 								int32_T code;
 				
