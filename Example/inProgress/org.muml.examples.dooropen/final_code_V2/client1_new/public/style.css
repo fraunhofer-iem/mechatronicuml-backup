@@ -1,0 +1,102 @@
+body{
+	margin: 0;
+	padding: 0;
+	font: 16px "Helvetica neue", Helvetica, Arial, sans-serif;
+	color: #333;
+}
+
+
+div#full-size{
+    position: absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    overflow:hidden;
+    width: 100%;
+	margin:0 auto;
+	float:left;
+    }
+
+    div#pad{
+    position: absolute;
+    bottom:0;
+    left:20%;
+    float:left;
+    }
+
+div#padContent{
+    position: absolute;
+    top:10%;
+    left:19%;
+    width:65%;
+    }
+
+    div#padContent2{
+    position: absolute;
+    top:10%;
+    left:19%;
+    width:65%;
+    }
+
+
+img {
+    max-width: auto;
+    height: 3em;
+    border-style: solid;
+    border-width: 0px;
+}
+
+img.centralized {
+display: block;
+margin: 0px auto;
+}
+
+header, footer{
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: auto;
+	padding: 0 0.5em;
+	font-size: 24px;
+	line-height: 2em;
+	height: 3em;
+	color: #fff;
+}
+header{
+	font-weight: bold;
+}
+header > a:last-child{
+	float: right;
+	color: #fff;
+	font-weight: normal;
+}
+footer{
+	top: auto;
+	bottom: 0;
+}
+input{
+	height: 1.5em;
+	font-size: 14px;
+}
+#content{
+	margin: 48px 0.5em;
+	list-style: none;
+}
+
+#superStuff{
+	  position: absolute;
+	height:300px;
+    width:300px;
+     top: 40%;
+  left: 40%;
+    margin: -100px 0 0 -150px;
+         float:left;
+}
+
+input[type="text"]
+{
+    font-size:24px;
+}
