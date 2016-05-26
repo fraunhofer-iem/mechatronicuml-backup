@@ -15,6 +15,9 @@
 			stateChart->isOtherReady = false;
 			stateChart->peer1Tries = 0;
 			stateChart->newTry = false;
+			stateChart->peer1 = -32;
+			stateChart->peer2 = -42;
+			stateChart->verifiedLaunch = false;
 			;
 		
 			stateChart->LaunchVerifierPeer1Master_peer1_isExecutable = true;
@@ -231,8 +234,9 @@
 				if (
 		
 				stateChart->verifiedLaunch == false && stateChart->peer1Tries < 3
+						&& stateChart->peer2 > 0
 		
-				) {
+						) {
 		
 					// execute exit actions
 					// nothing to do
@@ -354,6 +358,9 @@
 					stateChart->isOtherReady = false;
 					stateChart->peer1Tries = 0;
 					stateChart->newTry = false;
+					stateChart->peer1 = -32;
+					stateChart->peer2 = -42;
+					stateChart->verifiedLaunch = false;
 					;
 		
 				} else {
@@ -386,6 +393,9 @@
 					stateChart->isOtherReady = false;
 					stateChart->peer1Tries = 0;
 					stateChart->newTry = false;
+					stateChart->peer1 = -32;
+					stateChart->peer2 = -42;
+					stateChart->verifiedLaunch = false;
 					;
 		
 				} else {
@@ -471,106 +481,9 @@
 					//release all created sent events
 					// change the state
 					stateChart->currentStateOfLaunchVerifierPeer2Master_peer2 =
-							STATE_LAUNCHVERIFIERPEER2MASTER_MAIN;
+							STATE_LAUNCHVERIFIERPEER2WAITTILFINALRESULT;
 		#ifdef DEBUG
-					printDebugInformation("currentStateOfLaunchVerifierPeer2Master_peer2 switched state to STATE_LAUNCHVERIFIERPEER2MASTER_MAIN" );
-		#endif		
-		
-					// execute entry actions
-					// nothing to do
-		
-				} else if (
-		
-				stateChart->verifiedLaunch == false && stateChart->peer1Tries < 3
-						&& stateChart->peer1Tries > 0 && stateChart->newTry == true
-		
-						) {
-		
-					// execute exit actions
-					// nothing to do
-		
-					// Transition Effects (incl. clock resets)
-					// nothing to do
-		
-					// nothing to do			
-		
-					//release all created received events
-					//release all created sent events
-					// change the state
-					stateChart->currentStateOfLaunchVerifierPeer2Master_peer2 =
-							STATE_LAUNCHVERIFIERPEER2DENY;
-		#ifdef DEBUG
-					printDebugInformation("currentStateOfLaunchVerifierPeer2Master_peer2 switched state to STATE_LAUNCHVERIFIERPEER2DENY" );
-		#endif		
-		
-					// execute entry actions
-					// nothing to do
-		
-				} else if (
-		
-				stateChart->verifiedLaunch == false && stateChart->peer1Tries >= 3
-		
-				) {
-		
-					// execute exit actions
-					// nothing to do
-		
-					// Transition Effects (incl. clock resets)
-					// nothing to do
-		
-					//create new Parameter struct for M1CompleteDeny_M1_Message
-					M1CompleteDeny_M1_Message msg_M1CompleteDeny;
-		
-					//send Message
-					MCC_LaunchVerifierComponent_peer2_send_M1CompleteDeny_M1_Message(
-							&(stateChart->parentComponent->peer2Port),
-							&msg_M1CompleteDeny);
-		#ifdef DEBUG
-					printDebugInformation("LaunchVerifier sent message of type M1CompleteDeny");
-		#endif		
-		
-					//release all created received events
-					//release all created sent events
-					// change the state
-					stateChart->currentStateOfLaunchVerifierPeer2Master_peer2 =
-							STATE_LAUNCHVERIFIERPEER2COMPLETEDENY;
-		#ifdef DEBUG
-					printDebugInformation("currentStateOfLaunchVerifierPeer2Master_peer2 switched state to STATE_LAUNCHVERIFIERPEER2COMPLETEDENY" );
-		#endif		
-		
-					// execute entry actions
-					// nothing to do
-		
-				} else if (
-		
-				stateChart->verifiedLaunch == true && stateChart->peer1Tries <= 3
-		
-				) {
-		
-					// execute exit actions
-					// nothing to do
-		
-					// Transition Effects (incl. clock resets)
-					// nothing to do
-		
-					//create new Parameter struct for M1AccessGranted_M1_Message
-					M1AccessGranted_M1_Message msg_M1AccessGranted;
-		
-					//send Message
-					MCC_LaunchVerifierComponent_peer2_send_M1AccessGranted_M1_Message(
-							&(stateChart->parentComponent->peer2Port),
-							&msg_M1AccessGranted);
-		#ifdef DEBUG
-					printDebugInformation("LaunchVerifier sent message of type M1AccessGranted");
-		#endif		
-		
-					//release all created received events
-					//release all created sent events
-					// change the state
-					stateChart->currentStateOfLaunchVerifierPeer2Master_peer2 =
-							STATE_LAUNCHVERIFIERPEER2ACCESGRANTED;
-		#ifdef DEBUG
-					printDebugInformation("currentStateOfLaunchVerifierPeer2Master_peer2 switched state to STATE_LAUNCHVERIFIERPEER2ACCESGRANTED" );
+					printDebugInformation("currentStateOfLaunchVerifierPeer2Master_peer2 switched state to STATE_LAUNCHVERIFIERPEER2WAITTILFINALRESULT" );
 		#endif		
 		
 					// execute entry actions
@@ -733,9 +646,112 @@
 					//release all created sent events
 					// change the state
 					stateChart->currentStateOfLaunchVerifierPeer2Master_peer2 =
-							STATE_LAUNCHVERIFIERPEER2MASTER_MAIN;
+							STATE_LAUNCHVERIFIERPEER2WAITTILFINALRESULT;
 		#ifdef DEBUG
-					printDebugInformation("currentStateOfLaunchVerifierPeer2Master_peer2 switched state to STATE_LAUNCHVERIFIERPEER2MASTER_MAIN" );
+					printDebugInformation("currentStateOfLaunchVerifierPeer2Master_peer2 switched state to STATE_LAUNCHVERIFIERPEER2WAITTILFINALRESULT" );
+		#endif		
+		
+					// execute entry actions
+					// nothing to do
+		
+				} else {
+		
+				}
+				break;
+			case STATE_LAUNCHVERIFIERPEER2WAITTILFINALRESULT:
+				if (
+		
+				stateChart->verifiedLaunch == false && stateChart->peer1Tries < 3
+						&& stateChart->peer1Tries > 0 && stateChart->newTry == true
+						&& stateChart->peer1 > 0
+		
+						) {
+		
+					// execute exit actions
+					// nothing to do
+		
+					// Transition Effects (incl. clock resets)
+					// nothing to do
+		
+					// nothing to do			
+		
+					//release all created received events
+					//release all created sent events
+					// change the state
+					stateChart->currentStateOfLaunchVerifierPeer2Master_peer2 =
+							STATE_LAUNCHVERIFIERPEER2DENY;
+		#ifdef DEBUG
+					printDebugInformation("currentStateOfLaunchVerifierPeer2Master_peer2 switched state to STATE_LAUNCHVERIFIERPEER2DENY" );
+		#endif		
+		
+					// execute entry actions
+					// nothing to do
+		
+				} else if (
+		
+				stateChart->verifiedLaunch == false && stateChart->peer1Tries >= 3
+		
+				) {
+		
+					// execute exit actions
+					// nothing to do
+		
+					// Transition Effects (incl. clock resets)
+					// nothing to do
+		
+					//create new Parameter struct for M1CompleteDeny_M1_Message
+					M1CompleteDeny_M1_Message msg_M1CompleteDeny;
+		
+					//send Message
+					MCC_LaunchVerifierComponent_peer2_send_M1CompleteDeny_M1_Message(
+							&(stateChart->parentComponent->peer2Port),
+							&msg_M1CompleteDeny);
+		#ifdef DEBUG
+					printDebugInformation("LaunchVerifier sent message of type M1CompleteDeny");
+		#endif		
+		
+					//release all created received events
+					//release all created sent events
+					// change the state
+					stateChart->currentStateOfLaunchVerifierPeer2Master_peer2 =
+							STATE_LAUNCHVERIFIERPEER2COMPLETEDENY;
+		#ifdef DEBUG
+					printDebugInformation("currentStateOfLaunchVerifierPeer2Master_peer2 switched state to STATE_LAUNCHVERIFIERPEER2COMPLETEDENY" );
+		#endif		
+		
+					// execute entry actions
+					// nothing to do
+		
+				} else if (
+		
+				stateChart->verifiedLaunch == true && stateChart->peer1Tries <= 3
+		
+				) {
+		
+					// execute exit actions
+					// nothing to do
+		
+					// Transition Effects (incl. clock resets)
+					// nothing to do
+		
+					//create new Parameter struct for M1AccessGranted_M1_Message
+					M1AccessGranted_M1_Message msg_M1AccessGranted;
+		
+					//send Message
+					MCC_LaunchVerifierComponent_peer2_send_M1AccessGranted_M1_Message(
+							&(stateChart->parentComponent->peer2Port),
+							&msg_M1AccessGranted);
+		#ifdef DEBUG
+					printDebugInformation("LaunchVerifier sent message of type M1AccessGranted");
+		#endif		
+		
+					//release all created received events
+					//release all created sent events
+					// change the state
+					stateChart->currentStateOfLaunchVerifierPeer2Master_peer2 =
+							STATE_LAUNCHVERIFIERPEER2ACCESGRANTED;
+		#ifdef DEBUG
+					printDebugInformation("currentStateOfLaunchVerifierPeer2Master_peer2 switched state to STATE_LAUNCHVERIFIERPEER2ACCESGRANTED" );
 		#endif		
 		
 					// execute entry actions
@@ -883,6 +899,10 @@
 		
 				break;
 			case STATE_LAUNCHVERIFIERPEER2DENY:
+				// nothing to do
+		
+				break;
+			case STATE_LAUNCHVERIFIERPEER2WAITTILFINALRESULT:
 				// nothing to do
 		
 				break;

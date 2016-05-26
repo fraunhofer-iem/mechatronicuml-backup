@@ -190,6 +190,7 @@
 						,		STATE_LAUNCHVERIFIERPEER2ACCESGRANTED /**< Represents the State: STATE_LAUNCHVERIFIERPEER2ACCESGRANTED of the Realtime-StateChart: LaunchVerifierPeer2Master_peer2 */
 						,		STATE_LAUNCHVERIFIERPEER2COMPLETEDENY /**< Represents the State: STATE_LAUNCHVERIFIERPEER2COMPLETEDENY of the Realtime-StateChart: LaunchVerifierPeer2Master_peer2 */
 						,		STATE_LAUNCHVERIFIERPEER2DENY /**< Represents the State: STATE_LAUNCHVERIFIERPEER2DENY of the Realtime-StateChart: LaunchVerifierPeer2Master_peer2 */
+						,		STATE_LAUNCHVERIFIERPEER2WAITTILFINALRESULT /**< Represents the State: STATE_LAUNCHVERIFIERPEER2WAITTILFINALRESULT of the Realtime-StateChart: LaunchVerifierPeer2Master_peer2 */
 						,		STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTUNVERIFIED /**< Represents the State: STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTUNVERIFIED of the Realtime-StateChart: LaunchVerifierLaunchVerifier_mainStatechart */
 						,		STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTVERIFIED /**< Represents the State: STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTVERIFIED of the Realtime-StateChart: LaunchVerifierLaunchVerifier_mainStatechart */	
 					}LaunchVerifierLaunchVerifierState;
