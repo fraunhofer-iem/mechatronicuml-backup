@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xsi:schemaLocation="http://www.muml.org/pim/component/1.0.0 http://www.muml.org/pim/1.0.0#//component http://www.muml.org/modelinstance/1.0.0 http://www.muml.org/core/1.0.0#//modelinstance" xmi:id="_0QhLkCMmEeaKgdiSINwsHw" type="Component" name="LaunchVerifier.component_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_0QiZsCMmEeaKgdiSINwsHw" type="2006" fontName="Cantarell" fontHeight="11" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_0Qk18CMmEeaKgdiSINwsHw" type="5028"/>
+    <children xmi:type="notation:Shape" xmi:id="_73argCMmEeaKgdiSINwsHw" type="3010" fontName="Cantarell" fontHeight="11" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_73argiMmEeaKgdiSINwsHw" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_73argyMmEeaKgdiSINwsHw" x="48" y="-36"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_73arhCMmEeaKgdiSINwsHw" type="5025">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_73arhSMmEeaKgdiSINwsHw" x="36" y="-12"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../org.muml.examples.muml#_e6xXMMjrEeW0gpRI-mS_yA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_73argSMmEeaKgdiSINwsHw" x="72" y="-12"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_73bSkCMmEeaKgdiSINwsHw" type="3010" fontName="Cantarell" fontHeight="11" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_73bSkiMmEeaKgdiSINwsHw" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_73bSkyMmEeaKgdiSINwsHw" x="-96" y="-36"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_73bSlCMmEeaKgdiSINwsHw" type="5025">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_73bSlSMmEeaKgdiSINwsHw" x="-132" y="-12"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../org.muml.examples.muml#_tnYVkMjrEeW0gpRI-mS_yA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_73bSkSMmEeaKgdiSINwsHw" x="12" y="-12"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_73bSliMmEeaKgdiSINwsHw" type="3013" fontName="Cantarell" fontHeight="11" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_73bSmCMmEeaKgdiSINwsHw" type="5024">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_73bSmSMmEeaKgdiSINwsHw" y="5"/>
+      </children>
+      <element xmi:type="component:HybridPort" href="../org.muml.examples.muml#_M0m3gMj1EeWzrcBaL-cniQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_73bSlyMmEeaKgdiSINwsHw" x="24" y="35"/>
+    </children>
+    <element xmi:type="component:StaticAtomicComponent" href="../org.muml.examples.muml#_curTEMjrEeW0gpRI-mS_yA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0QiZsSMmEeaKgdiSINwsHw" x="408" y="192"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_0QhLkSMmEeaKgdiSINwsHw"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../org.muml.examples.muml#//@categories.10"/>
+</notation:Diagram>

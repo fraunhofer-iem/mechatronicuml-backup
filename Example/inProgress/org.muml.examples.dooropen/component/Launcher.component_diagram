@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xsi:schemaLocation="http://www.muml.org/pim/component/1.0.0 http://www.muml.org/pim/1.0.0#//component http://www.muml.org/modelinstance/1.0.0 http://www.muml.org/core/1.0.0#//modelinstance" xmi:id="_0QsKsCMmEeaKgdiSINwsHw" type="Component" name="Launcher.component_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_0QsKsiMmEeaKgdiSINwsHw" type="2006" fontName="Cantarell" fontHeight="11" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_0QsxwCMmEeaKgdiSINwsHw" type="5028"/>
+    <element xmi:type="component:StaticAtomicComponent" href="../org.muml.examples.muml#_SKhW0Mj2EeWzrcBaL-cniQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0QsKsyMmEeaKgdiSINwsHw"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_0QsKsSMmEeaKgdiSINwsHw"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../org.muml.examples.muml#//@categories.10"/>
+</notation:Diagram>

@@ -1,0 +1,9 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+PROJECT(rocketRoot)
+
+file(GLOB_RECURSE SRCS *.c)
+file(GLOB_RECURSE HDRS *.h)
+include_directories(${CMAKE_SOURCE_DIR})
+
+ADD_EXECUTABLE(rocketRoot  ${SRCS} ${HDRS})
+TARGET_LINK_LIBRARIES(rocketRoot) 

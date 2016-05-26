@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.muml.org/pim/actionlanguage/1.0.0" xmlns:allocation="http://www.muml.org/psm/allocation/1.0.0" xmlns:common="http://www.muml.org/core/expressions/common/1.0.0" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:hwplatform="http://www.muml.org/pm/hardware/hwplatform/1.0.0" xmlns:hwplatforminstance="http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0" xmlns:hwresource="http://www.muml.org/pm/hardware/hwresource/1.0.0" xmlns:hwresourceinstance="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0" xmlns:instance="http://www.muml.org/pim/instance/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmlns:types="http://www.muml.org/pim/types/1.0.0" xmi:id="_IaAgAMjrEeW0gpRI-mS_yA">
+  <categories xmi:id="_IaAgAcjrEeW0gpRI-mS_yA" key="de.uni_paderborn.fujaba.muml.types.category" name="types"/>
+  <categories xmi:id="_IaAgAsjrEeW0gpRI-mS_yA" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_LkK5cMjsEeW0gpRI-mS_yA" name="peer" behavioralElement="_4UmGMMjrEeW0gpRI-mS_yA">
+      <variables xmi:id="_j_y60MjsEeW0gpRI-mS_yA" name="code">
+        <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+      </variables>
+      <transitions xmi:id="_QayDEMjsEeW0gpRI-mS_yA" priority="1" target="_LkK5ccjsEeW0gpRI-mS_yA" source="_LkK5ccjsEeW0gpRI-mS_yA">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_fUGnwMjsEeW0gpRI-mS_yA">
+          <message xmi:id="_fUYUkMjsEeW0gpRI-mS_yA" instanceOf="_jxLsgMjrEeW0gpRI-mS_yA">
+            <parameterBinding xmi:id="_XICv0MjtEeW0gpRI-mS_yA" parameter="_kuXtgMjrEeW0gpRI-mS_yA">
+              <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_Y07vcMjtEeW0gpRI-mS_yA" typedNamedElement="_j_y60MjsEeW0gpRI-mS_yA"/>
+            </parameterBinding>
+          </message>
+        </events>
+      </transitions>
+      <states xmi:id="_LkK5ccjsEeW0gpRI-mS_yA" name="peer_Main" outgoingTransitions="_QayDEMjsEeW0gpRI-mS_yA" incomingTransitions="_QayDEMjsEeW0gpRI-mS_yA" initial="true"/>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_d6psEMjtEeW0gpRI-mS_yA" name="master" behavioralElement="_4UxFUcjrEeW0gpRI-mS_yA">
+      <transitions xmi:id="_hcCIIMjtEeW0gpRI-mS_yA" priority="1" target="_d6psEcjtEeW0gpRI-mS_yA" source="_d6psEcjtEeW0gpRI-mS_yA">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_-K9xwMjtEeW0gpRI-mS_yA" kind="TRIGGER">
+          <message xmi:id="_-LJX8MjtEeW0gpRI-mS_yA" instanceOf="_jxLsgMjrEeW0gpRI-mS_yA"/>
+        </events>
+      </transitions>
+      <states xmi:id="_d6psEcjtEeW0gpRI-mS_yA" name="master_Main" outgoingTransitions="_hcCIIMjtEeW0gpRI-mS_yA" incomingTransitions="_hcCIIMjtEeW0gpRI-mS_yA" initial="true"/>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_Yqrx0MjuEeW0gpRI-mS_yA" name="LaunchVerifier" behavioralElement="_curTEMjrEeW0gpRI-mS_yA">
+      <variables xmi:id="_3wE8gMjuEeW0gpRI-mS_yA" name="peer1">
+        <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        <initializeExpression xsi:type="common:UnaryExpression" xmi:id="_8vXhAMjuEeW0gpRI-mS_yA" operator="MINUS">
+          <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_8vXhAcjuEeW0gpRI-mS_yA" value="32"/>
+        </initializeExpression>
+      </variables>
+      <variables xmi:id="_9SLTIMjuEeW0gpRI-mS_yA" name="peer2">
+        <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        <initializeExpression xsi:type="common:UnaryExpression" xmi:id="_Je4EIMqdEeWg8I9CxdQyWw" operator="MINUS">
+          <enclosedExpression xsi:type="common:LiteralExpression" xmi:id="_Je4EIcqdEeWg8I9CxdQyWw" value="42"/>
+        </initializeExpression>
+      </variables>
+      <variables name="isOtherReady">
+        <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
+        <initializeExpression xsi:type="common:LiteralExpression" value="false"/>
+      </variables>
+      <variables name="peer1Tries">
+        <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        <initializeExpression xsi:type="common:LiteralExpression" value="0"/>
+      </variables>
+      <states xmi:id="_Yqrx0cjuEeW0gpRI-mS_yA" name="LaunchVerifier_main" initial="true">
+        <embeddedRegions xmi:id="_Yqrx0sjuEeW0gpRI-mS_yA" priority="1">
+          <embeddedStatechart xmi:id="_Yqrx08juEeW0gpRI-mS_yA" name="master_peer1" behavioralElement="_e6xXMMjrEeW0gpRI-mS_yA">
+            <transitions xmi:id="_Yqrx1MjuEeW0gpRI-mS_yA" priority="1" target="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.3" source="_Yqrx18juEeW0gpRI-mS_yA">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_Yqrx1cjuEeW0gpRI-mS_yA" kind="TRIGGER">
+                <message xmi:id="_Yqrx1sjuEeW0gpRI-mS_yA" instanceOf="_jxLsgMjrEeW0gpRI-mS_yA"/>
+              </events>
+              <action xmi:id="_uGBfwMjzEeW0gpRI-mS_yA" name="getValue">
+                <expressions xsi:type="actionlanguage:Block">
+                  <expressions xsi:type="actionlanguage:Assignment" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" messageType="_jxLsgMjrEeW0gpRI-mS_yA" parameter="_kuXtgMjrEeW0gpRI-mS_yA"/>
+                    <lhs_typedNamedElementExpression typedNamedElement="_3wE8gMjuEeW0gpRI-mS_yA"/>
+                  </expressions>
+                  <expressions xsi:type="actionlanguage:Assignment" incrementDecrementOperator="++">
+                    <lhs_typedNamedElementExpression typedNamedElement="//@categories.1/@modelElements.2/@variables.3"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <transitions priority="1" target="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.2" source="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" kind="TRIGGER">
+                <message instanceOf="//@categories.3/@modelElements.0/@messageTypes.3"/>
+              </events>
+              <action name="setRead">
+                <expressions xsi:type="actionlanguage:Block">
+                  <expressions xsi:type="actionlanguage:Assignment" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="common:LiteralExpression" value="true"/>
+                    <lhs_typedNamedElementExpression typedNamedElement="//@categories.1/@modelElements.2/@variables.2"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <transitions priority="1" target="_Yqrx18juEeW0gpRI-mS_yA" source="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.2"/>
+            <transitions priority="2" target="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.5" source="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.3">
+              <guard xsi:type="common:LogicalExpression">
+                <leftExpression xsi:type="common:ComparisonExpression" operator="EQUAL">
+                  <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" typedNamedElement="_M0m3gMj1EeWzrcBaL-cniQ"/>
+                  <rightExpression xsi:type="common:LiteralExpression" value="true"/>
+                </leftExpression>
+                <rightExpression xsi:type="common:ComparisonExpression" operator="LESS_OR_EQUAL">
+                  <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" typedNamedElement="//@categories.1/@modelElements.2/@variables.3"/>
+                  <rightExpression xsi:type="common:LiteralExpression" value="3"/>
+                </rightExpression>
+              </guard>
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent">
+                <message instanceOf="//@categories.3/@modelElements.0/@messageTypes.1"/>
+              </events>
+            </transitions>
+            <transitions priority="1" target="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.4" source="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.3">
+              <guard xsi:type="common:LogicalExpression">
+                <leftExpression xsi:type="common:ComparisonExpression" operator="EQUAL">
+                  <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" typedNamedElement="_M0m3gMj1EeWzrcBaL-cniQ"/>
+                  <rightExpression xsi:type="common:LiteralExpression" value="false"/>
+                </leftExpression>
+                <rightExpression xsi:type="common:ComparisonExpression" operator="GREATER_OR_EQUAL">
+                  <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" typedNamedElement="//@categories.1/@modelElements.2/@variables.3"/>
+                  <rightExpression xsi:type="common:LiteralExpression" value="3"/>
+                </rightExpression>
+              </guard>
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent">
+                <message instanceOf="//@categories.3/@modelElements.0/@messageTypes.5"/>
+              </events>
+            </transitions>
+            <transitions priority="1" target="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1" source="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.4"/>
+            <transitions priority="1" target="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1" source="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.5"/>
+            <transitions priority="3" target="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.6" source="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.3">
+              <guard xsi:type="common:LogicalExpression">
+                <leftExpression xsi:type="common:ComparisonExpression" operator="EQUAL">
+                  <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" typedNamedElement="_M0m3gMj1EeWzrcBaL-cniQ"/>
+                  <rightExpression xsi:type="common:LiteralExpression" value="false"/>
+                </leftExpression>
+                <rightExpression xsi:type="common:ComparisonExpression">
+                  <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" typedNamedElement="//@categories.1/@modelElements.2/@variables.3"/>
+                  <rightExpression xsi:type="common:LiteralExpression" value="3"/>
+                </rightExpression>
+              </guard>
+            </transitions>
+            <transitions priority="1" target="_Yqrx18juEeW0gpRI-mS_yA" source="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.6">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent">
+                <message instanceOf="//@categories.3/@modelElements.0/@messageTypes.2"/>
+              </events>
+            </transitions>
+            <states xmi:id="_Yqrx18juEeW0gpRI-mS_yA" name="master_Main" outgoingTransitions="_Yqrx1MjuEeW0gpRI-mS_yA" incomingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.2 //@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.8"/>
+            <states name="WaitForStart" outgoingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.1" incomingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.5 //@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.6" initial="true">
+              <entryEvent>
+                <action name="setInitReady">
+                  <expressions xsi:type="actionlanguage:Block">
+                    <expressions xsi:type="actionlanguage:Assignment" assignOperator=":=">
+                      <rhs_assignExpression xsi:type="common:LiteralExpression" value="false"/>
+                      <lhs_typedNamedElementExpression typedNamedElement="//@categories.1/@modelElements.2/@variables.2"/>
+                    </expressions>
+                    <expressions xsi:type="actionlanguage:Assignment" assignOperator=":=">
+                      <rhs_assignExpression xsi:type="common:LiteralExpression" value="0"/>
+                      <lhs_typedNamedElementExpression typedNamedElement="//@categories.1/@modelElements.2/@variables.3"/>
+                    </expressions>
+                  </expressions>
+                </action>
+              </entryEvent>
+            </states>
+            <states name="GetReady" outgoingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.2" incomingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.1"/>
+            <states name="WaitIsCorrect" outgoingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.4 //@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.3 //@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.7" incomingTransitions="_Yqrx1MjuEeW0gpRI-mS_yA"/>
+            <states name="CompleteDeny" outgoingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.5" incomingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.4"/>
+            <states name="AccessGranted" outgoingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.6" incomingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.3"/>
+            <states name="AccesDeny" outgoingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.8" incomingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.7"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+        <embeddedRegions xmi:id="_ZvdBgMjuEeW0gpRI-mS_yA" priority="2">
+          <embeddedStatechart xmi:id="_ZvdokMjuEeW0gpRI-mS_yA" name="master_peer2" behavioralElement="_tnYVkMjrEeW0gpRI-mS_yA">
+            <transitions xmi:id="_ZvdokcjuEeW0gpRI-mS_yA" priority="4" target="_ZvdolMjuEeW0gpRI-mS_yA" source="_ZvdolMjuEeW0gpRI-mS_yA">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_ZvdoksjuEeW0gpRI-mS_yA" kind="TRIGGER">
+                <message xmi:id="_Zvdok8juEeW0gpRI-mS_yA" instanceOf="_jxLsgMjrEeW0gpRI-mS_yA"/>
+              </events>
+              <action xmi:id="_DO2eMMj1EeWzrcBaL-cniQ" name="getValue">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_EXGfsMj1EeWzrcBaL-cniQ">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_EXGfscj1EeWzrcBaL-cniQ" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_EXGfssj1EeWzrcBaL-cniQ" messageType="_jxLsgMjrEeW0gpRI-mS_yA" parameter="_kuXtgMjrEeW0gpRI-mS_yA"/>
+                    <lhs_typedNamedElementExpression xmi:id="_EXGfs8j1EeWzrcBaL-cniQ" typedNamedElement="_9SLTIMjuEeW0gpRI-mS_yA"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <transitions priority="1" target="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.1/@embeddedStatechart/@states.2" source="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.1/@embeddedStatechart/@states.1">
+              <guard xsi:type="common:ComparisonExpression" operator="EQUAL">
+                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" typedNamedElement="//@categories.1/@modelElements.2/@variables.2"/>
+                <rightExpression xsi:type="common:LiteralExpression" value="true"/>
+              </guard>
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent">
+                <message instanceOf="//@categories.3/@modelElements.0/@messageTypes.4"/>
+              </events>
+            </transitions>
+            <transitions priority="1" target="_ZvdolMjuEeW0gpRI-mS_yA" source="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.1/@embeddedStatechart/@states.2"/>
+            <transitions priority="1" target="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.1/@embeddedStatechart/@states.3" source="_ZvdolMjuEeW0gpRI-mS_yA">
+              <guard xsi:type="common:LogicalExpression">
+                <leftExpression xsi:type="common:ComparisonExpression" operator="EQUAL">
+                  <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" typedNamedElement="_M0m3gMj1EeWzrcBaL-cniQ"/>
+                  <rightExpression xsi:type="common:LiteralExpression" value="true"/>
+                </leftExpression>
+                <rightExpression xsi:type="common:ComparisonExpression" operator="LESS_OR_EQUAL">
+                  <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" typedNamedElement="//@categories.1/@modelElements.2/@variables.3"/>
+                  <rightExpression xsi:type="common:LiteralExpression" value="3"/>
+                </rightExpression>
+              </guard>
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent">
+                <message instanceOf="//@categories.3/@modelElements.0/@messageTypes.1"/>
+              </events>
+            </transitions>
+            <transitions priority="1" target="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.1/@embeddedStatechart/@states.1" source="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.1/@embeddedStatechart/@states.3"/>
+            <transitions priority="2" target="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.1/@embeddedStatechart/@states.4" source="_ZvdolMjuEeW0gpRI-mS_yA">
+              <guard xsi:type="common:LogicalExpression">
+                <leftExpression xsi:type="common:ComparisonExpression" operator="EQUAL">
+                  <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" typedNamedElement="_M0m3gMj1EeWzrcBaL-cniQ"/>
+                  <rightExpression xsi:type="common:LiteralExpression" value="false"/>
+                </leftExpression>
+                <rightExpression xsi:type="common:ComparisonExpression" operator="GREATER_OR_EQUAL">
+                  <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" typedNamedElement="//@categories.1/@modelElements.2/@variables.3"/>
+                  <rightExpression xsi:type="common:LiteralExpression" value="3"/>
+                </rightExpression>
+              </guard>
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent">
+                <message instanceOf="//@categories.3/@modelElements.0/@messageTypes.5"/>
+              </events>
+            </transitions>
+            <transitions priority="1" target="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.1/@embeddedStatechart/@states.1" source="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.1/@embeddedStatechart/@states.4"/>
+            <transitions priority="3" target="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.1/@embeddedStatechart/@states.5" source="_ZvdolMjuEeW0gpRI-mS_yA">
+              <guard xsi:type="common:LogicalExpression">
+                <leftExpression xsi:type="common:LogicalExpression">
+                  <leftExpression xsi:type="common:ComparisonExpression" operator="EQUAL">
+                    <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" typedNamedElement="_M0m3gMj1EeWzrcBaL-cniQ"/>
+                    <rightExpression xsi:type="common:LiteralExpression" value="false"/>
+                  </leftExpression>
+                  <rightExpression xsi:type="common:ComparisonExpression">
+                    <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" typedNamedElement="//@categories.1/@modelElements.2/@variables.3"/>
+                    <rightExpression xsi:type="common:LiteralExpression" value="3"/>
+                  </rightExpression>
+                </leftExpression>
+                <rightExpression xsi:type="common:ComparisonExpression" operator="GREATER">
+                  <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" typedNamedElement="//@categories.1/@modelElements.2/@variables.3"/>
+                  <rightExpression xsi:type="common:LiteralExpression" value="0"/>
+                </rightExpression>
+              </guard>
+            </transitions>
+            <transitions priority="1" target="_ZvdolMjuEeW0gpRI-mS_yA" source="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.1/@embeddedStatechart/@states.5">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent">
+                <message instanceOf="//@categories.3/@modelElements.0/@messageTypes.2"/>
+              </events>
+            </transitions>
+            <states xmi:id="_ZvdolMjuEeW0gpRI-mS_yA" name="master_Main" outgoingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.1/@embeddedStatechart/@transitions.3 //@categories.1/@modelElements.2/@states.0/@embeddedRegions.1/@embeddedStatechart/@transitions.5 //@categories.1/@modelElements.2/@states.0/@embeddedRegions.1/@embeddedStatechart/@transitions.7 _ZvdokcjuEeW0gpRI-mS_yA" incomingTransitions="_ZvdokcjuEeW0gpRI-mS_yA //@categories.1/@modelElements.2/@states.0/@embeddedRegions.1/@embeddedStatechart/@transitions.2 //@categories.1/@modelElements.2/@states.0/@embeddedRegions.1/@embeddedStatechart/@transitions.8"/>
+            <states name="WaitForStart" outgoingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.1/@embeddedStatechart/@transitions.1" incomingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.1/@embeddedStatechart/@transitions.4 //@categories.1/@modelElements.2/@states.0/@embeddedRegions.1/@embeddedStatechart/@transitions.6" initial="true"/>
+            <states name="SendReady" outgoingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.1/@embeddedStatechart/@transitions.2" incomingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.1/@embeddedStatechart/@transitions.1"/>
+            <states name="AccesGranted" outgoingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.1/@embeddedStatechart/@transitions.4" incomingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.1/@embeddedStatechart/@transitions.3"/>
+            <states name="CompleteDeny" outgoingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.1/@embeddedStatechart/@transitions.6" incomingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.1/@embeddedStatechart/@transitions.5"/>
+            <states name="Deny" outgoingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.1/@embeddedStatechart/@transitions.8" incomingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.1/@embeddedStatechart/@transitions.7"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+        <embeddedRegions xmi:id="_19UlcMjuEeW0gpRI-mS_yA" priority="3">
+          <embeddedStatechart xmi:id="_19ougMjuEeW0gpRI-mS_yA" name="statechart">
+            <transitions xmi:id="_iXrXYMj1EeWzrcBaL-cniQ" priority="1" target="_VWvp4Mm0EeWQPJzmExyJCA" source="_19p8oMjuEeW0gpRI-mS_yA">
+              <guard xsi:type="common:LogicalExpression" xmi:id="_wvaEQMqdEeWg8I9CxdQyWw">
+                <leftExpression xsi:type="common:LogicalExpression" xmi:id="_wvaEQcqdEeWg8I9CxdQyWw">
+                  <leftExpression xsi:type="common:ComparisonExpression" xmi:id="_wvaEQsqdEeWg8I9CxdQyWw" operator="EQUAL">
+                    <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_wvaEQ8qdEeWg8I9CxdQyWw" typedNamedElement="_3wE8gMjuEeW0gpRI-mS_yA"/>
+                    <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_wvaERMqdEeWg8I9CxdQyWw" typedNamedElement="_9SLTIMjuEeW0gpRI-mS_yA"/>
+                  </leftExpression>
+                  <rightExpression xsi:type="common:ComparisonExpression" xmi:id="_wvaERcqdEeWg8I9CxdQyWw" operator="GREATER">
+                    <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_wvaERsqdEeWg8I9CxdQyWw" typedNamedElement="_3wE8gMjuEeW0gpRI-mS_yA"/>
+                    <rightExpression xsi:type="common:LiteralExpression" xmi:id="_wvaER8qdEeWg8I9CxdQyWw" value="0"/>
+                  </rightExpression>
+                </leftExpression>
+                <rightExpression xsi:type="common:ComparisonExpression" xmi:id="_wvaESMqdEeWg8I9CxdQyWw" operator="GREATER">
+                  <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_wvaEScqdEeWg8I9CxdQyWw" typedNamedElement="_9SLTIMjuEeW0gpRI-mS_yA"/>
+                  <rightExpression xsi:type="common:LiteralExpression" xmi:id="_wvaESsqdEeWg8I9CxdQyWw" value="0"/>
+                </rightExpression>
+              </guard>
+              <action xmi:id="_l_fLkMj1EeWzrcBaL-cniQ" name="setVerifiedLaunch">
+                <expressions xsi:type="actionlanguage:Block">
+                  <expressions xsi:type="actionlanguage:IfStatement">
+                    <ifCondition xsi:type="common:ComparisonExpression" operator="EQUAL">
+                      <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" typedNamedElement="_3wE8gMjuEeW0gpRI-mS_yA"/>
+                      <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" typedNamedElement="_9SLTIMjuEeW0gpRI-mS_yA"/>
+                    </ifCondition>
+                    <ifBlock>
+                      <expressions xsi:type="actionlanguage:Assignment" assignOperator=":=">
+                        <rhs_assignExpression xsi:type="common:LiteralExpression" value="true"/>
+                        <lhs_typedNamedElementExpression typedNamedElement="_M0m3gMj1EeWzrcBaL-cniQ"/>
+                      </expressions>
+                    </ifBlock>
+                    <elseBlock>
+                      <expressions xsi:type="actionlanguage:Assignment" assignOperator=":=">
+                        <rhs_assignExpression xsi:type="common:LiteralExpression" value="false"/>
+                        <lhs_typedNamedElementExpression typedNamedElement="_M0m3gMj1EeWzrcBaL-cniQ"/>
+                      </expressions>
+                    </elseBlock>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <transitions xmi:id="_WleG0Mm0EeWQPJzmExyJCA" priority="1" target="_19p8oMjuEeW0gpRI-mS_yA" source="_VWvp4Mm0EeWQPJzmExyJCA">
+              <guard xsi:type="common:ComparisonExpression" xmi:id="_ATHCkMm1EeWQPJzmExyJCA" operator="UNEQUAL">
+                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_ATHCkcm1EeWQPJzmExyJCA" typedNamedElement="_3wE8gMjuEeW0gpRI-mS_yA"/>
+                <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_ATHCksm1EeWQPJzmExyJCA" typedNamedElement="_9SLTIMjuEeW0gpRI-mS_yA"/>
+              </guard>
+              <action xmi:id="_AUDdwMm1EeWQPJzmExyJCA" name="setVerifiedLaunchFalse">
+                <expressions xsi:type="actionlanguage:Block">
+                  <expressions xsi:type="actionlanguage:Assignment" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="common:LiteralExpression" value="false"/>
+                    <lhs_typedNamedElementExpression typedNamedElement="_M0m3gMj1EeWzrcBaL-cniQ"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <states xmi:id="_19p8oMjuEeW0gpRI-mS_yA" name="unverified" outgoingTransitions="_iXrXYMj1EeWzrcBaL-cniQ" incomingTransitions="_WleG0Mm0EeWQPJzmExyJCA" initial="true"/>
+            <states xmi:id="_VWvp4Mm0EeWQPJzmExyJCA" name="verified" outgoingTransitions="_WleG0Mm0EeWQPJzmExyJCA" incomingTransitions="_iXrXYMj1EeWzrcBaL-cniQ">
+              <entryEvent xmi:id="_XgsY8Mm0EeWQPJzmExyJCA">
+                <action xmi:id="_X8mR0Mm0EeWQPJzmExyJCA" name="reset">
+                  <expressions xsi:type="actionlanguage:Block" xmi:id="_24GgsMm0EeWQPJzmExyJCA">
+                    <expressions xsi:type="actionlanguage:Assignment" xmi:id="_24Ggscm0EeWQPJzmExyJCA" assignOperator=":=">
+                      <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_24Ggssm0EeWQPJzmExyJCA" value="true"/>
+                      <lhs_typedNamedElementExpression xmi:id="_24Ggs8m0EeWQPJzmExyJCA" typedNamedElement="_M0m3gMj1EeWzrcBaL-cniQ"/>
+                    </expressions>
+                  </expressions>
+                </action>
+              </entryEvent>
+            </states>
+          </embeddedStatechart>
+        </embeddedRegions>
+      </states>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_bWFoIMjuEeW0gpRI-mS_yA" name="LaunchDelegator" behavioralElement="_QUHP0MjrEeW0gpRI-mS_yA">
+      <states xmi:id="_bWFoIcjuEeW0gpRI-mS_yA" name="LaunchDelegator_main" initial="true">
+        <embeddedRegions xmi:id="_bWFoIsjuEeW0gpRI-mS_yA" priority="1">
+          <embeddedStatechart xmi:id="_bWFoI8juEeW0gpRI-mS_yA" name="peer_verifier" behavioralElement="_gPXyoMjrEeW0gpRI-mS_yA">
+            <transitions xmi:id="_bWGPMMjuEeW0gpRI-mS_yA" priority="1" target="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.3" source="_bWGPNcjuEeW0gpRI-mS_yA">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_bWGPMcjuEeW0gpRI-mS_yA">
+                <message xmi:id="_bWGPMsjuEeW0gpRI-mS_yA" instanceOf="_jxLsgMjrEeW0gpRI-mS_yA">
+                  <parameterBinding xmi:id="_bWGPM8juEeW0gpRI-mS_yA" parameter="_kuXtgMjrEeW0gpRI-mS_yA">
+                    <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_xXspoMmoEeWgH-bGO8AU1w" typedNamedElement="_W1YkcMjrEeW0gpRI-mS_yA"/>
+                  </parameterBinding>
+                </message>
+              </events>
+            </transitions>
+            <transitions priority="1" target="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.2" source="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1">
+              <guard xsi:type="common:ComparisonExpression" operator="EQUAL">
+                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" typedNamedElement="_W1YkcMjrEeW0gpRI-mS_yA"/>
+                <rightExpression xsi:type="common:UnaryExpression" operator="MINUS">
+                  <enclosedExpression xsi:type="common:LiteralExpression" value="42"/>
+                </rightExpression>
+              </guard>
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent">
+                <message instanceOf="//@categories.3/@modelElements.0/@messageTypes.3"/>
+              </events>
+            </transitions>
+            <transitions priority="2" target="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.2" source="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" kind="TRIGGER">
+                <message instanceOf="//@categories.3/@modelElements.0/@messageTypes.4"/>
+              </events>
+            </transitions>
+            <transitions priority="1" target="_bWGPNcjuEeW0gpRI-mS_yA" source="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.2"/>
+            <transitions priority="1" target="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1" source="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.4"/>
+            <transitions priority="1" target="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1" source="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.5"/>
+            <transitions priority="1" target="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.4" source="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.3">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" kind="TRIGGER">
+                <message instanceOf="//@categories.3/@modelElements.0/@messageTypes.1"/>
+              </events>
+            </transitions>
+            <transitions priority="2" target="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.5" source="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.3">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" kind="TRIGGER">
+                <message instanceOf="//@categories.3/@modelElements.0/@messageTypes.5"/>
+              </events>
+            </transitions>
+            <transitions priority="3" target="_bWGPNcjuEeW0gpRI-mS_yA" source="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.3">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" kind="TRIGGER">
+                <message instanceOf="//@categories.3/@modelElements.0/@messageTypes.2"/>
+              </events>
+            </transitions>
+            <states xmi:id="_bWGPNcjuEeW0gpRI-mS_yA" name="InputState" outgoingTransitions="_bWGPMMjuEeW0gpRI-mS_yA" incomingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.3 //@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.8"/>
+            <states name="Start" outgoingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.1 //@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.2" incomingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.4 //@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.5" initial="true"/>
+            <states name="Ready" outgoingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.3" incomingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.1 //@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.2"/>
+            <states name="WaitForResponse" outgoingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.6 //@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.7 //@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.8" incomingTransitions="_bWGPMMjuEeW0gpRI-mS_yA"/>
+            <states name="AccessOk" outgoingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.4" incomingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.6"/>
+            <states name="CompleteDeny" outgoingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.5" incomingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.7"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+      </states>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_IaAgA8jrEeW0gpRI-mS_yA" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_4UO50MjrEeW0gpRI-mS_yA" name="C1">
+      <roles xmi:id="_4UmGMMjrEeW0gpRI-mS_yA" connectors="_4UyTccjrEeW0gpRI-mS_yA" behavior="_LkK5cMjsEeW0gpRI-mS_yA" name="peer" senderMessageTypes="_jxLsgMjrEeW0gpRI-mS_yA">
+        <cardinality xmi:id="_4Uv3MMjrEeW0gpRI-mS_yA">
+          <lowerBound xmi:id="_4Uv3McjrEeW0gpRI-mS_yA"/>
+          <upperBound xmi:id="_4UxFUMjrEeW0gpRI-mS_yA"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_4UxFUcjrEeW0gpRI-mS_yA" connectors="_4UyTccjrEeW0gpRI-mS_yA" behavior="_d6psEMjtEeW0gpRI-mS_yA" name="master" receiverMessageTypes="_jxLsgMjrEeW0gpRI-mS_yA">
+        <cardinality xmi:id="_4UxsYMjrEeW0gpRI-mS_yA">
+          <lowerBound xmi:id="_4UxsYcjrEeW0gpRI-mS_yA"/>
+          <upperBound xmi:id="_4UyTcMjrEeW0gpRI-mS_yA"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_C5TbEMjsEeW0gpRI-mS_yA" name="buf" messageType="_jxLsgMjrEeW0gpRI-mS_yA" bufferOverflowAvoidanceStrategy="discard oldest message in buffer">
+          <bufferSize xmi:id="_FGZkwMjsEeW0gpRI-mS_yA"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roleConnector xmi:id="_4UyTccjrEeW0gpRI-mS_yA" connectorEndpoints="_4UmGMMjrEeW0gpRI-mS_yA _4UxFUcjrEeW0gpRI-mS_yA">
+        <connectorQualityOfServiceAssumptions xmi:id="_4U1WwMjrEeW0gpRI-mS_yA" comment="">
+          <minMessageDelay xmi:id="_4U3L8MjrEeW0gpRI-mS_yA" unit="MILLISECONDS">
+            <value xsi:type="common:LiteralExpression" xmi:id="_4U3L8cjrEeW0gpRI-mS_yA" value="0"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_4U190MjrEeW0gpRI-mS_yA" unit="MILLISECONDS">
+            <value xsi:type="common:LiteralExpression" xmi:id="_4U2k4MjrEeW0gpRI-mS_yA" value="0"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_IaAgBMjrEeW0gpRI-mS_yA" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_jLAdUMjrEeW0gpRI-mS_yA" name="M1">
+      <messageTypes xmi:id="_jxLsgMjrEeW0gpRI-mS_yA" name="launchCode">
+        <parameters xmi:id="_kuXtgMjrEeW0gpRI-mS_yA" name="id">
+          <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        </parameters>
+      </messageTypes>
+      <messageTypes name="accessGranted"/>
+      <messageTypes name="accessDenied"/>
+      <messageTypes name="ready"/>
+      <messageTypes name="otherReady"/>
+      <messageTypes name="completeDeny"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_IaAgBcjrEeW0gpRI-mS_yA" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance">
+    <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_8aQ6EMj2EeWzrcBaL-cniQ" name="rocketRoot" comment="rocketRoot">
+      <componentInstances xsi:type="instance:StructuredComponentInstance" xmi:id="_95w98Mj2EeWzrcBaL-cniQ" name="S1" componentType="_YGfmAMj2EeWzrcBaL-cniQ">
+        <embeddedCIC xmi:id="_-15PAMj2EeWzrcBaL-cniQ" name="System">
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_-15PAcj2EeWzrcBaL-cniQ" name="peer1Input" componentType="_MYz34MjrEeW0gpRI-mS_yA" componentPart="_YGfmAcj2EeWzrcBaL-cniQ">
+            <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_-15PAsj2EeWzrcBaL-cniQ" name="code" connectorInstances="_-15PEcj2EeWzrcBaL-cniQ" type="_TYcjgMjrEeW0gpRI-mS_yA"/>
+          </componentInstances>
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_-15PA8j2EeWzrcBaL-cniQ" name="peer1" componentType="_QUHP0MjrEeW0gpRI-mS_yA" componentPart="_YGfmBsj2EeWzrcBaL-cniQ">
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_-15PBMj2EeWzrcBaL-cniQ" name="verifier1" connectorInstances="_-15PE8j2EeWzrcBaL-cniQ" type="_gPXyoMjrEeW0gpRI-mS_yA"/>
+            <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_-15PBcj2EeWzrcBaL-cniQ" name="code" connectorInstances="_-15PEcj2EeWzrcBaL-cniQ" type="_W1YkcMjrEeW0gpRI-mS_yA"/>
+          </componentInstances>
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_-15PBsj2EeWzrcBaL-cniQ" name="LaunchVerifier" componentType="_curTEMjrEeW0gpRI-mS_yA" componentPart="_YGfmDMj2EeWzrcBaL-cniQ">
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_-15PB8j2EeWzrcBaL-cniQ" name="peer21" connectorInstances="_-15PFMj2EeWzrcBaL-cniQ" type="_tnYVkMjrEeW0gpRI-mS_yA"/>
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_-15PCMj2EeWzrcBaL-cniQ" name="peer11" connectorInstances="_-15PE8j2EeWzrcBaL-cniQ" type="_e6xXMMjrEeW0gpRI-mS_yA"/>
+            <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_-15PCcj2EeWzrcBaL-cniQ" name="verifiedLaunch" connectorInstances="_-15PEsj2EeWzrcBaL-cniQ" type="_M0m3gMj1EeWzrcBaL-cniQ"/>
+          </componentInstances>
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_-15PCsj2EeWzrcBaL-cniQ" name="Launcher" componentType="_SKhW0Mj2EeWzrcBaL-cniQ" componentPart="_YGfmE8j2EeWzrcBaL-cniQ">
+            <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_-15PC8j2EeWzrcBaL-cniQ" name="launch" connectorInstances="_-15PEsj2EeWzrcBaL-cniQ" type="_T5EjUMj2EeWzrcBaL-cniQ"/>
+          </componentInstances>
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_-15PDMj2EeWzrcBaL-cniQ" name="peer2" componentType="_QUHP0MjrEeW0gpRI-mS_yA" componentPart="_lkc_8Mj2EeWzrcBaL-cniQ">
+            <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_-15PDcj2EeWzrcBaL-cniQ" name="code" connectorInstances="_-15PFcj2EeWzrcBaL-cniQ" type="_W1YkcMjrEeW0gpRI-mS_yA"/>
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_-15PDsj2EeWzrcBaL-cniQ" name="verifier1" connectorInstances="_-15PFMj2EeWzrcBaL-cniQ" type="_gPXyoMjrEeW0gpRI-mS_yA"/>
+          </componentInstances>
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_-15PD8j2EeWzrcBaL-cniQ" name="peer2Input" componentType="_MYz34MjrEeW0gpRI-mS_yA" componentPart="_nbcWwMj2EeWzrcBaL-cniQ">
+            <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_-15PEMj2EeWzrcBaL-cniQ" name="code" connectorInstances="_-15PFcj2EeWzrcBaL-cniQ" type="_TYcjgMjrEeW0gpRI-mS_yA"/>
+          </componentInstances>
+          <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_-15PEcj2EeWzrcBaL-cniQ" type="_dQtoIMj2EeWzrcBaL-cniQ" connectorEndpointInstances="_-15PAsj2EeWzrcBaL-cniQ _-15PBcj2EeWzrcBaL-cniQ"/>
+          <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_-15PEsj2EeWzrcBaL-cniQ" type="_wps2EMj2EeWzrcBaL-cniQ" connectorEndpointInstances="_-15PC8j2EeWzrcBaL-cniQ _-15PCcj2EeWzrcBaL-cniQ"/>
+          <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_-15PE8j2EeWzrcBaL-cniQ" type="_t0lqIMj2EeWzrcBaL-cniQ" connectorEndpointInstances="_-15PBMj2EeWzrcBaL-cniQ _-15PCMj2EeWzrcBaL-cniQ"/>
+          <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_-15PFMj2EeWzrcBaL-cniQ" type="_tKcg8Mj2EeWzrcBaL-cniQ" connectorEndpointInstances="_-15PDsj2EeWzrcBaL-cniQ _-15PB8j2EeWzrcBaL-cniQ"/>
+          <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_-15PFcj2EeWzrcBaL-cniQ" type="_r9BrkMj2EeWzrcBaL-cniQ" connectorEndpointInstances="_-15PEMj2EeWzrcBaL-cniQ _-15PDcj2EeWzrcBaL-cniQ"/>
+          <coordinationProtocolInstances xmi:id="_-_RNcMj2EeWzrcBaL-cniQ" name="" portInstances="_-15PBMj2EeWzrcBaL-cniQ _-15PCMj2EeWzrcBaL-cniQ" coordinationProtocolPart="_t09dkMj2EeWzrcBaL-cniQ" coordinationProtocol="_4UO50MjrEeW0gpRI-mS_yA"/>
+          <coordinationProtocolInstances xmi:id="_-_U30Mj2EeWzrcBaL-cniQ" name="" portInstances="_-15PB8j2EeWzrcBaL-cniQ _-15PDsj2EeWzrcBaL-cniQ" coordinationProtocolPart="_tK-scMj2EeWzrcBaL-cniQ" coordinationProtocol="_4UO50MjrEeW0gpRI-mS_yA"/>
+        </embeddedCIC>
+      </componentInstances>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_IaAgBsjrEeW0gpRI-mS_yA" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_MYz34MjrEeW0gpRI-mS_yA" name="IdentificationInput" componentKind="continuous component">
+      <ports xsi:type="component:ContinuousPort" xmi:id="_TYcjgMjrEeW0gpRI-mS_yA" name="code" kind="OUT">
+        <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+      </ports>
+    </modelElements>
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_QUHP0MjrEeW0gpRI-mS_yA" name="LaunchDelegator" behavior="_bWFoIMjuEeW0gpRI-mS_yA">
+      <ports xsi:type="component:HybridPort" xmi:id="_W1YkcMjrEeW0gpRI-mS_yA" name="code">
+        <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/org.muml.pim.types/model/predefined.mumltypes#int32"/>
+        <samplingInterval xmi:id="_Zg15kMj1EeWzrcBaL-cniQ">
+          <value xsi:type="common:LiteralExpression" xmi:id="_bIz88Mj1EeWzrcBaL-cniQ" value="100"/>
+        </samplingInterval>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_gPXyoMjrEeW0gpRI-mS_yA" name="verifier" behavior="_bWFoI8juEeW0gpRI-mS_yA" senderMessageTypes="_jxLsgMjrEeW0gpRI-mS_yA //@categories.3/@modelElements.0/@messageTypes.3" receiverMessageTypes="//@categories.3/@modelElements.0/@messageTypes.1 //@categories.3/@modelElements.0/@messageTypes.2 //@categories.3/@modelElements.0/@messageTypes.4 //@categories.3/@modelElements.0/@messageTypes.5" refinedRole="_4UmGMMjrEeW0gpRI-mS_yA">
+        <cardinality xmi:id="_bTmU0MjuEeW0gpRI-mS_yA">
+          <lowerBound xmi:id="_bTmU0cjuEeW0gpRI-mS_yA"/>
+          <upperBound xmi:id="_bTmU0sjuEeW0gpRI-mS_yA"/>
+        </cardinality>
+        <receiverMessageBuffer name="buf1" messageType="//@categories.3/@modelElements.0/@messageTypes.1 //@categories.3/@modelElements.0/@messageTypes.2 //@categories.3/@modelElements.0/@messageTypes.4">
+          <bufferSize/>
+        </receiverMessageBuffer>
+      </ports>
+    </modelElements>
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_curTEMjrEeW0gpRI-mS_yA" name="LaunchVerifier" behavior="_Yqrx0MjuEeW0gpRI-mS_yA">
+      <ports xsi:type="component:DiscretePort" xmi:id="_e6xXMMjrEeW0gpRI-mS_yA" name="peer1" behavior="_Yqrx08juEeW0gpRI-mS_yA" senderMessageTypes="//@categories.3/@modelElements.0/@messageTypes.1 //@categories.3/@modelElements.0/@messageTypes.2 //@categories.3/@modelElements.0/@messageTypes.4 //@categories.3/@modelElements.0/@messageTypes.5" receiverMessageTypes="_jxLsgMjrEeW0gpRI-mS_yA //@categories.3/@modelElements.0/@messageTypes.3" refinedRole="_4UxFUcjrEeW0gpRI-mS_yA">
+        <cardinality xmi:id="_YqC4oMjuEeW0gpRI-mS_yA">
+          <lowerBound/>
+          <upperBound/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_YqQUAMjuEeW0gpRI-mS_yA" name="buf" messageType="_jxLsgMjrEeW0gpRI-mS_yA //@categories.3/@modelElements.0/@messageTypes.3" bufferOverflowAvoidanceStrategy="discard oldest message in buffer">
+          <bufferSize xmi:id="_YqQUAcjuEeW0gpRI-mS_yA"/>
+        </receiverMessageBuffer>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_tnYVkMjrEeW0gpRI-mS_yA" name="peer2" behavior="_ZvdokMjuEeW0gpRI-mS_yA" senderMessageTypes="//@categories.3/@modelElements.0/@messageTypes.1 //@categories.3/@modelElements.0/@messageTypes.2 //@categories.3/@modelElements.0/@messageTypes.4 //@categories.3/@modelElements.0/@messageTypes.5" receiverMessageTypes="_jxLsgMjrEeW0gpRI-mS_yA //@categories.3/@modelElements.0/@messageTypes.3" refinedRole="_4UxFUcjrEeW0gpRI-mS_yA">
+        <cardinality xmi:id="_ZvD_8MjuEeW0gpRI-mS_yA">
+          <lowerBound/>
+          <upperBound/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_ZvL7wMjuEeW0gpRI-mS_yA" name="buf" messageType="_jxLsgMjrEeW0gpRI-mS_yA //@categories.3/@modelElements.0/@messageTypes.3" bufferOverflowAvoidanceStrategy="discard oldest message in buffer">
+          <bufferSize xmi:id="_ZvL7wcjuEeW0gpRI-mS_yA"/>
+        </receiverMessageBuffer>
+      </ports>
+      <ports xsi:type="component:HybridPort" xmi:id="_M0m3gMj1EeWzrcBaL-cniQ" name="verifiedLaunch" kind="OUT">
+        <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
+        <initializeExpression xsi:type="common:LiteralExpression" xmi:id="_yzfPAMmkEeWgH-bGO8AU1w" value="false"/>
+        <samplingInterval xmi:id="_Vz6U0Mj1EeWzrcBaL-cniQ" unit="MILLISECONDS">
+          <value xsi:type="common:LiteralExpression" xmi:id="_cYp0MMj1EeWzrcBaL-cniQ" value="100"/>
+        </samplingInterval>
+      </ports>
+    </modelElements>
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_SKhW0Mj2EeWzrcBaL-cniQ" name="Launcher" componentKind="continuous component">
+      <ports xsi:type="component:ContinuousPort" xmi:id="_T5EjUMj2EeWzrcBaL-cniQ" name="launch">
+        <dataType xsi:type="types:PrimitiveDataType" href="../../plugin/org.muml.pim.types/model/predefined.mumltypes#boolean"/>
+      </ports>
+    </modelElements>
+    <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_YGfmAMj2EeWzrcBaL-cniQ" name="System" componentKind="hybrid component">
+      <embeddedComponentParts xmi:id="_YGfmAcj2EeWzrcBaL-cniQ" name="peer1Input" componentType="_MYz34MjrEeW0gpRI-mS_yA">
+        <cardinality xmi:id="_YGfmAsj2EeWzrcBaL-cniQ">
+          <lowerBound xmi:id="_YGfmA8j2EeWzrcBaL-cniQ"/>
+          <upperBound xmi:id="_YGfmBMj2EeWzrcBaL-cniQ"/>
+        </cardinality>
+        <portParts xmi:id="_YGfmBcj2EeWzrcBaL-cniQ" connectors="_dQtoIMj2EeWzrcBaL-cniQ" portType="_TYcjgMjrEeW0gpRI-mS_yA"/>
+      </embeddedComponentParts>
+      <embeddedComponentParts xmi:id="_YGfmBsj2EeWzrcBaL-cniQ" name="peer1" componentType="_QUHP0MjrEeW0gpRI-mS_yA">
+        <cardinality xmi:id="_YGfmB8j2EeWzrcBaL-cniQ">
+          <lowerBound xmi:id="_YGfmCMj2EeWzrcBaL-cniQ"/>
+          <upperBound xmi:id="_YGfmCcj2EeWzrcBaL-cniQ"/>
+        </cardinality>
+        <portParts xmi:id="_YGfmCsj2EeWzrcBaL-cniQ" connectors="_dQtoIMj2EeWzrcBaL-cniQ" portType="_W1YkcMjrEeW0gpRI-mS_yA"/>
+        <portParts xmi:id="_YGfmC8j2EeWzrcBaL-cniQ" connectors="_t0lqIMj2EeWzrcBaL-cniQ" portType="_gPXyoMjrEeW0gpRI-mS_yA" coordinationProtocolPart="_t09dkMj2EeWzrcBaL-cniQ"/>
+      </embeddedComponentParts>
+      <embeddedComponentParts xmi:id="_YGfmDMj2EeWzrcBaL-cniQ" name="LaunchVerifier" componentType="_curTEMjrEeW0gpRI-mS_yA">
+        <cardinality xmi:id="_YGfmDcj2EeWzrcBaL-cniQ">
+          <lowerBound xmi:id="_YGfmDsj2EeWzrcBaL-cniQ"/>
+          <upperBound xmi:id="_YGfmD8j2EeWzrcBaL-cniQ"/>
+        </cardinality>
+        <portParts xmi:id="_YGfmEMj2EeWzrcBaL-cniQ" connectors="_t0lqIMj2EeWzrcBaL-cniQ" portType="_e6xXMMjrEeW0gpRI-mS_yA" coordinationProtocolPart="_t09dkMj2EeWzrcBaL-cniQ"/>
+        <portParts xmi:id="_YGfmEcj2EeWzrcBaL-cniQ" connectors="_tKcg8Mj2EeWzrcBaL-cniQ" portType="_tnYVkMjrEeW0gpRI-mS_yA" coordinationProtocolPart="_tK-scMj2EeWzrcBaL-cniQ"/>
+        <portParts xmi:id="_YGfmEsj2EeWzrcBaL-cniQ" connectors="_wps2EMj2EeWzrcBaL-cniQ" portType="_M0m3gMj1EeWzrcBaL-cniQ"/>
+      </embeddedComponentParts>
+      <embeddedComponentParts xmi:id="_YGfmE8j2EeWzrcBaL-cniQ" name="Launcher" componentType="_SKhW0Mj2EeWzrcBaL-cniQ">
+        <cardinality xmi:id="_YGfmFMj2EeWzrcBaL-cniQ">
+          <lowerBound xmi:id="_YGfmFcj2EeWzrcBaL-cniQ"/>
+          <upperBound xmi:id="_YGfmFsj2EeWzrcBaL-cniQ"/>
+        </cardinality>
+        <portParts xmi:id="_YGfmF8j2EeWzrcBaL-cniQ" connectors="_wps2EMj2EeWzrcBaL-cniQ" portType="_T5EjUMj2EeWzrcBaL-cniQ"/>
+      </embeddedComponentParts>
+      <embeddedComponentParts xmi:id="_lkc_8Mj2EeWzrcBaL-cniQ" name="peer2" componentType="_QUHP0MjrEeW0gpRI-mS_yA">
+        <cardinality xmi:id="_lke1IMj2EeWzrcBaL-cniQ">
+          <lowerBound xmi:id="_lkgDQMj2EeWzrcBaL-cniQ"/>
+          <upperBound xmi:id="_lkgDQcj2EeWzrcBaL-cniQ"/>
+        </cardinality>
+        <portParts xmi:id="_ms_8YMj2EeWzrcBaL-cniQ" connectors="_r9BrkMj2EeWzrcBaL-cniQ" portType="_W1YkcMjrEeW0gpRI-mS_yA"/>
+        <portParts xmi:id="_mtAjcMj2EeWzrcBaL-cniQ" connectors="_tKcg8Mj2EeWzrcBaL-cniQ" portType="_gPXyoMjrEeW0gpRI-mS_yA" coordinationProtocolPart="_tK-scMj2EeWzrcBaL-cniQ"/>
+      </embeddedComponentParts>
+      <embeddedComponentParts xmi:id="_nbcWwMj2EeWzrcBaL-cniQ" name="peer2Input" componentType="_MYz34MjrEeW0gpRI-mS_yA">
+        <cardinality xmi:id="_nbeL8Mj2EeWzrcBaL-cniQ">
+          <lowerBound xmi:id="_nbezAMj2EeWzrcBaL-cniQ"/>
+          <upperBound xmi:id="_nbezAcj2EeWzrcBaL-cniQ"/>
+        </cardinality>
+        <portParts xmi:id="_o-8w4Mj2EeWzrcBaL-cniQ" connectors="_r9BrkMj2EeWzrcBaL-cniQ" portType="_TYcjgMjrEeW0gpRI-mS_yA"/>
+      </embeddedComponentParts>
+      <connectors xsi:type="component:AssemblyConnector" xmi:id="_dQtoIMj2EeWzrcBaL-cniQ" connectorEndpoints="_YGfmBcj2EeWzrcBaL-cniQ _YGfmCsj2EeWzrcBaL-cniQ"/>
+      <connectors xsi:type="component:AssemblyConnector" xmi:id="_r9BrkMj2EeWzrcBaL-cniQ" connectorEndpoints="_o-8w4Mj2EeWzrcBaL-cniQ _ms_8YMj2EeWzrcBaL-cniQ"/>
+      <connectors xsi:type="component:AssemblyConnector" xmi:id="_tKcg8Mj2EeWzrcBaL-cniQ" connectorEndpoints="_mtAjcMj2EeWzrcBaL-cniQ _YGfmEcj2EeWzrcBaL-cniQ"/>
+      <connectors xsi:type="component:AssemblyConnector" xmi:id="_t0lqIMj2EeWzrcBaL-cniQ" connectorEndpoints="_YGfmC8j2EeWzrcBaL-cniQ _YGfmEMj2EeWzrcBaL-cniQ"/>
+      <connectors xsi:type="component:AssemblyConnector" xmi:id="_wps2EMj2EeWzrcBaL-cniQ" connectorEndpoints="_YGfmEsj2EeWzrcBaL-cniQ _YGfmF8j2EeWzrcBaL-cniQ"/>
+      <coordinationProtocolParts xmi:id="_tK-scMj2EeWzrcBaL-cniQ" coordinationProtocol="_4UO50MjrEeW0gpRI-mS_yA" portParts="_YGfmEcj2EeWzrcBaL-cniQ _mtAjcMj2EeWzrcBaL-cniQ"/>
+      <coordinationProtocolParts xmi:id="_t09dkMj2EeWzrcBaL-cniQ" coordinationProtocol="_4UO50MjrEeW0gpRI-mS_yA" portParts="_YGfmC8j2EeWzrcBaL-cniQ _YGfmEMj2EeWzrcBaL-cniQ"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_IaAgB8jrEeW0gpRI-mS_yA" key="de.uni_paderborn.fujaba.muml.pattern.category" name="pattern"/>
+  <categories xmi:id="_xOKXwMknEeWbAtw7kHpt1w" key="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category" name="hwplatform">
+    <modelElements xsi:type="hwplatform:HWPlatform" xmi:id="_xOKXwcknEeWbAtw7kHpt1w" name="Platform">
+      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_xOKXwsknEeWbAtw7kHpt1w" name="ECU" resourceType="_xOKX8MknEeWbAtw7kHpt1w">
+        <cardinality xmi:id="_xOKXw8knEeWbAtw7kHpt1w">
+          <lowerBound xmi:id="_xOKXxMknEeWbAtw7kHpt1w" value="3"/>
+          <upperBound xmi:id="_xOKXxcknEeWbAtw7kHpt1w" value="3"/>
+        </cardinality>
+        <hwPortParts xmi:id="_xOKXxsknEeWbAtw7kHpt1w" connectors="_xOKXyMknEeWbAtw7kHpt1w" hwport="_xOKX8cknEeWbAtw7kHpt1w"/>
+      </embeddedPlatformParts>
+      <networkingHardware xsi:type="hwplatform:NetworkBridge" xmi:id="_xOKXx8knEeWbAtw7kHpt1w" connectors="_xOKXyMknEeWbAtw7kHpt1w"/>
+      <networkConnectors xmi:id="_xOKXyMknEeWbAtw7kHpt1w" connectorEndpoints="_xOKXxsknEeWbAtw7kHpt1w _xOKXx8knEeWbAtw7kHpt1w"/>
+    </modelElements>
+    <modelElements xsi:type="hwplatforminstance:HWPlatformInstanceConfiguration" xmi:id="_xOKXycknEeWbAtw7kHpt1w" comment="rootRocket">
+      <hwplatformInstances xmi:id="_xOKXysknEeWbAtw7kHpt1w" name="System" hwplatformType="_xOKXwcknEeWbAtw7kHpt1w">
+        <embeddedHPIC xmi:id="_xOKXy8knEeWbAtw7kHpt1w">
+          <networkingHardwareInstances xsi:type="hwplatforminstance:NetworkBridgeInstance" xmi:id="_xOKXzMknEeWbAtw7kHpt1w" name="Router" connectorInstances="_xOKX38knEeWbAtw7kHpt1w _xOKX4MknEeWbAtw7kHpt1w _xOKX4cknEeWbAtw7kHpt1w" type="_xOKXx8knEeWbAtw7kHpt1w"/>
+          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_xOKXzcknEeWbAtw7kHpt1w" name="ECU-Peer1" resourceType="_xOKX5MknEeWbAtw7kHpt1w">
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_xOKXzsknEeWbAtw7kHpt1w" name="NI_Ethernet" connectorInstances="_xOKX38knEeWbAtw7kHpt1w" type="_xOKXxsknEeWbAtw7kHpt1w" communicationResource="_xOKX5cknEeWbAtw7kHpt1w"/>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_xOKXz8knEeWbAtw7kHpt1w" name="CPU" resourceType="_xOKX6cknEeWbAtw7kHpt1w">
+              <frequency xmi:id="_xOKX0MknEeWbAtw7kHpt1w" value="500.0" unit="MHz"/>
+            </embeddedAtomicResourceInstances>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_xOKX0cknEeWbAtw7kHpt1w" name="RAM" resourceType="_xOKX68knEeWbAtw7kHpt1w">
+              <memorySize xmi:id="_xOKX0sknEeWbAtw7kHpt1w" value="500.0" unit="MByte"/>
+            </embeddedAtomicResourceInstances>
+          </resources>
+          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_xOKX08knEeWbAtw7kHpt1w" name="ECU-Launch" resourceType="_xOKX5MknEeWbAtw7kHpt1w">
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_xOKX1MknEeWbAtw7kHpt1w" name="NI_Ethernet" connectorInstances="_xOKX4cknEeWbAtw7kHpt1w" type="_xOKXxsknEeWbAtw7kHpt1w" communicationResource="_xOKX5cknEeWbAtw7kHpt1w"/>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_xOKX1cknEeWbAtw7kHpt1w" name="CPU" resourceType="_xOKX6cknEeWbAtw7kHpt1w">
+              <frequency xmi:id="_xOKX1sknEeWbAtw7kHpt1w" value="500.0" unit="MHz"/>
+            </embeddedAtomicResourceInstances>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_xOKX18knEeWbAtw7kHpt1w" name="RAM" resourceType="_xOKX68knEeWbAtw7kHpt1w">
+              <memorySize xmi:id="_xOKX2MknEeWbAtw7kHpt1w" value="500.0" unit="MByte"/>
+            </embeddedAtomicResourceInstances>
+          </resources>
+          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_xOKX2cknEeWbAtw7kHpt1w" name="ECU-Peer2" resourceType="_xOKX5MknEeWbAtw7kHpt1w">
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_xOKX2sknEeWbAtw7kHpt1w" name="NI_Ethernet" connectorInstances="_xOKX4MknEeWbAtw7kHpt1w" type="_xOKXxsknEeWbAtw7kHpt1w" communicationResource="_xOKX5cknEeWbAtw7kHpt1w"/>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_xOKX28knEeWbAtw7kHpt1w" name="CPU" resourceType="_xOKX6cknEeWbAtw7kHpt1w">
+              <frequency xmi:id="_xOKX3MknEeWbAtw7kHpt1w" value="500.0" unit="MHz"/>
+            </embeddedAtomicResourceInstances>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_xOKX3cknEeWbAtw7kHpt1w" name="RAM" resourceType="_xOKX68knEeWbAtw7kHpt1w">
+              <memorySize xmi:id="_xOKX3sknEeWbAtw7kHpt1w" value="500.0" unit="MByte"/>
+            </embeddedAtomicResourceInstances>
+          </resources>
+          <networkConnectorInstances xmi:id="_xOKX38knEeWbAtw7kHpt1w" connectorEndpointInstances="_xOKXzsknEeWbAtw7kHpt1w _xOKXzMknEeWbAtw7kHpt1w"/>
+          <networkConnectorInstances xmi:id="_xOKX4MknEeWbAtw7kHpt1w" connectorEndpointInstances="_xOKX2sknEeWbAtw7kHpt1w _xOKXzMknEeWbAtw7kHpt1w"/>
+          <networkConnectorInstances xmi:id="_xOKX4cknEeWbAtw7kHpt1w" connectorEndpointInstances="_xOKX1MknEeWbAtw7kHpt1w _xOKXzMknEeWbAtw7kHpt1w"/>
+        </embeddedHPIC>
+      </hwplatformInstances>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_xOKX4sknEeWbAtw7kHpt1w" key="de.uni_paderborn.fujaba.muml.hardware.hwresource.category" name="hwresource">
+    <modelElements xsi:type="hwresource:ResourceRepository" xmi:id="_xOKX48knEeWbAtw7kHpt1w">
+      <resources xsi:type="hwresource:StructuredResource" xmi:id="_xOKX5MknEeWbAtw7kHpt1w" name="ECU">
+        <communicationResources xmi:id="_xOKX5cknEeWbAtw7kHpt1w" name="EthernetNI" protocol="_xOKX7cknEeWbAtw7kHpt1w">
+          <cardinality xmi:id="_xOKX5sknEeWbAtw7kHpt1w">
+            <lowerBound xmi:id="_xOKX58knEeWbAtw7kHpt1w"/>
+            <upperBound xmi:id="_xOKX6MknEeWbAtw7kHpt1w"/>
+          </cardinality>
+        </communicationResources>
+        <embeddedAtomicResources xsi:type="hwresource:Processor" xmi:id="_xOKX6cknEeWbAtw7kHpt1w" name="CPU">
+          <nbCores xmi:id="_xOKX6sknEeWbAtw7kHpt1w"/>
+        </embeddedAtomicResources>
+        <embeddedAtomicResources xsi:type="hwresource:MemoryResource" xmi:id="_xOKX68knEeWbAtw7kHpt1w" name="RAM"/>
+      </resources>
+      <protocols xmi:id="_xOKX7MknEeWbAtw7kHpt1w" name="Protocols">
+        <communicationProtocols xsi:type="hwresource:LinkProtocol" xmi:id="_xOKX7cknEeWbAtw7kHpt1w" name="Ethernet" isEventTriggered="true">
+          <bandwidth xmi:id="_xOKX7sknEeWbAtw7kHpt1w" value="1.0" unit="Kb\s"/>
+        </communicationProtocols>
+      </protocols>
+    </modelElements>
+    <modelElements xsi:type="hwresourceinstance:ResourceInstanceRepository" xmi:id="_xOKX78knEeWbAtw7kHpt1w">
+      <resourceInstances xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_xOKX8MknEeWbAtw7kHpt1w" name="ECUInstance" resourceType="_xOKX5MknEeWbAtw7kHpt1w">
+        <hwports xmi:id="_xOKX8cknEeWbAtw7kHpt1w" name="NI" communicationResource="_xOKX5cknEeWbAtw7kHpt1w"/>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_xOKX8sknEeWbAtw7kHpt1w" name="CPU" resourceType="_xOKX6cknEeWbAtw7kHpt1w">
+          <frequency xmi:id="_xOKX88knEeWbAtw7kHpt1w" value="500.0" unit="MHz"/>
+        </embeddedAtomicResourceInstances>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_xOKX9MknEeWbAtw7kHpt1w" name="RAM" resourceType="_xOKX68knEeWbAtw7kHpt1w">
+          <memorySize xmi:id="_xOKX9cknEeWbAtw7kHpt1w" value="500.0" unit="MByte"/>
+        </embeddedAtomicResourceInstances>
+      </resourceInstances>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_xOKX9sknEeWbAtw7kHpt1w" key="de.uni_paderborn.fujaba.muml.psm.allocation.category" name="allocation">
+    <modelElements xsi:type="allocation:SystemAllocation" xmi:id="_xOKX98knEeWbAtw7kHpt1w" cic="_8aQ6EMj2EeWzrcBaL-cniQ" hpic="_xOKXycknEeWbAtw7kHpt1w">
+      <allocations xmi:id="_xOKX-MknEeWbAtw7kHpt1w" componentInstance="_-15PCsj2EeWzrcBaL-cniQ" resourceInstance="_xOKX08knEeWbAtw7kHpt1w"/>
+      <allocations xmi:id="_xOKX-cknEeWbAtw7kHpt1w" componentInstance="_-15PBsj2EeWzrcBaL-cniQ" resourceInstance="_xOKX08knEeWbAtw7kHpt1w"/>
+      <allocations xmi:id="_xOKX-sknEeWbAtw7kHpt1w" componentInstance="_-15PA8j2EeWzrcBaL-cniQ" resourceInstance="_xOKXzcknEeWbAtw7kHpt1w"/>
+      <allocations xmi:id="_xOKX-8knEeWbAtw7kHpt1w" componentInstance="_-15PAcj2EeWzrcBaL-cniQ" resourceInstance="_xOKXzcknEeWbAtw7kHpt1w"/>
+      <allocations xmi:id="_xOKX_MknEeWbAtw7kHpt1w" componentInstance="_-15PDMj2EeWzrcBaL-cniQ" resourceInstance="_xOKX2cknEeWbAtw7kHpt1w"/>
+      <allocations xmi:id="_OyoiQMkoEeWbAtw7kHpt1w" componentInstance="_-15PD8j2EeWzrcBaL-cniQ" resourceInstance="_xOKX2cknEeWbAtw7kHpt1w"/>
+    </modelElements>
+  </categories>
+</modelinstance:RootNode>
