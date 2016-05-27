@@ -93,7 +93,7 @@ public class ResourceManager {
 		activity.eAdapters().add(resourceSetAdapter);
 		EAnnotation annotation = null;
 		for (EAnnotation currentAnnotation : activity.getAnnotations()) {
-			if (SOURCE_TYPES.equals(annotation.getSource())) {
+			if (SOURCE_TYPES.equals(currentAnnotation.getSource())) {
 				annotation = currentAnnotation;
 			}
 		}
@@ -197,7 +197,7 @@ public class ResourceManager {
 
 		EAnnotation annotation = null;
 		for (EAnnotation currentAnnotation : activity.getAnnotations()) {
-			if (ResourceManager.SOURCE_TYPES.equals(annotation.getSource())) {
+			if (ResourceManager.SOURCE_TYPES.equals(currentAnnotation.getSource())) {
 				annotation = currentAnnotation;
 			}
 		}
