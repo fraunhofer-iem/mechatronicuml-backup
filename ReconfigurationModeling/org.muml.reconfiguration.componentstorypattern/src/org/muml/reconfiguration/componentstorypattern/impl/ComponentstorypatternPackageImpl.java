@@ -947,9 +947,9 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		  (portVariableEClass, 
 		   source, 
 		   new String[] {
-			 "SameBindingOperatorAsParent", "if self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CHECK_ONLY then\r\n\tself.bindingOperator = self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator\r\nelse\r\n\ttrue\r\nendif",
-			 "SameBindingSemanticsAsParent", "if self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingSemantics=storydiagrams::patterns::BindingSemantics::OPTIONAL then\r\n\tself.bindingSemantics = self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingSemantics\r\nelse\r\n\ttrue\r\nendif",
-			 "ValidTypeOfPortVariable", "if self.eContainer().oclIsKindOf(ComponentVariable) then\r\n\tif not self.eContainer().oclAsType(ComponentVariable).type.oclIsUndefined() then\r\n\t\tself.eContainer().oclAsType(ComponentVariable).type.oclAsType(pim::component::Component).ports->includes(self.dataType.oclAsType(pim::component::Port))\r\n\telse\r\n\t\tfalse\r\n\tendif\r\nelse\r\n\tif self.eContainer().oclIsKindOf(PartVariable) then\r\n\t\tif not self.eContainer().oclAsType(PartVariable).dataType.oclIsUndefined() then\r\n\t\t\tself.eContainer().oclAsType(PartVariable).dataType.oclAsType(pim::component::ComponentPart).componentType.oclAsType(pim::component::Component).ports->includes(self.dataType.oclAsType(pim::component::Port))\r\n\t\telse\r\n\t\t\tfalse\r\n\t\tendif\r\n\telse\r\n\t\ttrue\r\n\tendif\r\nendif"
+			 "SameBindingOperatorAsParent", "if self.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagram::patterns::BindingOperator::CHECK_ONLY then\r\n\tself.bindingOperator = self.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator\r\nelse\r\n\ttrue\r\nendif",
+			 "SameBindingSemanticsAsParent", "if self.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentStoryPatternVariable).bindingSemantics=storydiagram::patterns::BindingSemantics::OPTIONAL then\r\n\tself.bindingSemantics = self.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentStoryPatternVariable).bindingSemantics\r\nelse\r\n\ttrue\r\nendif",
+			 "ValidTypeOfPortVariable", "if self.oclAsType(ecore::EObject).eContainer().oclIsKindOf(ComponentVariable) then\r\n\tif not self.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentVariable).type.oclIsUndefined() then\r\n\t\tself.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentVariable).type.oclAsType(pim::component::Component).ports->includes(self.dataType.oclAsType(pim::component::Port))\r\n\telse\r\n\t\tfalse\r\n\tendif\r\nelse\r\n\tif self.oclAsType(ecore::EObject).eContainer().oclIsKindOf(PartVariable) then\r\n\t\tif not self.oclAsType(ecore::EObject).eContainer().oclAsType(PartVariable).dataType.oclIsUndefined() then\r\n\t\t\tself.oclAsType(ecore::EObject).eContainer().oclAsType(PartVariable).dataType.oclAsType(pim::component::ComponentPart).componentType.oclAsType(pim::component::Component).ports->includes(self.dataType.oclAsType(pim::component::Port))\r\n\t\telse\r\n\t\t\tfalse\r\n\t\tendif\r\n\telse\r\n\t\ttrue\r\n\tendif\r\nendif"
 		   });	
 		addAnnotation
 		  (getPortVariable_PortType(), 
@@ -967,8 +967,8 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		  (partVariableEClass, 
 		   source, 
 		   new String[] {
-			 "SameBindingOperatorAsComponentVariable", "if self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CHECK_ONLY then\r\n\tself.bindingOperator = self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator\r\nelse\r\n\ttrue\r\nendif",
-			 "ValidTypeOfPartVariable", "if not self.eContainer().oclAsType(ComponentVariable).type.oclIsUndefined() then\r\n\tif self.eContainer().oclAsType(ComponentVariable).type.oclIsKindOf(pim::component::StructuredComponent) then\r\n\t\tself.eContainer().oclAsType(ComponentVariable).type.oclAsType(pim::component::StructuredComponent).embeddedComponentParts->includes(self.dataType.oclAsType(pim::component::ComponentPart))\r\n\telse\r\n\t\tfalse\r\n\tendif\r\nelse\r\n\tfalse\r\nendif"
+			 "SameBindingOperatorAsComponentVariable", "if self.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagram::patterns::BindingOperator::CHECK_ONLY then\r\n\tself.bindingOperator = self.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator\r\nelse\r\n\ttrue\r\nendif",
+			 "ValidTypeOfPartVariable", "if not self.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentVariable).type.oclIsUndefined() then\r\n\tif self.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentVariable).type.oclIsKindOf(pim::component::StructuredComponent) then\r\n\t\tself.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentVariable).type.oclAsType(pim::component::StructuredComponent).embeddedComponentParts->includes(self.dataType.oclAsType(pim::component::ComponentPart))\r\n\telse\r\n\t\tfalse\r\n\tendif\r\nelse\r\n\tfalse\r\nendif"
 		   });	
 		addAnnotation
 		  (getPartVariable_ComponentPartType(), 
@@ -980,8 +980,8 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		  (connectorVariableEClass, 
 		   source, 
 		   new String[] {
-			 "MustNotConnectCreateAndDestroyPorts", "if self.portVariables->asOrderedSet()->first().oclAsType(ComponentStoryPatternVariable).bindingOperator=storydiagrams::patterns::BindingOperator::CREATE then\r\n\tself.portVariables->asOrderedSet()->last().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::DESTROY\r\nelse\r\n\tif self.portVariables->asOrderedSet()->first().oclAsType(ComponentStoryPatternVariable).bindingOperator=storydiagrams::patterns::BindingOperator::DESTROY then\r\n\t\tself.portVariables->asOrderedSet()->last().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CREATE\r\n\telse\r\n\t\ttrue\r\n\tendif\r\nendif",
-			 "SameBindingOperatorAsPortVariable", "if self.portVariables->asOrderedSet()->first().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CHECK_ONLY then\r\n\tself.oclAsType(ComponentStoryPatternVariable).bindingOperator = self.portVariables->asOrderedSet()->first().oclAsType(ComponentStoryPatternVariable).bindingOperator\r\nelse\r\n\tif self.portVariables->asOrderedSet()->last().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CHECK_ONLY then\r\n\t\tself.oclAsType(ComponentStoryPatternVariable).bindingOperator = self.portVariables->asOrderedSet()->last().oclAsType(ComponentStoryPatternVariable).bindingOperator\r\n\telse\r\n\t\ttrue\r\n\tendif\r\nendif"
+			 "MustNotConnectCreateAndDestroyPorts", "if self.portVariables->asOrderedSet()->first().oclAsType(ComponentStoryPatternVariable).bindingOperator=storydiagram::patterns::BindingOperator::CREATE then\r\n\tself.portVariables->asOrderedSet()->last().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagram::patterns::BindingOperator::DESTROY\r\nelse\r\n\tif self.portVariables->asOrderedSet()->first().oclAsType(ComponentStoryPatternVariable).bindingOperator=storydiagram::patterns::BindingOperator::DESTROY then\r\n\t\tself.portVariables->asOrderedSet()->last().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagram::patterns::BindingOperator::CREATE\r\n\telse\r\n\t\ttrue\r\n\tendif\r\nendif",
+			 "SameBindingOperatorAsPortVariable", "if self.portVariables->asOrderedSet()->first().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagram::patterns::BindingOperator::CHECK_ONLY then\r\n\tself.oclAsType(ComponentStoryPatternVariable).bindingOperator = self.portVariables->asOrderedSet()->first().oclAsType(ComponentStoryPatternVariable).bindingOperator\r\nelse\r\n\tif self.portVariables->asOrderedSet()->last().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagram::patterns::BindingOperator::CHECK_ONLY then\r\n\t\tself.oclAsType(ComponentStoryPatternVariable).bindingOperator = self.portVariables->asOrderedSet()->last().oclAsType(ComponentStoryPatternVariable).bindingOperator\r\n\telse\r\n\t\ttrue\r\n\tendif\r\nendif"
 		   });	
 		addAnnotation
 		  (getConnectorVariable_PortVariables(), 
@@ -1005,7 +1005,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		  (multiPortVariableEClass, 
 		   source, 
 		   new String[] {
-			 "MultiPortCreatedOnlyIfParentCreated", "-- Multi Port Variables may only be created if their parent is created as well\r\nif(self.bindingOperator = storydiagrams::patterns::BindingOperator::CREATE and self.eContainer().oclIsKindOf(ComponentStoryPatternVariable)) then\r\n\tself.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator = storydiagrams::patterns::BindingOperator::CREATE\r\nelse\r\n\ttrue\r\nendif"
+			 "MultiPortCreatedOnlyIfParentCreated", "-- Multi Port Variables may only be created if their parent is created as well\r\nif(self.bindingOperator = storydiagram::patterns::BindingOperator::CREATE and self.oclAsType(ecore::EObject).eContainer().oclIsKindOf(ComponentStoryPatternVariable)) then\r\n\tself.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator = storydiagram::patterns::BindingOperator::CREATE\r\nelse\r\n\ttrue\r\nendif"
 		   });	
 		addAnnotation
 		  (getMultiPortVariable_GmfSubPortVariables(), 
@@ -1018,7 +1018,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		   source, 
 		   new String[] {
 			 "AppliedFadingFunctionIsContainedInType", " let fadingFunction : reconfiguration::FadingFunction = self.appliedFadingFunction.oclAsType(reconfiguration::FadingFunction) in\r\n \tif fadingFunction.oclIsUndefined()\r\n \tthen true\r\n \telse\r\n\t\tself.dataType.oclAsType(pim::component::ComponentPart).componentType.oclAsType(reconfiguration::FadingComponent).fadingFunction\r\n\t\t->select(curFadingFunction : reconfiguration::FadingFunction| curFadingFunction = fadingFunction)->size()=1\r\n\tendif",
-			 "NotDefineAppliedFadingFunctionForVariableNotContainedInControllerExchangeNode", "if not self.eContainer().eContainer().eContainer().oclIsTypeOf(componentstorydiagram::ControllerExchangeNode)\r\n\tthen self.appliedFadingFunction.oclIsUndefined()\r\nelse true\r\nendif"
+			 "NotDefineAppliedFadingFunctionForVariableNotContainedInControllerExchangeNode", "if not self.oclAsType(ecore::EObject).eContainer().oclAsType(ecore::EObject).eContainer().oclAsType(ecore::EObject).eContainer().oclIsTypeOf(componentstorydiagram::ControllerExchangeNode)\r\n\tthen self.appliedFadingFunction.oclIsUndefined()\r\nelse true\r\nendif"
 		   });
 	}
 
@@ -1034,26 +1034,26 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		  (portVariableEClass, 
 		   source, 
 		   new String[] {
-			 "choices", "if self.eContainer().oclIsKindOf(PartVariable)\r\nthen self.eContainer().oclAsType(PartVariable).componentPartType.portParts.portType\r\nelse\r\n\tself.eContainer().oclAsType(ComponentVariable).type.ports\r\nendif",
+			 "choices", "if self.oclAsType(ecore::EObject).eContainer().oclIsKindOf(PartVariable)\r\nthen self.oclAsType(ecore::EObject).eContainer().oclAsType(PartVariable).componentPartType.portParts.portType\r\nelse\r\n\tself.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentVariable).type.ports\r\nendif",
 			 "feature", "dataType"
 		   });	
 		addAnnotation
 		  (getAssemblyVariable_Type(), 
 		   source, 
 		   new String[] {
-			 "choices", "let this : ComponentVariable = self.eContainer().oclAsType(ComponentVariable),\r\n\tassemblyConnectors : Collection(connector::Connector) = this.type.oclAsType(component::StructuredComponent).connectors->select(oclIsTypeOf(component::AssemblyConnector)),\r\n\tportVariableTypes: Collection(component::Port) = self.portVariables.portType->excluding(null)\r\nin\r\n\tassemblyConnectors->select(aC | portVariableTypes->forAll(p | aC.oclAsType(component::AssemblyConnector).portParts.portType->includes(p)))"
+			 "choices", "let this : ComponentVariable = self.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentVariable),\r\n\tassemblyConnectors : Collection(connector::Connector) = this.type.oclAsType(component::StructuredComponent).connectors->select(oclIsTypeOf(component::AssemblyConnector)),\r\n\tportVariableTypes: Collection(component::Port) = self.portVariables.portType->excluding(null)\r\nin\r\n\tassemblyConnectors->select(aC | portVariableTypes->forAll(p | aC.oclAsType(component::AssemblyConnector).portParts.portType->includes(p)))"
 		   });	
 		addAnnotation
 		  (getDelegationVariable_Type(), 
 		   source, 
 		   new String[] {
-			 "choices", "let outerPort : pim::component::Port = self.portVariables->select(eContainer().oclIsTypeOf(ComponentVariable))->at(1).portType,\r\n\tinnerPort : pim::component::Port = self.portVariables.portType->excluding(outerPort)->at(1),\r\n\tdelegationConnectorsOuter : OrderedSet(pim::connector::Connector) = outerPort.connectors->select(oclIsTypeOf(pim::component::DelegationConnector))\r\nin\r\n\tdelegationConnectorsOuter->select(dC | dC.oclAsType(pim::component::DelegationConnector).portPart.portType = innerPort)"
+			 "choices", "let outerPort : pim::component::Port = self.portVariables->select(oclAsType(ecore::EObject).eContainer().oclIsTypeOf(ComponentVariable))->at(1).portType,\r\n\tinnerPort : pim::component::Port = self.portVariables.portType->excluding(outerPort)->at(1),\r\n\tdelegationConnectorsOuter : OrderedSet(pim::connector::Connector) = outerPort.connectors->select(oclIsTypeOf(pim::component::DelegationConnector))\r\nin\r\n\tdelegationConnectorsOuter->select(dC | dC.oclAsType(pim::component::DelegationConnector).portPart.portType = innerPort)"
 		   });	
 		addAnnotation
 		  (fadingComponentPartVariableEClass, 
 		   source, 
 		   new String[] {
-			 "choices", "let \r\n\tcomponent : component::StructuredComponent = self.eContainer().oclAsType(ComponentVariable).type.oclAsType(component::StructuredComponent)\r\nin\r\n\tcomponent.embeddedComponentParts->select(p | p.componentType.oclIsTypeOf(reconfiguration::FadingComponent))",
+			 "choices", "let \r\n\tcomponent : component::StructuredComponent = self.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentVariable).type.oclAsType(component::StructuredComponent)\r\nin\r\n\tcomponent.embeddedComponentParts->select(p | p.componentType.oclIsTypeOf(reconfiguration::FadingComponent))",
 			 "feature", "dataType"
 		   });	
 		addAnnotation
@@ -1066,7 +1066,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		  (componentPartVariableEClass, 
 		   source, 
 		   new String[] {
-			 "choices", "let \r\n\tcomponent : component::StructuredComponent = self.eContainer().oclAsType(ComponentVariable).type.oclAsType(component::StructuredComponent)\r\nin\r\n\tcomponent.embeddedComponentParts->select(p | not p.componentType.oclIsTypeOf(reconfiguration::FadingComponent))",
+			 "choices", "let \r\n\tcomponent : component::StructuredComponent = self.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentVariable).type.oclAsType(component::StructuredComponent)\r\nin\r\n\tcomponent.embeddedComponentParts->select(p | not p.componentType.oclIsTypeOf(reconfiguration::FadingComponent))",
 			 "feature", "dataType"
 		   });
 	}

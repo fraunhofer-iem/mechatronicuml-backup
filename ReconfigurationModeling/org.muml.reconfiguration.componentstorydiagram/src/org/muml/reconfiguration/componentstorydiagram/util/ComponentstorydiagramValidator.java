@@ -127,9 +127,9 @@ public class ComponentstorydiagramValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String COMPONENT_STORY_RULE__COMPONENT_VARIABLE_HAS_TO_HAVE_SAME_TYPE_AS_RECONFIGURED_COMPONENT__EEXPRESSION = "-- A ComponentVariable has to have the reconfigured component as type\r\n" +
-		"self.activity.ownedActivityNode->select(oclIsTypeOf(ComponentStoryNode))->forAll(oAN | oAN.oclAsType(ComponentStoryNode).componentStoryPattern.thisVariable.type = self.reconfiguredComponent)\r\n" +
+		"self.activity.ownedActivityNodes->select(oclIsTypeOf(ComponentStoryNode))->forAll(oAN | oAN.oclAsType(ComponentStoryNode).componentStoryPattern.thisVariable.type = self.reconfiguredComponent)\r\n" +
 		"and\r\n" +
-		"self.activity.ownedActivityNode->select(oclIsTypeOf(ControllerExchangeNode))->forAll(oAN | oAN.oclAsType(ControllerExchangeNode).componentStoryPattern.thisVariable.type = self.reconfiguredComponent)";
+		"self.activity.ownedActivityNodes->select(oclIsTypeOf(ControllerExchangeNode))->forAll(oAN | oAN.oclAsType(ControllerExchangeNode).componentStoryPattern.thisVariable.type = self.reconfiguredComponent)";
 
 	/**
 	 * Validates the ComponentVariableHasToHaveSameTypeAsReconfiguredComponent constraint of '<em>Component Story Rule</em>'.
@@ -190,8 +190,8 @@ public class ComponentstorydiagramValidator extends EObjectValidator {
 	protected static final String CONTROLLER_EXCHANGE_NODE__HAS_ONLY_ONE_CREATE_AND_ONE_DESTROY_PART_VARIABLE__EEXPRESSION = "let partVariables : OrderedSet(componentstorypattern::PartVariable) = self.componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).partVariables\r\n" +
 		"->select(pV : componentstorypattern::PartVariable | pV.oclIsKindOf(componentstorypattern::ComponentPartVariable))->asOrderedSet() in\r\n" +
 		"partVariables->size() = 2 and\r\n" +
-		"if partVariables->first().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::CREATE then partVariables->last().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY else\r\n" +
-		"if partVariables->first().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY then partVariables->last().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::CREATE else\r\n" +
+		"if partVariables->first().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagram::patterns::BindingOperator::CREATE then partVariables->last().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagram::patterns::BindingOperator::DESTROY else\r\n" +
+		"if partVariables->first().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagram::patterns::BindingOperator::DESTROY then partVariables->last().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagram::patterns::BindingOperator::CREATE else\r\n" +
 		"false endif endif\r\n" +
 		"";
 

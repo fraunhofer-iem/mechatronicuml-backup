@@ -215,8 +215,8 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String PORT_VARIABLE__SAME_BINDING_OPERATOR_AS_PARENT__EEXPRESSION = "if self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CHECK_ONLY then\r\n" +
-		"\tself.bindingOperator = self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator\r\n" +
+	protected static final String PORT_VARIABLE__SAME_BINDING_OPERATOR_AS_PARENT__EEXPRESSION = "if self.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagram::patterns::BindingOperator::CHECK_ONLY then\r\n" +
+		"\tself.bindingOperator = self.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator\r\n" +
 		"else\r\n" +
 		"\ttrue\r\n" +
 		"endif";
@@ -248,8 +248,8 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String PORT_VARIABLE__SAME_BINDING_SEMANTICS_AS_PARENT__EEXPRESSION = "if self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingSemantics=storydiagrams::patterns::BindingSemantics::OPTIONAL then\r\n" +
-		"\tself.bindingSemantics = self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingSemantics\r\n" +
+	protected static final String PORT_VARIABLE__SAME_BINDING_SEMANTICS_AS_PARENT__EEXPRESSION = "if self.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentStoryPatternVariable).bindingSemantics=storydiagram::patterns::BindingSemantics::OPTIONAL then\r\n" +
+		"\tself.bindingSemantics = self.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentStoryPatternVariable).bindingSemantics\r\n" +
 		"else\r\n" +
 		"\ttrue\r\n" +
 		"endif";
@@ -281,16 +281,16 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String PORT_VARIABLE__VALID_TYPE_OF_PORT_VARIABLE__EEXPRESSION = "if self.eContainer().oclIsKindOf(ComponentVariable) then\r\n" +
-		"\tif not self.eContainer().oclAsType(ComponentVariable).type.oclIsUndefined() then\r\n" +
-		"\t\tself.eContainer().oclAsType(ComponentVariable).type.oclAsType(pim::component::Component).ports->includes(self.dataType.oclAsType(pim::component::Port))\r\n" +
+	protected static final String PORT_VARIABLE__VALID_TYPE_OF_PORT_VARIABLE__EEXPRESSION = "if self.oclAsType(ecore::EObject).eContainer().oclIsKindOf(ComponentVariable) then\r\n" +
+		"\tif not self.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentVariable).type.oclIsUndefined() then\r\n" +
+		"\t\tself.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentVariable).type.oclAsType(pim::component::Component).ports->includes(self.dataType.oclAsType(pim::component::Port))\r\n" +
 		"\telse\r\n" +
 		"\t\tfalse\r\n" +
 		"\tendif\r\n" +
 		"else\r\n" +
-		"\tif self.eContainer().oclIsKindOf(PartVariable) then\r\n" +
-		"\t\tif not self.eContainer().oclAsType(PartVariable).dataType.oclIsUndefined() then\r\n" +
-		"\t\t\tself.eContainer().oclAsType(PartVariable).dataType.oclAsType(pim::component::ComponentPart).componentType.oclAsType(pim::component::Component).ports->includes(self.dataType.oclAsType(pim::component::Port))\r\n" +
+		"\tif self.oclAsType(ecore::EObject).eContainer().oclIsKindOf(PartVariable) then\r\n" +
+		"\t\tif not self.oclAsType(ecore::EObject).eContainer().oclAsType(PartVariable).dataType.oclIsUndefined() then\r\n" +
+		"\t\t\tself.oclAsType(ecore::EObject).eContainer().oclAsType(PartVariable).dataType.oclAsType(pim::component::ComponentPart).componentType.oclAsType(pim::component::Component).ports->includes(self.dataType.oclAsType(pim::component::Port))\r\n" +
 		"\t\telse\r\n" +
 		"\t\t\tfalse\r\n" +
 		"\t\tendif\r\n" +
@@ -346,8 +346,8 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String PART_VARIABLE__SAME_BINDING_OPERATOR_AS_COMPONENT_VARIABLE__EEXPRESSION = "if self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CHECK_ONLY then\r\n" +
-		"\tself.bindingOperator = self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator\r\n" +
+	protected static final String PART_VARIABLE__SAME_BINDING_OPERATOR_AS_COMPONENT_VARIABLE__EEXPRESSION = "if self.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagram::patterns::BindingOperator::CHECK_ONLY then\r\n" +
+		"\tself.bindingOperator = self.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator\r\n" +
 		"else\r\n" +
 		"\ttrue\r\n" +
 		"endif";
@@ -379,9 +379,9 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String PART_VARIABLE__VALID_TYPE_OF_PART_VARIABLE__EEXPRESSION = "if not self.eContainer().oclAsType(ComponentVariable).type.oclIsUndefined() then\r\n" +
-		"\tif self.eContainer().oclAsType(ComponentVariable).type.oclIsKindOf(pim::component::StructuredComponent) then\r\n" +
-		"\t\tself.eContainer().oclAsType(ComponentVariable).type.oclAsType(pim::component::StructuredComponent).embeddedComponentParts->includes(self.dataType.oclAsType(pim::component::ComponentPart))\r\n" +
+	protected static final String PART_VARIABLE__VALID_TYPE_OF_PART_VARIABLE__EEXPRESSION = "if not self.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentVariable).type.oclIsUndefined() then\r\n" +
+		"\tif self.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentVariable).type.oclIsKindOf(pim::component::StructuredComponent) then\r\n" +
+		"\t\tself.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentVariable).type.oclAsType(pim::component::StructuredComponent).embeddedComponentParts->includes(self.dataType.oclAsType(pim::component::ComponentPart))\r\n" +
 		"\telse\r\n" +
 		"\t\tfalse\r\n" +
 		"\tendif\r\n" +
@@ -436,11 +436,11 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String CONNECTOR_VARIABLE__MUST_NOT_CONNECT_CREATE_AND_DESTROY_PORTS__EEXPRESSION = "if self.portVariables->asOrderedSet()->first().oclAsType(ComponentStoryPatternVariable).bindingOperator=storydiagrams::patterns::BindingOperator::CREATE then\r\n" +
-		"\tself.portVariables->asOrderedSet()->last().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::DESTROY\r\n" +
+	protected static final String CONNECTOR_VARIABLE__MUST_NOT_CONNECT_CREATE_AND_DESTROY_PORTS__EEXPRESSION = "if self.portVariables->asOrderedSet()->first().oclAsType(ComponentStoryPatternVariable).bindingOperator=storydiagram::patterns::BindingOperator::CREATE then\r\n" +
+		"\tself.portVariables->asOrderedSet()->last().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagram::patterns::BindingOperator::DESTROY\r\n" +
 		"else\r\n" +
-		"\tif self.portVariables->asOrderedSet()->first().oclAsType(ComponentStoryPatternVariable).bindingOperator=storydiagrams::patterns::BindingOperator::DESTROY then\r\n" +
-		"\t\tself.portVariables->asOrderedSet()->last().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CREATE\r\n" +
+		"\tif self.portVariables->asOrderedSet()->first().oclAsType(ComponentStoryPatternVariable).bindingOperator=storydiagram::patterns::BindingOperator::DESTROY then\r\n" +
+		"\t\tself.portVariables->asOrderedSet()->last().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagram::patterns::BindingOperator::CREATE\r\n" +
 		"\telse\r\n" +
 		"\t\ttrue\r\n" +
 		"\tendif\r\n" +
@@ -473,10 +473,10 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String CONNECTOR_VARIABLE__SAME_BINDING_OPERATOR_AS_PORT_VARIABLE__EEXPRESSION = "if self.portVariables->asOrderedSet()->first().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CHECK_ONLY then\r\n" +
+	protected static final String CONNECTOR_VARIABLE__SAME_BINDING_OPERATOR_AS_PORT_VARIABLE__EEXPRESSION = "if self.portVariables->asOrderedSet()->first().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagram::patterns::BindingOperator::CHECK_ONLY then\r\n" +
 		"\tself.oclAsType(ComponentStoryPatternVariable).bindingOperator = self.portVariables->asOrderedSet()->first().oclAsType(ComponentStoryPatternVariable).bindingOperator\r\n" +
 		"else\r\n" +
-		"\tif self.portVariables->asOrderedSet()->last().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CHECK_ONLY then\r\n" +
+		"\tif self.portVariables->asOrderedSet()->last().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagram::patterns::BindingOperator::CHECK_ONLY then\r\n" +
 		"\t\tself.oclAsType(ComponentStoryPatternVariable).bindingOperator = self.portVariables->asOrderedSet()->last().oclAsType(ComponentStoryPatternVariable).bindingOperator\r\n" +
 		"\telse\r\n" +
 		"\t\ttrue\r\n" +
@@ -732,7 +732,7 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String FADING_COMPONENT_PART_VARIABLE__NOT_DEFINE_APPLIED_FADING_FUNCTION_FOR_VARIABLE_NOT_CONTAINED_IN_CONTROLLER_EXCHANGE_NODE__EEXPRESSION = "if not self.eContainer().eContainer().eContainer().oclIsTypeOf(componentstorydiagram::ControllerExchangeNode)\r\n" +
+	protected static final String FADING_COMPONENT_PART_VARIABLE__NOT_DEFINE_APPLIED_FADING_FUNCTION_FOR_VARIABLE_NOT_CONTAINED_IN_CONTROLLER_EXCHANGE_NODE__EEXPRESSION = "if not self.oclAsType(ecore::EObject).eContainer().oclAsType(ecore::EObject).eContainer().oclAsType(ecore::EObject).eContainer().oclIsTypeOf(componentstorydiagram::ControllerExchangeNode)\r\n" +
 		"\tthen self.appliedFadingFunction.oclIsUndefined()\r\n" +
 		"else true\r\n" +
 		"endif";

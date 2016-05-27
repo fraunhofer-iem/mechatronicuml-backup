@@ -34,7 +34,7 @@ public interface DelegationVariable extends ConnectorVariable {
 	 * @see #setType(DelegationConnector)
 	 * @see org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage#getDelegationVariable_Type()
 	 * @model required="true"
-	 *        annotation="http://www.muml.org/emf/OCLFilter choices='let outerPort : pim::component::Port = self.portVariables->select(eContainer().oclIsTypeOf(ComponentVariable))->at(1).portType,\r\n\tinnerPort : pim::component::Port = self.portVariables.portType->excluding(outerPort)->at(1),\r\n\tdelegationConnectorsOuter : OrderedSet(pim::connector::Connector) = outerPort.connectors->select(oclIsTypeOf(pim::component::DelegationConnector))\r\nin\r\n\tdelegationConnectorsOuter->select(dC | dC.oclAsType(pim::component::DelegationConnector).portPart.portType = innerPort)'"
+	 *        annotation="http://www.muml.org/emf/OCLFilter choices='let outerPort : pim::component::Port = self.portVariables->select(oclAsType(ecore::EObject).eContainer().oclIsTypeOf(ComponentVariable))->at(1).portType,\r\n\tinnerPort : pim::component::Port = self.portVariables.portType->excluding(outerPort)->at(1),\r\n\tdelegationConnectorsOuter : OrderedSet(pim::connector::Connector) = outerPort.connectors->select(oclIsTypeOf(pim::component::DelegationConnector))\r\nin\r\n\tdelegationConnectorsOuter->select(dC | dC.oclAsType(pim::component::DelegationConnector).portPart.portType = innerPort)'"
 	 * @generated
 	 */
 	DelegationConnector getType();

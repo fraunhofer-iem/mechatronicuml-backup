@@ -19,7 +19,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage#getMultiPortVariable()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL MultiPortCreatedOnlyIfParentCreated='-- Multi Port Variables may only be created if their parent is created as well\r\nif(self.bindingOperator = storydiagrams::patterns::BindingOperator::CREATE and self.eContainer().oclIsKindOf(ComponentStoryPatternVariable)) then\r\n\tself.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator = storydiagrams::patterns::BindingOperator::CREATE\r\nelse\r\n\ttrue\r\nendif'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL MultiPortCreatedOnlyIfParentCreated='-- Multi Port Variables may only be created if their parent is created as well\r\nif(self.bindingOperator = storydiagram::patterns::BindingOperator::CREATE and self.oclAsType(ecore::EObject).eContainer().oclIsKindOf(ComponentStoryPatternVariable)) then\r\n\tself.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator = storydiagram::patterns::BindingOperator::CREATE\r\nelse\r\n\ttrue\r\nendif'"
  * @generated
  */
 public interface MultiPortVariable extends PortVariable {

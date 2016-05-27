@@ -16,7 +16,7 @@ package org.muml.reconfiguration.componentstorypattern;
  * </ul>
  *
  * @see org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage#getComponentPartVariable()
- * @model annotation="http://www.muml.org/emf/OCLFilter choices='let \r\n\tcomponent : component::StructuredComponent = self.eContainer().oclAsType(ComponentVariable).type.oclAsType(component::StructuredComponent)\r\nin\r\n\tcomponent.embeddedComponentParts->select(p | not p.componentType.oclIsTypeOf(reconfiguration::FadingComponent))' feature='dataType'"
+ * @model annotation="http://www.muml.org/emf/OCLFilter choices='let \r\n\tcomponent : component::StructuredComponent = self.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentVariable).type.oclAsType(component::StructuredComponent)\r\nin\r\n\tcomponent.embeddedComponentParts->select(p | not p.componentType.oclIsTypeOf(reconfiguration::FadingComponent))' feature='dataType'"
  * @generated
  */
 public interface ComponentPartVariable extends PartVariable {
