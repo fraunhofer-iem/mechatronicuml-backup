@@ -59,7 +59,7 @@ public interface MatchingStoryNode extends StoryNode {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL implementation='self.ownedPattern'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='self.ownedPattern'"
 	 * @generated
 	 */
 	StoryPattern getStoryPattern();

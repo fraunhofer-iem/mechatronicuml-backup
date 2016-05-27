@@ -1025,13 +1025,13 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 		  (getMatchingStoryNode__GetStoryPattern(), 
 		   source, 
 		   new String[] {
-			 "implementation", "self.ownedPattern"
+			 "body", "self.ownedPattern"
 		   });	
 		addAnnotation
 		  (getModifyingStoryNode__GetStoryPattern(), 
 		   source, 
 		   new String[] {
-			 "implementation", "self.ownedRule"
+			 "body", "self.ownedRule"
 		   });
 	}
 

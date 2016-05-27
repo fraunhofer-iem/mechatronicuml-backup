@@ -200,7 +200,7 @@
       </eAnnotations>
       <eOperations name="getStoryPattern" eType="#//patterns/StoryPattern">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="implementation" value="self.ownedPattern"/>
+          <details key="body" value="self.ownedPattern"/>
         </eAnnotations>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ownedPattern" ordered="false"
@@ -347,7 +347,7 @@
       </eAnnotations>
       <eOperations name="getStoryPattern" eType="#//patterns/StoryPattern">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="implementation" value="self.ownedRule"/>
+          <details key="body" value="self.ownedRule"/>
         </eAnnotations>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ownedRule" ordered="false"
