@@ -65,7 +65,7 @@ public interface StoryNode extends ActivityNode {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Story Pattern</em>' reference.
 	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getStoryNode_StoryPattern()
-	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
+	 * @model resolveProxies="false" required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
 	 * @generated
 	 */
 	StoryPattern getStoryPattern();

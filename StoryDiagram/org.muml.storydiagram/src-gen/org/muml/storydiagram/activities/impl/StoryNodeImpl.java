@@ -8,7 +8,6 @@ package org.muml.storydiagram.activities.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.storydiagram.activities.ActivitiesPackage;
 import org.muml.storydiagram.activities.StoryNode;
@@ -87,16 +86,9 @@ public abstract class StoryNodeImpl extends ActivityNodeImpl implements
 	 * @generated
 	 */
 	public StoryPattern getStoryPattern() {
-		StoryPattern storyPattern = basicGetStoryPattern();
-		return storyPattern != null && storyPattern.eIsProxy() ? (StoryPattern)eResolveProxy((InternalEObject)storyPattern) : storyPattern;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public StoryPattern basicGetStoryPattern() {
-		return null;
+		// TODO: implement this method to return the 'Story Pattern' reference
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -109,8 +101,7 @@ public abstract class StoryNodeImpl extends ActivityNodeImpl implements
 			case ActivitiesPackage.STORY_NODE__FOR_EACH:
 				return isForEach();
 			case ActivitiesPackage.STORY_NODE__STORY_PATTERN:
-				if (resolve) return getStoryPattern();
-				return basicGetStoryPattern();
+				return getStoryPattern();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -153,7 +144,7 @@ public abstract class StoryNodeImpl extends ActivityNodeImpl implements
 			case ActivitiesPackage.STORY_NODE__FOR_EACH:
 				return forEach != FOR_EACH_EDEFAULT;
 			case ActivitiesPackage.STORY_NODE__STORY_PATTERN:
-				return basicGetStoryPattern() != null;
+				return getStoryPattern() != null;
 		}
 		return super.eIsSet(featureID);
 	}
