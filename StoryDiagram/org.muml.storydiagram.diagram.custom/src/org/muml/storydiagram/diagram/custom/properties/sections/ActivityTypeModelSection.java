@@ -106,7 +106,7 @@ public class ActivityTypeModelSection extends AbstractPropertySection {
 						Activity activity = (Activity) getElement();
 						EAnnotation annotation = null;
 						for (EAnnotation currentAnnotation : activity.getAnnotations()) {
-							if (ResourceManager.SOURCE_TYPES.equals(annotation.getSource())) {
+							if (ResourceManager.SOURCE_TYPES.equals(currentAnnotation.getSource())) {
 								annotation = currentAnnotation;
 							}
 						}
@@ -230,7 +230,7 @@ public class ActivityTypeModelSection extends AbstractPropertySection {
 								Activity activity = (Activity) getElement();
 								EAnnotation annotation = null;
 								for (EAnnotation currentAnnotation : activity.getAnnotations()) {
-									if (ResourceManager.SOURCE_TYPES.equals(annotation.getSource())) {
+									if (ResourceManager.SOURCE_TYPES.equals(currentAnnotation.getSource())) {
 										annotation = currentAnnotation;
 									}
 								}
@@ -286,7 +286,7 @@ public class ActivityTypeModelSection extends AbstractPropertySection {
 											Activity activity = getElement();
 											EAnnotation annotation = null;
 											for (EAnnotation currentAnnotation : activity.getAnnotations()) {
-												if (ResourceManager.SOURCE_TYPES.equals(annotation.getSource())) {
+												if (ResourceManager.SOURCE_TYPES.equals(currentAnnotation.getSource())) {
 													annotation = currentAnnotation;
 												}
 											}

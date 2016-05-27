@@ -25,7 +25,7 @@ public class ResourcesContentProvider extends ArrayContentProvider implements IT
 			Activity activity = (Activity) element;
 			EAnnotation annotation = null;
 			for (EAnnotation currentAnnotation : activity.getAnnotations()) {
-				if (ResourceManager.SOURCE_TYPES.equals(annotation.getSource())) {
+				if (ResourceManager.SOURCE_TYPES.equals(currentAnnotation.getSource())) {
 					annotation = currentAnnotation;
 				}
 			}
