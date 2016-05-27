@@ -4,8 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcoreFactory;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.jface.window.Window;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.muml.core.CorePackage;
 import org.muml.storydiagram.diagram.custom.ResourceManager;
 import org.muml.storydiagram.diagram.custom.dialogs.SelectEClassDialog;
@@ -38,9 +43,41 @@ public class ObjectVariableClassifierSection extends AbstractComboSection<EClass
 
 	@Override
 	protected EStructuralFeature getFeature() {
-		return CorePackage.Literals.TYPED_ELEMENT__GENERIC_TYPE;
+		return EcorePackage.Literals.EGENERIC_TYPE__ECLASSIFIER;
 	}
-
+	
+	@Override
+	protected EObject getElement() {
+		if(super.getElement() instanceof ObjectVariable){
+			ObjectVariable objectVariable = (ObjectVariable) super.getElement();
+			if(objectVariable.getGenericType() == null){
+				objectVariable.setGenericType(EcoreFactory.eINSTANCE.createEGenericType());
+			}
+			return objectVariable.getGenericType();
+		}
+		return super.getElement();
+	}
+	
+//	@Override
+//	protected void hookWidgetListeners() {
+//		super.getCombo()ombo.addSelectionListener(new SelectionAdapter() {
+//			@Override
+//			public void widgetSelected(SelectionEvent e) {
+//				set(map.get(combo.getSelectionIndex()));
+//				validate();
+//			}
+//		});
+//
+//		if (shouldShowButton()) {
+//			button.addSelectionListener(new SelectionAdapter() {
+//				@Override
+//				public void widgetSelected(SelectionEvent e) {
+//					handleButtonClicked();
+//				}
+//			});
+//		}
+//	}
+	
 	@Override
 	protected List<EClass> getItems() {
 		List<EClass> items = new ArrayList<EClass>();
