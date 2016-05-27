@@ -140,16 +140,6 @@ public class ComponentStoryPatternNodeItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(ComponentsddPackage.Literals.COMPONENT_STORY_PATTERN_NODE__PATTERN,
 				 ComponentstorypatternFactory.eINSTANCE.createComponentStoryPattern()));
 	}

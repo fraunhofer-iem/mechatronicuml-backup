@@ -218,16 +218,6 @@ public class ComponentStoryDecisionDiagramItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(SDDPackage.Literals.ABSTRACT_STORY_DECISION_DIAGRAM__NODES,
 				 ComponentsddFactory.eINSTANCE.createComponentStoryPatternNode()));
 

@@ -168,7 +168,7 @@ public class ComponentsddValidator extends EObjectValidator {
 		"\tconnectorVariables : OrderedSet(componentstorypattern::ConnectorVariable) = pattern.thisVariable.connectorVariables,\r\n" +
 		"\tportVariable : OrderedSet(componentstorypattern::ComponentStoryPatternVariable) = partVariables->collect(portVariables)->asOrderedSet()\r\n" +
 		"in\r\n" +
-		"\tportVariable->union(partVariables)->union(connectorVariables)->forAll(cV | cV.bindingSemantics = storydiagrams::patterns::BindingSemantics::MANDATORY)";
+		"\tportVariable->union(partVariables)->union(connectorVariables)->forAll(cV | cV.bindingSemantics = storydiagram::patterns::BindingSemantics::MANDATORY)";
 
 	/**
 	 * Validates the noNegativeVariables constraint of '<em>Component Story Pattern Node</em>'.
@@ -202,7 +202,7 @@ public class ComponentsddValidator extends EObjectValidator {
 		"\tconnectorVariables : OrderedSet(componentstorypattern::ConnectorVariable) = pattern.thisVariable.connectorVariables,\r\n" +
 		"\tportVariable : OrderedSet(componentstorypattern::ComponentStoryPatternVariable) = partVariables->collect(portVariables)->asOrderedSet()\r\n" +
 		"in\r\n" +
-		"\tportVariable->union(partVariables)->union(connectorVariables)->forAll(cV | cV.bindingOperator = storydiagrams::patterns::BindingOperator::CHECK_ONLY)";
+		"\tportVariable->union(partVariables)->union(connectorVariables)->forAll(cV | cV.bindingOperator = storydiagram::patterns::BindingOperator::CHECK_ONLY)";
 
 	/**
 	 * Validates the noVariableModifications constraint of '<em>Component Story Pattern Node</em>'.
