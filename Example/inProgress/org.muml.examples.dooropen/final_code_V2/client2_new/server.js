@@ -32,6 +32,15 @@ child.stdout.on('data', function(data) {
     console.log("Send Granted to clients");
   }
 
+  if(data.indexOf("received message of typeM1CompleteDeny_M1_Message") != -1){
+    io.sockets.emit('completeDeny');
+    console.log("Send CompleteDeny to clients");
+  }
+
+  if(data.indexOf("switched state to STATE_LAUNCHDELEGATORVERIFIERRESTART") != -1){
+    io.sockets.emit('restartSystem');
+    console.log("Send Restart to clients");
+  }
 
 });
 

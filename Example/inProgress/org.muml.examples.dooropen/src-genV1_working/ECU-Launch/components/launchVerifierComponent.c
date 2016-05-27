@@ -5,6 +5,7 @@
 #include "../../../src-genV1_working/ECU-Launch/components/launchVerifierComponent_Interface.h"
 		void contSelf(bool_T a){
 			  printf("received %d:\n",a);
+				fflush(stdout);
 			  if(a){
 				  system("/root/demonstrator-green.sh");
 			  }

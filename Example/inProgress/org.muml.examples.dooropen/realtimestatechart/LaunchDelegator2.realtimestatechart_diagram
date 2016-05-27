@@ -144,6 +144,48 @@
                     <element xmi:type="realtimestatechart:State" href="../org.muml.examples.muml#//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.5"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0qmQwSMsEeaKgdiSINwsHw" x="536" y="243"/>
                   </children>
+                  <children xmi:type="notation:Shape" xmi:id="_aYy4kCQ3EeaW16bKkHzlow" type="3032" fontName="Cantarell" fontHeight="11" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_aYzfoCQ3EeaW16bKkHzlow" type="5060"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_aYzfoSQ3EeaW16bKkHzlow" type="7031">
+                      <styles xmi:type="notation:SortingStyle" xmi:id="_aYzfoiQ3EeaW16bKkHzlow" sorting="Automatic" sortingKeys="default_sorting_key:Ascending"/>
+                      <styles xmi:type="notation:FilteringStyle" xmi:id="_aYzfoyQ3EeaW16bKkHzlow"/>
+                    </children>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_aYzfpCQ3EeaW16bKkHzlow" type="7032">
+                      <styles xmi:type="notation:SortingStyle" xmi:id="_aYzfpSQ3EeaW16bKkHzlow"/>
+                      <styles xmi:type="notation:FilteringStyle" xmi:id="_aYzfpiQ3EeaW16bKkHzlow"/>
+                    </children>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_aYzfpyQ3EeaW16bKkHzlow" type="7033">
+                      <styles xmi:type="notation:SortingStyle" xmi:id="_aYzfqCQ3EeaW16bKkHzlow"/>
+                      <styles xmi:type="notation:FilteringStyle" xmi:id="_aYzfqSQ3EeaW16bKkHzlow"/>
+                    </children>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_aY0GsCQ3EeaW16bKkHzlow" type="7034">
+                      <styles xmi:type="notation:SortingStyle" xmi:id="_aY0GsSQ3EeaW16bKkHzlow"/>
+                      <styles xmi:type="notation:FilteringStyle" xmi:id="_aY0GsiQ3EeaW16bKkHzlow"/>
+                    </children>
+                    <element xmi:type="realtimestatechart:State" href="../org.muml.examples.muml#//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.6"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aYy4kSQ3EeaW16bKkHzlow" x="45" y="300"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_g6IeoCQ3EeaW16bKkHzlow" type="3032" fontName="Cantarell" fontHeight="11" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_g6IeoiQ3EeaW16bKkHzlow" type="5060"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_g6IeoyQ3EeaW16bKkHzlow" type="7031">
+                      <styles xmi:type="notation:SortingStyle" xmi:id="_g6IepCQ3EeaW16bKkHzlow" sorting="Automatic" sortingKeys="default_sorting_key:Ascending"/>
+                      <styles xmi:type="notation:FilteringStyle" xmi:id="_g6IepSQ3EeaW16bKkHzlow"/>
+                    </children>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_g6IepiQ3EeaW16bKkHzlow" type="7032">
+                      <styles xmi:type="notation:SortingStyle" xmi:id="_g6IepyQ3EeaW16bKkHzlow"/>
+                      <styles xmi:type="notation:FilteringStyle" xmi:id="_g6IeqCQ3EeaW16bKkHzlow"/>
+                    </children>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_g6IeqSQ3EeaW16bKkHzlow" type="7033">
+                      <styles xmi:type="notation:SortingStyle" xmi:id="_g6IeqiQ3EeaW16bKkHzlow"/>
+                      <styles xmi:type="notation:FilteringStyle" xmi:id="_g6IeqyQ3EeaW16bKkHzlow"/>
+                    </children>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_g6IerCQ3EeaW16bKkHzlow" type="7034">
+                      <styles xmi:type="notation:SortingStyle" xmi:id="_g6IerSQ3EeaW16bKkHzlow"/>
+                      <styles xmi:type="notation:FilteringStyle" xmi:id="_g6IeriQ3EeaW16bKkHzlow"/>
+                    </children>
+                    <element xmi:type="realtimestatechart:State" href="../org.muml.examples.muml#//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.7"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g6IeoSQ3EeaW16bKkHzlow" x="25" y="165"/>
+                  </children>
                 </children>
                 <element xmi:type="realtimestatechart:RealtimeStatechart" href="../org.muml.examples.muml#_bWFoI8juEeW0gpRI-mS_yA"/>
                 <layoutConstraint xmi:type="notation:Bounds" xmi:id="_inKvQSMmEeaKgdiSINwsHw"/>
@@ -227,7 +269,7 @@
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_rR-UgCMsEeaKgdiSINwsHw" id="(0.43859649122807015,0.8113207547169812)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_rR-UgSMsEeaKgdiSINwsHw" id="(0.5934065934065934,0.11320754716981132)"/>
   </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_0AaEQCMsEeaKgdiSINwsHw" type="4003" source="_yrVuwCMsEeaKgdiSINwsHw" target="_LRgTkCMqEeaKgdiSINwsHw" lineColor="0">
+  <edges xmi:type="notation:Connector" xmi:id="_0AaEQCMsEeaKgdiSINwsHw" type="4003" source="_yrVuwCMsEeaKgdiSINwsHw" target="_aYy4kCQ3EeaW16bKkHzlow" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_0AaEQyMsEeaKgdiSINwsHw" type="6005">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_0AaERCMsEeaKgdiSINwsHw" y="-20"/>
     </children>
@@ -238,9 +280,9 @@
     <element xmi:type="realtimestatechart:Transition" href="../org.muml.examples.muml#//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.4"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_0AaEQiMsEeaKgdiSINwsHw" points="[-7, -1, 449, 61]$[-455, -59, 1, 3]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0ApU0CMsEeaKgdiSINwsHw" id="(0.08333333333333333,0.5283018867924528)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0ApU0SMsEeaKgdiSINwsHw" id="(0.8,0.9545454545454546)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0ApU0SMsEeaKgdiSINwsHw" id="(0.9139784946236559,0.39622641509433965)"/>
   </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_2e8jQCMsEeaKgdiSINwsHw" type="4003" source="_0qmQwCMsEeaKgdiSINwsHw" target="_LRgTkCMqEeaKgdiSINwsHw" lineColor="0">
+  <edges xmi:type="notation:Connector" xmi:id="_2e8jQCMsEeaKgdiSINwsHw" type="4003" source="_0qmQwCMsEeaKgdiSINwsHw" target="_aYy4kCQ3EeaW16bKkHzlow" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_2e8jQyMsEeaKgdiSINwsHw" type="6005">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_2e8jRCMsEeaKgdiSINwsHw" y="-20"/>
     </children>
@@ -250,7 +292,7 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_2e8jQSMsEeaKgdiSINwsHw" fontName="Cantarell" fontHeight="11"/>
     <element xmi:type="realtimestatechart:Transition" href="../org.muml.examples.muml#//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.5"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2e8jQiMsEeaKgdiSINwsHw" points="[-65, -3, 456, 220]$[-515, -22, 6, 201]$[-515, -208, 6, 15]"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2fKlsCMsEeaKgdiSINwsHw" id="(0.6,0.7727272727272727)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2fKlsCMsEeaKgdiSINwsHw" id="(0.7096774193548387,0.8867924528301887)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_7wA0QCMsEeaKgdiSINwsHw" type="4003" source="_sXvCsCMsEeaKgdiSINwsHw" target="_yrVuwCMsEeaKgdiSINwsHw" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_7wA0QyMsEeaKgdiSINwsHw" type="6005">
@@ -302,5 +344,27 @@
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_qQQE4iNEEeaKgdiSINwsHw" points="[22, 0, 34, -17]$[57, 0, 69, -17]$[57, 37, 69, 20]$[22, 26, 34, 9]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qQeuYCNEEeaKgdiSINwsHw" id="(0.8482758620689655,0.3584905660377358)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qQeuYSNEEeaKgdiSINwsHw" id="(0.7655172413793103,0.6792452830188679)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_iDGR0CQ3EeaW16bKkHzlow" type="4003" source="_aYy4kCQ3EeaW16bKkHzlow" target="_g6IeoCQ3EeaW16bKkHzlow" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_iDGR0yQ3EeaW16bKkHzlow" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_iDGR1CQ3EeaW16bKkHzlow" y="-20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_iDGR1SQ3EeaW16bKkHzlow" type="6006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_iDGR1iQ3EeaW16bKkHzlow" x="-10" y="20"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_iDGR0SQ3EeaW16bKkHzlow" fontName="Cantarell" fontHeight="11"/>
+    <element xmi:type="realtimestatechart:Transition" href="../org.muml.examples.muml#//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.10"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_iDGR0iQ3EeaW16bKkHzlow" points="[-13, -42, 39, 109]$[-46, -124, 6, 27]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_ia-mUCQ3EeaW16bKkHzlow" type="4003" source="_g6IeoCQ3EeaW16bKkHzlow" target="_LRgTkCMqEeaKgdiSINwsHw" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_ia_NYCQ3EeaW16bKkHzlow" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ia_NYSQ3EeaW16bKkHzlow" y="-20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_ia_NYiQ3EeaW16bKkHzlow" type="6006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ia_NYyQ3EeaW16bKkHzlow" x="-10" y="20"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_ia-mUSQ3EeaW16bKkHzlow" fontName="Cantarell" fontHeight="11"/>
+    <element xmi:type="realtimestatechart:Transition" href="../org.muml.examples.muml#//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.11"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ia-mUiQ3EeaW16bKkHzlow" points="[-6, -26, 8, 129]$[-6, -175, 8, -20]"/>
   </edges>
 </notation:Diagram>

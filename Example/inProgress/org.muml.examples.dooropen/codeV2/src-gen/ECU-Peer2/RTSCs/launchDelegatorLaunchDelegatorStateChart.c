@@ -21,6 +21,8 @@
 		void LaunchDelegatorLaunchDelegatorStateChart_initialize(
 				LaunchDelegatorLaunchDelegatorStateChart* stateChart) {
 			//initialize clocks
+			Clock_reset(
+					stateChart->launchDelegatorCLaunchDelegatorLaunchDelegatorClock);
 		
 			//initialize variables of the root statechart
 			stateChart->whoami = 2;
@@ -387,9 +389,73 @@
 					//release all created sent events
 					// change the state
 					stateChart->currentStateOfLaunchDelegatorVerifierPeer_verifier =
-							STATE_LAUNCHDELEGATORVERIFIERSTART;
+							STATE_LAUNCHDELEGATORVERIFIERINITRESTART;
 		#ifdef DEBUG
-					printDebugInformation("currentStateOfLaunchDelegatorVerifierPeer_verifier switched state to STATE_LAUNCHDELEGATORVERIFIERSTART" );
+					printDebugInformation("currentStateOfLaunchDelegatorVerifierPeer_verifier switched state to STATE_LAUNCHDELEGATORVERIFIERINITRESTART" );
+		#endif		
+		
+					// execute entry actions
+		
+					Clock_reset(
+							stateChart->launchDelegatorCLaunchDelegatorLaunchDelegatorClock);
+		
+				} else {
+		
+				}
+				break;
+			case STATE_LAUNCHDELEGATORVERIFIERCOMPLETEDENY:
+				if (1
+		
+				) {
+		
+					// execute exit actions
+					// nothing to do
+		
+					// Transition Effects (incl. clock resets)
+					// nothing to do
+		
+					// nothing to do			
+		
+					//release all created received events
+					//release all created sent events
+					// change the state
+					stateChart->currentStateOfLaunchDelegatorVerifierPeer_verifier =
+							STATE_LAUNCHDELEGATORVERIFIERINITRESTART;
+		#ifdef DEBUG
+					printDebugInformation("currentStateOfLaunchDelegatorVerifierPeer_verifier switched state to STATE_LAUNCHDELEGATORVERIFIERINITRESTART" );
+		#endif		
+		
+					// execute entry actions
+		
+					Clock_reset(
+							stateChart->launchDelegatorCLaunchDelegatorLaunchDelegatorClock);
+		
+				} else {
+		
+				}
+				break;
+			case STATE_LAUNCHDELEGATORVERIFIERINITRESTART:
+				if (Clock_getTime(
+						stateChart->launchDelegatorCLaunchDelegatorLaunchDelegatorClock)
+						>= 10 * 1000.0
+		
+						) {
+		
+					// execute exit actions
+					// nothing to do
+		
+					// Transition Effects (incl. clock resets)
+					// nothing to do
+		
+					// nothing to do			
+		
+					//release all created received events
+					//release all created sent events
+					// change the state
+					stateChart->currentStateOfLaunchDelegatorVerifierPeer_verifier =
+							STATE_LAUNCHDELEGATORVERIFIERRESTART;
+		#ifdef DEBUG
+					printDebugInformation("currentStateOfLaunchDelegatorVerifierPeer_verifier switched state to STATE_LAUNCHDELEGATORVERIFIERRESTART" );
 		#endif		
 		
 					// execute entry actions
@@ -399,7 +465,7 @@
 		
 				}
 				break;
-			case STATE_LAUNCHDELEGATORVERIFIERCOMPLETEDENY:
+			case STATE_LAUNCHDELEGATORVERIFIERRESTART:
 				if (1
 		
 				) {
@@ -475,6 +541,14 @@
 		
 				break;
 			case STATE_LAUNCHDELEGATORVERIFIERCOMPLETEDENY:
+				// nothing to do
+		
+				break;
+			case STATE_LAUNCHDELEGATORVERIFIERINITRESTART:
+				// nothing to do
+		
+				break;
+			case STATE_LAUNCHDELEGATORVERIFIERRESTART:
 				// nothing to do
 		
 				break;

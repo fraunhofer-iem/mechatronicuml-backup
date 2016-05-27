@@ -7,7 +7,7 @@ var express = require('express')
 
 
  var spawn = require('child_process').spawn
-     var program = "./app";
+     var program = "./appPIP1";
 
     var child = spawn(program, []);
 
@@ -24,6 +24,16 @@ child.stdout.on('data', function(data) {
   if(data.indexOf("received message of typeM1AccessGranted_M1_Message") != -1){
     io.sockets.emit('granted');
     console.log("Send Granted to clients");
+  }
+
+  if(data.indexOf("received message of typeM1CompleteDeny_M1_Message") != -1){
+    io.sockets.emit('completeDeny');
+    console.log("Send CompleteDeny to clients");
+  }
+
+  if(data.indexOf("switched state to STATE_LAUNCHDELEGATORVERIFIERRESTART") != -1){
+    io.sockets.emit('restartSystem');
+    console.log("Send Restart to clients");
   }
 
 });

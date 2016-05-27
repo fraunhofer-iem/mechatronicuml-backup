@@ -184,6 +184,7 @@
 						,		STATE_LAUNCHVERIFIERPEER1COMPLETEDENY /**< Represents the State: STATE_LAUNCHVERIFIERPEER1COMPLETEDENY of the Realtime-StateChart: LaunchVerifierPeer1Master_peer1 */
 						,		STATE_LAUNCHVERIFIERPEER1ACCESSGRANTED /**< Represents the State: STATE_LAUNCHVERIFIERPEER1ACCESSGRANTED of the Realtime-StateChart: LaunchVerifierPeer1Master_peer1 */
 						,		STATE_LAUNCHVERIFIERPEER1ACCESDENY /**< Represents the State: STATE_LAUNCHVERIFIERPEER1ACCESDENY of the Realtime-StateChart: LaunchVerifierPeer1Master_peer1 */
+						,		STATE_LAUNCHVERIFIERPEER1RESTART /**< Represents the State: STATE_LAUNCHVERIFIERPEER1RESTART of the Realtime-StateChart: LaunchVerifierPeer1Master_peer1 */
 						,		STATE_LAUNCHVERIFIERPEER2MASTER_MAIN /**< Represents the State: STATE_LAUNCHVERIFIERPEER2MASTER_MAIN of the Realtime-StateChart: LaunchVerifierPeer2Master_peer2 */
 						,		STATE_LAUNCHVERIFIERPEER2WAITFORSTART /**< Represents the State: STATE_LAUNCHVERIFIERPEER2WAITFORSTART of the Realtime-StateChart: LaunchVerifierPeer2Master_peer2 */
 						,		STATE_LAUNCHVERIFIERPEER2SENDREADY /**< Represents the State: STATE_LAUNCHVERIFIERPEER2SENDREADY of the Realtime-StateChart: LaunchVerifierPeer2Master_peer2 */
@@ -216,6 +217,7 @@
 							bool_t LaunchVerifierPeer2Master_peer2_isExecutable;/**< Execution Verifier of RTSC: LaunchVerifierPeer2Master_peer2. This variable is used to ensure that a RTSC is executed only once per execution cycle */
 							bool_t LaunchVerifierLaunchVerifier_mainStatechart_isExecutable;/**< Execution Verifier of RTSC: LaunchVerifierLaunchVerifier_mainStatechart. This variable is used to ensure that a RTSC is executed only once per execution cycle */
 					
+							Clock launchVerifierCLaunchVerifierLaunchVerifierClock;/**< The Clock: LaunchVerifierCLaunchVerifierLaunchVerifier */
 				
 				
 					
@@ -289,14 +291,6 @@
 					void LaunchVerifierLaunchVerifierStateChart_processStep(LaunchVerifierLaunchVerifierStateChart* rtsc);
 			
 				/**
-				 * @brief Leaves the Region: master_peer2 of the Realtime-StateChart: LaunchVerifierLaunchVerifier
-				 * @details This method is called, whenever a the Region: master_peer2 is left.
-				 * 			The correct State is set and all Exit-Events are executed.
-				 *
-				 * @param rtsc The specific LaunchVerifierLaunchVerifierStateChart whose Region: master_peer2 shall be exit
-				 */
-					void LaunchVerifierPeer2Master_peer2StateChart_exit(LaunchVerifierLaunchVerifierStateChart* rtsc);
-				/**
 				 * @brief Leaves the Region: statechart of the Realtime-StateChart: LaunchVerifierLaunchVerifier
 				 * @details This method is called, whenever a the Region: statechart is left.
 				 * 			The correct State is set and all Exit-Events are executed.
@@ -304,6 +298,14 @@
 				 * @param rtsc The specific LaunchVerifierLaunchVerifierStateChart whose Region: statechart shall be exit
 				 */
 					void LaunchVerifierLaunchVerifier_mainStatechartStateChart_exit(LaunchVerifierLaunchVerifierStateChart* rtsc);
+				/**
+				 * @brief Leaves the Region: master_peer2 of the Realtime-StateChart: LaunchVerifierLaunchVerifier
+				 * @details This method is called, whenever a the Region: master_peer2 is left.
+				 * 			The correct State is set and all Exit-Events are executed.
+				 *
+				 * @param rtsc The specific LaunchVerifierLaunchVerifierStateChart whose Region: master_peer2 shall be exit
+				 */
+					void LaunchVerifierPeer2Master_peer2StateChart_exit(LaunchVerifierLaunchVerifierStateChart* rtsc);
 				/**
 				 * @brief Leaves the Region: master_peer1 of the Realtime-StateChart: LaunchVerifierLaunchVerifier
 				 * @details This method is called, whenever a the Region: master_peer1 is left.

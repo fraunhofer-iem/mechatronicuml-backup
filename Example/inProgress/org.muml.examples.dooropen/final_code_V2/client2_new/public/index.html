@@ -53,9 +53,19 @@ socket.on('deny', function (data) {
 });
 
 socket.on('granted', function (data) {
+    $("#pad").hide();
     alert("Granted");
 });
 
+
+socket.on('completeDeny', function (data){
+    $("#pad").hide();
+    alert("Access have been denied after 3rd Tries!!")
+});
+
+socket.on('restartSystem', function (data){
+    location.reload();
+});
 
 </script>
 

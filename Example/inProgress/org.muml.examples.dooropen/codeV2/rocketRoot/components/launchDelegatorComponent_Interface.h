@@ -169,6 +169,8 @@
 						,		STATE_LAUNCHDELEGATORVERIFIERWAITFORRESPONSE /**< Represents the State: STATE_LAUNCHDELEGATORVERIFIERWAITFORRESPONSE of the Realtime-StateChart: LaunchDelegatorVerifierPeer_verifier */
 						,		STATE_LAUNCHDELEGATORVERIFIERACCESSOK /**< Represents the State: STATE_LAUNCHDELEGATORVERIFIERACCESSOK of the Realtime-StateChart: LaunchDelegatorVerifierPeer_verifier */
 						,		STATE_LAUNCHDELEGATORVERIFIERCOMPLETEDENY /**< Represents the State: STATE_LAUNCHDELEGATORVERIFIERCOMPLETEDENY of the Realtime-StateChart: LaunchDelegatorVerifierPeer_verifier */	
+						,		STATE_LAUNCHDELEGATORVERIFIERINITRESTART /**< Represents the State: STATE_LAUNCHDELEGATORVERIFIERINITRESTART of the Realtime-StateChart: LaunchDelegatorVerifierPeer_verifier */
+						,		STATE_LAUNCHDELEGATORVERIFIERRESTART /**< Represents the State: STATE_LAUNCHDELEGATORVERIFIERRESTART of the Realtime-StateChart: LaunchDelegatorVerifierPeer_verifier */	
 					}LaunchDelegatorLaunchDelegatorState;
 				
 				
@@ -188,6 +190,7 @@
 						bool_t LaunchDelegatorLaunchDelegator_isExecutable;/**< Execution Verifier of RTSC: LaunchDelegatorLaunchDelegator. This variable is used to ensure that a RTSC is executed only once per execution cycle */
 							bool_t LaunchDelegatorVerifierPeer_verifier_isExecutable;/**< Execution Verifier of RTSC: LaunchDelegatorVerifierPeer_verifier. This variable is used to ensure that a RTSC is executed only once per execution cycle */
 					
+							Clock launchDelegatorCLaunchDelegatorLaunchDelegatorClock;/**< The Clock: LaunchDelegatorCLaunchDelegatorLaunchDelegator */
 				
 				
 					

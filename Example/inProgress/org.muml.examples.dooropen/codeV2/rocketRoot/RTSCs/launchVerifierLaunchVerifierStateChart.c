@@ -51,6 +51,7 @@
 		void LaunchVerifierLaunchVerifierStateChart_initialize(
 				LaunchVerifierLaunchVerifierStateChart* stateChart) {
 			//initialize clocks
+			Clock_reset(stateChart->launchVerifierCLaunchVerifierLaunchVerifierClock);
 		
 			//initialize variables of the root statechart
 			stateChart->peer1 = -32;
@@ -349,19 +350,17 @@
 					//release all created sent events
 					// change the state
 					stateChart->currentStateOfLaunchVerifierPeer1Master_peer1 =
-							STATE_LAUNCHVERIFIERPEER1WAITFORSTART;
+							STATE_LAUNCHVERIFIERPEER1RESTART;
 		#ifdef DEBUG
-					printDebugInformation("currentStateOfLaunchVerifierPeer1Master_peer1 switched state to STATE_LAUNCHVERIFIERPEER1WAITFORSTART" );
+					printDebugInformation("currentStateOfLaunchVerifierPeer1Master_peer1 switched state to STATE_LAUNCHVERIFIERPEER1RESTART" );
 		#endif		
 		
 					// execute entry actions
 					stateChart->isOtherReady = false;
-					stateChart->peer1Tries = 0;
-					stateChart->newTry = false;
-					stateChart->peer1 = -32;
-					stateChart->peer2 = -42;
-					stateChart->verifiedLaunch = false;
 					;
+		
+					Clock_reset(
+							stateChart->launchVerifierCLaunchVerifierLaunchVerifierClock);
 		
 				} else {
 		
@@ -384,19 +383,17 @@
 					//release all created sent events
 					// change the state
 					stateChart->currentStateOfLaunchVerifierPeer1Master_peer1 =
-							STATE_LAUNCHVERIFIERPEER1WAITFORSTART;
+							STATE_LAUNCHVERIFIERPEER1RESTART;
 		#ifdef DEBUG
-					printDebugInformation("currentStateOfLaunchVerifierPeer1Master_peer1 switched state to STATE_LAUNCHVERIFIERPEER1WAITFORSTART" );
+					printDebugInformation("currentStateOfLaunchVerifierPeer1Master_peer1 switched state to STATE_LAUNCHVERIFIERPEER1RESTART" );
 		#endif		
 		
 					// execute entry actions
 					stateChart->isOtherReady = false;
-					stateChart->peer1Tries = 0;
-					stateChart->newTry = false;
-					stateChart->peer1 = -32;
-					stateChart->peer2 = -42;
-					stateChart->verifiedLaunch = false;
 					;
+		
+					Clock_reset(
+							stateChart->launchVerifierCLaunchVerifierLaunchVerifierClock);
 		
 				} else {
 		
@@ -435,6 +432,43 @@
 		
 					// execute entry actions
 					stateChart->newTry = false;
+					;
+		
+				} else {
+		
+				}
+				break;
+			case STATE_LAUNCHVERIFIERPEER1RESTART:
+				if (Clock_getTime(
+						stateChart->launchVerifierCLaunchVerifierLaunchVerifierClock)
+						>= 10 * 1000.0
+		
+						) {
+		
+					// execute exit actions
+					// nothing to do
+		
+					// Transition Effects (incl. clock resets)
+					// nothing to do
+		
+					// nothing to do			
+		
+					//release all created received events
+					//release all created sent events
+					// change the state
+					stateChart->currentStateOfLaunchVerifierPeer1Master_peer1 =
+							STATE_LAUNCHVERIFIERPEER1WAITFORSTART;
+		#ifdef DEBUG
+					printDebugInformation("currentStateOfLaunchVerifierPeer1Master_peer1 switched state to STATE_LAUNCHVERIFIERPEER1WAITFORSTART" );
+		#endif		
+		
+					// execute entry actions
+					stateChart->isOtherReady = false;
+					stateChart->peer1Tries = 0;
+					stateChart->newTry = false;
+					stateChart->peer1 = -32;
+					stateChart->peer2 = -42;
+					stateChart->verifiedLaunch = false;
 					;
 		
 				} else {
@@ -875,6 +909,64 @@
 		}
 		
 		
+		void LaunchVerifierPeer1Master_peer1StateChart_exit(
+				LaunchVerifierLaunchVerifierStateChart* stateChart) {
+			switch (stateChart->currentStateOfLaunchVerifierPeer1Master_peer1) {
+			case STATE_LAUNCHVERIFIERPEER1MASTER_MAIN:
+				// nothing to do
+		
+				break;
+			case STATE_LAUNCHVERIFIERPEER1WAITFORSTART:
+				// nothing to do
+		
+				break;
+			case STATE_LAUNCHVERIFIERPEER1GETREADY:
+				// nothing to do
+		
+				break;
+			case STATE_LAUNCHVERIFIERPEER1WAITISCORRECT:
+				// nothing to do
+		
+				break;
+			case STATE_LAUNCHVERIFIERPEER1COMPLETEDENY:
+				// nothing to do
+		
+				break;
+			case STATE_LAUNCHVERIFIERPEER1ACCESSGRANTED:
+				// nothing to do
+		
+				break;
+			case STATE_LAUNCHVERIFIERPEER1ACCESDENY:
+				// nothing to do
+		
+				break;
+			case STATE_LAUNCHVERIFIERPEER1RESTART:
+				// nothing to do
+		
+				break;
+			default:
+				break;
+			}
+			stateChart->currentStateOfLaunchVerifierPeer1Master_peer1 =
+					LAUNCHVERIFIERLAUNCHVERIFIER_INACTIVE;
+		}
+		void LaunchVerifierLaunchVerifier_mainStatechartStateChart_exit(
+				LaunchVerifierLaunchVerifierStateChart* stateChart) {
+			switch (stateChart->currentStateOfLaunchVerifierLaunchVerifier_mainStatechart) {
+			case STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTUNVERIFIED:
+				// nothing to do
+		
+				break;
+			case STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTVERIFIED:
+				// nothing to do
+		
+				break;
+			default:
+				break;
+			}
+			stateChart->currentStateOfLaunchVerifierLaunchVerifier_mainStatechart =
+					LAUNCHVERIFIERLAUNCHVERIFIER_INACTIVE;
+		}
 		void LaunchVerifierPeer2Master_peer2StateChart_exit(
 				LaunchVerifierLaunchVerifierStateChart* stateChart) {
 			switch (stateChart->currentStateOfLaunchVerifierPeer2Master_peer2) {
@@ -912,69 +1004,15 @@
 			stateChart->currentStateOfLaunchVerifierPeer2Master_peer2 =
 					LAUNCHVERIFIERLAUNCHVERIFIER_INACTIVE;
 		}
-		void LaunchVerifierLaunchVerifier_mainStatechartStateChart_exit(
-				LaunchVerifierLaunchVerifierStateChart* stateChart) {
-			switch (stateChart->currentStateOfLaunchVerifierLaunchVerifier_mainStatechart) {
-			case STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTUNVERIFIED:
-				// nothing to do
-		
-				break;
-			case STATE_LAUNCHVERIFIERLAUNCHVERIFIER_MAINSTATECHARTVERIFIED:
-				// nothing to do
-		
-				break;
-			default:
-				break;
-			}
-			stateChart->currentStateOfLaunchVerifierLaunchVerifier_mainStatechart =
-					LAUNCHVERIFIERLAUNCHVERIFIER_INACTIVE;
-		}
-		void LaunchVerifierPeer1Master_peer1StateChart_exit(
-				LaunchVerifierLaunchVerifierStateChart* stateChart) {
-			switch (stateChart->currentStateOfLaunchVerifierPeer1Master_peer1) {
-			case STATE_LAUNCHVERIFIERPEER1MASTER_MAIN:
-				// nothing to do
-		
-				break;
-			case STATE_LAUNCHVERIFIERPEER1WAITFORSTART:
-				// nothing to do
-		
-				break;
-			case STATE_LAUNCHVERIFIERPEER1GETREADY:
-				// nothing to do
-		
-				break;
-			case STATE_LAUNCHVERIFIERPEER1WAITISCORRECT:
-				// nothing to do
-		
-				break;
-			case STATE_LAUNCHVERIFIERPEER1COMPLETEDENY:
-				// nothing to do
-		
-				break;
-			case STATE_LAUNCHVERIFIERPEER1ACCESSGRANTED:
-				// nothing to do
-		
-				break;
-			case STATE_LAUNCHVERIFIERPEER1ACCESDENY:
-				// nothing to do
-		
-				break;
-			default:
-				break;
-			}
-			stateChart->currentStateOfLaunchVerifierPeer1Master_peer1 =
-					LAUNCHVERIFIERLAUNCHVERIFIER_INACTIVE;
-		}
 				
 			
 		bool_t LaunchVerifierLaunchVerifierStateChart_isInState(
 				LaunchVerifierLaunchVerifierStateChart* stateChart,
 				LaunchVerifierLaunchVerifierState state) {
-			return (stateChart->currentStateOfLaunchVerifierPeer2Master_peer2 == state
+			return (stateChart->currentStateOfLaunchVerifierPeer1Master_peer1 == state
 					|| stateChart->currentStateOfLaunchVerifierLaunchVerifier_mainStatechart
-							== state
-					|| stateChart->currentStateOfLaunchVerifierPeer1Master_peer1
+					== state
+					|| stateChart->currentStateOfLaunchVerifierPeer2Master_peer2
 							== state);
 		
 		}

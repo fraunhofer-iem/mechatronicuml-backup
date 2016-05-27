@@ -113,8 +113,8 @@
                 <message instanceOf="//@categories.3/@modelElements.0/@messageTypes.5"/>
               </events>
             </transitions>
-            <transitions priority="1" target="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1" source="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.4"/>
-            <transitions priority="1" target="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1" source="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.5"/>
+            <transitions priority="1" target="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.7" source="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.4"/>
+            <transitions priority="1" target="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.7" source="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.5"/>
             <transitions priority="3" target="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.6" source="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.3">
               <guard xsi:type="common:LogicalExpression">
                 <leftExpression xsi:type="common:LogicalExpression">
@@ -138,6 +138,13 @@
                 <message instanceOf="//@categories.3/@modelElements.0/@messageTypes.2"/>
               </events>
             </transitions>
+            <transitions priority="1" target="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1" source="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.7">
+              <clockConstraints clock="//@categories.1/@modelElements.2/@clocks.0" operator="GREATER_OR_EQUAL">
+                <bound unit="SECONDS">
+                  <value xsi:type="common:LiteralExpression" value="10"/>
+                </bound>
+              </clockConstraints>
+            </transitions>
             <states xmi:id="_Yqrx18juEeW0gpRI-mS_yA" name="master_Main" outgoingTransitions="_Yqrx1MjuEeW0gpRI-mS_yA" incomingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.2 //@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.8">
               <entryEvent>
                 <action name="setTry">
@@ -150,7 +157,7 @@
                 </action>
               </entryEvent>
             </states>
-            <states name="WaitForStart" outgoingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.1" incomingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.5 //@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.6" initial="true">
+            <states name="WaitForStart" outgoingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.1" incomingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.9" initial="true">
               <entryEvent>
                 <action name="ResetSystem">
                   <expressions xsi:type="actionlanguage:Block">
@@ -202,6 +209,18 @@
             <states name="CompleteDeny" outgoingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.5" incomingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.4"/>
             <states name="AccessGranted" outgoingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.6" incomingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.3"/>
             <states name="AccesDeny" outgoingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.8" incomingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.7"/>
+            <states name="Restart" outgoingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.9" incomingTransitions="//@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.5 //@categories.1/@modelElements.2/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.6">
+              <entryEvent clockResets="//@categories.1/@modelElements.2/@clocks.0">
+                <action name="resetOther">
+                  <expressions xsi:type="actionlanguage:Block">
+                    <expressions xsi:type="actionlanguage:Assignment" assignOperator=":=">
+                      <rhs_assignExpression xsi:type="common:LiteralExpression" value="false"/>
+                      <lhs_typedNamedElementExpression typedNamedElement="//@categories.1/@modelElements.2/@variables.2"/>
+                    </expressions>
+                  </expressions>
+                </action>
+              </entryEvent>
+            </states>
           </embeddedStatechart>
         </embeddedRegions>
         <embeddedRegions xmi:id="_ZvdBgMjuEeW0gpRI-mS_yA" priority="2">
@@ -377,6 +396,7 @@
           </embeddedStatechart>
         </embeddedRegions>
       </states>
+      <clocks name="c"/>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_bWFoIMjuEeW0gpRI-mS_yA" name="LaunchDelegator" behavioralElement="_QUHP0MjrEeW0gpRI-mS_yA">
       <variables name="whoami">
@@ -412,8 +432,8 @@
               </events>
             </transitions>
             <transitions priority="1" target="_bWGPNcjuEeW0gpRI-mS_yA" source="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.2"/>
-            <transitions priority="1" target="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1" source="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.4"/>
-            <transitions priority="1" target="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1" source="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.5"/>
+            <transitions priority="1" target="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.6" source="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.4"/>
+            <transitions priority="1" target="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.6" source="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.5"/>
             <transitions priority="1" target="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.4" source="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.3">
               <events xsi:type="realtimestatechart:AsynchronousMessageEvent" kind="TRIGGER">
                 <message instanceOf="//@categories.3/@modelElements.0/@messageTypes.1"/>
@@ -442,15 +462,28 @@
                 <message instanceOf="//@categories.3/@modelElements.0/@messageTypes.2"/>
               </events>
             </transitions>
+            <transitions priority="1" target="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.7" source="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.6">
+              <clockConstraints clock="//@categories.1/@modelElements.3/@clocks.0" operator="GREATER_OR_EQUAL">
+                <bound unit="SECONDS">
+                  <value xsi:type="common:LiteralExpression" value="10"/>
+                </bound>
+              </clockConstraints>
+            </transitions>
+            <transitions priority="1" target="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.1" source="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@states.7"/>
             <states xmi:id="_bWGPNcjuEeW0gpRI-mS_yA" name="InputState" outgoingTransitions="_bWGPMMjuEeW0gpRI-mS_yA" incomingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.3 //@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.8"/>
-            <states name="Start" outgoingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.1 //@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.2" incomingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.4 //@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.5" initial="true"/>
+            <states name="Start" outgoingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.1 //@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.2" incomingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.11" initial="true"/>
             <states name="Ready" outgoingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.3" incomingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.1 //@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.2"/>
             <states name="WaitForResponse" outgoingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.6 //@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.7 //@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.8 //@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.9" incomingTransitions="_bWGPMMjuEeW0gpRI-mS_yA //@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.9"/>
             <states name="AccessOk" outgoingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.4" incomingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.6"/>
             <states name="CompleteDeny" outgoingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.5" incomingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.7"/>
+            <states name="InitRestart" outgoingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.10" incomingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.5 //@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.4">
+              <entryEvent clockResets="//@categories.1/@modelElements.3/@clocks.0"/>
+            </states>
+            <states name="Restart" outgoingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.11" incomingTransitions="//@categories.1/@modelElements.3/@states.0/@embeddedRegions.0/@embeddedStatechart/@transitions.10"/>
           </embeddedStatechart>
         </embeddedRegions>
       </states>
+      <clocks name="c"/>
     </modelElements>
   </categories>
   <categories xmi:id="_IaAgA8jrEeW0gpRI-mS_yA" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">

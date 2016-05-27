@@ -21,22 +21,22 @@ div#full-size{
     div#pad{
     position: absolute;
     bottom:0;
-    left:20%;
+    left:15%;
     float:left;
     }
 
 div#padContent{
     position: absolute;
-    top:10%;
+    top:15%;
     left:19%;
-    width:65%;
+    width:70%;
     }
 
-    div#padContent2{
+div#doorbell{
     position: absolute;
-    top:10%;
-    left:19%;
-    width:65%;
+    top:35%;
+    left:40%;
+    width:20%;
     }
 
 

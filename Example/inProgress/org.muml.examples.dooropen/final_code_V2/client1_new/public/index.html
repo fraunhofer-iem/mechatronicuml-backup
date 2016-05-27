@@ -11,11 +11,39 @@
    <style>
 #inlineKeypad { width: 100%;}
 
-    .keypad-popup, .keypad-inline, .keypad-key, .keypad-special { font-size: 22px; }
-    .keypad-special { width: 4em; margin: 0.125em; }
-    .keypad-spacebar { width: 10em; margin: 0.125em; }
+    .keypad-popup, .keypad-inline, .keypad-key, .keypad-special { font-size: 28px; }
+    .keypad-special { width: 7em; margin: 0.125em; }
+    .keypad-spacebar { width: 13em; margin: 0.125em; }
     .keypad-key, .keypad-tab, .keypad-space { width: 2em; margin: 0.125em; }
     .keypad-half-space { width: 1em; margin-left: 0.125em; }
+
+
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: 5px solid;
+  width: 40%;  
+  height:0;
+  border-radius: 50%;
+  box-shadow: 0 0 10px gray;
+    padding-bottom: 30%;
+}
+
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
 
 </style>
 
@@ -35,24 +63,38 @@ $(function () {
      //   alert($(this).val());
     }});
 
-    $("#padContent").hide();
+    $("#pad").hide();
 });
 
 function startSystem(){
-    $("#padContent2").hide();
-    $("#padContent").show();
+    $("#doorbell").hide();
+    $("#pad").show();
     var name = "dummy";
     var text = -42;
     // Socket senden
     socket.emit('chat', { name: name, text: text });
 }
 
+
+
 socket.on('deny', function (data) {
     alert("Denied");
 });
 
 socket.on('granted', function (data) {
+    $("#pad").hide();
+    $("#full-size img").attr("src", "img/door_open.jpeg")
     alert("Granted");
+});
+
+socket.on('completeDeny', function (data){
+    $("#pad").hide();
+    alert("Access have been denied after 3rd Tries!!")
+});
+
+socket.on('restartSystem', function (data){
+    $("#full-size img").attr("src", "img/door.jpeg")
+    location.reload();
 });
 
 </script>
@@ -65,22 +107,21 @@ socket.on('granted', function (data) {
          <div id="full-size">
          <img src="img/door.jpeg" class="centralized" style="width: 100%; height:100%">
          
-         <div align="left" id="pad" style='z-index: 1'>
-           <img src="img/tablet.png" style="height:470px; border:0; vertical-align:bottom;">
-           <div id="padContent2" style='z-index: 3;  text-align: center;'>
-                <button type="button" id="start" style="vertical-align: middle; width:200px;height:100px;" onclick="startSystem()">Start</button>
+            <div id="doorbell" style='z-index: 3;  text-align: center;'>
+                <button type="button" class="button" id="start" onclick="startSystem()">Ring!!!</button>
             </div>
+
+
+         <div align="left" id="pad" style='z-index: 1'>
+           <img src="img/tablet.svg" style="height:620px; border:0; vertical-align:bottom;">
+
            <div id="padContent" style='z-index: 2;  text-align: center;'>
-            <input id="keyValue" type="text" placeholder="Key Name" style="width: 79%;" readonly />
+            <input id="keyValue" type="text" placeholder="Enter Key..." style="width: 80%;" readonly />
             <div style="  position: relative; margin: 0 auto; text-align: left; width:80%; ">
             <div  id="inlineKeypad"></div> 
             </div>
            </div>
          </div>
         </div>
-
-
-       
-       
     </body>
 </html>
