@@ -20,7 +20,7 @@ COMP = launchVerifierComponent.o
 OPERATIONREPOSITORIES = 
 LIB =   Debug.o
 CC = gcc
-CFLAGS = -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds -DDEBUG
+CFLAGS = -static -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds -DDEBUG
 all: app
 
 app : main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT)   $(DDSSOURCES)
