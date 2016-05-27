@@ -1,17 +1,17 @@
 		// Standard library
 		
 		#include "../components/launchVerifierComponent_Interface.h"
-
+		#include <stdlib.h>
 //TODO:CUstomCode
 void contSelf(bool_T a){
 			  printf("received %d:\n",a);
-		//	  if(a){
-		//		  system("/root/demonstrator-green.sh");
-		//	  }
-	//		  else{
-	//			  system("/root/demonstrator-red.sh");
-//
-		//	  }
+			  if(a){
+				  system("/root/demonstrator-green.sh");
+			  }
+			  else{
+				  system("/root/demonstrator-red.sh");
+
+			  }
 		}
 
 		

@@ -1,4 +1,5 @@
-
+	//TODO:customCode						
+	#include <stdlib.h>
 
 		#include "../components/launchVerifierComponent_Interface.h"
 		
@@ -171,6 +172,7 @@
 		#ifdef DEBUG
 					printDebugInformation("LaunchVerifier received message of typeM1Ready_M1_Message");
 		#endif
+					 system("/root/demonstrator-yellow.sh");
 		
 					// execute exit actions
 					// nothing to do
