@@ -35,7 +35,7 @@
   </nodeTraces>
   <nodeTraces
       visualID="2004"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'MatchingStoryNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'Activity') and _containmentMF_.name = 'ownedActivityNode')">
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'MatchingStoryNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'Activity') and _containmentMF_.name = 'ownedActivityNodes')">
     <nodeLabelTraces
         visualID="5012"
         queryText="true"/>
@@ -45,20 +45,20 @@
   </nodeTraces>
   <nodeTraces
       visualID="2005"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'InitialNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'Activity') and _containmentMF_.name = 'ownedActivityNode')">
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'InitialNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'Activity') and _containmentMF_.name = 'ownedActivityNodes')">
     <nodeLabelTraces
         visualID="5013"
         queryText="true"/>
   </nodeTraces>
   <nodeTraces
       visualID="2006"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'JunctionNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'Activity') and _containmentMF_.name = 'ownedActivityNode')"/>
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'JunctionNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'Activity') and _containmentMF_.name = 'ownedActivityNodes')"/>
   <nodeTraces
       visualID="2007"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'FlowFinalNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'Activity') and _containmentMF_.name = 'ownedActivityNode')"/>
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'FlowFinalNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'Activity') and _containmentMF_.name = 'ownedActivityNodes')"/>
   <nodeTraces
       visualID="2008"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'ActivityFinalNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'Activity') and _containmentMF_.name = 'ownedActivityNode')">
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'ActivityFinalNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'Activity') and _containmentMF_.name = 'ownedActivityNodes')">
     <nodeLabelTraces
         visualID="5014"
         queryText="true"/>
@@ -74,8 +74,18 @@
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
+      visualID="3007"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/patterns/1.0.0' and _eClass_.name = 'MatchingPattern') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'MatchingStoryNode') and _containmentMF_.name = 'ownedPattern')">
+    <compartmentTraces
+        visualID="7009"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7010"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
       visualID="3002"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/patterns/1.0.0' and _eClass_.name = 'CollectionVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/patterns/1.0.0' and _eClass_.name = 'StoryPattern') and _containmentMF_.name = 'variable')">
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/patterns/1.0.0' and _eClass_.name = 'CollectionVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/patterns/1.0.0' and _eClass_.name = 'StoryPattern') and _containmentMF_.name = 'variables')">
     <nodeLabelTraces
         visualID="5005"
         queryText="true"/>
@@ -94,13 +104,13 @@
   </childNodeTraces>
   <childNodeTraces
       visualID="3003"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/patterns/1.0.0' and _eClass_.name = 'AttributeAssignment') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/patterns/1.0.0' and _eClass_.name = 'ObjectVariable') and _containmentMF_.name = 'attributeAssignment')"/>
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/patterns/1.0.0' and _eClass_.name = 'AttributeAssignment') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/patterns/1.0.0' and _eClass_.name = 'ObjectVariable') and _containmentMF_.name = 'attributeAssignments')"/>
   <childNodeTraces
       visualID="3004"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/patterns/1.0.0' and _eClass_.name = 'Constraint') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/patterns/1.0.0' and _eClass_.name = 'AbstractVariable') and _containmentMF_.name = 'constraint')"/>
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/patterns/1.0.0' and _eClass_.name = 'Constraint') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/patterns/1.0.0' and _eClass_.name = 'AbstractVariable') and _containmentMF_.name = 'constraints')"/>
   <childNodeTraces
       visualID="3005"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/patterns/1.0.0' and _eClass_.name = 'ObjectVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/patterns/1.0.0' and _eClass_.name = 'StoryPattern') and _containmentMF_.name = 'variable')">
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/patterns/1.0.0' and _eClass_.name = 'ObjectVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/patterns/1.0.0' and _eClass_.name = 'StoryPattern') and _containmentMF_.name = 'variables')">
     <nodeLabelTraces
         visualID="5008"
         queryText="true"/>
@@ -119,17 +129,7 @@
   </childNodeTraces>
   <childNodeTraces
       visualID="3006"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/patterns/1.0.0' and _eClass_.name = 'Constraint') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/patterns/1.0.0' and _eClass_.name = 'StoryPattern') and _containmentMF_.name = 'constraint')"/>
-  <childNodeTraces
-      visualID="3007"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/patterns/1.0.0' and _eClass_.name = 'MatchingPattern') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'MatchingStoryNode') and _containmentMF_.name = 'ownedPattern')">
-    <compartmentTraces
-        visualID="7009"
-        queryText="true"/>
-    <compartmentTraces
-        visualID="7010"
-        queryText="true"/>
-  </childNodeTraces>
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/patterns/1.0.0' and _eClass_.name = 'Constraint') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/patterns/1.0.0' and _eClass_.name = 'StoryPattern') and _containmentMF_.name = 'constraints')"/>
   <linkTraces
       visualID="4001"
       queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'ActivityEdge')">

@@ -351,7 +351,6 @@
         visualID="2001"
         editPartClassName="ActivityCallNodeEditPart"
         itemSemanticEditPolicyClassName="ActivityCallNodeItemSemanticEditPolicy"
-        notationViewFactoryClassName="ActivityCallNodeViewFactory"
         canonicalEditPolicyClassName="ActivityCallNodeCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ActivityCallNodeGraphicalNodeEditPolicy"
         createCommandClassName="ActivityCallNodeCreateCommand">
@@ -380,8 +379,7 @@
       <labels
           visualID="5001"
           editPartClassName="ActivityCallNodeNameEditPart"
-          itemSemanticEditPolicyClassName="ActivityCallNodeNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ActivityCallNodeNameViewFactory">
+          itemSemanticEditPolicyClassName="ActivityCallNodeNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -1359,10 +1357,10 @@
       provider="www.storydriven.org"
       version="0.3.0.qualifier"
       printingEnabled="true">
-    <requiredPlugins>org.eclipse.ocl.pivot</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
+    <requiredPlugins>org.eclipse.ocl.pivot</requiredPlugins>
   </plugin>
   <editor/>
   <navigator>
