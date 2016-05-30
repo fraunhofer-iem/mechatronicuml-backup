@@ -4,36 +4,6 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:trace="http://www.eclipse.org/gmf/2006/Trace">
   <nodeTraces
-      visualID="2001"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'ActivityCallNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'Activity') and _containmentMF_.name = 'ownedActivityNode')">
-    <nodeLabelTraces
-        visualID="5001"
-        queryText="true"/>
-    <nodeLabelTraces
-        visualID="5002"
-        queryText="true"/>
-  </nodeTraces>
-  <nodeTraces
-      visualID="2002"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'StatementNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'Activity') and _containmentMF_.name = 'ownedActivityNode')">
-    <nodeLabelTraces
-        visualID="5003"
-        queryText="true"/>
-    <nodeLabelTraces
-        visualID="5004"
-        queryText="true"/>
-  </nodeTraces>
-  <nodeTraces
-      visualID="2003"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'ModifyingStoryNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'Activity') and _containmentMF_.name = 'ownedActivityNode')">
-    <nodeLabelTraces
-        visualID="5011"
-        queryText="true"/>
-    <compartmentTraces
-        visualID="7001"
-        queryText="true"/>
-  </nodeTraces>
-  <nodeTraces
       visualID="2004"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'MatchingStoryNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'Activity') and _containmentMF_.name = 'ownedActivityNodes')">
     <nodeLabelTraces
@@ -61,6 +31,36 @@
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'ActivityFinalNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'Activity') and _containmentMF_.name = 'ownedActivityNodes')">
     <nodeLabelTraces
         visualID="5014"
+        queryText="true"/>
+  </nodeTraces>
+  <nodeTraces
+      visualID="2001"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'ActivityCallNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'Activity') and _containmentMF_.name = 'ownedActivityNodes')">
+    <nodeLabelTraces
+        visualID="5001"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5002"
+        queryText="true"/>
+  </nodeTraces>
+  <nodeTraces
+      visualID="2002"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'StatementNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'Activity') and _containmentMF_.name = 'ownedActivityNodes')">
+    <nodeLabelTraces
+        visualID="5003"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5004"
+        queryText="true"/>
+  </nodeTraces>
+  <nodeTraces
+      visualID="2003"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'ModifyingStoryNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/activities/1.0.0' and _eClass_.name = 'Activity') and _containmentMF_.name = 'ownedActivityNodes')">
+    <nodeLabelTraces
+        visualID="5011"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7001"
         queryText="true"/>
   </nodeTraces>
   <childNodeTraces
