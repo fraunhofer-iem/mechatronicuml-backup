@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <emm:Migrator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:emm="http://www.muml.org/emm/1.0.0">
-  <sourcePackages href="muml-0.4.ecore#/"/>
-  <sourcePackages href="muml-0.4.ecore#//behavior"/>
-  <sourcePackages href="muml-0.4.ecore#//component"/>
-  <sourcePackages href="muml-0.4.ecore#//connector"/>
-  <sourcePackages href="muml-0.4.ecore#//constraint"/>
-  <sourcePackages href="muml-0.4.ecore#//instance"/>
-  <sourcePackages href="muml-0.4.ecore#//msgtype"/>
-  <sourcePackages href="muml-0.4.ecore#//realtimestatechart/one_to_n_schemata"/>
-  <sourcePackages href="muml-0.4.ecore#//pattern"/>
-  <sourcePackages href="muml-0.4.ecore#//protocol"/>
-  <sourcePackages href="muml-0.4.ecore#//realtimestatechart"/>
-  <sourcePackages href="muml-0.4.ecore#//types"/>
-  <sourcePackages href="muml-0.4.ecore#//valuetype"/>
+  <sourcePackages href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#/"/>
+  <sourcePackages href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior"/>
+  <sourcePackages href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component"/>
+  <sourcePackages href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector"/>
+  <sourcePackages href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//constraint"/>
+  <sourcePackages href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance"/>
+  <sourcePackages href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//msgtype"/>
+  <sourcePackages href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/one_to_n_schemata"/>
+  <sourcePackages href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//pattern"/>
+  <sourcePackages href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol"/>
+  <sourcePackages href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart"/>
+  <sourcePackages href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//types"/>
+  <sourcePackages href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype"/>
   <targetPackages href="pim.ecore#/"/>
   <targetPackages href="pim.ecore#//behavior"/>
   <targetPackages href="pim.ecore#//component"/>
@@ -30,1147 +30,1147 @@
     <targetClass href="pim.ecore#//pattern/CoordinationPattern"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//pattern/CoordinationPattern/combineablePatterns"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//pattern/CoordinationPattern/combineablePatterns"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//pattern/CoordinationPattern/combineablePatterns"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//pattern/CoordinationPattern/alternativePatterns"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//pattern/CoordinationPattern/alternativePatterns"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//pattern/CoordinationPattern/alternativePatterns"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//pattern/CoordinationPattern/descriptionAspects"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//pattern/CoordinationPattern/descriptionAspects"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//pattern/CoordinationPattern/descriptionAspects"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//pattern/CoordinationPattern/patternVariants"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//pattern/CoordinationPattern/patternVariants"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//pattern/CoordinationPattern/patternVariants"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//pattern/CoordinationPattern"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//pattern/CoordinationPattern"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//pattern/CoordinationPatternVariant"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//pattern/CoordinationPatternVariant/originalPattern"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//pattern/CoordinationPatternVariant/originalPattern"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//pattern/CoordinationPatternVariant/originalPattern"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//pattern/CoordinationPatternVariant"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//pattern/CoordinationPatternVariant"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//pattern/VerifiedConfiguration"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//pattern/VerifiedConfiguration/parameterBindings"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//pattern/VerifiedConfiguration/parameterBindings"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//pattern/VerifiedConfiguration/parameterBindings"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//pattern/VerifiedConfiguration/coordinationPattern"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//pattern/VerifiedConfiguration/coordinationPattern"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//pattern/VerifiedConfiguration/coordinationPattern"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//pattern/VerifiedConfiguration"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//pattern/VerifiedConfiguration"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//pattern/AbstractCoordinationPattern/verifiedConfigurations"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//pattern/AbstractCoordinationPattern/verifiedConfigurations"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//pattern/AbstractCoordinationPattern/verifiedConfigurations"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//pattern/AbstractCoordinationPattern/patternParameters"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//pattern/AbstractCoordinationPattern/patternParameters"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//pattern/AbstractCoordinationPattern/patternParameters"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//pattern/AbstractCoordinationPattern"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//pattern/AbstractCoordinationPattern"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//component/PortPart"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//component/PortPart/portType"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//component/PortPart/portType"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/PortPart/portType"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//component/PortPart/componentPart"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//component/PortPart/componentPart"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/PortPart/componentPart"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//component/PortPart/coordinationProtocolPart"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//component/PortPart/coordinationProtocolPart"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/PortPart/coordinationProtocolPart"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//component/PortPart"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/PortPart"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//component/DirectedTypedPort/kind"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//component/DirectedTypedPort/kind"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/DirectedTypedPort/kind"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//component/DirectedTypedPort/optional"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//component/DirectedTypedPort/optional"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/DirectedTypedPort/optional"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//component/DirectedTypedPort/initializeExpression"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//component/DirectedTypedPort/initializeExpression"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/DirectedTypedPort/initializeExpression"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//component/DirectedTypedPort"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/DirectedTypedPort"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//component/CoordinationProtocolPart"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//component/CoordinationProtocolPart/coordinationProtocol"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//component/CoordinationProtocolPart/coordinationProtocol"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/CoordinationProtocolPart/coordinationProtocol"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//component/CoordinationProtocolPart/portParts"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//component/CoordinationProtocolPart/portParts"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/CoordinationProtocolPart/portParts"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//component/CoordinationProtocolPart"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/CoordinationProtocolPart"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//component/StructuredComponent/embeddedComponentParts"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//component/StructuredComponent/embeddedComponentParts"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/StructuredComponent/embeddedComponentParts"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//component/StructuredComponent/connectors"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//component/StructuredComponent/connectors"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/StructuredComponent/connectors"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//component/StructuredComponent/coordinationProtocolParts"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//component/StructuredComponent/coordinationProtocolParts"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/StructuredComponent/coordinationProtocolParts"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//component/StructuredComponent"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/StructuredComponent"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//component/HybridPort"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//component/HybridPort/samplingInterval"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//component/HybridPort/samplingInterval"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/HybridPort/samplingInterval"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//component/HybridPort"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/HybridPort"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//component/PortConnector/parentComponent"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//component/PortConnector/parentComponent"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/PortConnector/parentComponent"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//component/PortConnector"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/PortConnector"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//component/DelegationConnector"/>
-    <sourceClass href="muml-0.4.ecore#//component/DelegationConnector"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/DelegationConnector"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//component/AssemblyConnector"/>
-    <sourceClass href="muml-0.4.ecore#//component/AssemblyConnector"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/AssemblyConnector"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//component/ComponentPart"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//component/ComponentPart/componentType"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//component/ComponentPart/componentType"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/ComponentPart/componentType"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//component/ComponentPart/parentComponent"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//component/ComponentPart/parentComponent"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/ComponentPart/parentComponent"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//component/ComponentPart/cardinality"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//component/ComponentPart/cardinality"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/ComponentPart/cardinality"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//component/ComponentPart/portParts"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//component/ComponentPart/portParts"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/ComponentPart/portParts"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//component/ComponentPart"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/ComponentPart"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//component/DiscretePort"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//component/DiscretePort/refinedRole"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//component/DiscretePort/refinedRole"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/DiscretePort/refinedRole"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//component/DiscretePort"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/DiscretePort"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//component/Port/component"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//component/Port/component"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/Port/component"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//component/Port"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/Port"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//component/Component/componentKind"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//component/Component/componentKind"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/Component/componentKind"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//component/Component/ports"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//component/Component/ports"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/Component/ports"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//component/Component"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/Component"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//behavior/OperationRepository"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//behavior/OperationRepository/operations"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//behavior/OperationRepository/operations"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/OperationRepository/operations"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//behavior/OperationRepository"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/OperationRepository"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//behavior/Variable"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//behavior/Variable/constant"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//behavior/Variable/constant"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Variable/constant"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//behavior/Variable/initializeExpression"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//behavior/Variable/initializeExpression"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Variable/initializeExpression"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//behavior/Variable"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Variable"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//behavior/TypedNamedElement/dataType"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//behavior/TypedNamedElement/dataType"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/TypedNamedElement/dataType"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//behavior/TypedNamedElement"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/TypedNamedElement"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//behavior/ParameterBinding"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//behavior/ParameterBinding/parameter"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//behavior/ParameterBinding/parameter"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/ParameterBinding/parameter"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//behavior/ParameterBinding/value"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//behavior/ParameterBinding/value"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/ParameterBinding/value"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//behavior/ParameterBinding"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/ParameterBinding"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//behavior/Operation"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//behavior/Operation/implementations"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//behavior/Operation/implementations"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Operation/implementations"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//behavior/Operation/parameters"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//behavior/Operation/parameters"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Operation/parameters"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//behavior/Operation/returnType"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//behavior/Operation/returnType"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Operation/returnType"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//behavior/Operation"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Operation"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//behavior/BehavioralElement/behavior"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//behavior/BehavioralElement/behavior"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/BehavioralElement/behavior"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//behavior/BehavioralElement"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/BehavioralElement"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//behavior/Behavior/behavioralElement"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//behavior/Behavior/behavioralElement"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Behavior/behavioralElement"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//behavior/Behavior/operations"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//behavior/Behavior/operations"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Behavior/operations"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//behavior/Behavior/variables"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//behavior/Behavior/variables"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Behavior/variables"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//behavior/Behavior"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Behavior"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//valuetype/TimeValue"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//valuetype/TimeValue/unit"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//valuetype/TimeValue/unit"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue/unit"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//valuetype/TimeValue/value"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//valuetype/TimeValue/value"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue/value"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//valuetype/TimeValue"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//valuetype/Cardinality"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//valuetype/Cardinality/lowerBound"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//valuetype/Cardinality/lowerBound"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality/lowerBound"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//valuetype/Cardinality/upperBound"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//valuetype/Cardinality/upperBound"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality/upperBound"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//valuetype/Cardinality"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//connector/MessageBuffer"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//connector/MessageBuffer/bufferOverflowAvoidanceStrategy"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//connector/MessageBuffer/bufferOverflowAvoidanceStrategy"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/MessageBuffer/bufferOverflowAvoidanceStrategy"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//connector/MessageBuffer/bufferSize"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//connector/MessageBuffer/bufferSize"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/MessageBuffer/bufferSize"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//connector/MessageBuffer/messageType"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//connector/MessageBuffer/messageType"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/MessageBuffer/messageType"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//connector/MessageBuffer/discreteInteractionEndpoint"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//connector/MessageBuffer/discreteInteractionEndpoint"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/MessageBuffer/discreteInteractionEndpoint"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//connector/MessageBuffer"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/MessageBuffer"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//connector/DiscreteMultiInteractionEndpointInstance/first"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//connector/DiscreteMultiInteractionEndpointInstance/first"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteMultiInteractionEndpointInstance/first"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//connector/DiscreteMultiInteractionEndpointInstance/last"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//connector/DiscreteMultiInteractionEndpointInstance/last"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteMultiInteractionEndpointInstance/last"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//connector/DiscreteMultiInteractionEndpointInstance"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteMultiInteractionEndpointInstance"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//connector/DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//connector/DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//connector/DiscreteSingleInteractionEndpointInstance/next"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//connector/DiscreteSingleInteractionEndpointInstance/next"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteSingleInteractionEndpointInstance/next"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//connector/DiscreteSingleInteractionEndpointInstance/previous"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//connector/DiscreteSingleInteractionEndpointInstance/previous"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteSingleInteractionEndpointInstance/previous"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//connector/DiscreteSingleInteractionEndpointInstance"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteSingleInteractionEndpointInstance"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//connector/DiscreteInteractionEndpoint/senderMessageTypes"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//connector/DiscreteInteractionEndpoint/senderMessageTypes"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteInteractionEndpoint/senderMessageTypes"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageTypes"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageTypes"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageTypes"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//connector/DiscreteInteractionEndpoint/coordinatorBehavior"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//connector/DiscreteInteractionEndpoint/coordinatorBehavior"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteInteractionEndpoint/coordinatorBehavior"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//connector/DiscreteInteractionEndpoint/subroleBehavior"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//connector/DiscreteInteractionEndpoint/subroleBehavior"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteInteractionEndpoint/subroleBehavior"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//connector/DiscreteInteractionEndpoint/cardinality"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//connector/DiscreteInteractionEndpoint/cardinality"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteInteractionEndpoint/cardinality"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageBuffer"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageBuffer"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageBuffer"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//connector/DiscreteInteractionEndpoint"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteInteractionEndpoint"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//connector/ConnectorInstance/type"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//connector/ConnectorInstance/type"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance/type"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//connector/ConnectorInstance"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//connector/ConnectorEndpointInstance/connectorInstances"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//connector/ConnectorEndpointInstance/connectorInstances"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpointInstance/connectorInstances"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//connector/ConnectorEndpointInstance/type"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//connector/ConnectorEndpointInstance/type"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpointInstance/type"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//connector/ConnectorEndpointInstance"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpointInstance"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//connector/Connector/connectorEndpoints"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//connector/Connector/connectorEndpoints"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//connector/Connector"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//connector/ConnectorEndpoint/connectors"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//connector/ConnectorEndpoint/connectors"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint/connectors"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//connector/ConnectorEndpoint"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//types/StructureDataType"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//types/StructureDataType/attributes"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//types/StructureDataType/attributes"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/StructureDataType/attributes"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//types/StructureDataType"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/StructureDataType"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//types/RangedPrimitiveDataType"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//types/RangedPrimitiveDataType/rangedType"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//types/RangedPrimitiveDataType/rangedType"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/RangedPrimitiveDataType/rangedType"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//types/RangedPrimitiveDataType/range"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//types/RangedPrimitiveDataType/range"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/RangedPrimitiveDataType/range"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//types/RangedPrimitiveDataType"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/RangedPrimitiveDataType"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//types/ArrayDataType"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//types/ArrayDataType/type"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//types/ArrayDataType/type"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/ArrayDataType/type"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//types/ArrayDataType/cardinality"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//types/ArrayDataType/cardinality"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/ArrayDataType/cardinality"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//types/ArrayDataType"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/ArrayDataType"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//msgtype/MessageTypeRepository"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//msgtype/MessageTypeRepository/messageTypes"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//msgtype/MessageTypeRepository/messageTypes"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//msgtype/MessageTypeRepository/messageTypes"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//msgtype/MessageTypeRepository"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//msgtype/MessageTypeRepository"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//msgtype/MessageType"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//msgtype/MessageType/parameters"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//msgtype/MessageType/parameters"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//msgtype/MessageType/parameters"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//msgtype/MessageType/repository"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//msgtype/MessageType/repository"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//msgtype/MessageType/repository"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//msgtype/MessageType"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//msgtype/MessageType"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//realtimestatechart/one_to_n_schemata/MultiReceive"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/one_to_n_schemata/MultiReceive/failureAction"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/one_to_n_schemata/MultiReceive/failureAction"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/one_to_n_schemata/MultiReceive/failureAction"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/one_to_n_schemata/MultiReceive"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/one_to_n_schemata/MultiReceive"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//realtimestatechart/one_to_n_schemata/LoadBalancing"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/one_to_n_schemata/LoadBalancing/responseMessage"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/one_to_n_schemata/LoadBalancing/responseMessage"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/one_to_n_schemata/LoadBalancing/responseMessage"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/one_to_n_schemata/LoadBalancing/maxWorkingTime"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/one_to_n_schemata/LoadBalancing/maxWorkingTime"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/one_to_n_schemata/LoadBalancing/maxWorkingTime"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/one_to_n_schemata/LoadBalancing/onResponseAction"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/one_to_n_schemata/LoadBalancing/onResponseAction"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/one_to_n_schemata/LoadBalancing/onResponseAction"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/one_to_n_schemata/LoadBalancing"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/one_to_n_schemata/LoadBalancing"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//realtimestatechart/one_to_n_schemata/Iterate"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//realtimestatechart/one_to_n_schemata/Iterate/startFromFirst"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//realtimestatechart/one_to_n_schemata/Iterate/startFromFirst"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/one_to_n_schemata/Iterate/startFromFirst"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/one_to_n_schemata/Iterate/terminationCondition"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/one_to_n_schemata/Iterate/terminationCondition"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/one_to_n_schemata/Iterate/terminationCondition"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/one_to_n_schemata/Iterate/delay"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/one_to_n_schemata/Iterate/delay"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/one_to_n_schemata/Iterate/delay"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/one_to_n_schemata/Iterate"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/one_to_n_schemata/Iterate"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/condition"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/condition"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/condition"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/asynchronousMessageEvent"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/asynchronousMessageEvent"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/asynchronousMessageEvent"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/action"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/action"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/action"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/StateConnectionPoint/state"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/StateConnectionPoint/state"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/StateConnectionPoint/state"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/StateConnectionPoint"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/StateConnectionPoint"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//realtimestatechart/Message"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/Message/instanceOf"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/Message/instanceOf"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Message/instanceOf"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/Message/parameterBinding"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/Message/parameterBinding"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Message/parameterBinding"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/Message"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Message"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//realtimestatechart/RealtimeStatechart"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/RealtimeStatechart/parentRegion"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/RealtimeStatechart/parentRegion"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart/parentRegion"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/RealtimeStatechart/transitions"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/RealtimeStatechart/transitions"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart/transitions"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/RealtimeStatechart/states"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/RealtimeStatechart/states"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart/states"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/RealtimeStatechart/clocks"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/RealtimeStatechart/clocks"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart/clocks"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/RealtimeStatechart/usedOperationRepositories"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/RealtimeStatechart/usedOperationRepositories"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart/usedOperationRepositories"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/RealtimeStatechart/subRoleSpecificVariables"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/RealtimeStatechart/subRoleSpecificVariables"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart/subRoleSpecificVariables"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/RealtimeStatechart/subRoleSpecificClocks"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/RealtimeStatechart/subRoleSpecificClocks"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart/subRoleSpecificClocks"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/RealtimeStatechart/subRoleSpecificOperations"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/RealtimeStatechart/subRoleSpecificOperations"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart/subRoleSpecificOperations"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/RealtimeStatechart"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//realtimestatechart/Synchronization"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//realtimestatechart/Synchronization/kind"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//realtimestatechart/Synchronization/kind"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Synchronization/kind"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/Synchronization/syncChannel"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/Synchronization/syncChannel"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Synchronization/syncChannel"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/Synchronization/selectorExpression"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/Synchronization/selectorExpression"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Synchronization/selectorExpression"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/Synchronization"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Synchronization"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//realtimestatechart/SynchronizationChannel"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/SynchronizationChannel/state"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/SynchronizationChannel/state"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/SynchronizationChannel/state"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/SynchronizationChannel/selectorType"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/SynchronizationChannel/selectorType"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/SynchronizationChannel/selectorType"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/SynchronizationChannel"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/SynchronizationChannel"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/EntryOrExitEvent/clockResets"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/EntryOrExitEvent/clockResets"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/EntryOrExitEvent/clockResets"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/EntryOrExitEvent/action"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/EntryOrExitEvent/action"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/EntryOrExitEvent/action"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/EntryOrExitEvent"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/EntryOrExitEvent"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//realtimestatechart/DoEvent"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/DoEvent/action"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/DoEvent/action"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/DoEvent/action"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/DoEvent/period"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/DoEvent/period"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/DoEvent/period"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/DoEvent"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/DoEvent"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//realtimestatechart/AsynchronousMessageEvent"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/AsynchronousMessageEvent/message"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/AsynchronousMessageEvent/message"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/AsynchronousMessageEvent/message"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/AsynchronousMessageEvent/oneToManyCommunicationSchema"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/AsynchronousMessageEvent/oneToManyCommunicationSchema"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/AsynchronousMessageEvent/oneToManyCommunicationSchema"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/AsynchronousMessageEvent"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/AsynchronousMessageEvent"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//realtimestatechart/Action"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/Action/expressions"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/Action/expressions"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Action/expressions"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/Action"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Action"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//realtimestatechart/ClockConstraint"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//realtimestatechart/ClockConstraint/operator"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//realtimestatechart/ClockConstraint/operator"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/ClockConstraint/operator"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/ClockConstraint/bound"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/ClockConstraint/bound"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/ClockConstraint/bound"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/ClockConstraint/clock"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/ClockConstraint/clock"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/ClockConstraint/clock"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/ClockConstraint"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/ClockConstraint"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//realtimestatechart/Transition"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//realtimestatechart/Transition/blockable"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//realtimestatechart/Transition/blockable"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Transition/blockable"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//realtimestatechart/Transition/urgent"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//realtimestatechart/Transition/urgent"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Transition/urgent"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/Transition/synchronization"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/Transition/synchronization"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Transition/synchronization"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/Transition/target"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/Transition/target"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Transition/target"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/Transition/source"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/Transition/source"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Transition/source"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/Transition/clockResets"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/Transition/clockResets"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Transition/clockResets"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/Transition/clockConstraints"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/Transition/clockConstraints"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Transition/clockConstraints"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/Transition/absoluteDeadlines"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/Transition/absoluteDeadlines"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Transition/absoluteDeadlines"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/Transition/relativeDeadline"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/Transition/relativeDeadline"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Transition/relativeDeadline"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/Transition/guard"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/Transition/guard"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Transition/guard"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/Transition/events"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/Transition/events"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Transition/events"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/Transition/action"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/Transition/action"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Transition/action"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/Transition"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Transition"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/Vertex/outgoingTransitions"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/Vertex/outgoingTransitions"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Vertex/outgoingTransitions"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/Vertex/incomingTransitions"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/Vertex/incomingTransitions"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Vertex/incomingTransitions"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/Vertex"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Vertex"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//realtimestatechart/State"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//realtimestatechart/State/initial"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//realtimestatechart/State/initial"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/State/initial"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//realtimestatechart/State/final"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//realtimestatechart/State/final"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/State/final"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//realtimestatechart/State/urgent"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//realtimestatechart/State/urgent"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/State/urgent"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/State/embeddedRegions"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/State/embeddedRegions"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/State/embeddedRegions"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/State/doEvent"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/State/doEvent"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/State/doEvent"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/State/exitEvent"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/State/exitEvent"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/State/exitEvent"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/State/entryEvent"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/State/entryEvent"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/State/entryEvent"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/State/invariants"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/State/invariants"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/State/invariants"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/State/channels"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/State/channels"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/State/channels"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/State/connectionPoints"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/State/connectionPoints"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/State/connectionPoints"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/State/parentStatechart"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/State/parentStatechart"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/State/parentStatechart"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/State"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/State"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//realtimestatechart/Region"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/Region/embeddedStatechart"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/Region/embeddedStatechart"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Region/embeddedStatechart"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/Region/parentState"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/Region/parentState"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Region/parentState"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/Region"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Region"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//realtimestatechart/Clock"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/Clock/statechart"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/Clock/statechart"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Clock/statechart"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/Clock"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Clock"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//realtimestatechart/AbsoluteDeadline"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/AbsoluteDeadline/clock"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/AbsoluteDeadline/clock"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/AbsoluteDeadline/clock"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/AbsoluteDeadline"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/AbsoluteDeadline"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/Deadline/upperBound"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/Deadline/upperBound"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Deadline/upperBound"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//realtimestatechart/Deadline/lowerBound"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//realtimestatechart/Deadline/lowerBound"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Deadline/lowerBound"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/Deadline"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Deadline"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//protocol/ConnectorQualityOfServiceAssumptions"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//protocol/ConnectorQualityOfServiceAssumptions/messageLossPossible"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//protocol/ConnectorQualityOfServiceAssumptions/messageLossPossible"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/ConnectorQualityOfServiceAssumptions/messageLossPossible"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//protocol/ConnectorQualityOfServiceAssumptions/minMessageDelay"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//protocol/ConnectorQualityOfServiceAssumptions/minMessageDelay"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/ConnectorQualityOfServiceAssumptions/minMessageDelay"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//protocol/ConnectorQualityOfServiceAssumptions/maxMessageDelay"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//protocol/ConnectorQualityOfServiceAssumptions/maxMessageDelay"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/ConnectorQualityOfServiceAssumptions/maxMessageDelay"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//protocol/ConnectorQualityOfServiceAssumptions"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/ConnectorQualityOfServiceAssumptions"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//protocol/RoleConnector"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//protocol/RoleConnector/coordinationProtocol"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//protocol/RoleConnector/coordinationProtocol"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/RoleConnector/coordinationProtocol"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//protocol/RoleConnector"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/RoleConnector"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//protocol/RoleConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/RoleConnector"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//protocol/RoleConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/RoleConnector/coordinationProtocol"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//protocol/RoleConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/RoleConnector/coordinationProtocol"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/RoleConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/RoleConnector/coordinationProtocol"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//protocol/RoleConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/RoleConnector/connectorQualityOfServiceAssumptions"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//protocol/RoleConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/RoleConnector/connectorQualityOfServiceAssumptions"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/RoleConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/RoleConnector/connectorQualityOfServiceAssumptions"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//protocol/RoleConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/RoleConnector"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/RoleConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/RoleConnector"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//protocol/Role"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//protocol/Role/coordinationProtocol"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//protocol/Role/coordinationProtocol"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/Role/coordinationProtocol"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//protocol/Role"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/Role"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//protocol/AbstractCoordinationSpecification/roles"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//protocol/AbstractCoordinationSpecification/roles"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/AbstractCoordinationSpecification/roles"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//protocol/AbstractCoordinationSpecification/roleConnector"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//protocol/AbstractCoordinationSpecification/roleConnector"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/AbstractCoordinationSpecification/roleConnector"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//protocol/AbstractCoordinationSpecification/adaptedFromPattern"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//protocol/AbstractCoordinationSpecification/adaptedFromPattern"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/AbstractCoordinationSpecification/adaptedFromPattern"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//protocol/AbstractCoordinationSpecification"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/AbstractCoordinationSpecification"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//instance/StructuredComponentInstance"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//instance/StructuredComponentInstance/embeddedCIC"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//instance/StructuredComponentInstance/embeddedCIC"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/StructuredComponentInstance/embeddedCIC"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//instance/StructuredComponentInstance"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/StructuredComponentInstance"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//instance/CoordinationProtocolInstance"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//instance/CoordinationProtocolInstance/portInstances"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//instance/CoordinationProtocolInstance/portInstances"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/CoordinationProtocolInstance/portInstances"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//instance/CoordinationProtocolInstance/coordinationProtocolPart"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//instance/CoordinationProtocolInstance/coordinationProtocolPart"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/CoordinationProtocolInstance/coordinationProtocolPart"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//instance/CoordinationProtocolInstance/coordinationProtocol"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//instance/CoordinationProtocolInstance/coordinationProtocol"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/CoordinationProtocolInstance/coordinationProtocol"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//instance/CoordinationProtocolInstance"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/CoordinationProtocolInstance"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//instance/DiscreteMultiPortInstance"/>
-    <sourceClass href="muml-0.4.ecore#//instance/DiscreteMultiPortInstance"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/DiscreteMultiPortInstance"/>
   </mappings>
   <mappings>
-    <sourceClass href="muml-0.4.ecore#//instance/DiscretePortInstance"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/DiscretePortInstance"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//instance/ComponentInstanceConfiguration"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//instance/ComponentInstanceConfiguration/componentInstances"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//instance/ComponentInstanceConfiguration/componentInstances"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration/componentInstances"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//instance/ComponentInstanceConfiguration/portConnectorInstances"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//instance/ComponentInstanceConfiguration/portConnectorInstances"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration/portConnectorInstances"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//instance/ComponentInstanceConfiguration/parentStructuredComponentInstance"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//instance/ComponentInstanceConfiguration/parentStructuredComponentInstance"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration/parentStructuredComponentInstance"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//instance/ComponentInstanceConfiguration/coordinationProtocolInstances"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//instance/ComponentInstanceConfiguration/coordinationProtocolInstances"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration/coordinationProtocolInstances"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//instance/ComponentInstanceConfiguration"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//instance/DelegationConnectorInstance"/>
-    <sourceClass href="muml-0.4.ecore#//instance/DelegationConnectorInstance"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/DelegationConnectorInstance"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//instance/AssemblyConnectorInstance"/>
-    <sourceClass href="muml-0.4.ecore#//instance/AssemblyConnectorInstance"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/AssemblyConnectorInstance"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//instance/PortInstance/componentInstance"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//instance/PortInstance/componentInstance"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/PortInstance/componentInstance"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//instance/PortInstance"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/PortInstance"/>
   </mappings>
   <mappings>
-    <sourceClass href="muml-0.4.ecore#//instance/PortConnectorInstance"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/PortConnectorInstance"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//instance/ComponentInstance/componentType"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//instance/ComponentInstance/componentType"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance/componentType"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//instance/ComponentInstance/portInstances"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//instance/ComponentInstance/portInstances"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance/portInstances"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//instance/ComponentInstance/componentPart"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//instance/ComponentInstance/componentPart"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance/componentPart"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//instance/ComponentInstance/parentCIC"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//instance/ComponentInstance/parentCIC"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance/parentCIC"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//instance/ComponentInstance"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="pim.ecore#//constraint/VerifiableElement/verificationConstraintRepositories"/>
-      <sourceFeature xsi:type="ecore:EReference" href="muml-0.4.ecore#//constraint/VerifiableElement/verificationConstraintRepositories"/>
+      <sourceFeature xsi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//constraint/VerifiableElement/verificationConstraintRepositories"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//constraint/VerifiableElement"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//constraint/VerifiableElement"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//pattern/DescriptionAspects"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//pattern/DescriptionAspects/overview"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//pattern/DescriptionAspects/overview"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//pattern/DescriptionAspects/overview"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//pattern/DescriptionAspects/context"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//pattern/DescriptionAspects/context"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//pattern/DescriptionAspects/context"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//pattern/DescriptionAspects/problem"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//pattern/DescriptionAspects/problem"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//pattern/DescriptionAspects/problem"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//pattern/DescriptionAspects/solution"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//pattern/DescriptionAspects/solution"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//pattern/DescriptionAspects/solution"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//pattern/DescriptionAspects/structure"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//pattern/DescriptionAspects/structure"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//pattern/DescriptionAspects/structure"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//pattern/DescriptionAspects/behavior"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//pattern/DescriptionAspects/behavior"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//pattern/DescriptionAspects/behavior"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//pattern/DescriptionAspects/examples"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//pattern/DescriptionAspects/examples"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//pattern/DescriptionAspects/examples"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//pattern/DescriptionAspects/consequences"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//pattern/DescriptionAspects/consequences"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//pattern/DescriptionAspects/consequences"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//pattern/DescriptionAspects/combineability"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//pattern/DescriptionAspects/combineability"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//pattern/DescriptionAspects/combineability"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//pattern/DescriptionAspects/variants"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//pattern/DescriptionAspects/variants"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//pattern/DescriptionAspects/variants"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//pattern/DescriptionAspects/alternatives"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//pattern/DescriptionAspects/alternatives"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//pattern/DescriptionAspects/alternatives"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//pattern/DescriptionAspects/verification_properties"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//pattern/DescriptionAspects/verification_properties"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//pattern/DescriptionAspects/verification_properties"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//pattern/DescriptionAspects"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//pattern/DescriptionAspects"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//valuetype/Range"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//valuetype/Range/lowerBound"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//valuetype/Range/lowerBound"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Range/lowerBound"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//valuetype/Range/upperBound"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//valuetype/Range/upperBound"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Range/upperBound"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//valuetype/Range"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Range"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//valuetype/NaturalNumber"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//valuetype/NaturalNumber/value"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//valuetype/NaturalNumber/value"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/NaturalNumber/value"/>
     </featureInitializers>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//valuetype/NaturalNumber/infinity"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//valuetype/NaturalNumber/infinity"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/NaturalNumber/infinity"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//valuetype/NaturalNumber"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/NaturalNumber"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//types/PrimitiveDataType"/>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//types/PrimitiveDataType/primitiveType"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//types/PrimitiveDataType/primitiveType"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/PrimitiveDataType/primitiveType"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//types/PrimitiveDataType"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/PrimitiveDataType"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//realtimestatechart/Event/kind"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//realtimestatechart/Event/kind"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Event/kind"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/Event"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Event"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="emm:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EAttribute" href="pim.ecore#//realtimestatechart/PrioritizedElement/priority"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="muml-0.4.ecore#//realtimestatechart/PrioritizedElement/priority"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/PrioritizedElement/priority"/>
     </featureInitializers>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/PrioritizedElement"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/PrioritizedElement"/>
   </mappings>
   <mappings>
-    <sourceClass href="muml-0.4.ecore#//constraint/VerificationConstraintRepository"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//constraint/VerificationConstraintRepository"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//instance/ContinuousPortInstance"/>
-    <sourceClass href="muml-0.4.ecore#//instance/ContinuousPortInstance"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ContinuousPortInstance"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//instance/HybridPortInstance"/>
-    <sourceClass href="muml-0.4.ecore#//instance/HybridPortInstance"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/HybridPortInstance"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//instance/DiscreteSinglePortInstance"/>
-    <sourceClass href="muml-0.4.ecore#//instance/DiscreteSinglePortInstance"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/DiscreteSinglePortInstance"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//instance/AtomicComponentInstance"/>
-    <sourceClass href="muml-0.4.ecore#//instance/AtomicComponentInstance"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/AtomicComponentInstance"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//protocol/CoordinationProtocol"/>
-    <sourceClass href="muml-0.4.ecore#//protocol/CoordinationProtocol"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/CoordinationProtocol"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//realtimestatechart/RelativeDeadline"/>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/RelativeDeadline"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RelativeDeadline"/>
   </mappings>
   <mappings>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/TransitionEvent"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/TransitionEvent"/>
   </mappings>
   <mappings>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/StateEvent"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/StateEvent"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//realtimestatechart/EntryEvent"/>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/EntryEvent"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/EntryEvent"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//realtimestatechart/ExitEvent"/>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/ExitEvent"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/ExitEvent"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//realtimestatechart/EntryPoint"/>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/EntryPoint"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/EntryPoint"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//realtimestatechart/ExitPoint"/>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/ExitPoint"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/ExitPoint"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//realtimestatechart/one_to_n_schemata/Multicast"/>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/one_to_n_schemata/Multicast"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/one_to_n_schemata/Multicast"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//realtimestatechart/one_to_n_schemata/Unicast"/>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/one_to_n_schemata/Unicast"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/one_to_n_schemata/Unicast"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//realtimestatechart/one_to_n_schemata/SingleReceive"/>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/one_to_n_schemata/SingleReceive"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/one_to_n_schemata/SingleReceive"/>
   </mappings>
   <mappings>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/one_to_n_schemata/ReceivingOneToManyCommunicationSchema"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/one_to_n_schemata/ReceivingOneToManyCommunicationSchema"/>
   </mappings>
   <mappings>
-    <sourceClass href="muml-0.4.ecore#//realtimestatechart/one_to_n_schemata/SendingOneToManyCommunicationSchema"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/one_to_n_schemata/SendingOneToManyCommunicationSchema"/>
   </mappings>
   <mappings>
-    <sourceClass href="muml-0.4.ecore#//types/DataType"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/DataType"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//types/Attribute"/>
-    <sourceClass href="muml-0.4.ecore#//types/Attribute"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/Attribute"/>
   </mappings>
   <mappings>
-    <sourceClass href="muml-0.4.ecore#//connector/DiscreteInteractionEndpointInstance"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteInteractionEndpointInstance"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//behavior/Parameter"/>
-    <sourceClass href="muml-0.4.ecore#//behavior/Parameter"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Parameter"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//component/ContinuousPort"/>
-    <sourceClass href="muml-0.4.ecore#//component/ContinuousPort"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/ContinuousPort"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//component/StaticStructuredComponent"/>
-    <sourceClass href="muml-0.4.ecore#//component/StaticStructuredComponent"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/StaticStructuredComponent"/>
   </mappings>
   <mappings>
-    <sourceClass href="muml-0.4.ecore#//component/AtomicComponent"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/AtomicComponent"/>
   </mappings>
   <mappings>
     <targetClass href="pim.ecore#//component/StaticAtomicComponent"/>
-    <sourceClass href="muml-0.4.ecore#//component/StaticAtomicComponent"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/StaticAtomicComponent"/>
   </mappings>
   <mappings>
-    <sourceClass href="muml-0.4.ecore#//component/StaticComponent"/>
+    <sourceClass href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/StaticComponent"/>
   </mappings>
   <release href="../../org.muml.core.migrator/model/muml.releaseset#//@releases.1"/>
 </emm:Migrator>
