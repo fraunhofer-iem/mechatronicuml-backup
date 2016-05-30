@@ -23,18 +23,19 @@ public class StoryDrivenActivityFinalNodeFacade extends StoryDrivenActivityNodeF
 
 		final Activity activity = finalNode.getOwningActivity();
 		
-		if (ActivityFinalNode.getReturnValue() != null)
-		{
-			assert activity.getOutParameters().size() == 1;
+		if (!activity.getOutParameters().isEmpty()) {
+			if (ActivityFinalNode.getReturnValue() != null)
+			{
+				assert activity.getOutParameters().size() == 1;
+				
+				map.put(activity.getOutParameters().get(0).getName(), ActivityFinalNode.getReturnValue());
 			
-			map.put(activity.getOutParameters().get(0).getName(), ActivityFinalNode.getReturnValue());
-		
-		} else {
-
-			assert activity.getOutParameters().size() == 0;
-		
+			} else {
+	
+				assert activity.getOutParameters().size() == 0;
+			
+			}
 		}
-
 		return map;
 	}
 
