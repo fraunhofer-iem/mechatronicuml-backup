@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="hardware" nsURI="http://www.muml.org/pm/hardware/1.0.0" nsPrefix="hardware">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="hardware" nsURI="http://www.fujaba.de/muml/hardware/1.1/" nsPrefix="hardware">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="The hardware package contains the  meta-model for the specification of a hardware platform.&#xA;The subpackage resourcetype defines the base classes for the Resource Type Viewpoint.&#xA;The subpackage platform defines the base classes for the Platform Type Viewpoint.&#xA;The subpackage platforminstance defines the base classes for the Platform Instance Viewpoint.&#xA;The subpackage hwvaluetype defines the classes to specify attributes of  hardware resources.&#x9;"/>
   </eAnnotations>
-  <eSubpackages name="hwplatform" nsURI="http://www.muml.org/pm/hardware/hwplatform/1.0.0"
+  <eSubpackages name="hwplatform" nsURI="http://www.fujaba.de/muml/hardware/hwplatform/1.1/"
       nsPrefix="hwplatform">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The package platform contains all classes of the Platform Type Viewpoint.&#xA;Hardware platforms are defined at the type level and may be instantiated in a HWPlatformInstanceConfiguration at the Platform Instance Viewpoint.&#xA;"/>
@@ -14,7 +14,7 @@
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     </eAnnotations>
-    <eClassifiers xsi:type="ecore:EClass" name="HWPlatform" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
+    <eClassifiers xsi:type="ecore:EClass" name="HWPlatform" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a hardware platform at the type level. &#xA;A HWPlatform consists of several embedded PlatformParts and several CommunicationResources to connect the embedded PlatformParts."/>
       </eAnnotations>
@@ -40,7 +40,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="networkConnectors" upperBound="-1"
           eType="#//hwplatform/NetworkConnector" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PlatformPart" abstract="true" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
+    <eClassifiers xsi:type="ecore:EClass" name="PlatformPart" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="CardinalityLowerBoundSet CardinalityUpperBoundSet"/>
       </eAnnotations>
@@ -58,7 +58,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"
-          eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/Cardinality"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The cardinality of a PlatformPart determines how many instances are allowed to exist in the associated HWPlatformInstance at instance level."/>
@@ -109,12 +109,12 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="DelegationHWPort" eSuperTypes="../../org.muml.pim/model/pim.ecore#//connector/ConnectorEndpoint #//hwresourceinstance/HWPort">
+    <eClassifiers xsi:type="ecore:EClass" name="DelegationHWPort" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint #//hwresourceinstance/HWPort">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents a DelegationPort of a HWPlatform.&#xA;DelegationPorts are used  to delegate HWPorts of embedded HWResourses to the outside.&#xA;In order to be conistent with the muml metamodel, this class inherits from pim::ConnectorEndpoint.&#xA;Furthermore, this class inherits from HWPort, because a DelegationPort provides to the outside the same features as a standard HWPort."/>
+        <details key="documentation" value="This class represents a DelegationPort of a HWPlatform.&#xA;DelegationPorts are used  to delegate HWPorts of embedded HWResourses to the outside.&#xA;In order to be conistent with the muml metamodel, this class inherits from muml::ConnectorEndpoint.&#xA;Furthermore, this class inherits from HWPort, because a DelegationPort provides to the outside the same features as a standard HWPort."/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="HWPortPart" eSuperTypes="../../org.muml.pim/model/pim.ecore#//connector/ConnectorEndpoint">
+    <eClassifiers xsi:type="ecore:EClass" name="HWPortPart" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a hardware port of a PlatformPart and is derived from a HWPort.&#xA;The purpose of a HWPortPart is to enable the reuse of defined HWPorts in different HWPlatforms and in different Confiugrations.&#xA;For Instance, HWPortParts are derived from one HWPort but can be attached to different NetworkConnectors."/>
       </eAnnotations>
@@ -152,7 +152,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Bus" eSuperTypes="../../org.muml.pim/model/pim.ecore#//connector/ConnectorEndpoint #//hwplatform/NetworkingHardware">
+    <eClassifiers xsi:type="ecore:EClass" name="Bus" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint #//hwplatform/NetworkingHardware">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a bus. A bus is used to connect several BusPortInstances."/>
       </eAnnotations>
@@ -188,7 +188,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="NetworkBridge" eSuperTypes="#//hwplatform/NetworkingHardware ../../org.muml.pim/model/pim.ecore#//connector/ConnectorEndpoint">
+    <eClassifiers xsi:type="ecore:EClass" name="NetworkBridge" eSuperTypes="#//hwplatform/NetworkingHardware ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a bridge or a gateway. Bridges are used to connect two or more Networks."/>
       </eAnnotations>
@@ -210,12 +210,12 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="NetworkingHardware" abstract="true"
-        eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
+        eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This abstract class represents hardware devices which are used to connect ECUs, e.g., bridge, router, bus."/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="NetworkConnector" eSuperTypes="../../org.muml.pim/model/pim.ecore#//connector/Connector">
+    <eClassifiers xsi:type="ecore:EClass" name="NetworkConnector" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="SameProtocol"/>
       </eAnnotations>
@@ -223,7 +223,7 @@
         <details key="SameProtocol" value="-- Connected Ports must use the same Protocol&#xD;&#xA;self.hwportParts.hwport->forAll(p1 , p2 | p1.protocol = p2.protocol)"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents a network connection between hardware resources.&#xA;This class inherits from pim::Connector to be conistent with the muml metamodel."/>
+        <details key="documentation" value="This class represents a network connection between hardware resources.&#xA;This class inherits from muml::Connector to be conistent with the muml metamodel."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="protocol" eType="#//hwresource/CommunicationProtocol"
           volatile="true" derived="true">
@@ -274,7 +274,7 @@
       </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="hwvaluetype" nsURI="http://www.muml.org/pm/hardware/hwvaluetype/1.0.0"
+  <eSubpackages name="hwvaluetype" nsURI="http://www.fujaba.de/muml/hardware/hwvaluetype/1.1/"
       nsPrefix="hwvaluetype">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This package defines the basic data types needed to characterize resources&#xA;(i.e. DataSize, Frequency)."/>
@@ -394,19 +394,19 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="TimeInterval" eSuperTypes="../../org.muml.pim/model/pim.ecore#//valuetype/Range">
+    <eClassifiers xsi:type="ecore:EClass" name="TimeInterval" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Range">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents an interval to specify time bounds."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" lowerBound="1"
-          eType="ecore:EDataType ../../org.muml.pim/model/pim.ecore#//valuetype/TimeUnit">
+          eType="ecore:EDataType ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeUnit">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The unit for this TimeInterval."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="hwplatforminstance" nsURI="http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0"
+  <eSubpackages name="hwplatforminstance" nsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/"
       nsPrefix="hwplatforminstance">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -416,7 +416,7 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This package contains all classes of the Platform Instance Viewpoint.&#xA;"/>
     </eAnnotations>
-    <eClassifiers xsi:type="ecore:EClass" name="HWPlatformInstance" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
+    <eClassifiers xsi:type="ecore:EClass" name="HWPlatformInstance" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a hardware platform at instance level. "/>
       </eAnnotations>
@@ -447,7 +447,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="HWPlatformInstanceConfiguration" eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="HWPlatformInstanceConfiguration" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a HWPlatformInstanceConfiguration.&#xA;A HWPlatformInstanceConfiguration consists of several HWPlatformInstances.&#xA;The HWPlatformInstances might be connected via different NetworkConnectorInstances."/>
       </eAnnotations>
@@ -484,7 +484,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="HWPortInstance" eSuperTypes="../../org.muml.pim/model/pim.ecore#//connector/ConnectorEndpointInstance #//hwresourceinstance/HWPort">
+    <eClassifiers xsi:type="ecore:EClass" name="HWPortInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpointInstance #//hwresourceinstance/HWPort">
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectedNetworkConnectorInstances"
           upperBound="-1" eType="#//hwplatforminstance/NetworkConnectorInstance" volatile="true"
           derived="true">
@@ -506,7 +506,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="BusInstance" eSuperTypes="../../org.muml.pim/model/pim.ecore#//connector/ConnectorEndpointInstance #//hwplatforminstance/NetworkingHardwareInstance">
+    <eClassifiers xsi:type="ecore:EClass" name="BusInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpointInstance #//hwplatforminstance/NetworkingHardwareInstance">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a bus. A bus is used to connect several BusPortInstances."/>
       </eAnnotations>
@@ -548,7 +548,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="NetworkBridgeInstance" eSuperTypes="#//hwplatforminstance/NetworkingHardwareInstance ../../org.muml.pim/model/pim.ecore#//connector/ConnectorEndpointInstance">
+    <eClassifiers xsi:type="ecore:EClass" name="NetworkBridgeInstance" eSuperTypes="#//hwplatforminstance/NetworkingHardwareInstance ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpointInstance">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a bridge or a gateway. Bridges are used to connect two or more CommunicationMedia."/>
       </eAnnotations>
@@ -573,14 +573,14 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="NetworkingHardwareInstance" abstract="true"
-        eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
+        eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This abstract class represents hardware devices which are used to connect ECUs, e.g., bridge, router, bus, on instance-level."/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="DelegationHWPortInstance" eSuperTypes="../../org.muml.pim/model/pim.ecore#//connector/ConnectorEndpointInstance">
+    <eClassifiers xsi:type="ecore:EClass" name="DelegationHWPortInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpointInstance">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents a DelegationPort of a HWPlatform on instance-level.&#xA;In order to be conistent with the muml metamodel, this class inherits from pim::ConnectorEndpointInstance."/>
+        <details key="documentation" value="This class represents a DelegationPort of a HWPlatform on instance-level.&#xA;In order to be conistent with the muml metamodel, this class inherits from muml::ConnectorEndpointInstance."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parentHWPlatformInstance"
           lowerBound="1" eType="#//hwplatforminstance/HWPlatformInstance" eOpposite="#//hwplatforminstance/HWPlatformInstance/delegationPorts">
@@ -589,9 +589,9 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="NetworkConnectorInstance" eSuperTypes="../../org.muml.pim/model/pim.ecore#//connector/ConnectorInstance">
+    <eClassifiers xsi:type="ecore:EClass" name="NetworkConnectorInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents a network connection between hardware resources on instance-level.&#xA;This class inherits from pim::ConnectorInstance to be conistent with the muml metamodel."/>
+        <details key="documentation" value="This class represents a network connection between hardware resources on instance-level.&#xA;This class inherits from muml::ConnectorInstance to be conistent with the muml metamodel."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectedHWPortInstances"
           upperBound="-1" eType="#//hwplatforminstance/HWPortInstance" changeable="false"
@@ -638,14 +638,14 @@
       </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="hwresource" nsURI="http://www.muml.org/pm/hardware/hwresource/1.0.0"
+  <eSubpackages name="hwresource" nsURI="http://www.fujaba.de/muml/hardware/hwresource/1.1/"
       nsPrefix="hwresource">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     </eAnnotations>
-    <eClassifiers xsi:type="ecore:EClass" name="Resource" abstract="true" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Resource" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This abstract class is the super class of all resource types."/>
       </eAnnotations>
@@ -761,7 +761,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="nbCores" lowerBound="1"
-          eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/NaturalNumber"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/NaturalNumber"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The number of cores of this Processor."/>
@@ -772,7 +772,7 @@
           <details key="documentation" value="The family of this Processor (i.e. x86, ARM, MIPS,..)."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="nbPipelineStages" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/NaturalNumber"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="nbPipelineStages" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/NaturalNumber"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The number of pipelines for this processor."/>
@@ -862,7 +862,7 @@
       <eLiterals name="LINK" value="1" literal="LINK"/>
       <eLiterals name="DELEGATION" literal="DELEGATION"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ResourceRepository" eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="ResourceRepository" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a repository containing several resource types."/>
       </eAnnotations>
@@ -885,7 +885,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="CommunicationProtocolRepository" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
+    <eClassifiers xsi:type="ecore:EClass" name="CommunicationProtocolRepository" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a repository containing several CommunicationProtocol which are used in the hardware models."/>
       </eAnnotations>
@@ -897,7 +897,7 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="CommunicationProtocol" abstract="true"
-        eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
+        eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This abstract class represents the CommunicationProtocol used by the HWPorts and CommunicationMedia.&#xA;It is used to match Ports and CommunicationMedia."/>
       </eAnnotations>
@@ -1008,7 +1008,7 @@
       <eLiterals name="BLUETOOTH" value="4" literal="BLUETOOTH"/>
       <eLiterals name="WIFI" value="5"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="CommunicationResource" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
+    <eClassifiers xsi:type="ecore:EClass" name="CommunicationResource" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents all resources which are able to transmit data."/>
       </eAnnotations>
@@ -1028,7 +1028,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"
-          eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/Cardinality"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The cardinality of this HWPort.&#xA;It determines the number of allowed hardware port instances."/>
@@ -1052,7 +1052,7 @@
       </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="hwresourceinstance" nsURI="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0"
+  <eSubpackages name="hwresourceinstance" nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/"
       nsPrefix="hwresourceinstance">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The package platform contains all classes of the Platform Type Viewpoint.&#xA;Hardware platforms are defined at the type level and may be instantiated in a HWPlatformInstanceConfiguration at the Platform Instance Viewpoint.&#xA;"/>
@@ -1063,7 +1063,7 @@
       <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="ResourceInstance" abstract="true"
-        eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
+        eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This abstract class is the super class of all resource instances.&#xA;The associated HWPortInstances are determined by its resource type."/>
       </eAnnotations>
@@ -1238,7 +1238,7 @@
         <details key="documentation" value="This class represents an actuator device at instance level."/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ResourceInstanceRepository" eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="ResourceInstanceRepository" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a ResourceInstanceRepository. &#xA;A ResourceInstanceRepository contains all ResourceInstances to build a HWPlatform. The ResourceInstances are derived from a ResourceTypeRepository."/>
       </eAnnotations>
@@ -1249,7 +1249,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="HWPort" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
+    <eClassifiers xsi:type="ecore:EClass" name="HWPort" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a hardware port of a resource instance."/>
       </eAnnotations>
@@ -1270,7 +1270,7 @@
           <details key="documentation" value="The used protocol of this HWPortInstance."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/Cardinality"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality"
           volatile="true" derived="true" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The cardinality of this HWPort.&#xA;It determines the number of allowed hardware port instances."/>
