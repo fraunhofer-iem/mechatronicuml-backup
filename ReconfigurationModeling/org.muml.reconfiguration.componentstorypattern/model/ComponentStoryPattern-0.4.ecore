@@ -34,7 +34,7 @@
         eType="#//ConnectorVariable" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../org.muml.reconfiguration/model/MumlReconfiguration-0.4.ecore#//ReconfigurableComponent"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PortVariable" abstract="true" eSuperTypes="#//ComponentStoryPatternVariable ../../org.muml.pim/model/muml-0.4.ecore#//connector/ConnectorEndpoint ../../org.muml.pim/model/muml-0.4.ecore#//behavior/TypedNamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="PortVariable" abstract="true" eSuperTypes="#//ComponentStoryPatternVariable ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/TypedNamedElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
       <details key="SameBindingOperatorAsParent" value="if self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator&lt;>storydiagrams::patterns::BindingOperator::CHECK_ONLY then&#xD;&#xA;&#x9;self.bindingOperator = self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
       <details key="SameBindingSemanticsAsParent" value="if self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingSemantics=storydiagrams::patterns::BindingSemantics::OPTIONAL then&#xD;&#xA;&#x9;self.bindingSemantics = self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingSemantics&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
@@ -48,7 +48,7 @@
       <details key="feature" value="dataType"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="portType" lowerBound="1"
-        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//component/Port"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/Port"
         changeable="false" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="derivation" value="self.dataType.oclAsType(component::Port)"/>
@@ -62,7 +62,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PartVariable" abstract="true" eSuperTypes="#//ComponentStoryPatternVariable ../../org.muml.pim/model/muml-0.4.ecore#//behavior/TypedNamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="PartVariable" abstract="true" eSuperTypes="#//ComponentStoryPatternVariable ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/TypedNamedElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
       <details key="SameBindingOperatorAsComponentVariable" value="if self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator&lt;>storydiagrams::patterns::BindingOperator::CHECK_ONLY then&#xD;&#xA;&#x9;self.bindingOperator = self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
       <details key="ValidTypeOfPartVariable" value="if not self.eContainer().oclAsType(ComponentVariable).type.oclIsUndefined() then&#xD;&#xA;&#x9;if self.eContainer().oclAsType(ComponentVariable).type.oclIsKindOf(muml::component::StructuredComponent) then&#xD;&#xA;&#x9;&#x9;self.eContainer().oclAsType(ComponentVariable).type.oclAsType(muml::component::StructuredComponent).embeddedComponentParts->includes(self.dataType.oclAsType(muml::component::ComponentPart))&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;false&#xD;&#xA;&#x9;endif&#xD;&#xA;else&#xD;&#xA;&#x9;false&#xD;&#xA;endif"/>
@@ -73,14 +73,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="portVariables" upperBound="-1"
         eType="#//PortVariable" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="componentPartType" lowerBound="1"
-        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//component/ComponentPart"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/ComponentPart"
         changeable="false" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="derivation" value="self.dataType.oclAsType(component::ComponentPart)"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ConnectorVariable" abstract="true" eSuperTypes="#//ComponentStoryPatternVariable ../../org.muml.pim/model/muml-0.4.ecore#//connector/Connector">
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectorVariable" abstract="true" eSuperTypes="#//ComponentStoryPatternVariable ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
       <details key="MustNotConnectCreateAndDestroyPorts" value="if self.portVariables->asOrderedSet()->first().oclAsType(ComponentStoryPatternVariable).bindingOperator=storydiagrams::patterns::BindingOperator::CREATE then&#xD;&#xA;&#x9;self.portVariables->asOrderedSet()->last().oclAsType(ComponentStoryPatternVariable).bindingOperator&lt;>storydiagrams::patterns::BindingOperator::DESTROY&#xD;&#xA;else&#xD;&#xA;&#x9;if self.portVariables->asOrderedSet()->first().oclAsType(ComponentStoryPatternVariable).bindingOperator=storydiagrams::patterns::BindingOperator::DESTROY then&#xD;&#xA;&#x9;&#x9;self.portVariables->asOrderedSet()->last().oclAsType(ComponentStoryPatternVariable).bindingOperator&lt;>storydiagrams::patterns::BindingOperator::CREATE&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;true&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
       <details key="SameBindingOperatorAsPortVariable" value="if self.portVariables->asOrderedSet()->first().oclAsType(ComponentStoryPatternVariable).bindingOperator&lt;>storydiagrams::patterns::BindingOperator::CHECK_ONLY then&#xD;&#xA;&#x9;self.oclAsType(ComponentStoryPatternVariable).bindingOperator = self.portVariables->asOrderedSet()->first().oclAsType(ComponentStoryPatternVariable).bindingOperator&#xD;&#xA;else&#xD;&#xA;&#x9;if self.portVariables->asOrderedSet()->last().oclAsType(ComponentStoryPatternVariable).bindingOperator&lt;>storydiagrams::patterns::BindingOperator::CHECK_ONLY then&#xD;&#xA;&#x9;&#x9;self.oclAsType(ComponentStoryPatternVariable).bindingOperator = self.portVariables->asOrderedSet()->last().oclAsType(ComponentStoryPatternVariable).bindingOperator&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;true&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
@@ -103,7 +103,7 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="ExistingConnectorBetweenPortVariableTypes"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//component/AssemblyConnector">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/AssemblyConnector">
       <eAnnotations source="http://www.muml.org/emf/OCLFilter">
         <details key="choices" value="let this : ComponentVariable = self.eContainer().oclAsType(ComponentVariable),&#xD;&#xA;&#x9;assemblyConnectors : Collection(connector::Connector) = this.type.oclAsType(component::StructuredComponent).connectors->select(oclIsTypeOf(component::AssemblyConnector)),&#xD;&#xA;&#x9;portVariableTypes: Collection(component::Port) = self.portVariables.portType->excluding(null)&#xD;&#xA;in&#xD;&#xA;&#x9;assemblyConnectors->select(aC | portVariableTypes->forAll(p | aC.oclAsType(component::AssemblyConnector).portParts.portType->includes(p)))"/>
       </eAnnotations>
@@ -116,7 +116,7 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="ExistingDelegationConnectorBetweenPortVariableTypes"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//component/DelegationConnector">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/DelegationConnector">
       <eAnnotations source="http://www.muml.org/emf/OCLFilter">
         <details key="choices" value="let outerPort : muml::component::Port = self.portVariables->select(eContainer().oclIsTypeOf(ComponentVariable))->at(1).portType,&#xD;&#xA;&#x9;innerPort : muml::component::Port = self.portVariables.portType->excluding(outerPort)->at(1),&#xD;&#xA;&#x9;delegationConnectorsOuter : OrderedSet(muml::connector::Connector) = outerPort.connectors->select(oclIsTypeOf(muml::component::DelegationConnector))&#xD;&#xA;in&#xD;&#xA;&#x9;delegationConnectorsOuter->select(dC | dC.oclAsType(muml::component::DelegationConnector).portPart.portType = innerPort)"/>
       </eAnnotations>

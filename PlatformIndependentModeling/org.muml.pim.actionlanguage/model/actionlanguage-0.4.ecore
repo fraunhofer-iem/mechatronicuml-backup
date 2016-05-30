@@ -175,13 +175,13 @@
       <details key="ParameterBindingForEveryParameter" value="-- An OperationCall must bind exactly one value to every parameter&#xA;not operation.oclIsUndefined() implies &#xA;operation.parameters->asBag() = parameterBinding.parameter->asBag()&#xA;-- author: bingo, adann"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="operation" lowerBound="1"
-        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//behavior/Operation">
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Operation">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Operation which belongs to an operation call."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBinding" upperBound="-1"
-        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//behavior/ParameterBinding"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/ParameterBinding"
         containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Parameter bindings which belongs to an operation call."/>
@@ -204,13 +204,13 @@
       <details key="documentation" value="Represents a parameter of a transition's trigger message."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="messageType" lowerBound="1"
-        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//msgtype/MessageType">
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//msgtype/MessageType">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The MessageType that this TriggerMessageExpression represents."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
-        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//behavior/Parameter">
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Parameter">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The messageType's parameter that should be accessed."/>
       </eAnnotations>
@@ -291,7 +291,7 @@
       <details key="documentation" value="Enables to declare a local variable inside a Block. Local variables are declared &#xD;&#xA;according to the C-rule and have the scope of the block they are defined in.&#xD;&#xA;Local variables may not have the same name as a variable that is declared in the&#xD;&#xA;real-time statechart."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
-        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//behavior/Variable"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Variable"
         containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The variable that is declared and optionally initialized by this declaration &#xD;&#xA;statement."/>
@@ -312,7 +312,7 @@
       <details key="documentation" value="To perform an action on a value of a variable of a \rtsc we use the typed named element expression, which has a reference to a typed named element and optional indices if a concrete array element should be referenced."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="typedNamedElement" lowerBound="1"
-        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//behavior/TypedNamedElement">
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/TypedNamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The typed named element that is referenced."/>
       </eAnnotations>
@@ -340,14 +340,14 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The nondeterministic choice expression selects a value from an interval of integers&#xD;&#xA;nondeterministically. It may be used to abstract from computations or interactions&#xD;&#xA;that will modify a value of a variable, but are not yet implementable, e.g., within&#xD;&#xA;a real-time coordination protocol. Nondeterministic choice expressions may only&#xD;&#xA;be used as right-hand side of an assignment."/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="range" lowerBound="1" eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//valuetype/Range"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="range" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Range"
         containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The range defines the lower bound and the upper bound of the interval from which&#xD;&#xA;values will be chosen nondeterministically. Every value in this interval will be&#xD;&#xA;chosen with the same probability."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" lowerBound="1"
-        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//types/PrimitiveDataType">
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/PrimitiveDataType">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The base type for the interval defined by the range. We only allow for integer types."/>
       </eAnnotations>
@@ -358,7 +358,7 @@
       <details key="documentation" value="This class is used to reference a TimeValue."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="timeValue" lowerBound="1"
-        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//valuetype/TimeValue">
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The TimeValue which is referenced by the TimeValueExpression."/>
       </eAnnotations>
@@ -368,7 +368,7 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A TypeCastExpression enables to perform an explicit type cast of the value of the enclosedExpression to the data type given in the eponymous reference. "/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//types/DataType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/DataType">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Represents the DataType to which the value of the enclosedExpression is converted."/>
       </eAnnotations>
@@ -403,7 +403,7 @@
       <details key="documentation" value="Used to access an attribute of a StructuredDataType."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
-        eType="ecore:EClass ../../org.muml.pim/model/muml-0.4.ecore#//types/Attribute">
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/Attribute">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The attribute of a StructuredDataType that should be accessed."/>
       </eAnnotations>

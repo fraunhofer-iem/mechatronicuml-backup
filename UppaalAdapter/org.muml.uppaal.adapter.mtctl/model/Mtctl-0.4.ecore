@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mtctl" nsURI="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl"
     nsPrefix="mtctl">
-  <eClassifiers xsi:type="ecore:EClass" name="PropertyRepository" eSuperTypes="../../org.muml.pim/model/muml-0.4.ecore#//constraint/VerificationConstraintRepository">
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyRepository" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//constraint/VerificationConstraintRepository">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="List of properties"/>
     </eAnnotations>
@@ -255,7 +255,7 @@
           <details key="documentation" value="The constant value of the expression"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeUnit" eType="ecore:EDataType ../../org.muml.pim/model/muml-0.4.ecore#//valuetype/TimeUnit"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeUnit" eType="ecore:EDataType ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeUnit"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MapExpr" abstract="true" eSuperTypes="#//Expression">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

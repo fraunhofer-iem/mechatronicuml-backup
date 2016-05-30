@@ -27,8 +27,8 @@
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresourceinstance/StructuredResourceInstance/embeddedAtomicResourceInstances"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresourceinstance/ResourceInstance/hwports"/>
@@ -42,8 +42,8 @@
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresourceinstance/AtomicResourceInstance/parentStructuredResourceInstance"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/AtomicResourceInstance"/>
   </mappings>
@@ -62,8 +62,8 @@
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresourceinstance/ProcessorInstance/ownedCacheInstance"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/ProcessorInstance"/>
   </mappings>
@@ -77,8 +77,8 @@
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresourceinstance/MemoryResourceInstance/throughput"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/MemoryResourceInstance"/>
   </mappings>
@@ -88,8 +88,8 @@
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresourceinstance/ComputingResourceInstance/frequency"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/ComputingResourceInstance"/>
   </mappings>
@@ -102,8 +102,8 @@
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresourceinstance/ResourceInstance/hwports"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/ResourceInstance"/>
   </mappings>
@@ -122,8 +122,8 @@
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/HWPort/parentResource"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <constraints ocl="not self.parentResource.oclIsUndefined()"/>
     <sourceClass href="hardware-1.0.ecore#//hwresource/CommunicationResource"/>
@@ -135,8 +135,8 @@
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/CommunicationProtocolRepository/communicationProtocols"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/CommunicationProtocolRepository"/>
   </mappings>
@@ -159,8 +159,8 @@
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/StructuredResource/embeddedAtomicResources"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/StructuredResource"/>
   </mappings>
@@ -170,8 +170,8 @@
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/AtomicResource/parentStructuredResource"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/AtomicResource"/>
   </mappings>
@@ -198,8 +198,8 @@
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/Processor/nbPipelineStages"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/Processor"/>
   </mappings>
@@ -226,8 +226,8 @@
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwresource/Cache/usedByProcessor"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/Cache"/>
   </mappings>
@@ -236,8 +236,8 @@
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresource/Resource/communicationResources"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/Resource"/>
   </mappings>
@@ -248,8 +248,8 @@
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatforminstance/DelegationHWPortInstance/parentHWPlatformInstance"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="../../org.muml.pim/model/pim.ecore#//connector/ConnectorEndpointInstance/type"/>
@@ -260,16 +260,16 @@
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwplatforminstance/NetworkBridgeInstance"/>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwplatforminstance/BridgeInstance"/>
   </mappings>
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwplatforminstance/BusInstance"/>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="../../org.muml.pim/model/pim.ecore#//connector/ConnectorEndpointInstance/type"/>
@@ -284,8 +284,8 @@
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwplatforminstance/HWPortInstance"/>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwplatforminstance/HWPortInstance"/>
   </mappings>
@@ -330,8 +330,8 @@
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatforminstance/HWPlatformInstance/parentHPIC"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwplatforminstance/HWPlatformInstance"/>
   </mappings>
@@ -369,8 +369,8 @@
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatform/ResourcePart/resourceType"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwplatform/ResourcePart"/>
   </mappings>
@@ -381,8 +381,8 @@
       <sourceFeature xsi:type="ecore:EReference" href="hardware-1.0.ecore#//hwplatform/HWPlatformPart/hwplatformType"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwplatform/HWPlatformPart"/>
   </mappings>
@@ -418,8 +418,8 @@
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwplatform/HWPlatform/networkConnectors"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwplatform/HWPlatform"/>
   </mappings>
@@ -451,8 +451,8 @@
       <targetFeature xsi:type="ecore:EReference" href="hardware-1.1.ecore#//hwresource/CommunicationProtocol/bandwidth"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/CommunicationProtocol"/>
   </mappings>
@@ -463,8 +463,8 @@
       <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/Device/deviceType"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/Device"/>
   </mappings>
@@ -483,8 +483,8 @@
       <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/MemoryResource/memoryType"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/MemoryResource"/>
   </mappings>
@@ -544,71 +544,71 @@
   </mappings>
   <mappings>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/ComputingResource"/>
   </mappings>
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwresource/ProgrammableLogicDevice"/>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/ProgrammableLogicDevice"/>
   </mappings>
   <mappings>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/DeviceInstance"/>
   </mappings>
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwresourceinstance/StorageMemoryInstance"/>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/StorageMemoryInstance"/>
   </mappings>
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwresourceinstance/ProcessingMemoryInstance"/>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/ProcessingMemoryInstance"/>
   </mappings>
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwresourceinstance/CacheInstance"/>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/CacheInstance"/>
   </mappings>
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwresourceinstance/ProgrammableLogicDeviceInstance"/>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/ProgrammableLogicDeviceInstance"/>
   </mappings>
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwresourceinstance/SensorInstance"/>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/SensorInstance"/>
   </mappings>
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwresourceinstance/ActuatorInstance"/>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresourceinstance/ActuatorInstance"/>
   </mappings>
@@ -671,8 +671,8 @@
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwresourceinstance/HWPort"/>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <constraints ocl="not self.parentResourceInstance.oclIsUndefined()"/>
     <sourceClass href="hardware-1.0.ecore#//hwresource/CommunicationResource"/>
@@ -684,8 +684,8 @@
       <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/BusProtocol/busProtocol"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/BusProtocol"/>
   </mappings>
@@ -696,8 +696,8 @@
       <sourceFeature xsi:type="ecore:EAttribute" href="hardware-1.0.ecore#//hwresource/LinkProtocol/linkProtocol"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
-      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
+      <targetFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="../../org.muml.core.migrator/model/core-0.4.ecore#//NamedElement/name"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwresource/LinkProtocol"/>
   </mappings>
