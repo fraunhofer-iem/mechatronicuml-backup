@@ -32,14 +32,6 @@ public class CustomObjectVariableTypeLabelEditPart extends ObjectVariableTypeLab
 
 		ObjectVariable ov = (ObjectVariable) ((View) getModel()).getElement();
 
-		String text = "";
-
-		String eClassName = "[null]";
-		if (ov.getClassifier() != null) {
-			eClassName = ov.getClassifier().getName();
-		}
-
-		text = " : " + eClassName;
 
 		if (ov.getBindingState() == BindingState.BOUND) {
 			setForegroundColor(new Color(null, 160, 160, 160));
@@ -54,13 +46,6 @@ public class CustomObjectVariableTypeLabelEditPart extends ObjectVariableTypeLab
 			 * objects, red for destroyed objects, and black otherwise.
 			 */
 		}
-
-		if (text.length() > 50) {
-			text = text.substring(0, 50);
-			text += "...";
-		}
-
-		setLabelText(text);
 
 		((WrappingLabel) getFigure()).setTextUnderline(true);
 	}

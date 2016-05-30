@@ -287,7 +287,8 @@
               fixedFont="true"/>
         </viewmap>
         <modelFacet
-            parser="//@labelParsers/@implementations.1"/>
+            xsi:type="gmfgen:ExpressionLabelModelFacet"
+            parser="//@labelParsers/@implementations.2"/>
       </labels>
     </childNodes>
     <childNodes
@@ -1813,6 +1814,11 @@
       <expressions
           body="&quot;&quot;"/>
     </providers>
+    <providers
+        xsi:type="gmfgen:GenExpressionInterpreter">
+      <expressions
+          body="let typeName : String = if self.genericType.eClassifier.name.oclIsUndefined() then ' ' else&#x9;' : '.concat(self.genericType.eClassifier.name) endif in&#xD;&#xA;typeName"/>
+    </providers>
   </expressionProviders>
   <labelParsers
       extensibleViaService="true">
@@ -1821,7 +1827,14 @@
         uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.1/@modelFacet //@diagram/@childNodes.4/@labels.1/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:ExternalParser"
-        uses="//@diagram/@topLevelNodes.0/@labels.1/@modelFacet //@diagram/@topLevelNodes.1/@labels.1/@modelFacet //@diagram/@childNodes.2/@labelModelFacet //@diagram/@childNodes.3/@labelModelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.2/@modelFacet //@diagram/@childNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.4/@labels.2/@modelFacet //@diagram/@childNodes.5/@labelModelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet //@diagram/@topLevelNodes.7/@labels.0/@modelFacet //@diagram/@links.0/@labels.0/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet //@diagram/@links.1/@labels.1/@modelFacet //@diagram/@links.1/@labels.2/@modelFacet //@diagram/@links.2/@labels.0/@modelFacet //@diagram/@links.3/@labels.0/@modelFacet"/>
+        uses="//@diagram/@topLevelNodes.0/@labels.1/@modelFacet //@diagram/@topLevelNodes.1/@labels.1/@modelFacet //@diagram/@childNodes.2/@labelModelFacet //@diagram/@childNodes.3/@labelModelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.2/@modelFacet //@diagram/@childNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.5/@labelModelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet //@diagram/@topLevelNodes.7/@labels.0/@modelFacet //@diagram/@links.0/@labels.0/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet //@diagram/@links.1/@labels.1/@modelFacet //@diagram/@links.1/@labels.2/@modelFacet //@diagram/@links.2/@labels.0/@modelFacet //@diagram/@links.3/@labels.0/@modelFacet"/>
+    <implementations
+        xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@childNodes.4/@labels.2/@modelFacet"
+        viewExpression="//@expressionProviders/@providers.1/@expressions.0">
+      <expressionContext
+          href="storydiagrams.genmodel#//storydiagram/patterns/ObjectVariable"/>
+    </implementations>
   </labelParsers>
   <contextMenus
       context="//@diagram">

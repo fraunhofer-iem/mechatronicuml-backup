@@ -29,6 +29,7 @@ import org.muml.storydiagram.activities.provider.ActivitiesItemProviderAdapterFa
 import org.muml.storydiagram.calls.expressions.provider.CallsExpressionsItemProviderAdapterFactory;
 import org.muml.storydiagram.calls.provider.CallsItemProviderAdapterFactory;
 import org.muml.storydiagram.diagram.edit.policies.StorydiagramsBaseItemSemanticEditPolicy;
+import org.muml.storydiagram.diagram.expressions.StorydiagramsOCLFactory;
 import org.muml.storydiagram.diagram.providers.ElementInitializers;
 import org.muml.storydiagram.patterns.expressions.provider.PatternsExpressionsItemProviderAdapterFactory;
 import org.muml.storydiagram.patterns.provider.PatternsItemProviderAdapterFactory;
@@ -83,6 +84,11 @@ public class StorydiagramsDiagramEditorPlugin extends AbstractUIPlugin {
 	private ElementInitializers initializers;
 
 	/**
+	* @generated
+	*/
+	private StorydiagramsOCLFactory oclFactory;
+
+	/**
 	 * @generated
 	 */
 	public StorydiagramsDiagramEditorPlugin() {
@@ -107,6 +113,7 @@ public class StorydiagramsDiagramEditorPlugin extends AbstractUIPlugin {
 		adapterFactory = null;
 		linkConstraints = null;
 		initializers = null;
+		oclFactory = null;
 		instance = null;
 		super.stop(context);
 	}
@@ -259,6 +266,20 @@ public class StorydiagramsDiagramEditorPlugin extends AbstractUIPlugin {
 	 */
 	public void setElementInitializers(ElementInitializers i) {
 		this.initializers = i;
+	}
+
+	/**
+	* @generated
+	*/
+	public StorydiagramsOCLFactory getStorydiagramsOCLFactory() {
+		return oclFactory;
+	}
+
+	/**
+	* @generated
+	*/
+	public void setStorydiagramsOCLFactory(StorydiagramsOCLFactory f) {
+		this.oclFactory = f;
 	}
 
 	/**

@@ -4,14 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.edit.command.ChangeCommand;
+import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.muml.core.CorePackage;
+import org.muml.storydiagram.StorydiagramPackage;
 import org.muml.storydiagram.diagram.custom.ResourceManager;
 import org.muml.storydiagram.diagram.custom.dialogs.SelectEClassDialog;
 import org.muml.storydiagram.diagram.custom.util.ActivityUtil;
@@ -43,40 +47,25 @@ public class ObjectVariableClassifierSection extends AbstractComboSection<EClass
 
 	@Override
 	protected EStructuralFeature getFeature() {
-		return EcorePackage.Literals.EGENERIC_TYPE__ECLASSIFIER;
+		return CorePackage.Literals.TYPED_ELEMENT__CLASSIFIER;
 	}
-	
+
 	@Override
-	protected EObject getElement() {
-		if(super.getElement() instanceof ObjectVariable){
-			ObjectVariable objectVariable = (ObjectVariable) super.getElement();
-			if(objectVariable.getGenericType() == null){
-				objectVariable.setGenericType(EcoreFactory.eINSTANCE.createEGenericType());
+	protected void set(Object value) {
+		final EClassifier classifier = (EClassifier) value;
+		execute(new ChangeCommand(getElement()) {
+			@Override
+			protected void doExecute() {
+				ObjectVariable objectVariable = (ObjectVariable) getElement();
+				if (objectVariable.getGenericType() == null){
+					objectVariable.setGenericType(EcoreFactory.eINSTANCE.createEGenericType());
+				}
+				objectVariable.getGenericType().setEClassifier(classifier);
 			}
-			return objectVariable.getGenericType();
-		}
-		return super.getElement();
+		});
+		
 	}
-	
-//	@Override
-//	protected void hookWidgetListeners() {
-//		super.getCombo()ombo.addSelectionListener(new SelectionAdapter() {
-//			@Override
-//			public void widgetSelected(SelectionEvent e) {
-//				set(map.get(combo.getSelectionIndex()));
-//				validate();
-//			}
-//		});
-//
-//		if (shouldShowButton()) {
-//			button.addSelectionListener(new SelectionAdapter() {
-//				@Override
-//				public void widgetSelected(SelectionEvent e) {
-//					handleButtonClicked();
-//				}
-//			});
-//		}
-//	}
+
 	
 	@Override
 	protected List<EClass> getItems() {

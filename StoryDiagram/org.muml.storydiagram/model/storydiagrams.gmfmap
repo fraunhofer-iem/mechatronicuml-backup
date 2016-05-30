@@ -189,9 +189,12 @@
                     href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
               </labelMappings>
               <labelMappings
+                  xsi:type="gmfmap:ExpressionLabelMapping"
                   readOnly="true">
                 <diagramLabel
                     href="storydiagrams.gmfgraph#ObjectVariableTypeLabel"/>
+                <viewExpression
+                    body="let typeName : String = if self.genericType.eClassifier.name.oclIsUndefined() then ' ' else&#x9;' : '.concat(self.genericType.eClassifier.name) endif in&#xD;&#xA;typeName"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"

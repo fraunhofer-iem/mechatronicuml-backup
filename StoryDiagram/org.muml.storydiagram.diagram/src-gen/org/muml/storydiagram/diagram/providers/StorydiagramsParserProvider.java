@@ -18,8 +18,10 @@ import org.muml.storydiagram.diagram.edit.parts.CollectionVariableNameLabelEditP
 import org.muml.storydiagram.diagram.edit.parts.MatchingStoryNodeNameEditPart;
 import org.muml.storydiagram.diagram.edit.parts.ModifyingStoryNodeNameEditPart;
 import org.muml.storydiagram.diagram.edit.parts.ObjectVariableNameEditPart;
+import org.muml.storydiagram.diagram.edit.parts.ObjectVariableTypeLabelEditPart;
 import org.muml.storydiagram.diagram.edit.parts.StatementNodeNameEditPart;
 import org.muml.storydiagram.diagram.parsers.MessageFormatParser;
+import org.muml.storydiagram.diagram.parsers.ObjectVariableLabelExpressionLabelParser;
 import org.muml.storydiagram.diagram.part.StorydiagramsVisualIDRegistry;
 
 /**
@@ -136,6 +138,13 @@ public class StorydiagramsParserProvider extends AbstractProvider implements IPa
 	}
 
 	/**
+	* @generated
+	*/
+	private IParser getObjectVariableLabel_5010Parser() {
+		return new ObjectVariableLabelExpressionLabelParser();
+	}
+
+	/**
 	 * @generated
 	 */
 	protected IParser getParser(int visualID) {
@@ -152,6 +161,8 @@ public class StorydiagramsParserProvider extends AbstractProvider implements IPa
 			return getCollectionVariableName_5006Parser();
 		case ObjectVariableNameEditPart.VISUAL_ID:
 			return getObjectVariableName_5009Parser();
+		case ObjectVariableTypeLabelEditPart.VISUAL_ID:
+			return getObjectVariableLabel_5010Parser();
 		}
 		return null;
 	}
