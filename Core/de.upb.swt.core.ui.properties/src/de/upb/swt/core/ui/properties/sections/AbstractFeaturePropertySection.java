@@ -19,7 +19,7 @@ public abstract class AbstractFeaturePropertySection extends AbstractPropertySec
 	 * 
 	 * @param values The values to add to the {@link #getFeature() feature}.
 	 */
-	protected final void add(Collection<Object> values) {
+	protected void add(Collection<Object> values) {
 		add(getFeature(), values);
 	}
 
@@ -28,7 +28,7 @@ public abstract class AbstractFeaturePropertySection extends AbstractPropertySec
 	 * 
 	 * @param value The value to add to the {@link #getFeature() feature}.
 	 */
-	protected final void add(Object value) {
+	protected void add(Object value) {
 		add(getFeature(), value);
 	}
 
@@ -37,7 +37,7 @@ public abstract class AbstractFeaturePropertySection extends AbstractPropertySec
 	 * 
 	 * @param values The values to remove from the {@link #getFeature() feature}.
 	 */
-	protected final void remove(Collection<Object> values) {
+	protected void remove(Collection<Object> values) {
 		remove(getFeature(), values);
 	}
 
@@ -46,7 +46,7 @@ public abstract class AbstractFeaturePropertySection extends AbstractPropertySec
 	 * 
 	 * @param value The value to remove from the {@link #getFeature() feature}.
 	 */
-	protected final void remove(Object value) {
+	protected void remove(Object value) {
 		remove(getFeature(), value);
 	}
 
@@ -55,7 +55,7 @@ public abstract class AbstractFeaturePropertySection extends AbstractPropertySec
 	 * 
 	 * @param value The value to set for the {@link #getFeature() feature}.
 	 */
-	protected final void set(Object value) {
+	protected void set(Object value) {
 		set(getFeature(), value);
 	}
 
