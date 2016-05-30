@@ -98,6 +98,9 @@ public final class ActivityUtil {
 	}
 
 	public static boolean isIndependent(Activity element) {
-		return element.eContainer() == null;
+		if(element.eContainer() == null)
+			return true;
+		//Activity is independent if it is not contained in an EOperation
+		else return !(element.eContainer() instanceof EOperation);
 	}
 }
