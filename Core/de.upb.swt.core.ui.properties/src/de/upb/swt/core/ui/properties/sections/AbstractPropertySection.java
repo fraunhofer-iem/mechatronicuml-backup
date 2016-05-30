@@ -13,6 +13,7 @@ import org.eclipse.emf.edit.command.AddCommand;
 import org.eclipse.emf.edit.command.RemoveCommand;
 import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.jface.viewers.BaseLabelProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.LabelProviderChangedEvent;
 import org.eclipse.swt.SWT;
@@ -359,7 +360,7 @@ public abstract class AbstractPropertySection implements ISection {
 	 */
 	protected final void refreshTitle() {
 		if (page != null) {
-			page.labelProviderChanged(new LabelProviderChangedEvent(null));
+			page.labelProviderChanged(new LabelProviderChangedEvent(new BaseLabelProvider()));
 		}
 	}
 }
