@@ -62,13 +62,23 @@ public class Layouter extends GraphvizDotLayouter {
 		}
 		
 		public void run() {
-			FileOutputStream out;
+			FileOutputStream out = null;
 			try {
 				out = new FileOutputStream(file);
 				IOUtils.copy(in, out);
 			} catch (IOException e) {
 				e.printStackTrace();
+			} finally {
+				try {
+					if (out != null) {
+						out.close();
+					}
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
+			
+			
 		}
 	}
 }
