@@ -39,7 +39,6 @@ public class FeatureDependencyGraph {
 	public static final String SYMBOLIC_NAME = "Bundle-SymbolicName: ";
 	public static final String REQUIRE_BUNDLE = "Require-Bundle: ";
 
-	private DotGraph graph = DotFactory.eINSTANCE.createDotGraph();
 	private List<File> featureXmls = new ArrayList<File>();
 	private List<File> manifests = new ArrayList<File>();
 	private Map<String, Plugin> plugins = new HashMap<String, Plugin>();
@@ -53,9 +52,6 @@ public class FeatureDependencyGraph {
 
 	@Test
 	public void run() throws ParserConfigurationException, SAXException, IOException {
-		graph.setDirectedGraph(true);
-		ResourceSet resourceSet = new ResourceSetImpl();
-		resourceSet.createResource(URI.createURI("dummy")).getContents().add(graph);
 		File dir = new File(WORKSPACE_LOC).getAbsoluteFile();
 		for (File project : dir.listFiles()) {
 			if (project.isDirectory()) {
@@ -90,27 +86,37 @@ public class FeatureDependencyGraph {
 		for (Plugin feature : features) {
 			feature.node = DotFactory.eINSTANCE.createDotNode();
 			feature.node.setName(feature.name.replace("org.muml.", "").replace(".feature", "").replace(".", "_"));
-			graph.getNodes().add(feature.node);
 		}	
 		
 		for (Plugin feature : features) {
-			Set<Plugin> includedBy = new HashSet<Plugin>();
-			for (Plugin dep : feature.dependencies) {
-				includedBy.addAll(dep.includedBy);
+			DotGraph graph = DotFactory.eINSTANCE.createDotGraph();
+			graph.setDirectedGraph(true);
+			ResourceSet resourceSet = new ResourceSetImpl();
+			resourceSet.createResource(URI.createURI("dummy")).getContents().add(graph);
+			graph.getNodes().add(feature.node);
+
+			Set<Plugin> depFeatures = new HashSet<Plugin>();
+			for (Plugin dep : feature.getAllDependencies()) {
+				depFeatures.addAll(dep.includedBy);
+				System.out.print(feature.name + " -> " + dep.name + " (");
+				for (Plugin depFeature : dep.includedBy) {
+					System.out.print(depFeature.name + ", ");
+				}
+				System.out.println(")");
 			}
-			for (Plugin depFeature : includedBy) {
+			for (Plugin depFeature : depFeatures) {
 				if (depFeature != feature) {
 					DotEdge edge = DotFactory.eINSTANCE.createDirectedDotEdge();
 					edge.setSource(feature.node);
 					edge.setTarget(depFeature.node);
 					graph.getEdges().add(edge);
+					graph.getNodes().add(depFeature.node);
 				}
 			}
+
+			Layouter layouter = new Layouter(feature.name, "svg");
+			layouter.layout(graph);
 		}
-		
-		
-		Layouter layouter = new Layouter();
-		DotGraph dotGraph = layouter.layout(graph);
 		
 		
 	}
@@ -121,7 +127,17 @@ public class FeatureDependencyGraph {
 		Document doc = dBuilder.parse(file);
 		doc.getDocumentElement().normalize();
 
-		Plugin plugin = getPlugin(doc.getDocumentElement().getAttribute("id"));
+		String featureId = doc.getDocumentElement().getAttribute("id");
+		if (featureId.endsWith(".buckminster")) {
+			return;
+		}
+		if (featureId.endsWith(".sdk.feature")) {
+			return;
+		}
+		if (featureId.endsWith(".sdk")) {
+			return;
+		}
+		Plugin plugin = getPlugin(featureId);
 		features.add(plugin);
 		
 		// Required plugins & features
@@ -265,20 +281,26 @@ public class FeatureDependencyGraph {
 		public String name;
 		public DotNode node;
 		private Set<Plugin> allDependencies = null; // lazy calculation
+		private Set<Plugin> dependenciesAndIncluded; // lazy calculation
 		public Set<Plugin> dependencies = new HashSet<Plugin>();
 		public Set<Plugin> includedPlugins = new HashSet<Plugin>(); // makes only sense for features
 		public Set<Plugin> includedBy = new HashSet<Plugin>();
 		
+		public Set<Plugin> getDependenciesAndIncluded() {
+			if (dependenciesAndIncluded == null) {
+				dependenciesAndIncluded = new HashSet<Plugin>();
+				dependenciesAndIncluded.addAll(dependencies);
+				dependenciesAndIncluded.addAll(includedPlugins);
+			}
+			return dependenciesAndIncluded;
+		}
+		
 		public Set<Plugin> getAllDependencies() {
 			if (allDependencies == null) {
 				allDependencies = new HashSet<Plugin>();
-				for (Plugin dependency : dependencies) {
+				for (Plugin dependency : getDependenciesAndIncluded()) {
 					allDependencies.addAll(dependency.getAllDependencies());
 					allDependencies.add(dependency);
-				}
-				for (Plugin includedPlugin : includedPlugins) {
-					allDependencies.addAll(includedPlugin.getAllDependencies());
-					allDependencies.add(includedPlugin);
 				}
 			}
 			return allDependencies;

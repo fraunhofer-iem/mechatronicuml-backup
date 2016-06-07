@@ -14,7 +14,14 @@ import org.muml.graphviz.dot.DotGraph;
 
 public class Layouter extends GraphvizDotLayouter {
 
-	public static String filetype = "svg";
+	
+	private String filename;
+	private String filetype;
+	
+	public Layouter(String filename, String filetype) {
+		this.filename = filename;
+		this.filetype = filetype;
+	}
 	
 	@Override
 	protected String[] getDotOptions() {
@@ -43,7 +50,7 @@ public class Layouter extends GraphvizDotLayouter {
 			process.getOutputStream().write((dotString + "\n").getBytes());
 			process.getOutputStream().close();
 			SaveToFileStreamWorker layouter = new SaveToFileStreamWorker(process.getInputStream(),
-					new File("test." + filetype));
+					new File(filename + "." + filetype));
 			threadPool.add(layouter);
 			threadPool.join();
 		
@@ -69,9 +76,7 @@ public class Layouter extends GraphvizDotLayouter {
 			} catch (IOException e1) {
 			}
 		}
-		
-		
-		System.out.println(dotString);
+	
 		try {
 			process.getInputStream().close();
 			process.getErrorStream().close();
@@ -103,7 +108,6 @@ public class Layouter extends GraphvizDotLayouter {
 				byte[] buffer = new byte[1024];
 				while ((n = in.read(buffer)) > -1) {
 					out.write(buffer, 0, n);
-					System.out.println(new String(buffer));
 				}
 				out.close();
 			} catch (IOException e) {
