@@ -1,3 +1,5 @@
+package featuredependencygraph;
+
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -27,11 +29,13 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import featuredependencygraph.dot.Layouter;
+
 
 // run me as JUnit Plugin Test
 public class FeatureDependencyGraph {
 	
-	public static final String WORKSPACE_LOC = "/local_ssd/bingo/SHK-GMF";
+	public static final String WORKSPACE_LOC = "/Users/ingo/Documents/SHK-GMF";
 	public static final String SYMBOLIC_NAME = "Bundle-SymbolicName: ";
 	public static final String REQUIRE_BUNDLE = "Require-Bundle: ";
 
