@@ -37,7 +37,9 @@ public abstract class AbstractGraphvizLayouter<I, O> {
 			process.getOutputStream().close();
 			StdoutWorker<O> layouter = new StdoutWorker<O>(process.getInputStream());
 			threadPool.add(layouter);
-			threadPool.add(new StderrWorker(process.getErrorStream()));
+			StreamWorker errorWorker = new StderrWorker(process.getErrorStream());
+			threadPool.add(errorWorker);
+			System.err.println(errorWorker.getData());
 			threadPool.join();
 			process.getInputStream().close();
 			process.getErrorStream().close();
@@ -52,7 +54,7 @@ public abstract class AbstractGraphvizLayouter<I, O> {
 		return null;
 	}
 	
-	static class StreamUtil {
+	public static class StreamUtil {
 		
 		@NonNull
 		public static String read(@NonNull InputStream in) throws IOException {
@@ -71,7 +73,7 @@ public abstract class AbstractGraphvizLayouter<I, O> {
 		
 	}
 	
-	static class ThreadPool {
+	public static class ThreadPool {
 		private List<Thread> pool;
 		
 		public ThreadPool() {
@@ -91,7 +93,7 @@ public abstract class AbstractGraphvizLayouter<I, O> {
 		}
 	}
 	
-	static class StreamWorker implements Runnable {
+	public static class StreamWorker implements Runnable {
 		@NonNull
 		private InputStream in;
 		private String data;
@@ -114,7 +116,7 @@ public abstract class AbstractGraphvizLayouter<I, O> {
 		}
 	}
 	
-	class StdoutWorker<G> extends StreamWorker {
+	public class StdoutWorker<G> extends StreamWorker {
 
 		public StdoutWorker(InputStream in) {
 			super(in);
@@ -133,7 +135,7 @@ public abstract class AbstractGraphvizLayouter<I, O> {
 		
 	}
 	
-	static class StderrWorker extends StreamWorker {
+	public static class StderrWorker extends StreamWorker {
 
 		public StderrWorker(InputStream in) {
 			super(in);
