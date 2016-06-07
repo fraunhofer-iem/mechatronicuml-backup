@@ -592,9 +592,9 @@
         href="../../org.muml.pm.hardware/model/hardware.ecore#//hwresource/Processor/ownedCache"/>
     <creationConstraints>
       <sourceEnd
-          body="self.oclIsTypeOf(hwresource::Processor) implies self.oclAsType(hwresource::Processor).ownedCache.oclIsUndefined()"/>
+          body="self.oclIsTypeOf(Processor) implies self.oclAsType(Processor).ownedCache.oclIsUndefined()"/>
       <targetEnd
-          body="self.oclAsType(ecore::EObject).eContainer() = oppositeEnd.oclAsType(ecore::EObject).eContainer()&#xA;and self.oclIsTypeOf(hwresource::Cache)&#xA;"/>
+          body="self.oclContainer() = oppositeEnd.oclContainer()&#xA;and self.oclIsTypeOf(Cache)&#xA;"/>
     </creationConstraints>
   </links>
   <diagram>

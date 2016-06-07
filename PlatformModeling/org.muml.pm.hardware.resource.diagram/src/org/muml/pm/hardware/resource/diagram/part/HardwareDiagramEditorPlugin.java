@@ -40,6 +40,7 @@ import org.muml.pm.hardware.hwplatforminstance.provider.HwplatforminstanceItemPr
 import org.muml.pm.hardware.hwresource.provider.HwresourceItemProviderAdapterFactory;
 import org.muml.pm.hardware.hwresourceinstance.provider.HwresourceinstanceItemProviderAdapterFactory;
 import org.muml.pm.hardware.hwvaluetype.provider.HwvaluetypeItemProviderAdapterFactory;
+import org.muml.pm.hardware.provider.HardwareItemProviderAdapterFactory;
 import org.muml.pm.hardware.resource.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy;
 import org.muml.pm.hardware.resource.diagram.expressions.HardwareOCLFactory;
 import org.muml.pm.hardware.resource.diagram.providers.ElementInitializers;
@@ -154,6 +155,7 @@ public class HardwareDiagramEditorPlugin extends AbstractUIPlugin {
 		factories.addAll(positivePriorityFactories);
 
 		// Default Factories
+		factories.add(new HardwareItemProviderAdapterFactory());
 		factories.add(new HwplatformItemProviderAdapterFactory());
 		factories.add(new HwvaluetypeItemProviderAdapterFactory());
 		factories.add(new HwplatforminstanceItemProviderAdapterFactory());

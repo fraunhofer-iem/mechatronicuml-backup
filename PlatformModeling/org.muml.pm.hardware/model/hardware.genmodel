@@ -4,7 +4,7 @@
     modelDirectory="/org.muml.pm.hardware/src" modelPluginID="org.muml.pm.hardware"
     modelName="Hardware" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    usedGenPackages="../../org.muml.core/model/core.genmodel#//core ../../org.muml.pim/model/pim.genmodel#//pim"
+    usedGenPackages="../../org.muml.core/model/core.genmodel#//core ../../org.muml.pim/model/pim.genmodel#//pim ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
     operationReflection="true" importOrganizing="true">
   <foreignModel>hardware.ecore</foreignModel>
   <genPackages prefix="Hardware" basePackage="org.muml.pm" disposableProviderFactory="true"

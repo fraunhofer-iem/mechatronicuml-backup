@@ -72,8 +72,6 @@
             <feature
                 href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
-          <elementClass
-              href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/HWPort"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -137,8 +135,6 @@
             <feature
                 href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
-          <elementClass
-              href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/CacheInstance"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -247,8 +243,6 @@
             <feature
                 href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
-          <elementClass
-              href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProgrammableLogicDeviceInstance"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -357,8 +351,6 @@
             <feature
                 href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
-          <elementClass
-              href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProcessorInstance"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -749,8 +741,6 @@
             <feature
                 href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
-          <elementClass
-              href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/SensorInstance"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -843,8 +833,6 @@
             <feature
                 href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
-          <elementClass
-              href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ActuatorInstance"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -933,8 +921,6 @@
             <feature
                 href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
-          <elementClass
-              href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/StructuredResourceInstance"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -1228,7 +1214,7 @@
         generateBoilerplate="false">
       <filter
           xsi:type="gmfgen:CustomTabFilter"
-          className="org.muml.core.properties.tabs.GeneralTabElementFilter"/>
+          className="org.muml.core.properties.tabs.Property_tab_generalTabElementFilter"/>
     </tabs>
     <tabs
         xsi:type="gmfgen:GenCustomPropertyTab"
@@ -1238,7 +1224,7 @@
         generateBoilerplate="false">
       <filter
           xsi:type="gmfgen:CustomTabFilter"
-          className="org.muml.core.properties.tabs.DocumentationTabElementFilter"/>
+          className="org.muml.core.properties.tabs.Property_tab_documentationTabElementFilter"/>
     </tabs>
   </propertySheet>
   <domainGenModel
