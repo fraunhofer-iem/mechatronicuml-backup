@@ -1,4 +1,4 @@
-package featuredependencygraph;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -27,8 +27,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import featuredependencygraph.dot.Layouter;
-
 
 // run me as JUnit Plugin Test
 public class FeatureDependencyGraph {
@@ -51,7 +49,7 @@ public class FeatureDependencyGraph {
 
 	@Test
 	public void run() throws ParserConfigurationException, SAXException, IOException {
-		
+		graph.setDirectedGraph(true);
 		ResourceSet resourceSet = new ResourceSetImpl();
 		resourceSet.createResource(URI.createURI("dummy")).getContents().add(graph);
 		File dir = new File(WORKSPACE_LOC).getAbsoluteFile();
@@ -87,22 +85,25 @@ public class FeatureDependencyGraph {
 
 		for (Plugin feature : features) {
 			feature.node = DotFactory.eINSTANCE.createDotNode();
-			feature.node.setName(feature.name);
+			feature.node.setName(feature.name.replace("org.muml.", "").replace(".feature", "").replace(".", "_"));
 			graph.getNodes().add(feature.node);
 		}	
 		
 		for (Plugin feature : features) {
 			Set<Plugin> includedBy = new HashSet<Plugin>();
-			for (Plugin dep : feature.getAllDependencies()) {
+			for (Plugin dep : feature.dependencies) {
 				includedBy.addAll(dep.includedBy);
 			}
 			for (Plugin depFeature : includedBy) {
-				DotEdge edge = DotFactory.eINSTANCE.createDirectedDotEdge();
-				edge.setSource(feature.node);
-				edge.setTarget(depFeature.node);
-				graph.getEdges().add(edge);
+				if (depFeature != feature) {
+					DotEdge edge = DotFactory.eINSTANCE.createDirectedDotEdge();
+					edge.setSource(feature.node);
+					edge.setTarget(depFeature.node);
+					graph.getEdges().add(edge);
+				}
 			}
 		}
+		
 		
 		Layouter layouter = new Layouter();
 		DotGraph dotGraph = layouter.layout(graph);
