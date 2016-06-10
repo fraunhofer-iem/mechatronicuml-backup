@@ -23,7 +23,7 @@ import com.google.inject.Injector;
  */
 public class MtctlXtextPropertyEditor extends AbstractManyFeatureXtextPropertyEditor { 
 	
-	private static final String languageName = "org.muml.uppaal.adapter.mtctl";
+	private static final String languageName = "org.muml.uppaal.adapter.mtctl.xtext.Mtctl";
 	public static class VerificationPropertyLanguageResource extends AbstractLanguageResource {
 		@Override
 		protected void init(EObject context) {
