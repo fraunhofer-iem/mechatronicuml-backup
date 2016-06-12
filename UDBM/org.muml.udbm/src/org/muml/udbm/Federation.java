@@ -408,5 +408,4 @@ public abstract class Federation implements Cloneable
 	public long getFullHash(){
 		return hashValue();
 	}
-
 }
