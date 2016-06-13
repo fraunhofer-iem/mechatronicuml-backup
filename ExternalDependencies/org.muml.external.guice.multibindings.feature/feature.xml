@@ -224,6 +224,10 @@ For more information about guice-multibindings, see https://github.com/google/gu
       <import plugin="org.muml.external.javax.inject" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.muml.external.guava" version="16.0.1" match="greaterOrEqual"/>
       <import plugin="org.muml.external.guice" version="4.0.0" match="greaterOrEqual"/>
+      <import feature="org.muml.external.aopalliance.feature" version="1.0.0"/>
+      <import feature="org.muml.external.guava.feature" version="16.0.1"/>
+      <import feature="org.muml.external.guice.feature" version="4.0.0"/>
+      <import feature="org.muml.external.javax.inject.feature" version="1.0.0"/>
    </requires>
 
    <plugin

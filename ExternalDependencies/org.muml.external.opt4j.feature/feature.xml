@@ -52,6 +52,11 @@ SOFTWARE.
       <import plugin="org.muml.external.guice.multibindings" version="4.0.0" match="greaterOrEqual"/>
       <import plugin="org.muml.external.sat4j.core" version="2.3.3" match="greaterOrEqual"/>
       <import plugin="org.muml.external.sat4j.pb" version="2.3.3" match="greaterOrEqual"/>
+      <import feature="org.muml.external.guava.feature" version="16.0.1"/>
+      <import feature="org.muml.external.aopalliance.feature" version="1.0.0"/>
+      <import feature="org.muml.external.guice.feature" version="4.0.0"/>
+      <import feature="org.muml.external.javax.inject.feature" version="1.0.0"/>
+      <import feature="org.muml.external.guice.multibindings.feature" version="4.0.0"/>
    </requires>
 
    <plugin
