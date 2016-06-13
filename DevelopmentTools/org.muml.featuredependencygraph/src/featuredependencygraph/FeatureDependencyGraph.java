@@ -177,6 +177,36 @@ public class FeatureDependencyGraph {
 		}
 		
 
+
+		// Create big image
+		{
+			DotGraph graph = createDotGraph();
+			for (Plugin feature : features) {
+				graph.getNodes().add(feature.node);
+				for (Plugin depFeature : feature.analyzedForwardFeatureDependencies) {
+					DirectedDotEdge edge = DotFactory.eINSTANCE.createDirectedDotEdge();
+					edge.setSource(feature.node);
+					edge.setTarget(depFeature.node);
+					graph.getEdges().add(edge);
+					graph.getNodes().add(depFeature.node);
+
+					if (!feature.declaredFeatureDependencies.contains(depFeature)
+							&& !feature.includedPlugins.contains(depFeature)) {
+						Setting setting = DotFactory.eINSTANCE.createSetting();
+						setting.setAttribute("color");
+						setting.setValue("\"#FF0000\"");
+						edge.getSettings().add(setting);
+					}
+				}
+
+			}
+			Layouter layouter = new Layouter("images/01-FeatureDependencyGraph", "svg");
+			layouter.layout(graph);
+		}
+
+
+		
+		
 		// Create examples image
 		{
 			DotGraph graph = createDotGraph();
@@ -232,32 +262,36 @@ public class FeatureDependencyGraph {
 			layouter.layout(graph);
 		}
 
-		// Create big image
+
+		// Create pim group image
 		{
 			DotGraph graph = createDotGraph();
 			for (Plugin feature : features) {
-				graph.getNodes().add(feature.node);
-				for (Plugin depFeature : feature.analyzedForwardFeatureDependencies) {
-					DirectedDotEdge edge = DotFactory.eINSTANCE.createDirectedDotEdge();
-					edge.setSource(feature.node);
-					edge.setTarget(depFeature.node);
-					graph.getEdges().add(edge);
-					graph.getNodes().add(depFeature.node);
-
-					if (!feature.declaredFeatureDependencies.contains(depFeature)
-							&& !feature.includedPlugins.contains(depFeature)) {
-						Setting setting = DotFactory.eINSTANCE.createSetting();
-						setting.setAttribute("color");
-						setting.setValue("\"#FF0000\"");
-						edge.getSettings().add(setting);
+				if (feature.name.startsWith("org.muml.pim.feature") || feature.name.startsWith("org.muml.example")) {
+					graph.getNodes().add(feature.node);
+					for (Plugin depFeature : feature.analyzedForwardFeatureDependencies) {
+						DirectedDotEdge edge = DotFactory.eINSTANCE.createDirectedDotEdge();
+						edge.setSource(feature.node);
+						edge.setTarget(depFeature.node);
+						graph.getEdges().add(edge);
+						graph.getNodes().add(depFeature.node);
+						
+						if (!feature.declaredFeatureDependencies.contains(depFeature) && !feature.includedPlugins.contains(depFeature)) {
+							Setting setting =DotFactory.eINSTANCE.createSetting();
+							setting.setAttribute("color");
+							setting.setValue("\"#FF0000\"");
+							edge.getSettings().add(setting);
+						}
 					}
 				}
 
 			}
-			Layouter layouter = new Layouter("images/01-FeatureDependencyGraph", "svg");
+			Layouter layouter = new Layouter("images/04-pim-group", "svg");
 			layouter.layout(graph);
 		}
+		
 
+		
 		String problems = "";
 		for (Plugin feature : features) {
 			for (Plugin depFeature : feature.analyzedForwardFeatureDependencies) {
