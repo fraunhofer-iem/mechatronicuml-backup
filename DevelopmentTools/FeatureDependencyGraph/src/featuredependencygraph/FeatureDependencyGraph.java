@@ -1,6 +1,8 @@
 package featuredependencygraph;
 
 
+import static org.junit.Assert.*;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -37,7 +39,7 @@ import featuredependencygraph.dot.Layouter;
 // run me as JUnit Plugin Test
 public class FeatureDependencyGraph {
 	
-	public static final String WORKSPACE_LOC = "/Users/ingo/Documents/SHK-GMF";
+	public static final String WORKSPACE_LOC = "/local_ssd/bingo/SHK-GMF";
 	public static final String SYMBOLIC_NAME = "Bundle-SymbolicName: ";
 	public static final String REQUIRE_BUNDLE = "Require-Bundle: ";
 
@@ -91,75 +93,71 @@ public class FeatureDependencyGraph {
 		}	
 		
 		for (Plugin feature : features) {
-			DotGraph graph = DotFactory.eINSTANCE.createDotGraph();
-			graph.setDirectedGraph(true);
-			ResourceSet resourceSet = new ResourceSetImpl();
-			resourceSet.createResource(URI.createURI("dummy")).getContents().add(graph);
+			for (Plugin dep : feature.getAllDependencies()) {
+				for (Plugin depFeature : dep.includedBy) {
+					if (depFeature != feature) {
+						feature.analyzedForwardFeatureDependencies.add(depFeature);
+						depFeature.analyzedBackwardFeatureDependencies.add(feature);
+					}
+				}
+			}
+		}
+		
+		// Create images: Forward dependencies
+		for (Plugin feature : features) {
+			DotGraph graph = createDotGraph();
 			graph.getNodes().add(feature.node);
 
-			Map<Plugin, Set<Plugin>> depFeaturesToPlugins = new HashMap<Plugin, Set<Plugin>>();
-			Set<Plugin> allDepFeatures = new HashSet<Plugin>();
-			Set<Plugin> directDepFeatures = new HashSet<Plugin>();
-			for (Plugin dep : feature.getAllDependencies()) {
-				allDepFeatures.addAll(dep.includedBy);
-				for (Plugin depFeature : dep.includedBy) {
-					if (!depFeaturesToPlugins.containsKey(depFeature)) {
-						depFeaturesToPlugins.put(depFeature, new HashSet<Plugin>());
-					}
-					depFeaturesToPlugins.get(depFeature).add(dep);
-				}
-			}
-			for (Plugin dep : feature.getDependenciesAndIncluded()) {
-				directDepFeatures.addAll(dep.includedBy);
-			}
-			List<DotEdge> dashedEdges = new ArrayList<DotEdge>();
-			for (Plugin depFeature : allDepFeatures) {
-				if (depFeature != feature) {
-					DirectedDotEdge edge = DotFactory.eINSTANCE.createDirectedDotEdge();
-					edge.setSource(feature.node);
-					edge.setTarget(depFeature.node);
-					graph.getEdges().add(edge);
-					graph.getNodes().add(depFeature.node);
-					
-					// generate label
-					StringBuffer label = new StringBuffer();
-					for (Plugin pluginDeps : depFeaturesToPlugins.get(depFeature)) {
-						//label.append(makeName(pluginDeps.name));
-						label.append(",");
-						//label.append('\n');
-					}
-					
-					{
-						Setting setting = DotFactory.eINSTANCE.createSetting();
-						setting.setAttribute("label");
-						setting.setValue(label.toString());
-						edge.getSettings().add(setting);
-					}
-				}
-			}
-			
-			for (DotEdge edge : graph.getEdges()) {
-				if (dashedEdges.size() < graph.getEdges().size())
-				{
-					Setting setting = DotFactory.eINSTANCE.createSetting();
-					setting.setAttribute("constraint");
-					setting.setValue("false");
-					edge.getSettings().add(setting);
-				}
-				
-				{
-					Setting setting = DotFactory.eINSTANCE.createSetting();
-					setting.setAttribute("style");
-					setting.setValue("dotted");
-					edge.getSettings().add(setting);
-				}
+			for (Plugin depFeature : feature.analyzedForwardFeatureDependencies) {
+				DirectedDotEdge edge = DotFactory.eINSTANCE.createDirectedDotEdge();
+				edge.setSource(feature.node);
+				edge.setTarget(depFeature.node);
+				graph.getEdges().add(edge);
+				graph.getNodes().add(depFeature.node);
 			}
 
-			Layouter layouter = new Layouter(feature.name, "svg");
+			Layouter layouter = new Layouter(feature.name + "_forward", "svg");
+			layouter.layout(graph);
+		}
+		
+		// Create images: Backward dependencies
+		for (Plugin depFeature : features) {
+			DotGraph graph = createDotGraph();
+			graph.getNodes().add(depFeature.node);
+
+			for (Plugin feature : depFeature.analyzedBackwardFeatureDependencies) {
+				DirectedDotEdge edge = DotFactory.eINSTANCE.createDirectedDotEdge();
+				edge.setSource(feature.node);
+				edge.setTarget(depFeature.node);
+				graph.getEdges().add(edge);
+				graph.getNodes().add(feature.node);
+			}
+
+			Layouter layouter = new Layouter(depFeature.name + "_backward", "svg");
 			layouter.layout(graph);
 		}
 		
 		
+		String problems = "";
+		for (Plugin feature : features) {
+			for (Plugin depFeature : feature.analyzedForwardFeatureDependencies) {
+				if (!feature.declaredFeatureDependencies.contains(depFeature)) {
+					problems += feature.name + " -> " + depFeature.name + "\n";
+				}
+			}
+		}
+		if (!problems.isEmpty()) {
+			fail("Missing feature dependencies:\n" + problems);
+		}
+		
+	}
+
+	private DotGraph createDotGraph() {
+		DotGraph graph = DotFactory.eINSTANCE.createDotGraph();
+		graph.setDirectedGraph(true);
+		ResourceSet resourceSet = new ResourceSetImpl();
+		resourceSet.createResource(URI.createURI("dummy")).getContents().add(graph);
+		return graph;
 	}
 
 	private String makeName(String name) {
@@ -185,25 +183,25 @@ public class FeatureDependencyGraph {
 		Plugin plugin = getPlugin(featureId);
 		features.add(plugin);
 		
-		// Required plugins & features
-		{
-			{
-				NodeList nList = doc.getElementsByTagName("import");
-				for (int temp = 0; temp < nList.getLength(); temp++) {
-					org.w3c.dom.Node nNode = nList.item(temp);
-					if (nNode.getParentNode().getNodeName().equals("requires")) {
-						org.w3c.dom.Node pluginNode = nNode.getAttributes().getNamedItem("plugin");
-						if (pluginNode != null) {
-							plugin.dependencies.add(getPlugin(pluginNode.getNodeValue()));
-						}
-						org.w3c.dom.Node featureNode = nNode.getAttributes().getNamedItem("feature");
-						if (featureNode != null) {
-							plugin.dependencies.add(getPlugin(featureNode.getNodeValue()));
-						}
-					}
-				}
-			}
-		}
+//		// Imported plugins & features
+//		{
+//			{
+//				NodeList nList = doc.getElementsByTagName("import");
+//				for (int temp = 0; temp < nList.getLength(); temp++) {
+//					org.w3c.dom.Node nNode = nList.item(temp);
+//					if (nNode.getParentNode().getNodeName().equals("requires")) {
+//						org.w3c.dom.Node pluginNode = nNode.getAttributes().getNamedItem("plugin");
+//						if (pluginNode != null) {
+//							plugin.dependencies.add(getPlugin(pluginNode.getNodeValue()));
+//						}
+//						org.w3c.dom.Node featureNode = nNode.getAttributes().getNamedItem("feature");
+//						if (featureNode != null) {
+//							plugin.dependencies.add(getPlugin(featureNode.getNodeValue()));
+//						}
+//					}
+//				}
+//			}
+//		}
 		
 		// Included features
 		{
@@ -225,6 +223,24 @@ public class FeatureDependencyGraph {
 				String include = nNode.getAttributes().getNamedItem("id").getNodeValue();
 				if (!include.isEmpty()) {
 					plugin.includedPlugins.add(getPlugin(include));
+				}
+			}
+		}
+		
+		// Import feature
+		{
+			NodeList nList = doc.getElementsByTagName("import");
+			for (int temp = 0; temp < nList.getLength(); temp++) {
+				org.w3c.dom.Node nNode = nList.item(temp);
+				if (nNode.getParentNode() != null && nNode.getParentNode().getNodeName().equals("requires")) {
+					org.w3c.dom.Node feature = nNode.getAttributes().getNamedItem("feature");
+					if (feature != null) {
+						String featureName = feature.getNodeValue();
+						if (!featureName.isEmpty()) {
+							plugin.declaredFeatureDependencies.add(getPlugin(featureName));
+						
+						}
+					}	
 				}
 			}
 		}
@@ -328,9 +344,18 @@ public class FeatureDependencyGraph {
 		private Set<Plugin> allDependencies = null; // lazy calculation
 		private Set<Plugin> dependenciesAndIncluded; // lazy calculation
 		public Set<Plugin> dependencies = new HashSet<Plugin>();
-		public Set<Plugin> includedPlugins = new HashSet<Plugin>(); // makes only sense for features
 		public Set<Plugin> includedBy = new HashSet<Plugin>();
 		
+		// makes only sense for features
+		public Set<Plugin> includedPlugins = new HashSet<Plugin>();
+		public Set<Plugin> declaredFeatureDependencies = new HashSet<Plugin>();
+		public Set<Plugin> analyzedForwardFeatureDependencies = new HashSet<Plugin>();
+		public Set<Plugin> analyzedBackwardFeatureDependencies = new HashSet<Plugin>();
+		
+		
+		public String toString() {
+			return name;
+		}
 		public Set<Plugin> getDependenciesAndIncluded() {
 			if (dependenciesAndIncluded == null) {
 				dependenciesAndIncluded = new HashSet<Plugin>();
