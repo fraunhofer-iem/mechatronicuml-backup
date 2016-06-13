@@ -40,7 +40,6 @@ public class Layouter extends GraphvizDotLayouter {
 
 	@Override
 	protected DotGraph runLayouter(String dotString) {
-		System.out.println(dotString);
 		ProcessBuilder pb = new ProcessBuilder(getCommand());
 		ThreadPool threadPool = new ThreadPool();
 		Process process = null;
