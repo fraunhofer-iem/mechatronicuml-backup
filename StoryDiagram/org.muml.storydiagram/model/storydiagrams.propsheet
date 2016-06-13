@@ -5,7 +5,7 @@
     <customTransformations xmi:id="_Rnt80M1gEeSIgPDefa6ZBw" uri="platform:/plugin/org.muml.pim.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
   </reconciler>
   <genModel href="storydiagrams.genmodel#/"/>
-  <referencedGenerators href="../../org.muml.pim/model/pim.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
+  <referencedGenerators href="../../org.muml.core/model/core.propsheet#_i_I4kOHNEeS5Putgio2lkg"/>
   <plugin xmi:id="_Rnuj4M1gEeSIgPDefa6ZBw" id="org.muml.storydiagram.edit.properties" name="Storydiagrams Tabbed Properties" vendor="" version="1.0.0.qualifier">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.ui</requiredBundles>
@@ -14,8 +14,6 @@
     <requiredBundles>org.muml.storydiagram</requiredBundles>
     <requiredBundles>org.muml.storydiagram.edit</requiredBundles>
     <requiredBundles>org.muml.ape.runtime</requiredBundles>
-    <requiredBundles>org.muml.pim.edit</requiredBundles>
-    <requiredBundles>org.muml.pim.edit.properties</requiredBundles>
   </plugin>
   <defaultTab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
   <packages xmi:id="_RnvK8M1gEeSIgPDefa6ZBw">

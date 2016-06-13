@@ -3,7 +3,6 @@
   <reconciler xmi:id="_Rmxhoc1gEeSIgPDefa6ZBw"/>
   <genModel href="BasicSDD.genmodel#/"/>
   <referencedGenerators href="../../org.muml.storydiagram.verification.sdd/model/sdd.propsheet#_RmkGQM1gEeSIgPDefa6ZBw"/>
-  <referencedGenerators href="../../org.muml.pim/model/pim.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
   <referencedGenerators href="../../org.muml.core/model/core.propsheet#_i_I4kOHNEeS5Putgio2lkg"/>
   <plugin xmi:id="_RmyIsM1gEeSIgPDefa6ZBw" id="org.muml.storydiagram.verification.sdd.basicsdd.edit.properties" name="Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="1.0.0.qualifier">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
@@ -13,8 +12,6 @@
     <requiredBundles>org.muml.storydiagram.verification.sdd.basicsdd</requiredBundles>
     <requiredBundles>org.muml.storydiagram.verification.sdd.basicsdd.edit</requiredBundles>
     <requiredBundles>org.muml.ape.runtime</requiredBundles>
-    <requiredBundles>org.muml.pim.edit</requiredBundles>
-    <requiredBundles>org.muml.pim.edit.properties</requiredBundles>
     <requiredBundles>org.muml.core.edit</requiredBundles>
     <requiredBundles>org.muml.core.edit.properties</requiredBundles>
     <requiredBundles>org.muml.storydiagram.verification.sdd.edit</requiredBundles>
