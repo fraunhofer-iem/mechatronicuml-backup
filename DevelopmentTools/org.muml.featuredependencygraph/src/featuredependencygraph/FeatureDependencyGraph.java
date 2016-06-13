@@ -1,6 +1,5 @@
 package featuredependencygraph;
 
-
 import static org.junit.Assert.fail;
 
 import java.io.BufferedReader;
@@ -35,11 +34,11 @@ import org.xml.sax.SAXException;
 
 import featuredependencygraph.dot.Layouter;
 
-
 // run me as JUnit Plugin Test
 public class FeatureDependencyGraph {
-	
-	public static final String WORKSPACE_LOC = "/local_ssd/bingo/SHK-GMF";
+
+	public static final String WORKSPACE_LOC = "."; // This requires that the launch configuration
+													// sets ${workspace_loc} as working directory!
 	public static final String SYMBOLIC_NAME = "Bundle-SymbolicName: ";
 	public static final String REQUIRE_BUNDLE = "Require-Bundle: ";
 
@@ -49,9 +48,9 @@ public class FeatureDependencyGraph {
 	private Set<Plugin> features = new HashSet<Plugin>();
 
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
-		
+
 		new FeatureDependencyGraph().run();
-		
+
 	}
 
 	@Test
@@ -90,19 +89,18 @@ public class FeatureDependencyGraph {
 		for (File featureXml : featureXmls) {
 			handleFeature(featureXml);
 		}
-		
+
 		for (Plugin feature : features) {
 			for (Plugin included : feature.includedPlugins) {
 				included.includedBy.add(feature);
 			}
 		}
-		
 
 		for (Plugin feature : features) {
 			feature.node = DotFactory.eINSTANCE.createDotNode();
 			feature.node.setName(makeName(feature.name));
-		}	
-		
+		}
+
 		for (Plugin feature : features) {
 			for (Plugin dep : feature.getAllDependencies()) {
 				for (Plugin depFeature : dep.includedBy) {
@@ -114,7 +112,7 @@ public class FeatureDependencyGraph {
 				}
 			}
 		}
-		
+
 		// Create images: Forward dependencies
 		for (Plugin feature : features) {
 			DotGraph graph = createDotGraph();
@@ -126,9 +124,10 @@ public class FeatureDependencyGraph {
 				edge.setTarget(depFeature.node);
 				graph.getEdges().add(edge);
 				graph.getNodes().add(depFeature.node);
-				
-				if (!feature.declaredFeatureDependencies.contains(depFeature) && !feature.includedPlugins.contains(depFeature)) {
-					Setting setting =DotFactory.eINSTANCE.createSetting();
+
+				if (!feature.declaredFeatureDependencies.contains(depFeature)
+						&& !feature.includedPlugins.contains(depFeature)) {
+					Setting setting = DotFactory.eINSTANCE.createSetting();
 					setting.setAttribute("color");
 					setting.setValue("\"#FF0000\"");
 					edge.getSettings().add(setting);
@@ -138,7 +137,7 @@ public class FeatureDependencyGraph {
 			Layouter layouter = new Layouter("images/" + feature.name + "_forward", "svg");
 			layouter.layout(graph);
 		}
-		
+
 		// Create images: Backward dependencies
 		for (Plugin depFeature : features) {
 			DotGraph graph = createDotGraph();
@@ -150,10 +149,10 @@ public class FeatureDependencyGraph {
 				edge.setTarget(depFeature.node);
 				graph.getEdges().add(edge);
 				graph.getNodes().add(feature.node);
-				
-				
-				if (!feature.declaredFeatureDependencies.contains(depFeature) && !feature.includedPlugins.contains(depFeature)) {
-					Setting setting =DotFactory.eINSTANCE.createSetting();
+
+				if (!feature.declaredFeatureDependencies.contains(depFeature)
+						&& !feature.includedPlugins.contains(depFeature)) {
+					Setting setting = DotFactory.eINSTANCE.createSetting();
 					setting.setAttribute("color");
 					setting.setValue("\"#FF0000\"");
 					edge.getSettings().add(setting);
@@ -175,9 +174,10 @@ public class FeatureDependencyGraph {
 					edge.setTarget(depFeature.node);
 					graph.getEdges().add(edge);
 					graph.getNodes().add(depFeature.node);
-					
-					if (!feature.declaredFeatureDependencies.contains(depFeature) && !feature.includedPlugins.contains(depFeature)) {
-						Setting setting =DotFactory.eINSTANCE.createSetting();
+
+					if (!feature.declaredFeatureDependencies.contains(depFeature)
+							&& !feature.includedPlugins.contains(depFeature)) {
+						Setting setting = DotFactory.eINSTANCE.createSetting();
 						setting.setAttribute("color");
 						setting.setValue("\"#FF0000\"");
 						edge.getSettings().add(setting);
@@ -188,7 +188,7 @@ public class FeatureDependencyGraph {
 			Layouter layouter = new Layouter("images/01-FeatureDependencyGraph", "svg");
 			layouter.layout(graph);
 		}
-		
+
 		String problems = "";
 		for (Plugin feature : features) {
 			for (Plugin depFeature : feature.analyzedForwardFeatureDependencies) {
@@ -200,7 +200,7 @@ public class FeatureDependencyGraph {
 		if (!problems.isEmpty()) {
 			fail("Missing feature dependencies:\n" + problems);
 		}
-		
+
 	}
 
 	private DotGraph createDotGraph() {
@@ -233,27 +233,29 @@ public class FeatureDependencyGraph {
 		}
 		Plugin plugin = getPlugin(featureId);
 		features.add(plugin);
-		
-//		// Imported plugins & features
-//		{
-//			{
-//				NodeList nList = doc.getElementsByTagName("import");
-//				for (int temp = 0; temp < nList.getLength(); temp++) {
-//					org.w3c.dom.Node nNode = nList.item(temp);
-//					if (nNode.getParentNode().getNodeName().equals("requires")) {
-//						org.w3c.dom.Node pluginNode = nNode.getAttributes().getNamedItem("plugin");
-//						if (pluginNode != null) {
-//							plugin.dependencies.add(getPlugin(pluginNode.getNodeValue()));
-//						}
-//						org.w3c.dom.Node featureNode = nNode.getAttributes().getNamedItem("feature");
-//						if (featureNode != null) {
-//							plugin.dependencies.add(getPlugin(featureNode.getNodeValue()));
-//						}
-//					}
-//				}
-//			}
-//		}
-		
+
+		// // Imported plugins & features
+		// {
+		// {
+		// NodeList nList = doc.getElementsByTagName("import");
+		// for (int temp = 0; temp < nList.getLength(); temp++) {
+		// org.w3c.dom.Node nNode = nList.item(temp);
+		// if (nNode.getParentNode().getNodeName().equals("requires")) {
+		// org.w3c.dom.Node pluginNode =
+		// nNode.getAttributes().getNamedItem("plugin");
+		// if (pluginNode != null) {
+		// plugin.dependencies.add(getPlugin(pluginNode.getNodeValue()));
+		// }
+		// org.w3c.dom.Node featureNode =
+		// nNode.getAttributes().getNamedItem("feature");
+		// if (featureNode != null) {
+		// plugin.dependencies.add(getPlugin(featureNode.getNodeValue()));
+		// }
+		// }
+		// }
+		// }
+		// }
+
 		// Included features
 		{
 			NodeList nList = doc.getElementsByTagName("includes");
@@ -265,7 +267,7 @@ public class FeatureDependencyGraph {
 				}
 			}
 		}
-		
+
 		// Included plugins
 		{
 			NodeList nList = doc.getElementsByTagName("plugin");
@@ -277,7 +279,7 @@ public class FeatureDependencyGraph {
 				}
 			}
 		}
-		
+
 		// Import feature
 		{
 			NodeList nList = doc.getElementsByTagName("import");
@@ -289,9 +291,9 @@ public class FeatureDependencyGraph {
 						String featureName = feature.getNodeValue();
 						if (!featureName.isEmpty()) {
 							plugin.declaredFeatureDependencies.add(getPlugin(featureName));
-						
+
 						}
-					}	
+					}
 				}
 			}
 		}
@@ -306,7 +308,7 @@ public class FeatureDependencyGraph {
 		}
 		return plugins.get(name);
 	}
-	
+
 	private void handleManifest(File file) throws IOException {
 		Plugin plugin = null;
 		List<String> dependencies = new ArrayList<String>();
@@ -396,17 +398,17 @@ public class FeatureDependencyGraph {
 		private Set<Plugin> dependenciesAndIncluded; // lazy calculation
 		public Set<Plugin> dependencies = new HashSet<Plugin>();
 		public Set<Plugin> includedBy = new HashSet<Plugin>();
-		
+
 		// makes only sense for features
 		public Set<Plugin> includedPlugins = new HashSet<Plugin>();
 		public Set<Plugin> declaredFeatureDependencies = new HashSet<Plugin>();
 		public Set<Plugin> analyzedForwardFeatureDependencies = new HashSet<Plugin>();
 		public Set<Plugin> analyzedBackwardFeatureDependencies = new HashSet<Plugin>();
-		
-		
+
 		public String toString() {
 			return name;
 		}
+
 		public Set<Plugin> getDependenciesAndIncluded() {
 			if (dependenciesAndIncluded == null) {
 				dependenciesAndIncluded = new HashSet<Plugin>();
@@ -415,7 +417,7 @@ public class FeatureDependencyGraph {
 			}
 			return dependenciesAndIncluded;
 		}
-		
+
 		public Set<Plugin> getAllDependencies() {
 			if (allDependencies == null) {
 				allDependencies = new HashSet<Plugin>();
@@ -427,4 +429,5 @@ public class FeatureDependencyGraph {
 			return allDependencies;
 		}
 	}
+
 }
