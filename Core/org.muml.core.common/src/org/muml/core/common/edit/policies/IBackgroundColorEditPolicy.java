@@ -1,4 +1,4 @@
-package org.muml.pim.common.edit.policies;
+package org.muml.core.common.edit.policies;
 
 import org.eclipse.swt.graphics.Color;
 

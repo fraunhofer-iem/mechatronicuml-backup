@@ -34,10 +34,10 @@ import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicy
 import org.eclipse.swt.graphics.Color;
 import org.muml.core.common.edit.policies.BorderItemSelectionEditPolicy;
 import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.IBackgroundColorEditPolicy;
 import org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy;
 import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
 import org.muml.core.common.figures.CustomExternalLabelBorderItemLocator;
-import org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy;
 import org.muml.pim.common.edit.policies.ports.MultiPortEditPolicy;
 import org.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy;
 import org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.MultiPortVariable2ItemSemanticEditPolicy;

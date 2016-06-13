@@ -50,7 +50,7 @@ import org.eclipse.swt.accessibility.AccessibleEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
-import org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy;
+import org.muml.core.common.edit.policies.IBackgroundColorEditPolicy;
 import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.BasicSDDTextNonResizableEditPolicy;
 import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.ConstraintItemSemanticEditPolicy;
 import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry;

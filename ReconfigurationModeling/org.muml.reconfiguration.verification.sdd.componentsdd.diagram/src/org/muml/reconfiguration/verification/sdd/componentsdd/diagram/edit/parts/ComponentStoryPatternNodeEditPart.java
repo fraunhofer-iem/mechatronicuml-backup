@@ -47,9 +47,9 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
 import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.IBackgroundColorEditPolicy;
 import org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy;
 import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
-import org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy;
 import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.ComponentStoryPatternNodeItemSemanticEditPolicy;
 import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry;
 

@@ -30,9 +30,9 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.IBackgroundColorEditPolicy;
 import org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy;
 import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
-import org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy;
 import org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ActivityItemSemanticEditPolicy;
 import org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry;
 

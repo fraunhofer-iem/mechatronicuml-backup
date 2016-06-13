@@ -61,8 +61,8 @@
 	@Override
 	protected void refreshBackgroundColor() {
 		EditPolicy backgroundColorPolicy = getEditPolicy(org.muml.core.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE);
-		if (backgroundColorPolicy instanceof org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy) {
-			setBackgroundColor(((org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy) backgroundColorPolicy).getCurrentBackgroundColor());
+		if (backgroundColorPolicy instanceof org.muml.core.common.edit.policies.IBackgroundColorEditPolicy) {
+			setBackgroundColor(((org.muml.core.common.edit.policies.IBackgroundColorEditPolicy) backgroundColorPolicy).getCurrentBackgroundColor());
 		} else {
 			super.refreshBackgroundColor();
 		}
