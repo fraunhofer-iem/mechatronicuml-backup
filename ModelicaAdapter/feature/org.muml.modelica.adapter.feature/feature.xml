@@ -57,6 +57,7 @@ warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
       <import plugin="org.muml.core.edit"/>
       <import plugin="org.eclipse.emf.ecore.edit"/>
       <import plugin="org.muml.pim.edit"/>
+      <import feature="org.muml.core.feature" version="0.5.0"/>
    </requires>
 
    <plugin
