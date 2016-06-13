@@ -1,7 +1,7 @@
 package featuredependencygraph;
 
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -9,6 +9,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -24,7 +25,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.junit.Test;
 import org.muml.graphviz.dot.DirectedDotEdge;
-import org.muml.graphviz.dot.DotEdge;
 import org.muml.graphviz.dot.DotFactory;
 import org.muml.graphviz.dot.DotGraph;
 import org.muml.graphviz.dot.DotNode;
@@ -57,7 +57,18 @@ public class FeatureDependencyGraph {
 	@Test
 	public void run() throws ParserConfigurationException, SAXException, IOException {
 		File dir = new File(WORKSPACE_LOC).getAbsoluteFile();
+		List<File> projects = new ArrayList<File>();
 		for (File project : dir.listFiles()) {
+			if (project.isDirectory()) {
+				projects.add(project);
+				for (File project2 : project.listFiles()) {
+					if (project2.isDirectory()) {
+						projects.add(project2);
+					}
+				}
+			}
+		}
+		for (File project : projects) {
 			if (project.isDirectory()) {
 				for (File file : project.listFiles()) {
 					if (file.isFile() && "feature.xml".equals(file.getName())) {
@@ -114,6 +125,13 @@ public class FeatureDependencyGraph {
 				edge.setTarget(depFeature.node);
 				graph.getEdges().add(edge);
 				graph.getNodes().add(depFeature.node);
+				
+				if (!feature.declaredFeatureDependencies.contains(depFeature)) {
+					Setting setting =DotFactory.eINSTANCE.createSetting();
+					setting.setAttribute("color");
+					setting.setValue("\"#FF0000\"");
+					edge.getSettings().add(setting);
+				}
 			}
 
 			Layouter layouter = new Layouter(feature.name + "_forward", "svg");
@@ -131,6 +149,14 @@ public class FeatureDependencyGraph {
 				edge.setTarget(depFeature.node);
 				graph.getEdges().add(edge);
 				graph.getNodes().add(feature.node);
+				
+				
+				if (!feature.declaredFeatureDependencies.contains(depFeature)) {
+					Setting setting =DotFactory.eINSTANCE.createSetting();
+					setting.setAttribute("color");
+					setting.setValue("\"#FF0000\"");
+					edge.getSettings().add(setting);
+				}
 			}
 
 			Layouter layouter = new Layouter(depFeature.name + "_backward", "svg");
