@@ -103,6 +103,9 @@
       <import feature="org.muml.pim.feature" version="0.5.0.qualifier"/>
       <import feature="org.muml.storydiagram.feature" version="0.5.0.201602222021"/>
       <import plugin="org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.wrapper"/>
+      <import feature="org.muml.core.feature" version="0.5.0.qualifier"/>
+      <import feature="org.muml.modelcopy.feature" version="0.5.0.qualifier"/>
+      <import feature="org.muml.ape.feature" version="0.5.0.qualifier"/>
    </requires>
 
    <plugin
