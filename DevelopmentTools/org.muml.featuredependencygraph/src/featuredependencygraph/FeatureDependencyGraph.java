@@ -71,6 +71,11 @@ public class FeatureDependencyGraph {
 				for (File project2 : project.listFiles()) {
 					if (project2.isDirectory()) {
 						projects.add(project2);
+						for (File project3 : project2.listFiles()) {
+							if (project3.isDirectory()) {
+								projects.add(project3);
+							}
+						}
 					}
 				}
 			}
