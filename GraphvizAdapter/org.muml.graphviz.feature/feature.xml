@@ -9,6 +9,10 @@
       %description
    </description>
 
+   <requires>
+      <import feature="org.muml.core.feature" version="0.5.0"/>
+   </requires>
+
    <plugin
          id="org.muml.graphviz"
          download-size="0"
