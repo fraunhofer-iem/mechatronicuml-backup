@@ -198,6 +198,34 @@ public class FeatureDependencyGraph {
 			Layouter layouter = new Layouter("images/02-org.muml.examples", "svg");
 			layouter.layout(graph);
 		}
+		
+
+		// Create external image
+		{
+			DotGraph graph = createDotGraph();
+			for (Plugin feature : features) {
+				if (feature.name.startsWith("org.muml.external.")) {
+					graph.getNodes().add(feature.node);
+					for (Plugin depFeature : feature.analyzedForwardFeatureDependencies) {
+						DirectedDotEdge edge = DotFactory.eINSTANCE.createDirectedDotEdge();
+						edge.setSource(feature.node);
+						edge.setTarget(depFeature.node);
+						graph.getEdges().add(edge);
+						graph.getNodes().add(depFeature.node);
+						
+						if (!feature.declaredFeatureDependencies.contains(depFeature) && !feature.includedPlugins.contains(depFeature)) {
+							Setting setting =DotFactory.eINSTANCE.createSetting();
+							setting.setAttribute("color");
+							setting.setValue("\"#FF0000\"");
+							edge.getSettings().add(setting);
+						}
+					}
+				}
+
+			}
+			Layouter layouter = new Layouter("images/03-org.muml.external", "svg");
+			layouter.layout(graph);
+		}
 
 		// Create big image
 		{
