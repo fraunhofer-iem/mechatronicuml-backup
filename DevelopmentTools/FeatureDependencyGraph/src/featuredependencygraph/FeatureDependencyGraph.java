@@ -153,9 +153,6 @@ public class FeatureDependencyGraph {
 				
 				
 				if (!feature.declaredFeatureDependencies.contains(depFeature) && !feature.includedPlugins.contains(depFeature)) {
-					if (feature.name.contains("releng")) {
-						System.out.println("");
-					}
 					Setting setting =DotFactory.eINSTANCE.createSetting();
 					setting.setAttribute("color");
 					setting.setValue("\"#FF0000\"");
