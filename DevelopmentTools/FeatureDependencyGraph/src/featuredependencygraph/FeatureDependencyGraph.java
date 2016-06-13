@@ -21,10 +21,12 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.junit.Test;
+import org.muml.graphviz.dot.DirectedDotEdge;
 import org.muml.graphviz.dot.DotEdge;
 import org.muml.graphviz.dot.DotFactory;
 import org.muml.graphviz.dot.DotGraph;
 import org.muml.graphviz.dot.DotNode;
+import org.muml.graphviz.dot.Setting;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
@@ -85,7 +87,7 @@ public class FeatureDependencyGraph {
 
 		for (Plugin feature : features) {
 			feature.node = DotFactory.eINSTANCE.createDotNode();
-			feature.node.setName(feature.name.replace("org.muml.", "").replace(".feature", "").replace(".", "_"));
+			feature.node.setName(makeName(feature.name));
 		}	
 		
 		for (Plugin feature : features) {
@@ -95,22 +97,61 @@ public class FeatureDependencyGraph {
 			resourceSet.createResource(URI.createURI("dummy")).getContents().add(graph);
 			graph.getNodes().add(feature.node);
 
-			Set<Plugin> depFeatures = new HashSet<Plugin>();
+			Map<Plugin, Set<Plugin>> depFeaturesToPlugins = new HashMap<Plugin, Set<Plugin>>();
+			Set<Plugin> allDepFeatures = new HashSet<Plugin>();
+			Set<Plugin> directDepFeatures = new HashSet<Plugin>();
 			for (Plugin dep : feature.getAllDependencies()) {
-				depFeatures.addAll(dep.includedBy);
-				System.out.print(feature.name + " -> " + dep.name + " (");
+				allDepFeatures.addAll(dep.includedBy);
 				for (Plugin depFeature : dep.includedBy) {
-					System.out.print(depFeature.name + ", ");
+					if (!depFeaturesToPlugins.containsKey(depFeature)) {
+						depFeaturesToPlugins.put(depFeature, new HashSet<Plugin>());
+					}
+					depFeaturesToPlugins.get(depFeature).add(dep);
 				}
-				System.out.println(")");
 			}
-			for (Plugin depFeature : depFeatures) {
+			for (Plugin dep : feature.getDependenciesAndIncluded()) {
+				directDepFeatures.addAll(dep.includedBy);
+			}
+			List<DotEdge> dashedEdges = new ArrayList<DotEdge>();
+			for (Plugin depFeature : allDepFeatures) {
 				if (depFeature != feature) {
-					DotEdge edge = DotFactory.eINSTANCE.createDirectedDotEdge();
+					DirectedDotEdge edge = DotFactory.eINSTANCE.createDirectedDotEdge();
 					edge.setSource(feature.node);
 					edge.setTarget(depFeature.node);
 					graph.getEdges().add(edge);
 					graph.getNodes().add(depFeature.node);
+					
+					// generate label
+					StringBuffer label = new StringBuffer();
+					for (Plugin pluginDeps : depFeaturesToPlugins.get(depFeature)) {
+						//label.append(makeName(pluginDeps.name));
+						label.append(",");
+						//label.append('\n');
+					}
+					
+					{
+						Setting setting = DotFactory.eINSTANCE.createSetting();
+						setting.setAttribute("label");
+						setting.setValue(label.toString());
+						edge.getSettings().add(setting);
+					}
+				}
+			}
+			
+			for (DotEdge edge : graph.getEdges()) {
+				if (dashedEdges.size() < graph.getEdges().size())
+				{
+					Setting setting = DotFactory.eINSTANCE.createSetting();
+					setting.setAttribute("constraint");
+					setting.setValue("false");
+					edge.getSettings().add(setting);
+				}
+				
+				{
+					Setting setting = DotFactory.eINSTANCE.createSetting();
+					setting.setAttribute("style");
+					setting.setValue("dotted");
+					edge.getSettings().add(setting);
 				}
 			}
 
@@ -119,6 +160,10 @@ public class FeatureDependencyGraph {
 		}
 		
 		
+	}
+
+	private String makeName(String name) {
+		return name.replace("org.muml.", "").replace(".feature", "").replace(".", "_");
 	}
 
 	private void handleFeature(File file) throws ParserConfigurationException, SAXException, IOException {
