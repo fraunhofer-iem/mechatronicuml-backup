@@ -8,7 +8,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -22,12 +21,14 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.muml.graphviz.dot.DirectedDotEdge;
 import org.muml.graphviz.dot.DotFactory;
 import org.muml.graphviz.dot.DotGraph;
 import org.muml.graphviz.dot.DotNode;
 import org.muml.graphviz.dot.Setting;
+import org.muml.graphviz.dot.xtext.DotLanguageStandaloneSetup;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
@@ -53,6 +54,13 @@ public class FeatureDependencyGraph {
 
 	}
 
+	@BeforeClass
+	public static void init() {
+		DotLanguageStandaloneSetup.doSetup();
+	}
+	
+	
+	
 	@Test
 	public void run() throws ParserConfigurationException, SAXException, IOException {
 		File dir = new File(WORKSPACE_LOC).getAbsoluteFile();
