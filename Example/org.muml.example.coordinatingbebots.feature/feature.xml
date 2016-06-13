@@ -19,11 +19,13 @@
 
    <requires>
       <import feature="org.muml.pim.feature" version="0.5.0.qualifier"/>
-      <import feature="org.muml.uppaal.feature" version="0.5.0.qualifier"/>
+      <import feature="org.muml.uppaal.feature"/>
       <import plugin="org.muml.core.example.ui" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.uppaal.adapter.mtctl" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.uppaal.adapter.mtctl"/>
       <import plugin="org.muml.pim.actionlanguage" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.expressions" version="3.5.0" match="greaterOrEqual"/>
+      <import feature="org.muml.core.feature"/>
+      <import feature="org.muml.uppaal.adapter.feature"/>
    </requires>
 
    <plugin

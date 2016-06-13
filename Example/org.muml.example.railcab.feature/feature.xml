@@ -29,6 +29,11 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
       <import plugin="org.muml.pim" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="org.muml.pim.actionlanguage" version="0.5.0" match="greaterOrEqual"/>
       <import feature="org.muml.pim.feature" version="0.5.0"/>
+      <import feature="org.muml.verification.core.feature"/>
+      <import feature="org.muml.uppaal.adapter.feature"/>
+      <import feature="org.muml.storydiagram.feature"/>
+      <import feature="org.muml.core.feature"/>
+      <import feature="org.muml.reconfiguration.feature"/>
    </requires>
 
    <plugin

@@ -24,6 +24,7 @@
       <import plugin="org.muml.pim.actionlanguage" version="0.5.0" match="greaterOrEqual"/>
       <import feature="org.muml.pim.feature" version="0.5.0.qualifier"/>
       <import feature="org.muml.uppaal.adapter.feature" version="0.5.0.qualifier"/>
+      <import feature="org.muml.core.feature"/>
    </requires>
 
    <plugin
