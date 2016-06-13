@@ -79,6 +79,12 @@
       <import plugin="org.muml.uppaal.job"/>
       <import plugin="org.muml.testlanguage.specification" version="0.1.0" match="greaterOrEqual"/>
       <import feature="org.muml.uppaal.adapter.feature" version="0.5.0.qualifier"/>
+      <import feature="org.muml.udbm.feature" version="0.5.0"/>
+      <import feature="org.muml.core.feature" version="0.5.0"/>
+      <import feature="org.muml.verification.core.feature" version="0.5.0"/>
+      <import feature="org.muml.ape.feature" version="0.5.0"/>
+      <import feature="org.muml.graphviz.feature" version="0.5.0"/>
+      <import feature="org.muml.pim.feature" version="0.5.0"/>
    </requires>
 
    <plugin
