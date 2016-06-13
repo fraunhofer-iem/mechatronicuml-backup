@@ -24,6 +24,12 @@ This feature is free software; you can redistribute and/or modify it under the t
 This feature is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
    </license>
 
+   <requires>
+      <import feature="org.muml.core.feature" version="0.5.0"/>
+      <import feature="org.muml.pim.feature" version="0.5.0"/>
+      <import feature="org.muml.ape.feature" version="0.5.0"/>
+   </requires>
+
    <plugin
          id="org.muml.pm.hardware"
          download-size="0"
