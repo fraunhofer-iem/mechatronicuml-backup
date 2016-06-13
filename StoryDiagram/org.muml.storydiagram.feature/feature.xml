@@ -17,6 +17,12 @@
       %license
    </license>
 
+   <requires>
+      <import feature="org.muml.ape.feature" version="0.5.0.qualifier"/>
+      <import feature="org.muml.core.feature" version="0.5.0.qualifier"/>
+      <import feature="org.muml.emm.feature" version="0.1.0.qualifier"/>
+   </requires>
+
    <plugin
          id="org.muml.storydiagram.resourcesetsynchronizer"
          download-size="0"
