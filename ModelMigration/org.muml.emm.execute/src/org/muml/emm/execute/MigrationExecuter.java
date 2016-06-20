@@ -32,6 +32,8 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMIResource;
+import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.eclipse.emf.ecore.xmi.impl.URIHandlerImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 import org.eclipse.jface.viewers.ISelection;
@@ -287,11 +289,14 @@ public class MigrationExecuter {
 			}
 		}
 		copier.copyReferences();
-
+		
+		Map<Object, Object> saveOptions = new HashMap<Object, Object>();
+		saveOptions.put(XMLResource.OPTION_URI_HANDLER, new URIHandlerImpl.PlatformSchemeAware());
+		
 		for (Resource resource : targetResources) {
 			if (resource.getURI().isPlatformResource()) {
 				try {
-					resource.save(Collections.emptyMap());
+					resource.save(saveOptions);
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
