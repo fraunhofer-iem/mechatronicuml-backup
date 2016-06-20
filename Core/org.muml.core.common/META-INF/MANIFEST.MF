@@ -17,7 +17,7 @@ Require-Bundle: org.eclipse.gmf.runtime.emf.commands.core;bundle-version="1.4.0"
  org.eclipse.core.expressions,
  org.muml.core;bundle-version="0.1.0",
  org.eclipse.gmf.tooling.runtime;bundle-version="3.3.1",
- org.eclipse.ocl.pivot;bundle-version="1.1.0"
+ org.eclipse.ocl.pivot;bundle-version="1.0.0"
 Bundle-Activator: org.muml.core.common.FujabaCommonPlugin
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
