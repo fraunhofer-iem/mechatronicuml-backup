@@ -14,19 +14,19 @@
     <rm:searchPath name="epp">
         <rm:provider componentTypes="osgi.bundle,eclipse.feature"
             readerType="p2" source="false" mutable="false">
-            <rm:uri format="http://download.eclipse.org/technology/epp/packages/mars" />
+            <rm:uri format="http://download.eclipse.org/technology/epp/packages/neon" />
         </rm:provider>
     </rm:searchPath>
-    <rm:searchPath name="mars-releases">
+    <rm:searchPath name="neon-releases">
         <rm:provider componentTypes="osgi.bundle,eclipse.feature"
             readerType="p2" source="false" mutable="false">
-            <rm:uri format="http://download.eclipse.org/releases/mars" />
+            <rm:uri format="http://download.eclipse.org/releases/neon" />
         </rm:provider>
     </rm:searchPath>
-    <rm:searchPath name="mars-updates">
+    <rm:searchPath name="neon-updates">
         <rm:provider componentTypes="osgi.bundle,eclipse.feature"
             readerType="p2" source="false" mutable="false">
-            <rm:uri format="http://download.eclipse.org/eclipse/updates/4.5" />
+            <rm:uri format="http://download.eclipse.org/eclipse/updates/4.6" />
         </rm:provider>
     </rm:searchPath>
     
@@ -39,7 +39,7 @@
 
     <rm:locator searchPathRef="local" failOnError="false" />
     <rm:locator searchPathRef="epp" failOnError="false" />
-    <rm:locator searchPathRef="mars-releases" failOnError="false" />
-    <rm:locator searchPathRef="mars-updates" failOnError="false" />
+    <rm:locator searchPathRef="neon-releases" failOnError="false" />
+    <rm:locator searchPathRef="neon-updates" failOnError="false" />
      <rm:locator searchPathRef="emf-compare" failOnError="true" />
 </rm:rmap>
