@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 import org.muml.udbm.ClockConstraint;
 import org.muml.udbm.ClockZone;
@@ -21,7 +22,7 @@ import org.muml.udbm.clockconstraint.TrueClockConstraint;
 
 public class JavaFederation extends Federation {
 
-	private JavaFederation() {
+	public JavaFederation() {
 		// Do nothing
 	}
 
@@ -39,8 +40,11 @@ public class JavaFederation extends Federation {
 	 */
 	protected LinkedHashMap<Integer, UDBMClock> indicesToClockNames;
 
+	private HashSet<UDBMClock> clocks;
+
 	protected JavaFederation(HashSet<UDBMClock> clocks,
 			HashSet<ClockZone> clockZones) {
+		this.setClockHashSet(clocks);
 		indicesToClockNames = new LinkedHashMap<Integer, UDBMClock>();
 		clockNamesToIndices = new LinkedHashMap<UDBMClock, Integer>();
 		// add Zero clock
@@ -71,6 +75,11 @@ public class JavaFederation extends Federation {
 		}
 	}
 
+	private void setClockHashSet(HashSet<UDBMClock> clocks) {
+		this.clocks = clocks;
+		
+	}
+
 	@Override
 	public void and(Federation federation) {
 		// intersect all zones with each other
@@ -94,6 +103,101 @@ public class JavaFederation extends Federation {
 		}
 
 	}
+	
+	/* SergejJ: Function checks if Federation contains overloaded ClockZone
+	 * - Parameter strictSubset is true: check if overloaded ClockZone is a strict subset of this Federation
+	 *   - In this case the overloaded ClockZone has to be a strict subset of every! ClockZone of this Federation 
+	 * - Parameter strictSubset is false: check if overloaded ClockZone is a subset of this Federation
+	 *   - In this case the overloaded ClockZone has to be a subset of at least one ClockZone of this Federation 
+	 */
+	public boolean contains(ClockZone clockZone, boolean checkStrictSubset) {
+		// New ClockZoneHashSet
+		HashSet<ClockZone> ClockZonesExtended = new HashSet<ClockZone>();
+		ClockZonesExtended.addAll(this.getClockZone());
+		ClockZonesExtended.add(clockZone);
+		
+		// Copy origin Federation and add overloaded ClockZone which has to be checked
+		JavaFederationFactory jff = new JavaFederationFactory();
+		
+		JavaFederation jfCopy = (JavaFederation) jff.createFederationFromClockZones(this.getClockHashSet(), ClockZonesExtended);
+				
+		if (checkStrictSubset == true){
+			return checkStrictSubset(jfCopy, clockZone);
+		}
+		else{
+			return checkSubset(jfCopy, clockZone);
+		}
+	}
+	
+	private HashSet<UDBMClock> getClockHashSet() {
+		return clocks;
+	}
+
+	// Check for every ClockZone in this Federation, if overloaded ClockZone is a strict subset of this Federation
+	private boolean checkStrictSubset(Federation jfCopy, ClockZone clockZone){
+		Set<? extends ClockZone> clockZones = jfCopy.getClockZone();
+
+		int containsValue;
+		boolean strictSubsetIsGiven = true;
+		
+		// Check for every ClockZone in this Federation, if overloaded ClockZone is a subset of this Federation
+		for (ClockZone cz: clockZones){
+			
+			containsValue = 0;
+			
+			// Don't compare itself 
+			if (cz.hashCode() != clockZone.hashCode()){
+
+				// thisZone.relation(givenZone)
+				// 0: zones are disjunct
+				// 1: givenZone part of thisZone // equals contains function
+				// 2: thisZone part of givenZone
+				// 3: zones are equal
+				containsValue =((JavaClockZone)cz).relation((JavaClockZone) clockZone);
+							
+				// Only strict subsets are allowed
+				if (containsValue != 1){
+					return false;
+				}
+			}
+		}
+
+		return strictSubsetIsGiven;
+	}
+	
+	// Check for every ClockZone in this Federation, if overloaded ClockZone is a subset of this Federation
+	private boolean checkSubset(Federation jfCopy, ClockZone clockZone){
+		Set<? extends ClockZone> clockZones = jfCopy.getClockZone();
+
+		int containsValue;
+		boolean booleanContains = false;
+		
+		// Check for every ClockZone in this Federation, if overloaded ClockZone is a subset of this Federation
+		for (ClockZone cz: clockZones){
+			
+			containsValue = 0;
+			
+			// Don't compare itself 
+			if (cz.hashCode() != clockZone.hashCode()){
+
+				// thisZone.relation(givenZone)
+				// 0: zones are disjunct
+				// 1: givenZone part of thisZone // equals contains function
+				// 2: thisZone part of givenZone
+				// 3: zones are equal
+				containsValue =((JavaClockZone)cz).relation((JavaClockZone) clockZone);
+							
+				// Check if overloaded ClockZone is equal or a subset of this Federation
+				if (containsValue == 1 || containsValue == 3){
+					return true;
+				}
+			}
+		}
+
+		return booleanContains;
+	}
+	
+	
 
 	@Override
 	public void and(ClockConstraint constraint) {
