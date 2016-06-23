@@ -6,7 +6,6 @@
     <cq:property key="target.ws" value="*"/>
     <cq:advisorNode namePattern="^.*\.source$" componentType="osgi.bundle" skipComponent="true"/>
 	<cq:advisorNode namePattern="^.*\.source\.feature$" componentType="eclipse.feature" skipComponent="true"/>
-    <cq:advisorNode namePattern="^org\.eclipse\.ocl\.pivot$" useMaterialization="false" useTargetPlatform="false" useWorkspace="true"/>
     <cq:advisorNode namePattern="^org\.eclipse.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePattern="^org\.apache.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePattern="^org\.hamcrest.*" useMaterialization="false" useTargetPlatform="true"/>
