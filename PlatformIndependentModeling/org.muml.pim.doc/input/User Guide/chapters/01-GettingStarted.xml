@@ -1,11 +1,11 @@
 <sect1 xml:id="gettingstarted"><title>Getting Started</title>
 	<para>
-		This chapter gives an instruction to install the Fujaba Real-Time Tool Suite within Eclipse.
+		This chapter gives an instruction to install the MechatronicUML Tool Suite within Eclipse.
 	</para>
 	
 	<sect2><title>Preconditions</title>
 		<para>
-			Fujaba Real-Time Tool Suite needs Java 1.6 for full feature support.
+			MechatronicUML Tool Suite needs Java 1.6 for full feature support.
 
 			If Java 1.6 is not yet on your computer: please visit
 			<ulink url="http://www.oracle.com/technetwork/java/">
@@ -248,7 +248,7 @@
 		</orderedlist>
 	</sect2>
 	
-	<sect2><title>Installing Plugins of the Fujaba Real-Time Tool Suite</title>
+	<sect2><title>Installing Plugins of the MechatronicUML Tool Suite</title>
 		<para>
 			Our Main-MechatronicUML-SVN is at:
 			<ulink url="​https://svn-serv.cs.upb.de/mechatronicuml">

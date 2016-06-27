@@ -1,11 +1,11 @@
 <sect1 xml:id="tutorials"><title>Tutorial</title>
 	<!-- Introduction -->
 	<para>
-		This tutorial will show you how to create models with the Fujaba Real-Time Tool Suite.
+		This tutorial will show you how to create models with the MechatronicUML Tool Suite.
 		To understand this tutorial you need to now what Mechatronic UML (MUML) is.
 		The tutorial will not explain the features of MUML, so please look into the Tech Report (LINK)
 		if you have any questions concerning MUML.
-		To teach you how to use the Fujaba Real-Time Tool Suite we will create all the required models of the following example.
+		To teach you how to use the MechatronicUML Tool Suite we will create all the required models of the following example.
 	</para>
 	<para>
 		Let there be two robots called BeBots. One shall be the master and one the slave.
@@ -1142,7 +1142,7 @@
 		</para>
 		<para>
 			At this point this tutorial ends. We created a scenario where one BeBot sends missions to another BeBot. 
-			This is a very simple example, but you got to know the most common features of the Fujaba Real-Time Tool Suite.
+			This is a very simple example, but you got to know the most common features of the MechatronicUML Tool Suite.
 		</para>
 	</sect2>
 </sect1>

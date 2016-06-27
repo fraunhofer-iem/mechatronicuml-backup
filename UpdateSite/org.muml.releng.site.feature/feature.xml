@@ -6,10 +6,10 @@
       provider-name="%providerName">
 
    <description url="https://trac.cs.upb.de/mechatronicuml">
-      This feature provides the Fujaba Real-Time Tool Suite.
+      This feature provides the MechatronicUML Tool Suite.
 It is a tool suite for modeling and formally verifying the software
 of networked mechatronic systems using the DSL ​MechatronicUML.
-The Fujaba Real-Time Tool Suite is implemented as a plug-in to
+The MechatronicUML Tool Suite is implemented as a plug-in to
 the Eclipse framework.
    </description>
 
