@@ -39,7 +39,10 @@
 						</or>
 					</visibleWhen>
 	      </command>
-	      
+
+
+<!-- DEACTIVATED, see #1515
+	
 	       <command
 	            commandId="org.muml.pim.common.commands.UseSharedTypesCommand"
 	            icon="icons/TypeDialog.gif"
@@ -52,7 +55,7 @@
 						</or>
 					</visibleWhen>
 	      </command>
-	      
+-->
 	      
 	      <command
 	      		commandId="org.eclipse.ui.file.export" id="export"
