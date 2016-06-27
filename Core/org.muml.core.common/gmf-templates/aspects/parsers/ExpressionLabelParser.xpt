@@ -1,11 +1,29 @@
 
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+
 «EXTENSION xpt::StringOperations»
 
 «EXTENSION impl::parsers::expression»
 
 
+«AROUND Main FOR gmfgen::ExpressionLabelParser-»
+«EXPAND xpt::Common::copyright FOR holder.editorGen-»
+«EXPAND xpt::Common::packageStatement FOR self.getQualifiedClassName()»
+
+«EXPAND xpt::Common::generatedClassComment»
+public class «self.getQualifiedClassName().xpandSplit('\\.')->last()»«EXPAND extendsList»«EXPAND implementsList» {
+«EXPAND impl::parsers::ExpressionLabelParser::fields-»
+	«EXPAND xpt::Common::generatedMemberComment»
+	public «getQualifiedClassName().xpandSplit('\\.')->last()»() {
+		super(new org.muml.core.common.gmf.ocl.ActivePivotOclTrackerFactory());
+	}
+«EXPAND body»
+}
+«ENDAROUND»
+
+
 «REM» Increase visibility of private methods to protected. «ENDREM»
-«AROUND body FOR gmfgen::ExpressionLabelParser»
+«DEFINE body FOR gmfgen::ExpressionLabelParser»
 
 «IF isViewExpressionDefinedAndOcl()-»
 	«EXPAND xpt::Common::generatedMemberComment»
@@ -73,33 +91,18 @@
 		throw new org.eclipse.core.commands.ExecutionException("Please implement parsing and value modification"); 
 	}
 «EXPAND impl::parsers::ExpressionLabelParser::extraMethods-»
-«ENDAROUND»
+«ENDDEFINE»
 
-«REM» Added empty method "initializeEnvironment" to be overriden by subclasses «ENDREM»
-«AROUND additions FOR gmfgen::ExpressionLabelParser-»
-	«targetDef.proceed()»
-«REM»
-	Removed because official GMF templates now support OCL tracker.
-	
 
-	«EXPAND xpt::Common::generatedMemberComment»
-	@Override
-	public java.util.List<org.eclipse.emf.ecore.EObject> getSemanticElementsBeingParsed(org.eclipse.emf.ecore.EObject element) {
-		return java.util.Arrays.asList(new org.eclipse.emf.ecore.EObject[] { element, element.eContainer() });
-	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
-	@Override
-	public boolean areSemanticElementsAffected(org.eclipse.emf.ecore.EObject listener, Object notification) {
-		return false;
-	}
-«ENDREM»	
-	«EXPAND xpt::Common::generatedMemberComment»
-	//
-	//protected void initializeEnvironment(java.util.Map<java.lang.String, org.eclipse.emf.ecore.EClassifier> typeEnv,
-	//		java.util.Map<java.lang.String, java.lang.Object> env, org.eclipse.emf.ecore.EObject context) {
-	//	// CAUTION: This is never called, because of newest GMF template changes according OCL-Tracking make it impossible to access the OCL object!
-	//  // TODO: See MUML #516
-	//}
-	//
-«ENDAROUND»
+«REM»COPIED FROM ORIGINAL TEMPLATES«ENDREM»
+«DEFINE extendsList FOR gmfgen::ExpressionLabelParser»
+	«IF isViewExpressionDefinedAndOcl()-»
+		extends org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase		
+	«ENDIF-»
+«ENDDEFINE»
+«DEFINE implementsList FOR gmfgen::ExpressionLabelParser-»
+	«IF not(isViewExpressionDefinedAndOcl())-»
+		implements org.eclipse.gmf.runtime.common.ui.services.parser.IParser	    
+	«ENDIF-»
+«ENDDEFINE»
