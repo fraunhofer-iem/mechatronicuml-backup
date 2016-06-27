@@ -19,6 +19,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.muml.core.common.gmf.ocl.ActivePivotOclTrackerFactory;
 import org.muml.pm.hardware.hwplatform.HwplatformPackage;
 import org.muml.pm.hardware.platform.diagram.expressions.HardwareOCLFactory;
 
@@ -30,6 +31,7 @@ public class HWPlatformPartLabelExpressionLabelParser5063 extends ExpressionLabe
 	 * @generated
 	 */
 	public HWPlatformPartLabelExpressionLabelParser5063() {
+		super(new ActivePivotOclTrackerFactory());
 	}
 
 	/**

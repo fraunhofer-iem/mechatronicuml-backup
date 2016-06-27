@@ -31,6 +31,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.muml.core.common.gmf.ocl.ActivePivotOclTrackerFactory;
 import org.muml.pim.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory;
 import org.muml.pim.instance.InstancePackage;
 
@@ -42,6 +43,7 @@ public class DiscreteSinglePortInstanceLabelExpressionLabelParser5049 extends Ex
 	* @generated
 	*/
 	public DiscreteSinglePortInstanceLabelExpressionLabelParser5049() {
+		super(new ActivePivotOclTrackerFactory());
 	}
 
 	/**

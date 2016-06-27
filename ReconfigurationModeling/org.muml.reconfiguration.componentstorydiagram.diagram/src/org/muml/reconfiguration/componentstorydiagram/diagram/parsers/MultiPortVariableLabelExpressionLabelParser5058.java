@@ -31,6 +31,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.muml.core.common.gmf.ocl.ActivePivotOclTrackerFactory;
 import org.muml.reconfiguration.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory;
 import org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage;
 
@@ -42,6 +43,7 @@ public class MultiPortVariableLabelExpressionLabelParser5058 extends ExpressionL
 	 * @generated
 	 */
 	public MultiPortVariableLabelExpressionLabelParser5058() {
+		super(new ActivePivotOclTrackerFactory());
 	}
 
 	/**

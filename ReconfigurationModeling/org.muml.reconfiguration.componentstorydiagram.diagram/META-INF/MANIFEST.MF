@@ -61,6 +61,7 @@ Require-Bundle: org.eclipse.emf.ecore.editor,
  org.muml.reconfiguration.componentstorypattern.edit;bundle-version="0.4.0",
  org.muml.reconfiguration.componentstorydiagram.edit.properties;visibility:=reexport,
  org.muml.reconfiguration.componentstorypattern.edit.properties;visibility:=reexport,
- org.muml.reconfiguration.edit.properties;visibility:=reexport
+ org.muml.reconfiguration.edit.properties;visibility:=reexport,
+ org.eclipse.ocl.pivot;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

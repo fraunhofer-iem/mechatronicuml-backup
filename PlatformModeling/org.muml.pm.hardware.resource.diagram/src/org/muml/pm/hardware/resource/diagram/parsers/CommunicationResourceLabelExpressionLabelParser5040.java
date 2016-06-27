@@ -19,6 +19,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.muml.core.common.gmf.ocl.ActivePivotOclTrackerFactory;
 import org.muml.pm.hardware.hwresource.HwresourcePackage;
 import org.muml.pm.hardware.resource.diagram.expressions.HardwareOCLFactory;
 
@@ -30,6 +31,7 @@ public class CommunicationResourceLabelExpressionLabelParser5040 extends Express
 	 * @generated
 	 */
 	public CommunicationResourceLabelExpressionLabelParser5040() {
+		super(new ActivePivotOclTrackerFactory());
 	}
 
 	/**

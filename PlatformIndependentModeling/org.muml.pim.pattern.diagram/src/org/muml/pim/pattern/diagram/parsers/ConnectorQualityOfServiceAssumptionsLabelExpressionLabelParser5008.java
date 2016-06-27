@@ -19,6 +19,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.muml.core.common.gmf.ocl.ActivePivotOclTrackerFactory;
 import org.muml.pim.pattern.diagram.expressions.MumlOCLFactory;
 import org.muml.pim.protocol.ProtocolPackage;
 
@@ -30,6 +31,7 @@ public class ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5008 
 	* @generated
 	*/
 	public ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5008() {
+		super(new ActivePivotOclTrackerFactory());
 	}
 
 	/**

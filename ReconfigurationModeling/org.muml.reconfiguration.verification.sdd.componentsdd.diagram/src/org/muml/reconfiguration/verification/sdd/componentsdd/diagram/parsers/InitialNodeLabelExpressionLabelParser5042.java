@@ -31,6 +31,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.muml.core.common.gmf.ocl.ActivePivotOclTrackerFactory;
 import org.muml.reconfiguration.verification.sdd.componentsdd.ComponentsddPackage;
 import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory;
 
@@ -42,6 +43,7 @@ public class InitialNodeLabelExpressionLabelParser5042 extends ExpressionLabelPa
 	 * @generated
 	 */
 	public InitialNodeLabelExpressionLabelParser5042() {
+		super(new ActivePivotOclTrackerFactory());
 	}
 
 	/**

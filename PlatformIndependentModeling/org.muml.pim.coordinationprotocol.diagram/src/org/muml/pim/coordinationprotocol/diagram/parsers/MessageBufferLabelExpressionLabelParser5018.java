@@ -31,6 +31,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.muml.core.common.gmf.ocl.ActivePivotOclTrackerFactory;
 import org.muml.pim.connector.ConnectorPackage;
 import org.muml.pim.coordinationprotocol.diagram.expressions.MumlOCLFactory;
 
@@ -42,6 +43,7 @@ public class MessageBufferLabelExpressionLabelParser5018 extends ExpressionLabel
 	 * @generated
 	 */
 	public MessageBufferLabelExpressionLabelParser5018() {
+		super(new ActivePivotOclTrackerFactory());
 	}
 
 	/**
