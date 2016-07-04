@@ -37,11 +37,11 @@ function build_command(){
 		fi
 		if [ -n "$XTEND" ]
 		then
-			BUILDCOMMAND=$(echo -e "build -c --continueonerror \n launch -l build.execution/xtend.launch --stderr --stdout  \n build")
+			BUILDCOMMAND=$(echo -e "build -c --continueonerror \n launch -l build.execution/xtend.launch  \n build")
 		fi
 		if [ -n "$ACCELEO" ] 
 			then
-				BUILDCOMMAND=$(echo -e "$BUILDCOMMAND \n launch -l build.execution/acceleo.launch --stderr --stdout")
+				BUILDCOMMAND=$(echo -e "$BUILDCOMMAND \n launch -l build.execution/acceleo.launch")
 		fi
 	fi	
 	cat <<EOF > build_command.txt
