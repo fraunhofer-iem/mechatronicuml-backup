@@ -66,7 +66,7 @@ function junit_test(){
 	 name=`basename $filename`
 	if [[ $name != *.ui* ]] 
 	then
-	        echo "junit -t 120 -l '$directory/$name' -o 'output/junit/$name.xml'" --stdout --stderr >> junit_command.txt
+	        echo "junit -t 120 -l '$directory/$name' -o 'output/junit/$name.xml'" >> junit_command.txt
 	fi
 	done
 }
