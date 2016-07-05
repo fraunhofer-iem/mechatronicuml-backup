@@ -48,8 +48,11 @@ function build_command(){
 importtargetdefinition -A 'https://svn-serv.cs.upb.de/mechatronicuml/trunk/UpdateSite/org.muml.releng.targetplatform/headless.target'
 import $QUERY
 $BUILDCOMMAND
-perform -D target.os=* -D target.ws=* -D target.arch=* $BUCKMINSTER_FEATURE_DIR#site.p2
 EOF
+
+echo "perform -D target.os=* -D target.ws=* -D target.arch=* $BUCKMINSTER_FEATURE_DIR#buckminster.clean" > build_command2.txt
+echo "perform -D target.os=* -D target.ws=* -D target.arch=* $BUCKMINSTER_FEATURE_DIR#site.p2" >> > build_command2.txt
+
 }
  
 function junit_test(){
