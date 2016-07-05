@@ -37,11 +37,11 @@ function build_command(){
 		fi
 		if [ -n "$XTEND" ]
 		then
-			BUILDCOMMAND=$(echo -e "build -c --continueonerror \n launch -l build.execution/xtend.launch  \n build")
+			BUILDCOMMAND=$(echo -e "build -c --continueonerror \n launch -l build.execution/xtend.launch --stderr --stdout  \n build")
 		fi
 		if [ -n "$ACCELEO" ] 
 			then
-				BUILDCOMMAND=$(echo -e "$BUILDCOMMAND \n launch -l build.execution/acceleo.launch")
+				BUILDCOMMAND=$(echo -e "$BUILDCOMMAND \n launch -l build.execution/acceleo.launch --stderr --stdout")
 		fi
 	fi	
 	cat <<EOF > build_command.txt
@@ -66,7 +66,7 @@ function junit_test(){
 	 name=`basename $filename`
 	if [[ $name != *.ui* ]] 
 	then
-	        echo "junit -t 120 -l '$directory/$name' -o 'output/junit/$name.xml'" >> junit_command.txt
+	        echo "junit -t 120 -l '$directory/$name' -o 'output/junit/$name.xml'" --stdout --stderr >> junit_command.txt
 	fi
 	done
 }
