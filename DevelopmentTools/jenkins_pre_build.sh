@@ -51,7 +51,7 @@ $BUILDCOMMAND
 EOF
 
 echo "perform -D target.os=* -D target.ws=* -D target.arch=* $BUCKMINSTER_FEATURE_DIR#buckminster.clean" > build_command2.txt
-echo "perform -D target.os=* -D target.ws=* -D target.arch=* $BUCKMINSTER_FEATURE_DIR#site.p2" >> > build_command2.txt
+echo "perform -D target.os=* -D target.ws=* -D target.arch=* $BUCKMINSTER_FEATURE_DIR#site.p2" >> build_command2.txt
 
 }
  
