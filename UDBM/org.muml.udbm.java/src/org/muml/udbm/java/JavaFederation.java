@@ -39,7 +39,7 @@ public class JavaFederation extends Federation {
 	 * during iteration.
 	 */
 	protected LinkedHashMap<Integer, UDBMClock> indicesToClockNames;
-
+	
 	private HashSet<UDBMClock> clocks;
 
 	protected JavaFederation(HashSet<UDBMClock> clocks,
@@ -127,6 +127,24 @@ public class JavaFederation extends Federation {
 		else{
 			return checkSubset(jfCopy, clockZone);
 		}
+	}
+	
+	// SergejJ: Function checks for overloaded Federation if it is a (strict) subset of this Federation
+
+	public boolean contains(JavaFederation javaFederation, boolean checkStrictSubset){
+		Set<? extends ClockZone> clockZones = javaFederation.getClockZone();
+		
+		boolean booleanContains = true;
+		
+		for (ClockZone clockZone: clockZones){
+			booleanContains = this.contains(clockZone, checkStrictSubset);
+			if (booleanContains == false){
+				return false;
+			}
+		}
+		
+		
+		return true;
 	}
 	
 	private HashSet<UDBMClock> getClockHashSet() {
@@ -530,5 +548,4 @@ public class JavaFederation extends Federation {
 
 		return result;
 	}
-
 }
