@@ -4,6 +4,9 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.ui.IStartup;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
+
+import java.lang.reflect.InvocationTargetException;
+
 import org.eclipse.core.resources.IMarker;
 
 public class Startup implements IStartup {
@@ -22,6 +25,12 @@ public class Startup implements IStartup {
 					e.printStackTrace();
 					exitCode = 1;
 
+				} catch (InvocationTargetException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
 				System.out.println("Done: Build in Eclipse");
 				if (markers != null && markers.length > 0) {
