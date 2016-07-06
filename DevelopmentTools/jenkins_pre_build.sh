@@ -49,8 +49,10 @@ importtargetdefinition -A 'https://svn-serv.cs.upb.de/mechatronicuml/trunk/Updat
 import $QUERY
 $BUILDCOMMAND
 EOF
-
+if [ -n "$XTEND" ]
+		then
 echo "perform -D target.os=* -D target.ws=* -D target.arch=* $BUCKMINSTER_FEATURE_DIR#buckminster.clean" > build_command2.txt
+fi
 echo "perform -D target.os=* -D target.ws=* -D target.arch=* $BUCKMINSTER_FEATURE_DIR#site.p2" >> build_command2.txt
 
 }
