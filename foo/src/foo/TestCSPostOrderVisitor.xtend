@@ -2,23 +2,23 @@ package foo
 
 import org.eclipse.ocl.xtext.base.cs2as.CS2ASConversion
 import org.eclipse.ocl.xtext.base.cs2as.Continuation
-import org.eclipse.ocl.xtext.essentialocl.cs2as.EssentialOCLCSPostOrderVisitor
-import org.eclipse.ocl.xtext.essentialoclcs.ContextCS
+import org.eclipse.ocl.xtext.completeocl.cs2as.CompleteOCLCSPostOrderVisitor
+import org.eclipse.ocl.xtext.completeoclcs.CompleteOCLDocumentCS
 
 //class TestCSPostOrderVisitor extends AbstractExtendingBaseCSVisitor<Object, Object> {
-class TestCSPostOrderVisitor extends EssentialOCLCSPostOrderVisitor {
+class TestCSPostOrderVisitor extends CompleteOCLCSPostOrderVisitor {
 	
 	new(CS2ASConversion context) {
 		super(context)
 	}
 	
-	/*public def override Continuation<?> visitCompleteOCLDocumentCS(CompleteOCLDocumentCS csElement) {
+	public def override Continuation<?> visitCompleteOCLDocumentCS(CompleteOCLDocumentCS csElement) {
 		return null;
-	}*/
-	
-	public def override Continuation<?> visitContextCS(ContextCS csContext) {
-		return null
 	}
+	
+	/*public def override Continuation<?> visitContextCS(ContextCS csContext) {
+		return null
+	}*/
 	
 	/*override visiting(VisitableCS visitable) {
 		throw new UnsupportedOperationException("TODO: MH: auto-generated method stub")
