@@ -56,8 +56,4 @@
          id="org.muml.external.unitontology.feature"
          version="0.0.0"/>
 
-   <includes
-         id="org.muml.external.ocl.pivot.beo477283.feature"
-         version="0.0.0"/>
-
 </feature>
