@@ -7,7 +7,7 @@ import org.eclipse.ocl.xtext.completeoclcs.CompleteOCLDocumentCS
 
 //class TestCSPostOrderVisitor extends AbstractExtendingBaseCSVisitor<Object, Object> {
 //class TestCSPostOrderVisitor extends AbstractCsPostOrderVisitor {
-class TestCSPostOrderVisitor extends BarCSPostOrderVisitor {
+class TestCSPostOrderVisitor extends BarCSPostOrderVisitorNonExistent {
 	
 	new(CS2ASConversion context) {
 		super(context)
