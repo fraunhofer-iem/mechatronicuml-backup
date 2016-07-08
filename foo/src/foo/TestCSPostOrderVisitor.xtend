@@ -3,6 +3,7 @@ package foo
 import org.eclipse.ocl.xtext.base.cs2as.CS2ASConversion
 import org.eclipse.ocl.xtext.basecs.util.AbstractExtendingBaseCSVisitor
 import org.eclipse.ocl.xtext.basecs.util.VisitableCS
+import org.eclipse.ocl.xtext.basecs.AttributeCS
 
 class TestCSPostOrderVisitor extends AbstractExtendingBaseCSVisitor<Object, Object> {
 	
@@ -16,6 +17,10 @@ class TestCSPostOrderVisitor extends AbstractExtendingBaseCSVisitor<Object, Obje
 	
 	override visiting(VisitableCS visitable) {
 		throw new UnsupportedOperationException("TODO: MH: auto-generated method stub")
+	}
+	
+	def override Object visitAttributeCS(AttributeCS object) {
+		return visitStructuralFeatureCS(object);
 	}
 	
 }
