@@ -42,7 +42,7 @@ public class BuildExecution {
 
 		
 		GlobalBuildAction build = new GlobalBuildAction(PlatformUI.getWorkbench().getActiveWorkbenchWindow(),
-				IncrementalProjectBuilder.FULL_BUILD);
+				IncrementalProjectBuilder.INCREMENTAL_BUILD);
         build.doBuild();
 //		try {
 //			workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
