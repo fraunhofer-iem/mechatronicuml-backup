@@ -13,9 +13,9 @@ class TestCSPostOrderVisitor extends BarCSPostOrderVisitor {
 		super(context)
 	}
 	
-	public def override Continuation<?> visitCompleteOCLDocumentCS(CompleteOCLDocumentCS csElement) {
+	/*public def override Continuation<?> visitCompleteOCLDocumentCS(CompleteOCLDocumentCS csElement) {
 		return null;
-	}
+	}*/
 	
 	/*public def override Continuation<?> visitEvaluatableElementCS(org.muml.psm.allocation.language.cs.EvaluatableElementCS csElement) {
 		return null
