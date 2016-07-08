@@ -44,6 +44,12 @@ public class BuildExecution {
 		GlobalBuildAction build = new GlobalBuildAction(PlatformUI.getWorkbench().getActiveWorkbenchWindow(),
 				IncrementalProjectBuilder.INCREMENTAL_BUILD);
         build.doBuild();
+        workspace.save(true, progressMonitor);
+        build.doBuild();
+        workspace.save(true, progressMonitor);
+
+        build.doBuild();
+
 //		try {
 //			workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
 //		} catch (CoreException e) {
