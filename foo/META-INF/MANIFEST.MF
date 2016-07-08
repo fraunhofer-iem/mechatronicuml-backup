@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Foo
+Bundle-SymbolicName: foo
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.ocl.xtext.completeocl;bundle-version="1.1.0",
+ org.eclipse.xtend;bundle-version="2.2.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.10.0"
