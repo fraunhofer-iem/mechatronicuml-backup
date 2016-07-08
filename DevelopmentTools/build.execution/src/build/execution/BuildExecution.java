@@ -18,9 +18,6 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
-import org.eclipse.ui.IWorkbench;
-import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.actions.GlobalBuildAction;
 
 public class BuildExecution {
 
@@ -40,23 +37,13 @@ public class BuildExecution {
 			}
 		});
 
-		
-		GlobalBuildAction build = new GlobalBuildAction(PlatformUI.getWorkbench().getActiveWorkbenchWindow(),
-				IncrementalProjectBuilder.INCREMENTAL_BUILD);
-        build.doBuild();
-        workspace.save(true, progressMonitor);
-        build.doBuild();
-        workspace.save(true, progressMonitor);
-
-        build.doBuild();
-
-//		try {
-//			workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
-//		} catch (CoreException e) {
-//			workspace.build(IncrementalProjectBuilder.CLEAN_BUILD, progressMonitor);
-//			workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
-//			e.printStackTrace(System.out);
-//		}
+		try {
+			workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
+		} catch (CoreException e) {
+			workspace.build(IncrementalProjectBuilder.CLEAN_BUILD, progressMonitor);
+			workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
+			e.printStackTrace(System.out);
+		}
 		System.out.println("Build Progress Successfully!");
 
 		IMarker[] markers = null;
