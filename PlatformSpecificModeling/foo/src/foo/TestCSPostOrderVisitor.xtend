@@ -2,11 +2,12 @@ package foo
 
 import org.eclipse.ocl.xtext.base.cs2as.CS2ASConversion
 import org.eclipse.ocl.xtext.base.cs2as.Continuation
+import org.eclipse.ocl.xtext.completeocl.cs2as.CompleteOCLCSPostOrderVisitor
 import org.eclipse.ocl.xtext.completeoclcs.CompleteOCLDocumentCS
 
 //class TestCSPostOrderVisitor extends AbstractExtendingBaseCSVisitor<Object, Object> {
 //class TestCSPostOrderVisitor extends AbstractCsPostOrderVisitor {
-class TestCSPostOrderVisitor extends PlainJavaCSPostOrderVisitor {
+class TestCSPostOrderVisitor extends CompleteOCLCSPostOrderVisitor {
 	
 	new(CS2ASConversion context) {
 		super(context)
