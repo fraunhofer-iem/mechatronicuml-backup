@@ -2,7 +2,7 @@ transformation cic_hierarchy_normalization(inout instance : ModelInstancePackage
 
 
 modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
-modeltype ModelInstancePackage uses modelinstance('http://www.muml.org/core/modelinstance/1.0.0');
+modeltype ModelInstancePackage uses modelinstance('http://www.muml.org/modelinstance/1.0.0');
 modeltype Codegen uses psm::codegen('http://www.muml.org/psm/1.0.0');
 
 

@@ -18,7 +18,7 @@ modeltype MessagePackage uses pim::msgtype('http://www.muml.org/pim/1.0.0');
 modeltype RTSCPackage uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
 modeltype ProtocolPackage uses pim::protocol('http://www.muml.org/pim/1.0.0');
 modeltype InstancePackage uses pim::instance('http://www.muml.org/pim/1.0.0');
-modeltype ModelInstance uses modelinstance('http://www.muml.org/core/modelinstance/1.0.0');
+modeltype ModelInstance uses modelinstance('http://www.muml.org/modelinstance/1.0.0');
 modeltype Actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
 
 modeltype PSM uses psm('http://www.muml.org/psm/1.0.0');
