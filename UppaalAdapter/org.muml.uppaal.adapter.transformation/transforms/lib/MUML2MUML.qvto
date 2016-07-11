@@ -14,7 +14,7 @@ modeltype verificationExtension uses 'http://www.muml.org/uppaal/adapter/extensi
 modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype instanceModel uses'http://www.muml.org/pim/instance/1.0.0';
-modeltype constraintModel uses 'http://www.muml.org/pim/constraint/1.0.0';
+modeltype constraintModel uses pim::constraint('http://www.muml.org/pim/1.0.0');
 modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
 modeltype mtctl uses 'http://www.muml.org/uppaal/adapter/mtctl/1.0.0';
 modeltype mtctlQuantifiers uses 'http://www.muml.org/uppaal/adapter/mtctl/quantifiers/1.0.0';
@@ -24,6 +24,7 @@ modeltype mtctlBooleanLogic uses 'http://www.muml.org/uppaal/adapter/mtctl/boole
 modeltype mtctlComparables uses 'http://www.muml.org/uppaal/adapter/mtctl/comparables/1.0.0';
 
 modeltype mumlConstraint uses 'http://www.muml.org/pim/constraint/1.0.0';
+
 mapping Extension :: Extension2Extension() : Extension disjuncts CommittedExtension::CommittedExtension2CommittedExtension, ElementToVerifyExtension::ElementToVerifyExtension2ElementToVerifyExtension;
 
 mapping CommittedExtension :: CommittedExtension2CommittedExtension() : CommittedExtension{
