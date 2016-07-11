@@ -21,22 +21,22 @@
       <genClass href="options.genmodel#//options/Options"/>
       <orderedElements xsi:type="org.muml:Property" xmi:id="_RnWwcM1gEeSIgPDefa6ZBw" tab="_RnWJYM1gEeSIgPDefa6ZBw" tooltip="" initializeOCLExpression="">
         <genFeature href="options.genmodel#//options/Options/connectorOutBufferSize"/>
-        <visibilityFilters xsi:type="org.muml:OCLFilter" xmi:id="_RnWwcc1gEeSIgPDefa6ZBw" expression="not self.extension->exists(ext | ext.oclAsType(HideOptionExtension).option = 'connectorOutBufferSize')"/>
+        <visibilityFilters xsi:type="org.muml:OCLFilter" xmi:id="_RnWwcc1gEeSIgPDefa6ZBw" expression="not self.extensions->exists(ext | ext.oclAsType(HideOptionExtension).option = 'connectorOutBufferSize')"/>
         <editor xsi:type="org.muml:SpinnerPropertyEditor" xmi:id="_RnWwcs1gEeSIgPDefa6ZBw"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property" xmi:id="_RnWwc81gEeSIgPDefa6ZBw" tab="_RnWJYM1gEeSIgPDefa6ZBw" tooltip="" initializeOCLExpression="">
         <genFeature href="options.genmodel#//options/Options/hashTableSize"/>
-        <visibilityFilters xsi:type="org.muml:OCLFilter" xmi:id="_RnWwdM1gEeSIgPDefa6ZBw" expression="not self.extension->exists(ext | ext.oclAsType(HideOptionExtension).option = 'hashTableSize')"/>
+        <visibilityFilters xsi:type="org.muml:OCLFilter" xmi:id="_RnWwdM1gEeSIgPDefa6ZBw" expression="not self.extensions->exists(ext | ext.oclAsType(HideOptionExtension).option = 'hashTableSize')"/>
         <editor xsi:type="org.muml:SpinnerPropertyEditor" xmi:id="_RnWwdc1gEeSIgPDefa6ZBw"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property" xmi:id="_RnXXgM1gEeSIgPDefa6ZBw" tab="_RnWJYM1gEeSIgPDefa6ZBw" tooltip="" initializeOCLExpression="">
         <genFeature href="options.genmodel#//options/Options/stateSpaceReduction"/>
-        <visibilityFilters xsi:type="org.muml:OCLFilter" xmi:id="_RnXXgc1gEeSIgPDefa6ZBw" expression="not self.extension->exists(ext | ext.oclAsType(HideOptionExtension).option = 'stateSpaceReduction')"/>
+        <visibilityFilters xsi:type="org.muml:OCLFilter" xmi:id="_RnXXgc1gEeSIgPDefa6ZBw" expression="not self.extensions->exists(ext | ext.oclAsType(HideOptionExtension).option = 'stateSpaceReduction')"/>
         <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_RnXXgs1gEeSIgPDefa6ZBw"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property" xmi:id="_RnXXg81gEeSIgPDefa6ZBw" tab="_RnWJYM1gEeSIgPDefa6ZBw" tooltip="" initializeOCLExpression="">
         <genFeature href="options.genmodel#//options/Options/traceOptions"/>
-        <visibilityFilters xsi:type="org.muml:OCLFilter" xmi:id="_RnXXhM1gEeSIgPDefa6ZBw" expression="not self.extension->exists(ext | ext.oclAsType(HideOptionExtension).option = 'traceOptions')"/>
+        <visibilityFilters xsi:type="org.muml:OCLFilter" xmi:id="_RnXXhM1gEeSIgPDefa6ZBw" expression="not self.extensions->exists(ext | ext.oclAsType(HideOptionExtension).option = 'traceOptions')"/>
         <editor xsi:type="org.muml:RadioPropertyEditor" xmi:id="_RnXXhc1gEeSIgPDefa6ZBw"/>
       </orderedElements>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_PmQuHNEeS5Putgio2lkg"/>
@@ -45,7 +45,7 @@
       <genClass href="options.genmodel#//options/CoordinationProtocolOptions"/>
       <orderedElements xsi:type="org.muml:Property" xmi:id="_RnXXh81gEeSIgPDefa6ZBw" tab="_RnWJYM1gEeSIgPDefa6ZBw" tooltip="" initializeOCLExpression="">
         <genFeature href="options.genmodel#//options/CoordinationProtocolOptions/roleMultiplicity"/>
-        <visibilityFilters xsi:type="org.muml:OCLFilter" xmi:id="_RnXXiM1gEeSIgPDefa6ZBw" expression="not self.extension->exists(ext | ext.oclAsType(HideOptionExtension).option = 'roleMultiplicity')"/>
+        <visibilityFilters xsi:type="org.muml:OCLFilter" xmi:id="_RnXXiM1gEeSIgPDefa6ZBw" expression="not self.extensions->exists(ext | ext.oclAsType(HideOptionExtension).option = 'roleMultiplicity')"/>
         <editor xsi:type="org.muml:SpinnerPropertyEditor" xmi:id="_RnXXic1gEeSIgPDefa6ZBw"/>
       </orderedElements>
     </classes>

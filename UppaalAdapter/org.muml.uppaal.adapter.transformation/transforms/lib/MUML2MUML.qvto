@@ -292,7 +292,7 @@ mapping ecore::EModelElement :: EModelElement2EModelElement() : ecore::EModelEle
       	
 mapping ecore::ENamedElement :: ENamedElement2ENamedElement() : ecore::ENamedElement disjuncts ecore::EPackage::EPackage2EPackage, ecore::ETypeParameter::ETypeParameter2ETypeParameter, ecore::ETypedElement::ETypedElement2ETypedElement, ecore::EEnumLiteral::EEnumLiteral2EEnumLiteral, ecore::EClassifier::EClassifier2EClassifier;
       	
-mapping ecore::EObject :: EObject2EObject() : ecore::EObject disjuncts mtctl::Expression::Expression2Expression, core::ExtendableElement::ExtendableElement2ExtendableElement, ecore::EObject::normalEObject2EObject;
+mapping ecore::EObject :: EObject2EObject() : ecore::EObject disjuncts mtctl::Expression::Expression2Expression, ecore::EObject::normalEObject2EObject;
  	 			
  mapping ecore::EObject :: normalEObject2EObject() : ecore::EObject{
  }
