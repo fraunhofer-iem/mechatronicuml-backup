@@ -183,33 +183,33 @@ mapping actionlanguage::NondeterministicChoiceExpression :: NondeterministicChoi
     	_dataType := self._dataType.map PrimitiveDataType2PrimitiveDataType();
    		 }
    		 
-mapping muml::valuetype::Cardinality :: Cardinality2Cardinality() : muml::valuetype::Cardinality{
+mapping pim::valuetype::Cardinality :: Cardinality2Cardinality() : pim::valuetype::Cardinality{
     	_lowerBound := self._lowerBound.map NaturalNumber2NaturalNumber();
     	_upperBound := self._upperBound.map NaturalNumber2NaturalNumber();
    		 }
    		 
-mapping muml::valuetype::TimeValue :: TimeValue2TimeValue() : muml::valuetype::TimeValue{
+mapping pim::valuetype::TimeValue :: TimeValue2TimeValue() : pim::valuetype::TimeValue{
     	_unit := self._unit;
     	
     	_extensions := self._extensions.map Extension2Extension();
     	_value := self._value.map Expression2Expression();
    		 }
    		 
-mapping muml::valuetype::NaturalNumber :: NaturalNumber2NaturalNumber() : muml::valuetype::NaturalNumber{
+mapping pim::valuetype::NaturalNumber :: NaturalNumber2NaturalNumber() : pim::valuetype::NaturalNumber{
     	_value := self._value;
     	_infinity := self._infinity;
    		 }
    		 
-mapping muml::valuetype::Range :: Range2Range() : muml::valuetype::Range{
+mapping pim::valuetype::Range :: Range2Range() : pim::valuetype::Range{
     	_lowerBound := self._lowerBound;
     	_upperBound := self._upperBound;
    		 }
    		 
-mapping core::CommentableElement :: CommentableElement2CommentableElement() : core::CommentableElement disjuncts pim::connector::MessageBuffer::MessageBuffer2MessageBuffer, muml::behavior::Variable::Variable2Variable, muml::protocol::ConnectorQualityOfServiceAssumptions::ConnectorQualityOfServiceAssumptions2ConnectorQualityOfServiceAssumptions, muml::behavior::Parameter::Parameter2Parameter, pim::realtimestatechart::Vertex::Vertex2Vertex, muml::msgtype::MessageType::MessageType2MessageType, pim::realtimestatechart::SynchronizationChannel::SynchronizationChannel2SynchronizationChannel, core::expressions::Expression::Expression2Expression, muml::msgtype::MessageTypeRepository::MessageTypeRepository2MessageTypeRepository, muml::protocol::AbstractCoordinationSpecification::AbstractCoordinationSpecification2AbstractCoordinationSpecification, pim::component::ComponentPart::ComponentPart2ComponentPart, pim::connector::Connector::Connector2Connector, pim::connector::ConnectorEndpoint::ConnectorEndpoint2ConnectorEndpoint, muml::types::DataType::DataType2DataType, pim::component::Component::Component2Component, muml::instance::ComponentInstanceConfiguration::ComponentInstanceConfiguration2ComponentInstanceConfiguration, pim::connector::ConnectorInstance::ConnectorInstance2ConnectorInstance, pim::connector::ConnectorEndpointInstance::ConnectorEndpointInstance2ConnectorEndpointInstance, mtctl::Property::Property2Property, pim::component::CoordinationProtocolPart::CoordinationProtocolPart2CoordinationProtocolPart, pim::realtimestatechart::Region::Region2Region, pim::realtimestatechart::Transition::Transition2Transition, muml::behavior::Operation::Operation2Operation, pim::realtimestatechart::RealtimeStatechart::RealtimeStatechart2RealtimeStatechart;
+mapping core::CommentableElement :: CommentableElement2CommentableElement() : core::CommentableElement disjuncts pim::connector::MessageBuffer::MessageBuffer2MessageBuffer, pim::behavior::Variable::Variable2Variable, pim::protocol::ConnectorQualityOfServiceAssumptions::ConnectorQualityOfServiceAssumptions2ConnectorQualityOfServiceAssumptions, pim::behavior::Parameter::Parameter2Parameter, pim::realtimestatechart::Vertex::Vertex2Vertex, pim::msgtype::MessageType::MessageType2MessageType, pim::realtimestatechart::SynchronizationChannel::SynchronizationChannel2SynchronizationChannel, core::expressions::Expression::Expression2Expression, pim::msgtype::MessageTypeRepository::MessageTypeRepository2MessageTypeRepository, pim::protocol::AbstractCoordinationSpecification::AbstractCoordinationSpecification2AbstractCoordinationSpecification, pim::component::ComponentPart::ComponentPart2ComponentPart, pim::connector::Connector::Connector2Connector, pim::connector::ConnectorEndpoint::ConnectorEndpoint2ConnectorEndpoint, pim::types::DataType::DataType2DataType, pim::component::Component::Component2Component, pim::instance::ComponentInstanceConfiguration::ComponentInstanceConfiguration2ComponentInstanceConfiguration, pim::connector::ConnectorInstance::ConnectorInstance2ConnectorInstance, pim::connector::ConnectorEndpointInstance::ConnectorEndpointInstance2ConnectorEndpointInstance, mtctl::Property::Property2Property, pim::component::CoordinationProtocolPart::CoordinationProtocolPart2CoordinationProtocolPart, pim::realtimestatechart::Region::Region2Region, pim::realtimestatechart::Transition::Transition2Transition, pim::behavior::Operation::Operation2Operation, pim::realtimestatechart::RealtimeStatechart::RealtimeStatechart2RealtimeStatechart;
       	
-mapping core::ExtendableElement :: ExtendableElement2ExtendableElement() : core::ExtendableElement disjuncts core::CommentableElement::CommentableElement2CommentableElement, muml::behavior::ParameterBinding::ParameterBinding2ParameterBinding, core::NamedElement::NamedElement2NamedElement, muml::constraint::VerificationConstraintRepository::VerificationConstraintRepository2VerificationConstraintRepository, pim::realtimestatechart::Message::Message2Message, pim::realtimestatechart::ClockConstraint::ClockConstraint2ClockConstraint, pim::realtimestatechart::Synchronization::Synchronization2Synchronization, muml::valuetype::TimeValue::TimeValue2TimeValue;
+mapping core::ExtendableElement :: ExtendableElement2ExtendableElement() : core::ExtendableElement disjuncts core::CommentableElement::CommentableElement2CommentableElement, pim::behavior::ParameterBinding::ParameterBinding2ParameterBinding, core::NamedElement::NamedElement2NamedElement, pim::constraint::VerificationConstraintRepository::VerificationConstraintRepository2VerificationConstraintRepository, pim::realtimestatechart::Message::Message2Message, pim::realtimestatechart::ClockConstraint::ClockConstraint2ClockConstraint, pim::realtimestatechart::Synchronization::Synchronization2Synchronization, pim::valuetype::TimeValue::TimeValue2TimeValue;
       	
-mapping core::NamedElement :: NamedElement2NamedElement() : core::NamedElement disjuncts pim::connector::MessageBuffer::MessageBuffer2MessageBuffer, muml::msgtype::MessageType::MessageType2MessageType, pim::realtimestatechart::Vertex::Vertex2Vertex, pim::realtimestatechart::SynchronizationChannel::SynchronizationChannel2SynchronizationChannel, muml::instance::ComponentInstance::ComponentInstance2ComponentInstance, muml::msgtype::MessageTypeRepository::MessageTypeRepository2MessageTypeRepository, muml::protocol::AbstractCoordinationSpecification::AbstractCoordinationSpecification2AbstractCoordinationSpecification, pim::component::ComponentPart::ComponentPart2ComponentPart, pim::realtimestatechart::Action::Action2Action, muml::types::DataType::DataType2DataType, muml::instance::CoordinationProtocolInstance::CoordinationProtocolInstance2CoordinationProtocolInstance, pim::component::Component::Component2Component, muml::instance::ComponentInstanceConfiguration::ComponentInstanceConfiguration2ComponentInstanceConfiguration, pim::connector::DiscreteInteractionEndpoint::DiscreteInteractionEndpoint2DiscreteInteractionEndpoint, pim::realtimestatechart::Clock::Clock2Clock, pim::connector::ConnectorEndpointInstance::ConnectorEndpointInstance2ConnectorEndpointInstance, muml::behavior::Operation::Operation2Operation, muml::behavior::TypedNamedElement::TypedNamedElement2TypedNamedElement, pim::realtimestatechart::RealtimeStatechart::RealtimeStatechart2RealtimeStatechart;
+mapping core::NamedElement :: NamedElement2NamedElement() : core::NamedElement disjuncts pim::connector::MessageBuffer::MessageBuffer2MessageBuffer, pim::msgtype::MessageType::MessageType2MessageType, pim::realtimestatechart::Vertex::Vertex2Vertex, pim::realtimestatechart::SynchronizationChannel::SynchronizationChannel2SynchronizationChannel, pim::instance::ComponentInstance::ComponentInstance2ComponentInstance, pim::msgtype::MessageTypeRepository::MessageTypeRepository2MessageTypeRepository, pim::protocol::AbstractCoordinationSpecification::AbstractCoordinationSpecification2AbstractCoordinationSpecification, pim::component::ComponentPart::ComponentPart2ComponentPart, pim::realtimestatechart::Action::Action2Action, pim::types::DataType::DataType2DataType, pim::instance::CoordinationProtocolInstance::CoordinationProtocolInstance2CoordinationProtocolInstance, pim::component::Component::Component2Component, pim::instance::ComponentInstanceConfiguration::ComponentInstanceConfiguration2ComponentInstanceConfiguration, pim::connector::DiscreteInteractionEndpoint::DiscreteInteractionEndpoint2DiscreteInteractionEndpoint, pim::realtimestatechart::Clock::Clock2Clock, pim::connector::ConnectorEndpointInstance::ConnectorEndpointInstance2ConnectorEndpointInstance, pim::behavior::Operation::Operation2Operation, pim::behavior::TypedNamedElement::TypedNamedElement2TypedNamedElement, pim::realtimestatechart::RealtimeStatechart::RealtimeStatechart2RealtimeStatechart;
       	
 mapping ecore::EAttribute :: EAttribute2EAttribute() : ecore::EAttribute{
     	_name := self._name;
@@ -390,9 +390,9 @@ mapping mtctl::Property :: Property2Property() : mtctl::Property{
     	_expression := self._expression.map Expression2Expression();
    		 }
    		 
-mapping mtctl::Expression :: Expression2Expression() : mtctl::Expression disjuncts mtctl::Predicates::PredicateExpr::PredicateExpr2PredicateExpr, mtctl::BooleanLogic::NotExpr::NotExpr2NotExpr, mtctl::BooleanLogic::AndExpr::AndExpr2AndExpr, mtctl::Comparables::MapExpr::MapExpr2MapExpr, mtctl::Quantifiers::BoundVariable::BoundVariable2BoundVariable, mtctl::Quantifiers::TemporalQuantifierExpr::TemporalQuantifierExpr2TemporalQuantifierExpr, mtctl::BooleanLogic::ImplyExpr::ImplyExpr2ImplyExpr, mtctl::Quantifiers::QuantifierExpr::QuantifierExpr2QuantifierExpr, mtctl::Sets::SetExpr::SetExpr2SetExpr, mtctl::BooleanLogic::OrExpr::OrExpr2OrExpr;
+mapping mtctl::Expression :: Expression2Expression() : mtctl::Expression disjuncts mtctl::predicates::PredicateExpr::PredicateExpr2PredicateExpr, mtctl::booleanlogic::NotExpr::NotExpr2NotExpr, mtctl::booleanlogic::AndExpr::AndExpr2AndExpr, mtctl::comparables::MapExpr::MapExpr2MapExpr, mtctl::quantifiers::BoundVariable::BoundVariable2BoundVariable, mtctl::quantifiers::TemporalQuantifierExpr::TemporalQuantifierExpr2TemporalQuantifierExpr, mtctl::booleanlogic::ImplyExpr::ImplyExpr2ImplyExpr, mtctl::quantifiers::QuantifierExpr::QuantifierExpr2QuantifierExpr, mtctl::sets::SetExpr::SetExpr2SetExpr, mtctl::booleanlogic::OrExpr::OrExpr2OrExpr;
       	
-mapping muml::types::ArrayDataType :: ArrayDataType2ArrayDataType() : muml::types::ArrayDataType{
+mapping pim::types::ArrayDataType :: ArrayDataType2ArrayDataType() : pim::types::ArrayDataType{
     	_name := self._name;
     	_comment := self._comment;
     	
@@ -401,7 +401,7 @@ mapping muml::types::ArrayDataType :: ArrayDataType2ArrayDataType() : muml::type
     	_cardinality := self._cardinality.map NaturalNumber2NaturalNumber();
    		 }
    		 
-mapping muml::types::PrimitiveDataType :: PrimitiveDataType2PrimitiveDataType() : muml::types::PrimitiveDataType{
+mapping pim::types::PrimitiveDataType :: PrimitiveDataType2PrimitiveDataType() : pim::types::PrimitiveDataType{
     	_name := self._name;
     	_comment := self._comment;
     	_primitiveType := self._primitiveType;
@@ -409,9 +409,9 @@ mapping muml::types::PrimitiveDataType :: PrimitiveDataType2PrimitiveDataType() 
     	_extensions := self._extensions.map Extension2Extension();
    		 }
    		 
-mapping muml::types::DataType :: DataType2DataType() : muml::types::DataType disjuncts pim::component::ComponentPart::ComponentPart2ComponentPart, muml::protocol::Role::Role2Role, pim::component::Component::Component2Component, muml::types::RangedPrimitiveDataType::RangedPrimitiveDataType2RangedPrimitiveDataType, muml::types::ArrayDataType::ArrayDataType2ArrayDataType, pim::component::Port::Port2Port, muml::types::PrimitiveDataType::PrimitiveDataType2PrimitiveDataType, muml::types::StructureDataType::StructureDataType2StructureDataType;
+mapping pim::types::DataType :: DataType2DataType() : pim::types::DataType disjuncts pim::component::ComponentPart::ComponentPart2ComponentPart, pim::protocol::Role::Role2Role, pim::component::Component::Component2Component, pim::types::RangedPrimitiveDataType::RangedPrimitiveDataType2RangedPrimitiveDataType, pim::types::ArrayDataType::ArrayDataType2ArrayDataType, pim::component::Port::Port2Port, pim::types::PrimitiveDataType::PrimitiveDataType2PrimitiveDataType, pim::types::StructureDataType::StructureDataType2StructureDataType;
       	
-mapping muml::types::RangedPrimitiveDataType :: RangedPrimitiveDataType2RangedPrimitiveDataType() : muml::types::RangedPrimitiveDataType{
+mapping pim::types::RangedPrimitiveDataType :: RangedPrimitiveDataType2RangedPrimitiveDataType() : pim::types::RangedPrimitiveDataType{
     	_name := self._name;
     	_comment := self._comment;
     	
@@ -420,7 +420,7 @@ mapping muml::types::RangedPrimitiveDataType :: RangedPrimitiveDataType2RangedPr
     	_range := self._range.map Range2Range();
    		 }
 
-mapping muml::types::StructureDataType :: StructureDataType2StructureDataType() : muml::types::StructureDataType{
+mapping pim::types::StructureDataType :: StructureDataType2StructureDataType() : pim::types::StructureDataType{
     	_name := self._name;
     	_comment := self._comment;
     	
@@ -436,13 +436,13 @@ mapping Attribute :: Attribute2Attribute() : Attribute{
     	_dataType := self._dataType.map DataType2DataType();
 }   		 
    		 
-mapping muml::instance::ComponentInstance :: ComponentInstance2ComponentInstance() : muml::instance::ComponentInstance disjuncts muml::instance::StructuredComponentInstance::StructuredComponentInstance2StructuredComponentInstance, muml::instance::AtomicComponentInstance::AtomicComponentInstance2AtomicComponentInstance;
+mapping pim::instance::ComponentInstance :: ComponentInstance2ComponentInstance() : pim::instance::ComponentInstance disjuncts pim::instance::StructuredComponentInstance::StructuredComponentInstance2StructuredComponentInstance, pim::instance::AtomicComponentInstance::AtomicComponentInstance2AtomicComponentInstance;
       	
-mapping muml::instance::PortConnectorInstance :: PortConnectorInstance2PortConnectorInstance() : muml::instance::PortConnectorInstance disjuncts muml::instance::AssemblyConnectorInstance::AssemblyConnectorInstance2AssemblyConnectorInstance, muml::instance::DelegationConnectorInstance::DelegationConnectorInstance2DelegationConnectorInstance;
+mapping pim::instance::PortConnectorInstance :: PortConnectorInstance2PortConnectorInstance() : pim::instance::PortConnectorInstance disjuncts pim::instance::AssemblyConnectorInstance::AssemblyConnectorInstance2AssemblyConnectorInstance, pim::instance::DelegationConnectorInstance::DelegationConnectorInstance2DelegationConnectorInstance;
       	
-mapping muml::instance::PortInstance :: PortInstance2PortInstance() : muml::instance::PortInstance disjuncts muml::instance::HybridPortInstance::HybridPortInstance2HybridPortInstance, muml::instance::ContinuousPortInstance::ContinuousPortInstance2ContinuousPortInstance, muml::instance::DiscretePortInstance::DiscretePortInstance2DiscretePortInstance;
+mapping pim::instance::PortInstance :: PortInstance2PortInstance() : pim::instance::PortInstance disjuncts pim::instance::HybridPortInstance::HybridPortInstance2HybridPortInstance, pim::instance::ContinuousPortInstance::ContinuousPortInstance2ContinuousPortInstance, pim::instance::DiscretePortInstance::DiscretePortInstance2DiscretePortInstance;
       	
-mapping muml::instance::AssemblyConnectorInstance :: AssemblyConnectorInstance2AssemblyConnectorInstance() : muml::instance::AssemblyConnectorInstance{
+mapping pim::instance::AssemblyConnectorInstance :: AssemblyConnectorInstance2AssemblyConnectorInstance() : pim::instance::AssemblyConnectorInstance{
     	_comment := self._comment;
     	
     	_extensions := self._extensions.map Extension2Extension();
@@ -450,7 +450,7 @@ mapping muml::instance::AssemblyConnectorInstance :: AssemblyConnectorInstance2A
     	_connectorEndpointInstances := self._connectorEndpointInstances.map ConnectorEndpointInstance2ConnectorEndpointInstance();
    		 }
    		 
-mapping muml::instance::DelegationConnectorInstance :: DelegationConnectorInstance2DelegationConnectorInstance() : muml::instance::DelegationConnectorInstance{
+mapping pim::instance::DelegationConnectorInstance :: DelegationConnectorInstance2DelegationConnectorInstance() : pim::instance::DelegationConnectorInstance{
     	_comment := self._comment;
     	
     	_extensions := self._extensions.map Extension2Extension();
@@ -458,7 +458,7 @@ mapping muml::instance::DelegationConnectorInstance :: DelegationConnectorInstan
     	_connectorEndpointInstances := self._connectorEndpointInstances.map ConnectorEndpointInstance2ConnectorEndpointInstance();
    		 }
    		 
-mapping muml::instance::ComponentInstanceConfiguration :: ComponentInstanceConfiguration2ComponentInstanceConfiguration() : muml::instance::ComponentInstanceConfiguration{
+mapping pim::instance::ComponentInstanceConfiguration :: ComponentInstanceConfiguration2ComponentInstanceConfiguration() : pim::instance::ComponentInstanceConfiguration{
     	_name := self._name;
     	_comment := self._comment;
     	
@@ -469,7 +469,7 @@ mapping muml::instance::ComponentInstanceConfiguration :: ComponentInstanceConfi
     	_parentStructuredComponentInstance := self._parentStructuredComponentInstance.map StructuredComponentInstance2StructuredComponentInstance();
    		 }
    		 
-mapping muml::instance::ContinuousPortInstance :: ContinuousPortInstance2ContinuousPortInstance() : muml::instance::ContinuousPortInstance{
+mapping pim::instance::ContinuousPortInstance :: ContinuousPortInstance2ContinuousPortInstance() : pim::instance::ContinuousPortInstance{
     	_name := self._name;
     	_comment := self._comment;
     	
@@ -481,7 +481,7 @@ mapping muml::instance::ContinuousPortInstance :: ContinuousPortInstance2Continu
     	_componentInstance := self._componentInstance.map ComponentInstance2ComponentInstance();
    		 }
    		 
-mapping muml::instance::HybridPortInstance :: HybridPortInstance2HybridPortInstance() : muml::instance::HybridPortInstance{
+mapping pim::instance::HybridPortInstance :: HybridPortInstance2HybridPortInstance() : pim::instance::HybridPortInstance{
     	_name := self._name;
     	_comment := self._comment;
     	
@@ -493,9 +493,9 @@ mapping muml::instance::HybridPortInstance :: HybridPortInstance2HybridPortInsta
     	_componentInstance := self._componentInstance.map ComponentInstance2ComponentInstance();
    		 }
    		 
-mapping muml::instance::DiscretePortInstance :: DiscretePortInstance2DiscretePortInstance() : muml::instance::DiscretePortInstance disjuncts muml::instance::DiscreteMultiPortInstance::DiscreteMultiPortInstance2DiscreteMultiPortInstance, muml::instance::DiscreteSinglePortInstance::DiscreteSinglePortInstance2DiscreteSinglePortInstance;
+mapping pim::instance::DiscretePortInstance :: DiscretePortInstance2DiscretePortInstance() : pim::instance::DiscretePortInstance disjuncts pim::instance::DiscreteMultiPortInstance::DiscreteMultiPortInstance2DiscreteMultiPortInstance, pim::instance::DiscreteSinglePortInstance::DiscreteSinglePortInstance2DiscreteSinglePortInstance;
       	
-mapping muml::instance::DiscreteSinglePortInstance :: DiscreteSinglePortInstance2DiscreteSinglePortInstance() : muml::instance::DiscreteSinglePortInstance{
+mapping pim::instance::DiscreteSinglePortInstance :: DiscreteSinglePortInstance2DiscreteSinglePortInstance() : pim::instance::DiscreteSinglePortInstance{
     	_name := self._name;
     	_comment := self._comment;
     	
@@ -510,7 +510,7 @@ mapping muml::instance::DiscreteSinglePortInstance :: DiscreteSinglePortInstance
     	_previous := self._previous.map DiscreteSingleInteractionEndpointInstance2DiscreteSingleInteractionEndpointInstance();
    		 }
    		 
-mapping muml::instance::DiscreteMultiPortInstance :: DiscreteMultiPortInstance2DiscreteMultiPortInstance() : muml::instance::DiscreteMultiPortInstance{
+mapping pim::instance::DiscreteMultiPortInstance :: DiscreteMultiPortInstance2DiscreteMultiPortInstance() : pim::instance::DiscreteMultiPortInstance{
     	_name := self._name;
     	_comment := self._comment;
     	
@@ -525,7 +525,7 @@ mapping muml::instance::DiscreteMultiPortInstance :: DiscreteMultiPortInstance2D
     	_last := self._last.map DiscreteSingleInteractionEndpointInstance2DiscreteSingleInteractionEndpointInstance();
    		 }
    		 
-mapping muml::instance::CoordinationProtocolInstance :: CoordinationProtocolInstance2CoordinationProtocolInstance() : muml::instance::CoordinationProtocolInstance{
+mapping pim::instance::CoordinationProtocolInstance :: CoordinationProtocolInstance2CoordinationProtocolInstance() : pim::instance::CoordinationProtocolInstance{
     	_name := self._name;
     	
     	_extensions := self._extensions.map Extension2Extension();
@@ -533,7 +533,7 @@ mapping muml::instance::CoordinationProtocolInstance :: CoordinationProtocolInst
     	_coordinationProtocolPart := self._coordinationProtocolPart.map CoordinationProtocolPart2CoordinationProtocolPart();
    		 }
    		 
-mapping muml::instance::StructuredComponentInstance :: StructuredComponentInstance2StructuredComponentInstance() : muml::instance::StructuredComponentInstance{
+mapping pim::instance::StructuredComponentInstance :: StructuredComponentInstance2StructuredComponentInstance() : pim::instance::StructuredComponentInstance{
     	_name := self._name;
     	
     	_extensions := self._extensions.map Extension2Extension();
@@ -544,7 +544,7 @@ mapping muml::instance::StructuredComponentInstance :: StructuredComponentInstan
     	_embeddedCIC := self._embeddedCIC.map ComponentInstanceConfiguration2ComponentInstanceConfiguration();
    		 }
    		 
-mapping muml::instance::AtomicComponentInstance :: AtomicComponentInstance2AtomicComponentInstance() : muml::instance::AtomicComponentInstance{
+mapping pim::instance::AtomicComponentInstance :: AtomicComponentInstance2AtomicComponentInstance() : pim::instance::AtomicComponentInstance{
     	_name := self._name;
     	
     	_extensions := self._extensions.map Extension2Extension();
@@ -554,128 +554,128 @@ mapping muml::instance::AtomicComponentInstance :: AtomicComponentInstance2Atomi
     	_parentCIC := self._parentCIC.map ComponentInstanceConfiguration2ComponentInstanceConfiguration();
    		 }
    		 
-mapping mtctl::Predicates::DeadlockExpr :: DeadlockExpr2DeadlockExpr() : mtctl::Predicates::DeadlockExpr{
+mapping mtctl::predicates::DeadlockExpr :: DeadlockExpr2DeadlockExpr() : mtctl::predicates::DeadlockExpr{
    		 }
    		 
-mapping mtctl::Predicates::ConnectorOverflowExpr :: ConnectorOverflowExpr2ConnectorOverflowExpr() : mtctl::Predicates::ConnectorOverflowExpr{
+mapping mtctl::predicates::ConnectorOverflowExpr :: ConnectorOverflowExpr2ConnectorOverflowExpr() : mtctl::predicates::ConnectorOverflowExpr{
    		 }
    		 
-mapping mtctl::Predicates::ComparisonExpr :: ComparisonExpr2ComparisonExpr() : mtctl::Predicates::ComparisonExpr{
+mapping mtctl::predicates::ComparisonExpr :: ComparisonExpr2ComparisonExpr() : mtctl::predicates::ComparisonExpr{
     	_op := self._op;
     	_lhs := self._lhs.map MapExpr2MapExpr();
     	_rhs := self._rhs.map MapExpr2MapExpr();
    		 }
    		 
-mapping mtctl::Predicates::MessageInBufferExpr :: MessageInBufferExpr2MessageInBufferExpr() : mtctl::Predicates::MessageInBufferExpr{
+mapping mtctl::predicates::MessageInBufferExpr :: MessageInBufferExpr2MessageInBufferExpr() : mtctl::predicates::MessageInBufferExpr{
     	_buffer := self._buffer.map MapExpr2MapExpr();
     	_message := self._message.map MapExpr2MapExpr();
    		 }
-mapping mtctl::Predicates::MessageDiscardedExpr :: MessageDiscardedExpr2MessageDiscardedExpr() : mtctl::Predicates::MessageDiscardedExpr{
+mapping mtctl::predicates::MessageDiscardedExpr :: MessageDiscardedExpr2MessageDiscardedExpr() : mtctl::predicates::MessageDiscardedExpr{
 		_buffer := self._buffer.map MapExpr2MapExpr();
 		}
-mapping mtctl::Predicates::MessageInTransitExpr :: MessageInTransitExpr2MessageInTransitExpr() : mtctl::Predicates::MessageInTransitExpr{
+mapping mtctl::predicates::MessageInTransitExpr :: MessageInTransitExpr2MessageInTransitExpr() : mtctl::predicates::MessageInTransitExpr{
     	_message := self._message.map MapExpr2MapExpr();
    		 }
    		 
-mapping mtctl::Predicates::StateActiveExpr :: StateActiveExpr2StateActiveExpr() : mtctl::Predicates::StateActiveExpr{
+mapping mtctl::predicates::StateActiveExpr :: StateActiveExpr2StateActiveExpr() : mtctl::predicates::StateActiveExpr{
     	_state := self._state.map MapExpr2MapExpr();
    		 }
    		 
-mapping mtctl::Predicates::SubstateOfExpr :: SubstateOfExpr2SubstateOfExpr() : mtctl::Predicates::SubstateOfExpr{
+mapping mtctl::predicates::SubstateOfExpr :: SubstateOfExpr2SubstateOfExpr() : mtctl::predicates::SubstateOfExpr{
     	_superstate := self._superstate.map MapExpr2MapExpr();
     	_state := self._state.map MapExpr2MapExpr();
    		 }
    		 
-mapping mtctl::Predicates::TransitionFiringExpr :: TransitionFiringExpr2TransitionFiringExpr() : mtctl::Predicates::TransitionFiringExpr{
+mapping mtctl::predicates::TransitionFiringExpr :: TransitionFiringExpr2TransitionFiringExpr() : mtctl::predicates::TransitionFiringExpr{
     	_transition := self._transition.map MapExpr2MapExpr();
    		 }
    		 
-mapping mtctl::Predicates::PredicateExpr :: PredicateExpr2PredicateExpr() : mtctl::Predicates::PredicateExpr disjuncts mtctl::Predicates::ComparisonExpr::ComparisonExpr2ComparisonExpr, mtctl::Predicates::StaticPredicateExpr::StaticPredicateExpr2StaticPredicateExpr, mtctl::Predicates::DynamicPredicateExpr::DynamicPredicateExpr2DynamicPredicateExpr, mtctl::Predicates::PredicateExpr::normalPredicateExpr2PredicateExpr;
+mapping mtctl::predicates::PredicateExpr :: PredicateExpr2PredicateExpr() : mtctl::predicates::PredicateExpr disjuncts mtctl::predicates::ComparisonExpr::ComparisonExpr2ComparisonExpr, mtctl::predicates::StaticPredicateExpr::StaticPredicateExpr2StaticPredicateExpr, mtctl::predicates::DynamicPredicateExpr::DynamicPredicateExpr2DynamicPredicateExpr, mtctl::predicates::PredicateExpr::normalPredicateExpr2PredicateExpr;
  	 			
- mapping mtctl::Predicates::PredicateExpr :: normalPredicateExpr2PredicateExpr() : mtctl::Predicates::PredicateExpr{
+ mapping mtctl::predicates::PredicateExpr :: normalPredicateExpr2PredicateExpr() : mtctl::predicates::PredicateExpr{
  }
  	 			
-mapping mtctl::Predicates::DynamicPredicateExpr :: DynamicPredicateExpr2DynamicPredicateExpr() : mtctl::Predicates::DynamicPredicateExpr disjuncts mtctl::Predicates::StateActiveExpr::StateActiveExpr2StateActiveExpr, mtctl::Predicates::TransitionFiringExpr::TransitionFiringExpr2TransitionFiringExpr, mtctl::Predicates::MessageInTransitExpr::MessageInTransitExpr2MessageInTransitExpr, mtctl::Predicates::DeadlockExpr::DeadlockExpr2DeadlockExpr, mtctl::Predicates::MessageInBufferExpr::MessageInBufferExpr2MessageInBufferExpr, mtctl::Predicates::MessageDiscardedExpr::MessageDiscardedExpr2MessageDiscardedExpr, mtctl::Predicates::ConnectorOverflowExpr::ConnectorOverflowExpr2ConnectorOverflowExpr;
+mapping mtctl::predicates::DynamicPredicateExpr :: DynamicPredicateExpr2DynamicPredicateExpr() : mtctl::predicates::DynamicPredicateExpr disjuncts mtctl::predicates::StateActiveExpr::StateActiveExpr2StateActiveExpr, mtctl::predicates::TransitionFiringExpr::TransitionFiringExpr2TransitionFiringExpr, mtctl::predicates::MessageInTransitExpr::MessageInTransitExpr2MessageInTransitExpr, mtctl::predicates::DeadlockExpr::DeadlockExpr2DeadlockExpr, mtctl::predicates::MessageInBufferExpr::MessageInBufferExpr2MessageInBufferExpr, mtctl::predicates::MessageDiscardedExpr::MessageDiscardedExpr2MessageDiscardedExpr, mtctl::predicates::ConnectorOverflowExpr::ConnectorOverflowExpr2ConnectorOverflowExpr;
       	
-mapping mtctl::Predicates::StaticPredicateExpr :: StaticPredicateExpr2StaticPredicateExpr() : mtctl::Predicates::StaticPredicateExpr disjuncts mtctl::Predicates::FalseExpr::FalseExpr2FalseExpr, mtctl::Predicates::TrueExpr::TrueExpr2TrueExpr, mtctl::Predicates::StateInStatechartExpr::StateInStatechartExpr2StateInStatechartExpr, mtctl::Predicates::SubstateOfExpr::SubstateOfExpr2SubstateOfExpr;
+mapping mtctl::predicates::StaticPredicateExpr :: StaticPredicateExpr2StaticPredicateExpr() : mtctl::predicates::StaticPredicateExpr disjuncts mtctl::predicates::FalseExpr::FalseExpr2FalseExpr, mtctl::predicates::TrueExpr::TrueExpr2TrueExpr, mtctl::predicates::StateInStatechartExpr::StateInStatechartExpr2StateInStatechartExpr, mtctl::predicates::SubstateOfExpr::SubstateOfExpr2SubstateOfExpr;
       	
-mapping mtctl::Predicates::TrueExpr :: TrueExpr2TrueExpr() : mtctl::Predicates::TrueExpr{
+mapping mtctl::predicates::TrueExpr :: TrueExpr2TrueExpr() : mtctl::predicates::TrueExpr{
    		 }
    		 
-mapping mtctl::Predicates::FalseExpr :: FalseExpr2FalseExpr() : mtctl::Predicates::FalseExpr{
+mapping mtctl::predicates::FalseExpr :: FalseExpr2FalseExpr() : mtctl::predicates::FalseExpr{
    		 }
    		 
-mapping mtctl::Predicates::StateInStatechartExpr :: StateInStatechartExpr2StateInStatechartExpr() : mtctl::Predicates::StateInStatechartExpr{
+mapping mtctl::predicates::StateInStatechartExpr :: StateInStatechartExpr2StateInStatechartExpr() : mtctl::predicates::StateInStatechartExpr{
     	_state := self._state.map MapExpr2MapExpr();
     	_statechart := self._statechart.map MapExpr2MapExpr();
    		 }
    		 
-mapping muml::constraint::VerificationConstraintRepository :: VerificationConstraintRepository2VerificationConstraintRepository() : muml::constraint::VerificationConstraintRepository disjuncts mtctl::PropertyRepository::PropertyRepository2PropertyRepository;
+mapping pim::constraint::VerificationConstraintRepository :: VerificationConstraintRepository2VerificationConstraintRepository() : pim::constraint::VerificationConstraintRepository disjuncts mtctl::PropertyRepository::PropertyRepository2PropertyRepository;
       	
-mapping muml::constraint::VerifiableElement :: VerifiableElement2VerifiableElement() : muml::constraint::VerifiableElement disjuncts muml::protocol::AbstractCoordinationSpecification::AbstractCoordinationSpecification2AbstractCoordinationSpecification, pim::component::AtomicComponent::AtomicComponent2AtomicComponent, muml::instance::ComponentInstanceConfiguration::ComponentInstanceConfiguration2ComponentInstanceConfiguration;
+mapping pim::constraint::VerifiableElement :: VerifiableElement2VerifiableElement() : pim::constraint::VerifiableElement disjuncts pim::protocol::AbstractCoordinationSpecification::AbstractCoordinationSpecification2AbstractCoordinationSpecification, pim::component::AtomicComponent::AtomicComponent2AtomicComponent, pim::instance::ComponentInstanceConfiguration::ComponentInstanceConfiguration2ComponentInstanceConfiguration;
       	
-mapping mtctl::Comparables::BufferMsgCountExpr :: BufferMsgCountExpr2BufferMsgCountExpr() : mtctl::Comparables::BufferMsgCountExpr{
+mapping mtctl::comparables::BufferMsgCountExpr :: BufferMsgCountExpr2BufferMsgCountExpr() : mtctl::comparables::BufferMsgCountExpr{
     	_buffer := self._buffer.map MapExpr2MapExpr();
    		 }
    		 
-mapping mtctl::Comparables::ConstExpr :: ConstExpr2ConstExpr() : mtctl::Comparables::ConstExpr{
+mapping mtctl::comparables::ConstExpr :: ConstExpr2ConstExpr() : mtctl::comparables::ConstExpr{
     	_val := self._val;
     	_timeUnit := self._timeUnit;
    		 }
    		 
-mapping mtctl::Comparables::MapExpr :: MapExpr2MapExpr() : mtctl::Comparables::MapExpr disjuncts mtctl::Comparables::ConstExpr::ConstExpr2ConstExpr, mtctl::Comparables::BufferMsgCountExpr::BufferMsgCountExpr2BufferMsgCountExpr, mtctl::Comparables::MumlElemExpr::MumlElemExpr2MumlElemExpr, mtctl::Comparables::TransitionMap::TransitionMap2TransitionMap;
+mapping mtctl::comparables::MapExpr :: MapExpr2MapExpr() : mtctl::comparables::MapExpr disjuncts mtctl::comparables::ConstExpr::ConstExpr2ConstExpr, mtctl::comparables::BufferMsgCountExpr::BufferMsgCountExpr2BufferMsgCountExpr, mtctl::comparables::MumlElemExpr::MumlElemExpr2MumlElemExpr, mtctl::comparables::TransitionMap::TransitionMap2TransitionMap;
       	
-mapping mtctl::Comparables::MumlElemExpr :: MumlElemExpr2MumlElemExpr() : mtctl::Comparables::MumlElemExpr{
+mapping mtctl::comparables::MumlElemExpr :: MumlElemExpr2MumlElemExpr() : mtctl::comparables::MumlElemExpr{
     	_elem := self._elem.map EObject2EObject();
     	_instance := self._instance.map EObject2EObject();
    		 }
    		 
-mapping mtctl::Comparables::TransitionMap :: TransitionMap2TransitionMap() : mtctl::Comparables::TransitionMap disjuncts mtctl::Comparables::SourceStateExpr::SourceStateExpr2SourceStateExpr, mtctl::Comparables::TargetStateExpr::TargetStateExpr2TargetStateExpr;
+mapping mtctl::comparables::TransitionMap :: TransitionMap2TransitionMap() : mtctl::comparables::TransitionMap disjuncts mtctl::comparables::SourceStateExpr::SourceStateExpr2SourceStateExpr, mtctl::comparables::TargetStateExpr::TargetStateExpr2TargetStateExpr;
       	
-mapping mtctl::Comparables::SourceStateExpr :: SourceStateExpr2SourceStateExpr() : mtctl::Comparables::SourceStateExpr{
+mapping mtctl::comparables::SourceStateExpr :: SourceStateExpr2SourceStateExpr() : mtctl::comparables::SourceStateExpr{
     	_transition := self._transition.map MapExpr2MapExpr();
    		 }
    		 
-mapping mtctl::Comparables::TargetStateExpr :: TargetStateExpr2TargetStateExpr() : mtctl::Comparables::TargetStateExpr{
+mapping mtctl::comparables::TargetStateExpr :: TargetStateExpr2TargetStateExpr() : mtctl::comparables::TargetStateExpr{
     	_transition := self._transition.map MapExpr2MapExpr();
    		 }
    		 
-mapping mtctl::Quantifiers::AFExpr :: AFExpr2AFExpr() : mtctl::Quantifiers::AFExpr{
+mapping mtctl::quantifiers::AFExpr :: AFExpr2AFExpr() : mtctl::quantifiers::AFExpr{
     	_expr := self._expr.map Expression2Expression();
    		 }
    		 
-mapping mtctl::Quantifiers::AGExpr :: AGExpr2AGExpr() : mtctl::Quantifiers::AGExpr{
+mapping mtctl::quantifiers::AGExpr :: AGExpr2AGExpr() : mtctl::quantifiers::AGExpr{
     	_expr := self._expr.map Expression2Expression();
    		 }
    		 
-mapping mtctl::Quantifiers::EFExpr :: EFExpr2EFExpr() : mtctl::Quantifiers::EFExpr{
+mapping mtctl::quantifiers::EFExpr :: EFExpr2EFExpr() : mtctl::quantifiers::EFExpr{
     	_expr := self._expr.map Expression2Expression();
    		 }
    		 
-mapping mtctl::Quantifiers::EGExpr :: EGExpr2EGExpr() : mtctl::Quantifiers::EGExpr{
+mapping mtctl::quantifiers::EGExpr :: EGExpr2EGExpr() : mtctl::quantifiers::EGExpr{
     	_expr := self._expr.map Expression2Expression();
    		 }
    		 
-mapping mtctl::Quantifiers::ExistenceQuantExpr :: ExistenceQuantExpr2ExistenceQuantExpr() : mtctl::Quantifiers::ExistenceQuantExpr{
+mapping mtctl::quantifiers::ExistenceQuantExpr :: ExistenceQuantExpr2ExistenceQuantExpr() : mtctl::quantifiers::ExistenceQuantExpr{
     	_formula := self._formula.map Expression2Expression();
     	_var := self._var.map BoundVariable2BoundVariable();
    		 }
    		 
-mapping mtctl::Quantifiers::QuantifierExpr :: QuantifierExpr2QuantifierExpr() : mtctl::Quantifiers::QuantifierExpr disjuncts mtctl::Quantifiers::ExistenceQuantExpr::ExistenceQuantExpr2ExistenceQuantExpr, mtctl::Quantifiers::UniversalQuantExpr::UniversalQuantExpr2UniversalQuantExpr;
+mapping mtctl::quantifiers::QuantifierExpr :: QuantifierExpr2QuantifierExpr() : mtctl::quantifiers::QuantifierExpr disjuncts mtctl::quantifiers::ExistenceQuantExpr::ExistenceQuantExpr2ExistenceQuantExpr, mtctl::quantifiers::UniversalQuantExpr::UniversalQuantExpr2UniversalQuantExpr;
       	
-mapping mtctl::Quantifiers::BoundVariable :: BoundVariable2BoundVariable() : mtctl::Quantifiers::BoundVariable{
+mapping mtctl::quantifiers::BoundVariable :: BoundVariable2BoundVariable() : mtctl::quantifiers::BoundVariable{
     	_name := self._name;
     	_set := self._set.map SetExpr2SetExpr();
    		 }
    		 
-mapping mtctl::Quantifiers::TemporalQuantifierExpr :: TemporalQuantifierExpr2TemporalQuantifierExpr() : mtctl::Quantifiers::TemporalQuantifierExpr disjuncts mtctl::Quantifiers::LeadsToExpr::LeadsToExpr2LeadsToExpr, mtctl::Quantifiers::AGExpr::AGExpr2AGExpr, mtctl::Quantifiers::AFExpr::AFExpr2AFExpr, mtctl::Quantifiers::EGExpr::EGExpr2EGExpr, mtctl::Quantifiers::EFExpr::EFExpr2EFExpr;
+mapping mtctl::quantifiers::TemporalQuantifierExpr :: TemporalQuantifierExpr2TemporalQuantifierExpr() : mtctl::quantifiers::TemporalQuantifierExpr disjuncts mtctl::quantifiers::LeadsToExpr::LeadsToExpr2LeadsToExpr, mtctl::quantifiers::AGExpr::AGExpr2AGExpr, mtctl::quantifiers::AFExpr::AFExpr2AFExpr, mtctl::quantifiers::EGExpr::EGExpr2EGExpr, mtctl::quantifiers::EFExpr::EFExpr2EFExpr;
       	
-mapping mtctl::Quantifiers::UniversalQuantExpr :: UniversalQuantExpr2UniversalQuantExpr() : mtctl::Quantifiers::UniversalQuantExpr{
+mapping mtctl::quantifiers::UniversalQuantExpr :: UniversalQuantExpr2UniversalQuantExpr() : mtctl::quantifiers::UniversalQuantExpr{
     	_formula := self._formula.map Expression2Expression();
     	_var := self._var.map BoundVariable2BoundVariable();
    		 }
    		 
-mapping mtctl::Quantifiers::LeadsToExpr :: LeadsToExpr2LeadsToExpr() : mtctl::Quantifiers::LeadsToExpr{
+mapping mtctl::quantifiers::LeadsToExpr :: LeadsToExpr2LeadsToExpr() : mtctl::quantifiers::LeadsToExpr{
     	_leftOpd := self._leftOpd.map Expression2Expression();
     	_rightOpd := self._rightOpd.map Expression2Expression();
    		 }
@@ -817,52 +817,52 @@ mapping pim::component::StaticAtomicComponent :: StaticAtomicComponent2StaticAto
    		 
 mapping pim::component::StaticComponent :: StaticComponent2StaticComponent() : pim::component::StaticComponent disjuncts pim::component::StaticAtomicComponent::StaticAtomicComponent2StaticAtomicComponent, pim::component::StaticStructuredComponent::StaticStructuredComponent2StaticStructuredComponent;
       	
-mapping mtctl::BooleanLogic::AndExpr :: AndExpr2AndExpr() : mtctl::BooleanLogic::AndExpr{
+mapping mtctl::booleanlogic::AndExpr :: AndExpr2AndExpr() : mtctl::booleanlogic::AndExpr{
     	_leftOpd := self._leftOpd.map Expression2Expression();
     	_rightOpd := self._rightOpd.map Expression2Expression();
    		 }
    		 
-mapping mtctl::BooleanLogic::ImplyExpr :: ImplyExpr2ImplyExpr() : mtctl::BooleanLogic::ImplyExpr{
+mapping mtctl::booleanlogic::ImplyExpr :: ImplyExpr2ImplyExpr() : mtctl::booleanlogic::ImplyExpr{
     	_leftOpd := self._leftOpd.map Expression2Expression();
     	_rightOpd := self._rightOpd.map Expression2Expression();
    		 }
    		 
-mapping mtctl::BooleanLogic::NotExpr :: NotExpr2NotExpr() : mtctl::BooleanLogic::NotExpr{
+mapping mtctl::booleanlogic::NotExpr :: NotExpr2NotExpr() : mtctl::booleanlogic::NotExpr{
     	_opd := self._opd.map Expression2Expression();
    		 }
    		 
-mapping mtctl::BooleanLogic::OrExpr :: OrExpr2OrExpr() : mtctl::BooleanLogic::OrExpr{
+mapping mtctl::booleanlogic::OrExpr :: OrExpr2OrExpr() : mtctl::booleanlogic::OrExpr{
     	_leftOpd := self._leftOpd.map Expression2Expression();
     	_rightOpd := self._rightOpd.map Expression2Expression();
    		 }
    		 
-mapping mtctl::Sets::SetExpr :: SetExpr2SetExpr() : mtctl::Sets::SetExpr disjuncts mtctl::Sets::IntervalSetExpr::IntervalSetExpr2IntervalSetExpr, mtctl::Sets::ClockSetExpr::ClockSetExpr2ClockSetExpr, mtctl::Sets::MessageSetExpr::MessageSetExpr2MessageSetExpr, mtctl::Sets::BufferSetExpr::BufferSetExpr2BufferSetExpr, mtctl::Sets::TransitionSetExpr::TransitionSetExpr2TransitionSetExpr, mtctl::Sets::StateSetExpr::StateSetExpr2StateSetExpr, mtctl::Sets::InstanceSetExpr::InstanceSetExpr2InstanceSetExpr, mtctl::Sets::SubinstanceSetExpr::SubinstanceSetExpr2SubinstanceSetExpr;
+mapping mtctl::sets::SetExpr :: SetExpr2SetExpr() : mtctl::sets::SetExpr disjuncts mtctl::sets::IntervalSetExpr::IntervalSetExpr2IntervalSetExpr, mtctl::sets::ClockSetExpr::ClockSetExpr2ClockSetExpr, mtctl::sets::MessageSetExpr::MessageSetExpr2MessageSetExpr, mtctl::sets::BufferSetExpr::BufferSetExpr2BufferSetExpr, mtctl::sets::TransitionSetExpr::TransitionSetExpr2TransitionSetExpr, mtctl::sets::StateSetExpr::StateSetExpr2StateSetExpr, mtctl::sets::InstanceSetExpr::InstanceSetExpr2InstanceSetExpr, mtctl::sets::SubinstanceSetExpr::SubinstanceSetExpr2SubinstanceSetExpr;
       	
-mapping mtctl::Sets::ClockSetExpr :: ClockSetExpr2ClockSetExpr() : mtctl::Sets::ClockSetExpr{
+mapping mtctl::sets::ClockSetExpr :: ClockSetExpr2ClockSetExpr() : mtctl::sets::ClockSetExpr{
    		 }
    		 
-mapping mtctl::Sets::IntervalSetExpr :: IntervalSetExpr2IntervalSetExpr() : mtctl::Sets::IntervalSetExpr{
+mapping mtctl::sets::IntervalSetExpr :: IntervalSetExpr2IntervalSetExpr() : mtctl::sets::IntervalSetExpr{
     	_lowerVal := self._lowerVal;
     	_upperVal := self._upperVal;
    		 }
    		 
-mapping mtctl::Sets::MessageSetExpr :: MessageSetExpr2MessageSetExpr() : mtctl::Sets::MessageSetExpr{
+mapping mtctl::sets::MessageSetExpr :: MessageSetExpr2MessageSetExpr() : mtctl::sets::MessageSetExpr{
    		 }
    		 
-mapping mtctl::Sets::StateSetExpr :: StateSetExpr2StateSetExpr() : mtctl::Sets::StateSetExpr{
+mapping mtctl::sets::StateSetExpr :: StateSetExpr2StateSetExpr() : mtctl::sets::StateSetExpr{
    		 }
    		 
-mapping mtctl::Sets::TransitionSetExpr :: TransitionSetExpr2TransitionSetExpr() : mtctl::Sets::TransitionSetExpr{
+mapping mtctl::sets::TransitionSetExpr :: TransitionSetExpr2TransitionSetExpr() : mtctl::sets::TransitionSetExpr{
    		 }
    		 
-mapping mtctl::Sets::BufferSetExpr :: BufferSetExpr2BufferSetExpr() : mtctl::Sets::BufferSetExpr{
+mapping mtctl::sets::BufferSetExpr :: BufferSetExpr2BufferSetExpr() : mtctl::sets::BufferSetExpr{
    		 }
    		 
-mapping mtctl::Sets::InstanceSetExpr :: InstanceSetExpr2InstanceSetExpr() : mtctl::Sets::InstanceSetExpr{
+mapping mtctl::sets::InstanceSetExpr :: InstanceSetExpr2InstanceSetExpr() : mtctl::sets::InstanceSetExpr{
     	_type := self._type.map MumlElemExpr2MumlElemExpr();
    		 }
    		 
-mapping mtctl::Sets::SubinstanceSetExpr :: SubinstanceSetExpr2SubinstanceSetExpr() : mtctl::Sets::SubinstanceSetExpr {
+mapping mtctl::sets::SubinstanceSetExpr :: SubinstanceSetExpr2SubinstanceSetExpr() : mtctl::sets::SubinstanceSetExpr {
     	_type := self._type.map MumlElemExpr2MumlElemExpr();
    		 }
    		 
@@ -876,7 +876,7 @@ mapping modelinstance::ModelElementCategory :: ModelElementCategory2ModelElement
     	_modelElements := self._modelElements.map ExtendableElement2ExtendableElement();
    		 }
    		 
-mapping muml::msgtype::MessageType :: MessageType2MessageType() : muml::msgtype::MessageType{
+mapping pim::msgtype::MessageType :: MessageType2MessageType() : pim::msgtype::MessageType{
     	_name := self._name;
     	_comment := self._comment;
     	
@@ -885,7 +885,7 @@ mapping muml::msgtype::MessageType :: MessageType2MessageType() : muml::msgtype:
     	_repository := self._repository.map MessageTypeRepository2MessageTypeRepository();
    		 }
    		 
-mapping muml::msgtype::MessageTypeRepository :: MessageTypeRepository2MessageTypeRepository() : muml::msgtype::MessageTypeRepository{
+mapping pim::msgtype::MessageTypeRepository :: MessageTypeRepository2MessageTypeRepository() : pim::msgtype::MessageTypeRepository{
     	_name := self._name;
     	_comment := self._comment;
     	
@@ -893,11 +893,11 @@ mapping muml::msgtype::MessageTypeRepository :: MessageTypeRepository2MessageTyp
     	_messageTypes := self._messageTypes.map MessageType2MessageType();
    		 }
    		 
-mapping muml::behavior::Behavior :: Behavior2Behavior() : muml::behavior::Behavior disjuncts pim::realtimestatechart::RealtimeStatechart::RealtimeStatechart2RealtimeStatechart;
+mapping pim::behavior::Behavior :: Behavior2Behavior() : pim::behavior::Behavior disjuncts pim::realtimestatechart::RealtimeStatechart::RealtimeStatechart2RealtimeStatechart;
       	
-mapping muml::behavior::BehavioralElement :: BehavioralElement2BehavioralElement() : muml::behavior::BehavioralElement disjuncts pim::component::AtomicComponent::AtomicComponent2AtomicComponent, pim::connector::DiscreteInteractionEndpoint::DiscreteInteractionEndpoint2DiscreteInteractionEndpoint;
+mapping pim::behavior::BehavioralElement :: BehavioralElement2BehavioralElement() : pim::behavior::BehavioralElement disjuncts pim::component::AtomicComponent::AtomicComponent2AtomicComponent, pim::connector::DiscreteInteractionEndpoint::DiscreteInteractionEndpoint2DiscreteInteractionEndpoint;
       	
-mapping muml::behavior::Operation :: Operation2Operation() : muml::behavior::Operation{
+mapping pim::behavior::Operation :: Operation2Operation() : pim::behavior::Operation{
     	_name := self._name;
     	_comment := self._comment;
     	
@@ -907,7 +907,7 @@ mapping muml::behavior::Operation :: Operation2Operation() : muml::behavior::Ope
     	_returnType := self._returnType.map DataType2DataType();
    		 }
    		 
-mapping muml::behavior::Parameter :: Parameter2Parameter() : muml::behavior::Parameter{
+mapping pim::behavior::Parameter :: Parameter2Parameter() : pim::behavior::Parameter{
     	_name := self._name;
     	_comment := self._comment;
     	
@@ -915,16 +915,16 @@ mapping muml::behavior::Parameter :: Parameter2Parameter() : muml::behavior::Par
     	_dataType := self._dataType.map DataType2DataType();
    		 }
    		 
-mapping muml::behavior::ParameterBinding :: ParameterBinding2ParameterBinding() : muml::behavior::ParameterBinding{
+mapping pim::behavior::ParameterBinding :: ParameterBinding2ParameterBinding() : pim::behavior::ParameterBinding{
     	
     	_extensions := self._extensions.map Extension2Extension();
     	_parameter := self._parameter.map Parameter2Parameter();
     	_value := self._value.map Expression2Expression();
    		 }
    		 
-mapping muml::behavior::TypedNamedElement :: TypedNamedElement2TypedNamedElement() : muml::behavior::TypedNamedElement disjuncts muml::behavior::Variable::Variable2Variable, muml::behavior::Parameter::Parameter2Parameter, pim::component::DirectedTypedPort::DirectedTypedPort2DirectedTypedPort;
+mapping pim::behavior::TypedNamedElement :: TypedNamedElement2TypedNamedElement() : pim::behavior::TypedNamedElement disjuncts pim::behavior::Variable::Variable2Variable, pim::behavior::Parameter::Parameter2Parameter, pim::component::DirectedTypedPort::DirectedTypedPort2DirectedTypedPort;
       	
-mapping muml::behavior::Variable :: Variable2Variable() : muml::behavior::Variable{
+mapping pim::behavior::Variable :: Variable2Variable() : pim::behavior::Variable{
     	_name := self._name;
     	_comment := self._comment;
     	_constant := self._constant;
@@ -1178,15 +1178,14 @@ mapping actionLanguage::TimeValueExpression :: TimeValueExpression2TimeValueExpr
 	        else {
 	        	result := self.timeValue.value.map Expression2Expression().deepclone().oclAsType(core::expressions::Expression);	
 	        }endif;
-	        
-	        result.
+
 	        result._extensions := self._extensions.map Extension2Extension();
 	        result._comment := self._comment;      
         }        
 }
 
 helper core::expressions::Expression :: isNestedInOtherTimeValue() : Boolean {
-	var eContainer : EObject := self.eContainer();
+	var eContainer : EObject := self.oclAsType(ecore::EObject).eContainer();
 	if(eContainer.oclIsTypeOf(TimeValue)) {
 		return true;
 	}else if(eContainer.oclIsKindOf(core::expressions::Expression) and not eContainer.oclIsUndefined()) {
@@ -1198,14 +1197,14 @@ helper core::expressions::Expression :: isNestedInOtherTimeValue() : Boolean {
 	endif;			
 }
 
-mapping muml::protocol::AbstractCoordinationSpecification :: AbstractCoordinationSpecification2AbstractCoordinationSpecification() : muml::protocol::AbstractCoordinationSpecification disjuncts muml::protocol::CoordinationProtocol::CoordinationProtocol2CoordinationProtocol, muml::pattern::AbstractCoordinationPattern::AbstractCoordinationPattern2AbstractCoordinationPattern;
+mapping pim::protocol::AbstractCoordinationSpecification :: AbstractCoordinationSpecification2AbstractCoordinationSpecification() : pim::protocol::AbstractCoordinationSpecification disjuncts pim::protocol::CoordinationProtocol::CoordinationProtocol2CoordinationProtocol, pim::pattern::AbstractCoordinationPattern::AbstractCoordinationPattern2AbstractCoordinationPattern;
       	
       	
-mapping muml::pattern::AbstractCoordinationPattern :: AbstractCoordinationPattern2AbstractCoordinationPattern(): muml::pattern::AbstractCoordinationPattern 
- disjuncts muml::pattern::CoordinationPatternVariant::CoordinationPatternVariant2CoordinationPatternVariant, muml::pattern::CoordinationPattern::CoordinationPattern2CoordinationPattern;  	
+mapping pim::pattern::AbstractCoordinationPattern :: AbstractCoordinationPattern2AbstractCoordinationPattern(): pim::pattern::AbstractCoordinationPattern 
+ disjuncts pim::pattern::CoordinationPatternVariant::CoordinationPatternVariant2CoordinationPatternVariant, pim::pattern::CoordinationPattern::CoordinationPattern2CoordinationPattern;  	
       	
       	
-mapping muml::pattern::CoordinationPattern :: CoordinationPattern2CoordinationPattern() : muml::pattern::CoordinationPattern {
+mapping pim::pattern::CoordinationPattern :: CoordinationPattern2CoordinationPattern() : pim::pattern::CoordinationPattern {
 		name := self.name;
 		
     	_extensions := self._extensions.map Extension2Extension();
@@ -1225,7 +1224,7 @@ mapping muml::pattern::CoordinationPattern :: CoordinationPattern2CoordinationPa
 }  	
 
 
-mapping muml::pattern::DescriptionAspects :: DescriptionAspects2DescriptionAspects() : muml::pattern::DescriptionAspects {
+mapping pim::pattern::DescriptionAspects :: DescriptionAspects2DescriptionAspects() : pim::pattern::DescriptionAspects {
 		overview := self.overview;
 		context := self.context;
 		problem := self.problem;
@@ -1239,7 +1238,7 @@ mapping muml::pattern::DescriptionAspects :: DescriptionAspects2DescriptionAspec
 		alternatives := self.alternatives;
 		verification_properties := self.verification_properties
 }
-mapping muml::pattern::CoordinationPatternVariant :: CoordinationPatternVariant2CoordinationPatternVariant() : muml::pattern::CoordinationPatternVariant {
+mapping pim::pattern::CoordinationPatternVariant :: CoordinationPatternVariant2CoordinationPatternVariant() : pim::pattern::CoordinationPatternVariant {
 			name := self.name;
 		
     	_extensions := self._extensions.map Extension2Extension();
@@ -1255,7 +1254,7 @@ mapping muml::pattern::CoordinationPatternVariant :: CoordinationPatternVariant2
     	patternParameters := self.patternParameters.map Parameter2Parameter();	
 }
 
-mapping muml::protocol::CoordinationProtocol :: CoordinationProtocol2CoordinationProtocol() : muml::protocol::CoordinationProtocol{
+mapping pim::protocol::CoordinationProtocol :: CoordinationProtocol2CoordinationProtocol() : pim::protocol::CoordinationProtocol{
     	_name := self._name;
     	_comment := self._comment;
     	
@@ -1265,7 +1264,7 @@ mapping muml::protocol::CoordinationProtocol :: CoordinationProtocol2Coordinatio
     	_roleConnector := self._roleConnector.map RoleConnector2RoleConnector();
    		 }
    		 
-mapping muml::protocol::Role :: Role2Role() : muml::protocol::Role{
+mapping pim::protocol::Role :: Role2Role() : pim::protocol::Role{
     	_comment := self._comment;
     	_name := self._name;
     	
@@ -1281,7 +1280,7 @@ mapping muml::protocol::Role :: Role2Role() : muml::protocol::Role{
     	_coordinationProtocol := self._coordinationProtocol.map AbstractCoordinationSpecification2AbstractCoordinationSpecification();
    		 }
    		 
-mapping muml::protocol::RoleConnector :: RoleConnector2RoleConnector() : muml::protocol::RoleConnector{
+mapping pim::protocol::RoleConnector :: RoleConnector2RoleConnector() : pim::protocol::RoleConnector{
     	_comment := self._comment;
     	
     	_extensions := self._extensions.map Extension2Extension();
@@ -1290,7 +1289,7 @@ mapping muml::protocol::RoleConnector :: RoleConnector2RoleConnector() : muml::p
     	_connectorQualityOfServiceAssumptions := self._connectorQualityOfServiceAssumptions.map ConnectorQualityOfServiceAssumptions2ConnectorQualityOfServiceAssumptions();
    		 }
    		 
-mapping muml::protocol::ConnectorQualityOfServiceAssumptions :: ConnectorQualityOfServiceAssumptions2ConnectorQualityOfServiceAssumptions() : muml::protocol::ConnectorQualityOfServiceAssumptions{
+mapping pim::protocol::ConnectorQualityOfServiceAssumptions :: ConnectorQualityOfServiceAssumptions2ConnectorQualityOfServiceAssumptions() : pim::protocol::ConnectorQualityOfServiceAssumptions{
     	_comment := self._comment;
     	_messageLossPossible := self._messageLossPossible;
     	
@@ -1301,19 +1300,19 @@ mapping muml::protocol::ConnectorQualityOfServiceAssumptions :: ConnectorQuality
    		 
 mapping pim::connector::ConnectorEndpoint :: ConnectorEndpoint2ConnectorEndpoint() : pim::connector::ConnectorEndpoint disjuncts pim::component::PortPart::PortPart2PortPart, pim::connector::DiscreteInteractionEndpoint::DiscreteInteractionEndpoint2DiscreteInteractionEndpoint, pim::component::Port::Port2Port;
       	
-mapping pim::connector::Connector :: Connector2Connector() : pim::connector::Connector disjuncts pim::component::PortConnector::PortConnector2PortConnector, muml::protocol::RoleConnector::RoleConnector2RoleConnector;
+mapping pim::connector::Connector :: Connector2Connector() : pim::connector::Connector disjuncts pim::component::PortConnector::PortConnector2PortConnector, pim::protocol::RoleConnector::RoleConnector2RoleConnector;
       	
-mapping pim::connector::ConnectorEndpointInstance :: ConnectorEndpointInstance2ConnectorEndpointInstance() : pim::connector::ConnectorEndpointInstance disjuncts pim::connector::DiscreteInteractionEndpointInstance::DiscreteInteractionEndpointInstance2DiscreteInteractionEndpointInstance, muml::instance::PortInstance::PortInstance2PortInstance;
+mapping pim::connector::ConnectorEndpointInstance :: ConnectorEndpointInstance2ConnectorEndpointInstance() : pim::connector::ConnectorEndpointInstance disjuncts pim::connector::DiscreteInteractionEndpointInstance::DiscreteInteractionEndpointInstance2DiscreteInteractionEndpointInstance, pim::instance::PortInstance::PortInstance2PortInstance;
       	
-mapping pim::connector::ConnectorInstance :: ConnectorInstance2ConnectorInstance() : pim::connector::ConnectorInstance disjuncts muml::instance::PortConnectorInstance::PortConnectorInstance2PortConnectorInstance;
+mapping pim::connector::ConnectorInstance :: ConnectorInstance2ConnectorInstance() : pim::connector::ConnectorInstance disjuncts pim::instance::PortConnectorInstance::PortConnectorInstance2PortConnectorInstance;
       	
-mapping pim::connector::DiscreteInteractionEndpoint :: DiscreteInteractionEndpoint2DiscreteInteractionEndpoint() : pim::connector::DiscreteInteractionEndpoint disjuncts pim::component::DiscretePort::DiscretePort2DiscretePort, muml::protocol::Role::Role2Role;
+mapping pim::connector::DiscreteInteractionEndpoint :: DiscreteInteractionEndpoint2DiscreteInteractionEndpoint() : pim::connector::DiscreteInteractionEndpoint disjuncts pim::component::DiscretePort::DiscretePort2DiscretePort, pim::protocol::Role::Role2Role;
       	
-mapping pim::connector::DiscreteInteractionEndpointInstance :: DiscreteInteractionEndpointInstance2DiscreteInteractionEndpointInstance() : pim::connector::DiscreteInteractionEndpointInstance disjuncts pim::connector::DiscreteSingleInteractionEndpointInstance::DiscreteSingleInteractionEndpointInstance2DiscreteSingleInteractionEndpointInstance, pim::connector::DiscreteMultiInteractionEndpointInstance::DiscreteMultiInteractionEndpointInstance2DiscreteMultiInteractionEndpointInstance, muml::instance::DiscretePortInstance::DiscretePortInstance2DiscretePortInstance;
+mapping pim::connector::DiscreteInteractionEndpointInstance :: DiscreteInteractionEndpointInstance2DiscreteInteractionEndpointInstance() : pim::connector::DiscreteInteractionEndpointInstance disjuncts pim::connector::DiscreteSingleInteractionEndpointInstance::DiscreteSingleInteractionEndpointInstance2DiscreteSingleInteractionEndpointInstance, pim::connector::DiscreteMultiInteractionEndpointInstance::DiscreteMultiInteractionEndpointInstance2DiscreteMultiInteractionEndpointInstance, pim::instance::DiscretePortInstance::DiscretePortInstance2DiscretePortInstance;
       	
-mapping pim::connector::DiscreteSingleInteractionEndpointInstance :: DiscreteSingleInteractionEndpointInstance2DiscreteSingleInteractionEndpointInstance() : pim::connector::DiscreteSingleInteractionEndpointInstance disjuncts muml::instance::DiscreteSinglePortInstance::DiscreteSinglePortInstance2DiscreteSinglePortInstance;
+mapping pim::connector::DiscreteSingleInteractionEndpointInstance :: DiscreteSingleInteractionEndpointInstance2DiscreteSingleInteractionEndpointInstance() : pim::connector::DiscreteSingleInteractionEndpointInstance disjuncts pim::instance::DiscreteSinglePortInstance::DiscreteSinglePortInstance2DiscreteSinglePortInstance;
       	
-mapping pim::connector::DiscreteMultiInteractionEndpointInstance :: DiscreteMultiInteractionEndpointInstance2DiscreteMultiInteractionEndpointInstance() : pim::connector::DiscreteMultiInteractionEndpointInstance disjuncts muml::instance::DiscreteMultiPortInstance::DiscreteMultiPortInstance2DiscreteMultiPortInstance;
+mapping pim::connector::DiscreteMultiInteractionEndpointInstance :: DiscreteMultiInteractionEndpointInstance2DiscreteMultiInteractionEndpointInstance() : pim::connector::DiscreteMultiInteractionEndpointInstance disjuncts pim::instance::DiscreteMultiPortInstance::DiscreteMultiPortInstance2DiscreteMultiPortInstance;
       	
 mapping pim::connector::MessageBuffer :: MessageBuffer2MessageBuffer() : pim::connector::MessageBuffer{
     	_name := self._name;
