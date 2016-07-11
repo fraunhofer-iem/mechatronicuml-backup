@@ -6,7 +6,7 @@ modeltype mumlConstraint uses 'http://www.muml.org/pim/constraint/1.0.0';
 modeltype mumlBehavior uses 'http://www.muml.org/pim/behavior/1.0.0';
 modeltype mumlconnector uses pim::connector('http://www.muml.org/pim/1.0.0');
 modeltype mumlmsgtype uses pim::msgtype('http://www.muml.org/pim/1.0.0');
-modeltype modelinstance uses 'http://www.muml.org/modelinstance/1.0.0';
+modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
 modeltype verification_extension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
 
 

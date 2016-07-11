@@ -15,7 +15,7 @@ modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
 modeltype storydriven_common uses core::expressions::common('http://www.muml.org/core/1.0.0');
 modeltype storydriven_expressions uses core::expressions('http://www.muml.org/core/1.0.0');
 modeltype verificationExtension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
-modeltype modelinstance uses 'http://www.muml.org/modelinstance/1.0.0';
+modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
 modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
 modeltype mtctl uses 'http://www.muml.org/uppaal/adapter/mtctl/1.0.0';
 modeltype mtctl_comparables uses mtctl::Comparables('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');

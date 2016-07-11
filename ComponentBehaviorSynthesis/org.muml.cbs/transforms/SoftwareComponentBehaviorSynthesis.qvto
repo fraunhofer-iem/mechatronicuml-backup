@@ -2,7 +2,7 @@ import transforms.CopyRTSCsIntoComponentRTSC;
 import transforms.WeaveDependenciesIntoRTSC;
 
 modeltype component uses pim::component('http://www.muml.org/pim/1.0.0');
-modeltype modelinstance uses 'http://www.muml.org/modelinstance/1.0.0';
+modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
 
 transformation SoftwareComponentBehaviorSynthesis(inout input:modelinstance);
 

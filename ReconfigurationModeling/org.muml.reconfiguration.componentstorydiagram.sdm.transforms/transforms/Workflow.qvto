@@ -18,7 +18,7 @@ modeltype storydrivenExpressions uses core::expressions('http://www.muml.org/cor
 
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 
-modeltype modelinstance uses 'http://www.muml.org/modelinstance/1.0.0';
+modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
 
 modeltype componentModel uses pim::component('http://www.muml.org/pim/1.0.0');
 

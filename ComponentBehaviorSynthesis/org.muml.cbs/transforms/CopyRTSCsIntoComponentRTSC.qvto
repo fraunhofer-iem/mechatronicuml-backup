@@ -4,7 +4,7 @@ modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
 modeltype component uses pim::component('http://www.muml.org/pim/1.0.0');
 modeltype depLang uses 'http://www.muml.org/cbs/dependencylanguage/1.0.0';
-modeltype modelinstance uses 'http://www.muml.org/modelinstance/1.0.0';
+modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
 
 transformation CopyRTSCsIntoComponentRTSC(inout input:modelinstance);
 
