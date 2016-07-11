@@ -23,8 +23,6 @@ modeltype mtctlSets uses 'http://www.muml.org/uppaal/adapter/mtctl/sets/1.0.0';
 modeltype mtctlBooleanLogic uses 'http://www.muml.org/uppaal/adapter/mtctl/booleanlogic/1.0.0';
 modeltype mtctlComparables uses 'http://www.muml.org/uppaal/adapter/mtctl/comparables/1.0.0';
 
-modeltype mumlConstraint uses 'http://www.muml.org/pim/constraint/1.0.0';
-
 mapping Extension :: Extension2Extension() : Extension disjuncts CommittedExtension::CommittedExtension2CommittedExtension, ElementToVerifyExtension::ElementToVerifyExtension2ElementToVerifyExtension;
 
 mapping CommittedExtension :: CommittedExtension2CommittedExtension() : CommittedExtension{
@@ -39,8 +37,7 @@ mapping actionlanguage::Block :: Block2Block() : actionlanguage::Block disjuncts
  	 			
  mapping actionlanguage::Block :: normalBlock2Block() : actionlanguage::Block{
  _comment := self._comment;
- _annotation := self._annotation.map EAnnotation2EAnnotation();
- _extension := self._extension.map Extension2Extension();
+ _extensions := self._extensions.map Extension2Extension();
  _expressions := self._expressions.map Expression2Expression();
  }
  	 			
@@ -48,16 +45,16 @@ mapping actionlanguage::Loop :: Loop2Loop() : actionlanguage::Loop disjuncts act
       	
 mapping actionlanguage::WhileLoop :: WhileLoop2WhileLoop() : actionlanguage::WhileLoop{
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_block := self._block.map Block2Block();
     	_loopTest := self._loopTest.map Expression2Expression();
    		 }
    		 
 mapping actionlanguage::DoWhileLoop :: DoWhileLoop2DoWhileLoop() : actionlanguage::DoWhileLoop{
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_block := self._block.map Block2Block();
     	_loopTest := self._loopTest.map Expression2Expression();
    		 }
@@ -66,16 +63,16 @@ mapping actionlanguage::Assignment :: Assignment2Assignment() : actionlanguage::
     	_comment := self._comment;
     	_assignOperator := self._assignOperator;
     	_incrementDecrementOperator := self._incrementDecrementOperator;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_rhs_assignExpression := self._rhs_assignExpression.map Expression2Expression();
     	_lhs_typedNamedElementExpression := self._lhs_typedNamedElementExpression.map TypedNamedElementExpression2TypedNamedElementExpression();
    		 }
    		 
 mapping actionlanguage::ForLoop :: ForLoop2ForLoop() : actionlanguage::ForLoop{
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_block := self._block.map Block2Block();
     	_loopTest := self._loopTest.map Expression2Expression();
     	_initializeExpression := self._initializeExpression.map Assignment2Assignment();
@@ -84,8 +81,8 @@ mapping actionlanguage::ForLoop :: ForLoop2ForLoop() : actionlanguage::ForLoop{
    		 
 mapping actionlanguage::IfStatement :: IfStatement2IfStatement() : actionlanguage::IfStatement{
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_ifCondition := self._ifCondition.map Expression2Expression();
     	_ifBlock := self._ifBlock.map Block2Block();
     	_elseIfStatements := self._elseIfStatements.map ElseIfStatement2ElseIfStatement();	
@@ -94,39 +91,39 @@ mapping actionlanguage::IfStatement :: IfStatement2IfStatement() : actionlanguag
 
  mapping ElseIfStatement::ElseIfStatement2ElseIfStatement(): ElseIfStatement { 
  		_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();    	
+    	
+    	_extensions := self._extensions.map Extension2Extension();    	
     	_elseIfBlock := self.elseIfBlock.map Block2Block();    	
     	_elseIfCondition := self.elseIfCondition.map Expression2Expression();       	 		
     }
  
 mapping actionlanguage::OperationCall :: OperationCall2OperationCall() : actionlanguage::OperationCall{
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_operation := self._operation.map Operation2Operation();
     	_parameterBinding := self._parameterBinding.map ParameterBinding2ParameterBinding();
    		 }
    		 
 mapping actionlanguage::ReturnStatement :: ReturnStatement2ReturnStatement() : actionlanguage::ReturnStatement{
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_expression := self._expression.map Expression2Expression();
    		 }
    		 
 mapping actionlanguage::TriggerMessageExpression :: TriggerMessageExpression2TriggerMessageExpression() : actionlanguage::TriggerMessageExpression{
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_messageType := self._messageType.map MessageType2MessageType();
     	_parameter := self._parameter.map Parameter2Parameter();
    		 }
    		 
 mapping actionlanguage::DiscreteInteractionEndpointReference :: DiscreteInteractionEndpointReference2DiscreteInteractionEndpointReference() : actionlanguage::DiscreteInteractionEndpointReference{
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_typedNamedElementExpression := self._typedNamedElementExpression.map TypedNamedElementExpression2TypedNamedElementExpression();
     	_position := self._position.map PositionSelector2PositionSelector();
    		 }
@@ -134,22 +131,22 @@ mapping actionlanguage::DiscreteInteractionEndpointReference :: DiscreteInteract
 mapping actionlanguage::PositionSelector :: PositionSelector2PositionSelector() : actionlanguage::PositionSelector{
     	_comment := self._comment;
     	_kind := self._kind;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_successor := self._successor.map PositionSelector2PositionSelector();
    		 }
    		 
 mapping actionlanguage::LocalVariableDeclarationStatement :: LocalVariableDeclarationStatement2LocalVariableDeclarationStatement() : actionlanguage::LocalVariableDeclarationStatement{
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_variable := self._variable.map Variable2Variable();
    		 }
    		 
 mapping actionlanguage::TypedNamedElementExpression :: TypedNamedElementExpression2TypedNamedElementExpression() : actionlanguage::TypedNamedElementExpression{
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_typedNamedElement := self._typedNamedElement.map TypedNamedElement2TypedNamedElement();
     	_elementAccessors := self._elementAccessors.map ElementAccessorExpression2ElementAccessorExpression();
    		 }
@@ -159,29 +156,29 @@ mapping ElementAccessorExpression :: ElementAccessorExpression2ElementAccessorEx
 
 mapping ArrayIndexExpression :: ArrayIndexExpression2ArrayIndexExpression() : ArrayIndexExpression {
 		_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_index := self._index.map Expression2Expression();
 }
 
 mapping AttributeAccessorExpression :: AttributeAccessorExpression2AttributeAccessorExpression() : AttributeAccessorExpression {
 		_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_attribute := self._attribute.map Attribute2Attribute();
 }	 
    		 
 mapping actionlanguage::ArrayInitializeExpression :: ArrayInitializeExpression2ArrayInitializeExpression() : actionlanguage::ArrayInitializeExpression{
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_expressions := self._expressions.map Expression2Expression();
    		 }
    		 
 mapping actionlanguage::NondeterministicChoiceExpression :: NondeterministicChoiceExpression2NondeterministicChoiceExpression() : actionlanguage::NondeterministicChoiceExpression{
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_range := self._range.map Range2Range();
     	_dataType := self._dataType.map PrimitiveDataType2PrimitiveDataType();
    		 }
@@ -193,8 +190,8 @@ mapping muml::valuetype::Cardinality :: Cardinality2Cardinality() : muml::valuet
    		 
 mapping muml::valuetype::TimeValue :: TimeValue2TimeValue() : muml::valuetype::TimeValue{
     	_unit := self._unit;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_value := self._value.map Expression2Expression();
    		 }
    		 
@@ -381,15 +378,15 @@ mapping ecore::ETypeParameter :: ETypeParameter2ETypeParameter() : ecore::ETypeP
    		 }
    		 
 mapping mtctl::PropertyRepository :: PropertyRepository2PropertyRepository() : mtctl::PropertyRepository{
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_properties := self._properties.map Property2Property();
    		 }
    		 
 mapping mtctl::Property :: Property2Property() : mtctl::Property{
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_expression := self._expression.map Expression2Expression();
    		 }
    		 
@@ -398,8 +395,8 @@ mapping mtctl::Expression :: Expression2Expression() : mtctl::Expression disjunc
 mapping muml::types::ArrayDataType :: ArrayDataType2ArrayDataType() : muml::types::ArrayDataType{
     	_name := self._name;
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_type := self._type.map DataType2DataType();
     	_cardinality := self._cardinality.map NaturalNumber2NaturalNumber();
    		 }
@@ -408,8 +405,8 @@ mapping muml::types::PrimitiveDataType :: PrimitiveDataType2PrimitiveDataType() 
     	_name := self._name;
     	_comment := self._comment;
     	_primitiveType := self._primitiveType;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
    		 }
    		 
 mapping muml::types::DataType :: DataType2DataType() : muml::types::DataType disjuncts pim::component::ComponentPart::ComponentPart2ComponentPart, muml::protocol::Role::Role2Role, pim::component::Component::Component2Component, muml::types::RangedPrimitiveDataType::RangedPrimitiveDataType2RangedPrimitiveDataType, muml::types::ArrayDataType::ArrayDataType2ArrayDataType, pim::component::Port::Port2Port, muml::types::PrimitiveDataType::PrimitiveDataType2PrimitiveDataType, muml::types::StructureDataType::StructureDataType2StructureDataType;
@@ -417,8 +414,8 @@ mapping muml::types::DataType :: DataType2DataType() : muml::types::DataType dis
 mapping muml::types::RangedPrimitiveDataType :: RangedPrimitiveDataType2RangedPrimitiveDataType() : muml::types::RangedPrimitiveDataType{
     	_name := self._name;
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_rangedType := self._rangedType.map PrimitiveDataType2PrimitiveDataType();
     	_range := self._range.map Range2Range();
    		 }
@@ -426,16 +423,16 @@ mapping muml::types::RangedPrimitiveDataType :: RangedPrimitiveDataType2RangedPr
 mapping muml::types::StructureDataType :: StructureDataType2StructureDataType() : muml::types::StructureDataType{
     	_name := self._name;
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_attributes := self.attributes.map Attribute2Attribute();
    		 }
    		 
 mapping Attribute :: Attribute2Attribute() : Attribute{
 		_name := self._name;
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_dataType := self._dataType.map DataType2DataType();
 }   		 
    		 
@@ -447,16 +444,16 @@ mapping muml::instance::PortInstance :: PortInstance2PortInstance() : muml::inst
       	
 mapping muml::instance::AssemblyConnectorInstance :: AssemblyConnectorInstance2AssemblyConnectorInstance() : muml::instance::AssemblyConnectorInstance{
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_type := self._type.map Connector2Connector();
     	_connectorEndpointInstances := self._connectorEndpointInstances.map ConnectorEndpointInstance2ConnectorEndpointInstance();
    		 }
    		 
 mapping muml::instance::DelegationConnectorInstance :: DelegationConnectorInstance2DelegationConnectorInstance() : muml::instance::DelegationConnectorInstance{
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_type := self._type.map Connector2Connector();
     	_connectorEndpointInstances := self._connectorEndpointInstances.map ConnectorEndpointInstance2ConnectorEndpointInstance();
    		 }
@@ -464,8 +461,8 @@ mapping muml::instance::DelegationConnectorInstance :: DelegationConnectorInstan
 mapping muml::instance::ComponentInstanceConfiguration :: ComponentInstanceConfiguration2ComponentInstanceConfiguration() : muml::instance::ComponentInstanceConfiguration{
     	_name := self._name;
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_verificationConstraintRepositories := self._verificationConstraintRepositories.map VerificationConstraintRepository2VerificationConstraintRepository();
     	_componentInstances := self._componentInstances.map ComponentInstance2ComponentInstance();
     	_portConnectorInstances := self._portConnectorInstances.map PortConnectorInstance2PortConnectorInstance();
@@ -475,8 +472,8 @@ mapping muml::instance::ComponentInstanceConfiguration :: ComponentInstanceConfi
 mapping muml::instance::ContinuousPortInstance :: ContinuousPortInstance2ContinuousPortInstance() : muml::instance::ContinuousPortInstance{
     	_name := self._name;
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	connectorInstances += self.connectorInstances.map ConnectorInstance2ConnectorInstance();     				
     	    			
     	    			
@@ -487,8 +484,8 @@ mapping muml::instance::ContinuousPortInstance :: ContinuousPortInstance2Continu
 mapping muml::instance::HybridPortInstance :: HybridPortInstance2HybridPortInstance() : muml::instance::HybridPortInstance{
     	_name := self._name;
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	connectorInstances += self.connectorInstances.map ConnectorInstance2ConnectorInstance();     				
     	    			
     	    			
@@ -501,8 +498,8 @@ mapping muml::instance::DiscretePortInstance :: DiscretePortInstance2DiscretePor
 mapping muml::instance::DiscreteSinglePortInstance :: DiscreteSinglePortInstance2DiscreteSinglePortInstance() : muml::instance::DiscreteSinglePortInstance{
     	_name := self._name;
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	connectorInstances += self.connectorInstances.map ConnectorInstance2ConnectorInstance();     				
     	    			
     	    			
@@ -516,8 +513,8 @@ mapping muml::instance::DiscreteSinglePortInstance :: DiscreteSinglePortInstance
 mapping muml::instance::DiscreteMultiPortInstance :: DiscreteMultiPortInstance2DiscreteMultiPortInstance() : muml::instance::DiscreteMultiPortInstance{
     	_name := self._name;
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	connectorInstances += self.connectorInstances.map ConnectorInstance2ConnectorInstance();     				
     	    			
     	    			
@@ -530,16 +527,16 @@ mapping muml::instance::DiscreteMultiPortInstance :: DiscreteMultiPortInstance2D
    		 
 mapping muml::instance::CoordinationProtocolInstance :: CoordinationProtocolInstance2CoordinationProtocolInstance() : muml::instance::CoordinationProtocolInstance{
     	_name := self._name;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_portInstances := self._portInstances.map PortInstance2PortInstance();
     	_coordinationProtocolPart := self._coordinationProtocolPart.map CoordinationProtocolPart2CoordinationProtocolPart();
    		 }
    		 
 mapping muml::instance::StructuredComponentInstance :: StructuredComponentInstance2StructuredComponentInstance() : muml::instance::StructuredComponentInstance{
     	_name := self._name;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_componentType := self._componentType.map Component2Component();
     	_portInstances := self._portInstances.map PortInstance2PortInstance();
     	_componentPart := self._componentPart.map ComponentPart2ComponentPart();
@@ -549,8 +546,8 @@ mapping muml::instance::StructuredComponentInstance :: StructuredComponentInstan
    		 
 mapping muml::instance::AtomicComponentInstance :: AtomicComponentInstance2AtomicComponentInstance() : muml::instance::AtomicComponentInstance{
     	_name := self._name;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_componentType := self._componentType.map Component2Component();
     	_portInstances := self._portInstances.map PortInstance2PortInstance();
     	_componentPart := self._componentPart.map ComponentPart2ComponentPart();
@@ -692,8 +689,8 @@ mapping pim::component::ContinuousPort :: ContinuousPort2ContinuousPort() : pim:
     	_name := self._name;
     	_kind := self._kind;
     	_optional := self._optional;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	connectors += self.connectors.map Connector2Connector();     				
     	    			
     	    			
@@ -705,8 +702,8 @@ mapping pim::component::ContinuousPort :: ContinuousPort2ContinuousPort() : pim:
 mapping pim::component::DiscretePort :: DiscretePort2DiscretePort() : pim::component::DiscretePort{
     	_comment := self._comment;
     	_name := self._name;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	connectors += self.connectors.map Connector2Connector();     				
     	    			
     	    			
@@ -727,8 +724,8 @@ mapping pim::component::DiscretePort :: DiscretePort2DiscretePort() : pim::compo
 mapping pim::component::ComponentPart :: ComponentPart2ComponentPart() : pim::component::ComponentPart{
     	_name := self._name;
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_componentType := self._componentType.map Component2Component();
     	_parentComponent := self._parentComponent.map StructuredComponent2StructuredComponent();
     	_cardinality := self._cardinality.map Cardinality2Cardinality();
@@ -739,8 +736,8 @@ mapping pim::component::StaticStructuredComponent :: StaticStructuredComponent2S
     	_name := self._name;
     	_comment := self._comment;
     	_componentKind := self._componentKind;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_ports := self._ports.map Port2Port();
     	_embeddedComponentParts := self._embeddedComponentParts.map ComponentPart2ComponentPart();
     	_connectors := self._connectors.map PortConnector2PortConnector();
@@ -751,16 +748,16 @@ mapping pim::component::AtomicComponent :: AtomicComponent2AtomicComponent() : p
       	
 mapping pim::component::AssemblyConnector :: AssemblyConnector2AssemblyConnector() : pim::component::AssemblyConnector{
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_connectorEndpoints := self._connectorEndpoints.map ConnectorEndpoint2ConnectorEndpoint();
     	_parentComponent := self._parentComponent.map StructuredComponent2StructuredComponent();
    		 }
    		 
 mapping pim::component::DelegationConnector :: DelegationConnector2DelegationConnector() : pim::component::DelegationConnector{
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_connectorEndpoints := self._connectorEndpoints.map ConnectorEndpoint2ConnectorEndpoint();
     	_parentComponent := self._parentComponent.map StructuredComponent2StructuredComponent();
    		 }
@@ -772,8 +769,8 @@ mapping pim::component::HybridPort :: HybridPort2HybridPort() : pim::component::
     	_name := self._name;
     	_kind := self._kind;
     	_optional := self._optional;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	connectors += self.connectors.map Connector2Connector();     				
     	    			
     	    			
@@ -787,8 +784,8 @@ mapping pim::component::StructuredComponent :: StructuredComponent2StructuredCom
       	
 mapping pim::component::CoordinationProtocolPart :: CoordinationProtocolPart2CoordinationProtocolPart() : pim::component::CoordinationProtocolPart{
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_coordinationProtocol := self._coordinationProtocol.map CoordinationProtocol2CoordinationProtocol();
     	_portParts := self._portParts.map PortPart2PortPart();
    		 }
@@ -797,8 +794,8 @@ mapping pim::component::DirectedTypedPort :: DirectedTypedPort2DirectedTypedPort
       	
 mapping pim::component::PortPart :: PortPart2PortPart() : pim::component::PortPart{
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	connectors += self.connectors.map Connector2Connector();     				
     	    			
     	    			
@@ -811,8 +808,8 @@ mapping pim::component::StaticAtomicComponent :: StaticAtomicComponent2StaticAto
     	_name := self._name;
     	_comment := self._comment;
     	_componentKind := self._componentKind;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_ports := self._ports.map Port2Port();
     	_behavior := self._behavior.map Behavior2Behavior();
     	_verificationConstraintRepositories := self._verificationConstraintRepositories.map VerificationConstraintRepository2VerificationConstraintRepository();
@@ -882,8 +879,8 @@ mapping modelinstance::ModelElementCategory :: ModelElementCategory2ModelElement
 mapping muml::msgtype::MessageType :: MessageType2MessageType() : muml::msgtype::MessageType{
     	_name := self._name;
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_parameters := self._parameters.map Parameter2Parameter();
     	_repository := self._repository.map MessageTypeRepository2MessageTypeRepository();
    		 }
@@ -891,8 +888,8 @@ mapping muml::msgtype::MessageType :: MessageType2MessageType() : muml::msgtype:
 mapping muml::msgtype::MessageTypeRepository :: MessageTypeRepository2MessageTypeRepository() : muml::msgtype::MessageTypeRepository{
     	_name := self._name;
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_messageTypes := self._messageTypes.map MessageType2MessageType();
    		 }
    		 
@@ -903,8 +900,8 @@ mapping muml::behavior::BehavioralElement :: BehavioralElement2BehavioralElement
 mapping muml::behavior::Operation :: Operation2Operation() : muml::behavior::Operation{
     	_name := self._name;
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_implementations := self._implementations.map Expression2Expression();
     	_parameters := self._parameters.map Parameter2Parameter();
     	_returnType := self._returnType.map DataType2DataType();
@@ -913,14 +910,14 @@ mapping muml::behavior::Operation :: Operation2Operation() : muml::behavior::Ope
 mapping muml::behavior::Parameter :: Parameter2Parameter() : muml::behavior::Parameter{
     	_name := self._name;
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_dataType := self._dataType.map DataType2DataType();
    		 }
    		 
 mapping muml::behavior::ParameterBinding :: ParameterBinding2ParameterBinding() : muml::behavior::ParameterBinding{
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_parameter := self._parameter.map Parameter2Parameter();
     	_value := self._value.map Expression2Expression();
    		 }
@@ -931,8 +928,8 @@ mapping muml::behavior::Variable :: Variable2Variable() : muml::behavior::Variab
     	_name := self._name;
     	_comment := self._comment;
     	_constant := self._constant;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_dataType := self._dataType.map DataType2DataType();
     	_initializeExpression := self._initializeExpression.map Expression2Expression();
    		 }
@@ -952,16 +949,16 @@ mapping pim::realtimestatechart::RelativeDeadline :: RelativeDeadline2RelativeDe
    		 
 mapping pim::realtimestatechart::Clock :: Clock2Clock() : pim::realtimestatechart::Clock{
     	_name := self._name;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_statechart := self._statechart.map RealtimeStatechart2RealtimeStatechart();
    		 }
    		 
 mapping pim::realtimestatechart::Region :: Region2Region() : pim::realtimestatechart::Region{
     	_comment := self._comment;
     	_priority := self._priority;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_embeddedStatechart := self._embeddedStatechart.map RealtimeStatechart2RealtimeStatechart();
     	_parentState := self._parentState.map State2State();
    		 }
@@ -972,8 +969,8 @@ mapping pim::realtimestatechart::State :: State2State() : pim::realtimestatechar
     	_initial := self._initial;
     	_final := self._final;
     	_urgent := self._urgent;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_outgoingTransitions := self._outgoingTransitions.map Transition2Transition();
     	_incomingTransitions := self._incomingTransitions.map Transition2Transition();
     	_embeddedRegions := self._embeddedRegions.map Region2Region();
@@ -993,8 +990,8 @@ mapping pim::realtimestatechart::Transition :: Transition2Transition() : pim::re
     	_comment := self._comment;
     	_blockable := self._blockable;
     	_urgent := self._urgent;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_synchronization := self._synchronization.map Synchronization2Synchronization();
     	_target := self._target.map Vertex2Vertex();
     	_source := self._source.map Vertex2Vertex();
@@ -1009,16 +1006,16 @@ mapping pim::realtimestatechart::Transition :: Transition2Transition() : pim::re
    		 
 mapping pim::realtimestatechart::ClockConstraint :: ClockConstraint2ClockConstraint() : pim::realtimestatechart::ClockConstraint{
     	_operator := self._operator;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_bound := self._bound.map TimeValue2TimeValue();
     	_clock := self._clock.map Clock2Clock();
    		 }
    		 
 mapping pim::realtimestatechart::Action :: Action2Action() : pim::realtimestatechart::Action{
     	_name := self._name;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_expressions := self._expressions.map Expression2Expression();
    		 }
    		 
@@ -1038,16 +1035,16 @@ mapping pim::realtimestatechart::EntryOrExitEvent :: EntryOrExitEvent2EntryOrExi
 mapping pim::realtimestatechart::SynchronizationChannel :: SynchronizationChannel2SynchronizationChannel() : pim::realtimestatechart::SynchronizationChannel{
     	_name := self._name;
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_state := self._state.map State2State();
     	_selectorType := self._selectorType.map DataType2DataType();
    		 }
    		 
 mapping pim::realtimestatechart::Synchronization :: Synchronization2Synchronization() : pim::realtimestatechart::Synchronization{
     	_kind := self._kind;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_syncChannel := self._syncChannel.map SynchronizationChannel2SynchronizationChannel();
     	_selectorExpression := self._selectorExpression.map Expression2Expression();
    		 }
@@ -1057,8 +1054,8 @@ mapping pim::realtimestatechart::PrioritizedElement :: PrioritizedElement2Priori
 mapping pim::realtimestatechart::RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : pim::realtimestatechart::RealtimeStatechart{
     	_name := self._name;
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_behavioralElement := self._behavioralElement.map BehavioralElement2BehavioralElement();
     	_operations := self._operations.map Operation2Operation();
     	_variables := self._variables.map Variable2Variable();
@@ -1075,8 +1072,8 @@ mapping pim::realtimestatechart::TransitionEvent :: TransitionEvent2TransitionEv
 mapping pim::realtimestatechart::StateEvent :: StateEvent2StateEvent() : pim::realtimestatechart::StateEvent disjuncts pim::realtimestatechart::DoEvent::DoEvent2DoEvent, pim::realtimestatechart::EntryOrExitEvent::EntryOrExitEvent2EntryOrExitEvent;
       	
 mapping pim::realtimestatechart::Message :: Message2Message() : pim::realtimestatechart::Message{
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_instanceOf := self._instanceOf.map MessageType2MessageType();
     	_parameterBinding := self._parameterBinding.map ParameterBinding2ParameterBinding();
    		 }
@@ -1098,8 +1095,8 @@ mapping pim::realtimestatechart::StateConnectionPoint :: StateConnectionPoint2St
 mapping pim::realtimestatechart::EntryPoint :: EntryPoint2EntryPoint() : pim::realtimestatechart::EntryPoint{
     	_name := self._name;
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_outgoingTransitions := self._outgoingTransitions.map Transition2Transition();
     	_incomingTransitions := self._incomingTransitions.map Transition2Transition();
     	_state := self._state.map State2State();
@@ -1108,8 +1105,8 @@ mapping pim::realtimestatechart::EntryPoint :: EntryPoint2EntryPoint() : pim::re
 mapping pim::realtimestatechart::ExitPoint :: ExitPoint2ExitPoint() : pim::realtimestatechart::ExitPoint{
     	_name := self._name;
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_outgoingTransitions := self._outgoingTransitions.map Transition2Transition();
     	_incomingTransitions := self._incomingTransitions.map Transition2Transition();
     	_state := self._state.map State2State();
@@ -1118,8 +1115,8 @@ mapping pim::realtimestatechart::ExitPoint :: ExitPoint2ExitPoint() : pim::realt
 mapping core::expressions::common::UnaryExpression :: UnaryExpression2UnaryExpression() : core::expressions::common::UnaryExpression{
     	_comment := self._comment;
     	_operator := self._operator;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_enclosedExpression := self._enclosedExpression.map Expression2Expression();
    		 }
    		 
@@ -1128,8 +1125,8 @@ mapping core::expressions::common::BinaryExpression :: BinaryExpression2BinaryEx
 mapping core::expressions::common::ComparisonExpression :: ComparisonExpression2ComparisonExpression() : core::expressions::common::ComparisonExpression{
     	_comment := self._comment;
     	_operator := self._operator;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_leftExpression := self._leftExpression.map Expression2Expression();
     	_rightExpression := self._rightExpression.map Expression2Expression();
    		 }
@@ -1137,8 +1134,8 @@ mapping core::expressions::common::ComparisonExpression :: ComparisonExpression2
 mapping core::expressions::common::ArithmeticExpression :: ArithmeticExpression2ArithmeticExpression() : core::expressions::common::ArithmeticExpression{
     	_comment := self._comment;
     	_operator := self._operator;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_leftExpression := self._leftExpression.map Expression2Expression();
     	_rightExpression := self._rightExpression.map Expression2Expression();
    		 }
@@ -1146,8 +1143,8 @@ mapping core::expressions::common::ArithmeticExpression :: ArithmeticExpression2
 mapping core::expressions::common::LogicalExpression :: LogicalExpression2LogicalExpression() : core::expressions::common::LogicalExpression{
     	_comment := self._comment;
     	_operator := self._operator;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_leftExpression := self._leftExpression.map Expression2Expression();
     	_rightExpression := self._rightExpression.map Expression2Expression();
    		 }
@@ -1155,8 +1152,8 @@ mapping core::expressions::common::LogicalExpression :: LogicalExpression2Logica
 mapping core::expressions::common::LiteralExpression :: LiteralExpression2LiteralExpression() : core::expressions::common::LiteralExpression{
     	_comment := self._comment;
     	_value := self._value;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
    		 }
    		 
 mapping core::expressions::Expression :: Expression2Expression() : core::expressions::Expression disjuncts core::expressions::common::LiteralExpression::LiteralExpression2LiteralExpression, actionlanguage::TypedNamedElementExpression::TypedNamedElementExpression2TypedNamedElementExpression, actionlanguage::Loop::Loop2Loop, actionlanguage::LocalVariableDeclarationStatement::LocalVariableDeclarationStatement2LocalVariableDeclarationStatement, actionlanguage::IfStatement::IfStatement2IfStatement, actionlanguage::ReturnStatement::ReturnStatement2ReturnStatement, actionlanguage::Assignment::Assignment2Assignment, core::expressions::TextualExpression::TextualExpression2TextualExpression, actionlanguage::NondeterministicChoiceExpression::NondeterministicChoiceExpression2NondeterministicChoiceExpression, actionlanguage::PositionSelector::PositionSelector2PositionSelector, actionlanguage::ArrayInitializeExpression::ArrayInitializeExpression2ArrayInitializeExpression, actionlanguage::DiscreteInteractionEndpointReference::DiscreteInteractionEndpointReference2DiscreteInteractionEndpointReference, actionlanguage::TriggerMessageExpression::TriggerMessageExpression2TriggerMessageExpression, actionlanguage::Block::Block2Block, core::expressions::common::BinaryExpression::BinaryExpression2BinaryExpression, core::expressions::common::UnaryExpression::UnaryExpression2UnaryExpression, actionlanguage::OperationCall::OperationCall2OperationCall, actionlanguage::TimeValueExpression::TimeValueExpression2TimeValueExpression;
@@ -1166,8 +1163,8 @@ mapping core::expressions::TextualExpression :: TextualExpression2TextualExpress
     	_expressionText := self._expressionText;
     	_language := self._language;
     	_languageVersion := self._languageVersion;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
    		 }
 
 mapping actionLanguage::TimeValueExpression :: TimeValueExpression2TimeValueExpression() : core::expressions::Expression{
@@ -1182,8 +1179,8 @@ mapping actionLanguage::TimeValueExpression :: TimeValueExpression2TimeValueExpr
 	        	result := self.timeValue.value.map Expression2Expression().deepclone().oclAsType(core::expressions::Expression);	
 	        }endif;
 	        
-	        result._annotation := self._annotation.map EAnnotation2EAnnotation();
-	        result._extension := self._extension.map Extension2Extension();
+	        result.
+	        result._extensions := self._extensions.map Extension2Extension();
 	        result._comment := self._comment;      
         }        
 }
@@ -1210,8 +1207,8 @@ mapping muml::pattern::AbstractCoordinationPattern :: AbstractCoordinationPatter
       	
 mapping muml::pattern::CoordinationPattern :: CoordinationPattern2CoordinationPattern() : muml::pattern::CoordinationPattern {
 		name := self.name;
-		_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+		
+    	_extensions := self._extensions.map Extension2Extension();
     	
     	verificationConstraintRepositories := self.verificationConstraintRepositories.map VerificationConstraintRepository2VerificationConstraintRepository();
     	roles := self.roles.map Role2Role();
@@ -1244,8 +1241,8 @@ mapping muml::pattern::DescriptionAspects :: DescriptionAspects2DescriptionAspec
 }
 mapping muml::pattern::CoordinationPatternVariant :: CoordinationPatternVariant2CoordinationPatternVariant() : muml::pattern::CoordinationPatternVariant {
 			name := self.name;
-		_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+		
+    	_extensions := self._extensions.map Extension2Extension();
     	
     	verificationConstraintRepositories := self.verificationConstraintRepositories.map VerificationConstraintRepository2VerificationConstraintRepository();
     	roles := self.roles.map Role2Role();
@@ -1261,8 +1258,8 @@ mapping muml::pattern::CoordinationPatternVariant :: CoordinationPatternVariant2
 mapping muml::protocol::CoordinationProtocol :: CoordinationProtocol2CoordinationProtocol() : muml::protocol::CoordinationProtocol{
     	_name := self._name;
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_verificationConstraintRepositories := self._verificationConstraintRepositories.map VerificationConstraintRepository2VerificationConstraintRepository();
     	_roles := self._roles.map Role2Role();
     	_roleConnector := self._roleConnector.map RoleConnector2RoleConnector();
@@ -1271,8 +1268,8 @@ mapping muml::protocol::CoordinationProtocol :: CoordinationProtocol2Coordinatio
 mapping muml::protocol::Role :: Role2Role() : muml::protocol::Role{
     	_comment := self._comment;
     	_name := self._name;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	connectors += self.connectors.map Connector2Connector();     				
     	_behavior := self._behavior.map Behavior2Behavior();
     	_senderMessageTypes := self._senderMessageTypes.map MessageType2MessageType();
@@ -1286,8 +1283,8 @@ mapping muml::protocol::Role :: Role2Role() : muml::protocol::Role{
    		 
 mapping muml::protocol::RoleConnector :: RoleConnector2RoleConnector() : muml::protocol::RoleConnector{
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_connectorEndpoints := self._connectorEndpoints.map ConnectorEndpoint2ConnectorEndpoint();
     	_coordinationProtocol := self._coordinationProtocol.map AbstractCoordinationSpecification2AbstractCoordinationSpecification();
     	_connectorQualityOfServiceAssumptions := self._connectorQualityOfServiceAssumptions.map ConnectorQualityOfServiceAssumptions2ConnectorQualityOfServiceAssumptions();
@@ -1296,8 +1293,8 @@ mapping muml::protocol::RoleConnector :: RoleConnector2RoleConnector() : muml::p
 mapping muml::protocol::ConnectorQualityOfServiceAssumptions :: ConnectorQualityOfServiceAssumptions2ConnectorQualityOfServiceAssumptions() : muml::protocol::ConnectorQualityOfServiceAssumptions{
     	_comment := self._comment;
     	_messageLossPossible := self._messageLossPossible;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_minMessageDelay := self._minMessageDelay.map TimeValue2TimeValue();
     	_maxMessageDelay := self._maxMessageDelay.map TimeValue2TimeValue();
    		 }
@@ -1322,8 +1319,8 @@ mapping pim::connector::MessageBuffer :: MessageBuffer2MessageBuffer() : pim::co
     	_name := self._name;
     	_comment := self._comment;
     	_bufferOverflowAvoidanceStrategy := self._bufferOverflowAvoidanceStrategy;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	
+    	_extensions := self._extensions.map Extension2Extension();
     	_bufferSize := self._bufferSize.map NaturalNumber2NaturalNumber();
     	_messageType := self._messageType.map MessageType2MessageType();
     	_discreteInteractionEndpoint := self._discreteInteractionEndpoint.map DiscreteInteractionEndpoint2DiscreteInteractionEndpoint();
