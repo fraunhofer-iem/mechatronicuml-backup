@@ -69,10 +69,10 @@ mapping uppaal_trace::State :: State2CICZoneGraphState() : CICZoneGraphState {
 	
 	containedToplevelStatechartInstances += locations->select(parentRealtimeStatechartInstance = null);
 	
-	cic := cicModel.objects()[pim::instance::ComponentInstanceConfiguration]->select(cic | cic.extension->exists(oclIsKindOf(ElementToVerifyExtension)))->any(true).map CIC2RuntimeCIC(self);
+	cic := cicModel.objects()[pim::instance::ComponentInstanceConfiguration]->select(cic | cic.extensions->exists(oclIsKindOf(ElementToVerifyExtension)))->any(true).map CIC2RuntimeCIC(self);
 	
-	var runtimePortInstances := cic.oclAsType(ComponentInstanceConfiguration)->closure(eContents())[RuntimeDiscretePortInstance]->asOrderedSet();
-	var runtimeComponentInstances := cic.oclAsType(ComponentInstanceConfiguration)->closure(eContents())[RuntimeComponentInstance]->asOrderedSet();
+	var runtimePortInstances := cic.oclAsType(ComponentInstanceConfiguration)->closure(oclAsType(ecore::EObject).eContents())[RuntimeDiscretePortInstance]->asOrderedSet();
+	var runtimeComponentInstances := cic.oclAsType(ComponentInstanceConfiguration)->closure(oclAsType(ecore::EObject).eContents())[RuntimeComponentInstance]->asOrderedSet();
 	
 	locations.setBehavioralElement(runtimePortInstances, runtimeComponentInstances);
 }
@@ -92,7 +92,7 @@ when {not self.location.getRTSCVertex().oclIsUndefined() or not self.location.ge
 		if(activeVertex.oclIsKindOf(muml_rtsc::State))
 			instanceOf := activeVertex.oclAsType(muml_rtsc::State).parentStatechart;
 		if(activeVertex.oclIsKindOf(muml_rtsc::StateConnectionPoint))
-			instanceOf := activeVertex.oclAsType(Vertex).eContainer().oclAsType(muml_rtsc::State).parentStatechart;
+			instanceOf := activeVertex.oclAsType(Vertex).oclAsType(ecore::EObject).eContainer().oclAsType(muml_rtsc::State).parentStatechart;
 	};
 	
 	if(not self.location.getRTSCTransition().oclIsUndefined()){
@@ -108,7 +108,7 @@ when {not self.location.getRTSCVertex().oclIsUndefined() or not self.location.ge
 	
 	//Create extension representing the current values of the Rtsc's clocks, if there are any clocks
 	if(instanceOf.oclAsType(RealtimeStatechart).clocks->size()>0)
-		extension := object ClockBindingsExtension{
+		extensions := object ClockBindingsExtension{
 			instanceOf.clocks->forEach(clock){
 				clockBindings += clock.map createClockBinding(diagState, self.process.template.oclAsType(RedefinedTemplate).declaration.getInstanceID());
 			};
@@ -178,7 +178,7 @@ DiscretePortInstance :: DiscretePortInstance2RuntimeDiscretePortInstance,
 
 mapping DiscreteInteractionEndpointInstance :: failOnUnsupportedExpressionDiscreteInteractionEndpointInstance(diagState :uppaal_trace::State) : RuntimeDiscreteInteractionEndpointInstance{
 	init{
-		assert fatal (false) with log(self.eClass().toString()+" is not supported by UPPAALTrace2MUMLTrace transformation");
+		assert fatal (false) with log(self.oclAsType(ecore::EObject).eClass().toString()+" is not supported by UPPAALTrace2MUMLTrace transformation");
 	}
 	
 }
@@ -190,7 +190,7 @@ DiscreteSinglePortInstance::DiscreteSinglePortInstance2RuntimeDiscreteSinglePort
 
 mapping DiscreteSingleInteractionEndpointInstance :: failOnUnsupportedDiscreteSingleInteractionEndpointInstance(diagState :uppaal_trace::State) : DiscreteSingleInteractionEndpointInstance{
 	init{
-		assert fatal (false) with log(self.eClass().toString()+" is not supported by UPPAALTrace2MUMLTrace transformation");
+		assert fatal (false) with log(self.oclAsType(ecore::EObject).eClass().toString()+" is not supported by UPPAALTrace2MUMLTrace transformation");
 	}
 	
 }
@@ -202,7 +202,7 @@ DiscreteMultiPortInstance::DiscreteMultiPortInstance2RuntimeMultiPortInstance,
 
 mapping DiscreteMultiInteractionEndpointInstance :: failOnUnsupportedDiscreteMultiInteractionEndpointInstance(diagState :uppaal_trace::State) : DiscreteMultiInteractionEndpointInstance{
 	init{
-		assert fatal (false) with log(self.eClass().toString()+" is not supported by UPPAALTrace2MUMLTrace transformation");
+		assert fatal (false) with log(self.oclAsType(ecore::EObject).eClass().toString()+" is not supported by UPPAALTrace2MUMLTrace transformation");
 	}
 	
 }
@@ -242,7 +242,7 @@ PortConnectorInstance::PortConnectorInstance2RuntimePortConnectorInstance,
 	
 mapping ConnectorInstance :: failOnUnsupportedConnectorInstance(diagState :uppaal_trace::State) : ConnectorInstance{
 	init{
-		assert fatal (false) with log(self.eClass().toString()+" is not supported by UPPAALTrace2MUMLTrace transformation");
+		assert fatal (false) with log(self.oclAsType(ecore::EObject).eClass().toString()+" is not supported by UPPAALTrace2MUMLTrace transformation");
 	}
 	
 }
