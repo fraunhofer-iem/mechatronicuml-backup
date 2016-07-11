@@ -20,10 +20,13 @@ modeltype storydriven_core_expressions_common uses core::expressions::common('ht
 modeltype storydriven_core_expressions uses core::expressions('http://www.muml.org/core/1.0.0');
 modeltype extension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
 modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
+
 modeltype mtctl uses 'http://www.muml.org/uppaal/adapter/mtctl/1.0.0';
-modeltype mtctl_comparables uses mtctl::Comparables('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
-modeltype mtctl_predicates uses 'http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0';
-modeltype mtctl_bool uses 'http://www.muml.org/uppaal/adapter/mtctl/booleanlogic/1.0.0';
+modeltype mtctlQuantifiers uses mtctl::quantifiers('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlPredicates uses mtctl::predicates('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlSets uses mtctl::sets('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlBooleanLogic uses mtctl::booleanlogic('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlComparables uses mtctl::comparables('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 
 property mumlElemsToFix : Set(MumlElemExpr) = Set{}; --set of mapped MumlElemExpr where the original was referencing a State
@@ -38,16 +41,16 @@ main() {
     mumlElemsToFix->forEach(mumlElemExpr) {
         // var debugProp := mumlElemExpr.oclAsType(EObject)->closure(x : EObject | if not x.oclIsUndefined() and x.oclIsKindOf(Property) then x else x.oclAsType(EObject).eContainer() endif)->any(oclIsKindOf(Property));
         var resultingExpr : mtctl::Expression = null;
-        var stateActiveExpr := mumlElemExpr.eContainer().oclAsType(StateActiveExpr);    
+        var stateActiveExpr := mumlElemExpr.oclAsType(ecore::EObject).eContainer().oclAsType(StateActiveExpr);    
         assert fatal (not stateActiveExpr.oclIsUndefined()) with log("unexpected non-StateActiveExpr in composite transition normalization \"mtctl repair\"");       
         var mystate : State = mumlElemExpr.elem.oclAsType(State);
-        mumlElemExpr.elem := mystate;
+        mumlElemExpr.elem := mystate.oclAsType(EObject);
         resultingExpr := object StateActiveExpr {state := mumlElemExpr }; //reuse the original MumlElemExpr here
         
         mystate.connectionPoints->forEach(cp) {
             // log("connection point " + cp.name + " found for state " + mystate.name);
             var nextMumlElemExpr := mumlElemExpr.deepclone().oclAsType(MumlElemExpr);
-            nextMumlElemExpr.elem := cp;
+            nextMumlElemExpr.elem := cp.oclAsType(EObject);
             
             //add to resultingExpr: "... or activeState(cp)"
             resultingExpr := object OrExpr {rightOpd := resultingExpr; leftOpd := object StateActiveExpr {state := nextMumlElemExpr}}
@@ -70,9 +73,9 @@ helper mtctl::Expression::replaceWith(newExpr : mtctl::Expression) {
     
 mapping MumlElemExpr :: MumlElemExpr2MumlElemExpr() : MumlElemExpr {
 	if (self.elem.oclIsKindOf(Transition))
-		elem := self.elem.late resolveoneIn(pim::realtimestatechart::Transition::Transition2Transition)
+		elem := self.elem.late resolveoneIn(pim::realtimestatechart::Transition::Transition2Transition).oclAsType(ecore::EObject)
 	else if (self.elem.oclIsKindOf(State)) {
-		elem := self.elem.oclAsType(State).map State2State(); // SDz: will be corrected in main() after the transformation
+		elem := self.elem.oclAsType(State).map State2State().oclAsType(ecore::EObject); // SDz: will be corrected in main() after the transformation
 		mumlElemsToFix += result;
 	} else
 		elem := self.elem.late resolveone(EObject);
@@ -195,8 +198,7 @@ mapping State :: State2State() : State {
 mapping pim::realtimestatechart::EntryPoint :: EntryPoint2EntryPoint() : pim::realtimestatechart::EntryPoint{
     	_name := self._name;
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	_extensions := self._extensions.map Extension2Extension();
 //    	_outgoingTransitions := self._outgoingTransitions.map Transition2Transition();
 //    	_incomingTransitions := self._incomingTransitions.map Transition2Transition();
     	_state := self._state.map State2State();
@@ -205,8 +207,7 @@ mapping pim::realtimestatechart::EntryPoint :: EntryPoint2EntryPoint() : pim::re
 mapping pim::realtimestatechart::ExitPoint :: ExitPoint2ExitPoint() : pim::realtimestatechart::ExitPoint{
     	_name := self._name;
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	_extensions := self._extensions.map Extension2Extension();
 //    	_outgoingTransitions := self._outgoingTransitions.map Transition2Transition();
 //    	_incomingTransitions := self._incomingTransitions.map Transition2Transition();
     	_state := self._state.map State2State();

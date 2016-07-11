@@ -219,7 +219,7 @@ mapping State :: State2State() : State {
 		urgent := self.urgent;	
 		channels := self.channels->map SynchronizationChannel2SynchronizationChannel();	
 		parentStatechart := self.parentStatechart.map RealtimeStatechart2RealtimeStatechart();
-		extension := self.extension.oclAsType(CommittedExtension).map CommittedExtension2CommittedExtension();	
+		extensions := self.extensions.oclAsType(CommittedExtension).map CommittedExtension2CommittedExtension();	
 }
 	
 mapping pim::realtimestatechart::Transition :: Transition2Transition() : pim::realtimestatechart::Transition disjuncts Transition::doTargetTransition2Transition, Transition::doSourceTransition2Transition, Transition::normalTransition2Transition;
@@ -229,8 +229,7 @@ mapping pim::realtimestatechart::Transition :: doTargetTransition2Transition() :
     	comment := self.comment;
     	blockable := self.blockable;
     	urgent := self.urgent;
-    	annotation := self.annotation.map EAnnotation2EAnnotation();
-    	extension := self.extension.map Extension2Extension();
+    	extensions := self.extensions.map Extension2Extension();
     	synchronization := self.synchronization.map Synchronization2Synchronization();
     	//do not set the target state because this transition is redirected to an entry point
     	if(not self.target.oclIsKindOf(State))
@@ -250,8 +249,7 @@ mapping pim::realtimestatechart::Transition :: doSourceTransition2Transition() :
     	comment := self.comment;
     	blockable := self.blockable;
     	urgent := self.urgent;
-    	annotation := self.annotation.map EAnnotation2EAnnotation();
-    	extension := self.extension.map Extension2Extension();
+    	extensions := self.extensions.map Extension2Extension();
     	synchronization := self.synchronization.map Synchronization2Synchronization();
     	target := self.target.map Vertex2Vertex();
     	//do not set the source state because this transition will have an exit point as source
@@ -269,8 +267,7 @@ mapping pim::realtimestatechart::Transition :: doSourceTransition2Transition() :
 mapping pim::realtimestatechart::EntryPoint :: EntryPoint2EntryPoint() : pim::realtimestatechart::EntryPoint{
     	name := self.name;
     	comment := self.comment;
-    	annotation := self.annotation.map EAnnotation2EAnnotation();
-    	extension := self.extension.map Extension2Extension();
+    	extensions := self.extensions.map Extension2Extension();
     	outgoingTransitions := self.outgoingTransitions.map Transition2Transition();
     	if(self.state.doEvent != null){
     		outgoingTransitions += map createTransition(result, self.state.map createWaitState(), 1);
@@ -284,8 +281,7 @@ mapping pim::realtimestatechart::EntryPoint :: EntryPoint2EntryPoint() : pim::re
 mapping pim::realtimestatechart::ExitPoint :: ExitPoint2ExitPoint() : pim::realtimestatechart::ExitPoint{
     	name := self.name;
     	comment := self.comment;
-    	annotation := self.annotation.map EAnnotation2EAnnotation();
-    	extension := self.extension.map Extension2Extension();
+    	extensions := self.extensions.map Extension2Extension();
     	outgoingTransitions := self.outgoingTransitions.map Transition2Transition();
     	incomingTransitions := self.incomingTransitions.map Transition2Transition();
     	
@@ -302,8 +298,7 @@ mapping pim::realtimestatechart::Transition :: normalTransition2Transition() : p
     	comment := self.comment;
     	blockable := self.blockable;
     	urgent := self.urgent;
-    	annotation := self.annotation.map EAnnotation2EAnnotation();
-    	extension := self.extension.map Extension2Extension();
+    	extensions := self.extensions.map Extension2Extension();
     	synchronization := self.synchronization.map Synchronization2Synchronization();
     	target := self.target.map Vertex2Vertex();
     	source := self.source.map Vertex2Vertex();

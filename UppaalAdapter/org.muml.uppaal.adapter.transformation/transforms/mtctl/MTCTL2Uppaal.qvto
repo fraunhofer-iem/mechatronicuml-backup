@@ -17,11 +17,11 @@ modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0
 modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
 
 modeltype mtctl uses 'http://www.muml.org/uppaal/adapter/mtctl/1.0.0';
-modeltype mtctlQuantifiers uses mtctl::Quantifiers('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
-modeltype mtctlPredicates uses mtctl::Predicates('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
-modeltype mtctlSets uses mtctl::Sets('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
-modeltype mtctlBooleanLogic uses mtctl::BooleanLogic('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
-modeltype mtctlComparables uses mtctl::Comparables('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlQuantifiers uses mtctl::quantifiers('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlPredicates uses mtctl::predicates('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlSets uses mtctl::sets('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlBooleanLogic uses mtctl::booleanlogic('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlComparables uses mtctl::comparables('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
 
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype extension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
@@ -160,7 +160,7 @@ mapping MumlElemExpr::ClockExpr2Expression() : uppaalExpr::IdentifierExpression 
 }
 
 mapping MumlElemExpr::VariableExpr2Expression() : uppaalExpr::IdentifierExpression when {self.elem.oclIsKindOf(Variable)} {
-	identifier := self.elem.oclAsType(Variable).resolveoneIn(muml::behavior::Variable::Variable2Variable).oclAsType(uppaal_core::NamedElement);
+	identifier := self.elem.oclAsType(Variable).resolveoneIn(pim::behavior::Variable::Variable2Variable).oclAsType(uppaal_core::NamedElement);
 	index += object LiteralExpression {text := self.instance.getInstanceID().repr() };
 }
 
@@ -252,5 +252,5 @@ mapping StateActiveExpr::StateActiveExpr2IdentifierExpression() : uppaalExpr::Sc
 }
 
 query cicToVerify() : ComponentInstanceConfiguration {
-	return input.objects()[ComponentInstanceConfiguration]->any(ve:ComponentInstanceConfiguration | ve.extension->exists(oclIsKindOf(ElementToVerifyExtension)));
+	return input.objects()[ComponentInstanceConfiguration]->any(ve:ComponentInstanceConfiguration | ve.extensions->exists(oclIsKindOf(ElementToVerifyExtension)));
 } 

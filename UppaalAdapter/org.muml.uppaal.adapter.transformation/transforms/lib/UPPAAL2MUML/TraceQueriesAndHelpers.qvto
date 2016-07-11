@@ -93,7 +93,7 @@ query TemplateDeclaration :: getInstanceID() : Integer{
 
 // parent variables have to be passed in correct order
 // indexes refers to first parent variable (null if there are no parent variables)
-query uppaal::declarations::Variable :: getVariableValue(diagState : diagnosticTrace::State, indexes : Sequence(Integer), parentVariables : OrderedSet(uppaal::declarations::Variable)) : OrderedSet(VariableValue){
+query uppaal::declarations::Variable :: getVariableValue(diagState : diagnostictrace::State, indexes : Sequence(Integer), parentVariables : OrderedSet(uppaal::declarations::Variable)) : OrderedSet(VariableValue){
 	
 	var variables : OrderedSet(uppaal::declarations::Variable):= parentVariables;
 	variables += self;
@@ -154,14 +154,14 @@ query Location :: getRTSCTransition() : muml_rtsc::Transition {
 
 query LocationActivity :: getPortInstance() : DiscretePortInstance{
 	var templateDeclaration := self.process.template.oclAsType(RedefinedTemplate).declaration;
-	var instance := templateDeclaration.recursiveInvresolve()->intersection(inputPortInstances)->any(true).oclAsType(muml::instance::DiscretePortInstance);	
+	var instance := templateDeclaration.recursiveInvresolve()->intersection(inputPortInstances)->any(true).oclAsType(pim::instance::DiscretePortInstance);	
 	return instance;	
 }
 
 
 query LocationActivity :: getComponentInstance() : ComponentInstance{
 	var templateDeclaration := self.process.template.oclAsType(RedefinedTemplate).declaration;
-	var instance := templateDeclaration.recursiveInvresolve()->intersection(inputComponentInstances)->any(true).oclAsType(muml::instance::ComponentInstance);	
+	var instance := templateDeclaration.recursiveInvresolve()->intersection(inputComponentInstances)->any(true).oclAsType(pim::instance::ComponentInstance);	
 	return instance;	
 }
 
@@ -251,7 +251,7 @@ query RealtimeStatechartInstance::  getTemplateDeclaration() : TemplateDeclarati
 ///// Create RuntimeElements for Muml Elements
 ////////////////////////////////////
 
-helper RuntimeDiscretePortInstance :: createMessagesOnConnectorForSender(diagState : diagnosticTrace::State, instance : DiscretePortInstance, receiver :RuntimeDiscretePortInstance) : OrderedSet(MessageOnConnector){
+helper RuntimeDiscretePortInstance :: createMessagesOnConnectorForSender(diagState : diagnostictrace::State, instance : DiscretePortInstance, receiver :RuntimeDiscretePortInstance) : OrderedSet(MessageOnConnector){
 	var messagesOnConnector : OrderedSet(MessageOnConnector);
 		
 	var parentVariables : OrderedSet(uppaal::declarations::Variable);
@@ -295,7 +295,7 @@ helper RuntimeDiscretePortInstance :: createMessagesOnConnectorForSender(diagSta
 }
 
 
-helper MessageBuffer :: createRuntimeMessages(diagState : diagnosticTrace::State, instance : DiscretePortInstance) : OrderedSet(RuntimeMessage){
+helper MessageBuffer :: createRuntimeMessages(diagState : diagnostictrace::State, instance : DiscretePortInstance) : OrderedSet(RuntimeMessage){
 	var runtimeMessages : OrderedSet(RuntimeMessage);
 //Uppaal Trace Example:
 	// buffers[0][0].messages[0].mId=1 buffers[0][0].messages[0].mType=1 buffers[0][0].messages[0].mArgsPosition=0
@@ -409,7 +409,7 @@ helper RealtimeStatechartInstance :: setBehavioralElement(inout runtimePortInsta
 		runtimeBehavioralElement := self.getComponentInstance().map ComponentInstance2RuntimeComponentInstance(diagState);*/
 }
 
-helper MessageType :: createRuntimeMessageParameter(mID : Integer, diagState : diagnosticTrace::State) : OrderedSet(RuntimeParameter){
+helper MessageType :: createRuntimeMessageParameter(mID : Integer, diagState : diagnostictrace::State) : OrderedSet(RuntimeParameter){
 //Example for Trace: MumlElement_exampleMessageMessageArguments[0].MumlElement_exampleMessageMessageID=2 MumlElement_exampleMessageMessageArguments[0].MumlElement_a=1
 	var runtimeParameters : OrderedSet(RuntimeParameter);
 
@@ -507,7 +507,7 @@ query uppaal::declarations::Variable :: getIntegerInitilizerValue() : Integer{
 	return self.initializer.oclAsType(uppaal::declarations::ExpressionInitializer).expression.toInteger();
 }
 
-helper Variable :: setVariableValue(inout varBinding : VariableBinding , diagState : diagnosticTrace::State, instanceID : Integer){
+helper Variable :: setVariableValue(inout varBinding : VariableBinding , diagState : diagnostictrace::State, instanceID : Integer){
 	
 	var parentIndexes : Sequence(Integer);
 	parentIndexes += instanceID;

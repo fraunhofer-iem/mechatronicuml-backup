@@ -32,8 +32,8 @@ main() {
 	inputVertices := cicModel.objects()[muml_rtsc::Vertex];
 	inputTransitions := cicModel.objects()[muml_rtsc::Transition];
 	uppaalVariables := uppaalModel.objects()[uppaal::declarations::Variable];
-	inputPortInstances := cicModel.objects()[muml::instance::DiscretePortInstance];
-	inputComponentInstances := cicModel.objects()[muml::instance::ComponentInstance];
+	inputPortInstances := cicModel.objects()[pim::instance::DiscretePortInstance];
+	inputComponentInstances := cicModel.objects()[pim::instance::ComponentInstance];
 	
 	input.objects()[Trace]->map Trace2ReachabilityGraph();
 }
@@ -69,7 +69,7 @@ mapping uppaal_trace::State :: State2CICZoneGraphState() : CICZoneGraphState {
 	
 	containedToplevelStatechartInstances += locations->select(parentRealtimeStatechartInstance = null);
 	
-	cic := cicModel.objects()[muml::instance::ComponentInstanceConfiguration]->select(cic | cic.extension->exists(oclIsKindOf(ElementToVerifyExtension)))->any(true).map CIC2RuntimeCIC(self);
+	cic := cicModel.objects()[pim::instance::ComponentInstanceConfiguration]->select(cic | cic.extension->exists(oclIsKindOf(ElementToVerifyExtension)))->any(true).map CIC2RuntimeCIC(self);
 	
 	var runtimePortInstances := cic.oclAsType(ComponentInstanceConfiguration)->closure(eContents())[RuntimeDiscretePortInstance]->asOrderedSet();
 	var runtimeComponentInstances := cic.oclAsType(ComponentInstanceConfiguration)->closure(eContents())[RuntimeComponentInstance]->asOrderedSet();
@@ -82,7 +82,7 @@ mapping uppaal_trace::State :: State2CICZoneGraphState() : CICZoneGraphState {
 ///// 	Create RTSCInstances
 ////////////////////////////////////
 
-mapping LocationActivity :: LocationActivity2RTSCInstance(diagState : diagnosticTrace::State) : RealtimeStatechartInstance
+mapping LocationActivity :: LocationActivity2RTSCInstance(diagState : diagnostictrace::State) : RealtimeStatechartInstance
 when {not self.location.getRTSCVertex().oclIsUndefined() or not self.location.getRTSCTransition().oclIsUndefined()}
 {	
 	assert (self.location.getRTSCVertex().oclIsUndefined() or self.location.getRTSCTransition().oclIsUndefined()) with log ('Location '+self.toString()+' is mapped to State and to Transition');
@@ -102,7 +102,7 @@ when {not self.location.getRTSCVertex().oclIsUndefined() or not self.location.ge
 	
 	// only map non-constant variables as constant variables are not in uppaals trace
 	// TODO maybe add constant variables to the list of variable bindings to inform the user about the values.	
-	var RtscVars : OrderedSet(muml::behavior::Variable) := instanceOf.oclAsType(RealtimeStatechart).variables;
+	var RtscVars : OrderedSet(pim::behavior::Variable) := instanceOf.oclAsType(RealtimeStatechart).variables;
 
 	variableBindings := RtscVars.map createVariableBinding(diagState, self.process.template.oclAsType(RedefinedTemplate).declaration.getInstanceID());
 	
@@ -117,14 +117,14 @@ when {not self.location.getRTSCVertex().oclIsUndefined() or not self.location.ge
 
 
 	
-mapping Variable:: createVariableBinding(diagState : diagnosticTrace::State, instanceID : Integer) : VariableBinding{
+mapping Variable:: createVariableBinding(diagState : diagnostictrace::State, instanceID : Integer) : VariableBinding{
 	variable := self;
 	//Looks odd to use a setter but has to be done due to the blackbox implementation setting array values
 	self.setVariableValue(result, diagState, instanceID);
 }
 
 
-mapping Clock :: createClockBinding(diagState : diagnosticTrace::State, instanceID: Integer) : ClockBinding{
+mapping Clock :: createClockBinding(diagState : diagnostictrace::State, instanceID: Integer) : ClockBinding{
 	
 	clock := self;
 	
@@ -280,7 +280,7 @@ mapping DelegationConnectorInstance :: DelegationConnectorInstance2RuntimeDelega
 /////	Create CIC
 ///// 		Message(Buffer) Specifics
 ////////////////////////////////////
-mapping MessageBuffer :: MessageBuffer2RuntimeMessageBuffer(diagState : diagnosticTrace::State, instance : DiscretePortInstance) : RuntimeMessageBuffer{
+mapping MessageBuffer :: MessageBuffer2RuntimeMessageBuffer(diagState : diagnostictrace::State, instance : DiscretePortInstance) : RuntimeMessageBuffer{
 	messages := self.createRuntimeMessages(diagState, instance);
 	runtimeBehavioralElement := instance.map DiscretePortInstance2RuntimeDiscretePortInstance(diagState);
 	messageBuffer := self;

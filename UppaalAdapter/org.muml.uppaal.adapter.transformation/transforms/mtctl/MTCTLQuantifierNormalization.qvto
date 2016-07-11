@@ -3,8 +3,8 @@ import org.muml.uppaal.adapter._blackbox.MtctlLibrary;
 
 modeltype muml_cic uses pim::instance('http://www.muml.org/pim/1.0.0');
 modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
-modeltype mumlConstraint uses 'http://www.muml.org/pim/constraint/1.0.0';
-modeltype mumlBehavior uses 'http://www.muml.org/pim/behavior/1.0.0';
+modeltype mumlConstraint uses pim::constraint('http://www.muml.org/pim/1.0.0');
+modeltype mumlBehavior uses pim::behavior('http://www.muml.org/pim/behavior/1.0.0');
 modeltype mumlConnector uses pim::connector('http://www.muml.org/pim/1.0.0');
 modeltype mumlMsgtype uses pim::msgtype('http://www.muml.org/pim/1.0.0');
 modeltype mumlComponent uses pim::component('http://www.muml.org/pim/1.0.0');
@@ -12,11 +12,11 @@ modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0
 modeltype verificationExtension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
 
 modeltype mtctl uses 'http://www.muml.org/uppaal/adapter/mtctl/1.0.0';
-modeltype mtctlQuantifiers uses mtctl::Quantifiers('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
-modeltype mtctlPredicates uses mtctl::Predicates('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
-modeltype mtctlSets uses mtctl::Sets('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
-modeltype mtctlBooleanLogic uses mtctl::BooleanLogic('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
-modeltype mtctlComparables uses mtctl::Comparables('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlQuantifiers uses mtctl::quantifiers('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlPredicates uses mtctl::predicates('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlSets uses mtctl::sets('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlBooleanLogic uses mtctl::booleanlogic('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlComparables uses mtctl::comparables('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 
 //Replaces all forall/exists quantifiers with equivalent and/or expressions (i.e. after this transformation, no forall/exists/BoundVariables will be present)
@@ -29,9 +29,8 @@ main() {
 }
 
 //Filter not-enabled property repositories
-mapping mtctl::PropertyRepository :: PropertyRepository2PropertyRepository() : mtctl::PropertyRepository when {self.eContainer().oclAsType(VerifiableElement).extension->exists(oclIsKindOf(ElementToVerifyExtension))} {
-	_annotation := self._annotation.map EAnnotation2EAnnotation();
-	_extension := self._extension.map Extension2Extension();
+mapping mtctl::PropertyRepository :: PropertyRepository2PropertyRepository() : mtctl::PropertyRepository when {self.oclAsType(ecore::EObject).eContainer().oclAsType(VerifiableElement).extensions->exists(oclIsKindOf(ElementToVerifyExtension))} {
+	_extensions := self._extensions.map Extension2Extension();
 	_properties := self._properties.map Property2Property();
 }
 
@@ -40,50 +39,50 @@ mapping mtctl::PropertyRepository :: PropertyRepository2PropertyRepository() : m
 //TODO clean this up: mappings for subtypes do not have to be called here
 mapping mtctl::Expression :: Expression2Expression() : mtctl::Expression disjuncts
 	QuantifierExpr::QuantifierExpr2RolledOut, 
-	 mtctl::Sets::SubinstanceSetExpr::SubinstanceSetExpr2SubinstanceSetExpr,
-	  mtctl::Sets::InstanceSetExpr::InstanceSetExpr2InstanceSetExpr,
-	   mtctl::Predicates::SubstateOfExpr::SubstateOfExpr2SubstateOfExpr,
-	    mtctl::Sets::TransitionSetExpr::TransitionSetExpr2TransitionSetExpr,
-	     mtctl::Quantifiers::LeadsToExpr::LeadsToExpr2LeadsToExpr,
-	      mtctl::BooleanLogic::ImplyExpr::ImplyExpr2ImplyExpr,
-	       mtctl::Quantifiers::EFExpr::EFExpr2EFExpr,
-	        mtctl::Quantifiers::QuantifierExpr::QuantifierExpr2QuantifierExpr,
-	         mtctl::Predicates::DynamicPredicateExpr::DynamicPredicateExpr2DynamicPredicateExpr,
-	          mtctl::Sets::ClockSetExpr::ClockSetExpr2ClockSetExpr,
-	           mtctl::Sets::StateSetExpr::StateSetExpr2StateSetExpr,
-	            mtctl::Predicates::FalseExpr::FalseExpr2FalseExpr,
-	             mtctl::Quantifiers::TemporalQuantifierExpr::TemporalQuantifierExpr2TemporalQuantifierExpr,
-	              mtctl::Comparables::TargetStateExpr::TargetStateExpr2TargetStateExpr,
-	               mtctl::Predicates::StateActiveExpr::StateActiveExpr2StateActiveExpr,
-	                mtctl::Quantifiers::BoundVariable::BoundVariable2BoundVariable,
-	                 mtctl::BooleanLogic::NotExpr::NotExpr2NotExpr,
-	                  mtctl::Quantifiers::EGExpr::EGExpr2EGExpr,
-	                   mtctl::Predicates::ComparisonExpr::ComparisonExpr2ComparisonExpr,
-	                    mtctl::Sets::MessageSetExpr::MessageSetExpr2MessageSetExpr,
-	                     mtctl::BooleanLogic::AndExpr::AndExpr2AndExpr,
-	                      mtctl::Comparables::MapExpr::MapExpr2MapExpr,
-	                       mtctl::Quantifiers::AGExpr::AGExpr2AGExpr,
-	                        mtctl::Quantifiers::UniversalQuantExpr::UniversalQuantExpr2UniversalQuantExpr,
-	                         mtctl::Quantifiers::AFExpr::AFExpr2AFExpr,
-	                          mtctl::Sets::IntervalSetExpr::IntervalSetExpr2IntervalSetExpr,
-	                           mtctl::BooleanLogic::OrExpr::OrExpr2OrExpr,
-	                            mtctl::Comparables::BufferMsgCountExpr::BufferMsgCountExpr2BufferMsgCountExpr,
-	                             mtctl::Comparables::SourceStateExpr::SourceStateExpr2SourceStateExpr,
-	                              mtctl::Comparables::TransitionMap::TransitionMap2TransitionMap,
-	                               mtctl::Predicates::TransitionFiringExpr::TransitionFiringExpr2TransitionFiringExpr,
-	                                mtctl::Predicates::TrueExpr::TrueExpr2TrueExpr,
-	                                 mtctl::Predicates::MessageInBufferExpr::MessageInBufferExpr2MessageInBufferExpr,
-	                                  mtctl::Predicates::MessageDiscardedExpr::MessageDiscardedExpr2MessageDiscardedExpr,
-	                                   mtctl::Comparables::MumlElemExpr::MumlElemExpr2MumlElemExpr,
-	                                    mtctl::Sets::BufferSetExpr::BufferSetExpr2BufferSetExpr,
-	                                     mtctl::Predicates::MessageInTransitExpr::MessageInTransitExpr2MessageInTransitExpr,
-	                                      mtctl::Predicates::ConnectorOverflowExpr::ConnectorOverflowExpr2ConnectorOverflowExpr,
-	                                       mtctl::Predicates::StaticPredicateExpr::StaticPredicateExpr2StaticPredicateExpr,
-	                                        mtctl::Predicates::PredicateExpr::PredicateExpr2PredicateExpr,
-	                                         mtctl::Predicates::DeadlockExpr::DeadlockExpr2DeadlockExpr,
-	                                          mtctl::Quantifiers::ExistenceQuantExpr::ExistenceQuantExpr2ExistenceQuantExpr,
-	                                           mtctl::Comparables::ConstExpr::ConstExpr2ConstExpr,
-	                                            mtctl::Sets::SetExpr::SetExpr2SetExpr;
+	 mtctl::sets::SubinstanceSetExpr::SubinstanceSetExpr2SubinstanceSetExpr,
+	  mtctl::sets::InstanceSetExpr::InstanceSetExpr2InstanceSetExpr,
+	   mtctl::predicates::SubstateOfExpr::SubstateOfExpr2SubstateOfExpr,
+	    mtctl::sets::TransitionSetExpr::TransitionSetExpr2TransitionSetExpr,
+	     mtctl::quantifiers::LeadsToExpr::LeadsToExpr2LeadsToExpr,
+	      mtctl::booleanlogic::ImplyExpr::ImplyExpr2ImplyExpr,
+	       mtctl::quantifiers::EFExpr::EFExpr2EFExpr,
+	        mtctl::quantifiers::QuantifierExpr::QuantifierExpr2QuantifierExpr,
+	         mtctl::predicates::DynamicPredicateExpr::DynamicPredicateExpr2DynamicPredicateExpr,
+	          mtctl::sets::ClockSetExpr::ClockSetExpr2ClockSetExpr,
+	           mtctl::sets::StateSetExpr::StateSetExpr2StateSetExpr,
+	            mtctl::predicates::FalseExpr::FalseExpr2FalseExpr,
+	             mtctl::quantifiers::TemporalQuantifierExpr::TemporalQuantifierExpr2TemporalQuantifierExpr,
+	              mtctl::comparables::TargetStateExpr::TargetStateExpr2TargetStateExpr,
+	               mtctl::predicates::StateActiveExpr::StateActiveExpr2StateActiveExpr,
+	                mtctl::quantifiers::BoundVariable::BoundVariable2BoundVariable,
+	                 mtctl::booleanlogic::NotExpr::NotExpr2NotExpr,
+	                  mtctl::quantifiers::EGExpr::EGExpr2EGExpr,
+	                   mtctl::predicates::ComparisonExpr::ComparisonExpr2ComparisonExpr,
+	                    mtctl::sets::MessageSetExpr::MessageSetExpr2MessageSetExpr,
+	                     mtctl::booleanlogic::AndExpr::AndExpr2AndExpr,
+	                      mtctl::comparables::MapExpr::MapExpr2MapExpr,
+	                       mtctl::quantifiers::AGExpr::AGExpr2AGExpr,
+	                        mtctl::quantifiers::UniversalQuantExpr::UniversalQuantExpr2UniversalQuantExpr,
+	                         mtctl::quantifiers::AFExpr::AFExpr2AFExpr,
+	                          mtctl::sets::IntervalSetExpr::IntervalSetExpr2IntervalSetExpr,
+	                           mtctl::booleanlogic::OrExpr::OrExpr2OrExpr,
+	                            mtctl::comparables::BufferMsgCountExpr::BufferMsgCountExpr2BufferMsgCountExpr,
+	                             mtctl::comparables::SourceStateExpr::SourceStateExpr2SourceStateExpr,
+	                              mtctl::comparables::TransitionMap::TransitionMap2TransitionMap,
+	                               mtctl::predicates::TransitionFiringExpr::TransitionFiringExpr2TransitionFiringExpr,
+	                                mtctl::predicates::TrueExpr::TrueExpr2TrueExpr,
+	                                 mtctl::predicates::MessageInBufferExpr::MessageInBufferExpr2MessageInBufferExpr,
+	                                  mtctl::predicates::MessageDiscardedExpr::MessageDiscardedExpr2MessageDiscardedExpr,
+	                                   mtctl::comparables::MumlElemExpr::MumlElemExpr2MumlElemExpr,
+	                                    mtctl::sets::BufferSetExpr::BufferSetExpr2BufferSetExpr,
+	                                     mtctl::predicates::MessageInTransitExpr::MessageInTransitExpr2MessageInTransitExpr,
+	                                      mtctl::predicates::ConnectorOverflowExpr::ConnectorOverflowExpr2ConnectorOverflowExpr,
+	                                       mtctl::predicates::StaticPredicateExpr::StaticPredicateExpr2StaticPredicateExpr,
+	                                        mtctl::predicates::PredicateExpr::PredicateExpr2PredicateExpr,
+	                                         mtctl::predicates::DeadlockExpr::DeadlockExpr2DeadlockExpr,
+	                                          mtctl::quantifiers::ExistenceQuantExpr::ExistenceQuantExpr2ExistenceQuantExpr,
+	                                           mtctl::comparables::ConstExpr::ConstExpr2ConstExpr,
+	                                            mtctl::sets::SetExpr::SetExpr2SetExpr;
 
 query Expression::getCIC() : ComponentInstanceConfiguration { //finds the CIC this Expression is part of
 	return self.oclAsType(EObject)->closure(x|if (x.oclIsKindOf(ComponentInstanceConfiguration)) then x else x.eContainer() endif)->any(oclIsKindOf(ComponentInstanceConfiguration)).oclAsType(ComponentInstanceConfiguration);

@@ -25,7 +25,7 @@ main() {
 	if (verifiableElement.oclIsUndefined()) {
 		// in case no ElementToVerifyExtension has been set for a VerifiableElement, we take a VerifiableElement with verification constraints
 		verifiableElement := input.objects()[VerifiableElement]->any(ve : VerifiableElement | not ve.verificationConstraintRepositories->isEmpty());
-		verifiableElement.extension += object ElementToVerifyExtension {};
+		verifiableElement.extensions += object ElementToVerifyExtension {};
 	};
 
 	if (verifiableElement.oclIsKindOf(CoordinationProtocol)) {

@@ -2,7 +2,7 @@ import transforms.lib.MUML2MUML;
 
 modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
 modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
-modeltype mumlConstraint uses 'http://www.muml.org/pim/constraint/1.0.0';
+modeltype mumlConstraint uses pim::constraint('http://www.muml.org/pim/1.0.0');
 modeltype mumlBehavior uses 'http://www.muml.org/pim/behavior/1.0.0';
 modeltype mumlconnector uses pim::connector('http://www.muml.org/pim/1.0.0');
 modeltype mumlmsgtype uses pim::msgtype('http://www.muml.org/pim/1.0.0');
@@ -11,11 +11,11 @@ modeltype verification_extension uses 'http://www.muml.org/uppaal/adapter/extens
 
 
 modeltype mtctl uses 'http://www.muml.org/uppaal/adapter/mtctl/1.0.0';
-modeltype mtctlQuantifiers uses mtctl::Quantifiers('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
-modeltype mtctlPredicates uses mtctl::Predicates('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
-modeltype mtctlSets uses mtctl::Sets('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
-modeltype mtctlBooleanLogic uses mtctl::BooleanLogic('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
-modeltype mtctlComparables uses mtctl::Comparables('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlQuantifiers uses mtctl::quantifiers('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlPredicates uses mtctl::predicates('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlSets uses mtctl::sets('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlBooleanLogic uses mtctl::booleanlogic('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlComparables uses mtctl::comparables('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 
 //Splits properties into multiple properties that each are rooted in a TemporalQuantifierExpr (these sub-properties can be verified by Uppaal)
@@ -24,7 +24,7 @@ transformation MTCTLPropertySplitTransformation(in input:muml_protocol, out outp
 
 main() {
 	input.objects()[RootNode]->map RootNode2RootNode();
-	output.objects()[VerifiableElement]->select(vr | vr.extension->exists(oclIsKindOf(ElementToVerifyExtension)))->forEach(verifiableElement) {
+	output.objects()[VerifiableElement]->select(vr | vr.extensions->exists(oclIsKindOf(ElementToVerifyExtension)))->forEach(verifiableElement) {
 		var combinedRepo := object PropertyRepository {};
 		combinedRepo.properties := verifiableElement.verificationConstraintRepositories->selectByKind(PropertyRepository).properties->asOrderedSet();
 		verifiableElement.verificationConstraintRepositories->forEach(repo) {

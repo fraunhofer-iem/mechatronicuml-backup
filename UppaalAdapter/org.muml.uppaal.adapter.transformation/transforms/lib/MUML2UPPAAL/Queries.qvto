@@ -47,7 +47,7 @@ modeltype x uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
 	}
 	
 	query State :: isCommitted() : Boolean {		
-		return self.extension->exists(oclIsKindOf(CommittedExtension));
+		return self.extensions->exists(oclIsKindOf(CommittedExtension));
 	}
 	
 	query muml_behavior::Variable :: getOwningStatechart() : RealtimeStatechart {

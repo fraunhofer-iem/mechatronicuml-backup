@@ -9,11 +9,11 @@ modeltype muml_valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
 modeltype storydriven_common uses core::expressions::common('http://www.muml.org/core/1.0.0');
 modeltype storydriven_expressions uses core::expressions('http://www.muml.org/core/1.0.0');
 modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
-modeltype mtctlQuantifiers uses mtctl::Quantifiers('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
-modeltype mtctlPredicates uses mtctl::Predicates('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
-modeltype mtctlSets uses mtctl::Sets('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
-modeltype mtctlBooleanLogic uses mtctl::BooleanLogic('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
-modeltype mtctlComparables uses mtctl::Comparables('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlQuantifiers uses mtctl::quantifiers('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlPredicates uses mtctl::predicates('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlSets uses mtctl::sets('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlBooleanLogic uses mtctl::booleanlogic('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlComparables uses mtctl::comparables('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
 
 
 /**

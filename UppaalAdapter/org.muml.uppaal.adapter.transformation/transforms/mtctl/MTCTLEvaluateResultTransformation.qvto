@@ -2,16 +2,16 @@ import transforms.mtctl.MTCTLStaticNormalization;
 import org.muml.uppaal.adapter._blackbox.ProgressUnit;
 
 modeltype muml_model uses 'http://www.muml.org/pim/1.0.0';
-modeltype mumlConstraint uses 'http://www.muml.org/pim/constraint/1.0.0';
+modeltype mumlConstraint uses pim::constraint('http://www.muml.org/pim/1.0.0');
 modeltype result_model uses 'http://www.muml.org/uppaal/adapter/results/1.0.0';
 modeltype uppaal_trace uses 'http://www.muml.org/uppaal/trace/1.0.0';
 
 modeltype mtctl uses 'http://www.muml.org/uppaal/adapter/mtctl/1.0.0';
-modeltype mtctlQuantifiers uses mtctl::Quantifiers('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
-modeltype mtctlPredicates uses mtctl::Predicates('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
-modeltype mtctlSets uses mtctl::Sets('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
-modeltype mtctlBooleanLogic uses mtctl::BooleanLogic('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
-modeltype mtctlComparables uses mtctl::Comparables('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlQuantifiers uses mtctl::quantifiers('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlPredicates uses mtctl::predicates('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlSets uses mtctl::sets('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlBooleanLogic uses mtctl::booleanlogic('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlComparables uses mtctl::comparables('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 
 modeltype extension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
@@ -48,9 +48,9 @@ main() {
 	
 	// Add results of composite Properties to their PropertyResults
 	staticallyNormalizedEvaluatedModel.objects()[Property]->forEach(prop) {
-		var staticVerifiableElement := statically_normalized_model.objects()[VerifiableElement]->any(ve : VerifiableElement | ve.extension->exists(oclIsKindOf(ElementToVerifyExtension))).oclAsType(VerifiableElement);
-		var staticRepository := staticVerifiableElement.oclAsType(VerifiableElement).verificationConstraintRepositories->at(prop.eContainer().eContainer().oclAsType(VerifiableElement).verificationConstraintRepositories->indexOf(prop.eContainer().oclAsType(VerificationConstraintRepository))); //sorry... :/
-		var originalProperty := staticRepository.oclAsType(PropertyRepository).properties->at(prop.eContainer().oclAsType(PropertyRepository).properties->indexOf(prop)).getOriginalProperty();
+		var staticVerifiableElement := statically_normalized_model.objects()[VerifiableElement]->any(ve : VerifiableElement | ve.extensions->exists(oclIsKindOf(ElementToVerifyExtension))).oclAsType(VerifiableElement);
+		var staticRepository := staticVerifiableElement.oclAsType(VerifiableElement).verificationConstraintRepositories->at(prop.oclAsType(ecore::EObject).eContainer().eContainer().oclAsType(VerifiableElement).verificationConstraintRepositories->indexOf(prop.oclAsType(ecore::EObject).eContainer().oclAsType(VerificationConstraintRepository))); //sorry... :/
+		var originalProperty := staticRepository.oclAsType(PropertyRepository).properties->at(prop.oclAsType(ecore::EObject).eContainer().oclAsType(PropertyRepository).properties->indexOf(prop)).getOriginalProperty();
 		//sorry, but the originalProperty cannot be simply resolved :( - we had to clone the statically_normalized_model above so that the MTCTLStaticNormalization (based on MUML2MUML) works.
 		originalProperty.map OriginalPropertyToPropertyResult().fulfilled := prop.expression.oclIsKindOf(TrueExpr);
 	}

@@ -17,11 +17,11 @@ modeltype storydriven_core_expressions_common uses core::expressions::common('ht
 modeltype storydriven_core_expressions uses core::expressions('http://www.muml.org/core/1.0.0');
 modeltype extension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
 modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
-modeltype mtctlQuantifiers uses mtctl::Quantifiers('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
-modeltype mtctlPredicates uses mtctl::Predicates('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
-modeltype mtctlSets uses mtctl::Sets('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
-modeltype mtctlBooleanLogic uses mtctl::BooleanLogic('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
-modeltype mtctlComparables uses mtctl::Comparables('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlQuantifiers uses mtctl::quantifiers('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlPredicates uses mtctl::predicates('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlSets uses mtctl::sets('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlBooleanLogic uses mtctl::booleanlogic('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlComparables uses mtctl::comparables('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
 modeltype instanceModel uses pim::instance('http://www.muml.org/pim/1.0.0');
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype verification_options uses 'http://www.muml.org/uppaal/options/1.0.0';
@@ -79,7 +79,7 @@ mapping modelinstance::ModelElementCategory :: ModelElementCategory2ModelElement
     	_modelElements += self._modelElements.map ExtendableElement2ExtendableElement();
    		 }
 
-mapping muml::protocol::CoordinationProtocol :: CoordinationProtocol2CoordinationProtocol() : muml::protocol::CoordinationProtocol{
+mapping pim::protocol::CoordinationProtocol :: CoordinationProtocol2CoordinationProtocol() : pim::protocol::CoordinationProtocol{
     	_name := self._name;
     	_comment := self._comment;
     	_annotation := self._annotation.map EAnnotation2EAnnotation();
@@ -95,16 +95,16 @@ mapping muml::protocol::CoordinationProtocol :: CoordinationProtocol2Coordinatio
 //Overridden to make sure that selectorType of SelectorExpression is changed from Role to corresponding Port
 //This assumes that a Role is only a DataType in the context of SelectorExpressions (otherwise the dataType reference could be redirected to a port, which was created by createPort)
 //Uncommented Mappings are not supported by this transformation
-mapping muml::types::DataType :: DataType2DataType() : muml::types::DataType disjuncts
+mapping pim::types::DataType :: DataType2DataType() : pim::types::DataType disjuncts
 Role::createPort,
  pim::component::Component::Component2Component,
-  muml::types::ArrayDataType::ArrayDataType2ArrayDataType2,
-   muml::types::RangedPrimitiveDataType::RangedPrimitiveDataType2RangedPrimitiveDataType2,
+  pim::types::ArrayDataType::ArrayDataType2ArrayDataType2,
+   pim::types::RangedPrimitiveDataType::RangedPrimitiveDataType2RangedPrimitiveDataType2,
     pim::component::ComponentPart::ComponentPart2ComponentPart,
      pim::component::Port::Port2Port,
-      muml::protocol::Role::Role2Role,
-       muml::types::PrimitiveDataType::PrimitiveDataType2PrimitiveDataType2,
-        muml::types::DataType::NonValidElementAsDataType;
+      pim::protocol::Role::Role2Role,
+       pim::types::PrimitiveDataType::PrimitiveDataType2PrimitiveDataType2,
+        pim::types::DataType::NonValidElementAsDataType;
 
 //Overridden to add Role::createPort to disjuncts
 mapping pim::connector::DiscreteInteractionEndpoint :: DiscreteInteractionEndpoint2DiscreteInteractionEndpoint() : pim::connector::DiscreteInteractionEndpoint disjuncts Role::createPort, Role::Role2Role, pim::component::DiscretePort::DiscretePort2DiscretePort;
@@ -182,7 +182,7 @@ mapping Role :: createComponentRTSC() : RealtimeStatechart{
 
 
 
-mapping muml::msgtype::MessageType :: MessageType2MessageType() : muml::msgtype::MessageType{
+mapping pim::msgtype::MessageType :: MessageType2MessageType() : pim::msgtype::MessageType{
 	init{
 		var invresolved : Set(OclAny) := self.invresolveIn(MessageType::MessageType2MessageType, MessageType)->oclAsSet()->flatten();
 		
@@ -206,7 +206,7 @@ mapping muml::msgtype::MessageType :: MessageType2MessageType() : muml::msgtype:
 constructor MessageType :: MessageType(){
 }
 
-mapping muml::behavior::Parameter :: Parameter2Parameter() : muml::behavior::Parameter{
+mapping pim::behavior::Parameter :: Parameter2Parameter() : pim::behavior::Parameter{
     	init{
     		//Unlike MessageTypes Parameter sometimes have to be copied anew (e.g. if they are contained in an operation)
     		//Since MessageTypes are not copied anew, their contained Parameters don't have to be copied too. 
@@ -231,7 +231,7 @@ constructor Parameter :: Parameter(){
 
 //TODO can not override PrimitiveDataType2PrimitiveDataType since QVTO does not respect overriding in disjuncts at the moment.
 // Therefore, all calls of PrimitiveDataType2PrimitiveDataType had to be overridden.
-mapping muml::types::PrimitiveDataType :: PrimitiveDataType2PrimitiveDataType2() : muml::types::PrimitiveDataType{
+mapping pim::types::PrimitiveDataType :: PrimitiveDataType2PrimitiveDataType2() : pim::types::PrimitiveDataType{
     	init{
     		
     		var invresolved : Set(OclAny) := self.invresolveIn(PrimitiveDataType :: PrimitiveDataType2PrimitiveDataType2, PrimitiveDataType)->oclAsSet()->flatten();
@@ -265,7 +265,7 @@ mapping actionlanguage::NondeterministicChoiceExpression :: NondeterministicChoi
    		 }
    		    	
    	
-mapping muml::types::ArrayDataType :: ArrayDataType2ArrayDataType2() : muml::types::ArrayDataType{
+mapping pim::types::ArrayDataType :: ArrayDataType2ArrayDataType2() : pim::types::ArrayDataType{
     	init{
     		
     		var invresolved : Set(OclAny) := self.invresolveIn(ArrayDataType :: ArrayDataType2ArrayDataType2, ArrayDataType)->oclAsSet()->flatten();
@@ -288,7 +288,7 @@ mapping muml::types::ArrayDataType :: ArrayDataType2ArrayDataType2() : muml::typ
 constructor ArrayDataType :: ArrayDataType(){
 }
    		 
-mapping muml::types::RangedPrimitiveDataType :: RangedPrimitiveDataType2RangedPrimitiveDataType2() : muml::types::RangedPrimitiveDataType{
+mapping pim::types::RangedPrimitiveDataType :: RangedPrimitiveDataType2RangedPrimitiveDataType2() : pim::types::RangedPrimitiveDataType{
     	init{
     		var invresolved : Set(OclAny) := self.invresolveIn(RangedPrimitiveDataType :: RangedPrimitiveDataType2RangedPrimitiveDataType2, RangedPrimitiveDataType)->oclAsSet()->flatten();
 			if(invresolved->intersection(input.objects()->oclAsSet()->flatten())->size()>0){
@@ -430,8 +430,8 @@ mapping createAssemblyConnectorInstance(endpoints : Set(DiscreteSinglePortInstan
 
 
 
-mapping mtctl::Comparables::MumlElemExpr :: MumlElemExpr2MumlElemExpr() : mtctl::Comparables::MumlElemExpr{
-		var invresolved : Set(OclAny) := self.invresolveIn(mtctl::Comparables::MumlElemExpr::MumlElemExpr2MumlElemExpr, mtctl::Comparables::MumlElemExpr)->oclAsSet()->flatten();
+mapping mtctl::comparables::MumlElemExpr :: MumlElemExpr2MumlElemExpr() : mtctl::comparables::MumlElemExpr{
+		var invresolved : Set(OclAny) := self.invresolveIn(mtctl::comparables::MumlElemExpr::MumlElemExpr2MumlElemExpr, mtctl::comparables::MumlElemExpr)->oclAsSet()->flatten();
 		
 		if(invresolved->intersection(input.objects()->oclAsSet()->flatten())->size() > 0){
 			//The Expression is to be adapted to the corresponding component model element

@@ -113,7 +113,7 @@ transformation RTSCEntryExitEventNormalization(in input:rtsc, out output:rtsc);
 		connectionPoints := self.connectionPoints[EntryPoint]->map EntryPoint2EntryPoint();
 		connectionPoints := self.connectionPoints[ExitPoint]->map ExitPoint2ExitPoint();
 		
-		extension := self.extension[CommittedExtension]->map CommittedExtension2CommittedExtension();
+		extensions := self.extensions[CommittedExtension]->map CommittedExtension2CommittedExtension();
 		
 	
 	}
