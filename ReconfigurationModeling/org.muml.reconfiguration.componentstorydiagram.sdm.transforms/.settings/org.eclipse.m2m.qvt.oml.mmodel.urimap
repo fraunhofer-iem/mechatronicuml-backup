@@ -4,7 +4,7 @@
   <mapping sourceURI="http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0" targetURI="platform:/resource/org.muml.reconfiguration.componentstorydiagram/model/ComponentStoryDiagram.ecore"/>
   <mapping sourceURI="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0" targetURI="platform:/resource/org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore"/>
   <mapping sourceURI="http://www.muml.org/pim/1.0.0" targetURI="platform:/resource/org.muml.pim/model/pim.ecore"/>
-  <mapping sourceURI="http://www.muml.org/core/modelinstance/1.0.0" targetURI="platform:/resource/org.muml.core.modelinstance/model/modelinstance.ecore"/>
+  <mapping sourceURI="http://www.muml.org/modelinstance/1.0.0" targetURI="platform:/resource/org.muml.core.modelinstance/model/modelinstance.ecore"/>
   <mapping sourceURI="http://www.muml.org/core/1.0.0" targetURI="platform:/resource/org.muml.core/model/core.ecore"/>
   <mapping sourceURI="http://www.muml.org/reconfiguration/1.0.0" targetURI="platform:/resource/org.muml.reconfiguration/model/MumlReconfiguration.ecore"/>
 </uriMap:MappingContainer>

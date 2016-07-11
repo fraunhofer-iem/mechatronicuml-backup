@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <uriMap:MappingContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uriMap="http:///www.eclipse.org/m2m/qvt/oml/MModelUriMap/1.0.0">
   <mapping sourceURI="http://www.muml.org/pim/1.0.0" targetURI="platform:/resource/org.muml.pim/model/pim.ecore"/>
-  <mapping sourceURI="http://www.muml.org/core/modelinstance/1.0.0" targetURI="platform:/resource/org.muml.core.modelinstance/model/modelinstance.ecore"/>
+  <mapping sourceURI="http://www.muml.org/modelinstance/1.0.0" targetURI="platform:/resource/org.muml.core.modelinstance/model/modelinstance.ecore"/>
   <mapping sourceURI="http://www.muml.org/reconfiguration/1.0.0" targetURI="platform:/resource/org.muml.reconfiguration/model/MumlReconfiguration.ecore"/>
   <mapping sourceURI="http://www.muml.org/core/1.0.0" targetURI="platform:/resource/org.muml.core/model/core.ecore"/>
   <mapping sourceURI="http://www.muml.org/pim/actionlanguage/1.0.0" targetURI="platform:/resource/org.muml.pim.actionlanguage/model/actionlanguage.ecore"/>

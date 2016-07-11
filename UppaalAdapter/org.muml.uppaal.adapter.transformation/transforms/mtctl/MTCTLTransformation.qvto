@@ -10,7 +10,7 @@ modeltype muml uses 'http://www.muml.org/pim/1.0.0';
 modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
 modeltype mumlConstraint uses 'http://www.muml.org/pim/constraint/1.0.0';
 modeltype mumlBehavior uses 'http://www.muml.org/pim/behavior/1.0.0';
-modeltype modelinstance uses 'http://www.muml.org/core/modelinstance/1.0.0';
+modeltype modelinstance uses 'http://www.muml.org/modelinstance/1.0.0';
 modeltype verification_extension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
 
 modeltype mtctl uses 'http://www.muml.org/uppaal/adapter/mtctl/1.0.0';

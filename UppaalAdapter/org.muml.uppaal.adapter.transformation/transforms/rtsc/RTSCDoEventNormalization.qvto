@@ -6,7 +6,7 @@ import transforms.lib.ExternalizedStrings;
 modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
 modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
 modeltype verificationExtension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
-modeltype modelinstance uses 'http://www.muml.org/core/modelinstance/1.0.0';
+modeltype modelinstance uses 'http://www.muml.org/modelinstance/1.0.0';
 modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
 modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
 

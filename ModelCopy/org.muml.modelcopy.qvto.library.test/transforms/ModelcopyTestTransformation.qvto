@@ -3,7 +3,7 @@ transformation ModelcopyTestTransformation(in i : ecore, out o : ecore);
 import ModelcopyLibrary;
 
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
-modeltype modelinstance uses 'http://www.muml.org/core/modelinstance/1.0.0';
+modeltype modelinstance uses 'http://www.muml.org/modelinstance/1.0.0';
 
 
 main() {

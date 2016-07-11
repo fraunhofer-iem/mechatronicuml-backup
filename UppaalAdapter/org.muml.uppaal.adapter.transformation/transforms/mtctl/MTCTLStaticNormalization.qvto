@@ -9,7 +9,7 @@ modeltype mumlconnector uses pim::connector('http://www.muml.org/pim/1.0.0');
 modeltype mumlmsgtype uses pim::msgtype('http://www.muml.org/pim/1.0.0');
 modeltype mumlinstance uses pim::instance('http://www.muml.org/pim/1.0.0');
 modeltype mumlvaluetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
-modeltype modelinstance uses 'http://www.muml.org/core/modelinstance/1.0.0';
+modeltype modelinstance uses 'http://www.muml.org/modelinstance/1.0.0';
 
 modeltype mtctl uses 'http://www.muml.org/uppaal/adapter/mtctl/1.0.0';
 modeltype mtctlQuantifiers uses mtctl::Quantifiers('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');

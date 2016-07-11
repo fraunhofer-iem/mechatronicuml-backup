@@ -21,7 +21,7 @@ modeltype muml_valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
 modeltype storydriven_core_expressions_common uses core::expressions::common('http://www.muml.org/core/1.0.0');
 modeltype storydriven_core_expressions uses core::expressions('http://www.muml.org/core/1.0.0');
 modeltype extension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
-modeltype modelinstance uses 'http://www.muml.org/core/modelinstance/1.0.0';
+modeltype modelinstance uses 'http://www.muml.org/modelinstance/1.0.0';
 modeltype mtctlQuantifiers uses mtctl::Quantifiers('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
 modeltype mtctlPredicates uses mtctl::Predicates('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
 modeltype mtctlSets uses mtctl::Sets('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');

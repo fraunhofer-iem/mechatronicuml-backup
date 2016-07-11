@@ -3,7 +3,7 @@ import Workflow;
 modeltype csd uses 'http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0';
 modeltype sd uses 'http://www.muml.org/storydiagram/1.0.0';
 
-modeltype modelinstance uses 'http://www.muml.org/core/modelinstance/1.0.0';
+modeltype modelinstance uses 'http://www.muml.org/modelinstance/1.0.0';
 
 // For Debugging
 //transformation CSD2SDTransform(inout model: modelinstance);

@@ -8,7 +8,7 @@ modeltype mumlBehavior uses 'http://www.muml.org/pim/behavior/1.0.0';
 modeltype mumlConnector uses pim::connector('http://www.muml.org/pim/1.0.0');
 modeltype mumlMsgtype uses pim::msgtype('http://www.muml.org/pim/1.0.0');
 modeltype mumlComponent uses pim::component('http://www.muml.org/pim/1.0.0');
-modeltype modelinstance uses 'http://www.muml.org/core/modelinstance/1.0.0';
+modeltype modelinstance uses 'http://www.muml.org/modelinstance/1.0.0';
 modeltype verificationExtension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
 
 modeltype mtctl uses 'http://www.muml.org/uppaal/adapter/mtctl/1.0.0';

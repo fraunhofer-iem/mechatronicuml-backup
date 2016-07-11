@@ -3,7 +3,7 @@ import transforms.lib.ExternalizedStrings;
 import transforms.lib.RTSCUtil;
 import org.muml.uppaal.adapter._blackbox.CharSubstitutionUnit;
 
-modeltype modelinstance uses 'http://www.muml.org/core/modelinstance/1.0.0';
+modeltype modelinstance uses 'http://www.muml.org/modelinstance/1.0.0';
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
 modeltype storydriven uses 'http://www.muml.org/core/1.0.0';

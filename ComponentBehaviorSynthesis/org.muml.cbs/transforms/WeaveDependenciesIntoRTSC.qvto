@@ -8,7 +8,7 @@ modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
 modeltype component uses pim::component('http://www.muml.org/pim/1.0.0');
 modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
 modeltype depLang uses 'http://www.muml.org/cbs/dependencylanguage/1.0.0';
-modeltype modelinstance uses 'http://www.muml.org/core/modelinstance/1.0.0';
+modeltype modelinstance uses 'http://www.muml.org/modelinstance/1.0.0';
 modeltype actLang uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
 modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
 modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
