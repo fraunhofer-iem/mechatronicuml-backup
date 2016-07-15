@@ -8,6 +8,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 import org.muml.udbm.ClockConstraint;
 import org.muml.udbm.ClockZone;
@@ -113,7 +115,8 @@ public class JavaFederation extends Federation {
 	public boolean contains(ClockZone clockZone, boolean checkStrictSubset) {
 		// New ClockZoneHashSet
 		HashSet<ClockZone> ClockZonesExtended = new HashSet<ClockZone>();
-		ClockZonesExtended.addAll(this.getClockZone());
+		JavaFederation jfUseCopiedClockZones = (JavaFederation) this.clone();
+		ClockZonesExtended.addAll(jfUseCopiedClockZones.getClockZone());
 		ClockZonesExtended.add(clockZone);
 		
 		// Copy origin Federation and add overloaded ClockZone which has to be checked
@@ -130,20 +133,23 @@ public class JavaFederation extends Federation {
 	}
 	
 	// SergejJ: Function checks for overloaded Federation if it is a (strict) subset of this Federation
-
 	public boolean contains(JavaFederation javaFederation, boolean checkStrictSubset){
-		Set<? extends ClockZone> clockZones = javaFederation.getClockZone();
+		JavaFederation jfCopy = (JavaFederation) javaFederation.clone(); 
+		
+		Set<? extends ClockZone> clockZones = jfCopy.getClockZone();
+		
+		ClockZone czCopy;
 		
 		boolean booleanContains = true;
 		
 		for (ClockZone clockZone: clockZones){
-			booleanContains = this.contains(clockZone, checkStrictSubset);
+			czCopy = (ClockZone) clockZone.clone();
+			booleanContains = this.contains(czCopy, checkStrictSubset);
 			if (booleanContains == false){
 				return false;
 			}
 		}
-		
-		
+				
 		return true;
 	}
 	
@@ -156,7 +162,7 @@ public class JavaFederation extends Federation {
 		Set<? extends ClockZone> clockZones = jfCopy.getClockZone();
 
 		int containsValue;
-		boolean strictSubsetIsGiven = true;
+		boolean strictSubsetIsGiven = false;
 		
 		// Check for every ClockZone in this Federation, if overloaded ClockZone is a subset of this Federation
 		for (ClockZone cz: clockZones){
@@ -174,8 +180,8 @@ public class JavaFederation extends Federation {
 				containsValue =((JavaClockZone)cz).relation((JavaClockZone) clockZone);
 							
 				// Only strict subsets are allowed
-				if (containsValue != 1){
-					return false;
+				if (containsValue == 1){
+					return true;
 				}
 			}
 		}
