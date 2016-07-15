@@ -30,7 +30,7 @@ public abstract class AbstractUDBMTest {
 	
 	@Before
 	public void setUp(){
-		getFederationFactory();
+		//getFederationFactory();
 		testSpecificSetUp();
 	}
 	
