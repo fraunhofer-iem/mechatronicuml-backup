@@ -26,7 +26,7 @@ function build_command(){
 	QUERY=$(find . -maxdepth 2 -iname "*.cquery" -printf "%P")
 	BUCKMINSTER_FEATURE_DIR=${QUERY%/*}
 	XTEND=$(find . -iname "*.xtend")
-	XTEND_CUSTOM_LAUNCH=$(find . -name "xtend_custom.launch")
+	XTEND_CUSTOM_LAUNCH=$(find . -name "xtend_custom.launch" -printf "%P\n")
 	ACCELEO=$(find . -iname "*.mtl")
 	BUILDCOMMAND="build -c"
 	if [ -n "$XTEND" -o  -n "$ACCELEO" ] 
