@@ -85,7 +85,7 @@ public class CoordinationProtocolOptionsEditor extends org.muml.ape.runtime.edit
 
 				try {
 					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery(
-							"not self.extension->exists(ext | ext.oclAsType(HideOptionExtension).option = 'roleMultiplicity')");
+							"not self.extensions->exists(ext | ext.oclAsType(HideOptionExtension).option = 'roleMultiplicity')");
 
 					org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 						@Override
@@ -135,7 +135,7 @@ public class CoordinationProtocolOptionsEditor extends org.muml.ape.runtime.edit
 
 				try {
 					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery(
-							"not self.extension->exists(ext | ext.oclAsType(HideOptionExtension).option = 'connectorOutBufferSize')");
+							"not self.extensions->exists(ext | ext.oclAsType(HideOptionExtension).option = 'connectorOutBufferSize')");
 
 					org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 						@Override
@@ -187,7 +187,7 @@ public class CoordinationProtocolOptionsEditor extends org.muml.ape.runtime.edit
 
 				try {
 					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery(
-							"not self.extension->exists(ext | ext.oclAsType(HideOptionExtension).option = 'hashTableSize')");
+							"not self.extensions->exists(ext | ext.oclAsType(HideOptionExtension).option = 'hashTableSize')");
 
 					org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 						@Override
@@ -239,7 +239,7 @@ public class CoordinationProtocolOptionsEditor extends org.muml.ape.runtime.edit
 
 				try {
 					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery(
-							"not self.extension->exists(ext | ext.oclAsType(HideOptionExtension).option = 'stateSpaceReduction')");
+							"not self.extensions->exists(ext | ext.oclAsType(HideOptionExtension).option = 'stateSpaceReduction')");
 
 					org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 						@Override
@@ -291,7 +291,7 @@ public class CoordinationProtocolOptionsEditor extends org.muml.ape.runtime.edit
 
 				try {
 					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery(
-							"not self.extension->exists(ext | ext.oclAsType(HideOptionExtension).option = 'traceOptions')");
+							"not self.extensions->exists(ext | ext.oclAsType(HideOptionExtension).option = 'traceOptions')");
 
 					org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 						@Override
