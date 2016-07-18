@@ -19,6 +19,8 @@ public class RealtimeStatechartModelInitializer implements IModelInitializer {
 
 	@Override
 	public void initialize(EObject object) {
+		((RealtimeStatechart)object).setName("statechart");
+		
 		// create an initial state
 		State state = RealtimestatechartFactory.eINSTANCE.createState();
 		state.setName("init");
