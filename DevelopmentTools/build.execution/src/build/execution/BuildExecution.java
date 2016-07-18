@@ -18,6 +18,7 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
+import org.eclipse.xtend.core.compiler.batch.Main;
 
 public class BuildExecution {
 
@@ -33,6 +34,12 @@ public class BuildExecution {
 				System.out.println(resource.getName());
 				if (resource instanceof IWorkspaceRoot)
 					return true;
+				if (resource.getName().endsWith("xtext") || resource.getName().endsWith("ui")) {
+					Main.main(new String[] {
+							"-classpath", resource.getName(),
+							"-d", "xtend-gen", "src", "src-gen"
+					});;
+				}
 				return false;
 			}
 		});
