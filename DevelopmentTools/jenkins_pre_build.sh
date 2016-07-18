@@ -38,7 +38,7 @@ function build_command(){
 		fi
 		if [ -n "$XTEND" ]
 		then
-			BUILDCOMMAND=$(echo -e "build -c --continueonerror \n launch -l build.execution/xtend.launch --stderr --stdout")
+			# BUILDCOMMAND=$(echo -e "build -c --continueonerror \n launch -l build.execution/xtend.launch --stderr --stdout")
 			for i in $XTEND_CUSTOM_LAUNCH; do
 				BUILDCOMMAND=$(echo -e "$BUILDCOMMAND\nlaunch -l $i --stderr --stdout")
 			done
