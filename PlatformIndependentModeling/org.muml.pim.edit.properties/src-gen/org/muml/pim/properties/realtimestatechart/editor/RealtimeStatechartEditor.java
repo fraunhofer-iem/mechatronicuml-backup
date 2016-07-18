@@ -208,7 +208,7 @@ public class RealtimeStatechartEditor extends org.muml.ape.runtime.editors.Class
 
 				try {
 					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery(
-							"let behavior : pim::behavior::BehavioralElement = self.getPortOrRoleStatechart().behavioralElement in\n (not behavior.oclIsInvalid() and behavior.oclIsKindOf(pim::connector::DiscreteInteractionEndpoint) implies  \n 	let die: pim::connector::DiscreteInteractionEndpoint = behavior.oclAsType(pim::connector::DiscreteInteractionEndpoint) in \n 						die.multi and die.subroleBehavior.oclIsUndefined() and die.coordinatorBehavior.oclIsUndefined()\n )");
+							"if (not self.getPortOrRoleStatechart().behavioralElement.oclIsUndefined() and self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(pim::connector::DiscreteInteractionEndpoint)) then\n	self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).multi and self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).subroleBehavior.oclIsUndefined() and self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsUndefined()\nelse\n	true\nendif");
 
 					org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 						@Override
@@ -260,7 +260,7 @@ public class RealtimeStatechartEditor extends org.muml.ape.runtime.editors.Class
 
 				try {
 					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery(
-							"let behavior : pim::behavior::BehavioralElement = self.getPortOrRoleStatechart().behavioralElement in\n (not behavior.oclIsInvalid() and behavior.oclIsKindOf(pim::connector::DiscreteInteractionEndpoint) implies  \n 	let die: pim::connector::DiscreteInteractionEndpoint = behavior.oclAsType(pim::connector::DiscreteInteractionEndpoint) in \n 						die.multi and die.subroleBehavior.oclIsUndefined() and die.coordinatorBehavior.oclIsUndefined()\n )");
+							"if (not self.getPortOrRoleStatechart().behavioralElement.oclIsUndefined() and self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(pim::connector::DiscreteInteractionEndpoint)) then\n	self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).multi and self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).subroleBehavior.oclIsUndefined() and self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsUndefined()\nelse\n	true\nendif");
 
 					org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 						@Override
@@ -312,7 +312,7 @@ public class RealtimeStatechartEditor extends org.muml.ape.runtime.editors.Class
 
 				try {
 					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery(
-							"let behavior : pim::behavior::BehavioralElement = self.getPortOrRoleStatechart().behavioralElement in\n (not behavior.oclIsInvalid() and behavior.oclIsKindOf(pim::connector::DiscreteInteractionEndpoint) implies  \n 	let die: pim::connector::DiscreteInteractionEndpoint = behavior.oclAsType(pim::connector::DiscreteInteractionEndpoint) in \n 						die.multi and  die.subroleBehavior.oclIsUndefined() and die.coordinatorBehavior.oclIsUndefined()\n )");
+							"if (not self.getPortOrRoleStatechart().behavioralElement.oclIsUndefined() and self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(pim::connector::DiscreteInteractionEndpoint)) then\n	self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).multi and self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).subroleBehavior.oclIsUndefined() and self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsUndefined()\nelse\n	true\nendif");
 
 					org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 						@Override
