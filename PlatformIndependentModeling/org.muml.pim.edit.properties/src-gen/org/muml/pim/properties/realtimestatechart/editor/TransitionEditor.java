@@ -179,7 +179,7 @@ public class TransitionEditor extends org.muml.ape.runtime.editors.ClassProperty
 
 				try {
 					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery(
-							"if(self.statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint) and not self.statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsUndefined() )then\n	not  self.statechart->closure(s:RealtimeStatechart|   let parent : RealtimeStatechart = s.parentRegion.parentState.parentStatechart in \n		if(parent.oclIsInvalid()) \n			then self.statechart \n		else parent \n		 endif )->includes(self.statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior) \nelse \n	 	true \nendif");
+							"if(self.statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(pim::connector::DiscreteInteractionEndpoint) and not self.statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsUndefined() )then\n	not  self.statechart->closure(s:RealtimeStatechart|   let parent : RealtimeStatechart = s.parentRegion.parentState.parentStatechart in \n		if(parent.oclIsInvalid()) \n			then self.statechart \n		else parent \n		 endif )->includes(self.statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).coordinatorBehavior) \nelse \n	 	true \nendif");
 
 					org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 						@Override
@@ -231,7 +231,7 @@ public class TransitionEditor extends org.muml.ape.runtime.editors.ClassProperty
 
 				try {
 					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery(
-							"if(self.statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint) and not self.statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsUndefined() )then\n	not  self.statechart->closure(s:RealtimeStatechart|   let parent : RealtimeStatechart = s.parentRegion.parentState.parentStatechart in \n		if(parent.oclIsInvalid()) \n			then self.statechart \n		else parent \n		 endif )->includes(self.statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior) \nelse \n	 	true \nendif");
+							"if(self.statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(pim::connector::DiscreteInteractionEndpoint) and not self.statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsUndefined() )then\n	not  self.statechart->closure(s:RealtimeStatechart|   let parent : RealtimeStatechart = s.parentRegion.parentState.parentStatechart in \n		if(parent.oclIsInvalid()) \n			then self.statechart \n		else parent \n		 endif )->includes(self.statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).coordinatorBehavior) \nelse \n	 	true \nendif");
 
 					org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 						@Override
@@ -460,14 +460,11 @@ public class TransitionEditor extends org.muml.ape.runtime.editors.ClassProperty
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays
-					.asList(new java.lang.String[]{"property.tab.condition", "property.tab.condition",
-							"property.tab.condition", "property.tab.effect", "property.tab.condition",
-							"property.tab.general", "property.tab.general", "property.tab.general",
-							"property.tab.effect", "property.tab.deadline", "property.tab.deadline",
-							"property.tab.general", "property.tab.effect", "property.tab.general",
-							"property.tab.documentation", "property.tab.extensions", "property.tab.general"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.condition", "property.tab.condition",
+					"property.tab.condition", "property.tab.effect", "property.tab.condition", "property.tab.general",
+					"property.tab.general", "property.tab.general", "property.tab.effect", "property.tab.deadline",
+					"property.tab.deadline", "property.tab.general", "property.tab.effect", "property.tab.general",
+					"property.tab.documentation", "property.tab.extensions", "property.tab.general"}).contains(tab);
 		}
 	}
 
