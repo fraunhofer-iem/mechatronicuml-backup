@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.logging.Logger;
 
 import org.apache.log4j.BasicConfigurator;
 import org.eclipse.acceleo.internal.ide.ui.builders.AcceleoMarkerUtils;
@@ -115,6 +116,7 @@ public class BuildExecution {
 				if (resource instanceof IWorkspaceRoot)
 					return true;
 				if (resource.getName().endsWith("xtext") || resource.getName().endsWith("ui")) {
+					BasicConfigurator.configure();
 					System.out.println("before: Main " + resource.getName());
 					Compiler.main(new String[] {
 							"-classpath", "${project_classpath:" + resource.getName() + "}",
