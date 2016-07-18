@@ -36,6 +36,13 @@ public class BuildExecution {
 					return true;
 				if (resource.getName().endsWith("xtext") || resource.getName().endsWith("ui")) {
 					System.out.println("before: Main " + resource.getName());
+					System.setSecurityManager(new SecurityManager() {
+						@Override
+						public void checkExit(int status) {
+							System.out.println("got status: " + status);
+							throw new RuntimeException("eeek");
+						}
+					});
 					Main.main(new String[] {
 							"-classpath", "${project_classpath:" + resource.getName() + "}",
 							"-d", "xtend-gen", "src", "src-gen"
