@@ -36,10 +36,11 @@ public class BuildExecution {
 					return true;
 				if (resource.getName().endsWith("xtext") || resource.getName().endsWith("ui")) {
 					System.out.println("before: Main " + resource.getName());
-					Main.main(new String[] {
+					/*Main.main(new String[] {
 							"-classpath", "reso${project_classpath:" + resource.getName() + "}",
 							"-d", "xtend-gen", "src", "src-gen"
-					});;
+					});;*/
+					Main.main(null);
 					System.out.println("after: Main " + resource.getName());
 				}
 				return false;
