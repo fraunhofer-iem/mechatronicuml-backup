@@ -30,5 +30,6 @@ Require-Bundle: org.eclipse.ui;bundle-version="3.107.0",
  org.eclipse.ocl.xtext.completeocl;bundle-version="1.0.1",
  org.eclipse.ocl.xtext.oclinecore;bundle-version="1.0.0",
  org.eclipse.jdt.launching;bundle-version="3.8.0",
- org.eclipse.ocl.examples.xtext.console;bundle-version="4.0.1"
+ org.eclipse.ocl.examples.xtext.console;bundle-version="4.0.1",
+ org.muml.psm;bundle-version="1.0.0"
 Bundle-Activator: Activator
