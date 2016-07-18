@@ -367,6 +367,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
 		// Add supertypes to classes
 		commentableElementEClass.getESuperTypes().add(this.getExtendableElement());
+		extendableElementEClass.getESuperTypes().add(ecorePackage.getEObject());
 		extensionEClass.getESuperTypes().add(this.getExtendableElement());
 		namedElementEClass.getESuperTypes().add(this.getExtendableElement());
 		typedElementEClass.getESuperTypes().add(this.getExtendableElement());
