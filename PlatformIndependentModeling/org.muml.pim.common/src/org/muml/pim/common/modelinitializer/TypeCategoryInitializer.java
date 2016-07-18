@@ -43,14 +43,14 @@ public class TypeCategoryInitializer implements IModelInitializer {
 			((RootNode) element).getCategories().add(typesCategory);
 		}
 
-		// Deactivated, because of Shared Primitive Types; see MUML #1008
-//		for (PrimitiveTypes type : PrimitiveTypes.VALUES) {
-//			PrimitiveDataType primitiveDataType = TypesFactory.eINSTANCE
-//					.createPrimitiveDataType();
-//			primitiveDataType.setPrimitiveType(type);
-//			primitiveDataType.setName(type.getName().toLowerCase());
-//			typesCategory.getModelElements().add(primitiveDataType);
-//		}
+		// XXX Deactivate again, because of Shared Primitive Types; see MUML #1008
+		for (PrimitiveTypes type : PrimitiveTypes.VALUES) {
+			PrimitiveDataType primitiveDataType = TypesFactory.eINSTANCE
+					.createPrimitiveDataType();
+			primitiveDataType.setPrimitiveType(type);
+			primitiveDataType.setName(type.getName().toLowerCase());
+			typesCategory.getModelElements().add(primitiveDataType);
+		}
 	}
 
 }
