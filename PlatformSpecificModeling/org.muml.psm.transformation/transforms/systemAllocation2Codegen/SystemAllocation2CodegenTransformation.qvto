@@ -29,7 +29,7 @@ modeltype Resource uses hardware::hwresource('http://www.muml.org/pm/hardware/1.
 // to determine the messages
 //since the connections are only known at instance level
 intermediate property HybridPort::connectedContiniousPort: pim::component::ContinuousPort;
-intermediate property ContinuousPort::samplingTimes: Set(muml::valuetype::TimeValue);
+intermediate property ContinuousPort::samplingTimes: Set(pim::valuetype::TimeValue);
 
 property apiMap:MappingRepository;
 
