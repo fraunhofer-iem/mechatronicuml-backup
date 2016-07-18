@@ -207,7 +207,7 @@
       <messageTypes name="frei"/>
     </modelElements>
   </categories>
-  <categories key="org.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" name="RolleParksystem" behavioralElement="//@categories.3/@modelElements.0/@roles.0">
       <transitions priority="1" target="//@categories.5/@modelElements.0/@states.1" source="//@categories.5/@modelElements.0/@states.0" clockResets="//@categories.5/@modelElements.0/@clocks.0" urgent="false">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent">

@@ -163,7 +163,7 @@
   </categories>
   <categories
       xmi:id="_W8MzXdUMEeOzB5sVHdJ6ng"
-      key="org.muml.realtimestatechart.category"
+      key="org.muml.pim.realtimestatechart.category"
       name="realtimestatechart">
     <modelElements
         xsi:type="realtimestatechart:RealtimeStatechart"

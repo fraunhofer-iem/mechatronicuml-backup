@@ -90,7 +90,7 @@
       </messageTypes>
     </modelElements>
   </categories>
-  <categories xmi:id="_YPvEgMOsEeKtesZp-51dtg" key="org.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_YPvEgMOsEeKtesZp-51dtg" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_YPyu4MOsEeKtesZp-51dtg" name="railcab_role" behavioralElement="_JgQnEMOmEeKt4K__LJLJ8w">
       <transitions xmi:id="_G51nUMO6EeKtesZp-51dtg" priority="1" target="__EFzEMO5EeKtesZp-51dtg" source="_YPyu4cOsEeKtesZp-51dtg" clockResets="_OZ_mEMO6EeKtesZp-51dtg">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_L0Gh4MO6EeKtesZp-51dtg" kind="TRIGGER">

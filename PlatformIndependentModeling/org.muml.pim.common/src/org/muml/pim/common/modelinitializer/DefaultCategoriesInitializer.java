@@ -28,7 +28,7 @@ public class DefaultCategoriesInitializer implements IModelInitializer {
 		// map.put("org.muml.types.category", "types");
 		map.put("org.muml.pim.protocol.category", "protocol");
 		map.put("org.muml.pim.components.category", "component");
-		map.put("org.muml.realtimestatechart.category", "realtimestatechart");
+		map.put("org.muml.pim.realtimestatechart.category", "realtimestatechart");
 		map.put("org.muml.pim.messagetype.category", "msgtype");
 		map.put("org.muml.pim.instance.category", "instance");
 		map.put("org.muml.pim.pattern.category", "pattern");

@@ -19,7 +19,7 @@ modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
 configuration property timeStamp : String;
 
 query getRealtimeStatechartCategory(theRootNode : RootNode) : ModelElementCategory {
-	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.realtimestatechart.category') -> any(true);
+	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.pim.realtimestatechart.category') -> any(true);
 }
 query getProtocolCategory(theRootNode : RootNode) : ModelElementCategory {
 	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.pim.protocol.category') -> any(true);

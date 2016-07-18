@@ -135,7 +135,7 @@
       <messageTypes xmi:id="_GL5zoAOAEeWYuPKYu7E8Kw" name="M1"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_0pwLkAN_EeWYuPKYu7E8Kw" key="org.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_0pwLkAN_EeWYuPKYu7E8Kw" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_V1Eg4AOAEeWYuPKYu7E8Kw" name="role1" behavioralElement="_8SF14AN_EeWYuPKYu7E8Kw">
       <variables xmi:id="_Mnru0AOBEeWYuPKYu7E8Kw" name="i" dataType="_0pwLgwN_EeWYuPKYu7E8Kw">
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_O8PLYAOBEeWYuPKYu7E8Kw" value="0"/>

@@ -10,7 +10,7 @@
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_8ieX97aKEeOEUtcc5oYJDw" name="LONG" primitiveType="LONG"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_8ieX-LaKEeOEUtcc5oYJDw" name="DOUBLE" primitiveType="DOUBLE"/>
   </categories>
-  <categories xmi:id="_8ieX-baKEeOEUtcc5oYJDw" key="org.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_8ieX-baKEeOEUtcc5oYJDw" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_8ieX-raKEeOEUtcc5oYJDw" name="Statechart" behavioralElement="_8ieYELaKEeOEUtcc5oYJDw">
       <transitions xmi:id="_8ieX-7aKEeOEUtcc5oYJDw" priority="1" target="_8ieYBbaKEeOEUtcc5oYJDw" source="_8ieX_7aKEeOEUtcc5oYJDw" clockResets="_8ieYC7aKEeOEUtcc5oYJDw">
         <clockConstraints xmi:id="_8ieX_LaKEeOEUtcc5oYJDw" clock="_8ieYC7aKEeOEUtcc5oYJDw" operator="GREATER_OR_EQUAL">

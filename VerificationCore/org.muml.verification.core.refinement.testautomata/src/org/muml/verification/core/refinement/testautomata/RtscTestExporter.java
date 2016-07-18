@@ -134,7 +134,7 @@ public class RtscTestExporter {
 								.createModelElementCategory();
 						rtscCategory.setName("realtimestatechart");
 						rtscCategory
-								.setKey("org.muml.realtimestatechart.category");
+								.setKey("org.muml.pim.realtimestatechart.category");
 						((RootNode) o).getCategories().add(rtscCategory);
 					}
 					break;

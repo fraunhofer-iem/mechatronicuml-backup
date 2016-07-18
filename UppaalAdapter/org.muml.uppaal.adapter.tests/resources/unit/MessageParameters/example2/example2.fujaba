@@ -54,7 +54,7 @@
       </messageTypes>
     </modelElements>
   </categories>
-  <categories xmi:id="_hzcMwMbhEeOdtdQTfYnn-A" key="org.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_hzcMwMbhEeOdtdQTfYnn-A" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_hzcMwcbhEeOdtdQTfYnn-A" name="Receiver" behavioralElement="_Dem08MbkEeOdtdQTfYnn-A">
       <variables xmi:id="_7KGysMbkEeOdtdQTfYnn-A" name="p1Target" dataType="_JjU308bhEeOdtdQTfYnn-A"/>
       <variables xmi:id="_8fxlIMbkEeOdtdQTfYnn-A" name="p2Target" dataType="_JjU31sbhEeOdtdQTfYnn-A"/>

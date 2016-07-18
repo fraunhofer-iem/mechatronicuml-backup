@@ -56,7 +56,7 @@
       <messageTypes xmi:id="_hGTLUBi6EeWsFZ_Un4dxHg" name="mi"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_Jm5hsRi6EeWsFZ_Un4dxHg" key="org.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_Jm5hsRi6EeWsFZ_Un4dxHg" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_SNqjIBi6EeWsFZ_Un4dxHg" name="rtsc" behavioralElement="_iKJN8Ri6EeWsFZ_Un4dxHg">
       <variables xmi:id="_xUTD8Bi6EeWsFZ_Un4dxHg" name="variable1" dataType="_Jm5hpBi6EeWsFZ_Un4dxHg"/>
       <transitions xmi:id="_XFOH8Bi6EeWsFZ_Un4dxHg" priority="1" target="_V5NAwBi6EeWsFZ_Un4dxHg" source="_SNqjIRi6EeWsFZ_Un4dxHg">

@@ -60,7 +60,7 @@
       <messageTypes xmi:id="_AltGUCyLEeSYk6MjS_5mTw" name="akzeptiereStop"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_M7u6bQUkEeSJTqo7jlVMjA" key="org.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_M7u6bQUkEeSJTqo7jlVMjA" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_cjkVcAUlEeSJTqo7jlVMjA" name="RolleParksystem" behavioralElement="_5mnqYAUkEeSJTqo7jlVMjA">
       <transitions xmi:id="_t7DlsAUlEeSJTqo7jlVMjA" priority="1" target="_oZuEEAUlEeSJTqo7jlVMjA" source="_cjkVcQUlEeSJTqo7jlVMjA" clockResets="_kj8sYAUlEeSJTqo7jlVMjA" urgent="false">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_6IvDgAUlEeSJTqo7jlVMjA">

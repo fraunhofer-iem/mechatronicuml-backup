@@ -22,7 +22,7 @@
       </messageTypes>
     </modelElements>
   </categories>
-  <categories xmi:id="_eZ7YoMb0EeOcjtx1ReUZug" key="org.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_eZ7YoMb0EeOcjtx1ReUZug" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_eZ7Yocb0EeOcjtx1ReUZug" name="sender" behavioralElement="_9aj_IMb0EeOcjtx1ReUZug">
       <variables xmi:id="_ggL6gMb0EeOcjtx1ReUZug" name="p1Source" dataType="_JXA_hsb0EeOcjtx1ReUZug">
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_jTK_gMb0EeOcjtx1ReUZug" value="42"/>

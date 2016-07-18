@@ -10,7 +10,7 @@
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_FB0TR5J7EeSSMde45fnrcg" name="INT64" primitiveType="INT64"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_FB0TSJJ7EeSSMde45fnrcg" name="DOUBLE" primitiveType="DOUBLE"/>
   </categories>
-  <categories xmi:id="_FB0TSZJ7EeSSMde45fnrcg" key="org.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_FB0TSZJ7EeSSMde45fnrcg" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_17zEoJKhEeSSMde45fnrcg" name="overtakeeRoleRTSC">
       <variables xmi:id="__fWvgKL9EeSbmbyTJYAEVw" name="constVelFast" dataType="_FB0TRpJ7EeSSMde45fnrcg" constant="true">
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_BHz7EKL-EeSbmbyTJYAEVw" value="18"/>

@@ -109,7 +109,7 @@ public class ActionLanguageTransformationTest {
 //		state.setParentStatechart(rtsc);
 //		ModelElementCategory modelElementCategory = ModelinstanceFactory.eINSTANCE.createModelElementCategory();
 //		modelElementCategory.getModelElements().add(rtsc);
-//		modelElementCategory.setKey("org.muml.realtimestatechart.category");
+//		modelElementCategory.setKey("org.muml.pim.realtimestatechart.category");
 //		RootNode rootNode = ModelinstanceFactory.eINSTANCE.createRootNode();
 //		rootNode.getCategories().add(modelElementCategory);
 //		rootNode.getCategories().add(typesCategory);

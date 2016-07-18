@@ -50,7 +50,7 @@
       <messageTypes xmi:id="_hGTLUBi6EeWsFZ_Un4dxHg" name="mi"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_Jm5hsRi6EeWsFZ_Un4dxHg" key="org.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_Jm5hsRi6EeWsFZ_Un4dxHg" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_psdZ4GVbEeWh3MOfW79Z2A" name="role2" behavioralElement="_iKSX4Bi6EeWsFZ_Un4dxHg">
       <transitions xmi:id="_81rtgGVbEeWh3MOfW79Z2A" priority="1" target="_8e8ogGVbEeWh3MOfW79Z2A" source="_psdZ4WVbEeWh3MOfW79Z2A">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_A3y4EGVcEeWh3MOfW79Z2A">

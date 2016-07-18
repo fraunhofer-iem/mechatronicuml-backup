@@ -17,7 +17,7 @@
       </messageTypes>
     </modelElements>
   </categories>
-  <categories xmi:id="_9Mj10MboEeOTKYUvCtrl0A" key="org.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_9Mj10MboEeOTKYUvCtrl0A" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_9Mj10cboEeOTKYUvCtrl0A" name="sender" behavioralElement="_FEdmMMbpEeOTKYUvCtrl0A">
       <transitions xmi:id="_ZtijAMbpEeOTKYUvCtrl0A" priority="1" target="_-uSHQMboEeOTKYUvCtrl0A" source="_9Mj10sboEeOTKYUvCtrl0A" urgent="false">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_bJaEEMbpEeOTKYUvCtrl0A">

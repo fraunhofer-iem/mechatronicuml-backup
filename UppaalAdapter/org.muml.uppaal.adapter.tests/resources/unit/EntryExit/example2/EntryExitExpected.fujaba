@@ -43,7 +43,7 @@
       </roleConnector>
     </modelElements>
   </categories>
-  <categories xmi:id="_FtCtfpydEeOSPY_MNk-8EA" key="org.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_FtCtfpydEeOSPY_MNk-8EA" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_FtCtf5ydEeOSPY_MNk-8EA" name="role1" behavioralElement="_FtCtbJydEeOSPY_MNk-8EA">
       <states xmi:id="_FtCtgJydEeOSPY_MNk-8EA" name="init" initial="true">
         <embeddedRegions xmi:id="_FtCtgZydEeOSPY_MNk-8EA" priority="1">

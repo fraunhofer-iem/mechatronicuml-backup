@@ -51,7 +51,7 @@ import org.muml.pim.realtimestatechart.Transition;
 public class GrammarTest {
 	
 	private static final String RTSC_FIXTURE = "fixtures/rtsc.fujaba";
-	private static final String RTSC_CATEGORY_KEY = "org.muml.realtimestatechart.category";
+	private static final String RTSC_CATEGORY_KEY = "org.muml.pim.realtimestatechart.category";
 	private RealtimeStatechart rtsc;
 	private ILoadResult loadResult;
 	

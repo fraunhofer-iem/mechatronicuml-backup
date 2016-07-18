@@ -52,7 +52,7 @@
       </roleConnector>
     </modelElements>
   </categories>
-  <categories xmi:id="_Jo3JQwdNEeS1buZSll3L6Q" key="org.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_Jo3JQwdNEeS1buZSll3L6Q" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_Jo3JRAdNEeS1buZSll3L6Q" name="role1" behavioralElement="_Jo3JMQdNEeS1buZSll3L6Q">
       <variables xmi:id="_Jo3JRQdNEeS1buZSll3L6Q" name="error" dataType="_Jo3JIwdNEeS1buZSll3L6Q">
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_Jo3JRgdNEeS1buZSll3L6Q" value="false"/>

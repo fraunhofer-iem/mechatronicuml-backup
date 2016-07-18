@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionLanguage="http://www.fujaba.de/muml/actionlanguage/0.3.14" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.3.15" xmlns:realtimestatechart="http://www.fujaba.de/muml/model/realtimestatechart/0.3.8" xmlns:sdcec="http://www.muml.org/core/expressions/common/1.0.0" xmlns:types="http://www.fujaba.de/muml/model/types/0.3.6">
-  <categories key="org.muml.realtimestatechart.category">
+  <categories key="org.muml.pim.realtimestatechart.category">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart">
       <variables name="counter" dataType="//@categories.1/@modelElements.0"/>
       <variables name="a" dataType="//@categories.1/@modelElements.0"/>

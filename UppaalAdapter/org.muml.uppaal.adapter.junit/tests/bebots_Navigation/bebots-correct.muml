@@ -349,7 +349,7 @@
       </roleConnector>
     </modelElements>
   </categories>
-  <categories xmi:id="_aMjV0F6UEeOU6dzb6wKMjg" key="org.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_aMjV0F6UEeOU6dzb6wKMjg" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_aMjV0V6UEeOU6dzb6wKMjg" name="Navigation_Provider" behavioralElement="_Z_k_4F6LEeOogaHLhp186w">
       <transitions xmi:id="_tsthgGQgEeOYdOhaVaRvtQ" priority="1" target="_qRFvMGQgEeOYdOhaVaRvtQ" source="_aMjV0l6UEeOU6dzb6wKMjg">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_jw7nYLZ-EeObnJbUcPIxUA" kind="TRIGGER">

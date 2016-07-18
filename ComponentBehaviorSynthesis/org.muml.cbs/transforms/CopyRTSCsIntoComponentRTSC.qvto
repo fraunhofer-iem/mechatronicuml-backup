@@ -12,7 +12,7 @@ property synBehavior : SynthesizableBehavior;
 property topState : State;
 property listOfRTSCs : OrderedSet(RealtimeStatechart) = null;
 property statechartCategory : ModelElementCategory = null;
-property RtscCatKey : String = 'org.muml.realtimestatechart.category';
+property RtscCatKey : String = 'org.muml.pim.realtimestatechart.category';
 
 configuration property nameOfComponentToSynthesize : String;
 configuration property componentToSynthesize: OrderedSet(AtomicComponent);

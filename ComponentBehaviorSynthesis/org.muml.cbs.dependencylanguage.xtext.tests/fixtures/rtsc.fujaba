@@ -169,7 +169,7 @@
       </ports>
     </modelElements>
   </categories>
-  <categories xmi:id="_VT2jkbe2EeKdhdSR8ySkxQ" key="org.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_VT2jkbe2EeKdhdSR8ySkxQ" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_VT2jkre2EeKdhdSR8ySkxQ" name="p1" behavioralElement="_VT18kLe2EeKdhdSR8ySkxQ">
       <operations xmi:id="_VT2jk7e2EeKdhdSR8ySkxQ" name="call" returnType="_VT18gre2EeKdhdSR8ySkxQ"/>
       <operations xmi:id="_VT2jlLe2EeKdhdSR8ySkxQ" name="callp">

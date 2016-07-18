@@ -62,7 +62,7 @@
       <messageTypes xmi:id="_hGTLUBi6EeWsFZ_Un4dxHg" name="mi"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_Jm5hsRi6EeWsFZ_Un4dxHg" key="org.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_Jm5hsRi6EeWsFZ_Un4dxHg" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_pXj14BjFEeWz7J5_ceJ04A" name="Component Behavior" behavioralElement="_mW5hQBjFEeWz7J5_ceJ04A">
       <variables xmi:id="_dI8ugBjGEeWz7J5_ceJ04A" name="var1" dataType="_Jm5hoxi6EeWsFZ_Un4dxHg"/>
       <states xmi:id="_pXj14RjFEeWz7J5_ceJ04A" name="init" initial="true">

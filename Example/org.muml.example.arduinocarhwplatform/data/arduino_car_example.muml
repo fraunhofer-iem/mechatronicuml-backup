@@ -6,7 +6,7 @@
   <categories xmi:id="_EhvwGgmXEeS8psHeDisM0A" key="org.muml.pim.components.category" name="component"/>
   <categories xmi:id="_EhvwGwmXEeS8psHeDisM0A" key="org.muml.pim.protocol.category" name="protocol"/>
   <categories xmi:id="_EhvwHAmXEeS8psHeDisM0A" key="org.muml.pim.messagetype.category" name="msgtype"/>
-  <categories xmi:id="_EhvwHQmXEeS8psHeDisM0A" key="org.muml.realtimestatechart.category" name="realtimestatechart"/>
+  <categories xmi:id="_EhvwHQmXEeS8psHeDisM0A" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart"/>
   <categories xmi:id="_LDcigAmXEeS8psHeDisM0A" key="org.muml.pm.hardware.hwresource.category" name="resource">
     <modelElements xsi:type="hwresource:ResourceRepository" xmi:id="_0YfC4Jq9EeWHH7cQ5HOrAg">
       <resources xsi:type="hwresource:StructuredResource" xmi:id="_0YfC4Zq9EeWHH7cQ5HOrAg" name="Arduino">

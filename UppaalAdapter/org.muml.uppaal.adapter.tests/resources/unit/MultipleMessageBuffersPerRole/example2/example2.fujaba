@@ -46,7 +46,7 @@
       <messageTypes xmi:id="_NuNNENQ4EeO5qLADvSb61w" name="messagetype1"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_JNvSnNQ4EeO5qLADvSb61w" key="org.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_JNvSnNQ4EeO5qLADvSb61w" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_SvFF8NQ4EeO5qLADvSb61w" name="sender" behavioralElement="_PtWaUNQ4EeO5qLADvSb61w">
       <transitions xmi:id="_0EnHQNQ4EeO5qLADvSb61w" priority="1" target="_SvFF8dQ4EeO5qLADvSb61w" source="_SvFF8dQ4EeO5qLADvSb61w" urgent="false">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_1Tlb0NQ4EeO5qLADvSb61w">

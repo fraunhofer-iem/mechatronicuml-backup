@@ -14,7 +14,7 @@
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_hNXtK2ddEeW2PYMF5P3p8Q" name="uint32" primitiveType="UINT32"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_hNXtLGddEeW2PYMF5P3p8Q" name="uint64" primitiveType="UINT64"/>
   </categories>
-  <categories xmi:id="_hNXtLWddEeW2PYMF5P3p8Q" key="org.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_hNXtLWddEeW2PYMF5P3p8Q" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_VdWiEGdlEeWDqoFdtyaAuw" name="role1" behavioralElement="_ld2q4GddEeW2PYMF5P3p8Q">
       <variables xmi:id="_antuIGdlEeWDqoFdtyaAuw" name="vara1" dataType="_hNXtI2ddEeW2PYMF5P3p8Q"/>
       <transitions xmi:id="_XyGL4GdlEeWDqoFdtyaAuw" priority="1" target="_XVJxMGdlEeWDqoFdtyaAuw" source="_VdWiEWdlEeWDqoFdtyaAuw">
