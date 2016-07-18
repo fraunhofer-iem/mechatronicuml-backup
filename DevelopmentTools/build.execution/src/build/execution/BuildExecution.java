@@ -112,7 +112,7 @@ public class BuildExecution {
 				System.out.println(resource.getName());
 				if (resource instanceof IWorkspaceRoot)
 					return true;
-				String path = resource.getFullPath().toOSString();
+				String path = resource.getLocation().toOSString();
 				System.out.println(path);
 				if (resource.getName().endsWith("xtext") || resource.getName().endsWith("xtext.ui")) {
 					System.out.println("before start: " + resource.getName());
