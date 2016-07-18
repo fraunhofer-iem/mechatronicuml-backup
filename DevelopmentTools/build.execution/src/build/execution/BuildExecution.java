@@ -35,12 +35,12 @@ public class BuildExecution {
 				if (resource instanceof IWorkspaceRoot)
 					return true;
 				if (resource.getName().endsWith("xtext") || resource.getName().endsWith("ui")) {
-					System.out.println("before: Main" + resource.getName());
+					System.out.println("before: Main " + resource.getName());
 					Main.main(new String[] {
 							"-classpath", "reso${project_classpath:" + resource.getName() + "}",
 							"-d", "xtend-gen", "src", "src-gen"
 					});;
-					System.out.println("after: Main" + resource.getName());
+					System.out.println("after: Main " + resource.getName());
 				}
 				return false;
 			}
