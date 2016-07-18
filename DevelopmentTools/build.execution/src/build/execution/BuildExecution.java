@@ -47,7 +47,7 @@ public class BuildExecution {
 		});
 
 		try {
-			workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
+			//workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
 		} catch (CoreException e) {
 			workspace.build(IncrementalProjectBuilder.CLEAN_BUILD, progressMonitor);
 			workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
