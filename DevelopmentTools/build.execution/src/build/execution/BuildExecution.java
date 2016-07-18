@@ -33,7 +33,6 @@ public class BuildExecution {
 				System.out.println(resource.getName());
 				if (resource instanceof IWorkspaceRoot)
 					return true;
-				System.out.println("XXX: " + resource);
 				return false;
 			}
 		});
