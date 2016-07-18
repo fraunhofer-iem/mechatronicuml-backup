@@ -118,7 +118,7 @@ public class BuildExecution {
 					System.out.println("before: Main " + resource.getName());
 					Compiler.main(new String[] {
 							"-classpath", "${project_classpath:" + resource.getName() + "}",
-							"-d", "xtend-gen", "src", "src-gen"
+							"-d", "xtend-gen", "src" //, "src-gen"
 					});
 					System.out.println("after: Main " + resource.getName());
 				}
