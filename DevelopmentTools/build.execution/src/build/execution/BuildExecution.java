@@ -118,6 +118,7 @@ public class BuildExecution {
 					System.out.println("before start: " + resource.getName());
 					MyCompiler.main(new String[] {
 						"-classpath", "${project_classpath:" + resource.getName() + "}",
+						"-useCurrentClassLoader",
 						"-d", path + "/xtend-gen",
 						path + "/src", path + "/src-gen"
 					});
