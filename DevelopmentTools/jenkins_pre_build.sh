@@ -38,10 +38,10 @@ function build_command(){
 		fi
 		if [ -n "$XTEND" ]
 		then
-			BUILDCOMMAND=$(echo -e "build -c --continueonerror")
-			for i in $XTEND_CUSTOM_LAUNCH; do
-				BUILDCOMMAND=$(echo -e "$BUILDCOMMAND\nlaunch -l $i --stderr --stdout")
-			done
+			BUILDCOMMAND=$(echo -e "build -c --continueonerror\nlaunch -l build.execution/acceleo.launch --stderr --stdout")
+#			for i in $XTEND_CUSTOM_LAUNCH; do
+#				BUILDCOMMAND=$(echo -e "$BUILDCOMMAND\nlaunch -l $i --stderr --stdout")
+#			done
 			BUILDCOMMAND=$(echo -e "$BUILDCOMMAND\nbuild")
 		fi
 		if [ -n "$ACCELEO" ] 
