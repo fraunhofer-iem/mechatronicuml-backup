@@ -1513,7 +1513,7 @@ public class MUMLAnalysis {
 	public static boolean modelContainsMultiDimensionalArrayVariables(RootNode model){
 		
 		for (ModelElementCategory cat : model.getCategories()){			
-			if(cat.getKey().equals("org.muml.realtimestatechart.category"))
+			if(cat.getKey().equals("org.muml.pim.realtimestatechart.category"))
 			{
 				for(ExtendableElement rtsc : cat.getModelElements()){					
 						TreeIterator<EObject> it = EcoreUtil.getAllContents(rtsc, true);
