@@ -18,6 +18,7 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
+import org.eclipse.xtend.core.compiler.batch.Main;
 
 public class BuildExecution {
 
@@ -33,17 +34,26 @@ public class BuildExecution {
 				System.out.println(resource.getName());
 				if (resource instanceof IWorkspaceRoot)
 					return true;
+				if (resource.getName().endsWith("xtext") || resource.getName().endsWith("xtext.ui")) {
+					System.out.println("before start: " + resource.getName());
+					Main.main(new String[] {
+						"-classpath", "${project_classpath:" + resource.getName() + "}",
+						"-d", "xtend-gen",
+						"src", "src-gen"
+					});
+					System.out.println("after start: " + resource.getName());
+				}
 				return false;
 			}
 		});
 
-		try {
+		/*try {
 			workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
 		} catch (CoreException e) {
 			workspace.build(IncrementalProjectBuilder.CLEAN_BUILD, progressMonitor);
 			workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
 			e.printStackTrace(System.out);
-		}
+		}*/
 		System.out.println("Build Progress Successfully!");
 
 		IMarker[] markers = null;
