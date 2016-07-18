@@ -214,7 +214,7 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	query cicToVerify() : ComponentInstanceConfiguration {
 
 		return input.objects()[ComponentInstanceConfiguration]
-			->any(ve:ComponentInstanceConfiguration | ve.extension->exists(oclIsKindOf(ElementToVerifyExtension)));
+			->any(ve:ComponentInstanceConfiguration | ve.extensions->exists(oclIsKindOf(ElementToVerifyExtension)));
 	
 	}
 
@@ -1370,8 +1370,7 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	mapping pim::realtimestatechart::SynchronizationChannel :: SynchronizationChannel2SynchronizationChannel() : pim::realtimestatechart::SynchronizationChannel{
     	_name := self._name;
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	_extensions := self._extensions.map Extension2Extension();
     --	_state := self._state.map State2State();
     	_selectorType := self._selectorType.map DataType2DataType();
    	}

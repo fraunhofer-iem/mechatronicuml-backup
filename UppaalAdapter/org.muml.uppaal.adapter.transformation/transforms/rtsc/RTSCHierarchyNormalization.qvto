@@ -250,7 +250,7 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 		
 		return object State {
 			urgent := true;
-			extension += object CommittedExtension {}
+			extensions += object CommittedExtension {}
 		}
 				
 	}

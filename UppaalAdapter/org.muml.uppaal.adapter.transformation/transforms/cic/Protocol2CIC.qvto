@@ -32,7 +32,7 @@ transformation Protocol2CIC(in input:modelinstance, in options: verification_opt
 main() {
 	
 	//precondition ensuring that no port is referenced from within a protocol (could lead to duplication of that port)
-	assert fatal(not portReferencedByProtocol(input.objects()[CoordinationProtocol]->select(protocol | protocol.extension->exists(oclIsKindOf(ElementToVerifyExtension)))->any(true))) with log("There is a reference to a Port in the Protocol to verify. This is not supported by the Protocol2CIC transformation.");
+	assert fatal(not portReferencedByProtocol(input.objects()[CoordinationProtocol]->select(protocol | protocol.extensions->exists(oclIsKindOf(ElementToVerifyExtension)))->any(true))) with log("There is a reference to a Port in the Protocol to verify. This is not supported by the Protocol2CIC transformation.");
 	assert fatal(roleMultiplicity() > 0) with log ("muliplicityOfMultiRole has to be > 0");
 	input.objects()[RootNode]->map RootNode2RootNode();
 	
@@ -59,13 +59,13 @@ mapping modelinstance::RootNode :: RootNode2RootNode() : modelinstance::RootNode
     	_categories += self._categories.map ModelElementCategory2ModelElementCategory();
     	
     	//Call mappings from copied CoordinationProtocol to Components/Ports and to CIC
-    	output.objects()[CoordinationProtocol]->any(ve:CoordinationProtocol | ve.extension->exists(oclIsKindOf(ElementToVerifyExtension))).roles.map createPort();
-    	output.objects()[CoordinationProtocol]->any(ve:CoordinationProtocol | ve.extension->exists(oclIsKindOf(ElementToVerifyExtension))).map createCIC();
+    	output.objects()[CoordinationProtocol]->any(ve:CoordinationProtocol | ve.extensions->exists(oclIsKindOf(ElementToVerifyExtension))).roles.map createPort();
+    	output.objects()[CoordinationProtocol]->any(ve:CoordinationProtocol | ve.extensions->exists(oclIsKindOf(ElementToVerifyExtension))).map createCIC();
     	
     	//Remove ElementToVerifyExtension from the CoordinationProtocol
-    	output.objects()[CoordinationProtocol]->select(ve:CoordinationProtocol | ve.extension->exists(oclIsKindOf(ElementToVerifyExtension)))->forEach(protocol) {
-    		var deletedExtensions := protocol.extension->selectByKind(ElementToVerifyExtension);
-    		protocol.extension := protocol.extension->reject(oclIsKindOf(ElementToVerifyExtension));
+    	output.objects()[CoordinationProtocol]->select(ve:CoordinationProtocol | ve.extensions->exists(oclIsKindOf(ElementToVerifyExtension)))->forEach(protocol) {
+    		var deletedExtensions := protocol.extensions->selectByKind(ElementToVerifyExtension);
+    		protocol.extensions := protocol.extensions->reject(oclIsKindOf(ElementToVerifyExtension));
     		deletedExtensions->forEach(ext) {
     			output.removeElement(ext);
     		}
@@ -82,8 +82,7 @@ mapping modelinstance::ModelElementCategory :: ModelElementCategory2ModelElement
 mapping pim::protocol::CoordinationProtocol :: CoordinationProtocol2CoordinationProtocol() : pim::protocol::CoordinationProtocol{
     	_name := self._name;
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	_extensions := self._extensions.map Extension2Extension();
     	
     	_verificationConstraintRepositories := self.verificationConstraintRepositories.map VerificationConstraintRepository2VerificationConstraintRepository();
     	_roles := self._roles.map Role2Role();
@@ -194,8 +193,7 @@ mapping pim::msgtype::MessageType :: MessageType2MessageType() : pim::msgtype::M
 			result := new MessageType();		
 			result._name := self._name;
     		result._comment := self._comment;
-    		result._annotation := self._annotation.map EAnnotation2EAnnotation();
-    		result._extension := self._extension.map Extension2Extension();
+    		result._extensions := self._extensions.map Extension2Extension();
     		result._parameters := self._parameters.map Parameter2Parameter();
     		//do not set the repository to make sure not to execute the if condition again before finishing this transformation
     	--	result._repository := self._repository.map MessageTypeRepository2MessageTypeRepository();
@@ -220,8 +218,7 @@ mapping pim::behavior::Parameter :: Parameter2Parameter() : pim::behavior::Param
     			result := new Parameter();  	
     			result._name := self._name;
     			result._comment := self._comment;
-    			result._annotation := self._annotation.map EAnnotation2EAnnotation();
-    			result._extension := self._extension.map Extension2Extension();
+    			result._extensions := self._extensions.map Extension2Extension();
     			result._dataType := self._dataType.map DataType2DataType();
     			}
    		}
@@ -245,8 +242,7 @@ mapping pim::types::PrimitiveDataType :: PrimitiveDataType2PrimitiveDataType2() 
     			result._name := self._name;
     			result._comment := self._comment;
     			result._primitiveType := self._primitiveType;
-    			result._annotation := self._annotation.map EAnnotation2EAnnotation();
-    			result._extension := self._extension.map Extension2Extension();
+    			result._extensions := self._extensions.map Extension2Extension();
     			};
    		 }
    	}
@@ -257,8 +253,7 @@ constructor PrimitiveDataType :: PrimitiveDataType(){
 //Overridden to replace _dataType := self._dataType.map PrimitiveDataType2PrimitiveDataType();
 mapping actionlanguage::NondeterministicChoiceExpression :: NondeterministicChoiceExpression2NondeterministicChoiceExpression() : actionlanguage::NondeterministicChoiceExpression{
     	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
+    	_extensions := self._extensions.map Extension2Extension();
     	_range := self._range.map Range2Range();
     	
     	_dataType := self._dataType.map PrimitiveDataType2PrimitiveDataType2();
@@ -277,8 +272,7 @@ mapping pim::types::ArrayDataType :: ArrayDataType2ArrayDataType2() : pim::types
     			result := new ArrayDataType();
     			result._name := self._name;
     			result._comment := self._comment;
-    			result._annotation := self._annotation.map EAnnotation2EAnnotation();
-    			result._extension := self._extension.map Extension2Extension();
+    			result._extensions := self._extensions.map Extension2Extension();
     			result._type := self._type.map DataType2DataType();
     			result._cardinality := self._cardinality.map NaturalNumber2NaturalNumber();
     			}
@@ -299,8 +293,7 @@ mapping pim::types::RangedPrimitiveDataType :: RangedPrimitiveDataType2RangedPri
     			result := new RangedPrimitiveDataType();
     			result._name := self._name;
     			result._comment := self._comment;
-    			result._annotation := self._annotation.map EAnnotation2EAnnotation();
-    			result._extension := self._extension.map Extension2Extension();
+    			result._extensions := self._extensions.map Extension2Extension();
     			
     			//Make sure to call PrimitiveDataType2PrimitiveDataType2().
     			//Otherwise a new PrimitiveDataType could be created if its also the selectorType of a SelectorExpression
@@ -349,7 +342,7 @@ helper getModelElementCategory(_key : String, _name : String) : ModelElementCate
 mapping CoordinationProtocol :: createCIC() : ComponentInstanceConfiguration{
 	//Adapt the CoordinationProtocol's VCR to component (instance) level
 	verificationConstraintRepositories := self.verificationConstraintRepositories.map VerificationConstraintRepository2VerificationConstraintRepository();
-	_extension += object ElementToVerifyExtension {};
+	_extensions += object ElementToVerifyExtension {};
 	name := self.name+coordinationProtocol2CICSuffix;
 	self.roles->forEach(role){
 		if(role.multi)
@@ -467,7 +460,7 @@ init{
 
 helper portReferencedByProtocol(inout protocol : CoordinationProtocol) : Boolean {
 	assert fatal (not protocol.oclIsUndefined());
-	var directContents : Sequence(EObject):=protocol.eContents().oclAsType(EObject);
+	var directContents : Sequence(EObject):=protocol.oclAsType(EObject).eContents().oclAsType(EObject);
 	var indirectContents:= directContents->closure(eContents());
 	
 	var allContents := directContents;

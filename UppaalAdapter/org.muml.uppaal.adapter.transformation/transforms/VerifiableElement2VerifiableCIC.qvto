@@ -21,7 +21,7 @@ transformation VerifiableElement2VerifiableCIC(in input : muml, in options: veri
 main() {
 	reportProgress("Creating CIC");
 
-	var verifiableElement = input.objects()[VerifiableElement]->any(ve : VerifiableElement | ve.extension->exists(oclIsKindOf(ElementToVerifyExtension)));
+	var verifiableElement = input.objects()[VerifiableElement]->any(ve : VerifiableElement | ve.extensions->exists(oclIsKindOf(ElementToVerifyExtension)));
 	if (verifiableElement.oclIsUndefined()) {
 		// in case no ElementToVerifyExtension has been set for a VerifiableElement, we take a VerifiableElement with verification constraints
 		verifiableElement := input.objects()[VerifiableElement]->any(ve : VerifiableElement | not ve.verificationConstraintRepositories->isEmpty());
