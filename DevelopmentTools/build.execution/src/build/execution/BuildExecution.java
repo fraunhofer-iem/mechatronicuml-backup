@@ -119,7 +119,7 @@ public class BuildExecution {
 					BasicConfigurator.configure();
 					System.out.println("before: Main " + resource.getName());
 					Compiler.main(new String[] {
-							"-classpath", "${project_classpath:" + resource.getName() + "}",
+							"-classpath", "${project_classpath:" + resource.getName() + "xxxx}",
 							"-d", "xtend-gen", "src" //, "src-gen"
 					});
 					System.out.println("after: Main " + resource.getName());
