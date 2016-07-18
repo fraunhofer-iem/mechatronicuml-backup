@@ -112,12 +112,14 @@ public class BuildExecution {
 				System.out.println(resource.getName());
 				if (resource instanceof IWorkspaceRoot)
 					return true;
+				String path = resource.getFullPath().toOSString();
+				System.out.println(path);
 				if (resource.getName().endsWith("xtext") || resource.getName().endsWith("xtext.ui")) {
 					System.out.println("before start: " + resource.getName());
 					MyCompiler.main(new String[] {
 						"-classpath", "${project_classpath:" + resource.getName() + "}",
-						"-d", "xtend-gen",
-						"src", "src-gen"
+						"-d", path + "/xtend-gen",
+						path + "/src", path + "/src-gen"
 					});
 					System.out.println("after start: " + resource.getName());
 				}
