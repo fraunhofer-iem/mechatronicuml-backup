@@ -422,7 +422,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					envType.put("oppositeView", NotationPackage.Literals.VIEW);
 					env.put("oppositeView", sourceView);
 
-					MumlAbstractExpression expression = MumlOCLFactory.getExpression(32,
+					MumlAbstractExpression expression = MumlOCLFactory.getExpression(33,
 							ConnectorPackage.eINSTANCE.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
 
@@ -455,7 +455,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					envType.put("oppositeView", NotationPackage.Literals.VIEW);
 					env.put("oppositeView", sourceView);
 
-					MumlAbstractExpression expression = MumlOCLFactory.getExpression(32,
+					MumlAbstractExpression expression = MumlOCLFactory.getExpression(33,
 							ConnectorPackage.eINSTANCE.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
 

@@ -34,12 +34,15 @@ import org.muml.pim.coordinationprotocol.diagram.edit.parts.WrappingLabel3EditPa
 import org.muml.pim.coordinationprotocol.diagram.edit.parts.WrappingLabel5EditPart;
 import org.muml.pim.coordinationprotocol.diagram.edit.parts.WrappingLabel6EditPart;
 import org.muml.pim.coordinationprotocol.diagram.edit.parts.WrappingLabelEditPart;
+import org.muml.pim.coordinationprotocol.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser;
 import org.muml.pim.coordinationprotocol.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5020;
 import org.muml.pim.coordinationprotocol.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5021;
+import org.muml.pim.coordinationprotocol.diagram.parsers.MessageBufferLabelExpressionLabelParser;
 import org.muml.pim.coordinationprotocol.diagram.parsers.MessageBufferLabelExpressionLabelParser5018;
 import org.muml.pim.coordinationprotocol.diagram.parsers.MessageBufferLabelExpressionLabelParser5019;
 import org.muml.pim.coordinationprotocol.diagram.parsers.MessageBufferLabelExpressionLabelParser5025;
 import org.muml.pim.coordinationprotocol.diagram.parsers.MessageFormatParser;
+import org.muml.pim.coordinationprotocol.diagram.parsers.ParameterLabelExpressionLabelParser;
 import org.muml.pim.coordinationprotocol.diagram.parsers.ParameterLabelExpressionLabelParser5024;
 import org.muml.pim.coordinationprotocol.diagram.part.MumlVisualIDRegistry;
 
@@ -86,21 +89,21 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	 * @generated
 	 */
 	private IParser getMessageBufferLabel_5018Parser() {
-		return new MessageBufferLabelExpressionLabelParser5018();
+		return new MessageBufferLabelExpressionLabelParser();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getMessageBufferLabel_5019Parser() {
-		return new MessageBufferLabelExpressionLabelParser5019();
+		return new MessageBufferLabelExpressionLabelParser();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getMessageBufferLabel_5025Parser() {
-		return new MessageBufferLabelExpressionLabelParser5025();
+		return new MessageBufferLabelExpressionLabelParser();
 	}
 
 	/**
@@ -124,21 +127,21 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	 * @generated
 	 */
 	private IParser getParameterLabel_5024Parser() {
-		return new ParameterLabelExpressionLabelParser5024();
+		return new ParameterLabelExpressionLabelParser();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getConnectorQualityOfServiceAssumptionsLabel_5020Parser() {
-		return new ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5020();
+		return new ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser();
 	}
 
 	/**
 	* @generated
 	*/
 	private IParser getConnectorQualityOfServiceAssumptionsLabel_5021Parser() {
-		return new ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5021();
+		return new ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser();
 	}
 
 	/**

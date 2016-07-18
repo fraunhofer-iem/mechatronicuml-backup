@@ -69,8 +69,6 @@ public class MessageTypeCreateCommand extends EditElementCommand {
 		MessageBuffer owner = (MessageBuffer) getElementToEdit();
 		owner.getGmfMessageTypes().add(newElement);
 
-		ElementInitializers.getInstance().init_MessageType_3009(newElement);
-
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

@@ -1,66 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmfgraph:Canvas
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition"
-    name="PatternEditor">
-  <figures
-      name="Default">
-    <descriptors
-        name="PatternFigure">
-      <actualFigure
-          xsi:type="gmfgraph:ScalablePolygon"
-          name="PatternFigure">
-        <layout
-            xsi:type="gmfgraph:GridLayout"/>
-        <backgroundColor
-            xsi:type="gmfgraph:RGBColor"
-            red="251"
-            green="215"
-            blue="187"/>
-        <location
-            x="2"
-            y="2"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="PatternNameLabel">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData"
-              grabExcessHorizontalSpace="true"
-              grabExcessVerticalSpace="true"/>
-          <font
-              xsi:type="gmfgraph:BasicFont"
-              style="BOLD"/>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="PatternEditor">
+  <figures name="Default">
+    <descriptors name="PatternFigure">
+      <actualFigure xsi:type="gmfgraph:ScalablePolygon" name="PatternFigure">
+        <layout xsi:type="gmfgraph:GridLayout"/>
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="251" green="215" blue="187"/>
+        <location x="2" y="2"/>
+        <children xsi:type="gmfgraph:Label" name="PatternNameLabel">
+          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true"/>
+          <font xsi:type="gmfgraph:BasicFont" style="BOLD"/>
         </children>
-        <template
-            x="4"/>
-        <template
-            x="15"/>
-        <template
-            x="19"
-            y="1"/>
-        <template
-            x="15"
-            y="2"/>
-        <template
-            x="4"
-            y="2"/>
-        <template
-            y="1"/>
-        <template
-            x="4"/>
+        <template x="4"/>
+        <template x="15"/>
+        <template x="19" y="1"/>
+        <template x="15" y="2"/>
+        <template x="4" y="2"/>
+        <template y="1"/>
+        <template x="4"/>
       </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
   </figures>
-  <nodes
-      name="PatternNode"
-      figure="PatternFigure"/>
-  <labels
-      name="NameLabelPattern"
-      figure="PatternFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <nodes name="PatternNode" figure="PatternFigure"/>
+  <labels name="NameLabelPattern" figure="PatternFigure" elementIcon="false" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
 </gmfgraph:Canvas>

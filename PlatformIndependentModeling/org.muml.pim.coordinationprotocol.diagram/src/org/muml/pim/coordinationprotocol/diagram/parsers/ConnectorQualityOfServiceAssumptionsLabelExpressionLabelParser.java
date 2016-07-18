@@ -31,16 +31,19 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.muml.core.common.gmf.ocl.ActivePivotOclTrackerFactory;
+import org.muml.pim.coordinationprotocol.diagram.expressions.MumlOCLFactory;
+import org.muml.pim.protocol.ProtocolPackage;
 
 /**
  * @generated
  */
-public class ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser
-		extends ExpressionLabelParserBase {
+public class ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser extends ExpressionLabelParserBase {
 	/**
 	 * @generated
 	 */
 	public ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser() {
+		super(new ActivePivotOclTrackerFactory());
 	}
 
 	/**
@@ -48,12 +51,8 @@ public class ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser
 	 */
 	@Override
 	protected String getExpressionBody() {
-		return org.muml.pim.coordinationprotocol.diagram.expressions.MumlOCLFactory
-				.getExpression(
-						19,
-						org.muml.pim.protocol.ProtocolPackage.eINSTANCE
-								.getConnectorQualityOfServiceAssumptions(),
-						null).body();
+		return MumlOCLFactory
+				.getExpression(19, ProtocolPackage.eINSTANCE.getConnectorQualityOfServiceAssumptions(), null).body();
 	}
 
 	/**
@@ -66,31 +65,26 @@ public class ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser
 	/**
 	 * @generated
 	 */
-	public IParserEditStatus isValidEditString(IAdaptable element,
-			String editString) {
+	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		return ParserEditStatus.EDITABLE_STATUS;
 	}
 
 	/**
 	 * @generated
 	 */
-	public ICommand getParseCommand(IAdaptable element, final String newString,
-			int flags) {
+	public ICommand getParseCommand(IAdaptable element, final String newString, int flags) {
 		final EObject target = (EObject) element.getAdapter(EObject.class);
 		if (!validateValues(target, newString)) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		TransactionalEditingDomain editingDomain = TransactionUtil
-				.getEditingDomain(target);
+		TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(target);
 		if (editingDomain == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		IFile affectedFile = WorkspaceSynchronizer.getFile(target.eResource());
-		return new AbstractTransactionalCommand(
-				editingDomain,
-				"Set Values", affectedFile == null ? null : Collections.singletonList(affectedFile)) { //$NON-NLS-1$ 
-			protected CommandResult doExecuteWithResult(
-					IProgressMonitor monitor, IAdaptable info)
+		return new AbstractTransactionalCommand(editingDomain, "Set Values", //$NON-NLS-1$
+				affectedFile == null ? null : Collections.singletonList(affectedFile)) {
+			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
 				return new CommandResult(updateValues(target, newString));
 			}
@@ -115,12 +109,10 @@ public class ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser
 	/**
 	 * @generated
 	 */
-	protected IStatus updateValues(EObject target, String newString)
-			throws ExecutionException {
+	protected IStatus updateValues(EObject target, String newString) throws ExecutionException {
 		// TODO implement this method
 		// DO NOT FORGET to remove @generated tag or mark method @generated NOT
-		throw new ExecutionException(
-				"Please implement parsing and value modification");
+		throw new ExecutionException("Please implement parsing and value modification");
 	}
 
 	/**

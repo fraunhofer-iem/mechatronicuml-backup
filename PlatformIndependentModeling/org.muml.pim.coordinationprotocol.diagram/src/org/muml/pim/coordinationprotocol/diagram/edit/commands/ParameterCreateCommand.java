@@ -69,8 +69,6 @@ public class ParameterCreateCommand extends EditElementCommand {
 		MessageType owner = (MessageType) getElementToEdit();
 		owner.getParameters().add(newElement);
 
-		ElementInitializers.getInstance().init_Parameter_3016(newElement);
-
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

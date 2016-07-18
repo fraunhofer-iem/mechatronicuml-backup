@@ -31,16 +31,19 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.muml.core.common.gmf.ocl.ActivePivotOclTrackerFactory;
+import org.muml.pim.behavior.BehaviorPackage;
+import org.muml.pim.coordinationprotocol.diagram.expressions.MumlOCLFactory;
 
 /**
  * @generated
  */
-public class ParameterLabelExpressionLabelParser extends
-		ExpressionLabelParserBase {
+public class ParameterLabelExpressionLabelParser extends ExpressionLabelParserBase {
 	/**
 	 * @generated
 	 */
 	public ParameterLabelExpressionLabelParser() {
+		super(new ActivePivotOclTrackerFactory());
 	}
 
 	/**
@@ -48,11 +51,7 @@ public class ParameterLabelExpressionLabelParser extends
 	 */
 	@Override
 	protected String getExpressionBody() {
-		return org.muml.pim.coordinationprotocol.diagram.expressions.MumlOCLFactory
-				.getExpression(
-						12,
-						org.muml.pim.behavior.BehaviorPackage.eINSTANCE
-								.getParameter(), null).body();
+		return MumlOCLFactory.getExpression(13, BehaviorPackage.eINSTANCE.getParameter(), null).body();
 	}
 
 	/**
@@ -60,42 +59,34 @@ public class ParameterLabelExpressionLabelParser extends
 	 */
 	public String getEditString(IAdaptable element, int flags) {
 		EObject target = (EObject) element.getAdapter(EObject.class);
-		Object result = org.muml.pim.coordinationprotocol.diagram.expressions.MumlOCLFactory
-				.getExpression(
-						13,
-						org.muml.pim.behavior.BehaviorPackage.eINSTANCE
-								.getParameter(), null).evaluate(target);
+		Object result = MumlOCLFactory.getExpression(14, BehaviorPackage.eINSTANCE.getParameter(), null)
+				.evaluate(target);
 		return String.valueOf(result);
 	}
 
 	/**
 	 * @generated
 	 */
-	public IParserEditStatus isValidEditString(IAdaptable element,
-			String editString) {
+	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		return ParserEditStatus.EDITABLE_STATUS;
 	}
 
 	/**
 	 * @generated
 	 */
-	public ICommand getParseCommand(IAdaptable element, final String newString,
-			int flags) {
+	public ICommand getParseCommand(IAdaptable element, final String newString, int flags) {
 		final EObject target = (EObject) element.getAdapter(EObject.class);
 		if (!validateValues(target, newString)) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		TransactionalEditingDomain editingDomain = TransactionUtil
-				.getEditingDomain(target);
+		TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(target);
 		if (editingDomain == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		IFile affectedFile = WorkspaceSynchronizer.getFile(target.eResource());
-		return new AbstractTransactionalCommand(
-				editingDomain,
-				"Set Values", affectedFile == null ? null : Collections.singletonList(affectedFile)) { //$NON-NLS-1$ 
-			protected CommandResult doExecuteWithResult(
-					IProgressMonitor monitor, IAdaptable info)
+		return new AbstractTransactionalCommand(editingDomain, "Set Values", //$NON-NLS-1$
+				affectedFile == null ? null : Collections.singletonList(affectedFile)) {
+			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
 				return new CommandResult(updateValues(target, newString));
 			}
@@ -120,12 +111,10 @@ public class ParameterLabelExpressionLabelParser extends
 	/**
 	 * @generated
 	 */
-	protected IStatus updateValues(EObject target, String newString)
-			throws ExecutionException {
+	protected IStatus updateValues(EObject target, String newString) throws ExecutionException {
 		// TODO implement this method
 		// DO NOT FORGET to remove @generated tag or mark method @generated NOT
-		throw new ExecutionException(
-				"Please implement parsing and value modification");
+		throw new ExecutionException("Please implement parsing and value modification");
 	}
 
 	/**

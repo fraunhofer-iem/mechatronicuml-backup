@@ -1,16 +1,4 @@
-/*
- * <copyright>
- * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *     Software Engineering Group - initial API and implementation
- * </copyright>
- */
-package org.muml.pim.coordinationprotocol.diagram.parsers;
+package org.muml.pim.pattern.diagram.parsers;
 
 import java.util.Collections;
 
@@ -32,45 +20,47 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCo
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.muml.core.common.gmf.ocl.ActivePivotOclTrackerFactory;
-import org.muml.pim.connector.ConnectorPackage;
-import org.muml.pim.coordinationprotocol.diagram.expressions.MumlOCLFactory;
+import org.muml.pim.pattern.diagram.expressions.MumlOCLFactory;
+import org.muml.pim.protocol.ProtocolPackage;
 
 /**
  * @generated
  */
-public class MessageBufferLabelExpressionLabelParser extends ExpressionLabelParserBase {
+public class ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser extends ExpressionLabelParserBase {
 	/**
-	 * @generated
-	 */
-	public MessageBufferLabelExpressionLabelParser() {
+	* @generated
+	*/
+	public ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser() {
 		super(new ActivePivotOclTrackerFactory());
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@Override
+
 	protected String getExpressionBody() {
-		return MumlOCLFactory.getExpression(17, ConnectorPackage.eINSTANCE.getMessageBuffer(), null).body();
+		return MumlOCLFactory
+				.getExpression(19, ProtocolPackage.eINSTANCE.getConnectorQualityOfServiceAssumptions(), null).body();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getEditString(IAdaptable element, int flags) {
 		return getPrintString(element, flags);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		return ParserEditStatus.EDITABLE_STATUS;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public ICommand getParseCommand(IAdaptable element, final String newString, int flags) {
 		final EObject target = (EObject) element.getAdapter(EObject.class);
 		if (!validateValues(target, newString)) {
@@ -91,38 +81,27 @@ public class MessageBufferLabelExpressionLabelParser extends ExpressionLabelPars
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		return null;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean validateValues(EObject target, String newString) {
 		// TODO implement as needed
 		return true;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IStatus updateValues(EObject target, String newString) throws ExecutionException {
 		// TODO implement this method
 		// DO NOT FORGET to remove @generated tag or mark method @generated NOT
 		throw new ExecutionException("Please implement parsing and value modification");
 	}
-
-	/**
-	 * @generated
-	 */
-	//
-	//protected void initializeEnvironment(java.util.Map<java.lang.String, org.eclipse.emf.ecore.EClassifier> typeEnv,
-	//		java.util.Map<java.lang.String, java.lang.Object> env, org.eclipse.emf.ecore.EObject context) {
-	//	// CAUTION: This is never called, because of newest GMF template changes according OCL-Tracking make it impossible to access the OCL object!
-	//  // TODO: See MUML #516
-	//}
-	//
 
 }

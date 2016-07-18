@@ -1,103 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmfgraph:Canvas
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition"
-    name="messageinterfaceeditor">
-  <figures
-      name="MessagetypeGallery">
-    <descriptors
-        name="MessageTypeFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="MessageTypeFigure"
-          outline="false"
-          fill="false">
-        <layout
-            xsi:type="gmfgraph:FlowLayout"
-            matchMinorSize="true"
-            forceSingleLine="true"
-            majorAlignment="FILL"
-            majorSpacing="0"
-            minorSpacing="0"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="MessageTypeNameLabelFigure"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="OpeningParenthesesLabelFigure"
-            text="("/>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="ParametersCompartmentFigure"
-            outline="false"
-            fill="false"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="ClosingParenthesesLabelFigure"
-            text=")"/>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="messageinterfaceeditor">
+  <figures name="MessagetypeGallery">
+    <descriptors name="MessageTypeFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="MessageTypeFigure" outline="false" fill="false">
+        <layout xsi:type="gmfgraph:FlowLayout" matchMinorSize="true" forceSingleLine="true" majorAlignment="FILL" majorSpacing="0" minorSpacing="0"/>
+        <children xsi:type="gmfgraph:Label" name="MessageTypeNameLabelFigure"/>
+        <children xsi:type="gmfgraph:Label" name="OpeningParenthesesLabelFigure" text="("/>
+        <children xsi:type="gmfgraph:Rectangle" name="ParametersCompartmentFigure" outline="false" fill="false"/>
+        <children xsi:type="gmfgraph:Label" name="ClosingParenthesesLabelFigure" text=")"/>
       </actualFigure>
-      <accessors
-          accessor="getFigureMessageTypeNameLabelFigure"
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
-      <accessors
-          accessor="getFigureParametersCompartmentFigure"
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.2"/>
+      <accessors accessor="getFigureMessageTypeNameLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureParametersCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.2"/>
     </descriptors>
-    <descriptors
-        name="ParameterFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="ParameterFigure"
-          outline="false"
-          fill="false">
-        <children
-            xsi:type="gmfgraph:Label"
-            name="ParameterLabel"
-            text=""/>
+    <descriptors name="ParameterFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="ParameterFigure" outline="false" fill="false">
+        <children xsi:type="gmfgraph:Label" name="ParameterLabel" text=""/>
       </actualFigure>
-      <accessors
-          accessor="getFigureParameterLabel"
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureParameterLabel" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
     </descriptors>
   </figures>
-  <nodes
-      name="MessageType"
-      figure="MessageTypeFigure">
-    <facets
-        xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize
-          dx="-1"
-          dy="-1"/>
+  <nodes name="MessageType" figure="MessageTypeFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="-1" dy="-1"/>
     </facets>
   </nodes>
-  <nodes
-      name="Parameter"
-      figure="ParameterFigure"
-      resizeConstraint="NONE">
-    <facets
-        xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize
-          dx="-1"
-          dy="-1"/>
+  <nodes name="Parameter" figure="ParameterFigure" resizeConstraint="NONE">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="-1" dy="-1"/>
     </facets>
   </nodes>
-  <compartments
-      name="ParametersCompartment"
-      figure="MessageTypeFigure"
-      collapsible="true"
-      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
-  <labels
-      name="MessageTypeName"
-      figure="MessageTypeFigure"
-      resizeConstraint="NONE"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
-  <labels
-      name="ParameterName"
-      figure="ParameterFigure"
-      resizeConstraint="NONE"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <compartments name="ParametersCompartment" figure="MessageTypeFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <labels name="MessageTypeName" figure="MessageTypeFigure" resizeConstraint="NONE" elementIcon="false" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="ParameterName" figure="ParameterFigure" resizeConstraint="NONE" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
 </gmfgraph:Canvas>

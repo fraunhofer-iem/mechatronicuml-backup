@@ -23,12 +23,15 @@ import org.muml.pim.pattern.diagram.edit.parts.WrappingLabel3EditPart;
 import org.muml.pim.pattern.diagram.edit.parts.WrappingLabel4EditPart;
 import org.muml.pim.pattern.diagram.edit.parts.WrappingLabel6EditPart;
 import org.muml.pim.pattern.diagram.edit.parts.WrappingLabelEditPart;
+import org.muml.pim.pattern.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser;
 import org.muml.pim.pattern.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5008;
 import org.muml.pim.pattern.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5009;
+import org.muml.pim.pattern.diagram.parsers.MessageBufferLabelExpressionLabelParser;
 import org.muml.pim.pattern.diagram.parsers.MessageBufferLabelExpressionLabelParser5006;
 import org.muml.pim.pattern.diagram.parsers.MessageBufferLabelExpressionLabelParser5007;
 import org.muml.pim.pattern.diagram.parsers.MessageBufferLabelExpressionLabelParser5011;
 import org.muml.pim.pattern.diagram.parsers.MessageFormatParser;
+import org.muml.pim.pattern.diagram.parsers.ParameterLabelExpressionLabelParser;
 import org.muml.pim.pattern.diagram.parsers.ParameterLabelExpressionLabelParser5004;
 import org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry;
 
@@ -75,21 +78,21 @@ public class CoordinationPatternParserProvider extends AbstractProvider implemen
 	* @generated
 	*/
 	private IParser getMessageBufferLabel_5006Parser() {
-		return new MessageBufferLabelExpressionLabelParser5006();
+		return new MessageBufferLabelExpressionLabelParser();
 	}
 
 	/**
 	* @generated
 	*/
 	private IParser getMessageBufferLabel_5007Parser() {
-		return new MessageBufferLabelExpressionLabelParser5007();
+		return new MessageBufferLabelExpressionLabelParser();
 	}
 
 	/**
 	* @generated
 	*/
 	private IParser getMessageBufferLabel_5011Parser() {
-		return new MessageBufferLabelExpressionLabelParser5011();
+		return new MessageBufferLabelExpressionLabelParser();
 	}
 
 	/**
@@ -113,21 +116,21 @@ public class CoordinationPatternParserProvider extends AbstractProvider implemen
 	* @generated
 	*/
 	private IParser getParameterLabel_5004Parser() {
-		return new ParameterLabelExpressionLabelParser5004();
+		return new ParameterLabelExpressionLabelParser();
 	}
 
 	/**
 	* @generated
 	*/
 	private IParser getConnectorQualityOfServiceAssumptionsLabel_5008Parser() {
-		return new ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5008();
+		return new ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser();
 	}
 
 	/**
 	* @generated
 	*/
 	private IParser getConnectorQualityOfServiceAssumptionsLabel_5009Parser() {
-		return new ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5009();
+		return new ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser();
 	}
 
 	/**
