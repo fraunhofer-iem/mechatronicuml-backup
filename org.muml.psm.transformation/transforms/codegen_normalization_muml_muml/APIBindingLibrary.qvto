@@ -62,7 +62,7 @@ helper ParameterisableDiscreteSinglePortInstance::createAPICallParameterBinding(
 	binding.name:=self.componentInstance.name+"_"+self.name+"_"+org_port.map mapContinuousPort2APICallParameter().name;
 	binding.parameter:=org_port.map mapContinuousPort2APICallParameter();
 	binding.returnType:=org_port.map mapContinuousPort2APICallParameter().returnType;
-	binding.parameters:=org_port.map mapContinuousPort2APICallParameter().parameters->deepclone()->oclAsType(Muml::behavior::Parameter);
+	binding.parameters:=org_port.map mapContinuousPort2APICallParameter().parameters->deepclone()->oclAsType(pim::behavior::Parameter);
 	binding.implementations+=mappingExpressiong.createMumlValidExpression();
 	return binding;
 }
