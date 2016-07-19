@@ -3,8 +3,7 @@
   <mapping sourceURI="http://www.muml.org/pim/1.0.0" targetURI="platform:/resource/org.muml.pim/model/pim.ecore"/>
   <mapping sourceURI="http://www.muml.org/pm/hardware/1.0.0" targetURI="platform:/resource/org.muml.pm.hardware/model/hardware.ecore"/>
   <mapping sourceURI="http://www.muml.org/psm/1.0.0" targetURI="platform:/resource/org.muml.psm/model/psm.ecore"/>
-  <mapping sourceURI="http://www.muml.org/pm/software/1.0.0" targetURI="platform:/resource/org.muml.pm.software.platform/model/swplatform.ecore"/>
+  <mapping sourceURI="http://www.muml.org/pm/software/1.0.0" targetURI="platform:/resource/org.muml.pm.software/model/software.ecore"/>
   <mapping sourceURI="http://www.muml.org/core/1.0.0" targetURI="platform:/resource/org.muml.core/model/core.ecore"/>
-  <mapping sourceURI="http://www.muml.org/modelinstance/1.0.0" targetURI="platform:/resource/org.muml.core.modelinstance/model/modelinstance.ecore"/>
   <mapping sourceURI="http://www.muml.org/pim/actionlanguage/1.0.0" targetURI="platform:/resource/org.muml.pim.actionlanguage/model/actionlanguage.ecore"/>
 </uriMap:MappingContainer>
