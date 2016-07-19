@@ -36,12 +36,23 @@ import com.google.inject.Injector;
 public class BuildExecution {
 	
 	private static class MyCompiler {
+		
+		private static class MyBatchCompiler extends XtendBatchCompiler {
+			public MyBatchCompiler() {
+				System.out.println("in constructor");
+				this.currentClassLoader = MyCompiler.class.getClassLoader();
+				this.useCurrentClassLoaderAsParent = true;
+			}
+		}
+		
 		public static void main(String[] args) {
 			List<String> existingDirs = new ArrayList<String>();
 			BasicConfigurator.configure();
 			Injector injector = XtendInjectorSingleton.INJECTOR;
-			XtendBatchCompiler compiler = injector.getInstance(XtendBatchCompiler.class);
+			//XtendBatchCompiler compiler = injector.getInstance(XtendBatchCompiler.class);
+			XtendBatchCompiler compiler = injector.getInstance(MyBatchCompiler.class);
 			System.out.println("DEBUG out:");
+			System.out.println(compiler);
 			System.out.println(MyCompiler.class.getClassLoader());
 			System.out.println(compiler.getClass().getClassLoader());
 			System.out.println(Platform.getBundle("org.muml.core.common"));
