@@ -25,7 +25,7 @@ modeltype PortMappingModel uses psm::portapimapping('http://www.muml.org/psm/1.0
 modeltype ApiExpessions uses psm::apiexpressions('http://www.muml.org/psm/1.0.0');
 modeltype PSMInstance uses psm::psm_instance('http://www.muml.org/psm/1.0.0');
 
-modeltype SoftPlattform uses swplatform('http://www.muml.org/pm/software/1.0.0');
+modeltype SoftPlattform uses software('http://www.muml.org/pm/software/1.0.0');
 modeltype Hardware uses hardware('http://www.muml.org/pm/hardware/1.0.0');
 modeltype Platform uses hardware::hwplatform('http://www.muml.org/pm/hardware/1.0.0');
 modeltype PlatformInstance uses hardware::hwplatforminstance('http://www.muml.org/pm/hardware/1.0.0');

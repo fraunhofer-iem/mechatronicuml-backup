@@ -2,7 +2,7 @@ library APIBindingLibrary;
 import CommonLibrary;
 import StateChartLibrary;
 
-modeltype SoftPlattform uses swplatform('http://www.muml.org/pm/software/1.0.0');
+modeltype SoftPlattform uses software('http://www.muml.org/pm/software/1.0.0');
 
 modeltype PSM uses psm('http://www.muml.org/psm/1.0.0');
 modeltype PortMappingModel uses psm::portapimapping('http://www.muml.org/psm/1.0.0');
