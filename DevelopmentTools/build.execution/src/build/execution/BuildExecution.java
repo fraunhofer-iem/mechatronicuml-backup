@@ -40,6 +40,7 @@ public class BuildExecution {
 			BasicConfigurator.configure();
 			Injector injector = XtendInjectorSingleton.INJECTOR;
 			XtendBatchCompiler compiler = injector.getInstance(XtendBatchCompiler.class);
+			System.out.println(compiler.getClass().getClassLoader());
 			if ((args == null) || (args.length == 0)) {
 				printUsage();
 				return;
