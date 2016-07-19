@@ -42,6 +42,7 @@ public class BuildExecution {
 			Injector injector = XtendInjectorSingleton.INJECTOR;
 			XtendBatchCompiler compiler = injector.getInstance(XtendBatchCompiler.class);
 			System.out.println("DEBUG out:");
+			System.out.println(MyCompiler.class.getClassLoader());
 			System.out.println(compiler.getClass().getClassLoader());
 			System.out.println(Platform.getBundle("org.muml.core.common"));
 			if ((args == null) || (args.length == 0)) {
