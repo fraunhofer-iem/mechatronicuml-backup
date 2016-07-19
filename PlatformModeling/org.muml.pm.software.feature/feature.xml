@@ -28,7 +28,6 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
       <import feature="org.muml.core.feature" version="0.5.0"/>
       <import feature="org.muml.pim.feature" version="0.5.0"/>
       <import feature="org.muml.ape.feature" version="0.5.0"/>
-      <import feature="org.muml.pm.feature" version="0.5.0.qualifier"/>
    </requires>
 
    <plugin
