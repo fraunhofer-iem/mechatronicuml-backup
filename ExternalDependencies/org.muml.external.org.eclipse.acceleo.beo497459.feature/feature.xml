@@ -2,7 +2,7 @@
 <feature
       id="org.muml.external.org.eclipse.acceleo.beo497459.feature"
       label="beo497459"
-      version="1.0.0"
+      version="1.0.0.qualifier"
       provider-name="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany">
 
    <description url="http://www.example.com/description">
