@@ -255,6 +255,10 @@ the Eclipse framework.
          id="org.muml.example.rocketlauncher.feature"
          version="0.0.0"/>
 
+   <includes
+         id="org.muml.external.org.eclipse.acceleo.beo497459.feature"
+         version="0.0.0"/>
+
    <requires>
       <import feature="org.muml.pm.hardware.feature" version="1.0.0"/>
       <import feature="org.muml.pm.software.feature" version="1.0.0"/>
