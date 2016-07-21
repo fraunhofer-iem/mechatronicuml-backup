@@ -18,7 +18,7 @@
    </license>
 
    <requires>
-      <import feature="org.eclipse.acceleo" version="3.6.4.201605040614" patch="true"/>
+      <import feature="org.eclipse.acceleo.runtime" version="3.6.4.201605040614" patch="true"/>
       <import plugin="org.eclipse.acceleo.common"/>
       <import plugin="org.eclipse.acceleo.model"/>
       <import plugin="org.eclipse.acceleo.profiler"/>
