@@ -1783,6 +1783,7 @@ public class AcceleoEvaluationVisitor<PK, C, O, P, EL, PM, S, COA, SSA, CT, CLS,
 			init.setReferredVariable(null);
 			temporaryVar.setType(null);
 			temporaryVar.setInitExpression(null);
+			getEvaluationEnvironment().remove(temporaryVar.getName());
 
 			final Object argValue = getEvaluationEnvironment().getValueOf(var.getName());
 			arguments.add(argValue);
