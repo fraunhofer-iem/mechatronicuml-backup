@@ -17,6 +17,7 @@
 	</properties>
   
   <modules>
+    <module>mm/org.muml.psm.allocation.language</module>  
     <module>org.muml.psm</module>
     <module>org.muml.psm.allocation.algorithm</module>
     <module>org.muml.psm.allocation.algorithm.ilp</module>
