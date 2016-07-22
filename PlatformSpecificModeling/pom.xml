@@ -38,7 +38,6 @@
     <module>org.muml.psm.allocation.ilp.lpsolve.xtext.tests</module>
     <module>org.muml.psm.allocation.ilp.lpsolve.xtext.ui</module>
     <module>org.muml.psm.allocation.ilp.tests</module>
-    <module>org.muml.psm.allocation.language.build</module>
     <module>org.muml.psm.allocation.language.xtext</module>
     <module>org.muml.psm.allocation.language.xtext.tests</module>
     <module>org.muml.psm.allocation.language.xtext.ui</module>
