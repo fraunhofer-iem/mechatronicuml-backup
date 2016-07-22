@@ -62,11 +62,7 @@
         <version>0.25.0</version>
         <extensions>true</extensions>
       </plugin>
-      <plugin>
-				<!-- enable build environments -->
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>target-platform-configuration</artifactId>				
-			</plugin>
+
       <plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>target-platform-configuration</artifactId>
