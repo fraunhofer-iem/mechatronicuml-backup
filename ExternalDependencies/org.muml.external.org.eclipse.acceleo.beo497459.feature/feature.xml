@@ -19,11 +19,6 @@
 
    <requires>
       <import feature="org.eclipse.acceleo" version="3.6.4.201605040614" patch="true"/>
-      <import plugin="org.eclipse.acceleo.common"/>
-      <import plugin="org.eclipse.acceleo.model"/>
-      <import plugin="org.eclipse.acceleo.profiler"/>
-      <import plugin="org.eclipse.ocl.ecore"/>
-      <import plugin="com.google.guava"/>
    </requires>
 
    <plugin
