@@ -174,8 +174,8 @@
 
         <repository>
             <id>xtext</id>
-            <layout>p2</layout>
-            <url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases</url>
+            <layout>default</layout>
+            <url>http://download.eclipse.org/modeling/tmf/xtext/maven</url>
         </repository>
 		
 		
