@@ -44,7 +44,6 @@ public class BuildExecution {
 			workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
 			e.printStackTrace(System.out);
 		}
-		System.out.println("Build Progress Successfully!");
 
 		IMarker[] markers = null;
 		try {

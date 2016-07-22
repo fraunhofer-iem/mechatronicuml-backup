@@ -36,6 +36,14 @@ public class Startup implements IStartup {
 				if (markers != null && markers.length > 0) {
 					exitCode = 1;
 				}
+				if(exitCode==0){
+					System.out.println("Build Progress Successfully!");
+
+				}
+				else{
+					System.out.println("Build Progress Failed!");
+
+				}
 				workbench.close();
 				System.exit(exitCode);
 
