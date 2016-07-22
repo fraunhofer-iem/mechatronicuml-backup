@@ -174,7 +174,6 @@
 
         <repository>
             <id>xtext</id>
-            <layout>default</layout>
             <url>http://download.eclipse.org/modeling/tmf/xtext/maven</url>
         </repository>
 		
