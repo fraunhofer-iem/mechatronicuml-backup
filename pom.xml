@@ -53,7 +53,6 @@
     <module>org.muml.psm.transformation</module>
   </modules>
   <build>
-  	<pluginManagement>
   
     <plugins>
       <plugin>
@@ -96,19 +95,6 @@
 						</environment>
 					</environments>
 				</configuration>
-			</plugin>
-    </plugins>
-    		</pluginManagement>
-    <plugins>
-			<plugin>
-				<!-- enable tycho build extension -->
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>tycho-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<!-- enable build environments -->
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>target-platform-configuration</artifactId>				
 			</plugin>
 			<plugin>
 				<!-- set compiler version -->
