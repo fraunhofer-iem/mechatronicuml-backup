@@ -95,8 +95,8 @@
 						</environment>
 					</environments>
 				</configuration>
-			</plugin>
-			<plugin> -->
+			</plugin> -->
+			<plugin>
 				<!-- set compiler version -->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
