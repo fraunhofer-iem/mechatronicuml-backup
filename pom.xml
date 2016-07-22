@@ -104,8 +104,18 @@
 		<repository>
 			<id>eclipse-kepler</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/neon?importType=binary</url>
+			<url>http://download.eclipse.org/releases/neon</url>
 		</repository>
+		
+		
+			<!-- basic eclipse dependencies -->
+		<repository>
+			<id>eclipse-updates</id>
+			<layout>p2</layout>
+			<url>		http://download.eclipse.org/eclipse/updates/4.6</url>
+		</repository>
+		
+		
 
 		<!-- yakindu/xtext-jface-utils dependency -->
 		<repository>
@@ -118,7 +128,7 @@
 		<repository>
 			<id>emf</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/emf/emf/updates/releases/</url>
+			<url>http://download.eclipse.org/technology/epp/packages/neon</url>
 		</repository>
    
 		<!-- gmf-tooling dependency -->
