@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rm:rmap xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0" xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0">
   <rm:locator searchPathRef="default" failOnError="false"/>  
+    <rm:locator searchPathRef="opendds" failOnError="false"/>  
+  
   <rm:redirect href="https://svn-serv.cs.upb.de/mechatronicuml/trunk/UpdateSite/org.muml.releng.site.feature/default.rmap" />
 
   <rm:searchPath name="default">
@@ -11,5 +13,15 @@
       </rm:uri>
     </rm:provider>
   </rm:searchPath>
+  
+  
+  <rm:searchPath name="opendds">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
+      <rm:uri format="  http://download.opendds.org/modeling/eclipse" />
+    </rm:provider>
+</rm:searchPath>
+  
+
+  
     
 </rm:rmap>
