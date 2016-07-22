@@ -164,7 +164,7 @@
 		
 		
 				<repository>
-			<id>hen</id>
+			<id>hens</id>
 			<layout>p2</layout>
 			<url>file:///data/jenkins/jobs/PlatformModeling/lastSuccessful/archive/targetPlatform/</url>
 		</repository>
