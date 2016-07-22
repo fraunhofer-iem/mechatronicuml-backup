@@ -140,7 +140,7 @@
   </build>
   
   
-  <pluginRepositories>
+  <!--<pluginRepositories>
     <pluginRepository>
         <id>xtend</id>
         <url>http://build.eclipse.org/common/xtend/maven/</url>
@@ -149,7 +149,7 @@
         <id>fornax</id>
         <url>http://fornax-platform.org/nexus/content/groups/public/</url>
     </pluginRepository>
-</pluginRepositories>
+</pluginRepositories>-->
   
   <repositories>
 	    <!--<repository>
