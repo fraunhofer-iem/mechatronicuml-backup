@@ -60,7 +60,7 @@
     <module>org.muml.psm.api.apimappinglanguage.xtext</module>
     <module>org.muml.psm.api.apimappinglanguage.xtext.ui</module>
     <module>org.muml.psm.api.transformation.blackbox</module>
-    <module>org.muml.psm.buckminster</module>
+    <!--<module>org.muml.psm.buckminster</module>-->
     <module>org.muml.psm.edit</module>
     <module>org.muml.psm.edit.properties</module>
     <module>org.muml.psm.feature</module>
