@@ -6,6 +6,16 @@
   <artifactId>PlatformSpecificModeling</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
+  
+  	<properties>
+		<tycho-version>0.18.1</tycho-version>
+		<maven-compiler-plugin-version>2.5.1</maven-compiler-plugin-version>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+		<jacoco.version>0.7.4.201502262128</jacoco.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+  
   <modules>
     <module>org.muml.psm</module>
     <module>org.muml.psm.allocation.algorithm</module>
@@ -86,4 +96,86 @@
 			</plugin>
     </plugins>
   </build>
+  
+  
+  <repositories>
+	
+		<!-- basic eclipse dependencies -->
+		<repository>
+			<id>eclipse-kepler</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/neon?importType=binary</url>
+		</repository>
+
+		<!-- yakindu/xtext-jface-utils dependency -->
+		<repository>
+			<id>yakindu-releases</id>
+			<layout>p2</layout>
+			<url>file:///data/jenkins/jobs/Core/lastSuccessful/archive/targetPlatform/</url>
+		</repository>
+    
+		<!-- emf dependency -->
+		<repository>
+			<id>emf</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/modeling/emf/emf/updates/releases/</url>
+		</repository>
+   
+		<!-- gmf-tooling dependency -->
+		<repository>
+			<id>gmf-tooling</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/releases/</url>
+		</repository>
+    
+		<!-- kit pcm dependencies -->
+		<repository>
+			<id>kit-palladio-35</id>
+			<layout>p2</layout>
+			<url>file:///data/jenkins/jobs/ModelCopy/lastSuccessful/archive/targetPlatform/</url>
+		</repository>
+
+		<!-- kit commons dependencies -->
+		<repository>
+			<id>kit-commons-14</id>
+			<layout>p2</layout>
+			<url>file:///data/jenkins/jobs/ModelMigration/lastSuccessful/archive/targetPlatform/</url>
+		</repository>
+
+		<!-- swt-core dependencies  -->
+		<repository>
+			<id>swt-core-releases</id>
+			<layout>p2</layout>
+			<url>file:///data/jenkins/jobs/APE/lastSuccessful/archive/targetPlatform/</url>
+		</repository>
+    
+		<!-- henshin -->
+		<repository>
+			<id>henshi</id>
+			<layout>p2</layout>
+			<url>file:///data/jenkins/jobs/PlatformIndependentModeling/lastSuccessful/archive/targetPlatform/</url>
+		</repository>
+		
+		<repository>
+			<id>hen</id>
+			<layout>p2</layout>
+			<url>file:///data/jenkins/jobs/PlatformIndependentModeling/lastSuccessful/archive/targetPlatform/</url>
+		</repository>
+		
+		
+				<repository>
+			<id>hen</id>
+			<layout>p2</layout>
+			<url>file:///data/jenkins/jobs/PlatformModeling/lastSuccessful/archive/targetPlatform/</url>
+		</repository>
+		
+		<repository>
+			<id>he</id>
+			<layout>p2</layout>
+			<url>file:///data/jenkins/jobs/ExternalDependencies/lastSuccessful/archive/targetPlatform/</url>
+		</repository>
+		
+		
+		
+	</repositories>
 </project>
