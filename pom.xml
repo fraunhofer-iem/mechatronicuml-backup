@@ -157,7 +157,10 @@
 </pluginRepositories>
   
   <repositories>
-	
+	    <repository>
+        <id>xtend</id>
+        <url>http://build.eclipse.org/common/xtend/maven/</url>
+    </repository>
 		<!-- basic eclipse dependencies -->
 		<repository>
 			<id>eclipse-kepler</id>
