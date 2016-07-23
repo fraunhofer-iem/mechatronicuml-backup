@@ -67,6 +67,10 @@
  <!--   <module>org.muml.psm.sdk.feature</module> -->
     <module>org.muml.psm.tests</module>
     <module>org.muml.psm.transformation</module>
+    
+    
+        <module>org.muml.psm.repository</module>
+    
   </modules>
   <build>
   
