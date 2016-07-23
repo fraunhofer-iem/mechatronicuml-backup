@@ -233,11 +233,6 @@
 			<url>file:///data/jenkins/jobs/PlatformIndependentModeling/lastSuccessful/archive/targetPlatform/</url>
 		</repository>
 		
-		<repository>
-			<id>hen</id>
-			<layout>p2</layout>
-			<url>file:///data/jenkins/jobs/PlatformIndependentModeling/lastSuccessful/archive/targetPlatform/</url>
-		</repository>
 		
 		
 				<repository>
