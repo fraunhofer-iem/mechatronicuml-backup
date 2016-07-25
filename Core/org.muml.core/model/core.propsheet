@@ -119,13 +119,12 @@
     </classes>
     <classes>
       <genClass href="core.genmodel#//core/modelinstance/ModelElementCategory"/>
-      <orderedElements xsi:type="org.muml:Property" tab="_i_NxEOHNEeS5Putgio2lkg">
-        <genFeature href="core.genmodel#//core/modelinstance/ModelElementCategory/key"/>
-        <editor xsi:type="org.muml:TextPropertyEditor"/>
-      </orderedElements>
-      <orderedElements xsi:type="org.muml:Property" tab="_i_NxEOHNEeS5Putgio2lkg">
-        <genFeature href="core.genmodel#//core/modelinstance/ModelElementCategory/name"/>
-        <editor xsi:type="org.muml:TextPropertyEditor"/>
+      <orderedElements xsi:type="org.muml:Property" tab="_i_NxEOHNEeS5Putgio2lkg" initializeOCLExpression="">
+        <genFeature href="core.genmodel#//core/modelinstance/ModelElementCategory/modelElements"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+        <creationConstraint>
+          <filters xsi:type="org.muml:OCLFilter" expression="isValidEClass(eclass)"/>
+        </creationConstraint>
       </orderedElements>
     </classes>
   </packages>

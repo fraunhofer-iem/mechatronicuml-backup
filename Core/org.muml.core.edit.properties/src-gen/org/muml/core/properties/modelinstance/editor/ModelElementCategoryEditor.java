@@ -21,15 +21,11 @@ public class ModelElementCategoryEditor extends org.muml.ape.runtime.editors.Cla
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorKey_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorModelElements_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorKey_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorModelElements_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -39,35 +35,40 @@ public class ModelElementCategoryEditor extends org.muml.ape.runtime.editors.Cla
 		}
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorKey_property_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorKey_property_tab_generalTab_Editor() {
-		if (this.editorKey_property_tab_generalTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorModelElements_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorModelElements_property_tab_generalTab_Editor() {
+		if (this.editorModelElements_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE
-					.getModelElementCategory_Key();
-			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
-					adapterFactory, feature, false);
+					.getModelElementCategory_ModelElements();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
 
 			editor.setTooltipMessage(
-					"The uniquely identifying key of this category. The key of the category may be\nused by editors to register for the model elements contained in this section.");
+					"The ModelElements which are contained in this category. All model elements\nmust be of the same type.");
 
-			this.editorKey_property_tab_generalTab = editor;
+			{
+				final org.eclipse.ocl.ecore.OCLExpression expression = org.muml.ape.runtime.RuntimePlugin
+						.createOCLExpression("isValidEClass(eclass)", feature, getEClass());
+				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = org.muml.ape.runtime.RuntimePlugin.OCL_ECORE
+						.createQuery(expression);
+				query.getEvaluationEnvironment().add("eclass", null);
+				org.muml.ape.runtime.filter.ICreationFilter filter = new org.muml.ape.runtime.filter.ICreationFilter() {
+
+					@Override
+					public boolean select(Object object, org.eclipse.emf.ecore.EClass eClass) {
+						query.getEvaluationEnvironment().replace("eclass", eClass);
+						return Boolean.TRUE.equals(query.evaluate(object));
+					}
+
+				};
+				if (filter != null) {
+					editor.addCreationFilter(filter);
+				}
+			}
+
+			this.editorModelElements_property_tab_generalTab = editor;
 		}
-		return this.editorKey_property_tab_generalTab;
-	}
-
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_property_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_property_tab_generalTab_Editor() {
-		if (this.editorName_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE
-					.getModelElementCategory_Name();
-			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
-					adapterFactory, feature, false);
-
-			editor.setTooltipMessage("A human readable name for this category.");
-
-			this.editorName_property_tab_generalTab = editor;
-		}
-		return this.editorName_property_tab_generalTab;
+		return this.editorModelElements_property_tab_generalTab;
 	}
 
 	//
@@ -93,8 +94,7 @@ public class ModelElementCategoryEditor extends org.muml.ape.runtime.editors.Cla
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general"}).contains(tab);
 		}
 	}
 
