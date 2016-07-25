@@ -50,7 +50,7 @@ property componentCategoryKey : String = "org.muml.pim.components.category";
 property componentCategoryName : String ="component";
 property componentInstanceCategoryKey : String = "org.muml.pim.instance.category";
 property componentInstanceCategoryName : String = "instance";
-property rtscCategoryKey : String = "org.muml.realtimestatechart.category";
+property rtscCategoryKey : String = "org.muml.pim.realtimestatechart.category";
 property rtscCategoryName : String = "realtimestatechart";
 
 
