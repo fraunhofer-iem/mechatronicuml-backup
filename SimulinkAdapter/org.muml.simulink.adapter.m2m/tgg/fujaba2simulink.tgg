@@ -270,7 +270,7 @@
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_yIy1IsXXEeCl0_SfQxol4w" typedModel="_M439QJzXEeCxo-rGjpVr5g" node="_yIy1JsXXEeCl0_SfQxol4w _8eHDIMXXEeCl0_SfQxol4w"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_yIy1I8XXEeCl0_SfQxol4w" typedModel="_NYLIYJzXEeCxo-rGjpVr5g" node="_yIy1K8XXEeCl0_SfQxol4w _mC3IoMXYEeCl0_SfQxol4w"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_yIy1JMXXEeCl0_SfQxol4w" typedModel="_NK6IcJzXEeCxo-rGjpVr5g" node="_yIy1JcXXEeCl0_SfQxol4w _36V9AMXXEeCl0_SfQxol4w _95vg8EBoEeGxy-I1s6LQvw"/>
-    <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_bQDGUMXYEeCl0_SfQxol4w" slotNode="_8eHDIMXXEeCl0_SfQxol4w" expression="'org.muml.realtimestatechart.category'">
+    <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_bQDGUMXYEeCl0_SfQxol4w" slotNode="_8eHDIMXXEeCl0_SfQxol4w" expression="'org.muml.pim.realtimestatechart.category'">
       <slotAttribute href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/key"/>
     </constraint>
   </rule>
