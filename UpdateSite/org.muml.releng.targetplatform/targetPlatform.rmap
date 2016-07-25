@@ -38,7 +38,7 @@
     </rm:searchPath>
     
     
-    <rm:searchPath name="ExternalDependencies">
+    <rm:searchPath name="UpdateSite">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
       <rm:uri format="file:///data/jenkins/jobs/UpdateSite/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
