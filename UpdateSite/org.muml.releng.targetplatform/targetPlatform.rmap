@@ -40,7 +40,7 @@
     
     <rm:searchPath name="ExternalDependencies">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
-      <rm:uri format="file:///data/jenkins/jobs/ExternalDependencies/lastSuccessful/archive/targetPlatform/">
+      <rm:uri format="file:///data/jenkins/jobs/UpdateSite/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
 </rm:searchPath>
@@ -52,6 +52,6 @@
     <rm:locator searchPathRef="neon-releases" failOnError="false" />
     <rm:locator searchPathRef="neon-updates" failOnError="false" />
      <rm:locator searchPathRef="emf-compare" failOnError="false" />
-     <rm:locator searchPathRef="ExternalDependencies" failOnError="true"/>
+     <rm:locator searchPathRef="UpdateSite" failOnError="true"/>
      
 </rm:rmap>
