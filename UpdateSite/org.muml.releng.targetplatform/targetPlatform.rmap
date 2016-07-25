@@ -51,7 +51,7 @@
     <rm:locator searchPathRef="epp" failOnError="false" />
     <rm:locator searchPathRef="neon-releases" failOnError="false" />
     <rm:locator searchPathRef="neon-updates" failOnError="false" />
-     <rm:locator searchPathRef="emf-compare" failOnError="true" />
-     <rm:locator searchPathRef="ExternalDependencies" failOnError="false"/>
+     <rm:locator searchPathRef="emf-compare" failOnError="false" />
+     <rm:locator searchPathRef="ExternalDependencies" failOnError="true"/>
      
 </rm:rmap>
