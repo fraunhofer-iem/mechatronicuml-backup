@@ -3,10 +3,10 @@ import org.muml.uppaal.adapter._blackbox.TimeLibUnit;
 
 modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
 modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
-modeltype mumlConstraint uses 'http://www.muml.org/pim/constraint/1.0.0';
-modeltype mumlBehavior uses 'http://www.muml.org/pim/behavior/1.0.0';
-modeltype mumlconnector uses pim::connector('http://www.muml.org/pim/1.0.0');
-modeltype mumlmsgtype uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype mumlConstraint uses pim::constraint('http://www.muml.org/pim/1.0.0');
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype msgtype uses pim::msgtype('http://www.muml.org/pim/1.0.0');
 modeltype mumlinstance uses pim::instance('http://www.muml.org/pim/1.0.0');
 modeltype mumlvaluetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
 modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
