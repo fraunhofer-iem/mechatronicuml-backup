@@ -686,7 +686,7 @@
         href="../../org.muml.pim/model/pim.ecore#//connector/Connector/connectorEndpoints"/>
     <creationConstraints>
       <targetEnd
-          body="self.oclAsType(protocol::Role).coordinationProtocol = oppositeEnd.oclAsType(protocol::Role).coordinationProtocol"/>
+          body="self.oclAsType(pim::protocol::Role).coordinationProtocol = oppositeEnd.oclAsType(pim::protocol::Role).coordinationProtocol"/>
     </creationConstraints>
   </links>
   <links>

@@ -64,7 +64,7 @@ public class MumlOCLFactory {
 				"self.coordinationProtocol.roleConnector", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
-				"(\r\nif self.oclAsType(ecore::EObject).eContainer().oclAsType(msgtype::MessageType).parameters->first() = self then\r\n\t\t\'\'\r\n\telse\r\n\t\t\' \'\r\n\tendif\r\n).concat(\r\n\tif self.dataType.name.oclIsUndefined() then\r\n\t\t\'\'\r\n\telse\r\n\t\tself.dataType.name\r\n\tendif\t\r\n\r\n).concat(\r\n\tif self.name.oclIsUndefined() then\r\n\t\t\'null\'\r\n\telse\r\n\t\t\' \'.concat(self.name)\r\n\tendif\r\n).concat(\r\n\tif self.oclAsType(ecore::EObject).eContainer().oclAsType(msgtype::MessageType).parameters->last() = self then\r\n\t\t\'\'\r\n\telse\r\n\t\t\',\'\r\n\tendif\r\n)\r\n\r\n", //$NON-NLS-1$
+				"(\r\nif self.oclAsType(ecore::EObject).eContainer().oclAsType(pim::msgtype::MessageType).parameters->first() = self then\r\n\t\t\'\'\r\n\telse\r\n\t\t\' \'\r\n\tendif\r\n).concat(\r\n\tif self.dataType.name.oclIsUndefined() then\r\n\t\t\'\'\r\n\telse\r\n\t\tself.dataType.name\r\n\tendif\t\r\n\r\n).concat(\r\n\tif self.name.oclIsUndefined() then\r\n\t\t\'null\'\r\n\telse\r\n\t\t\' \'.concat(self.name)\r\n\tendif\r\n).concat(\r\n\tif self.oclAsType(ecore::EObject).eContainer().oclAsType(pim::msgtype::MessageType).parameters->last() = self then\r\n\t\t\'\'\r\n\telse\r\n\t\t\',\'\r\n\tendif\r\n)\r\n\r\n", //$NON-NLS-1$
 				"if self.name.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tself.name\r\nendif", //$NON-NLS-1$
 				"\'Size: \'.concat(if(self.bufferSize.oclIsUndefined()) \r\nthen \'null\' else self.bufferSize.toString() endif)", //$NON-NLS-1$
 				"\'Discard: \'.concat(if (self.bufferOverflowAvoidanceStrategy = BufferOverflowAvoidanceStrategy::DISCARD_INCOMING_MESSAGE)\r\nthen \'Incoming Msgs\' else \'Oldest Msgs\' endif)", //$NON-NLS-1$
@@ -74,7 +74,7 @@ public class MumlOCLFactory {
 				"\'\'", //$NON-NLS-1$
 				"\'0\'", //$NON-NLS-1$
 				"\'0\'", //$NON-NLS-1$
-				"self.oclAsType(protocol::Role).coordinationProtocol = oppositeEnd.oclAsType(protocol::Role).coordinationProtocol", //$NON-NLS-1$
+				"self.oclAsType(pim::protocol::Role).coordinationProtocol = oppositeEnd.oclAsType(pim::protocol::Role).coordinationProtocol", //$NON-NLS-1$
 		};
 	}
 
