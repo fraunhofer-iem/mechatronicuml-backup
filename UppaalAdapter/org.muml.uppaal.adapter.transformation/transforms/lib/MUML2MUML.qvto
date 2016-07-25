@@ -13,15 +13,17 @@ modeltype componentModel uses pim::component('http://www.muml.org/pim/1.0.0');
 modeltype verificationExtension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
 modeltype modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
-modeltype instanceModel uses'http://www.muml.org/pim/instance/1.0.0';
+modeltype instanceModel uses pim::instance('http://www.muml.org/pim/1.0.0');
 modeltype constraintModel uses pim::constraint('http://www.muml.org/pim/1.0.0');
 modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
 modeltype mtctl uses 'http://www.muml.org/uppaal/adapter/mtctl/1.0.0';
-modeltype mtctlQuantifiers uses 'http://www.muml.org/uppaal/adapter/mtctl/quantifiers/1.0.0';
-modeltype mtctlPredicates uses 'http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0';
-modeltype mtctlSets uses 'http://www.muml.org/uppaal/adapter/mtctl/sets/1.0.0';
-modeltype mtctlBooleanLogic uses 'http://www.muml.org/uppaal/adapter/mtctl/booleanlogic/1.0.0';
-modeltype mtctlComparables uses 'http://www.muml.org/uppaal/adapter/mtctl/comparables/1.0.0';
+modeltype mtctlQuantifiers uses mtctl::quantifiers('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlPredicates uses mtctl::predicates('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlSets uses mtctl::sets('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlBooleanLogic uses mtctl::booleanlogic('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlComparables uses mtctl::comparables('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+
+modeltype mumlConstraint uses 'http://www.muml.org/pim/constraint/1.0.0';
 
 mapping Extension :: Extension2Extension() : Extension disjuncts CommittedExtension::CommittedExtension2CommittedExtension, ElementToVerifyExtension::ElementToVerifyExtension2ElementToVerifyExtension;
 
@@ -37,6 +39,7 @@ mapping actionlanguage::Block :: Block2Block() : actionlanguage::Block disjuncts
  	 			
  mapping actionlanguage::Block :: normalBlock2Block() : actionlanguage::Block{
  _comment := self._comment;
+
  _extensions := self._extensions.map Extension2Extension();
  _expressions := self._expressions.map Expression2Expression();
  }
@@ -292,7 +295,7 @@ mapping ecore::EModelElement :: EModelElement2EModelElement() : ecore::EModelEle
       	
 mapping ecore::ENamedElement :: ENamedElement2ENamedElement() : ecore::ENamedElement disjuncts ecore::EPackage::EPackage2EPackage, ecore::ETypeParameter::ETypeParameter2ETypeParameter, ecore::ETypedElement::ETypedElement2ETypedElement, ecore::EEnumLiteral::EEnumLiteral2EEnumLiteral, ecore::EClassifier::EClassifier2EClassifier;
       	
-mapping ecore::EObject :: EObject2EObject() : ecore::EObject disjuncts mtctl::Expression::Expression2Expression, ecore::EObject::normalEObject2EObject;
+mapping ecore::EObject :: EObject2EObject() : ecore::EObject disjuncts mtctl::Expression::Expression2Expression, core::ExtendableElement::ExtendableElement2ExtendableElement, ecore::EObject::normalEObject2EObject;
  	 			
  mapping ecore::EObject :: normalEObject2EObject() : ecore::EObject{
  }
@@ -1178,14 +1181,14 @@ mapping actionLanguage::TimeValueExpression :: TimeValueExpression2TimeValueExpr
 	        else {
 	        	result := self.timeValue.value.map Expression2Expression().deepclone().oclAsType(core::expressions::Expression);	
 	        }endif;
-
+	        
 	        result._extensions := self._extensions.map Extension2Extension();
 	        result._comment := self._comment;      
         }        
 }
 
 helper core::expressions::Expression :: isNestedInOtherTimeValue() : Boolean {
-	var eContainer : EObject := self.oclAsType(ecore::EObject).eContainer();
+	var eContainer : EObject := self.eContainer();
 	if(eContainer.oclIsTypeOf(TimeValue)) {
 		return true;
 	}else if(eContainer.oclIsKindOf(core::expressions::Expression) and not eContainer.oclIsUndefined()) {
