@@ -195,8 +195,8 @@ mapping pim::realtimestatechart::RealtimeStatechart :: RealtimeStatechart2Realti
 	
 //TODO clean this up: mappings for subtypes do not have to be called here	
 mapping Expression :: Expression2Expression() : Expression disjuncts
-	TransitionFiringExpr::TransitionFiringExpr2OrExpr,
-	 TransitionFiringExpr::TransitionFiringExpr2NonUrgentTransitionFiringExpr,
+	mtctl::predicates::TransitionFiringExpr::TransitionFiringExpr2OrExpr,
+	 mtctl::predicates::TransitionFiringExpr::TransitionFiringExpr2NonUrgentTransitionFiringExpr,
 	  mtctl::quantifiers::BoundVariable::BoundVariable2BoundVariable,
 	   mtctl::booleanlogic::AndExpr::AndExpr2AndExpr,
 	    mtctl::sets::SetExpr::SetExpr2SetExpr,
@@ -236,7 +236,7 @@ mapping Expression :: Expression2Expression() : Expression disjuncts
 	                                      mtctl::sets::StateSetExpr::StateSetExpr2StateSetExpr,
 	                                       mtctl::quantifiers::UniversalQuantExpr::UniversalQuantExpr2UniversalQuantExpr,
 	                                        mtctl::quantifiers::TemporalQuantifierExpr::TemporalQuantifierExpr2TemporalQuantifierExpr,
-	                                         TransitionFiringExpr ::TransitionFiringExpr2TransitionFiringExpr,
+	                                         mtctl::predicates::TransitionFiringExpr ::TransitionFiringExpr2TransitionFiringExpr,
 	                                          mtctl::predicates::TrueExpr::TrueExpr2TrueExpr,
 	                                           mtctl::predicates::StateActiveExpr::StateActiveExpr2StateActiveExpr;
 

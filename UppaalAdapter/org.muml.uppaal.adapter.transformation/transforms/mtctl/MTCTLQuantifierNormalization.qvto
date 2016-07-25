@@ -38,7 +38,7 @@ mapping mtctl::PropertyRepository :: PropertyRepository2PropertyRepository() : m
 //Overridden from MUML2MUML: check if we should apply one of our mappings here, otherwise fall back to a simple copying map
 //TODO clean this up: mappings for subtypes do not have to be called here
 mapping mtctl::Expression :: Expression2Expression() : mtctl::Expression disjuncts
-	QuantifierExpr::QuantifierExpr2RolledOut, 
+	mtctl::quantifiers::QuantifierExpr::QuantifierExpr2RolledOut, 
 	 mtctl::sets::SubinstanceSetExpr::SubinstanceSetExpr2SubinstanceSetExpr,
 	  mtctl::sets::InstanceSetExpr::InstanceSetExpr2InstanceSetExpr,
 	   mtctl::predicates::SubstateOfExpr::SubstateOfExpr2SubstateOfExpr,
