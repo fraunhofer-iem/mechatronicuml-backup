@@ -36,10 +36,22 @@
             <rm:uri format="http://download.eclipse.org/modeling/emf/compare/updates/releases/latest" />
         </rm:provider>
     </rm:searchPath>
+    
+    
+    <rm:searchPath name="ExternalDependencies">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="true" source="false">
+      <rm:uri format="file:///data/jenkins/jobs/ExternalDependencies/lastSuccessful/archive/targetPlatform/">
+      </rm:uri>
+    </rm:provider>
+</rm:searchPath>
+
+
 
     <rm:locator searchPathRef="local" failOnError="false" />
     <rm:locator searchPathRef="epp" failOnError="false" />
     <rm:locator searchPathRef="neon-releases" failOnError="false" />
     <rm:locator searchPathRef="neon-updates" failOnError="false" />
      <rm:locator searchPathRef="emf-compare" failOnError="true" />
+     <rm:locator searchPathRef="ExternalDependencies" failOnError="false"/>
+     
 </rm:rmap>
