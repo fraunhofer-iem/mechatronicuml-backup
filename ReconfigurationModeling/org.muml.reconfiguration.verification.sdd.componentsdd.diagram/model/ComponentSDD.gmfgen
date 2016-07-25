@@ -10,8 +10,7 @@
     dynamicTemplates="true"
     templateDirectory="/org.muml.core.common/gmf-templates"
     copyrightText="&lt;copyright>&#xD;&#xA;Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.&#xD;&#xA;All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html&#xD;&#xA;&#xD;&#xA;Contributors:&#xD;&#xA;    Software Engineering Group - initial API and implementation&#xD;&#xA;&lt;/copyright>">
-  <diagram
-      visualID="1000"
+  <diagram visualID="1000"
       editPartClassName="ComponentStoryDecisionDiagramEditPart"
       itemSemanticEditPolicyClassName="ComponentStoryDecisionDiagramItemSemanticEditPolicy"
       canonicalEditPolicyClassName="ComponentStoryDecisionDiagramCanonicalEditPolicy"
@@ -966,8 +965,7 @@
             parser="//@labelParsers/@implementations.13"/>
       </labels>
     </topLevelNodes>
-    <links
-        visualID="4001"
+    <links visualID="4001"
         editPartClassName="EdgeEditPart"
         itemSemanticEditPolicyClassName="EdgeItemSemanticEditPolicy"
         notationViewFactoryClassName="EdgeViewFactory"
@@ -1000,8 +998,7 @@
             href="../../org.muml.storydiagram.verification.sdd/model/sdd.genmodel#//sdd/Edge/targetNode"/>
       </modelFacet>
     </links>
-    <links
-        visualID="4002"
+    <links visualID="4002"
         editPartClassName="AssemblyVariableEditPart"
         itemSemanticEditPolicyClassName="AssemblyVariableItemSemanticEditPolicy"
         notationViewFactoryClassName="AssemblyVariableViewFactory"
@@ -1066,8 +1063,7 @@
           sourceEnd="//@expressionProviders/@providers.0/@expressions.18"
           targetEnd="//@expressionProviders/@providers.0/@expressions.19"/>
     </links>
-    <links
-        visualID="4003"
+    <links visualID="4003"
         editPartClassName="DelegationVariableEditPart"
         itemSemanticEditPolicyClassName="DelegationVariableItemSemanticEditPolicy"
         notationViewFactoryClassName="DelegationVariableViewFactory"
@@ -1132,8 +1128,7 @@
           sourceEnd="//@expressionProviders/@providers.0/@expressions.21"
           targetEnd="//@expressionProviders/@providers.0/@expressions.22"/>
     </links>
-    <links
-        visualID="4004"
+    <links visualID="4004"
         editPartClassName="MultiPortOrderConstraintEditPart"
         itemSemanticEditPolicyClassName="MultiPortOrderConstraintItemSemanticEditPolicy"
         notationViewFactoryClassName="MultiPortOrderConstraintViewFactory"
@@ -1415,8 +1410,7 @@
           kind="RulersAndGrid"/>
     </preferencePages>
   </diagram>
-  <plugin
-      name="Component Story Decision Diagram Editor"
+  <plugin name="Component Story Decision Diagram Editor"
       provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn">
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
@@ -1428,6 +1422,7 @@
     <requiredPlugins>org.muml.core.edit.properties</requiredPlugins>
     <requiredPlugins>org.muml.core.common</requiredPlugins>
     <requiredPlugins>org.muml.ape.runtime</requiredPlugins>
+    <requiredPlugins>org.muml.core.common.editingdomain</requiredPlugins>
   </plugin>
   <editor/>
   <navigator>
@@ -1885,14 +1880,11 @@
   </navigator>
   <diagramUpdater/>
   <propertySheet>
-    <tabs
-        xsi:type="gmfgen:GenStandardPropertyTab"
+    <tabs xsi:type="gmfgen:GenStandardPropertyTab"
         iD="appearance"/>
-    <tabs
-        xsi:type="gmfgen:GenStandardPropertyTab"
+    <tabs xsi:type="gmfgen:GenStandardPropertyTab"
         iD="diagram"/>
-    <tabs
-        xsi:type="gmfgen:GenCustomPropertyTab"
+    <tabs xsi:type="gmfgen:GenCustomPropertyTab"
         iD="domain"
         label="Advanced">
       <filter
@@ -1902,8 +1894,7 @@
         <generatedTypes>abstractNavigatorItem</generatedTypes>
       </filter>
     </tabs>
-    <tabs
-        xsi:type="gmfgen:GenCustomPropertyTab"
+    <tabs xsi:type="gmfgen:GenCustomPropertyTab"
         iD="general"
         label="General"
         className="org.muml.ape.runtime.sections.ObjectPropertySection"
@@ -1912,8 +1903,7 @@
           xsi:type="gmfgen:CustomTabFilter"
           className="org.muml.core.properties.tabs.Property_tab_generalTabElementFilter"/>
     </tabs>
-    <tabs
-        xsi:type="gmfgen:GenCustomPropertyTab"
+    <tabs xsi:type="gmfgen:GenCustomPropertyTab"
         iD="documentation"
         label="Documentation"
         className="org.muml.ape.runtime.sections.ObjectPropertySection"
@@ -2098,7 +2088,6 @@
   </labelParsers>
   <contextMenus
       context="//@diagram">
-    <items
-        xsi:type="gmfgen:LoadResourceAction"/>
+    <items xsi:type="gmfgen:LoadResourceAction"/>
   </contextMenus>
 </gmfgen:GenEditorGenerator>

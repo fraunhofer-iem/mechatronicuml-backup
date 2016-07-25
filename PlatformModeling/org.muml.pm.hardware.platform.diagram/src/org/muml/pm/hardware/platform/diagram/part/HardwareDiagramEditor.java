@@ -289,10 +289,9 @@ public class HardwareDiagramEditor extends DiagramDocumentEditor implements IGot
 	@Override
 	public void setInput(IEditorInput input) {
 		super.setInput(input);
-		// XXX Activate again
-		//		for (org.muml.core.common.editingdomain.initialize.IEditingDomainInitializer init : org.muml.core.common.editingdomain.EditingDomainPlugin.getEditingDomainInitializers()) {
-		//			init.initialize(getEditingDomain());
-		//		}
+		for (org.muml.common.editingdomain.initialize.IEditingDomainInitializer init : org.muml.common.editingdomain.EditingDomainPlugin.getEditingDomainInitializers()) {
+			init.initialize(getEditingDomain());
+		}
 	}
 
 	/**

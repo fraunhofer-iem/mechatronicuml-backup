@@ -259,10 +259,9 @@ public class CoordinationProtocolDiagramEditor extends DiagramDocumentEditor imp
 	@Override
 	public void setInput(IEditorInput input) {
 		super.setInput(input);
-		// XXX Activate again
-		//		for (org.muml.core.common.editingdomain.initialize.IEditingDomainInitializer init : org.muml.core.common.editingdomain.EditingDomainPlugin.getEditingDomainInitializers()) {
-		//			init.initialize(getEditingDomain());
-		//		}
+		for (org.muml.common.editingdomain.initialize.IEditingDomainInitializer init : org.muml.common.editingdomain.EditingDomainPlugin.getEditingDomainInitializers()) {
+			init.initialize(getEditingDomain());
+		}
 	}
 
 	/**
