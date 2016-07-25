@@ -297,9 +297,9 @@
         href="../../org.muml.pim/model/pim.ecore#//connector/Connector/connectorEndpoints"/>
     <creationConstraints>
       <sourceEnd
-          body="-- Only PortParts may be connected using an AssemblyConnector&#xA;self.oclIsKindOf(component::PortPart)"/>
+          body="-- Only PortParts may be connected using an AssemblyConnector&#xA;self.oclIsKindOf(pim::component::PortPart)"/>
       <targetEnd
-          body="-- DEACTIVATED FOR #941:&#xA;-- Assembly must only connect PortParts at different ComponentParts of the same type&#xA;true&#xA;--self.oclIsKindOf(component::PortPart) and&#xA;--not oppositeEnd.oclAsType(component::PortPart).componentPart.parentComponent.componentKind.oclIsUndefined() and&#xA;--not self.oclAsType(component::PortPart).componentPart.parentComponent.oclIsUndefined() and&#xA;--oppositeEnd.oclAsType(component::PortPart).componentPart &lt;> self.oclAsType(component::PortPart).componentPart and&#xA;--oppositeEnd.oclAsType(component::PortPart).componentPart.parentComponent = self.oclAsType(component::PortPart).componentPart.parentComponent"/>
+          body="-- DEACTIVATED FOR #941:&#xA;-- Assembly must only connect PortParts at different ComponentParts of the same type&#xA;true&#xA;--self.oclIsKindOf(pim::component::PortPart) and&#xA;--not oppositeEnd.oclAsType(pim::component::PortPart).componentPart.parentComponent.componentKind.oclIsUndefined() and&#xA;--not self.oclAsType(pim::component::PortPart).componentPart.parentComponent.oclIsUndefined() and&#xA;--oppositeEnd.oclAsType(pim::component::PortPart).componentPart &lt;> self.oclAsType(pim::component::PortPart).componentPart and&#xA;--oppositeEnd.oclAsType(pim::component::PortPart).componentPart.parentComponent = self.oclAsType(pim::component::PortPart).componentPart.parentComponent"/>
     </creationConstraints>
   </links>
   <links>
@@ -320,9 +320,9 @@
         href="../../org.muml.pim/model/pim.ecore#//connector/Connector/connectorEndpoints"/>
     <creationConstraints>
       <sourceEnd
-          body="-- Only Ports or PortParts may be the source of a DelegationConnector&#xA;true&#xA;-- or self.oclIsKindOf(component::PortPart) or self.oclIsKindOf(component::Port)"/>
+          body="-- Only Ports or PortParts may be the source of a DelegationConnector&#xA;true&#xA;-- or self.oclIsKindOf(pim::component::PortPart) or self.oclIsKindOf(pim::component::Port)"/>
       <targetEnd
-          body="-- DelegationConnector must only connect Port at StructuredComponent and PortPart at embedded ComponentPart&#xA;let portPart : component::PortPart = if self.oclIsKindOf(component::PortPart) then self else if oppositeEnd.oclIsKindOf(component::PortPart) then oppositeEnd else null endif endif.oclAsType(component::PortPart) in&#xA;let portType : component::Port = if self.oclIsKindOf(component::Port) then self else if oppositeEnd.oclIsKindOf(component::Port) then oppositeEnd else null endif endif.oclAsType(component::Port) in&#xA;not portPart.oclIsUndefined() and&#xA;not portType.oclIsUndefined() and&#xA;not portPart.componentPart.parentComponent.oclIsUndefined() and&#xA;not portType.component.oclIsUndefined() and&#xA;portPart.componentPart.parentComponent = portType.component"/>
+          body="-- DelegationConnector must only connect Port at StructuredComponent and PortPart at embedded ComponentPart&#xA;let portPart : pim::component::PortPart = if self.oclIsKindOf(pim::component::PortPart) then self else if oppositeEnd.oclIsKindOf(pim::component::PortPart) then oppositeEnd else null endif endif.oclAsType(pim::component::PortPart) in&#xA;let portType : pim::component::Port = if self.oclIsKindOf(pim::component::Port) then self else if oppositeEnd.oclIsKindOf(pim::component::Port) then oppositeEnd else null endif endif.oclAsType(pim::component::Port) in&#xA;not portPart.oclIsUndefined() and&#xA;not portType.oclIsUndefined() and&#xA;not portPart.componentPart.parentComponent.oclIsUndefined() and&#xA;not portType.component.oclIsUndefined() and&#xA;portPart.componentPart.parentComponent = portType.component"/>
     </creationConstraints>
   </links>
   <links>
