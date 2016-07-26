@@ -619,10 +619,14 @@ modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 	
 		index += object ValueIndex {
 		
-			sizeExpression := object IdentifierExpression {
-				identifier := map createNumberOfMessagesInTransitConstant();
+			sizeExpression := object ArithmeticExpression {
+				firstExpr := object IdentifierExpression {
+					identifier := map createNumberOfMessagesInTransitConstant();
+				};
+				secondExpr := object LiteralExpression {
+					text := 1.repr();
+				};
 			}
-		
 		};
 		
 	}

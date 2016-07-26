@@ -61,6 +61,24 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 			};			
 		};
 		
+		// third paramter argsPosition - the position where the arguments of the lay
+		
+		var argsPosition : Variable := object Variable {
+			name := 'argsPosition';
+		};
+		
+		
+		parameter += object Parameter{
+			variableDeclaration := object DataVariableDeclaration {
+				typeDefinition := object TypeReference{
+				
+					referredType := INT ;
+				};
+				variable += argsPosition;
+			};			
+		};
+		
+		
 		block := object Block {
 				
 		
@@ -75,7 +93,7 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 			};				
 			
 			--if(message.mType == muml_m){
-			--	removemuml_mArguments(messageToDiscard); 
+			--	removemuml_mArguments(argsPosition); 
 	 		--	}
 	 		-- ..	
 			messageTypes()->forEach(mType) {
@@ -96,7 +114,7 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 								expression := object FunctionCallExpression {
 									function := mType.map createRemoveForMessageTypeFunction();
 									argument += object IdentifierExpression {
-											identifier := id;
+											identifier := argsPosition;
 									};									
 								};	
 							};
@@ -567,63 +585,99 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 		
 		};
 		
+		var i : Variable := object Variable{
+			name := "i";
+			
+		};
 		block := object Block {
-			
-			statement += object ExpressionStatement {
-			
-				expression := object AssignmentExpression {
-				
-					firstExpr := object IdentifierExpression {
-					
-						identifier := self.map createParameterTypeBufferFieldVariable(); // resolve here?
-						
-						index += object IdentifierExpression {
-							identifier := self.map createParameterTypeTailVariable(); // resolve here?
-						};
-						
+			// int i;
+			declarations := object LocalDeclarations {
+				declaration +=object DataVariableDeclaration {
+					typeDefinition := object TypeReference {
+						referredType := INT;
 					};
-					
-					secondExpr := object IdentifierExpression {
-						identifier := m;
-					};
-					
-					operator := AssignmentOperator::EQUAL;
-					
-				};
-				
+					variable := i;	
+				};				
 			};
 			
-			statement += object ExpressionStatement {
-				
-				expression := object IncrementDecrementExpression {
-				
-					expression := object IdentifierExpression {
-						identifier := self.map createParameterTypeTailVariable();
+			statement += object ForLoop {
+				initialization := object AssignmentExpression {
+					firstExpr := object IdentifierExpression {
+						identifier := i;
 					};
-					
-					position := IncrementDecrementPosition::POST;
-					
-					operator := IncrementDecrementOperator::INCREMENT;
-				
+					secondExpr := object LiteralExpression {
+						text := 0.repr();
+					};
+					operator := AssignmentOperator::EQUAL;
 				};
-				
+				condition := object CompareExpression {
+					firstExpr := object IdentifierExpression {
+						identifier := i;
+					};
+					secondExpr := object ArithmeticExpression {
+						firstExpr := object IdentifierExpression {
+							identifier := map createNumberOfMessagesInTransitConstant();
+						};
+						secondExpr := object LiteralExpression {
+							text := 1.repr();
+						};
+						operator := ArithmeticOperator::ADD;
+					};
+					operator := CompareOperator::LESS
+				};
+				iteration := object IncrementDecrementExpression {
+					expression := object IdentifierExpression {
+						identifier := i;
+					};
+					position := IncrementDecrementPosition::POST;
+					operator := IncrementDecrementOperator::INCREMENT;
+				};
+				statement := object IfStatement {
+					ifExpression := object CompareExpression {
+						firstExpr := object ScopedIdentifierExpression {
+							scope := object IdentifierExpression {
+								identifier := self.map createParameterTypeBufferFieldVariable();
+								index := object IdentifierExpression {
+									identifier := i;
+								};
+							};
+							identifier := object IdentifierExpression {
+								identifier := self.map createParameterTypeMessageIdVariable();
+							};
+						};
+						secondExpr := object LiteralExpression {
+							text := 0.repr();
+						};
+						operator := CompareOperator::EQUAL;
+					};
+					thenStatement := object Block {
+						statement += object ExpressionStatement {
+							expression := object AssignmentExpression {
+								firstExpr := object IdentifierExpression {
+									identifier := self.map createParameterTypeBufferFieldVariable();
+									index := object IdentifierExpression {
+										identifier := i;
+									};
+								};
+								secondExpr := object IdentifierExpression {
+									identifier := m;
+								};
+								operator := AssignmentOperator::EQUAL;
+							};
+						};
+						statement += object ReturnStatement {
+							returnExpression := object IdentifierExpression{
+								identifier := i;
+							};
+						};					
+					}
+				}
 			};
 			
 			statement += object ReturnStatement {
-				
-				returnExpression := object ArithmeticExpression {
-					
-					firstExpr := object IdentifierExpression {
-						identifier := self.map createParameterTypeTailVariable();
-					};
-					
-					secondExpr := object LiteralExpression {
-						text := 1.repr();
-					};
-					
-					operator := ArithmeticOperator::SUBTRACT;
-				};
-				
+				returnExpression := object LiteralExpression {
+					text := "-1";
+				}
 			};
 			
 		}
@@ -638,296 +692,46 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 			referredType := BOOL;
 		};
 			
-		var mId : Variable := object Variable {
-			name := 'mId';
+		var mArgsPosition : Variable := object Variable {
+			name := 'mArgsPosition';
 		};
 		
 		parameter += object Parameter {
 			variableDeclaration := object DataVariableDeclaration {
 			
 				typeDefinition := object TypeReference {
-					referredType := map createMessageIdType();
+					referredType := INT;
 				};
 				
-				variable += mId;
+				variable += mArgsPosition;
 			};
 		};
 		
 		block := object Block {
 			
-			var i : Variable := object Variable {
-				name := 'i';
-			};
-			
-			declarations := object LocalDeclarations {
-			
-				declaration += object DataVariableDeclaration {
-					
-					typeDefinition := object TypeReference {
-						referredType := INT;
-					};
-					
-					variable += i;
-					
-				};
-				
-			};
-			
-			statement += object ForLoop {
-				
-				initialization := object AssignmentExpression {
-					
+			statement += object ExpressionStatement {
+				expression := object AssignmentExpression {
 					firstExpr := object IdentifierExpression {
-						identifier := i;
-					};
-					
-					secondExpr := object LiteralExpression {
-						text := 0.repr();
-					};
-					
-					operator := AssignmentOperator::EQUAL;
-					
-				};
-				
-				condition := object CompareExpression {
-					
-					firstExpr := object IdentifierExpression {
-						identifier := i;
+						identifier := self.map createParameterTypeBufferFieldVariable();	
+						index += object IdentifierExpression {
+							identifier := mArgsPosition;
+						}
 					};
 					
 					secondExpr := object IdentifierExpression {
-						identifier := map createNumberOfMessagesInTransitConstant();
+						identifier := self.map createParameterTypeNullConstantVariable();
 					};
 					
-					operator := CompareOperator::LESS;
-				
-				};
-				
-				iteration := object IncrementDecrementExpression {
-					
-					expression := object IdentifierExpression {
-						identifier := i;
-					};
-					
-					position := IncrementDecrementPosition::POST;
-					
-					operator := IncrementDecrementOperator::INCREMENT;
-					
-				};
-				
-				statement := object Block {
-					
-					statement += object IfStatement {
-						
-						ifExpression := object CompareExpression {
-							
-							firstExpr := object ScopedIdentifierExpression {
-								
-								scope := object IdentifierExpression {
-								
-									identifier := self.map createParameterTypeBufferFieldVariable(); // resolve here?
-								
-									index += object IdentifierExpression {
-										
-										identifier := i;
-										
-									};
-								
-								};
-								
-								identifier := object IdentifierExpression {
-									identifier := self.map createParameterTypeMessageIdVariable(); // resolve here?
-								};
-								
-							};
-							
-							
-							secondExpr := object IdentifierExpression {
-								identifier := mId;
-							};
-							
-						};
-						
-						thenStatement := object Block {
-							
-							var j : Variable := object Variable {
-								name := 'j';
-							};
-							
-							declarations := object LocalDeclarations {
-								
-								declaration += object DataVariableDeclaration {
-									
-									typeDefinition := object TypeReference {
-										referredType := INT;	
-									};
-									
-									variable += j;
-								}
-								
-							};
-							
-							statement += object ForLoop {
-								
-								initialization := object AssignmentExpression {
-									
-									firstExpr := object IdentifierExpression {
-										identifier := j;
-									};
-									
-									secondExpr := object ArithmeticExpression {
-										
-										firstExpr := object IdentifierExpression {
-											identifier := i;
-										};
-										
-										secondExpr := object LiteralExpression {
-											text := 1.repr();
-										};
-										
-										operator := ArithmeticOperator::ADD;
-										
-									};
-									
-									operator := AssignmentOperator::EQUAL;
-								};
-								
-								condition := object CompareExpression {
-									
-									firstExpr := object IdentifierExpression {
-										identifier := j;
-									};
-									
-									secondExpr := object IdentifierExpression {
-										identifier := map createNumberOfMessagesInTransitConstant();
-									};
-									
-									operator := CompareOperator::LESS;
-								
-								};
-								
-								iteration := object IncrementDecrementExpression {
-									
-									expression := object IdentifierExpression {
-										identifier := j;
-									};
-									
-									position := IncrementDecrementPosition::POST;
-									
-									operator := IncrementDecrementOperator::INCREMENT;
-									
-								};
-								
-								statement := object ExpressionStatement {
-									
-									expression := object AssignmentExpression {
-										
-										firstExpr := object IdentifierExpression {
-											
-											identifier := self.map createParameterTypeBufferFieldVariable();
-											
-											index += object ArithmeticExpression {
-												
-												firstExpr := object IdentifierExpression {
-													identifier := j;	
-												};
-												
-												secondExpr := object LiteralExpression {
-													text := 1.repr();
-												};
-												
-												operator := ArithmeticOperator::SUBTRACT;
-												
-											};
-										};
-										
-										secondExpr := object IdentifierExpression {
-											
-											identifier := self.map createParameterTypeBufferFieldVariable();
-											
-											index += object IdentifierExpression {
-												identifier := j;
-											};
-											
-										}; 
-										
-										operator := AssignmentOperator::EQUAL;
-										
-									};
-									
-								};
-								
-							};
-							
-							statement += object ExpressionStatement {
-								
-								expression := object AssignmentExpression {
-									
-									firstExpr := object IdentifierExpression {
-									
-										identifier := self.map createParameterTypeBufferFieldVariable();
-									
-										index += object ArithmeticExpression {
-											
-											firstExpr := object IdentifierExpression {
-												identifier := map createNumberOfMessagesInTransitConstant();	
-											};
-											
-											secondExpr := object LiteralExpression {
-												text := 1.repr();
-											};
-											
-											operator := ArithmeticOperator::SUBTRACT;
-											
-										};
-									
-									};
-									
-									secondExpr := object IdentifierExpression {
-										identifier := self.map createParameterTypeNullConstantVariable();
-									};
-									
-								};
-								
-							};
-							
-							statement += object ExpressionStatement {
-								
-								expression := object IncrementDecrementExpression {
-								
-									expression := object IdentifierExpression {
-										identifier := self.map createParameterTypeTailVariable();
-									};
-									
-									position := IncrementDecrementPosition::POST;
-									
-									operator := IncrementDecrementOperator::DECREMENT;
-								
-								};
-							
-							};
-							
-							statement += object ReturnStatement {
-								returnExpression := object LiteralExpression {
-									text := true.repr();
-								};
-							};
-								
-						};
-						
-					};
-					 
-				};
-								
+					operator := AssignmentOperator::EQUAL;
+				}
 			};
-			
 			statement += object ReturnStatement {
 				returnExpression := object LiteralExpression {
-					text := false.repr();
-				};
-			};
-			
+					text := true.repr();
+				}
+			}
 		}
+		
 		
 	}
 	
@@ -2383,7 +2187,7 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 										};
 										
 										identifier := object IdentifierExpression {
-											identifier := map createMessageTypeMessageIdVariable();
+											identifier := map createMessageArgumentsPositionVariable();
 										};
 										
 									};
@@ -2699,6 +2503,14 @@ modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 						};
 						argument += object IdentifierExpression {
 							identifier := messageTypeToDiscard;
+						argument += object ScopedIdentifierExpression{
+							scope := object IdentifierExpression{
+								identifier := e;
+							};
+							identifier := object IdentifierExpression {
+								identifier := map createMessageArgumentsPositionVariable();
+							}
+						};
 					};
 				};									
 	 		};		
