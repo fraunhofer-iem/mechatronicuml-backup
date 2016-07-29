@@ -368,6 +368,8 @@
             <feature
                 href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
+          <elementClass
+              href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwplatform/DelegationHWPort"/>
         </modelElementInitializer>
       </modelFacet>
     </childNodes>
@@ -565,6 +567,8 @@
             <feature
                 href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
+          <elementClass
+              href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwplatform/HWPlatform"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
