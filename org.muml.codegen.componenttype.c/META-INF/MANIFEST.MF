@@ -19,7 +19,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.muml.pim;bundle-version="0.4.0",
  org.muml.codegen.c.beautifier;bundle-version="0.4.0",
  org.muml.pim.common;bundle-version="0.5.0",
- org.muml.psm;bundle-version="1.0.0"
+ org.muml.psm;bundle-version="1.0.0",
+ org.muml.psm.container;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
 Export-Package: org.muml.codegen.componenttype.c;uses:="org.osgi.framework,org.eclipse.core.runtime",
