@@ -132,7 +132,7 @@ public class GenerateAll {
 				RootNode rootNode = (RootNode) resource.getContents().get(0);
 
 				for (ModelElementCategory mec : rootNode.getCategories()) {
-					if (mec.getKey().matches("de.uni_paderborn.fujaba.muml.instance.category")) {
+					if (mec.getKey().matches("org.muml.pim.instance.category")) {
 
 						for (ExtendableElement me : mec.getModelElements()) {
 							ComponentInstanceConfiguration cic = (ComponentInstanceConfiguration) me;
@@ -149,8 +149,8 @@ public class GenerateAll {
 							monitor.worked(++monitorCounter);
 
 							String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil
-									.computeUIProjectID("de.uni_paderborn.fujaba.muml.codegen.c",
-											"de.uni_paderborn.fujaba.muml.codegen.c.main.Main", modelURI.toString(),
+									.computeUIProjectID("org.muml.codegen.componenttype.c",
+											"org.muml.codegen.componenttype.c.main.Main", modelURI.toString(),
 											targetFolder.getFullPath().toString(), new ArrayList<String>());
 							gen0.setGenerationID(generationID);
 							gen0.doGenerate(BasicMonitor.toMonitor(monitor));
@@ -174,7 +174,7 @@ public class GenerateAll {
 		org.muml.codegen.componenttype.c.main.Main gen0 = new org.muml.codegen.componenttype.c.main.Main(
 				cic, targetFolder.getLocation().toFile(), arguments);
 		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID(
-				"de.uni_paderborn.fujaba.muml.codegen.c", "de.uni_paderborn.fujaba.muml.codegen.c.main.Main",
+				"org.muml.codegen.componenttype.c", "org.muml.codegen.componenttype.c.main.Main",
 				modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
 		gen0.setGenerationID(generationID);
 		gen0.doGenerate(BasicMonitor.toMonitor(monitor));
