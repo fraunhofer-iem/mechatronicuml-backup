@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ASCII"?>
+<muml_container:DeploymentConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:instance="http://www.muml.org/pim/instance/1.0.0" xmlns:muml_container="http://www.muml.org/psm/muml_container/0.5.0">
+  <systemAllocation href="../model/productionBroker.muml#_QFZZ0PvtEeW8GfSft-yqOg"/>
+  <ecuConfigurations name="rpi.0.1_config">
+    <structuredResourceInstance href="../model/productionBroker.muml#_6TriAOwqEeWTKqLnMSJAUw"/>
+    <componentContainers name="MCC_RecipeGeneratorComponent">
+      <componentType xsi:type="component:StaticAtomicComponent" href="../model/productionBroker.muml#_QVSL8NxcEeW-N_z6XJQq2w"/>
+      <componentInstanceConfigurations>
+        <componentInstance xsi:type="instance:AtomicComponentInstance" href="../model/productionBroker.muml#_ClUoo-VHEeWTk8L1nP577g"/>
+      </componentInstanceConfigurations>
+      <componentInstances xsi:type="instance:AtomicComponentInstance" href="../model/productionBroker.muml#_ClUoo-VHEeWTk8L1nP577g"/>
+    </componentContainers>
+  </ecuConfigurations>
+  <ecuConfigurations name="mx.0.1_config">
+    <structuredResourceInstance href="../model/productionBroker.muml#_6TriBuwqEeWTKqLnMSJAUw"/>
+    <componentContainers name="MCC_ProductionStationComponent">
+      <componentType xsi:type="component:StaticAtomicComponent" href="../model/productionBroker.muml#_vwAi4NxbEeW-N_z6XJQq2w"/>
+      <componentInstanceConfigurations>
+        <componentInstance xsi:type="instance:AtomicComponentInstance" href="../model/productionBroker.muml#_ZCvGAOapEeWyd6JHVas6Kw"/>
+      </componentInstanceConfigurations>
+      <componentInstances xsi:type="instance:AtomicComponentInstance" href="../model/productionBroker.muml#_ZCvGAOapEeWyd6JHVas6Kw"/>
+    </componentContainers>
+  </ecuConfigurations>
+  <ecuConfigurations name="cx.0.1_config">
+    <structuredResourceInstance href="../model/productionBroker.muml#_6Tq68OwqEeWTKqLnMSJAUw"/>
+    <componentContainers name="MCC_BrokerComponent">
+      <componentType xsi:type="component:StaticAtomicComponent" href="../model/productionBroker.muml#_Ozg3MNxcEeW-N_z6XJQq2w"/>
+      <componentInstanceConfigurations>
+        <componentInstance xsi:type="instance:AtomicComponentInstance" href="../model/productionBroker.muml#_ClUooeVHEeWTk8L1nP577g"/>
+      </componentInstanceConfigurations>
+      <componentInstances xsi:type="instance:AtomicComponentInstance" href="../model/productionBroker.muml#_ClUooeVHEeWTk8L1nP577g"/>
+    </componentContainers>
+  </ecuConfigurations>
+</muml_container:DeploymentConfiguration>
