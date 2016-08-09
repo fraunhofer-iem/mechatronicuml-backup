@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ASCII"?>
+<opendds:OpenDDSModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opendds="http://www.opendds.org/modeling/schemas/OpenDDS/1.0" xmlns:types="http://www.opendds.org/modeling/schemas/Types/1.0" xmi:id="_sXj0MF4fEeaNcvW989QGZw" name="MUML_DDS">
+  <libs xsi:type="types:DataLib" xmi:id="_sXj0MV4fEeaNcvW989QGZw" name="MUML_DataLib">
+    <types xsi:type="types:Struct" xmi:id="_sXj0Ml4fEeaNcvW989QGZw" name="DDS_MessagesnoOrder_Messages" isDcpsDataType="true">
+      <fields xmi:id="_sXj0M14fEeaNcvW989QGZw" name="receiverPsID" type="_sXj0Ql4fEeaNcvW989QGZw"/>
+    </types>
+    <types xsi:type="types:Struct" xmi:id="_sXj0NF4fEeaNcvW989QGZw" name="DDS_MessagesdoneOrder_Messages" isDcpsDataType="true">
+      <fields xmi:id="_sXj0NV4fEeaNcvW989QGZw" name="orderID" type="_sXj0Ql4fEeaNcvW989QGZw"/>
+    </types>
+    <types xsi:type="types:Struct" xmi:id="_sXj0Nl4fEeaNcvW989QGZw" name="DDS_MessagesgetOrder_Messages" isDcpsDataType="true">
+      <fields xmi:id="_sXj0N14fEeaNcvW989QGZw" name="psID" type="_sXj0Ql4fEeaNcvW989QGZw"/>
+    </types>
+    <types xsi:type="types:Struct" xmi:id="_sXj0OF4fEeaNcvW989QGZw" name="DDS_MessagessimpleOrder_Messages" isDcpsDataType="true">
+      <fields xmi:id="_sXj0OV4fEeaNcvW989QGZw" name="orderID" type="_sXj0Ql4fEeaNcvW989QGZw"/>
+      <fields xmi:id="_sXj0Ol4fEeaNcvW989QGZw" name="ingredientID" type="_sXj0Ql4fEeaNcvW989QGZw"/>
+      <fields xmi:id="_sXj0O14fEeaNcvW989QGZw" name="amount" type="_sXj0Ql4fEeaNcvW989QGZw"/>
+    </types>
+    <types xsi:type="types:Struct" xmi:id="_sXj0PF4fEeaNcvW989QGZw" name="DDS_MessagesorderForPS_Messages" isDcpsDataType="true">
+      <fields xmi:id="_sXj0PV4fEeaNcvW989QGZw" name="receiverPsID" type="_sXj0Ql4fEeaNcvW989QGZw"/>
+      <fields xmi:id="_sXj0Pl4fEeaNcvW989QGZw" name="orderID" type="_sXj0Ql4fEeaNcvW989QGZw"/>
+      <fields xmi:id="_sXj0P14fEeaNcvW989QGZw" name="incredientID" type="_sXj0Ql4fEeaNcvW989QGZw"/>
+      <fields xmi:id="_sXj0QF4fEeaNcvW989QGZw" name="amount" type="_sXj0Ql4fEeaNcvW989QGZw"/>
+    </types>
+    <types xsi:type="types:Char" xmi:id="_sXj0QV4fEeaNcvW989QGZw"/>
+    <types xsi:type="types:Long" xmi:id="_sXj0Ql4fEeaNcvW989QGZw"/>
+  </libs>
+  <libs xsi:type="opendds:PolicyLib" xmi:id="_sXj0Q14fEeaNcvW989QGZw"/>
+  <libs xsi:type="opendds:DcpsLib" xmi:id="_sXj0RF4fEeaNcvW989QGZw">
+    <domains xmi:id="_sXj0RV4fEeaNcvW989QGZw" name="dummyDomain" domainId="-42"/>
+  </libs>
+</opendds:OpenDDSModel>
