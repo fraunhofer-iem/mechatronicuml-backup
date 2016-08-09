@@ -4,7 +4,7 @@
    <extension
          point="org.eclipse.ui.exportWizards">
       <wizard
-            category="de.uni_paderborn.fujaba.export"
+            category="org.muml.core.export"
             class="org.muml.container.transformation.ui.ContainerWizard"
             id="org.muml.container.transformation.ui.ContainerWizard"
             name="Create Container and DDS Model">
