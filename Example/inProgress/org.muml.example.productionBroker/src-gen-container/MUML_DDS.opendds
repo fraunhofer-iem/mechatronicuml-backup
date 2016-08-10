@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ASCII"?>
+<opendds:OpenDDSModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opendds="http://www.opendds.org/modeling/schemas/OpenDDS/1.0" xmlns:qos="http://www.opendds.org/modeling/schemas/QoS/1.0" xmlns:topics="http://www.opendds.org/modeling/schemas/Topics/1.0" xmlns:types="http://www.opendds.org/modeling/schemas/Types/1.0" xmi:id="_EMP94F7PEeaNcvW989QGZw" name="MUML_DDS">
+  <libs xsi:type="types:DataLib" xmi:id="_EMP94V7PEeaNcvW989QGZw" name="MUML_DataLib">
+    <types xsi:type="types:Struct" xmi:id="_EMP94l7PEeaNcvW989QGZw" name="DDS_MessagessimpleOrder_Messages" isDcpsDataType="true">
+      <fields xmi:id="_EMP9417PEeaNcvW989QGZw" name="orderID" type="_EMP98l7PEeaNcvW989QGZw"/>
+      <fields xmi:id="_EMP95F7PEeaNcvW989QGZw" name="ingredientID" type="_EMP98l7PEeaNcvW989QGZw"/>
+      <fields xmi:id="_EMP95V7PEeaNcvW989QGZw" name="amount" type="_EMP98l7PEeaNcvW989QGZw"/>
+    </types>
+    <types xsi:type="types:Struct" xmi:id="_EMP95l7PEeaNcvW989QGZw" name="DDS_MessagesgetOrder_Messages" isDcpsDataType="true">
+      <fields xmi:id="_EMP9517PEeaNcvW989QGZw" name="psID" type="_EMP98l7PEeaNcvW989QGZw"/>
+    </types>
+    <types xsi:type="types:Struct" xmi:id="_EMP96F7PEeaNcvW989QGZw" name="DDS_MessagesdoneOrder_Messages" isDcpsDataType="true">
+      <fields xmi:id="_EMP96V7PEeaNcvW989QGZw" name="orderID" type="_EMP98l7PEeaNcvW989QGZw"/>
+    </types>
+    <types xsi:type="types:Struct" xmi:id="_EMP96l7PEeaNcvW989QGZw" name="DDS_MessagesnoOrder_Messages" isDcpsDataType="true">
+      <fields xmi:id="_EMP9617PEeaNcvW989QGZw" name="receiverPsID" type="_EMP98l7PEeaNcvW989QGZw"/>
+    </types>
+    <types xsi:type="types:Struct" xmi:id="_EMP97F7PEeaNcvW989QGZw" name="DDS_MessagesorderForPS_Messages" isDcpsDataType="true">
+      <fields xmi:id="_EMP97V7PEeaNcvW989QGZw" name="receiverPsID" type="_EMP98l7PEeaNcvW989QGZw"/>
+      <fields xmi:id="_EMP97l7PEeaNcvW989QGZw" name="orderID" type="_EMP98l7PEeaNcvW989QGZw"/>
+      <fields xmi:id="_EMP9717PEeaNcvW989QGZw" name="incredientID" type="_EMP98l7PEeaNcvW989QGZw"/>
+      <fields xmi:id="_EMP98F7PEeaNcvW989QGZw" name="amount" type="_EMP98l7PEeaNcvW989QGZw"/>
+    </types>
+    <types xsi:type="types:Char" xmi:id="_EMP98V7PEeaNcvW989QGZw"/>
+    <types xsi:type="types:Long" xmi:id="_EMP98l7PEeaNcvW989QGZw"/>
+  </libs>
+  <libs xsi:type="opendds:PolicyLib" xmi:id="_EMP9817PEeaNcvW989QGZw">
+    <policies xsi:type="qos:HistoryQosPolicy" xmi:id="_EMP99F7PEeaNcvW989QGZw" name="getOrderHistoryQos" depth="2" kind="KEEP_ALL"/>
+    <policies xsi:type="qos:HistoryQosPolicy" xmi:id="_EMP99V7PEeaNcvW989QGZw" name="getOrderHistoryQos" depth="2" kind="KEEP_ALL"/>
+    <policies xsi:type="qos:HistoryQosPolicy" xmi:id="_EMP99l7PEeaNcvW989QGZw" name="brokerForPSPortHistoryQos" depth="5" kind="KEEP_ALL"/>
+    <policies xsi:type="qos:HistoryQosPolicy" xmi:id="_EMP9917PEeaNcvW989QGZw" name="brokerForPSPortHistoryQos" depth="5" kind="KEEP_ALL"/>
+    <policies xsi:type="qos:ReliabilityQosPolicy" xmi:id="_EMP9-F7PEeaNcvW989QGZw" name="getOrderReliabilityQos" kind="BEST_EFFORT">
+      <max_blocking_time xmi:id="_EMP9-V7PEeaNcvW989QGZw" second="1"/>
+    </policies>
+    <policies xsi:type="qos:ReliabilityQosPolicy" xmi:id="_EMP9-l7PEeaNcvW989QGZw" name="provideOrderReliabilityQos" kind="BEST_EFFORT">
+      <max_blocking_time xmi:id="_EMP9-17PEeaNcvW989QGZw" second="1"/>
+    </policies>
+    <policies xsi:type="qos:ReliabilityQosPolicy" xmi:id="_EMP9_F7PEeaNcvW989QGZw" name="brokerForPSPortReliabilityQos" kind="BEST_EFFORT">
+      <max_blocking_time xmi:id="_EMP9_V7PEeaNcvW989QGZw" second="1"/>
+    </policies>
+    <policies xsi:type="qos:ReliabilityQosPolicy" xmi:id="_EMP9_l7PEeaNcvW989QGZw" name="getOrderReliabilityQos" kind="BEST_EFFORT">
+      <max_blocking_time xmi:id="_EMP9_17PEeaNcvW989QGZw" second="1"/>
+    </policies>
+    <policies xsi:type="qos:HistoryQosPolicy" xmi:id="_EMP-AF7PEeaNcvW989QGZw" name="getOrderHistoryQos" depth="5" kind="KEEP_ALL"/>
+  </libs>
+  <libs xsi:type="opendds:DcpsLib" xmi:id="_EMP-AV7PEeaNcvW989QGZw">
+    <domains xmi:id="_EMP-Al7PEeaNcvW989QGZw" name="dummyDomain" domainId="-42"/>
+    <participants xmi:id="_EMP-A17PEeaNcvW989QGZw" name="Broker_brokerForPSPortParticipant" domain="_EMP-Al7PEeaNcvW989QGZw">
+      <publishers xmi:id="_EMP-BF7PEeaNcvW989QGZw" name="brokerForPSPortPublisher" transportId="-1">
+        <writers xmi:id="_EMP-BV7PEeaNcvW989QGZw" name="DDS_MessagesorderForPS_MessagesDataWriter" reliability="_EMP9_F7PEeaNcvW989QGZw" copyFromTopicQos="false" topic="_EMP-GV7PEeaNcvW989QGZw"/>
+        <writers xmi:id="_EMP-Bl7PEeaNcvW989QGZw" name="DDS_MessagesnoOrder_MessagesDataWriter" reliability="_EMP9_F7PEeaNcvW989QGZw" copyFromTopicQos="false" topic="_EMP-Gl7PEeaNcvW989QGZw"/>
+      </publishers>
+      <subscribers xmi:id="_EMP-B17PEeaNcvW989QGZw" name="brokerForPSPortSubscriber" transportId="-1">
+        <readers xmi:id="_EMP-CF7PEeaNcvW989QGZw" name="DDS_MessagesdoneOrder_MessagesDataReader" history="_EMP99l7PEeaNcvW989QGZw" reliability="_EMP9_F7PEeaNcvW989QGZw" copyFromTopicQos="false" topic="_EMP-G17PEeaNcvW989QGZw"/>
+        <readers xmi:id="_EMP-CV7PEeaNcvW989QGZw" name="DDS_MessagesgetOrder_MessagesDataReader" history="_EMP9917PEeaNcvW989QGZw" reliability="_EMP9_F7PEeaNcvW989QGZw" copyFromTopicQos="false" topic="_EMP-F17PEeaNcvW989QGZw"/>
+      </subscribers>
+    </participants>
+    <participants xmi:id="_EMP-Cl7PEeaNcvW989QGZw" name="RecipeGenerator_provideOrderParticipant" domain="_EMP-Al7PEeaNcvW989QGZw">
+      <publishers xmi:id="_EMP-C17PEeaNcvW989QGZw" name="provideOrderPublisher" transportId="-1">
+        <writers xmi:id="_EMP-DF7PEeaNcvW989QGZw" name="DDS_MessagessimpleOrder_MessagesDataWriter" reliability="_EMP9-l7PEeaNcvW989QGZw" copyFromTopicQos="false" topic="_EMP-GF7PEeaNcvW989QGZw"/>
+      </publishers>
+    </participants>
+    <participants xmi:id="_EMP-DV7PEeaNcvW989QGZw" name="ProductionStation_getOrderParticipant" domain="_EMP-Al7PEeaNcvW989QGZw">
+      <publishers xmi:id="_EMP-Dl7PEeaNcvW989QGZw" name="getOrderPublisher" transportId="-1">
+        <writers xmi:id="_EMP-D17PEeaNcvW989QGZw" name="DDS_MessagesdoneOrder_MessagesDataWriter" reliability="_EMP9_l7PEeaNcvW989QGZw" copyFromTopicQos="false" topic="_EMP-G17PEeaNcvW989QGZw"/>
+        <writers xmi:id="_EMP-EF7PEeaNcvW989QGZw" name="DDS_MessagesgetOrder_MessagesDataWriter" reliability="_EMP9_l7PEeaNcvW989QGZw" copyFromTopicQos="false" topic="_EMP-F17PEeaNcvW989QGZw"/>
+      </publishers>
+      <subscribers xmi:id="_EMP-EV7PEeaNcvW989QGZw" name="getOrderSubscriber" transportId="-1">
+        <readers xmi:id="_EMP-El7PEeaNcvW989QGZw" name="DDS_MessagesorderForPS_MessagesDataReader" history="_EMP99F7PEeaNcvW989QGZw" reliability="_EMP9_l7PEeaNcvW989QGZw" copyFromTopicQos="false" topic="_EMP-GV7PEeaNcvW989QGZw"/>
+        <readers xmi:id="_EMP-E17PEeaNcvW989QGZw" name="DDS_MessagesnoOrder_MessagesDataReader" history="_EMP99V7PEeaNcvW989QGZw" reliability="_EMP9_l7PEeaNcvW989QGZw" copyFromTopicQos="false" topic="_EMP-Gl7PEeaNcvW989QGZw"/>
+      </subscribers>
+    </participants>
+    <participants xmi:id="_EMP-FF7PEeaNcvW989QGZw" name="Broker_getOrderParticipant" domain="_EMP-Al7PEeaNcvW989QGZw">
+      <subscribers xmi:id="_EMP-FV7PEeaNcvW989QGZw" name="getOrderSubscriber" transportId="-1">
+        <readers xmi:id="_EMP-Fl7PEeaNcvW989QGZw" name="DDS_MessagessimpleOrder_MessagesDataReader" history="_EMP-AF7PEeaNcvW989QGZw" reliability="_EMP9-F7PEeaNcvW989QGZw" copyFromTopicQos="false" topic="_EMP-GF7PEeaNcvW989QGZw"/>
+      </subscribers>
+    </participants>
+    <topicDescriptions xsi:type="topics:Topic" xmi:id="_EMP-F17PEeaNcvW989QGZw" name="DDS_MessagesgetOrder_MessagesgetOrderProductionStation_TopicgetOrder" datatype="_EMP95l7PEeaNcvW989QGZw"/>
+    <topicDescriptions xsi:type="topics:Topic" xmi:id="_EMP-GF7PEeaNcvW989QGZw" name="DDS_MessagessimpleOrder_MessagesprovideOrderRecipeGenerator_TopicprovideOrder" datatype="_EMP94l7PEeaNcvW989QGZw"/>
+    <topicDescriptions xsi:type="topics:Topic" xmi:id="_EMP-GV7PEeaNcvW989QGZw" name="DDS_MessagesorderForPS_MessagesbrokerForPSPortBroker_TopicbrokerForPSPort" datatype="_EMP97F7PEeaNcvW989QGZw"/>
+    <topicDescriptions xsi:type="topics:Topic" xmi:id="_EMP-Gl7PEeaNcvW989QGZw" name="DDS_MessagesnoOrder_MessagesbrokerForPSPortBroker_TopicbrokerForPSPort" datatype="_EMP96l7PEeaNcvW989QGZw"/>
+    <topicDescriptions xsi:type="topics:Topic" xmi:id="_EMP-G17PEeaNcvW989QGZw" name="DDS_MessagesdoneOrder_MessagesgetOrderProductionStation_TopicgetOrder" datatype="_EMP96F7PEeaNcvW989QGZw"/>
+  </libs>
+</opendds:OpenDDSModel>
