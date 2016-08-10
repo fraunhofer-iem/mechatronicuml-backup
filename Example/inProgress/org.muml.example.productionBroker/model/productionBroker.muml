@@ -1470,7 +1470,7 @@
         <communicationProtocols xsi:type="hwresource:BusProtocol" xmi:id="_2uYWzewnEeWTKqLnMSJAUw" name="CAN">
           <bandwidth xmi:id="_2uYWzuwnEeWTKqLnMSJAUw" value="1.0" unit="Kb\s"/>
         </communicationProtocols>
-        <communicationProtocols xsi:type="hwresource:LinkProtocol" xmi:id="_2uYWz-wnEeWTKqLnMSJAUw" name="TCP" linkProtocol="ETHERCAT">
+        <communicationProtocols xsi:type="hwresource:LinkProtocol" xmi:id="_2uYWz-wnEeWTKqLnMSJAUw" name="TCP">
           <bandwidth xmi:id="_2uYW0OwnEeWTKqLnMSJAUw" value="1.0" unit="Kb\s"/>
         </communicationProtocols>
         <communicationProtocols xsi:type="hwresource:LinkProtocol" xmi:id="_2uYW0ewnEeWTKqLnMSJAUw" name="eCAD" linkProtocol="WIFI">
