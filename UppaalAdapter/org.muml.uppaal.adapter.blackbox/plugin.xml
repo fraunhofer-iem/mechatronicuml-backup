@@ -38,6 +38,14 @@
        </library>
     </unit>
     <unit
+          name="SaveXMIUnit"
+          namespace="org.muml.uppaal.adapter._blackbox">
+       <library
+             class="org.muml.uppaal.adapter.blackbox.SaveXMILibrary"
+             name="SaveXMILib">
+       </library>
+    </unit>
+    <unit
           name="CharSubstitutionUnit"
           namespace="org.muml.uppaal.adapter._blackbox">
        <library
