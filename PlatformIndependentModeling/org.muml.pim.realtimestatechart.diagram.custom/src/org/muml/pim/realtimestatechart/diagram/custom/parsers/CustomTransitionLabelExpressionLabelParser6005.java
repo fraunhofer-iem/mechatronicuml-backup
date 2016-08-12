@@ -101,7 +101,7 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 				case LESS_OR_EQUAL: 	buf.append("<="); break; //buf.append(new String(new byte[] { -30, -119, -92}, "UTF-8")); break; 
 				case GREATER_OR_EQUAL: 	buf.append(">="); break; //buf.append(new String(new byte[] { -30, -119, -91}, "UTF-8")); break;
 				case GREATER:			buf.append('>'); break;
-				case UNEQUAL:			buf.append("!="); break; //buf.append(new String(new byte[] { -30, -119, -96}, "UTF-8")); break;
+				case UNEQUAL:			buf.append("<>"); break; //buf.append(new String(new byte[] { -30, -119, -96}, "UTF-8")); break;
 				case REGULAR_EXPRESSION:buf.append("regexp"); break; 
 				}
 			//} catch (UnsupportedEncodingException e) {
