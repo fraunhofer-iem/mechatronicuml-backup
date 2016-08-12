@@ -1,8 +1,10 @@
 package org.muml.uppaal.adapter.job.operations;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 
 import org.eclipse.core.resources.IWorkspaceRunnable;
 import org.eclipse.core.runtime.CoreException;
@@ -12,11 +14,17 @@ import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.muml.core.NamedElement;
+import org.muml.pim.component.AtomicComponent;
+import org.muml.pim.component.Component;
 import org.muml.pim.constraint.VerifiableElement;
 import org.muml.pim.constraint.VerificationConstraintRepository;
+import org.muml.pim.instance.ComponentInstanceConfiguration;
+import org.muml.pim.protocol.AbstractCoordinationSpecification;
+import org.muml.pim.protocol.Role;
 import org.muml.uppaal.adapter.extension.verificationextension.VerificationExtensionPackage;
 
 /**
@@ -52,6 +60,20 @@ public class PrepareModelOperation implements IWorkspaceRunnable {
 			cloneOperation.run(subMonitor.newChild(90));
 			
 			
+
+//			role.behavior löschen
+//			structured components alle löschen
+//			atomic continuous components löschen
+//			atomic software component referenziert statechart, statechart löschen, dann komponente löschen
+			
+			// Component Type referenziert statechart -> st löschen (komponenten
+			// komponent types löschen
+			// alle protokolle löschen außer mit clonedVerifiableElement löschen, und alle referenzierten Statecharts löschen (rollen statecharts)
+			// alle cics löschen
+
+			List<EObject> delete = new ArrayList<EObject>();
+			
+			
 			//Find the marked element in the copy
 			EObject clonedVerifiableElement = null;
 			for (EObject root : resultExtent.getContents()) {
@@ -61,10 +83,40 @@ public class PrepareModelOperation implements IWorkspaceRunnable {
 					obj = it.next();
 					if (obj instanceof VerifiableElement && ((VerifiableElement) obj).getExtension(VerificationExtensionPackage.eINSTANCE.getElementToVerifyExtension()) != null) {
 						clonedVerifiableElement = obj;
-						break;
+						continue;
+					}
+					if (obj instanceof AtomicComponent && ((AtomicComponent) obj).getBehavior() != null) {
+						delete.add(((AtomicComponent) obj).getBehavior());
+					}
+					if (obj instanceof Component) {
+						delete.add(obj);
+					}
+					if (obj instanceof Role && ((Role) obj).getBehavior() != null) {
+						delete.add(((Role) obj).getBehavior());
+					}
+					if (obj instanceof AbstractCoordinationSpecification) {
+						delete.add(obj);
+					}
+					if (obj instanceof ComponentInstanceConfiguration) {
+						delete.add(obj);
 					}
 				}
 			}
+			
+			if (clonedVerifiableElement instanceof AbstractCoordinationSpecification) {
+				AbstractCoordinationSpecification coordination = (AbstractCoordinationSpecification) clonedVerifiableElement;
+				delete.remove(coordination);
+				for (Role role : coordination.getRoles()) {
+					delete.remove(role.getBehavior());
+				}
+			}
+			
+			for (EObject currentDelete : delete) {
+				if (currentDelete.eContainer() != null) {
+					EcoreUtil.remove(currentDelete);
+				}
+			}
+
 			assert clonedVerifiableElement != null;
 			this.clonedVerifiableElement = (VerifiableElement) clonedVerifiableElement;
 			
