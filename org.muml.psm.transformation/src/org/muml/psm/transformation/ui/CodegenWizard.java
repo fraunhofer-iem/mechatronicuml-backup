@@ -79,7 +79,7 @@ public class CodegenWizard extends AbstractFujabaExportWizard {
 			}
 
 		};
-		apiMappingPage.setTitle("Select a API-Mapping file");
+		apiMappingPage.setTitle("Select an API-Mapping file");
 		addPage(apiMappingPage);
 
 		targetPage = new AbstractFujabaExportTargetPage("target", toolkit) {
