@@ -45,7 +45,7 @@ public class CodegenWizard extends AbstractFujabaExportWizard {
 
 			@Override
 			public String wizardPageGetSourceFileExtension() {
-				return "";
+				return "muml";
 			}
 
 			@Override
