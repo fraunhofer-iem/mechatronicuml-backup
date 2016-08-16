@@ -5,10 +5,14 @@
       <objectContribution
             adaptable="true"
             objectClass="org.eclipse.core.resources.IFile"
-            nameFilter="*.*"
+            nameFilter="*.muml_container"
             id="org.muml.container.codegen.c.ui.popupMenus.contribution.IFile">
-         <menu id="org.eclipse.acceleo.module.menu" label="Acceleo Model to Text" path="additionsAcceleo">
-               <groupMarker name="acceleo"/> 
+         <menu
+               icon="icons/muml.png"
+               id="org.muml.menu"
+               label="MechatronicUML"
+               path="additionsAcceleo">
+               <groupMarker name="mumlContainer"/> 
          </menu>
          <action
                class="org.muml.container.codegen.c.ui.popupMenus.AcceleoGenerateCAction"
@@ -16,7 +20,7 @@
                id="org.muml.container.codegen.c.ui.popupMenus.acceleoGenerateCAction"
                icon="icons/default.gif"
                label="Generate Component Container Code"
-               menubarPath="org.eclipse.acceleo.module.menu/acceleo"/>
+               menubarPath="org.muml.menu/mumlContainer"/>
       </objectContribution>
    </extension>
 </plugin>
