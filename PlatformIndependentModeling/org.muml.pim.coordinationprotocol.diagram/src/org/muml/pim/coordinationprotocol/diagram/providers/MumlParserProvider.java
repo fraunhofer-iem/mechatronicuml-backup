@@ -89,21 +89,21 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	 * @generated
 	 */
 	private IParser getMessageBufferLabel_5018Parser() {
-		return new MessageBufferLabelExpressionLabelParser();
+		return new MessageBufferLabelExpressionLabelParser5018();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getMessageBufferLabel_5019Parser() {
-		return new MessageBufferLabelExpressionLabelParser();
+		return new MessageBufferLabelExpressionLabelParser5019();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getMessageBufferLabel_5025Parser() {
-		return new MessageBufferLabelExpressionLabelParser();
+		return new MessageBufferLabelExpressionLabelParser5025();
 	}
 
 	/**
@@ -127,21 +127,21 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	 * @generated
 	 */
 	private IParser getParameterLabel_5024Parser() {
-		return new ParameterLabelExpressionLabelParser();
+		return new ParameterLabelExpressionLabelParser5024();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getConnectorQualityOfServiceAssumptionsLabel_5020Parser() {
-		return new ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser();
+		return new ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5020();
 	}
 
 	/**
 	* @generated
 	*/
 	private IParser getConnectorQualityOfServiceAssumptionsLabel_5021Parser() {
-		return new ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser();
+		return new ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5021();
 	}
 
 	/**

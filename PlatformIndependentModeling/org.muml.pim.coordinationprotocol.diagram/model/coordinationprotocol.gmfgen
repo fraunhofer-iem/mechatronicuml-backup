@@ -995,12 +995,12 @@
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
-    <requiredPlugins>org.eclipse.ocl.pivot</requiredPlugins>
     <requiredPlugins>org.muml.core.common</requiredPlugins>
     <requiredPlugins>org.muml.core.modelinstance.ui</requiredPlugins>
     <requiredPlugins>org.muml.core.edit.properties</requiredPlugins>
     <requiredPlugins>org.muml.pim.edit.properties</requiredPlugins>
     <requiredPlugins>org.muml.core.common.editingdomain</requiredPlugins>
+    <requiredPlugins>org.eclipse.ocl.pivot</requiredPlugins>
     <requiredPlugins>org.muml.ape.runtime</requiredPlugins>
     <requiredPlugins>org.muml.pim.common</requiredPlugins>
   </plugin>
@@ -1142,6 +1142,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.4/@labels.0/@modelFacet"
+        className="ParameterLabelExpressionLabelParser5024"
         viewExpression="//@expressionProviders/@providers.0/@expressions.13"
         editExpression="//@expressionProviders/@providers.0/@expressions.14">
       <expressionContext
@@ -1150,6 +1151,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.2/@labels.0/@modelFacet"
+        className="MessageBufferLabelExpressionLabelParser5018"
         viewExpression="//@expressionProviders/@providers.0/@expressions.15">
       <expressionContext
           href="../../org.muml.pim/model/pim.genmodel#//pim/connector/MessageBuffer"/>
@@ -1157,6 +1159,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.2/@labels.1/@modelFacet"
+        className="MessageBufferLabelExpressionLabelParser5019"
         viewExpression="//@expressionProviders/@providers.0/@expressions.16">
       <expressionContext
           href="../../org.muml.pim/model/pim.genmodel#//pim/connector/MessageBuffer"/>
@@ -1164,6 +1167,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.2/@labels.2/@modelFacet"
+        className="MessageBufferLabelExpressionLabelParser5025"
         viewExpression="//@expressionProviders/@providers.0/@expressions.17">
       <expressionContext
           href="../../org.muml.pim/model/pim.genmodel#//pim/connector/MessageBuffer"/>
@@ -1171,6 +1175,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.5/@labels.0/@modelFacet"
+        className="ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5020"
         viewExpression="//@expressionProviders/@providers.0/@expressions.18">
       <expressionContext
           href="../../org.muml.pim/model/pim.genmodel#//pim/protocol/ConnectorQualityOfServiceAssumptions"/>
@@ -1178,6 +1183,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.5/@labels.1/@modelFacet"
+        className="ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5021"
         viewExpression="//@expressionProviders/@providers.0/@expressions.19">
       <expressionContext
           href="../../org.muml.pim/model/pim.genmodel#//pim/protocol/ConnectorQualityOfServiceAssumptions"/>

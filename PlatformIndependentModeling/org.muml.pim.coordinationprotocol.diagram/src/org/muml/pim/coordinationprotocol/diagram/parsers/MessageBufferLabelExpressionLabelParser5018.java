@@ -51,7 +51,7 @@ public class MessageBufferLabelExpressionLabelParser5018 extends ExpressionLabel
 	 */
 	@Override
 	protected String getExpressionBody() {
-		return MumlOCLFactory.getExpression(14, ConnectorPackage.eINSTANCE.getMessageBuffer(), null).body();
+		return MumlOCLFactory.getExpression(15, ConnectorPackage.eINSTANCE.getMessageBuffer(), null).body();
 	}
 
 	/**
