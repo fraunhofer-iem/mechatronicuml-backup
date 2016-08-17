@@ -7,7 +7,7 @@
             category="org.muml.core.export"
             class="org.muml.psm.transformation.ui.CodegenWizard"
             id="org.muml.psm.codegen.transformation.ui.CodeGenWizard"
-            name="Transform Continious Components to Discrete Components for Code-Generation">
+            name="Transform Continuous Components to Discrete Components for Code-Generation">
       </wizard>
    </extension>
 </plugin>
