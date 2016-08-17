@@ -132,7 +132,11 @@ public class PropertyEditor extends org.muml.ape.runtime.editors.ClassPropertyEd
 					org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 						@Override
 						public boolean select(Object object) {
-							return object != null && Boolean.TRUE.equals(ocl.evaluate(object, oclExpression));
+							try {
+								return object != null && Boolean.TRUE.equals(ocl.evaluate(object, oclExpression));
+							} catch (org.eclipse.ocl.pivot.values.InvalidValueException e) {
+								return false;
+							}
 						}
 					};
 					if (filter != null) {
