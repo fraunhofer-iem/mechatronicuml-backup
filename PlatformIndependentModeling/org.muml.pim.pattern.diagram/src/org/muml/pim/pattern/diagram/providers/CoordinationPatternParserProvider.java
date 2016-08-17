@@ -78,21 +78,21 @@ public class CoordinationPatternParserProvider extends AbstractProvider implemen
 	* @generated
 	*/
 	private IParser getMessageBufferLabel_5006Parser() {
-		return new MessageBufferLabelExpressionLabelParser();
+		return new MessageBufferLabelExpressionLabelParser5006();
 	}
 
 	/**
 	* @generated
 	*/
 	private IParser getMessageBufferLabel_5007Parser() {
-		return new MessageBufferLabelExpressionLabelParser();
+		return new MessageBufferLabelExpressionLabelParser5007();
 	}
 
 	/**
 	* @generated
 	*/
 	private IParser getMessageBufferLabel_5011Parser() {
-		return new MessageBufferLabelExpressionLabelParser();
+		return new MessageBufferLabelExpressionLabelParser5011();
 	}
 
 	/**
@@ -116,21 +116,21 @@ public class CoordinationPatternParserProvider extends AbstractProvider implemen
 	* @generated
 	*/
 	private IParser getParameterLabel_5004Parser() {
-		return new ParameterLabelExpressionLabelParser();
+		return new ParameterLabelExpressionLabelParser5004();
 	}
 
 	/**
 	* @generated
 	*/
 	private IParser getConnectorQualityOfServiceAssumptionsLabel_5008Parser() {
-		return new ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser();
+		return new ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5008();
 	}
 
 	/**
 	* @generated
 	*/
 	private IParser getConnectorQualityOfServiceAssumptionsLabel_5009Parser() {
-		return new ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser();
+		return new ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5009();
 	}
 
 	/**
