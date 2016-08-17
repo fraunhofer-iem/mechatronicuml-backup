@@ -85,6 +85,11 @@
     </classes>
     <classes superClasses="//@packages.1/@classes.3">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationMessagePort"/>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationMessagePort/interfaceEntries"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
     </classes>
     <classes superClasses="//@packages.1/@classes.4">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationMessagePortInterfaceEntry"/>
