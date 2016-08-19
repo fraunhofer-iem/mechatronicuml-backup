@@ -346,18 +346,6 @@ public class Main extends AbstractAcceleoGenerator {
         if (!isInWorkspace(org.muml.pim.behavior.BehaviorPackage.class)) {
             resourceSet.getPackageRegistry().put(org.muml.pim.behavior.BehaviorPackage.eINSTANCE.getNsURI(), org.muml.pim.behavior.BehaviorPackage.eINSTANCE);
         }
-        if (!isInWorkspace(org.muml.core.CorePackage.class)) {
-            resourceSet.getPackageRegistry().put(org.muml.core.CorePackage.eINSTANCE.getNsURI(), org.muml.core.CorePackage.eINSTANCE);
-        }
-        if (!isInWorkspace(org.muml.core.expressions.ExpressionsPackage.class)) {
-            resourceSet.getPackageRegistry().put(org.muml.core.expressions.ExpressionsPackage.eINSTANCE.getNsURI(), org.muml.core.expressions.ExpressionsPackage.eINSTANCE);
-        }
-        if (!isInWorkspace(org.muml.core.expressions.common.CommonExpressionsPackage.class)) {
-            resourceSet.getPackageRegistry().put(org.muml.core.expressions.common.CommonExpressionsPackage.eINSTANCE.getNsURI(), org.muml.core.expressions.common.CommonExpressionsPackage.eINSTANCE);
-        }
-        if (!isInWorkspace(org.muml.core.modelinstance.ModelinstancePackage.class)) {
-            resourceSet.getPackageRegistry().put(org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE.getNsURI(), org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE);
-        }
         if (!isInWorkspace(org.muml.pim.actionlanguage.ActionlanguagePackage.class)) {
             resourceSet.getPackageRegistry().put(org.muml.pim.actionlanguage.ActionlanguagePackage.eINSTANCE.getNsURI(), org.muml.pim.actionlanguage.ActionlanguagePackage.eINSTANCE);
         }
@@ -366,9 +354,6 @@ public class Main extends AbstractAcceleoGenerator {
         }
         if (!isInWorkspace(org.muml.pim.types.TypesPackage.class)) {
             resourceSet.getPackageRegistry().put(org.muml.pim.types.TypesPackage.eINSTANCE.getNsURI(), org.muml.pim.types.TypesPackage.eINSTANCE);
-        }
-        if (!isInWorkspace(org.muml.core.modelinstance.ModelinstancePackage.class)) {
-            resourceSet.getPackageRegistry().put(org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE.getNsURI(), org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE);
         }
         if (!isInWorkspace(org.muml.pim.component.ComponentPackage.class)) {
             resourceSet.getPackageRegistry().put(org.muml.pim.component.ComponentPackage.eINSTANCE.getNsURI(), org.muml.pim.component.ComponentPackage.eINSTANCE);
