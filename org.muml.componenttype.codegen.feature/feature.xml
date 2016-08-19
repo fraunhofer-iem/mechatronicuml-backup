@@ -2,7 +2,7 @@
 <feature
       id="org.muml.componenttype.codegen.feature"
       label="Container Code Generation"
-      version="1.0.0.qualifier"
+      version="1.0.9.qualifier"
       provider-name="Heinz Nixdorf Institute, Fraunhofer IEM">
 
    <description url="www.muml.org">
@@ -24,6 +24,10 @@
          id=&quot;org.opendds.modeling.sdk.model.edit&quot;
          id=&quot;org.opendds.modeling.sdk.model.editor
          id=&quot;org.opendds.modeling.validation&quot;
+         id=&quot;com.ociweb.emf.util&quot;
+         id=&quot;com.ociweb.emf&quot;
+         id=&quot;com.ociweb.gmf&quot;
+         
 
 OpenDDS is an open source implementation of the Object Management Group (OMG) Data Distribution Service (DDS), developed and copyrighted by Object Computing Incorporated (OCI). OpenDDS is both a multi-language and multi-platform implementation. The OMG DDS specification is intended to be suitable for systems whose requirements include real-time, high volume, robustness, failure tolerant data distribution utilizing a publish and subscribe model.
 Since OpenDDS is open source and free of licensing fees, you are free to use, modify, and distribute the source code, as long as you include this copyright statement.
@@ -501,8 +505,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
          id="org.muml.container.codegen.c"
          download-size="0"
          install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="org.muml.container.codegen.c.ui"
@@ -603,6 +606,20 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
    <plugin
          id="org.opendds.modeling.validation"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.ociweb.emf.util"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.ociweb.gmf"
          download-size="0"
          install-size="0"
          version="0.0.0"
