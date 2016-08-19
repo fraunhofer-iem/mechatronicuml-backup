@@ -18,10 +18,10 @@ brakeByWireAllocationSpecification {
 		ocl	self.allocateEmbeddedToPlatformInstance('calliper', 'Brake.0');
 	}
 	
-	--constraint requiredLocation communicatingComponents {
-	--	descriptors (c1, e1), (c2, e2);
-	--	ocl self.allocateCommunicatingComponentsToConnectedECUs();
-	--}
+	constraint requiredLocation communicatingComponents {
+		descriptors (c1, e1), (c2, e2);
+		ocl self.allocateCommunicatingComponentsToConnectedECUs();
+	}
 	
 	constraint requiredResource maxMemoryConsumption {
 		lhs requiredMemory;
