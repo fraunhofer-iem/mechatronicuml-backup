@@ -35,7 +35,7 @@ public class Main extends AbstractAcceleoGenerator {
      *
      * @generated
      */
-    public static final String MODULE_FILE_NAME = "/org/muml/container/codegen/c/main";
+    public static final String MODULE_FILE_NAME = "bin/org/muml/container/codegen/c/main";
     
     /**
      * The name of the templates that are to be generated.
@@ -340,21 +340,6 @@ public class Main extends AbstractAcceleoGenerator {
     @Override
     public void registerPackages(ResourceSet resourceSet) {
         super.registerPackages(resourceSet);
-        if (!isInWorkspace(org.muml.core.CorePackage.class)) {
-            resourceSet.getPackageRegistry().put(org.muml.core.CorePackage.eINSTANCE.getNsURI(), org.muml.core.CorePackage.eINSTANCE);
-        }
-        if (!isInWorkspace(org.muml.core.expressions.ExpressionsPackage.class)) {
-            resourceSet.getPackageRegistry().put(org.muml.core.expressions.ExpressionsPackage.eINSTANCE.getNsURI(), org.muml.core.expressions.ExpressionsPackage.eINSTANCE);
-        }
-        if (!isInWorkspace(org.muml.core.expressions.common.CommonExpressionsPackage.class)) {
-            resourceSet.getPackageRegistry().put(org.muml.core.expressions.common.CommonExpressionsPackage.eINSTANCE.getNsURI(), org.muml.core.expressions.common.CommonExpressionsPackage.eINSTANCE);
-        }
-        if (!isInWorkspace(org.muml.core.modelinstance.ModelinstancePackage.class)) {
-            resourceSet.getPackageRegistry().put(org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE.getNsURI(), org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE);
-        }
-        if (!isInWorkspace(org.muml.core.modelinstance.ModelinstancePackage.class)) {
-            resourceSet.getPackageRegistry().put(org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE.getNsURI(), org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE);
-        }
         if (!isInWorkspace(org.muml.pim.actionlanguage.ActionlanguagePackage.class)) {
             resourceSet.getPackageRegistry().put(org.muml.pim.actionlanguage.ActionlanguagePackage.eINSTANCE.getNsURI(), org.muml.pim.actionlanguage.ActionlanguagePackage.eINSTANCE);
         }

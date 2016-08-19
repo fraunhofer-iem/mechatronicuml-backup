@@ -7,6 +7,7 @@
 				'http://www.muml.org/pim/behavior/1.0.0',
 				'http://www.muml.org/core/1.0.0',
 				'http://www.muml.org/pim/actionlanguage/1.0.0',
+				'http://www.muml.org/core/expressions/common/1.0.0',
 				'http://www.muml.org/pim/msgtype/1.0.0',
 				'http://www.muml.org/pim/types/1.0.0',
 				'http://www.muml.org/modelinstance/1.0.0',
@@ -14,7 +15,11 @@
 				'http://www.muml.org/pim/instance/1.0.0',
 				'http://www.muml.org/pim/realtimestatechart/1.0.0',
 				'http://www.muml.org/psm/1.0.0',
-				'http://www.muml.org/psm/muml_container/0.5.0')/]
+				'http://www.muml.org/psm/muml_container/0.5.0',
+				'http://www.opendds.org/modeling/schemas/DCPS/1.0',
+				'http://www.opendds.org/modeling/schemas/Core/1.0',
+				'http://www.opendds.org/modeling/schemas/Application/1.0',
+				'http://www.opendds.org/modeling/schemas/Topics/1.0')/]
 
 [import org::muml::codegen::componenttype::c::queries::stringQueries/]
 [import org::muml::codegen::componenttype::c::queries::modelQueries/]
