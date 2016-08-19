@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Acceleo C Module Runtime Plug-in
-Bundle-SymbolicName: org.muml.container.codegen.c
+Bundle-SymbolicName: org.muml.container.codegen.c;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.muml.container.codegen.c.Activator
 Bundle-Vendor: Eclipse Modeling Project
