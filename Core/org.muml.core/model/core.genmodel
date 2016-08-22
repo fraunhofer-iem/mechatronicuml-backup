@@ -39,6 +39,11 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/TextualExpression/language"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/TextualExpression/languageVersion"/>
       </genClasses>
+      <genClasses ecoreClass="core.ecore#//expressions/ExpressionText">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/ExpressionText/grammar"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/ExpressionText/text"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//expressions/ExpressionText/expression"/>
+      </genClasses>
       <nestedGenPackages prefix="CommonExpressions" basePackage="org.muml.core.expressions"
           disposableProviderFactory="true" ecorePackage="core.ecore#//expressions/common">
         <genEnums typeSafeEnumCompatible="false" ecoreEnum="core.ecore#//expressions/common/LogicOperator">

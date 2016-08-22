@@ -6,12 +6,14 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.muml.core.CorePackage;
 
 import org.muml.core.expressions.Expression;
+import org.muml.core.expressions.ExpressionText;
 import org.muml.core.expressions.ExpressionsFactory;
 import org.muml.core.expressions.ExpressionsPackage;
 import org.muml.core.expressions.TextualExpression;
@@ -44,6 +46,13 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * @generated
 	 */
 	private EClass textualExpressionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass expressionTextEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -170,6 +179,42 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getExpressionText() {
+		return expressionTextEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getExpressionText_Grammar() {
+		return (EAttribute)expressionTextEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getExpressionText_Text() {
+		return (EAttribute)expressionTextEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getExpressionText_Expression() {
+		return (EReference)expressionTextEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ExpressionsFactory getExpressionsFactory() {
 		return (ExpressionsFactory)getEFactoryInstance();
 	}
@@ -199,6 +244,11 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 		createEAttribute(textualExpressionEClass, TEXTUAL_EXPRESSION__EXPRESSION_TEXT);
 		createEAttribute(textualExpressionEClass, TEXTUAL_EXPRESSION__LANGUAGE);
 		createEAttribute(textualExpressionEClass, TEXTUAL_EXPRESSION__LANGUAGE_VERSION);
+
+		expressionTextEClass = createEClass(EXPRESSION_TEXT);
+		createEAttribute(expressionTextEClass, EXPRESSION_TEXT__GRAMMAR);
+		createEAttribute(expressionTextEClass, EXPRESSION_TEXT__TEXT);
+		createEReference(expressionTextEClass, EXPRESSION_TEXT__EXPRESSION);
 	}
 
 	/**
@@ -246,6 +296,11 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 		initEAttribute(getTextualExpression_ExpressionText(), ecorePackage.getEString(), "expressionText", null, 1, 1, TextualExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getTextualExpression_Language(), ecorePackage.getEString(), "language", null, 1, 1, TextualExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getTextualExpression_LanguageVersion(), ecorePackage.getEString(), "languageVersion", null, 0, 1, TextualExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(expressionTextEClass, ExpressionText.class, "ExpressionText", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getExpressionText_Grammar(), ecorePackage.getEString(), "grammar", null, 0, 1, ExpressionText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getExpressionText_Text(), ecorePackage.getEString(), "text", null, 0, 1, ExpressionText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExpressionText_Expression(), this.getExpression(), null, "expression", null, 1, 1, ExpressionText.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore

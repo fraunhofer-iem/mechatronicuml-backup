@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.muml.core.CorePackage;
 
 /**
@@ -470,6 +471,62 @@ public interface ExpressionsPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.muml.core.expressions.impl.ExpressionTextImpl <em>Expression Text</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.muml.core.expressions.impl.ExpressionTextImpl
+	 * @see org.muml.core.expressions.impl.ExpressionsPackageImpl#getExpressionText()
+	 * @generated
+	 */
+	int EXPRESSION_TEXT = 2;
+
+	/**
+	 * The feature id for the '<em><b>Grammar</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPRESSION_TEXT__GRAMMAR = 0;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPRESSION_TEXT__TEXT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPRESSION_TEXT__EXPRESSION = 2;
+
+	/**
+	 * The number of structural features of the '<em>Expression Text</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPRESSION_TEXT_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Expression Text</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPRESSION_TEXT_OPERATION_COUNT = 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.muml.core.expressions.Expression <em>Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -521,6 +578,49 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTextualExpression_LanguageVersion();
+
+	/**
+	 * Returns the meta object for class '{@link org.muml.core.expressions.ExpressionText <em>Expression Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Expression Text</em>'.
+	 * @see org.muml.core.expressions.ExpressionText
+	 * @generated
+	 */
+	EClass getExpressionText();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.muml.core.expressions.ExpressionText#getGrammar <em>Grammar</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Grammar</em>'.
+	 * @see org.muml.core.expressions.ExpressionText#getGrammar()
+	 * @see #getExpressionText()
+	 * @generated
+	 */
+	EAttribute getExpressionText_Grammar();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.muml.core.expressions.ExpressionText#getText <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Text</em>'.
+	 * @see org.muml.core.expressions.ExpressionText#getText()
+	 * @see #getExpressionText()
+	 * @generated
+	 */
+	EAttribute getExpressionText_Text();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.muml.core.expressions.ExpressionText#getExpression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Expression</em>'.
+	 * @see org.muml.core.expressions.ExpressionText#getExpression()
+	 * @see #getExpressionText()
+	 * @generated
+	 */
+	EReference getExpressionText_Expression();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -588,6 +688,40 @@ public interface ExpressionsPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TEXTUAL_EXPRESSION__LANGUAGE_VERSION = eINSTANCE.getTextualExpression_LanguageVersion();
+
+		/**
+		 * The meta object literal for the '{@link org.muml.core.expressions.impl.ExpressionTextImpl <em>Expression Text</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.muml.core.expressions.impl.ExpressionTextImpl
+		 * @see org.muml.core.expressions.impl.ExpressionsPackageImpl#getExpressionText()
+		 * @generated
+		 */
+		EClass EXPRESSION_TEXT = eINSTANCE.getExpressionText();
+
+		/**
+		 * The meta object literal for the '<em><b>Grammar</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXPRESSION_TEXT__GRAMMAR = eINSTANCE.getExpressionText_Grammar();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXPRESSION_TEXT__TEXT = eINSTANCE.getExpressionText_Text();
+
+		/**
+		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXPRESSION_TEXT__EXPRESSION = eINSTANCE.getExpressionText_Expression();
 
 	}
 

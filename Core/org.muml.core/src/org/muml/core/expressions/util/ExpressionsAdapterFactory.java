@@ -79,6 +79,10 @@ public class ExpressionsAdapterFactory extends AdapterFactoryImpl {
 				return createTextualExpressionAdapter();
 			}
 			@Override
+			public Adapter caseExpressionText(ExpressionText object) {
+				return createExpressionTextAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -131,6 +135,20 @@ public class ExpressionsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTextualExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.muml.core.expressions.ExpressionText <em>Expression Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.muml.core.expressions.ExpressionText
+	 * @generated
+	 */
+	public Adapter createExpressionTextAdapter() {
 		return null;
 	}
 

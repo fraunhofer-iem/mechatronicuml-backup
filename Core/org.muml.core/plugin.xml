@@ -51,6 +51,7 @@
 
 <extension-point id="modelelementcategory" name="modelelementcategory" schema="schema/modelelementcategory.exsd"/>
 <extension-point id="version" name="version" schema="schema/version.exsd"/>
+<extension-point id="expressionGrammar" name="expressionGrammar" schema="schema/expressionGrammar.exsd"/>
 
    <extension point="org.eclipse.emf.ecore.extension_parser">
       <parser class="org.muml.core.util.CoreResourceFactoryImpl" type="muml"/>
@@ -60,6 +61,12 @@
 
    <extension point="org.eclipse.emf.ecore.extension_parser">
       <parser class="org.muml.core.util.CoreResourceFactoryImpl" type="fujaba"/>
+   </extension>
+   <extension
+         point="org.muml.core.expressionGrammar">
+      <grammar
+            implementation="org.muml.core.expressions.grammar.TestGrammar">
+      </grammar>
    </extension>
    
    
