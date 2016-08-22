@@ -10,7 +10,7 @@ import transforms.cic.Protocol2CIC;
 import transforms.MUML2UPPAAL;
 
 import org.muml.uppaal.adapter._blackbox.ProgressUnit;
-import org.muml.uppaal.adapter._blackbox.SaveXMIUnit;
+import org.muml.common._blackbox.SaveXMIBlackbox;
 
 modeltype muml uses 'http://www.muml.org/pim/1.0.0';
 modeltype uppaal uses 'http://www.muml.org/uppaal/1.0.0';
@@ -28,7 +28,7 @@ configuration property STORE_INTERMEDIATE_MODELS : Boolean;
 
 helper storeModel(model : Bag(Element), filename : String) {
 	if (STORE_INTERMEDIATE_MODELS) then {
-		save(model, filename);
+		save(model, "Intermediate Models", filename);
 	} endif;
 }
 

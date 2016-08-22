@@ -1,4 +1,4 @@
-package org.muml.uppaal.adapter.blackbox;
+package org.muml.core.common.blackbox;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -14,16 +14,14 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
-// This is only used to save intermediate models from within QVTO
-public class SaveXMILibrary {
+// This can be used for debugging purposes to save intermediate models etc.
+public class SaveXMIBlackbox {
 
-	private static final String PROJECT_NAME = "Intermediate Models";
+	public SaveXMIBlackbox() {}
 
-	public SaveXMILibrary() {}
-
-	public void save(Collection<Object> objects, String filename) {
+	public void save(Collection<Object> objects, String projectName, String filename) {
 		if (ResourcesPlugin.getWorkspace() != null && ResourcesPlugin.getWorkspace().getRoot() != null) {
-			IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(PROJECT_NAME);
+			IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(projectName);
 			try {
 				if (!project.exists()) {
 					project.create(new NullProgressMonitor());
@@ -35,7 +33,7 @@ public class SaveXMILibrary {
 			}
 		}
 		ResourceSet resourceSet = new ResourceSetImpl();
-		Resource resource = resourceSet.createResource(URI.createURI("platform:/resource/" + PROJECT_NAME + "/" + filename));
+		Resource resource = resourceSet.createResource(URI.createURI("platform:/resource/" + projectName + "/" + filename));
 		if (resource != null) {
 			for (Object object : objects) {
 				if (object instanceof EObject) {

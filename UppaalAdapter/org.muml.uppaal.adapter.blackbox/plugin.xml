@@ -2,6 +2,7 @@
 <plugin>
 	
 	<extension point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
+	
    	<unit name="TraceLibUnit" namespace="org.muml.uppaal.adapter._blackbox">
     <library name="TraceLib" 
              class="org.muml.uppaal.adapter.blackbox.TraceLibrary">
@@ -37,14 +38,7 @@
              name="ProgressLib">
        </library>
     </unit>
-    <unit
-          name="SaveXMIUnit"
-          namespace="org.muml.uppaal.adapter._blackbox">
-       <library
-             class="org.muml.uppaal.adapter.blackbox.SaveXMILibrary"
-             name="SaveXMILib">
-       </library>
-    </unit>
+   
     <unit
           name="CharSubstitutionUnit"
           namespace="org.muml.uppaal.adapter._blackbox">

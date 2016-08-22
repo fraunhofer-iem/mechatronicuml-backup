@@ -54,4 +54,16 @@
      </category>
   </extension>
   
+
+  <extension point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
+     <unit
+          name="SaveXMIBlackbox"
+          namespace="org.muml.common._blackbox">
+       <library
+             class="org.muml.core.common.blackbox.SaveXMIBlackbox"
+             name="SaveXMIBlackbox">
+       </library>
+     </unit>
+  </extension>
+  
 </plugin>
