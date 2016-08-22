@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.core.resources.IWorkspaceRunnable;
 import org.eclipse.core.runtime.CoreException;
@@ -37,9 +38,15 @@ public class PrepareModelOperation implements IWorkspaceRunnable {
 	protected VerifiableElement verifiableElement;
 	private VerifiableElement clonedVerifiableElement;
 	private ModelExtent resultExtent;
-	
+	private Map<String, Object> configProperties = new HashMap<String, Object>();
+
 	public PrepareModelOperation(VerifiableElement verifiableElement) {
 		this.verifiableElement = verifiableElement;
+	}
+	
+	// Get or change config properties map. It is used by run().
+	public Map<String, Object> getConfigProperties() {
+		return configProperties;
 	}
 		
 	@Override
@@ -55,21 +62,20 @@ public class PrepareModelOperation implements IWorkspaceRunnable {
 			resultExtent = new BasicModelExtent();
 			
 			cloneOperation.setTransformationParameters(inputExtent, verifiableElementExtent, resultExtent);
-			HashMap<String, Object> configProperties = new HashMap<String, Object>();
 			cloneOperation.setTransformationConfigProperties(configProperties);
 			cloneOperation.run(subMonitor.newChild(90));
 			
 			
 
-//			role.behavior löschen
-//			structured components alle löschen
-//			atomic continuous components löschen
-//			atomic software component referenziert statechart, statechart löschen, dann komponente löschen
+//			role.behavior lï¿½schen
+//			structured components alle lï¿½schen
+//			atomic continuous components lï¿½schen
+//			atomic software component referenziert statechart, statechart lï¿½schen, dann komponente lï¿½schen
 			
-			// Component Type referenziert statechart -> st löschen (komponenten
-			// komponent types löschen
-			// alle protokolle löschen außer mit clonedVerifiableElement löschen, und alle referenzierten Statecharts löschen (rollen statecharts)
-			// alle cics löschen
+			// Component Type referenziert statechart -> st lï¿½schen (komponenten
+			// komponent types lï¿½schen
+			// alle protokolle lï¿½schen auï¿½er mit clonedVerifiableElement lï¿½schen, und alle referenzierten Statecharts lï¿½schen (rollen statecharts)
+			// alle cics lï¿½schen
 
 			List<EObject> delete = new ArrayList<EObject>();
 			

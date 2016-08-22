@@ -2,12 +2,20 @@
 <?eclipse version="3.4"?>
 <plugin>
 
-	<extension point="org.eclipse.ui.commands" id="menu-commands">
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
       <category id="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="UPPAAL Verification Command" description="Run UPPAAL model checking"/>
       <command id="org.muml.uppaal.adapter.UppaalVerificationAction"
          name="Run UPPAAL Model Checking"
          categoryId="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
          defaultHandler="org.muml.uppaal.adapter.ui.UppaalVerifyForResultAction"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <category id="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="UPPAAL Verification Command" description="Run UPPAAL model checking"/>
+      <command id="org.muml.uppaal.adapter.GenerateIntermediateModelsAction"
+         name="Generate Intermediate Models"
+         categoryId="org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
+         defaultHandler="org.muml.uppaal.adapter.ui.UppaalGenerateIntermediateModelsAction"/>
    </extension>
 
    <extension point="org.eclipse.ui.commands" id="menu-commands">
@@ -115,9 +123,29 @@
          <menu
                id="de.uni_paderborn.de.fujaba.muml.uppaal.verification.debugging"
                label="Debugging">
-               <command
-                     commandId="org.muml.uppaal.adapter.ExportUppaalModelAction"
-                     label="Generate Uppaal Model">
+               
+         
+         <command
+               commandId="org.muml.uppaal.adapter.GenerateIntermediateModelsAction"
+               label="Generate Intermediate Models">
+             <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="org.muml.pim.protocol.AbstractCoordinationSpecification">
+                        </adapt>
+                     </iterate>
+                  </with></and>
+            </visibleWhen>
+         </command>
+               
+               
+         <command
+               commandId="org.muml.uppaal.adapter.ExportUppaalModelAction"
+               label="Generate Uppaal Model">
             <visibleWhen>
                <and>
                   <with
@@ -148,7 +176,11 @@
                   </with></and>
             </visibleWhen>
          </command>
+         
+         
          </menu>
+         
+         
         <!-- The wizard should not be dispayed anymore
          <command commandId="org.muml.uppaal.adapter.ExportUppaalWizardModelAction">
             <visibleWhen>

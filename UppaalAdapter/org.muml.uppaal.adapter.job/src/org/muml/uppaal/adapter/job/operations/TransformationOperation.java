@@ -23,6 +23,9 @@ import org.muml.uppaal.adapter.job.Activator;
 
 public class TransformationOperation implements IWorkspaceRunnable {
 	
+	public static String CONFIG_STORE_INTERMEDIATE_MODELS = "STORE_INTERMEDIATE_MODELS";
+	
+	
 	protected URI uri;
 	protected ModelExtent params[] = null;
 	protected Map<String, Object> configProperties = null;

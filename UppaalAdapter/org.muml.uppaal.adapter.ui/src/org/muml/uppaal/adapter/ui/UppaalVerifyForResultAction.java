@@ -18,11 +18,15 @@ public class UppaalVerifyForResultAction extends AbstractUppaalAction {
 		if(verifiableElement instanceof AbstractCoordinationPattern)
 			verifiableElement = convertAbstractCoordinationPatternToCoordinationProtocol(event);
 		
-		UppaalVerifyForResultWizard wizard = new UppaalVerifyForResultWizard();
-		Job job = new VerifyForResultsJob(verifiableElement, wizard, wizard, new PropertiesResultWizard());
+		Job job = createJob();
 		job.setUser(true);
 		job.schedule();
 
 		return CommandResult.newOKCommandResult();
+	}
+
+	protected VerifyForResultsJob createJob() {
+		UppaalVerifyForResultWizard wizard = new UppaalVerifyForResultWizard();
+		return new VerifyForResultsJob(verifiableElement, wizard, wizard, new PropertiesResultWizard());
 	}
 }

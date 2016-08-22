@@ -1,7 +1,9 @@
 package org.muml.uppaal.adapter.job;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -30,7 +32,9 @@ public class VerifyForResultsJob extends Job {
 	protected VerificationPropertyChoiceProvider propertyChoiceProvider;
 	protected VerificationPropertyResultAcceptor propertyResultAcceptor;
 	protected VerifiableElement verifiableElement;
+	private boolean storeIntermediateModels;
 	
+
 	public VerifyForResultsJob(VerifiableElement verifiableElement, VerificationOptionsProvider optionsProvider, VerificationPropertyChoiceProvider propertyChoiceProvider, VerificationPropertyResultAcceptor propertyResultAcceptor) {
 		super("Verifying "+((NamedElement) verifiableElement).getName());
 		this.verifiableElement = verifiableElement;
@@ -38,7 +42,15 @@ public class VerifyForResultsJob extends Job {
 		this.propertyChoiceProvider = propertyChoiceProvider;
 		this.propertyResultAcceptor = propertyResultAcceptor;
 	}
-		
+
+	public boolean isStoreIntermediateModels() {
+		return storeIntermediateModels;
+	}
+
+	public void setStoreIntermediateModels(boolean storeIntermediateModels) {
+		this.storeIntermediateModels = storeIntermediateModels;
+	}
+	
 	@Override
 	protected IStatus run(IProgressMonitor monitor) {
 		
@@ -76,12 +88,18 @@ public class VerifyForResultsJob extends Job {
 				}
 			}
 			
-			//Start the verification job
+			// set input and output extents for verification job
 			TransformationOperation verifyOperation = new TransformationOperation("Running verification process", URI.createPlatformPluginURI("/org.muml.uppaal.adapter.transformation/transforms/VerifiableElement2Results.qvto", true));
 			ModelExtent resultExtent = new BasicModelExtent();
 			ModelExtent optionsExtent = new BasicModelExtent(Arrays.asList(new Options[] {optionsProvider.getOptions()}));
-									
 			verifyOperation.setTransformationParameters(mainInputExtent, optionsExtent, resultExtent);
+			
+			// Set config properties
+			Map<String, Object> configProperties = new HashMap<String, Object>();
+			configProperties.put(TransformationOperation.CONFIG_STORE_INTERMEDIATE_MODELS, storeIntermediateModels);
+			verifyOperation.setTransformationConfigProperties(configProperties);
+			
+			// Run verification job
 			try {
 				verifyOperation.run(subMonitor.newChild(90));
 			}

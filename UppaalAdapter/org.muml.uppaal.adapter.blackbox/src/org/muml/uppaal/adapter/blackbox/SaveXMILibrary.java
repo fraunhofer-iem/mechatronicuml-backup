@@ -54,6 +54,9 @@ public class SaveXMILibrary {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+			
+			// Use this code to prevent cross references between intermediate models.
+			//resource.getContents().clear();
 		}
 	}
 

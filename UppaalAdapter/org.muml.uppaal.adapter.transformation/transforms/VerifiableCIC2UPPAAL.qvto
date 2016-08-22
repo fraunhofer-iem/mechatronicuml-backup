@@ -17,63 +17,72 @@ modeltype uppaal uses 'http://www.muml.org/uppaal/1.0.0';
 modeltype uppaal_requirements uses 'http://www.muml.org/uppaal/requirements/1.0.0';
 modeltype verification_options uses 'http://www.muml.org/uppaal/options/1.0.0';
 
+
 /*
 * Transforms a property-normalized CIC to UPPAAL
 */
 
 transformation VerifiableCIC2UPPAAL(in verifiable_cic : muml, in options : verification_options, out output_uppaal : uppaal, out output_req: uppaal_requirements);
 
+configuration property STORE_INTERMEDIATE_MODELS : Boolean;
+
+helper storeModel(model : Bag(Element), filename : String) {
+	if (STORE_INTERMEDIATE_MODELS) then {
+		save(model, filename);
+	} endif;
+}
+
 main() {
-	save(verifiable_cic.rootObjects()->asBag(), "1.xmi");
+	storeModel(verifiable_cic.rootObjects()->asBag(), "1.xmi");
 	
 	reportProgress("Normalizations");
 	// Normalize time units used in the model (to one common time unit)
 	var scaleClockValuesNormalizedModel : muml = muml.createEmptyModel().oclAsType(muml);
 	var scaleClockValuesNormalization : RTSCScaleTimeValuesNormalization = new RTSCScaleTimeValuesNormalization(verifiable_cic, scaleClockValuesNormalizedModel);
 	var retcode := scaleClockValuesNormalization.transform();
-	save(scaleClockValuesNormalizedModel.rootObjects()->asBag(), "2.xmi");
+	storeModel(scaleClockValuesNormalizedModel.rootObjects()->asBag(), "2.xmi");
 	assert fatal (retcode.succeeded()) with log('Scale-Time-Values normalization failed: ' + retcode.raisedException().repr());
 	
 	//add muml prefix to all named elements and substitute unsupported substrings of the named elements' names
 	var prefixedModel : muml = muml.createEmptyModel().oclAsType(muml);
 	var nameNormalization : NameNormalization = new NameNormalization(scaleClockValuesNormalizedModel, prefixedModel);
 	retcode := nameNormalization.transform();
-	save(prefixedModel.rootObjects()->asBag(), "3.xmi");
+	storeModel(prefixedModel.rootObjects()->asBag(), "3.xmi");
 	assert fatal (retcode.succeeded()) with log('NamePrefix normalization failed: ' + retcode.raisedException().repr());
 
 	// Normalize transitions with deadlines by adding an intermediate state
 	var transitionNormalizedModel : muml = muml.createEmptyModel().oclAsType(muml);
 	var transitionDeadlineNormalization : RTSCDeadlineTransitionNormalization = new RTSCDeadlineTransitionNormalization(prefixedModel,transitionNormalizedModel);
 	retcode := transitionDeadlineNormalization.transform();
-	save(transitionNormalizedModel.rootObjects()->asBag(), "4.xmi");
+	storeModel(transitionNormalizedModel.rootObjects()->asBag(), "4.xmi");
 	assert fatal (retcode.succeeded()) with log('Deadline transition normalization failed: ' + retcode.raisedException().repr());
 	
 	// Replace composite transitions by equivalent transitions and exit/entry points
 	var compositeNormalizedModel : muml = muml.createEmptyModel().oclAsType(muml);
 	var compositeNormalization : RTSCCompositeTransitionNormalization = new RTSCCompositeTransitionNormalization(transitionNormalizedModel,compositeNormalizedModel);
 	retcode := compositeNormalization.transform();
-	save(compositeNormalizedModel.rootObjects()->asBag(), "5.xmi");
+	storeModel(compositeNormalizedModel.rootObjects()->asBag(), "5.xmi");
 	assert fatal (retcode.succeeded()) with log('Composite transition normalization failed: ' + retcode.raisedException().repr());
 	
 	// Replace do events by equivalent regions
 	var doEventNormalizedModel : muml = muml.createEmptyModel().oclAsType(muml);
 	var doEventNormalization : RTSCDoEventNormalization = new RTSCDoEventNormalization(compositeNormalizedModel,doEventNormalizedModel);
 	retcode := doEventNormalization.transform();
-	save(doEventNormalizedModel.rootObjects()->asBag(), "6.xmi");
+	storeModel(doEventNormalizedModel.rootObjects()->asBag(), "6.xmi");
 	assert fatal (retcode.succeeded()) with log('Do event normalization failed: ' + retcode.raisedException().repr());
 		
 	// Flatten the RTSCs into one equivalent flat RTSC with multiple regions without hierarchical states
 	var flatModel : muml = muml.createEmptyModel().oclAsType(muml);
 	var flattening : RTSCHierarchyNormalization = new RTSCHierarchyNormalization(doEventNormalizedModel,flatModel);
 	retcode := flattening.transform();
-	save(flatModel.rootObjects()->asBag(), "7.xmi");	
+	storeModel(flatModel.rootObjects()->asBag(), "7.xmi");	
 	assert fatal (retcode.succeeded()) with log('Hierarchy normalization failed: ' + retcode.raisedException().repr());
 	
 	// Move entry/exit events of a state to incoming/outgoing transitions
 	var entryExitNormalizedModel : muml = muml.createEmptyModel().oclAsType(muml);
 	var entryExitNormalization : RTSCEntryExitEventNormalization = new RTSCEntryExitEventNormalization(flatModel,entryExitNormalizedModel);
 	retcode := entryExitNormalization.transform();
-	save(entryExitNormalizedModel.rootObjects()->asBag(), "8.xmi");	
+	storeModel(entryExitNormalizedModel.rootObjects()->asBag(), "8.xmi");	
 	assert fatal (retcode.succeeded()) with log('Entry-Exit-Event normalization failed: ' + retcode.raisedException().repr());
 
 	
@@ -81,7 +90,7 @@ main() {
 	var urgencyNormalizedModel : muml = muml.createEmptyModel().oclAsType(muml);
 	var urgencyNormalization : RTSCUrgencyNormalization = new RTSCUrgencyNormalization(entryExitNormalizedModel,urgencyNormalizedModel);
 	retcode := urgencyNormalization.transform();
-	save(urgencyNormalizedModel.rootObjects()->asBag(), "9.xmi");	
+	storeModel(urgencyNormalizedModel.rootObjects()->asBag(), "9.xmi");	
 	assert fatal (retcode.succeeded()) with log('Urgency normalization failed: ' + retcode.raisedException().repr());
 	
 	// Migration to Uppaal, yielding the NTA model and the Uppaal "requirements" model
