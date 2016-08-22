@@ -52,6 +52,9 @@ public class ExpressionGrammarRegistry {
 						SafeRunner.run(nameReader);
 						String name = nameReader.getName();
 						if (name != null) {
+							if (grammarMap.containsKey(name)) {
+								new UnsupportedOperationException("Duplicate grammar entry in ExpressionGrammarRegistry found!").printStackTrace();
+							}
 							grammarMap.put(name, grammar);
 						}
 					}
