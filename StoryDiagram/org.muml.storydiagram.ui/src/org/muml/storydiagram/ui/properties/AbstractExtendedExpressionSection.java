@@ -57,7 +57,6 @@ import org.muml.core.expressions.common.LiteralExpression;
 import org.muml.core.expressions.common.LogicOperator;
 import org.muml.core.expressions.common.LogicalExpression;
 import org.muml.core.expressions.common.UnaryExpression;
-import org.muml.core.expressions.util.ExpressionUtils;
 import org.muml.storydiagram.activities.expressions.ActivitiesExpressionsFactory;
 import org.muml.storydiagram.calls.expressions.CallsExpressionsFactory;
 import org.muml.storydiagram.diagram.custom.util.ActivityUtil;
@@ -71,6 +70,7 @@ import org.muml.storydiagram.patterns.expressions.PatternsExpressionsFactory;
 import org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage;
 import org.muml.storydiagram.patterns.expressions.PrimitiveVariableExpression;
 import org.muml.storydiagram.ui.SourceViewerProvider;
+import org.muml.storydiagram.ui.utils.ExpressionUtils;
 
 import de.upb.swt.core.ui.CoreImages;
 import de.upb.swt.core.ui.properties.sections.AbstractPropertySection;

@@ -40,10 +40,10 @@ import org.eclipse.swt.widgets.Shell;
 import org.muml.core.expressions.Expression;
 import org.muml.core.expressions.ExpressionsPackage;
 import org.muml.core.expressions.TextualExpression;
-import org.muml.core.expressions.util.ExpressionUtils;
 import org.muml.storydiagram.activities.Activity;
 import org.muml.storydiagram.patterns.ObjectVariable;
 import org.muml.storydiagram.ui.SourceViewerProvider;
+import org.muml.storydiagram.ui.utils.ExpressionUtils;
 
 public class EditExpressionDialog extends Dialog {
 
