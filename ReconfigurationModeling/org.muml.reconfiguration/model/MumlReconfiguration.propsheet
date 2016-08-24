@@ -98,21 +98,66 @@
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:RadioPropertyEditor"/>
       </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationMessagePortInterfaceEntry/expectedResponseTime"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
     </classes>
     <classes superClasses="//@packages.1/@classes.3">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionPort"/>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionPort/interfaceEntries"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
     </classes>
     <classes superClasses="//@packages.1/@classes.4">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionPortInterfaceEntry"/>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionPortInterfaceEntry/timeForExecutionPhase"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionPortInterfaceEntry/timeForDecision"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionPortInterfaceEntry/minimumCommitTime"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecification"/>
     </classes>
     <classes superClasses="//@packages.1/@classes.9">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationSinglePhase"/>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationSinglePhase/timeForExecution"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
     </classes>
     <classes superClasses="//@packages.1/@classes.9">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationThreePhase"/>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationThreePhase/timeForFading"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationThreePhase/timeForSetup"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationThreePhase/timeForTeardown"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
     </classes>
     <classes superClasses="//@packages.1/@classes.3">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/InternalReconfigurationCommunicationPort"/>
@@ -129,6 +174,11 @@
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/Manager"/>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/Manager/specificationEntries"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
       <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZTcxMwbEeSjx7OWZCcdLw"/>
     </classes>
     <classes>
@@ -172,6 +222,11 @@
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/Executor"/>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/Executor/specificationEntries"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
       <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZTcxMwbEeSjx7OWZCcdLw"/>
     </classes>
     <classes>

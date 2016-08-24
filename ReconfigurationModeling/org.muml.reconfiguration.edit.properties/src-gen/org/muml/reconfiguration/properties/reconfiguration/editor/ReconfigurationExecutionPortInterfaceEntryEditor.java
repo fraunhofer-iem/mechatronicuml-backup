@@ -25,6 +25,12 @@ public class ReconfigurationExecutionPortInterfaceEntryEditor extends org.muml.a
 
 			addPropertyEditor(createEditorMessageType_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorTimeForExecutionPhase_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorTimeForDecision_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorMinimumCommitTime_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
@@ -49,12 +55,66 @@ public class ReconfigurationExecutionPortInterfaceEntryEditor extends org.muml.a
 
 			addPropertyEditor(createEditorMessageType_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorTimeForExecutionPhase_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorTimeForDecision_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorMinimumCommitTime_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
 		} else {
 		}
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorTimeForExecutionPhase_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorTimeForExecutionPhase_property_tab_generalTab_Editor() {
+		if (this.editorTimeForExecutionPhase_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+					.getReconfigurationExecutionPortInterfaceEntry_TimeForExecutionPhase();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage(
+					"The time that is needed by the component for executing the reconfiguration\nthat is offered by this interface entry. The time for execution is specified an\nExecutionTimeSpecification because it depends on the particular execution\nprocedure. Currently, we support single-phase and three-phase execution.");
+
+			this.editorTimeForExecutionPhase_property_tab_generalTab = editor;
+		}
+		return this.editorTimeForExecutionPhase_property_tab_generalTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorTimeForDecision_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorTimeForDecision_property_tab_generalTab_Editor() {
+		if (this.editorTimeForDecision_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+					.getReconfigurationExecutionPortInterfaceEntry_TimeForDecision();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage(
+					"The time that is needed by the component for deciding whether the reconfiguration\nthat is offered by this interface entry can be executed.");
+
+			this.editorTimeForDecision_property_tab_generalTab = editor;
+		}
+		return this.editorTimeForDecision_property_tab_generalTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorMinimumCommitTime_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorMinimumCommitTime_property_tab_generalTab_Editor() {
+		if (this.editorMinimumCommitTime_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+					.getReconfigurationExecutionPortInterfaceEntry_MinimumCommitTime();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage(
+					"If the component confirmed to the parent that it can execute the requested\nreconfiguration, the commit time denotes how long the component may stick\nto that confirmation. The minimum commit time sets a lower bound to this value.\nIt is required for analyzing the reconfiguration behavior.");
+
+			this.editorMinimumCommitTime_property_tab_generalTab = editor;
+		}
+		return this.editorMinimumCommitTime_property_tab_generalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDescription_property_tab_generalTab;
@@ -113,8 +173,8 @@ public class ReconfigurationExecutionPortInterfaceEntryEditor extends org.muml.a
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.general", "property.tab.general"}).contains(tab);
 		}
 	}
 

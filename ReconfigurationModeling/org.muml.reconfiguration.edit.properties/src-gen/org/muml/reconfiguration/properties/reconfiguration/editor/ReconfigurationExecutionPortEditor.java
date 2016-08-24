@@ -55,6 +55,8 @@ public class ReconfigurationExecutionPortEditor extends org.muml.ape.runtime.edi
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorInterfaceEntries_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
@@ -93,6 +95,8 @@ public class ReconfigurationExecutionPortEditor extends org.muml.ape.runtime.edi
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorInterfaceEntries_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
@@ -115,6 +119,22 @@ public class ReconfigurationExecutionPortEditor extends org.muml.ape.runtime.edi
 
 		} else {
 		}
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorInterfaceEntries_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorInterfaceEntries_property_tab_generalTab_Editor() {
+		if (this.editorInterfaceEntries_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+					.getReconfigurationExecutionPort_InterfaceEntries();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage(
+					"The interface entries of this reconfiguration execution port. Each interface entry\nspecifies one reconfiguration message that is offered to the parent.");
+
+			this.editorInterfaceEntries_property_tab_generalTab = editor;
+		}
+		return this.editorInterfaceEntries_property_tab_generalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSenderMessageTypes_property_tab_messageTab;
@@ -310,10 +330,11 @@ public class ReconfigurationExecutionPortEditor extends org.muml.ape.runtime.edi
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.message", "property.tab.message",
-					"property.tab.general", "property.tab.message", "property.tab.behavior", "property.tab.behavior",
-					"property.tab.behavior", "property.tab.general", "property.tab.documentation",
-					"property.tab.extensions", "property.tab.general", "property.tab.general"}).contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.message",
+					"property.tab.message", "property.tab.general", "property.tab.message", "property.tab.behavior",
+					"property.tab.behavior", "property.tab.behavior", "property.tab.general",
+					"property.tab.documentation", "property.tab.extensions", "property.tab.general",
+					"property.tab.general"}).contains(tab);
 		}
 	}
 

@@ -27,6 +27,8 @@ public class ReconfigurationMessagePortInterfaceEntryEditor extends org.muml.ape
 
 			addPropertyEditor(createEditorReconfigurationMessageType_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorExpectedResponseTime_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
@@ -53,6 +55,8 @@ public class ReconfigurationMessagePortInterfaceEntryEditor extends org.muml.ape
 
 			addPropertyEditor(createEditorReconfigurationMessageType_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorExpectedResponseTime_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
@@ -75,6 +79,22 @@ public class ReconfigurationMessagePortInterfaceEntryEditor extends org.muml.ape
 			this.editorReconfigurationMessageType_property_tab_generalTab = editor;
 		}
 		return this.editorReconfigurationMessageType_property_tab_generalTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExpectedResponseTime_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExpectedResponseTime_property_tab_generalTab_Editor() {
+		if (this.editorExpectedResponseTime_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+					.getReconfigurationMessagePortInterfaceEntry_ExpectedResponseTime();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage(
+					"If the message is a request, then the expected response time denotes how long \nthe parent has time to answer the request. For an info message, no answer of\nthe parent is sent and, consequently, no expected response time is specified.");
+
+			this.editorExpectedResponseTime_property_tab_generalTab = editor;
+		}
+		return this.editorExpectedResponseTime_property_tab_generalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDescription_property_tab_generalTab;
@@ -133,9 +153,8 @@ public class ReconfigurationMessagePortInterfaceEntryEditor extends org.muml.ape
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general", "property.tab.general", "property.tab.general"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.general"}).contains(tab);
 		}
 	}
 
