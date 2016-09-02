@@ -3,7 +3,9 @@ package org.muml.pim.common.refactoring;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedHashSet;
+import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.core.resources.IFile;
@@ -21,6 +23,8 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.eclipse.emf.ecore.xmi.impl.URIHandlerImpl;
 import org.eclipse.ltk.core.refactoring.Change;
 import org.eclipse.ltk.core.refactoring.CompositeChange;
 import org.eclipse.ltk.core.refactoring.RefactoringStatus;
@@ -109,7 +113,9 @@ public class XMIProxyChange extends CompositeChange {
 				@Override
 				public Change perform(IProgressMonitor pm) throws CoreException {
 					try {
-						saveResource.save(Collections.emptyMap());
+						Map<Object, Object> saveOptions = new HashMap<Object, Object>();
+						saveOptions.put(XMLResource.OPTION_URI_HANDLER, new URIHandlerImpl.PlatformSchemeAware());
+						saveResource.save(saveOptions);
 					} catch (IOException e) {
 			    		throw new CoreException(new Status(Status.ERROR, "", e.getMessage()));
 					}

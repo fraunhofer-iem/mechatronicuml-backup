@@ -43,6 +43,8 @@ import org.eclipse.ui.navigator.resources.ProjectExplorer;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.IShowInTargetList;
 import org.eclipse.ui.part.ShowInContext;
+import org.muml.common.editingdomain.EditingDomainPlugin;
+import org.muml.common.editingdomain.initialize.IEditingDomainInitializer;
 import org.muml.pm.hardware.platforminstance.diagram.navigator.HardwareNavigatorItem;
 
 /**
@@ -289,7 +291,7 @@ public class PlatformInstanceDiagramEditor extends DiagramDocumentEditor impleme
 	@Override
 	public void setInput(IEditorInput input) {
 		super.setInput(input);
-		for (org.muml.common.editingdomain.initialize.IEditingDomainInitializer init : org.muml.common.editingdomain.EditingDomainPlugin.getEditingDomainInitializers()) {
+		for (IEditingDomainInitializer init : EditingDomainPlugin.getEditingDomainInitializers()) {
 			init.initialize(getEditingDomain());
 		}
 	}
