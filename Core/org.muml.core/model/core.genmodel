@@ -92,8 +92,8 @@
         </genClasses>
       </nestedGenPackages>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Modelinstance" basePackage="org.muml.core" disposableProviderFactory="true"
-        ecorePackage="core.ecore#//modelinstance">
+    <nestedGenPackages prefix="Modelinstance" basePackage="org.muml.core" resource="XMI"
+        disposableProviderFactory="true" ecorePackage="core.ecore#//modelinstance">
       <genClasses ecoreClass="core.ecore#//modelinstance/RootNode">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//modelinstance/RootNode/categories"/>
       </genClasses>
