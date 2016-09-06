@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:behavior="http://www.muml.org/pim/behavior/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xsi:schemaLocation="http://www.muml.org/pim/behavior/1.0.0 http://www.muml.org/pim/1.0.0#//behavior http://www.muml.org/modelinstance/1.0.0 http://www.muml.org/core/1.0.0#//modelinstance http://www.muml.org/pim/msgtype/1.0.0 http://www.muml.org/pim/1.0.0#//msgtype" xmi:id="_-hFTAG-yEeayztt0xJNggA" type="Message Type" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_AYA_cG-zEeayztt0xJNggA" type="2008" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_AYBmgG-zEeayztt0xJNggA" type="5017"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_AYBmgW-zEeayztt0xJNggA" type="7010">
+      <children xmi:type="notation:Shape" xmi:id="_BS8WoG-zEeayztt0xJNggA" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_BS8Wom-zEeayztt0xJNggA" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_BTABAG-zEeayztt0xJNggA" type="7009">
+          <children xmi:type="notation:Shape" xmi:id="_CfTcEG-zEeayztt0xJNggA" type="3009" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_CfTcEm-zEeayztt0xJNggA" type="5016"/>
+            <element xmi:type="behavior:Parameter" href="../data2.muml#//@categories.6/@modelElements.0/@messageTypes.0/@parameters.0"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CfTcEW-zEeayztt0xJNggA"/>
+          </children>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_BTABAW-zEeayztt0xJNggA"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_BTABAm-zEeayztt0xJNggA"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../data2.muml#//@categories.6/@modelElements.0/@messageTypes.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BS8WoW-zEeayztt0xJNggA"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_AYBmgm-zEeayztt0xJNggA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_AYBmg2-zEeayztt0xJNggA"/>
+    </children>
+    <element xmi:type="msgtype:MessageTypeRepository" href="../data2.muml#//@categories.6/@modelElements.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AYA_cW-zEeayztt0xJNggA" x="110" y="84"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_-hFTAW-yEeayztt0xJNggA"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../data2.muml#//@categories.6"/>
+</notation:Diagram>
