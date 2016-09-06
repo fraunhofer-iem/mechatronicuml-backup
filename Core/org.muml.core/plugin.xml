@@ -18,6 +18,12 @@
             genModel="model/core.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated core -->
+      <parser
+            type="muml"
+            class="org.muml.core.util.CoreResourceFactoryImpl"/>
+   </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated core -->
@@ -43,13 +49,6 @@
             genModel="model/core.genmodel"/>
    </extension>
 
-   <extension point="org.eclipse.emf.ecore.extension_parser">
-      <!-- @generated core -->
-      <parser
-            type="muml"
-            class="org.muml.core.modelinstance.util.ModelinstanceResourceFactoryImpl"/>
-   </extension>
-
 <extension-point id="modelelementcategory" name="modelelementcategory" schema="schema/modelelementcategory.exsd"/>
 <extension-point id="version" name="version" schema="schema/version.exsd"/>
 
@@ -61,20 +60,6 @@
 
    <extension point="org.eclipse.emf.ecore.extension_parser">
       <parser class="org.muml.core.util.CoreResourceFactoryImpl" type="fujaba"/>
-   </extension>
-   <extension
-         point="org.eclipse.emf.ecore.extension_parser">
-      <parser
-            class="org.muml.core.modelinstance.util.ModelinstanceResourceFactoryImpl"
-            type="fujaba">
-      </parser>
-   </extension>
-   <extension
-         point="org.eclipse.emf.ecore.extension_parser">
-      <parser
-            class="org.muml.core.modelinstance.util.ModelinstanceResourceFactoryImpl"
-            type="muml">
-      </parser>
    </extension>
    
    

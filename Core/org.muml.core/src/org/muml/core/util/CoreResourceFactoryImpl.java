@@ -25,15 +25,6 @@ public class CoreResourceFactoryImpl extends ResourceFactoryImpl {
 	public CoreResourceFactoryImpl() {
 		super();
 	}
-	
-	
-	/**
-	 * @generated NOT
-	 */
-	protected boolean useUUIDs() {
-		return true;
-	}
-	
 
 	/**
 	 * Creates an instance of the resource.

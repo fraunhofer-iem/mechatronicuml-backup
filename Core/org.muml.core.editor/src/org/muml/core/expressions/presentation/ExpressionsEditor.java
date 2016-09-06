@@ -156,7 +156,6 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import org.muml.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
 
-import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 import org.muml.core.expressions.common.provider.CommonExpressionsItemProviderAdapterFactory;
@@ -714,7 +713,6 @@ public class ExpressionsEditor
 		adapterFactory.addAdapterFactory(new ExpressionsItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new CommonExpressionsItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ModelinstanceItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.
