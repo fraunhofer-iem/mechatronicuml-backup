@@ -169,7 +169,7 @@
     <modelElements xsi:type="msgtype:MessageTypeRepository" name="M1">
       <messageTypes name="m">
         <parameters name="i">
-          <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int8"/>
+          <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int8"/>
         </parameters>
       </messageTypes>
     </modelElements>
