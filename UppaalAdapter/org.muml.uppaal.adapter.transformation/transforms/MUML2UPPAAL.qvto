@@ -654,7 +654,7 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 			var subInstances : List(DiscreteInteractionEndpointInstance) := List{};
 			var currentInstance := self.first;
 			while(currentInstance != null) {
-				subInstances->append(currentInstance);
+				subInstances->add(currentInstance);
 				currentInstance := currentInstance.next
 			};
 			
