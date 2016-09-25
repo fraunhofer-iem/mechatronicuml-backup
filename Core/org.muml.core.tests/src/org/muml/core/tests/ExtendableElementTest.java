@@ -10,6 +10,12 @@ import junit.framework.TestCase;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Extendable Element</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link org.muml.core.ExtendableElement#getExtension(org.eclipse.emf.ecore.EClass) <em>Get Extension</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public abstract class ExtendableElementTest extends TestCase {
@@ -50,6 +56,19 @@ public abstract class ExtendableElementTest extends TestCase {
 	 */
 	protected ExtendableElement getFixture() {
 		return fixture;
+	}
+
+	/**
+	 * Tests the '{@link org.muml.core.ExtendableElement#getExtension(org.eclipse.emf.ecore.EClass) <em>Get Extension</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.muml.core.ExtendableElement#getExtension(org.eclipse.emf.ecore.EClass)
+	 * @generated
+	 */
+	public void testGetExtension__EClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //ExtendableElementTest

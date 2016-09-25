@@ -30,6 +30,7 @@ public class ExpressionsTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new ExpressionsTests("expressions Tests");
+		suite.addTestSuite(TextualExpressionTest.class);
 		return suite;
 	}
 

@@ -7,6 +7,8 @@ import org.muml.core.modelinstance.tests.ModelinstanceTests;
 import junit.framework.Test;
 import junit.framework.TestSuite;
 import junit.textui.TestRunner;
+import org.muml.core.expressions.common.tests.CommonExpressionsTests;
+import org.muml.core.expressions.tests.ExpressionsTests;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,6 +35,8 @@ public class CoreAllTests extends TestSuite {
 	public static Test suite() {
 		TestSuite suite = new CoreAllTests("Core Tests");
 		suite.addTest(CoreTests.suite());
+		suite.addTest(ExpressionsTests.suite());
+		suite.addTest(CommonExpressionsTests.suite());
 		suite.addTest(ModelinstanceTests.suite());
 		return suite;
 	}

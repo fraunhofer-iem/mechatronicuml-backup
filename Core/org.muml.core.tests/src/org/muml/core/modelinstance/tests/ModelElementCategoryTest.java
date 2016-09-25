@@ -15,7 +15,7 @@ import junit.textui.TestRunner;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link org.muml.core.modelinstance.ModelElementCategory#isValidElement(org.eclipse.emf.ecore.EObject) <em>Is Valid Element</em>}</li>
+ *   <li>{@link org.muml.core.modelinstance.ModelElementCategory#isValidElement(org.muml.core.ExtendableElement) <em>Is Valid Element</em>}</li>
  *   <li>{@link org.muml.core.modelinstance.ModelElementCategory#isValidEClass(org.eclipse.emf.ecore.EClass) <em>Is Valid EClass</em>}</li>
  * </ul>
  * </p>
@@ -93,13 +93,13 @@ public class ModelElementCategoryTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link org.muml.core.modelinstance.ModelElementCategory#isValidElement(org.eclipse.emf.ecore.EObject) <em>Is Valid Element</em>}' operation.
+	 * Tests the '{@link org.muml.core.modelinstance.ModelElementCategory#isValidElement(org.muml.core.ExtendableElement) <em>Is Valid Element</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.core.modelinstance.ModelElementCategory#isValidElement(org.eclipse.emf.ecore.EObject)
+	 * @see org.muml.core.modelinstance.ModelElementCategory#isValidElement(org.muml.core.ExtendableElement)
 	 * @generated
 	 */
-	public void testIsValidElement__EObject() {
+	public void testIsValidElement__ExtendableElement() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

@@ -11,7 +11,13 @@ import org.muml.core.TypedElement;
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link org.muml.core.TypedElement#getType() <em>Type</em>}</li>
+ *   <li>{@link org.muml.core.TypedElement#getClassifier() <em>Classifier</em>}</li>
+ * </ul>
+ * </p>
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link org.muml.core.TypedElement#setClassifier(org.eclipse.emf.ecore.EClassifier) <em>Set Classifier</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -40,14 +46,27 @@ public abstract class TypedElementTest extends ExtendableElementTest {
 	}
 
 	/**
-	 * Tests the '{@link org.muml.core.TypedElement#getType() <em>Type</em>}' feature getter.
+	 * Tests the '{@link org.muml.core.TypedElement#getClassifier() <em>Classifier</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.core.TypedElement#getType()
+	 * @see org.muml.core.TypedElement#getClassifier()
 	 * @generated
 	 */
-	public void testGetType() {
+	public void testGetClassifier() {
 		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link org.muml.core.TypedElement#setClassifier(org.eclipse.emf.ecore.EClassifier) <em>Set Classifier</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.muml.core.TypedElement#setClassifier(org.eclipse.emf.ecore.EClassifier)
+	 * @generated
+	 */
+	public void testSetClassifier__EClassifier() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

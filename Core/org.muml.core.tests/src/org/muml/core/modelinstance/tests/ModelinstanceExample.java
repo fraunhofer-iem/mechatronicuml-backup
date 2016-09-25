@@ -12,10 +12,10 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.Diagnostician;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.muml.core.modelinstance.ModelinstanceFactory;
 import org.muml.core.modelinstance.ModelinstancePackage;
 import org.muml.core.modelinstance.RootNode;
+import org.muml.core.modelinstance.util.ModelinstanceResourceFactoryImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,7 +40,7 @@ public class ModelinstanceExample {
 		//
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put
 			(Resource.Factory.Registry.DEFAULT_EXTENSION, 
-			 new XMIResourceFactoryImpl());
+			 new ModelinstanceResourceFactoryImpl());
 
 		// Register the package to ensure it is available during loading.
 		//
@@ -53,7 +53,7 @@ public class ModelinstanceExample {
 		if (args.length == 0) {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
-				Resource resource = resourceSet.createResource(URI.createURI("http:///My.modelinstance"));
+				Resource resource = resourceSet.createResource(URI.createURI("http:///My.muml"));
 				RootNode root = ModelinstanceFactory.eINSTANCE.createRootNode();
 				resource.getContents().add(root);
 				resource.save(System.out, null);

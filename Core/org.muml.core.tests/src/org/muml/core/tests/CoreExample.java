@@ -11,8 +11,8 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.Diagnostician;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.muml.core.CorePackage;
-import org.muml.core.util.CoreResourceFactoryImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,7 +37,7 @@ public class CoreExample {
 		//
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put
 			(Resource.Factory.Registry.DEFAULT_EXTENSION, 
-			 new CoreResourceFactoryImpl());
+			 new XMIResourceFactoryImpl());
 
 		// Register the package to ensure it is available during loading.
 		//

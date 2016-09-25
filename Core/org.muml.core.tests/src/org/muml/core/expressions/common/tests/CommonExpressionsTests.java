@@ -30,6 +30,11 @@ public class CommonExpressionsTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new CommonExpressionsTests("common Tests");
+		suite.addTestSuite(UnaryExpressionTest.class);
+		suite.addTestSuite(ComparisonExpressionTest.class);
+		suite.addTestSuite(ArithmeticExpressionTest.class);
+		suite.addTestSuite(LogicalExpressionTest.class);
+		suite.addTestSuite(LiteralExpressionTest.class);
 		return suite;
 	}
 
