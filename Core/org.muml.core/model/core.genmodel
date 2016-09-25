@@ -6,7 +6,7 @@
     usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore" operationReflection="true"
     importOrganizing="true">
   <foreignModel>core.ecore</foreignModel>
-  <genPackages prefix="Core" basePackage="org.muml" resource="XMI" disposableProviderFactory="true"
+  <genPackages prefix="Core" basePackage="org.muml" disposableProviderFactory="true"
       fileExtensions="muml" ecorePackage="core.ecore#/">
     <genClasses image="false" ecoreClass="core.ecore#//CommentableElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//CommentableElement/comment"/>
