@@ -23,9 +23,17 @@ public class ModelElementCategoryEditor extends org.muml.ape.runtime.editors.Cla
 
 			addPropertyEditor(createEditorModelElements_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorKey_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
 			addPropertyEditor(createEditorModelElements_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorKey_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -57,7 +65,11 @@ public class ModelElementCategoryEditor extends org.muml.ape.runtime.editors.Cla
 					@Override
 					public boolean select(Object object, org.eclipse.emf.ecore.EClass eClass) {
 						query.getEvaluationEnvironment().replace("eclass", eClass);
-						return Boolean.TRUE.equals(query.evaluate(object));
+						try {
+							return Boolean.TRUE.equals(query.evaluate(object));
+						} catch (org.eclipse.ocl.pivot.values.InvalidValueException e) {
+							return false;
+						}
 					}
 
 				};
@@ -69,6 +81,37 @@ public class ModelElementCategoryEditor extends org.muml.ape.runtime.editors.Cla
 			this.editorModelElements_property_tab_generalTab = editor;
 		}
 		return this.editorModelElements_property_tab_generalTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorKey_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorKey_property_tab_generalTab_Editor() {
+		if (this.editorKey_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE
+					.getModelElementCategory_Key();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
+					adapterFactory, feature, false);
+
+			editor.setTooltipMessage(
+					"The uniquely identifying key of this category. The key of the category may be\nused by editors to register for the model elements contained in this section.");
+
+			this.editorKey_property_tab_generalTab = editor;
+		}
+		return this.editorKey_property_tab_generalTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_property_tab_generalTab_Editor() {
+		if (this.editorName_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE
+					.getModelElementCategory_Name();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
+					adapterFactory, feature, false);
+
+			editor.setTooltipMessage("A human readable name for this category.");
+
+			this.editorName_property_tab_generalTab = editor;
+		}
+		return this.editorName_property_tab_generalTab;
 	}
 
 	//
@@ -94,7 +137,9 @@ public class ModelElementCategoryEditor extends org.muml.ape.runtime.editors.Cla
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general"}).contains(tab);
+			return java.util.Arrays.asList(
+					new java.lang.String[]{"property.tab.general", "property.tab.general", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 
