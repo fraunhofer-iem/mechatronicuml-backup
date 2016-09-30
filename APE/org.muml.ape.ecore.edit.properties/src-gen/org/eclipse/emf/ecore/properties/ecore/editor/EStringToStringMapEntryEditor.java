@@ -81,17 +81,20 @@ public class EStringToStringMapEntryEditor extends org.muml.ape.runtime.editors.
 					}
 				});
 
-				final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
-				org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(feature);
-
 				try {
+					final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+					org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(feature);
 					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery(
 							"not eContainer().oclIsKindOf(ecore::EAnnotation) or not (eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.eclipse.org/emf/2002/Ecore/OCL' or eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.muml.org/emf/OCLFilter')");
 
 					org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 						@Override
 						public boolean select(Object object) {
-							return object != null && Boolean.TRUE.equals(ocl.evaluate(object, oclExpression));
+							try {
+								return object != null && Boolean.TRUE.equals(ocl.evaluate(object, oclExpression));
+							} catch (org.eclipse.ocl.pivot.values.InvalidValueException e) {
+								return false;
+							}
 						}
 					};
 					if (filter != null) {
@@ -131,17 +134,20 @@ public class EStringToStringMapEntryEditor extends org.muml.ape.runtime.editors.
 					}
 				});
 
-				final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
-				org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(feature);
-
 				try {
+					final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+					org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(feature);
 					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery(
 							"eContainer().oclIsKindOf(ecore::EAnnotation) and (eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.eclipse.org/emf/2002/Ecore/OCL' or eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.muml.org/emf/OCLFilter')");
 
 					org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 						@Override
 						public boolean select(Object object) {
-							return object != null && Boolean.TRUE.equals(ocl.evaluate(object, oclExpression));
+							try {
+								return object != null && Boolean.TRUE.equals(ocl.evaluate(object, oclExpression));
+							} catch (org.eclipse.ocl.pivot.values.InvalidValueException e) {
+								return false;
+							}
 						}
 					};
 					if (filter != null) {
