@@ -13,8 +13,7 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.muml.core.edit,
  org.muml.core.edit.properties,
  org.muml.pim.edit,
- org.muml.pim.edit.properties,
- org.eclipse.ocl.examples.pivot;bundle-version="3.5.0"
+ org.muml.pim.edit.properties
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.pm.hardware.properties.metamodel, org.muml.pm.hardware.properties.constraint,
