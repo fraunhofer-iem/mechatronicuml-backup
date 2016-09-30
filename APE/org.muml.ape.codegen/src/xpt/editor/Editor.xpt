@@ -197,10 +197,10 @@ new «fullyQualifiedClassName»(adapterFactory, «featureVar»);
 			}
 		});
 
-		final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
-		org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(«featureVar»);
 
 		try {
+			final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+			org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(«featureVar»);
 			final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery("«expression.escapeString()»");
 
 			org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
@@ -235,10 +235,10 @@ new «fullyQualifiedClassName»(adapterFactory, «featureVar»);
 			}
 		});
 
-		final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
-		org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(«featureVar»);
-
+		
 		try {
+			final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+			org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(«featureVar»);
 			final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery("«expression.escapeString()»");
 
 			org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
@@ -263,10 +263,11 @@ new «fullyQualifiedClassName»(adapterFactory, «featureVar»);
 
 «DEFINE setInitializeOCLExpression(String editorVar, String featureVar) FOR Property»
 	{
-		final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
-		org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(«featureVar»);
+	
 
 		try {
+			final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+			org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(«featureVar»);
 			final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery("«initializeOCLExpression.toString().escapeString()»");
 			«editorVar».setInitializeExpression(oclExpression);
 		} catch (org.eclipse.ocl.pivot.utilities.ParserException e) {
