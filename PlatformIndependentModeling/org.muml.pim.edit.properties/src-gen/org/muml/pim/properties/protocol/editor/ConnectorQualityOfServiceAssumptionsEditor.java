@@ -122,16 +122,19 @@ public class ConnectorQualityOfServiceAssumptionsEditor extends org.muml.ape.run
 					}
 				});
 
-				final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
-				org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(feature);
-
 				try {
+					final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+					org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(feature);
 					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery("false");
 
 					org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 						@Override
 						public boolean select(Object object) {
-							return object != null && Boolean.TRUE.equals(ocl.evaluate(object, oclExpression));
+							try {
+								return object != null && Boolean.TRUE.equals(ocl.evaluate(object, oclExpression));
+							} catch (org.eclipse.ocl.pivot.values.InvalidValueException e) {
+								return false;
+							}
 						}
 					};
 					if (filter != null) {

@@ -99,7 +99,11 @@ public class AsynchronousMessageEventEditor extends org.muml.ape.runtime.editors
 					@Override
 					public boolean select(Object object, org.eclipse.emf.ecore.EClass eClass) {
 						query.getEvaluationEnvironment().replace("eclass", eClass);
-						return Boolean.TRUE.equals(query.evaluate(object));
+						try {
+							return Boolean.TRUE.equals(query.evaluate(object));
+						} catch (org.eclipse.ocl.pivot.values.InvalidValueException e) {
+							return false;
+						}
 					}
 
 				};
