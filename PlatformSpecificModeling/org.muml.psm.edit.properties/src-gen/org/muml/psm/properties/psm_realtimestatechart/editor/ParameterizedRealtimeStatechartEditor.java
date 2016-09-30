@@ -174,7 +174,11 @@ public class ParameterizedRealtimeStatechartEditor extends org.muml.ape.runtime.
 					@Override
 					public boolean select(Object object, org.eclipse.emf.ecore.EClass eClass) {
 						query.getEvaluationEnvironment().replace("eclass", eClass);
-						return Boolean.TRUE.equals(query.evaluate(object));
+						try {
+							return Boolean.TRUE.equals(query.evaluate(object));
+						} catch (org.eclipse.ocl.pivot.values.InvalidValueException e) {
+							return false;
+						}
 					}
 
 				};
@@ -226,17 +230,20 @@ public class ParameterizedRealtimeStatechartEditor extends org.muml.ape.runtime.
 					}
 				});
 
-				final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
-				org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(feature);
-
 				try {
+					final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+					org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(feature);
 					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery(
-							"let behavior : behavior::BehavioralElement = self.getPortOrRoleStatechart().behavioralElement in\n (not behavior.oclIsInvalid() and behavior.oclIsKindOf(connector::DiscreteInteractionEndpoint) implies  \n 	let die: connector::DiscreteInteractionEndpoint = behavior.oclAsType(connector::DiscreteInteractionEndpoint) in \n 						die.multi and die.subroleBehavior.oclIsUndefined() and die.coordinatorBehavior.oclIsUndefined()\n )");
+							"if (not self.getPortOrRoleStatechart().behavioralElement.oclIsUndefined() and self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(pim::connector::DiscreteInteractionEndpoint)) then\n	self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).multi and self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).subroleBehavior.oclIsUndefined() and self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsUndefined()\nelse\n	true\nendif");
 
 					org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 						@Override
 						public boolean select(Object object) {
-							return object != null && Boolean.TRUE.equals(ocl.evaluate(object, oclExpression));
+							try {
+								return object != null && Boolean.TRUE.equals(ocl.evaluate(object, oclExpression));
+							} catch (org.eclipse.ocl.pivot.values.InvalidValueException e) {
+								return false;
+							}
 						}
 					};
 					if (filter != null) {
@@ -278,17 +285,20 @@ public class ParameterizedRealtimeStatechartEditor extends org.muml.ape.runtime.
 					}
 				});
 
-				final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
-				org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(feature);
-
 				try {
+					final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+					org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(feature);
 					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery(
-							"let behavior : behavior::BehavioralElement = self.getPortOrRoleStatechart().behavioralElement in\n (not behavior.oclIsInvalid() and behavior.oclIsKindOf(connector::DiscreteInteractionEndpoint) implies  \n 	let die: connector::DiscreteInteractionEndpoint = behavior.oclAsType(connector::DiscreteInteractionEndpoint) in \n 						die.multi and die.subroleBehavior.oclIsUndefined() and die.coordinatorBehavior.oclIsUndefined()\n )");
+							"if (not self.getPortOrRoleStatechart().behavioralElement.oclIsUndefined() and self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(pim::connector::DiscreteInteractionEndpoint)) then\n	self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).multi and self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).subroleBehavior.oclIsUndefined() and self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsUndefined()\nelse\n	true\nendif");
 
 					org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 						@Override
 						public boolean select(Object object) {
-							return object != null && Boolean.TRUE.equals(ocl.evaluate(object, oclExpression));
+							try {
+								return object != null && Boolean.TRUE.equals(ocl.evaluate(object, oclExpression));
+							} catch (org.eclipse.ocl.pivot.values.InvalidValueException e) {
+								return false;
+							}
 						}
 					};
 					if (filter != null) {
@@ -330,17 +340,20 @@ public class ParameterizedRealtimeStatechartEditor extends org.muml.ape.runtime.
 					}
 				});
 
-				final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
-				org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(feature);
-
 				try {
+					final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+					org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(feature);
 					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery(
-							"let behavior : behavior::BehavioralElement = self.getPortOrRoleStatechart().behavioralElement in\n (not behavior.oclIsInvalid() and behavior.oclIsKindOf(connector::DiscreteInteractionEndpoint) implies  \n 	let die: connector::DiscreteInteractionEndpoint = behavior.oclAsType(connector::DiscreteInteractionEndpoint) in \n 						die.multi and  die.subroleBehavior.oclIsUndefined() and die.coordinatorBehavior.oclIsUndefined()\n )");
+							"if (not self.getPortOrRoleStatechart().behavioralElement.oclIsUndefined() and self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(pim::connector::DiscreteInteractionEndpoint)) then\n	self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).multi and self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).subroleBehavior.oclIsUndefined() and self.getPortOrRoleStatechart().behavioralElement.oclAsType(pim::connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsUndefined()\nelse\n	true\nendif");
 
 					org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 						@Override
 						public boolean select(Object object) {
-							return object != null && Boolean.TRUE.equals(ocl.evaluate(object, oclExpression));
+							try {
+								return object != null && Boolean.TRUE.equals(ocl.evaluate(object, oclExpression));
+							} catch (org.eclipse.ocl.pivot.values.InvalidValueException e) {
+								return false;
+							}
 						}
 					};
 					if (filter != null) {
@@ -368,10 +381,10 @@ public class ParameterizedRealtimeStatechartEditor extends org.muml.ape.runtime.
 					adapterFactory, feature, false);
 
 			{
-				final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
-				org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(feature);
 
 				try {
+					final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+					org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(feature);
 					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery(
 							"let prefix : String = self.oclType().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n	let provisionalName : String = prefix.concat(e.toString()) in\n	if self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n		e + 1\n	else\n		e\n	endif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)");
 					editor.setInitializeExpression(oclExpression);
