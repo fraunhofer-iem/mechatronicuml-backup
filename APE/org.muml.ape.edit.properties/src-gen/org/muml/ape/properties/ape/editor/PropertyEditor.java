@@ -122,10 +122,9 @@ public class PropertyEditor extends org.muml.ape.runtime.editors.ClassPropertyEd
 					}
 				});
 
-				final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
-				org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(feature);
-
 				try {
+					final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+					org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(feature);
 					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper
 							.createQuery("self.genFeature.ecoreFeature.oclIsKindOf(ecore::EAttribute)");
 
