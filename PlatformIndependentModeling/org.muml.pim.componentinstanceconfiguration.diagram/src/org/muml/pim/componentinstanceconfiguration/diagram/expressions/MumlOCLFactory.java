@@ -157,9 +157,8 @@ public class MumlOCLFactory {
 			 */
 		public Expression(String body, EClassifier context, Map<String, EClassifier> environment) {
 			super(body, context);
-			
-			try {
-				pivotOclInstance = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+			pivotOclInstance = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+			try {	
 				OCLHelper pivotHelper = pivotOclInstance.createOCLHelper(context);
 				pivotOclExpression = pivotHelper.createQuery(body());
 				setStatus(IStatus.OK, null, null);
