@@ -35,22 +35,6 @@ public abstract class AbstractStoryDecisionDiagramEditor extends org.muml.ape.ru
 
 			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
-		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
-
-		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
-
-		} else if ("property.tab.condition".equals(tab)) { // Tab Condition
-
-		} else if ("property.tab.effect".equals(tab)) { // Tab Effect
-
-		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
-
-		} else if ("property.tab.sampling".equals(tab)) { // Tab Sampling
-
-		} else if ("property.tab.message".equals(tab)) { // Tab Message
-
-		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
-
 		} else {
 		}
 	}
@@ -64,10 +48,10 @@ public abstract class AbstractStoryDecisionDiagramEditor extends org.muml.ape.ru
 					adapterFactory, feature, false);
 
 			{
-				final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
-				org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(feature);
 
 				try {
+					final org.eclipse.ocl.pivot.utilities.OCL ocl = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
+					org.eclipse.ocl.pivot.utilities.OCLHelper helper = ocl.createOCLHelper(feature);
 					final org.eclipse.ocl.pivot.ExpressionInOCL oclExpression = helper.createQuery(
 							"let prefix : String = self.oclType().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n	let provisionalName : String = prefix.concat(e.toString()) in\n	if self.oclContainer().oclContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n		e + 1\n	else\n		e\n	endif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)");
 					editor.setInitializeExpression(oclExpression);
