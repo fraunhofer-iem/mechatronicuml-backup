@@ -31,9 +31,8 @@ public class «className» {
 		«EXPAND xpt::Common::generatedMemberComment»
 		public Expression(String body, org.eclipse.emf.ecore.EClassifier context, java.util.Map«EXPAND CodeStyle::G2('String', 'org.eclipse.emf.ecore.EClassifier') FOR container.editorGen.diagram» environment) {
 			super(body, context);
-		
+			pivotOclInstance = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
 			try {
-				pivotOclInstance = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
 				org.eclipse.ocl.pivot.utilities.OCLHelper pivotHelper = pivotOclInstance.createOCLHelper(context);
 				pivotOclExpression = pivotHelper.createQuery(body());
 				setStatus(org.eclipse.core.runtime.IStatus.OK, null, null);
