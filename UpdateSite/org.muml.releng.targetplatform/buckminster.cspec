@@ -10,6 +10,5 @@
         <cs:dependency name="org.eclipse.ocl.examples.feature.group" componentType="eclipse.feature"/>
         <cs:dependency name="org.eclipse.xtend.sdk.feature.group" componentType="eclipse.feature"/>
         <cs:dependency name="org.eclipse.xtext.sdk.feature.group" componentType="eclipse.feature"/>
-        <cs:dependency name="org.muml.external.org.eclipse.acceleo.beo497459.feature.feature.group" componentType="eclipse.feature"/>
     </cs:dependencies>
 </cs:cspec>
