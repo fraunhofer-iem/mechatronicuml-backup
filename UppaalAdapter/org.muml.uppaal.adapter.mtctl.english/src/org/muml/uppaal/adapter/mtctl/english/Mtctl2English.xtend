@@ -250,7 +250,13 @@ class Mtctl2English {
 	
 	def dispatch expr(MumlElemExpr expr, boolean positive) {
 		var provider = new MtctlQualifiedNameProvider();
-		'''«provider.getQualifiedName(expr.elem, null)»''' //TODO only last segment (solve strange type resolve error)
+		
+		if (expr.instance == null) 
+			'''«provider.getQualifiedName(expr.elem, null)»'''
+		else
+			'''«provider.getQualifiedName(expr.elem, null)» of instance «provider.getQualifiedName(expr.instance, null)»''';
+		
+		//TODO only last segment (solve strange type resolve error)
 	}
 	
 	def dispatch expr(SourceStateExpr expr, boolean positive) {
