@@ -1,0 +1,184 @@
+SeminarVergabe {
+	include 'platform:/plugin/de.uni_paderborn.fujaba.muml.allocation.language.xtext/operations/OCLContext.ocl'
+	
+	 
+	constraint requiredLocation eins {
+		descriptors (first, second);
+		ocl	self.allocateToECU('jhs', 'eins')->union(self.allocateToECU('jhs', 'acht'))->union(self.allocateToECU('jhs', 'zwei'))->union(self.allocateToECU('jhs', 'vierA'))->union(self.allocateToECU('jhs', 'fuenf'));
+	}
+	
+	constraint requiredLocation zwei {
+		descriptors (first, second);
+		ocl	self.allocateToECU('jns', 'eins')->union(self.allocateToECU('jns', 'acht'))->union(self.allocateToECU('jns', 'vierA'))->union(self.allocateToECU('jns', 'vierB'))->union(self.allocateToECU('jns', 'fuenf'))->union(self.allocateToECU('jns', 'sieben'));
+	}
+	
+		constraint requiredLocation drei {
+		descriptors (first, second);
+		ocl	self.allocateToECU('pf', 'eins')->union(self.allocateToECU('pf', 'vierA'))->union(self.allocateToECU('pf', 'vierB'))->union(self.allocateToECU('pf', 'fuenf'));
+	}
+	
+		constraint requiredLocation vier {
+		descriptors (first, second);
+		ocl	self.allocateToECU('fb', 'eins')->union(self.allocateToECU('fb', 'acht'))->union(self.allocateToECU('fb', 'zwei'))->union(self.allocateToECU('fb', 'vierA'));
+	}
+	
+	constraint requiredHardwareResourceInstance fuenf {
+		descriptors (first, second);
+		ocl	self.allocateToECU('ab', 'eins')->union(self.allocateToECU('ab', 'vierB'));
+	}
+	
+	constraint separateLocation sechs
+	{
+		descriptors (first, second);
+		ocl self.getAllSWInstances()->product(getAllSWInstances())->select(t | t.first<> t.second)
+		; 
+	}
+	
+--	constraint requiredResource test{
+--		lhs allocation;
+--		rhs one;
+--		descriptors (student, topic);
+--		ocl
+			--self.getAllSWInstances()->product(self.getAllHWInstances())->collect(t |
+			--	Tuple {
+			--		first = t.first,
+			--		second = t.second,
+			--		allocation = 1,
+			--	}
+			--)
+		--	self.getAllHWInstances()->collect(t |
+		--		Tuple {
+		--			one = 1,
+		--			allocation = self.getAllSWInstances()->collect(s |
+		--				Tuple{
+		--					student = s,
+		--					topic = t,
+		--					allocation = 1
+		--				}
+		--			)->asSet()
+		--	}
+		--	)->asSet()
+		--;
+	--}
+	
+	
+	service foo {
+		qos dd {
+			value weight;
+			descriptors (student, topic);
+		ocl
+				Set{
+					Tuple {
+						weight = 1,
+						student = self.getSWInstance('jhs'),
+						topic = self.getECU('eins')
+					},
+					Tuple {
+						weight = 1,
+						student = self.getSWInstance('jhs'),
+						topic = self.getECU('acht')
+					},
+					Tuple {
+						weight = 2,
+						student = self.getSWInstance('jhs'),
+						topic = self.getECU('zwei')
+					}
+					,
+					Tuple {
+						weight = 2,
+						student = self.getSWInstance('jhs'),
+						topic = self.getECU('vierA')
+					},
+					Tuple {
+						weight = 2,
+						student = self.getSWInstance('jhs'),
+						topic = self.getECU('fuenf')
+					},
+					Tuple {
+						weight = 1,
+						student = self.getSWInstance('jns'),
+						topic = self.getECU('eins')
+					},
+					Tuple {
+						weight = 2,
+						student = self.getSWInstance('jns'),
+						topic = self.getECU('vierA')
+					},
+					Tuple {
+						weight = 2,
+						student = self.getSWInstance('jns'),
+						topic = self.getECU('vierB')
+					},
+					Tuple {
+						weight = 2,
+						student = self.getSWInstance('jns'),
+						topic = self.getECU('fuenf')
+					},
+					Tuple {
+						weight = 2,
+						student = self.getSWInstance('jns'),
+						topic = self.getECU('sieben')
+					},
+					Tuple {
+						weight = 1,
+						student = self.getSWInstance('jns'),
+						topic = self.getECU('acht')
+					},
+					Tuple {
+						weight = 1,
+						student = self.getSWInstance('pf'),
+						topic = self.getECU('eins')
+					},
+					Tuple {
+						weight = 1,
+						student = self.getSWInstance('pf'),
+						topic = self.getECU('vierA')
+					},
+					Tuple {
+						weight = 1,
+						student = self.getSWInstance('pf'),
+						topic = self.getECU('vierB')
+					},
+					Tuple {
+						weight = 2,
+						student = self.getSWInstance('pf'),
+						topic = self.getECU('fuenf')
+					},
+					Tuple {
+						weight = 1,
+						student = self.getSWInstance('fb'),
+						topic = self.getECU('eins')
+					},
+					Tuple {
+						weight = 2,
+						student = self.getSWInstance('fb'),
+						topic = self.getECU('zwei')
+					},
+					Tuple {
+						weight = 2,
+						student = self.getSWInstance('fb'),
+						topic = self.getECU('vierA')
+					},
+					Tuple {
+						weight = 1,
+						student = self.getSWInstance('fb'),
+						topic = self.getECU('acht')
+					},
+					Tuple {
+						weight = 1,
+						student = self.getSWInstance('ab'),
+						topic = self.getECU('eins')
+					},
+					Tuple {
+						weight = 2,
+						student = self.getSWInstance('ab'),
+						topic = self.getECU('vierB')
+					}
+				}
+			;
+		}
+	}
+	
+	min measure foo;
+	
+}

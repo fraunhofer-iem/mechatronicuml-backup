@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:hwresource="http://www.fujaba.de/muml/hardware/hwresource/1.1/" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_pbaFkArwEeaopdRB2_MGAg" type="Resource" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_qv8PkArwEeaopdRB2_MGAg" type="2007" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_qwAhAArwEeaopdRB2_MGAg" type="5065"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_qwBIEArwEeaopdRB2_MGAg" type="5066"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_qwBIEQrwEeaopdRB2_MGAg" type="5067"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_qwHOsArwEeaopdRB2_MGAg" type="7003">
+      <children xmi:type="notation:Shape" xmi:id="_toz6IArwEeaopdRB2_MGAg" type="3014" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_toz6IgrwEeaopdRB2_MGAg" type="5052"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_to0hMArwEeaopdRB2_MGAg" type="5053"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_to0hMQrwEeaopdRB2_MGAg" type="5054"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_to0hMgrwEeaopdRB2_MGAg" type="5055"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_to0hMwrwEeaopdRB2_MGAg" type="5056"/>
+        <element xmi:type="hwresource:Processor" href="../SeminarVergabe.muml#_toJLwArwEeaopdRB2_MGAg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_toz6IQrwEeaopdRB2_MGAg" x="57" y="28"/>
+      </children>
+    </children>
+    <element xmi:type="hwresource:StructuredResource" href="../SeminarVergabe.muml#_qvNPwArwEeaopdRB2_MGAg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qv8PkQrwEeaopdRB2_MGAg" x="312" y="192" width="313" height="253"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_pbaFkQrwEeaopdRB2_MGAg"/>
+  <element xmi:type="hwresource:ResourceRepository" href="../SeminarVergabe.muml#_pbUmAQrwEeaopdRB2_MGAg"/>
+</notation:Diagram>

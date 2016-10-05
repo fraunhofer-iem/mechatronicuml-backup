@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_ZnwmoArwEeaopdRB2_MGAg" type="Component Instance Configuration" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_agEHoArwEeaopdRB2_MGAg" type="2016" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_agFVwArwEeaopdRB2_MGAg" type="5027"/>
+    <element xmi:type="instance:AtomicComponentInstance" href="../SeminarVergabe.muml#_afUgwArwEeaopdRB2_MGAg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_agEHoQrwEeaopdRB2_MGAg" x="120" y="156" width="145" height="85"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_bjescArwEeaopdRB2_MGAg" type="2016" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_bjfTgArwEeaopdRB2_MGAg" type="5027"/>
+    <element xmi:type="instance:AtomicComponentInstance" href="../SeminarVergabe.muml#_bjcQMArwEeaopdRB2_MGAg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bjescQrwEeaopdRB2_MGAg" x="480" y="108" width="193" height="133"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_gae3oArwEeaopdRB2_MGAg" type="2016" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_gav9YArwEeaopdRB2_MGAg" type="5027"/>
+    <element xmi:type="instance:AtomicComponentInstance" href="../SeminarVergabe.muml#_gaXi4ArwEeaopdRB2_MGAg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gae3oQrwEeaopdRB2_MGAg" x="228" y="288" width="145" height="97"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_hcsikArwEeaopdRB2_MGAg" type="2016" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_hcsikgrwEeaopdRB2_MGAg" type="5027"/>
+    <element xmi:type="instance:AtomicComponentInstance" href="../SeminarVergabe.muml#_hcqtYArwEeaopdRB2_MGAg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hcsikQrwEeaopdRB2_MGAg" x="444" y="300" width="169" height="133"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_iRZV8ArwEeaopdRB2_MGAg" type="2016" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_iRZV8grwEeaopdRB2_MGAg" type="5027"/>
+    <element xmi:type="instance:AtomicComponentInstance" href="../SeminarVergabe.muml#_iRYH0ArwEeaopdRB2_MGAg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iRZV8QrwEeaopdRB2_MGAg" x="240" y="420" width="121" height="97"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_ZnwmoQrwEeaopdRB2_MGAg"/>
+  <element xmi:type="instance:ComponentInstanceConfiguration" href="../SeminarVergabe.muml#_ZnmOkArwEeaopdRB2_MGAg"/>
+</notation:Diagram>
