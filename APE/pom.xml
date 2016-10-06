@@ -21,7 +21,7 @@
     <module>org.muml.ape.migrator.feature</module>
     <module>org.muml.ape.reconcile</module>
     <module>org.muml.ape.runtime</module>
-    <module>org.muml.ape.sdk.feature</module>
+ <!--   <module>org.muml.ape.sdk.feature</module> -->
     <module>org.muml.oclfilter</module>
     <module>org.muml.oclfilter.feature</module>
   </modules>
