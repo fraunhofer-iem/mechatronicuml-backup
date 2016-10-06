@@ -5,6 +5,11 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.muml.graphviz.blackbox.GraphvizPlainLayouter;
 import org.muml.graphviz.dot.DotEdge;
 import org.muml.graphviz.dot.DotFactory;
@@ -33,6 +38,8 @@ public class Layouter {
 
 		//Create graph and run layouter
 		DotGraph graph = createDotGraph(template);
+	
+		
 		PlainGraph resultGraph = runLayouter(graph);
 		
 		//Interpret results for nodes
@@ -91,6 +98,12 @@ public class Layouter {
 			result.getEdges().add(dotEdge);
 		}
 		
+
+		// FIX FOR MUML #1526:  Dotgraph needs to be contained in resource (necessary for serialization by Graphviz Adapter).
+		ResourceSet resourceSet = new ResourceSetImpl();
+		Resource resource = resourceSet.createResource(URI.createURI("dummy:/dotgraph"));
+		resource.getContents().add(result);
+	
 		return result;
 	}
 	
