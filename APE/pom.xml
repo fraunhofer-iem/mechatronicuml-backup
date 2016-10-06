@@ -24,6 +24,7 @@
  <!--   <module>org.muml.ape.sdk.feature</module> -->
     <module>org.muml.oclfilter</module>
     <module>org.muml.oclfilter.feature</module>
+        <module>org.muml.ape.repository</module>
   </modules>
   <build>
     <plugins>
