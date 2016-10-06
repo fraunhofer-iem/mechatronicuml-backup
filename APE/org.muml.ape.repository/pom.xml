@@ -7,7 +7,7 @@ PSM MUML
 	<artifactId>org.muml.ape.repository</artifactId>
 	<packaging>eclipse-repository</packaging>
 	  <parent>
-    <groupId>org.muml.ape.group</groupId>
+    <groupId>org.muml.core.group</groupId>
     <artifactId>APE</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
