@@ -44,5 +44,13 @@
 			<url>http://download.eclipse.org/releases/neon</url>
 		</repository>
 		
+
+<!-- Model Migration dependencies -->
+		<repository>
+			<id>model-migration</id>
+			<layout>p2</layout>
+			<url>file:///data/jenkins/jobs/ModelMigration/lastSuccessful/archive/targetPlatform/</url>
+		</repository>
+
 </repositories>
 </project>
