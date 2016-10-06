@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.muml.core.group</groupId>
+  <artifactId>APE</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <modules>
+    <module>org.muml.ape</module>
+  <!--  <module>org.muml.ape.buckminster</module> -->
+    <module>org.muml.ape.codegen</module>
+    <module>org.muml.ape.ecore.edit.properties</module>
+    <module>org.muml.ape.ecore.editor</module>
+    <module>org.muml.ape.ecore.feature</module>
+    <module>org.muml.ape.edit</module>
+    <module>org.muml.ape.edit.properties</module>
+    <module>org.muml.ape.editor</module>
+    <module>org.muml.ape.feature</module>
+    <module>org.muml.ape.migrator</module>
+    <module>org.muml.ape.migrator.feature</module>
+    <module>org.muml.ape.reconcile</module>
+    <module>org.muml.ape.runtime</module>
+    <module>org.muml.ape.sdk.feature</module>
+    <module>org.muml.oclfilter</module>
+    <module>org.muml.oclfilter.feature</module>
+  </modules>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>0.26.0</version>
+        <extensions>true</extensions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
