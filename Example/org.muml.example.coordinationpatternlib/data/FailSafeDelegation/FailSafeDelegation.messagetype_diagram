@@ -43,7 +43,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_elsVVeqPEeSdp6KdWPaGDw"/>
     </children>
     <element xmi:type="msgtype:MessageTypeRepository" href="../patterns.muml#_elp5EOqPEeSdp6KdWPaGDw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_elsVUeqPEeSdp6KdWPaGDw" x="307" y="203" width="354" height="158"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_elsVUeqPEeSdp6KdWPaGDw" x="36" y="12" width="205" height="121"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_tQtNseqOEeSdp6KdWPaGDw"/>
   <element xmi:type="modelinstance:ModelElementCategory" href="../patterns.muml#_t0IlzedrEeSmgcfWtmVOuw"/>

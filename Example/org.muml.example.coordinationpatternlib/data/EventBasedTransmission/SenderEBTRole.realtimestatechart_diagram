@@ -23,11 +23,32 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_2Mt3O-5DEeSkkcvANuOg5g"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../patterns.muml#_P9fYge5CEeSkkcvANuOg5g"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2MtQIe5DEeSkkcvANuOg5g"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2MtQIe5DEeSkkcvANuOg5g" x="194" y="25"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_9I6pYEPEEeasOswqY-bxFg" type="3032" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_9I6pYkPEEeasOswqY-bxFg" type="5060"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_9I6pY0PEEeasOswqY-bxFg" type="7031">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_9I6pZEPEEeasOswqY-bxFg" sorting="Automatic" sortingKeys="default_sorting_key:Ascending"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_9I6pZUPEEeasOswqY-bxFg"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_9I6pZkPEEeasOswqY-bxFg" type="7032">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_9I6pZ0PEEeasOswqY-bxFg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_9I6paEPEEeasOswqY-bxFg"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_9I6paUPEEeasOswqY-bxFg" type="7033">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_9I6pakPEEeasOswqY-bxFg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_9I6pa0PEEeasOswqY-bxFg"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_9I6pbEPEEeasOswqY-bxFg" type="7034">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_9I6pbUPEEeasOswqY-bxFg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_9I6pbkPEEeasOswqY-bxFg"/>
+        </children>
+        <element xmi:type="realtimestatechart:State" href="../patterns.muml#_9I3mEEPEEeasOswqY-bxFg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9I6pYUPEEeasOswqY-bxFg" x="14" y="29"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../patterns.muml#_P9fYgO5CEeSkkcvANuOg5g"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_j1s5Ee5CEeSkkcvANuOg5g" width="286" height="271"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_j1s5Ee5CEeSkkcvANuOg5g" width="481" height="271"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_P9h0we5CEeSkkcvANuOg5g"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../patterns.muml#_P9fYgO5CEeSkkcvANuOg5g"/>
@@ -43,5 +64,18 @@
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_7Q4Uou5DEeSkkcvANuOg5g" points="[11, 0, 21, 0]$[11, 12, 21, 12]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7RPhAO5DEeSkkcvANuOg5g" id="(0.8791208791208791,0.7333333333333333)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7RPhAe5DEeSkkcvANuOg5g" id="(0.7692307692307693,0.7333333333333333)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_A1PKIEPFEeasOswqY-bxFg" type="4003" source="_9I6pYEPEEeasOswqY-bxFg" target="_2MtQIO5DEeSkkcvANuOg5g" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_A1PKI0PFEeasOswqY-bxFg" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_A1PKJEPFEeasOswqY-bxFg" y="-20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_A1PKJUPFEeasOswqY-bxFg" type="6006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_A1PKJkPFEeasOswqY-bxFg" x="-10" y="20"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_A1PKIUPFEeasOswqY-bxFg" fontName="Segoe UI"/>
+    <element xmi:type="realtimestatechart:Transition" href="../patterns.muml#_A1LfwEPFEeasOswqY-bxFg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_A1PKIkPFEeasOswqY-bxFg" points="[23, 9, -163, 0]$[175, 7, -11, -2]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_A1ZiMEPFEeasOswqY-bxFg" id="(0.8083333333333333,0.4)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_A1ZiMUPFEeasOswqY-bxFg" id="(0.09649122807017543,0.43023255813953487)"/>
   </edges>
 </notation:Diagram>

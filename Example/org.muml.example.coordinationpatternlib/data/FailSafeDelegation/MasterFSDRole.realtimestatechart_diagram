@@ -65,7 +65,7 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_AF6RzuqSEeSdp6KdWPaGDw"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../patterns.muml#_AF0LIOqSEeSdp6KdWPaGDw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AF6RweqSEeSdp6KdWPaGDw" x="254" y="166" width="121" height="97"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AF6RweqSEeSdp6KdWPaGDw" x="254" y="166" width="121" height="56"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../patterns.muml#_uBqwkOqOEeSdp6KdWPaGDw"/>

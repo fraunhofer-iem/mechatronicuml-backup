@@ -36,7 +36,7 @@
         <styles xmi:type="notation:FontStyle" xmi:id="_gCZ4sNv6EeWk7OzKNRMDBQ" fontName="Segoe UI"/>
         <styles xmi:type="notation:LineStyle" xmi:id="_gCZ4sdv6EeWk7OzKNRMDBQ" lineColor="0"/>
         <element xmi:type="connector:MessageBuffer" href="../patterns.muml#_pay2oOqPEeSdp6KdWPaGDw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gCZ4stv6EeWk7OzKNRMDBQ" x="10" y="114"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gCZ4stv6EeWk7OzKNRMDBQ" x="31" y="123"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_gCafsNv6EeWk7OzKNRMDBQ" type="3004">
         <children xmi:type="notation:DecorationNode" xmi:id="_gCaftdv6EeWk7OzKNRMDBQ" type="5006"/>
