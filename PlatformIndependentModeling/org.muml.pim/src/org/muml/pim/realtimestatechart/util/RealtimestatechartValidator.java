@@ -256,6 +256,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateState_UniqueRegionNames(state, diagnostics, context);
 		if (result || diagnostics != null) result &= validateState_InvalidClockConstraintOperator(state, diagnostics, context);
 		if (result || diagnostics != null) result &= validateState_UniqueStateConnectionPointNames(state, diagnostics, context);
+		if (result || diagnostics != null) result &= validateState_EntryEventAtInitialState(state, diagnostics, context);
 		return result;
 	}
 
@@ -494,6 +495,38 @@ public class RealtimestatechartValidator extends MumlValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "UniqueStateConnectionPointNames",
 				 STATE__UNIQUE_STATE_CONNECTION_POINT_NAMES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the EntryEventAtInitialState constraint of '<em>State</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String STATE__ENTRY_EVENT_AT_INITIAL_STATE__EEXPRESSION = "-- @warning\n" +
+		"-- Attention: An initial state only executes its entry event if it is activated via a firing transition. Consequently, if the RTSC starts, its initial states do not execute their entry events (their entry actions and their clock resets). Noteworthy, this only affects initial states that have no parent states and initial states where all their parents are initial states.\n" +
+		"let allParentStates : Set(RealtimeStatechart) = self -> closure(if parentStatechart.parentRegion.oclIsUndefined() then self else parentStatechart.parentRegion.parentState endif) in\n" +
+		"not (self.initial and allParentStates.states->forAll(x | x.initial) and not self.entryEvent.oclIsUndefined())";
+
+	/**
+	 * Validates the EntryEventAtInitialState constraint of '<em>State</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateState_EntryEventAtInitialState(State state, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.STATE,
+				 state,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "EntryEventAtInitialState",
+				 STATE__ENTRY_EVENT_AT_INITIAL_STATE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

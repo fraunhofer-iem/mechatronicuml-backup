@@ -716,7 +716,7 @@
         <details key="documentation" value="This class represents a composite state of a realtime statechart. Composite states may again contain realtime statecharts hence enabling the creation of hierarchical statecharts. Further more composite states have do, entry and exit actions. Also composite states define which synchronization channels are allowed to be used by embedded statecharts."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames InvalidClockConstraintOperator UniqueStateConnectionPointNames"/>
+        <details key="constraints" value="NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames InvalidClockConstraintOperator UniqueStateConnectionPointNames EntryEventAtInitialState"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="NoOutgoingTransitionOfFinalState" value="-- Final states must not have outgoing transitions&#xA;self.final implies self.outgoingTransitions->isEmpty()"/>
@@ -727,6 +727,7 @@
         <details key="UniqueRegionNames" value="-- Regions must have a unique name&#xA;self.embeddedRegions->isUnique(name)"/>
         <details key="InvalidClockConstraintOperator" value="-- Clock Constraints must only use operators LESS and LESS_OR_EQUAL&#xA;self.invariants->forAll(invariant | Set{core::expressions::common::ComparingOperator::LESS, core::expressions::common::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))"/>
         <details key="UniqueStateConnectionPointNames" value="-- State Connection Points of a composite state must have unique names.&#xD;&#xA;self.connectionPoints->isUnique(name)"/>
+        <details key="EntryEventAtInitialState" value="-- @warning&#xA;-- Attention: An initial state only executes its entry event if it is activated via a firing transition. Consequently, if the RTSC starts, its initial states do not execute their entry events (their entry actions and their clock resets). Noteworthy, this only affects initial states that have no parent states and initial states where all their parents are initial states.&#xA;let allParentStates : Set(RealtimeStatechart) = self -> closure(if parentStatechart.parentRegion.oclIsUndefined() then self else parentStatechart.parentRegion.parentState endif) in&#xA;not (self.initial and allParentStates.states->forAll(x | x.initial) and not self.entryEvent.oclIsUndefined())"/>
       </eAnnotations>
       <eOperations name="getUniqueRegionPriority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
