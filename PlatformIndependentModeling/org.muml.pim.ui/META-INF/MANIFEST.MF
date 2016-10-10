@@ -13,7 +13,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.m2m.qvt.oml;bundle-version="3.4.1",
  org.eclipse.gmf.runtime.diagram.ui,
- org.muml.pim.onetomanycommunicationschemata.synthesis;bundle-version="0.4.0",
+ org.muml.pim.onetomanycommunicationschemata;bundle-version="0.4.0",
  org.muml.core.modelinstance.ui,
  org.muml.pim.actionlanguage;bundle-version="0.5.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7

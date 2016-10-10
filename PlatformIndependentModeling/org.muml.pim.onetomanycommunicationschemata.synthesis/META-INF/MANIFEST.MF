@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: One-to-Many Protocol Synthesis
-Bundle-SymbolicName: org.muml.pim.onetomanycommunicationschemata.synthesis;singleton:=true
+Bundle-SymbolicName: org.muml.pim.onetomanycommunicationschemata;singleton:=true
 Bundle-Version: 0.4.0.qualifier
 Bundle-Vendor: 
  Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
