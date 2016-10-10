@@ -145,7 +145,7 @@ public class PatternToProtocolExportWizard extends AbstractFujabaExportWizard {
 
 		// get the protocol category and get the number of protocols within this
 		// category
-		CoordinationProtocol newProtocol = PatternToProtocolTransformation.transformPatternToProtocol(thePattern,
+		CoordinationProtocol newProtocol = PatternTransformationUtilities.transformPatternToProtocol(thePattern,
 				rootNode, bindings, editingDomain);
 		if (newProtocol == null)
 			return;
@@ -166,7 +166,7 @@ public class PatternToProtocolExportWizard extends AbstractFujabaExportWizard {
 			e.printStackTrace();
 		}
 
-		PatternToProtocolTransformation.createDiagrams(shell, newProtocol);
+		PatternTransformationUtilities.createDiagrams(shell, newProtocol);
 
 	}
 

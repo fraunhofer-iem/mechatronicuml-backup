@@ -63,7 +63,7 @@ public class ProtocolToPatternExportWizard extends AbstractFujabaExportWizard{
 			i++;
 		}
 		
-		CoordinationPattern newPattern = PatternToProtocolTransformation.transformProtocolToPattern(protocol, variables, editingDomain);
+		CoordinationPattern newPattern = PatternTransformationUtilities.transformProtocolToPattern(protocol, variables, editingDomain);
 		if(newPattern!= null)
 		{
 			Resource resource = newPattern.eResource();
@@ -75,7 +75,7 @@ public class ProtocolToPatternExportWizard extends AbstractFujabaExportWizard{
 			}			
 			
 			
-			PatternToProtocolTransformation.createDiagrams(this.getShell(), newPattern);
+			PatternTransformationUtilities.createDiagrams(this.getShell(), newPattern);
 			
 			return true;
 		}

@@ -15,7 +15,6 @@ public class Activator extends AbstractUIPlugin {
 	public static final String CREATE_ROLE_RTSC = "/org.muml.pim.coordinationprotocol.diagram.custom/transforms/CreateRoleRTSC.qvto";
 
 	public static final String TRANSFORM_PATTERN_TO_PROTOCOTOL_STEP1="/org.muml.pim.pattern.diagram.custom/transforms/TransformPatternToProtocolStep1.qvto";
-	public static final String TRANSFORM_PATTERN_TO_PROTOCOTOL_STEP2="/org.muml.pim.pattern.diagram.custom/transforms/TransformPatternToProtocolStep2.qvto";
 	public static final String TRANSFORM_PROTOCOL_TO_PATTERN="/org.muml.pim.pattern.diagram.custom/transforms/TransformProtocolToPattern.qvto";
 
 	public static final String TRANSFORM_PATTERN_TO_PROTOCOL_VERIFICATION="/org.muml.pim.pattern.diagram.custom/transforms/TransformPatternToProtocolNewModel.qvto";
@@ -33,7 +32,6 @@ public class Activator extends AbstractUIPlugin {
 
 		// Create transformation executor
 
-		getTransformationExecutor(TRANSFORM_PATTERN_TO_PROTOCOTOL_STEP2);
 		getTransformationExecutor(TRANSFORM_PATTERN_TO_PROTOCOTOL_STEP1);
 		getTransformationExecutor(CREATE_ROLE_RTSC);
 		getTransformationExecutor(TRANSFORM_PROTOCOL_TO_PATTERN);

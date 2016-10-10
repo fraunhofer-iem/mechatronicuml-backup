@@ -49,7 +49,7 @@ import org.muml.pim.protocol.CoordinationProtocol;
 import org.muml.pim.protocol.Role;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
 
-public class PatternToProtocolTransformation {
+public class PatternTransformationUtilities {
 	
 	
 	

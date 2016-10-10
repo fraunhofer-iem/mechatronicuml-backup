@@ -55,7 +55,7 @@ main()
 	rootOfNewModel := new RootNode();
 	
 	theRootNode.categories->forEach(cat) {
-	 if(cat.key.oclAsType(String).matches('org.pim.types.category') or cat.key.oclAsType(String).matches('org.pim.pim.messagetype.category') ) {
+	 if(cat.key.oclAsType(String).matches('org.muml.types.category') or cat.key.oclAsType(String).matches('org.muml.pim.messagetype.category') ) {
 	 	rootOfNewModel.categories += cat.map transform().oclAsType(ModelElementCategory);
 	 	}
 	 	else {
