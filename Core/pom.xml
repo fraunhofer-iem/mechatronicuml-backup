@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.muml.core.group</groupId>
+  <artifactId>Core</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <modules>
+    <module>de.upb.swt.core</module>
+    <module>de.upb.swt.core.ui</module>
+    <module>de.upb.swt.core.ui.properties</module>
+    <module>org.muml.core</module>
+    <module>org.muml.core.browser</module>
+    <module>org.muml.core.buckminster</module>
+    <module>org.muml.core.common</module>
+    <module>org.muml.core.common.editingdomain</module>
+    <module>org.muml.core.edit</module>
+    <module>org.muml.core.edit.properties</module>
+    <module>org.muml.core.editor</module>
+    <module>org.muml.core.example.ui</module>
+    <module>org.muml.core.export</module>
+    <module>org.muml.core.feature</module>
+    <module>org.muml.core.migrator</module>
+    <module>org.muml.core.modelinstance.ui</module>
+    <module>org.muml.core.ocl</module>
+    <module>org.muml.core.preferences</module>
+    <module>org.muml.core.reachanalysis.core</module>
+    <module>org.muml.core.reachanalysis.reachabilitygraph</module>
+    <module>org.muml.core.sdk.feature</module>
+    <module>org.muml.core.tests</module>
+    <module>org.muml.core.ui</module>
+  </modules>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>0.26.0</version>
+        <extensions>true</extensions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
