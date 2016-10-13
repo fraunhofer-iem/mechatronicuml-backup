@@ -26,7 +26,7 @@
     <module>org.muml.core.preferences</module>
     <module>org.muml.core.reachanalysis.core</module>
     <module>org.muml.core.reachanalysis.reachabilitygraph</module>
-    <module>org.muml.core.sdk.feature</module>
+    <!-- <module>org.muml.core.sdk.feature</module> -->
     <module>org.muml.core.tests</module>
     <module>org.muml.core.ui</module>
   </modules>
