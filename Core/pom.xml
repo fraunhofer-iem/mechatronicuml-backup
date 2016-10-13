@@ -29,6 +29,7 @@
     <!-- <module>org.muml.core.sdk.feature</module> -->
     <module>org.muml.core.tests</module>
     <module>org.muml.core.ui</module>
+    <module>org.muml.core.repository</module>
   </modules>
   <build>
     <plugins>
