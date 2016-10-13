@@ -508,8 +508,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 */
 	protected static final String STATE__ENTRY_EVENT_AT_INITIAL_STATE__EEXPRESSION = "-- @warning\n" +
 		"-- Attention: An initial state only executes its entry event if it is activated via a firing transition. Consequently, if the RTSC starts, its initial states do not execute their entry events (their entry actions and their clock resets). Noteworthy, this only affects initial states that have no parent states and initial states where all their parents are initial states.\n" +
-		"let allParentStates : Set(RealtimeStatechart) = self -> closure(if parentStatechart.parentRegion.oclIsUndefined() then self else parentStatechart.parentRegion.parentState endif) in\n" +
-		"not (self.initial and allParentStates.states->forAll(x | x.initial) and not self.entryEvent.oclIsUndefined())";
+		"let allParentStates : Set(State) = self -> closure(if parentStatechart.parentRegion.oclIsUndefined() then self else parentStatechart.parentRegion.parentState endif) in\n" +
+		"not (self.initial and allParentStates->forAll(x | x.initial) and not self.entryEvent.oclIsUndefined())";
 
 	/**
 	 * Validates the EntryEventAtInitialState constraint of '<em>State</em>'.
