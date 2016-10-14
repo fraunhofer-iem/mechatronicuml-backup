@@ -1,0 +1,434 @@
+/*******************************************************************************
+ * Copyright (c) 2016 Fraunhofer IEM.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Johannes Geismann - initial implementation
+ *    David Schmelter - migration to MechatronicUML 1.0, APP4MC 0.7.x
+ *******************************************************************************/
+library runnableTransformationHelperQueries;
+
+//import org.muml.psm.api._transformation._blackbox.TimeUnitLibUnit;
+//import org.muml.pim.runnable._transformation._blackbox.TimeHelper;
+
+//import org.muml.pim.runnable.trans.bbox.TimeHelper;
+
+modeltype ecore uses ecore ('http://www.eclipse.org/emf/2002/Ecore');
+
+modeltype muml_core uses 'http://www.muml.org/core/1.0.0';
+modeltype muml_modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
+modeltype muml_expression uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype muml_expression_types uses core::expressions::common('http://www.muml.org/core/1.0.0');
+
+modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype muml_component uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype muml_instance uses pim::instance('http://www.muml.org/pim/1.0.0');
+//modeltype muml_connector uses pim::connector('http://www.muml.org/pim/1.0.0');
+//modeltype muml_constraint uses pim::constraint('http://www.muml.org/pim/1.0.0');
+modeltype muml_behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+//modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
+//modeltype muml_msgtype uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+//modeltype muml_types uses pim::types('http://www.muml.org/pim/1.0.0');
+//modeltype muml_valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype muml_valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype muml_runnable uses pim::runnable('http://www.muml.org/pim/1.0.0');
+
+modeltype muml_actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+
+blackbox query TimeValue :: getFactor() : Real;
+
+/*
+ * returns the label name for a given region (currentStateOfRegion)
+ */
+query Region::getVariableName(ci : ComponentInstance) : String {
+
+	return "R_" + ci.componentType.name + "_" + ci.name + "_" + self.name+"_" + "_RegionRTSC"
+}
+
+/*
+ * returns the label name for a given component instance
+ */
+query ComponentInstance::getVariableName(ci : ComponentInstance) : String {
+
+	return "R_" + ci.componentType.name + "_" + ci.name + "_" + "_ComponentInstance"
+}
+
+/*
+ * returns the label name for a given hybrid port instance
+ */
+query HybridPortInstance::getVariableName() : String {
+	
+	return "H_" + self.componentInstance.name+"_" + self.componentInstance.componentType.name+"_" + self.name
+}
+
+/*
+ * returns the label name for a given clock
+ */
+query Clock::getVariableName(ci : ComponentInstance) : String {
+	
+	return "CLK_"  + self.getComponentRTSC().name + ci.componentType.name + "_" + ci.name + "_"+  self.name
+}
+
+/*
+ * returns the label name for a given variable
+ */
+query Variable::getVariableName(ci: ComponentInstance) : String {
+
+	return "VAR_" +self.getComponentRTSC().name + ci.componentType.name + "_" + ci.name + "_" + self.name
+}
+
+/*
+ * returns the name of the runnable for a given region
+ */
+query Region::getRunnableName(ci: ComponentInstance) : String {
+ 	//TODO add component instance name
+	return "R_" + self.name+"_" + ci.componentType.name + "_" + ci.name + "_" + "_RegionRTSC"
+}
+
+/*
+ * returns the name of the runnable for a given hybrid port instance
+ */
+query HybridPortInstance::getRunnableName() : String {
+	
+	return "H_" + self.componentInstance.name+"_" + self.componentInstance.componentType.name+"_" + self.name
+}
+
+/*
+ * returns the rtsc of the component for a clock, i.e. the most top RTSC in the hierarchy
+ */
+query Clock::getComponentRTSC() : RealtimeStatechart{
+
+if (not self.statechart.embedded){
+		return self.statechart
+	}
+	else{
+		return self.statechart.parentRegion.getComponentRTSC()
+	};
+	return null
+}
+
+/*
+ * returns the rtsc of the component for a variable, i.e. the most top RTSC in the hierarchy
+ */
+query Variable::getComponentRTSC() : RealtimeStatechart {
+
+	let containingRTSC = self.oclAsType(EObject).eContainer().oclAsType(RealtimeStatechart) in
+	if (not containingRTSC.embedded) then 
+		return containingRTSC
+	else
+		return containingRTSC.parentRegion.getComponentRTSC()
+	endif;
+	//will never happen
+	return null;
+}
+
+/*
+ * returns the rtsc of the component for a region, i.e. the most top RTSC in the hierarchy
+ */
+query Region::getComponentRTSC() : RealtimeStatechart{
+
+	if (not self.parentState.parentStatechart.embedded){
+		return self.parentState.parentStatechart
+	}
+	else{
+		return self.parentState.parentStatechart.parentRegion.getComponentRTSC()
+	};
+	//will never happen
+	return null
+}
+
+/*
+ * returns the top region in the component-behavior RTSC init-state
+ */
+query Region::getTopLevelRegion() : Region{
+
+	var parentStateChart := self.parentState.parentStatechart;
+	var parentRegion := parentStateChart.parentRegion;
+	//region is a top-region
+	if (parentRegion = null){
+		return self
+	}
+	//region is not a top-region
+	else{
+		return self.parentState.parentStatechart.parentRegion.getTopLevelRegion()
+	};
+	//will never happen
+	return null
+}
+
+query Set(Region)::getAllSubRegions() : Set(Region) {
+
+	return self->union(self->asOrderedSet()->closure(r : Region | r.embeddedStatechart.states->collect(embeddedRegions)));	
+}
+
+
+
+query Region::getAllSyncChannelPartnerRegions() : Set(Region) {
+	
+	var mylocalTransitions := self.embeddedStatechart.transitions;
+ 	var syncTransitions := mylocalTransitions->select(t | not t.synchronization.oclIsUndefined());
+
+	var partnerRegions := syncTransitions->collect(getAllPartnerRegions())->asSet();
+	return partnerRegions;	
+}
+
+
+query Transition::getAllPartnerRegions() : Set(Region){
+
+	var topRTSC := self.statechart.parentRegion.getTopLevelRegion().parentState.parentStatechart;
+	var CITransitions := topRTSC.states.embeddedRegions->asSet()->getAllSubRegions().embeddedStatechart.transitions->select(t | not t.synchronization.oclIsUndefined());
+
+	var partnerTransitions := CITransitions->select(t |
+		 t.synchronization.syncChannel.name = self.synchronization.syncChannel.name and
+		 t.synchronization.kind != self.synchronization.kind and
+		 t.statechart != self.statechart
+	);
+	var partnerRegions := partnerTransitions.statechart.parentRegion->select(reg | reg.parentState.parentStatechart.parentRegion = null)->asSet();
+	return partnerRegions;	
+}
+
+/*
+ * returns all clocks that are read in a given expression or its sub-expressions
+ */
+query Region::getAllReadClocks() : Set(Clock) {
+
+    //TODO state-clocks
+	var transitions = self.embeddedStatechart.transitions;
+	var states : Set(State) = self.embeddedStatechart.states;
+			//clock constraints of transtions
+			
+	var transitionClockConstraints := transitions.clockConstraints->clock->asSet() ;
+	var stateInvariantClocks := states.invariants->clock->asSet();
+		
+	return transitionClockConstraints->union(stateInvariantClocks);
+}
+
+/*
+ * returns all clocks that are written in a given expression or its sub-expressions
+ */
+query Region::getAllWrittenClocks() : Set(Clock) {
+
+	var transitions = self.embeddedStatechart.transitions;
+	var states : Set(State) = self.embeddedStatechart.states;
+	
+	var statesWithEntryEvent: Set(State) := states->select(s | (not s.entryEvent.oclIsUndefined()))->asSet();
+	var entryEventClocks := statesWithEntryEvent.entryEvent->select(e |  e.clockResets->size() > 0)->collect(clockResets)->asSet();
+	
+	return transitions.clockResets->asSet()->union(entryEventClocks)
+}
+
+/*
+ * returns all variables that are read in a given expression or its sub-expressions
+ */
+query Expression::getAllReadVariables() : Set(Variable) {
+
+	self->closure(e | 
+	if e.oclIsKindOf(BinaryExpression) then let binExp = e.oclAsType(BinaryExpression) in 
+			binExp.leftExpression->union(binExp.rightExpression->asSet()) endif);
+	return null;
+}
+
+/*
+ * returns all variables that are written in a given expression or its sub-expressions
+ */
+query Expression::getAllWrittenVariables() : Set(Variable) {
+	
+	return null;
+}
+
+query TimeValue::getTimeValue() : Integer {
+
+    var myreturn := 0;
+	if (self.value.oclIsKindOf(LiteralExpression)){
+		myreturn := self.value.oclAsType(LiteralExpression).value.toInteger();
+	}else{
+		myreturn := 42;
+	};
+	
+	myreturn := (myreturn * self.getFactor()).round();
+	
+	return myreturn;
+}
+
+query Region::getDeadline(): Integer{
+	var allTransitions := self.allSubobjectsOfKind(Transition);
+	var allDeadlines := allTransitions.oclAsType(Transition).relativeDeadline->select(d | not d.oclIsUndefined());
+	var intDeadlines := allDeadlines.upperBound.getTimeValue()->asSet();
+	var minDeadline := intDeadlines->min();
+	
+	if (minDeadline.oclIsUndefined()){
+		return -1;
+	};
+	return minDeadline;
+}
+
+/*
+ * returns the value for the periodic activation for a given region
+ */
+query Region::getPeriodicActivationTime() : Integer {
+
+	var useInvariant := false;
+	var useClockConstraint := false;
+	var useHybridPort := false;
+	
+	// HYBRID PORT ACCESSES
+	//get all expressions
+	var expressions := self.embeddedStatechart.allSubobjectsOfType(TypedNamedElementExpression);
+	
+	//get all typedNamedElements
+	var tne := expressions->collect(e| e.oclAsType(TypedNamedElementExpression).typedNamedElement);
+	
+	//filter the elements for hybridPort accesses
+	var hybridPorts := tne->selectByKind(HybridPort)->asSet();
+	
+	var samplingIntervals := hybridPorts->collect(hp | hp.oclAsType(HybridPort).samplingInterval.getTimeValue())->asSet();
+	
+	var minimalSamplingInterval := -1;
+	if (samplingIntervals->size()>0){
+		useHybridPort := true;
+		minimalSamplingInterval := (samplingIntervals->min()/2).round();
+	};
+
+	//TODO /* ONLY CLOCK CONSTRAINT */
+	var minimalClockConstraint := -1;
+	
+	var statesWithCC := self.embeddedStatechart.states->select(s|s.outgoingTransitions.clockConstraints->size()>0);
+	if (statesWithCC->size()>0){
+		useClockConstraint:= true;
+		minimalClockConstraint := (statesWithCC.outgoingTransitions.clockConstraints->select(litCC |
+		 litCC.bound.value.oclIsKindOf(LiteralExpression)).bound.getTimeValue()->min().round() / 2).round();
+	};
+	
+	
+	
+	/* COMBINATION OF CLOCK CONSTRAINT AND INVARIANT */
+	var statesWithInvariant := self.embeddedStatechart.states->select(s|s.invariants->size()>0);
+	if (statesWithInvariant->size()>0){
+		useInvariant:= true;
+	};
+	var minValueCC = -1;
+	var minValueInv = -1;
+	//do for each state
+	statesWithInvariant->forEach(state){
+		//do for each transition with clock-constraint
+		state.outgoingTransitions->select(t | t.clockConstraints->size() > 0)->forEach(tcc){
+			//check each clock constraint which has a literal expression as time value
+			tcc.clockConstraints->select(cc |cc.operator = ComparingOperator::GREATER_OR_EQUAL or cc.operator = ComparingOperator::GREATER)
+				->select(litCC | litCC.bound.value.oclIsKindOf(LiteralExpression))->forEach(cc){
+					//if initial
+					if (minValueCC = -1){
+						minValueCC := cc.bound.value.oclAsType(LiteralExpression).value.toInteger();
+					}else{
+						if (cc.bound.value.oclAsType(LiteralExpression).value.toInteger()< minValueCC){
+							minValueCC := cc.bound.value.oclAsType(LiteralExpression).value.toInteger();
+						}
+					}	
+				}
+		};
+		
+		//determine shortest invariant
+		state.invariants->forEach(inv){
+			if (minValueInv = -1){
+						minValueInv := inv.bound.value.oclAsType(LiteralExpression).value.toInteger();
+					}else{
+						if (inv.bound.value.oclAsType(LiteralExpression).value.toInteger()< minValueInv){
+							minValueInv := inv.bound.value.oclAsType(LiteralExpression).value.toInteger();
+						}
+					}
+		}
+	};
+	//set value for periodic activation
+	var valueWithInv := 0;
+	if (minValueInv != -1){
+		valueWithInv := ((minValueInv - minValueCC -1)/2).round();
+	}else{
+		valueWithInv := 100000;
+	};
+	var valueWithoutInv := 100000;
+	
+	//getMinimum
+	
+	var periodicValue := 0;
+	if ( (not useInvariant) and (not useClockConstraint) and (not useHybridPort)){
+		periodicValue := -1;
+	}
+	else{
+		periodicValue := Set{valueWithInv, valueWithoutInv, minimalSamplingInterval,minimalClockConstraint}->select(i:Integer | i != -1)->min();
+	};
+	
+	return periodicValue;
+}
+
+/*
+ * returns the value for the periodic activation for a given hybrid port
+ */
+query HybridPortInstance::getPeriodicActivationTime() : TimeValue {
+
+	var port := self.portType.oclAsType(HybridPort);
+	var samplingInterval := port.samplingInterval;
+
+	return samplingInterval;
+}
+
+/*
+ * returns all TypedNamedElementExpression (recursively) contained in a given Expression
+ */ 
+query Expression::getAllTypedNamedElementExpressions() : Set(TypedNamedElementExpression)  {
+
+    var foo =  self.oclAsType(ecore::EObject)->asSet()->closure(v : ecore::EObject |
+        v.eContents()->select(oclIsKindOf(ecore::EObject))->collect(oclAsType(ecore::EObject))
+    )->select(oclIsKindOf(TypedNamedElementExpression)).oclAsType(TypedNamedElementExpression)->asSet();
+	return foo
+}
+
+/*
+ * returns the parent-expressions for all TypedNamedElementExpressions of a given RTSC
+ */
+query RealtimeStatechart::getAllTypedNamedElementExpressionsParents(): Set(Expression) {
+
+ 	var transitions := self.transitions;
+ 	transitions += self.getAllTransitionsRecursive();
+	return transitions->select(not action.oclIsUndefined() and action.expressions->notEmpty()
+	)->collect(action)->union(self.states->select(
+		not entryEvent.oclIsUndefined() and not entryEvent.action.oclIsUndefined() and entryEvent.action.expressions->notEmpty()
+	)->collect(entryEvent.action))->union(self.states->select(
+		not exitEvent.oclIsUndefined() and not exitEvent.action.oclIsUndefined() and exitEvent.action.expressions->notEmpty()
+	)->collect(exitEvent.action))->collect(
+		expressions->at(1).getAllTypedNamedElementExpressions().oclAsType(EObject).eContainer().oclAsType(Expression)->asSet()
+	)->asSet()->union(
+		self.transitions->select(not guard.oclIsUndefined())->collect(guard).getAllTypedNamedElementExpressions().oclAsType(EObject).eContainer().oclAsType(Expression)->asSet()
+	)
+	->union(self.states.embeddedRegions.embeddedStatechart.getAllTypedNamedElementExpressionsParents()->asSet())
+}
+
+query RealtimeStatechart::getAllTransitionsRecursive() : Set(Transition){
+	return self.states.embeddedRegions->asOrderedSet()->closure(r : Region | r.embeddedStatechart.states->collect(embeddedRegions)).embeddedStatechart.transitions->asSet();
+}
+
+query ComponentInstanceConfiguration::getAllComponentInstances() : Set(ComponentInstance){
+	var comps := self.componentInstances->selectByKind(StructuredComponentInstance).embeddedCIC.getAllComponentInstances()->asSet();
+	comps += self.componentInstances->selectByKind(AtomicComponentInstance)->asSet();
+	return comps;
+}
+
+/*
+ * returns the continuous compenent instacne for a given HybridPortInstance
+  */
+query HybridPortInstance::getContinuousComponentInstance() : ComponentInstance{
+	var connector := self.portConnectorInstances;
+	return connector.portInstances->selectByKind(ContinuousPortInstance).componentInstance->any(true);
+
+}
+
+/*
+ * returns the hybridPortInstance for a given HybridPort and ComponentInstance
+ * (based on the name only)
+ */
+query HybridPort::getHybridPortInstance(ci : ComponentInstance) : HybridPortInstance{
+
+	var allHybridPortInstances := ci.portInstances->selectByKind(HybridPortInstance);
+	return allHybridPortInstances->selectOne(hpi | hpi.name = self.name)
+}
