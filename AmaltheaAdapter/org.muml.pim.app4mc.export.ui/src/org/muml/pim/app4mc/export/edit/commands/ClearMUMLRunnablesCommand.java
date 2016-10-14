@@ -8,7 +8,7 @@
  * Contributors:
  *    David Schmelter - initial implementation
  *******************************************************************************/
-package org.eclipse.muml.pim.app4mc.export.edit.commands;
+package org.muml.pim.app4mc.export.edit.commands;
 
 import java.util.Collections;
 import java.util.List;

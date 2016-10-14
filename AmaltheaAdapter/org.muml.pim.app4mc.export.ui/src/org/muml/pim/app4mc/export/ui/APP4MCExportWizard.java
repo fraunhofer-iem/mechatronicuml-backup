@@ -8,7 +8,7 @@
  * Contributors:
  *    David Schmelter - initial implementation
  *******************************************************************************/
-package org.eclipse.muml.pim.app4mc.export.ui;
+package org.muml.pim.app4mc.export.ui;
 
 import java.io.File;
 import java.io.IOException;
@@ -40,8 +40,6 @@ import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.m2m.qvt.oml.util.WriterLog;
-import org.eclipse.muml.pim.app4mc.export.edit.commands.ClearAMALTHEAModelCommand;
-import org.eclipse.muml.pim.app4mc.export.edit.commands.ClearMUMLRunnablesCommand;
 import org.eclipse.ui.IWorkbench;
 import org.muml.core.common.edit.commands.ExecuteQvtoTransformationCommand;
 import org.muml.core.export.operation.AbstractFujabaExportOperation;
@@ -51,6 +49,8 @@ import org.muml.core.export.pages.AbstractFujabaExportTargetPage;
 import org.muml.core.export.pages.ElementSelectionMode;
 import org.muml.core.export.wizard.AbstractFujabaExportWizard;
 import org.muml.core.modelinstance.RootNode;
+import org.muml.pim.app4mc.export.edit.commands.ClearAMALTHEAModelCommand;
+import org.muml.pim.app4mc.export.edit.commands.ClearMUMLRunnablesCommand;
 import org.muml.pim.instance.ComponentInstanceConfiguration;
 import org.muml.pim.runnable.Runnable;
 

@@ -5,7 +5,7 @@
          point="org.eclipse.ui.exportWizards">
       <wizard
             category="org.muml.core.export"
-            class="org.eclipse.muml.pim.app4mc.export.ui.APP4MCExportWizard"
+            class="org.muml.pim.app4mc.export.ui.APP4MCExportWizard"
             icon="icons/app4mc-logo-16.png"
             id="org.eclipse.muml.pim.app4mc.export.ui.wizard"
             name="APP4MC">

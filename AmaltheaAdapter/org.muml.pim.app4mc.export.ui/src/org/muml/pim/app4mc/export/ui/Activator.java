@@ -8,7 +8,7 @@
  * Contributors:
  *    David Schmelter - initial implementation
  *******************************************************************************/
-package org.eclipse.muml.pim.app4mc.export.ui;
+package org.muml.pim.app4mc.export.ui;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
@@ -21,7 +21,7 @@ import org.osgi.framework.BundleContext;
 public class Activator extends AbstractUIPlugin {
 
 	// The plug-in ID
-	public static final String PLUGIN_ID = "org.eclipse.muml.pim.app4mc.export.ui"; //$NON-NLS-1$
+	public static final String PLUGIN_ID = "org.muml.pim.app4mc.export.ui"; //$NON-NLS-1$
 
 	// The shared instance
 	private static Activator plugin;
