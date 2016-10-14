@@ -1,0 +1,152 @@
+/*******************************************************************************
+ * Copyright (c) 2016 Fraunhofer IEM.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Johannes Geismann - initial implementation
+ *    David Schmelter - migration to MechatronicUML 1.0, APP4MC 0.7.x
+ *******************************************************************************/
+import runnableTransformationHelperQueries;
+
+//modeltype ecore uses ecore ('http://www.eclipse.org/emf/2002/Ecore');
+
+modeltype muml_modelinstance uses core::modelinstance('http://www.muml.org/core/1.0.0');
+
+modeltype muml_core uses 'http://www.muml.org/core/1.0.0';
+modeltype muml_expression uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype muml_expression_types uses core::expressions::common('http://www.muml.org/core/1.0.0');
+
+modeltype muml_pim uses 'http://www.muml.org/pim/1.0.0';
+//modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype muml_component uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype muml_instance uses pim::instance('http://www.muml.org/pim/1.0.0');
+//modeltype muml_connector uses pim::connector('http://www.muml.org/pim/1.0.0');
+//modeltype muml_constraint uses pim::constraint('http://www.muml.org/pim/1.0.0');
+//modeltype muml_behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+//modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
+//modeltype muml_msgtype uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+//modeltype muml_types uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype muml_valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype muml_runnable uses pim::runnable('http://www.muml.org/pim/1.0.0');
+
+//modeltype muml_actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+
+modeltype app4mc uses model('http://app4mc.eclipse.org/amalthea/0.7.0');
+
+transformation MUML2Amalthea(in startCIC : muml_instance, inout amal : app4mc);
+
+property defaultTimeValue:Integer = 500;
+
+main() {
+
+	//TODO workaround: we map one specific embedded and flat CIC (overtaker)
+	var embCIC := startCIC.rootObjects()[ComponentInstanceConfiguration]->any(true);
+	
+	if(not embCIC.oclIsTypeOf(ComponentInstanceConfiguration)) {
+		embCIC := ComponentInstanceConfiguration.allInstances() -> any(c | c.name = "OvertakerVehicle");
+	};
+	
+	log(embCIC.toString());
+
+	//create new amalthea model
+	var amalthea = amal.rootObjects()[Amalthea]->any(true);
+	
+	log("amalthea: " + amalthea.toString());
+
+	//map the CIC to the software-model of amalthea
+	amalthea.swModel :=  embCIC.map CIC2AmaltheaSW();
+	
+	log("amalthea.swModel: " + amalthea.swModel.toString());
+}
+
+/**
+ * Maps a given CIC with defined runnables, labels, and label accesses to a Amalthea SoftwareModel
+ * Creates Runnables, Labels, Activations and sets dependencies between these objects
+**/
+mapping ComponentInstanceConfiguration::CIC2AmaltheaSW(): SWModel {
+
+	//get all discrete and hybrid CIs
+	var comps := self.componentInstances->select(ci | ci.componentType.componentKind != ComponentKind::CONTINUOUS_COMPONENT);
+
+	activations += comps.runnables.period.value->selectByKind(LiteralExpression).value.toInteger()->asSet()->Periods2Activations();
+	comps.runnables->forEach(r) {
+	   //log(r.name.toString() + " " + r.period.value.toString());
+	};
+
+	//do for all comps (we have to do it in a for-loop, because we have to delegate the CI to sub-mappings)
+	comps->forEach(comp){
+			
+		//***LABELS FOR HYBRID PORTS***//
+		labels += comps.labels->map Label2Label();
+		runnables += comps.runnables->map Runnable2Runnable();
+	};
+	
+//	comps := self.componentInstances->select(ci | not ci.componentType.oclIsKindOf(StructuredComponentInstance) and ci.componentType.componentKind != ComponentKind::CONTINUOUS_COMPONENT);
+//	comps->forEach(comp) {
+//		comp.oclAsType(StructuredComponentInstance).embeddedCIC.map CIC2AmaltheaSW();
+//	}
+}
+
+mapping Integer::Periods2Activations() : PeriodicActivation{
+	
+	if (self < 0){
+		name := "Standard Periodic Activation";
+		offset := object Time {
+			value := defaultTimeValue;
+			unit := app4mc::TimeUnit::ms
+		};
+	}
+
+	else{
+		name := self.toString() + " Periodic Activation";
+		offset := object Time {
+			value := self;
+			unit := app4mc::TimeUnit::ms
+		};
+	}
+}
+
+mapping muml_runnable::Label::Label2Label() : app4mc::Label{
+
+	name := self.name;
+}
+
+mapping muml_runnable::Runnable::Runnable2Runnable() : app4mc::Runnable{
+
+	name := self.name;
+	activation := self.period.getTimeValue().resolveone(PeriodicActivation);
+	runnableItems += self.labelAccesses->map LabelAccess2LabelAccess();
+	deadline := self.deadline.map Deadline2Deadline();
+}
+
+mapping TimeValue::Deadline2Deadline() : Time{
+	value := self.getTimeValue();
+	if(value = -1) {
+		value := defaultTimeValue;
+	};
+	unit := app4mc::TimeUnit::ms;
+}
+
+//query TimeValue::Period2Activation() : PeriodicActivation{
+//	if (self.value.oclIsKindOf(LiteralExpression)){
+//		return 	self.value.oclAsType(LiteralExpression).value.toInteger().resolveone(PeriodicActivation);
+//	}else{
+//		return 42.resolveone(PeriodicActivation);
+//	};
+//	
+//	return 42.resolveone(PeriodicActivation);
+//}
+
+mapping muml_runnable::LabelAccess::LabelAccess2LabelAccess() : app4mc::LabelAccess{
+
+	data := self.accessLabel.late resolveone(app4mc::Label);
+
+	if (self.accessKind = LabelAccessKind::READACCESS){
+   		_access := LabelAccessEnum::read;
+	}else{
+		_access := LabelAccessEnum::write;
+	}
+}
