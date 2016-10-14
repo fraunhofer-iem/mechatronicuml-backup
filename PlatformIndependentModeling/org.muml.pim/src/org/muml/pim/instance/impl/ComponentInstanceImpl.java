@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.muml.core.impl.NamedElementImpl;
@@ -25,6 +26,8 @@ import org.muml.pim.instance.ComponentInstance;
 import org.muml.pim.instance.ComponentInstanceConfiguration;
 import org.muml.pim.instance.InstancePackage;
 import org.muml.pim.instance.PortInstance;
+import org.muml.pim.runnable.Label;
+import org.muml.pim.runnable.RunnablePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,6 +42,8 @@ import org.muml.pim.instance.PortInstance;
  *   <li>{@link org.muml.pim.instance.impl.ComponentInstanceImpl#getComponentPart <em>Component Part</em>}</li>
  *   <li>{@link org.muml.pim.instance.impl.ComponentInstanceImpl#getParentCIC <em>Parent CIC</em>}</li>
  *   <li>{@link org.muml.pim.instance.impl.ComponentInstanceImpl#isTopLevel <em>Top Level</em>}</li>
+ *   <li>{@link org.muml.pim.instance.impl.ComponentInstanceImpl#getRunnables <em>Runnables</em>}</li>
+ *   <li>{@link org.muml.pim.instance.impl.ComponentInstanceImpl#getLabels <em>Labels</em>}</li>
  * </ul>
  *
  * @generated
@@ -83,6 +88,26 @@ public abstract class ComponentInstanceImpl extends NamedElementImpl implements 
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate TOP_LEVEL__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.COMPONENT_INSTANCE__TOP_LEVEL).getSettingDelegate();
+
+	/**
+	 * The cached value of the '{@link #getRunnables() <em>Runnables</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRunnables()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<org.muml.pim.runnable.Runnable> runnables;
+
+	/**
+	 * The cached value of the '{@link #getLabels() <em>Labels</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLabels()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Label> labels;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -249,6 +274,30 @@ public abstract class ComponentInstanceImpl extends NamedElementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<org.muml.pim.runnable.Runnable> getRunnables() {
+		if (runnables == null) {
+			runnables = new EObjectWithInverseResolvingEList<org.muml.pim.runnable.Runnable>(org.muml.pim.runnable.Runnable.class, this, InstancePackage.COMPONENT_INSTANCE__RUNNABLES, RunnablePackage.RUNNABLE__COMPONENT_INSTANCE);
+		}
+		return runnables;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Label> getLabels() {
+		if (labels == null) {
+			labels = new EObjectWithInverseResolvingEList<Label>(Label.class, this, InstancePackage.COMPONENT_INSTANCE__LABELS, RunnablePackage.LABEL__COMPONENT_INSTANCE);
+		}
+		return labels;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -259,6 +308,10 @@ public abstract class ComponentInstanceImpl extends NamedElementImpl implements 
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetParentCIC((ComponentInstanceConfiguration)otherEnd, msgs);
+			case InstancePackage.COMPONENT_INSTANCE__RUNNABLES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRunnables()).basicAdd(otherEnd, msgs);
+			case InstancePackage.COMPONENT_INSTANCE__LABELS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLabels()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -275,6 +328,10 @@ public abstract class ComponentInstanceImpl extends NamedElementImpl implements 
 				return ((InternalEList<?>)getPortInstances()).basicRemove(otherEnd, msgs);
 			case InstancePackage.COMPONENT_INSTANCE__PARENT_CIC:
 				return basicSetParentCIC(null, msgs);
+			case InstancePackage.COMPONENT_INSTANCE__RUNNABLES:
+				return ((InternalEList<?>)getRunnables()).basicRemove(otherEnd, msgs);
+			case InstancePackage.COMPONENT_INSTANCE__LABELS:
+				return ((InternalEList<?>)getLabels()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -313,6 +370,10 @@ public abstract class ComponentInstanceImpl extends NamedElementImpl implements 
 				return getParentCIC();
 			case InstancePackage.COMPONENT_INSTANCE__TOP_LEVEL:
 				return isTopLevel();
+			case InstancePackage.COMPONENT_INSTANCE__RUNNABLES:
+				return getRunnables();
+			case InstancePackage.COMPONENT_INSTANCE__LABELS:
+				return getLabels();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -339,6 +400,14 @@ public abstract class ComponentInstanceImpl extends NamedElementImpl implements 
 			case InstancePackage.COMPONENT_INSTANCE__PARENT_CIC:
 				setParentCIC((ComponentInstanceConfiguration)newValue);
 				return;
+			case InstancePackage.COMPONENT_INSTANCE__RUNNABLES:
+				getRunnables().clear();
+				getRunnables().addAll((Collection<? extends org.muml.pim.runnable.Runnable>)newValue);
+				return;
+			case InstancePackage.COMPONENT_INSTANCE__LABELS:
+				getLabels().clear();
+				getLabels().addAll((Collection<? extends Label>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -363,6 +432,12 @@ public abstract class ComponentInstanceImpl extends NamedElementImpl implements 
 			case InstancePackage.COMPONENT_INSTANCE__PARENT_CIC:
 				setParentCIC((ComponentInstanceConfiguration)null);
 				return;
+			case InstancePackage.COMPONENT_INSTANCE__RUNNABLES:
+				getRunnables().clear();
+				return;
+			case InstancePackage.COMPONENT_INSTANCE__LABELS:
+				getLabels().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -385,6 +460,10 @@ public abstract class ComponentInstanceImpl extends NamedElementImpl implements 
 				return getParentCIC() != null;
 			case InstancePackage.COMPONENT_INSTANCE__TOP_LEVEL:
 				return TOP_LEVEL__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case InstancePackage.COMPONENT_INSTANCE__RUNNABLES:
+				return runnables != null && !runnables.isEmpty();
+			case InstancePackage.COMPONENT_INSTANCE__LABELS:
+				return labels != null && !labels.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -141,13 +141,31 @@ public interface InstancePackage extends EPackage {
 	int COMPONENT_INSTANCE__TOP_LEVEL = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Runnables</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANCE__RUNNABLES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Labels</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANCE__LABELS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Component Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int COMPONENT_INSTANCE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -620,13 +638,22 @@ public interface InstancePackage extends EPackage {
 	int PORT_INSTANCE__PORT_PART = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Runnable</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE__RUNNABLE = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Port Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_INSTANCE_FEATURE_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 4;
+	int PORT_INSTANCE_FEATURE_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -1597,6 +1624,15 @@ public interface InstancePackage extends EPackage {
 	int CONTINUOUS_PORT_INSTANCE__PORT_PART = PORT_INSTANCE__PORT_PART;
 
 	/**
+	 * The feature id for the '<em><b>Runnable</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT_INSTANCE__RUNNABLE = PORT_INSTANCE__RUNNABLE;
+
+	/**
 	 * The number of structural features of the '<em>Continuous Port Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1860,6 +1896,15 @@ public interface InstancePackage extends EPackage {
 	int HYBRID_PORT_INSTANCE__PORT_PART = PORT_INSTANCE__PORT_PART;
 
 	/**
+	 * The feature id for the '<em><b>Runnable</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__RUNNABLE = PORT_INSTANCE__RUNNABLE;
+
+	/**
 	 * The number of structural features of the '<em>Hybrid Port Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2101,6 +2146,15 @@ public interface InstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int DISCRETE_PORT_INSTANCE__PORT_PART = PORT_INSTANCE__PORT_PART;
+
+	/**
+	 * The feature id for the '<em><b>Runnable</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT_INSTANCE__RUNNABLE = PORT_INSTANCE__RUNNABLE;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
@@ -2390,6 +2444,15 @@ public interface InstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int DISCRETE_SINGLE_PORT_INSTANCE__PORT_PART = DISCRETE_PORT_INSTANCE__PORT_PART;
+
+	/**
+	 * The feature id for the '<em><b>Runnable</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_SINGLE_PORT_INSTANCE__RUNNABLE = DISCRETE_PORT_INSTANCE__RUNNABLE;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
@@ -2724,6 +2787,15 @@ public interface InstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int DISCRETE_MULTI_PORT_INSTANCE__PORT_PART = DISCRETE_PORT_INSTANCE__PORT_PART;
+
+	/**
+	 * The feature id for the '<em><b>Runnable</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_MULTI_PORT_INSTANCE__RUNNABLE = DISCRETE_PORT_INSTANCE__RUNNABLE;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
@@ -3250,6 +3322,24 @@ public interface InstancePackage extends EPackage {
 	int STRUCTURED_COMPONENT_INSTANCE__TOP_LEVEL = COMPONENT_INSTANCE__TOP_LEVEL;
 
 	/**
+	 * The feature id for the '<em><b>Runnables</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURED_COMPONENT_INSTANCE__RUNNABLES = COMPONENT_INSTANCE__RUNNABLES;
+
+	/**
+	 * The feature id for the '<em><b>Labels</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURED_COMPONENT_INSTANCE__LABELS = COMPONENT_INSTANCE__LABELS;
+
+	/**
 	 * The feature id for the '<em><b>Embedded CIC</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3494,6 +3584,24 @@ public interface InstancePackage extends EPackage {
 	int ATOMIC_COMPONENT_INSTANCE__TOP_LEVEL = COMPONENT_INSTANCE__TOP_LEVEL;
 
 	/**
+	 * The feature id for the '<em><b>Runnables</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATOMIC_COMPONENT_INSTANCE__RUNNABLES = COMPONENT_INSTANCE__RUNNABLES;
+
+	/**
+	 * The feature id for the '<em><b>Labels</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATOMIC_COMPONENT_INSTANCE__LABELS = COMPONENT_INSTANCE__LABELS;
+
+	/**
 	 * The number of structural features of the '<em>Atomic Component Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3721,6 +3829,28 @@ public interface InstancePackage extends EPackage {
 	EAttribute getComponentInstance_TopLevel();
 
 	/**
+	 * Returns the meta object for the reference list '{@link org.muml.pim.instance.ComponentInstance#getRunnables <em>Runnables</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Runnables</em>'.
+	 * @see org.muml.pim.instance.ComponentInstance#getRunnables()
+	 * @see #getComponentInstance()
+	 * @generated
+	 */
+	EReference getComponentInstance_Runnables();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.muml.pim.instance.ComponentInstance#getLabels <em>Labels</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Labels</em>'.
+	 * @see org.muml.pim.instance.ComponentInstance#getLabels()
+	 * @see #getComponentInstance()
+	 * @generated
+	 */
+	EReference getComponentInstance_Labels();
+
+	/**
 	 * Returns the meta object for class '{@link org.muml.pim.instance.PortConnectorInstance <em>Port Connector Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3805,6 +3935,17 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPortInstance_PortPart();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.muml.pim.instance.PortInstance#getRunnable <em>Runnable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Runnable</em>'.
+	 * @see org.muml.pim.instance.PortInstance#getRunnable()
+	 * @see #getPortInstance()
+	 * @generated
+	 */
+	EReference getPortInstance_Runnable();
 
 	/**
 	 * Returns the meta object for class '{@link org.muml.pim.instance.AssemblyConnectorInstance <em>Assembly Connector Instance</em>}'.
@@ -4165,6 +4306,22 @@ public interface InstancePackage extends EPackage {
 		EAttribute COMPONENT_INSTANCE__TOP_LEVEL = eINSTANCE.getComponentInstance_TopLevel();
 
 		/**
+		 * The meta object literal for the '<em><b>Runnables</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_INSTANCE__RUNNABLES = eINSTANCE.getComponentInstance_Runnables();
+
+		/**
+		 * The meta object literal for the '<em><b>Labels</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_INSTANCE__LABELS = eINSTANCE.getComponentInstance_Labels();
+
+		/**
 		 * The meta object literal for the '{@link org.muml.pim.instance.impl.PortConnectorInstanceImpl <em>Port Connector Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4231,6 +4388,14 @@ public interface InstancePackage extends EPackage {
 		 * @generated
 		 */
 		EReference PORT_INSTANCE__PORT_PART = eINSTANCE.getPortInstance_PortPart();
+
+		/**
+		 * The meta object literal for the '<em><b>Runnable</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PORT_INSTANCE__RUNNABLE = eINSTANCE.getPortInstance_Runnable();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.pim.instance.impl.AssemblyConnectorInstanceImpl <em>Assembly Connector Instance</em>}' class.

@@ -6,6 +6,7 @@
  */
 package org.muml.pim.instance.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -13,7 +14,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.muml.pim.component.Port;
 import org.muml.pim.component.PortPart;
 import org.muml.pim.connector.impl.ConnectorEndpointInstanceImpl;
@@ -21,6 +24,7 @@ import org.muml.pim.instance.ComponentInstance;
 import org.muml.pim.instance.InstancePackage;
 import org.muml.pim.instance.PortConnectorInstance;
 import org.muml.pim.instance.PortInstance;
+import org.muml.pim.runnable.RunnablePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,6 +38,7 @@ import org.muml.pim.instance.PortInstance;
  *   <li>{@link org.muml.pim.instance.impl.PortInstanceImpl#getComponentInstance <em>Component Instance</em>}</li>
  *   <li>{@link org.muml.pim.instance.impl.PortInstanceImpl#getPortConnectorInstances <em>Port Connector Instances</em>}</li>
  *   <li>{@link org.muml.pim.instance.impl.PortInstanceImpl#getPortPart <em>Port Part</em>}</li>
+ *   <li>{@link org.muml.pim.instance.impl.PortInstanceImpl#getRunnable <em>Runnable</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,6 +72,15 @@ public abstract class PortInstanceImpl extends ConnectorEndpointInstanceImpl imp
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate PORT_PART__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.PORT_INSTANCE__PORT_PART).getSettingDelegate();
+	/**
+	 * The cached value of the '{@link #getRunnable() <em>Runnable</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRunnable()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<org.muml.pim.runnable.Runnable> runnable;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -200,6 +214,18 @@ public abstract class PortInstanceImpl extends ConnectorEndpointInstanceImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<org.muml.pim.runnable.Runnable> getRunnable() {
+		if (runnable == null) {
+			runnable = new EObjectWithInverseResolvingEList.ManyInverse<org.muml.pim.runnable.Runnable>(org.muml.pim.runnable.Runnable.class, this, InstancePackage.PORT_INSTANCE__RUNNABLE, RunnablePackage.RUNNABLE__PORT_INSTANCE);
+		}
+		return runnable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -208,6 +234,8 @@ public abstract class PortInstanceImpl extends ConnectorEndpointInstanceImpl imp
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetComponentInstance((ComponentInstance)otherEnd, msgs);
+			case InstancePackage.PORT_INSTANCE__RUNNABLE:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRunnable()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -222,6 +250,8 @@ public abstract class PortInstanceImpl extends ConnectorEndpointInstanceImpl imp
 		switch (featureID) {
 			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
 				return basicSetComponentInstance(null, msgs);
+			case InstancePackage.PORT_INSTANCE__RUNNABLE:
+				return ((InternalEList<?>)getRunnable()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -258,6 +288,8 @@ public abstract class PortInstanceImpl extends ConnectorEndpointInstanceImpl imp
 			case InstancePackage.PORT_INSTANCE__PORT_PART:
 				if (resolve) return getPortPart();
 				return basicGetPortPart();
+			case InstancePackage.PORT_INSTANCE__RUNNABLE:
+				return getRunnable();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -274,6 +306,10 @@ public abstract class PortInstanceImpl extends ConnectorEndpointInstanceImpl imp
 			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
 				setComponentInstance((ComponentInstance)newValue);
 				return;
+			case InstancePackage.PORT_INSTANCE__RUNNABLE:
+				getRunnable().clear();
+				getRunnable().addAll((Collection<? extends org.muml.pim.runnable.Runnable>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -288,6 +324,9 @@ public abstract class PortInstanceImpl extends ConnectorEndpointInstanceImpl imp
 		switch (featureID) {
 			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
 				setComponentInstance((ComponentInstance)null);
+				return;
+			case InstancePackage.PORT_INSTANCE__RUNNABLE:
+				getRunnable().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -309,6 +348,8 @@ public abstract class PortInstanceImpl extends ConnectorEndpointInstanceImpl imp
 				return PORT_CONNECTOR_INSTANCES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case InstancePackage.PORT_INSTANCE__PORT_PART:
 				return PORT_PART__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case InstancePackage.PORT_INSTANCE__RUNNABLE:
+				return runnable != null && !runnable.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -10,6 +10,7 @@ import org.eclipse.emf.common.util.EList;
 import org.muml.core.NamedElement;
 import org.muml.pim.component.Component;
 import org.muml.pim.component.ComponentPart;
+import org.muml.pim.runnable.Label;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,6 +30,8 @@ import org.muml.pim.component.ComponentPart;
  *   <li>{@link org.muml.pim.instance.ComponentInstance#getComponentPart <em>Component Part</em>}</li>
  *   <li>{@link org.muml.pim.instance.ComponentInstance#getParentCIC <em>Parent CIC</em>}</li>
  *   <li>{@link org.muml.pim.instance.ComponentInstance#isTopLevel <em>Top Level</em>}</li>
+ *   <li>{@link org.muml.pim.instance.ComponentInstance#getRunnables <em>Runnables</em>}</li>
+ *   <li>{@link org.muml.pim.instance.ComponentInstance#getLabels <em>Labels</em>}</li>
  * </ul>
  *
  * @see org.muml.pim.instance.InstancePackage#getComponentInstance()
@@ -161,5 +164,41 @@ public interface ComponentInstance extends NamedElement {
 	 * @generated
 	 */
 	boolean isTopLevel();
+
+	/**
+	 * Returns the value of the '<em><b>Runnables</b></em>' reference list.
+	 * The list contents are of type {@link org.muml.pim.runnable.Runnable}.
+	 * It is bidirectional and its opposite is '{@link org.muml.pim.runnable.Runnable#getComponentInstance <em>Component Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Runnables</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Runnables</em>' reference list.
+	 * @see org.muml.pim.instance.InstancePackage#getComponentInstance_Runnables()
+	 * @see org.muml.pim.runnable.Runnable#getComponentInstance
+	 * @model opposite="componentInstance"
+	 * @generated
+	 */
+	EList<org.muml.pim.runnable.Runnable> getRunnables();
+
+	/**
+	 * Returns the value of the '<em><b>Labels</b></em>' reference list.
+	 * The list contents are of type {@link org.muml.pim.runnable.Label}.
+	 * It is bidirectional and its opposite is '{@link org.muml.pim.runnable.Label#getComponentInstance <em>Component Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Labels</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Labels</em>' reference list.
+	 * @see org.muml.pim.instance.InstancePackage#getComponentInstance_Labels()
+	 * @see org.muml.pim.runnable.Label#getComponentInstance
+	 * @model opposite="componentInstance"
+	 * @generated
+	 */
+	EList<Label> getLabels();
 
 } // ComponentInstance

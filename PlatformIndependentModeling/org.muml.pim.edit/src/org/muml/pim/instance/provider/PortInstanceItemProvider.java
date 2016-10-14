@@ -56,6 +56,7 @@ public class PortInstanceItemProvider extends
 			addComponentInstancePropertyDescriptor(object);
 			addPortConnectorInstancesPropertyDescriptor(object);
 			addPortPartPropertyDescriptor(object);
+			addRunnablePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -147,6 +148,28 @@ public class PortInstanceItemProvider extends
 				 getString("_UI_PropertyDescriptor_description", "_UI_PortInstance_portPart_feature", "_UI_PortInstance_type"),
 				 InstancePackage.Literals.PORT_INSTANCE__PORT_PART,
 				 false,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Runnable feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRunnablePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PortInstance_runnable_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortInstance_runnable_feature", "_UI_PortInstance_type"),
+				 InstancePackage.Literals.PORT_INSTANCE__RUNNABLE,
+				 true,
 				 false,
 				 true,
 				 null,

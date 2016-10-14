@@ -91,6 +91,10 @@
           <details key="documentation" value="A component instance is considered to be a top-level component instance if it is not embedded in a structured component instance."/>
         </eAnnotations>
       </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="runnables" upperBound="-1"
+          eType="#//runnable/Runnable" eOpposite="#//runnable/Runnable/componentInstance"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="labels" upperBound="-1"
+          eType="#//runnable/Label" eOpposite="#//runnable/Label/componentInstance"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="PortConnectorInstance" abstract="true"
         eSuperTypes="#//connector/ConnectorInstance">
@@ -173,6 +177,8 @@
           <details key="documentation" value="If the enclosing component instance corresponds to a component part of a structured component, refers to the port part that corresponds to this port instance."/>
         </eAnnotations>
       </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="runnable" upperBound="-1"
+          eType="#//runnable/Runnable" eOpposite="#//runnable/Runnable/portInstance"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AssemblyConnectorInstance" eSuperTypes="#//instance/PortConnectorInstance">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3111,6 +3117,56 @@
           <details key="documentation" value="The variants of this pattern."/>
         </eAnnotations>
       </eStructuralFeatures>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="runnable" nsURI="http://www.muml.org/pim/runnable/1.0.0" nsPrefix="runnable">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The package runnable contains all classes for modeling Runnables, Labels and LabelAccesses.&#xD;&#xA;&#xD;&#xA;These are used for deriving a sheduling for time-triggered systems, e.g., in case of multi-core target platforms and for the transformation to APP4MC"/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="Runnable" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A Runnable represents executable (i.e., schedulable) code in a time-triggered system.&#xD;&#xA;&#xD;&#xA;For example, this is used when deriving a scheduling for a multi-core target platform."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstance" lowerBound="1"
+          eType="#//instance/ComponentInstance" eOpposite="#//instance/ComponentInstance/runnables"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="portInstance" upperBound="-1"
+          eType="#//instance/PortInstance" eOpposite="#//instance/PortInstance/runnable"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="period" lowerBound="1"
+          eType="#//valuetype/TimeValue" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="labelAccesses" upperBound="-1"
+          eType="#//runnable/LabelAccess" eOpposite="#//runnable/LabelAccess/accessingRunnable"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="deadline" eType="#//valuetype/TimeValue"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Label" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Models a Label, i.e., variable that is beeing read or written during execution.&#xD;&#xA;&#xD;&#xA;A label (e.g., variable, RTSC state) can be either read or written during execution. This information is important when deriving a multi-core scheduling in order to respect dependencies between Runnables and to avoid access conflicts."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstance" lowerBound="1"
+          eType="#//instance/ComponentInstance" eOpposite="#//instance/ComponentInstance/labels"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="componentStatechart"
+          eType="#//realtimestatechart/RealtimeStatechart"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isConstant" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="false"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LabelAccess" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Models a LabelAccess, i.e., reading or writing a certain variable or RTSC state.&#xD;&#xA;&#xD;&#xA;A label (e.g., variable, RTSC state) can be either read or written during execution. This information is important when deriving a multi-core scheduling in order to respect dependencies between Runnables and to avoid access conflicts."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessKind" lowerBound="1"
+          eType="#//runnable/LabelAccessKind"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="accessLabel" lowerBound="1"
+          eType="#//runnable/Label"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="accessingRunnable" lowerBound="1"
+          eType="#//runnable/Runnable" eOpposite="#//runnable/Runnable/labelAccesses"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="LabelAccessKind">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Different kinds of LabelAccesses.&#xD;&#xA;&#xD;&#xA;A label (e.g., variable, RTSC state) can be either read or written during execution. This information is important when deriving a multi-core scheduling in order to respect dependencies between Runnables and to avoid access conflicts."/>
+      </eAnnotations>
+      <eLiterals name="READACCESS" literal="READACCESS"/>
+      <eLiterals name="WRITEACCESS" value="1" literal="WRITEACCESS"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

@@ -138,4 +138,12 @@
             class="org.muml.pim.pattern.PatternPackage"
             genModel="model/pim.genmodel"/>
    </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pim -->
+      <package
+            uri="http://www.muml.org/pim/runnable/1.0.0"
+            class="org.muml.pim.runnable.RunnablePackage"
+            genModel="model/pim.genmodel"/>
+   </extension>
 </plugin>

@@ -48,6 +48,8 @@ import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
 import org.muml.pim.realtimestatechart.impl.RealtimestatechartPackageImpl;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.impl.One_to_n_schemataPackageImpl;
+import org.muml.pim.runnable.RunnablePackage;
+import org.muml.pim.runnable.impl.RunnablePackageImpl;
 import org.muml.pim.types.TypesPackage;
 import org.muml.pim.types.impl.TypesPackageImpl;
 import org.muml.pim.valuetype.ValuetypePackage;
@@ -157,6 +159,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		ValuetypePackageImpl theValuetypePackage = (ValuetypePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI) instanceof ValuetypePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI) : ValuetypePackage.eINSTANCE);
 		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 		ComponentPackageImpl theComponentPackage = (ComponentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) instanceof ComponentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) : ComponentPackage.eINSTANCE);
+		RunnablePackageImpl theRunnablePackage = (RunnablePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RunnablePackage.eNS_URI) instanceof RunnablePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RunnablePackage.eNS_URI) : RunnablePackage.eINSTANCE);
 
 		// Create package meta-data objects
 		thePatternPackage.createPackageContents();
@@ -172,6 +175,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		theValuetypePackage.createPackageContents();
 		theBehaviorPackage.createPackageContents();
 		theComponentPackage.createPackageContents();
+		theRunnablePackage.createPackageContents();
 
 		// Initialize created meta-data
 		thePatternPackage.initializePackageContents();
@@ -187,6 +191,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		theValuetypePackage.initializePackageContents();
 		theBehaviorPackage.initializePackageContents();
 		theComponentPackage.initializePackageContents();
+		theRunnablePackage.initializePackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put

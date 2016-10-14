@@ -27,6 +27,10 @@
             ecoreFeature="ecore:EReference pim.ecore#//instance/ComponentInstance/componentPart"/>
         <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//instance/ComponentInstance/parentCIC"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//instance/ComponentInstance/topLevel"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//instance/ComponentInstance/runnables"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//instance/ComponentInstance/labels"/>
       </genClasses>
       <genClasses image="false" ecoreClass="pim.ecore#//instance/PortConnectorInstance">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//instance/PortConnectorInstance/portConnectorType"/>
@@ -39,6 +43,8 @@
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//instance/PortInstance/portConnectorInstances"/>
         <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference pim.ecore#//instance/PortInstance/portPart"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//instance/PortInstance/runnable"/>
       </genClasses>
       <genClasses ecoreClass="pim.ecore#//instance/AssemblyConnectorInstance">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//instance/AssemblyConnectorInstance/assemblyConnectorType"/>
@@ -616,6 +622,37 @@
             ecoreFeature="ecore:EReference pim.ecore#//pattern/CoordinationPattern/alternativePatterns"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//pattern/CoordinationPattern/descriptionAspects"/>
         <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference pim.ecore#//pattern/CoordinationPattern/patternVariants"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Runnable" basePackage="org.muml.pim" disposableProviderFactory="true"
+        ecorePackage="pim.ecore#//runnable">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="pim.ecore#//runnable/LabelAccessKind">
+        <genEnumLiterals ecoreEnumLiteral="pim.ecore#//runnable/LabelAccessKind/READACCESS"/>
+        <genEnumLiterals ecoreEnumLiteral="pim.ecore#//runnable/LabelAccessKind/WRITEACCESS"/>
+      </genEnums>
+      <genClasses ecoreClass="pim.ecore#//runnable/Runnable">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//runnable/Runnable/componentInstance"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//runnable/Runnable/portInstance"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//runnable/Runnable/period"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//runnable/Runnable/labelAccesses"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//runnable/Runnable/deadline"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//runnable/Label">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//runnable/Label/componentInstance"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//runnable/Label/componentStatechart"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//runnable/Label/isConstant"/>
+      </genClasses>
+      <genClasses ecoreClass="pim.ecore#//runnable/LabelAccess">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pim.ecore#//runnable/LabelAccess/accessKind"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//runnable/LabelAccess/accessLabel"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pim.ecore#//runnable/LabelAccess/accessingRunnable"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>

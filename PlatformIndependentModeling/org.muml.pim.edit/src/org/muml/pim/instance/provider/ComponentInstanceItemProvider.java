@@ -58,6 +58,8 @@ public class ComponentInstanceItemProvider
 			addComponentPartPropertyDescriptor(object);
 			addParentCICPropertyDescriptor(object);
 			addTopLevelPropertyDescriptor(object);
+			addRunnablesPropertyDescriptor(object);
+			addLabelsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -168,6 +170,50 @@ public class ComponentInstanceItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Runnables feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRunnablesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComponentInstance_runnables_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstance_runnables_feature", "_UI_ComponentInstance_type"),
+				 InstancePackage.Literals.COMPONENT_INSTANCE__RUNNABLES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Labels feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLabelsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComponentInstance_labels_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstance_labels_feature", "_UI_ComponentInstance_type"),
+				 InstancePackage.Literals.COMPONENT_INSTANCE__LABELS,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

@@ -51,6 +51,8 @@ import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
 import org.muml.pim.realtimestatechart.impl.RealtimestatechartPackageImpl;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.impl.One_to_n_schemataPackageImpl;
+import org.muml.pim.runnable.RunnablePackage;
+import org.muml.pim.runnable.impl.RunnablePackageImpl;
 import org.muml.pim.types.TypesPackage;
 import org.muml.pim.types.impl.TypesPackageImpl;
 import org.muml.pim.valuetype.ValuetypePackage;
@@ -223,6 +225,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 		ComponentPackageImpl theComponentPackage = (ComponentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) instanceof ComponentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) : ComponentPackage.eINSTANCE);
 		PatternPackageImpl thePatternPackage = (PatternPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI) instanceof PatternPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI) : PatternPackage.eINSTANCE);
+		RunnablePackageImpl theRunnablePackage = (RunnablePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RunnablePackage.eNS_URI) instanceof RunnablePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RunnablePackage.eNS_URI) : RunnablePackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theInstancePackage.createPackageContents();
@@ -238,6 +241,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		theBehaviorPackage.createPackageContents();
 		theComponentPackage.createPackageContents();
 		thePatternPackage.createPackageContents();
+		theRunnablePackage.createPackageContents();
 
 		// Initialize created meta-data
 		theInstancePackage.initializePackageContents();
@@ -253,6 +257,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		theBehaviorPackage.initializePackageContents();
 		theComponentPackage.initializePackageContents();
 		thePatternPackage.initializePackageContents();
+		theRunnablePackage.initializePackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
@@ -331,6 +336,24 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getComponentInstance_Runnables() {
+		return (EReference)componentInstanceEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getComponentInstance_Labels() {
+		return (EReference)componentInstanceEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPortConnectorInstance() {
 		return portConnectorInstanceEClass;
 	}
@@ -396,6 +419,15 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 */
 	public EReference getPortInstance_PortPart() {
 		return (EReference)portInstanceEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPortInstance_Runnable() {
+		return (EReference)portInstanceEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -675,6 +707,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		createEReference(componentInstanceEClass, COMPONENT_INSTANCE__COMPONENT_PART);
 		createEReference(componentInstanceEClass, COMPONENT_INSTANCE__PARENT_CIC);
 		createEAttribute(componentInstanceEClass, COMPONENT_INSTANCE__TOP_LEVEL);
+		createEReference(componentInstanceEClass, COMPONENT_INSTANCE__RUNNABLES);
+		createEReference(componentInstanceEClass, COMPONENT_INSTANCE__LABELS);
 
 		portConnectorInstanceEClass = createEClass(PORT_CONNECTOR_INSTANCE);
 		createEReference(portConnectorInstanceEClass, PORT_CONNECTOR_INSTANCE__PORT_CONNECTOR_TYPE);
@@ -685,6 +719,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		createEReference(portInstanceEClass, PORT_INSTANCE__COMPONENT_INSTANCE);
 		createEReference(portInstanceEClass, PORT_INSTANCE__PORT_CONNECTOR_INSTANCES);
 		createEReference(portInstanceEClass, PORT_INSTANCE__PORT_PART);
+		createEReference(portInstanceEClass, PORT_INSTANCE__RUNNABLE);
 
 		assemblyConnectorInstanceEClass = createEClass(ASSEMBLY_CONNECTOR_INSTANCE);
 		createEReference(assemblyConnectorInstanceEClass, ASSEMBLY_CONNECTOR_INSTANCE__ASSEMBLY_CONNECTOR_TYPE);
@@ -751,6 +786,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		// Obtain other dependent packages
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
+		RunnablePackage theRunnablePackage = (RunnablePackage)EPackage.Registry.INSTANCE.getEPackage(RunnablePackage.eNS_URI);
 		ConnectorPackage theConnectorPackage = (ConnectorPackage)EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI);
 		ConstraintPackage theConstraintPackage = (ConstraintPackage)EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI);
 		MsgtypePackage theMsgtypePackage = (MsgtypePackage)EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI);
@@ -788,6 +824,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		initEReference(getComponentInstance_ComponentPart(), theComponentPackage.getComponentPart(), null, "componentPart", null, 0, 1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentInstance_ParentCIC(), this.getComponentInstanceConfiguration(), this.getComponentInstanceConfiguration_ComponentInstances(), "parentCIC", null, 1, 1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponentInstance_TopLevel(), ecorePackage.getEBoolean(), "topLevel", "true", 0, 1, ComponentInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentInstance_Runnables(), theRunnablePackage.getRunnable(), theRunnablePackage.getRunnable_ComponentInstance(), "runnables", null, 0, -1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentInstance_Labels(), theRunnablePackage.getLabel(), theRunnablePackage.getLabel_ComponentInstance(), "labels", null, 0, -1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(portConnectorInstanceEClass, PortConnectorInstance.class, "PortConnectorInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPortConnectorInstance_PortConnectorType(), theComponentPackage.getPortConnector(), null, "portConnectorType", null, 0, 1, PortConnectorInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -798,6 +836,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		initEReference(getPortInstance_ComponentInstance(), this.getComponentInstance(), this.getComponentInstance_PortInstances(), "componentInstance", null, 0, 1, PortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPortInstance_PortConnectorInstances(), this.getPortConnectorInstance(), null, "portConnectorInstances", null, 0, -1, PortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getPortInstance_PortPart(), theComponentPackage.getPortPart(), null, "portPart", null, 0, 1, PortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPortInstance_Runnable(), theRunnablePackage.getRunnable(), theRunnablePackage.getRunnable_PortInstance(), "runnable", null, 0, -1, PortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(assemblyConnectorInstanceEClass, AssemblyConnectorInstance.class, "AssemblyConnectorInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAssemblyConnectorInstance_AssemblyConnectorType(), theComponentPackage.getAssemblyConnector(), null, "assemblyConnectorType", null, 0, 1, AssemblyConnectorInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);

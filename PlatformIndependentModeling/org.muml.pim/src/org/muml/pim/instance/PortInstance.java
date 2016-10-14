@@ -28,6 +28,7 @@ import org.muml.pim.connector.ConnectorEndpointInstance;
  *   <li>{@link org.muml.pim.instance.PortInstance#getComponentInstance <em>Component Instance</em>}</li>
  *   <li>{@link org.muml.pim.instance.PortInstance#getPortConnectorInstances <em>Port Connector Instances</em>}</li>
  *   <li>{@link org.muml.pim.instance.PortInstance#getPortPart <em>Port Part</em>}</li>
+ *   <li>{@link org.muml.pim.instance.PortInstance#getRunnable <em>Runnable</em>}</li>
  * </ul>
  *
  * @see org.muml.pim.instance.InstancePackage#getPortInstance()
@@ -117,5 +118,23 @@ public interface PortInstance extends ConnectorEndpointInstance {
 	 * @generated
 	 */
 	PortPart getPortPart();
+
+	/**
+	 * Returns the value of the '<em><b>Runnable</b></em>' reference list.
+	 * The list contents are of type {@link org.muml.pim.runnable.Runnable}.
+	 * It is bidirectional and its opposite is '{@link org.muml.pim.runnable.Runnable#getPortInstance <em>Port Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Runnable</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Runnable</em>' reference list.
+	 * @see org.muml.pim.instance.InstancePackage#getPortInstance_Runnable()
+	 * @see org.muml.pim.runnable.Runnable#getPortInstance
+	 * @model opposite="portInstance"
+	 * @generated
+	 */
+	EList<org.muml.pim.runnable.Runnable> getRunnable();
 
 } // PortInstance

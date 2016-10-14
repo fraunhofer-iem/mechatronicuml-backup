@@ -53,6 +53,8 @@ import org.muml.pim.realtimestatechart.one_to_n_schemata.SendingOneToManyCommuni
 import org.muml.pim.realtimestatechart.one_to_n_schemata.SingleReceive;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.Unicast;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.util.One_to_n_schemataValidator;
+import org.muml.pim.runnable.RunnablePackage;
+import org.muml.pim.runnable.impl.RunnablePackageImpl;
 import org.muml.pim.types.TypesPackage;
 import org.muml.pim.types.impl.TypesPackageImpl;
 import org.muml.pim.valuetype.ValuetypePackage;
@@ -190,6 +192,7 @@ public class One_to_n_schemataPackageImpl extends EPackageImpl implements One_to
 		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 		ComponentPackageImpl theComponentPackage = (ComponentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) instanceof ComponentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) : ComponentPackage.eINSTANCE);
 		PatternPackageImpl thePatternPackage = (PatternPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI) instanceof PatternPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI) : PatternPackage.eINSTANCE);
+		RunnablePackageImpl theRunnablePackage = (RunnablePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RunnablePackage.eNS_URI) instanceof RunnablePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RunnablePackage.eNS_URI) : RunnablePackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theOne_to_n_schemataPackage.createPackageContents();
@@ -205,6 +208,7 @@ public class One_to_n_schemataPackageImpl extends EPackageImpl implements One_to
 		theBehaviorPackage.createPackageContents();
 		theComponentPackage.createPackageContents();
 		thePatternPackage.createPackageContents();
+		theRunnablePackage.createPackageContents();
 
 		// Initialize created meta-data
 		theOne_to_n_schemataPackage.initializePackageContents();
@@ -220,6 +224,7 @@ public class One_to_n_schemataPackageImpl extends EPackageImpl implements One_to
 		theBehaviorPackage.initializePackageContents();
 		theComponentPackage.initializePackageContents();
 		thePatternPackage.initializePackageContents();
+		theRunnablePackage.initializePackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
