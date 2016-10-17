@@ -29,9 +29,11 @@ Require-Bundle: org.eclipse.core.resources;bundle-version="3.8.1",
  org.muml.uppaal.adapter.results,
  org.muml.graphviz.blackbox;resolution:=optional,
  org.muml.graphviz;resolution:=optional,
- org.muml.uppaal.job;bundle-version="0.5.0"
+ org.muml.uppaal.job;bundle-version="0.5.0",
+ org.muml.uppaal.adapter.blackbox;bundle-version="0.5.0"
 Export-Package: org.muml.uppaal.adapter.job,
- org.muml.uppaal.adapter.job.interfaces
+ org.muml.uppaal.adapter.job.interfaces,
+ org.muml.uppaal.adapter.job.statistics
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Import-Package: org.muml.uppaal.options

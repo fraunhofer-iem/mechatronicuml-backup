@@ -17,11 +17,13 @@ import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.muml.core.NamedElement;
 import org.muml.pim.constraint.VerifiableElement;
 import org.muml.pim.constraint.VerificationConstraintRepository;
+import org.muml.uppaal.adapter.blackbox.ProgressLibrary;
 import org.muml.uppaal.adapter.job.interfaces.VerificationOptionsProvider;
 import org.muml.uppaal.adapter.job.interfaces.VerificationPropertyChoiceProvider;
 import org.muml.uppaal.adapter.job.interfaces.VerificationPropertyResultAcceptor;
 import org.muml.uppaal.adapter.job.operations.PrepareModelOperation;
 import org.muml.uppaal.adapter.job.operations.TransformationOperation;
+import org.muml.uppaal.adapter.job.statistics.StatisticalEvaluation;
 import org.muml.uppaal.adapter.mtctl.Property;
 import org.muml.uppaal.adapter.results.PropertyResultRepository;
 import org.muml.uppaal.options.Options;
@@ -53,6 +55,8 @@ public class VerifyForResultsJob extends Job {
 	
 	@Override
 	protected IStatus run(IProgressMonitor monitor) {
+		StatisticalEvaluation statisticalEvaluation = new StatisticalEvaluation(null); // XXX add qvto IContext
+		ProgressLibrary.addProgressListener(statisticalEvaluation);
 		
 		try {
 			SubMonitor subMonitor = SubMonitor.convert(monitor, this.getName(), 100);
@@ -115,6 +119,8 @@ public class VerifyForResultsJob extends Job {
 		}
 		finally {
 			monitor.done();
+			ProgressLibrary.removeProgressListener(statisticalEvaluation);
 		}
 	}
 }
+
