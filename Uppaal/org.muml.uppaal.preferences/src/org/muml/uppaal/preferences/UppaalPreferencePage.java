@@ -1,7 +1,13 @@
 package org.muml.uppaal.preferences;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IConfigurationElement;
+import org.eclipse.core.runtime.Platform;
+import org.eclipse.jface.preference.FieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.jface.preference.FileFieldEditor;
 import org.eclipse.jface.preference.StringFieldEditor;
@@ -13,9 +19,23 @@ import org.eclipse.ui.IWorkbenchPreferencePage;
 public class UppaalPreferencePage extends FieldEditorPreferencePage
 		implements IWorkbenchPreferencePage {
 
+	private List<IUppaalPreferencesPageExtension> extensions = new ArrayList<IUppaalPreferencesPageExtension>();
+	
 	public UppaalPreferencePage() {
 		super(GRID);
 
+		for (IConfigurationElement element : Platform.getExtensionRegistry().
+		        getConfigurationElementsFor("org.muml.uppaal.preferences.preferencesPageExtension")) {
+			Object impl = null;
+			try {
+				impl = element.createExecutableExtension("implementation");
+			} catch (CoreException e) {
+				e.printStackTrace();
+			}
+			if (impl instanceof IUppaalPreferencesPageExtension) {
+				extensions.add((IUppaalPreferencesPageExtension) impl);
+			}
+		}
 	}
 
 	@Override
@@ -26,51 +46,24 @@ public class UppaalPreferencePage extends FieldEditorPreferencePage
 
 	public void createFieldEditors() {
 		Composite parent = getFieldEditorParent();
-
-		StringFieldEditor uppaalPathEditor = new FileFieldEditor(
-				UppaalPreferencesPlugin.VERIFYTA_KEY, "&UPPAAL verifyta path:", parent) {
-			protected boolean doCheckState() {
-				// Allow empty string
-				String fileName = getStringValue();
-				fileName = fileName.trim();
-				if (fileName.length() == 0 && isEmptyStringAllowed()) {
-					return true;
-				}
-
-				// Make sure the uppaal binary can be found.
-				File verifyta = getVerifyTAFile();
-				return isValidVerifyTAFile(verifyta);
-			}
-
-			@Override
-			protected void doStore() {
-				File binary = getVerifyTAFile();
-				getPreferenceStore().setValue(getPreferenceName(),
-						binary.getAbsolutePath());
-			}
-
-			private File getVerifyTAFile() {
-				
-				return new File(getStringValue());
-			
-			}
-			
-			private boolean isValidVerifyTAFile(File file) {
-				
-				return file.isFile() && file.getName().toLowerCase().startsWith("verifyta");
-			}
-
-		};
-		uppaalPathEditor
-				.setErrorMessage("File is not recognized as UPPAAL verifyta binary.");
-		uppaalPathEditor.setEmptyStringAllowed(true);
-		addField(uppaalPathEditor);
+		for (IUppaalPreferencesPageExtension extension : extensions) {
+			extension.createTableControls(parent);
+		}
 	}
+	
+	// Override to make public
+    public void addField(FieldEditor editor) {
+    	super.addField(editor);
+    }
+
 
 	@Override
 	public void init(IWorkbench workbench) {
 		setPreferenceStore(UppaalPreferencesPlugin.getDefault()
 				.getPreferenceStore());
 		setDescription("UPPAAL Preferences");
+		for (IUppaalPreferencesPageExtension extension : extensions) {
+			extension.init(this, workbench);
+		}
 	}
 }

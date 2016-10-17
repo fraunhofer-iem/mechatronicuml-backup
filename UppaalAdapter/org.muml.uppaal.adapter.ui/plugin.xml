@@ -211,5 +211,14 @@
             name="MechatronicUML to Uppaal">
       </wizard>
    </extension>
+   
+   
+   <!-- extend verification preferences with additional controls -->
+   <extension
+         point="org.muml.uppaal.preferences.preferencesPageExtension">
+      <preferencesPageExtension
+            implementation="org.muml.uppaal.preferences.DefaultUppaalPreferencesPageExtension">
+      </preferencesPageExtension>
+   </extension>
 
 </plugin>
