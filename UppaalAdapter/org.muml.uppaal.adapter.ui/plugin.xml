@@ -216,8 +216,8 @@
    <!-- extend verification preferences with additional controls -->
    <extension
          point="org.muml.uppaal.preferences.preferencesPageExtension">
-      <preferencesPageExtension
-            implementation="org.muml.uppaal.preferences.DefaultUppaalPreferencesPageExtension">
+      <preferencesPageExtension id="org.muml.uppaal.adapter.ui.preferences.UppaalAdapterPreferencesExtension" after="org.muml.uppaal.preferences.DefaultUppaalPreferencesPageExtension"
+            implementation="org.muml.uppaal.adapter.ui.preferences.UppaalAdapterPreferencesExtension">
       </preferencesPageExtension>
    </extension>
 

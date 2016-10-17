@@ -13,7 +13,7 @@
    </extension>
    <extension
          point="org.muml.uppaal.preferences.preferencesPageExtension">
-      <preferencesPageExtension
+      <preferencesPageExtension id="org.muml.uppaal.preferences.DefaultUppaalPreferencesPageExtension"
             implementation="org.muml.uppaal.preferences.DefaultUppaalPreferencesPageExtension">
       </preferencesPageExtension>
    </extension>
