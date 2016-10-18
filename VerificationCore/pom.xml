@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.muml.verification.core.group</groupId>
+  <artifactId>VerificationCore</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <modules>
+    <module>org.muml.verification.core.actionlanguage.interpreter</module>
+    <module>org.muml.verification.core.actionlanguage.interpreter.test</module>
+    <!-- <module>org.muml.verification.core.buckminster</module> -->
+    <module>org.muml.verification.core.feature</module>
+    <module>org.muml.verification.core.reachanalysis.reachabilitygraph.cic</module>
+    <module>org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc</module>
+    <module>org.muml.verification.core.reachanalysis.rtsc</module>
+    <module>org.muml.verification.core.reachanalysis.rtsc.test</module>
+    <module>org.muml.verification.core.refinement.testautomata</module>
+    <module>org.muml.verification.core.repository</module>
+    <module>org.muml.verification.core.runtime</module>
+    <module>org.muml.verification.core.runtime.edit</module>
+    <!-- <module>org.muml.verification.core.sdk.feature</module> -->
+  </modules>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>0.26.0</version>
+        <extensions>true</extensions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
