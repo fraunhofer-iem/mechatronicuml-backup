@@ -17,6 +17,7 @@ import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.muml.core.NamedElement;
 import org.muml.pim.constraint.VerifiableElement;
 import org.muml.pim.constraint.VerificationConstraintRepository;
+import org.muml.uppaal.adapter.ProgressProvider;
 import org.muml.uppaal.adapter.blackbox.ProgressLibrary;
 import org.muml.uppaal.adapter.job.interfaces.VerificationOptionsProvider;
 import org.muml.uppaal.adapter.job.interfaces.VerificationPropertyChoiceProvider;
@@ -56,7 +57,7 @@ public class VerifyForResultsJob extends Job {
 	@Override
 	protected IStatus run(IProgressMonitor monitor) {
 		StatisticalEvaluation statisticalEvaluation = new StatisticalEvaluation(null); // XXX add qvto IContext
-		ProgressLibrary.addProgressListener(statisticalEvaluation);
+		ProgressProvider.getDefault().addProgressListener(statisticalEvaluation);
 		
 		try {
 			SubMonitor subMonitor = SubMonitor.convert(monitor, this.getName(), 100);
@@ -119,7 +120,7 @@ public class VerifyForResultsJob extends Job {
 		}
 		finally {
 			monitor.done();
-			ProgressLibrary.removeProgressListener(statisticalEvaluation);
+			ProgressProvider.getDefault().removeProgressListener(statisticalEvaluation);
 		}
 	}
 }

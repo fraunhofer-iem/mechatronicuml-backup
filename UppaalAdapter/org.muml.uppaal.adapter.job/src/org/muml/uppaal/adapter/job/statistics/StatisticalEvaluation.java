@@ -5,7 +5,7 @@ import java.util.Map;
 
 import org.eclipse.m2m.qvt.oml.util.IContext;
 
-public class StatisticalEvaluation implements org.muml.uppaal.adapter.blackbox.ProgressLibrary.ProgressListener {
+public class StatisticalEvaluation implements org.muml.uppaal.adapter.ProgressListener {
 
 	private IContext context;
 	private Map<String, Integer> timestamps = new HashMap<String, Integer>();

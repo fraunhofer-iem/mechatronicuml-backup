@@ -1,11 +1,9 @@
 package org.muml.uppaal.adapter.blackbox;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.m2m.qvt.oml.blackbox.java.Operation;
 import org.eclipse.m2m.qvt.oml.util.IContext;
+import org.muml.uppaal.adapter.ProgressProvider;
 
 /**
  * Reports progress to either the running transformation job or the console
@@ -13,17 +11,6 @@ import org.eclipse.m2m.qvt.oml.util.IContext;
  */
 public class ProgressLibrary {
 	public ProgressLibrary() {}
-	private static List<ProgressListener> progressListeners = new ArrayList<ProgressListener>();
-	public interface ProgressListener {
-		public void reportProgress(IContext context, String nextTask);
-	}
-	public static void addProgressListener(ProgressListener listener) {
-		progressListeners.add(listener);
-	}
-	public static void removeProgressListener(ProgressListener listener) {
-		progressListeners.remove(listener);
-	}
-	
 	/**
 	 * Reports that nextTask now begins
 	 */
@@ -35,8 +22,6 @@ public class ProgressLibrary {
 		else
 			System.out.println("Starting \""+nextTask+"\"");
 		
-		for (ProgressListener listener : progressListeners) {
-			listener.reportProgress(context, nextTask);
-		}
+		ProgressProvider.getDefault().reportProgress(context, nextTask);
 	}
 }
