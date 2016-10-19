@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.muml.pim.group</groupId>
+  <artifactId>PlatformIndependentModeling</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  
+  <dependencies>
+		<dependency>
+			<groupId>org.eclipse.xtend</groupId>
+			<artifactId>org.eclipse.xtend.lib</artifactId>
+			<version>2.10.0</version>
+		</dependency>
+   </dependencies>
+  
+  <modules>
+    <module>org.muml.pim</module>
+    <module>org.muml.pim.actionlanguage</module>
+    <module>org.muml.pim.actionlanguage.edit</module>
+    <module>org.muml.pim.actionlanguage.edit.properties</module>
+    <module>org.muml.pim.actionlanguage.xtext</module>
+    <module>org.muml.pim.actionlanguage.xtext.tests</module>
+    <module>org.muml.pim.actionlanguage.xtext.ui</module>
+    <!-- <module>org.muml.pim.buckminster</module> -->
+    <module>org.muml.pim.common</module>
+    <module>org.muml.pim.component.diagram</module>
+    <module>org.muml.pim.component.diagram.custom</module>
+    <module>org.muml.pim.componentinstanceconfiguration.diagram</module>
+    <module>org.muml.pim.componentinstanceconfiguration.diagram.custom</module>
+    <module>org.muml.pim.coordinationprotocol.diagram</module>
+    <module>org.muml.pim.coordinationprotocol.diagram.custom</module>
+    <module>org.muml.pim.coordinationspecification.common</module>
+    <module>org.muml.pim.doc</module>
+    <module>org.muml.pim.edit</module>
+    <module>org.muml.pim.edit.properties</module>
+    <module>org.muml.pim.feature</module>
+    <module>org.muml.pim.messagetype.diagram</module>
+    <module>org.muml.pim.messagetype.diagram.custom</module>
+    <module>org.muml.pim.onetomanycommunicationschemata</module>
+    <module>org.muml.pim.operationrepository.diagram</module>
+    <module>org.muml.pim.operationrepository.diagram.custom</module>
+    <module>org.muml.pim.pattern.diagram</module>
+    <module>org.muml.pim.pattern.diagram.custom</module>
+    <module>org.muml.pim.realtimestatechart.diagram</module>
+    <module>org.muml.pim.realtimestatechart.diagram.custom</module>
+    <module>org.muml.pim.repository</module>
+    <module>org.muml.pim.runnable.transformation</module>
+    <module>org.muml.pim.runnable.transformation.blackbox</module>
+    <!-- <module>org.muml.pim.sdk.feature</module> -->
+    <module>org.muml.pim.tests</module>
+    <module>org.muml.pim.types</module>
+    <module>org.muml.pim.ui</module>
+  </modules>
+ 
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>0.26.0</version>
+        <extensions>true</extensions>
+      </plugin>
+      
+      <plugin>
+      <groupId>org.eclipse.xtend</groupId>
+      <artifactId>xtend-maven-plugin</artifactId>
+      <version>2.10.0</version>
+      <executions>
+        <execution>
+            <goals>
+                <goal>compile</goal>
+                <goal>xtend-install-debug-info</goal>
+                <goal>testCompile</goal>
+                <goal>xtend-test-install-debug-info</goal>
+            </goals>
+        </execution>
+      </executions>
+      <configuration>
+            <outputDirectory>xtend-gen</outputDirectory>
+      </configuration>
+    </plugin>
+    </plugins>
+  </build>
+  
+  <repositories>
+	    <!--<repository>
+            <id>xtend</id>
+            <url>http://build.eclipse.org/common/xtend/maven/</url>
+        </repository>-->
+		<!-- basic eclipse dependencies -->
+		<repository>
+			<id>eclipse-neon</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/neon</url>
+		</repository>
+		
+
+        <repository>
+            <id>xtext</id>
+            <layout>p2</layout>
+            <url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases</url>
+        </repository>
+        
+  </repositories>
+</project>

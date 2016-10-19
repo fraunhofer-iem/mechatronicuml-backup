@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.muml.pim.feature_0.5.0.qualifier.jar" id="org.muml.pim.feature" version="0.5.0.qualifier">
+      <category name="org.muml.pim.repository.category"/>
+   </feature>
+   <category-def name="org.muml.pim.repository.category" label="pim"/>
+</site>
