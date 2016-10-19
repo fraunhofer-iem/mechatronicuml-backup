@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.muml.graphviz.group</groupId>
+  <artifactId>GraphvizAdapter</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <modules>
+    <module>org.muml.graphviz</module>
+    <!--module>org.muml.graphviz.adapter.buckminster</module> -->
+    <module>org.muml.graphviz.blackbox</module>
+    <module>org.muml.graphviz.dot.xtext</module>
+    <module>org.muml.graphviz.dot.xtext.tests</module>
+    <module>org.muml.graphviz.dot.xtext.ui</module>
+    <module>org.muml.graphviz.edit</module>
+    <module>org.muml.graphviz.feature</module>
+    <module>org.muml.graphviz.plain.xtext</module>
+    <module>org.muml.graphviz.plain.xtext.tests</module>
+    <module>org.muml.graphviz.plain.xtext.ui</module>
+    <module>org.muml.graphviz.repository</module>
+  </modules>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>0.26.0</version>
+        <extensions>true</extensions>
+      </plugin>
+      
+      <plugin>
+      <groupId>org.eclipse.xtend</groupId>
+      <artifactId>xtend-maven-plugin</artifactId>
+      <version>2.10.0</version>
+      <executions>
+        <execution>
+            <goals>
+                <goal>compile</goal>
+                <goal>xtend-install-debug-info</goal>
+                <goal>testCompile</goal>
+                <goal>xtend-test-install-debug-info</goal>
+            </goals>
+        </execution>
+      </executions>
+      <configuration>
+            <outputDirectory>xtend-gen</outputDirectory>
+      </configuration>
+    </plugin>
+    </plugins>
+  </build>
+  
+    <repositories>
+		<repository>
+			<id>eclipse-neon</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/neon</url>
+		</repository>
+		
+        <repository>
+            <id>xtext</id>
+            <layout>p2</layout>
+            <url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases</url>
+        </repository>       
+    </repositories>
+  
+</project>

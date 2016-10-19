@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.muml.graphviz.feature_0.5.0.qualifier.jar" id="org.muml.graphviz.feature" version="0.5.0.qualifier">
+      <category name="org.muml.graphviz.repository.category"/>
+   </feature>
+   <category-def name="org.muml.graphviz.repository.category" label="graphviz"/>
+</site>
