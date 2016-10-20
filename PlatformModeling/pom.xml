@@ -119,7 +119,13 @@
 			<layout>p2</layout>
 			<url>file:///data/jenkins/jobs/PlatformIndependentModeling/lastSuccessful/archive/targetPlatform/</url>
 		</repository>
-
+        
+        <repository>
+            <id>xtext</id>
+            <layout>p2</layout>
+            <url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases</url>
+        </repository>
+        
         <repository>
 			<id>ModelCopy</id>
 			<layout>p2</layout>
