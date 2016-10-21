@@ -1392,7 +1392,7 @@
     <genPackage href="pim.genmodel#//pim/runnable"/>
     <classes>
       <genClass href="pim.genmodel#//pim/runnable/Runnable"/>
-      <orderedElements xsi:type="org.muml:Property">
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
         <genFeature href="pim.genmodel#//pim/runnable/Runnable/componentInstance"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
@@ -1406,6 +1406,16 @@
         <genFeature href="pim.genmodel#//pim/runnable/Runnable/labelAccesses"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property" initializeOCLExpression="">
+        <genFeature href="pim.genmodel#//pim/runnable/Runnable/period"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/runnable/Runnable/deadline"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ObjectPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:PropertyCategory" title="Lists" properties="//@packages.13/@classes.0/@orderedElements.1 //@packages.13/@classes.0/@orderedElements.2"/>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>

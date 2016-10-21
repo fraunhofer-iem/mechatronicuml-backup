@@ -27,6 +27,10 @@ public class RunnableEditor extends org.muml.ape.runtime.editors.ClassPropertyEd
 
 			addPropertyEditor(createEditorComponentInstance_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorPeriod_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorDeadline_property_tab_generalTab_Editor(), false);
+
 			addSubCategory("org.muml.ape.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 			addEditorToCategory("org.muml.ape.category.Lists",
@@ -56,6 +60,10 @@ public class RunnableEditor extends org.muml.ape.runtime.editors.ClassPropertyEd
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorComponentInstance_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorPeriod_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorDeadline_property_tab_generalTab_Editor(), false);
 
 			addSubCategory("org.muml.ape.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
@@ -112,6 +120,32 @@ public class RunnableEditor extends org.muml.ape.runtime.editors.ClassPropertyEd
 			this.editorLabelAccesses_property_tab_generalTab = editor;
 		}
 		return this.editorLabelAccesses_property_tab_generalTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPeriod_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPeriod_property_tab_generalTab_Editor() {
+		if (this.editorPeriod_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.runnable.RunnablePackage.eINSTANCE
+					.getRunnable_Period();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			this.editorPeriod_property_tab_generalTab = editor;
+		}
+		return this.editorPeriod_property_tab_generalTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDeadline_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorDeadline_property_tab_generalTab_Editor() {
+		if (this.editorDeadline_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.runnable.RunnablePackage.eINSTANCE
+					.getRunnable_Deadline();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			this.editorDeadline_property_tab_generalTab = editor;
+		}
+		return this.editorDeadline_property_tab_generalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_property_tab_generalTab;
@@ -181,7 +215,8 @@ public class RunnableEditor extends org.muml.ape.runtime.editors.ClassPropertyEd
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
-					"property.tab.general", "property.tab.general", "property.tab.extensions"}).contains(tab);
+					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.general",
+					"property.tab.extensions"}).contains(tab);
 		}
 	}
 
