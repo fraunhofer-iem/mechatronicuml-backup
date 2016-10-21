@@ -506,6 +506,21 @@
              type="http://www.muml.org/pim/1.0.0#Test">
        </propertyEditor>
     
+       <propertyEditor
+             factory="org.muml.pim.properties.runnable.editor.RunnableEditor$Factory"
+             type="http://www.muml.org/pim/runnable/1.0.0#Runnable">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.runnable.editor.LabelEditor$Factory"
+             type="http://www.muml.org/pim/runnable/1.0.0#Label">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.muml.pim.properties.runnable.editor.LabelAccessEditor$Factory"
+             type="http://www.muml.org/pim/runnable/1.0.0#LabelAccess">
+       </propertyEditor>
+    
     </propertyEditors>
  </extension>
 

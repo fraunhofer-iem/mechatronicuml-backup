@@ -44,6 +44,8 @@ public class MetamodelContributor implements org.muml.ape.runtime.metamodel.IMet
 
 		factories.add(new org.muml.pim.provider.PimItemProviderAdapterFactory());
 
+		factories.add(new org.muml.pim.runnable.provider.RunnableItemProviderAdapterFactory());
+
 	}
 
 }

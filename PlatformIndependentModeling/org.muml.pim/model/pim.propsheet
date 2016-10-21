@@ -511,6 +511,16 @@
         <genFeature href="pim.genmodel#//pim/instance/ComponentInstance/portInstances"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
       </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/instance/ComponentInstance/runnables"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/instance/ComponentInstance/labels"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
     </classes>
     <classes xmi:id="_VZPyZcwbEeSjx7OWZCcdLw" superClasses="_VZXuOMwbEeSjx7OWZCcdLw">
@@ -521,6 +531,11 @@
       <orderedElements xsi:type="org.muml:Property" xmi:id="_VZPyZ8wbEeSjx7OWZCcdLw" reconcile="false">
         <genFeature href="pim.genmodel#//pim/instance/PortInstance/componentInstance"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/instance/PortInstance/runnable"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes xmi:id="_VZPyacwbEeSjx7OWZCcdLw" superClasses="_VZPyZcwbEeSjx7OWZCcdLw">
@@ -1371,6 +1386,67 @@
     <genPackage href="pim.genmodel#//pim"/>
     <classes>
       <genClass href="pim.genmodel#//pim/Test"/>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="pim.genmodel#//pim/runnable"/>
+    <classes>
+      <genClass href="pim.genmodel#//pim/runnable/Runnable"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/runnable/Runnable/componentInstance"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/runnable/Runnable/portInstance"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/runnable/Runnable/labelAccesses"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:PropertyCategory" title="Lists" properties="//@packages.13/@classes.0/@orderedElements.1 //@packages.13/@classes.0/@orderedElements.2"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+    <classes>
+      <genClass href="pim.genmodel#//pim/runnable/Label"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/runnable/Label/componentInstance"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/runnable/Label/componentStatechart"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/runnable/Label/isConstant"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
+    </classes>
+    <classes>
+      <genClass href="pim.genmodel#//pim/runnable/LabelAccess"/>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/runnable/LabelAccess/accessKind"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/runnable/LabelAccess/accessLabel"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="org.muml:Property">
+        <genFeature href="pim.genmodel#//pim/runnable/LabelAccess/accessingRunnable"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
     </classes>
   </packages>
 </org.muml:PropertyGenerator>

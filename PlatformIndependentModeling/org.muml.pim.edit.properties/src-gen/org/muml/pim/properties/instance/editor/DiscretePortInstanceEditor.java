@@ -31,6 +31,8 @@ public abstract class DiscretePortInstanceEditor extends org.muml.ape.runtime.ed
 
 			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorRunnable_property_tab_generalTab_Editor(), false);
+
 			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
@@ -63,6 +65,8 @@ public abstract class DiscretePortInstanceEditor extends org.muml.ape.runtime.ed
 
 			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorRunnable_property_tab_generalTab_Editor(), false);
+
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
@@ -85,6 +89,19 @@ public abstract class DiscretePortInstanceEditor extends org.muml.ape.runtime.ed
 
 		} else {
 		}
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorRunnable_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorRunnable_property_tab_generalTab_Editor() {
+		if (this.editorRunnable_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.instance.InstancePackage.eINSTANCE
+					.getPortInstance_Runnable();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorRunnable_property_tab_generalTab = editor;
+		}
+		return this.editorRunnable_property_tab_generalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorType_property_tab_generalTab;

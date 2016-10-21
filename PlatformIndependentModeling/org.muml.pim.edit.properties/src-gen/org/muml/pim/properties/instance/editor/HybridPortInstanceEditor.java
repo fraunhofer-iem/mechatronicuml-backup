@@ -31,6 +31,8 @@ public class HybridPortInstanceEditor extends org.muml.ape.runtime.editors.Class
 
 			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorRunnable_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
@@ -53,6 +55,8 @@ public class HybridPortInstanceEditor extends org.muml.ape.runtime.editors.Class
 
 			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorRunnable_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
@@ -65,6 +69,19 @@ public class HybridPortInstanceEditor extends org.muml.ape.runtime.editors.Class
 
 		} else {
 		}
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorRunnable_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorRunnable_property_tab_generalTab_Editor() {
+		if (this.editorRunnable_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.instance.InstancePackage.eINSTANCE
+					.getPortInstance_Runnable();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorRunnable_property_tab_generalTab = editor;
+		}
+		return this.editorRunnable_property_tab_generalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorType_property_tab_generalTab;
@@ -164,10 +181,9 @@ public class HybridPortInstanceEditor extends org.muml.ape.runtime.editors.Class
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general", "property.tab.general", "property.tab.general",
-							"property.tab.documentation", "property.tab.extensions", "property.tab.general"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.general", "property.tab.documentation",
+					"property.tab.extensions", "property.tab.general"}).contains(tab);
 		}
 	}
 
