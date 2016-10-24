@@ -96,7 +96,7 @@ public class GenerateAll {
 		gen0.doGenerate(BasicMonitor.toMonitor(monitor));
 		Double finalTime = Double.valueOf(Double.valueOf(System.currentTimeMillis() - start)
 				.doubleValue() / 1000d);
-		System.out.println("Time to generate Modelica Code: "+finalTime);
+		System.err.println("Time to generate Modelica Code: "+finalTime);
 			
 		
 	}
