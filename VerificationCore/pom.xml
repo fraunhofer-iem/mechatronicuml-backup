@@ -67,5 +67,10 @@
 			<layout>p2</layout>
 			<url>file:///data/jenkins/jobs/PlatformIndependentModeling/lastSuccessful/archive/targetPlatform/</url>
 		</repository>
+        <repository>
+			<id>model-migration</id>
+			<layout>p2</layout>
+			<url>file:///data/jenkins/jobs/ModelMigration/lastSuccessful/archive/targetPlatform/</url>
+		</repository>
 	</repositories>	
 </project>
