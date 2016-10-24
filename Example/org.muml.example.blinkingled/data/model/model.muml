@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--muml metamodel version 0.3.2 (r15221)-->
-<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.muml.org/pim/actionlanguage/1.0.0" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:instance="http://www.muml.org/pim/instance/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmlns:sdcec="http://www.muml.org/core/expressions/common/1.0.0" xmlns:types="http://www.muml.org/pim/types/1.0.0" xmi:id="_yGfsoFL0EeWl58eUwm1Yvw">
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.muml.org/pim/actionlanguage/1.0.0" xmlns:allocation="http://www.muml.org/psm/allocation/1.0.0" xmlns:common="http://www.muml.org/core/expressions/common/1.0.0" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:hwplatform="http://www.muml.org/pm/hardware/hwplatform/1.0.0" xmlns:hwplatforminstance="http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0" xmlns:hwresource="http://www.muml.org/pm/hardware/hwresource/1.0.0" xmlns:hwresourceinstance="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0" xmlns:instance="http://www.muml.org/pim/instance/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmlns:types="http://www.muml.org/pim/types/1.0.0" xmi:id="_yGfsoFL0EeWl58eUwm1Yvw">
   <categories xmi:id="_yGfsoVL0EeWl58eUwm1Yvw" key="org.muml.types.category" name="types"/>
   <categories xmi:id="_yGgTu1L0EeWl58eUwm1Yvw" key="org.muml.pim.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_QbiYcFL1EeWl58eUwm1Yvw" name="rootRTSC" behavioralElement="_2sZgwFL0EeWl58eUwm1Yvw">
@@ -10,14 +9,14 @@
             <transitions xmi:id="_Yvmq8FL2EeWl58eUwm1Yvw" priority="1" target="_BVWnAFL2EeWl58eUwm1Yvw" source="_5KSqEFL1EeWl58eUwm1Yvw">
               <clockConstraints xmi:id="_dXFzcFL2EeWl58eUwm1Yvw" clock="_Fd-pQFL2EeWl58eUwm1Yvw" operator="GREATER_OR_EQUAL">
                 <bound xmi:id="_ef-uIFL2EeWl58eUwm1Yvw">
-                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_i-EqEFL2EeWl58eUwm1Yvw" value="500"/>
+                  <value xsi:type="common:LiteralExpression" xmi:id="_i-EqEFL2EeWl58eUwm1Yvw" value="500"/>
                 </bound>
               </clockConstraints>
             </transitions>
             <transitions xmi:id="_avL9EFL2EeWl58eUwm1Yvw" priority="1" target="_5KSqEFL1EeWl58eUwm1Yvw" source="_BVWnAFL2EeWl58eUwm1Yvw">
               <clockConstraints xmi:id="_gJBIgFL2EeWl58eUwm1Yvw" clock="_Fd-pQFL2EeWl58eUwm1Yvw" operator="GREATER_OR_EQUAL">
                 <bound xmi:id="_ggmiEFL2EeWl58eUwm1Yvw">
-                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_g7JJAFL2EeWl58eUwm1Yvw" value="500"/>
+                  <value xsi:type="common:LiteralExpression" xmi:id="_g7JJAFL2EeWl58eUwm1Yvw" value="500"/>
                 </bound>
               </clockConstraints>
             </transitions>
@@ -26,7 +25,7 @@
                 <action xmi:id="_lQpwsFL2EeWl58eUwm1Yvw" name="turnOff">
                   <expressions xsi:type="actionlanguage:Block" xmi:id="_oxNtYFL2EeWl58eUwm1Yvw">
                     <expressions xsi:type="actionlanguage:Assignment" xmi:id="_oxNtYVL2EeWl58eUwm1Yvw" assignOperator=":=">
-                      <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_oxNtYlL2EeWl58eUwm1Yvw" value="0"/>
+                      <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_oxNtYlL2EeWl58eUwm1Yvw" value="0"/>
                       <lhs_typedNamedElementExpression xmi:id="_oxNtY1L2EeWl58eUwm1Yvw" typedNamedElement="_86mIYFL0EeWl58eUwm1Yvw"/>
                     </expressions>
                   </expressions>
@@ -38,7 +37,7 @@
                 <action xmi:id="_pi_voFL2EeWl58eUwm1Yvw" name="turnOn">
                   <expressions xsi:type="actionlanguage:Block" xmi:id="_rusLIFL2EeWl58eUwm1Yvw">
                     <expressions xsi:type="actionlanguage:Assignment" xmi:id="_rusLIVL2EeWl58eUwm1Yvw" assignOperator=":=">
-                      <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_rusLIlL2EeWl58eUwm1Yvw" value="1"/>
+                      <rhs_assignExpression xsi:type="common:LiteralExpression" xmi:id="_rusLIlL2EeWl58eUwm1Yvw" value="1"/>
                       <lhs_typedNamedElementExpression xmi:id="_rusLI1L2EeWl58eUwm1Yvw" typedNamedElement="_86mIYFL0EeWl58eUwm1Yvw"/>
                     </expressions>
                   </expressions>
@@ -71,15 +70,15 @@
   <categories xmi:id="_yGgTv1L0EeWl58eUwm1Yvw" key="org.muml.pim.components.category" name="component">
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_2sZgwFL0EeWl58eUwm1Yvw" name="Main" behavior="_QbiYcFL1EeWl58eUwm1Yvw">
       <ports xsi:type="component:HybridPort" xmi:id="_86mIYFL0EeWl58eUwm1Yvw" name="LED_voltage" kind="OUT">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int8"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int8"/>
         <samplingInterval xmi:id="_LgNt8FL1EeWl58eUwm1Yvw">
-          <value xsi:type="sdcec:LiteralExpression" xmi:id="_ME69gFL1EeWl58eUwm1Yvw" value="50"/>
+          <value xsi:type="common:LiteralExpression" xmi:id="_ME69gFL1EeWl58eUwm1Yvw" value="50"/>
         </samplingInterval>
       </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_46ZpYFL0EeWl58eUwm1Yvw" name="LED" componentKind="continuous component">
       <ports xsi:type="component:ContinuousPort" xmi:id="_6WB54FL0EeWl58eUwm1Yvw" name="voltage">
-        <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/org.muml.pim.types/model/predefined.mumltypes#int8"/>
+        <dataType xsi:type="types:PrimitiveDataType" href="../../../plugin/org.muml.pim.types/model/predefined.mumltypes#int8"/>
       </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_3g4m0FL2EeWl58eUwm1Yvw" name="System" componentKind="hybrid component">
@@ -98,6 +97,97 @@
         <portParts xmi:id="_6Q0-4FL2EeWl58eUwm1Yvw" connectors="_7DQhYFL2EeWl58eUwm1Yvw" portType="_6WB54FL0EeWl58eUwm1Yvw"/>
       </embeddedComponentParts>
       <connectors xsi:type="component:AssemblyConnector" xmi:id="_7DQhYFL2EeWl58eUwm1Yvw" connectorEndpoints="_5AkQ4FL2EeWl58eUwm1Yvw _6Q0-4FL2EeWl58eUwm1Yvw"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_Q03BwJn3EeaXwNlr2mTDLg" key="org.muml.pm.hardware.hwplatform.category" name="hwplatform">
+    <modelElements xsi:type="hwplatform:HWPlatform" xmi:id="_Q09IYJn3EeaXwNlr2mTDLg" name="Platform">
+      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_qTjpsJn3EeaXwNlr2mTDLg" name="R1" resourceType="_mTiw4Jn3EeaXwNlr2mTDLg">
+        <cardinality xmi:id="_qTjpsZn3EeaXwNlr2mTDLg">
+          <lowerBound xmi:id="_02bLgJn3EeaXwNlr2mTDLg" value="2"/>
+          <upperBound xmi:id="_02jHUJn3EeaXwNlr2mTDLg" value="2"/>
+        </cardinality>
+        <hwPortParts xmi:id="_q5eaMJn3EeaXwNlr2mTDLg" connectors="_rj9hoJn3EeaXwNlr2mTDLg" hwport="_m0apUJn3EeaXwNlr2mTDLg"/>
+      </embeddedPlatformParts>
+      <networkingHardware xsi:type="hwplatform:NetworkBridge" xmi:id="_pZlUwJn3EeaXwNlr2mTDLg" connectors="_rj9hoJn3EeaXwNlr2mTDLg"/>
+      <networkConnectors xmi:id="_rj9hoJn3EeaXwNlr2mTDLg" connectorEndpoints="_q5eaMJn3EeaXwNlr2mTDLg _pZlUwJn3EeaXwNlr2mTDLg"/>
+    </modelElements>
+    <modelElements xsi:type="hwplatforminstance:HWPlatformInstanceConfiguration" xmi:id="_w6JjMJn3EeaXwNlr2mTDLg">
+      <hwplatformInstances xmi:id="_2I3DwJn3EeaXwNlr2mTDLg" name="Platform.0" hwplatformType="_Q09IYJn3EeaXwNlr2mTDLg">
+        <embeddedHPIC xmi:id="_2bMw8Jn3EeaXwNlr2mTDLg">
+          <networkingHardwareInstances xsi:type="hwplatforminstance:NetworkBridgeInstance" xmi:id="_2bXJAJn3EeaXwNlr2mTDLg" name="Bridge" comment="&quot;no comment provided&quot;.0" connectorInstances="_4tfjsJn3EeaXwNlr2mTDLg _-InIkJn3EeaXwNlr2mTDLg" type="_pZlUwJn3EeaXwNlr2mTDLg"/>
+          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_2bVT0Jn3EeaXwNlr2mTDLg" name="R1.0.1" resourceType="_TM1lwJn3EeaXwNlr2mTDLg">
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_2bVT0Zn3EeaXwNlr2mTDLg" name="C1" connectorInstances="_4tfjsJn3EeaXwNlr2mTDLg" type="_q5eaMJn3EeaXwNlr2mTDLg" communicationResource="_hBuR8Jn3EeaXwNlr2mTDLg"/>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_2bVT0pn3EeaXwNlr2mTDLg" name="P1" resourceType="_UH1OYJn3EeaXwNlr2mTDLg">
+              <frequency xmi:id="_2bVT05n3EeaXwNlr2mTDLg"/>
+            </embeddedAtomicResourceInstances>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_2bVT1Jn3EeaXwNlr2mTDLg" name="M1" resourceType="_UqDxsJn3EeaXwNlr2mTDLg">
+              <memorySize xmi:id="_2bVT1Zn3EeaXwNlr2mTDLg"/>
+            </embeddedAtomicResourceInstances>
+          </resources>
+          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_2bVT1pn3EeaXwNlr2mTDLg" name="R1.0.2" resourceType="_TM1lwJn3EeaXwNlr2mTDLg">
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_2bVT15n3EeaXwNlr2mTDLg" name="C1" connectorInstances="_-InIkJn3EeaXwNlr2mTDLg" type="_q5eaMJn3EeaXwNlr2mTDLg" communicationResource="_hBuR8Jn3EeaXwNlr2mTDLg"/>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_2bVT2Jn3EeaXwNlr2mTDLg" name="P1" resourceType="_UH1OYJn3EeaXwNlr2mTDLg">
+              <frequency xmi:id="_2bVT2Zn3EeaXwNlr2mTDLg"/>
+            </embeddedAtomicResourceInstances>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_2bVT2pn3EeaXwNlr2mTDLg" name="M1" resourceType="_UqDxsJn3EeaXwNlr2mTDLg">
+              <memorySize xmi:id="_2bVT25n3EeaXwNlr2mTDLg"/>
+            </embeddedAtomicResourceInstances>
+          </resources>
+          <networkConnectorInstances xmi:id="_4tfjsJn3EeaXwNlr2mTDLg" type="_rj9hoJn3EeaXwNlr2mTDLg" connectorEndpointInstances="_2bXJAJn3EeaXwNlr2mTDLg _2bVT0Zn3EeaXwNlr2mTDLg"/>
+          <networkConnectorInstances xmi:id="_-InIkJn3EeaXwNlr2mTDLg" type="_rj9hoJn3EeaXwNlr2mTDLg" connectorEndpointInstances="_2bXJAJn3EeaXwNlr2mTDLg _2bVT15n3EeaXwNlr2mTDLg"/>
+        </embeddedHPIC>
+      </hwplatformInstances>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_RrdSkJn3EeaXwNlr2mTDLg" key="org.muml.pm.hardware.hwresource.category" name="hwresource">
+    <modelElements xsi:type="hwresource:ResourceRepository" xmi:id="_RrdSkZn3EeaXwNlr2mTDLg">
+      <resources xsi:type="hwresource:StructuredResource" xmi:id="_TM1lwJn3EeaXwNlr2mTDLg" name="ECU">
+        <communicationResources xmi:id="_hBuR8Jn3EeaXwNlr2mTDLg" name="C1" protocol="_YBzJkJn3EeaXwNlr2mTDLg">
+          <cardinality xmi:id="_hBu5AJn3EeaXwNlr2mTDLg">
+            <lowerBound xmi:id="_hBu5AZn3EeaXwNlr2mTDLg"/>
+            <upperBound xmi:id="_hCkmgJn3EeaXwNlr2mTDLg"/>
+          </cardinality>
+        </communicationResources>
+        <embeddedAtomicResources xsi:type="hwresource:Processor" xmi:id="_UH1OYJn3EeaXwNlr2mTDLg" name="P1">
+          <nbCores xmi:id="_UH11cJn3EeaXwNlr2mTDLg"/>
+        </embeddedAtomicResources>
+        <embeddedAtomicResources xsi:type="hwresource:MemoryResource" xmi:id="_UqDxsJn3EeaXwNlr2mTDLg" name="M1"/>
+      </resources>
+      <protocols xmi:id="_Xrm3IJn3EeaXwNlr2mTDLg" name="C1">
+        <communicationProtocols xsi:type="hwresource:LinkProtocol" xmi:id="_YBzJkJn3EeaXwNlr2mTDLg" name="TCP">
+          <bandwidth xmi:id="_YB0-wJn3EeaXwNlr2mTDLg"/>
+        </communicationProtocols>
+      </protocols>
+    </modelElements>
+    <modelElements xsi:type="hwresourceinstance:ResourceInstanceRepository" xmi:id="_ltGb8Jn3EeaXwNlr2mTDLg">
+      <resourceInstances xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_mTiw4Jn3EeaXwNlr2mTDLg" name="S1" resourceType="_TM1lwJn3EeaXwNlr2mTDLg">
+        <hwports xmi:id="_m0apUJn3EeaXwNlr2mTDLg" name="C1" communicationResource="_hBuR8Jn3EeaXwNlr2mTDLg"/>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_m0KxsJn3EeaXwNlr2mTDLg" name="P1" resourceType="_UH1OYJn3EeaXwNlr2mTDLg">
+          <frequency xmi:id="_m0LYwJn3EeaXwNlr2mTDLg"/>
+        </embeddedAtomicResourceInstances>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_m0TUkJn3EeaXwNlr2mTDLg" name="M1" resourceType="_UqDxsJn3EeaXwNlr2mTDLg">
+          <memorySize xmi:id="_m0TUkZn3EeaXwNlr2mTDLg"/>
+        </embeddedAtomicResourceInstances>
+      </resourceInstances>
+    </modelElements>
+    <modelElements xsi:type="hwresourceinstance:ResourceInstanceRepository" xmi:id="_tqjasJn3EeaXwNlr2mTDLg"/>
+  </categories>
+  <categories xmi:id="_PPzBEJn6EeaXwNlr2mTDLg" key="org.muml.psm.allocation.category" name="allocation">
+    <modelElements xsi:type="allocation:SystemAllocation" xmi:id="_PPzBEZn6EeaXwNlr2mTDLg">
+      <allocations xmi:id="_PPzBEpn6EeaXwNlr2mTDLg">
+        <componentInstance xsi:type="instance:AtomicComponentInstance" href="#_JbMQQVL3EeWl58eUwm1Yvw"/>
+        <resourceInstance href="#_2bVT0Jn3EeaXwNlr2mTDLg"/>
+      </allocations>
+      <allocations xmi:id="_PPzBE5n6EeaXwNlr2mTDLg">
+        <componentInstance xsi:type="instance:AtomicComponentInstance" href="#_JbMQQ1L3EeWl58eUwm1Yvw"/>
+        <resourceInstance href="#_2bVT1pn3EeaXwNlr2mTDLg"/>
+      </allocations>
+      <allocations xmi:id="_PPzBFJn6EeaXwNlr2mTDLg">
+        <componentInstance xsi:type="instance:StructuredComponentInstance" href="#_Ik_BAFL3EeWl58eUwm1Yvw"/>
+        <resourceInstance href="#_2bVT0Jn3EeaXwNlr2mTDLg"/>
+      </allocations>
+      <cic href="#_HSyZUFL3EeWl58eUwm1Yvw"/>
+      <hpic href="#_w6JjMJn3EeaXwNlr2mTDLg"/>
     </modelElements>
   </categories>
 </modelinstance:RootNode>
