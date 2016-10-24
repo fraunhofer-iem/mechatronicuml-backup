@@ -29,6 +29,30 @@
         <version>0.26.0</version>
         <extensions>true</extensions>
       </plugin>
+       <plugin>
+            <groupId>org.eclipse.tycho</groupId>
+            <artifactId>target-platform-configuration</artifactId>
+            <version>0.26.0</version>
+            <configuration>
+              <environments>
+                <environment>
+                  <os>win32</os>
+                  <ws>win32</ws>
+                  <arch>x86</arch>
+                </environment>
+                <environment>
+                  <os>linux</os>
+                  <ws>gtk</ws>
+                  <arch>x86_64</arch>
+                </environment>
+                <environment>
+                  <os>macosx</os>
+                  <ws>cocoa</ws>
+                  <arch>x86_64</arch>
+                </environment>
+              </environments>
+            </configuration>
+        </plugin>
     </plugins>
   </build>
   
@@ -37,6 +61,11 @@
 			<id>eclipse-neon</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/releases/neon</url>
+		</repository>
+        <repository>
+			<id>PIM</id>
+			<layout>p2</layout>
+			<url>file:///data/jenkins/jobs/PlatformIndependentModeling/lastSuccessful/archive/targetPlatform/</url>
 		</repository>
 	</repositories>	
 </project>
