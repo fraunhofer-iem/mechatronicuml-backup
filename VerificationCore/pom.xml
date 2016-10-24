@@ -82,5 +82,15 @@
 			<layout>p2</layout>
 			<url>file:///data/jenkins/jobs/ModelCopy/lastSuccessful/archive/targetPlatform/</url>
 		</repository>
+        <repository>
+			<id>Core</id>
+			<layout>p2</layout>
+			<url>file:///data/jenkins/jobs/Core/lastSuccessful/archive/targetPlatform/</url>
+		</repository>
+        <repository>
+			<id>APE</id>
+			<layout>p2</layout>
+			<url>file:///data/jenkins/jobs/APE/lastSuccessful/archive/targetPlatform/</url>
+		</repository>
 	</repositories>	
 </project>
