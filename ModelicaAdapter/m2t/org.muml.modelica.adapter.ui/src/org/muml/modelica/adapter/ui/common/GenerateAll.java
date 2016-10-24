@@ -97,6 +97,7 @@ public class GenerateAll {
 		Double finalTime = Double.valueOf(Double.valueOf(System.currentTimeMillis() - start)
 				.doubleValue() / 1000d);
 		System.err.println("Time to generate Modelica Code: "+finalTime);
+		System.err.flush();
 			
 		
 	}
