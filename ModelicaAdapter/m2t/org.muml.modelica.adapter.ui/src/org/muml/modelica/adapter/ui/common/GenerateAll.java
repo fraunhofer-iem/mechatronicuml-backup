@@ -91,7 +91,12 @@ public class GenerateAll {
 		monitor.worked(1);
 		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("org.muml.modelica.adapter", "org.muml.modelica.adapter.main.Generate", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
 		gen0.setGenerationID(generationID);
+		long start;
+		start = System.currentTimeMillis();
 		gen0.doGenerate(BasicMonitor.toMonitor(monitor));
+		Double finalTime = Double.valueOf(Double.valueOf(System.currentTimeMillis() - start)
+				.doubleValue() / 1000d);
+		System.out.println("Time to generate Modelica Code: "+finalTime);
 			
 		
 	}
