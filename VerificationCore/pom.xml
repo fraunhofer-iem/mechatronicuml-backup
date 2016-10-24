@@ -77,5 +77,10 @@
 			<layout>p2</layout>
 			<url>file:///data/jenkins/jobs/UDBM/lastSuccessful/archive/targetPlatform/</url>
 		</repository>
+        <repository>
+			<id>ModelCopy</id>
+			<layout>p2</layout>
+			<url>file:///data/jenkins/jobs/ModelCopy/lastSuccessful/archive/targetPlatform/</url>
+		</repository>
 	</repositories>	
 </project>
