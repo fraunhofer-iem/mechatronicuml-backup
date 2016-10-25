@@ -25,10 +25,12 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.muml.container.codegen.c.ui.Activator;
 import org.muml.psm.muml_container.DeploymentConfiguration;
 import org.muml.psm.muml_container.ECUConfiguration;
 import org.osgi.framework.Bundle;
@@ -105,8 +107,14 @@ public class GenerateAll {
 				"org.muml.container.codegen.c", "org.muml.container.codegen.c.Main", modelURI.toString(),
 				targetFolder.getFullPath().toString(), new ArrayList<String>());
 		gen0.setGenerationID(generationID);
+		
+		long start = System.currentTimeMillis();
 		gen0.doGenerate(BasicMonitor.toMonitor(monitor));
-
+		Double finalTime = Double.valueOf(Double.valueOf(System.currentTimeMillis() - start)
+				.doubleValue() / 1000d);
+		Status logTransformationTime = new Status(Status.INFO,Activator.PLUGIN_ID,"Time to generate C99-Code: "+finalTime);
+		// writes log into the .log file within the .metadata folder of the workspace
+		Activator.getDefault().getLog().log(logTransformationTime);
 		URL resources = FileLocator
 				.toFileURL(Platform.getBundle(org.muml.container.codegen.c.Activator.PLUGIN_ID).getEntry("resources"));
 		File sourceFolder = null;
