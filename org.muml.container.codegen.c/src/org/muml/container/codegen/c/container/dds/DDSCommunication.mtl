@@ -149,7 +149,8 @@
 [comment Methods for DirectedTypedPorts /]
 
 [template public generateSwitchCaseForSending_DDS(portInstanceConfig:Collection(PortInstanceConfiguration_DDS), port:DirectedTypedPort)]
-	[let writer : DataWriter =portInstanceConfig.publisher.writers->select(w:DataWriter|w.topic.datatype.name.equalsIgnoreCase(port.nameOfDDSStruct()))->any(true) ]
+	[comment Publisher for DirectedTypedPorts have always by construction only one writer/]
+	[let writer : DataWriter =portInstanceConfig.publisher.writers->any(true) ]
 		case PORT_HANDLE_TYPE_DDS:
 			// Find correct dataWriter
 			publisher = ((DDSHandle *) port->handle->concreteHandle)->publisher;
@@ -159,7 +160,7 @@
 			[writer.topic.oclAsType(topics::Topic).datatype.name/] *instance = [writer.topic.oclAsType(topics::Topic).datatype.name/]TypeSupport_create_data_ex(DDS_BOOLEAN_TRUE);
 			[comment FIXME: make message transformation /]
 			//make message transformation
-		
+			instance->value = *msg;
 			//write the actual data
 			[writer.topic.oclAsType(topics::Topic).datatype.name/]DataWriter_write(concrete_writer, instance, &DDS_HANDLE_NIL);
 			//delete DDS instance
@@ -172,8 +173,9 @@
 
 
 [template public generateSwitchCaseForReceiving_DDS(portInstanceConfig:Collection(PortInstanceConfiguration_DDS), port:DirectedTypedPort)]
-		[let reader : DataReader =portInstanceConfig.subscriber.readers->select(r:DataReader|r.topic.oclAsType(Topic).datatype.name.equalsIgnoreCase(port.nameOfDDSStruct()))->any(true) ]
-		case PORT_HANDLE_TYPE_DDS:
+			[comment Subscriber for DirectedTypedPorts have always by construction only one reader/]
+			[let reader : DataReader =portInstanceConfig.subscriber.readers->any(true) ]
+			case PORT_HANDLE_TYPE_DDS:
 			//find correct dataReader
 			subscriber = ((DDSHandle *) port->handle->concreteHandle)->subscriber;
 			reader = DDS_Subscriber_lookup_datareader(subscriber, "[reader.topic.name/]");
@@ -187,6 +189,9 @@
 			}
 			[comment FIXME: make message transformation /]
 			//make message transformation
+			*msg = instance->value;
+			[reader.topic.oclAsType(topics::Topic).datatype.name/]TypeSupport_delete_data_ex(instance,DDS_BOOLEAN_TRUE);
+															
 			[comment FIXME: after message trasnformation delte Message FooTypeSupport_delete_data_ex(data,DDS_BOOLEAN_TRUE); /]
 			[comment FIXME: or create DDS Data on Stack and then  FooTypeSupport_initialize_data_ex(data, DDS_BOOLEAN) /]
 			return true;
@@ -195,8 +200,9 @@
 [/template]
 
 [template public generateSwitchCaseForMessageExists_DDS(portInstanceConfig:Collection(PortInstanceConfiguration_DDS), port:DirectedTypedPort)]
-		[let reader : DataReader =portInstanceConfig.subscriber.readers->select(r:DataReader|r.topic.oclAsType(Topic).datatype.name.equalsIgnoreCase(port.nameOfDDSStruct()))->any(true) ]
-		case PORT_HANDLE_TYPE_DDS:
+			[comment Subscriber for DirectedTypedPorts have always by construction only one reader/]
+			[let reader : DataReader =portInstanceConfig.subscriber.readers->any(true) ]
+			case PORT_HANDLE_TYPE_DDS:
 			//find correct dataReader
 			subscriber = ((DDSHandle *) port->handle->concreteHandle)->subscriber;
 			reader = DDS_Subscriber_lookup_datareader(subscriber, "[reader.topic.name/]");
