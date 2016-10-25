@@ -26,11 +26,13 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.muml.codegen.componenttype.c.ui.Activator;
 import org.muml.core.ExtendableElement;
 import org.muml.core.modelinstance.ModelElementCategory;
 import org.muml.core.modelinstance.RootNode;
@@ -158,8 +160,8 @@ public class GenerateAll {
 							gen0.doGenerate(BasicMonitor.toMonitor(monitor));
 							Double finalTime = Double.valueOf(Double.valueOf(System.currentTimeMillis() - start)
 									.doubleValue() / 1000d);
-							System.err.println("Time to generate C99-Component Type Code: "+finalTime);
-							System.err.flush();
+							Status logTransformationTime = new Status(Status.INFO,Activator.PLUGIN_ID,"Time to generate Modelica Code: "+finalTime);
+							Activator.getDefault().getLog().log(logTransformationTime);
 						}
 					}
 				}
