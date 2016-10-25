@@ -22,7 +22,9 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
+import org.muml.modelica.adapter.ui.Activator;
 import org.osgi.framework.Bundle;
 
 
@@ -96,8 +98,9 @@ public class GenerateAll {
 		gen0.doGenerate(BasicMonitor.toMonitor(monitor));
 		Double finalTime = Double.valueOf(Double.valueOf(System.currentTimeMillis() - start)
 				.doubleValue() / 1000d);
-		System.err.println("Time to generate Modelica Code: "+finalTime);
-		System.err.flush();
+		Status logTransformationTime = new Status(Status.INFO,Activator.PLUGIN_ID,"Time to generate Modelica Code: "+finalTime);
+		Activator.getDefault().getLog().log(logTransformationTime);
+		
 			
 		
 	}
