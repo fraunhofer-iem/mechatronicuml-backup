@@ -34,8 +34,8 @@ query SystemAllocation::getRootHPIC():HWPlatformInstanceConfiguration{
 	return self.hpic;
 }
 
-query SystemAllocation::getAllAllocatedAtomicComponentInstances(ecu:StructuredResourceInstance):Sequence(ComponentInstance){
-	return self.allocations->select(a|a.resourceInstance=ecu)->select(a|a.componentInstance.oclIsTypeOf(AtomicComponentInstance)).componentInstance;	
+query SystemAllocation::getAllAllocatedComponentInstances(ecu:StructuredResourceInstance):Sequence(ComponentInstance){
+	return self.allocations->select(a|a.resourceInstance=ecu).componentInstance;	
 }
 
 query ComponentInstance::getAllocatedECU(systemallocation:SystemAllocation):StructuredResourceInstance{
