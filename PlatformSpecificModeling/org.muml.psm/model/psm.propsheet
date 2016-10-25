@@ -61,7 +61,7 @@
     <genPackage href="psm.genmodel#//psm/properties"/>
     <classes>
       <genClass href="psm.genmodel#//psm/properties/WCET"/>
-      <orderedElements xsi:type="org.muml:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="org.muml:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw" initializeOCLExpression="">
         <genFeature href="psm.genmodel#//psm/properties/WCET/wcet"/>
         <editor xsi:type="org.muml:ObjectPropertyEditor"/>
       </orderedElements>
@@ -74,7 +74,7 @@
         <tab href="../../org.muml.core/model/core.propsheet#_i_OYIeHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
         <creationOppositeConstraint>
-          <filters xsi:type="org.muml:OCLFilter" expression="self.oclIsKindOf(pim::instance::ComponentInstance)"/>
+          <filters xsi:type="org.muml:OCLFilter" expression="self.oclIsKindOf(pim::instance::ComponentInstance) or self.oclIsKindOf(pim::runnable::Runnable)"/>
         </creationOppositeConstraint>
       </orderedElements>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
@@ -355,8 +355,8 @@
         <genFeature href="psm.genmodel#//psm/portapimapping/MappingRepository/imports"/>
         <editor xsi:type="org.muml:ListPropertyEditor"/>
       </orderedElements>
-      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
     </classes>
   </packages>
   <packages>
@@ -368,8 +368,8 @@
     </classes>
     <classes>
       <genClass href="psm.genmodel#//psm/psm_realtimestatechart/realtimestatechartparameter/TimeParameter"/>
-      <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZTcz8wbEeSjx7OWZCcdLw"/>
       <superClasses href="#//@packages.7/@classes.2"/>
+      <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZTcz8wbEeSjx7OWZCcdLw"/>
     </classes>
     <classes>
       <genClass href="psm.genmodel#//psm/psm_realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter"/>
@@ -377,8 +377,8 @@
         <genFeature href="psm.genmodel#//psm/psm_realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter/statechart"/>
         <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
-      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
     </classes>
   </packages>
   <packages>
