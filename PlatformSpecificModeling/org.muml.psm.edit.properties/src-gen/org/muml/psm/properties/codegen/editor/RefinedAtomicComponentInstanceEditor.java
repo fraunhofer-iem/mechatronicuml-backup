@@ -29,6 +29,10 @@ public class RefinedAtomicComponentInstanceEditor extends org.muml.ape.runtime.e
 
 			addPropertyEditor(createEditorComponentPart_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorRunnables_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorLabels_property_tab_generalTab_Editor(), false);
+
 			addPropertyEditor(createEditorComponentInstance_property_tab_psmTab_Editor(), false);
 
 			addPropertyEditor(createEditorInitCommands_property_tab_psmTab_Editor(), false);
@@ -54,6 +58,10 @@ public class RefinedAtomicComponentInstanceEditor extends org.muml.ape.runtime.e
 			addPropertyEditor(createEditorComponentType_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorComponentPart_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorRunnables_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorLabels_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -128,6 +136,32 @@ public class RefinedAtomicComponentInstanceEditor extends org.muml.ape.runtime.e
 			this.editorComponentPart_property_tab_generalTab = editor;
 		}
 		return this.editorComponentPart_property_tab_generalTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorRunnables_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorRunnables_property_tab_generalTab_Editor() {
+		if (this.editorRunnables_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.instance.InstancePackage.eINSTANCE
+					.getComponentInstance_Runnables();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorRunnables_property_tab_generalTab = editor;
+		}
+		return this.editorRunnables_property_tab_generalTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLabels_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLabels_property_tab_generalTab_Editor() {
+		if (this.editorLabels_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.instance.InstancePackage.eINSTANCE
+					.getComponentInstance_Labels();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorLabels_property_tab_generalTab = editor;
+		}
+		return this.editorLabels_property_tab_generalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_property_tab_generalTab;
@@ -235,11 +269,10 @@ public class RefinedAtomicComponentInstanceEditor extends org.muml.ape.runtime.e
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays
-					.asList(new java.lang.String[]{"property.tab.psm", "property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general", "property.tab.general",
-							"property.tab.extensions", "property.tab.psm", "property.tab.psm", "property.tab.psm"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.psm", "property.tab.general",
+					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.general", "property.tab.extensions", "property.tab.psm",
+					"property.tab.psm", "property.tab.psm"}).contains(tab);
 		}
 	}
 

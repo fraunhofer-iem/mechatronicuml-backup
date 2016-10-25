@@ -37,11 +37,11 @@ public class APICallParameterEditor extends org.muml.ape.runtime.editors.ClassPr
 
 			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
 			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
+			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorStatechart_property_tab_psmTab_Editor(), false);
 
