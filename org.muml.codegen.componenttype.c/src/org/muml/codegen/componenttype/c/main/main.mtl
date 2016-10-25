@@ -79,10 +79,8 @@
  */]
 [template public generateTypeFiles(COs : OrderedSet(Component), path : String, useSubDir: Boolean)]
 [for (component : Component | COs) ? (component.oclIsKindOf(AtomicComponent))]
-[if ((component.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (component.componentKind = ComponentKind::HYBRID_COMPONENT))]
 [generate_ComponentInterface(component, path, useSubDir)/]
 [generate_ComponentClass(component, path, useSubDir)/]
-[/if]
 [/for]
 [/template]
 
