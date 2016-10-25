@@ -1,7 +1,7 @@
 transformation Initial_Container_Transformation(in mumlModel:PSM, out containerModel:MumlContainer);
 import Naming_Library;
 import org.muml.container._library.DDSHelperBlackBox;
-
+	
 
 modeltype MumlPackage uses pim('http://www.muml.org/pim/1.0.0');
 modeltype Typespackage uses pim::types('http://www.muml.org/pim/1.0.0');
@@ -37,13 +37,18 @@ property systemallocation:SystemAllocation;
 
 
 main() {
+	var startTime : Integer;
+	var endTime : Integer;
 	systemallocation:=mumlModel.rootObjects()[SystemAllocation]->any(true);
 	if(systemallocation=null) then{
 		systemallocation:=SystemAllocation.allInstances()->any(true);
 	}endif;
-	
-	
+	startTime := getCurrentTime();
 	systemallocation.map mapSystemAllocation();
+	endTime := getCurrentTime();
+	log("Time for create Deployment Configuration:"+((endTime-startTime)/1000).toString()+" seconds");
+	
+	
 }
 
 

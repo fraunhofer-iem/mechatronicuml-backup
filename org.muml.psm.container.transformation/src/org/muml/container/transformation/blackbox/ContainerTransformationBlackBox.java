@@ -18,6 +18,8 @@ import org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance;
 
 public class ContainerTransformationBlackBox {
 
+	
+
 	public static final QualifiedNameProvider nameProvider = new MumlQualifiedNameProvider();
 
 	public static String getName(EObject obj) {
@@ -58,6 +60,17 @@ public class ContainerTransformationBlackBox {
 		short shortHashCode = wrapped.getShort(); // 1
 		return shortHashCode;
 
+	}
+	
+	
+	/** QVTo blackbox method to get system time for performance measurement
+	 * @author upohl
+	 * @return long current system time in ms
+	 * @param void
+	 * */
+	public static long getCurrentTime()
+	{
+		return System.currentTimeMillis();
 	}
 
 	public static StructuredResourceInstance getNextHopECU(StructuredResourceInstance startECU,

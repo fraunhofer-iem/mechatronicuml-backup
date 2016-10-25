@@ -55,8 +55,12 @@ property dummyDomain : domain  = object domain{
 };
 
 main() {
-
+	var startTime : Integer;
+	var endTime : Integer;
+	startTime := getCurrentTime();
 	containerModel.rootObjects()[DeploymentConfiguration]->map mapSystemConfiguration2DDSModel();
+	endTime := getCurrentTime();
+	log("Time for create DDS Model of MUML:"+((endTime-startTime)/1000).toString()+" seconds");
 	
 }
 
