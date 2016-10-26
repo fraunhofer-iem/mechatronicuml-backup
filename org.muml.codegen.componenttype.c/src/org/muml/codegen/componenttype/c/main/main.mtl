@@ -78,7 +78,7 @@
  * @param modelElementCategory
  */]
 [template public generateTypeFiles(COs : OrderedSet(Component), path : String, useSubDir: Boolean)]
-[for (component : Component | COs)]
+[for (component : Component | COs) ? (component.oclIsKindOf(AtomicComponent))]
 [generate_ComponentInterface(component, path, useSubDir)/]
 [generate_ComponentClass(component, path, useSubDir)/]
 [/for]
@@ -93,7 +93,7 @@
 [template public generateRTSCFiles(COs : OrderedSet(Component), path: String, useSubDir: Boolean) ]
 
 	[for (comp : Component | COs) ? (oclIsKindOf(AtomicComponent))]
-	[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
+	[if (comp.componentKind = ComponentKind::SOFTWARE_COMPONENT)]
 	[let aComp : AtomicComponent = comp.oclAsType(AtomicComponent)]
 	
 	[comment if no behavior is defined/]

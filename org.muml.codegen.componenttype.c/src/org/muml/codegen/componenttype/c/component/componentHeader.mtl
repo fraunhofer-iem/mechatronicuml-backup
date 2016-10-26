@@ -57,7 +57,7 @@
  * @param statechart
 */]
 [template private variables (component : Component) post (trim())]
-[if component.oclIsKindOf(AtomicComponent) and (component.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (component.componentKind = ComponentKind::HYBRID_COMPONENT)]
+[if component.oclIsKindOf(AtomicComponent) and (component.componentKind = ComponentKind::SOFTWARE_COMPONENT) ]
 /**
  * @brief Forward Declaration of the struct [getClassName(component.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart))/] which describes the behavior of [getClassName(component)/]
  * 
