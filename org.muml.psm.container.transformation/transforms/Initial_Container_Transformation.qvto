@@ -65,7 +65,7 @@ mapping StructuredResourceInstance::mapECUConfiguration():ECUConfiguration{
 	/**
 	* Create for all ComponentInstance of Same Component Type a Container per ECU
 	*/
-	var componentInstancesForECU :Sequence(ComponentInstance) = systemallocation.getAllAllocatedComponentInstances(self);
+	var componentInstancesForECU :Sequence(ComponentInstance) = systemallocation.getAllAllocatedAtomicComponentInstances(self);
 	componentInstancesForECU.componentType->asOrderedSet()->forEach(componentType){
 		log("Create Container for Component:"+componentType.name +" instances: "+componentInstancesForECU->size().toString());
 	
