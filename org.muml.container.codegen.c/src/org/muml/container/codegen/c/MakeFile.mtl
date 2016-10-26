@@ -60,7 +60,7 @@ app : main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) [if (CIs.componen
 	$(CC) $(CFLAGS) [rtsc.getFileName(false,useSubDir)/]
 [/let]
 [/for]
-[for (comp : Component | CIs.componentType->asSet()) ? (not(componentKind=ComponentKind::CONTINUOUS_COMPONENT) and oclIsKindOf(AtomicComponent))]
+[for (comp : Component | CIs.componentType->asSet()) ? (oclIsKindOf(AtomicComponent))]
 [comp.getClassName().toLowerFirst()/].o: [comp.getFileName(false,useSubDir)/]
 	$(CC) $(CFLAGS) [comp.getFileName(false,useSubDir)/]
 [/for]
