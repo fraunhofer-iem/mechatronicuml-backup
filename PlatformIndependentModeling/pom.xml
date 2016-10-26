@@ -114,7 +114,7 @@
 			<layout>p2</layout>
 			<url>file:///data/jenkins/jobs/Core/lastSuccessful/archive/targetPlatform/</url>
 		</repository>
-        <repository>
+		<repository>
 			<id>APE</id>
 			<layout>p2</layout>
 			<url>file:///data/jenkins/jobs/APE/lastSuccessful/archive/targetPlatform/</url>
