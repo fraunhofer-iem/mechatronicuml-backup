@@ -84,10 +84,9 @@
 	// Library
 	#include "[if (useSubDir)]../types/[/if]standardTypes.h"
 	#include "[if (useSubDir)]../types/[/if]customTypes.h"
+	#include "[if (useSubDir)]../lib/[/if]port.h"
 	[if (component.eAllContents(DiscretePort)->size()>0)]
-		#include "[if (useSubDir)]../lib/[/if]port.h"
 		#include "[if (useSubDir)]../messages/[/if]messages_types.h"
-
 	[/if]
 	#include "[if (useSubDir)]../lib/[/if]clock.h"
 	#include "[if (useSubDir)]../lib/[/if]Debug.h"
