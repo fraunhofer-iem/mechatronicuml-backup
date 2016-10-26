@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ASCII"?>
+<opendds:OpenDDSModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opendds="http://www.opendds.org/modeling/schemas/OpenDDS/1.0" xmlns:qos="http://www.opendds.org/modeling/schemas/QoS/1.0" xmlns:topics="http://www.opendds.org/modeling/schemas/Topics/1.0" xmlns:types="http://www.opendds.org/modeling/schemas/Types/1.0" xmi:id="_WFwX8JrZEeaUtYEiGwj3eg" name="MUML_DDS">
+  <libs xsi:type="types:DataLib" xmi:id="_WFy0MJrZEeaUtYEiGwj3eg" name="MUML_DataLib">
+    <types xsi:type="types:Char" xmi:id="_WFy0MZrZEeaUtYEiGwj3eg"/>
+    <types xsi:type="types:Struct" xmi:id="_WFy0MprZEeaUtYEiGwj3eg" name="DDS_MAIN_LED_VOLTAGE" isDcpsDataType="true">
+      <fields xmi:id="_WFy0M5rZEeaUtYEiGwj3eg" name="value" type="_WFy0NJrZEeaUtYEiGwj3eg"/>
+    </types>
+    <types xsi:type="types:Char" xmi:id="_WFy0NJrZEeaUtYEiGwj3eg"/>
+  </libs>
+  <libs xsi:type="opendds:PolicyLib" xmi:id="_WFy0NZrZEeaUtYEiGwj3eg">
+    <policies xsi:type="qos:ReliabilityQosPolicy" xmi:id="_WFy0NprZEeaUtYEiGwj3eg" name="voltageReliabilityQos" kind="BEST_EFFORT">
+      <max_blocking_time xmi:id="_WFy0N5rZEeaUtYEiGwj3eg" second="1"/>
+    </policies>
+    <policies xsi:type="qos:ReliabilityQosPolicy" xmi:id="_WFy0OJrZEeaUtYEiGwj3eg" name="LED_voltageReliabilityQos" kind="BEST_EFFORT">
+      <max_blocking_time xmi:id="_WFy0OZrZEeaUtYEiGwj3eg" second="1"/>
+    </policies>
+    <policies xsi:type="qos:HistoryQosPolicy" xmi:id="_WFy0OprZEeaUtYEiGwj3eg" name="voltageHistoryQos" depth="1" kind="KEEP_LAST"/>
+  </libs>
+  <libs xsi:type="opendds:DcpsLib" xmi:id="_WFy0O5rZEeaUtYEiGwj3eg">
+    <domains xmi:id="_WFy0PJrZEeaUtYEiGwj3eg" name="dummyDomain" domainId="-42"/>
+    <participants xmi:id="_WFy0PZrZEeaUtYEiGwj3eg" name="LED_voltageParticipant" domain="_WFy0PJrZEeaUtYEiGwj3eg">
+      <subscribers xmi:id="_WFy0PprZEeaUtYEiGwj3eg" name="voltageSubscriber" transportId="-1">
+        <readers xmi:id="_WFy0P5rZEeaUtYEiGwj3eg" name="DDS_MAIN_LED_VOLTAGEDataReader" history="_WFy0OprZEeaUtYEiGwj3eg" reliability="_WFy0NprZEeaUtYEiGwj3eg" copyFromTopicQos="false" topic="_WFy0Q5rZEeaUtYEiGwj3eg"/>
+      </subscribers>
+    </participants>
+    <participants xmi:id="_WFy0QJrZEeaUtYEiGwj3eg" name="Main_LED_voltageParticipant" domain="_WFy0PJrZEeaUtYEiGwj3eg">
+      <publishers xmi:id="_WFy0QZrZEeaUtYEiGwj3eg" name="LED_voltagePublisher" transportId="-1">
+        <writers xmi:id="_WFy0QprZEeaUtYEiGwj3eg" name="DDS_MAIN_LED_VOLTAGEDataReader" reliability="_WFy0OJrZEeaUtYEiGwj3eg" copyFromTopicQos="false" topic="_WFy0Q5rZEeaUtYEiGwj3eg"/>
+      </publishers>
+    </participants>
+    <topicDescriptions xsi:type="topics:Topic" xmi:id="_WFy0Q5rZEeaUtYEiGwj3eg" name="DDS_MAIN_LED_VOLTAGE_Topic" datatype="_WFy0MprZEeaUtYEiGwj3eg"/>
+  </libs>
+</opendds:OpenDDSModel>
