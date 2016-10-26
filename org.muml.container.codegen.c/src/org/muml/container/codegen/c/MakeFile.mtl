@@ -30,13 +30,13 @@
 
 
 ifndef NDDSHOME
-NDDSHOME := "/home/ralle/rti_connext_dds-5.2.0"
+NDDSHOME := "CHANGE_ME"
 endif
 #TARGET_ARCH = x64Linux3.xgcc4.6.3
 
 SYSLIBS = -ldl -lnsl -lm -lpthread -lrt
 DEFINES = -DRTI_UNIX -DRTI_LINUX -DRTI_64BIT 
-LIBS = -L$(NDDSHOME)/lib/x64Linux3.xgcc4.6.3 \
+LIBS = -L$(NDDSHOME)/lib/CHANGE_ME \
         -lnddscz -lnddscorez $(SYSLIBS)
 DDSSOURCES = [getDDSFileName()/]Support.o [getDDSFileName()/]Plugin.o [getDDSFileName()/].o 
 
@@ -45,15 +45,15 @@ CONT = [for (container:ComponentContainer| ecuConfig.componentContainers)] MCC_[
 CONT_LIB =  MessageBuffer.o LocalBufferManager.o DDS_Custom_Lib.o
 
 RTSC = [for (comp : Component | CIs.componentType->asSet())][if ((comp.oclIsKindOf(AtomicComponent)) and (comp.componentKind = ComponentKind::SOFTWARE_COMPONENT))][comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getClassName().toLowerFirst()/].o [/if][/for]
-COMP = [for (comp : Component | CIs.componentType->asSet())][if ((componentKind=ComponentKind::SOFTWARE_COMPONENT and oclIsKindOf(AtomicComponent)))][comp.getClassName().toLowerFirst()/].o [/if][/for] 
-OPERATIONREPOSITORIES = [let opRepos : Sequence(OperationRepository) = CIs.componentType->filter(AtomicComponent).behavior.oclAsType(RealtimeStatechart).usedOperationRepositories]	[for (opRep: OperationRepository | opRepos)] [getClassName(opRep).toLowerFirst()/].o	[/for]	[/let]
+COMP = [for (comp : Component | CIs.componentType->asSet())][if ((oclIsKindOf(AtomicComponent)))][comp.getClassName().toLowerFirst()/].o [/if][/for] 
+OPERATIONREPOSITORIES = [let opRepos : Sequence(OperationRepository) = CIs.componentType->filter(AtomicComponent)->select(a:AtomicComponent|a.componentKind=ComponentKind::SOFTWARE_COMPONENT).behavior.oclAsType(RealtimeStatechart).usedOperationRepositories]	[for (opRep: OperationRepository | opRepos)] [getClassName(opRep).toLowerFirst()/].o	[/for]	[/let]
 LIB =   Debug.o
 CC = gcc
-CFLAGS = -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds 
+CFLAGS = -DC99 -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds 
 all: app
 
-app : main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) [if (CIs.componentType->filter(AtomicComponent).behavior.oclAsType(RealtimeStatechart).usedOperationRepositories->size() > 0)]$(OPERATIONREPOSITORIES)[/if]  $(DDSSOURCES)
-	$(CC) main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) [if (CIs.componentType->filter(AtomicComponent).behavior.oclAsType(RealtimeStatechart).usedOperationRepositories->size() > 0)]$(OPERATIONREPOSITORIES)[/if] $(DDSSOURCES) $(LIBS) -o app
+app : main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) [if (CIs.componentType->filter(AtomicComponent)->select(a:AtomicComponent|a.componentKind=ComponentKind::SOFTWARE_COMPONENT).behavior.oclAsType(RealtimeStatechart).usedOperationRepositories->size() > 0)]$(OPERATIONREPOSITORIES)[/if]  $(DDSSOURCES)
+	$(CC) main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) [if (CIs.componentType->filter(AtomicComponent)->select(a:AtomicComponent|a.componentKind=ComponentKind::SOFTWARE_COMPONENT).behavior.oclAsType(RealtimeStatechart).usedOperationRepositories->size() > 0)]$(OPERATIONREPOSITORIES)[/if] $(DDSSOURCES) $(LIBS) -o app
 [for (comp : Component | CIs.componentType->asSet())? (componentKind=ComponentKind::SOFTWARE_COMPONENT and oclIsKindOf(AtomicComponent))]
 [let rtsc : RealtimeStatechart = comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart)]
 [rtsc.getClassName().toLowerFirst()/].o: [rtsc.getFileName(false,useSubDir)/]
@@ -64,10 +64,6 @@ app : main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) [if (CIs.componen
 [comp.getClassName().toLowerFirst()/].o: [comp.getFileName(false,useSubDir)/]
 	$(CC) $(CFLAGS) [comp.getFileName(false,useSubDir)/]
 [/for]
-[if CIs.componentType->select( c | c.componentKind=ComponentKind::CONTINUOUS_COMPONENT)->size()>0]
-#contImplementations.o: [getFileName4ContinuousImpl(false, useSubDir)/]
-	#$(CC) $(CFLAGS) [getFileName4ContinuousImpl(false, useSubDir)/]
-[/if]
 
 [getDDSFileName()/]Support.o: dds/[getDDSFileName()/]Support.c
 	$(CC) $(CFLAGS) dds/[getDDSFileName()/]Support.c
@@ -94,7 +90,7 @@ Debug.o: [if (useSubDir)]lib/[/if]Debug.c
 	$(CC) $(CFLAGS) [if (useSubDir)]lib/[/if]Debug.c
 
 
-[for (opRepo : OperationRepository | CIs.componentType->filter(AtomicComponent).behavior.oclAsType(RealtimeStatechart).usedOperationRepositories)]
+[for (opRepo : OperationRepository | CIs.componentType->filter(AtomicComponent)->select(a:AtomicComponent|a.componentKind=ComponentKind::SOFTWARE_COMPONENT).behavior.oclAsType(RealtimeStatechart).usedOperationRepositories)]
  [getClassName(opRepo).toLowerFirst()/].o: [opRepo.getFileName(false, true)/]
 	$(CC) $(CFLAGS) [opRepo.getFileName(false, true)/]
 [/for]	
