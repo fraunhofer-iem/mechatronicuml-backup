@@ -86,23 +86,21 @@
   </build>
   
   <repositories>
-	    <!--<repository>
-            <id>xtend</id>
-            <url>http://build.eclipse.org/common/xtend/maven/</url>
-        </repository>-->
-		<!-- basic eclipse dependencies -->
 		<repository>
 			<id>eclipse-neon</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/releases/neon</url>
 		</repository>
-		
-
         <repository>
             <id>xtext</id>
             <layout>p2</layout>
             <url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases</url>
         </repository>
+        <repository>
+			<id>model-migration</id>
+			<layout>p2</layout>
+			<url>file:///data/jenkins/jobs/ModelMigration/lastSuccessful/archive/targetPlatform/</url>
+		</repository>
         
   </repositories>
 </project>
