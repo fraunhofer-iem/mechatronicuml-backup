@@ -6,10 +6,7 @@
 		
 	
 		void LEDComponent_initialize(LEDComponent* component) {
-		//Clock_reset((component->voltage).portClock); //manuell
-		ClockedPort *myPort = ((ClockedPort*)&(component->voltage)); //manuell
-		Clock_reset(myPort->portClock); //manuell
-		
+		Clock_reset(component->voltageClock); //manuell
 		}
 		
 
@@ -31,24 +28,26 @@
 		
 		
 		void LEDComponent_processStep(LEDComponent* component) {
-
-			getterOf_LED_voltage(&(component->voltage),&(component->LED_voltage));
 		
+			// start manuell
+			if (Clock_getTime(component->voltageClock)		>= 250 * 1.0) //interval of continuous port
+			{
+				getterOf_LED_voltage(&component->voltage,&component->LED_voltage);
+				Clock_reset(component->voltageClock);
+				component->voltageAccessFunction(&(component->LED_voltage));
+			}
+			//end manuell
 		}
 
-		//Manuell start
+		//Manuell TODO change to receive method
 		void getterOf_LED_voltage(Port* port, int8_T* value) {
-			ClockedPort *myPort = (ClockedPort*) port; 
-			if (Clock_getTime(myPort->portClock)		>= 1000 * 1.0) //interval of continuous port
-			{
+
 				if(MCC_LEDComponent_voltage_exists_value(port)){
 					MCC_LEDComponent_voltage_recv_value(port,value);
-					Clock_reset(myPort->portClock);
 				}
-			}
 		}
-		
-		//Manuell end
+
+
 		
 
 		

@@ -30,6 +30,7 @@
 					PortStatus VOLTAGE; /**< The status of port voltage */
 					PortHandle* (*createVOLTAGEHandle)(struct lEDComponent_Builder*, PortHandle*); /**< The builder method to create a PortHandle for port voltage */
 					struct port_option VOLTAGE_op; /**< The port_option for the PortHandle of port voltage */
+					void (*voltageAccessFunction) (int8_T*); //manuell
 		}lEDComponent_Builder;
 		
 		/**
@@ -119,6 +120,7 @@
 										}
 										return false;
 									}	
+						
 			
 			
 			
@@ -131,13 +133,13 @@
 		*/
 			static LEDComponent* MCC_LEDComponent_Builder(lEDComponent_Builder* b){
 				instancePool[pool_index].ID = b->ID;
+				instancePool[pool_index].voltageAccessFunction=b->voltageAccessFunction; //manuell
 				//For each port initialize it
 					if(b->VOLTAGE != PORT_DEACTIVATED) {
-					Port* port = (Port*) &(instancePool[pool_index].voltage);
-					port->status = b->VOLTAGE;
-					port->handle = (PortHandle*) malloc(sizeof(PortHandle));
-		 			port->handle->port = port;
-					b->createVOLTAGEHandle(b, (port->handle));
+					instancePool[pool_index].voltage.status = b->VOLTAGE;
+					instancePool[pool_index].voltage.handle = (PortHandle*) malloc(sizeof(PortHandle));
+		 			instancePool[pool_index].voltage.handle->port = &(instancePool[pool_index].voltage);
+					b->createVOLTAGEHandle(b, (instancePool[pool_index].voltage.handle));
 					//instancePool[pool_index].voltage.handle->port = &(instancePool[pool_index].voltage);
 				}
 			
@@ -208,20 +210,35 @@
 								return ptr;
 								}	
 		
+			//start manuell accessCommand		
+			static void accessCommandPortInstanceX(int8_T* value)
+			{
+					printf("new LED value %d\n",*value);
+			}
+			//end manuell 		
+
+			//start manuell accessCommand		
+			static void accessCommandPortInstanceY(int8_T* value)
+			{
+					printf("old LED value %d\n",*value);
+			}
+			//end manuell 	
 
 			LEDComponent* MCC_create_LEDComponent(uint8_T ID){
 			struct lEDComponent_Builder b = INIT_BUILDER;
 			switch(ID){
 				case CI_C2LED:
 					b.ID = ID;
-							b.VOLTAGE = PORT_UNCONNECTED;
-							b.createVOLTAGEHandle = &create_VOLTAGEDDSHandle;
-							b.VOLTAGE_op.dds_option.domainID = 0;
-							b.VOLTAGE_op.dds_option.partition = -20106;
+					b.voltageAccessFunction=&accessCommandPortInstanceY ;//manuell TODO
+					b.VOLTAGE = PORT_UNCONNECTED;
+					b.createVOLTAGEHandle = &create_VOLTAGEDDSHandle;
+					b.VOLTAGE_op.dds_option.domainID = 0;
+					b.VOLTAGE_op.dds_option.partition = -20106;
 				break;
 			default:
 				break;
 			}
 			return MCC_LEDComponent_Builder(&b);
 			}
-		
+
+	

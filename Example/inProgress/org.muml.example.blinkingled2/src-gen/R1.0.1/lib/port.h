@@ -44,11 +44,4 @@ typedef struct Port {
 } Port;
 
 
-typedef struct ClockedPort {
-	struct Port;
-	Clock portClock;
-} ClockedPort;
-
-
-
 #endif /* PORT_H_ */

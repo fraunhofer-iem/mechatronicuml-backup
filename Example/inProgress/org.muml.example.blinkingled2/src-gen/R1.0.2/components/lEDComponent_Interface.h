@@ -25,8 +25,8 @@
 			
 					bool_t MCC_LEDComponent_voltage_recv_value(Port* p, int8_T* value);
 					bool_t MCC_LEDComponent_voltage_exists_value(Port* p);
-			
-			
+			//		void voltageAccessCommand(int8_T* value);
+								
 	
 			/*****
  			 *
@@ -54,15 +54,10 @@
 						struct LEDComponent {
 						
 								uint8_T ID;	
-						
-						
-							
-										ClockedPort voltage; /**< A  Component's Port: voltage */
-						
-										int8_T LED_voltage;
-								
-								
-						
+								Port voltage; /**< A  Component's Port: voltage */
+								Clock voltageClock; // manuell
+								void (*voltageAccessFunction) (int8_T*); //manuell
+								int8_T LED_voltage; 
 								LEDComponent * next;/**< A Pointer to the next component part, if this component ist part of a multipart in the CIC */
 								
 							};

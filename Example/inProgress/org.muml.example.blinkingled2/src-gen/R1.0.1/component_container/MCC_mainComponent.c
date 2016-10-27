@@ -96,11 +96,10 @@
 				MainComponent_initialize(&instancePool[pool_index]);
 				//For each port initialize it
 					if(b->LED_VOLTAGE != PORT_DEACTIVATED) {
-					Port* port = (Port*) &(instancePool[pool_index].LED_voltage);
-					port->status = b->LED_VOLTAGE;
-					port->handle = (PortHandle*) malloc(sizeof(PortHandle));
-		 			port->handle->port = port;
-					b->createLED_VOLTAGEHandle(b, (port->handle));
+					instancePool[pool_index].LED_voltage.status = b->LED_VOLTAGE;
+					instancePool[pool_index].LED_voltage.handle = (PortHandle*) malloc(sizeof(PortHandle));
+		 			instancePool[pool_index].LED_voltage.handle->port = &(instancePool[pool_index].LED_voltage);
+					b->createLED_VOLTAGEHandle(b, (instancePool[pool_index].LED_voltage.handle));
 					//instancePool[pool_index].LED_voltage.handle->port = &(instancePool[pool_index].LED_voltage);
 				}
 			
