@@ -133,10 +133,11 @@
 				instancePool[pool_index].ID = b->ID;
 				//For each port initialize it
 					if(b->VOLTAGE != PORT_DEACTIVATED) {
-					instancePool[pool_index].voltage.status = b->VOLTAGE;
-					instancePool[pool_index].voltage.handle = (PortHandle*) malloc(sizeof(PortHandle));
-		 			instancePool[pool_index].voltage.handle->port = &(instancePool[pool_index].voltage);
-					b->createVOLTAGEHandle(b, (instancePool[pool_index].voltage.handle));
+					Port* port = (Port*) &(instancePool[pool_index].voltage);
+					port->status = b->VOLTAGE;
+					port->handle = (PortHandle*) malloc(sizeof(PortHandle));
+		 			port->handle->port = port;
+					b->createVOLTAGEHandle(b, (port->handle));
 					//instancePool[pool_index].voltage.handle->port = &(instancePool[pool_index].voltage);
 				}
 			

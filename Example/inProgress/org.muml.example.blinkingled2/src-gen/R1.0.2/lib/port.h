@@ -45,8 +45,16 @@ typedef struct Port {
 
 
 typedef struct ClockedPort {
-	Port port;
+	struct Port;
 	Clock portClock;
 } ClockedPort;
+
+typedef struct ContinuousClockedPort{
+	Port port;
+	Clock portClock;
+	double (*accessFunction)(double);
+	void (*initFunction)(void);
+	void (*termFunction)(void);
+}ContinuousClockedPort;
 
 #endif /* PORT_H_ */
