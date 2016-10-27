@@ -1,24 +1,22 @@
 		// Standard library
 		
 		#include "../components/mainComponent_Interface.h"
-		
-
-		
-	
+			
 		void MainComponent_initialize(MainComponent* component) {
 		
 			MainRootRTSCStateChart_initialize(component->stateChart);
-			Clock_reset((component->LED_voltage).portClock); //manuell
+			ClockedPort *myPort = ((ClockedPort*)&(component->LED_voltage)); //manuell
+			Clock_reset(myPort->portClock); //manuell
 		
 		}
 
 		//start manuel
 		void setterOf_LED_voltage(Port* port, int8_T* value) {
-			
-			if (Clock_getTime(port->portClock)		>= 500 * 1.0) //interval of hybrid port
+			ClockedPort *myPort = (ClockedPort*) port; 
+			if (Clock_getTime(myPort->portClock)		>= 500 * 1.0) //interval of hybrid port
 			{
 				MCC_MainComponent_LED_voltage_send_value(port,value);
-				Clock_reset(port->portClock);
+				Clock_reset( myPort->portClock);
 			}
 
 		}

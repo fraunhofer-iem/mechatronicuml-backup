@@ -41,8 +41,12 @@ typedef enum {
 typedef struct Port {
 	PortStatus status;
 	PortHandlePtr handle;
-	Clock portClock;
 } Port;
 
+
+typedef struct ClockedPort {
+	Port port;
+	Clock portClock;
+} ClockedPort;
 
 #endif /* PORT_H_ */

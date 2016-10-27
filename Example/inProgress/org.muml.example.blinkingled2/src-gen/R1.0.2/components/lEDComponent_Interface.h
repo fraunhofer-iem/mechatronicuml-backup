@@ -57,7 +57,7 @@
 						
 						
 							
-										Port voltage; /**< A  Component's Port: voltage */
+										ClockedPort voltage; /**< A  Component's Port: voltage */
 						
 										int8_T LED_voltage;
 								

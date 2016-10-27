@@ -72,9 +72,8 @@
 						
 									MainRootRTSCStateChart* stateChart;	/**< The MainRootRTSCStateChart of the Component Main */
 							
-									Port LED_voltage; /**< A  Component's Port: LED_voltage */
-												
-
+									ClockedPort LED_voltage; /**< A  Component's Port: LED_voltage */
+								
 								MainComponent * next;/**< A Pointer to the next component part, if this component ist part of a multipart in the CIC */
 								
 							};
