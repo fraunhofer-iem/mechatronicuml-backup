@@ -35,8 +35,9 @@
 		//Manuell TODO change to receive method
 		void getterOf_LED_voltage(Port* port, int8_T* value) {
 
-			MCC_LEDComponent_voltage_recv_value(port,value);
-
+			if(MCC_LEDComponent_voltage_exists_value(port)){
+				MCC_LEDComponent_voltage_recv_value(port,value);
+			}
 		}
 		
 

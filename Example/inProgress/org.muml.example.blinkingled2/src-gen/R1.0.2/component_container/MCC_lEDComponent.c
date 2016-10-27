@@ -103,10 +103,12 @@
 															retcode = DDS_MAIN_LED_VOLTAGEDataReader_take_next_sample(concrete_reader, instance,
 																	&sample_info);
 															if (retcode == DDS_RETCODE_NO_DATA) {
+																printf("no new data\n");
 																return false;
 															}
 															//make message transformation
-															*msg = instance->value;
+															*msg = (int8_T) (instance->value);
+															printf("new data %d\n",*msg);
 															DDS_MAIN_LED_VOLTAGETypeSupport_delete_data_ex(instance,DDS_BOOLEAN_TRUE);
 																											
 															return true;
@@ -184,7 +186,7 @@
 										return NULL;
 									}
 									//register the topic
-									DDS_DomainParticipant_create_topic(hndl->participant, "DDS_MAIN_LED_VOLTAGE_Topic", type_name,
+									topic = DDS_DomainParticipant_create_topic(hndl->participant, "DDS_MAIN_LED_VOLTAGE_Topic", type_name,
 										&DDS_TOPIC_QOS_DEFAULT, NULL /* listener */,
 										DDS_STATUS_MASK_NONE);
 									if (topic == NULL) {

@@ -64,7 +64,9 @@
 															//create DDS_Instance to write
 															DDS_MAIN_LED_VOLTAGE *instance = DDS_MAIN_LED_VOLTAGETypeSupport_create_data_ex(DDS_BOOLEAN_TRUE);
 															//make message transformation
-															instance->value = *msg;
+															char mychar = (char) *msg;
+															printf("send data: %d\n",(int8_T) mychar);
+															instance->value = (char) mychar;
 															//write the actual data
 															DDS_MAIN_LED_VOLTAGEDataWriter_write(concrete_writer, instance, &DDS_HANDLE_NIL);
 															//delete DDS instance
@@ -147,7 +149,7 @@
 										return NULL;
 									}
 									//register the topic
-									DDS_DomainParticipant_create_topic(hndl->participant, "DDS_MAIN_LED_VOLTAGE_Topic", type_name,
+									topic = DDS_DomainParticipant_create_topic(hndl->participant, "DDS_MAIN_LED_VOLTAGE_Topic", type_name,
 										&DDS_TOPIC_QOS_DEFAULT, NULL /* listener */,
 										DDS_STATUS_MASK_NONE);
 									if (topic == NULL) {
