@@ -12,6 +12,7 @@
 #include "stdlib.h"
 #include "../types/standardTypes.h"
 #include "../types/customTypes.h"
+#include "clock.h"
 
 /**
  * @brief The structure Port
@@ -40,6 +41,7 @@ typedef enum {
 typedef struct Port {
 	PortStatus status;
 	PortHandlePtr handle;
+	Clock portClock;
 } Port;
 
 
