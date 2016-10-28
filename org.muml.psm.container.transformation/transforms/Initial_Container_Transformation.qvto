@@ -111,8 +111,8 @@ helper PortInstance::createPortInstance2PortInstanceConfiguration():PortInstance
 		var targetPortInstance : PortInstance := connectedPortInstances->any(true);
 		//get the target ECU
 		var targetECU: StructuredResourceInstance:= targetPortInstance.componentInstance.getAllocatedECU(systemallocation);
-		//check if the connected PortInstances are hosted on the same ECU
-		if(ownECU=targetECU) then{
+		//check if the connected PortInstances are hosted on the same ECU if(ownECU=targetECU) then{
+		if(false) then{
 			//create a Local Connector;
 			portInstanceConfig :=  object PortInstanceConfiguration_Local {
 				portInstance:=self;
@@ -133,8 +133,8 @@ helper PortInstance::createPortInstance2PortInstanceConfiguration():PortInstance
 				var protocolKind : LinkProtocolKind := hwport.protocol.oclAsType(LinkProtocol).linkProtocol;
 				
 				switch{
-				
-					case (protocolKind=LinkProtocolKind::ETHERNET){
+					//case (protocolKind=LinkProtocolKind::ETHERNET){
+					case (true){
 						portInstanceConfig:= object PortInstanceConfiguration_DDS{
 							portInstance:=self;
 							hwportInstance:=hwport;
