@@ -15,6 +15,12 @@
   <build>
 		<plugins>
 
+
+	 <plugin>
+          <groupId>org.eclipse.xtend</groupId>
+          <artifactId>xtend-maven-plugin</artifactId>
+    </plugin>
+
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-surefire-plugin</artifactId>
@@ -26,8 +32,11 @@
 				</configuration>
 			</plugin>
 
+
+
 		</plugins>
 
 
 	</build>
+
 </project>

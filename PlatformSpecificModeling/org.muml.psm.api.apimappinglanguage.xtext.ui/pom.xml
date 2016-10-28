@@ -20,25 +20,12 @@
 		</dependency>
 	</dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.eclipse.xtend</groupId>
-				<artifactId>xtend-maven-plugin</artifactId>
-				<version>2.9.0</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>compile</goal>
-							<goal>testCompile</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${project.build.directory}/xtend-gen/main</outputDirectory>
-							<testOutputDirectory>${project.build.directory}/xtend-gen/test</testOutputDirectory>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+<build>
+	<plugins>
+     <plugin>
+          <groupId>org.eclipse.xtend</groupId>
+          <artifactId>xtend-maven-plugin</artifactId>
+    </plugin>
+	</plugins>
+</build>
 </project>
