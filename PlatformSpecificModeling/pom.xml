@@ -89,9 +89,7 @@
       </execution>
           </executions>
         </plugin>
-      </plugins>
-    </pluginManagement>
-    <plugins>
+
       <plugin>
         <groupId>org.eclipse.tycho</groupId>
         <artifactId>tycho-maven-plugin</artifactId>
@@ -127,10 +125,8 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
     </plugin>
-				          
-
-    
-  </plugins>
+    </plugins
+    </pluginManagement>
   </build>
   
   <repositories>
