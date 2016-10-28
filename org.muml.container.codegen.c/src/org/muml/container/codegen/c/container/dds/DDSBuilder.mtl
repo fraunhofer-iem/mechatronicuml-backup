@@ -117,7 +117,7 @@
 			return NULL;
 		}
 		//register the topic
-		topic=DDS_DomainParticipant_create_topic(hndl->participant, "[writer.topic.name/]", type_name,
+		topic = DDS_DomainParticipant_create_topic(hndl->participant, "[writer.topic.name/]", type_name,
 			&DDS_TOPIC_QOS_DEFAULT, NULL /* listener */,
 			DDS_STATUS_MASK_NONE);
 		if (topic == NULL) {
@@ -191,7 +191,7 @@
 			return NULL;
 		}
 		//register the topic
-		topic=DDS_DomainParticipant_create_topic(hndl->participant, "[reader.topic.name/]", type_name,
+		topic = DDS_DomainParticipant_create_topic(hndl->participant, "[reader.topic.name/]", type_name,
 			&DDS_TOPIC_QOS_DEFAULT, NULL /* listener */,
 			DDS_STATUS_MASK_NONE);
 		if (topic == NULL) {
@@ -270,7 +270,7 @@ static PortHandle* [port.getMethodNameForDDSPortBuilder()/]([port.component.getB
 			return NULL;
 		}
 		//register the topic
-		DDS_DomainParticipant_create_topic(hndl->participant, "[writer.topic.name/]", type_name,
+		topic = DDS_DomainParticipant_create_topic(hndl->participant, "[writer.topic.name/]", type_name,
 			&DDS_TOPIC_QOS_DEFAULT, NULL /* listener */,
 			DDS_STATUS_MASK_NONE);
 		if (topic == NULL) {
@@ -312,7 +312,7 @@ static PortHandle* [port.getMethodNameForDDSPortBuilder()/]([port.component.getB
 			return NULL;
 		}
 		//register the topic
-		DDS_DomainParticipant_create_topic(hndl->participant, "[reader.topic.name/]", type_name,
+		topic = DDS_DomainParticipant_create_topic(hndl->participant, "[reader.topic.name/]", type_name,
 			&DDS_TOPIC_QOS_DEFAULT, NULL /* listener */,
 			DDS_STATUS_MASK_NONE);
 		if (topic == NULL) {
