@@ -86,8 +86,9 @@
       </execution>
           </executions>
           <configuration>
-      <outputDirectory>xtend-gen</outputDirectory>
-          </configuration>
+  			<outputDirectory>${project.build.directory}/xtend-gen</outputDirectory>
+			<testOutputDirectory>${project.build.directory}/xtend-gen/test</testOutputDirectory>  
+	     </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
