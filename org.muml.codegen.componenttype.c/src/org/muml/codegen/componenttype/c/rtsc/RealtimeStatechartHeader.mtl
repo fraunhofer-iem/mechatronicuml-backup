@@ -125,7 +125,7 @@ struct [getClassName(rtsc)/] {
 
 		[for (port : Port | comp.ports) ? (oclIsKindOf(HybridPort))]
 			[let hPort : HybridPort = port.oclAsType(HybridPort)]
-				[hPort.dataType.getTypeName()/] [hPort.getVariableName()/];
+				[hPort.dataType.getTypeName()/] [hPort.getStructVariableName()/];
 			[/let]		
 		[/for]
 

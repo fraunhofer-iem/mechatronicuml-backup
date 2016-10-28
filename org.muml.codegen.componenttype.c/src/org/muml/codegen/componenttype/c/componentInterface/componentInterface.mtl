@@ -53,7 +53,7 @@
 		
 
 	
-[if ((component.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (component.componentKind = ComponentKind::HYBRID_COMPONENT) and component.oclIsTypeOf(AtomicComponent))]
+[if ((component.componentKind = ComponentKind::SOFTWARE_COMPONENT) and component.oclIsKindOf(AtomicComponent))]
 	
 			/*****
  			 *

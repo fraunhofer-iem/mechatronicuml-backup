@@ -80,23 +80,24 @@ msgT.getVariableName()+'_Message'/]
 [template public generate_ContainerFunctionDefinitions(component:Component)]
 [for (port : DiscretePort | component.ports->filter(DiscretePort))]
 	[for (sendMsg : MessageType | port.senderMessageTypes)]
-		void [getContainerSendMethodName(port, sendMsg)/](Port* p, [sendMsg.getMessageType()/]* msg);
+		[getVoidTypeString(component)/] [getContainerSendMethodName(port, sendMsg)/]([getClassName(port)/]* p, [sendMsg.getMessageType()/]* msg);
 	[/for]
 	[for (recvMsg : MessageType | port.receiverMessageTypes)]
-		bool_t [getContainerReceiverMethodName(port, recvMsg)/](Port* p, [recvMsg.getMessageType()/]* msg);
-		bool_t [getContainerCheckForMessageMethodName(port, recvMsg)/](Port* p);
+		[getBooleanTypeString(component)/] [getContainerReceiverMethodName(port, recvMsg)/]([getClassName(port)/]* p, [recvMsg.getMessageType()/]* msg);
+		[getBooleanTypeString(component)/] [getContainerCheckForMessageMethodName(port, recvMsg)/]([getClassName(port)/]* p);
 	[/for]
 [/for]
 
 [for (port : DirectedTypedPort | component.ports->filter(DirectedTypedPort))]
 		[if (port.outPort)]
-			void [getContainerSendMethodName(port)/](Port* p, [port.dataType.getTypeName()/]* value);
+			[getVoidTypeString(component)/] [getContainerSendMethodName(port)/]([getClassName(port)/]* p, [port.dataType.getTypeName()/]* value);
 		[/if]
 		[if port.inPort]
-		bool_t [getContainerReceiverMethodName(port)/](Port* p, [port.dataType.getTypeName()/]* value);
-		bool_t [getContainerCheckForMessageMethodName(port)/](Port* p);
+		[getBooleanTypeString(component)/] [getContainerReceiverMethodName(port)/]([getClassName(port)/]* p, [port.dataType.getTypeName()/]* value);
+		[getBooleanTypeString(component)/] [getContainerCheckForMessageMethodName(port)/]([getClassName(port)/]* p);
 		[/if]
 [/for]
+
 
 [/template]
 

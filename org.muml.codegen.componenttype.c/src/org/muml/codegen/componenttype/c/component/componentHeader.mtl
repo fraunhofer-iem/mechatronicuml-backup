@@ -39,11 +39,13 @@
 			[constructor(component)/]
 	
 			[destroy(component)/]
-		
-[if ((component.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (component.componentKind = ComponentKind::HYBRID_COMPONENT))]
 			
 			[processStep(component)/]
-[/if]		
+	
+
+
+
+
 			[getterAndSetter(component)/]
 		
 			[queueMethods(component)/]
@@ -97,17 +99,13 @@ struct [getClassName(component)/] {
 		[/for]
 
 		[if component.oclIsKindOf(AtomicComponent)]
-		[for (port : Port | component.ports)]
-			[if (port.oclIsTypeOf(HybridPort))]
-				[if port.oclAsType(HybridPort).outPort]
-					void (*setterOf_[port.oclAsType(HybridPort).getName()/])([port.oclAsType(HybridPort).dataType.getTypeName()/]);/**< A Pointer to the setter function of the hybrid port: [port.getName()/] */
-				[else]
-					[port.oclAsType(HybridPort).dataType.getTypeName()/] (*getterOf_[port.oclAsType(HybridPort).getName()/])(void);/**< A Pointer to the getter function of the hybrid port: [port.getName()/] */
-				[/if]
-
-			[/if]
+					
+		[/if]
+		[comment Continious Component Implementation/]
+		[if component.oclIsKindOf(AtomicComponent) and component.componentKind=ComponentKind::CONTINUOUS_COMPONENT]
+		[for (port : DirectedTypedPort | component.ports->filter(DirectedTypedPort))]
+			[port.dataType.getTypeName()/] [getStructVariableName(port)/]; /*A Ports Data Variable*/
 		[/for]
-			
 		[/if]
 		
 		
@@ -130,7 +128,7 @@ struct [getClassName(component)/] {
 * 
 * @param component The [getClassName(component)/] to be initialized
 */	
-	void [getInitializeMethodName(component)/]([getClassName(component)/]* component);
+	[getVoidTypeString(component)/] [getInitializeMethodName(component)/]([getClassName(component)/]* component);
 [/template]
 
 [**
@@ -158,7 +156,7 @@ struct [getClassName(component)/] {
  * 
 * @param component The specific [getClassName(component)/] to be destroyed
  */
-	void [getDestroyMethodName(component)/]([getClassName(component)/]* component);
+	[getVoidTypeString(component)/] [getDestroyMethodName(component)/]([getClassName(component)/]* component);
 [/template]
 
 [**
@@ -191,7 +189,7 @@ struct [getClassName(component)/] {
 *			
 * @param component The [getClassName(component)/] whose behavior shall be checked
 */
-	void [getProcessMethodName(component)/]([getClassName(component)/]* component);
+	[getVoidTypeString(component)/] [getProcessMethodName(component)/]([getClassName(component)/]* component);
 [/template]
 
 [**
@@ -201,7 +199,15 @@ struct [getClassName(component)/] {
  * @param statechart
 */]
 [template private getterAndSetter (component : Component) post (trim())]
-	[if (component.oclIsTypeOf(AtomicComponent))]
+	/*Getter and Setter for Sending Values of Hybrid/Continuous ports*/
+	[for (port : DirectedTypedPort | component.ports->filter(DirectedTypedPort))]
+	[if port.outPort]
+			[getVoidTypeString(component)/] setterOf_[port.getName()/]([getClassName(port)/]* [getVariableName(port)/], [port.dataType.getTypeName()/]* [port.getName()/]);/**< A Pointer to the setter function of the port: [port.getName()/] */
+	[else]
+		[getVoidTypeString(component)/] getterOf_[port.getName()/]([getClassName(port)/]* [getVariableName(port)/], [port.dataType.getTypeName()/]* [port.getName()/]);/**< A Pointer to the getter function of the port: [port.getName()/] */
+	[/if]
+	[/for]
+	[if (component.componentKind=ComponentKind::SOFTWARE_COMPONENT)]
 	[let rtsc : RealtimeStatechart = component.oclAsType(AtomicComponent).behavior]
 		[getClassName(rtsc)/]* [getGetterName(component)/]([getClassName(component)/]* component);
 	[/let]
@@ -229,8 +235,8 @@ struct [getClassName(component)/] {
 [if (component.oclIsKindOf(StructuredComponent))]
 [for (compPart : ComponentPart | component.oclAsType(StructuredComponent).embeddedComponentParts->asSet())]
 //Queue methods for component parts of type '[getName(compPart)/]'
-void [getAddMethodName(component,compPart)/]([getClassName(component)/]* component, [getClassName(compPart)/]* multiPart);		
-void [getRemoveMethodName(component,compPart)/]([getClassName(compPart)/]* component, [getClassName(compPart)/]* multiPart);
+[getVoidTypeString(component)/] [getAddMethodName(component,compPart)/]([getClassName(component)/]* component, [getClassName(compPart)/]* multiPart);		
+[getVoidTypeString(component)/] [getRemoveMethodName(component,compPart)/]([getClassName(compPart)/]* component, [getClassName(compPart)/]* multiPart);
 [/for]
 [/if]
 [/template]

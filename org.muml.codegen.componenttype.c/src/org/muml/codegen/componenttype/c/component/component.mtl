@@ -17,7 +17,7 @@
 [import org::muml::codegen::componenttype::c::queries::stringQueries/]
 [import org::muml::codegen::componenttype::c::queries::modelQueries/]
 [import org::muml::codegen::componenttype::c::actionlanguage::expression/]
-
+[import org::muml::codegen::componenttype::c::queries::ContainerQueries/]
 
 [**
  * Generates the class for the given component.
@@ -38,7 +38,8 @@
 		[destroy(component)/]
 		
 		[processStep(component)/]
-	
+
+		
 		[getterAndSetter(component)/]
 
 		[queueMethods(component)/]
@@ -155,7 +156,7 @@
 				[/if]
 			[/for]
 			[/if]
-			[if component.oclIsTypeOf(AtomicComponent) and component.componentKind=component::ComponentKind::SOFTWARE_COMPONENT]
+			[if component.oclIsKindOf(AtomicComponent) and component.componentKind=component::ComponentKind::SOFTWARE_COMPONENT]
 				[getDestroyMethodName(component.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart))/](component->stateChart);	
 			[/if]
 		
@@ -247,7 +248,7 @@
 		}
 	[/if]
 	[if component.oclIsKindOf(AtomicComponent) and component.componentKind=component::ComponentKind::SOFTWARE_COMPONENT]
-		[for (hPort : HybridPort | component.eAllContents(HybridPort)) ? (hPort.inPort)]
+		[for (hPort : HybridPort | component.ports->filter(HybridPort)) ? (hPort.inPort)]
 			component->stateChart->[hPort.getVariableName()/] = component->getterOf_[hPort.getName()/]();
 		[/for]
 
@@ -258,10 +259,26 @@
 		[/for]
 		[getProcessMethodName(rtsc)/](component->stateChart);
 		[/let]
-		[for (hPort : HybridPort | component.eAllContents(HybridPort))? (hPort.outPort)]
-			component->setterOf_[hPort.getName()/](component->stateChart->[hPort.getVariableName()/]);
+		[if  not component.ports->filter(HybridPort)->select(outPort)->isEmpty()]/*Send Messages for Hybrid Out Ports*/[/if]	
+		[for (hPort : HybridPort | component.ports->filter(HybridPort))? (hPort.outPort)]
+			setterOf_[hPort.getName()/](&component->[getVariableName(hPort)/], &component->stateChart->[hPort.getName()/]);
+		[/for]
+		[if  not component.ports->filter(HybridPort)->select(inPort)->isEmpty()]/*Receive Messages for Hybrid In Ports*/[/if]	
+		[for (hPort : HybridPort | component.ports->filter(HybridPort))? (hPort.inPort)]
+			getterOf_[hPort.getName()/](&component->[getVariableName(hPort)/], &component->stateChart->[hPort.getName()/]);
 		[/for]
 	[/if]
+	[if component.oclIsKindOf(AtomicComponent) and component.componentKind=component::ComponentKind::CONTINUOUS_COMPONENT]
+	[if  not component.ports->filter(ContinuousPort)->select(outPort)->isEmpty()]/*Send Messages for Continuous Out Ports*/[/if]
+		[for (cPort : ContinuousPort | component.ports->filter(ContinuousPort)) ? (cPort.outPort)]
+			setterOf_[cPort.getName()/](&component->[getVariableName(cPort)/], [cPort.dataType.getTypeName()/]* [cPort.getName()/]);
+		[/for]
+		[if  not component.ports->filter(ContinuousPort)->select(inPort)->isEmpty()]/*Receive Messages for Continuous In Ports*/[/if]
+		[for (cPort : ContinuousPort | component.ports->filter(ContinuousPort)) ? (cPort.inPort)]
+			getterOf_[cPort.getName()/](&component->[getVariableName(cPort)/], &component->[cPort.getName()/]);
+		[/for]
+	[/if]
+	
 }	
 [/template]
 
@@ -278,15 +295,26 @@
 		[getClassName(component.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart))/]* [getGetterName(component)/]([getClassName(component)/]* component) {
 			return component->stateChart;
 		} 
-	[/if]
+[for (port : Port | component.ports) ? (port.oclIsKindOf(DiscretePort))]
+	Port* [getGetterName(port)/]([getClassName(component)/]* component) {
+	return &(component->[getVariableName(port)/]);
+}
+[/for]
 
-	[for (port : Port | component.ports)]
-	[if (port.oclIsKindOf(DiscretePort))]
-		Port* [getGetterName(port)/]([getClassName(component)/]* component) {
-			return &(component->[getVariableName(port)/]);
-		}
-	[/if]
-	[/for]
+[/if]
+[if (component.oclIsKindOf(AtomicComponent))]
+[for (port : DirectedTypedPort | component.ports->filter(DirectedTypedPort)->select(outPort))]
+	[getVoidTypeString(port)/] setterOf_[port.getName()/]([getClassName(port)/]* [getVariableName(port)/], [port.dataType.getTypeName()/]* [port.getName()/]) {
+		[getContainerSendMethodName(port)/]([getVariableName(port)/], [port.getName()/]);		
+}
+[/for]
+[for (port : DirectedTypedPort | component.ports->filter(DirectedTypedPort)->select(inPort))]
+	getterOf_[port.getName()/]([getClassName(port)/]* [getVariableName(port)/], [port.dataType.getTypeName()/]* [port.getName()/]) {
+	if([getContainerCheckForMessageMethodName(port)/]([getVariableName(port)/])){
+		[getContainerReceiverMethodName(port)/]([getVariableName(port)/], [port.getName()/]);
+	}
+}
+[/for][/if]
 [/template]
 
 

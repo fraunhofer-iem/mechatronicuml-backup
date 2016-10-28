@@ -560,11 +560,7 @@ endif
  * @param port
 */]
 [query public getClassName(port : Port) : String = 
-	if (port.oclIsTypeOf(DiscretePort)) then
 		'Port'
-	else
-		'#warning Continous ports not supported!'
-	endif
 /]
 
 
@@ -661,11 +657,7 @@ endif
 if (port.oclIsUndefined()) then
 '#error null value '
 else
-	if (port.oclIsTypeOf(HybridPort) or port.oclIsTypeOf(ContinuousPort)) then
-			getStructVariableName(port)
-	else
-		getName(port) + 'Port'
-	endif
+	getName(port) + 'Port'
 endif
 /]
 
@@ -917,7 +909,7 @@ endif
  * @param element
 */]
 [query public getTypeName(type : PrimitiveDataType) : String = 
-	if (type = PrimitiveTypes::BOOLEAN or type.name = 'boolean') then 'bool_T' else
+	if (type = PrimitiveTypes::BOOLEAN or type.name = 'boolean') then getBooleanTypeString(type) else
 	if (type = PrimitiveTypes::DOUBLE or type.name = 'double') then 'double_T' else
 	if (type = PrimitiveTypes::INT8 or type.name = 'int8') then 'int8_T' else
 	if (type = PrimitiveTypes::INT16 or type.name = 'int16') then 'int16_T' else
@@ -927,7 +919,7 @@ endif
 	if (type = PrimitiveTypes::UINT16 or type.name = 'uint16') then 'uint16_T' else
 	if (type = PrimitiveTypes::UINT32 or type.name = 'uint32') then 'uint32_T' else
 	if (type = PrimitiveTypes::UINT64 or type.name = 'uint64') then 'uint64_T' else
-	if (type = PrimitiveTypes::VOID or type.name = 'void') then 'void' else
+	if (type = PrimitiveTypes::VOID or type.name = 'void') then getVoidTypeString(type) else
 	'PRIMITIVE TYPE UNDEFINED: '+type
 	endif
 	endif
@@ -942,6 +934,12 @@ endif
 	endif
 /]
 
+[query public getVoidTypeString(name:NamedElement) : String = 
+'void'
+/]
+
+[query public getBooleanTypeString(name:NamedElement) : String = 'bool_T'
+/]
 
 
 [query public getTypeName(type : DataType) : String = 
@@ -997,6 +995,8 @@ endif
 	endif
 
 /]
+
+
 
 [query public getReferenceVariableName(cpi : ContinuousPortInstance) : String = 
 cpi.getQualifiedName() + '_Reference'
