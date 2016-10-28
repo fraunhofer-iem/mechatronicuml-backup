@@ -95,7 +95,10 @@
 		[if component.oclIsKindOf(AtomicComponent) and component.componentKind=component::ComponentKind::SOFTWARE_COMPONENT]
 			[getInitializeMethodName(component.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart))/](component->stateChart);	
 		[/if]
-	
+		/*Initialize all DirectedTypedPorts*/
+		[for (port : DirectedTypedPort | component.ports->filter(DirectedTypedPort))]
+		Clock_reset(component->[getVariableName(port)/]Clock);
+		[/for]
 			[comment Initialization of Ports/]
 	}
 [/template]
@@ -248,10 +251,15 @@
 		}
 	[/if]
 	[if component.oclIsKindOf(AtomicComponent) and component.componentKind=component::ComponentKind::SOFTWARE_COMPONENT]
+		[comment]
 		[for (hPort : HybridPort | component.ports->filter(HybridPort)) ? (hPort.inPort)]
+		if (Clock_getTime(component->[getVariableName(hPort)/]Clock) >= [hPort.samplingInterval.value/] * [getTimeUnitFactor(hPort.samplingInterval)/]) //interval of hybrid port
+		{
 			component->stateChart->[hPort.getVariableName()/] = component->getterOf_[hPort.getName()/]();
+			Clock_reset(component->[getVariableName(hPort)/]Clock);
+		}
 		[/for]
-
+		[/comment]
 		[let rtsc : RealtimeStatechart = component.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart)]
 			component->stateChart->[rtsc.getExecutionVerifierName()/] = true;
 		[for (region : Region | rtsc.eAllContents(Region))]
@@ -261,21 +269,45 @@
 		[/let]
 		[if  not component.ports->filter(HybridPort)->select(outPort)->isEmpty()]/*Send Messages for Hybrid Out Ports*/[/if]	
 		[for (hPort : HybridPort | component.ports->filter(HybridPort))? (hPort.outPort)]
+		if (Clock_getTime(component->[getVariableName(hPort)/]Clock) >= [hPort.samplingInterval.value.generateExpression('')/] * [getTimeUnitFactor(hPort.samplingInterval)/]) //interval of hybrid port
+		{
 			setterOf_[hPort.getName()/](&component->[getVariableName(hPort)/], &component->stateChart->[hPort.getName()/]);
+			Clock_reset(component->[getVariableName(hPort)/]Clock);
+		}
 		[/for]
-		[if  not component.ports->filter(HybridPort)->select(inPort)->isEmpty()]/*Receive Messages for Hybrid In Ports*/[/if]	
+		[if  not component.ports->filter(HybridPort)->select(inPort)->isEmpty()]/*Receive Messages for Hybrid In Ports*/[/if]
 		[for (hPort : HybridPort | component.ports->filter(HybridPort))? (hPort.inPort)]
+		if (Clock_getTime(component->[getVariableName(hPort)/]Clock) >= [hPort.samplingInterval.value.generateExpression('')/] * [getTimeUnitFactor(hPort.samplingInterval)/]) //interval of hybrid port
+		{
 			getterOf_[hPort.getName()/](&component->[getVariableName(hPort)/], &component->stateChart->[hPort.getName()/]);
+			Clock_reset(component->[getVariableName(hPort)/]Clock);
+		}
 		[/for]
 	[/if]
 	[if component.oclIsKindOf(AtomicComponent) and component.componentKind=component::ComponentKind::CONTINUOUS_COMPONENT]
 	[if  not component.ports->filter(ContinuousPort)->select(outPort)->isEmpty()]/*Send Messages for Continuous Out Ports*/[/if]
 		[for (cPort : ContinuousPort | component.ports->filter(ContinuousPort)) ? (cPort.outPort)]
+		{
+		/*FIXME Currently a Continuous Port has no update interval. We set a fixed interval of 1ms.  An interval has to be defined in the model in the future.*/ 
+		int localTimeInterval = 1;
+		if (Clock_getTime(component->[getVariableName(cPort)/]Clock) >= localTimeInterval * 1) //interval of continuous port
+		{
 			setterOf_[cPort.getName()/](&component->[getVariableName(cPort)/], [cPort.dataType.getTypeName()/]* [cPort.getName()/]);
+			Clock_reset(component->[getVariableName(cPort)/]Clock);
+		}
+		}
 		[/for]
 		[if  not component.ports->filter(ContinuousPort)->select(inPort)->isEmpty()]/*Receive Messages for Continuous In Ports*/[/if]
 		[for (cPort : ContinuousPort | component.ports->filter(ContinuousPort)) ? (cPort.inPort)]
+		{
+		/*FIXME Currently a Continuous Port has no update interval. We set a fixed interval of 1ms.  An interval has to be defined in the model in the future.*/ 
+		int localTimeInterval = 1;
+		if (Clock_getTime(component->[getVariableName(cPort)/]Clock) >= localTimeInterval * 1) //interval of continuous port
+		{	
 			getterOf_[cPort.getName()/](&component->[getVariableName(cPort)/], &component->[cPort.getName()/]);
+			Clock_reset(component->[getVariableName(cPort)/]Clock);
+		}
+		}
 		[/for]
 	[/if]
 	

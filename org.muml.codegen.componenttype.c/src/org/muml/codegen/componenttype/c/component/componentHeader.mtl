@@ -93,11 +93,13 @@ struct [getClassName(component)/] {
 		[/if]
 	
 		[comment list all ports of the component/]
-		[comment list all ports of the component/]
 		[for (port : Port | component.ports)]
 				Port [getVariableName(port)/]; /**< A  Component's Port: [port.getName()/] */
 		[/for]
-
+		[for (port : DirectedTypedPort | component.ports->filter(DirectedTypedPort))]
+				Clock [getVariableName(port)/]Clock; /**< A  Hybrid/ Continuous Port's Clock: [getVariableName(port)/]Clock */
+		[/for]
+		
 		[if component.oclIsKindOf(AtomicComponent)]
 					
 		[/if]
