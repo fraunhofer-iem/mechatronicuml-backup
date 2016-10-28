@@ -35,20 +35,16 @@
 [let cis : OrderedSet(ComponentInstance) = ecuConfig.componentContainers.componentInstanceConfigurations.componentInstance->asOrderedSet()]
 //variable for component Instances
 [for (ci : ComponentInstance | cis)]
-	[if (ci.componentType.oclIsKindOf(AtomicComponent) and ci.componentType.oclAsType(AtomicComponent).componentKind=ComponentKind::SOFTWARE_COMPONENT)]
+	[if (ci.componentType.oclIsKindOf(AtomicComponent))]
 			[ci.componentType.getClassName()/]* atomic_c[i/];
-	[else]
-			[ci.componentType.getClassName()/]* cont_c[i/];
 	[/if]
 [/for]
 [for (ci : ComponentInstance | cis->filter(AtomicComponentInstance)->select(c:AtomicComponentInstance |  c.componentType=ComponentKind::SOFTWARE_COMPONENT)->asOrderedSet())]
 [/for]
 int main(){
 	[for (ci : ComponentInstance | cis)]
-		[if (ci.componentType.oclIsKindOf(AtomicComponent) and ci.componentType.oclAsType(AtomicComponent).componentKind=ComponentKind::SOFTWARE_COMPONENT)]
+		[if (ci.componentType.oclIsKindOf(AtomicComponent))]
 			atomic_c[i/]= [ci.componentType.getContainerComponentCreateMethodName()/]([ci.getIdentifierVariableName()/]);
-		[else]
-			 cont_c[i/]=[ci.componentType.getContainerComponentCreateMethodName()/]([ci.getIdentifierVariableName()/]);
 		[/if]
 
 	[/for]
@@ -58,14 +54,11 @@ int main(){
 	while (1) {
 
 	[for (ci : ComponentInstance | cis)]
-			[if (ci.componentType.oclIsKindOf(AtomicComponent) and ci.componentType.oclAsType(AtomicComponent).componentKind=ComponentKind::SOFTWARE_COMPONENT)]
-		[ci.componentType.getProcessMethodName()/](atomic_c[i/]);
+		[if (ci.componentType.oclIsKindOf(AtomicComponent))]
+			[ci.componentType.getProcessMethodName()/](atomic_c[i/]);
 		[/if]
-	 		
-		[/for]
-
+	[/for]
 	}
-
 }	
 
 [/let]
