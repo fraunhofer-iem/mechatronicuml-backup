@@ -88,7 +88,7 @@ struct [getClassName(component)/] {
 		[/if]
 
 		[comment if atomic, list the RTSC of the component/]
-		[if (component.oclIsKindOf(AtomicComponent) and (not(componentKind=ComponentKind::CONTINUOUS_COMPONENT)))]
+		[if (component.oclIsKindOf(AtomicComponent) and (componentKind=ComponentKind::SOFTWARE_COMPONENT))]
 			[getClassName(component.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart))/]* stateChart;	/**< The [getClassName(component.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart))/] of the Component [component.getName()/] */
 		[/if]
 	
@@ -100,9 +100,11 @@ struct [getClassName(component)/] {
 				Clock [getVariableName(port)/]Clock; /**< A  Hybrid/ Continuous Port's Clock: [getVariableName(port)/]Clock */
 		[/for]
 		
-		[if component.oclIsKindOf(AtomicComponent)]
-					
-		[/if]
+		[for (port : ContinuousPort | component.ports->filter(ContinuousPort))]
+			void (*[getVariableName(port)/]AccessFunction) ([port.dataType.getTypeName()/]*); /**access function pointer for continuous port */
+			/*FIXME: Add InitFunction and Destory Funcion */
+		[/for]
+
 		[comment Continious Component Implementation/]
 		[if component.oclIsKindOf(AtomicComponent) and component.componentKind=ComponentKind::CONTINUOUS_COMPONENT]
 		[for (port : DirectedTypedPort | component.ports->filter(DirectedTypedPort))]
@@ -206,7 +208,7 @@ struct [getClassName(component)/] {
 	[if port.outPort]
 			[getVoidTypeString(component)/] setterOf_[port.getName()/]([getClassName(port)/]* [getVariableName(port)/], [port.dataType.getTypeName()/]* [port.getName()/]);/**< A Pointer to the setter function of the port: [port.getName()/] */
 	[else]
-		[getVoidTypeString(component)/] getterOf_[port.getName()/]([getClassName(port)/]* [getVariableName(port)/], [port.dataType.getTypeName()/]* [port.getName()/]);/**< A Pointer to the getter function of the port: [port.getName()/] */
+		[getBooleanTypeString(component)/] getterOf_[port.getName()/]([getClassName(port)/]* [getVariableName(port)/], [port.dataType.getTypeName()/]* [port.getName()/]);/**< A Pointer to the getter function of the port: [port.getName()/] */
 	[/if]
 	[/for]
 	[if (component.componentKind=ComponentKind::SOFTWARE_COMPONENT)]

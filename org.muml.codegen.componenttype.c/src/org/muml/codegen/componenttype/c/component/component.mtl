@@ -279,7 +279,8 @@
 		[for (hPort : HybridPort | component.ports->filter(HybridPort))? (hPort.inPort)]
 		if (Clock_getTime(component->[getVariableName(hPort)/]Clock) >= [hPort.samplingInterval.value.generateExpression('')/] * [getTimeUnitFactor(hPort.samplingInterval)/]) //interval of hybrid port
 		{
-			getterOf_[hPort.getName()/](&component->[getVariableName(hPort)/], &component->stateChart->[hPort.getName()/]);
+			[getBooleanTypeString(hPort)/] changed = false;
+			changed = getterOf_[hPort.getName()/](&component->[getVariableName(hPort)/], &component->stateChart->[hPort.getName()/]);
 			Clock_reset(component->[getVariableName(hPort)/]Clock);
 		}
 		[/for]
@@ -304,8 +305,12 @@
 		int localTimeInterval = 1;
 		if (Clock_getTime(component->[getVariableName(cPort)/]Clock) >= localTimeInterval * 1) //interval of continuous port
 		{	
-			getterOf_[cPort.getName()/](&component->[getVariableName(cPort)/], &component->[cPort.getName()/]);
+			[getBooleanTypeString(cPort)/] changed = false;
+			changed =  getterOf_[cPort.getName()/](&component->[getVariableName(cPort)/], &component->[cPort.getName()/]);
 			Clock_reset(component->[getVariableName(cPort)/]Clock);
+			if(changed){
+				component->[getVariableName(cPort)/]AccessFunction(&component->[cPort.getName()/]);
+			}
 		}
 		}
 		[/for]
@@ -341,10 +346,13 @@
 }
 [/for]
 [for (port : DirectedTypedPort | component.ports->filter(DirectedTypedPort)->select(inPort))]
-	getterOf_[port.getName()/]([getClassName(port)/]* [getVariableName(port)/], [port.dataType.getTypeName()/]* [port.getName()/]) {
+	
+	[getBooleanTypeString(component)/] getterOf_[port.getName()/]([getClassName(port)/]* [getVariableName(port)/], [port.dataType.getTypeName()/]* [port.getName()/]) {
 	if([getContainerCheckForMessageMethodName(port)/]([getVariableName(port)/])){
 		[getContainerReceiverMethodName(port)/]([getVariableName(port)/], [port.getName()/]);
+	return true;
 	}
+	else return false;
 }
 [/for][/if]
 [/template]

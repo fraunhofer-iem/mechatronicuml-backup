@@ -45,6 +45,8 @@
 
 		[generateBuilderForPortHandle(container)/]
 
+		[generateAccessCommandStubs(container, container.componentInstanceConfigurations)/]
+
 		[generateCreateMethodForComponentInstances(container, container.componentInstanceConfigurations)/]
 		
 	[/file]

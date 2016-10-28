@@ -37,6 +37,9 @@
 	[for (componentInstanceCfg : ContainerComponentInstanceConfiguration | cicfgs)]
 		case [componentInstanceCfg.componentInstance.getIdentifierVariableName()/]:
 			b.ID = ID;
+			[for (cPort : ContinuousPort | container.componentType.ports->filter(ContinuousPort))]
+				b.[getVariableName(cPort)/]AccessFunction=&[componentInstanceCfg.componentInstance.getIdentifierVariableName()/][getVariableName(cPort)/]accessCommand;
+			[/for]
 			[for (portCfg : PortInstanceConfiguration | componentInstanceCfg.portInstanceConfigurations)]
 				[if (portCfg.oclIsKindOf(PortInstanceConfiguration_Local))]
 					b.[portCfg.portInstance.portType.name.toUpper()/] = PORT_ACTIVE;
@@ -60,5 +63,18 @@
 	}
 [/template]	
 
+
+[template public generateAccessCommandStubs(container:ComponentContainer, cicfgs:Collection(ContainerComponentInstanceConfiguration))]
+[for (componentInstanceCfg : ContainerComponentInstanceConfiguration | cicfgs)]
+	[for (cPort : ContinuousPort | container.componentType.ports->filter(ContinuousPort))]
+		static void [componentInstanceCfg.componentInstance.getIdentifierVariableName()/][getVariableName(cPort)/]accessCommand([getTypeName(cPort.dataType)/]* value){
+		// [protected ('API')]
+ 	
+ 		// [/protected]
+	}
+	[/for]
+[/for]
+
+[/template]	
 
 

@@ -64,6 +64,10 @@ typedef struct [component.getBuilderStructName()/] {
 			PortHandle* (*create[port.name.toUpper()/]Handle)(struct [component.getBuilderStructName()/]*, PortHandle*); /**< The builder method to create a PortHandle for port [port.name/] */
 			struct port_option [port.name.toUpper()/]_op; /**< The port_option for the PortHandle of port [port.name/] */
 		[/for]
+		[for (cPort : ContinuousPort | component.ports->filter(ContinuousPort))]
+		void (*[getVariableName(cPort)/]AccessFunction) ([cPort.dataType.getTypeName()/]*); /**access function pointer for continuous port */
+		/*FIXME add initialize and destroy function pointer*/
+		[/for]
 }[component.getBuilderStructName()/];
 
 /**
@@ -93,7 +97,10 @@ static const [component.getBuilderStructName()/] INIT_BUILDER = { 0, [for (port 
 */
 	static [cmp.getClassName()/]* MCC_[cmp.getClassName()/]_Builder([cmp.getBuilderStructName()/]* b){
 		instancePool['['/]pool_index[']'/].ID = b->ID;
-[if not (cmp.componentKind=ComponentKind::CONTINUOUS_COMPONENT)]
+		[for (cPort:ContinuousPort|cmp.ports->filter(ContinuousPort))]	
+		instancePool['['/]pool_index[']'/].[getVariableName(cPort)/]AccessFunction = b->[getVariableName(cPort)/]AccessFunction;
+		[/for]
+[if cmp.componentKind=ComponentKind::SOFTWARE_COMPONENT]
 		instancePool['['/]pool_index[']'/].stateChart = [cmp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getCreateMethodName()/](
 			&instancePool['['/]pool_index[']'/]);
 		//call init after RTSC was created
