@@ -340,6 +340,21 @@ public class Main extends AbstractAcceleoGenerator {
     @Override
     public void registerPackages(ResourceSet resourceSet) {
         super.registerPackages(resourceSet);
+        if (!isInWorkspace(org.muml.core.CorePackage.class)) {
+            resourceSet.getPackageRegistry().put(org.muml.core.CorePackage.eINSTANCE.getNsURI(), org.muml.core.CorePackage.eINSTANCE);
+        }
+        if (!isInWorkspace(org.muml.core.expressions.ExpressionsPackage.class)) {
+            resourceSet.getPackageRegistry().put(org.muml.core.expressions.ExpressionsPackage.eINSTANCE.getNsURI(), org.muml.core.expressions.ExpressionsPackage.eINSTANCE);
+        }
+        if (!isInWorkspace(org.muml.core.expressions.common.CommonExpressionsPackage.class)) {
+            resourceSet.getPackageRegistry().put(org.muml.core.expressions.common.CommonExpressionsPackage.eINSTANCE.getNsURI(), org.muml.core.expressions.common.CommonExpressionsPackage.eINSTANCE);
+        }
+        if (!isInWorkspace(org.muml.core.modelinstance.ModelinstancePackage.class)) {
+            resourceSet.getPackageRegistry().put(org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE.getNsURI(), org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE);
+        }
+        if (!isInWorkspace(org.muml.core.modelinstance.ModelinstancePackage.class)) {
+            resourceSet.getPackageRegistry().put(org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE.getNsURI(), org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE);
+        }
         if (!isInWorkspace(org.muml.pim.actionlanguage.ActionlanguagePackage.class)) {
             resourceSet.getPackageRegistry().put(org.muml.pim.actionlanguage.ActionlanguagePackage.eINSTANCE.getNsURI(), org.muml.pim.actionlanguage.ActionlanguagePackage.eINSTANCE);
         }
@@ -396,6 +411,39 @@ public class Main extends AbstractAcceleoGenerator {
         }
         if (!isInWorkspace(org.muml.pim.pattern.PatternPackage.class)) {
             resourceSet.getPackageRegistry().put(org.muml.pim.pattern.PatternPackage.eINSTANCE.getNsURI(), org.muml.pim.pattern.PatternPackage.eINSTANCE);
+        }
+        if (!isInWorkspace(org.muml.pim.runnable.RunnablePackage.class)) {
+            resourceSet.getPackageRegistry().put(org.muml.pim.runnable.RunnablePackage.eINSTANCE.getNsURI(), org.muml.pim.runnable.RunnablePackage.eINSTANCE);
+        }
+        if (!isInWorkspace(org.muml.psm.PsmPackage.class)) {
+            resourceSet.getPackageRegistry().put(org.muml.psm.PsmPackage.eINSTANCE.getNsURI(), org.muml.psm.PsmPackage.eINSTANCE);
+        }
+        if (!isInWorkspace(org.muml.psm.allocation.AllocationPackage.class)) {
+            resourceSet.getPackageRegistry().put(org.muml.psm.allocation.AllocationPackage.eINSTANCE.getNsURI(), org.muml.psm.allocation.AllocationPackage.eINSTANCE);
+        }
+        if (!isInWorkspace(org.muml.psm.properties.PropertiesPackage.class)) {
+            resourceSet.getPackageRegistry().put(org.muml.psm.properties.PropertiesPackage.eINSTANCE.getNsURI(), org.muml.psm.properties.PropertiesPackage.eINSTANCE);
+        }
+        if (!isInWorkspace(org.muml.psm.psm_realtimestatechart.Psm_realtimestatechartPackage.class)) {
+            resourceSet.getPackageRegistry().put(org.muml.psm.psm_realtimestatechart.Psm_realtimestatechartPackage.eINSTANCE.getNsURI(), org.muml.psm.psm_realtimestatechart.Psm_realtimestatechartPackage.eINSTANCE);
+        }
+        if (!isInWorkspace(org.muml.psm.psm_realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterPackage.class)) {
+            resourceSet.getPackageRegistry().put(org.muml.psm.psm_realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterPackage.eINSTANCE.getNsURI(), org.muml.psm.psm_realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterPackage.eINSTANCE);
+        }
+        if (!isInWorkspace(org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage.class)) {
+            resourceSet.getPackageRegistry().put(org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage.eINSTANCE.getNsURI(), org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage.eINSTANCE);
+        }
+        if (!isInWorkspace(org.muml.psm.psm_instance.Psm_instancePackage.class)) {
+            resourceSet.getPackageRegistry().put(org.muml.psm.psm_instance.Psm_instancePackage.eINSTANCE.getNsURI(), org.muml.psm.psm_instance.Psm_instancePackage.eINSTANCE);
+        }
+        if (!isInWorkspace(org.muml.psm.portapimapping.PortapimappingPackage.class)) {
+            resourceSet.getPackageRegistry().put(org.muml.psm.portapimapping.PortapimappingPackage.eINSTANCE.getNsURI(), org.muml.psm.portapimapping.PortapimappingPackage.eINSTANCE);
+        }
+        if (!isInWorkspace(org.muml.psm.apiexpressions.ApiexpressionsPackage.class)) {
+            resourceSet.getPackageRegistry().put(org.muml.psm.apiexpressions.ApiexpressionsPackage.eINSTANCE.getNsURI(), org.muml.psm.apiexpressions.ApiexpressionsPackage.eINSTANCE);
+        }
+        if (!isInWorkspace(org.muml.psm.codegen.CodegenPackage.class)) {
+            resourceSet.getPackageRegistry().put(org.muml.psm.codegen.CodegenPackage.eINSTANCE.getNsURI(), org.muml.psm.codegen.CodegenPackage.eINSTANCE);
         }
         if (!isInWorkspace(org.muml.pm.hardware.HardwarePackage.class)) {
             resourceSet.getPackageRegistry().put(org.muml.pm.hardware.HardwarePackage.eINSTANCE.getNsURI(), org.muml.pm.hardware.HardwarePackage.eINSTANCE);
