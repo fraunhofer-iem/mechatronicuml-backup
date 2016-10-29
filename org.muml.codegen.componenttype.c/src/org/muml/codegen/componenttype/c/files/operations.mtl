@@ -21,7 +21,7 @@
  * @param anAbsoluteDeadline
  */]
 [template public generateOperationFiles(COs : OrderedSet(Component), path : String, useSubDir: Boolean)]
-[let opRepos : Sequence(OperationRepository) = COs->selectByType(AtomicComponent)->select(c:AtomicComponent| not c.behavior.oclIsUndefined()).behavior.oclAsType(RealtimeStatechart).usedOperationRepositories]
+[let opRepos : Sequence(OperationRepository) = COs->selectByKind(AtomicComponent)->select(c:AtomicComponent| not c.behavior.oclIsUndefined()).behavior.oclAsType(RealtimeStatechart).usedOperationRepositories]
 [if opRepos->notEmpty()]
 [for (opRep: OperationRepository | opRepos)]
 	[comment generate separate files for each repository /]	
@@ -34,7 +34,6 @@
 [/for]
 [/if]
 [/let]
-
 [/template]
 
 
