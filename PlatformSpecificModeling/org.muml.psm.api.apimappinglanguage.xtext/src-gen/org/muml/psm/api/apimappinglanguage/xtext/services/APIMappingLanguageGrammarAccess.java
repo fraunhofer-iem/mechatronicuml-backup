@@ -43,15 +43,13 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 		
 		//MappingRepository portapimapping::MappingRepository:
 		//	imports+=Import* // allow imports
-		//	'MappingRepository:'
-		//	name=EString
-		//	'{' (portApiMappings+=PortApiMapping ("," portApiMappings+=PortApiMapping)*)?
-		//	'}' ('#' comment=EString)?
+		// 'MappingRepository:' name=EString '{' (portApiMappings+=PortApiMapping (","
+		//	portApiMappings+=PortApiMapping)*)? '}' ('#' comment=EString)?
 		@Override public ParserRule getRule() { return rule; }
 
 		//imports+=Import* // allow imports
-		//'MappingRepository:' name=EString '{' (portApiMappings+=PortApiMapping ("," portApiMappings+=PortApiMapping)*)? '}' ('#'
-		//comment=EString)?
+		// 'MappingRepository:' name=EString '{' (portApiMappings+=PortApiMapping (","
+		//portApiMappings+=PortApiMapping)*)? '}' ('#' comment=EString)?
 		public Group getGroup() { return cGroup; }
 
 		//imports+=Import*
@@ -61,7 +59,7 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 		public RuleCall getImportsImportParserRuleCall_0_0() { return cImportsImportParserRuleCall_0_0; }
 
 		//// allow imports
-		//'MappingRepository:'
+		// 'MappingRepository:'
 		public Keyword getMappingRepositoryKeyword_1() { return cMappingRepositoryKeyword_1; }
 
 		//name=EString
@@ -152,12 +150,9 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//// feature must be named importURI
-		//PortApiMapping portapimapping::PortApiMapping:
-		//	'PortInstance:'
-		//	port=[instance::ContinuousPortInstance|EString]
-		//	'{'
-		//	'execCommand:' execCommand=Entry ('initCommand:' initCommand=Entry)?
-		//	'}'
+		// PortApiMapping portapimapping::PortApiMapping:
+		//	'PortInstance:' port=[instance::ContinuousPortInstance|EString] '{' 'execCommand:' execCommand=Entry ('initCommand:'
+		//	initCommand=Entry)? '}'
 		@Override public ParserRule getRule() { return rule; }
 
 		//'PortInstance:' port=[instance::ContinuousPortInstance|EString] '{' 'execCommand:' execCommand=Entry ('initCommand:'
@@ -270,9 +265,8 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//APICallExpression apiexpressions::APICallExpression:
-		//	'API_Call:' apiCommand=[swplatform::APICommand]
-		//	'(' (parameterBindings+=ParamaterBinding (',' parameterBindings+=ParamaterBinding)*)?
-		//	')'
+		//	'API_Call:' apiCommand=[swplatform::APICommand] '(' (parameterBindings+=ParamaterBinding (','
+		//	parameterBindings+=ParamaterBinding)*)? ')'
 		@Override public ParserRule getRule() { return rule; }
 
 		//'API_Call:' apiCommand=[swplatform::APICommand] '(' (parameterBindings+=ParamaterBinding (','
@@ -571,10 +565,8 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	
 	//MappingRepository portapimapping::MappingRepository:
 	//	imports+=Import* // allow imports
-	//	'MappingRepository:'
-	//	name=EString
-	//	'{' (portApiMappings+=PortApiMapping ("," portApiMappings+=PortApiMapping)*)?
-	//	'}' ('#' comment=EString)?
+	// 'MappingRepository:' name=EString '{' (portApiMappings+=PortApiMapping (","
+	//	portApiMappings+=PortApiMapping)*)? '}' ('#' comment=EString)?
 	public MappingRepositoryElements getMappingRepositoryAccess() {
 		return pMappingRepository;
 	}
@@ -594,12 +586,9 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//// feature must be named importURI
-	//PortApiMapping portapimapping::PortApiMapping:
-	//	'PortInstance:'
-	//	port=[instance::ContinuousPortInstance|EString]
-	//	'{'
-	//	'execCommand:' execCommand=Entry ('initCommand:' initCommand=Entry)?
-	//	'}'
+	// PortApiMapping portapimapping::PortApiMapping:
+	//	'PortInstance:' port=[instance::ContinuousPortInstance|EString] '{' 'execCommand:' execCommand=Entry ('initCommand:'
+	//	initCommand=Entry)? '}'
 	public PortApiMappingElements getPortApiMappingAccess() {
 		return pPortApiMapping;
 	}
@@ -629,9 +618,8 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//APICallExpression apiexpressions::APICallExpression:
-	//	'API_Call:' apiCommand=[swplatform::APICommand]
-	//	'(' (parameterBindings+=ParamaterBinding (',' parameterBindings+=ParamaterBinding)*)?
-	//	')'
+	//	'API_Call:' apiCommand=[swplatform::APICommand] '(' (parameterBindings+=ParamaterBinding (','
+	//	parameterBindings+=ParamaterBinding)*)? ')'
 	public APICallExpressionElements getAPICallExpressionAccess() {
 		return pAPICallExpression;
 	}
@@ -703,9 +691,7 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//Block actionlanguage::Block hidden(WS, ML_COMMENT, SL_COMMENT):
-	//	{actionlanguage::Block}
-	//	'{'
-	//	expressions+=super::ExpressionStartRule* '}'
+	//	{actionlanguage::Block} '{' expressions+=super::ExpressionStartRule* '}'
 	public ActionLanguageGrammarAccess.BlockElements getBlockAccess() {
 		return gaActionLanguage.getBlockAccess();
 	}
@@ -715,11 +701,11 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//// TODO: clarify if it makes sense to allow arbitrary expressions for
+	//
 	//// the initializeExpression and countingExpression
-	//ForLoop actionlanguage::ForLoop:
+	// ForLoop actionlanguage::ForLoop:
 	//	'for' '(' initializeExpression=Assignment loopTest=super::Expression ';' countingExpression=ForLoopCountingExpression
-	//	')'
-	//	block=Block
+	//	')' block=Block
 	public ActionLanguageGrammarAccess.ForLoopElements getForLoopAccess() {
 		return gaActionLanguage.getForLoopAccess();
 	}
@@ -730,8 +716,8 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 
 	//ForLoopCountingExpression actionlanguage::Assignment:
 	//	lhs_typedNamedElementExpression=TypedNamedElementExpression
-	//	(incrementDecrementOperator=UnaryPostIncrementDecrementOperator
-	//	| assignOperator=AssignOperator rhs_assignExpression=super::Expression)
+	//	(incrementDecrementOperator=UnaryPostIncrementDecrementOperator | assignOperator=AssignOperator
+	//	rhs_assignExpression=super::Expression)
 	public ActionLanguageGrammarAccess.ForLoopCountingExpressionElements getForLoopCountingExpressionAccess() {
 		return gaActionLanguage.getForLoopCountingExpressionAccess();
 	}
@@ -741,8 +727,7 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//WhileLoop actionlanguage::WhileLoop:
-	//	'while' '(' loopTest=super::Expression ')'
-	//	block=Block
+	//	'while' '(' loopTest=super::Expression ')' block=Block
 	public ActionLanguageGrammarAccess.WhileLoopElements getWhileLoopAccess() {
 		return gaActionLanguage.getWhileLoopAccess();
 	}
@@ -752,9 +737,7 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//DoWhileLoop actionlanguage::DoWhileLoop:
-	//	'do'
-	//	block=Block
-	//	'while' '(' loopTest=super::Expression ');'
+	//	'do' block=Block 'while' '(' loopTest=super::Expression ');'
 	public ActionLanguageGrammarAccess.DoWhileLoopElements getDoWhileLoopAccess() {
 		return gaActionLanguage.getDoWhileLoopAccess();
 	}
@@ -764,9 +747,7 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//IfStatement actionlanguage::IfStatement:
-	//	'if' '(' ifCondition=super::Expression ')'
-	//	ifBlock=Block
-	//	elseIfStatements+=ElseIfStatement* ('else' elseBlock=Block)?
+	//	'if' '(' ifCondition=super::Expression ')' ifBlock=Block elseIfStatements+=ElseIfStatement* ('else' elseBlock=Block)?
 	public ActionLanguageGrammarAccess.IfStatementElements getIfStatementAccess() {
 		return gaActionLanguage.getIfStatementAccess();
 	}
@@ -776,8 +757,7 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//ElseIfStatement actionlanguage::ElseIfStatement:
-	//	'elseif' '(' elseIfCondition=super::Expression ')'
-	//	elseIfBlock=Block
+	//	'elseif' '(' elseIfCondition=super::Expression ')' elseIfBlock=Block
 	public ActionLanguageGrammarAccess.ElseIfStatementElements getElseIfStatementAccess() {
 		return gaActionLanguage.getElseIfStatementAccess();
 	}
@@ -787,8 +767,7 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//ReturnStatement actionlanguage::ReturnStatement:
-	//	{actionlanguage::ReturnStatement}
-	//	'return' expression=super::Expression ';'
+	//	{actionlanguage::ReturnStatement} 'return' expression=super::Expression ';'
 	public ActionLanguageGrammarAccess.ReturnStatementElements getReturnStatementAccess() {
 		return gaActionLanguage.getReturnStatementAccess();
 	}
@@ -818,10 +797,9 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//// Assignment
-	//Assignment actionlanguage::Assignment:
+	// Assignment actionlanguage::Assignment:
 	//	lhs_typedNamedElementExpression=TypedNamedElementExpression (assignOperator=AssignOperator
-	//	rhs_assignExpression=InitializeExpression
-	//	| incrementDecrementOperator=UnaryPostIncrementDecrementOperator) ';'
+	//	rhs_assignExpression=InitializeExpression | incrementDecrementOperator=UnaryPostIncrementDecrementOperator) ';'
 	public ActionLanguageGrammarAccess.AssignmentElements getAssignmentAccess() {
 		return gaActionLanguage.getAssignmentAccess();
 	}
@@ -851,8 +829,8 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//// end of assignment
-	//// initialize expression
-	//InitializeExpression expressions::Expression:
+	// // initialize expression
+	// InitializeExpression expressions::Expression:
 	//	ArrayInitializeExpression | NondeterministicChoiceExpression | super::Expression
 	public ActionLanguageGrammarAccess.InitializeExpressionElements getInitializeExpressionAccess() {
 		return gaActionLanguage.getInitializeExpressionAccess();
@@ -863,10 +841,10 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//// end of initialize expression
-	//// array initialization
-	//ArrayInitializeExpression actionlanguage::ArrayInitializeExpression:
-	//	'[' expressions+=InitializeExpression (',' expressions+=InitializeExpression)*
-	//	']'
+	// // array initialization
+	// ArrayInitializeExpression
+	//actionlanguage::ArrayInitializeExpression:
+	//	'[' expressions+=InitializeExpression (',' expressions+=InitializeExpression)* ']'
 	public ActionLanguageGrammarAccess.ArrayInitializeExpressionElements getArrayInitializeExpressionAccess() {
 		return gaActionLanguage.getArrayInitializeExpressionAccess();
 	}
@@ -876,8 +854,9 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//// end of array initialization
-	//// local variable declaration
-	//LocalVariableOrConstantDeclarationStatement actionlanguage::LocalVariableDeclarationStatement:
+	// // local variable declaration
+	// LocalVariableOrConstantDeclarationStatement
+	//actionlanguage::LocalVariableDeclarationStatement:
 	//	variable=(LocalVariableDeclaration | LocalConstantDeclaration)
 	public ActionLanguageGrammarAccess.LocalVariableOrConstantDeclarationStatementElements getLocalVariableOrConstantDeclarationStatementAccess() {
 		return gaActionLanguage.getLocalVariableOrConstantDeclarationStatementAccess();
@@ -908,8 +887,9 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//// end of local variable declaration
-	//// nondeterministic choice expression
-	//NondeterministicChoiceExpression actionlanguage::NondeterministicChoiceExpression:
+	// // nondeterministic choice expression
+	// NondeterministicChoiceExpression
+	//actionlanguage::NondeterministicChoiceExpression:
 	//	dataType=[types::PrimitiveDataType] range=Range
 	public ActionLanguageGrammarAccess.NondeterministicChoiceExpressionElements getNondeterministicChoiceExpressionAccess() {
 		return gaActionLanguage.getNondeterministicChoiceExpressionAccess();
@@ -940,7 +920,7 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//// LogicalExpression
-	//LogicalExpression expressions::Expression:
+	// LogicalExpression expressions::Expression:
 	//	LogicalOrExpression
 	public ActionLanguageGrammarAccess.LogicalExpressionElements getLogicalExpressionAccess() {
 		return gaActionLanguage.getLogicalExpressionAccess();
@@ -993,11 +973,10 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//// end of LogicalExpression
-	//// ComparisonExpression
-	//ComparisonExpression expressions::Expression:
+	// // ComparisonExpression
+	// ComparisonExpression expressions::Expression:
 	//	ComparisonHigherOpExpression ({commonExpressions::ComparisonExpression.leftExpression=current}
-	//	operator=ComparingEQNEQOperator
-	//	rightExpression=ComparisonHigherOpExpression)?
+	//	operator=ComparingEQNEQOperator rightExpression=ComparisonHigherOpExpression)?
 	public ActionLanguageGrammarAccess.ComparisonExpressionElements getComparisonExpressionAccess() {
 		return gaActionLanguage.getComparisonExpressionAccess();
 	}
@@ -1038,8 +1017,8 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//// end of ComparisonExpression
-	//// ArithmeticExpression	
-	//ArithmeticExpression expressions::Expression:
+	// // ArithmeticExpression	
+	// ArithmeticExpression expressions::Expression:
 	//	AdditionExpression
 	public ActionLanguageGrammarAccess.ArithmeticExpressionElements getArithmeticExpressionAccess() {
 		return gaActionLanguage.getArithmeticExpressionAccess();
@@ -1092,8 +1071,8 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//// end of ArithmeticExpression
-	//// UnaryPreExpression
-	//UnaryPreExpression expressions::Expression:
+	// // UnaryPreExpression
+	// UnaryPreExpression expressions::Expression:
 	//	{commonExpressions::UnaryExpression} operator=UnaryPreOperator enclosedExpression=TypeCastExpression
 	public ActionLanguageGrammarAccess.UnaryPreExpressionElements getUnaryPreExpressionAccess() {
 		return gaActionLanguage.getUnaryPreExpressionAccess();
@@ -1114,9 +1093,8 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//// end of UnaryPreExpression
-	//TypeCastExpression expressions::Expression:
-	//	Operand | {actionlanguage::TypeCastExpression}
-	//	'(' dataType=[types::DataType|DATATYPE] ')' enclosedExpression=Operand
+	// TypeCastExpression expressions::Expression:
+	//	Operand | {actionlanguage::TypeCastExpression} '(' dataType=[types::DataType|DATATYPE] ')' enclosedExpression=Operand
 	public ActionLanguageGrammarAccess.TypeCastExpressionElements getTypeCastExpressionAccess() {
 		return gaActionLanguage.getTypeCastExpressionAccess();
 	}
@@ -1126,9 +1104,9 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//// Operand
-	//Operand expressions::Expression:
-	//	'(' super::Expression ')' | LiteralExpression | ExtendedTypedNamedElementExpression | TimeValueExpression
-	//	| OperationCall | TriggerMessageExpression | NoAttributeSelectorExpression
+	// Operand expressions::Expression:
+	//	'(' super::Expression ')' | LiteralExpression | ExtendedTypedNamedElementExpression | TimeValueExpression |
+	//	OperationCall | TriggerMessageExpression | NoAttributeSelectorExpression
 	public ActionLanguageGrammarAccess.OperandElements getOperandAccess() {
 		return gaActionLanguage.getOperandAccess();
 	}
@@ -1138,7 +1116,7 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//// end of Operand
-	//LiteralExpression commonExpressions::LiteralExpression:
+	// LiteralExpression commonExpressions::LiteralExpression:
 	//	{commonExpressions::LiteralExpression} value=Literal
 	public ActionLanguageGrammarAccess.LiteralExpressionElements getLiteralExpressionAccess() {
 		return gaActionLanguage.getLiteralExpressionAccess();
@@ -1176,9 +1154,8 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 
 	//ExtendedTypedNamedElementExpression expressions::Expression:
 	//	TypedNamedElementExpression
-	//	({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current}
-	//	'->' position=PositionSelectorExpression
-	//	| {actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
+	//	({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} '->'
+	//	position=PositionSelectorExpression | {actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
 	//	incrementDecrementOperator=IncrementDecrementOperatorExpression)?
 	public ActionLanguageGrammarAccess.ExtendedTypedNamedElementExpressionElements getExtendedTypedNamedElementExpressionAccess() {
 		return gaActionLanguage.getExtendedTypedNamedElementExpressionAccess();
@@ -1251,8 +1228,7 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 
 	//OperationCall actionlanguage::OperationCall:
 	//	operation=[behavior::Operation] '(' (parameterBinding+=super::ParamaterBinding (','
-	//	parameterBinding+=super::ParamaterBinding)*)?
-	//	')'
+	//	parameterBinding+=super::ParamaterBinding)*)? ')'
 	public ActionLanguageGrammarAccess.OperationCallElements getOperationCallAccess() {
 		return gaActionLanguage.getOperationCallAccess();
 	}
@@ -1262,7 +1238,7 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//// TriggerMessageExpression
-	//TriggerMessageExpression actionlanguage::TriggerMessageExpression:
+	// TriggerMessageExpression actionlanguage::TriggerMessageExpression:
 	//	messageType=[msgtype::MessageType] '->' parameter=[behavior::Parameter]
 	public ActionLanguageGrammarAccess.TriggerMessageExpressionElements getTriggerMessageExpressionAccess() {
 		return gaActionLanguage.getTriggerMessageExpressionAccess();
@@ -1307,8 +1283,7 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	} 
 
 	//terminal STRING:
-	//	'"' ('\\' . | !('\\' | '"'))* '"' |
-	//	"'" ('\\' . | !('\\' | "'"))* "'";
+	//	'"' ('\\' . | !('\\' | '"'))* '"' | "'" ('\\' . | !('\\' | "'"))* "'";
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	} 
