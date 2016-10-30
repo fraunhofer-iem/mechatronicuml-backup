@@ -69,6 +69,11 @@
 			<url>file:///data/jenkins/jobs/Example/lastSuccessful/archive/targetPlatform/</url>
 		</repository>
         <repository>
+			<id>Uppaal</id>
+			<layout>p2</layout>
+			<url>file:///data/jenkins/jobs/Uppaal/lastSuccessful/archive/targetPlatform/</url>
+		</repository>
+        <repository>
 			<id>Uppaal-Adapter</id>
 			<layout>p2</layout>
 			<url>file:///data/jenkins/jobs/UppaalAdapter/lastSuccessful/archive/targetPlatform/</url>
