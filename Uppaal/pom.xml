@@ -88,5 +88,10 @@
 			<layout>p2</layout>
 			<url>file:///data/jenkins/jobs/GraphvizAdapter/lastSuccessful/archive/targetPlatform/</url>
 		</repository>
+        <repository>
+			<id>ModelMigration</id>
+			<layout>p2</layout>
+			<url>file:///data/jenkins/jobs/ModelMigration/lastSuccessful/archive/targetPlatform/</url>
+		</repository>
     </repositories>
 </project>
