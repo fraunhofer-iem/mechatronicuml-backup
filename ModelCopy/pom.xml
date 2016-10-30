@@ -11,6 +11,7 @@
     <module>org.muml.modelcopy.feature</module>
     <module>org.muml.modelcopy.qvto.library</module>
     <module>org.muml.modelcopy.qvto.library.test</module>
+    <module>org.muml.modelcopy.repository</module>
   </modules>
   <build>
     <plugins>
