@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.muml.modelcopy.feature_0.5.0.qualifier.jar" id="org.muml.modelcopy.feature" version="0.5.0.qualifier">
+      <category name="org.muml.psm.modelcopy.category"/>
+   </feature>
+   <category-def name="org.muml.psm.modelcopy.category" label="ModelCopy"/>
+</site>
