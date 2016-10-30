@@ -63,5 +63,10 @@
 			<layout>p2</layout>
 			<url>file:///data/jenkins/jobs/TestLanguage/lastSuccessful/archive/targetPlatform/</url>
 		</repository>
+        <repository>
+			<id>Example</id>
+			<layout>p2</layout>
+			<url>file:///data/jenkins/jobs/Example/lastSuccessful/archive/targetPlatform/</url>
+		</repository>
     </repositories>
 </project>
