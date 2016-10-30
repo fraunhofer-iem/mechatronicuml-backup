@@ -58,5 +58,10 @@
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/eclipse/updates/4.6</url>
 		</repository>
+        <repository>
+			<id>Testlanguage</id>
+			<layout>p2</layout>
+			<url>file:///data/jenkins/jobs/TestLanguage/lastSuccessful/archive/targetPlatform/</url>
+		</repository>
     </repositories>
 </project>
