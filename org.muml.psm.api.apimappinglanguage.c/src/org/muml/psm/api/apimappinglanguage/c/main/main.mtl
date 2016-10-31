@@ -33,14 +33,20 @@
 [comment @main/]
 [for (mapping : PortApiMapping | mapRepsitory.portApiMappings)]
 	[let filename : String = mapping.port.componentInstance.oclAsType(ComponentInstance).getIdentifierVariableName()+getVariableName(mapping.port.type.oclAsType(Port))+'accessCommand']
-	[file (filename+'.h', false, 'Cp1252')]
+	[file ('APImappings/'+filename+'.h', false, 'Cp1252')]
+		// [protected ('FORINCLUDES')]
+ 	
+ 		// [/protected]
 		#include "../types/standardTypes.h"
 		#include "../types/customTypes.h"
 		[for (cPort : ContinuousPortInstance |  mapping.port.oclAsType(ContinuousPortInstance))]
-		static void [cPort.componentInstance.oclAsType(ComponentInstance).getIdentifierVariableName()/][getVariableName(cPort.type.oclAsType(Port))/]accessCommand([getTypeName(cPort.portType.oclAsType(ContinuousPort).dataType)/]* value)
+		static void [cPort.componentInstance.oclAsType(ComponentInstance).getIdentifierVariableName()/][getVariableName(cPort.type.oclAsType(Port))/]accessCommand([getTypeName(cPort.portType.oclAsType(ContinuousPort).dataType)/]* value);
 	[/for]
 	[/file]
-	[file (filename+'.c', false, 'Cp1252')]
+	[file ('APImappings/'+filename+'.c', false, 'Cp1252')]
+		[for (cPort : ContinuousPortInstance |  mapping.port.oclAsType(ContinuousPortInstance))]
+		#include "[cPort.componentInstance.oclAsType(ComponentInstance).getIdentifierVariableName()/][getVariableName(cPort.type.oclAsType(Port))/]accessCommand.h"
+		[/for]
 		[for (cPort : ContinuousPortInstance |  mapping.port.oclAsType(ContinuousPortInstance))]
 		static void [cPort.componentInstance.oclAsType(ComponentInstance).getIdentifierVariableName()/][getVariableName(cPort.type.oclAsType(Port))/]accessCommand([getTypeName(cPort.portType.oclAsType(ContinuousPort).dataType)/]* value){
 		[generateExpression(mapping.execCommand,'')/]
