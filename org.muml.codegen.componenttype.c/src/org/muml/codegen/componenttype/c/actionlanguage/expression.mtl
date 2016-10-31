@@ -5,6 +5,7 @@
 				'http://www.muml.org/core/expressions/common/1.0.0',
 				'http://www.muml.org/pim/msgtype/1.0.0',
 				'http://www.muml.org/pim/types/1.0.0',
+				'http://www.muml.org/psm/apiexpressions/1.0.0',
 				'http://www.muml.org/modelinstance/1.0.0',
 				'http://www.muml.org/pim/component/1.0.0',
 				'http://www.muml.org/pim/instance/1.0.0',
@@ -461,10 +462,14 @@ while ([generateExpression(expression.loopTest, fqname)/]) {
 */]
 [template public generateExpression(expression : ReturnStatement , fqname : String)]
 [if expression.expression.oclIsUndefined()]
-[comment a simple "return" is not yet supported /]
-unsupported simple return statement
+return;
+[else]
+[if expression.getContainingOperation().getOperationOutputVariableName()->size() < 1]
+[comment FIXME The *value is required for the return value of an api command/]
+*value = [generateExpression(expression.expression,  fqname)/];
 [else]
 [expression.getContainingOperation().getOperationOutputVariableName()/] = [generateExpression(expression.expression,  fqname)/];
+[/if]
 [/if]
 [/template]
 
@@ -599,9 +604,12 @@ while ([generateExpression(expression.loopTest,  fqname) /]){
 [template public generateExpression(expression : OperationCall , fqname : String)]
 [expression.operation.getMethodName()/]([if (not expression.operation.isRepositoryOperation())]stateChart [if (expression.operation.parameters->size() > 0)],[/if][/if][for (pBinding:ParameterBinding | expression.parameterBinding) separator(', ')] [pBinding.getValue()/][/for]);[/template]
 
+
+
 [template public generateExpression(expression : Expression , fqname : String)]
 unexpected expression class: [expression.eClass().name /]
 [/template]
+
 
 [template public generateExpression(expression : Expression, parop : LogicOperator , fqname : String)]
 unexpected expression class with log op: [expression.eClass().name/]
@@ -639,3 +647,71 @@ unexpected expression class with unary op: [expression.eClass().name/]
 [template public generateStrutInit(var : Variable, fqName : String)]
 	template_expression
 [/template]
+
+
+
+[**
+ * Generates a APICallExpression
+ * @param expression the expression
+ * @param parop the parent operator
+ * @param usePre use pre construct for rhs variables (and for guards)
+ * @param fqname a fully qualified name or the empty string
+*/]
+[template public generateExpression(expression : APICallExpression, parop : LogicOperator , fqname : String)]
+[generateExpression(expression,  fqname) /]
+[/template]
+
+[**
+ * Generates a APICallExpression
+ * @param expression the expression
+ * @param parop the parent operator
+ * @param usePre use pre construct for rhs variables (and for guards)
+ * @param fqname a fully qualified name or the empty string
+*/]
+[template public generateExpression(expression : APICallExpression, parop : ComparingOperator , fqname : String)]
+[generateExpression(expression,  fqname) /]
+[/template]
+
+[**
+ * Generates a APICallExpression
+ * @param expression the expression
+ * @param parop the parent operator
+ * @param usePre use pre construct for rhs variables (and for guards)
+ * @param fqname a fully qualified name or the empty string
+*/]
+[template public generateExpression(expression : APICallExpression, parop : ArithmeticOperator , fqname : String)]
+[generateExpression(expression,  fqname) /]
+[/template]
+
+[**
+ * Generates a APICallExpression
+ * @param expression the expression
+ * @param parop the parent operator
+ * @param usePre use pre construct for rhs variables (and for guards)
+ * @param fqname a fully qualified name or the empty string
+*/]
+[template public generateExpression(expression : APICallExpression, parop : UnaryOperator , fqname : String)]
+[generateExpression(expression,  fqname) /]
+[/template]
+
+[**
+ * Generates an OperationCall
+ * @param expression the OperationCall
+ * @param usePre use pre construct for rhs variables (and for guards)
+ * @param fqname a fully qualified name or the empty string
+*/]
+[template public generateExpression(expression : APICallExpression , fqname : String)]
+[expression.apiCommand.name/]([for (pBinding:ParameterBinding | expression.parameterBindings) separator(', ')][if pBinding.value.oclIsKindOf(TypedNamedElementExpression)]value[else][pBinding.getValue()/][/if][/for]);[/template]
+
+
+
+
+
+
+
+
+
+
+
+
+

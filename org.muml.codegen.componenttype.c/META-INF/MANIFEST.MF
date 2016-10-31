@@ -27,7 +27,7 @@ Export-Package: org.muml.codegen.componenttype.c;uses:="org.osgi.framework,org.e
  org.muml.codegen.componenttype.c.component,
  org.muml.codegen.componenttype.c.componentInterface,
  org.muml.codegen.componenttype.c.files,
- org.muml.codegen.componenttype.c.helper;uses:="org.eclipse.emf.ecore,de.uni_paderborn.fujaba.muml.valuetype,de.uni_paderborn.fujaba.muml.common.naming",
+ org.muml.codegen.componenttype.c.helper,
  org.muml.codegen.componenttype.c.main;
   uses:="org.eclipse.emf.ecore,
    org.eclipse.emf.common.util,
