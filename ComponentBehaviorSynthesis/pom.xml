@@ -66,17 +66,17 @@
           <artifactId>xtend-maven-plugin</artifactId>
           <version>2.10.0</version>
           <executions>
-      <execution>
-        <goals>
-          <goal>compile</goal>
-          <goal>xtend-install-debug-info</goal>
-          <goal>testCompile</goal>
-          <goal>xtend-test-install-debug-info</goal>
-        </goals>
-          <configuration>
-              <outputDirectory>${basedir}/xtend-gen</outputDirectory>
-            </configuration>
-      </execution>
+              <execution>
+                <goals>
+                  <goal>compile</goal>
+                  <goal>xtend-install-debug-info</goal>
+                  <goal>testCompile</goal>
+                  <goal>xtend-test-install-debug-info</goal>
+                </goals>
+                  <configuration>
+                      <outputDirectory>${basedir}/xtend-gen</outputDirectory>
+                    </configuration>
+              </execution>
           </executions>
         </plugin>
        </plugins>
