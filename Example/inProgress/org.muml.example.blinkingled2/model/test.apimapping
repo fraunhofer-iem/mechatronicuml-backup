@@ -1,0 +1,16 @@
+import "test.osdsl"
+import "model.muml"
+
+MappingRepository:test{
+	PortInstance:voltage{
+		execCommand:{
+			int16 t := 5;
+			int8 h := 6;
+			if(h==t)
+			{
+				t:= API_Call:test(s:=voltage,q:=5) ;
+				return t;
+			}
+		}
+	}
+}
