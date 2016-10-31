@@ -43,5 +43,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.muml.core;visibility:=reexport,
  org.muml.pm.hardware;visibility:=reexport,
  org.muml.pim;visibility:=reexport,
- org.muml.pm.software;visibility:=reexport
+ org.muml.pm.software;visibility:=reexport,
+ org.eclipse.xtext;bundle-version="2.10.0"
 Bundle-ActivationPolicy: lazy

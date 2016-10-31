@@ -5,6 +5,13 @@
 -->
 
 <plugin>
+<extension
+          point="org.eclipse.xtext.extension_resourceServiceProvider">
+        <resourceServiceProvider
+              class="org.muml.psm.MUMLResourceServiceProvider"
+              uriExtension="muml">
+        </resourceServiceProvider>
+    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated psm -->
