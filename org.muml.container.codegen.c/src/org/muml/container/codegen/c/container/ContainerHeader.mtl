@@ -72,7 +72,13 @@
 [/if]	
 	//include the component_interfache header
 	#include "../[getFileNameComponentInterface(container.componentType,useSubDir)/]"
-[/template]
+	//include api mapping headers
+[for (cInst : ComponentInstance | container.componentInstances)]
+	[for (cPort : ContinuousPort | container.componentType.ports->filter(ContinuousPort))]
+	#include "../APImappings/[cInst.getIdentifierVariableName()/][getVariableName(cPort)/]accessCommand.h";
+	[/for]
+[/for] 
+	[/template]
 
 [template public containerOperations(container:ComponentContainer)]
 						/**
