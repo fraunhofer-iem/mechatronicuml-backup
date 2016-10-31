@@ -4,11 +4,14 @@
 package org.muml.psm.api.apimappinglanguage.xtext.scoping;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 import org.muml.core.modelinstance.ModelElementCategory;
@@ -17,8 +20,14 @@ import org.muml.core.modelinstance.RootNode;
 import org.muml.pim.behavior.Parameter;
 import org.muml.pim.instance.ContinuousPortInstance;
 import org.muml.pim.instance.InstancePackage;
+import org.muml.pim.types.ArrayDataType;
 import org.muml.pim.types.DataType;
+import org.muml.pim.types.PrimitiveDataType;
+import org.muml.pim.types.RangedPrimitiveDataType;
+import org.muml.pim.types.StructureDataType;
+import org.muml.pim.types.blackbox.TypesBlackbox;
 import org.muml.pm.software.APICommand;
+import org.muml.pm.software.APIRepository;
 import org.muml.pm.software.EnumerationValue;
 import org.muml.pm.software.SoftwarePackage;
 import org.muml.psm.apiexpressions.APICallExpression;
@@ -31,143 +40,24 @@ import org.muml.psm.apiexpressions.APICallExpression;
  * 
  */
 public class APIMappingLanguageScopeProvider extends
-		org.muml.pim.actionlanguage.xtext.scoping.ActionLanguageScopeProvider {
-	private static final String OS_CATEGORY_KEY = "org.muml.os.category";
-	private static final String TYPES_CATEGORY_KEY = "org.muml.types.category";
-	private static final String INSTANCE_CATEGORY_KEY = "org.muml.pim.instance.category";
-
-	public static RootNode rootNode;
-
-	private List<APICommand> apiCommandList;
-	private List<Parameter> parameterList;
-	private List<DataType> typeList;
-	private List<EnumerationValue> enumerationValues;
-	private List<ContinuousPortInstance> continuousPortInstancesList;
-
-	public APIMappingLanguageScopeProvider() {
-		super();
-	}
+org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider {
 	
-
-
-	IScope scope_ParameterBinding_parameter(Object object, EReference ref){
-		APICallExpression apiCallExpression=null;
-		if (((EObject) object).eContainer() instanceof APICallExpression
-				&& "parameter".equalsIgnoreCase(ref.getName())) {
-			apiCallExpression = (APICallExpression) ((EObject) object).eContainer();
-		}
-		if(object instanceof APICallExpression){
-			apiCallExpression = (APICallExpression) object;
-		}
-		if(apiCallExpression != null){
-			parameterList = new ArrayList<Parameter>();
-			parameterList.addAll(apiCallExpression
-					.getApiCommand().getParameters());
-
-			return createScope(parameterList);
-		}
-		return super.getScope((EObject) object, ref);
-	}
-//	
-//	IScope scope_ContinuousPortExpression_continuousPort(Object object, EReference ref){
-//		continuousPortInstancesList = new ArrayList<ContinuousPortInstance>();
-//		if (((EObject) object).eContainer() instanceof ParameterBinding) {
-//			PortApiMapping mapping = (PortApiMapping) ((EObject) object).eContainer()
-//					.eContainer().eContainer();
-//			continuousPortInstancesList.add(mapping.getPort());
-//			return createScope(continuousPortInstancesList);
-//		}
-//		return super.getScope((EObject) object, ref);
-//	}
-//	
-
-//	
-//	IScope scope_ContinuousPortExpression(Object object, EReference ref){
-//		ArrayList<ContinuousPortInstance> conInstances = new ArrayList<ContinuousPortInstance>();
-//		if (((EObject) object).eContainer() instanceof ParameterBinding) {
-//			PortApiMapping mapping = (PortApiMapping) ((EObject) object).eContainer()
-//					.eContainer().eContainer();
-//			conInstances.add(mapping.getPort());
-//			return createScope(conInstances);
-//		}
-//		return super.getScope((EObject) object, ref);
-//	}
-//	
-//	IScope scope_EnumerationValueExpression(Object object, EReference ref){
-//		enumerationValues = new ArrayList<EnumerationValue>();
-//		if (((EObject) object).eContainer() instanceof ParameterBinding) {
-//			if (((EObject) object).eContainer().eContainer() instanceof APICallExpression) {
-//				APICommand cmd = (APICommand) ((EObject) object).eContainer()
-//						.eContainer();
-//				OperatingSystem os = cmd.getRepository().getSwPlatform();
-//				TreeIterator<EObject> iteratror = os.eAllContents();
-//				while (iteratror.hasNext()) {
-//					EObject element = iteratror.next();
-//					if (element instanceof EnumerationValue) {
-//						enumerationValues.add((EnumerationValue)element);
-//					}
-//
-//				}
-//				return createScope(enumerationValues);
-//			}
-//	}
-//		return super.getScope((EObject) object, ref);
-//	}
+	@Override
+	public IScope getScope(EObject context, EReference reference) {
+		if(reference.getName()=="dataType")
+		{
+			Collection preDef = TypesBlackbox.getPredefinedTypes(context.eResource().getResourceSet());
+			Iterable<IEObjectDescription> sup = super.getScope(context,reference).getAllElements();
+			
 	
-
-
-	/**
-	 * Creates a corresponding scope from the list of referenceable objects
-	 * 
-	 * @param list
-	 * @return
-	 */
-	private IScope createScope(List<? extends EObject> list) {
-		if (list == null || list.isEmpty()) {
-			return IScope.NULLSCOPE;
-		}
-		IScope scope = Scopes.scopeFor(list);
-
-		/*
-		 * for (IEObjectDescription descr : scope.getAllElements()) //debugging
-		 * log System.out.println(descr.getQualifiedName().toString());
-		 * System.out.println();
-		 */
-		return scope;
-	}
-
-	public void initContiniousPortInstances(List<ContinuousPortInstance> list) {		
-		ModelElementCategory modelElementCategory = ModelInstancePlugin.getInstance()
-				.getModelElementCategoryRegistry()
-				.getModelElementCategory(rootNode, INSTANCE_CATEGORY_KEY);
-		final TreeIterator<EObject> allContents = modelElementCategory.eAllContents();
-		while (allContents.hasNext()) {
-			final EObject eObject = allContents.next();
-			if (InstancePackage.Literals.CONTINUOUS_PORT_INSTANCE.isSuperTypeOf(eObject.eClass())) {
-				list.add((ContinuousPortInstance) eObject);
+			for (Iterator<IEObjectDescription> iterator = sup.iterator(); iterator.hasNext();) {
+				EObject addMe = iterator.next().getEObjectOrProxy();
+				preDef.add(addMe);
+			
+				
 			}
+			return  Scopes.scopeFor(preDef);
 		}
-	}
-
-	private void initAPICommands() {
-		apiCommandList = new ArrayList<APICommand>();
-		final TreeIterator<EObject> allContents = rootNode.eResource()
-				.getAllContents();
-		while (allContents.hasNext()) {
-			final EObject eObject = allContents.next();
-			if (eObject.eClass() == SoftwarePackage.Literals.API_COMMAND) {
-				apiCommandList.add((APICommand) eObject);
-			}
-		}
-	}
-	
-	private void initDataTypes(RootNode object) {
-		typeList = new ArrayList<DataType>();
-		ModelElementCategory modelElementCategory = ModelInstancePlugin.getInstance()
-				.getModelElementCategoryRegistry()
-				.getModelElementCategory(rootNode, TYPES_CATEGORY_KEY);
-		for (EObject type : modelElementCategory.getModelElements()) {
-			typeList.add((DataType) type);
-		}
-	}
-}
+		
+		return super.getScope(context,reference);
+}}
