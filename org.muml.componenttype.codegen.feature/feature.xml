@@ -2,7 +2,7 @@
 <feature
       id="org.muml.componenttype.codegen.feature"
       label="Container Code Generation"
-      version="1.0.19.qualifier"
+      version="1.0.20.qualifier"
       provider-name="Heinz Nixdorf Institute, Fraunhofer IEM">
 
    <description url="www.muml.org">
@@ -620,6 +620,20 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
    <plugin
          id="com.ociweb.gmf"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.muml.psm.api.apimappinglanguage.c"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.muml.psm.api.apimappinglanguage.c.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
