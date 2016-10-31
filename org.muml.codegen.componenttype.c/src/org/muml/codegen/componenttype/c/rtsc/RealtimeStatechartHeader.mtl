@@ -114,7 +114,7 @@ struct [getClassName(rtsc)/] {
 	
 		[comment Member variables for the variables of each region. /]	
 
-		[for (var : Variable | rtsc.eAllContents(Variable))] 
+		[for (var : Variable | rtsc.eAllContents(Variable)->select(v : Variable | not v.eContainer().oclIsTypeOf(LocalVariableDeclarationStatement)))] 
 [if (var.dataType.oclIsKindOf(ArrayDataType))]
 			[var.dataType.getTypeName()/] [getVariableName(var)/] [let arrayType: ArrayDataType = var.dataType.oclAsType(ArrayDataType)][if (arrayType.cardinality.value > 0 and not arrayType.cardinality.oclIsUndefined())]['['/][if (arrayType.cardinality.value > 32768)]32768[else][arrayType.cardinality.value/][/if][']'/][/if][/let]; /**< The Realtime-StateChart Variable: [var.getName()/] of Type: [var.dataType.name/]; */
 

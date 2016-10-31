@@ -477,9 +477,9 @@ unsupported simple return statement
 */]
 [template public generateExpression(expression : LocalVariableDeclarationStatement , fqname : String)]
 [if expression.variable.initializeExpression.oclIsUndefined()]
-// local variable declaration (name: [expression.variable.name/]) but no initialization
+[expression.variable.dataType.getTypeName()/] [expression.variable.name/]
 [else]
-[expression.variable.dataType.getTypeName()/] [expression.variable.getFullyQualifiedName(fqname)/] = [generateExpression(expression.variable.initializeExpression,  fqname)/];[/if]
+[expression.variable.dataType.getTypeName()/] [expression.variable.name/] = [generateExpression(expression.variable.initializeExpression,  fqname)/];[/if]
 [/template]
 
 [**
