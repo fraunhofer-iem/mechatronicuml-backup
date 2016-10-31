@@ -62,7 +62,7 @@
 */]
 [query public getTypedNamedElementName(typedNamedElement : TypedNamedElement) : String =
 	if typedNamedElement.eContainer().oclIsKindOf(LocalVariableDeclarationStatement) then
-		getUniqueLocalVariableName(typedNamedElement.eContainer().oclAsType(LocalVariableDeclarationStatement))
+		typedNamedElement.name
 	else if typedNamedElement.oclIsKindOf(Parameter) then
 		typedNamedElement.name
 	
