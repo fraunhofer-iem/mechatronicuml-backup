@@ -19,7 +19,7 @@
     <module>org.muml.emm.release.edit</module>
     <module>org.muml.emm.release.editor</module>
     <module>org.muml.emm.repository</module>
-    <module>org.muml.emm.tests</module>
+    <!-- <module>org.muml.emm.tests</module> -->
     <module>org.muml.emm.ui</module>
   </modules>
   <build>
