@@ -26,19 +26,39 @@
           <fileset>
       <directory>${basedir}/xtend-gen</directory>
           </fileset>
-          <!-- clean ui plugin as well -->
           <fileset>
-      <directory>${basedir}/../${project.artifactId}.ui/src-gen</directory>
+      <directory>${basedir}/../pim.edit/src-gen</directory>
           </fileset>
           <fileset>
-      <directory>${basedir}/../${project.artifactId}.ui/xtend-gen</directory>
+      <directory>${basedir}/../pim.edit/xtend-gen</directory>
+          </fileset>
+          
+        <!-- clean edit properties -->
+          <fileset>
+      <directory>${basedir}/../pim.edit.properties/src-gen</directory>
+          </fileset>
+          <fileset>
+      <directory>${basedir}/../pim.edit.properties/xtend-gen</directory>
+          </fileset>
+           <fileset>
+      <directory>${basedir}/../pim.xtext/src-gen</directory>
+          </fileset>
+          <fileset>
+      <directory>${basedir}/../pim.xtext/xtend-gen</directory>
+          </fileset>             
+          <!-- clean ui plugin as well -->
+          <fileset>
+      <directory>${basedir}/../pim.xtext.ui/src-gen</directory>
+          </fileset>
+          <fileset>
+      <directory>${basedir}/../pim.xtext.ui/xtend-gen</directory>
           </fileset>
           <!-- clean test fragment as well -->
           <fileset>
-      <directory>${basedir}/../${project.artifactId}.tests/src-gen</directory>
+      <directory>${basedir}/../pim.xtext.tests/src-gen</directory>
           </fileset>
           <fileset>
-      <directory>${basedir}/../${project.artifactId}.tests/xtend-gen</directory>
+      <directory>${basedir}/../pim.xtext.tests/xtend-gen</directory>
           </fileset>
         </filesets>
       </configuration>
