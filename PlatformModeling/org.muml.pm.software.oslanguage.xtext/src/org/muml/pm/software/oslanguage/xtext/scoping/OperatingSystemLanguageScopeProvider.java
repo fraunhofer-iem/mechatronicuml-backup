@@ -3,6 +3,19 @@
  */
 package org.muml.pm.software.oslanguage.xtext.scoping;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.xtext.scoping.IScope;
+import org.eclipse.xtext.scoping.Scopes;
+import org.muml.pim.types.blackbox.TypesBlackbox;
+import org.muml.pim.behavior.Parameter;
+import org.muml.pim.types.DataType;
+import org.muml.pim.types.PrimitiveDataType;
+import org.muml.pim.types.StructureDataType;
+import org.muml.pm.software.APICommand;
+import org.muml.pm.software.APIRepository;
+import org.muml.pm.software.OperatingSystem;
+
 /**
  * This class contains custom scoping description.
  * 
@@ -10,5 +23,16 @@ package org.muml.pm.software.oslanguage.xtext.scoping;
  * on how and when to use it.
  */
 public class OperatingSystemLanguageScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider {
-
+	@Override
+	public IScope getScope(EObject context, EReference reference) {
+	if ((context instanceof APICommand ||context instanceof APIRepository||context instanceof Parameter)  && (reference.getName() == "returnDataType"|| reference.getName() == "dataType")){
+		return Scopes.scopeFor(TypesBlackbox.getPredefinedTypes(context.eResource().getResourceSet()));
+	
+	}
+	if (context instanceof OperatingSystem)
+	{
+		return super.getScope(context,reference);
+	}
+		return super.getScope(context,reference);
+	}
 }
