@@ -17,7 +17,7 @@
     <module>org.muml.cbs.dependencylanguage.ui</module>
     <module>org.muml.cbs.dependencylanguage.xtext</module>
     <module>org.muml.cbs.dependencylanguage.xtext.sdk</module>
-    <!-- <module>org.muml.cbs.dependencylanguage.xtext.tests</module> -->
+    <module>org.muml.cbs.dependencylanguage.xtext.tests</module>
     <module>org.muml.cbs.dependencylanguage.xtext.ui</module>
     <module>org.muml.cbs.dependencylanguage.xtext.ui.xtfo</module>
     <module>org.muml.cbs.feature</module>
