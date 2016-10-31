@@ -1,0 +1,61 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module main.
+ */]
+[module main(
+'http://www.muml.org/core/1.0.0', 
+'http://www.muml.org/pim/instance/1.0.0', 
+'http://www.muml.org/pim/component/1.0.0', 
+'http://www.muml.org/core/expressions/1.0.0',
+'http://www.muml.org/core/expressions/common/1.0.0',
+'http://www.muml.org/pm/software/1.0.0',
+'http://www.muml.org/psm/portapimapping/1.0.0',
+'http://www.muml.org/psm/apiexpressions/1.0.0',
+'http://www.muml.org/pim/connector/1.0.0', 
+'http://www.muml.org/pim/behavior/1.0.0',
+'http://www.muml.org/pim/actionlanguage/1.0.0',
+'http://www.muml.org/pim/msgtype/1.0.0',
+'http://www.muml.org/pim/types/1.0.0',
+'http://www.muml.org/modelinstance/1.0.0',
+'http://www.muml.org/pim/component/1.0.0',
+'http://www.muml.org/pim/instance/1.0.0',
+'http://www.muml.org/pim/realtimestatechart/1.0.0')]
+
+[import org::muml::codegen::componenttype::c::queries::stringQueries/]
+[import org::muml::container::codegen::c::queries::containerStringQueries/]
+[import org::muml::codegen::componenttype::c::actionlanguage::expression/]
+
+[**
+ * The documentation of the template generateElement.
+ * @param anArithmeticExpression
+ */]
+[template public generateElement(mapRepsitory : MappingRepository)]
+[comment @main/]
+[for (mapping : PortApiMapping | mapRepsitory.portApiMappings)]
+	[let filename : String = mapping.port.componentInstance.oclAsType(ComponentInstance).getIdentifierVariableName()+getVariableName(mapping.port.type.oclAsType(Port))+'accessCommand']
+	[file (filename+'.h', false, 'Cp1252')]
+		#include "../types/standardTypes.h"
+		#include "../types/customTypes.h"
+		[for (cPort : ContinuousPortInstance |  mapping.port.oclAsType(ContinuousPortInstance))]
+		static void [cPort.componentInstance.oclAsType(ComponentInstance).getIdentifierVariableName()/][getVariableName(cPort.type.oclAsType(Port))/]accessCommand([getTypeName(cPort.portType.oclAsType(ContinuousPort).dataType)/]* value)
+	[/for]
+	[/file]
+	[file (filename+'.c', false, 'Cp1252')]
+		[for (cPort : ContinuousPortInstance |  mapping.port.oclAsType(ContinuousPortInstance))]
+		static void [cPort.componentInstance.oclAsType(ComponentInstance).getIdentifierVariableName()/][getVariableName(cPort.type.oclAsType(Port))/]accessCommand([getTypeName(cPort.portType.oclAsType(ContinuousPort).dataType)/]* value){
+		[generateExpression(mapping.execCommand,'')/]
+		// [protected ('API')]
+ 	
+ 		// [/protected]
+	}
+	[/for]
+	[/file]
+[/let]
+
+[/for]
+
+[/template]
+
+
+
+
