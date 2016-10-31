@@ -36,14 +36,13 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 		
 		//OperatingSystem swplatform::OperatingSystem:
 		//	imports+=Import* // allow imports
-		//	'OperatingSystem:'
-		//	name=EString
-		//	'{' (apirepositories+=APIRepository | enumerationDataTypes+=EnumerationDataType)*
-		//	'}'
+		// 'OperatingSystem:' name=EString '{' (apirepositories+=APIRepository |
+		//	enumerationDataTypes+=EnumerationDataType)* '}'
 		@Override public ParserRule getRule() { return rule; }
 
 		//imports+=Import* // allow imports
-		//'OperatingSystem:' name=EString '{' (apirepositories+=APIRepository | enumerationDataTypes+=EnumerationDataType)* '}'
+		// 'OperatingSystem:' name=EString '{' (apirepositories+=APIRepository |
+		//enumerationDataTypes+=EnumerationDataType)* '}'
 		public Group getGroup() { return cGroup; }
 
 		//imports+=Import*
@@ -53,7 +52,7 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 		public RuleCall getImportsImportParserRuleCall_0_0() { return cImportsImportParserRuleCall_0_0; }
 
 		//// allow imports
-		//'OperatingSystem:'
+		// 'OperatingSystem:'
 		public Keyword getOperatingSystemKeyword_1() { return cOperatingSystemKeyword_1; }
 
 		//name=EString
@@ -115,7 +114,7 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//// feature must be named importURI
-		//EString:
+		// EString:
 		//	STRING | ID;
 		@Override public ParserRule getRule() { return rule; }
 
@@ -141,11 +140,7 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//APIRepository swplatform::APIRepository:
-		//	'Device_API_Calls:'
-		//	name=EString
-		//	'{'
-		//	apiCommands+=APICommand*
-		//	'}'
+		//	'Device_API_Calls:' name=EString '{' apiCommands+=APICommand* '}'
 		@Override public ParserRule getRule() { return rule; }
 
 		//'Device_API_Calls:' name=EString '{' apiCommands+=APICommand* '}'
@@ -190,10 +185,7 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//EnumerationDataType swplatform::EnumerationDataType:
-		//	'enum:'
-		//	name=EString
-		//	'{' (enumerationValues+=EnumerationValue (',' enumerationValues+=EnumerationValue)*)?
-		//	'}'
+		//	'enum:' name=EString '{' (enumerationValues+=EnumerationValue (',' enumerationValues+=EnumerationValue)*)? '}'
 		@Override public ParserRule getRule() { return rule; }
 
 		//'enum:' name=EString '{' (enumerationValues+=EnumerationValue (',' enumerationValues+=EnumerationValue)*)? '}'
@@ -258,8 +250,8 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//APICommand swplatform::APICommand:
-		//	returnDataType=[types::DataType|EString] name=EString
-		//	'(' (parameters+=Parameter (',' parameters+=Parameter)*)? ')' constraints+=TimeConstraint? ';'
+		//	returnDataType=[types::DataType|EString] name=EString '(' (parameters+=Parameter (',' parameters+=Parameter)*)? ')'
+		//	constraints+=TimeConstraint? ';'
 		@Override public ParserRule getRule() { return rule; }
 
 		//returnDataType=[types::DataType|EString] name=EString '(' (parameters+=Parameter (',' parameters+=Parameter)*)? ')'
@@ -544,10 +536,8 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 	
 	//OperatingSystem swplatform::OperatingSystem:
 	//	imports+=Import* // allow imports
-	//	'OperatingSystem:'
-	//	name=EString
-	//	'{' (apirepositories+=APIRepository | enumerationDataTypes+=EnumerationDataType)*
-	//	'}'
+	// 'OperatingSystem:' name=EString '{' (apirepositories+=APIRepository |
+	//	enumerationDataTypes+=EnumerationDataType)* '}'
 	public OperatingSystemElements getOperatingSystemAccess() {
 		return pOperatingSystem;
 	}
@@ -567,7 +557,7 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//// feature must be named importURI
-	//EString:
+	// EString:
 	//	STRING | ID;
 	public EStringElements getEStringAccess() {
 		return pEString;
@@ -578,11 +568,7 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//APIRepository swplatform::APIRepository:
-	//	'Device_API_Calls:'
-	//	name=EString
-	//	'{'
-	//	apiCommands+=APICommand*
-	//	'}'
+	//	'Device_API_Calls:' name=EString '{' apiCommands+=APICommand* '}'
 	public APIRepositoryElements getAPIRepositoryAccess() {
 		return pAPIRepository;
 	}
@@ -592,10 +578,7 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//EnumerationDataType swplatform::EnumerationDataType:
-	//	'enum:'
-	//	name=EString
-	//	'{' (enumerationValues+=EnumerationValue (',' enumerationValues+=EnumerationValue)*)?
-	//	'}'
+	//	'enum:' name=EString '{' (enumerationValues+=EnumerationValue (',' enumerationValues+=EnumerationValue)*)? '}'
 	public EnumerationDataTypeElements getEnumerationDataTypeAccess() {
 		return pEnumerationDataType;
 	}
@@ -605,8 +588,8 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//APICommand swplatform::APICommand:
-	//	returnDataType=[types::DataType|EString] name=EString
-	//	'(' (parameters+=Parameter (',' parameters+=Parameter)*)? ')' constraints+=TimeConstraint? ';'
+	//	returnDataType=[types::DataType|EString] name=EString '(' (parameters+=Parameter (',' parameters+=Parameter)*)? ')'
+	//	constraints+=TimeConstraint? ';'
 	public APICommandElements getAPICommandAccess() {
 		return pAPICommand;
 	}
@@ -688,8 +671,7 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 	} 
 
 	//terminal STRING:
-	//	'"' ('\\' . | !('\\' | '"'))* '"' |
-	//	"'" ('\\' . | !('\\' | "'"))* "'";
+	//	'"' ('\\' . | !('\\' | '"'))* '"' | "'" ('\\' . | !('\\' | "'"))* "'";
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	} 

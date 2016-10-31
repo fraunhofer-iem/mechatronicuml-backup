@@ -818,7 +818,7 @@ ruleTimeUnitExpr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTo
     }
 
     |
-	kw='\u00B5s' 
+	kw='\u00C2\u00B5s' 
     {
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getSKeyword_5()); 

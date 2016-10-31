@@ -3,18 +3,22 @@
  */
 package org.muml.pm.software.oslanguage.xtext.scoping;
 
+import java.util.Collection;
+import java.util.Iterator;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
-import org.muml.pim.types.blackbox.TypesBlackbox;
 import org.muml.pim.behavior.Parameter;
-import org.muml.pim.types.DataType;
+import org.muml.pim.types.ArrayDataType;
 import org.muml.pim.types.PrimitiveDataType;
+import org.muml.pim.types.RangedPrimitiveDataType;
 import org.muml.pim.types.StructureDataType;
+import org.muml.pim.types.blackbox.TypesBlackbox;
 import org.muml.pm.software.APICommand;
 import org.muml.pm.software.APIRepository;
-import org.muml.pm.software.OperatingSystem;
 
 /**
  * This class contains custom scoping description.
@@ -26,12 +30,18 @@ public class OperatingSystemLanguageScopeProvider extends org.eclipse.xtext.scop
 	@Override
 	public IScope getScope(EObject context, EReference reference) {
 	if ((context instanceof APICommand ||context instanceof APIRepository||context instanceof Parameter)  && (reference.getName() == "returnDataType"|| reference.getName() == "dataType")){
-		return Scopes.scopeFor(TypesBlackbox.getPredefinedTypes(context.eResource().getResourceSet()));
-	
-	}
-	if (context instanceof OperatingSystem)
-	{
-		return super.getScope(context,reference);
+		Collection preDef = TypesBlackbox.getPredefinedTypes(context.eResource().getResourceSet());
+		Iterable<IEObjectDescription> sup = super.getScope(context,reference).getAllElements();
+		
+
+		for (Iterator<IEObjectDescription> iterator = sup.iterator(); iterator.hasNext();) {
+			EObject addMe = iterator.next().getEObjectOrProxy();
+			if (addMe instanceof RangedPrimitiveDataType ||addMe instanceof PrimitiveDataType || addMe instanceof StructureDataType || addMe instanceof ArrayDataType) {
+				preDef.add(addMe);
+			}
+			
+		}
+		return  Scopes.scopeFor(preDef);
 	}
 		return super.getScope(context,reference);
 	}

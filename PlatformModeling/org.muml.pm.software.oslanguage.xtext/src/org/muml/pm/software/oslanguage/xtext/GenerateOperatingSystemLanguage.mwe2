@@ -23,7 +23,7 @@ Workflow {
 //		
 //	 	registerGeneratedEPackage = "org.muml.core.types.TypesPackage"
 //		registerGeneratedEPackage = "org.muml.pim.valuetype.ValuetypePackage"
-//		registerGeneratedEPackage = "org.muml.pim.behavior.BehaviorPackage"
+		registerGeneratedEPackage = "org.muml.pim.behavior.BehaviorPackage"
 //		registerGeneratedEPackage = "org.muml.psm.software.SoftwarePackage" 
 //		registerGeneratedEPackage = "org.muml.psm.PsmPackage" 
 //		registerGeneratedEPackage = "org.muml.core.modelinstance.ModelinstancePackage"

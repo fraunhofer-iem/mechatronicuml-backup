@@ -50,15 +50,14 @@ protected class ThisRootNode extends RootToken {
  *
  * OperatingSystem swplatform::OperatingSystem:
  * 	imports+=Import* // allow imports
- * 	'OperatingSystem:'
- * 	name=EString
- * 	'{' (apirepositories+=APIRepository | enumerationDataTypes+=EnumerationDataType)*
- * 	'}'
+ *  'OperatingSystem:' name=EString '{' (apirepositories+=APIRepository |
+ * 	enumerationDataTypes+=EnumerationDataType)* '}'
  *
  **/
 
 // imports+=Import* // allow imports
-// 'OperatingSystem:' name=EString '{' (apirepositories+=APIRepository | enumerationDataTypes+=EnumerationDataType)* '}'
+//  'OperatingSystem:' name=EString '{' (apirepositories+=APIRepository |
+// enumerationDataTypes+=EnumerationDataType)* '}'
 protected class OperatingSystem_Group extends GroupToken {
 	
 	public OperatingSystem_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -134,7 +133,7 @@ protected class OperatingSystem_ImportsAssignment_0 extends AssignmentToken  {
 }
 
 // // allow imports
-// 'OperatingSystem:'
+//  'OperatingSystem:'
 protected class OperatingSystem_OperatingSystemKeyword_1 extends KeywordToken  {
 	
 	public OperatingSystem_OperatingSystemKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -456,11 +455,7 @@ protected class Import_ImportURIAssignment_1 extends AssignmentToken  {
 /************ begin Rule APIRepository ****************
  *
  * APIRepository swplatform::APIRepository:
- * 	'Device_API_Calls:'
- * 	name=EString
- * 	'{'
- * 	apiCommands+=APICommand*
- * 	'}'
+ * 	'Device_API_Calls:' name=EString '{' apiCommands+=APICommand* '}'
  *
  **/
 
@@ -647,10 +642,7 @@ protected class APIRepository_RightCurlyBracketKeyword_4 extends KeywordToken  {
 /************ begin Rule EnumerationDataType ****************
  *
  * EnumerationDataType swplatform::EnumerationDataType:
- * 	'enum:'
- * 	name=EString
- * 	'{' (enumerationValues+=EnumerationValue (',' enumerationValues+=EnumerationValue)*)?
- * 	'}'
+ * 	'enum:' name=EString '{' (enumerationValues+=EnumerationValue (',' enumerationValues+=EnumerationValue)*)? '}'
  *
  **/
 
@@ -952,8 +944,8 @@ protected class EnumerationDataType_RightCurlyBracketKeyword_4 extends KeywordTo
 /************ begin Rule APICommand ****************
  *
  * APICommand swplatform::APICommand:
- * 	returnDataType=[types::DataType|EString] name=EString
- * 	'(' (parameters+=Parameter (',' parameters+=Parameter)*)? ')' constraints+=TimeConstraint? ';'
+ * 	returnDataType=[types::DataType|EString] name=EString '(' (parameters+=Parameter (',' parameters+=Parameter)*)? ')'
+ * 	constraints+=TimeConstraint? ';'
  *
  **/
 

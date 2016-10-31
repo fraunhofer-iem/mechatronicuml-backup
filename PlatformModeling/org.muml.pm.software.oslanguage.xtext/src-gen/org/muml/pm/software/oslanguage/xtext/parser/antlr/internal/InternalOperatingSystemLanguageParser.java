@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'OperatingSystem:'", "'{'", "'}'", "'import'", "'Device_API_Calls:'", "'enum:'", "','", "'('", "')'", "';'", "'['", "']'", "'days'", "'hours'", "'min'", "'sec'", "'ms'", "'\\u00B5s'", "'ns'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'OperatingSystem:'", "'{'", "'}'", "'import'", "'Device_API_Calls:'", "'enum:'", "','", "'('", "')'", "';'", "'['", "']'", "'days'", "'hours'", "'min'", "'sec'", "'ms'", "'\\u00C2\\u00B5s'", "'ns'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -1894,7 +1894,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleTimeUnitExpr"
-    // InternalOperatingSystemLanguage.g:781:1: ruleTimeUnitExpr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'days' | kw= 'hours' | kw= 'min' | kw= 'sec' | kw= 'ms' | kw= '\\u00B5s' | kw= 'ns' ) ;
+    // InternalOperatingSystemLanguage.g:781:1: ruleTimeUnitExpr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'days' | kw= 'hours' | kw= 'min' | kw= 'sec' | kw= 'ms' | kw= '\\u00C2\\u00B5s' | kw= 'ns' ) ;
     public final AntlrDatatypeRuleToken ruleTimeUnitExpr() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1903,10 +1903,10 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // InternalOperatingSystemLanguage.g:784:28: ( (kw= 'days' | kw= 'hours' | kw= 'min' | kw= 'sec' | kw= 'ms' | kw= '\\u00B5s' | kw= 'ns' ) )
-            // InternalOperatingSystemLanguage.g:785:1: (kw= 'days' | kw= 'hours' | kw= 'min' | kw= 'sec' | kw= 'ms' | kw= '\\u00B5s' | kw= 'ns' )
+            // InternalOperatingSystemLanguage.g:784:28: ( (kw= 'days' | kw= 'hours' | kw= 'min' | kw= 'sec' | kw= 'ms' | kw= '\\u00C2\\u00B5s' | kw= 'ns' ) )
+            // InternalOperatingSystemLanguage.g:785:1: (kw= 'days' | kw= 'hours' | kw= 'min' | kw= 'sec' | kw= 'ms' | kw= '\\u00C2\\u00B5s' | kw= 'ns' )
             {
-            // InternalOperatingSystemLanguage.g:785:1: (kw= 'days' | kw= 'hours' | kw= 'min' | kw= 'sec' | kw= 'ms' | kw= '\\u00B5s' | kw= 'ns' )
+            // InternalOperatingSystemLanguage.g:785:1: (kw= 'days' | kw= 'hours' | kw= 'min' | kw= 'sec' | kw= 'ms' | kw= '\\u00C2\\u00B5s' | kw= 'ns' )
             int alt10=7;
             switch ( input.LA(1) ) {
             case 23:
@@ -2008,7 +2008,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 6 :
-                    // InternalOperatingSystemLanguage.g:821:2: kw= '\\u00B5s'
+                    // InternalOperatingSystemLanguage.g:821:2: kw= '\\u00C2\\u00B5s'
                     {
                     kw=(Token)match(input,28,FollowSets000.FOLLOW_2); 
 
