@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: %Bundle-Name
-Bundle-Vendor: %Bundle-Vendor
+Bundle-Name: %pluginName
+Bundle-Vendor: %providerName
 Bundle-Version: 0.4.0.qualifier
 Bundle-SymbolicName: org.muml.psm.api.apimappinglanguage.xtext.ui;singleton:=true
 Bundle-ActivationPolicy: lazy
