@@ -83,7 +83,7 @@ ExpressionStartRule returns expressions::Expression:
 	Assignment |  ForLoop | 
 	WhileLoop | DoWhileLoop | 
 	IfStatement | ReturnStatement | LocalVariableOrConstantDeclarationStatement |
-	OperationCallStatement | APICallExpression
+	OperationCallStatement | APICallExpression';'
 ;
 
 EString returns ecore::EString:

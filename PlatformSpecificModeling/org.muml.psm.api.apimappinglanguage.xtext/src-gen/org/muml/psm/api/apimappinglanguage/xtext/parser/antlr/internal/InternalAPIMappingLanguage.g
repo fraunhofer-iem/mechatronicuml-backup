@@ -721,16 +721,20 @@ ruleExpressionStartRule returns [EObject current=null]
         afterParserOrEnumRuleCall();
     }
 
-    |
+    |(
     { 
-        newCompositeNode(grammarAccess.getExpressionStartRuleAccess().getAPICallExpressionParserRuleCall_8()); 
+        newCompositeNode(grammarAccess.getExpressionStartRuleAccess().getAPICallExpressionParserRuleCall_8_0()); 
     }
     this_APICallExpression_8=ruleAPICallExpression
     { 
         $current = $this_APICallExpression_8.current; 
         afterParserOrEnumRuleCall();
     }
-)
+	otherlv_9=';' 
+    {
+    	newLeafNode(otherlv_9, grammarAccess.getExpressionStartRuleAccess().getSemicolonKeyword_8_1());
+    }
+))
 ;
 
 

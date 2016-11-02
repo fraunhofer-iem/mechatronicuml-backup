@@ -1741,12 +1741,12 @@ protected class ContiniousPortExpressions_ContinuousPortAssignment_1 extends Ass
  *
  * ExpressionStartRule expressions::Expression:
  * 	Assignment | ForLoop | WhileLoop | DoWhileLoop | IfStatement | ReturnStatement |
- * 	LocalVariableOrConstantDeclarationStatement | OperationCallStatement | APICallExpression
+ * 	LocalVariableOrConstantDeclarationStatement | OperationCallStatement | APICallExpression ';'
  *
  **/
 
 // Assignment | ForLoop | WhileLoop | DoWhileLoop | IfStatement | ReturnStatement |
-// LocalVariableOrConstantDeclarationStatement | OperationCallStatement | APICallExpression
+// LocalVariableOrConstantDeclarationStatement | OperationCallStatement | APICallExpression ';'
 protected class ExpressionStartRule_Alternatives extends AlternativesToken {
 
 	public ExpressionStartRule_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1769,7 +1769,7 @@ protected class ExpressionStartRule_Alternatives extends AlternativesToken {
 			case 5: return new ExpressionStartRule_ReturnStatementParserRuleCall_5(lastRuleCallOrigin, this, 5, inst);
 			case 6: return new ExpressionStartRule_LocalVariableOrConstantDeclarationStatementParserRuleCall_6(lastRuleCallOrigin, this, 6, inst);
 			case 7: return new ExpressionStartRule_OperationCallStatementParserRuleCall_7(lastRuleCallOrigin, this, 7, inst);
-			case 8: return new ExpressionStartRule_APICallExpressionParserRuleCall_8(lastRuleCallOrigin, this, 8, inst);
+			case 8: return new ExpressionStartRule_Group_8(lastRuleCallOrigin, this, 8, inst);
 			default: return null;
 		}	
 	}
@@ -2079,16 +2079,45 @@ protected class ExpressionStartRule_OperationCallStatementParserRuleCall_7 exten
 	}	
 }
 
-// APICallExpression
-protected class ExpressionStartRule_APICallExpressionParserRuleCall_8 extends RuleCallToken {
+// APICallExpression ';'
+protected class ExpressionStartRule_Group_8 extends GroupToken {
 	
-	public ExpressionStartRule_APICallExpressionParserRuleCall_8(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ExpressionStartRule_Group_8(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getExpressionStartRuleAccess().getGroup_8();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new ExpressionStartRule_SemicolonKeyword_8_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getAPICallExpressionRule().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// APICallExpression
+protected class ExpressionStartRule_APICallExpressionParserRuleCall_8_0 extends RuleCallToken {
+	
+	public ExpressionStartRule_APICallExpressionParserRuleCall_8_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public RuleCall getGrammarElement() {
-		return grammarAccess.getExpressionStartRuleAccess().getAPICallExpressionParserRuleCall_8();
+		return grammarAccess.getExpressionStartRuleAccess().getAPICallExpressionParserRuleCall_8_0();
 	}
 
     @Override
@@ -2101,8 +2130,6 @@ protected class ExpressionStartRule_APICallExpressionParserRuleCall_8 extends Ru
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getAPICallExpressionRule().getType().getClassifier())
-			return null;
 		if(checkForRecursion(APICallExpression_Group.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
 	}
@@ -2114,6 +2141,29 @@ protected class ExpressionStartRule_APICallExpressionParserRuleCall_8 extends Ru
 		}	
 	}	
 }
+
+// ';'
+protected class ExpressionStartRule_SemicolonKeyword_8_1 extends KeywordToken  {
+	
+	public ExpressionStartRule_SemicolonKeyword_8_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getExpressionStartRuleAccess().getSemicolonKeyword_8_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new ExpressionStartRule_APICallExpressionParserRuleCall_8_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
 
 
 /************ end Rule ExpressionStartRule ****************/

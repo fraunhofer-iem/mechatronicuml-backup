@@ -75,6 +75,7 @@ public class APIMappingLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAPICallExpressionAccess().getGroup_3_1(), "rule__APICallExpression__Group_3_1__0");
 					put(grammarAccess.getParamaterBindingAccess().getGroup(), "rule__ParamaterBinding__Group__0");
 					put(grammarAccess.getContiniousPortExpressionsAccess().getGroup(), "rule__ContiniousPortExpressions__Group__0");
+					put(grammarAccess.getExpressionStartRuleAccess().getGroup_8(), "rule__ExpressionStartRule__Group_8__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
 					put(grammarAccess.getBlockAccess().getGroup(), "rule__Block__Group__0");

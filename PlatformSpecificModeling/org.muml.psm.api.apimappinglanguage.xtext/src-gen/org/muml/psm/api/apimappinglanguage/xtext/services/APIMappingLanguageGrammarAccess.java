@@ -406,15 +406,17 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 		private final RuleCall cReturnStatementParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		private final RuleCall cLocalVariableOrConstantDeclarationStatementParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		private final RuleCall cOperationCallStatementParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
-		private final RuleCall cAPICallExpressionParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
+		private final Group cGroup_8 = (Group)cAlternatives.eContents().get(8);
+		private final RuleCall cAPICallExpressionParserRuleCall_8_0 = (RuleCall)cGroup_8.eContents().get(0);
+		private final Keyword cSemicolonKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
 		
 		//ExpressionStartRule expressions::Expression:
 		//	Assignment | ForLoop | WhileLoop | DoWhileLoop | IfStatement | ReturnStatement |
-		//	LocalVariableOrConstantDeclarationStatement | OperationCallStatement | APICallExpression
+		//	LocalVariableOrConstantDeclarationStatement | OperationCallStatement | APICallExpression ';'
 		@Override public ParserRule getRule() { return rule; }
 
 		//Assignment | ForLoop | WhileLoop | DoWhileLoop | IfStatement | ReturnStatement |
-		//LocalVariableOrConstantDeclarationStatement | OperationCallStatement | APICallExpression
+		//LocalVariableOrConstantDeclarationStatement | OperationCallStatement | APICallExpression ';'
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Assignment
@@ -441,8 +443,14 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 		//OperationCallStatement
 		public RuleCall getOperationCallStatementParserRuleCall_7() { return cOperationCallStatementParserRuleCall_7; }
 
+		//APICallExpression ';'
+		public Group getGroup_8() { return cGroup_8; }
+
 		//APICallExpression
-		public RuleCall getAPICallExpressionParserRuleCall_8() { return cAPICallExpressionParserRuleCall_8; }
+		public RuleCall getAPICallExpressionParserRuleCall_8_0() { return cAPICallExpressionParserRuleCall_8_0; }
+
+		//';'
+		public Keyword getSemicolonKeyword_8_1() { return cSemicolonKeyword_8_1; }
 	}
 
 	public class EStringElements extends AbstractParserRuleElementFinder {
@@ -651,7 +659,7 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 
 	//ExpressionStartRule expressions::Expression:
 	//	Assignment | ForLoop | WhileLoop | DoWhileLoop | IfStatement | ReturnStatement |
-	//	LocalVariableOrConstantDeclarationStatement | OperationCallStatement | APICallExpression
+	//	LocalVariableOrConstantDeclarationStatement | OperationCallStatement | APICallExpression ';'
 	public ExpressionStartRuleElements getExpressionStartRuleAccess() {
 		return pExpressionStartRule;
 	}
