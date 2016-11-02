@@ -698,7 +698,7 @@ unexpected expression class with unary op: [expression.eClass().name/]
 */]
 [template public generateExpression(expression : APICallExpression , fqname : String)]
 [comment FIXME Add Test if the TypedNamedElement of TypedNamedElementExpression in the Parameterbinding is equal to the ContinuousPort /]
-[if expression.apiCommand.returnDataType.name <> 'void']*value = [/if][expression.apiCommand.name/]([for (pBinding:ParameterBinding | expression.parameterBindings) separator(', ')][if pBinding.value.oclIsKindOf(TypedNamedElementExpression)]*value[else][pBinding.getValue()/][/if][/for]);[/template]
+[expression.apiCommand.name/]([for (pBinding:ParameterBinding | expression.parameterBindings) separator(', ')][pBinding.getValue()/][/for]);[/template]
 
 
 

@@ -40,7 +40,7 @@
 		#include "../types/standardTypes.h"
 		#include "../types/customTypes.h"
 		[for (cPort : ContinuousPortInstance |  mapping.port.oclAsType(ContinuousPortInstance))]
-		static void [cPort.componentInstance.oclAsType(ComponentInstance).getIdentifierVariableName()/][getVariableName(cPort.type.oclAsType(Port))/]accessCommand([getTypeName(cPort.portType.oclAsType(ContinuousPort).dataType)/]* value);
+		static void [cPort.componentInstance.oclAsType(ComponentInstance).getIdentifierVariableName()/][getVariableName(cPort.type.oclAsType(Port))/]accessCommand([getTypeName(cPort.portType.oclAsType(ContinuousPort).dataType)/]* [cPort.portType.name/]);
 	[/for]
 	[/file]
 	[file ('APImappings/'+filename+'.c', false, 'Cp1252')]
@@ -48,7 +48,7 @@
 		#include "[cPort.componentInstance.oclAsType(ComponentInstance).getIdentifierVariableName()/][getVariableName(cPort.type.oclAsType(Port))/]accessCommand.h"
 		[/for]
 		[for (cPort : ContinuousPortInstance |  mapping.port.oclAsType(ContinuousPortInstance))]
-		static void [cPort.componentInstance.oclAsType(ComponentInstance).getIdentifierVariableName()/][getVariableName(cPort.type.oclAsType(Port))/]accessCommand([getTypeName(cPort.portType.oclAsType(ContinuousPort).dataType)/]* value){
+		static void [cPort.componentInstance.oclAsType(ComponentInstance).getIdentifierVariableName()/][getVariableName(cPort.type.oclAsType(Port))/]accessCommand([getTypeName(cPort.portType.oclAsType(ContinuousPort).dataType)/]* [cPort.portType.name/]){
 		[generateExpression(mapping.execCommand,'')/]
 		// [protected ('API')]
  	

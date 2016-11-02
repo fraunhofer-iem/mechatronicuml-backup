@@ -61,13 +61,21 @@
  * @param typedNamedElement the TypedNamedElement
 */]
 [query public getTypedNamedElementName(typedNamedElement : TypedNamedElement) : String =
-	if typedNamedElement.eContainer().oclIsKindOf(LocalVariableDeclarationStatement) then
-		typedNamedElement.name
+	if typedNamedElement.eContainer().oclIsKindOf(RealtimeStatechart) then
+		'stateChart->'+typedNamedElement.name	
+	else if typedNamedElement.oclIsKindOf(HybridPort) then
+		'stateChart->'+typedNamedElement.name	
 	else if typedNamedElement.oclIsKindOf(Parameter) then
 		typedNamedElement.name
-	
-		else
-		'stateChart->'+typedNamedElement.name
+	else if typedNamedElement.eContainer().oclIsKindOf(LocalVariableDeclarationStatement) then
+		typedNamedElement.name
+	else if typedNamedElement.oclIsKindOf(ContinuousPort) then
+		'*'+typedNamedElement.name
+	else 
+		'stateChart->'+typedNamedElement.name	
+	endif
+	endif
+	endif
 	endif
 	endif
 /]
