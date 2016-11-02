@@ -462,14 +462,10 @@ while ([generateExpression(expression.loopTest, fqname)/]) {
 */]
 [template public generateExpression(expression : ReturnStatement , fqname : String)]
 [if expression.expression.oclIsUndefined()]
-return;
-[else]
-[if expression.getContainingOperation().getOperationOutputVariableName()->size() < 1]
-[comment FIXME The *value is required for the return value of an api command/]
-*value = [generateExpression(expression.expression,  fqname)/];
-[else]
+[elseif not expression.getContainingOperation().oclIsUndefined()]
 [expression.getContainingOperation().getOperationOutputVariableName()/] = [generateExpression(expression.expression,  fqname)/];
-[/if]
+[else]
+[generateExpression(expression.expression,  fqname)/];
 [/if]
 [/template]
 
@@ -701,7 +697,8 @@ unexpected expression class with unary op: [expression.eClass().name/]
  * @param fqname a fully qualified name or the empty string
 */]
 [template public generateExpression(expression : APICallExpression , fqname : String)]
-[expression.apiCommand.name/]([for (pBinding:ParameterBinding | expression.parameterBindings) separator(', ')][if pBinding.value.oclIsKindOf(TypedNamedElementExpression)]value[else][pBinding.getValue()/][/if][/for]);[/template]
+[comment FIXME Add Test if the TypedNamedElement of TypedNamedElementExpression in the Parameterbinding is equal to the ContinuousPort /]
+[if expression.apiCommand.returnDataType.name <> 'void']*value = [/if][expression.apiCommand.name/]([for (pBinding:ParameterBinding | expression.parameterBindings) separator(', ')][if pBinding.value.oclIsKindOf(TypedNamedElementExpression)]*value[else][pBinding.getValue()/][/if][/for]);[/template]
 
 
 
