@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Software Engineering Core
 Bundle-SymbolicName: de.upb.swt.core;singleton:=true
-Bundle-Version: 0.5.0.qualifier
+Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: University of Paderborn
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.upb.swt.core.runtime,
