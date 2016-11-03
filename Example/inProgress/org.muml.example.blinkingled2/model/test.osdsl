@@ -2,6 +2,7 @@ import "model.muml"
 
 OperatingSystem:testMe{
 	Device_API_Calls:testme{
-	  int16 test(int16 s, int8 q);
+	  void test(int16 s, int8 q);
+	  int32 bla(int16 s, int8 q);
 	}
 }
