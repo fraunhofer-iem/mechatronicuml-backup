@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Fujaba New-Wizard
 Bundle-SymbolicName: org.muml.core.modelinstance.ui;singleton:=true
-Bundle-Version: 0.5.0.qualifier
+Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.muml.core.modelinstance.ui.ModelinstanceUiPlugin
 Require-Bundle: org.eclipse.gmf.runtime.diagram.ui,
  org.eclipse.emf.edit.ui;bundle-version="2.6.0",
