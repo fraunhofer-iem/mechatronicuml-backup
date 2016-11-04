@@ -22,7 +22,9 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
+import org.muml.psm.api.apimappinglanguage.c.ui.Activator;
 import org.osgi.framework.Bundle;
 
 
@@ -91,7 +93,14 @@ public class GenerateAll {
 		monitor.worked(1);
 		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("org.muml.psm.api.apimappinglanguage.c", "org.muml.psm.api.apimappinglanguage.c.main.Main", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
 		gen0.setGenerationID(generationID);
+		long start;
+		start = System.currentTimeMillis();
 		gen0.doGenerate(BasicMonitor.toMonitor(monitor));
+		Double finalTime = Double.valueOf(Double.valueOf(System.currentTimeMillis() - start)
+				.doubleValue() / 1000d);
+		Status logTransformationTime = new Status(Status.INFO,Activator.PLUGIN_ID,"Time to generate C-Mapping Code: "+finalTime);
+		// writes log into the .log file within the .metadata folder of the workspace
+		Activator.getDefault().getLog().log(logTransformationTime);
 			
 		
 	}
