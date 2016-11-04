@@ -46,14 +46,15 @@ CONT_LIB =  MessageBuffer.o LocalBufferManager.o DDS_Custom_Lib.o
 
 RTSC = [for (comp : Component | CIs.componentType->asSet())][if ((comp.oclIsKindOf(AtomicComponent)) and (comp.componentKind = ComponentKind::SOFTWARE_COMPONENT))][comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getClassName().toLowerFirst()/].o [/if][/for]
 COMP = [for (comp : Component | CIs.componentType->asSet())][if ((oclIsKindOf(AtomicComponent)))][comp.getClassName().toLowerFirst()/].o [/if][/for] 
+CONTMAPPING = [for (cInst : ComponentInstance | CIs->select(componentType.oclAsType(Component).componentKind=ComponentKind::CONTINUOUS_COMPONENT))][for (cPort : ContinuousPort | cInst.componentType.ports->filter(ContinuousPort))][cInst.getIdentifierVariableName()/][getVariableName(cPort)/]accessCommand.o [/for][/for]
 OPERATIONREPOSITORIES = [let opRepos : Sequence(OperationRepository) = CIs.componentType->filter(AtomicComponent)->select(a:AtomicComponent|a.componentKind=ComponentKind::SOFTWARE_COMPONENT).behavior.oclAsType(RealtimeStatechart).usedOperationRepositories]	[for (opRep: OperationRepository | opRepos)] [getClassName(opRep).toLowerFirst()/].o	[/for]	[/let]
 LIB =   Debug.o
 CC = gcc
 CFLAGS = -DC99 -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds 
 all: app
 
-app : main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) [if (CIs.componentType->filter(AtomicComponent)->select(a:AtomicComponent|a.componentKind=ComponentKind::SOFTWARE_COMPONENT).behavior.oclAsType(RealtimeStatechart).usedOperationRepositories->size() > 0)]$(OPERATIONREPOSITORIES)[/if]  $(DDSSOURCES)
-	$(CC) main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) [if (CIs.componentType->filter(AtomicComponent)->select(a:AtomicComponent|a.componentKind=ComponentKind::SOFTWARE_COMPONENT).behavior.oclAsType(RealtimeStatechart).usedOperationRepositories->size() > 0)]$(OPERATIONREPOSITORIES)[/if] $(DDSSOURCES) $(LIBS) -o app
+app : main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) &(CONTMAPPING) [if (CIs.componentType->filter(AtomicComponent)->select(a:AtomicComponent|a.componentKind=ComponentKind::SOFTWARE_COMPONENT).behavior.oclAsType(RealtimeStatechart).usedOperationRepositories->size() > 0)]$(OPERATIONREPOSITORIES)[/if]  $(DDSSOURCES)
+	$(CC) main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) &(CONTMAPPING)[if (CIs.componentType->filter(AtomicComponent)->select(a:AtomicComponent|a.componentKind=ComponentKind::SOFTWARE_COMPONENT).behavior.oclAsType(RealtimeStatechart).usedOperationRepositories->size() > 0)]$(OPERATIONREPOSITORIES)[/if] $(DDSSOURCES) $(LIBS) -o app
 [for (comp : Component | CIs.componentType->asSet())? (componentKind=ComponentKind::SOFTWARE_COMPONENT and oclIsKindOf(AtomicComponent))]
 [let rtsc : RealtimeStatechart = comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart)]
 [rtsc.getClassName().toLowerFirst()/].o: [rtsc.getFileName(false,useSubDir)/]
@@ -64,6 +65,13 @@ app : main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) [if (CIs.componen
 [comp.getClassName().toLowerFirst()/].o: [comp.getFileName(false,useSubDir)/]
 	$(CC) $(CFLAGS) [comp.getFileName(false,useSubDir)/]
 [/for]
+[for (cInst : ComponentInstance | CIs->select(componentType.oclAsType(Component).componentKind=ComponentKind::CONTINUOUS_COMPONENT))]
+[for (cPort : ContinuousPort | cInst.componentType.ports->filter(ContinuousPort))]
+[cInst.getIdentifierVariableName()/][getVariableName(cPort)/]accessCommand.o: APImappings/[cInst.getIdentifierVariableName()/][getVariableName(cPort)/]accessCommand.c
+	$(CC) $(CFLAGS) APImappings/[cInst.getIdentifierVariableName()/][getVariableName(cPort)/]accessCommand.c
+[/for]
+[/for]
+
 
 [getDDSFileName()/]Support.o: dds/[getDDSFileName()/]Support.c
 	$(CC) $(CFLAGS) dds/[getDDSFileName()/]Support.c
@@ -71,6 +79,8 @@ app : main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) [if (CIs.componen
 	$(CC) $(CFLAGS) dds/[getDDSFileName()/]Plugin.c
 [getDDSFileName()/].o: dds/[getDDSFileName()/].c
 	$(CC) $(CFLAGS) dds/[getDDSFileName()/].c
+
+
 
 
 MessageBuffer.o: container_lib/MessageBuffer.c
