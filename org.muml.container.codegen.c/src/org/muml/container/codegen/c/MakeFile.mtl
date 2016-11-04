@@ -55,8 +55,8 @@ CC = gcc
 CFLAGS = -DC99 -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds 
 all: app
 
-app : main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) &(CONTMAPPING) [if (CIs.componentType->filter(AtomicComponent)->select(a:AtomicComponent|a.componentKind=ComponentKind::SOFTWARE_COMPONENT).behavior.oclAsType(RealtimeStatechart).usedOperationRepositories->size() > 0)]$(OPERATIONREPOSITORIES)[/if]  $(DDSSOURCES)
-	$(CC) main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) &(CONTMAPPING)[if (CIs.componentType->filter(AtomicComponent)->select(a:AtomicComponent|a.componentKind=ComponentKind::SOFTWARE_COMPONENT).behavior.oclAsType(RealtimeStatechart).usedOperationRepositories->size() > 0)]$(OPERATIONREPOSITORIES)[/if] $(DDSSOURCES) $(LIBS) -o app
+app : main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) $(CONTMAPPING) [if (CIs.componentType->filter(AtomicComponent)->select(a:AtomicComponent|a.componentKind=ComponentKind::SOFTWARE_COMPONENT).behavior.oclAsType(RealtimeStatechart).usedOperationRepositories->size() > 0)]$(OPERATIONREPOSITORIES)[/if]  $(DDSSOURCES)
+	$(CC) main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) $(CONTMAPPING)[if (CIs.componentType->filter(AtomicComponent)->select(a:AtomicComponent|a.componentKind=ComponentKind::SOFTWARE_COMPONENT).behavior.oclAsType(RealtimeStatechart).usedOperationRepositories->size() > 0)]$(OPERATIONREPOSITORIES)[/if] $(DDSSOURCES) $(LIBS) -o app
 [for (comp : Component | CIs.componentType->asSet())? (componentKind=ComponentKind::SOFTWARE_COMPONENT and oclIsKindOf(AtomicComponent))]
 [let rtsc : RealtimeStatechart = comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart)]
 [rtsc.getClassName().toLowerFirst()/].o: [rtsc.getFileName(false,useSubDir)/]
