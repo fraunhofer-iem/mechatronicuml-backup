@@ -75,7 +75,7 @@
 	//include api mapping headers
 [for (cInst : ComponentInstance | container.componentInstances)]
 	[for (cPort : ContinuousPort | container.componentType.ports->filter(ContinuousPort))]
-	#include "../APImappings/[cInst.getIdentifierVariableName()/][getVariableName(cPort)/]accessCommand.h";
+	#include "../APImappings/[cInst.getIdentifierVariableName()/][getVariableName(cPort)/]accessCommand.h"
 	[/for]
 [/for] 
 	[/template]
