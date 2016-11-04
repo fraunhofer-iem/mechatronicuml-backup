@@ -293,8 +293,8 @@
 		int localTimeInterval = 1;
 		if (Clock_getTime(component->[getVariableName(cPort)/]Clock) >= localTimeInterval * 1) //interval of continuous port
 		{
-			setterOf_[cPort.getName()/](&component->[getVariableName(cPort)/], &component->[cPort.getName()/]);
 			component->[getVariableName(cPort)/]AccessFunction(&component->[cPort.getName()/]);
+			setterOf_[cPort.getName()/](&component->[getVariableName(cPort)/], &component->[cPort.getName()/]);
 			Clock_reset(component->[getVariableName(cPort)/]Clock);
 		}
 		}
