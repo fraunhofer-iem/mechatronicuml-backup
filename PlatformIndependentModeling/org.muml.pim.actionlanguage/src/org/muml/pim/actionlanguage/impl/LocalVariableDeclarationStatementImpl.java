@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
@@ -45,14 +46,14 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 	protected Variable variable;
 
 	/**
-	 * The cached value of the '{@link #getAllSurroundingBlocks() <em>All Surrounding Blocks</em>}' reference list.
+	 * The cached setting delegate for the '{@link #getAllSurroundingBlocks() <em>All Surrounding Blocks</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAllSurroundingBlocks()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Block> allSurroundingBlocks;
+	protected EStructuralFeature.Internal.SettingDelegate ALL_SURROUNDING_BLOCKS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__ALL_SURROUNDING_BLOCKS).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -121,11 +122,9 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public EList<Block> getAllSurroundingBlocks() {
-		if (allSurroundingBlocks == null) {
-			allSurroundingBlocks = new EObjectResolvingEList<Block>(Block.class, this, ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__ALL_SURROUNDING_BLOCKS);
-		}
-		return allSurroundingBlocks;
+		return (EList<Block>)ALL_SURROUNDING_BLOCKS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -199,7 +198,7 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE:
 				return variable != null;
 			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__ALL_SURROUNDING_BLOCKS:
-				return allSurroundingBlocks != null && !allSurroundingBlocks.isEmpty();
+				return ALL_SURROUNDING_BLOCKS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

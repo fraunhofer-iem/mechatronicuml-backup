@@ -1155,7 +1155,8 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		  (this, 
 		   source, 
 		   new String[] {
-			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
+			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
 		   });	
 		addAnnotation
 		  (assignmentEClass, 

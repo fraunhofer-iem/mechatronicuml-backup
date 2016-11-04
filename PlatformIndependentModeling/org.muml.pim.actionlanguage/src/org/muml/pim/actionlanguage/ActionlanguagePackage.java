@@ -38,7 +38,7 @@ import org.muml.core.expressions.ExpressionsPackage;
  * <!-- end-model-doc -->
  * @see org.muml.pim.actionlanguage.ActionlanguageFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */
 public interface ActionlanguagePackage extends EPackage {
