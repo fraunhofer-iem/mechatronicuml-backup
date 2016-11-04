@@ -52,7 +52,7 @@ CONTMAPPING = [for (cInst : ComponentInstance | CIs->select(componentType.oclAsT
 OPERATIONREPOSITORIES = [let opRepos : Sequence(OperationRepository) = CIs.componentType->filter(AtomicComponent)->select(a:AtomicComponent|a.componentKind=ComponentKind::SOFTWARE_COMPONENT).behavior.oclAsType(RealtimeStatechart).usedOperationRepositories]	[for (opRep: OperationRepository | opRepos)] [getClassName(opRep).toLowerFirst()/].o	[/for]	[/let]
 LIB =   Debug.o
 CC = gcc
-CFLAGS = -DC99 -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds 
+CFLAGS = -DC99 -DDEBUG -ggdb -Wall -c  $(DEFINES) -I types -I lib -I $(NDDSHOME)/include -I $(NDDSHOME)/include/ndds 
 all: app
 
 app : main.o $(RTSC) $(COMP) $(LIB) $(CONT_LIB) $(HYB) $(CONT) $(CONTMAPPING) [if (CIs.componentType->filter(AtomicComponent)->select(a:AtomicComponent|a.componentKind=ComponentKind::SOFTWARE_COMPONENT).behavior.oclAsType(RealtimeStatechart).usedOperationRepositories->size() > 0)]$(OPERATIONREPOSITORIES)[/if]  $(DDSSOURCES)
