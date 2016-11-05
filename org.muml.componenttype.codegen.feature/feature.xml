@@ -2,7 +2,7 @@
 <feature
       id="org.muml.componenttype.codegen.feature"
       label="Container Code Generation"
-      version="1.0.23.qualifier"
+      version="1.0.24.qualifier"
       provider-name="Heinz Nixdorf Institute, Fraunhofer IEM">
 
    <description url="www.muml.org">
