@@ -2,7 +2,7 @@
 <feature
       id="org.muml.verification.core.feature"
       label="Verification Core"
-      version="0.5.0.qualifier">
+      version="1.0.0.qualifier">
 
    <description>
       Verification Core
