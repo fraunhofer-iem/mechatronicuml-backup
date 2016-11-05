@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/org.muml.ontology.feature_0.5.0.qualifier.jar" id="org.muml.ontology.feature" version="0.5.0.qualifier">
+   <feature url="features/org.muml.ontology.feature_1.0.0.qualifier.jar" id="org.muml.ontology.feature" version="1.0.0.qualifier">
       <category name="org.muml.ontology.category"/>
    </feature>
    <category-def name="org.muml.ontology.category" label="ontology"/>
