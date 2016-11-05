@@ -67,11 +67,27 @@
 [template public generateAccessCommandStubs(container:ComponentContainer, cicfgs:Collection(ContainerComponentInstanceConfiguration))]
 [for (componentInstanceCfg : ContainerComponentInstanceConfiguration | cicfgs)]
 	[for (cPort : ContinuousPort | container.componentType.ports->filter(ContinuousPort))]
-		static void [componentInstanceCfg.componentInstance.getIdentifierVariableName()/][getVariableName(cPort)/]accessCommand([getTypeName(cPort.dataType)/]* value){
+	[let filename : String = componentInstanceCfg.componentInstance.getIdentifierVariableName()+getVariableName(cPort)+'accessCommand']
+	[file ('APImappings/'+filename+'.h', false, 'Utf8')]
+		// [protected ('FORINCLUDES')]
+ 	
+ 		// [/protected]
+		#include "../types/standardTypes.h"
+		#include "../types/customTypes.h"
+		void [componentInstanceCfg.componentInstance.getIdentifierVariableName()/][getVariableName(cPort)/]accessCommand([getTypeName(cPort.dataType)/]* [cPort.name/]);
+		// [protected ('API')]
+ 	
+ 		// [/protected]
+	[/file]	
+	[file ('APImappings/'+filename+'.c', false, 'Cp1252')]
+	#include "[filename+'.h'/]"
+	void [componentInstanceCfg.componentInstance.getIdentifierVariableName()/][getVariableName(cPort)/]accessCommand([getTypeName(cPort.dataType)/]* [cPort.name/]){
 		// [protected ('API')]
  	
  		// [/protected]
 	}
+	[/file]
+	[/let]
 	[/for]
 [/for]
 

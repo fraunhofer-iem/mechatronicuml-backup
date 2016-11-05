@@ -45,8 +45,7 @@
 
 		[generateBuilderForPortHandle(container)/]
 
-		[comment FIXME let the user decide if he wants to have subs/]
-		[comment generateAccessCommandStubs(container, container.componentInstanceConfigurations)/]
+		[generateAccessCommandStubs(container, container.componentInstanceConfigurations)/]
 
 		[generateCreateMethodForComponentInstances(container, container.componentInstanceConfigurations)/]
 		
