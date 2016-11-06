@@ -14,9 +14,9 @@ Export-Package: de.uni_paderborn.fujaba.muml.reachanalysis.example.ttccarplatoon
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.core.reachanalysis.reachabilitygraph;visibility:=reexport,
- org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm;bundle-version="0.4.0",
- org.muml.core.reachanalysis.core;bundle-version="0.4.0",
- org.muml.storydiagram.reachanalysis.sdm;bundle-version="0.4.0",
+ org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm,
+ org.muml.core.reachanalysis.core,
+ org.muml.storydiagram.reachanalysis.sdm,
  org.muml.core,
  org.junit;bundle-version="4.10.0"
 Bundle-ActivationPolicy: lazy
