@@ -15,10 +15,10 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ocl.ecore,
  org.eclipse.acceleo.model,
  org.eclipse.acceleo.engine,
- org.muml.core.modelinstance.ui;bundle-version="0.4.0",
- org.muml.core.export;bundle-version="0.5.0",
- org.muml.core.common;bundle-version="0.5.0",
- org.muml.pim;bundle-version="0.5.0"
+ org.muml.core.modelinstance.ui,
+ org.muml.core.export,
+ org.muml.core.common,
+ org.muml.pim
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
