@@ -5,11 +5,11 @@ Bundle-Version: 0.5.0.qualifier
 Bundle-Activator: org.muml.reconfiguration.verification.sdd.componentsdd.diagram.custom.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.muml.storydiagram.verification.sdd.basicsdd.diagram.custom;bundle-version="0.4.0",
- org.muml.reconfiguration.verification.sdd.componentsdd.diagram;bundle-version="0.4.0",
+ org.muml.storydiagram.verification.sdd.basicsdd.diagram.custom,
+ org.muml.reconfiguration.verification.sdd.componentsdd.diagram,
  org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.7.0",
- org.muml.reconfiguration.componentstorydiagram.diagram.custom;bundle-version="0.4.0",
- org.muml.core.modelinstance.ui;bundle-version="0.4.0"
+ org.muml.reconfiguration.componentstorydiagram.diagram.custom,
+ org.muml.core.modelinstance.ui
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Name: %pluginName

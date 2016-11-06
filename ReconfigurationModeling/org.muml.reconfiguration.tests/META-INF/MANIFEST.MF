@@ -7,9 +7,9 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.junit;bundle-version="3.8.2",
  org.muml.storydiagram;bundle-version="1.0.1",
- org.muml.pim;bundle-version="0.4.0",
- org.muml.reconfiguration.componentstorydiagram;bundle-version="0.4.0",
- org.muml.reconfiguration.componentstorypattern;bundle-version="0.4.0",
+ org.muml.pim,
+ org.muml.reconfiguration.componentstorydiagram,
+ org.muml.reconfiguration.componentstorypattern,
  org.muml.core,
  org.muml.core.tests;bundle-version="0.3.1"
 Bundle-ActivationPolicy: lazy
