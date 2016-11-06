@@ -4,13 +4,13 @@ Bundle-Name: RailCab Example
 Bundle-SymbolicName: org.muml.example.railcab;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
-Require-Bundle: org.muml.core.example.ui;bundle-version="0.4.0",
- org.muml.uppaal.adapter.mtctl;bundle-version="0.5.0",
- org.muml.reconfiguration;bundle-version="0.5.0",
- org.muml.example.railcab.profiletypes;bundle-version="1.0.0",
- org.muml.pim.actionlanguage;bundle-version="0.5.0",
- org.muml.reconfiguration.componentstorydiagram;bundle-version="0.5.0",
- org.muml.reconfiguration.verification.sdd.componentsdd;bundle-version="0.5.0",
- org.muml.storydiagram.expressions;bundle-version="1.0.0"
+Require-Bundle: org.muml.core.example.ui,
+ org.muml.uppaal.adapter.mtctl,
+ org.muml.reconfiguration,
+ org.muml.example.railcab.profiletypes,
+ org.muml.pim.actionlanguage,
+ org.muml.reconfiguration.componentstorydiagram,
+ org.muml.reconfiguration.verification.sdd.componentsdd,
+ org.muml.storydiagram.expressions
 Bundle-Localization: plugin
 Bundle-ActivationPolicy: lazy
