@@ -16,7 +16,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.acceleo.profiler;bundle-version="3.2.1",
  org.eclipse.acceleo.engine;bundle-version="3.2.1",
  org.muml.pim.actionlanguage,
- org.muml.pim;bundle-version="0.4.0",
+ org.muml.pim;,
  org.muml.codegen.c.beautifier,
  org.muml.pim.common,
  org.muml.psm
