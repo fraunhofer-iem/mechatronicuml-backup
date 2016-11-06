@@ -26,9 +26,9 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
    </license>
 
    <requires>
-      <import plugin="org.muml.pim" version="0.5.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.pim.actionlanguage" version="0.5.0" match="greaterOrEqual"/>
-      <import feature="org.muml.pim.feature" version="0.5.0"/>
+      <import plugin="org.muml.pim" />
+      <import plugin="org.muml.pim.actionlanguage" />
+      <import feature="org.muml.pim.feature" />
       <import feature="org.muml.core.feature"/>
    </requires>
 
