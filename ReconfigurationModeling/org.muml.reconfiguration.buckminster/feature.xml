@@ -24,10 +24,10 @@
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.junit" version="3.8.2" match="greaterOrEqual"/>
-      <import plugin="org.muml.storydiagram" version="1.0.1" match="greaterOrEqual"/>
-      <import plugin="org.muml.pim" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.reconfiguration.componentstorydiagram" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.pim.tests" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="org.muml.storydiagram" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim"/>
+      <import plugin="org.muml.reconfiguration.componentstorydiagram"/>
+      <import plugin="org.muml.pim.tests"/>
    </requires>
 
    <plugin
