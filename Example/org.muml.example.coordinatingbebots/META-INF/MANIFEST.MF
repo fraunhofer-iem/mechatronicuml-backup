@@ -4,8 +4,8 @@ Bundle-Name: CoordinatingBebots
 Bundle-SymbolicName: org.muml.example.coordinatingbebots;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.muml.core.example.ui;bundle-version="0.4.0",
- org.muml.uppaal.adapter.mtctl;bundle-version="0.5.0",
- org.muml.pim.actionlanguage;bundle-version="0.5.0",
+Require-Bundle: org.muml.core.example.ui,
+ org.muml.uppaal.adapter.mtctl,
+ org.muml.pim.actionlanguage,
  org.eclipse.core.expressions;bundle-version="3.5.0"
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
