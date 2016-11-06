@@ -39,6 +39,7 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.muml.pim.types_0.5.0.201610311621.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.muml.psm_1.0.0.201611011447.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.muml.pm.hardware_1.0.0.201610311626.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.muml.pm.software_0.5.0.201610311626.jar"/>
     </path>
 
     <path id="org.muml.codegen.allocation.latex.classpath">

@@ -20,7 +20,7 @@
 
 [template public generate(sysAll: SystemAllocation)]
 [comment @main/]
-[file ('SystemAllocation.tex', false, 'Utf8')]
+[file ('SystemAllocationOf'+sysAll.cic.name+'.tex', false, 'Utf8')]
 [comment only generate, if CIC is a root-CIC/]
 [if cic.eContainer().oclIsKindOf(ModelElementCategory)]	
 	[comment generate software parts/]
