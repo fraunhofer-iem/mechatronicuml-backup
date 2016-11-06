@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: MechatronicUML Arduino Car Example
 Bundle-SymbolicName: org.muml.example.arduinocarhwplatform;singleton:=true
 Bundle-Version: 0.5.0.qualifier
-Require-Bundle: org.muml.core.example.ui;bundle-version="0.5.0",
- org.muml.pim.actionlanguage;bundle-version="0.5.0"
+Require-Bundle: org.muml.core.example.ui,
+ org.muml.pim.actionlanguage
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
