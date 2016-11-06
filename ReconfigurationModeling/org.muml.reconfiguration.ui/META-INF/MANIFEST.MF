@@ -5,21 +5,21 @@ Bundle-SymbolicName: org.muml.reconfiguration.ui;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-Activator: org.muml.reconfiguration.ui.Activator
 Bundle-Vendor: %providerName
-Require-Bundle: org.muml.reconfiguration;bundle-version="0.3.1",
+Require-Bundle: org.muml.reconfiguration,
  org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.6.0",
  org.eclipse.m2m.qvt.oml;bundle-version="3.2.0",
- org.muml.pim.component.diagram.custom;bundle-version="0.3.1",
- org.muml.pim.common;bundle-version="0.4.0",
- org.muml.core.modelinstance.ui;bundle-version="0.4.0",
+ org.muml.pim.component.diagram.custom,
+ org.muml.pim.common,
+ org.muml.core.modelinstance.ui,
  org.eclipse.gmf.runtime.diagram.ui.providers;bundle-version="1.5.0",
  org.muml.pim.component.diagram,
  org.eclipse.m2m.qvt.oml.project;bundle-version="3.1.0",
- org.muml.reconfiguration.componentstorydiagram;bundle-version="0.4.0",
- org.muml.reconfiguration.componentstorydiagram.sdm.transforms;bundle-version="1.0.0",
- org.muml.core.reachanalysis.core;bundle-version="0.4.0",
- org.muml.core.reachanalysis.reachabilitygraph;bundle-version="0.4.0",
- org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm;bundle-version="0.4.0",
- org.muml.storydiagram.reachanalysis.sdm;bundle-version="0.4.0"
+ org.muml.reconfiguration.componentstorydiagram,
+ org.muml.reconfiguration.componentstorydiagram.sdm.transforms,
+ org.muml.core.reachanalysis.core,
+ org.muml.core.reachanalysis.reachabilitygraph,
+ org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm,
+ org.muml.storydiagram.reachanalysis.sdm
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: org.muml.reconfiguration.ui.edit.parts,
