@@ -18,11 +18,11 @@
    </license>
 
    <requires>
-      <import feature="org.muml.uppaal.feature" version="0.5.0.qualifier"/>
+      <import feature="org.muml.uppaal.feature" />
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.eclipse.emf.validation" version="1.7.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.testlanguage" version="0.1.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.testlanguage" />
       <import plugin="org.eclipse.ui" version="3.105.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.transaction"/>
       <import plugin="org.eclipse.gmf.runtime.notation" version="1.8.0" match="greaterOrEqual"/>
@@ -54,8 +54,8 @@
       <import plugin="org.eclipse.ocl.ecore"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing.render"/>
-      <import plugin="org.muml.testlanguage.custom" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.testlanguage.diagram" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.testlanguage.custom" />
+      <import plugin="org.muml.testlanguage.diagram" />
       <import plugin="org.eclipse.gmf.validate" version="1.2.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml.common"/>
       <import plugin="org.eclipse.m2m.qvt.oml.common.ui"/>
@@ -66,25 +66,25 @@
       <import plugin="org.eclipse.emf.common"/>
       <import plugin="org.eclipse.emf.compare" version="3.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml"/>
-      <import plugin="org.muml.pim" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.uppaal.adapter.job" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.uppaal" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.uppaal.requirements" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.pim" />
+      <import plugin="org.muml.uppaal.adapter.job" />
+      <import plugin="org.muml.uppaal" />
+      <import plugin="org.muml.uppaal.requirements" />
       <import plugin="org.muml.uppaal.trace"/>
-      <import plugin="org.muml.uppaal.adapter.results" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.uppaal.adapter.results" />
       <import plugin="org.muml.uppaal.adapter.mtctl.xtext"/>
-      <import plugin="org.muml.uppaal.adapter.extension" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.uppaal.adapter.extension" />
       <import plugin="org.muml.core" match="greaterOrEqual"/>
-      <import plugin="org.muml.uppaal.options" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.uppaal.options" />
       <import plugin="org.muml.uppaal.job"/>
-      <import plugin="org.muml.testlanguage.specification" version="0.1.0" match="greaterOrEqual"/>
-      <import feature="org.muml.uppaal.adapter.feature" version="0.5.0.qualifier"/>
-      <import feature="org.muml.udbm.feature" version="0.5.0"/>
-      <import feature="org.muml.core.feature" version="0.5.0"/>
-      <import feature="org.muml.verification.core.feature" version="0.5.0"/>
-      <import feature="org.muml.ape.feature" version="0.5.0"/>
-      <import feature="org.muml.graphviz.feature" version="0.5.0"/>
-      <import feature="org.muml.pim.feature" version="0.5.0"/>
+      <import plugin="org.muml.testlanguage.specification" />
+      <import feature="org.muml.uppaal.adapter.feature" />
+      <import feature="org.muml.udbm.feature" />
+      <import feature="org.muml.core.feature" />
+      <import feature="org.muml.verification.core.feature" />
+      <import feature="org.muml.ape.feature" />
+      <import feature="org.muml.graphviz.feature" />
+      <import feature="org.muml.pim.feature" />
    </requires>
 
    <plugin
