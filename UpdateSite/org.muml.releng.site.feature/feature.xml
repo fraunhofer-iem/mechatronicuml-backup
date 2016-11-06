@@ -256,9 +256,9 @@ the Eclipse framework.
          version="0.0.0"/>
 
    <requires>
-      <import feature="org.muml.pm.hardware.feature" version="1.0.0"/>
-      <import feature="org.muml.pm.software.feature" version="1.0.0"/>
-      <import feature="org.muml.oclfilter.feature" version="0.5.0"/>
+      <import feature="org.muml.pm.hardware.feature"/>
+      <import feature="org.muml.pm.software.feature"/>
+      <import feature="org.muml.oclfilter.feature"/>
    </requires>
 
 </feature>
