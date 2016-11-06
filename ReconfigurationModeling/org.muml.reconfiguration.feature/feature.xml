@@ -23,7 +23,7 @@
       <import plugin="org.muml.core"/>
       <import plugin="org.muml.pim"/>
       <import plugin="org.muml.storydiagram"/>
-      <import plugin="org.muml.reconfiguration.componentstorypattern" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.reconfiguration.componentstorypattern"/>
       <import plugin="org.eclipse.emf.ecore.editor"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide"/>
@@ -57,37 +57,37 @@
       <import plugin="org.muml.ape.runtime"/>
       <import plugin="org.muml.core.edit.properties"/>
       <import plugin="org.muml.pim.edit.properties"/>
-      <import plugin="org.muml.reconfiguration.componentstorypattern.edit" />
+      <import plugin="org.muml.reconfiguration.componentstorypattern.edit"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.edit.ui" version="2.7.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.core.ui" version="0.1.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.core.ui"/>
       <import plugin="de.upb.swt.core.ui.properties" version="0.1.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.pim.common" />
+      <import plugin="org.muml.pim.common"/>
       <import plugin="org.eclipse.emf.edit"/>
-      <import plugin="org.muml.core.common" />
+      <import plugin="org.muml.core.common"/>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.muml.pim.actionlanguage.xtext.ui"/>
-      <import plugin="org.muml.reconfiguration.edit.properties" />
+      <import plugin="org.muml.reconfiguration.edit.properties"/>
       <import plugin="org.eclipse.m2m.qvt.oml.project" version="3.3.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml" version="3.4.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.pim.edit" />
-      <import plugin="org.muml.storydiagram.edit" />
+      <import plugin="org.muml.pim.edit"/>
+      <import plugin="org.muml.storydiagram.edit"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties" version="1.4.2" match="greaterOrEqual"/>
-      <import plugin="org.muml.pim.common" />
-      <import plugin="org.muml.reconfiguration.componentstorydiagram" />
-      <import plugin="org.muml.reconfiguration" />
+      <import plugin="org.muml.pim.common"/>
+      <import plugin="org.muml.reconfiguration.componentstorydiagram"/>
+      <import plugin="org.muml.reconfiguration"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.6.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml" version="3.2.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.pim.component.diagram.custom" />
-      <import plugin="org.muml.core.modelinstance.ui" />
+      <import plugin="org.muml.pim.component.diagram.custom"/>
+      <import plugin="org.muml.core.modelinstance.ui"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers" version="1.5.0" match="greaterOrEqual"/>
       <import plugin="org.muml.pim.component.diagram"/>
       <import plugin="org.eclipse.m2m.qvt.oml.project" version="3.1.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.reconfiguration.componentstorydiagram.sdm.transforms" />
-      <import plugin="org.muml.core.reachanalysis.core" />
-      <import plugin="org.muml.core.reachanalysis.reachabilitygraph" />
-      <import plugin="org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm" />
-      <import plugin="org.muml.storydiagram.reachanalysis.sdm" />
+      <import plugin="org.muml.reconfiguration.componentstorydiagram.sdm.transforms"/>
+      <import plugin="org.muml.core.reachanalysis.core"/>
+      <import plugin="org.muml.core.reachanalysis.reachabilitygraph"/>
+      <import plugin="org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm"/>
+      <import plugin="org.muml.storydiagram.reachanalysis.sdm"/>
       <import plugin="org.muml.storydiagram.verification.sdd"/>
       <import plugin="org.eclipse.core.expressions"/>
       <import plugin="org.eclipse.ui.navigator"/>
@@ -95,17 +95,17 @@
       <import plugin="org.muml.storydiagram.verification.sdd.edit"/>
       <import plugin="org.muml.storydiagram.verification.sdd.basicsdd.edit.properties"/>
       <import plugin="org.muml.storydiagram.verification.sdd.edit.properties"/>
-      <import plugin="org.muml.reconfiguration.common" />
-      <import plugin="org.muml.storydiagram.verification.sdd.basicsdd.diagram.custom" />
-      <import plugin="org.muml.reconfiguration.verification.sdd.componentsdd.diagram" />
+      <import plugin="org.muml.reconfiguration.common"/>
+      <import plugin="org.muml.storydiagram.verification.sdd.basicsdd.diagram.custom"/>
+      <import plugin="org.muml.reconfiguration.verification.sdd.componentsdd.diagram"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.7.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.reconfiguration.componentstorydiagram.diagram.custom" />
-      <import feature="org.muml.pim.feature" />
-      <import feature="org.muml.storydiagram.feature" />
+      <import plugin="org.muml.reconfiguration.componentstorydiagram.diagram.custom"/>
+      <import feature="org.muml.pim.feature"/>
+      <import feature="org.muml.storydiagram.feature"/>
       <import plugin="org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.wrapper"/>
-      <import feature="org.muml.core.feature" />
-      <import feature="org.muml.modelcopy.feature" />
-      <import feature="org.muml.ape.feature" />
+      <import feature="org.muml.core.feature"/>
+      <import feature="org.muml.modelcopy.feature"/>
+      <import feature="org.muml.ape.feature"/>
    </requires>
 
    <plugin
