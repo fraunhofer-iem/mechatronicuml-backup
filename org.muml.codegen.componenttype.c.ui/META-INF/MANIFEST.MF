@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Acceleo ComponentType Code Module IDE Plug-in
+Bundle-Name: MechatronicUML ComponentType C Code Generator User Interface
 Bundle-SymbolicName: org.muml.codegen.componenttype.c.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.muml.codegen.componenttype.c.ui.Activator
-Bundle-Vendor: Eclipse Modeling Project
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.core.resources,
