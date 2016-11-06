@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MechatronicUML Blinking LED Example
 Bundle-SymbolicName: org.muml.example.blinkingled;singleton:=true
-Bundle-Version: 0.5.0.qualifier
+Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.muml.core.example.ui;bundle-version="0.5.0",
  org.muml.pim.actionlanguage;bundle-version="0.5.0"
 Bundle-ActivationPolicy: lazy
