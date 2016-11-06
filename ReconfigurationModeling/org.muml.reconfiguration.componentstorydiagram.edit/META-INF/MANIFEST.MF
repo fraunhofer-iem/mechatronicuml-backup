@@ -23,6 +23,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.muml.storydiagram;visibility:=reexport,
  org.muml.storydiagram.edit;visibility:=reexport,
  org.muml.core.common;bundle-version="0.3.1",
- org.muml.reconfiguration.componentstorypattern;bundle-version="0.4.0";visibility:=reexport,
- org.muml.reconfiguration.componentstorypattern.edit;bundle-version="0.4.0";visibility:=reexport
+ org.muml.reconfiguration.componentstorypattern;visibility:=reexport,
+ org.muml.reconfiguration.componentstorypattern.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

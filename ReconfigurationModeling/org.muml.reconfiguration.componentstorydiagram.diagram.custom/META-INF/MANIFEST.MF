@@ -9,8 +9,8 @@ Require-Bundle: org.muml.reconfiguration.componentstorydiagram.diagram,
  org.eclipse.emf.edit.ui;bundle-version="2.7.0",
  org.muml.core.ui;bundle-version="0.1.0",
  de.upb.swt.core.ui.properties;bundle-version="0.1.0",
- org.muml.reconfiguration.componentstorypattern;bundle-version="0.4.0",
- org.muml.pim.common;bundle-version="0.4.0"
+ org.muml.reconfiguration.componentstorypattern,
+ org.muml.pim.common
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.reconfiguration.componentstorydiagram.diagram.custom.util
