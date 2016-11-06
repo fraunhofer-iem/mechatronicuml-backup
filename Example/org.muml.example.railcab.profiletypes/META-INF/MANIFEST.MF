@@ -12,7 +12,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.core;visibility:=reexport,
  org.muml.pim;visibility:=reexport,
- org.muml.verification.core.runtime;bundle-version="0.4.0";visibility:=reexport
+ org.muml.verification.core.runtime;visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.example.railcab.profiles,
  org.muml.example.railcab.profiles.impl,
