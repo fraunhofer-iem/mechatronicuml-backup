@@ -635,10 +635,10 @@
             ecoreFeature="ecore:EReference pim.ecore#//runnable/Runnable/componentInstance"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference pim.ecore#//runnable/Runnable/portInstance"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//runnable/Runnable/period"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//runnable/Runnable/period"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference pim.ecore#//runnable/Runnable/labelAccesses"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//runnable/Runnable/deadline"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference pim.ecore#//runnable/Runnable/deadline"/>
       </genClasses>
       <genClasses ecoreClass="pim.ecore#//runnable/Label">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
