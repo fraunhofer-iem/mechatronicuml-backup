@@ -3,14 +3,14 @@ Bundle-ManifestVersion: 2
 Bundle-Name: MechatronicUML Component Story Diagram Common Plugin
 Bundle-SymbolicName: org.muml.reconfiguration.common;singleton:=true
 Bundle-Version: 0.5.0.qualifier
-Require-Bundle: org.muml.pim.edit;bundle-version="0.3.1",
- org.muml.storydiagram.edit;bundle-version="1.0.0",
+Require-Bundle: org.muml.pim.edit,
+ org.muml.storydiagram.edit,
  org.eclipse.gmf.runtime.diagram.ui.properties;bundle-version="1.4.2",
- org.muml.pim.common;bundle-version="0.3.1",
+ org.muml.pim.common,
  org.muml.reconfiguration.componentstorydiagram,
  org.muml.reconfiguration.componentstorypattern,
  org.muml.pim.actionlanguage.xtext,
- org.muml.pim.actionlanguage.xtext.ui;bundle-version="0.5.0",
+ org.muml.pim.actionlanguage.xtext.ui,
  com.google.inject;bundle-version="3.0.0",
  org.eclipse.xtext,
  org.muml.reconfiguration.verification.sdd.componentsdd,
