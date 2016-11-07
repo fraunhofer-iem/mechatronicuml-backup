@@ -16,7 +16,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.acceleo.profiler;bundle-version="3.2.1",
  org.eclipse.acceleo.engine;bundle-version="3.2.1",
  org.muml.pim.actionlanguage,
- org.muml.pim;,
+ org.muml.pim,
  org.muml.codegen.c.beautifier,
  org.muml.pim.common,
  org.muml.psm
@@ -28,7 +28,7 @@ Export-Package: org.muml.codegen.allocation.latex;uses:="org.osgi.framework,org.
    org.eclipse.emf.common.util,
    org.eclipse.acceleo.engine.service,
    org.eclipse.emf.ecore.resource,
-   org.eclipse.acceleo.engine.generation.strategy",
+   org.eclipse.acceleo.engine.generation.strategy,
  	org.muml.codegen.allocation.latex
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 
