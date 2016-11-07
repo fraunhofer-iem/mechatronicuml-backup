@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-Vendor: %providerName
-Bundle-Version: 0.5.0.qualifier
+Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: org.muml.pm.software.oslanguage.xtext.ui;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext.ui,
@@ -14,11 +14,11 @@ Require-Bundle: org.eclipse.xtext.ui,
  org.antlr.runtime,
  org.eclipse.xtext.common.types.ui,
  org.eclipse.xtext.ui.codetemplates.ui,
- org.muml.pim.actionlanguage.xtext;bundle-version="0.4.0",
- org.muml.pim.actionlanguage.xtext.ui;bundle-version="0.4.0",
+ org.muml.pim.actionlanguage.xtext,
+ org.muml.pim.actionlanguage.xtext.ui,
  org.eclipse.xtext.xbase.lib,
  org.eclipse.compare;bundle-version="3.5.500",
- org.muml.pm.software.oslanguage.xtext;bundle-version="0.5.0"
+ org.muml.pm.software.oslanguage.xtext
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

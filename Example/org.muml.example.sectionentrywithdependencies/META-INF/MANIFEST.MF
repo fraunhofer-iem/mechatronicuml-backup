@@ -4,7 +4,7 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.muml.example.sectionentrywithdependencies;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-Vendor: %providerName
-Require-Bundle: org.muml.core.example.ui;bundle-version="0.5.0",
- org.muml.pim.actionlanguage;bundle-version="0.5.0"
+Require-Bundle: org.muml.core.example.ui,
+ org.muml.pim.actionlanguage
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
