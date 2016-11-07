@@ -18,7 +18,7 @@ Require-Bundle: org.muml.psm.api.apimappinglanguage.xtext;visibility:=reexport,
  org.eclipse.compare,
  org.muml.pim.actionlanguage.xtext,
  org.muml.pim.actionlanguage.xtext.ui,
- org.muml.pm.common;bundle-version="1.0.0",
+ org.muml.pm.common,
  org.muml.psm,
  org.eclipse.xtext.xbase.lib
 Import-Package: org.apache.log4j,

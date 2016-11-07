@@ -6,12 +6,12 @@ Bundle-Version: 0.5.0.qualifier
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.gmf.runtime.diagram.ui.properties;bundle-version="1.4.0",
  org.eclipse.gmf.runtime.diagram.ui.providers;bundle-version="1.5.0",
- org.muml.pim.coordinationprotocol.diagram;bundle-version="0.3.1",
- org.muml.pim.actionlanguage;bundle-version="0.4.0",
+ org.muml.pim.coordinationprotocol.diagram,
+ org.muml.pim.actionlanguage,
  org.eclipse.m2m.qvt.oml;bundle-version="3.3.0",
  org.eclipse.ui.workbench,
  org.muml.pim.common,
- org.muml.pim.coordinationspecification.common;bundle-version="0.5.0",
+ org.muml.pim.coordinationspecification.common,
  org.muml.pim.actionlanguage.xtext
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy

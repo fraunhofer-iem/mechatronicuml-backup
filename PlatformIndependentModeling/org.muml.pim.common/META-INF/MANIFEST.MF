@@ -4,19 +4,19 @@ Bundle-Name: MechatronicUML Common Plugin
 Bundle-SymbolicName: org.muml.pim.common;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Require-Bundle: org.muml.core.common;bundle-version="0.3.1",
- org.muml.pim.actionlanguage.xtext;bundle-version="0.3.1",
- org.muml.pim.edit;bundle-version="0.3.1",
- org.muml.core.modelinstance.ui;bundle-version="0.3.1",
+Require-Bundle: org.muml.core.common,
+ org.muml.pim.actionlanguage.xtext,
+ org.muml.pim.edit,
+ org.muml.core.modelinstance.ui,
  org.eclipse.ui.ide;bundle-version="3.7.0",
  org.eclipse.gmf.runtime.diagram.ui.properties;bundle-version="1.4.2",
- org.muml.ape.runtime;bundle-version="0.4.0",
+ org.muml.ape.runtime,
  org.eclipse.emf.ecore,
  org.eclipse.swt,
  org.eclipse.draw2d,
  org.eclipse.gmf.runtime.diagram.ui,
- org.muml.pim.types;bundle-version="0.1.0";visibility:=reexport,
- org.muml.core.common.editingdomain;bundle-version="0.5.0"
+ org.muml.pim.types;visibility:=reexport,
+ org.muml.core.common.editingdomain
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
 Export-Package: org.muml.pim.common,

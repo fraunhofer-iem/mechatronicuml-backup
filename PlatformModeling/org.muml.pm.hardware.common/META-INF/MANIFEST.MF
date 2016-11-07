@@ -14,7 +14,7 @@ Export-Package: org.muml.pm.hardware.common.edit.policies,
  org.muml.pm.hardware.common.parsers,
  org.muml.pm.hardware.common.refactor
 Require-Bundle: org.eclipse.gmf.runtime.diagram.ui.properties,
- org.muml.pim.common;bundle-version="0.4.0",
+ org.muml.pim.common,
  org.muml.pm.hardware,
  org.eclipse.gmf.runtime.diagram.ui,
  org.eclipse.gmf.runtime.emf.commands.core,

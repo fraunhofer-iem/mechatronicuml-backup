@@ -6,7 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: 
  Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Require-Bundle: org.muml.pm.hardware.platforminstance.diagram;bundle-version="1.0.0",
+Require-Bundle: org.muml.pm.hardware.platforminstance.diagram,
  org.eclipse.m2m.qvt.oml;bundle-version="3.1.0",
  org.muml.pm.hardware.common,
  org.eclipse.gmf.runtime.diagram.ui.properties,

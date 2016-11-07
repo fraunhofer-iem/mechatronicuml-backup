@@ -6,7 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: 
  oftware Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT
 Require-Bundle: org.eclipse.m2m.qvt.oml;bundle-version="3.1.0",
- org.muml.pm.hardware.resourceinstance.diagram;bundle-version="1.0.0",
+ org.muml.pm.hardware.resourceinstance.diagram,
  org.eclipse.gmf.runtime.diagram.ui,
  org.muml.pm.hardware.common
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

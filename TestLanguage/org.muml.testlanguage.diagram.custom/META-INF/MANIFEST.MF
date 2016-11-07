@@ -4,7 +4,7 @@ Bundle-Name: Custom
 Bundle-SymbolicName: org.muml.testlanguage.diagram.custom;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Require-Bundle: org.muml.testlanguage.diagram;bundle-version="1.0.0",
+Require-Bundle: org.muml.testlanguage.diagram,
  org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.core.expressions,

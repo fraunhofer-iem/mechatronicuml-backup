@@ -5,11 +5,11 @@ Bundle-SymbolicName: org.muml.pim.onetomanycommunicationschemata;singleton:=true
 Bundle-Version: 0.4.0.qualifier
 Bundle-Vendor: 
  Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
-Require-Bundle: org.muml.pim;bundle-version="0.4.0",
- org.muml.pim.actionlanguage;bundle-version="0.4.0",
+Require-Bundle: org.muml.pim,
+ org.muml.pim.actionlanguage,
  org.eclipse.m2m.qvt.oml;bundle-version="3.3.0",
  org.eclipse.m2m.qvt.oml.project;bundle-version="3.3.0",
  org.eclipse.m2m.qvt.oml.runtime;bundle-version="3.5.0",
- org.muml.pim.types;bundle-version="0.5.0",
- org.muml.modelcopy.qvto.library;bundle-version="1.0.0"
+ org.muml.pim.types,
+ org.muml.modelcopy.qvto.library
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

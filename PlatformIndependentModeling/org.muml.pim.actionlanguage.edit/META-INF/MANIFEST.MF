@@ -12,10 +12,10 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.pim.actionlanguage.provider
 Require-Bundle: org.eclipse.core.runtime,
- org.muml.pim.actionlanguage;bundle-version="0.3.1";visibility:=reexport,
+ org.muml.pim.actionlanguage;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
  org.muml.pim;visibility:=reexport,
- org.muml.pim.edit;bundle-version="0.3.1";visibility:=reexport,
+ org.muml.pim.edit;visibility:=reexport,
  org.muml.core;visibility:=reexport,
  org.muml.core.edit;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,

@@ -6,11 +6,11 @@ Bundle-Version: 0.5.0.qualifier
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.junit;bundle-version="3.8.2",
- org.muml.storydiagram;bundle-version="1.0.1",
+ org.muml.storydiagram
  org.muml.pim,
  org.muml.reconfiguration.componentstorydiagram,
  org.muml.reconfiguration.componentstorypattern,
  org.muml.core,
- org.muml.core.tests;bundle-version="0.3.1"
+ org.muml.core.tests
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

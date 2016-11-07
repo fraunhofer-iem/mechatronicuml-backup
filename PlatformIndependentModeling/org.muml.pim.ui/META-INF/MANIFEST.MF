@@ -13,9 +13,9 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.m2m.qvt.oml;bundle-version="3.4.1",
  org.eclipse.gmf.runtime.diagram.ui,
- org.muml.pim.onetomanycommunicationschemata;bundle-version="0.4.0",
+ org.muml.pim.onetomanycommunicationschemata,
  org.muml.core.modelinstance.ui,
- org.muml.pim.actionlanguage;bundle-version="0.5.0"
+ org.muml.pim.actionlanguage
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Export-Package: org.muml.pim.ui.contextmenu.handlers.component,

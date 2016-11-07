@@ -28,5 +28,5 @@ Export-Package: org.muml.pm.hardware,
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.core;visibility:=reexport,
- org.muml.pim;bundle-version="0.4.0";visibility:=reexport
+ org.muml.pim;visibility:=reexport
 Bundle-ActivationPolicy: lazy

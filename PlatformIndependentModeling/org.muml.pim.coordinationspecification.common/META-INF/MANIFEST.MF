@@ -9,7 +9,7 @@ Export-Package: org.muml.pim.coordinationspecification.common.edit.helpers,
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.gmf.runtime.diagram.ui.providers;bundle-version="1.5.0",
- org.muml.pim.actionlanguage;bundle-version="0.4.0",
+ org.muml.pim.actionlanguage,
  org.eclipse.m2m.qvt.oml;bundle-version="3.3.0",
  org.eclipse.ui.workbench,
  org.eclipse.gmf.runtime.diagram.ui

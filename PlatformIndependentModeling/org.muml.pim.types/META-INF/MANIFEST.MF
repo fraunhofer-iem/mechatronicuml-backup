@@ -5,7 +5,7 @@ Bundle-Version: 0.5.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.emf.ecore.xmi,
  org.eclipse.core.runtime,
- org.muml.pim;bundle-version="0.5.0",
+ org.muml.pim,
  org.eclipse.m2m.qvt.oml
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.muml.pim.types.Activator
