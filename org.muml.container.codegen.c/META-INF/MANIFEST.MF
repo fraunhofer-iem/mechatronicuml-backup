@@ -16,9 +16,9 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.acceleo.engine;bundle-version="3.3.0",
  com.google.guava,
  org.muml.codegen.componenttype.c,
- org.muml.core;bundle-version="1.0.0",
+ org.muml.core,
  org.muml.pim,
- org.muml.psm;bundle-version="1.0.0",
+ org.muml.psm,
  org.muml.psm.container
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy

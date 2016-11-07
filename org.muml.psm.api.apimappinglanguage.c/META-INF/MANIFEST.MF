@@ -20,7 +20,7 @@ Require-Bundle: org.eclipse.core.runtime,
  com.google.guava,
  org.muml.psm,
  org.muml.codegen.componenttype.c,
- org.muml.container.codegen.c;bundle-version="1.0.0",
+ org.muml.container.codegen.c,
  org.muml.psm.api.apimappinglanguage.xtext,
  org.muml.psm.api.apimappinglanguage.xtext.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
