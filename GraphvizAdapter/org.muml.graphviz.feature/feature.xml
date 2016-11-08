@@ -11,6 +11,7 @@
 
    <requires>
       <import feature="org.muml.core.feature"/>
+      <import feature="org.eclipse.xtext.sdk" version="2.10.0.v201605250459" match="compatible"/>
    </requires>
 
    <plugin
