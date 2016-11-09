@@ -299,7 +299,31 @@
 	context valuetype::TimeValue
 		def: getLiteralVal() : Real =
 			if self._'value'.oclIsKindOf(common::LiteralExpression) then
-				self._'value'.oclAsType(common::LiteralExpression)._'value'.toReal()
+				if self._'unit'.toString() = 'SECONDS' then
+					self._'value'.oclAsType(common::LiteralExpression)._'value'.toReal()*1000
+				else
+					if self._'unit'.toString() = 'MICROSECONDS' then
+						self._'value'.oclAsType(common::LiteralExpression)._'value'.toReal()/1000
+					else
+						 if self._'unit'.toString() = 'HOURS' then
+							self._'value'.oclAsType(common::LiteralExpression)._'value'.toReal()*3600000
+						 else
+							if self._'unit'.toString() = 'DAYS' then 
+								self._'value'.oclAsType(common::LiteralExpression)._'value'.toReal()*86400000	
+							else
+								if self._'unit'.toString() = 'MINUTES' then 
+									self._'value'.oclAsType(common::LiteralExpression)._'value'.toReal()*60000
+								else
+									if self._'unit'.toString() = 'NANOSECONDS' then 
+										self._'value'.oclAsType(common::LiteralExpression)._'value'.toReal()/1000000
+									else
+										self._'value'.oclAsType(common::LiteralExpression)._'value'.toReal()
+									endif
+								endif
+							endif
+						endif
+					endif
+				endif
 			else
 				42
 			endif
