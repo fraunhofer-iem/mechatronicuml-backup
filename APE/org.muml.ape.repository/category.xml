@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/org.muml.ape.feature_0.5.0.qualifier.jar" id="org.muml.ape.feature" version="0.5.0.qualifier">
+   <feature url="features/org.muml.ape.feature_1.0.0.qualifier.jar" id="org.muml.ape.feature" version="1.0.0.qualifier">
       <category name="org.muml.ape.repository.category"/>
    </feature>
    <category-def name="org.muml.ape.repository.category" label="APE"/>
