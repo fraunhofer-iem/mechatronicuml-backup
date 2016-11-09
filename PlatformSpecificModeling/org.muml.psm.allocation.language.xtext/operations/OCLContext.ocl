@@ -295,7 +295,8 @@
 			else
 				wcet
 			endif
-				
+	
+	--normalized to milliseconds			
 	context valuetype::TimeValue
 		def: getLiteralVal() : Real =
 			if self._'value'.oclIsKindOf(common::LiteralExpression) then
