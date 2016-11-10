@@ -59,6 +59,8 @@
             </configuration>
         </plugin>
     </plugins>
+    
+    
     <pluginManagement>
       <plugins>
         <plugin>
@@ -78,6 +80,26 @@
                     </configuration>
               </execution>
           </executions>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-clean-plugin</artifactId>
+            <version>2.5</version>
+            <executions>
+                <execution>
+                    <id>gen-clean</id>
+                    <goals>
+                        <goal>clean</goal>
+                    </goals>
+                    <configuration>
+                        <filesets>
+                            <fileset>
+                                <directory>${project.basedir}/xtend-gen</directory>
+                            </fileset>
+                        </filesets>
+                    </configuration>
+                </execution>
+            </executions>
         </plugin>
        </plugins>
     </pluginManagement>
