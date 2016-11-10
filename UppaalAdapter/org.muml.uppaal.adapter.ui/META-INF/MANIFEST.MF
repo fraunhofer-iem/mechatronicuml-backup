@@ -6,12 +6,12 @@ Bundle-Version: 0.5.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.ui.ide;bundle-version="3.6.2",
  org.eclipse.gmf.runtime.diagram.ui,
- org.muml.pim.coordinationprotocol.diagram;bundle-version="0.3.1",
- org.muml.uppaal.adapter.job;bundle-version="0.4.0",
+ org.muml.pim.coordinationprotocol.diagram,
+ org.muml.uppaal.adapter.job,
  org.muml.uppaal.trace,
  org.eclipse.jface,
  org.muml.uppaal.adapter.mtctl,
- org.muml.uppaal.adapter.mtctl.xtext.ui;bundle-version="0.4.0",
+ org.muml.uppaal.adapter.mtctl.xtext.ui,
  org.muml.ape.runtime,
  org.muml.uppaal.options.edit.properties,
  org.muml.uppaal.options,
@@ -19,10 +19,10 @@ Require-Bundle: org.eclipse.ui.ide;bundle-version="3.6.2",
  org.muml.uppaal.adapter.results,
  org.eclipse.m2m.qvt.oml,
  org.muml.pim,
- org.muml.uppaal.adapter.mtctl.english;bundle-version="0.4.0",
- org.muml.core.export;bundle-version="0.4.0",
- org.muml.pim.pattern.diagram.custom;bundle-version="0.5.0",
- org.muml.uppaal.preferences;bundle-version="0.5.0"
+ org.muml.uppaal.adapter.mtctl.english,
+ org.muml.core.export,
+ org.muml.pim.pattern.diagram.custom,
+ org.muml.uppaal.preferences
 Export-Package: org.muml.uppaal.adapter.ui
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

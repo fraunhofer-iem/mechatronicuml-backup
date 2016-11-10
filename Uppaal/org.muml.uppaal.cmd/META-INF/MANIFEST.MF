@@ -4,8 +4,8 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.muml.uppaal.cmd;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Require-Bundle: org.eclipse.core.runtime,
- org.muml.uppaal.preferences;bundle-version="0.4.0",
- org.muml.core.common;bundle-version="0.5.0"
+ org.muml.uppaal.preferences,
+ org.muml.core.common
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.uppaal.cmd,

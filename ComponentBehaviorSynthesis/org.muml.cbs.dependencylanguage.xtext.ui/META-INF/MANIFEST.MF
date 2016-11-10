@@ -20,7 +20,7 @@ Require-Bundle: org.muml.cbs.dependencylanguage.xtext;visibility:=reexport,
  org.muml.ape.runtime,
  org.eclipse.core.expressions,
  org.eclipse.ui.navigator,
- org.muml.cbs.dependencylanguage.xtext.ui.xtfo;bundle-version="0.4.0",
+ org.muml.cbs.dependencylanguage.xtext.ui.xtfo,
  org.muml.pim.actionlanguage.xtext.ui,
  org.eclipse.xtext.xbase.lib
 Import-Package: org.apache.log4j,

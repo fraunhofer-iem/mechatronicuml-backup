@@ -4,7 +4,7 @@ Bundle-Name: BlindOvertaking
 Bundle-SymbolicName: org.muml.example.blindovertaking;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
-Require-Bundle: org.muml.core.example.ui;bundle-version="0.4.0",
- org.muml.pim.actionlanguage;bundle-version="0.5.0",
- org.muml.uppaal.adapter.mtctl;bundle-version="0.5.0"
+Require-Bundle: org.muml.core.example.ui,
+ org.muml.pim.actionlanguage,
+ org.muml.uppaal.adapter.mtctl
 Bundle-ActivationPolicy: lazy

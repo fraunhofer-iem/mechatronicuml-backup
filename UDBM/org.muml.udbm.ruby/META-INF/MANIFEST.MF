@@ -5,5 +5,5 @@ Bundle-SymbolicName: org.muml.udbm.ruby;singleton:=true
 Bundle-Version: 0.2.0
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
-Require-Bundle: org.muml.udbm;bundle-version="0.3.0"
+Require-Bundle: org.muml.udbm
 Export-Package: org.muml.udbm.ruby

@@ -9,11 +9,11 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.emf.cdo;bundle-version="3.0.1",
  de.upb.swt.qvt.tgg;bundle-version="0.4.0",
  de.upb.swt.qvt.tgg.interpreter;bundle-version="0.4.0",
- org.muml.simulink;bundle-version="0.4.0",
+ org.muml.simulink,
  org.muml.core;visibility:=reexport,
- org.muml.simulink.adapter.m2t;bundle-version="0.4.0",
- org.muml.simulink.adapter.actionlanguage.matlab.generator;bundle-version="0.4.0",
- org.muml.pim;bundle-version="0.4.0",
+ org.muml.simulink.adapter.m2t,
+ org.muml.simulink.adapter.actionlanguage.matlab.generator,
+ org.muml.pim,
  org.muml.simulink.adapter.extension
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

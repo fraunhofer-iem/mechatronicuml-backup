@@ -6,7 +6,7 @@ Bundle-Version: 0.3.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.muml.udbm;bundle-version="0.3.0",
+Require-Bundle: org.muml.udbm,
  org.junit;bundle-version="4.10.0"
 Export-Package: org.muml.udbm.test
 Import-Package: org.muml.udbm.java

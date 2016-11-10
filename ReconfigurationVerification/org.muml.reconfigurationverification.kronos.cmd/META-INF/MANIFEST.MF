@@ -5,8 +5,8 @@ Bundle-SymbolicName: org.muml.reconfigurationverification.kronos.cmd
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.muml.reconfigurationverification.kronos.cmd.Activator
 Require-Bundle: org.eclipse.core.runtime,
- org.muml.reconfigurationverification.modelchecker.ui;bundle-version="1.0.0",
- org.muml.uppaal.cmd;bundle-version="0.4.0",
+ org.muml.reconfigurationverification.modelchecker.ui,
+ org.muml.uppaal.cmd,
  org.eclipse.ui,
  org.muml.core.common
 Bundle-ActivationPolicy: lazy

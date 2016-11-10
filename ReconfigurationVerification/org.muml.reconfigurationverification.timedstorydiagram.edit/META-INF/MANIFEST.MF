@@ -16,6 +16,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.muml.storydiagram;visibility:=reexport,
- org.muml.reconfigurationverification.timedstorydiagram;bundle-version="1.0.0";visibility:=reexport,
- org.muml.storydiagram.edit;bundle-version="1.0.0";visibility:=reexport
+ org.muml.reconfigurationverification.timedstorydiagram;visibility:=reexport,
+ org.muml.storydiagram.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

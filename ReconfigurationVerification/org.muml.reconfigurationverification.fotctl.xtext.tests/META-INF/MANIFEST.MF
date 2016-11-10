@@ -11,8 +11,8 @@ Require-Bundle: org.muml.reconfigurationverification.fotctl.xtext,
  org.eclipse.xtext,
  org.eclipse.xtext.junit4,
  org.eclipse.ui.workbench;resolution:=optional,
- org.muml.reconfigurationverification.fotctl;bundle-version="1.0.0",
- org.muml.core;bundle-version="1.0.0",
+ org.muml.reconfigurationverification.fotctl,
+ org.muml.core,
  org.junit;bundle-version="4.10.0"
 Import-Package: org.apache.log4j,
  org.apache.commons.logging

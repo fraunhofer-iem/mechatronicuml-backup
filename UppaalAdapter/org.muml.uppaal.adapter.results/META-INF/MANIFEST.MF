@@ -13,6 +13,6 @@ Export-Package: org.muml.uppaal.adapter.results,
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.core;visibility:=reexport,
- org.muml.uppaal.adapter.mtctl;bundle-version="0.4.0";visibility:=reexport,
+ org.muml.uppaal.adapter.mtctl;visibility:=reexport,
  org.muml.pim;visibility:=reexport
 Bundle-ActivationPolicy: lazy

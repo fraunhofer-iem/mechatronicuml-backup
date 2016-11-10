@@ -7,7 +7,7 @@ Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn Un
  %providerName
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.m2m.qvt.oml;bundle-version="3.2.0",
- org.muml.pim;bundle-version="0.4.0",
+ org.muml.pim,
  org.eclipse.emf.edit,
  org.eclipse.emf.transaction,
  org.eclipse.uml2.common.edit

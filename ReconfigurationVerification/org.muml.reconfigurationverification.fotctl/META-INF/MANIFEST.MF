@@ -13,5 +13,5 @@ Export-Package: org.muml.reconfigurationverification.fotctl,
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.reconfigurationverification.tctl;visibility:=reexport,
- org.muml.core;bundle-version="1.0.0";visibility:=reexport
+ org.muml.core;visibility:=reexport
 Bundle-ActivationPolicy: lazy

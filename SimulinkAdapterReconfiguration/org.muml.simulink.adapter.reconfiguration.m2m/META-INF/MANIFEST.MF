@@ -19,4 +19,4 @@ Import-Package: de.upb.swt.qvt.qvtbase,
  org.muml.storydiagram.activities,
  org.muml.storydiagram.reachanalysis.sdm
 Require-Bundle: de.upb.swt.qvt.tgg.interpreter,
- org.muml.core.reachanalysis.core;bundle-version="0.4.0"
+ org.muml.core.reachanalysis.core

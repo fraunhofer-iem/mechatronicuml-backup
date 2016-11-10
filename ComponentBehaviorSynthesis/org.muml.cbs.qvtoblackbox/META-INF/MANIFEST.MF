@@ -8,8 +8,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
  org.eclipse.m2m.qvt.oml;bundle-version="3.4.0",
- org.muml.pim.actionlanguage.xtext;bundle-version="0.4.0",
- org.muml.cbs.dependencylanguage.xtext;bundle-version="0.4.0"
+ org.muml.pim.actionlanguage.xtext,
+ org.muml.cbs.dependencylanguage.xtext
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: org.muml.cbs.qvtoblackbox

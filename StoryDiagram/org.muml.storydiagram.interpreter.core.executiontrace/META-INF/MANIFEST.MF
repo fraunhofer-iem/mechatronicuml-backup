@@ -12,5 +12,5 @@ Export-Package: org.muml.storydiagram.interpreter.core.executiontrace,
  org.muml.storydiagram.interpreter.core.executiontrace.util
 Require-Bundle: org.eclipse.core.runtime;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.muml.storydiagram.interpreter.core.mdelab;bundle-version="1.0.0";visibility:=reexport
+ org.muml.storydiagram.interpreter.core.mdelab;visibility:=reexport
 Bundle-ActivationPolicy: lazy

@@ -7,5 +7,5 @@ Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn Un
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.junit;bundle-version="4.10.0",
- org.muml.udbm.java;bundle-version="0.1.0",
- org.muml.udbm.test;bundle-version="0.3.0"
+ org.muml.udbm.java,
+ org.muml.udbm.test

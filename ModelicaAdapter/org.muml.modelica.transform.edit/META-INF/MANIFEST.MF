@@ -17,5 +17,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.muml.pim;visibility:=reexport,
  org.muml.pim.edit;visibility:=reexport,
- org.muml.modelica.transform;bundle-version="0.4.0";visibility:=reexport
+ org.muml.modelica.transform;visibility:=reexport
 Bundle-ActivationPolicy: lazy

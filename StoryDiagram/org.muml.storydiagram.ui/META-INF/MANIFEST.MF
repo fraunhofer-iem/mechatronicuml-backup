@@ -9,8 +9,8 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="3.7.0",
  de.upb.swt.core.ui.properties;bundle-version="0.1.0",
  org.eclipse.emf.transaction;bundle-version="1.4.0",
  org.eclipse.jface.text;bundle-version="3.7.0",
- org.muml.core;bundle-version="1.0.0",
- org.muml.storydiagram;bundle-version="1.0.1"
+ org.muml.core,
+ org.muml.storydiagram
 Export-Package: org.muml.storydiagram.ui,
  org.muml.storydiagram.ui.properties,
  org.muml.storydiagram.ui.utils

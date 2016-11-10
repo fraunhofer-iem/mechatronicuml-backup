@@ -12,7 +12,7 @@ Export-Package: org.muml.storydiagram.interpreter.core.debug,
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.6.1";visibility:=reexport,
  org.eclipse.emf.ecore.change;bundle-version="2.5.1";visibility:=reexport,
- org.muml.storydiagram.interpreter.core.mdelab;bundle-version="1.0.0";visibility:=reexport,
+ org.muml.storydiagram.interpreter.core.mdelab;visibility:=reexport,
  org.eclipse.net4j;bundle-version="3.0.1";visibility:=reexport,
  org.eclipse.net4j.tcp;bundle-version="3.0.1";visibility:=reexport,
- org.muml.storydiagram.resourcesetsynchronizer;bundle-version="1.0.0";visibility:=reexport
+ org.muml.storydiagram.resourcesetsynchronizer;visibility:=reexport

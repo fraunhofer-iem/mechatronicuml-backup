@@ -4,17 +4,17 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.muml.storydiagram.reachanalysis.sdm
 Bundle-Version: 0.5.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Require-Bundle: org.muml.core.reachanalysis.core;bundle-version="0.4.0",
- org.muml.core.reachanalysis.reachabilitygraph;bundle-version="0.4.0",
- org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm;bundle-version="0.4.0",
+Require-Bundle: org.muml.core.reachanalysis.core,
+ org.muml.core.reachanalysis.reachabilitygraph,
+ org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm,
  org.eclipse.m2m.qvt.oml;bundle-version="3.0.1",
- org.muml.storydiagram.interpreter.core.mdelab;bundle-version="1.0.0",
- org.muml.storydiagram.interpreter.core.eclipse;bundle-version="1.0.0",
- org.muml.core;bundle-version="1.0.0",
- org.muml.storydiagram;bundle-version="1.0.0",
- org.muml.storydiagram.interpreter.eclipse;bundle-version="1.0.0",
- org.muml.storydiagram.diagram.interpreter;bundle-version="1.0.1",
- org.muml.storydiagram.interpreter.core;bundle-version="1.0.1"
+ org.muml.storydiagram.interpreter.core.mdelab,
+ org.muml.storydiagram.interpreter.core.eclipse,
+ org.muml.core,
+ org.muml.storydiagram,
+ org.muml.storydiagram.interpreter.eclipse,
+ org.muml.storydiagram.diagram.interpreter,
+ org.muml.storydiagram.interpreter.core
 Export-Package: org.muml.storydiagram.reachanalysis.sdm,
  org.muml.storydiagram.reachanalysis.sdm.export
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

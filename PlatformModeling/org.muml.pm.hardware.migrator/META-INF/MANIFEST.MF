@@ -4,4 +4,4 @@ Bundle-Name: org.muml.pm.hardware.migrator
 Bundle-SymbolicName: org.muml.pm.hardware.migrator;singleton:=true
 Bundle-Version: 0.1.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore,
- org.muml.emm;bundle-version="0.1.0"
+ org.muml.emm

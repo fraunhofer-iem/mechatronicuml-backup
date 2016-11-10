@@ -19,10 +19,10 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.acceleo.engine;bundle-version="3.2.2",
  org.muml.core,
  org.eclipse.acceleo.parser;bundle-version="3.2.2",
- org.muml.modelica.transform;bundle-version="0.4.0",
+ org.muml.modelica.transform,
  org.eclipse.m2m.qvt.oml.runtime,
  org.eclipse.m2m.qvt.oml.project,
- org.muml.graphviz.blackbox;bundle-version="1.0.0",
+ org.muml.graphviz.blackbox,
  org.eclipse.m2m.qvt.oml;bundle-version="3.3.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy

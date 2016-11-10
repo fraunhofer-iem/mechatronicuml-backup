@@ -6,10 +6,10 @@ Bundle-Version: 0.5.0.qualifier
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.muml.core,
- org.muml.storydiagram.reachanalysis.sdm.transform;bundle-version="0.4.0",
- org.muml.storydiagram;bundle-version="1.0.0",
+ org.muml.storydiagram.reachanalysis.sdm.transform,
+ org.muml.storydiagram,
  org.eclipse.m2m.qvt.oml;bundle-version="3.1.0",
- org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm;bundle-version="0.4.0",
+ org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm,
  org.junit;bundle-version="4.10.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

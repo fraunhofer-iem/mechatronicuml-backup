@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: MechatronicUML RTSC with Synchronization Selector Expression Example
 Bundle-SymbolicName: org.muml.example.mini.syncselectorchannel;singleton:=true
 Bundle-Version: 0.5.0.qualifier
-Require-Bundle: org.muml.core.example.ui;bundle-version="0.5.0",
- org.muml.pim.actionlanguage;bundle-version="0.5.0"
+Require-Bundle: org.muml.core.example.ui,
+ org.muml.pim.actionlanguage
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

@@ -11,15 +11,15 @@ Require-Bundle: org.eclipse.ui.ide,
  org.eclipse.xtext.builder,
  org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.4.1",
  org.eclipse.compare,
- org.muml.pim.actionlanguage.xtext;bundle-version="0.3.1";visibility:=reexport,
- org.muml.ape.runtime;bundle-version="0.4.0",
+ org.muml.pim.actionlanguage.xtext;visibility:=reexport,
+ org.muml.ape.runtime,
  org.eclipse.jdt.core,
  org.eclipse.ui.editors,
  org.eclipse.ui,
  org.antlr.runtime,
  org.eclipse.m2m.qvt.oml.project;bundle-version="3.1.0",
  org.eclipse.m2m.qvt.oml;bundle-version="3.2.0",
- org.muml.pim.common;bundle-version="0.4.0"
+ org.muml.pim.common
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Activator: org.muml.pim.actionlanguage.xtext.ui.internal.ActionLanguageActivator
 Import-Package: org.apache.log4j;version="1.2.15",

@@ -13,4 +13,4 @@ Export-Package: org.sat4j.pb,
  org.sat4j.pb.reader,
  org.sat4j.pb.tools
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Require-Bundle: org.muml.external.sat4j.core;bundle-version="2.3.3"
+Require-Bundle: org.muml.external.sat4j.core

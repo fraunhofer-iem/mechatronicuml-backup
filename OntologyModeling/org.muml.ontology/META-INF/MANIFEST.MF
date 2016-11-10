@@ -13,7 +13,7 @@ Export-Package: org.muml.ontology,
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.core;visibility:=reexport,
- org.muml.ontology.owl;bundle-version="1.0.0",
- org.muml.pim;bundle-version="0.5.0",
- org.muml.external.unitontology;bundle-version="1.0.0"
+ org.muml.ontology.owl,
+ org.muml.pim,
+ org.muml.external.unitontology
 Bundle-ActivationPolicy: lazy

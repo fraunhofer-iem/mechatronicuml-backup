@@ -22,7 +22,7 @@ Require-Bundle: org.muml.uppaal.adapter.mtctl.xtext;visibility:=reexport,
  org.muml.ape.runtime,
  org.eclipse.swt,
  org.eclipse.emf.ecore,
- org.muml.pim;bundle-version="0.4.0",
+ org.muml.pim,
  org.eclipse.xtext,
  org.muml.uppaal.adapter.mtctl.english
 Import-Package: org.apache.log4j,

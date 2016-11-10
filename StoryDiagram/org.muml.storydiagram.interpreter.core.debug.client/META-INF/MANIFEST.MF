@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.muml.storydiagram.interpreter.core.debug.client
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Require-Bundle: org.muml.storydiagram.interpreter.core.debug;bundle-version="1.0.0";visibility:=reexport
+Require-Bundle: org.muml.storydiagram.interpreter.core.debug;visibility:=reexport
 Export-Package: org.muml.storydiagram.interpreter.core.debug.client,
  org.muml.storydiagram.interpreter.core.debug.client.protocol,
  org.muml.storydiagram.interpreter.core.debug.client.protocol.indications,

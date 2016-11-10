@@ -16,7 +16,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.muml.core;visibility:=reexport,
  org.muml.storydiagram;visibility:=reexport,
  org.eclipse.m2m.qvt.oml;bundle-version="3.1.0",
- org.muml.pim;bundle-version="0.3.2";visibility:=reexport
+ org.muml.pim;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Import-Package: org.junit;version="4.8.2",
  org.junit.runner,

@@ -7,12 +7,12 @@ Bundle-SymbolicName: org.muml.storydiagram.interpreter.eclipse;singleton:=true
 Bundle-Version: 1.0.1.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.muml.storydiagram.interpreter.core.mdelab;visibility:=reexport,
- org.muml.storydiagram.interpreter.core.eclipse;bundle-version="1.0.0";visibility:=reexport,
+ org.muml.storydiagram.interpreter.core.eclipse;visibility:=reexport,
  org.eclipse.emf;bundle-version="2.6.0",
  org.eclipse.emf.ecore;bundle-version="2.11.1",
- org.muml.storydiagram.expressions;bundle-version="1.0.0",
- org.muml.storydiagram.expressions.common;bundle-version="1.0.0",
- org.muml.storydiagram.expressions.common.ui;bundle-version="1.0.0",
- org.muml.storydiagram.expressions.ui;bundle-version="1.0.0",
- org.muml.storydiagram.interpreter.core;bundle-version="1.0.1"
+ org.muml.storydiagram.expressions,
+ org.muml.storydiagram.expressions.common,
+ org.muml.storydiagram.expressions.common.ui,
+ org.muml.storydiagram.expressions.ui,
+ org.muml.storydiagram.interpreter.core
 Export-Package: org.muml.storydiagram.interpreter.eclipse

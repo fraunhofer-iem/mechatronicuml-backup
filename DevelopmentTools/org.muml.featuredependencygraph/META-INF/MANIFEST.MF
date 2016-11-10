@@ -4,9 +4,9 @@ Bundle-Name: FeatureDependencyGraph
 Bundle-SymbolicName: org.muml.featuredependencygraph
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Require-Bundle: org.muml.graphviz;bundle-version="0.5.0",
- org.muml.graphviz.dot.xtext;bundle-version="1.0.0",
- org.muml.graphviz.blackbox;bundle-version="1.0.0",
- org.muml.core.common;bundle-version="0.5.0",
+Require-Bundle: org.muml.graphviz,
+ org.muml.graphviz.dot.xtext,
+ org.muml.graphviz.blackbox,
+ org.muml.core.common,
  org.apache.commons.io;bundle-version="2.2.0",
  org.junit
