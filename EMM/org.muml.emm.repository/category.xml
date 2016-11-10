@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/org.muml.emm.feature_0.1.0.qualifier.jar" id="org.muml.emm.feature" version="0.1.0.qualifier">
+   <feature url="features/org.muml.emm.feature_0.1.0.qualifier.jar" id="org.muml.emm.feature" version="1.0.0.qualifier">
       <category name="org.muml.emm.category"/>
    </feature>
    <category-def name="org.muml.emm.category" label="emm"/>
