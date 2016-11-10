@@ -15,4 +15,4 @@ Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.muml.ape.codegen.PropertiesCodegenPlugin
 Export-Package: org.muml.ape.codegen
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

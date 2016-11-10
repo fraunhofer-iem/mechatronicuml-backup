@@ -18,4 +18,4 @@ Export-Package: org.muml.core.modelinstance.ui,
  org.muml.core.modelinstance.ui.diagrams.pages,
  org.muml.core.modelinstance.ui.handlers,
  org.muml.core.modelinstance.ui.initializer
-Bundle-Vendor: Fujaba Community made up of Heinz Nixdorf Institute Paderborn, Technische Universität Darmstadt, University of Kassel, Hasso Plattner Institute Potsdam, Yatta Solutions GmbH
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

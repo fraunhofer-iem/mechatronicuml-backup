@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-Vendor: %providerName
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Bundle-Version: 0.5.0.qualifier
 Bundle-SymbolicName: org.muml.cbs.dependencylanguage.xtext.tests;singleton:=true
 Bundle-ActivationPolicy: lazy

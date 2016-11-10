@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.muml.pim.componentinstanceconfiguration.diagram; single
 Bundle-Version: 0.5.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-Bundle-Vendor: %providerName
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Bundle-Localization: plugin
 Export-Package: org.muml.pim.componentinstanceconfiguration.diagram.edit.commands,
  org.muml.pim.componentinstanceconfiguration.diagram.edit.parts,

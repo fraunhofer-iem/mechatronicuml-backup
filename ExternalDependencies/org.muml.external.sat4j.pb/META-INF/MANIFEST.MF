@@ -4,7 +4,7 @@ Bundle-Name: Pb
 Bundle-SymbolicName: org.muml.external.sat4j.pb
 Bundle-Version: 2.3.3
 Bundle-ClassPath: .
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany (NOT the author)
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Export-Package: org.sat4j.pb,
  org.sat4j.pb.constraints,
  org.sat4j.pb.constraints.pb,

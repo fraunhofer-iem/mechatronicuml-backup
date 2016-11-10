@@ -11,4 +11,4 @@ Export-Package: org.muml.storydiagram.interpreter.core.mdelab,
  org.muml.storydiagram.interpreter.core.mdelab.patternmatcher.patternPartBased,
  org.muml.storydiagram.interpreter.core.mdelab.variables
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Bundle-Vendor: MDELab.de
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

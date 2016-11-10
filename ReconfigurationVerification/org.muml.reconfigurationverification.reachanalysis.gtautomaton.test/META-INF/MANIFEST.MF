@@ -17,4 +17,4 @@ Require-Bundle: org.muml.reconfigurationverification.reachanalysis.gtautomaton;b
  org.muml.verification.core.runtime;bundle-version="0.3.1",
  org.junit;bundle-version="4.10.0"
 Export-Package: org.muml.reconfigurationverification.reachanalysis.gtautomaton.test
-Bundle-Vendor: %providerName
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

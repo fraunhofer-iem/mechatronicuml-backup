@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Eclipse-LazyStart: true
 Bundle-Name: %pluginName
-Bundle-Vendor: %providerName
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Bundle-Version: 3.6.4.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Activator: org.eclipse.acceleo.engine.AcceleoEnginePlugin

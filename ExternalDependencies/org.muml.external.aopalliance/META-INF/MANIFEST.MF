@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Aopalliance
 Bundle-SymbolicName: org.muml.external.aopalliance
 Bundle-Version: 1.0.0
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany (NOT the author)
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.aopalliance.aop,
  org.aopalliance.intercept

@@ -34,4 +34,4 @@ Export-Package: org.muml.psm.properties.metamodel, org.muml.psm.properties.const
  org.muml.psm.properties.apiexpressions.editor,
  org.muml.psm.properties.psm_instance.editor,
  org.muml.psm.properties.tabs
-Bundle-Vendor: Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT 
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

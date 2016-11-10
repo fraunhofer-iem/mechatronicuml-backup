@@ -24,5 +24,5 @@ Require-Bundle: org.eclipse.ui,
  org.muml.pim.actionlanguage.xtext
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Export-Package: org.muml.pim.pattern.diagram.custom.export.wizard

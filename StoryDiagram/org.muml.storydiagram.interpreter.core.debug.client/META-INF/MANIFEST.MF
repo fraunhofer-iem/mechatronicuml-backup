@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: MDELab SD Debugger Client
 Bundle-SymbolicName: org.muml.storydiagram.interpreter.core.debug.client
 Bundle-Version: 1.0.0.qualifier
-Bundle-Vendor: MDELab.de
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.muml.storydiagram.interpreter.core.debug;bundle-version="1.0.0";visibility:=reexport
 Export-Package: org.muml.storydiagram.interpreter.core.debug.client,

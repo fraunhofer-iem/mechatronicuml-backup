@@ -36,6 +36,6 @@ Import-Package: org.eclipse.emf.common.util,
  org.muml.pim.realtimestatechart.impl,
  org.muml.simulink,
  org.muml.simulink.stateflow
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Export-Package: org.muml.simulink.adapter.wizard,
  org.muml.simulink.adapter.wizard.transformation

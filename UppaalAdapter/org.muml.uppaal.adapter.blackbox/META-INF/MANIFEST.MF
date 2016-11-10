@@ -19,7 +19,7 @@ Require-Bundle: org.muml.uppaal;bundle-version="0.4.0",
  org.muml.uppaal.adapter.mtctl,
  org.muml.uppaal.options,
  org.muml.uppaal.job;bundle-version="0.5.0"
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Bundle-Localization: plugin
 Export-Package: org.muml.uppaal.adapter,
  org.muml.uppaal.adapter.blackbox

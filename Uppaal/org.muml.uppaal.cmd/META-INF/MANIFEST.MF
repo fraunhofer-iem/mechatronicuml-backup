@@ -12,5 +12,5 @@ Export-Package: org.muml.uppaal.cmd,
  org.muml.uppaal.cmd.options.misc,
  org.muml.uppaal.cmd.options.trace,
  org.muml.uppaal.cmd.options.tuning
-Bundle-Vendor: %providerName
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Bundle-Localization: plugin

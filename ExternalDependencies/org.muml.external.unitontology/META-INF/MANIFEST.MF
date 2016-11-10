@@ -3,4 +3,4 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Units
 Bundle-SymbolicName: org.muml.external.unitontology
 Bundle-Version: 1.0.0.qualifier
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany (NOT the author)
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

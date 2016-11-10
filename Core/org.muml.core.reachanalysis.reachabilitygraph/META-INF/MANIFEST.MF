@@ -4,7 +4,7 @@ Bundle-Name: MechatronicUML ReachabilityAnalysis ReachabilityGraph
 Bundle-SymbolicName: org.muml.core.reachanalysis.reachabilitygraph;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Vendor: Software Engineering Group,
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
  Heinz Nixdorf Institute,
  University of Paderborn
 Bundle-Localization: plugin

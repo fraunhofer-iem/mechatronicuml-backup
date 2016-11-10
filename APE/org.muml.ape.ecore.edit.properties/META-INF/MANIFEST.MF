@@ -14,4 +14,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.eclipse.emf.ecore.properties.metamodel, org.eclipse.emf.ecore.properties.constraint,
  org.eclipse.emf.ecore.properties.ecore.editor,
  org.eclipse.emf.ecore.properties.tabs
-Bundle-Vendor: University of Paderborn
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

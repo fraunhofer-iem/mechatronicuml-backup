@@ -16,6 +16,6 @@ Export-Package: org.muml.storydiagram.resourcesetsynchronizer,
  org.muml.storydiagram.resourcesetsynchronizer.protocols.synchronization,
  org.muml.storydiagram.resourcesetsynchronizer.protocols.synchronization.indications,
  org.muml.storydiagram.resourcesetsynchronizer.protocols.synchronization.requests
-Bundle-Vendor: MDELab.de
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.muml.storydiagram.resourcesetsynchronizer.ResourceSetSynchronizerPlugin

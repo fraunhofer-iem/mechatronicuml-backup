@@ -1,9 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<feature
-      id="org.muml.releng.site.feature"
-      label="MechatronicUML"
-      version="0.5.0.qualifier"
-      provider-name="%providerName">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.muml.releng.site.feature" label="MechatronicUML" provider-name="%providerName" version="1.0.0.qualifier">
 
    <description url="https://trac.cs.upb.de/mechatronicuml">
       This feature provides the MechatronicUML Tool Suite.
@@ -21,239 +16,121 @@ the Eclipse framework.
       %license
    </license>
 
-   <includes
-         id="org.muml.pim.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.pim.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.pim.sdk.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.pim.sdk.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.modelica.adapter.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.modelica.adapter.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.modelica.adapter.sdk.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.modelica.adapter.sdk.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.ape.feature"
-         version="0.0.0"
-         name=""/>
+   <includes id="org.muml.ape.feature" name="" version="0.0.0"/>
 
-   <includes
-         id="org.muml.ape.sdk.feature"
-         version="0.0.0"
-         name=""/>
+   <includes id="org.muml.ape.sdk.feature" name="" version="0.0.0"/>
 
-   <includes
-         id="org.muml.uppaal.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.uppaal.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.uppaal.sdk.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.uppaal.sdk.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.ape.ecore.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.ape.ecore.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.core.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.core.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.core.sdk.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.core.sdk.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.pm.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.pm.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.pm.sdk.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.pm.sdk.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.codegen.c.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.codegen.c.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.codegen.c.source.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.codegen.c.source.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.verification.core.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.verification.core.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.verification.core.sdk.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.verification.core.sdk.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.uppaal.adapter.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.uppaal.adapter.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.uppaal.adapter.sdk.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.uppaal.adapter.sdk.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.udbm.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.udbm.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.udbm.source.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.udbm.source.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.graphviz.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.graphviz.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.graphviz.source.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.graphviz.source.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.reconfiguration.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.reconfiguration.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.reconfiguration.source.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.reconfiguration.source.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.storydiagram.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.storydiagram.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.storydiagram.source.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.storydiagram.source.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.psm.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.psm.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.psm.sdk.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.psm.sdk.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.ape.migrator.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.ape.migrator.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.emm.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.emm.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.emm.source.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.emm.source.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.external.aopalliance.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.external.aopalliance.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.external.guava.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.external.guava.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.external.guice.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.external.guice.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.external.guice.multibindings.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.external.guice.multibindings.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.external.javax.inject.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.external.javax.inject.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.external.opt4j.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.external.opt4j.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.external.sat4j.core.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.external.sat4j.core.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.external.sat4j.pb.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.external.sat4j.pb.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.modelcopy.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.modelcopy.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.modelcopy.source.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.modelcopy.source.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.example.coordinationpatternlib.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.example.coordinationpatternlib.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.example.blindovertaking.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.example.blindovertaking.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.example.coordinatingbebots.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.example.coordinatingbebots.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.example.mini.entryexit.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.example.mini.entryexit.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.example.mini.messages.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.example.mini.messages.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.example.mini.operations.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.example.mini.operations.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.example.mini.simplertsc.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.example.mini.simplertsc.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.example.mini.syncchannel.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.example.mini.syncchannel.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.example.railcab.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.example.railcab.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.example.sectionentry.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.example.sectionentry.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.example.arduinocarhwplatform.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.example.arduinocarhwplatform.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.example.blinkingled.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.example.blinkingled.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.example.brakebywire.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.example.brakebywire.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.example.cooperatingballplayingrobots.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.example.cooperatingballplayingrobots.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.example.mini.syncselectorchannel.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.example.mini.syncselectorchannel.feature" version="0.0.0"/>
 
-   <includes
-         id="org.muml.example.rocketlauncher.feature"
-         version="0.0.0"/>
+   <includes id="org.muml.example.rocketlauncher.feature" version="0.0.0"/>
 
    <requires>
       <import feature="org.muml.pm.hardware.feature"/>

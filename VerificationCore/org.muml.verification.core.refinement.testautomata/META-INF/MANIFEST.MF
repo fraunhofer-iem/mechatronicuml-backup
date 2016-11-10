@@ -27,4 +27,4 @@ Import-Package: org.eclipse.gmf.runtime.diagram.ui.parts,
  org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts,
  org.eclipse.m2m.qvt.oml,
  org.eclipse.ui.views.properties.tabbed
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

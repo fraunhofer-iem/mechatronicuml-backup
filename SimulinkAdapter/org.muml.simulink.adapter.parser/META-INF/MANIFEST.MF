@@ -17,4 +17,4 @@ Bundle-ClassPath: lib/ccsm-commons.jar,
  lib/simulink.jar,
  lib/cup-runtime.jar,
  .
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

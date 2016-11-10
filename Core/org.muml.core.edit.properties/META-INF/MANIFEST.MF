@@ -18,4 +18,4 @@ Export-Package: org.muml.core.properties.metamodel, org.muml.core.properties.con
  org.muml.core.properties.common.editor,
  org.muml.core.properties.modelinstance.editor,
  org.muml.core.properties.tabs
-Bundle-Vendor: SDM
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

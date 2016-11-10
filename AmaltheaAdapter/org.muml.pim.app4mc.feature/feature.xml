@@ -1,15 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<feature
-      id="org.muml.pim.app4mc.feature"
-      label="%featureName"
-      version="1.0.0.qualifier"
-      provider-name="%providerName">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.muml.pim.app4mc.feature" label="%featureName" provider-name="%providerName" version="1.0.0.qualifier">
 
    <description>
       %description
    </description>
 
-   <copyright>
+   <copyright url="%copyrightURL">
       %copyright
    </copyright>
 
@@ -25,30 +20,12 @@
       <import feature="org.eclipse.app4mc.amalthea.models" version="0.7.0"/>
    </requires>
 
-   <plugin
-         id="org.muml.pim.runnable.transformation"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
+   <plugin download-size="0" id="org.muml.pim.runnable.transformation" install-size="0" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.pim.runnable.transformation.blackbox"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.pim.runnable.transformation.blackbox" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.pim.app4mc.export.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.pim.app4mc.export.ui" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.pim.app4mc.transformation"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
+   <plugin download-size="0" id="org.muml.pim.app4mc.transformation" install-size="0" version="0.0.0"/>
 
 </feature>

@@ -9,7 +9,7 @@ Export-Package: org.muml.storydiagram.interpreter.core.debug,
  org.muml.storydiagram.interpreter.core.debug.protocol,
  org.muml.storydiagram.interpreter.core.debug.protocol.indications,
  org.muml.storydiagram.interpreter.core.debug.protocol.requests
-Bundle-Vendor: MDELab.de
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.6.1";visibility:=reexport,
  org.eclipse.emf.ecore.change;bundle-version="2.5.1";visibility:=reexport,
  org.muml.storydiagram.interpreter.core.mdelab;bundle-version="1.0.0";visibility:=reexport,

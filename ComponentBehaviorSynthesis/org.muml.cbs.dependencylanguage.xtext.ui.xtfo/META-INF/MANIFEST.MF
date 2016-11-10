@@ -15,5 +15,5 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.expressions
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Bundle-Vendor: %providerName
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Export-Package: org.muml.cbs.dependencylanguage.xtext.ui.xtfo

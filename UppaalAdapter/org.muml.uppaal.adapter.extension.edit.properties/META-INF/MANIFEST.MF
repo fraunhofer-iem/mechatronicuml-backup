@@ -16,4 +16,4 @@ Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.uppaal.adapter.extension.properties.metamodel, org.muml.uppaal.adapter.extension.properties.constraint,
  org.muml.uppaal.adapter.extension.properties.verificationextension.editor
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

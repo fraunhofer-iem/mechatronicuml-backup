@@ -21,4 +21,4 @@ Export-Package: org.muml.uppaal.adapter.mtctl.properties.metamodel, org.muml.upp
  org.muml.uppaal.adapter.mtctl.properties.comparables.editor,
  org.muml.uppaal.adapter.mtctl.properties.sets.editor,
  org.muml.uppaal.adapter.mtctl.properties.tabs
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

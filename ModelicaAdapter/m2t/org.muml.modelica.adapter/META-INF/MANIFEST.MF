@@ -4,7 +4,7 @@ Bundle-Name: MechatronicUML Modelica Adapter
 Bundle-SymbolicName: org.muml.modelica.adapter;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-Activator: org.muml.modelica.adapter.Activator
-Bundle-Vendor: Fraunhofer IPT-EM, Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Require-Bundle: org.eclipse.core.runtime,
  org.muml.pim,
  org.muml.pim.actionlanguage,

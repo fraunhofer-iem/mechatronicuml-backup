@@ -1,15 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<feature
-      id="org.muml.reconfiguration.feature"
-      label="%featureName"
-      version="0.5.0.qualifier"
-      provider-name="%providerName">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.muml.reconfiguration.feature" label="%featureName" provider-name="%providerName" version="1.0.0.qualifier">
 
    <description>
       %description
    </description>
 
-   <copyright>
+   <copyright url="%copyrightURL">
       %copyright
    </copyright>
 
@@ -58,31 +53,31 @@
       <import plugin="org.muml.core.edit.properties"/>
       <import plugin="org.muml.pim.edit.properties"/>
       <import plugin="org.muml.reconfiguration.componentstorypattern.edit"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.5.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.edit.ui" version="2.7.0" match="greaterOrEqual"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.5.0"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.emf.edit.ui" version="2.7.0"/>
       <import plugin="org.muml.core.ui"/>
-      <import plugin="de.upb.swt.core.ui.properties" version="0.1.0" match="greaterOrEqual"/>
+      <import match="greaterOrEqual" plugin="de.upb.swt.core.ui.properties" version="0.1.0"/>
       <import plugin="org.muml.pim.common"/>
       <import plugin="org.eclipse.emf.edit"/>
       <import plugin="org.muml.core.common"/>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.muml.pim.actionlanguage.xtext.ui"/>
       <import plugin="org.muml.reconfiguration.edit.properties"/>
-      <import plugin="org.eclipse.m2m.qvt.oml.project" version="3.3.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.m2m.qvt.oml" version="3.4.0" match="greaterOrEqual"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.m2m.qvt.oml.project" version="3.3.0"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.m2m.qvt.oml" version="3.4.0"/>
       <import plugin="org.muml.pim.edit"/>
       <import plugin="org.muml.storydiagram.edit"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties" version="1.4.2" match="greaterOrEqual"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.gmf.runtime.diagram.ui.properties" version="1.4.2"/>
       <import plugin="org.muml.pim.common"/>
       <import plugin="org.muml.reconfiguration.componentstorydiagram"/>
       <import plugin="org.muml.reconfiguration"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.6.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.m2m.qvt.oml" version="3.2.0" match="greaterOrEqual"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.6.0"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.m2m.qvt.oml" version="3.2.0"/>
       <import plugin="org.muml.pim.component.diagram.custom"/>
       <import plugin="org.muml.core.modelinstance.ui"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers" version="1.5.0" match="greaterOrEqual"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.gmf.runtime.diagram.ui.providers" version="1.5.0"/>
       <import plugin="org.muml.pim.component.diagram"/>
-      <import plugin="org.eclipse.m2m.qvt.oml.project" version="3.1.0" match="greaterOrEqual"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.m2m.qvt.oml.project" version="3.1.0"/>
       <import plugin="org.muml.reconfiguration.componentstorydiagram.sdm.transforms"/>
       <import plugin="org.muml.core.reachanalysis.core"/>
       <import plugin="org.muml.core.reachanalysis.reachabilitygraph"/>
@@ -98,7 +93,7 @@
       <import plugin="org.muml.reconfiguration.common"/>
       <import plugin="org.muml.storydiagram.verification.sdd.basicsdd.diagram.custom"/>
       <import plugin="org.muml.reconfiguration.verification.sdd.componentsdd.diagram"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.7.0" match="greaterOrEqual"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.7.0"/>
       <import plugin="org.muml.reconfiguration.componentstorydiagram.diagram.custom"/>
       <import feature="org.muml.pim.feature"/>
       <import feature="org.muml.storydiagram.feature"/>
@@ -108,136 +103,42 @@
       <import feature="org.muml.ape.feature"/>
    </requires>
 
-   <plugin
-         id="org.muml.reconfiguration.componentstorydiagram"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.reconfiguration.componentstorydiagram" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.reconfiguration.componentstorydiagram.diagram"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.reconfiguration.componentstorydiagram.diagram" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.reconfiguration.componentstorydiagram.diagram.custom"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.reconfiguration.componentstorydiagram.diagram.custom" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.reconfiguration.componentstorydiagram.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.reconfiguration.componentstorydiagram.edit" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.reconfiguration.componentstorydiagram.edit.properties"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.reconfiguration.componentstorydiagram.edit.properties" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.reconfiguration.componentstorydiagram.sdm.transforms"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
+   <plugin download-size="0" id="org.muml.reconfiguration.componentstorydiagram.sdm.transforms" install-size="0" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.reconfiguration.componentstorypattern"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.reconfiguration.componentstorypattern" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.reconfiguration.componentstorypattern.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.reconfiguration.componentstorypattern.edit" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.reconfiguration.componentstorypattern.edit.properties"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.reconfiguration.componentstorypattern.edit.properties" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.reconfiguration"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.reconfiguration" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.reconfiguration.common"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.reconfiguration.common" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.reconfiguration.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.reconfiguration.edit" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.reconfiguration.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.reconfiguration.ui" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.reconfiguration.verification.sdd.componentsdd"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.reconfiguration.verification.sdd.componentsdd" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.custom"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.custom" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.reconfiguration.verification.sdd.componentsdd.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.reconfiguration.verification.sdd.componentsdd.edit" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.reconfiguration.verification.sdd.componentsdd.edit.properties"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.reconfiguration.verification.sdd.componentsdd.edit.properties" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.reconfiguration.edit.properties"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.reconfiguration.edit.properties" install-size="0" unpack="false" version="0.0.0"/>
 
 </feature>

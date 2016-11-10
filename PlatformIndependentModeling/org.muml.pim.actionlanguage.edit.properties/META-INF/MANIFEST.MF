@@ -16,4 +16,4 @@ Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.pim.actionlanguage.properties.metamodel, org.muml.pim.actionlanguage.properties.constraint,
  org.muml.pim.actionlanguage.properties.actionlanguage.editor
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

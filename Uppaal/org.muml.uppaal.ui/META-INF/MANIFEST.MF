@@ -19,6 +19,6 @@ Require-Bundle: org.eclipse.ui.ide;bundle-version="3.6.2",
  org.muml.uppaal.job;bundle-version="0.5.0"
 Export-Package: org.muml.uppaal.ui.wizard
 Bundle-ActivationPolicy: lazy
-Bundle-Vendor: %providerName
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Bundle-Localization: plugin
 Import-Package: org.muml.uppaal.requirements

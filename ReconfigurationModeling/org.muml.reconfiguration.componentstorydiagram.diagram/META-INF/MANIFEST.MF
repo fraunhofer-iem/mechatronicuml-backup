@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.muml.reconfiguration.componentstorydiagram.diagram; sin
 Bundle-Version: 0.4.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-Bundle-Vendor: %providerName
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Bundle-Localization: plugin
 Export-Package: org.muml.reconfiguration.componentstorydiagram.diagram.edit.commands,
  org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts,

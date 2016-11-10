@@ -31,4 +31,4 @@ Export-Package: org.muml.pim.properties.metamodel, org.muml.pim.properties.const
  org.muml.pim.properties.pim.editor,
  org.muml.pim.properties.runnable.editor,
  org.muml.pim.properties.tabs
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

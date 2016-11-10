@@ -4,7 +4,7 @@ Bundle-Name: Core
 Bundle-SymbolicName: org.muml.external.sat4j.core
 Bundle-Version: 2.3.3
 Bundle-ClassPath: .
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany (NOT the author)
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Export-Package: org.sat4j,
  org.sat4j.core,
  org.sat4j.minisat,

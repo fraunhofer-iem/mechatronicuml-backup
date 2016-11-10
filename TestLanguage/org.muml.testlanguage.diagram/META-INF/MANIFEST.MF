@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.muml.testlanguage.diagram; singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin
-Bundle-Vendor: %providerName
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Bundle-Localization: plugin
 Export-Package: org.muml.testlanguage.diagram.edit.parts,
  org.muml.testlanguage.diagram.part,

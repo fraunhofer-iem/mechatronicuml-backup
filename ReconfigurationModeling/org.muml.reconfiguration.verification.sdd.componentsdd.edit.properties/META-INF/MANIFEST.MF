@@ -27,4 +27,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.reconfiguration.verification.sdd.componentsdd.properties.metamodel, org.muml.reconfiguration.verification.sdd.componentsdd.properties.constraint,
  org.muml.reconfiguration.verification.sdd.componentsdd.properties.componentsdd.editor,
  org.muml.reconfiguration.verification.sdd.componentsdd.properties.tabs
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

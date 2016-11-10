@@ -16,4 +16,4 @@ Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.storydiagram.verification.sdd.properties.metamodel, org.muml.storydiagram.verification.sdd.properties.constraint,
  org.muml.storydiagram.verification.sdd.properties.sdd.editor
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

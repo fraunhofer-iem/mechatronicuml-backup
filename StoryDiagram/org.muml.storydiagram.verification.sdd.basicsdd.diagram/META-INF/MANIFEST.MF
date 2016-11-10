@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.muml.storydiagram.verification.sdd.basicsdd.diagram; si
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-Bundle-Vendor: %providerName
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Bundle-Localization: plugin
 Export-Package: org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.commands,
  org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts,

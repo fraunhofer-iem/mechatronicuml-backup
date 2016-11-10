@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Multibindings
 Bundle-SymbolicName: org.muml.external.guice.multibindings
 Bundle-Version: 4.0.0.beta5
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany (NOT the author)
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.muml.external.aopalliance;bundle-version="1.0.0",
  org.muml.external.javax.inject;bundle-version="1.0.0",

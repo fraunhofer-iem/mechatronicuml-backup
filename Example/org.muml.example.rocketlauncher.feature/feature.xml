@@ -1,41 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<feature
-      id="org.muml.example.rocketlauncher.feature"
-      label="MechatronicUML Authorized Rocket Launcher Example"
-      version="0.5.0.qualifier"
-      provider-name="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.muml.example.rocketlauncher.feature" label="MechatronicUML Authorized Rocket Launcher Example" provider-name="%providerName" version="1.0.0.qualifier">
 
    <description>
       MechatronicUML Authorized Rocket Launcher Example
    </description>
 
-   <copyright>
-      Copyright (C) Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany
-All rights reserved. This program and the accompanying materials
-are made available under the terms of the Eclipse Public License v1.0
-which accompanies this distribution, and is available at
-http://www.eclipse.org/legal/epl-v10.html
+   <copyright url="%copyrightURL">
+      %copyright
    </copyright>
 
-   <license url="license.html">
-      Fujaba Licence Agreement
-July 21, 2012
-
-This feature is free software; you can redistribute and/or modify it under the terms of the Eclipse Public License (EPL) as published by the Eclipse Foundation. You can access the full text of the license agreement under http://www.eclipse.org/legal/epl-v10.html
-This feature is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+   <license url="%licenseURL">
+      %license
    </license>
 
    <requires>
-      <import plugin="org.muml.pim" version="0.5.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.pim.actionlanguage" version="0.5.0" match="greaterOrEqual"/>
+      <import match="greaterOrEqual" plugin="org.muml.pim" version="0.5.0"/>
+      <import match="greaterOrEqual" plugin="org.muml.pim.actionlanguage" version="0.5.0"/>
       <import feature="org.muml.pim.feature" version="0.5.0"/>
       <import feature="org.muml.core.feature"/>
    </requires>
 
-   <plugin
-         id="org.muml.example.rocketlauncher"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
+   <plugin download-size="0" id="org.muml.example.rocketlauncher" install-size="0" version="0.0.0"/>
 
 </feature>

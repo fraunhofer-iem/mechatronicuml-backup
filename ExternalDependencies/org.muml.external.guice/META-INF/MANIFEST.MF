@@ -4,7 +4,7 @@ Bundle-Name: Guice
 Bundle-SymbolicName: org.muml.external.guice
 Bundle-Version: 4.0.0.beta5
 Bundle-ClassPath: .
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany (NOT the author)
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Export-Package: com.google.inject,
  com.google.inject.binder,
  com.google.inject.internal,

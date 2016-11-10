@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: de.uni_paderborn.fujaba.udbm.ruby.test
 Bundle-SymbolicName: org.muml.udbm.ruby.test
 Bundle-Version: 0.2.0.qualifier
-Bundle-Vendor: %providerName
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Require-Bundle: org.muml.udbm.ruby;bundle-version="0.2.0",
  org.junit;bundle-version="4.10.0",

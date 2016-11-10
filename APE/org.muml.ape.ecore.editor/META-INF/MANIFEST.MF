@@ -17,7 +17,7 @@ Export-Package: org.eclipse.emf.ecore.presentation
 Ant-Version: Apache Ant 1.8.2
 Bundle-ClassPath: .
 Bundle-ActivationPolicy: lazy
-Bundle-Vendor: %providerName
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Bundle-Name: %pluginName
 Created-By: 1.6.0_21-b06 (Sun Microsystems Inc.)
 Bundle-ManifestVersion: 2

@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: PSM API Transformation
 Bundle-SymbolicName: org.muml.psm.transformation;singleton:=true
 Bundle-Version: 0.4.0.qualifier
-Bundle-Vendor: 
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
  Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT, Germany and Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany
 Require-Bundle: org.muml.psm.api.transformation.blackbox;bundle-version="0.4.0",
  org.muml.pim.actionlanguage;bundle-version="0.4.0",

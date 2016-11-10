@@ -23,4 +23,4 @@ Export-Package: org.muml.storydiagram.properties.metamodel, org.muml.storydiagra
  org.muml.storydiagram.properties.expressions.editor,
  org.muml.storydiagram.properties.expressions.editor,
  org.muml.storydiagram.properties.expressions.editor
-Bundle-Vendor: 
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

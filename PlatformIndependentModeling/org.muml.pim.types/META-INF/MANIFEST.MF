@@ -11,4 +11,4 @@ Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.muml.pim.types.Activator
 Export-Package: org.muml.pim.types,
  org.muml.pim.types.blackbox
-Bundle-Vendor: %providerName
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

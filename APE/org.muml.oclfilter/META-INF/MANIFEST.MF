@@ -14,4 +14,4 @@ Bundle-ActivationPolicy: lazy
 Export-Package: org.muml.oclfilter,
  org.muml.oclfilter.descriptor,
  org.muml.oclfilter.generator
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

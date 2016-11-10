@@ -16,7 +16,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.emf.workspace
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Export-Package: org.muml.core.export.operation,
  org.muml.core.export.pages,
  org.muml.core.export.providers,

@@ -18,7 +18,7 @@ Require-Bundle: org.muml.core.common,
  org.muml.pim.types;visibility:=reexport,
  org.muml.core.common.editingdomain
 Bundle-ActivationPolicy: lazy
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Export-Package: org.muml.pim.common,
  org.muml.pim.common.edit.policies,
  org.muml.pim.common.edit.policies.component,

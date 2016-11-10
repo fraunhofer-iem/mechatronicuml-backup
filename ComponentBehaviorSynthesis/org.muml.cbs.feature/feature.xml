@@ -1,15 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<feature
-      id="org.muml.cbs.feature"
-      label="%featureName"
-      version="0.5.0.qualifier"
-      provider-name="%providerName">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.muml.cbs.feature" label="%featureName" provider-name="%providerName" version="1.0.0.qualifier">
 
    <description>
       %description
    </description>
 
-   <copyright>
+   <copyright url="%copyrightURL">
       %copyright
    </copyright>
 
@@ -20,9 +15,9 @@
    <requires>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.emf.ecore"/>
-      <import plugin="org.muml.pim.actionlanguage" version="0.4.0" match="greaterOrEqual"/>
+      <import match="greaterOrEqual" plugin="org.muml.pim.actionlanguage" version="0.4.0"/>
       <import plugin="org.muml.core"/>
-      <import plugin="org.muml.pim" version="0.4.0" match="greaterOrEqual"/>
+      <import match="greaterOrEqual" plugin="org.muml.pim" version="0.4.0"/>
       <import plugin="org.eclipse.emf.edit"/>
       <import plugin="org.muml.pim.actionlanguage.edit"/>
       <import plugin="org.muml.core.edit"/>
@@ -34,28 +29,28 @@
       <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="org.eclipse.emf.edit.ui"/>
       <import plugin="org.eclipse.ui.ide"/>
-      <import plugin="org.muml.cbs.dependencylanguage" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.m2m.qvt.oml" version="3.4.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.m2m.qvt.oml.project" version="3.2.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.m2m.qvt.oml" version="3.2.0" match="greaterOrEqual"/>
+      <import match="greaterOrEqual" plugin="org.muml.cbs.dependencylanguage" version="0.4.0"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.m2m.qvt.oml" version="3.4.0"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.m2m.qvt.oml.project" version="3.2.0"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.m2m.qvt.oml" version="3.2.0"/>
       <import plugin="org.eclipse.emf.transaction"/>
       <import plugin="org.eclipse.uml2.common.edit"/>
-      <import plugin="org.muml.pim.actionlanguage.xtext" version="0.4.0" match="greaterOrEqual"/>
+      <import match="greaterOrEqual" plugin="org.muml.pim.actionlanguage.xtext" version="0.4.0"/>
       <import plugin="org.eclipse.jface"/>
       <import plugin="org.eclipse.ui.workbench"/>
       <import plugin="org.eclipse.gmf.runtime.common.core"/>
       <import plugin="org.junit"/>
       <import plugin="org.eclipse.xtext"/>
       <import plugin="org.eclipse.xtext.util"/>
-      <import plugin="org.antlr.runtime" version="3.2.0" match="greaterOrEqual"/>
+      <import match="greaterOrEqual" plugin="org.antlr.runtime" version="3.2.0"/>
       <import plugin="org.eclipse.xtext.common.types"/>
       <import plugin="org.apache.log4j"/>
       <import plugin="org.eclipse.xtext.xbase.lib"/>
       <import plugin="org.eclipse.xtext.junit4"/>
       <import plugin="org.hamcrest.core"/>
       <import plugin="org.eclipse.xtext.ui"/>
-      <import plugin="org.eclipse.ui.editors" version="3.5.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ui.ide" version="3.5.0" match="greaterOrEqual"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.ui.editors" version="3.5.0"/>
+      <import match="greaterOrEqual" plugin="org.eclipse.ui.ide" version="3.5.0"/>
       <import plugin="org.eclipse.xtext.ui.shared"/>
       <import plugin="org.eclipse.xtext.builder"/>
       <import plugin="org.eclipse.xtext.common.types.ui"/>
@@ -63,115 +58,45 @@
       <import plugin="org.eclipse.compare"/>
       <import plugin="org.eclipse.core.expressions"/>
       <import plugin="org.eclipse.ui.navigator"/>
-      <import plugin="org.muml.cbs.dependencylanguage.xtext.ui.xtfo" version="0.4.0" match="greaterOrEqual"/>
+      <import match="greaterOrEqual" plugin="org.muml.cbs.dependencylanguage.xtext.ui.xtfo" version="0.4.0"/>
       <import plugin="org.muml.pim.actionlanguage.xtext.ui"/>
       <import plugin="org.muml.core.common"/>
       <import plugin="org.eclipse.emf.common"/>
       <import plugin="org.eclipse.jface.text"/>
-      <import plugin="org.muml.cbs.qvtoblackbox" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="org.muml.cbs.dependencylanguage.xtext" version="0.4.0" match="greaterOrEqual"/>
+      <import match="greaterOrEqual" plugin="org.muml.cbs.qvtoblackbox" version="0.4.0"/>
+      <import match="greaterOrEqual" plugin="org.muml.cbs.dependencylanguage.xtext" version="0.4.0"/>
       <import feature="org.muml.core.feature" version="0.5.0.qualifier"/>
       <import feature="org.muml.ape.feature" version="0.5.0.qualifier"/>
       <import feature="org.muml.emm.feature" version="0.1.0.qualifier"/>
       <import feature="org.muml.pim.feature" version="0.5.0.qualifier"/>
    </requires>
 
-   <plugin
-         id="org.muml.cbs.dependencylanguage"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.cbs.dependencylanguage" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.cbs.dependencylanguage.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.cbs.dependencylanguage.edit" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.cbs.dependencylanguage.edit.properties"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.cbs.dependencylanguage.edit.properties" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.cbs.dependencylanguage.editor"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.cbs.dependencylanguage.editor" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.cbs"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.cbs" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.cbs.jobs"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.cbs.jobs" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.cbs.qvtoblackbox"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.cbs.qvtoblackbox" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.cbs.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.cbs.ui" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.cbs.dependencylanguage.tests"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.cbs.dependencylanguage.tests" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.cbs.dependencylanguage.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.cbs.dependencylanguage.ui" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.cbs.dependencylanguage.xtext"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.cbs.dependencylanguage.xtext" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.cbs.dependencylanguage.xtext.tests"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.cbs.dependencylanguage.xtext.tests" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.cbs.dependencylanguage.xtext.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.cbs.dependencylanguage.xtext.ui" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.cbs.dependencylanguage.xtext.ui.xtfo"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.cbs.dependencylanguage.xtext.ui.xtfo" install-size="0" unpack="false" version="0.0.0"/>
 
 </feature>

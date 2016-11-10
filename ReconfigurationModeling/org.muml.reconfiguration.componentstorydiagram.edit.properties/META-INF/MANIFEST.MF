@@ -21,4 +21,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.reconfiguration.componentstorydiagram.properties.metamodel, org.muml.reconfiguration.componentstorydiagram.properties.constraint,
  org.muml.reconfiguration.componentstorydiagram.properties.componentstorydiagram.editor,
  org.muml.reconfiguration.componentstorydiagram.properties.tabs
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany

@@ -22,5 +22,5 @@ Require-Bundle: org.eclipse.gmf.runtime.diagram.ui.properties,
  org.muml.core.modelinstance.ui,
  org.eclipse.gmf.runtime.diagram.ui.render,
  org.eclipse.ui.ide;bundle-version="3.7.0"
-Bundle-Vendor: %Bundle-Vendor
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Import-Package: org.eclipse.gmf.runtime.notation

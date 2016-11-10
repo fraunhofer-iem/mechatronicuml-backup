@@ -24,7 +24,7 @@ Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.7.0";visibility:=reexpor
  org.eclipse.m2m.qvt.oml
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Bundle-Vendor: %providerName
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Bundle-Localization: plugin
 Export-Package: org.muml.core.expressions.common.tests,
  org.muml.core.expressions.tests,

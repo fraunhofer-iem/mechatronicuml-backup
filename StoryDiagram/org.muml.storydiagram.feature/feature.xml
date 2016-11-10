@@ -1,15 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<feature
-      id="org.muml.storydiagram.feature"
-      label="%featureName"
-      version="0.5.0.qualifier"
-      provider-name="%providerName">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.muml.storydiagram.feature" label="%featureName" provider-name="%providerName" version="1.0.0.qualifier">
 
    <description>
       %description
    </description>
 
-   <copyright>
+   <copyright url="%copyrightURL">
       %copyright
    </copyright>
 
@@ -23,255 +18,76 @@
       <import feature="org.muml.emm.feature" version="0.1.0.qualifier"/>
    </requires>
 
-   <plugin
-         id="org.muml.storydiagram.resourcesetsynchronizer"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.resourcesetsynchronizer" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.interpreter.core"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.interpreter.core" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.interpreter.core.debug"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.interpreter.core.debug" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.interpreter.core.debug.client"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.interpreter.core.debug.client" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.interpreter.core.eclipse"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.interpreter.core.eclipse" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.interpreter.core.executiontrace"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.interpreter.core.executiontrace" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.interpreter.core.executiontrace.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.interpreter.core.executiontrace.edit" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.interpreter.core.executiontrace.editor"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.interpreter.core.executiontrace.editor" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.interpreter.ocl"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.interpreter.ocl" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.wrapper"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.wrapper" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.reachanalysis.sdm"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.reachanalysis.sdm" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.reachanalysis.sdm.transform"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
+   <plugin download-size="0" id="org.muml.storydiagram.reachanalysis.sdm.transform" install-size="0" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.verification.sdd"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.verification.sdd" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.verification.sdd.basicsdd"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.verification.sdd.basicsdd" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.verification.sdd.basicsdd.diagram"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.verification.sdd.basicsdd.diagram" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.verification.sdd.basicsdd.diagram.custom"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.verification.sdd.basicsdd.diagram.custom" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.verification.sdd.basicsdd.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.verification.sdd.basicsdd.edit" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.verification.sdd.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.verification.sdd.edit" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.diagram"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.diagram" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.diagram.custom"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.diagram.custom" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.diagram.interpreter"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.diagram.interpreter" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.diagram.ocl"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.diagram.ocl" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.edit" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.editor"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.editor" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.expressions"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.expressions" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.expressions.common"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.expressions.common" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.expressions.common.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.expressions.common.ui" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.expressions.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.expressions.ui" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.interpreter.core.mdelab"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.interpreter.core.mdelab" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.interpreter.eclipse"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.interpreter.eclipse" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.ui" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.verification.sdd.basicsdd.edit.properties"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.verification.sdd.basicsdd.edit.properties" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.verification.sdd.edit.properties"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.verification.sdd.edit.properties" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.muml.storydiagram.edit.properties"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.muml.storydiagram.edit.properties" install-size="0" unpack="false" version="0.0.0"/>
 
 </feature>

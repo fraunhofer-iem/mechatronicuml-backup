@@ -51,7 +51,7 @@ Require-Bundle: org.eclipse.core.expressions,
  org.eclipse.ocl.pivot;visibility:=reexport
 Bundle-ClassPath: .
 Bundle-Activator: org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin
-Bundle-Vendor: %providerName
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Bundle-Localization: plugin
 Export-Package: org.muml.pm.hardware.platform.diagram.edit.commands,
  org.muml.pm.hardware.platform.diagram.edit.helpers,

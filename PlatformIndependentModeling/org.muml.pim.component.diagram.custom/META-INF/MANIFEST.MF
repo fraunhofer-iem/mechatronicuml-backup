@@ -16,7 +16,7 @@ Require-Bundle: org.eclipse.gmf.runtime.diagram.ui.properties;bundle-version="1.
  org.muml.pim.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Import-Package: org.eclipse.m2m.qvt.oml
 Bundle-Activator: org.muml.pim.component.diagram.custom.part.Activator
 Export-Package: org.muml.pim.component.diagram.custom.edit.parts,
