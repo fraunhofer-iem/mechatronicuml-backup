@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Coordination Specification Common Plugin
 Bundle-SymbolicName: org.muml.pim.coordinationspecification.common;singleton:=true
-Bundle-Version: 0.5.0.qualifier
+Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.muml.pim.coordinationspecification.common.Activator
 Export-Package: org.muml.pim.coordinationspecification.common.edit.helpers,
  org.muml.pim.coordinationspecification.common.edit.policies

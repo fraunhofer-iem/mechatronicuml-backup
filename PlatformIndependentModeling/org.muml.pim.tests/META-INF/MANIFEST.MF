@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MechatronicUML Meta-Model Tests
 Bundle-SymbolicName: org.muml.pim.tests
-Bundle-Version: 0.5.0.qualifier
+Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.7.0",
  org.junit;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;bundle-version="2.7.0",

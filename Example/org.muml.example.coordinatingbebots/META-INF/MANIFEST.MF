@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: CoordinatingBebots
 Bundle-SymbolicName: org.muml.example.coordinatingbebots;singleton:=true
-Bundle-Version: 0.5.0.qualifier
+Bundle-Version: 1.0.0.qualifier
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.muml.core.example.ui,
  org.muml.uppaal.adapter.mtctl,
