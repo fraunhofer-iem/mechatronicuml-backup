@@ -61,6 +61,50 @@
             </configuration>
         </plugin>
     </plugins>
+    
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.eclipse.xtend</groupId>
+          <artifactId>xtend-maven-plugin</artifactId>
+          <version>2.10.0</version>
+          <executions>
+              <execution>
+                <goals>
+                  <goal>compile</goal>
+                  <goal>xtend-install-debug-info</goal>
+                  <goal>testCompile</goal>
+                  <goal>xtend-test-install-debug-info</goal>
+                </goals>
+                  <configuration>
+                      <outputDirectory>${basedir}/xtend-gen</outputDirectory>
+                    </configuration>
+              </execution>
+          </executions>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-clean-plugin</artifactId>
+            <version>2.5</version>
+            <executions>
+                <execution>
+                    <id>gen-clean</id>
+                    <goals>
+                        <goal>clean</goal>
+                    </goals>
+                    <configuration>
+                        <filesets>
+                            <fileset>
+                                <directory>${project.basedir}/xtend-gen</directory>
+                            </fileset>
+                        </filesets>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+       </plugins>
+    </pluginManagement>
+    
   </build>
    <repositories>
 		<repository>
@@ -74,7 +118,7 @@
 			<url>http://download.eclipse.org/eclipse/updates/4.6</url>
 		</repository>
         <repository>
-			<id>Core-Maven</id>
+			<id>Core</id>
 			<layout>p2</layout>
 			<url>file:///data/jenkins/jobs/Core/lastSuccessful/archive/targetPlatform/</url>
 		</repository>
