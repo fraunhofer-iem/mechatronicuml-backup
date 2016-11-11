@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
    <feature url="features/org.muml.emm.feature_1.0.0.qualifier.jar" id="org.muml.emm.feature" version="1.0.0.qualifier">
-      <category name="org.muml.emm.category"/>
+      <category name="org.muml.emm.repository.category"/>
    </feature>
-   <category-def name="org.muml.emm.category" label="emm"/>
+   <category-def name="org.muml.emm.repository.category" label="emm"/>
 </site>
