@@ -33,4 +33,33 @@
       </plugin>
     </plugins>
   </build>
+  
+  <repositories>
+		<repository>
+			<id>eclipse-neon</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/neon</url>
+		</repository>
+		<repository>
+			<id>eclipse-updates</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/eclipse/updates/4.6</url>
+		</repository>
+		<repository>
+			<id>Core</id>
+			<layout>p2</layout>
+			<url>file:///data/jenkins/jobs/Core/lastSuccessful/archive/targetPlatform/</url>
+		</repository>
+		<repository>
+			<id>APE</id>
+			<layout>p2</layout>
+			<url>file:///data/jenkins/jobs/APE/lastSuccessful/archive/targetPlatform/</url>
+		</repository>
+		<repository>
+			<id>ExternalDependencies</id>
+			<layout>p2</layout>
+			<url>file:///data/jenkins/jobs/ExternalDependencies/lastSuccessful/archive/targetPlatform/</url>
+		</repository>
+	</repositories>
+
 </project>
