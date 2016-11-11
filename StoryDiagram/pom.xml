@@ -4,21 +4,48 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.muml.storydiagram.group</groupId>
   <artifactId>StoryDiagram</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <modules>
+    <module>org.muml.storydiagram</module>
+    <!-- <module>org.muml.storydiagram.buckminster</module> -->
     <module>org.muml.storydiagram.diagram</module>
+    <module>org.muml.storydiagram.diagram.custom</module>
     <module>org.muml.storydiagram.diagram.interpreter</module>
     <module>org.muml.storydiagram.diagram.ocl</module>
     <module>org.muml.storydiagram.edit</module>
     <module>org.muml.storydiagram.edit.properties</module>
+    <module>org.muml.storydiagram.editor</module>
     <module>org.muml.storydiagram.expressions</module>
+    <module>org.muml.storydiagram.expressions.common</module>
+    <module>org.muml.storydiagram.expressions.common.ui</module>
+    <module>org.muml.storydiagram.expressions.ui</module>
     <module>org.muml.storydiagram.feature</module>
+    <module>org.muml.storydiagram.interpreter.core</module>
+    <module>org.muml.storydiagram.interpreter.core.debug</module>
+    <module>org.muml.storydiagram.interpreter.core.debug.client</module>
+    <module>org.muml.storydiagram.interpreter.core.eclipse</module>
+    <module>org.muml.storydiagram.interpreter.core.executiontrace</module>
+    <module>org.muml.storydiagram.interpreter.core.executiontrace.edit</module>
+    <module>org.muml.storydiagram.interpreter.core.executiontrace.editor</module>
+    <module>org.muml.storydiagram.interpreter.core.mdelab</module>
+    <module>org.muml.storydiagram.interpreter.eclipse</module>
+    <module>org.muml.storydiagram.interpreter.ocl</module>
+    <module>org.muml.storydiagram.interpreter.tests</module>
     <module>org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm</module>
+    <module>org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.wrapper</module>
+    <module>org.muml.storydiagram.reachanalysis.sdm</module>
+    <module>org.muml.storydiagram.reachanalysis.sdm.test</module>
+    <module>org.muml.storydiagram.reachanalysis.sdm.transform</module>
     <module>org.muml.storydiagram.reachanalysis.sdm.transform.test</module>
+    <module>org.muml.storydiagram.repository</module>
+    <module>org.muml.storydiagram.resourcesetsynchronizer</module>
+    <module>org.muml.storydiagram.ui</module>
     <module>org.muml.storydiagram.verification.sdd</module>
+    <module>org.muml.storydiagram.verification.sdd.basicsdd</module>
     <module>org.muml.storydiagram.verification.sdd.basicsdd.diagram</module>
     <module>org.muml.storydiagram.verification.sdd.basicsdd.diagram.custom</module>
+    <module>org.muml.storydiagram.verification.sdd.basicsdd.edit</module>
     <module>org.muml.storydiagram.verification.sdd.basicsdd.edit.properties</module>
     <module>org.muml.storydiagram.verification.sdd.edit</module>
     <module>org.muml.storydiagram.verification.sdd.edit.properties</module>
@@ -45,7 +72,7 @@
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/eclipse/updates/4.6</url>
 		</repository>
-		<repository>
+        <repository>
 			<id>Core</id>
 			<layout>p2</layout>
 			<url>file:///data/jenkins/jobs/Core/lastSuccessful/archive/targetPlatform/</url>
@@ -61,5 +88,5 @@
 			<url>file:///data/jenkins/jobs/ExternalDependencies/lastSuccessful/archive/targetPlatform/</url>
 		</repository>
 	</repositories>
-
+    
 </project>
