@@ -7,6 +7,6 @@
   </parent>
   <groupId>org.muml.ape.group</groupId>
   <artifactId>org.muml.oclfilter.feature</artifactId>
-  <version>0.5.0-SNAPSHOT</version>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>eclipse-feature</packaging>
 </project>
