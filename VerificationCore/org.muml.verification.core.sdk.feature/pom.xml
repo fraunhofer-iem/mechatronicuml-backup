@@ -3,7 +3,7 @@
   <parent>
     <groupId>org.muml.verification.core.group</groupId>
     <artifactId>VerificationCore</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
   </parent>
   <groupId>org.muml.verification.core.group</groupId>
   <artifactId>org.muml.verification.core.sdk.feature</artifactId>
