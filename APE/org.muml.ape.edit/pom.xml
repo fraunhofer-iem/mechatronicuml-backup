@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.muml.ape.group</groupId>
     <artifactId>APE</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
   </parent>
   <groupId>org.muml.ape.group</groupId>
   <artifactId>org.muml.ape.edit</artifactId>
