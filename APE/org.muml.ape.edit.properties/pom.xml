@@ -3,11 +3,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.muml.core.group</groupId>
+    <groupId>org.muml.ape.group</groupId>
     <artifactId>APE</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>org.muml.core.group</groupId>
+  <groupId>org.muml.ape.group</groupId>
   <artifactId>org.muml.ape.edit.properties</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
