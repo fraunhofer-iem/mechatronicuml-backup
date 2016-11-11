@@ -1208,7 +1208,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		  (getLocalVariableDeclarationStatement_AllSurroundingBlocks(), 
 		   source, 
 		   new String[] {
-			 "derivation", "-- collect all blocks which surround this LocalVariableDeclarationStatement\nself.oclAsType(ecore::EObject).eContainer()->closure(c : ecore::EObject |\n\tif c.eContainer().oclIsKindOf(core::expressions::Expression) then\n\t\tc.eContainer()\n\telse\n\t\tc\n\tendif\n)->union(\n\tSet{self.oclAsType(ecore::EObject)}\n)->select(oclIsKindOf(Block))->collect(\n\toclAsType(Block)\n)->asOrderedSet()"
+			 "derivation", "-- collect all blocks which surround this LocalVariableDeclarationStatement\nself.oclAsType(ecore::EObject).eContainer()->closure(c : ecore::EObject |\n\tif c.eContainer().oclIsKindOf(core::expressions::Expression) then\n\t\tc.eContainer()\n\telse\n\t\tc\n\tendif\n)->union(\n\t-- by default, the closure operation does not include the source value(s) (at least\n\t-- in the \"old\" OCL case)\n\t-- (see org.eclipse.ocl.internal.evaluation.IterationTemplateClosure.evaluateResult method)\n\tSet{self.eContainer()}\n)->select(oclIsKindOf(Block))->collect(\n\toclAsType(Block)\n)->asOrderedSet()"
 		   });
 	}
 

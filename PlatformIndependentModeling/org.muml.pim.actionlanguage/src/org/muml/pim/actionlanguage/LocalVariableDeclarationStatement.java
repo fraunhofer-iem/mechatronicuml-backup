@@ -82,7 +82,7 @@ public interface LocalVariableDeclarationStatement extends Expression {
 	 * @return the value of the '<em>All Surrounding Blocks</em>' reference list.
 	 * @see org.muml.pim.actionlanguage.ActionlanguagePackage#getLocalVariableDeclarationStatement_AllSurroundingBlocks()
 	 * @model transient="true" changeable="false" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- collect all blocks which surround this LocalVariableDeclarationStatement\nself.oclAsType(ecore::EObject).eContainer()->closure(c : ecore::EObject |\n\tif c.eContainer().oclIsKindOf(core::expressions::Expression) then\n\t\tc.eContainer()\n\telse\n\t\tc\n\tendif\n)->union(\n\tSet{self.oclAsType(ecore::EObject)}\n)->select(oclIsKindOf(Block))->collect(\n\toclAsType(Block)\n)->asOrderedSet()'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- collect all blocks which surround this LocalVariableDeclarationStatement\nself.oclAsType(ecore::EObject).eContainer()->closure(c : ecore::EObject |\n\tif c.eContainer().oclIsKindOf(core::expressions::Expression) then\n\t\tc.eContainer()\n\telse\n\t\tc\n\tendif\n)->union(\n\t-- by default, the closure operation does not include the source value(s) (at least\n\t-- in the \"old\" OCL case)\n\t-- (see org.eclipse.ocl.internal.evaluation.IterationTemplateClosure.evaluateResult method)\n\tSet{self.eContainer()}\n)->select(oclIsKindOf(Block))->collect(\n\toclAsType(Block)\n)->asOrderedSet()'"
 	 * @generated
 	 */
 	EList<Block> getAllSurroundingBlocks();
