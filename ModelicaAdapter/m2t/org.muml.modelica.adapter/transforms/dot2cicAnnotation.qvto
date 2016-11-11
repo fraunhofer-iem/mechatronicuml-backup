@@ -44,7 +44,7 @@ helper DotGraph::layout() {
 	this.WIDTH := self.getWidth();
 	this.HEIGHT := self.getHeight();
 	var cic : ComponentInstanceConfiguration := getGraphSet()->any(container().oclIsUndefined()).invresolveone(ComponentInstanceConfiguration);
-	var ann : EAnnotation := cic.map getOrCreateAnnotation(ANNOTATION_SOURCE);
+	var ann : EAnnotation := cic.getOrCreateAnnotation(ANNOTATION_SOURCE);
 	ann.map addDetail('width', (this.WIDTH / 2).toString());
 	ann.map addDetail('height', (this.HEIGHT / 2).toString());
 	log("WIDTH: " + this.WIDTH.toString() + ", HEIGHT: " + this.HEIGHT.toString());
@@ -86,7 +86,7 @@ helper Set(Setting)::getOrCreateBBSetting() : Setting {
 /* helper RealtimeStatechart::annotate(pGraph : PLAIN::Graph) {
 	this.ROOT_RTSC := self;
 	log("rtsc annotate: " + self.name);
-	var ann : EAnnotation := self.map getOrCreateAnnotation(ANNOTATION_SOURCE);
+	var ann : EAnnotation := self.getOrCreateAnnotation(ANNOTATION_SOURCE);
 	this.WIDTH := pGraph.width;
 	this.HEIGHT := pGraph.height;
 	ann.map addDetail(RTSC_SCALE, inchToMM(pGraph.scale));
@@ -119,14 +119,14 @@ helper DotEdge::layout() {
 }
 
 helper PortConnectorInstance::annotate(pEdge : PlainEdge, kind : String) : EAnnotation {
-	var ann : EAnnotation := self.map getOrCreateAnnotation(ANNOTATION_SOURCE);
+	var ann : EAnnotation := self.getOrCreateAnnotation(ANNOTATION_SOURCE);
 	ann.addTransitionDetails(pEdge, kind);
 	return ann;
 }*/
 
 // this mapping is also called for a transition but ignored
 mapping inout ComponentInstance::annotate(outGraph : DotGraph) {
-	var ann : EAnnotation := self.map getOrCreateAnnotation(ANNOTATION_SOURCE);
+	var ann : EAnnotation := self.getOrCreateAnnotation(ANNOTATION_SOURCE);
 	this.WIDTH := outGraph.getWidth();
 	this.HEIGHT := outGraph.getHeight();
 	//ann.map addDetail(ICON_WIDTH, this.WIDTH.toString());
@@ -210,18 +210,18 @@ mapping inout OclAny::annotate(Node : Node)
 	
 mapping inout PortInstance::annotate(dNode : DotNode) {
 	log("annotate: " + dNode.name);
-	var ann : EAnnotation := self.map getOrCreateAnnotation(ANNOTATION_SOURCE);
+	var ann : EAnnotation := self.getOrCreateAnnotation(ANNOTATION_SOURCE);
 	ann.addNodeDetails(dNode);
 }
 
 mapping inout DiscretePortInstance::annotate(dNode : DotNode) {
-	var ann : EAnnotation := self.map getOrCreateAnnotation(ANNOTATION_SOURCE);
+	var ann : EAnnotation := self.getOrCreateAnnotation(ANNOTATION_SOURCE);
 	var prefix : String = dNode.name.replaceFirst(self.getName() + '_', '');
 	ann.addNodeDetails(dNode, prefix);
 }
 
 mapping inout PortConnectorInstance::annotate(dEdge : DotEdge) {
-	var ann : EAnnotation := self.map getOrCreateAnnotation(ANNOTATION_SOURCE);
+	var ann : EAnnotation := self.getOrCreateAnnotation(ANNOTATION_SOURCE);
 	//ann.addTransitionDetails(dEdge, dEdge.source.getName() + '_' + dEdge.target.getName());
 	var points : String := '';
 	dEdge.getPoints()->forEach(p) {

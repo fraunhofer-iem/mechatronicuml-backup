@@ -55,7 +55,7 @@ helper PlainGraph::layout() {
 helper RealtimeStatechart::annotate(pGraph : PlainGraph) {
 	this.ROOT_RTSC := self;
 	log("rtsc annotate: " + self.name);
-	var ann : EAnnotation := self.map getOrCreateAnnotation(ANNOTATION_SOURCE);
+	var ann : EAnnotation := self.getOrCreateAnnotation(ANNOTATION_SOURCE);
 	this.WIDTH := pGraph.width;
 	this.HEIGHT := pGraph.height;
 	ann.map addDetail(RTSC_SCALE, inchToMM(pGraph.scale));
@@ -97,13 +97,13 @@ query getTransitionAnnotationKind(source : OclAny, target : OclAny) : String {
 }
 
 helper Transition::annotate(pEdge : PlainEdge, kind : String) : EAnnotation {
-	var ann : EAnnotation := self.map getOrCreateAnnotation(ANNOTATION_SOURCE);
+	var ann : EAnnotation := self.getOrCreateAnnotation(ANNOTATION_SOURCE);
 	ann.addTransitionDetails(pEdge, kind);
 	return ann;
 }
 
 helper AsynchronousMessageEvent::annotate(pEdge : PlainEdge) {
-	var ann : EAnnotation := this.ROOT_RTSC.map getOrCreateAnnotation(ANNOTATION_SOURCE);
+	var ann : EAnnotation := this.ROOT_RTSC.getOrCreateAnnotation(ANNOTATION_SOURCE);
 	if (self.kind = EventKind::RAISE) then {
 		ann.addTransitionDetails(pEdge, self.getMessageName() + '_' + POLY_MESSAGE_DELEGATION);
 	} else {
@@ -116,13 +116,13 @@ mapping inout OclAny::annotate(pNode : Node)
 	disjuncts State::annotate, AsynchronousMessageEvent::annotate;
 	
 mapping inout State::annotate(pNode : PlainNode) {
-	var ann : EAnnotation := self.map getOrCreateAnnotation(ANNOTATION_SOURCE);
+	var ann : EAnnotation := self.getOrCreateAnnotation(ANNOTATION_SOURCE);
 	ann.addNodeDetails(pNode);
 }
 
 mapping inout AsynchronousMessageEvent::annotate(pNode : PlainNode) {
 	log("annontate async");
-	var ann : EAnnotation := this.ROOT_RTSC.map getOrCreateAnnotation(ANNOTATION_SOURCE);
+	var ann : EAnnotation := this.ROOT_RTSC.getOrCreateAnnotation(ANNOTATION_SOURCE);
 	ann.addNodeDetails(pNode, pNode.name + '_');
 }
 

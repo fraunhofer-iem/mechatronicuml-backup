@@ -39,7 +39,7 @@ helper PLAIN::Graph::layout() {
 /* helper RealtimeStatechart::annotate(pGraph : PLAIN::Graph) {
 	this.ROOT_RTSC := self;
 	log("rtsc annotate: " + self.name);
-	var ann : EAnnotation := self.map getOrCreateAnnotation(ANNOTATION_SOURCE);
+	var ann : EAnnotation := self.getOrCreateAnnotation(ANNOTATION_SOURCE);
 	this.WIDTH := pGraph.width;
 	this.HEIGHT := pGraph.height;
 	ann.map addDetail(RTSC_SCALE, inchToMM(pGraph.scale));
@@ -70,7 +70,7 @@ query getTransitionAnnotationKind(source : OclAny, target : OclAny) : String {
 }
 
 helper PortConnectorInstance::annotate(pEdge : PLAIN::Edge, kind : String) : EAnnotation {
-	var ann : EAnnotation := self.map getOrCreateAnnotation(ANNOTATION_SOURCE);
+	var ann : EAnnotation := self.getOrCreateAnnotation(ANNOTATION_SOURCE);
 	ann.addTransitionDetails(pEdge, kind);
 	return ann;
 }
@@ -80,7 +80,7 @@ mapping inout OclAny::annotate(pNode : PLAIN::Node)
 	disjuncts PortInstance::annotate;
 	
 mapping inout PortInstance::annotate(pNode : PLAIN::Node) {
-	var ann : EAnnotation := self.map getOrCreateAnnotation(ANNOTATION_SOURCE);
+	var ann : EAnnotation := self.getOrCreateAnnotation(ANNOTATION_SOURCE);
 	ann.addNodeDetails(pNode);
 }
 

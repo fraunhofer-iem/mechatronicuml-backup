@@ -79,14 +79,18 @@ query getNodeSet() : Set(Node) {
 	return Set{}; // never reached
 }
 
-mapping inout ExtendableElement::getOrCreateAnnotation(src : String) : PositionExtension {
-	init {
-		result := self.extensions->selectByKind(PositionExtension)->any(true);
-	}
-	if (not self.extensions->includes(result)) then {
-		self.extensions := self.extensions->union(Set{result});
-	} endif;
-	result.source := src;
+mapping inout ExtendableElement::addAnnotation(src : String) {
+	self.extensions += object PositionExtension {
+		source := src
+	};
+}
+
+helper ExtendableElement::getOrCreateAnnotation(src : String) : PositionExtension {
+	var positionExtension : PositionExtension := self.extensions->selectByKind(PositionExtension)->any(true);
+	if (positionExtension.oclIsUndefined()) {
+		self.map addAnnotation(src);
+	};
+	return self.extensions->selectByKind(PositionExtension)->any(true);
 }
 
 helper EAnnotation::addNodeDetails(pNode : Node) {
