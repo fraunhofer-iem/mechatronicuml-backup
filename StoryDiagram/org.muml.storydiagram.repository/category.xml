@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.muml.storydiagram.feature_1.0.0.qualifier.jar" id="org.muml.storydiagram.feature" version="1.0.0.qualifier">
+      <category name="org.muml.storydiagram.repository.category"/>
+   </feature>
+   <category-def name="org.muml.storydiagram.repository.category" label="Storydiagram"/>
+</site>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.muml.storydiagram.group</groupId>
+  <artifactId>StoryDiagram</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <modules>
+    <module>org.muml.storydiagram.diagram</module>
+    <module>org.muml.storydiagram.diagram.interpreter</module>
+    <module>org.muml.storydiagram.diagram.ocl</module>
+    <module>org.muml.storydiagram.edit</module>
+    <module>org.muml.storydiagram.edit.properties</module>
+    <module>org.muml.storydiagram.expressions</module>
+    <module>org.muml.storydiagram.feature</module>
+    <module>org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm</module>
+    <module>org.muml.storydiagram.reachanalysis.sdm.transform.test</module>
+    <module>org.muml.storydiagram.verification.sdd</module>
+    <module>org.muml.storydiagram.verification.sdd.basicsdd.diagram</module>
+    <module>org.muml.storydiagram.verification.sdd.basicsdd.diagram.custom</module>
+    <module>org.muml.storydiagram.verification.sdd.basicsdd.edit.properties</module>
+    <module>org.muml.storydiagram.verification.sdd.edit</module>
+    <module>org.muml.storydiagram.verification.sdd.edit.properties</module>
+  </modules>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>0.26.0</version>
+        <extensions>true</extensions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
