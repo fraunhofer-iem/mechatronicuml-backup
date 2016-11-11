@@ -112,7 +112,6 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
         for (DataType dataType : typeList) {
             if (isAllowedTypeForNondeterministicChoices(dataType) && dataType instanceof PrimitiveDataType) {
                 scopeList.add((PrimitiveDataType) dataType);
-                break;
             }
         }
         return createScope(scopeList);
