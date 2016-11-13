@@ -230,13 +230,16 @@ public class JavaFederation extends Federation {
 		while (it.hasNext()) {
 			// Intersect against constraint
 			JavaClockZone curZone = it.next();
+			System.out.println("###     Current zone: " + curZone);
 			curZone.and(constraint);
-
+			System.out.println("###     Current zone and constraint: " + curZone);
 			// delete zone if it became empty
 			if (curZone.isEmpty()) {
+				System.out.println("###     Remove *** Current zone and constraint: " + curZone);
 				it.remove();
 			}
 		}
+		System.out.println("###     Federation and constraint: " + this.toString());
 	}
 
 	@Override
