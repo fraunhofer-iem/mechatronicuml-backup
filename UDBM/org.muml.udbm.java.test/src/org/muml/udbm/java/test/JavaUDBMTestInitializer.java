@@ -7,7 +7,7 @@ public class JavaUDBMTestInitializer {
 
 	@BeforeClass
 	public static void initializeTestSuite(){
-		System.setProperty("federationFactoryClass","de.uni_paderborn.fujaba.udbm.java.JavaFederationFactory");
+		System.setProperty("federationFactoryClass","org.muml.udbm.java.JavaFederationFactory");
 	}
 	
 	@Test
