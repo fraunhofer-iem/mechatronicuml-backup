@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmi:id="_xNdNQEQiEeasOswqY-bxFg" type="Real-Time Statechart" name="Requester.realtimestatechart_diagram" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xsi:schemaLocation="http://www.muml.org/pim/realtimestatechart/1.0.0 http://www.muml.org/pim/1.0.0#//realtimestatechart" xmi:id="_xNdNQEQiEeasOswqY-bxFg" type="Real-Time Statechart" name="Requester.realtimestatechart_diagram" measurementUnit="Pixel">
   <children xmi:type="notation:Shape" xmi:id="_Q2w9UEQjEeasOswqY-bxFg" type="2007" fontName="Segoe UI" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_Q2w9UkQjEeasOswqY-bxFg" type="5061"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_Q2w9U0QjEeasOswqY-bxFg" type="5062"/>
@@ -44,11 +44,11 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_SAio3kQjEeasOswqY-bxFg"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../patterns.muml#_SAgMkEQjEeasOswqY-bxFg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SAio0UQjEeasOswqY-bxFg" x="146" y="5" width="265"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SAio0UQjEeasOswqY-bxFg" x="146" y="5" width="370"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../patterns.muml#_xMxQwEQiEeasOswqY-bxFg"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q2w9UUQjEeasOswqY-bxFg" width="457" height="217"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q2w9UUQjEeasOswqY-bxFg" width="541" height="241"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_xNdNQUQiEeasOswqY-bxFg"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../patterns.muml#_xMxQwEQiEeasOswqY-bxFg"/>
@@ -80,7 +80,7 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_UPfzsEQjEeasOswqY-bxFg" type="4003" source="_SAio0EQjEeasOswqY-bxFg" target="_Q2yygEQjEeasOswqY-bxFg" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_UPfzs0QjEeasOswqY-bxFg" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_UPfztEQjEeasOswqY-bxFg" y="-20"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_UPfztEQjEeasOswqY-bxFg" x="-37" y="-25"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_UPfztUQjEeasOswqY-bxFg" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_UPfztkQjEeasOswqY-bxFg" x="-10" y="20"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmi:id="_uBqwkuqOEeSdp6KdWPaGDw" type="Real-Time Statechart" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xsi:schemaLocation="http://www.muml.org/pim/realtimestatechart/1.0.0 http://www.muml.org/pim/1.0.0#//realtimestatechart" xmi:id="_uBqwkuqOEeSdp6KdWPaGDw" type="Real-Time Statechart" measurementUnit="Pixel">
   <children xmi:type="notation:Shape" xmi:id="_R-uYUOqQEeSdp6KdWPaGDw" type="2007" fontName="Segoe UI" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_R-uYUuqQEeSdp6KdWPaGDw" type="5061"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_R-uYU-qQEeSdp6KdWPaGDw" type="5062"/>
@@ -44,7 +44,7 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="__a9QSOqREeSdp6KdWPaGDw"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../patterns.muml#__a8CIOqREeSdp6KdWPaGDw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="__a8pMeqREeSdp6KdWPaGDw" x="542" y="22" width="184" height="169"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="__a8pMeqREeSdp6KdWPaGDw" x="542" y="22" width="379" height="169"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_AF6RwOqSEeSdp6KdWPaGDw" type="3032" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_AF6RwuqSEeSdp6KdWPaGDw" type="5060"/>
@@ -69,7 +69,7 @@
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../patterns.muml#_uBqwkOqOEeSdp6KdWPaGDw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_R-uYUeqQEeSdp6KdWPaGDw" width="793" height="445"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_R-uYUeqQEeSdp6KdWPaGDw" width="961" height="301"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_uBqwk-qOEeSdp6KdWPaGDw"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../patterns.muml#_uBqwkOqOEeSdp6KdWPaGDw"/>

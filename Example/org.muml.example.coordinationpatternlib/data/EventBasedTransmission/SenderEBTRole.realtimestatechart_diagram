@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmi:id="_P9h0wO5CEeSkkcvANuOg5g" type="Real-Time Statechart" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xsi:schemaLocation="http://www.muml.org/pim/realtimestatechart/1.0.0 http://www.muml.org/pim/1.0.0#//realtimestatechart" xmi:id="_P9h0wO5CEeSkkcvANuOg5g" type="Real-Time Statechart" measurementUnit="Pixel">
   <children xmi:type="notation:Shape" xmi:id="_j1s5EO5CEeSkkcvANuOg5g" type="2007" fontName="Segoe UI" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_j1tgIO5CEeSkkcvANuOg5g" type="5061"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_j1tgIe5CEeSkkcvANuOg5g" type="5062"/>
@@ -48,7 +48,7 @@
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../patterns.muml#_P9fYgO5CEeSkkcvANuOg5g"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_j1s5Ee5CEeSkkcvANuOg5g" width="481" height="271"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_j1s5Ee5CEeSkkcvANuOg5g" width="526" height="271"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_P9h0we5CEeSkkcvANuOg5g"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../patterns.muml#_P9fYgO5CEeSkkcvANuOg5g"/>

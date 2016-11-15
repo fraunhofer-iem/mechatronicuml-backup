@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmi:id="_t7p-8u5OEeSkkcvANuOg5g" type="Real-Time Statechart" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xsi:schemaLocation="http://www.muml.org/pim/realtimestatechart/1.0.0 http://www.muml.org/pim/1.0.0#//realtimestatechart" xmi:id="_t7p-8u5OEeSkkcvANuOg5g" type="Real-Time Statechart" measurementUnit="Pixel">
   <children xmi:type="notation:Shape" xmi:id="_FM20kO5PEeSkkcvANuOg5g" type="2007" fontName="Segoe UI" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_FM3boO5PEeSkkcvANuOg5g" type="5061"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_FM3boe5PEeSkkcvANuOg5g" type="5062"/>
@@ -65,11 +65,11 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_EKyeLO5QEeSkkcvANuOg5g"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../patterns.muml#_EKtloO5QEeSkkcvANuOg5g"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EKx3Ee5QEeSkkcvANuOg5g" x="422" y="151" width="145" height="74"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EKx3Ee5QEeSkkcvANuOg5g" x="465" y="151" width="145" height="74"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../patterns.muml#_t7p-8O5OEeSkkcvANuOg5g"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FM20ke5PEeSkkcvANuOg5g" x="24" y="24" width="601" height="301"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FM20ke5PEeSkkcvANuOg5g" x="24" y="24" width="712" height="322"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_t7p-8-5OEeSkkcvANuOg5g"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../patterns.muml#_t7p-8O5OEeSkkcvANuOg5g"/>

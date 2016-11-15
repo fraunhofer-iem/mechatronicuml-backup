@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:connector="http://www.muml.org/pim/connector/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:pattern="http://www.muml.org/pim/pattern/1.0.0" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmi:id="_e7rhINv6EeWk7OzKNRMDBQ" type="Coordination Pattern" name="BlockedExecution.coordinationpattern_diagram" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:connector="http://www.muml.org/pim/connector/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:pattern="http://www.muml.org/pim/pattern/1.0.0" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xsi:schemaLocation="http://www.muml.org/pim/connector/1.0.0 http://www.muml.org/pim/1.0.0#//connector http://www.muml.org/modelinstance/1.0.0 http://www.muml.org/core/1.0.0#//modelinstance http://www.muml.org/pim/pattern/1.0.0 http://www.muml.org/pim/1.0.0#//pattern http://www.muml.org/pim/protocol/1.0.0 http://www.muml.org/pim/1.0.0#//protocol" xmi:id="_e7rhINv6EeWk7OzKNRMDBQ" type="Coordination Pattern" name="BlockedExecution.coordinationpattern_diagram" measurementUnit="Pixel">
   <children xmi:type="notation:Shape" xmi:id="_e7rhItv6EeWk7OzKNRMDBQ" type="2001" fontName="Segoe UI" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_e7rhJNv6EeWk7OzKNRMDBQ" type="7001">
       <children xmi:type="notation:Node" xmi:id="_fa7B4Nv6EeWk7OzKNRMDBQ" type="3003">
@@ -36,7 +36,7 @@
         <styles xmi:type="notation:FontStyle" xmi:id="_fa7o-9v6EeWk7OzKNRMDBQ" fontName="Segoe UI"/>
         <styles xmi:type="notation:LineStyle" xmi:id="_fa7o_Nv6EeWk7OzKNRMDBQ" lineColor="0"/>
         <element xmi:type="connector:MessageBuffer" href="../patterns.muml#_KlRY0O5REeSkkcvANuOg5g"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fa7o_dv6EeWk7OzKNRMDBQ" x="199" y="102"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fa7o_dv6EeWk7OzKNRMDBQ" x="280" y="102"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_fa7pBNv6EeWk7OzKNRMDBQ" type="3007">
         <children xmi:type="notation:DecorationNode" xmi:id="_fa7pCdv6EeWk7OzKNRMDBQ" type="5008"/>
