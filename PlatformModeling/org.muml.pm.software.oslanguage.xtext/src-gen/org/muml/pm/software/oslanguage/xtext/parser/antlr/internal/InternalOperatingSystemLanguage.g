@@ -689,9 +689,9 @@ ruleTimeValue returns [EObject current=null]
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTimeValueAccess().getValueINTExpressionParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getTimeValueAccess().getValueLiteralExpressionParserRuleCall_0_0()); 
 	    }
-		lv_value_0_0=ruleINTExpression		{
+		lv_value_0_0=ruleLiteralExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getTimeValueRule());
 	        }
@@ -699,7 +699,7 @@ ruleTimeValue returns [EObject current=null]
        			$current, 
        			"value",
         		lv_value_0_0, 
-        		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.INTExpression");
+        		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.LiteralExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -723,45 +723,6 @@ ruleTimeValue returns [EObject current=null]
 
 )
 ))
-;
-
-
-
-
-
-// Entry rule entryRuleINTExpression
-entryRuleINTExpression returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getINTExpressionRule()); }
-	 iv_ruleINTExpression=ruleINTExpression 
-	 { $current=$iv_ruleINTExpression.current; } 
-	 EOF 
-;
-
-// Rule INTExpression
-ruleINTExpression returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getINTExpressionAccess().getValueEStringParserRuleCall_0()); 
-	    }
-		lv_value_0_0=ruleEString		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getINTExpressionRule());
-	        }
-       		set(
-       			$current, 
-       			"value",
-        		lv_value_0_0, 
-        		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.EString");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)
 ;
 
 
@@ -836,6 +797,106 @@ ruleTimeUnitExpr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTo
 
 
 
+
+// Entry rule entryRuleLiteralExpression
+entryRuleLiteralExpression returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getLiteralExpressionRule()); }
+	 iv_ruleLiteralExpression=ruleLiteralExpression 
+	 { $current=$iv_ruleLiteralExpression.current; } 
+	 EOF 
+;
+
+// Rule LiteralExpression
+ruleLiteralExpression returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getLiteralExpressionAccess().getLiteralExpressionAction_0(),
+            $current);
+    }
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getLiteralExpressionAccess().getValueLiteralParserRuleCall_1_0()); 
+	    }
+		lv_value_1_0=ruleLiteral		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getLiteralExpressionRule());
+	        }
+       		set(
+       			$current, 
+       			"value",
+        		lv_value_1_0, 
+        		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.Literal");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+;
+
+
+
+
+
+// Entry rule entryRuleLiteral
+entryRuleLiteral returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getLiteralRule()); } 
+	 iv_ruleLiteral=ruleLiteral 
+	 { $current=$iv_ruleLiteral.current.getText(); }  
+	 EOF 
+;
+
+// Rule Literal
+ruleLiteral returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(    this_NUMBER_0=RULE_NUMBER    {
+		$current.merge(this_NUMBER_0);
+    }
+
+    { 
+    newLeafNode(this_NUMBER_0, grammarAccess.getLiteralAccess().getNUMBERTerminalRuleCall_0()); 
+    }
+
+    |    this_BOOLEAN_1=RULE_BOOLEAN    {
+		$current.merge(this_BOOLEAN_1);
+    }
+
+    { 
+    newLeafNode(this_BOOLEAN_1, grammarAccess.getLiteralAccess().getBOOLEANTerminalRuleCall_1()); 
+    }
+
+    |    this_INT_2=RULE_INT    {
+		$current.merge(this_INT_2);
+    }
+
+    { 
+    newLeafNode(this_INT_2, grammarAccess.getLiteralAccess().getINTTerminalRuleCall_2()); 
+    }
+
+    |
+	kw='null' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getLiteralAccess().getNullKeyword_3()); 
+    }
+)
+    ;
+
+
+
+
+
+RULE_NUMBER : RULE_INT '.' RULE_INT;
+
+RULE_BOOLEAN : ('true'|'false');
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

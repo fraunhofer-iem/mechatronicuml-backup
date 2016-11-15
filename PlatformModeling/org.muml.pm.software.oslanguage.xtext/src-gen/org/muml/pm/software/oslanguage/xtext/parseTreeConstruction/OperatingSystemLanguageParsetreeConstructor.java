@@ -39,7 +39,7 @@ protected class ThisRootNode extends RootToken {
 			case 6: return new EnumerationValue_ValueAssignment(this, this, 6, inst);
 			case 7: return new TimeConstraint_Group(this, this, 7, inst);
 			case 8: return new TimeValue_Group(this, this, 8, inst);
-			case 9: return new INTExpression_ValueAssignment(this, this, 9, inst);
+			case 9: return new LiteralExpression_Group(this, this, 9, inst);
 			default: return null;
 		}	
 	}	
@@ -1616,11 +1616,11 @@ protected class TimeConstraint_RightSquareBracketKeyword_2 extends KeywordToken 
 /************ begin Rule TimeValue ****************
  *
  * TimeValue valuetype::TimeValue:
- * 	value=INTExpression unit=TimeUnitExpr
+ * 	value=LiteralExpression unit=TimeUnitExpr
  *
  **/
 
-// value=INTExpression unit=TimeUnitExpr
+// value=LiteralExpression unit=TimeUnitExpr
 protected class TimeValue_Group extends GroupToken {
 	
 	public TimeValue_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1649,7 +1649,7 @@ protected class TimeValue_Group extends GroupToken {
 
 }
 
-// value=INTExpression
+// value=LiteralExpression
 protected class TimeValue_ValueAssignment_0 extends AssignmentToken  {
 	
 	public TimeValue_ValueAssignment_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1664,7 +1664,7 @@ protected class TimeValue_ValueAssignment_0 extends AssignmentToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new INTExpression_ValueAssignment(this, this, 0, inst);
+			case 0: return new LiteralExpression_Group(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -1675,9 +1675,9 @@ protected class TimeValue_ValueAssignment_0 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("value");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getINTExpressionRule().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getLiteralExpressionRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getTimeValueAccess().getValueINTExpressionParserRuleCall_0_0(); 
+				element = grammarAccess.getTimeValueAccess().getValueLiteralExpressionParserRuleCall_0_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -1732,23 +1732,53 @@ protected class TimeValue_UnitAssignment_1 extends AssignmentToken  {
 /************ end Rule TimeValue ****************/
 
 
-/************ begin Rule INTExpression ****************
+
+/************ begin Rule LiteralExpression ****************
  *
- * INTExpression common::LiteralExpression:
- * 	value=EString
+ * LiteralExpression common::LiteralExpression:
+ * 	{common::LiteralExpression} value=Literal
  *
  **/
 
-// value=EString
-protected class INTExpression_ValueAssignment extends AssignmentToken  {
+// {common::LiteralExpression} value=Literal
+protected class LiteralExpression_Group extends GroupToken {
 	
-	public INTExpression_ValueAssignment(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public LiteralExpression_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
-	public Assignment getGrammarElement() {
-		return grammarAccess.getINTExpressionAccess().getValueAssignment();
+	public Group getGrammarElement() {
+		return grammarAccess.getLiteralExpressionAccess().getGroup();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new LiteralExpression_ValueAssignment_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getLiteralExpressionAccess().getLiteralExpressionAction_0().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// {common::LiteralExpression}
+protected class LiteralExpression_LiteralExpressionAction_0 extends ActionToken  {
+
+	public LiteralExpression_LiteralExpressionAction_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Action getGrammarElement() {
+		return grammarAccess.getLiteralExpressionAccess().getLiteralExpressionAction_0();
 	}
 
     @Override
@@ -1758,15 +1788,40 @@ protected class INTExpression_ValueAssignment extends AssignmentToken  {
 		}	
 	}
 
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(!eObjectConsumer.isConsumed()) return null;
+		return eObjectConsumer;
+	}
+}
+
+// value=Literal
+protected class LiteralExpression_ValueAssignment_1 extends AssignmentToken  {
+	
+	public LiteralExpression_ValueAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getLiteralExpressionAccess().getValueAssignment_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new LiteralExpression_LiteralExpressionAction_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
     @Override	
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getINTExpressionRule().getType().getClassifier())
-			return null;
 		if((value = eObjectConsumer.getConsumable("value",true)) == null) return null;
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("value");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getINTExpressionAccess().getValueEStringParserRuleCall_0(), value, null)) {
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getLiteralExpressionAccess().getValueLiteralParserRuleCall_1_0(), value, null)) {
 			type = AssignmentType.DATATYPE_RULE_CALL;
-			element = grammarAccess.getINTExpressionAccess().getValueEStringParserRuleCall_0();
+			element = grammarAccess.getLiteralExpressionAccess().getValueLiteralParserRuleCall_1_0();
 			return obj;
 		}
 		return null;
@@ -1774,7 +1829,8 @@ protected class INTExpression_ValueAssignment extends AssignmentToken  {
 
 }
 
-/************ end Rule INTExpression ****************/
+
+/************ end Rule LiteralExpression ****************/
 
 
 }

@@ -21,30 +21,33 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'OperatingSystem:'", "'{'", "'}'", "'import'", "'Device_API_Calls:'", "'enum:'", "','", "'('", "')'", "';'", "'['", "']'", "'DAYS'", "'HOURS'", "'MILLISECONDS'", "'MINUTES'", "'SECONDS'", "'MICROSECONDS'", "'NANOSECONDS'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_NUMBER", "RULE_BOOLEAN", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'OperatingSystem:'", "'{'", "'}'", "'import'", "'Device_API_Calls:'", "'enum:'", "','", "'('", "')'", "';'", "'['", "']'", "'DAYS'", "'HOURS'", "'MILLISECONDS'", "'MINUTES'", "'SECONDS'", "'MICROSECONDS'", "'NANOSECONDS'", "'null'"
     };
+    public static final int RULE_BOOLEAN=7;
     public static final int RULE_STRING=4;
-    public static final int RULE_SL_COMMENT=8;
+    public static final int RULE_SL_COMMENT=10;
     public static final int T__19=19;
     public static final int T__15=15;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
-    public static final int T__11=11;
-    public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
     public static final int RULE_ID=5;
-    public static final int RULE_WS=9;
-    public static final int RULE_ANY_OTHER=10;
+    public static final int RULE_WS=11;
+    public static final int RULE_ANY_OTHER=12;
+    public static final int RULE_NUMBER=6;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
-    public static final int RULE_INT=6;
+    public static final int RULE_INT=8;
     public static final int T__29=29;
     public static final int T__22=22;
-    public static final int RULE_ML_COMMENT=7;
+    public static final int RULE_ML_COMMENT=9;
     public static final int T__23=23;
     public static final int T__24=24;
     public static final int T__25=25;
@@ -157,7 +160,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==14) ) {
+                if ( (LA1_0==16) ) {
                     alt1=1;
                 }
 
@@ -200,7 +203,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                 }
             } while (true);
 
-            otherlv_1=(Token)match(input,11,FollowSets000.FOLLOW_4); 
+            otherlv_1=(Token)match(input,13,FollowSets000.FOLLOW_4); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getOperatingSystemAccess().getOperatingSystemKeyword_1());
                 
@@ -235,7 +238,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
 
             }
 
-            otherlv_3=(Token)match(input,12,FollowSets000.FOLLOW_6); 
+            otherlv_3=(Token)match(input,14,FollowSets000.FOLLOW_6); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getOperatingSystemAccess().getLeftCurlyBracketKeyword_3());
                 
@@ -245,10 +248,10 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                 int alt2=3;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==15) ) {
+                if ( (LA2_0==17) ) {
                     alt2=1;
                 }
-                else if ( (LA2_0==16) ) {
+                else if ( (LA2_0==18) ) {
                     alt2=2;
                 }
 
@@ -334,7 +337,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                 }
             } while (true);
 
-            otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_2); 
+            otherlv_6=(Token)match(input,15,FollowSets000.FOLLOW_2); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getOperatingSystemAccess().getRightCurlyBracketKeyword_5());
                 
@@ -411,7 +414,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
             // InternalOperatingSystemLanguage.g:186:1: (otherlv_0= 'import' ( (lv_importURI_1_0= RULE_STRING ) ) )
             // InternalOperatingSystemLanguage.g:186:3: otherlv_0= 'import' ( (lv_importURI_1_0= RULE_STRING ) )
             {
-            otherlv_0=(Token)match(input,14,FollowSets000.FOLLOW_7); 
+            otherlv_0=(Token)match(input,16,FollowSets000.FOLLOW_7); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getImportAccess().getImportKeyword_0());
                 
@@ -632,7 +635,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
             // InternalOperatingSystemLanguage.g:265:1: (otherlv_0= 'Device_API_Calls:' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_apiCommands_3_0= ruleAPICommand ) )* otherlv_4= '}' )
             // InternalOperatingSystemLanguage.g:265:3: otherlv_0= 'Device_API_Calls:' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_apiCommands_3_0= ruleAPICommand ) )* otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,15,FollowSets000.FOLLOW_4); 
+            otherlv_0=(Token)match(input,17,FollowSets000.FOLLOW_4); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getAPIRepositoryAccess().getDevice_API_CallsKeyword_0());
                 
@@ -667,7 +670,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
 
             }
 
-            otherlv_2=(Token)match(input,12,FollowSets000.FOLLOW_8); 
+            otherlv_2=(Token)match(input,14,FollowSets000.FOLLOW_8); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getAPIRepositoryAccess().getLeftCurlyBracketKeyword_2());
                 
@@ -720,7 +723,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,13,FollowSets000.FOLLOW_2); 
+            otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_2); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getAPIRepositoryAccess().getRightCurlyBracketKeyword_4());
                 
@@ -805,7 +808,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
             // InternalOperatingSystemLanguage.g:334:1: (otherlv_0= 'enum:' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( ( (lv_enumerationValues_3_0= ruleEnumerationValue ) ) (otherlv_4= ',' ( (lv_enumerationValues_5_0= ruleEnumerationValue ) ) )* )? otherlv_6= '}' )
             // InternalOperatingSystemLanguage.g:334:3: otherlv_0= 'enum:' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( ( (lv_enumerationValues_3_0= ruleEnumerationValue ) ) (otherlv_4= ',' ( (lv_enumerationValues_5_0= ruleEnumerationValue ) ) )* )? otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,16,FollowSets000.FOLLOW_4); 
+            otherlv_0=(Token)match(input,18,FollowSets000.FOLLOW_4); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getEnumerationDataTypeAccess().getEnumKeyword_0());
                 
@@ -840,7 +843,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
 
             }
 
-            otherlv_2=(Token)match(input,12,FollowSets000.FOLLOW_8); 
+            otherlv_2=(Token)match(input,14,FollowSets000.FOLLOW_8); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getEnumerationDataTypeAccess().getLeftCurlyBracketKeyword_2());
                 
@@ -892,7 +895,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                         int alt5=2;
                         int LA5_0 = input.LA(1);
 
-                        if ( (LA5_0==17) ) {
+                        if ( (LA5_0==19) ) {
                             alt5=1;
                         }
 
@@ -901,7 +904,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                     	case 1 :
                     	    // InternalOperatingSystemLanguage.g:378:4: otherlv_4= ',' ( (lv_enumerationValues_5_0= ruleEnumerationValue ) )
                     	    {
-                    	    otherlv_4=(Token)match(input,17,FollowSets000.FOLLOW_4); 
+                    	    otherlv_4=(Token)match(input,19,FollowSets000.FOLLOW_4); 
 
                     	        	newLeafNode(otherlv_4, grammarAccess.getEnumerationDataTypeAccess().getCommaKeyword_3_1_0());
                     	        
@@ -951,7 +954,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
 
             }
 
-            otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_2); 
+            otherlv_6=(Token)match(input,15,FollowSets000.FOLLOW_2); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getEnumerationDataTypeAccess().getRightCurlyBracketKeyword_4());
                 
@@ -1097,7 +1100,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
 
             }
 
-            otherlv_2=(Token)match(input,18,FollowSets000.FOLLOW_11); 
+            otherlv_2=(Token)match(input,20,FollowSets000.FOLLOW_11); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getAPICommandAccess().getLeftParenthesisKeyword_2());
                 
@@ -1149,7 +1152,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                         int alt7=2;
                         int LA7_0 = input.LA(1);
 
-                        if ( (LA7_0==17) ) {
+                        if ( (LA7_0==19) ) {
                             alt7=1;
                         }
 
@@ -1158,7 +1161,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                     	case 1 :
                     	    // InternalOperatingSystemLanguage.g:480:4: otherlv_4= ',' ( (lv_parameters_5_0= ruleParameter ) )
                     	    {
-                    	    otherlv_4=(Token)match(input,17,FollowSets000.FOLLOW_4); 
+                    	    otherlv_4=(Token)match(input,19,FollowSets000.FOLLOW_4); 
 
                     	        	newLeafNode(otherlv_4, grammarAccess.getAPICommandAccess().getCommaKeyword_3_1_0());
                     	        
@@ -1208,7 +1211,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
 
             }
 
-            otherlv_6=(Token)match(input,19,FollowSets000.FOLLOW_13); 
+            otherlv_6=(Token)match(input,21,FollowSets000.FOLLOW_13); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getAPICommandAccess().getRightParenthesisKeyword_4());
                 
@@ -1216,7 +1219,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
             int alt9=2;
             int LA9_0 = input.LA(1);
 
-            if ( (LA9_0==21) ) {
+            if ( (LA9_0==23) ) {
                 alt9=1;
             }
             switch (alt9) {
@@ -1254,7 +1257,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
 
             }
 
-            otherlv_8=(Token)match(input,20,FollowSets000.FOLLOW_2); 
+            otherlv_8=(Token)match(input,22,FollowSets000.FOLLOW_2); 
 
                 	newLeafNode(otherlv_8, grammarAccess.getAPICommandAccess().getSemicolonKeyword_6());
                 
@@ -1563,7 +1566,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
             // InternalOperatingSystemLanguage.g:642:1: (otherlv_0= '[' ( (lv_samplingTime_1_0= ruleTimeValue ) ) otherlv_2= ']' )
             // InternalOperatingSystemLanguage.g:642:3: otherlv_0= '[' ( (lv_samplingTime_1_0= ruleTimeValue ) ) otherlv_2= ']'
             {
-            otherlv_0=(Token)match(input,21,FollowSets000.FOLLOW_4); 
+            otherlv_0=(Token)match(input,23,FollowSets000.FOLLOW_15); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getTimeConstraintAccess().getLeftSquareBracketKeyword_0());
                 
@@ -1576,7 +1579,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
              
             	        newCompositeNode(grammarAccess.getTimeConstraintAccess().getSamplingTimeTimeValueParserRuleCall_1_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_15);
+            pushFollow(FollowSets000.FOLLOW_16);
             lv_samplingTime_1_0=ruleTimeValue();
 
             state._fsp--;
@@ -1598,7 +1601,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
 
             }
 
-            otherlv_2=(Token)match(input,22,FollowSets000.FOLLOW_2); 
+            otherlv_2=(Token)match(input,24,FollowSets000.FOLLOW_2); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getTimeConstraintAccess().getRightSquareBracketKeyword_2());
                 
@@ -1659,7 +1662,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleTimeValue"
-    // InternalOperatingSystemLanguage.g:685:1: ruleTimeValue returns [EObject current=null] : ( ( (lv_value_0_0= ruleINTExpression ) ) ( (lv_unit_1_0= ruleTimeUnitExpr ) ) ) ;
+    // InternalOperatingSystemLanguage.g:685:1: ruleTimeValue returns [EObject current=null] : ( ( (lv_value_0_0= ruleLiteralExpression ) ) ( (lv_unit_1_0= ruleTimeUnitExpr ) ) ) ;
     public final EObject ruleTimeValue() throws RecognitionException {
         EObject current = null;
 
@@ -1671,23 +1674,23 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // InternalOperatingSystemLanguage.g:688:28: ( ( ( (lv_value_0_0= ruleINTExpression ) ) ( (lv_unit_1_0= ruleTimeUnitExpr ) ) ) )
-            // InternalOperatingSystemLanguage.g:689:1: ( ( (lv_value_0_0= ruleINTExpression ) ) ( (lv_unit_1_0= ruleTimeUnitExpr ) ) )
+            // InternalOperatingSystemLanguage.g:688:28: ( ( ( (lv_value_0_0= ruleLiteralExpression ) ) ( (lv_unit_1_0= ruleTimeUnitExpr ) ) ) )
+            // InternalOperatingSystemLanguage.g:689:1: ( ( (lv_value_0_0= ruleLiteralExpression ) ) ( (lv_unit_1_0= ruleTimeUnitExpr ) ) )
             {
-            // InternalOperatingSystemLanguage.g:689:1: ( ( (lv_value_0_0= ruleINTExpression ) ) ( (lv_unit_1_0= ruleTimeUnitExpr ) ) )
-            // InternalOperatingSystemLanguage.g:689:2: ( (lv_value_0_0= ruleINTExpression ) ) ( (lv_unit_1_0= ruleTimeUnitExpr ) )
+            // InternalOperatingSystemLanguage.g:689:1: ( ( (lv_value_0_0= ruleLiteralExpression ) ) ( (lv_unit_1_0= ruleTimeUnitExpr ) ) )
+            // InternalOperatingSystemLanguage.g:689:2: ( (lv_value_0_0= ruleLiteralExpression ) ) ( (lv_unit_1_0= ruleTimeUnitExpr ) )
             {
-            // InternalOperatingSystemLanguage.g:689:2: ( (lv_value_0_0= ruleINTExpression ) )
-            // InternalOperatingSystemLanguage.g:690:1: (lv_value_0_0= ruleINTExpression )
+            // InternalOperatingSystemLanguage.g:689:2: ( (lv_value_0_0= ruleLiteralExpression ) )
+            // InternalOperatingSystemLanguage.g:690:1: (lv_value_0_0= ruleLiteralExpression )
             {
-            // InternalOperatingSystemLanguage.g:690:1: (lv_value_0_0= ruleINTExpression )
-            // InternalOperatingSystemLanguage.g:691:3: lv_value_0_0= ruleINTExpression
+            // InternalOperatingSystemLanguage.g:690:1: (lv_value_0_0= ruleLiteralExpression )
+            // InternalOperatingSystemLanguage.g:691:3: lv_value_0_0= ruleLiteralExpression
             {
              
-            	        newCompositeNode(grammarAccess.getTimeValueAccess().getValueINTExpressionParserRuleCall_0_0()); 
+            	        newCompositeNode(grammarAccess.getTimeValueAccess().getValueLiteralExpressionParserRuleCall_0_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_16);
-            lv_value_0_0=ruleINTExpression();
+            pushFollow(FollowSets000.FOLLOW_17);
+            lv_value_0_0=ruleLiteralExpression();
 
             state._fsp--;
 
@@ -1699,7 +1702,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                    			current, 
                    			"value",
                     		lv_value_0_0, 
-                    		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.INTExpression");
+                    		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.LiteralExpression");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -1759,106 +1762,8 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
     // $ANTLR end "ruleTimeValue"
 
 
-    // $ANTLR start "entryRuleINTExpression"
-    // InternalOperatingSystemLanguage.g:733:1: entryRuleINTExpression returns [EObject current=null] : iv_ruleINTExpression= ruleINTExpression EOF ;
-    public final EObject entryRuleINTExpression() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleINTExpression = null;
-
-
-        try {
-            // InternalOperatingSystemLanguage.g:734:2: (iv_ruleINTExpression= ruleINTExpression EOF )
-            // InternalOperatingSystemLanguage.g:735:2: iv_ruleINTExpression= ruleINTExpression EOF
-            {
-             newCompositeNode(grammarAccess.getINTExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_1);
-            iv_ruleINTExpression=ruleINTExpression();
-
-            state._fsp--;
-
-             current =iv_ruleINTExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_2); 
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleINTExpression"
-
-
-    // $ANTLR start "ruleINTExpression"
-    // InternalOperatingSystemLanguage.g:742:1: ruleINTExpression returns [EObject current=null] : ( (lv_value_0_0= ruleEString ) ) ;
-    public final EObject ruleINTExpression() throws RecognitionException {
-        EObject current = null;
-
-        AntlrDatatypeRuleToken lv_value_0_0 = null;
-
-
-         enterRule(); 
-            
-        try {
-            // InternalOperatingSystemLanguage.g:745:28: ( ( (lv_value_0_0= ruleEString ) ) )
-            // InternalOperatingSystemLanguage.g:746:1: ( (lv_value_0_0= ruleEString ) )
-            {
-            // InternalOperatingSystemLanguage.g:746:1: ( (lv_value_0_0= ruleEString ) )
-            // InternalOperatingSystemLanguage.g:747:1: (lv_value_0_0= ruleEString )
-            {
-            // InternalOperatingSystemLanguage.g:747:1: (lv_value_0_0= ruleEString )
-            // InternalOperatingSystemLanguage.g:748:3: lv_value_0_0= ruleEString
-            {
-             
-            	        newCompositeNode(grammarAccess.getINTExpressionAccess().getValueEStringParserRuleCall_0()); 
-            	    
-            pushFollow(FollowSets000.FOLLOW_2);
-            lv_value_0_0=ruleEString();
-
-            state._fsp--;
-
-
-            	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getINTExpressionRule());
-            	        }
-                   		set(
-                   			current, 
-                   			"value",
-                    		lv_value_0_0, 
-                    		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.EString");
-            	        afterParserOrEnumRuleCall();
-            	    
-
-            }
-
-
-            }
-
-
-            }
-
-             leaveRule(); 
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleINTExpression"
-
-
     // $ANTLR start "entryRuleTimeUnitExpr"
-    // InternalOperatingSystemLanguage.g:772:1: entryRuleTimeUnitExpr returns [String current=null] : iv_ruleTimeUnitExpr= ruleTimeUnitExpr EOF ;
+    // InternalOperatingSystemLanguage.g:733:1: entryRuleTimeUnitExpr returns [String current=null] : iv_ruleTimeUnitExpr= ruleTimeUnitExpr EOF ;
     public final String entryRuleTimeUnitExpr() throws RecognitionException {
         String current = null;
 
@@ -1866,8 +1771,8 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // InternalOperatingSystemLanguage.g:773:2: (iv_ruleTimeUnitExpr= ruleTimeUnitExpr EOF )
-            // InternalOperatingSystemLanguage.g:774:2: iv_ruleTimeUnitExpr= ruleTimeUnitExpr EOF
+            // InternalOperatingSystemLanguage.g:734:2: (iv_ruleTimeUnitExpr= ruleTimeUnitExpr EOF )
+            // InternalOperatingSystemLanguage.g:735:2: iv_ruleTimeUnitExpr= ruleTimeUnitExpr EOF
             {
              newCompositeNode(grammarAccess.getTimeUnitExprRule()); 
             pushFollow(FollowSets000.FOLLOW_1);
@@ -1894,7 +1799,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleTimeUnitExpr"
-    // InternalOperatingSystemLanguage.g:781:1: ruleTimeUnitExpr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'DAYS' | kw= 'HOURS' | kw= 'MILLISECONDS' | kw= 'MINUTES' | kw= 'SECONDS' | kw= 'MICROSECONDS' | kw= 'NANOSECONDS' ) ;
+    // InternalOperatingSystemLanguage.g:742:1: ruleTimeUnitExpr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'DAYS' | kw= 'HOURS' | kw= 'MILLISECONDS' | kw= 'MINUTES' | kw= 'SECONDS' | kw= 'MICROSECONDS' | kw= 'NANOSECONDS' ) ;
     public final AntlrDatatypeRuleToken ruleTimeUnitExpr() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1903,43 +1808,43 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // InternalOperatingSystemLanguage.g:784:28: ( (kw= 'DAYS' | kw= 'HOURS' | kw= 'MILLISECONDS' | kw= 'MINUTES' | kw= 'SECONDS' | kw= 'MICROSECONDS' | kw= 'NANOSECONDS' ) )
-            // InternalOperatingSystemLanguage.g:785:1: (kw= 'DAYS' | kw= 'HOURS' | kw= 'MILLISECONDS' | kw= 'MINUTES' | kw= 'SECONDS' | kw= 'MICROSECONDS' | kw= 'NANOSECONDS' )
+            // InternalOperatingSystemLanguage.g:745:28: ( (kw= 'DAYS' | kw= 'HOURS' | kw= 'MILLISECONDS' | kw= 'MINUTES' | kw= 'SECONDS' | kw= 'MICROSECONDS' | kw= 'NANOSECONDS' ) )
+            // InternalOperatingSystemLanguage.g:746:1: (kw= 'DAYS' | kw= 'HOURS' | kw= 'MILLISECONDS' | kw= 'MINUTES' | kw= 'SECONDS' | kw= 'MICROSECONDS' | kw= 'NANOSECONDS' )
             {
-            // InternalOperatingSystemLanguage.g:785:1: (kw= 'DAYS' | kw= 'HOURS' | kw= 'MILLISECONDS' | kw= 'MINUTES' | kw= 'SECONDS' | kw= 'MICROSECONDS' | kw= 'NANOSECONDS' )
+            // InternalOperatingSystemLanguage.g:746:1: (kw= 'DAYS' | kw= 'HOURS' | kw= 'MILLISECONDS' | kw= 'MINUTES' | kw= 'SECONDS' | kw= 'MICROSECONDS' | kw= 'NANOSECONDS' )
             int alt10=7;
             switch ( input.LA(1) ) {
-            case 23:
+            case 25:
                 {
                 alt10=1;
                 }
                 break;
-            case 24:
+            case 26:
                 {
                 alt10=2;
                 }
                 break;
-            case 25:
+            case 27:
                 {
                 alt10=3;
                 }
                 break;
-            case 26:
+            case 28:
                 {
                 alt10=4;
                 }
                 break;
-            case 27:
+            case 29:
                 {
                 alt10=5;
                 }
                 break;
-            case 28:
+            case 30:
                 {
                 alt10=6;
                 }
                 break;
-            case 29:
+            case 31:
                 {
                 alt10=7;
                 }
@@ -1953,9 +1858,9 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
 
             switch (alt10) {
                 case 1 :
-                    // InternalOperatingSystemLanguage.g:786:2: kw= 'DAYS'
+                    // InternalOperatingSystemLanguage.g:747:2: kw= 'DAYS'
                     {
-                    kw=(Token)match(input,23,FollowSets000.FOLLOW_2); 
+                    kw=(Token)match(input,25,FollowSets000.FOLLOW_2); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getDAYSKeyword_0()); 
@@ -1964,9 +1869,9 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 2 :
-                    // InternalOperatingSystemLanguage.g:793:2: kw= 'HOURS'
+                    // InternalOperatingSystemLanguage.g:754:2: kw= 'HOURS'
                     {
-                    kw=(Token)match(input,24,FollowSets000.FOLLOW_2); 
+                    kw=(Token)match(input,26,FollowSets000.FOLLOW_2); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getHOURSKeyword_1()); 
@@ -1975,9 +1880,9 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 3 :
-                    // InternalOperatingSystemLanguage.g:800:2: kw= 'MILLISECONDS'
+                    // InternalOperatingSystemLanguage.g:761:2: kw= 'MILLISECONDS'
                     {
-                    kw=(Token)match(input,25,FollowSets000.FOLLOW_2); 
+                    kw=(Token)match(input,27,FollowSets000.FOLLOW_2); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getMILLISECONDSKeyword_2()); 
@@ -1986,9 +1891,9 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 4 :
-                    // InternalOperatingSystemLanguage.g:807:2: kw= 'MINUTES'
+                    // InternalOperatingSystemLanguage.g:768:2: kw= 'MINUTES'
                     {
-                    kw=(Token)match(input,26,FollowSets000.FOLLOW_2); 
+                    kw=(Token)match(input,28,FollowSets000.FOLLOW_2); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getMINUTESKeyword_3()); 
@@ -1997,9 +1902,9 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 5 :
-                    // InternalOperatingSystemLanguage.g:814:2: kw= 'SECONDS'
+                    // InternalOperatingSystemLanguage.g:775:2: kw= 'SECONDS'
                     {
-                    kw=(Token)match(input,27,FollowSets000.FOLLOW_2); 
+                    kw=(Token)match(input,29,FollowSets000.FOLLOW_2); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getSECONDSKeyword_4()); 
@@ -2008,9 +1913,9 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 6 :
-                    // InternalOperatingSystemLanguage.g:821:2: kw= 'MICROSECONDS'
+                    // InternalOperatingSystemLanguage.g:782:2: kw= 'MICROSECONDS'
                     {
-                    kw=(Token)match(input,28,FollowSets000.FOLLOW_2); 
+                    kw=(Token)match(input,30,FollowSets000.FOLLOW_2); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getMICROSECONDSKeyword_5()); 
@@ -2019,9 +1924,9 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 7 :
-                    // InternalOperatingSystemLanguage.g:828:2: kw= 'NANOSECONDS'
+                    // InternalOperatingSystemLanguage.g:789:2: kw= 'NANOSECONDS'
                     {
-                    kw=(Token)match(input,29,FollowSets000.FOLLOW_2); 
+                    kw=(Token)match(input,31,FollowSets000.FOLLOW_2); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getNANOSECONDSKeyword_6()); 
@@ -2048,6 +1953,274 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
     }
     // $ANTLR end "ruleTimeUnitExpr"
 
+
+    // $ANTLR start "entryRuleLiteralExpression"
+    // InternalOperatingSystemLanguage.g:802:1: entryRuleLiteralExpression returns [EObject current=null] : iv_ruleLiteralExpression= ruleLiteralExpression EOF ;
+    public final EObject entryRuleLiteralExpression() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleLiteralExpression = null;
+
+
+        try {
+            // InternalOperatingSystemLanguage.g:803:2: (iv_ruleLiteralExpression= ruleLiteralExpression EOF )
+            // InternalOperatingSystemLanguage.g:804:2: iv_ruleLiteralExpression= ruleLiteralExpression EOF
+            {
+             newCompositeNode(grammarAccess.getLiteralExpressionRule()); 
+            pushFollow(FollowSets000.FOLLOW_1);
+            iv_ruleLiteralExpression=ruleLiteralExpression();
+
+            state._fsp--;
+
+             current =iv_ruleLiteralExpression; 
+            match(input,EOF,FollowSets000.FOLLOW_2); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleLiteralExpression"
+
+
+    // $ANTLR start "ruleLiteralExpression"
+    // InternalOperatingSystemLanguage.g:811:1: ruleLiteralExpression returns [EObject current=null] : ( () ( (lv_value_1_0= ruleLiteral ) ) ) ;
+    public final EObject ruleLiteralExpression() throws RecognitionException {
+        EObject current = null;
+
+        AntlrDatatypeRuleToken lv_value_1_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // InternalOperatingSystemLanguage.g:814:28: ( ( () ( (lv_value_1_0= ruleLiteral ) ) ) )
+            // InternalOperatingSystemLanguage.g:815:1: ( () ( (lv_value_1_0= ruleLiteral ) ) )
+            {
+            // InternalOperatingSystemLanguage.g:815:1: ( () ( (lv_value_1_0= ruleLiteral ) ) )
+            // InternalOperatingSystemLanguage.g:815:2: () ( (lv_value_1_0= ruleLiteral ) )
+            {
+            // InternalOperatingSystemLanguage.g:815:2: ()
+            // InternalOperatingSystemLanguage.g:816:5: 
+            {
+
+                    current = forceCreateModelElement(
+                        grammarAccess.getLiteralExpressionAccess().getLiteralExpressionAction_0(),
+                        current);
+                
+
+            }
+
+            // InternalOperatingSystemLanguage.g:821:2: ( (lv_value_1_0= ruleLiteral ) )
+            // InternalOperatingSystemLanguage.g:822:1: (lv_value_1_0= ruleLiteral )
+            {
+            // InternalOperatingSystemLanguage.g:822:1: (lv_value_1_0= ruleLiteral )
+            // InternalOperatingSystemLanguage.g:823:3: lv_value_1_0= ruleLiteral
+            {
+             
+            	        newCompositeNode(grammarAccess.getLiteralExpressionAccess().getValueLiteralParserRuleCall_1_0()); 
+            	    
+            pushFollow(FollowSets000.FOLLOW_2);
+            lv_value_1_0=ruleLiteral();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getLiteralExpressionRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"value",
+                    		lv_value_1_0, 
+                    		"org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.Literal");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleLiteralExpression"
+
+
+    // $ANTLR start "entryRuleLiteral"
+    // InternalOperatingSystemLanguage.g:847:1: entryRuleLiteral returns [String current=null] : iv_ruleLiteral= ruleLiteral EOF ;
+    public final String entryRuleLiteral() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleLiteral = null;
+
+
+        try {
+            // InternalOperatingSystemLanguage.g:848:2: (iv_ruleLiteral= ruleLiteral EOF )
+            // InternalOperatingSystemLanguage.g:849:2: iv_ruleLiteral= ruleLiteral EOF
+            {
+             newCompositeNode(grammarAccess.getLiteralRule()); 
+            pushFollow(FollowSets000.FOLLOW_1);
+            iv_ruleLiteral=ruleLiteral();
+
+            state._fsp--;
+
+             current =iv_ruleLiteral.getText(); 
+            match(input,EOF,FollowSets000.FOLLOW_2); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleLiteral"
+
+
+    // $ANTLR start "ruleLiteral"
+    // InternalOperatingSystemLanguage.g:856:1: ruleLiteral returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_NUMBER_0= RULE_NUMBER | this_BOOLEAN_1= RULE_BOOLEAN | this_INT_2= RULE_INT | kw= 'null' ) ;
+    public final AntlrDatatypeRuleToken ruleLiteral() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token this_NUMBER_0=null;
+        Token this_BOOLEAN_1=null;
+        Token this_INT_2=null;
+        Token kw=null;
+
+         enterRule(); 
+            
+        try {
+            // InternalOperatingSystemLanguage.g:859:28: ( (this_NUMBER_0= RULE_NUMBER | this_BOOLEAN_1= RULE_BOOLEAN | this_INT_2= RULE_INT | kw= 'null' ) )
+            // InternalOperatingSystemLanguage.g:860:1: (this_NUMBER_0= RULE_NUMBER | this_BOOLEAN_1= RULE_BOOLEAN | this_INT_2= RULE_INT | kw= 'null' )
+            {
+            // InternalOperatingSystemLanguage.g:860:1: (this_NUMBER_0= RULE_NUMBER | this_BOOLEAN_1= RULE_BOOLEAN | this_INT_2= RULE_INT | kw= 'null' )
+            int alt11=4;
+            switch ( input.LA(1) ) {
+            case RULE_NUMBER:
+                {
+                alt11=1;
+                }
+                break;
+            case RULE_BOOLEAN:
+                {
+                alt11=2;
+                }
+                break;
+            case RULE_INT:
+                {
+                alt11=3;
+                }
+                break;
+            case 32:
+                {
+                alt11=4;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 11, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt11) {
+                case 1 :
+                    // InternalOperatingSystemLanguage.g:860:6: this_NUMBER_0= RULE_NUMBER
+                    {
+                    this_NUMBER_0=(Token)match(input,RULE_NUMBER,FollowSets000.FOLLOW_2); 
+
+                    		current.merge(this_NUMBER_0);
+                        
+                     
+                        newLeafNode(this_NUMBER_0, grammarAccess.getLiteralAccess().getNUMBERTerminalRuleCall_0()); 
+                        
+
+                    }
+                    break;
+                case 2 :
+                    // InternalOperatingSystemLanguage.g:868:10: this_BOOLEAN_1= RULE_BOOLEAN
+                    {
+                    this_BOOLEAN_1=(Token)match(input,RULE_BOOLEAN,FollowSets000.FOLLOW_2); 
+
+                    		current.merge(this_BOOLEAN_1);
+                        
+                     
+                        newLeafNode(this_BOOLEAN_1, grammarAccess.getLiteralAccess().getBOOLEANTerminalRuleCall_1()); 
+                        
+
+                    }
+                    break;
+                case 3 :
+                    // InternalOperatingSystemLanguage.g:876:10: this_INT_2= RULE_INT
+                    {
+                    this_INT_2=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_2); 
+
+                    		current.merge(this_INT_2);
+                        
+                     
+                        newLeafNode(this_INT_2, grammarAccess.getLiteralAccess().getINTTerminalRuleCall_2()); 
+                        
+
+                    }
+                    break;
+                case 4 :
+                    // InternalOperatingSystemLanguage.g:885:2: kw= 'null'
+                    {
+                    kw=(Token)match(input,32,FollowSets000.FOLLOW_2); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getLiteralAccess().getNullKeyword_3()); 
+                        
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleLiteral"
+
     // Delegated rules
 
 
@@ -2057,20 +2230,21 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
     private static class FollowSets000 {
         public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000004800L});
+        public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000012000L});
         public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x000000000001A000L});
+        public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000004000L});
+        public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000068000L});
         public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000002030L});
-        public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000022000L});
-        public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000040000L});
-        public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000080030L});
-        public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x00000000000A0000L});
-        public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000300000L});
-        public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000100000L});
-        public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000400000L});
-        public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x000000003F800000L});
+        public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000008030L});
+        public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000088000L});
+        public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000100000L});
+        public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000200030L});
+        public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000280000L});
+        public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000C00000L});
+        public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000400000L});
+        public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x00000001000001C0L});
+        public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000001000000L});
+        public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x00000000FE000000L});
     }
 
 

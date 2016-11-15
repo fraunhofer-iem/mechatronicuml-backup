@@ -40,6 +40,7 @@ public class OperatingSystemLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getOperatingSystemAccess().getAlternatives_4(), "rule__OperatingSystem__Alternatives_4");
 					put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
 					put(grammarAccess.getTimeUnitExprAccess().getAlternatives(), "rule__TimeUnitExpr__Alternatives");
+					put(grammarAccess.getLiteralAccess().getAlternatives(), "rule__Literal__Alternatives");
 					put(grammarAccess.getOperatingSystemAccess().getGroup(), "rule__OperatingSystem__Group__0");
 					put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
 					put(grammarAccess.getAPIRepositoryAccess().getGroup(), "rule__APIRepository__Group__0");
@@ -52,6 +53,7 @@ public class OperatingSystemLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getParameterAccess().getGroup(), "rule__Parameter__Group__0");
 					put(grammarAccess.getTimeConstraintAccess().getGroup(), "rule__TimeConstraint__Group__0");
 					put(grammarAccess.getTimeValueAccess().getGroup(), "rule__TimeValue__Group__0");
+					put(grammarAccess.getLiteralExpressionAccess().getGroup(), "rule__LiteralExpression__Group__0");
 					put(grammarAccess.getOperatingSystemAccess().getImportsAssignment_0(), "rule__OperatingSystem__ImportsAssignment_0");
 					put(grammarAccess.getOperatingSystemAccess().getNameAssignment_2(), "rule__OperatingSystem__NameAssignment_2");
 					put(grammarAccess.getOperatingSystemAccess().getApirepositoriesAssignment_4_0(), "rule__OperatingSystem__ApirepositoriesAssignment_4_0");
@@ -73,7 +75,7 @@ public class OperatingSystemLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTimeConstraintAccess().getSamplingTimeAssignment_1(), "rule__TimeConstraint__SamplingTimeAssignment_1");
 					put(grammarAccess.getTimeValueAccess().getValueAssignment_0(), "rule__TimeValue__ValueAssignment_0");
 					put(grammarAccess.getTimeValueAccess().getUnitAssignment_1(), "rule__TimeValue__UnitAssignment_1");
-					put(grammarAccess.getINTExpressionAccess().getValueAssignment(), "rule__INTExpression__ValueAssignment");
+					put(grammarAccess.getLiteralExpressionAccess().getValueAssignment_1(), "rule__LiteralExpression__ValueAssignment_1");
 				}
 			};
 		}

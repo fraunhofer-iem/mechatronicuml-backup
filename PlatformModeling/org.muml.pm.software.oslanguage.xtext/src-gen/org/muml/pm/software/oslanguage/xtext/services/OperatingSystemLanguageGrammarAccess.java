@@ -390,44 +390,28 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.TimeValue");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cValueAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cValueINTExpressionParserRuleCall_0_0 = (RuleCall)cValueAssignment_0.eContents().get(0);
+		private final RuleCall cValueLiteralExpressionParserRuleCall_0_0 = (RuleCall)cValueAssignment_0.eContents().get(0);
 		private final Assignment cUnitAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cUnitTimeUnitExprParserRuleCall_1_0 = (RuleCall)cUnitAssignment_1.eContents().get(0);
 		
 		//TimeValue valuetype::TimeValue:
-		//	value=INTExpression unit=TimeUnitExpr
+		//	value=LiteralExpression unit=TimeUnitExpr
 		@Override public ParserRule getRule() { return rule; }
 
-		//value=INTExpression unit=TimeUnitExpr
+		//value=LiteralExpression unit=TimeUnitExpr
 		public Group getGroup() { return cGroup; }
 
-		//value=INTExpression
+		//value=LiteralExpression
 		public Assignment getValueAssignment_0() { return cValueAssignment_0; }
 
-		//INTExpression
-		public RuleCall getValueINTExpressionParserRuleCall_0_0() { return cValueINTExpressionParserRuleCall_0_0; }
+		//LiteralExpression
+		public RuleCall getValueLiteralExpressionParserRuleCall_0_0() { return cValueLiteralExpressionParserRuleCall_0_0; }
 
 		//unit=TimeUnitExpr
 		public Assignment getUnitAssignment_1() { return cUnitAssignment_1; }
 
 		//TimeUnitExpr
 		public RuleCall getUnitTimeUnitExprParserRuleCall_1_0() { return cUnitTimeUnitExprParserRuleCall_1_0; }
-	}
-
-	public class INTExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.INTExpression");
-		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cValueEStringParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
-		
-		//INTExpression common::LiteralExpression:
-		//	value=EString
-		@Override public ParserRule getRule() { return rule; }
-
-		//value=EString
-		public Assignment getValueAssignment() { return cValueAssignment; }
-
-		//EString
-		public RuleCall getValueEStringParserRuleCall_0() { return cValueEStringParserRuleCall_0; }
 	}
 
 	public class TimeUnitExprElements extends AbstractParserRuleElementFinder {
@@ -469,6 +453,58 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 		//'NANOSECONDS'
 		public Keyword getNANOSECONDSKeyword_6() { return cNANOSECONDSKeyword_6; }
 	}
+
+	public class LiteralExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.LiteralExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cLiteralExpressionAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValueLiteralParserRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		
+		//LiteralExpression common::LiteralExpression:
+		//	{common::LiteralExpression} value=Literal
+		@Override public ParserRule getRule() { return rule; }
+
+		//{common::LiteralExpression} value=Literal
+		public Group getGroup() { return cGroup; }
+
+		//{common::LiteralExpression}
+		public Action getLiteralExpressionAction_0() { return cLiteralExpressionAction_0; }
+
+		//value=Literal
+		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
+
+		//Literal
+		public RuleCall getValueLiteralParserRuleCall_1_0() { return cValueLiteralParserRuleCall_1_0; }
+	}
+
+	public class LiteralElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.Literal");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cNUMBERTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cBOOLEANTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final Keyword cNullKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		
+		//Literal:
+		//	NUMBER | BOOLEAN | INT | 'null';
+		@Override public ParserRule getRule() { return rule; }
+
+		//NUMBER | BOOLEAN | INT | 'null'
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//NUMBER
+		public RuleCall getNUMBERTerminalRuleCall_0() { return cNUMBERTerminalRuleCall_0; }
+
+		//BOOLEAN
+		public RuleCall getBOOLEANTerminalRuleCall_1() { return cBOOLEANTerminalRuleCall_1; }
+
+		//INT
+		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
+
+		//'null'
+		public Keyword getNullKeyword_3() { return cNullKeyword_3; }
+	}
 	
 	
 	private final OperatingSystemElements pOperatingSystem;
@@ -481,8 +517,11 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 	private final EnumerationValueElements pEnumerationValue;
 	private final TimeConstraintElements pTimeConstraint;
 	private final TimeValueElements pTimeValue;
-	private final INTExpressionElements pINTExpression;
 	private final TimeUnitExprElements pTimeUnitExpr;
+	private final LiteralExpressionElements pLiteralExpression;
+	private final LiteralElements pLiteral;
+	private final TerminalRule tNUMBER;
+	private final TerminalRule tBOOLEAN;
 	
 	private final Grammar grammar;
 
@@ -503,8 +542,11 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 		this.pEnumerationValue = new EnumerationValueElements();
 		this.pTimeConstraint = new TimeConstraintElements();
 		this.pTimeValue = new TimeValueElements();
-		this.pINTExpression = new INTExpressionElements();
 		this.pTimeUnitExpr = new TimeUnitExprElements();
+		this.pLiteralExpression = new LiteralExpressionElements();
+		this.pLiteral = new LiteralElements();
+		this.tNUMBER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.NUMBER");
+		this.tBOOLEAN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.BOOLEAN");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -629,23 +671,13 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//TimeValue valuetype::TimeValue:
-	//	value=INTExpression unit=TimeUnitExpr
+	//	value=LiteralExpression unit=TimeUnitExpr
 	public TimeValueElements getTimeValueAccess() {
 		return pTimeValue;
 	}
 	
 	public ParserRule getTimeValueRule() {
 		return getTimeValueAccess().getRule();
-	}
-
-	//INTExpression common::LiteralExpression:
-	//	value=EString
-	public INTExpressionElements getINTExpressionAccess() {
-		return pINTExpression;
-	}
-	
-	public ParserRule getINTExpressionRule() {
-		return getINTExpressionAccess().getRule();
 	}
 
 	//TimeUnitExpr valuetype::TimeUnit:
@@ -657,6 +689,38 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 	public ParserRule getTimeUnitExprRule() {
 		return getTimeUnitExprAccess().getRule();
 	}
+
+	//LiteralExpression common::LiteralExpression:
+	//	{common::LiteralExpression} value=Literal
+	public LiteralExpressionElements getLiteralExpressionAccess() {
+		return pLiteralExpression;
+	}
+	
+	public ParserRule getLiteralExpressionRule() {
+		return getLiteralExpressionAccess().getRule();
+	}
+
+	//Literal:
+	//	NUMBER | BOOLEAN | INT | 'null';
+	public LiteralElements getLiteralAccess() {
+		return pLiteral;
+	}
+	
+	public ParserRule getLiteralRule() {
+		return getLiteralAccess().getRule();
+	}
+
+	//terminal NUMBER returns ecore::EBigDecimal:
+	//	INT '.' INT;
+	public TerminalRule getNUMBERRule() {
+		return tNUMBER;
+	} 
+
+	//terminal BOOLEAN returns ecore::EBoolean:
+	//	'true' | 'false';
+	public TerminalRule getBOOLEANRule() {
+		return tBOOLEAN;
+	} 
 
 	//terminal ID:
 	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;

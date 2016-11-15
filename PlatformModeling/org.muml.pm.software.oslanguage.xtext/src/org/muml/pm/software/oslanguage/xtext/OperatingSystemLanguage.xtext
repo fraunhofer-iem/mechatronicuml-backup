@@ -72,14 +72,26 @@ TimeConstraint returns swplatform::TimeConstraint:
 	'[' samplingTime=TimeValue  ']';
 	
 TimeValue returns valuetype::TimeValue:
-	value=INTExpression unit=TimeUnitExpr
+	value=LiteralExpression unit=TimeUnitExpr
 ;
 
-INTExpression returns common::LiteralExpression:
-	value=EString
-;
 
 TimeUnitExpr returns valuetype::TimeUnit:
 	'DAYS' | 'HOURS' | 'MILLISECONDS' | 'MINUTES' |'SECONDS' | 'MICROSECONDS' | 'NANOSECONDS'
 ;
 
+
+LiteralExpression returns common::LiteralExpression:
+	{common::LiteralExpression} value=Literal
+;
+
+Literal returns ecore::EString:
+	NUMBER | BOOLEAN | INT | 'null'
+;
+terminal NUMBER returns ecore::EBigDecimal:
+	INT'.' INT
+;
+
+terminal BOOLEAN returns ecore::EBoolean:
+	'true' | 'false'
+;
