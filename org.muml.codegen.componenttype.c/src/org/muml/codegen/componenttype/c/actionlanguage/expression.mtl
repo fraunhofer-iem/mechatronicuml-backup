@@ -7,6 +7,7 @@
 				'http://www.muml.org/pim/types/1.0.0',
 				'http://www.muml.org/psm/apiexpressions/1.0.0',
 				'http://www.muml.org/modelinstance/1.0.0',
+				'http://www.muml.org/pm/software/1.0.0',
 				'http://www.muml.org/pim/component/1.0.0',
 				'http://www.muml.org/pim/instance/1.0.0',
 				'http://www.muml.org/pim/realtimestatechart/1.0.0')/]
@@ -687,6 +688,10 @@ unexpected expression class with unary op: [expression.eClass().name/]
  * @param fqname a fully qualified name or the empty string
 */]
 [template public generateExpression(expression : APICallExpression, parop : UnaryOperator , fqname : String)]
+[if (not expression.apiCommand.constraints->at(1).oclIsUndefined())]
+	[comment Add generation of time constraints,  ADD CLOCK to the Continuous Port Value in the component struct declaration and use the clock to implement a time constraint that enforces that the api call is only executed if the time constraint is fulfilled /]
+	/*FIXME WARNING TIME CONSTRAINTS ARE CURRENTLY NOT SUPPORTED IN THE GENERATION*/ 
+[/if]
 [generateExpression(expression,  fqname) /]
 [/template]
 
