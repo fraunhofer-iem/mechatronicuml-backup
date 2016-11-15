@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//protocol/Allow.coordinationprotocol_diagram=UTF-8
+encoding//protocol/ChangeSection.coordinationprotocol_diagram=UTF-8
+encoding//protocol/Delegate.coordinationprotocol_diagram=UTF-8
+encoding//protocol/Inform.coordinationprotocol_diagram=UTF-8
+encoding//protocol/LimitVelocity.coordinationprotocol_diagram=UTF-8
+encoding//protocol/Overtake.coordinationprotocol_diagram=UTF-8
+encoding//protocol/VModeControl.coordinationprotocol_diagram=UTF-8
+encoding/OvertakingRegions2Runnables.muml=UTF-8

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xsi:schemaLocation="http://www.muml.org/modelinstance/1.0.0 http://www.muml.org/core/1.0.0#//modelinstance http://www.muml.org/pim/protocol/1.0.0 http://www.muml.org/pim/1.0.0#//protocol" xmi:id="_0Rr1Bas1EeahOakP9zdesg" type="Coordination Protocol" name="ChangeSection.coordinationprotocol_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_0Rr1B6s1EeahOakP9zdesg" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_0Rr1Cas1EeahOakP9zdesg" type="7005"/>
+    <element xmi:type="protocol:CoordinationProtocol" href="../OvertakingRegions2Runnables.muml#_sgmDkJKjEeSSMde45fnrcg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0Rr1CKs1EeahOakP9zdesg"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_0Rr1Bqs1EeahOakP9zdesg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../OvertakingRegions2Runnables.muml#_FB0TSpJ7EeSSMde45fnrcg"/>
+</notation:Diagram>
