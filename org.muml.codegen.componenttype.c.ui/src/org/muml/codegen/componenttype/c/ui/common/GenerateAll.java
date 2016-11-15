@@ -185,7 +185,14 @@ public class GenerateAll {
 				"org.muml.codegen.componenttype.c", "org.muml.codegen.componenttype.c.main.Main",
 				modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
 		gen0.setGenerationID(generationID);
+		long start;
+		start = System.currentTimeMillis();
 		gen0.doGenerate(BasicMonitor.toMonitor(monitor));
+		Double finalTime = Double.valueOf(Double.valueOf(System.currentTimeMillis() - start)
+				.doubleValue() / 1000d);
+		Status logTransformationTime = new Status(Status.INFO,Activator.PLUGIN_ID,"Time to generate C-Type Code: "+finalTime);
+		// writes log into the .log file within the .metadata folder of the workspace
+		Activator.getDefault().getLog().log(logTransformationTime);
 		monitor.worked(1);
 		URL resources = FileLocator.toFileURL(Platform
 				.getBundle(org.muml.codegen.componenttype.c.Activator.PLUGIN_ID).getEntry("resources"));
