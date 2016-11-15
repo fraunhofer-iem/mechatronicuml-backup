@@ -433,41 +433,41 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 	public class TimeUnitExprElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.pm.software.oslanguage.xtext.OperatingSystemLanguage.TimeUnitExpr");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cDaysKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cHoursKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		private final Keyword cMinKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
-		private final Keyword cSecKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
-		private final Keyword cMsKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
-		private final Keyword cSKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
-		private final Keyword cNsKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
+		private final Keyword cDAYSKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cHOURSKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cMILLISECONDSKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cMINUTESKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		private final Keyword cSECONDSKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
+		private final Keyword cMICROSECONDSKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
+		private final Keyword cNANOSECONDSKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
 		
 		//TimeUnitExpr valuetype::TimeUnit:
-		//	'days' | 'hours' | 'min' | 'sec' | 'ms' | 'µs' | 'ns'
+		//	'DAYS' | 'HOURS' | 'MILLISECONDS' | 'MINUTES' | 'SECONDS' | 'MICROSECONDS' | 'NANOSECONDS'
 		@Override public ParserRule getRule() { return rule; }
 
-		//'days' | 'hours' | 'min' | 'sec' | 'ms' | 'µs' | 'ns'
+		//'DAYS' | 'HOURS' | 'MILLISECONDS' | 'MINUTES' | 'SECONDS' | 'MICROSECONDS' | 'NANOSECONDS'
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//'days'
-		public Keyword getDaysKeyword_0() { return cDaysKeyword_0; }
+		//'DAYS'
+		public Keyword getDAYSKeyword_0() { return cDAYSKeyword_0; }
 
-		//'hours'
-		public Keyword getHoursKeyword_1() { return cHoursKeyword_1; }
+		//'HOURS'
+		public Keyword getHOURSKeyword_1() { return cHOURSKeyword_1; }
 
-		//'min'
-		public Keyword getMinKeyword_2() { return cMinKeyword_2; }
+		//'MILLISECONDS'
+		public Keyword getMILLISECONDSKeyword_2() { return cMILLISECONDSKeyword_2; }
 
-		//'sec'
-		public Keyword getSecKeyword_3() { return cSecKeyword_3; }
+		//'MINUTES'
+		public Keyword getMINUTESKeyword_3() { return cMINUTESKeyword_3; }
 
-		//'ms'
-		public Keyword getMsKeyword_4() { return cMsKeyword_4; }
+		//'SECONDS'
+		public Keyword getSECONDSKeyword_4() { return cSECONDSKeyword_4; }
 
-		//'µs'
-		public Keyword getSKeyword_5() { return cSKeyword_5; }
+		//'MICROSECONDS'
+		public Keyword getMICROSECONDSKeyword_5() { return cMICROSECONDSKeyword_5; }
 
-		//'ns'
-		public Keyword getNsKeyword_6() { return cNsKeyword_6; }
+		//'NANOSECONDS'
+		public Keyword getNANOSECONDSKeyword_6() { return cNANOSECONDSKeyword_6; }
 	}
 	
 	
@@ -649,7 +649,7 @@ public class OperatingSystemLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//TimeUnitExpr valuetype::TimeUnit:
-	//	'days' | 'hours' | 'min' | 'sec' | 'ms' | 'µs' | 'ns'
+	//	'DAYS' | 'HOURS' | 'MILLISECONDS' | 'MINUTES' | 'SECONDS' | 'MICROSECONDS' | 'NANOSECONDS'
 	public TimeUnitExprElements getTimeUnitExprAccess() {
 		return pTimeUnitExpr;
 	}

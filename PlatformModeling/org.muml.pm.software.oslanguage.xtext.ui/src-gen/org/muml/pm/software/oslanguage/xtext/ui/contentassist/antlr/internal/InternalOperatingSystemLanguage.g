@@ -443,59 +443,59 @@ rule__TimeUnitExpr__Alternatives
     }
 :
 (
-{ before(grammarAccess.getTimeUnitExprAccess().getDaysKeyword_0()); }
+{ before(grammarAccess.getTimeUnitExprAccess().getDAYSKeyword_0()); }
 
-	'days' 
+	'DAYS' 
 
-{ after(grammarAccess.getTimeUnitExprAccess().getDaysKeyword_0()); }
+{ after(grammarAccess.getTimeUnitExprAccess().getDAYSKeyword_0()); }
 )
 
     |(
-{ before(grammarAccess.getTimeUnitExprAccess().getHoursKeyword_1()); }
+{ before(grammarAccess.getTimeUnitExprAccess().getHOURSKeyword_1()); }
 
-	'hours' 
+	'HOURS' 
 
-{ after(grammarAccess.getTimeUnitExprAccess().getHoursKeyword_1()); }
+{ after(grammarAccess.getTimeUnitExprAccess().getHOURSKeyword_1()); }
 )
 
     |(
-{ before(grammarAccess.getTimeUnitExprAccess().getMinKeyword_2()); }
+{ before(grammarAccess.getTimeUnitExprAccess().getMILLISECONDSKeyword_2()); }
 
-	'min' 
+	'MILLISECONDS' 
 
-{ after(grammarAccess.getTimeUnitExprAccess().getMinKeyword_2()); }
+{ after(grammarAccess.getTimeUnitExprAccess().getMILLISECONDSKeyword_2()); }
 )
 
     |(
-{ before(grammarAccess.getTimeUnitExprAccess().getSecKeyword_3()); }
+{ before(grammarAccess.getTimeUnitExprAccess().getMINUTESKeyword_3()); }
 
-	'sec' 
+	'MINUTES' 
 
-{ after(grammarAccess.getTimeUnitExprAccess().getSecKeyword_3()); }
+{ after(grammarAccess.getTimeUnitExprAccess().getMINUTESKeyword_3()); }
 )
 
     |(
-{ before(grammarAccess.getTimeUnitExprAccess().getMsKeyword_4()); }
+{ before(grammarAccess.getTimeUnitExprAccess().getSECONDSKeyword_4()); }
 
-	'ms' 
+	'SECONDS' 
 
-{ after(grammarAccess.getTimeUnitExprAccess().getMsKeyword_4()); }
+{ after(grammarAccess.getTimeUnitExprAccess().getSECONDSKeyword_4()); }
 )
 
     |(
-{ before(grammarAccess.getTimeUnitExprAccess().getSKeyword_5()); }
+{ before(grammarAccess.getTimeUnitExprAccess().getMICROSECONDSKeyword_5()); }
 
-	'\u00B5s' 
+	'MICROSECONDS' 
 
-{ after(grammarAccess.getTimeUnitExprAccess().getSKeyword_5()); }
+{ after(grammarAccess.getTimeUnitExprAccess().getMICROSECONDSKeyword_5()); }
 )
 
     |(
-{ before(grammarAccess.getTimeUnitExprAccess().getNsKeyword_6()); }
+{ before(grammarAccess.getTimeUnitExprAccess().getNANOSECONDSKeyword_6()); }
 
-	'ns' 
+	'NANOSECONDS' 
 
-{ after(grammarAccess.getTimeUnitExprAccess().getNsKeyword_6()); }
+{ after(grammarAccess.getTimeUnitExprAccess().getNANOSECONDSKeyword_6()); }
 )
 
 ;

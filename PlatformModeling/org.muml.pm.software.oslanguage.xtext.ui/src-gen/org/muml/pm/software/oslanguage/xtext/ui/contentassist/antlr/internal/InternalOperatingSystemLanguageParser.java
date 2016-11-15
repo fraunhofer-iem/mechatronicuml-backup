@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalOperatingSystemLanguageParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'days'", "'hours'", "'min'", "'sec'", "'ms'", "'\\u00B5s'", "'ns'", "'OperatingSystem:'", "'{'", "'}'", "'import'", "'Device_API_Calls:'", "'enum:'", "','", "'('", "')'", "';'", "'['", "']'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'DAYS'", "'HOURS'", "'MILLISECONDS'", "'MINUTES'", "'SECONDS'", "'MICROSECONDS'", "'NANOSECONDS'", "'OperatingSystem:'", "'{'", "'}'", "'import'", "'Device_API_Calls:'", "'enum:'", "','", "'('", "')'", "';'", "'['", "']'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -1176,13 +1176,13 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalConte
 
 
     // $ANTLR start "rule__TimeUnitExpr__Alternatives"
-    // InternalOperatingSystemLanguage.g:440:1: rule__TimeUnitExpr__Alternatives : ( ( 'days' ) | ( 'hours' ) | ( 'min' ) | ( 'sec' ) | ( 'ms' ) | ( '\\u00B5s' ) | ( 'ns' ) );
+    // InternalOperatingSystemLanguage.g:440:1: rule__TimeUnitExpr__Alternatives : ( ( 'DAYS' ) | ( 'HOURS' ) | ( 'MILLISECONDS' ) | ( 'MINUTES' ) | ( 'SECONDS' ) | ( 'MICROSECONDS' ) | ( 'NANOSECONDS' ) );
     public final void rule__TimeUnitExpr__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalOperatingSystemLanguage.g:444:1: ( ( 'days' ) | ( 'hours' ) | ( 'min' ) | ( 'sec' ) | ( 'ms' ) | ( '\\u00B5s' ) | ( 'ns' ) )
+            // InternalOperatingSystemLanguage.g:444:1: ( ( 'DAYS' ) | ( 'HOURS' ) | ( 'MILLISECONDS' ) | ( 'MINUTES' ) | ( 'SECONDS' ) | ( 'MICROSECONDS' ) | ( 'NANOSECONDS' ) )
             int alt3=7;
             switch ( input.LA(1) ) {
             case 11:
@@ -1229,14 +1229,14 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalConte
 
             switch (alt3) {
                 case 1 :
-                    // InternalOperatingSystemLanguage.g:445:1: ( 'days' )
+                    // InternalOperatingSystemLanguage.g:445:1: ( 'DAYS' )
                     {
-                    // InternalOperatingSystemLanguage.g:445:1: ( 'days' )
-                    // InternalOperatingSystemLanguage.g:446:1: 'days'
+                    // InternalOperatingSystemLanguage.g:445:1: ( 'DAYS' )
+                    // InternalOperatingSystemLanguage.g:446:1: 'DAYS'
                     {
-                     before(grammarAccess.getTimeUnitExprAccess().getDaysKeyword_0()); 
+                     before(grammarAccess.getTimeUnitExprAccess().getDAYSKeyword_0()); 
                     match(input,11,FollowSets000.FOLLOW_2); 
-                     after(grammarAccess.getTimeUnitExprAccess().getDaysKeyword_0()); 
+                     after(grammarAccess.getTimeUnitExprAccess().getDAYSKeyword_0()); 
 
                     }
 
@@ -1244,14 +1244,14 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalConte
                     }
                     break;
                 case 2 :
-                    // InternalOperatingSystemLanguage.g:453:6: ( 'hours' )
+                    // InternalOperatingSystemLanguage.g:453:6: ( 'HOURS' )
                     {
-                    // InternalOperatingSystemLanguage.g:453:6: ( 'hours' )
-                    // InternalOperatingSystemLanguage.g:454:1: 'hours'
+                    // InternalOperatingSystemLanguage.g:453:6: ( 'HOURS' )
+                    // InternalOperatingSystemLanguage.g:454:1: 'HOURS'
                     {
-                     before(grammarAccess.getTimeUnitExprAccess().getHoursKeyword_1()); 
+                     before(grammarAccess.getTimeUnitExprAccess().getHOURSKeyword_1()); 
                     match(input,12,FollowSets000.FOLLOW_2); 
-                     after(grammarAccess.getTimeUnitExprAccess().getHoursKeyword_1()); 
+                     after(grammarAccess.getTimeUnitExprAccess().getHOURSKeyword_1()); 
 
                     }
 
@@ -1259,14 +1259,14 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalConte
                     }
                     break;
                 case 3 :
-                    // InternalOperatingSystemLanguage.g:461:6: ( 'min' )
+                    // InternalOperatingSystemLanguage.g:461:6: ( 'MILLISECONDS' )
                     {
-                    // InternalOperatingSystemLanguage.g:461:6: ( 'min' )
-                    // InternalOperatingSystemLanguage.g:462:1: 'min'
+                    // InternalOperatingSystemLanguage.g:461:6: ( 'MILLISECONDS' )
+                    // InternalOperatingSystemLanguage.g:462:1: 'MILLISECONDS'
                     {
-                     before(grammarAccess.getTimeUnitExprAccess().getMinKeyword_2()); 
+                     before(grammarAccess.getTimeUnitExprAccess().getMILLISECONDSKeyword_2()); 
                     match(input,13,FollowSets000.FOLLOW_2); 
-                     after(grammarAccess.getTimeUnitExprAccess().getMinKeyword_2()); 
+                     after(grammarAccess.getTimeUnitExprAccess().getMILLISECONDSKeyword_2()); 
 
                     }
 
@@ -1274,14 +1274,14 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalConte
                     }
                     break;
                 case 4 :
-                    // InternalOperatingSystemLanguage.g:469:6: ( 'sec' )
+                    // InternalOperatingSystemLanguage.g:469:6: ( 'MINUTES' )
                     {
-                    // InternalOperatingSystemLanguage.g:469:6: ( 'sec' )
-                    // InternalOperatingSystemLanguage.g:470:1: 'sec'
+                    // InternalOperatingSystemLanguage.g:469:6: ( 'MINUTES' )
+                    // InternalOperatingSystemLanguage.g:470:1: 'MINUTES'
                     {
-                     before(grammarAccess.getTimeUnitExprAccess().getSecKeyword_3()); 
+                     before(grammarAccess.getTimeUnitExprAccess().getMINUTESKeyword_3()); 
                     match(input,14,FollowSets000.FOLLOW_2); 
-                     after(grammarAccess.getTimeUnitExprAccess().getSecKeyword_3()); 
+                     after(grammarAccess.getTimeUnitExprAccess().getMINUTESKeyword_3()); 
 
                     }
 
@@ -1289,14 +1289,14 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalConte
                     }
                     break;
                 case 5 :
-                    // InternalOperatingSystemLanguage.g:477:6: ( 'ms' )
+                    // InternalOperatingSystemLanguage.g:477:6: ( 'SECONDS' )
                     {
-                    // InternalOperatingSystemLanguage.g:477:6: ( 'ms' )
-                    // InternalOperatingSystemLanguage.g:478:1: 'ms'
+                    // InternalOperatingSystemLanguage.g:477:6: ( 'SECONDS' )
+                    // InternalOperatingSystemLanguage.g:478:1: 'SECONDS'
                     {
-                     before(grammarAccess.getTimeUnitExprAccess().getMsKeyword_4()); 
+                     before(grammarAccess.getTimeUnitExprAccess().getSECONDSKeyword_4()); 
                     match(input,15,FollowSets000.FOLLOW_2); 
-                     after(grammarAccess.getTimeUnitExprAccess().getMsKeyword_4()); 
+                     after(grammarAccess.getTimeUnitExprAccess().getSECONDSKeyword_4()); 
 
                     }
 
@@ -1304,14 +1304,14 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalConte
                     }
                     break;
                 case 6 :
-                    // InternalOperatingSystemLanguage.g:485:6: ( '\\u00B5s' )
+                    // InternalOperatingSystemLanguage.g:485:6: ( 'MICROSECONDS' )
                     {
-                    // InternalOperatingSystemLanguage.g:485:6: ( '\\u00B5s' )
-                    // InternalOperatingSystemLanguage.g:486:1: '\\u00B5s'
+                    // InternalOperatingSystemLanguage.g:485:6: ( 'MICROSECONDS' )
+                    // InternalOperatingSystemLanguage.g:486:1: 'MICROSECONDS'
                     {
-                     before(grammarAccess.getTimeUnitExprAccess().getSKeyword_5()); 
+                     before(grammarAccess.getTimeUnitExprAccess().getMICROSECONDSKeyword_5()); 
                     match(input,16,FollowSets000.FOLLOW_2); 
-                     after(grammarAccess.getTimeUnitExprAccess().getSKeyword_5()); 
+                     after(grammarAccess.getTimeUnitExprAccess().getMICROSECONDSKeyword_5()); 
 
                     }
 
@@ -1319,14 +1319,14 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalConte
                     }
                     break;
                 case 7 :
-                    // InternalOperatingSystemLanguage.g:493:6: ( 'ns' )
+                    // InternalOperatingSystemLanguage.g:493:6: ( 'NANOSECONDS' )
                     {
-                    // InternalOperatingSystemLanguage.g:493:6: ( 'ns' )
-                    // InternalOperatingSystemLanguage.g:494:1: 'ns'
+                    // InternalOperatingSystemLanguage.g:493:6: ( 'NANOSECONDS' )
+                    // InternalOperatingSystemLanguage.g:494:1: 'NANOSECONDS'
                     {
-                     before(grammarAccess.getTimeUnitExprAccess().getNsKeyword_6()); 
+                     before(grammarAccess.getTimeUnitExprAccess().getNANOSECONDSKeyword_6()); 
                     match(input,17,FollowSets000.FOLLOW_2); 
-                     after(grammarAccess.getTimeUnitExprAccess().getNsKeyword_6()); 
+                     after(grammarAccess.getTimeUnitExprAccess().getNANOSECONDSKeyword_6()); 
 
                     }
 

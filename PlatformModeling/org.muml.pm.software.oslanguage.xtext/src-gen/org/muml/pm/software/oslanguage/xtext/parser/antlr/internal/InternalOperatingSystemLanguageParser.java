@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'OperatingSystem:'", "'{'", "'}'", "'import'", "'Device_API_Calls:'", "'enum:'", "','", "'('", "')'", "';'", "'['", "']'", "'days'", "'hours'", "'min'", "'sec'", "'ms'", "'\\u00C2\\u00B5s'", "'ns'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'OperatingSystem:'", "'{'", "'}'", "'import'", "'Device_API_Calls:'", "'enum:'", "','", "'('", "')'", "';'", "'['", "']'", "'DAYS'", "'HOURS'", "'MILLISECONDS'", "'MINUTES'", "'SECONDS'", "'MICROSECONDS'", "'NANOSECONDS'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -1894,7 +1894,7 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleTimeUnitExpr"
-    // InternalOperatingSystemLanguage.g:781:1: ruleTimeUnitExpr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'days' | kw= 'hours' | kw= 'min' | kw= 'sec' | kw= 'ms' | kw= '\\u00C2\\u00B5s' | kw= 'ns' ) ;
+    // InternalOperatingSystemLanguage.g:781:1: ruleTimeUnitExpr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'DAYS' | kw= 'HOURS' | kw= 'MILLISECONDS' | kw= 'MINUTES' | kw= 'SECONDS' | kw= 'MICROSECONDS' | kw= 'NANOSECONDS' ) ;
     public final AntlrDatatypeRuleToken ruleTimeUnitExpr() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1903,10 +1903,10 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // InternalOperatingSystemLanguage.g:784:28: ( (kw= 'days' | kw= 'hours' | kw= 'min' | kw= 'sec' | kw= 'ms' | kw= '\\u00C2\\u00B5s' | kw= 'ns' ) )
-            // InternalOperatingSystemLanguage.g:785:1: (kw= 'days' | kw= 'hours' | kw= 'min' | kw= 'sec' | kw= 'ms' | kw= '\\u00C2\\u00B5s' | kw= 'ns' )
+            // InternalOperatingSystemLanguage.g:784:28: ( (kw= 'DAYS' | kw= 'HOURS' | kw= 'MILLISECONDS' | kw= 'MINUTES' | kw= 'SECONDS' | kw= 'MICROSECONDS' | kw= 'NANOSECONDS' ) )
+            // InternalOperatingSystemLanguage.g:785:1: (kw= 'DAYS' | kw= 'HOURS' | kw= 'MILLISECONDS' | kw= 'MINUTES' | kw= 'SECONDS' | kw= 'MICROSECONDS' | kw= 'NANOSECONDS' )
             {
-            // InternalOperatingSystemLanguage.g:785:1: (kw= 'days' | kw= 'hours' | kw= 'min' | kw= 'sec' | kw= 'ms' | kw= '\\u00C2\\u00B5s' | kw= 'ns' )
+            // InternalOperatingSystemLanguage.g:785:1: (kw= 'DAYS' | kw= 'HOURS' | kw= 'MILLISECONDS' | kw= 'MINUTES' | kw= 'SECONDS' | kw= 'MICROSECONDS' | kw= 'NANOSECONDS' )
             int alt10=7;
             switch ( input.LA(1) ) {
             case 23:
@@ -1953,78 +1953,78 @@ public class InternalOperatingSystemLanguageParser extends AbstractInternalAntlr
 
             switch (alt10) {
                 case 1 :
-                    // InternalOperatingSystemLanguage.g:786:2: kw= 'days'
+                    // InternalOperatingSystemLanguage.g:786:2: kw= 'DAYS'
                     {
                     kw=(Token)match(input,23,FollowSets000.FOLLOW_2); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getDaysKeyword_0()); 
+                            newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getDAYSKeyword_0()); 
                         
 
                     }
                     break;
                 case 2 :
-                    // InternalOperatingSystemLanguage.g:793:2: kw= 'hours'
+                    // InternalOperatingSystemLanguage.g:793:2: kw= 'HOURS'
                     {
                     kw=(Token)match(input,24,FollowSets000.FOLLOW_2); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getHoursKeyword_1()); 
+                            newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getHOURSKeyword_1()); 
                         
 
                     }
                     break;
                 case 3 :
-                    // InternalOperatingSystemLanguage.g:800:2: kw= 'min'
+                    // InternalOperatingSystemLanguage.g:800:2: kw= 'MILLISECONDS'
                     {
                     kw=(Token)match(input,25,FollowSets000.FOLLOW_2); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getMinKeyword_2()); 
+                            newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getMILLISECONDSKeyword_2()); 
                         
 
                     }
                     break;
                 case 4 :
-                    // InternalOperatingSystemLanguage.g:807:2: kw= 'sec'
+                    // InternalOperatingSystemLanguage.g:807:2: kw= 'MINUTES'
                     {
                     kw=(Token)match(input,26,FollowSets000.FOLLOW_2); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getSecKeyword_3()); 
+                            newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getMINUTESKeyword_3()); 
                         
 
                     }
                     break;
                 case 5 :
-                    // InternalOperatingSystemLanguage.g:814:2: kw= 'ms'
+                    // InternalOperatingSystemLanguage.g:814:2: kw= 'SECONDS'
                     {
                     kw=(Token)match(input,27,FollowSets000.FOLLOW_2); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getMsKeyword_4()); 
+                            newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getSECONDSKeyword_4()); 
                         
 
                     }
                     break;
                 case 6 :
-                    // InternalOperatingSystemLanguage.g:821:2: kw= '\\u00C2\\u00B5s'
+                    // InternalOperatingSystemLanguage.g:821:2: kw= 'MICROSECONDS'
                     {
                     kw=(Token)match(input,28,FollowSets000.FOLLOW_2); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getSKeyword_5()); 
+                            newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getMICROSECONDSKeyword_5()); 
                         
 
                     }
                     break;
                 case 7 :
-                    // InternalOperatingSystemLanguage.g:828:2: kw= 'ns'
+                    // InternalOperatingSystemLanguage.g:828:2: kw= 'NANOSECONDS'
                     {
                     kw=(Token)match(input,29,FollowSets000.FOLLOW_2); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getNsKeyword_6()); 
+                            newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getNANOSECONDSKeyword_6()); 
                         
 
                     }

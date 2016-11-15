@@ -16,6 +16,7 @@ import "platform:/resource/org.muml.pim/model/pim.ecore#//msgtype" as msgtype
 import "platform:/resource/org.muml.pim/model/pim.ecore#//protocol" as protocol
 import "platform:/resource/org.muml.pim/model/pim.ecore#//instance" as instance
 
+
 import "platform:/resource/org.muml.pim.actionlanguage/model/actionlanguage.ecore" as actionlanguage
 
 import "platform:/resource/org.muml.pm.software/model/software.ecore" as swplatform
@@ -79,5 +80,6 @@ INTExpression returns common::LiteralExpression:
 ;
 
 TimeUnitExpr returns valuetype::TimeUnit:
-	'days' | 'hours' | 'min' | 'sec' | 'ms' | 'µs' | 'ns'
+	'DAYS' | 'HOURS' | 'MILLISECONDS' | 'MINUTES' |'SECONDS' | 'MICROSECONDS' | 'NANOSECONDS'
 ;
+
