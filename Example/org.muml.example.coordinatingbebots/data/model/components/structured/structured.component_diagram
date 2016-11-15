@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_ZQyNQIHXEeOaAZpBzLRsyA" type="Component" name="structured.component_diagram" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xsi:schemaLocation="http://www.muml.org/pim/component/1.0.0 http://www.muml.org/pim/1.0.0#//component http://www.muml.org/modelinstance/1.0.0 http://www.muml.org/core/1.0.0#//modelinstance" xmi:id="_ZQyNQIHXEeOaAZpBzLRsyA" type="Component" name="structured.component_diagram" measurementUnit="Pixel">
   <children xmi:type="notation:Shape" xmi:id="_g9mvAIHXEeOaAZpBzLRsyA" type="2005" fontName="Segoe UI" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_g9n9IIHXEeOaAZpBzLRsyA" type="5021"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_g9n9IYHXEeOaAZpBzLRsyA" type="7005">
@@ -128,6 +128,14 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_LHJpa51pEeSGUPaRXN92yA" type="5026"/>
         <element xmi:type="component:CoordinationProtocolPart" href="../../coordinatingBebots.muml#_LHDiw51pEeSGUPaRXN92yA"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LHJpap1pEeSGUPaRXN92yA" x="281" y="427"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_m0bwQKs2EeahOakP9zdesg" type="3016">
+        <children xmi:type="notation:DecorationNode" xmi:id="_m0bwRas2EeahOakP9zdesg" type="5026"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_m0bwQas2EeahOakP9zdesg"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_m0bwQqs2EeahOakP9zdesg" fontName="Segoe UI"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="_m0bwQ6s2EeahOakP9zdesg" lineColor="0"/>
+        <element xmi:type="component:CoordinationProtocolPart" href="../../coordinatingBebots.muml#_m0R_Sas2EeahOakP9zdesg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m0bwRKs2EeahOakP9zdesg" x="266" y="217"/>
       </children>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_uxylsIHZEeO1qqzaJp0c1w" type="3011" fontName="Segoe UI" lineColor="0">
@@ -388,12 +396,20 @@
       <children xmi:type="notation:Shape" xmi:id="_LLcThp1pEeSGUPaRXN92yA" type="3016" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_LLcTiJ1pEeSGUPaRXN92yA" type="5026"/>
         <element xmi:type="component:CoordinationProtocolPart" href="../../coordinatingBebots.muml#_LLQGQp1pEeSGUPaRXN92yA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LLcTh51pEeSGUPaRXN92yA" x="26" y="244"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LLcTh51pEeSGUPaRXN92yA" x="41" y="244"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_LLcTiZ1pEeSGUPaRXN92yA" type="3016" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_LLcTi51pEeSGUPaRXN92yA" type="5026"/>
         <element xmi:type="component:CoordinationProtocolPart" href="../../coordinatingBebots.muml#_LLQGQ51pEeSGUPaRXN92yA"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LLcTip1pEeSGUPaRXN92yA" x="266" y="334"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_m78tgas2EeahOakP9zdesg" type="3016">
+        <children xmi:type="notation:DecorationNode" xmi:id="_m78thqs2EeahOakP9zdesg" type="5026"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_m78tgqs2EeahOakP9zdesg"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_m78tg6s2EeahOakP9zdesg" fontName="Segoe UI"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="_m78thKs2EeahOakP9zdesg" lineColor="0"/>
+        <element xmi:type="component:CoordinationProtocolPart" href="../../coordinatingBebots.muml#_m78tgKs2EeahOakP9zdesg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m78thas2EeahOakP9zdesg" x="281" y="229"/>
       </children>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_OzQYwIp6EeOFVcInix1dwQ" type="3011" fontName="Segoe UI" lineColor="0">
