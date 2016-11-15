@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: %pluginName
+Bundle-Name: org.muml.psm.swplatform.oslanguage
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: org.muml.pm.software.oslanguage.xtext;singleton:=true
