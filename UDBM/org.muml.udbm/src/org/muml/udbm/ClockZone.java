@@ -50,10 +50,6 @@ public class ClockZone implements Cloneable
     */
    protected HashSet<ClockConstraint> clockConstraint;
 
-   public boolean isEmpty(){
-	   return this.clockConstraint.isEmpty();
-   }
-
    protected boolean addToClockConstraint(ClockConstraint value)
    {
       boolean changed = false;
