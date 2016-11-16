@@ -30,12 +30,8 @@ public class PropertiesCheck {
        
     	String filename=args[0];
     	//do not modify the feature.xml of buckminster projects
-	if (filename.endsWith("pom.xml")) {
-		propCheck.fixPomXML(filename);
-	}
     	if(filename.endsWith("feature.xml") && !(filename.contains("buckminster"))){
     		propCheck.fixFeatureXML(filename);
-    		propCheck.fixFeatureXMLVersion(filename);
     		propCheck.fixFeatureProperties(filename.replace("feature.xml", "feature.properties"));
     		propCheck.fixBuildProperties(filename.replace("feature.xml", "build.properties"));
     	}
@@ -97,43 +93,6 @@ public class PropertiesCheck {
 		StreamResult result = new StreamResult(new FileOutputStream(file));
 		transformer.transform(source, result);
 	}
-
-	public void fixPomXML(String filename) throws TransformerException, ParserConfigurationException, SAXException, IOException {
-		File file = new File(filename);
-		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-		DocumentBuilder db = dbf.newDocumentBuilder();
-		Document document = db.parse(file);
-
-		
-		setText(getNode(new String[] { "project", "version" }, document), "1.0.0-SNAPSHOT", document);
-
-		// Use a Transformer for output
-		TransformerFactory tFactory = TransformerFactory.newInstance();
-		Transformer transformer = tFactory.newTransformer();
-
-		DOMSource source = new DOMSource(document);
-		StreamResult result = new StreamResult(new FileOutputStream(file));
-		transformer.transform(source, result);
-	}
-	
-	public void fixFeatureXMLVersion(String filename) throws TransformerException, ParserConfigurationException, SAXException, IOException {
-		File file = new File(filename);
-		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-		DocumentBuilder db = dbf.newDocumentBuilder();
-		Document document = db.parse(file);
-
-		
-		setAttribute(getNode(new String[] { "feature" }, document), "version", "1.0.0.qualifier", document);
-
-		// Use a Transformer for output
-		TransformerFactory tFactory = TransformerFactory.newInstance();
-		Transformer transformer = tFactory.newTransformer();
-
-		DOMSource source = new DOMSource(document);
-		StreamResult result = new StreamResult(new FileOutputStream(file));
-		transformer.transform(source, result);
-	}
-	
 	
 	private Node getNode(String tags[], Document document) {
 		Node node = document;
