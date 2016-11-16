@@ -696,14 +696,16 @@ unexpected expression class with unary op: [expression.eClass().name/]
 [/template]
 
 [**
- * Generates an OperationCall
- * @param expression the OperationCall
+ * Generates an APICallExpression
+ * @param expression the APICallExpression
  * @param usePre use pre construct for rhs variables (and for guards)
  * @param fqname a fully qualified name or the empty string
 */]
 [template public generateExpression(expression : APICallExpression , fqname : String)]
 [comment FIXME Add Test if the TypedNamedElement of TypedNamedElementExpression in the Parameterbinding is equal to the ContinuousPort /]
-[expression.apiCommand.name/]([for (pBinding:ParameterBinding | expression.parameterBindings) separator(', ')][pBinding.getValue()/][/for]);[/template]
+[expression.apiCommand.name/]([for (pBinding:ParameterBinding | expression.parameterBindings) separator(', ')][pBinding.getValue()/][/for])[if (not (expression.eContainer().oclIsKindOf(Variable) or expression.eContainer().oclIsKindOf(Assignment)))];[/if]
+[/template]
+
 
 
 
