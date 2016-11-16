@@ -5,11 +5,11 @@
   <parent>
     <groupId>org.muml.cbs.group</groupId>
     <artifactId>ComponentBehaviorSynthesis</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
   </parent>
   <groupId>org.muml.cbs.group</groupId>
   <artifactId>org.muml.cbs.dependencylanguage.xtext</artifactId>
-  <version>0.5.0-SNAPSHOT</version>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
   
         
