@@ -95,7 +95,7 @@
         <repository>
 			<id>Example</id>
 			<layout>p2</layout>
-			<url>${repobase}/jobs/Example/lastSuccessful/archive/targetPlatform/</url>
+			<url>${repobase}/Example/lastSuccessful/archive/targetPlatform/</url>
 		</repository>
         <repository>
 			<id>Uppaal</id>
