@@ -110,7 +110,7 @@
         <repository>
 			<id>ModelMigration</id>
 			<layout>p2</layout>
-			<url>${repobase}/ModelMigration-Maven/lastSuccessful/artifact/org.muml.emm.repository/target/</url>
+			<url>${repobase}/ModelMigration-Maven/lastSuccessful/archive/org.muml.emm.repository/target/</url>
 		</repository>
         <repository>
 			<id>UDBM</id>
