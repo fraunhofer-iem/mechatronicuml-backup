@@ -6,6 +6,7 @@
   <artifactId>ModelCopy</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
+  
   <modules>
     <!-- <module>org.muml.modelcopy.buckminster</module> -->
     <module>org.muml.modelcopy.feature</module>
@@ -13,15 +14,43 @@
     <module>org.muml.modelcopy.qvto.library.test</module>
     <module>org.muml.modelcopy.repository</module>
   </modules>
+  
+    <profiles>
+        <profile>
+          <id>Local</id>
+          <activation>
+            <property>
+              <name>env</name>
+              <value>local</value>
+            </property>
+          </activation>
+          <properties>
+            <repobase>TODO</repobase>
+          </properties>
+        </profile>
+        <profile>
+          <id>Jenkins</id>
+          <activation>
+            <property>
+              <name>env</name>
+              <value>!local</value>
+            </property>
+          </activation>
+          <properties>
+            <repobase>file:///data/jenkins/jobs</repobase>
+          </properties>
+        </profile>
+  </profiles>
+  
   <build>
     <plugins>
-      <plugin>
-        <groupId>org.eclipse.tycho</groupId>
-        <artifactId>tycho-maven-plugin</artifactId>
-        <version>0.26.0</version>
-        <extensions>true</extensions>
-      </plugin>
-      <plugin>
+        <plugin>
+            <groupId>org.eclipse.tycho</groupId>
+            <artifactId>tycho-maven-plugin</artifactId>
+            <version>0.26.0</version>
+            <extensions>true</extensions>
+        </plugin>
+        <plugin>
             <groupId>org.eclipse.tycho</groupId>
             <artifactId>target-platform-configuration</artifactId>
             <version>0.26.0</version>
@@ -61,32 +90,32 @@
         <repository>
 			<id>Testlanguage</id>
 			<layout>p2</layout>
-			<url>file:///data/jenkins/jobs/TestLanguage/lastSuccessful/archive/targetPlatform/</url>
+			<url>${repobase}/TestLanguage/lastSuccessful/archive/targetPlatform/</url>
 		</repository>
         <repository>
 			<id>Example</id>
 			<layout>p2</layout>
-			<url>file:///data/jenkins/jobs/Example/lastSuccessful/archive/targetPlatform/</url>
+			<url>${repobase}/jobs/Example/lastSuccessful/archive/targetPlatform/</url>
 		</repository>
         <repository>
 			<id>Uppaal</id>
 			<layout>p2</layout>
-			<url>file:///data/jenkins/jobs/Uppaal/lastSuccessful/archive/targetPlatform/</url>
+			<url>${repobase}/Uppaal/lastSuccessful/archive/targetPlatform/</url>
 		</repository>
         <repository>
 			<id>Uppaal-Adapter</id>
 			<layout>p2</layout>
-			<url>file:///data/jenkins/jobs/UppaalAdapter/lastSuccessful/archive/targetPlatform/</url>
+			<url>${repobase}/UppaalAdapter/lastSuccessful/archive/targetPlatform/</url>
 		</repository>
         <repository>
 			<id>ModelMigration</id>
 			<layout>p2</layout>
-			<url>file:///data/jenkins/jobs/ModelMigration/lastSuccessful/archive/targetPlatform/</url>
+			<url>${repobase}/ModelMigration/lastSuccessful/archive/targetPlatform/</url>
 		</repository>
         <repository>
 			<id>UDBM</id>
 			<layout>p2</layout>
-			<url>file:///data/jenkins/jobs/UDBM/lastSuccessful/archive/targetPlatform/</url>
+			<url>${repobase}/UDBM/lastSuccessful/archive/targetPlatform/</url>
 		</repository>
     </repositories>
 </project>
