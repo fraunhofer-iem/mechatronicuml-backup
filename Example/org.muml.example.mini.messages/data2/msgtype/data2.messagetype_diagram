@@ -8,21 +8,21 @@
         <children xmi:type="notation:BasicCompartment" xmi:id="_BTABAG-zEeayztt0xJNggA" type="7009">
           <children xmi:type="notation:Shape" xmi:id="_CfTcEG-zEeayztt0xJNggA" type="3009" fontName="Segoe UI" lineColor="0">
             <children xmi:type="notation:DecorationNode" xmi:id="_CfTcEm-zEeayztt0xJNggA" type="5016"/>
-            <element xmi:type="behavior:Parameter" href="../data2.muml#//@categories.6/@modelElements.0/@messageTypes.0/@parameters.0"/>
+            <element xmi:type="behavior:Parameter" href="../data2.muml#_lJT3pqypEeaQtL77hNy28w"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CfTcEW-zEeayztt0xJNggA"/>
           </children>
           <styles xmi:type="notation:SortingStyle" xmi:id="_BTABAW-zEeayztt0xJNggA"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_BTABAm-zEeayztt0xJNggA"/>
         </children>
-        <element xmi:type="msgtype:MessageType" href="../data2.muml#//@categories.6/@modelElements.0/@messageTypes.0"/>
+        <element xmi:type="msgtype:MessageType" href="../data2.muml#_lJT3paypEeaQtL77hNy28w"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BS8WoW-zEeayztt0xJNggA"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_AYBmgm-zEeayztt0xJNggA"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_AYBmg2-zEeayztt0xJNggA"/>
     </children>
-    <element xmi:type="msgtype:MessageTypeRepository" href="../data2.muml#//@categories.6/@modelElements.0"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AYA_cW-zEeayztt0xJNggA" x="110" y="84"/>
+    <element xmi:type="msgtype:MessageTypeRepository" href="../data2.muml#_lJT3pKypEeaQtL77hNy28w"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AYA_cW-zEeayztt0xJNggA" x="132" y="96"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_-hFTAW-yEeayztt0xJNggA"/>
-  <element xmi:type="modelinstance:ModelElementCategory" href="../data2.muml#//@categories.6"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../data2.muml#_lJT3o6ypEeaQtL77hNy28w"/>
 </notation:Diagram>

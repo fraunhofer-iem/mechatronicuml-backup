@@ -22,15 +22,15 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="_Un7__W-0Eeayztt0xJNggA"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_Un7__m-0Eeayztt0xJNggA"/>
         </children>
-        <element xmi:type="realtimestatechart:State" href="../data2.muml#//@categories.1/@modelElements.1/@states.0"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Un7_8W-0Eeayztt0xJNggA"/>
+        <element xmi:type="realtimestatechart:State" href="../data2.muml#_lJQNR6ypEeaQtL77hNy28w"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Un7_8W-0Eeayztt0xJNggA" x="14"/>
       </children>
     </children>
-    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../data2.muml#//@categories.1/@modelElements.1"/>
+    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../data2.muml#_lJQNQ6ypEeaQtL77hNy28w"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Umsp0W-0Eeayztt0xJNggA" width="256" height="226"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_ShY_oW-zEeayztt0xJNggA"/>
-  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../data2.muml#//@categories.1/@modelElements.1"/>
+  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../data2.muml#_lJQNQ6ypEeaQtL77hNy28w"/>
   <edges xmi:type="notation:Connector" xmi:id="_VKFDsG-0Eeayztt0xJNggA" type="4003" source="_Un7_8G-0Eeayztt0xJNggA" target="_Un7_8G-0Eeayztt0xJNggA" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_VKFqwG-0Eeayztt0xJNggA" type="6005">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_VKFqwW-0Eeayztt0xJNggA" y="-20"/>
@@ -39,7 +39,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_VKFqw2-0Eeayztt0xJNggA" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_VKFDsW-0Eeayztt0xJNggA" fontName="Segoe UI"/>
-    <element xmi:type="realtimestatechart:Transition" href="../data2.muml#//@categories.1/@modelElements.1/@transitions.0"/>
+    <element xmi:type="realtimestatechart:Transition" href="../data2.muml#_lJQNRKypEeaQtL77hNy28w"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_VKFDsm-0Eeayztt0xJNggA" points="[-60, 6, -60, 6]$[-60, 6, -60, 6]"/>
   </edges>
 </notation:Diagram>

@@ -22,8 +22,8 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="_Y9zpfW-zEeayztt0xJNggA"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_Y9zpfm-zEeayztt0xJNggA"/>
         </children>
-        <element xmi:type="realtimestatechart:State" href="../data2.muml#//@categories.1/@modelElements.0/@states.0"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Y9zpcW-zEeayztt0xJNggA"/>
+        <element xmi:type="realtimestatechart:State" href="../data2.muml#_lJPmOaypEeaQtL77hNy28w"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Y9zpcW-zEeayztt0xJNggA" x="14" y="-3"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_dvOxEG-zEeayztt0xJNggA" type="3032" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_dvOxEm-zEeayztt0xJNggA" type="5060"/>
@@ -43,15 +43,15 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="_dvOxHW-zEeayztt0xJNggA"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_dvOxHm-zEeayztt0xJNggA"/>
         </children>
-        <element xmi:type="realtimestatechart:State" href="../data2.muml#//@categories.1/@modelElements.0/@states.1"/>
+        <element xmi:type="realtimestatechart:State" href="../data2.muml#_lJQNQKypEeaQtL77hNy28w"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dvOxEW-zEeayztt0xJNggA" x="320" y="5"/>
       </children>
     </children>
-    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../data2.muml#//@categories.1/@modelElements.0"/>
+    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../data2.muml#_lJO_I6ypEeaQtL77hNy28w"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Y8s2MW-zEeayztt0xJNggA" width="496" height="226"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_RL1h8W-zEeayztt0xJNggA"/>
-  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../data2.muml#//@categories.1/@modelElements.0"/>
+  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../data2.muml#_lJO_I6ypEeaQtL77hNy28w"/>
   <edges xmi:type="notation:Connector" xmi:id="_gjVQYG-zEeayztt0xJNggA" type="4003" source="_Y9zpcG-zEeayztt0xJNggA" target="_dvOxEG-zEeayztt0xJNggA" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_gjV3cG-zEeayztt0xJNggA" type="6005">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_gjV3cW-zEeayztt0xJNggA" y="-20"/>
@@ -60,7 +60,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_gjV3c2-zEeayztt0xJNggA" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_gjVQYW-zEeayztt0xJNggA" fontName="Segoe UI"/>
-    <element xmi:type="realtimestatechart:Transition" href="../data2.muml#//@categories.1/@modelElements.0/@transitions.0"/>
+    <element xmi:type="realtimestatechart:Transition" href="../data2.muml#_lJO_JKypEeaQtL77hNy28w"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_gjVQYm-zEeayztt0xJNggA" points="[23, 4, -158, 0]$[172, 1, -9, -3]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_gk5WoG-zEeayztt0xJNggA" id="(0.7927927927927928,0.3787878787878788)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_gk5WoW-zEeayztt0xJNggA" id="(0.225,0.4528301886792453)"/>
@@ -73,7 +73,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_hOshk2-zEeayztt0xJNggA" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_hOr6gW-zEeayztt0xJNggA" fontName="Segoe UI"/>
-    <element xmi:type="realtimestatechart:Transition" href="../data2.muml#//@categories.1/@modelElements.0/@transitions.1"/>
+    <element xmi:type="realtimestatechart:Transition" href="../data2.muml#_lJPmMaypEeaQtL77hNy28w"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_hOr6gm-zEeayztt0xJNggA" points="[0, 42, 289, 6]$[0, 86, 289, 50]$[-289, 86, 0, 50]$[-289, 50, 0, 14]"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hS328G-zEeayztt0xJNggA" id="(0.7477477477477478,0.8636363636363636)"/>
   </edges>

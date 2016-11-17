@@ -7,21 +7,21 @@
         <styles xmi:type="notation:DescriptionStyle" xmi:id="_xqLSAW-yEeayztt0xJNggA"/>
         <styles xmi:type="notation:FontStyle" xmi:id="_xqLSAm-yEeayztt0xJNggA" fontName="Segoe UI"/>
         <styles xmi:type="notation:LineStyle" xmi:id="_xqLSA2-yEeayztt0xJNggA" lineColor="0"/>
-        <element xmi:type="protocol:CoordinationProtocol" href="../data2.muml#//@categories.4/@modelElements.0"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xqLSBG-yEeayztt0xJNggA" x="205" y="99" width="61"/>
+        <element xmi:type="protocol:CoordinationProtocol" href="../data2.muml#_lJQ0U6ypEeaQtL77hNy28w"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xqLSBG-yEeayztt0xJNggA" x="205" y="96" width="61"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_xqLSBm-yEeayztt0xJNggA" type="3006" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_xqL5EG-yEeayztt0xJNggA" type="5006">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_xqL5EW-yEeayztt0xJNggA" x="-15" y="-30"/>
         </children>
-        <element xmi:type="protocol:Role" href="../data2.muml#//@categories.4/@modelElements.0/@roles.0"/>
+        <element xmi:type="protocol:Role" href="../data2.muml#_lJSpiKypEeaQtL77hNy28w"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xqLSB2-yEeayztt0xJNggA" x="70" y="155"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_xqL5Em-yEeayztt0xJNggA" type="3006" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_xqL5FG-yEeayztt0xJNggA" type="5006">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_xqL5FW-yEeayztt0xJNggA" x="-20" y="-34"/>
         </children>
-        <element xmi:type="protocol:Role" href="../data2.muml#//@categories.4/@modelElements.0/@roles.1"/>
+        <element xmi:type="protocol:Role" href="../data2.muml#_lJTQkKypEeaQtL77hNy28w"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xqL5E2-yEeayztt0xJNggA" x="375" y="159"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_xqL5Fm-yEeayztt0xJNggA" type="3014">
@@ -30,7 +30,7 @@
         <styles xmi:type="notation:DescriptionStyle" xmi:id="_xqL5F2-yEeayztt0xJNggA"/>
         <styles xmi:type="notation:FontStyle" xmi:id="_xqL5GG-yEeayztt0xJNggA" fontName="Segoe UI"/>
         <styles xmi:type="notation:LineStyle" xmi:id="_xqL5GW-yEeayztt0xJNggA" lineColor="0"/>
-        <element xmi:type="protocol:ConnectorQualityOfServiceAssumptions" href="../data2.muml#//@categories.4/@modelElements.0/@roleConnector/@connectorQualityOfServiceAssumptions"/>
+        <element xmi:type="protocol:ConnectorQualityOfServiceAssumptions" href="../data2.muml#_lJTQl6ypEeaQtL77hNy28w"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xqL5Gm-yEeayztt0xJNggA" x="105" y="204"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_ICuBUG-zEeayztt0xJNggA" type="3013">
@@ -44,13 +44,13 @@
         <styles xmi:type="notation:DescriptionStyle" xmi:id="_ICuBUW-zEeayztt0xJNggA"/>
         <styles xmi:type="notation:FontStyle" xmi:id="_ICuBUm-zEeayztt0xJNggA" fontName="Segoe UI"/>
         <styles xmi:type="notation:LineStyle" xmi:id="_ICuBU2-zEeayztt0xJNggA" lineColor="0"/>
-        <element xmi:type="connector:MessageBuffer" href="../data2.muml#//@categories.4/@modelElements.0/@roles.1/@receiverMessageBuffer.0"/>
+        <element xmi:type="connector:MessageBuffer" href="../data2.muml#_lJTQlKypEeaQtL77hNy28w"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ICuBVG-zEeayztt0xJNggA" x="295" y="200"/>
       </children>
     </children>
-    <element xmi:type="protocol:CoordinationProtocol" href="../data2.muml#//@categories.4/@modelElements.0"/>
+    <element xmi:type="protocol:CoordinationProtocol" href="../data2.muml#_lJQ0U6ypEeaQtL77hNy28w"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xqD9QW-yEeayztt0xJNggA" x="150" y="90" width="498" height="328"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_we8N8W-yEeayztt0xJNggA"/>
-  <element xmi:type="modelinstance:ModelElementCategory" href="../data2.muml#//@categories.4"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../data2.muml#_lJQ0UqypEeaQtL77hNy28w"/>
 </notation:Diagram>
