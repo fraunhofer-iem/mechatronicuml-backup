@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.muml.uppaal.group</groupId>
-    <artifactId>uppaal</artifactId>
+    <artifactId>Uppaal</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
   <groupId>org.muml.uppaal.group</groupId>
