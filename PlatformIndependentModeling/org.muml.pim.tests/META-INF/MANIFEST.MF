@@ -20,7 +20,8 @@ Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.7.0",
  org.muml.core.tests,
  org.muml.pim.common,
  org.muml.ape,
- org.muml.modelcopy.qvto.library
+ org.muml.modelcopy.qvto.library,
+ org.muml.pim.actionlanguage;bundle-version="0.5.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Export-Package: org.muml.pim.tests
