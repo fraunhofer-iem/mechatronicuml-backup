@@ -31,7 +31,7 @@
     <module>org.muml.storydiagram.interpreter.core.mdelab</module>
     <module>org.muml.storydiagram.interpreter.eclipse</module>
     <module>org.muml.storydiagram.interpreter.ocl</module>
-    <module>org.muml.storydiagram.interpreter.tests</module>
+    <!--<module>org.muml.storydiagram.interpreter.tests</module> -->
     <module>org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm</module>
     <module>org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.wrapper</module>
     <module>org.muml.storydiagram.reachanalysis.sdm</module>
