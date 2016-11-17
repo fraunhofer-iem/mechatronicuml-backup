@@ -29,6 +29,21 @@ public abstract class AbstractUppaalAction extends AbstractHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
+		if (org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().shouldDoStatisticalEvaluation()) {
+			org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().startEvaluationIteration();
+			org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().logInfo("Started Uppaal Action.");
+			org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().setRestartRunnable(new Runnable() {
+				@Override
+				public void run() {
+					try {
+						execute(event);
+					} catch (ExecutionException e) {
+						e.printStackTrace();
+					}
+				}			
+			});
+		}
+		
 		Shell shell = HandlerUtil.getActiveWorkbenchWindow(event).getShell();
 		IStructuredSelection selection = (IStructuredSelection) HandlerUtil.getCurrentSelection(event);
 

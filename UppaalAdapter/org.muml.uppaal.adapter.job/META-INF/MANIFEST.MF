@@ -30,10 +30,11 @@ Require-Bundle: org.eclipse.core.resources;bundle-version="3.8.1",
  org.muml.graphviz.blackbox;resolution:=optional,
  org.muml.graphviz;resolution:=optional,
  org.muml.uppaal.job,
- org.muml.uppaal.adapter.blackbox
+ org.muml.uppaal.adapter.blackbox,
+ org.eclipse.ui.ide;bundle-version="3.12.1",
+ org.muml.uppaal.adapter.log;bundle-version="1.0.0"
 Export-Package: org.muml.uppaal.adapter.job,
- org.muml.uppaal.adapter.job.interfaces,
- org.muml.uppaal.adapter.job.statistics
+ org.muml.uppaal.adapter.job.interfaces
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Bundle-Localization: plugin
 Import-Package: org.muml.uppaal.options

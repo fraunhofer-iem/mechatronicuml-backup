@@ -18,8 +18,8 @@ Require-Bundle: org.muml.uppaal,
  org.eclipse.emf.ecore,
  org.muml.uppaal.adapter.mtctl,
  org.muml.uppaal.options,
- org.muml.uppaal.job
+ org.muml.uppaal.job,
+ org.muml.uppaal.adapter.log;bundle-version="1.0.0"
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
 Bundle-Localization: plugin
-Export-Package: org.muml.uppaal.adapter,
- org.muml.uppaal.adapter.blackbox
+Export-Package: org.muml.uppaal.adapter.blackbox

@@ -64,7 +64,14 @@ public class UppaalVerifyForResultWizard extends Wizard implements VerificationO
 			@Override
 			public void run() {
 				dialog = new WizardDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), UppaalVerifyForResultWizard.this);
-				dialog.open();
+				
+				if (org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().shouldDoStatisticalEvaluation()) {
+					dialog.setBlockOnOpen(false);
+					dialog.open();
+					dialog.close();
+				} else {
+					dialog.open();
+				}
 			}
 		});
 		

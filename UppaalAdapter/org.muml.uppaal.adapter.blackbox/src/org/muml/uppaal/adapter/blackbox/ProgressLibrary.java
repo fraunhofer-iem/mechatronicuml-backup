@@ -3,7 +3,6 @@ package org.muml.uppaal.adapter.blackbox;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.m2m.qvt.oml.blackbox.java.Operation;
 import org.eclipse.m2m.qvt.oml.util.IContext;
-import org.muml.uppaal.adapter.ProgressProvider;
 
 /**
  * Reports progress to either the running transformation job or the console
@@ -22,6 +21,6 @@ public class ProgressLibrary {
 		else
 			System.out.println("Starting \""+nextTask+"\"");
 		
-		ProgressProvider.getDefault().reportProgress(context, nextTask);
-	}
+		
+		org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().logInfo("Starting " + nextTask);	}
 }

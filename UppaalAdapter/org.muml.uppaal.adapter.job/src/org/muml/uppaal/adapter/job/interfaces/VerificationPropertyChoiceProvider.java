@@ -16,4 +16,5 @@ public interface VerificationPropertyChoiceProvider {
 	 */
 	boolean isChosen(Property property);
 
+
 }

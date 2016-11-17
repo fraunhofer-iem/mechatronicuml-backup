@@ -10,21 +10,20 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.SubMonitor;
+import org.eclipse.core.runtime.jobs.IJobChangeEvent;
 import org.eclipse.core.runtime.jobs.Job;
+import org.eclipse.core.runtime.jobs.JobChangeAdapter;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.muml.core.NamedElement;
 import org.muml.pim.constraint.VerifiableElement;
 import org.muml.pim.constraint.VerificationConstraintRepository;
-import org.muml.uppaal.adapter.ProgressProvider;
-import org.muml.uppaal.adapter.blackbox.ProgressLibrary;
 import org.muml.uppaal.adapter.job.interfaces.VerificationOptionsProvider;
 import org.muml.uppaal.adapter.job.interfaces.VerificationPropertyChoiceProvider;
 import org.muml.uppaal.adapter.job.interfaces.VerificationPropertyResultAcceptor;
 import org.muml.uppaal.adapter.job.operations.PrepareModelOperation;
 import org.muml.uppaal.adapter.job.operations.TransformationOperation;
-import org.muml.uppaal.adapter.job.statistics.StatisticalEvaluation;
 import org.muml.uppaal.adapter.mtctl.Property;
 import org.muml.uppaal.adapter.results.PropertyResultRepository;
 import org.muml.uppaal.options.Options;
@@ -42,8 +41,21 @@ public class VerifyForResultsJob extends Job {
 		super("Verifying "+((NamedElement) verifiableElement).getName());
 		this.verifiableElement = verifiableElement;
 		this.optionsProvider = optionsProvider;
+		
+	
 		this.propertyChoiceProvider = propertyChoiceProvider;
 		this.propertyResultAcceptor = propertyResultAcceptor;
+		if (org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().shouldDoStatisticalEvaluation()) {
+			this.addJobChangeListener(new JobChangeAdapter() {
+				@Override
+				public void done(IJobChangeEvent event) {
+					if (!event.getResult().isOK()) {
+						org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().setRestartRunnable(null);
+					}
+					org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().evaluationDone();
+				}
+			});
+		}
 	}
 
 	public boolean isStoreIntermediateModels() {
@@ -56,9 +68,6 @@ public class VerifyForResultsJob extends Job {
 	
 	@Override
 	protected IStatus run(IProgressMonitor monitor) {
-		StatisticalEvaluation statisticalEvaluation = new StatisticalEvaluation(null); // XXX add qvto IContext
-		ProgressProvider.getDefault().addProgressListener(statisticalEvaluation);
-		
 		try {
 			SubMonitor subMonitor = SubMonitor.convert(monitor, this.getName(), 100);
 			
@@ -114,13 +123,14 @@ public class VerifyForResultsJob extends Job {
 						
 			//Show results
 			subMonitor.subTask("Showing Results");
-			propertyResultAcceptor.acceptResult((PropertyResultRepository) resultExtent.getContents().get(0));
+			if (!org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().shouldDoStatisticalEvaluation()) {
+				propertyResultAcceptor.acceptResult((PropertyResultRepository) resultExtent.getContents().get(0));
+			}
 			
 			return Status.OK_STATUS;
 		}
 		finally {
 			monitor.done();
-			ProgressProvider.getDefault().removeProgressListener(statisticalEvaluation);
 		}
 	}
 }
