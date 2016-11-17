@@ -18,6 +18,10 @@
             <groupId>org.eclipse.tycho</groupId>
             <artifactId>tycho-surefire-plugin</artifactId>
             <version>0.26.0</version>
+            <configuration>
+					<testSuite>org.muml.cbs.dependencylanguage.tests</testSuite>
+					<product>org.eclipse.platform.ide</product>
+				</configuration>
         </plugin>
     </plugins>
   </build>
