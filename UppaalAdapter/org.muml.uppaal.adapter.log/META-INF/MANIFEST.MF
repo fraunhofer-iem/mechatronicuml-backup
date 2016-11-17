@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Uppaal Adapter Logging
+Bundle-SymbolicName: org.muml.uppaal.adapter.log
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.ui.workbench,
+ org.eclipse.ui.ide;bundle-version="3.12.1",
+ org.muml.uppaal.preferences;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: org.muml.uppaal.adapter.log
