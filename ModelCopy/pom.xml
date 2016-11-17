@@ -25,7 +25,8 @@
             </property>
           </activation>
           <properties>
-            <repobase>TODO</repobase>
+            <repobase>file://${basedir}</repobase>
+            <repopath>TODO</repopath>
           </properties>
         </profile>
         <profile>
@@ -38,6 +39,7 @@
           </activation>
           <properties>
             <repobase>file:///data/jenkins/jobs</repobase>
+            <repopath>lastSuccessful/archive/targetPlatform/</repopath>
           </properties>
         </profile>
   </profiles>
@@ -90,22 +92,22 @@
         <repository>
 			<id>Testlanguage</id>
 			<layout>p2</layout>
-			<url>${repobase}/TestLanguage/lastSuccessful/archive/targetPlatform/</url>
+			<url>${repobase}/TestLanguage/${repopath}</url>
 		</repository>
         <repository>
 			<id>Example</id>
 			<layout>p2</layout>
-			<url>${repobase}/Example/lastSuccessful/archive/targetPlatform/</url>
+			<url>${repobase}/Example/${repopath}</url>
 		</repository>
         <repository>
 			<id>Uppaal</id>
 			<layout>p2</layout>
-			<url>${repobase}/Uppaal/lastSuccessful/archive/targetPlatform/</url>
+			<url>${repobase}/Uppaal/${repopath}</url>
 		</repository>
         <repository>
 			<id>Uppaal-Adapter</id>
 			<layout>p2</layout>
-			<url>${repobase}/UppaalAdapter/lastSuccessful/archive/targetPlatform/</url>
+			<url>${repobase}/UppaalAdapter/${repopath}</url>
 		</repository>
         <repository>
 			<id>ModelMigration</id>
@@ -115,7 +117,7 @@
         <repository>
 			<id>UDBM</id>
 			<layout>p2</layout>
-			<url>${repobase}/UDBM/lastSuccessful/archive/targetPlatform/</url>
+			<url>${repobase}/UDBM/${repopath}</url>
 		</repository>
     </repositories>
 </project>
