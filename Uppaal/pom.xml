@@ -30,6 +30,7 @@
     <module>org.muml.uppaal.preferences</module>
     <module>org.muml.uppaal.project.design</module>
     <module>org.muml.uppaal.requirements</module>
+    <module>org.muml.uppaal.repository</module>
     <module>org.muml.uppaal.requirements.edit</module>
     <module>org.muml.uppaal.requirements.editor</module>
     <!-- <module>org.muml.uppaal.sdk.feature</module> -->
