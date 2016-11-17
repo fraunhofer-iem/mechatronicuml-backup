@@ -467,7 +467,7 @@ public abstract class AbstractOpenDiagramEditPolicy extends OpenEditPolicy {
 							while (it.hasNext()) {
 								EObject view = it.next();
 								if (view instanceof View) {
-									if (((View) element).getElement() == diagramDomainElement) {
+									if (((View) view).getElement() == diagramDomainElement) {
 										selected = true;
 									}
 								}
