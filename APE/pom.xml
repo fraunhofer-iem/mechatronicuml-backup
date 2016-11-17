@@ -6,6 +6,16 @@
   <artifactId>APE</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
+  
+    <properties>
+		<tycho-version>0.26.0</tycho-version>
+		<maven-compiler-plugin-version>2.5.1</maven-compiler-plugin-version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<jacoco.version>0.7.4.201502262128</jacoco.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+   
   <modules>
     <module>org.muml.ape</module>
   <!--  <module>org.muml.ape.buckminster</module> -->
@@ -21,11 +31,55 @@
     <module>org.muml.ape.migrator.feature</module>
     <module>org.muml.ape.reconcile</module>
     <module>org.muml.ape.runtime</module>
- <!--   <module>org.muml.ape.sdk.feature</module> -->
+    <!--<module>org.muml.ape.sdk.feature</module> -->
     <module>org.muml.oclfilter</module>
     <module>org.muml.oclfilter.feature</module>
-        <module>org.muml.ape.repository</module>
+    <module>org.muml.ape.repository</module>
   </modules>
+
+  <profiles>
+        <profile>
+          <id>Local</id> <!-- local build, uses local maven repositories -->
+          <activation>
+            <property>
+              <name>env</name>
+              <value>local</value>
+            </property>
+          </activation>
+          <properties>
+            <repobase>file://${basedir}</repobase>
+            <repopath>TP/</repopath>
+          </properties>
+        </profile>
+        <profile>
+          <id>Jenkins</id> <!-- Jenkins build, only works on Jenkins file system -->
+          <activation>
+            <property>
+              <name>env</name>
+              <value>!local</value>
+            </property>
+          </activation>
+          <properties>
+            <repobase>file:///data/jenkins/jobs</repobase>
+            <repopath>lastSuccessful/archive/targetPlatform/</repopath>
+          </properties>
+        </profile>
+        <profile>
+          <id>localJenkins</id> <!-- build this locally, but download other projects from Jenkins-->
+          <activation>
+            <property>
+              <name>env</name>
+              <value>localJenkins</value>
+            </property>
+          </activation>
+          <properties>
+            <repobase>http://muml-build.cs.upb.de/job</repobase>
+            <repopath>lastSuccessfulBuild/artifact/targetPlatform/</repopath>
+          </properties>
+        </profile>
+  </profiles>
+  
+  
   <build>
     <plugins>
       <plugin>
@@ -34,6 +88,30 @@
         <version>0.26.0</version>
         <extensions>true</extensions>
       </plugin>
+      <plugin>
+            <groupId>org.eclipse.tycho</groupId>
+            <artifactId>target-platform-configuration</artifactId>
+            <version>0.26.0</version>
+            <configuration>
+              <environments>
+                <environment>
+                  <os>win32</os>
+                  <ws>win32</ws>
+                  <arch>x86</arch>
+                </environment>
+                <environment>
+                  <os>linux</os>
+                  <ws>gtk</ws>
+                  <arch>x86_64</arch>
+                </environment>
+                <environment>
+                  <os>macosx</os>
+                  <ws>cocoa</ws>
+                  <arch>x86_64</arch>
+                </environment>
+              </environments>
+            </configuration>
+        </plugin>
     </plugins>
   </build>
 
@@ -45,12 +123,11 @@
 			<url>http://download.eclipse.org/releases/neon</url>
 		</repository>
 		
-
 <!-- Model Migration dependencies -->
 		<repository>
 			<id>model-migration</id>
 			<layout>p2</layout>
-			<url>file:///data/jenkins/jobs/ModelMigration/lastSuccessful/archive/targetPlatform/</url>
+			<url>${repobase}/ModelMigration/${repopath}</url>
 		</repository>
 
 </repositories>
