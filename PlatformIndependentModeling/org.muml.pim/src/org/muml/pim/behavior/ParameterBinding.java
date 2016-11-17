@@ -27,7 +27,8 @@ import org.muml.core.expressions.Expression;
  * </ul>
  *
  * @see org.muml.pim.behavior.BehaviorPackage#getParameterBinding()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ExcludeInvalidExpressions'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ExcludeInvalidExpressions='-- The value expression must provide a value. Block and Loop are not allowed.\r\nnot (self.value.oclIsKindOf(actionlanguage::Block) or  self.value.oclIsKindOf(actionlanguage::Loop)) '"
  * @generated
  */
 public interface ParameterBinding extends ExtendableElement {

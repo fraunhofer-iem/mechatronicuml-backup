@@ -217,7 +217,47 @@ public class BehaviorValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateParameterBinding(ParameterBinding parameterBinding, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(parameterBinding, diagnostics, context);
+		if (!validate_NoCircularContainment(parameterBinding, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(parameterBinding, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(parameterBinding, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(parameterBinding, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(parameterBinding, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(parameterBinding, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(parameterBinding, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(parameterBinding, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(parameterBinding, diagnostics, context);
+		if (result || diagnostics != null) result &= validateParameterBinding_ExcludeInvalidExpressions(parameterBinding, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the ExcludeInvalidExpressions constraint of '<em>Parameter Binding</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String PARAMETER_BINDING__EXCLUDE_INVALID_EXPRESSIONS__EEXPRESSION = "-- The value expression must provide a value. Block and Loop are not allowed.\r\n" +
+		"not (self.value.oclIsKindOf(actionlanguage::Block) or  self.value.oclIsKindOf(actionlanguage::Loop)) ";
+
+	/**
+	 * Validates the ExcludeInvalidExpressions constraint of '<em>Parameter Binding</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateParameterBinding_ExcludeInvalidExpressions(ParameterBinding parameterBinding, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(BehaviorPackage.Literals.PARAMETER_BINDING,
+				 parameterBinding,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ExcludeInvalidExpressions",
+				 PARAMETER_BINDING__EXCLUDE_INVALID_EXPRESSIONS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

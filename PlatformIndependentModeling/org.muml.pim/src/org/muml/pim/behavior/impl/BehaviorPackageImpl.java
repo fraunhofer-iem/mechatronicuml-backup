@@ -553,10 +553,10 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
-		// http://www.muml.org/emf/OCLFilter
-		createOCLFilterAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL
 		createOCLAnnotations();
+		// http://www.muml.org/emf/OCLFilter
+		createOCLFilterAnnotations();
 	}
 
 	/**
@@ -574,6 +574,12 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
+		   });	
+		addAnnotation
+		  (parameterBindingEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "ExcludeInvalidExpressions"
 		   });	
 		addAnnotation
 		  (variableEClass, 
@@ -607,6 +613,12 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 */
 	protected void createOCLAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
+		addAnnotation
+		  (parameterBindingEClass, 
+		   source, 
+		   new String[] {
+			 "ExcludeInvalidExpressions", "-- The value expression must provide a value. Block and Loop are not allowed.\r\nnot (self.value.oclIsKindOf(actionlanguage::Block) or  self.value.oclIsKindOf(actionlanguage::Loop)) "
+		   });	
 		addAnnotation
 		  (variableEClass, 
 		   source, 
