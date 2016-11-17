@@ -11,13 +11,13 @@
     <!-- <module>org.muml.modelcopy.buckminster</module> -->
     <module>org.muml.modelcopy.feature</module>
     <module>org.muml.modelcopy.qvto.library</module>
-    <module>org.muml.modelcopy.qvto.library.test</module>
+    <!-- <module>org.muml.modelcopy.qvto.library.test</module> -->
     <module>org.muml.modelcopy.repository</module>
   </modules>
   
     <profiles>
         <profile>
-          <id>Local</id>
+          <id>Local</id> <!-- local build, uses local maven repositories -->
           <activation>
             <property>
               <name>env</name>
@@ -26,11 +26,11 @@
           </activation>
           <properties>
             <repobase>file://${basedir}</repobase>
-            <repopath>TODO</repopath>
+            <repopath></repopath>
           </properties>
         </profile>
         <profile>
-          <id>Jenkins</id>
+          <id>Jenkins</id> <!-- Jenkins build, only works on Jenkins file system -->
           <activation>
             <property>
               <name>env</name>
@@ -40,6 +40,19 @@
           <properties>
             <repobase>file:///data/jenkins/jobs</repobase>
             <repopath>lastSuccessful/archive/targetPlatform/</repopath>
+          </properties>
+        </profile>
+        <profile>
+          <id>localJenkins</id> <!-- build this locally, but download other projects from Jenkins-->
+          <activation>
+            <property>
+              <name>env</name>
+              <value>localJenkins</value>
+            </property>
+          </activation>
+          <properties>
+            <repobase>http://muml-build.cs.upb.de/job</repobase>
+            <repopath>lastSuccessfulBuild/artifact/targetPlatform/</repopath>
           </properties>
         </profile>
   </profiles>
@@ -88,36 +101,6 @@
 			<id>eclipse-updates</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/eclipse/updates/4.6</url>
-		</repository>
-        <repository>
-			<id>Testlanguage</id>
-			<layout>p2</layout>
-			<url>${repobase}/TestLanguage/${repopath}</url>
-		</repository>
-        <repository>
-			<id>Example</id>
-			<layout>p2</layout>
-			<url>${repobase}/Example/${repopath}</url>
-		</repository>
-        <repository>
-			<id>Uppaal</id>
-			<layout>p2</layout>
-			<url>${repobase}/Uppaal/${repopath}</url>
-		</repository>
-        <repository>
-			<id>Uppaal-Adapter</id>
-			<layout>p2</layout>
-			<url>${repobase}/UppaalAdapter/${repopath}</url>
-		</repository>
-        <repository>
-			<id>ModelMigration</id>
-			<layout>p2</layout>
-			<url>${repobase}/ModelMigration-Maven/lastSuccessful/archive/org.muml.emm.repository/target/</url>
-		</repository>
-        <repository>
-			<id>UDBM</id>
-			<layout>p2</layout>
-			<url>${repobase}/UDBM/${repopath}</url>
 		</repository>
     </repositories>
 </project>
