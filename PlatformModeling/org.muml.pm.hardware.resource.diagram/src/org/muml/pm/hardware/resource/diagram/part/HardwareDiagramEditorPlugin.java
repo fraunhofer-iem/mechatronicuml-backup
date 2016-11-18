@@ -33,6 +33,7 @@ import org.muml.pim.pattern.provider.PatternItemProviderAdapterFactory;
 import org.muml.pim.protocol.provider.ProtocolItemProviderAdapterFactory;
 import org.muml.pim.provider.PimItemProviderAdapterFactory;
 import org.muml.pim.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory;
+import org.muml.pim.runnable.provider.RunnableItemProviderAdapterFactory;
 import org.muml.pim.types.provider.TypesItemProviderAdapterFactory;
 import org.muml.pim.valuetype.provider.ValuetypeItemProviderAdapterFactory;
 import org.muml.pm.hardware.hwplatform.provider.HwplatformItemProviderAdapterFactory;
@@ -179,6 +180,7 @@ public class HardwareDiagramEditorPlugin extends AbstractUIPlugin {
 		factories.add(new BehaviorItemProviderAdapterFactory());
 		factories.add(new ComponentItemProviderAdapterFactory());
 		factories.add(new PatternItemProviderAdapterFactory());
+		factories.add(new RunnableItemProviderAdapterFactory());
 		factories.add(new EcoreItemProviderAdapterFactory());
 
 		// Custom Factories with negative priority

@@ -157,7 +157,6 @@ public class HardwareOCLFactory {
 		public Expression(String body, EClassifier context, Map<String, EClassifier> environment) {
 			super(body, context);
 			pivotOclInstance = org.eclipse.ocl.pivot.utilities.OCL.newInstance();
-			
 			try {
 				OCLHelper pivotHelper = pivotOclInstance.createOCLHelper(context);
 				pivotOclExpression = pivotHelper.createQuery(body());

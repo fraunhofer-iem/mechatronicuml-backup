@@ -5,7 +5,12 @@ Bundle-SymbolicName: org.muml.pm.hardware.resource.diagram; singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, Paderborn University, and Fraunhofer Research Institution for Mechatronic Systems Design IEM, Germany
+Bundle-Vendor: Software Engineering Group,
+ Heinz Nixdorf Institute,
+ Paderborn University,
+ and Fraunhofer Research Institution for Mechatronic Systems Design IEM,
+ Germany,
+ %providerName
 Bundle-Localization: plugin
 Export-Package: org.muml.pm.hardware.resource.diagram.edit.parts,
  org.muml.pm.hardware.resource.diagram.parsers,

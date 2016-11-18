@@ -358,7 +358,7 @@
          <propertySection
             id="property.section.general" 
             tab="property.tab.general"
-            filter="org.muml.core.properties.tabs.Property_tab_documentationTabElementFilter"
+            filter="org.muml.core.properties.tabs.Property_tab_generalTabElementFilter"
             class="org.muml.ape.runtime.sections.ObjectPropertySection">
          </propertySection>
          <propertySection
