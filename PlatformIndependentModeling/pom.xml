@@ -29,8 +29,6 @@
           <scope>test</scope>
         </dependency>
   </dependencies>
-        
-   </dependencies>
   
   <modules>
     <module>org.muml.pim</module>
