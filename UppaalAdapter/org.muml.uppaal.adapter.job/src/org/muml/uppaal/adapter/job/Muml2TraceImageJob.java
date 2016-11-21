@@ -40,7 +40,7 @@ public class Muml2TraceImageJob extends Job {
 		this.propertyChoiceProvider = propertyChoiceProvider;		
 	}
 	
-	public Muml2TraceImageJob(VerifiableElement verifiableElement, IResource resource, VerificationOptionsProvider optionsProvider, VerificationPropertyChoiceProvider propertyChoiceProvider) {
+	public Muml2TraceImageJob(final VerifiableElement verifiableElement, IResource resource, VerificationOptionsProvider optionsProvider, VerificationPropertyChoiceProvider propertyChoiceProvider) {
 		this(verifiableElement, resource.getLocation(), optionsProvider, propertyChoiceProvider);
 		this.resource = resource;
 		if (org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().shouldDoStatisticalEvaluation()) {

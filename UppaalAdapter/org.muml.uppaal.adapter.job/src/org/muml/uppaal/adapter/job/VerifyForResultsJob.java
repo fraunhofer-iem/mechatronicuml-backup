@@ -36,7 +36,7 @@ public class VerifyForResultsJob extends Job {
 	protected VerifiableElement verifiableElement;
 	private boolean storeIntermediateModels;
 
-	public VerifyForResultsJob(VerifiableElement verifiableElement, VerificationOptionsProvider optionsProvider, VerificationPropertyChoiceProvider propertyChoiceProvider, VerificationPropertyResultAcceptor propertyResultAcceptor) {
+	public VerifyForResultsJob(final VerifiableElement verifiableElement, VerificationOptionsProvider optionsProvider, VerificationPropertyChoiceProvider propertyChoiceProvider, VerificationPropertyResultAcceptor propertyResultAcceptor) {
 		super("Verifying "+((NamedElement) verifiableElement).getName());
 		this.verifiableElement = verifiableElement;
 		this.optionsProvider = optionsProvider;

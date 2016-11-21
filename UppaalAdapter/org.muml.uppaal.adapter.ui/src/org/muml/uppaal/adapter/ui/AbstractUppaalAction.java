@@ -28,7 +28,7 @@ public abstract class AbstractUppaalAction extends AbstractHandler {
 	protected VerifiableElement verifiableElement;
 
 	@Override
-	public Object execute(ExecutionEvent event) throws ExecutionException {
+	public Object execute(final ExecutionEvent event) throws ExecutionException {
 		if (org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().shouldDoStatisticalEvaluation()) {
 			org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().startEvaluationIteration();
 			org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().logInfo("Started Uppaal Action.");

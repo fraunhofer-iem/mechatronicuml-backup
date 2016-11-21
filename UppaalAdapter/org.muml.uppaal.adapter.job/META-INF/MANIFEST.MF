@@ -31,7 +31,7 @@ Require-Bundle: org.eclipse.core.resources;bundle-version="3.8.1",
  org.muml.graphviz;resolution:=optional,
  org.muml.uppaal.job,
  org.muml.uppaal.adapter.blackbox,
- org.eclipse.ui.ide;bundle-version="3.12.1",
+ org.eclipse.ui.ide;bundle-version="3.12.0",
  org.muml.uppaal.adapter.log;bundle-version="1.0.0"
 Export-Package: org.muml.uppaal.adapter.job,
  org.muml.uppaal.adapter.job.interfaces

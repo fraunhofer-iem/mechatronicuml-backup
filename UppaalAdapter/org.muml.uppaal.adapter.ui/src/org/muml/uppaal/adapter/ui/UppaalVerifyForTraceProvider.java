@@ -35,7 +35,7 @@ public class UppaalVerifyForTraceProvider implements VerificationOptionsProvider
 
 	@Override
 	public boolean preparePropertyChoiceProvider(final VerifiableElement verifiableElement) {
-		ArrayList<Property> properties = new ArrayList<Property>();
+		final ArrayList<Property> properties = new ArrayList<Property>();
 		for (VerificationConstraintRepository repo : verifiableElement.getVerificationConstraintRepositories())
 			if (repo instanceof PropertyRepository)
 				properties.addAll(((PropertyRepository) repo).getProperties());
