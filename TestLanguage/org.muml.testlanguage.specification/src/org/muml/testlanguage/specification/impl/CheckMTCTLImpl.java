@@ -4,15 +4,23 @@ package org.muml.testlanguage.specification.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
+
+import javax.print.attribute.standard.Severity;
+
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.testlanguage.specification.CheckMTCTL;
 import org.muml.testlanguage.specification.NodeSpecification;
 import org.muml.testlanguage.specification.PortType;
 import org.muml.testlanguage.specification.SpecificationPackage;
 import org.muml.testlanguage.specification.custom.ExecutionException;
+import org.muml.uppaal.adapter.mtctl.PropertyRepository;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -199,13 +207,18 @@ public class CheckMTCTLImpl extends NodeSpecificationImpl implements CheckMTCTL 
 				resourceSet.getLoadOptions());
 
 		// Parse the PropertyRepository we have in the context of the protocol.
-		org.muml.uppaal.requirements.PropertyRepository propertyRepository = (org.muml.uppaal.requirements.PropertyRepository) resource
-				.getContents().get(0);
+		
+		EObject content = resource.getContents().get(0);
+		
+		if (!(content instanceof PropertyRepository)) {
+			throw new ExecutionException("Model does not include a PropertyRepository.");
+		}
+		
+		PropertyRepository propertyRepository = (PropertyRepository) content;
 
 		// Replace all existing PropertyRepositories by the one we just created.
 		protocol.getVerificationConstraintRepositories().clear();
-		protocol.getVerificationConstraintRepositories()
-				.add((org.muml.pim.constraint.VerificationConstraintRepository) propertyRepository);
+		protocol.getVerificationConstraintRepositories().add(propertyRepository);
 
 		// Verify for results (= apply the transformation by the MTCTL people).
 		org.eclipse.emf.common.util.URI realURI = org.eclipse.emf.common.util.URI.createURI(
@@ -215,8 +228,8 @@ public class CheckMTCTLImpl extends NodeSpecificationImpl implements CheckMTCTL 
 		org.eclipse.m2m.qvt.oml.ExecutionContextImpl context;
 		org.eclipse.core.runtime.IStatus status;
 		status = org.eclipse.emf.common.util.BasicDiagnostic.toIStatus(executor.loadTransformation());
-		if (!status.isOK()) {
-			throw new ExecutionException(status.getMessage());
+		if (status.getSeverity() == Status.ERROR) {
+			throw new ExecutionException(new CoreException(status));
 		}
 		context = new org.eclipse.m2m.qvt.oml.ExecutionContextImpl();
 
@@ -243,14 +256,14 @@ public class CheckMTCTLImpl extends NodeSpecificationImpl implements CheckMTCTL 
 		org.eclipse.m2m.qvt.oml.ExecutionDiagnostic dia = executor.execute(context, mumlExtent, optionsExtent,
 				resultExtent);
 
-		if (extension != null) {
-			extension = null; // Is this enoguh or I should remove the extension
-								// from the list of protocol's extensions?
-		}
+//		if (extension != null) {
+//			extension = null; // Is this enoguh or I should remove the extension
+//								// from the list of protocol's extensions?
+//		}
 
 		// Check if we succeeded.
 		if (dia.getSeverity() != org.eclipse.m2m.qvt.oml.ExecutionDiagnostic.OK) {
-			throw new ExecutionException(dia.getMessage());
+			throw new ExecutionException(new CoreException(BasicDiagnostic.toIStatus(dia)));
 		}
 
 		// Get the output.
