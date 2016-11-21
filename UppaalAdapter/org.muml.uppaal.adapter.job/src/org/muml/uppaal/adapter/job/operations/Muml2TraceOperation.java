@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
+import org.muml.core.CommentableElement;
 import org.muml.pim.constraint.VerifiableElement;
 import org.muml.pim.constraint.VerificationConstraintRepository;
 import org.muml.pim.instance.ComponentInstanceConfiguration;
@@ -31,6 +32,7 @@ public class Muml2TraceOperation implements IWorkspaceRunnable {
 	private ZoneGraph trace;
 	protected VerificationOptionsProvider optionsProvider;
 	protected VerificationPropertyChoiceProvider propertyChoiceProvider;
+	private String propertyName = "";
 	
 	public Muml2TraceOperation(VerifiableElement verifiableElement, VerificationOptionsProvider optionsProvider, VerificationPropertyChoiceProvider propertyChoiceProvider) {
 		this.verifiableElement = verifiableElement;
@@ -107,7 +109,9 @@ public class Muml2TraceOperation implements IWorkspaceRunnable {
 			if (propertyCount != 1 || !(lastProperty.getExpression() instanceof TemporalQuantifierExpr)) {
 				throw new CoreException(new Status(Status.ERROR, "org.muml.uppaal.adapter.job", "Please select exactly one simple property verifiable with Uppaal"));
 			}			
-			
+			if (lastProperty instanceof CommentableElement) {
+				propertyName = ((CommentableElement) lastProperty).getComment();
+			}
 			//Verify the resulting CIC with the one property
 			TransformationOperation mainTransformation = new TransformationOperation("MUML to Trace Transformation", URI.createPlatformPluginURI("/org.muml.uppaal.adapter.transformation/transforms/VerifiableElement2Trace.qvto", true));
 			reachabilityResultExtent = new BasicModelExtent();
@@ -127,6 +131,9 @@ public class Muml2TraceOperation implements IWorkspaceRunnable {
 			
 	};
 	
+	
+	
+	public String getPropertyName() { return propertyName; }
 	public ZoneGraph getTrace() {		
 		return trace;
 	}

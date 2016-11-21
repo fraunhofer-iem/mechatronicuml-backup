@@ -2,12 +2,14 @@ package org.muml.uppaal.adapter.log;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+import java.util.Date;
 
 import org.eclipse.core.resources.IStorage;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.swt.widgets.DateTime;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IPersistableElement;
 import org.eclipse.ui.IWorkbenchPage;
@@ -26,6 +28,7 @@ public class UppaalAdapterLogPlugin extends AbstractUIPlugin {
 	public String csv = "";
 	public int iteration = 1;
 	private Runnable restartRunnable = null;
+	
 	
 	// The plug-in ID
 	public static final String PLUGIN_ID = "org.muml.uppaal.adapter.log"; //$NON-NLS-1$
@@ -75,16 +78,17 @@ public class UppaalAdapterLogPlugin extends AbstractUIPlugin {
 		startMillis = System.currentTimeMillis();
 	}
 
-	public void evaluationDone() {
+	public void evaluationDone(String verifiableElementName, String propertyName, boolean trace) {
 		logInfo("DONE");
 		int iterations = org.muml.uppaal.preferences.UppaalPreferencesPlugin.getDefault().getPreferenceStore().getInt("org.muml.uppaal.adapter.preferences.num_iterations");
 		if (iteration >= iterations || restartRunnable == null) {
 			String currentCSV = csv;
 			startNewEvaluation();
+			String filename = new Date().toString() + "_UppaalAdapterTiming_" + verifiableElementName + "_" + propertyName + "_" + (trace ? "Trace" : "NoTrace") + ".csv";
 			Display.getDefault().asyncExec(new Runnable() {
 				@Override
 				public void run() {
-					displayTextEditor(currentCSV);
+					displayTextEditor(currentCSV, filename);
 				}
 			});
 		} else {
@@ -95,12 +99,11 @@ public class UppaalAdapterLogPlugin extends AbstractUIPlugin {
 
 	private void startNewEvaluation() {
 		csv = "iteration,task,milliseconds\n";
-		csv += "1,Starting Log,0\n";	
 		iteration = 1;
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	private void displayTextEditor(String text) {
+	private void displayTextEditor(String text, String filename) {
 		IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
 		IStorage storage = new IStorage() {
 			public InputStream getContents() throws CoreException {
@@ -116,7 +119,7 @@ public class UppaalAdapterLogPlugin extends AbstractUIPlugin {
 			}
 
 			public String getName() {
-				return "Uppaal Adapter Timing.csv";
+				return filename;
 			}
 
 			public boolean isReadOnly() {

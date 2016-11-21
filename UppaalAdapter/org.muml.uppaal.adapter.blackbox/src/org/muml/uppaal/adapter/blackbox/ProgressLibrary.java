@@ -19,8 +19,9 @@ public class ProgressLibrary {
 		if (monitor != null)
 			monitor.subTask(nextTask);
 		else
-			System.out.println("Starting \""+nextTask+"\"");
+			System.out.println(nextTask);
 		
 		
-		org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().logInfo("Starting " + nextTask);	}
+		org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().logInfo(nextTask);
+	}
 }

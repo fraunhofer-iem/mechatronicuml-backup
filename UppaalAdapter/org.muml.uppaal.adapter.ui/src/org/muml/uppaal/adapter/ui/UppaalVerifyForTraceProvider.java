@@ -62,7 +62,16 @@ public class UppaalVerifyForTraceProvider implements VerificationOptionsProvider
 						return "Verify " + ((NamedElement) verifiableElement).getName() + " for a Trace";
 					}
 				});
-				dialog.open();
+				if (org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().shouldDoStatisticalEvaluation()) {
+					dialog.setBlockOnOpen(false);
+					dialog.open();
+					if (!properties.isEmpty()) {
+						propertiesPage.setPropertySelected(properties.get(0), true);
+					}
+					dialog.close();
+				} else {
+					dialog.open();
+				}
 			}
 		});
 		
@@ -103,7 +112,13 @@ public class UppaalVerifyForTraceProvider implements VerificationOptionsProvider
 						addPage(optionsPage);
 					}
 				});
-				dialog.open();
+				if (org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().shouldDoStatisticalEvaluation()) {
+					dialog.setBlockOnOpen(false);
+					dialog.open();
+					dialog.close();
+				} else {
+					dialog.open();
+				}
 			}
 		});
 		

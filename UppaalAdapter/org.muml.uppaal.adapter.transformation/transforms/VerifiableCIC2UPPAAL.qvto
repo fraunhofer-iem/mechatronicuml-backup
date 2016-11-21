@@ -35,8 +35,9 @@ helper storeModel(model : Bag(Element), filename : String) {
 main() {
 	storeModel(verifiable_cic.rootObjects()->asBag(), "1_after_CIC.muml");
 	
-	reportProgress("Normalizations");
+	
 	// Normalize time units used in the model (to one common time unit)
+	reportProgress("Normalization: Time Units");
 	var scaleClockValuesNormalizedModel : muml = muml.createEmptyModel().oclAsType(muml);
 	var scaleClockValuesNormalization : RTSCScaleTimeValuesNormalization = new RTSCScaleTimeValuesNormalization(verifiable_cic, scaleClockValuesNormalizedModel);
 	var retcode := scaleClockValuesNormalization.transform();
@@ -44,6 +45,7 @@ main() {
 	assert fatal (retcode.succeeded()) with log('Scale-Time-Values normalization failed: ' + retcode.raisedException().repr());
 	
 	//add muml prefix to all named elements and substitute unsupported substrings of the named elements' names
+	reportProgress("Normalization: Set Qualifier");
 	var prefixedModel : muml = muml.createEmptyModel().oclAsType(muml);
 	var nameNormalization : NameNormalization = new NameNormalization(scaleClockValuesNormalizedModel, prefixedModel);
 	retcode := nameNormalization.transform();
@@ -51,6 +53,7 @@ main() {
 	assert fatal (retcode.succeeded()) with log('NamePrefix normalization failed: ' + retcode.raisedException().repr());
 
 	// Normalize transitions with deadlines by adding an intermediate state
+	reportProgress("Normalization: Deadlines");
 	var transitionNormalizedModel : muml = muml.createEmptyModel().oclAsType(muml);
 	var transitionDeadlineNormalization : RTSCDeadlineTransitionNormalization = new RTSCDeadlineTransitionNormalization(prefixedModel,transitionNormalizedModel);
 	retcode := transitionDeadlineNormalization.transform();
@@ -58,6 +61,7 @@ main() {
 	assert fatal (retcode.succeeded()) with log('Deadline transition normalization failed: ' + retcode.raisedException().repr());
 	
 	// Replace composite transitions by equivalent transitions and exit/entry points
+	reportProgress("Normalization: Composite Transitions");
 	var compositeNormalizedModel : muml = muml.createEmptyModel().oclAsType(muml);
 	var compositeNormalization : RTSCCompositeTransitionNormalization = new RTSCCompositeTransitionNormalization(transitionNormalizedModel,compositeNormalizedModel);
 	retcode := compositeNormalization.transform();
@@ -65,6 +69,7 @@ main() {
 	assert fatal (retcode.succeeded()) with log('Composite transition normalization failed: ' + retcode.raisedException().repr());
 	
 	// Replace do events by equivalent regions
+	reportProgress("Normalization: State Do-Effect");
 	var doEventNormalizedModel : muml = muml.createEmptyModel().oclAsType(muml);
 	var doEventNormalization : RTSCDoEventNormalization = new RTSCDoEventNormalization(compositeNormalizedModel,doEventNormalizedModel);
 	retcode := doEventNormalization.transform();
@@ -72,6 +77,7 @@ main() {
 	assert fatal (retcode.succeeded()) with log('Do event normalization failed: ' + retcode.raisedException().repr());
 		
 	// Flatten the RTSCs into one equivalent flat RTSC with multiple regions without hierarchical states
+	reportProgress("Normalization: Hierarchy Flattening");
 	var flatModel : muml = muml.createEmptyModel().oclAsType(muml);
 	var flattening : RTSCHierarchyNormalization = new RTSCHierarchyNormalization(doEventNormalizedModel,flatModel);
 	retcode := flattening.transform();
@@ -79,14 +85,15 @@ main() {
 	assert fatal (retcode.succeeded()) with log('Hierarchy normalization failed: ' + retcode.raisedException().repr());
 	
 	// Move entry/exit events of a state to incoming/outgoing transitions
+	reportProgress("Normalization: State Entry-/Exit-Effect");
 	var entryExitNormalizedModel : muml = muml.createEmptyModel().oclAsType(muml);
 	var entryExitNormalization : RTSCEntryExitEventNormalization = new RTSCEntryExitEventNormalization(flatModel,entryExitNormalizedModel);
 	retcode := entryExitNormalization.transform();
 	storeModel(entryExitNormalizedModel.rootObjects()->asBag(), "8_after_StateEntryExitNorm.muml");	
 	assert fatal (retcode.succeeded()) with log('Entry-Exit-Event normalization failed: ' + retcode.raisedException().repr());
-
 	
 	// Ensure that all transitions synchronizing over the same channel are either all urgent or all non-urgent.
+	reportProgress("Normalization: Urgency of Transitions");
 	var urgencyNormalizedModel : muml = muml.createEmptyModel().oclAsType(muml);
 	var urgencyNormalization : RTSCUrgencyNormalization = new RTSCUrgencyNormalization(entryExitNormalizedModel,urgencyNormalizedModel);
 	retcode := urgencyNormalization.transform();

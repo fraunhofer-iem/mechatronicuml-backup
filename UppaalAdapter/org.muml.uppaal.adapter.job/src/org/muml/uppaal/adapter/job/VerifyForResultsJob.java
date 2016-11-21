@@ -35,7 +35,6 @@ public class VerifyForResultsJob extends Job {
 	protected VerificationPropertyResultAcceptor propertyResultAcceptor;
 	protected VerifiableElement verifiableElement;
 	private boolean storeIntermediateModels;
-	
 
 	public VerifyForResultsJob(VerifiableElement verifiableElement, VerificationOptionsProvider optionsProvider, VerificationPropertyChoiceProvider propertyChoiceProvider, VerificationPropertyResultAcceptor propertyResultAcceptor) {
 		super("Verifying "+((NamedElement) verifiableElement).getName());
@@ -52,7 +51,8 @@ public class VerifyForResultsJob extends Job {
 					if (!event.getResult().isOK()) {
 						org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().setRestartRunnable(null);
 					}
-					org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().evaluationDone();
+					String elementName = (verifiableElement instanceof NamedElement) ? ((NamedElement) verifiableElement).getName() : "";
+					org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().evaluationDone(elementName, "ALL", false);
 				}
 			});
 		}

@@ -144,6 +144,10 @@ public class PropertiesWizardPage extends WizardPage {
 		setControl(container);
 	}
 	
+	public void setPropertySelected(Property property, boolean selected) {
+		ctv.setSubtreeChecked(property, selected);
+	}
+	
 	public boolean isChecked(Property property) {
 		if (selectedProperties == null)
 			return false;
