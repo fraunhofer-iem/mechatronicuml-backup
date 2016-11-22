@@ -11,8 +11,10 @@ import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.Token;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.text.TextAttribute;
+import org.eclipse.jface.viewers.CheckStateChangedEvent;
 import org.eclipse.jface.viewers.CheckboxTreeViewer;
 import org.eclipse.jface.viewers.ColumnViewerToolTipSupport;
+import org.eclipse.jface.viewers.ICheckStateListener;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
@@ -129,12 +131,14 @@ public class PropertiesWizardPage extends WizardPage {
 		ctv.addSelectionChangedListener(new ISelectionChangedListener() {
 			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
-				int numChecked = ctv.getCheckedElements().length;
-				setPageComplete(!selectOne && numChecked > 0 || selectOne && numChecked == 1);
-				
-				selectedProperties.clear();
-				for (Object obj : ctv.getCheckedElements())
-					selectedProperties.add((Property) obj);
+				updateSelection();
+			}
+		});
+		ctv.addCheckStateListener(new ICheckStateListener() {
+
+			@Override
+			public void checkStateChanged(CheckStateChangedEvent event) {
+				updateSelection();
 			}
 		});
 		
@@ -144,10 +148,15 @@ public class PropertiesWizardPage extends WizardPage {
 		setControl(container);
 	}
 	
-	public void setPropertySelected(Property property, boolean selected) {
-		ctv.setSubtreeChecked(property, selected);
+	protected void updateSelection() {
+		int numChecked = ctv.getCheckedElements().length;
+		setPageComplete(!selectOne && numChecked > 0 || selectOne && numChecked == 1);
+		
+		selectedProperties.clear();
+		for (Object obj : ctv.getCheckedElements())
+			selectedProperties.add((Property) obj);		
 	}
-	
+
 	public boolean isChecked(Property property) {
 		if (selectedProperties == null)
 			return false;
@@ -156,8 +165,9 @@ public class PropertiesWizardPage extends WizardPage {
 	
 	public void setChecked(Property property, boolean state) {
 		ctv.setChecked(property, state);
+		updateSelection();
 	}
-	
+
 	/**
 	 * Sets the property to display as satisfied or not
 	 * @param property

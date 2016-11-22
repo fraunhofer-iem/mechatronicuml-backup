@@ -66,7 +66,7 @@ public class UppaalVerifyForTraceProvider implements VerificationOptionsProvider
 					dialog.setBlockOnOpen(false);
 					dialog.open();
 					if (!properties.isEmpty()) {
-						propertiesPage.setPropertySelected(properties.get(0), true);
+						propertiesPage.setChecked(properties.get(0), true);
 					}
 					dialog.close();
 				} else {

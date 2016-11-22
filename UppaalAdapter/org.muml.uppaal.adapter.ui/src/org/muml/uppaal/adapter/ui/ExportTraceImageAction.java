@@ -13,28 +13,32 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.ContainerSelectionDialog;
 import org.muml.pim.pattern.AbstractCoordinationPattern;
 import org.muml.uppaal.adapter.job.Muml2TraceImageJob;
+import org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin;
 
 public class ExportTraceImageAction extends AbstractUppaalAction {
 
 	@Override
 	public Object executeJobSpecific(ExecutionEvent event, Shell shell, ISelection selection,
 			EditingDomain editingDomain) {
-		if(verifiableElement instanceof AbstractCoordinationPattern)
+		if (verifiableElement instanceof AbstractCoordinationPattern)
 			verifiableElement = convertAbstractCoordinationPatternToCoordinationProtocol(event);
-		
-		ContainerSelectionDialog containerDialog = new ContainerSelectionDialog(shell, null, true,
-				"Select the container for the trace image file.");
-		containerDialog.open();
 
-		Object[] result = containerDialog.getResult();
-		if (containerDialog.getReturnCode() == Window.CANCEL) {
-			return CommandResult.newCancelledCommandResult();
+		IResource resource = null;
+		if (!UppaalAdapterLogPlugin.getDefault().shouldDoStatisticalEvaluation()) {
+			ContainerSelectionDialog containerDialog = new ContainerSelectionDialog(shell, null, true,
+					"Select the container for the trace image file.");
+			Object[] result = containerDialog.getResult();
+			if (containerDialog.getReturnCode() == Window.CANCEL) {
+				return CommandResult.newCancelledCommandResult();
+			}
+
+			IPath targetPath = (IPath) result[0];
+			resource = ResourcesPlugin.getWorkspace().getRoot().findMember(targetPath);
+			containerDialog.open();
 		}
 
 		UppaalVerifyForTraceProvider provider = new UppaalVerifyForTraceProvider();
 
-		IPath targetPath = (IPath) result[0];
-		IResource resource = ResourcesPlugin.getWorkspace().getRoot().findMember(targetPath);
 		Job job = new Muml2TraceImageJob(verifiableElement, resource, provider, provider);
 		job.addJobChangeListener(new ExportJobChangeAdapter());
 		job.schedule();

@@ -37,12 +37,8 @@ public class Muml2TraceImageJob extends Job {
 		this.verifiableElement = verifiableElement;
 		this.targetPath = targetPath;
 		this.optionsProvider = optionsProvider;
-		this.propertyChoiceProvider = propertyChoiceProvider;		
-	}
-	
-	public Muml2TraceImageJob(final VerifiableElement verifiableElement, IResource resource, VerificationOptionsProvider optionsProvider, VerificationPropertyChoiceProvider propertyChoiceProvider) {
-		this(verifiableElement, resource.getLocation(), optionsProvider, propertyChoiceProvider);
-		this.resource = resource;
+		this.propertyChoiceProvider = propertyChoiceProvider;	
+		
 		if (org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().shouldDoStatisticalEvaluation()) {
 			this.addJobChangeListener(new JobChangeAdapter() {
 				@Override
@@ -56,6 +52,11 @@ public class Muml2TraceImageJob extends Job {
 				}
 			});
 		}
+	}
+	
+	public Muml2TraceImageJob(final VerifiableElement verifiableElement, IResource resource, VerificationOptionsProvider optionsProvider, VerificationPropertyChoiceProvider propertyChoiceProvider) {
+		this(verifiableElement, resource != null ? resource.getLocation() : null, optionsProvider, propertyChoiceProvider);
+		this.resource = resource;
 	}
 	
 	@Override
@@ -83,10 +84,13 @@ public class Muml2TraceImageJob extends Job {
 				return Status.CANCEL_STATUS;
 			};
 
-
 			subMonitor.subTask("GraphViz Export");
 			ReachabilityGraphExporter exporter = new CICGraphvizExport(null); //TODO param ?
-			exporter.export(trace, targetPath);
+			if (targetPath != null) {
+				exporter.export(trace, targetPath);
+			} else {
+				exporter.export(trace);
+			}
 		    subMonitor.worked(20);
 		    
 		    if (resource != null) {
