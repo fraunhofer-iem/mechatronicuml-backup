@@ -19,7 +19,7 @@
             <artifactId>tycho-surefire-plugin</artifactId>
             <version>0.26.0</version>
             <configuration>
-                <testSuite>org.muml.pim.actionlanguage.xtext.tests</testSuite>
+                <testClass>org.muml.pim.tests.MumlTestSuite.java</testClass>
                 <product>org.eclipse.platform.ide</product>
             </configuration>
         </plugin>
