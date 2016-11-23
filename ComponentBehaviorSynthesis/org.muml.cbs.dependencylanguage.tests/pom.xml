@@ -19,7 +19,7 @@
             <artifactId>tycho-surefire-plugin</artifactId>
             <version>0.26.0</version>
             <configuration>
-					<testClass>org.muml.cbs.dependencylanguage.tests.DependencylanguageTests</testClass>
+					<testClass>org.muml.cbs.dependencylanguage.tests.DependencylanguageAllTests</testClass>
 					<product>org.eclipse.platform.ide</product>
 				</configuration>
         </plugin>
