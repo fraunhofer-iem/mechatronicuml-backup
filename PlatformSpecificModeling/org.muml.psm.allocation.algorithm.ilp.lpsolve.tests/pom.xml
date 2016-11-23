@@ -37,6 +37,15 @@
                 </execution>
             </executions>
       </plugin>
+      <plugin>
+            <groupId>org.eclipse.tycho</groupId>
+            <artifactId>tycho-surefire-plugin</artifactId>
+            <version>${tycho-version}</version>
+            <configuration>
+                <testClass>org.muml.psm.allocation.algorithm.ilp.lpsolve.tests.AllTestsSuite</testClass>
+                <product>org.eclipse.platform.ide</product>
+            </configuration>
+    </plugin>
   </plugins>
 </build>
 </project>
