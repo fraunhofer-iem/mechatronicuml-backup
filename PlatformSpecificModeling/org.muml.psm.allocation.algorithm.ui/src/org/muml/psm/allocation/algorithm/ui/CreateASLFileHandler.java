@@ -43,7 +43,7 @@ public class CreateASLFileHandler extends AbstractHandler {
 	private static void createASLFile(IFile file) {
 		ResourceSet resSet = new ResourceSetImpl();
 		IPath path = getNonexistentPath(file.getFullPath(), file_extension);
-		String name = path.removeFileExtension().lastSegment();
+		String name = path.removeFileExtension().lastSegment().replaceAll("\\W", "");
 		// XXX: hrm is path.toString already encoded?
 		Resource resource = resSet.createResource(
 				URI.createPlatformResourceURI(path.toString(), true));
