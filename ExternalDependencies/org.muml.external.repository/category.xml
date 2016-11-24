@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<site>
-   <feature url="features/org.muml.external.feature_1.0.0.qualifier.jar" id="org.muml.external.feature" version="1.0.0.qualifier">
-      <category name="org.muml.external.repository.category"/>
-   </feature>
-   <category-def name="org.muml.external.repository.category" label="external"/>
-</site>
