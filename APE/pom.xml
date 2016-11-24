@@ -36,48 +36,6 @@
     <module>org.muml.oclfilter.feature</module>
     <module>org.muml.ape.repository</module>
   </modules>
-
-  <profiles>
-        <profile>
-          <id>Local</id> <!-- local build, uses local maven repositories -->
-          <activation>
-            <property>
-              <name>env</name>
-              <value>local</value>
-            </property>
-          </activation>
-          <properties>
-            <repobase>file://${basedir}</repobase>
-            <repopath>TP/</repopath>
-          </properties>
-        </profile>
-        <profile>
-          <id>Jenkins</id> <!-- Jenkins build, only works on Jenkins file system -->
-          <activation>
-            <property>
-              <name>env</name>
-              <value>!local</value>
-            </property>
-          </activation>
-          <properties>
-            <repobase>file:///data/jenkins/jobs</repobase>
-            <repopath>lastSuccessful/archive/targetPlatform/</repopath>
-          </properties>
-        </profile>
-        <profile>
-          <id>localJenkins</id> <!-- build this locally, but download other projects from Jenkins-->
-          <activation>
-            <property>
-              <name>env</name>
-              <value>localJenkins</value>
-            </property>
-          </activation>
-          <properties>
-            <repobase>http://muml-build.cs.upb.de/job</repobase>
-            <repopath>lastSuccessfulBuild/artifact/targetPlatform/</repopath>
-          </properties>
-        </profile>
-  </profiles>
   
   
   <build>
@@ -114,21 +72,62 @@
         </plugin>
     </plugins>
   </build>
+  
+        <profiles>
+        <profile>
+          <id>Local</id> <!-- local build, uses local maven repositories -->
+          <activation>
+            <property>
+              <name>env</name>
+              <value>local</value>
+            </property>
+          </activation>
+          <properties>
+            <repobase>file:///${userpath}</repobase>
+            <repopath></repopath>
+          </properties>
+        </profile>
+        <profile>
+          <id>Jenkins</id> <!-- Jenkins build, only works on Jenkins file system -->
+          <activation>
+            <property>
+              <name>env</name>
+              <value>!local</value>
+            </property>
+          </activation>
+          <properties>
+            <repobase>file:///data/jenkins/jobs</repobase>
+            <repopath>lastSuccessful/archive/</repopath>
+          </properties>
+        </profile>
+        <profile>
+          <id>localJenkins</id> <!-- build this locally, but download other projects from Jenkins-->
+          <activation>
+            <property>
+              <name>env</name>
+              <value>localJenkins</value>
+            </property>
+          </activation>
+          <properties>
+            <repobase>http://muml-build.cs.upb.de/job</repobase>
+            <repopath>lastSuccessfulBuild/artifact/</repopath>
+          </properties>
+        </profile>
+  </profiles>
 
-<repositories>
-<!-- basic eclipse dependencies -->
+    <repositories>
+        <!-- basic eclipse dependencies -->
 		<repository>
 			<id>eclipse-neon</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/releases/neon</url>
-		</repository>
-		
-<!-- Model Migration dependencies -->
+        </repository>
+        
+        <!-- Model Migration dependencies -->
 		<repository>
 			<id>model-migration</id>
 			<layout>p2</layout>
-			<url>${repobase}/ModelMigration/${repopath}</url>
+			<url>${repobase}/ModelMigration-Maven/${repopath}org.muml.emm.repository/target/repository</url>
 		</repository>
-
-</repositories>
+    </repositories>
 </project>
