@@ -89,7 +89,7 @@
 		<repository>
 			<id>model-migration</id>
 			<layout>p2</layout>
-			<url>file:///data/jenkins/jobs/ModelMigration/lastSuccessful/archive/org.muml.emm.repository/target/repository/</url>
+			<url>file:///data/jenkins/jobs/ModelMigration-Maven/lastSuccessful/archive/org.muml.emm.repository/target/repository/</url>
 		</repository>
     </repositories>
 </project>
