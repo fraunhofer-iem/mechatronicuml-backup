@@ -7,6 +7,15 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   
+  <properties>
+		<tycho-version>0.26.0</tycho-version>
+		<maven-compiler-plugin-version>2.5.1</maven-compiler-plugin-version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<jacoco.version>0.7.4.201502262128</jacoco.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+   </properties>
+    
   <modules>
     <!-- <module>org.muml.modelcopy.buckminster</module> -->
     <module>org.muml.modelcopy.feature</module>
@@ -14,48 +23,6 @@
     <!-- <module>org.muml.modelcopy.qvto.library.test</module> -->
     <module>org.muml.modelcopy.repository</module>
   </modules>
-  
-    <profiles>
-        <profile>
-          <id>Local</id> <!-- local build, uses local maven repositories -->
-          <activation>
-            <property>
-              <name>env</name>
-              <value>local</value>
-            </property>
-          </activation>
-          <properties>
-            <repobase>file://${basedir}</repobase>
-            <repopath></repopath>
-          </properties>
-        </profile>
-        <profile>
-          <id>Jenkins</id> <!-- Jenkins build, only works on Jenkins file system -->
-          <activation>
-            <property>
-              <name>env</name>
-              <value>!local</value>
-            </property>
-          </activation>
-          <properties>
-            <repobase>file:///data/jenkins/jobs</repobase>
-            <repopath>lastSuccessful/archive/targetPlatform/</repopath>
-          </properties>
-        </profile>
-        <profile>
-          <id>localJenkins</id> <!-- build this locally, but download other projects from Jenkins-->
-          <activation>
-            <property>
-              <name>env</name>
-              <value>localJenkins</value>
-            </property>
-          </activation>
-          <properties>
-            <repobase>http://muml-build.cs.upb.de/job</repobase>
-            <repopath>lastSuccessfulBuild/artifact/targetPlatform/</repopath>
-          </properties>
-        </profile>
-  </profiles>
   
   <build>
     <plugins>
