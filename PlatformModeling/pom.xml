@@ -6,15 +6,7 @@
   <artifactId>PlatformModeling</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  
-  <properties>
-		<tycho-version>0.26.0</tycho-version>
-		<maven-compiler-plugin-version>2.5.1</maven-compiler-plugin-version>
-		<maven.compiler.source>1.5</maven.compiler.source>
-		<maven.compiler.target>1.5</maven.compiler.target> 
-		<jacoco.version>0.7.4.201502262128</jacoco.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+ 
 	
     <dependencies>
 		<dependency>
