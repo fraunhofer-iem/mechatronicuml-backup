@@ -1195,7 +1195,6 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (directedTypedPortEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "InitializeExpressionOnlyForOutPorts"
 		   });	
 		addAnnotation
 		  (staticComponentEClass, 
@@ -1381,7 +1380,6 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (directedTypedPortEClass, 
 		   source, 
 		   new String[] {
-			 "InitializeExpressionOnlyForOutPorts", "-- Only out ports may have an initialize expression.\nself.kind <> component::PortDirectionKind::OUT implies self.initializeExpression.oclIsUndefined()"
 		   });	
 		addAnnotation
 		  (getDirectedTypedPort_OutPort(), 

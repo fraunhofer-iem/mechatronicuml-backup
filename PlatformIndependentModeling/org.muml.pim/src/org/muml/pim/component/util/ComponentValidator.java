@@ -257,17 +257,7 @@ public class ComponentValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateContinuousPort(ContinuousPort continuousPort, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(continuousPort, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(continuousPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(continuousPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(continuousPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(continuousPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(continuousPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(continuousPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(continuousPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(continuousPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDirectedTypedPort_InitializeExpressionOnlyForOutPorts(continuousPort, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint(continuousPort, diagnostics, context);
 	}
 
 	/**
@@ -959,47 +949,7 @@ public class ComponentValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateDirectedTypedPort(DirectedTypedPort directedTypedPort, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(directedTypedPort, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(directedTypedPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(directedTypedPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(directedTypedPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(directedTypedPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(directedTypedPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(directedTypedPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(directedTypedPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(directedTypedPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDirectedTypedPort_InitializeExpressionOnlyForOutPorts(directedTypedPort, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the InitializeExpressionOnlyForOutPorts constraint of '<em>Directed Typed Port</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DIRECTED_TYPED_PORT__INITIALIZE_EXPRESSION_ONLY_FOR_OUT_PORTS__EEXPRESSION = "-- Only out ports may have an initialize expression.\n" +
-		"self.kind <> component::PortDirectionKind::OUT implies self.initializeExpression.oclIsUndefined()";
-
-	/**
-	 * Validates the InitializeExpressionOnlyForOutPorts constraint of '<em>Directed Typed Port</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDirectedTypedPort_InitializeExpressionOnlyForOutPorts(DirectedTypedPort directedTypedPort, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.DIRECTED_TYPED_PORT,
-				 directedTypedPort,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "InitializeExpressionOnlyForOutPorts",
-				 DIRECTED_TYPED_PORT__INITIALIZE_EXPRESSION_ONLY_FOR_OUT_PORTS__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return validate_EveryDefaultConstraint(directedTypedPort, diagnostics, context);
 	}
 
 	/**
@@ -1828,17 +1778,7 @@ public class ComponentValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateHybridPort(HybridPort hybridPort, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(hybridPort, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(hybridPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(hybridPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(hybridPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(hybridPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(hybridPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(hybridPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(hybridPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(hybridPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDirectedTypedPort_InitializeExpressionOnlyForOutPorts(hybridPort, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint(hybridPort, diagnostics, context);
 	}
 
 	/**

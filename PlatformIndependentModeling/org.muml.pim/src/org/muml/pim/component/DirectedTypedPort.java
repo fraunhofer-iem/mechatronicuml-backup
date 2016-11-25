@@ -34,8 +34,6 @@ import org.muml.pim.behavior.TypedNamedElement;
  *
  * @see org.muml.pim.component.ComponentPackage#getDirectedTypedPort()
  * @model abstract="true"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='InitializeExpressionOnlyForOutPorts'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL InitializeExpressionOnlyForOutPorts='-- Only out ports may have an initialize expression.\nself.kind <> component::PortDirectionKind::OUT implies self.initializeExpression.oclIsUndefined()'"
  * @generated
  */
 public interface DirectedTypedPort extends Port, TypedNamedElement {
