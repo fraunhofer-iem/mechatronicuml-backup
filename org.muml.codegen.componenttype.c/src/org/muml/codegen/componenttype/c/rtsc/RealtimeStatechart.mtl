@@ -35,7 +35,7 @@
 
 
 
-		[initialize(rtsc)/]
+		[initialize(component, rtsc)/]
 
 		[constructor(component, rtsc)/]
 
@@ -73,7 +73,7 @@
 [** generates the initialize methods for the realtime statechart and all its regions
  * @param rtsc the realtime statechart
 */]
-[template private initialize (rtsc : RealtimeStatechart) post(cdtbeautifier())]
+[template private initialize (comp: Component, rtsc : RealtimeStatechart) post(cdtbeautifier())]
 	
 	[for (region: Region | rtsc.eAllContents(Region))]
 		 [let firstState : State = region.embeddedStatechart.getInitalState()]
@@ -149,6 +149,14 @@
 						stateChart->[getVariableName(variable)/] = [getDefaultValue(variable, 'stateChart->')/];
 					[/if]
 
+				[/for]
+				//initialize port variables of the root statechart
+				[for (port : Port | comp.ports) ? (oclIsKindOf(HybridPort))]
+				[let hPort : HybridPort = port.oclAsType(HybridPort)]
+				[if (not hPort.initializeExpression.oclIsUndefined())]
+					statechart->[hPort.getName()/] = [hPort.initializeExpression.generateExpression('')/] ;
+				[/if]
+				[/let]		
 				[/for]
 			
 				//initialize init state
