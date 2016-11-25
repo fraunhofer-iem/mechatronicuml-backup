@@ -250,10 +250,20 @@ static PortHandle* [port.getMethodNameForDDSPortBuilder()/]([port.component.getB
 	}
 [if (portInstanceCfg.publisher->size()>0)]
 	[let publisher:Publisher = portInstanceCfg.publisher->any(true)]
+	//create Publisher Partition
+	struct DDS_PublisherQos pubQoS = DDS_PublisherQos_INITIALIZER;
+	retcode = DDS_DomainParticipant_get_default_publisher_qos(hndl->participant,&pubQoS);
+	 if (retcode != DDS_RETCODE_OK) {
+       printf("get_default_publisher_qos error\n");
+	    return NULL;
+	 }
+	[generatePartition(port, portInstanceCfg->any(true), 'pubQoS')/]
+
 	//create Publisher
 	hndl->publisher = DDS_DomainParticipant_create_publisher(hndl->participant,
-			&DDS_PUBLISHER_QOS_DEFAULT, NULL /* listener */,
+			&pubQoS, NULL /* listener */,
 			DDS_STATUS_MASK_NONE);
+	DDS_PublisherQos_finalize(&pubQoS);
 	if (hndl->publisher == NULL) {
 		printf("create_publisher error\n");
 		publisher_shutdown(hndl->participant);
@@ -291,11 +301,23 @@ static PortHandle* [port.getMethodNameForDDSPortBuilder()/]([port.component.getB
 	[/let]
 [/if]
 
+
+
 [if (portInstanceCfg.subscriber->size()>0)]
 	[let subscriber:Subscriber = portInstanceCfg.subscriber->any(true)]
+	//create Subscriber Partition
+	struct DDS_SubscriberQos subQoS = DDS_SubscriberQos_INITIALIZER;
+	retcode = DDS_DomainParticipant_get_default_subscriber_qos(hndl->participant,&subQoS);
+	 if (retcode != DDS_RETCODE_OK) {
+       printf("get_default_publisher_qos error\n");
+	    return NULL;
+	 }
+	[generatePartition(port, portInstanceCfg->any(true), 'subQoS')/]
+	//create Subscriber
 	hndl->subscriber = DDS_DomainParticipant_create_subscriber(
-			hndl->participant, &DDS_SUBSCRIBER_QOS_DEFAULT, NULL /* listener */,
+			hndl->participant, &subQoS, NULL /* listener */,
 			DDS_STATUS_MASK_NONE);
+	DDS_SubscriberQos_finalize(&subQoS);
 	if (hndl->subscriber == NULL) {
 		printf("create_subscriber error\n");
 		subscriber_shutdown(hndl->participant);
