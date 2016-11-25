@@ -97,6 +97,9 @@
 		[/if]
 		/*Initialize all DirectedTypedPorts*/
 		[for (port : DirectedTypedPort | component.ports->filter(DirectedTypedPort))]
+		[if (not port.initializeExpression.oclIsUndefined())]
+			component->[getName(port)/] = [port.initializeExpression.generateExpression('')/];
+		[/if]	
 		Clock_reset(component->[getVariableName(port)/]Clock);
 		[/for]
 			[comment Initialization of Ports/]
