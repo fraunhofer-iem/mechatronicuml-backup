@@ -3,5 +3,6 @@
    <feature url="features/org.muml.core.feature_1.0.0.qualifier.jar" id="org.muml.core.feature" version="1.0.0.qualifier">
       <category name="org.muml.core.repository.category"/>
    </feature>
+   <bundle id="org.muml.core.tests"/>
    <category-def name="org.muml.core.repository.category" label="Core"/>
 </site>
