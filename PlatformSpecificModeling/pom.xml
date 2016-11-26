@@ -184,11 +184,6 @@
             <url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases</url>
         </repository>
 		<repository>
-			<id>Core</id>
-			<layout>p2</layout>
-			<url>file:///data/jenkins/jobs/Core/lastSuccessful/archive/targetPlatform/</url>
-		</repository>
-		<repository>
 			<id>emf</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/technology/epp/packages/neon</url>
@@ -212,6 +207,11 @@
 			<id>APE</id>
 			<layout>p2</layout>
 			<url>${repobase}/APE-Maven/${repopath}org.muml.ape.repository/target/repository</url>
+		</repository>
+        <repository>
+			<id>Core</id>
+			<layout>p2</layout>
+			<url>${repobase}/Core-Maven/${repopath}org.muml.core.repository/target/repository</url>
 		</repository>
 		<repository>
 			<id>PIM</id>
