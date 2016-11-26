@@ -6,7 +6,15 @@
   <artifactId>PlatformModeling</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
- 
+  
+  <properties>
+		<tycho-version>0.26.0</tycho-version>
+		<maven-compiler-plugin-version>2.5.1</maven-compiler-plugin-version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target> 
+		<jacoco.version>0.7.4.201502262128</jacoco.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 	
     <dependencies>
 		<dependency>
@@ -157,7 +165,17 @@
             <id>Xtext</id>
             <layout>p2</layout>
             <url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases</url>
-        </repository>  
+        </repository> 
+        <repository>
+			<id>Core</id>
+			<layout>p2</layout>
+			<url>${repobase}/Core-Maven/${repopath}org.muml.core.repository/target/repository</url>
+		</repository>
+        <repository>
+			<id>APE</id>
+			<layout>p2</layout>
+			<url>${repobase}/APE-Maven/${repopath}org.muml.ape.repository/target/repository</url>
+		</repository>  
 		<repository>
 			<id>ModelMigration</id>
 			<layout>p2</layout>
@@ -168,10 +186,10 @@
 			<layout>p2</layout>
 			<url>${repobase}/PlatformIndependentModeling-Maven/${repopath}org.muml.pim.repository/target/repository</url>
 		</repository>
-        <repository>
+         <repository>
 			<id>ModelCopy</id>
 			<layout>p2</layout>
 			<url>${repobase}/ModelCopy-Maven/${repopath}org.muml.modelcopy.repository/target/repository</url>
-		</repository>      
+		</repository>
   </repositories>
 </project>
