@@ -7,7 +7,7 @@ public class RubyUDBMTestInitializer {
 
 	@BeforeClass
 	public static void initializeTestSuite(){
-		System.setProperty("federationFactoryClass","de.uni_paderborn.fujaba.udbm.ruby.RubyFederationFactory");
+		System.setProperty("federationFactoryClass","org.muml.udbm.ruby.RubyFederationFactory");
 	}
 	
 	@Test
