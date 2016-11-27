@@ -5,6 +5,7 @@ import org.junit.runners.Suite;
 import org.muml.udbm.test.AddClockTest;
 import org.muml.udbm.test.AndTest;
 import org.muml.udbm.test.CloneFederationTest;
+import org.muml.udbm.test.ContainsTest;
 import org.muml.udbm.test.DownTest;
 import org.muml.udbm.test.EmptyFederationTest;
 import org.muml.udbm.test.HashValueTest;
@@ -35,6 +36,7 @@ import org.muml.udbm.test.UrgentDelayTest;
 						SubstractTest.class,
 						UpTest.class,
 						UrgentDelayTest.class,
+						ContainsTest.class,
 						RubyUDBMTestFinalizer.class})
 public class AllRubyUDBMTests {
 
