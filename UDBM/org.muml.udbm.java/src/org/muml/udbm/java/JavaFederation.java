@@ -8,9 +8,6 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-
 import org.muml.udbm.ClockConstraint;
 import org.muml.udbm.ClockZone;
 import org.muml.udbm.DifferenceClockConstraint;
@@ -85,22 +82,20 @@ public class JavaFederation extends Federation {
 	@Override
 	public void and(Federation federation) {
 		// intersect all zones with each other
-		Iterator<JavaClockZone> outerIter = (Iterator<JavaClockZone>) this
-				.iteratorOfClockZone();
+		Iterator<?> outerIter = (Iterator<?>) this.iteratorOfClockZone();
 		while (outerIter.hasNext()) {
-			JavaClockZone outerZone = outerIter.next();
-			Iterator<JavaClockZone> innerIter = (Iterator<JavaClockZone>) federation
-					.iteratorOfClockZone();
+			JavaClockZone outerZone = (JavaClockZone) outerIter.next();
+			Iterator<?> innerIter = (Iterator<?>) federation.iteratorOfClockZone();
 			while (innerIter.hasNext()) {
-				JavaClockZone innerZone = innerIter.next();
+				JavaClockZone innerZone = (JavaClockZone) innerIter.next();
 				outerZone.and(innerZone);
 			}
 		}
 
 		// remove empty zones
-		outerIter = (Iterator<JavaClockZone>) this.iteratorOfClockZone();
+		outerIter = (Iterator<?>) this.iteratorOfClockZone();
 		while (outerIter.hasNext()) {
-			if (outerIter.next().isEmpty())
+			if (((JavaFederation) outerIter.next()).isEmpty())
 				outerIter.remove();
 		}
 
@@ -225,11 +220,10 @@ public class JavaFederation extends Federation {
 
 	@Override
 	public void and(ClockConstraint constraint) {
-		Iterator<JavaClockZone> it = (Iterator<JavaClockZone>) this
-				.iteratorOfClockZone();
+		Iterator<?> it = (Iterator<?>) this.iteratorOfClockZone();
 		while (it.hasNext()) {
 			// Intersect against constraint
-			JavaClockZone curZone = it.next();
+			JavaClockZone curZone = (JavaClockZone) it.next();
 			System.out.println("###     Current zone: " + curZone);
 			curZone.and(constraint);
 			System.out.println("###     Current zone and constraint: " + curZone);
@@ -254,10 +248,9 @@ public class JavaFederation extends Federation {
 		// reset all clocks ...
 		for (UDBMClock curClock : clock) {
 			// ... in all clock zones
-			Iterator<JavaClockZone> it = (Iterator<JavaClockZone>) this
-					.iteratorOfClockZone();
+			Iterator<?> it = (Iterator<?>) this.iteratorOfClockZone();
 			while (it.hasNext()) {
-				it.next().reset(curClock);
+				((JavaClockZone) it.next()).reset(curClock);
 			}
 		}
 	}
@@ -265,11 +258,10 @@ public class JavaFederation extends Federation {
 	@Override
 	public void diagonalNormalize(HashMap<UDBMClock, Integer> maxValues,
 			HashSet<DifferenceClockConstraint> clockConstraints) {
-		Iterator<JavaClockZone> it = (Iterator<JavaClockZone>) this
-				.iteratorOfClockZone();
+		Iterator<?> it = (Iterator<?>) this.iteratorOfClockZone();
 
 		while (it.hasNext()) {
-			JavaClockZone jcz = it.next();
+			JavaClockZone jcz = (JavaClockZone) it.next();
 			HashSet<JavaClockZone> normalizedZones = jcz.diagonalNormalize(
 					maxValues, clockConstraints);
 			this.removeFromClockZone(jcz);
@@ -283,36 +275,32 @@ public class JavaFederation extends Federation {
 	// TODO: ensure zones are disjunct
 	@Override
 	public void down() {
-		Iterator<JavaClockZone> it = (Iterator<JavaClockZone>) this
-				.iteratorOfClockZone();
+		Iterator<?> it = (Iterator<?>) this.iteratorOfClockZone();
 		while (it.hasNext()) {
-			it.next().down();
+			((JavaClockZone) it.next()).down();
 		}
 	}
 
 	@Override
 	public void relax() {
-		Iterator<JavaClockZone> it = (Iterator<JavaClockZone>) this
-				.iteratorOfClockZone();
+		Iterator<?> it = (Iterator<?>) this.iteratorOfClockZone();
 		while (it.hasNext()) {
-			it.next().relax();
+			((JavaClockZone) it.next()).relax();
 		}
 	}
 
 	@Override
 	public boolean equals(Federation federation) {
 		// iterate all zones of this federation
-		Iterator<JavaClockZone> zoneIter = (Iterator<JavaClockZone>) this
-				.iteratorOfClockZone();
+		Iterator<?> zoneIter = (Iterator<?>) this.iteratorOfClockZone();
 		while (zoneIter.hasNext()) {
 			boolean found = false;
-			JavaClockZone curZone = zoneIter.next();
+			JavaClockZone curZone = (JavaClockZone) zoneIter.next();
 
 			// compare to the zones of the parameter fed
-			Iterator<JavaClockZone> otherZoneIter = (Iterator<JavaClockZone>) federation
-					.iteratorOfClockZone();
+			Iterator<?> otherZoneIter = (Iterator<?>) federation.iteratorOfClockZone();
 			while (otherZoneIter.hasNext()) {
-				JavaClockZone otherZone = otherZoneIter.next();
+				JavaClockZone otherZone = (JavaClockZone) otherZoneIter.next();
 				if (curZone.equals(otherZone))
 					found = true;
 			}
@@ -329,10 +317,9 @@ public class JavaFederation extends Federation {
 		int value = -1;
 
 		// iterate all zone to obtain larger clock value
-		Iterator<JavaClockZone> it = (Iterator<JavaClockZone>) this
-				.iteratorOfClockZone();
+		Iterator<?> it = (Iterator<?>) this.iteratorOfClockZone();
 		while (it.hasNext()) {
-			int tmpValue = it.next().getUpperBound(clock);
+			int tmpValue = ((JavaClockZone) it.next()).getUpperBound(clock);
 			if (tmpValue > value)
 				value = tmpValue;
 		}
@@ -351,10 +338,9 @@ public class JavaFederation extends Federation {
 
 	@Override
 	public boolean isEmpty() {
-		Iterator<JavaClockZone> it = (Iterator<JavaClockZone>) this
-				.iteratorOfClockZone();
+		Iterator<?> it = (Iterator<?>) this.iteratorOfClockZone();
 		while (it.hasNext()) {
-			if (!(it.next().isEmpty()))
+			if (!(((JavaClockZone)it.next()).isEmpty()))
 				return false;
 		}
 		return true;
@@ -462,10 +448,9 @@ public class JavaFederation extends Federation {
 	// TODO: Ensure that the zones are disjunct.
 	@Override
 	public void up() {
-		Iterator<JavaClockZone> it = (Iterator<JavaClockZone>) this
-				.iteratorOfClockZone();
+		Iterator<?> it = (Iterator<?>) this.iteratorOfClockZone();
 		while (it.hasNext()) {
-			it.next().up();
+			((JavaClockZone) it.next()).up();
 		}
 
 	}
@@ -507,10 +492,9 @@ public class JavaFederation extends Federation {
 		int value = Integer.MAX_VALUE;
 
 		// iterate all zone to obtain smaller clock value
-		Iterator<JavaClockZone> it = (Iterator<JavaClockZone>) this
-				.iteratorOfClockZone();
+		Iterator<?> it = (Iterator<?>) this.iteratorOfClockZone();
 		while (it.hasNext()) {
-			int tmpValue = it.next().getLowerBound(clock);
+			int tmpValue = ((JavaClockZone) it.next()).getLowerBound(clock);
 			if (tmpValue < value)
 				value = tmpValue;
 		}
