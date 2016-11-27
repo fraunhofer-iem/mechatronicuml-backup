@@ -163,8 +163,8 @@ public class ContainsTest extends AbstractUDBMTest{
 		JavaClockZone ClockZone3 = new JavaClockZone(ClockConstraints3, clocks.size());
 
 		// Check if the overloaded ClockZone is a strict subset of at least one ClockZone of a given Federation
-		// Contains function should return true, since ClockZone3 is a strict subset of ClockZone1		
-		assertTrue(jf.contains(ClockZone3, true));
+		// Contains function should return true, since ClockZone3 is not a strict subset of ClockZone1		
+		assertTrue(!jf.contains(ClockZone3, true));
 	}
 	
 	/**
