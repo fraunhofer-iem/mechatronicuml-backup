@@ -35,7 +35,7 @@ extends FederationFactory
 	@Override
 	public Federation createZeroFederation(HashSet<UDBMClock> clocks) {
 		if(clocks.isEmpty()){
-			UDBMClock zeroClock = new UDBMClock("dummyClock", "dummyClock");
+			UDBMClock zeroClock = new UDBMClock("zeroclock", "zeroclock");
 			clocks.add(zeroClock);
 		}
 		

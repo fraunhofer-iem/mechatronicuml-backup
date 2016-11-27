@@ -35,7 +35,7 @@ public class RubyFederation extends Federation implements Cloneable{
 	protected RubyFederation(HashSet<UDBMClock> clocks,
 			HashSet<ClockZone> clockZones) {
 		if(clocks.isEmpty()){
-			UDBMClock zeroClock = new UDBMClock("dummyClock", "dummyClock");
+			UDBMClock zeroClock = new UDBMClock("zeroclock", "zeroclock");
 			clocks.add(zeroClock);
 		}
 		for (UDBMClock clock : clocks) {
