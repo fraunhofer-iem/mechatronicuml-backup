@@ -95,7 +95,7 @@ public class JavaFederation extends Federation {
 		// remove empty zones
 		outerIter = (Iterator<?>) this.iteratorOfClockZone();
 		while (outerIter.hasNext()) {
-			if (((JavaFederation) outerIter.next()).isEmpty())
+			if (((JavaClockZone) outerIter.next()).isEmpty())
 				outerIter.remove();
 		}
 
