@@ -2324,12 +2324,8 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A parameter binding associates a parameter with a concrete value which is bound to this parameter by an invocation. As an example, an operation defines a set of parameters. A call of this operation needs to provide concrete values for the parameters which are defined by a parameter binding. The value is represented by an expression."/>
       </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="ExcludeInvalidExpressions"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="ExcludeInvalidExpressions" value="-- The value expression must provide a value. Block and Loop are not allowed.&#xD;&#xA;not (self.value.oclIsKindOf(actionlanguage::Block) or  self.value.oclIsKindOf(actionlanguage::Loop)) "/>
-      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore"/>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
           eType="#//behavior/Parameter">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

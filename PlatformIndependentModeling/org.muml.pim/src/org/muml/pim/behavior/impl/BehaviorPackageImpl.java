@@ -579,7 +579,6 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		  (parameterBindingEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "ExcludeInvalidExpressions"
 		   });	
 		addAnnotation
 		  (variableEClass, 
@@ -617,7 +616,6 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		  (parameterBindingEClass, 
 		   source, 
 		   new String[] {
-			 "ExcludeInvalidExpressions", "-- The value expression must provide a value. Block and Loop are not allowed.\r\nnot (self.value.oclIsKindOf(actionlanguage::Block) or  self.value.oclIsKindOf(actionlanguage::Loop)) "
 		   });	
 		addAnnotation
 		  (variableEClass, 
