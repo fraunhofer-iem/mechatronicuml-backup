@@ -22,8 +22,6 @@ public class MetamodelContributor implements org.muml.ape.runtime.metamodel.IMet
 
 		factories.add(new org.muml.psm.properties.provider.PropertiesItemProviderAdapterFactory());
 
-		factories.add(new org.muml.psm.codegen.provider.CodegenItemProviderAdapterFactory());
-
 		factories.add(new org.muml.psm.provider.PsmItemProviderAdapterFactory());
 
 		factories.add(

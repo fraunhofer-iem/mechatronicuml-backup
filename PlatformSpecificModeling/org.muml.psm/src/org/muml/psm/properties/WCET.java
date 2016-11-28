@@ -63,7 +63,7 @@ public interface WCET extends Extension {
 	 * @return the value of the '<em>Resource Instance</em>' reference.
 	 * @see #setResourceInstance(StructuredResourceInstance)
 	 * @see org.muml.psm.properties.PropertiesPackage#getWCET_ResourceInstance()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	StructuredResourceInstance getResourceInstance();

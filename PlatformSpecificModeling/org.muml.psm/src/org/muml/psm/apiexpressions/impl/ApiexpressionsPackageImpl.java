@@ -11,11 +11,7 @@ import org.muml.core.expressions.ExpressionsPackage;
 import org.muml.pim.actionlanguage.ActionlanguagePackage;
 import org.muml.pim.behavior.BehaviorPackage;
 import org.muml.pim.instance.InstancePackage;
-import org.muml.pm.hardware.hwplatform.HwplatformPackage;
-import org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage;
-import org.muml.pm.hardware.hwresource.HwresourcePackage;
-import org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage;
-import org.muml.pm.hardware.hwvaluetype.HwvaluetypePackage;
+import org.muml.pm.hardware.HardwarePackage;
 import org.muml.pm.software.SoftwarePackage;
 import org.muml.psm.PsmPackage;
 import org.muml.psm.allocation.AllocationPackage;
@@ -26,8 +22,6 @@ import org.muml.psm.apiexpressions.ApiexpressionsPackage;
 import org.muml.psm.apiexpressions.ContinuousPortExpression;
 import org.muml.psm.apiexpressions.EnumerationValueExpression;
 import org.muml.psm.apiexpressions.util.ApiexpressionsValidator;
-import org.muml.psm.codegen.CodegenPackage;
-import org.muml.psm.codegen.impl.CodegenPackageImpl;
 import org.muml.psm.impl.PsmPackageImpl;
 import org.muml.psm.portapimapping.PortapimappingPackage;
 import org.muml.psm.portapimapping.impl.PortapimappingPackageImpl;
@@ -118,11 +112,7 @@ public class ApiexpressionsPackageImpl extends EPackageImpl implements Apiexpres
 
 		// Initialize simple dependencies
 		ActionlanguagePackage.eINSTANCE.eClass();
-		HwplatformPackage.eINSTANCE.eClass();
-		HwvaluetypePackage.eINSTANCE.eClass();
-		HwplatforminstancePackage.eINSTANCE.eClass();
-		HwresourcePackage.eINSTANCE.eClass();
-		HwresourceinstancePackage.eINSTANCE.eClass();
+		HardwarePackage.eINSTANCE.eClass();
 		SoftwarePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
@@ -134,7 +124,6 @@ public class ApiexpressionsPackageImpl extends EPackageImpl implements Apiexpres
 		RealtimestatechartparameterbindingPackageImpl theRealtimestatechartparameterbindingPackage = (RealtimestatechartparameterbindingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartparameterbindingPackage.eNS_URI) instanceof RealtimestatechartparameterbindingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartparameterbindingPackage.eNS_URI) : RealtimestatechartparameterbindingPackage.eINSTANCE);
 		Psm_instancePackageImpl thePsm_instancePackage = (Psm_instancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Psm_instancePackage.eNS_URI) instanceof Psm_instancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Psm_instancePackage.eNS_URI) : Psm_instancePackage.eINSTANCE);
 		PortapimappingPackageImpl thePortapimappingPackage = (PortapimappingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PortapimappingPackage.eNS_URI) instanceof PortapimappingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PortapimappingPackage.eNS_URI) : PortapimappingPackage.eINSTANCE);
-		CodegenPackageImpl theCodegenPackage = (CodegenPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CodegenPackage.eNS_URI) instanceof CodegenPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CodegenPackage.eNS_URI) : CodegenPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theApiexpressionsPackage.createPackageContents();
@@ -146,7 +135,6 @@ public class ApiexpressionsPackageImpl extends EPackageImpl implements Apiexpres
 		theRealtimestatechartparameterbindingPackage.createPackageContents();
 		thePsm_instancePackage.createPackageContents();
 		thePortapimappingPackage.createPackageContents();
-		theCodegenPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theApiexpressionsPackage.initializePackageContents();
@@ -158,7 +146,6 @@ public class ApiexpressionsPackageImpl extends EPackageImpl implements Apiexpres
 		theRealtimestatechartparameterbindingPackage.initializePackageContents();
 		thePsm_instancePackage.initializePackageContents();
 		thePortapimappingPackage.initializePackageContents();
-		theCodegenPackage.initializePackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put

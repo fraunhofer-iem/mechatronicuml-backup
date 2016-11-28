@@ -10,19 +10,13 @@ import org.muml.core.expressions.ExpressionsPackage;
 import org.muml.pim.actionlanguage.ActionlanguagePackage;
 import org.muml.pim.behavior.BehaviorPackage;
 import org.muml.pim.valuetype.ValuetypePackage;
-import org.muml.pm.hardware.hwplatform.HwplatformPackage;
-import org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage;
-import org.muml.pm.hardware.hwresource.HwresourcePackage;
-import org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage;
-import org.muml.pm.hardware.hwvaluetype.HwvaluetypePackage;
+import org.muml.pm.hardware.HardwarePackage;
 import org.muml.pm.software.SoftwarePackage;
 import org.muml.psm.PsmPackage;
 import org.muml.psm.allocation.AllocationPackage;
 import org.muml.psm.allocation.impl.AllocationPackageImpl;
 import org.muml.psm.apiexpressions.ApiexpressionsPackage;
 import org.muml.psm.apiexpressions.impl.ApiexpressionsPackageImpl;
-import org.muml.psm.codegen.CodegenPackage;
-import org.muml.psm.codegen.impl.CodegenPackageImpl;
 import org.muml.psm.impl.PsmPackageImpl;
 import org.muml.psm.portapimapping.PortapimappingPackage;
 import org.muml.psm.portapimapping.impl.PortapimappingPackageImpl;
@@ -116,11 +110,7 @@ public class RealtimestatechartparameterbindingPackageImpl extends EPackageImpl 
 
 		// Initialize simple dependencies
 		ActionlanguagePackage.eINSTANCE.eClass();
-		HwplatformPackage.eINSTANCE.eClass();
-		HwvaluetypePackage.eINSTANCE.eClass();
-		HwplatforminstancePackage.eINSTANCE.eClass();
-		HwresourcePackage.eINSTANCE.eClass();
-		HwresourceinstancePackage.eINSTANCE.eClass();
+		HardwarePackage.eINSTANCE.eClass();
 		SoftwarePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
@@ -132,7 +122,6 @@ public class RealtimestatechartparameterbindingPackageImpl extends EPackageImpl 
 		Psm_instancePackageImpl thePsm_instancePackage = (Psm_instancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Psm_instancePackage.eNS_URI) instanceof Psm_instancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Psm_instancePackage.eNS_URI) : Psm_instancePackage.eINSTANCE);
 		PortapimappingPackageImpl thePortapimappingPackage = (PortapimappingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PortapimappingPackage.eNS_URI) instanceof PortapimappingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PortapimappingPackage.eNS_URI) : PortapimappingPackage.eINSTANCE);
 		ApiexpressionsPackageImpl theApiexpressionsPackage = (ApiexpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApiexpressionsPackage.eNS_URI) instanceof ApiexpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApiexpressionsPackage.eNS_URI) : ApiexpressionsPackage.eINSTANCE);
-		CodegenPackageImpl theCodegenPackage = (CodegenPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CodegenPackage.eNS_URI) instanceof CodegenPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CodegenPackage.eNS_URI) : CodegenPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theRealtimestatechartparameterbindingPackage.createPackageContents();
@@ -144,7 +133,6 @@ public class RealtimestatechartparameterbindingPackageImpl extends EPackageImpl 
 		thePsm_instancePackage.createPackageContents();
 		thePortapimappingPackage.createPackageContents();
 		theApiexpressionsPackage.createPackageContents();
-		theCodegenPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theRealtimestatechartparameterbindingPackage.initializePackageContents();
@@ -156,7 +144,6 @@ public class RealtimestatechartparameterbindingPackageImpl extends EPackageImpl 
 		thePsm_instancePackage.initializePackageContents();
 		thePortapimappingPackage.initializePackageContents();
 		theApiexpressionsPackage.initializePackageContents();
-		theCodegenPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theRealtimestatechartparameterbindingPackage.freeze();

@@ -9,9 +9,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.core.CorePackage;
 import org.muml.pim.actionlanguage.ActionlanguagePackage;
 import org.muml.pim.valuetype.ValuetypePackage;
-import org.muml.pm.hardware.hwplatform.HwplatformPackage;
-import org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage;
-import org.muml.pm.hardware.hwresource.HwresourcePackage;
+import org.muml.pm.hardware.HardwarePackage;
 import org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage;
 import org.muml.pm.hardware.hwvaluetype.HwvaluetypePackage;
 import org.muml.pm.software.SoftwarePackage;
@@ -20,8 +18,6 @@ import org.muml.psm.allocation.AllocationPackage;
 import org.muml.psm.allocation.impl.AllocationPackageImpl;
 import org.muml.psm.apiexpressions.ApiexpressionsPackage;
 import org.muml.psm.apiexpressions.impl.ApiexpressionsPackageImpl;
-import org.muml.psm.codegen.CodegenPackage;
-import org.muml.psm.codegen.impl.CodegenPackageImpl;
 import org.muml.psm.impl.PsmPackageImpl;
 import org.muml.psm.portapimapping.PortapimappingPackage;
 import org.muml.psm.portapimapping.impl.PortapimappingPackageImpl;
@@ -130,11 +126,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 
 		// Initialize simple dependencies
 		ActionlanguagePackage.eINSTANCE.eClass();
-		HwplatformPackage.eINSTANCE.eClass();
-		HwvaluetypePackage.eINSTANCE.eClass();
-		HwplatforminstancePackage.eINSTANCE.eClass();
-		HwresourcePackage.eINSTANCE.eClass();
-		HwresourceinstancePackage.eINSTANCE.eClass();
+		HardwarePackage.eINSTANCE.eClass();
 		SoftwarePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
@@ -146,7 +138,6 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		Psm_instancePackageImpl thePsm_instancePackage = (Psm_instancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Psm_instancePackage.eNS_URI) instanceof Psm_instancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Psm_instancePackage.eNS_URI) : Psm_instancePackage.eINSTANCE);
 		PortapimappingPackageImpl thePortapimappingPackage = (PortapimappingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PortapimappingPackage.eNS_URI) instanceof PortapimappingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PortapimappingPackage.eNS_URI) : PortapimappingPackage.eINSTANCE);
 		ApiexpressionsPackageImpl theApiexpressionsPackage = (ApiexpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApiexpressionsPackage.eNS_URI) instanceof ApiexpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApiexpressionsPackage.eNS_URI) : ApiexpressionsPackage.eINSTANCE);
-		CodegenPackageImpl theCodegenPackage = (CodegenPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CodegenPackage.eNS_URI) instanceof CodegenPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CodegenPackage.eNS_URI) : CodegenPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		thePropertiesPackage.createPackageContents();
@@ -158,7 +149,6 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		thePsm_instancePackage.createPackageContents();
 		thePortapimappingPackage.createPackageContents();
 		theApiexpressionsPackage.createPackageContents();
-		theCodegenPackage.createPackageContents();
 
 		// Initialize created meta-data
 		thePropertiesPackage.initializePackageContents();
@@ -170,7 +160,6 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		thePsm_instancePackage.initializePackageContents();
 		thePortapimappingPackage.initializePackageContents();
 		theApiexpressionsPackage.initializePackageContents();
-		theCodegenPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		thePropertiesPackage.freeze();
@@ -418,11 +407,11 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		// Initialize classes, features, and operations; add parameters
 		initEClass(wcetEClass, org.muml.psm.properties.WCET.class, "WCET", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getWCET_Wcet(), theValuetypePackage.getTimeValue(), null, "wcet", null, 1, 1, org.muml.psm.properties.WCET.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWCET_ResourceInstance(), theHwresourceinstancePackage.getStructuredResourceInstance(), null, "resourceInstance", null, 1, 1, org.muml.psm.properties.WCET.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWCET_ResourceInstance(), theHwresourceinstancePackage.getStructuredResourceInstance(), null, "resourceInstance", null, 0, 1, org.muml.psm.properties.WCET.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(requiredMemoryEClass, RequiredMemory.class, "RequiredMemory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRequiredMemory_RequiredMemory(), theHwvaluetypePackage.getDataSize(), null, "requiredMemory", null, 1, 1, RequiredMemory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRequiredMemory_ResourceInstance(), theHwresourceinstancePackage.getStructuredResourceInstance(), null, "resourceInstance", null, 1, 1, RequiredMemory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRequiredMemory_ResourceInstance(), theHwresourceinstancePackage.getStructuredResourceInstance(), null, "resourceInstance", null, 0, 1, RequiredMemory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(schedulingEClass, Scheduling.class, "Scheduling", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getScheduling_Deadline(), theValuetypePackage.getTimeValue(), null, "deadline", null, 1, 1, Scheduling.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

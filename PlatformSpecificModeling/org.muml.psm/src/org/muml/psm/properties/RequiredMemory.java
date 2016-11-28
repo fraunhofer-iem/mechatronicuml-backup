@@ -63,7 +63,7 @@ public interface RequiredMemory extends Extension {
 	 * @return the value of the '<em>Resource Instance</em>' reference.
 	 * @see #setResourceInstance(StructuredResourceInstance)
 	 * @see org.muml.psm.properties.PropertiesPackage#getRequiredMemory_ResourceInstance()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	StructuredResourceInstance getResourceInstance();
