@@ -30,6 +30,7 @@ public class RealtimestatechartparameterbindingTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new RealtimestatechartparameterbindingTests("realtimestatechartparameterbinding Tests");
+		suite.addTestSuite(APICallParameterBindingTest.class);
 		return suite;
 	}
 

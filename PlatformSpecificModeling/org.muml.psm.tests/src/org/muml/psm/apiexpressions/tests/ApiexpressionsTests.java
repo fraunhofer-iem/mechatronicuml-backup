@@ -30,6 +30,9 @@ public class ApiexpressionsTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new ApiexpressionsTests("apiexpressions Tests");
+		suite.addTestSuite(APICallExpressionTest.class);
+		suite.addTestSuite(EnumerationValueExpressionTest.class);
+		suite.addTestSuite(ContinuousPortExpressionTest.class);
 		return suite;
 	}
 
