@@ -17,6 +17,7 @@ import org.muml.uppaal.adapter.job.graphviz.CICGraphvizExport;
 import org.muml.uppaal.adapter.job.interfaces.VerificationOptionsProvider;
 import org.muml.uppaal.adapter.job.interfaces.VerificationPropertyChoiceProvider;
 import org.muml.uppaal.adapter.job.operations.Muml2TraceOperation;
+import org.muml.uppaal.adapter.mtctl.Property;
 import org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.ZoneGraph;
 
 public class Muml2TraceImageJob extends Job {
@@ -46,9 +47,9 @@ public class Muml2TraceImageJob extends Job {
 					if (!event.getResult().isOK()) {
 						org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().setRestartRunnable(null);
 					}
-					String propertyName = m2m != null ? m2m.getPropertyName() : "";
+					Property property = m2m != null ? m2m.getProperty() : null;
 					String elementName = (verifiableElement instanceof NamedElement) ? ((NamedElement) verifiableElement).getName() : "";
-					org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().evaluationDone(elementName, propertyName, true);
+					org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().evaluationDone(elementName, property, true);
 				}
 			});
 		}

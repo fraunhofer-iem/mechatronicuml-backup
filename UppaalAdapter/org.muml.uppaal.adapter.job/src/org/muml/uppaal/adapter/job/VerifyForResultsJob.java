@@ -52,7 +52,7 @@ public class VerifyForResultsJob extends Job {
 						org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().setRestartRunnable(null);
 					}
 					String elementName = (verifiableElement instanceof NamedElement) ? ((NamedElement) verifiableElement).getName() : "";
-					org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().evaluationDone(elementName, "ALL", false);
+					org.muml.uppaal.adapter.log.UppaalAdapterLogPlugin.getDefault().evaluationDone(elementName, null, false);
 				}
 			});
 		}
