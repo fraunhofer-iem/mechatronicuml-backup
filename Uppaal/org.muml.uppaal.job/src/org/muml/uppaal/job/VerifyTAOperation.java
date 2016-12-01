@@ -178,7 +178,7 @@ public class VerifyTAOperation implements IWorkspaceRunnable {
 					String result = stringWriter.toString();
 					
 					if (exitCode != 0) {
-						throw new CoreException(new Status(IStatus.ERROR, "org.muml.uppaal.adapter.job", result));
+						throw new CoreException(new Status(IStatus.ERROR, "org.muml.uppaal.job", result));
 					}
 					
 					subMonitor.subTask("Parsing Results");
@@ -206,7 +206,7 @@ public class VerifyTAOperation implements IWorkspaceRunnable {
 					Diagnostic resourceDiagnostic = EcoreUtil.computeDiagnostic(resource, false);
 									
 					if (!BasicDiagnostic.toIStatus(resourceDiagnostic).isOK()) {
-						BasicDiagnostic parseDiagnostic = new BasicDiagnostic("org.muml.uppaal.adapter.job", resourceDiagnostic.getCode(), "Parsing the UPPAAL diagnostic trace failed", null);
+						BasicDiagnostic parseDiagnostic = new BasicDiagnostic("org.muml.uppaal.job", resourceDiagnostic.getCode(), "Parsing the UPPAAL diagnostic trace failed", null);
 						parseDiagnostic.merge(resourceDiagnostic);
 						
 						throw new CoreException(BasicDiagnostic.toIStatus(parseDiagnostic));
