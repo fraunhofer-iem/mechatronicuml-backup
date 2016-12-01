@@ -170,27 +170,27 @@
         <repository>
 			<id>Core</id>
 			<layout>p2</layout>
-			<url>${repobase}/Core-Maven/${repopath}org.muml.core.repository/target/repository</url>
+			<url>${repobase}/Core-Maven/${repopath}org.muml.core.repository/target/repository/</url>
 		</repository>
         <repository>
 			<id>APE</id>
 			<layout>p2</layout>
-			<url>${repobase}/APE-Maven/${repopath}org.muml.ape.repository/target/repository</url>
+			<url>${repobase}/APE-Maven/${repopath}org.muml.ape.repository/target/repository/</url>
 		</repository>  
 		<repository>
 			<id>ModelMigration</id>
 			<layout>p2</layout>
-			<url>${repobase}/ModelMigration-Maven/${repopath}org.muml.emm.repository/target/repository</url>
+			<url>${repobase}/ModelMigration-Maven/${repopath}org.muml.emm.repository/target/repository/</url>
 		</repository>
         <repository>
 			<id>PIM</id>
 			<layout>p2</layout>
-			<url>${repobase}/PlatformIndependentModeling-Maven/${repopath}org.muml.pim.repository/target/repository</url>
+			<url>${repobase}/PlatformIndependentModeling-Maven/${repopath}org.muml.pim.repository/target/repository/</url>
 		</repository>
          <repository>
 			<id>ModelCopy</id>
 			<layout>p2</layout>
-			<url>${repobase}/ModelCopy-Maven/${repopath}org.muml.modelcopy.repository/target/repository</url>
+			<url>${repobase}/ModelCopy-Maven/${repopath}org.muml.modelcopy.repository/target/repository/</url>
 		</repository>
   </repositories>
 </project>
