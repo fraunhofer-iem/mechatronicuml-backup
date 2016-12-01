@@ -137,7 +137,7 @@
             </property>
           </activation>
           <properties>
-            <repobase>file:/data/jenkins/jobs</repobase>
+            <repobase>file://data/jenkins/jobs</repobase>
             <repopath>lastSuccessful/archive/</repopath>
           </properties>
         </profile>
