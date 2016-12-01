@@ -137,7 +137,7 @@
             </property>
           </activation>
           <properties>
-            <repobase>http://muml-build.cs.upb.de/job</repobase>
+            <repobase>http://localhost:8080/job</repobase>
             <repopath>lastSuccessfulBuild/artifact/</repopath>
           </properties>
         </profile>
