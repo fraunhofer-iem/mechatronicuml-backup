@@ -216,8 +216,8 @@
 		</repository>
 		<repository>
 			<id>PIM</id>
-			<layout>p2</layout>
-			<url>${repobase}/PlatformIndependentModeling-Maven/${repopath}org.muml.pim.repository/target/repository</url>
+            <url> ${repobase}/PlatformIndependentModeling/lastSuccessfulBuild/archive/targetPlatform/</url>
+			<!-- <url>${repobase}/PlatformIndependentModeling-Maven/${repopath}org.muml.pim.repository/target/repository</url> -->
 		</repository>
 		<repository>
 			<id>PM</id>
