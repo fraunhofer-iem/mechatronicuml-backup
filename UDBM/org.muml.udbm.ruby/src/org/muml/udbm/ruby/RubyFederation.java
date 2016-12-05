@@ -34,10 +34,10 @@ public class RubyFederation extends Federation implements Cloneable{
 
 	protected RubyFederation(HashSet<UDBMClock> clocks,
 			HashSet<ClockZone> clockZones) {
-		if(clocks.isEmpty()){
-			UDBMClock zeroClock = new UDBMClock("zeroclock", "zeroclock");
-			clocks.add(zeroClock);
-		}
+		// add Zero clock
+		UDBMClock zeroClock = new UDBMClock("zeroclock", "zeroclock");
+		addToClock(zeroClock);
+		// add other clocks
 		for (UDBMClock clock : clocks) {
 			addToClock(clock);
 		}

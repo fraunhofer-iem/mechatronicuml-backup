@@ -34,11 +34,6 @@ extends FederationFactory
 
 	@Override
 	public Federation createZeroFederation(HashSet<UDBMClock> clocks) {
-		if(clocks.isEmpty()){
-			UDBMClock zeroClock = new UDBMClock("zeroclock", "zeroclock");
-			clocks.add(zeroClock);
-		}
-		
 		HashSet<ClockConstraint> zeroClockConstraints = new HashSet<ClockConstraint>();
 		
 		for (UDBMClock clock : clocks) {
