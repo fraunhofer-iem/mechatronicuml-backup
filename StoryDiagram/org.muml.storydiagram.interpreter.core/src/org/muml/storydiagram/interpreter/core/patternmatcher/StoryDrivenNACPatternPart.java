@@ -25,10 +25,10 @@ public class StoryDrivenNACPatternPart extends StoryDrivenPatternPart<AbstractVa
 	{
 		super(patternMatcher, nacPatternPart.link, nacPatternPart.variables);
 
+		this.nacPatternPart = nacPatternPart;
+		
 		assert this.nacPatternPart.link.getBindingSemantics() == BindingSemantics.NEGATIVE;
 		assert this.nacPatternPart.link.getBindingOperator() == BindingOperator.CHECK_ONLY;
-
-		this.nacPatternPart = nacPatternPart;
 	}
 
 	@Override
