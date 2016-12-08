@@ -43,8 +43,8 @@
    
     <pluginRepositories>
      <pluginRepository>
-       <id>Eclipse - Acceleo Snapshots</id>
-       <url>https://repo.eclipse.org/content/repositories/acceleo-snapshots</url>
+       <id>Eclipse - Acceleo Snapshot 3.5.0</id>
+       <url>https://repo.eclipse.org/content/repositories/acceleo-snapshots/org/eclipse/acceleo/org.eclipse.acceleo.maven/3.5.0-SNAPSHOT/</url>
      </pluginRepository>
      <pluginRepository>
        <id>Eclipse - Acceleo Release</id>
