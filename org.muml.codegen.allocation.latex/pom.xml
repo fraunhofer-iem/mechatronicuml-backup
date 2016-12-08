@@ -50,6 +50,14 @@
        <id>Eclipse - Acceleo Release</id>
        <url>https://repo.eclipse.org/content/repositories/acceleo-releases</url>
      </pluginRepository>
+         <pluginRepository>
+      <id>Indigo Release</id>
+      <url>https://raw.github.com/eclipse/acceleo/master/maven/repository/releases/indigo</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>Snapshots</id>
+      <url>https://raw.github.com/lbroudoux/acceleo/master/maven/repository/snapshots</url>
+    </pluginRepository>
    </pluginRepositories>
   
    <repositories>
@@ -62,17 +70,6 @@
       <url>https://raw.github.com/lbroudoux/acceleo/master/maven/repository/snapshots</url>
     </repository>
   </repositories>
-   
-  <pluginRepositories>
-    <pluginRepository>
-      <id>Indigo Release</id>
-      <url>https://raw.github.com/eclipse/acceleo/master/maven/repository/releases/indigo</url>
-    </pluginRepository>
-    <pluginRepository>
-      <id>Snapshots</id>
-      <url>https://raw.github.com/lbroudoux/acceleo/master/maven/repository/snapshots</url>
-    </pluginRepository>
-  </pluginRepositories>
    
 
    
@@ -111,16 +108,3 @@
     </plugins>
   </build>
 </project>
-
-<!--  <packaging>eclipse-plugin</packaging>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.eclipse.tycho</groupId>
-        <artifactId>tycho-maven-plugin</artifactId>
-        <version>0.26.0</version>
-        <extensions>true</extensions>
-      </plugin>
-    </plugins>
-  </build>
-</project> -->
