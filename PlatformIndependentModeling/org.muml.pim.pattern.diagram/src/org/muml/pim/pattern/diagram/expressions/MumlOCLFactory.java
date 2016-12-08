@@ -72,7 +72,7 @@ public class MumlOCLFactory {
 				"\'\'", //$NON-NLS-1$
 				"\'0\'", //$NON-NLS-1$
 				"\'0\'", //$NON-NLS-1$
-				"self.oclAsType(pim::protocol::Role).coordinationProtocol = oppositeEnd.oclAsType(pim::protocol::Role).coordinationProtocol", //$NON-NLS-1$
+				"true -- self.oclAsType(pim::protocol::Role).coordinationProtocol = oppositeEnd.oclAsType(pim::protocol::Role).coordinationProtocol", //$NON-NLS-1$
 		};
 	}
 

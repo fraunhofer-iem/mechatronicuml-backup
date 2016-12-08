@@ -594,7 +594,7 @@
       <sourceEnd
           body="self.oclIsTypeOf(Processor) implies self.oclAsType(Processor).ownedCache.oclIsUndefined()"/>
       <targetEnd
-          body="self.oclContainer() = oppositeEnd.oclContainer()&#xA;and self.oclIsTypeOf(Cache)&#xA;"/>
+          body="true -- self.oclContainer() = oppositeEnd.oclContainer()&#xA;and self.oclIsTypeOf(Cache)&#xA;"/>
     </creationConstraints>
   </links>
   <diagram>
