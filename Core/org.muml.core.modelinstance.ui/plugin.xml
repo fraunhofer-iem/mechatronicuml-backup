@@ -19,6 +19,33 @@
     </wizard>
     
   </extension>
+  
+  <extension
+        point="org.eclipse.ui.menus">
+     <menuContribution
+           locationURI="popup:org.muml?after=types">
+        <menu
+              icon="icons/muml.png"
+              id="org.muml.tools"
+              label="Tools">
+           <command
+                 commandId="org.muml.core.tools.splitcategories"
+                 icon="icons/muml.png"
+                 id="org.muml.core.tools.splitcategories"
+                 label="Split categories into separate files"
+                 style="push">
+              <visibleWhen checkEnabled="false">
+						<or>
+							<reference definitionId="org.muml.expression.mumlfile"></reference>
+							<reference definitionId="org.muml.expression.typesfile"></reference>
+						</or>
+			  </visibleWhen>
+           </command>
+              
+        </menu>
+      </menuContribution>
+  </extension>
+  
   <extension
         point="org.eclipse.ui.menus">
      <menuContribution
@@ -75,12 +102,23 @@
            id="org.muml"
            name="MechatronicUML">
      </category>
+     <category
+           id="org.muml.tools"
+           name="Tools">
+     </category>
      <command
            categoryId="org.muml"
            defaultHandler="org.muml.core.modelinstance.ui.handlers.CreateModelFileCommand"
            description="Create new MechatronicUML Model"
            id="org.muml.core.ui.command.newmodel"
            name="Create new MechatronicUML Model">
+     </command>
+     <command
+           categoryId="org.muml.tools"
+           defaultHandler="org.muml.core.modelinstance.ui.handlers.SplitCategoriesIntoSeparateFilesCommand"
+           description="Split categories into separate files"
+           id="org.muml.core.tools.splitcategories"
+           name="Split categories into separate files">
      </command>
   </extension>
 
