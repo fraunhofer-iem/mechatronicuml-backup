@@ -4,10 +4,10 @@
   <categories xmi:id="_M7u6YQUkEeSJTqo7jlVMjA" key="org.muml.types.category" name="types">
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_M7u6YgUkEeSJTqo7jlVMjA" name="VOID"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_M7u6YwUkEeSJTqo7jlVMjA" name="BOOLEAN" primitiveType="BOOLEAN"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_M7u6ZAUkEeSJTqo7jlVMjA" name="BYTE" primitiveType="BYTE"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_M7u6ZQUkEeSJTqo7jlVMjA" name="SHORT" primitiveType="SHORT"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_M7u6ZgUkEeSJTqo7jlVMjA" name="INT" primitiveType="INT"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_M7u6ZwUkEeSJTqo7jlVMjA" name="LONG" primitiveType="LONG"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_M7u6ZAUkEeSJTqo7jlVMjA" name="BYTE" primitiveType="INT8"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_M7u6ZQUkEeSJTqo7jlVMjA" name="SHORT" primitiveType="INT16"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_M7u6ZgUkEeSJTqo7jlVMjA" name="INT" primitiveType="INT32"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_M7u6ZwUkEeSJTqo7jlVMjA" name="LONG" primitiveType="INT64"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_M7u6aAUkEeSJTqo7jlVMjA" name="DOUBLE" primitiveType="DOUBLE"/>
   </categories>
   <categories xmi:id="_M7u6aQUkEeSJTqo7jlVMjA" key="org.muml.pim.instance.category" name="instance"/>
@@ -21,7 +21,6 @@
           <upperBound xmi:id="_GYzs4S3JEeS3i-cDQ8GhOQ"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_B6x48AUlEeSJTqo7jlVMjA" name="ParksystemFreiBuffer" comment="Buffer für Nachrichten für das Parksystem." messageType="_tBA0wAUkEeSJTqo7jlVMjA">
-          <extension xsi:type="sda:OperationExtension" xmi:id="_Ytl9wC3HEeS3i-cDQ8GhOQ"/>
           <bufferSize xmi:id="_ihBjgC3DEeS3i-cDQ8GhOQ"/>
         </receiverMessageBuffer>
         <receiverMessageBuffer xmi:id="_kX1_YC28EeS3i-cDQ8GhOQ" name="ParksystemAkzStopBuffer" messageType="_AltGUCyLEeSYk6MjS_5mTw">

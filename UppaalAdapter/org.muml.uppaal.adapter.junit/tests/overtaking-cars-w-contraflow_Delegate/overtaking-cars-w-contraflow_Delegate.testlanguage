@@ -2,7 +2,7 @@
 <org.muml.testlanguage:TestCase xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml.testlanguage="http://www.muml.org/testlanguage/1.0" xmlns:org.muml.testlanguage.specification="http://www.muml.org/testlanguage/specification/1.0">
   <nodes label="Load Model" specificationClassName="LoadModel">
     <outputs name="model" targets="//@nodes.1/@inputs[name='muml']"/>
-    <specification xsi:type="org.muml.testlanguage.specification:LoadModel" label="Load Model" uri="platform:/plugin/org.muml.testlanguage.junit/tests/overtaking-cars-w-contraflow_Delegate/overtaking-cars-w-contraflow_Correct.muml#_hBCUEJQkEeSZM-zEIRk3lw">
+    <specification xsi:type="org.muml.testlanguage.specification:LoadModel" label="Load Model" uri="platform:/resource/org.muml.uppaal.adapter.junit/tests/overtaking-cars-w-contraflow_Delegate/overtaking-cars-w-contraflow_Correct.muml#_hBCUEJQkEeSZM-zEIRk3lw">
       <portSpecifications name="model" optional="true" type="OUT"/>
     </specification>
   </nodes>

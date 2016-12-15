@@ -1,1 +1,53 @@
-Unexpected error.  File contents could not be restored from local history during undo/redo.
+<?xml version="1.0" encoding="UTF-8"?>
+<org.muml.testlanguage:TestCase xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml.testlanguage="http://www.muml.org/testlanguage/1.0" xmlns:org.muml.testlanguage.specification="http://www.muml.org/testlanguage/specification/1.0">
+  <nodes label="Load Model" specificationClassName="LoadModel">
+    <outputs name="model" targets="//@nodes.3/@inputs[name='model_2'] //@nodes.4/@inputs[name='model_1']"/>
+    <specification xsi:type="org.muml.testlanguage.specification:LoadModel" label="Load Model" uri="platform:/resource/org.muml.uppaal.adapter.junit/tests/compareModels/einparkhilfe.muml">
+      <portSpecifications name="model" optional="true" type="OUT"/>
+    </specification>
+  </nodes>
+  <nodes label="Load Model" specificationClassName="LoadModel">
+    <outputs name="model" targets="//@nodes.4/@inputs[name='model_2']"/>
+    <specification xsi:type="org.muml.testlanguage.specification:LoadModel" label="Load Model" uri="platform:/resource/org.muml.uppaal.adapter.junit/tests/compareModels/minimal.muml">
+      <portSpecifications name="model" optional="true" type="OUT"/>
+    </specification>
+  </nodes>
+  <nodes label="Load Model" specificationClassName="LoadModel">
+    <outputs name="model" targets="//@nodes.3/@inputs[name='model_1']"/>
+    <specification xsi:type="org.muml.testlanguage.specification:LoadModel" label="Load Model" uri="platform:/resource/org.muml.uppaal.adapter.junit/tests/compareModels/einparkhilfe.muml">
+      <portSpecifications name="model" optional="true" type="OUT"/>
+    </specification>
+  </nodes>
+  <nodes label="Compare Models" specificationClassName="CompareModels">
+    <inputs name="model_1" source="//@nodes.2/@outputs[name='model']"/>
+    <inputs name="model_2" source="//@nodes.0/@outputs[name='model']"/>
+    <outputs name="bool" targets="//@nodes.5/@inputs[name='bool']"/>
+    <specification xsi:type="org.muml.testlanguage.specification:CompareModels" label="Compare Models">
+      <portSpecifications name="model_1"/>
+      <portSpecifications name="model_2"/>
+      <portSpecifications name="bool" type="OUT"/>
+    </specification>
+  </nodes>
+  <nodes label="Compare Models" specificationClassName="CompareModels">
+    <inputs name="model_1" source="//@nodes.0/@outputs[name='model']"/>
+    <inputs name="model_2" source="//@nodes.1/@outputs[name='model']"/>
+    <outputs name="bool" targets="//@nodes.6/@inputs[name='bool']"/>
+    <specification xsi:type="org.muml.testlanguage.specification:CompareModels" label="Compare Models">
+      <portSpecifications name="model_1"/>
+      <portSpecifications name="model_2"/>
+      <portSpecifications name="bool" type="OUT"/>
+    </specification>
+  </nodes>
+  <nodes label="Assert Bool" specificationClassName="AssertBool">
+    <inputs name="bool" source="//@nodes.3/@outputs[name='bool']" dataType="class.java.lang.Boolean"/>
+    <specification xsi:type="org.muml.testlanguage.specification:AssertBool" label="Assert Bool">
+      <portSpecifications name="bool" dataType="class.java.lang.Boolean"/>
+    </specification>
+  </nodes>
+  <nodes label="Assert Bool" specificationClassName="AssertBool">
+    <inputs name="bool" source="//@nodes.4/@outputs[name='bool']" dataType="class.java.lang.Boolean"/>
+    <specification xsi:type="org.muml.testlanguage.specification:AssertBool" label="Assert Bool" assertion="false">
+      <portSpecifications name="bool" dataType="class.java.lang.Boolean"/>
+    </specification>
+  </nodes>
+</org.muml.testlanguage:TestCase>
