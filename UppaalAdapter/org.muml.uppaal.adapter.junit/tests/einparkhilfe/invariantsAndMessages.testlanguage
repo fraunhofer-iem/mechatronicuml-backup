@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<org.muml.testlanguage:TestCase xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml.testlanguage="http://www.muml.org/testlanguage/1.0" xmlns:org.muml.testlanguage.specification="http://www.muml.org/testlanguage/specification/1.0">
+<testlanguage:TestCase xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:testlanguage="http://www.muml.org/testlanguage/1.0" xmlns:testlanguagespec="http://www.muml.org/testlanguage/specification/1.0">
   <nodes label="Load Model" specificationClassName="LoadModel">
     <outputs name="model" targets="//@nodes.1/@inputs[name='muml']"/>
-    <specification xsi:type="org.muml.testlanguage.specification:LoadModel" label="Load Model" uri="platform:/resource/org.muml.uppaal.adapter.junit/tests/einparkhilfe/simplerExample.muml">
+    <specification xsi:type="testlanguagespec:LoadModel" label="Load Model" uri="platform:/resource/org.muml.uppaal.adapter.junit/tests/einparkhilfe/simplerExample.muml">
       <portSpecifications name="model" optional="true" type="OUT"/>
     </specification>
   </nodes>
   <nodes label="Check MTCTL" specificationClassName="CheckMTCTL">
-    <inputs name="muml" source="//@nodes.0/@outputs[name='model']" dataType="org.modelinstance.RootNode"/>
-    <inputs name="options" optional="true" dataType="org.muml.verification.uppaal.options.Options"/>
+    <inputs name="muml" source="//@nodes.0/@outputs[name='model']"/>
+    <inputs name="options" optional="true"/>
     <outputs name="results" targets="//@nodes.2/@inputs[name='property_result_repository']"/>
-    <specification xsi:type="org.muml.testlanguage.specification:CheckMTCTL" label="Check MTCTL" properties="stateActive(Hinderniserkennung.aktiv.hindernis) leadsTo stateActive(Parksystem.ausgeschaltet); //Invarianten + Nachrichtenaustausch">
-      <portSpecifications name="muml" dataType="org.modelinstance.RootNode"/>
-      <portSpecifications name="options" optional="true" dataType="org.muml.verification.uppaal.options.Options"/>
+    <specification xsi:type="testlanguagespec:CheckMTCTL" label="Check MTCTL" properties="stateActive(Hinderniserkennung.aktiv.hindernis) leadsTo stateActive(Parksystem.ausgeschaltet); //Invarianten + Nachrichtenaustausch">
+      <portSpecifications name="muml"/>
+      <portSpecifications name="options" optional="true"/>
       <portSpecifications name="results" type="OUT"/>
     </specification>
   </nodes>
   <nodes label="Assert Result" specificationClassName="AssertResult">
-    <inputs name="property_result_repository" source="//@nodes.1/@outputs[name='results']" dataType="org.muml.verification.uppaal.results.PropertyResultRepository"/>
-    <specification xsi:type="org.muml.testlanguage.specification:AssertResult" label="Assert Result">
-      <portSpecifications name="property_result_repository" dataType="org.muml.verification.uppaal.results.PropertyResultRepository"/>
+    <inputs name="property_result_repository" source="//@nodes.1/@outputs[name='results']"/>
+    <specification xsi:type="testlanguagespec:AssertResult" label="Assert Result">
+      <portSpecifications name="property_result_repository"/>
     </specification>
   </nodes>
-</org.muml.testlanguage:TestCase>
+</testlanguage:TestCase>
