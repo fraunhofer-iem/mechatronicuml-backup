@@ -8,84 +8,121 @@
   <!-- https://wiki.eclipse.org/Acceleo/Maven -->
   <!-- https://lbroudoux.wordpress.com/2012/07/24/launching-acceleo-generation-from-maven/ -->
   
-   <dependencies>
-     <dependency>
-       <groupId>org.eclipse.acceleo</groupId>
-       <artifactId>org.eclipse.acceleo.maven</artifactId>
-       <version>3.5.0-SNAPSHOT</version>
-     </dependency>
-     <dependency>
-       <groupId>org.eclipse.acceleo</groupId>
-       <artifactId>org.eclipse.acceleo.engine</artifactId>
-       <version>3.5.0-SNAPSHOT</version>
-     </dependency>
-     <dependency>
-       <groupId>org.eclipse.uml2</groupId>
-       <artifactId>org.eclipse.uml2.uml</artifactId>
-       <version>4.1.1.v20130902-0826</version>
-     </dependency>
-     <dependency>
-       <groupId>org.eclipse.uml2</groupId>
-       <artifactId>org.eclipse.uml2.types</artifactId>
-       <version>1.1.0.v20130902-0826</version>
-     </dependency>
-     <dependency>
-       <groupId>org.eclipse.uml2</groupId>
-       <artifactId>org.eclipse.uml2.common</artifactId>
-       <version>1.8.1.v20130902-0826</version>
-     </dependency>
-     <dependency>
-       <groupId>org.slf4j</groupId>
-       <artifactId>slf4j-simple</artifactId>
-       <version>1.6.4</version>
-     </dependency>
-   </dependencies>
-   
-    <pluginRepositories>
-     <pluginRepository>
-       <id>Eclipse - Acceleo Snapshot 3.5.0</id>
-       <url>https://repo.eclipse.org/content/repositories/acceleo-snapshots/org/eclipse/acceleo/org.eclipse.acceleo.maven/3.5.0-SNAPSHOT/</url>
-     </pluginRepository>
-     <pluginRepository>
-       <id>Eclipse - Acceleo Release</id>
-       <url>https://repo.eclipse.org/content/repositories/acceleo-releases</url>
-     </pluginRepository>
-         <pluginRepository>
-      <id>Indigo Release</id>
-      <url>https://raw.github.com/eclipse/acceleo/master/maven/repository/releases/indigo</url>
-    </pluginRepository>
-    <pluginRepository>
-      <id>Snapshots</id>
-      <url>https://raw.github.com/lbroudoux/acceleo/master/maven/repository/snapshots</url>
-    </pluginRepository>
-   </pluginRepositories>
+  <properties>
+       <version>0.26.0</version>
+  </properties>
+
+  <profiles>
+    <profile>
+      <id>platform-neon</id>
+      <activation>
+         <activeByDefault>true</activeByDefault>
+        <property>
+          <name>platform-version-name</name>
+          <value>neon</value>
+        </property>
+      </activation>
+      <properties>
+        <uml-to-java-site>http://marketplace.obeonetwork.com/updates/od5/</uml-to-java-site>
+        <eclipse-site>http://download.eclipse.org/releases/neon/</eclipse-site>
+        <!--<platform-version>[3.7,3.8)</platform-version> -->
+      </properties>
+    </profile>
+  </profiles>
   
-   <repositories>
+  <repositories>
     <repository>
-      <id>Indigo Release</id>
-      <url>https://raw.github.com/eclipse/acceleo/master/maven/repository/releases/indigo</url>
+      <id>eclipse-platform</id>
+      <layout>p2</layout>
+      <url>${eclipse-site}</url>
     </repository>
     <repository>
-      <id>Snapshots</id>
-      <url>https://raw.github.com/lbroudoux/acceleo/master/maven/repository/snapshots</url>
+      <id>uml-to-java</id>
+      <layout>p2</layout>
+      <url>${uml-to-java-site}</url>
+    </repository>
+    <repository>
+      <id>Eclipse - Acceleo Snapshots</id>
+      <url>https://repo.eclipse.org/content/repositories/acceleo-snapshots</url>
+    </repository>
+	<repository>
+      <id>Eclipse - Acceleo Release</id>
+      <url>https://repo.eclipse.org/content/repositories/acceleo-releases</url>
     </repository>
   </repositories>
-   
-
-   
+  
+  <pluginRepositories>
+    <pluginRepository>
+      <id>codehaus.snapshots</id>
+      <url>http://snapshots.repository.codehaus.org/</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>Eclipse - Acceleo Snapshots</id>
+      <url>https://repo.eclipse.org/content/repositories/acceleo-snapshots</url>
+    </pluginRepository>
+	<pluginRepository>
+      <id>Eclipse - Acceleo Release</id>
+      <url>https://repo.eclipse.org/content/repositories/acceleo-releases</url>
+    </pluginRepository>
+  </pluginRepositories>
+  
+  <dependencies>
+    <dependency>
+      <groupId>org.eclipse.acceleo</groupId>
+      <artifactId>org.eclipse.acceleo.maven</artifactId>
+      <version>3.6.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.acceleo</groupId>
+      <artifactId>org.eclipse.acceleo.engine</artifactId>
+      <version>3.6.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.uml2</groupId>
+      <artifactId>org.eclipse.uml2.uml</artifactId>
+      <version>4.1.1.v20130902-0826</version>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.uml2</groupId>
+      <artifactId>org.eclipse.uml2.types</artifactId>
+      <version>1.1.0.v20130902-0826</version>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.uml2</groupId>
+      <artifactId>org.eclipse.uml2.common</artifactId>
+      <version>1.8.1.v20130902-0826</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>1.6.4</version>
+    </dependency>
+  </dependencies>
+  
   <build>
-    <sourceDirectory>${basedir}/src</sourceDirectory>
     <plugins>
       <plugin>
-        <groupId>org.eclipse.acceleo</groupId>
-        <artifactId>maven</artifactId>
-        <version>3.5.0-SNAPSHOT</version>
-        <executions>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>${tycho-version}</version>
+        <extensions>true</extensions>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho-version}</version>
+        <configuration>
+          <resolver>p2</resolver>
+          <pomDependencies>consider</pomDependencies>
+        </configuration>
+      </plugin>
+      <plugin>
+       <groupId>org.eclipse.acceleo</groupId>
+       <artifactId>org.eclipse.acceleo.maven</artifactId>
+       <version>3.6.0-SNAPSHOT</version>
+       <executions>
           <execution>
             <phase>compile</phase>
-            <goals>
-              <goal>acceleo-compile</goal>
-            </goals>
           </execution>
         </executions>
         <configuration>
@@ -95,16 +132,60 @@
             <root>${project.basedir}</root>
             <entries>
               <entry>
-                <input>src</input>
+                <input>src/main/java</input>
                 <output>target/classes</output>
               </entry>
             </entries>
+            <jars>
+            	<jar>p2.eclipse-plugin:org.obeonetwork.pim.uml2.gen.java</jar>
+            </jars>
           </acceleoProject>
           <packagesToRegister>
             <packageToRegister>org.eclipse.uml2.uml.UMLPackage</packageToRegister>
           </packagesToRegister>
+          <uriHandler>org.eclipse.acceleo.maven.AcceleoURIHandler</uriHandler>
         </configuration>
-      </plugin>
+     </plugin>
     </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.eclipse.tycho</groupId>
+          <artifactId>tycho-compiler-plugin</artifactId>
+          <version>${tycho-version}</version>
+          <configuration>
+            <encoding>UTF-8</encoding>
+          </configuration>
+        </plugin>
+        <plugin>
+          <!-- TODO remove workaround when https://issues.sonatype.org/browse/TYCHO-473 is fixed -->
+          <groupId>org.eclipse.tycho</groupId>
+          <artifactId>tycho-source-plugin</artifactId>
+          <version>${tycho-version}</version>
+          <executions>
+            <execution>
+              <id>attach-source</id>
+              <phase>process-classes</phase>
+              <goals>
+                <goal>plugin-source</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>2.4.1</version>
+          <configuration>
+            <encoding>ISO-8859-1</encoding>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-antrun-plugin</artifactId>
+          <version>1.3</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
   </build>
 </project>
