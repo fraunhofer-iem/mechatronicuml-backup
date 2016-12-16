@@ -9,7 +9,7 @@
   <!-- https://lbroudoux.wordpress.com/2012/07/24/launching-acceleo-generation-from-maven/ -->
   
   <properties>
-       <version>0.26.0</version>
+       <tycho-version>0.26.0</tycho-version>
   </properties>
 
   <profiles>
