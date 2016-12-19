@@ -317,19 +317,34 @@ public class JavaFederation extends Federation {
 	public ClockConstraint getUpperBound(UDBMClock clock) {
 
 		// the maximum value of the clock
-		int value = -1;
+		int value = Integer.MIN_VALUE;
 
 		// iterate all zone to obtain larger clock value
 		Iterator<?> it = (Iterator<?>) this.iteratorOfClockZone();
 		while (it.hasNext()) {
 			int tmpValue = ((JavaClockZone) it.next()).getUpperBound(clock);
-			if (tmpValue > value)
-				value = tmpValue;
+			
+			// positive clock values (or clock differences)
+			if (tmpValue >= 0){
+				if (tmpValue > value){
+					value = tmpValue;
+				}
+			}
+			// negative clock values (or clock differences)
+			else {
+				if (value == Integer.MIN_VALUE){
+					value = (-1)*value;
+				}
+				if (tmpValue < value){
+					value = tmpValue;
+				}
+			}
+				
 		}
-
-		if (value == -1)
+		
+		if (value == Integer.MIN_VALUE || value == -Integer.MAX_VALUE  )
 			return new FalseClockConstraint();
-		else if (value == Integer.MAX_VALUE)
+		else if (value == Integer.MAX_VALUE || value == -Integer.MIN_VALUE)
 			return new TrueClockConstraint();
 		else
 			return new SimpleClockConstraint(
@@ -517,7 +532,7 @@ public class JavaFederation extends Federation {
 			}
 		}
 
-		if (value == Integer.MAX_VALUE)
+		if (value == Integer.MAX_VALUE || value == -Integer.MIN_VALUE)
 			return new FalseClockConstraint();
 		else if (value == Integer.MIN_VALUE || value == -Integer.MAX_VALUE)
 			return new TrueClockConstraint();
