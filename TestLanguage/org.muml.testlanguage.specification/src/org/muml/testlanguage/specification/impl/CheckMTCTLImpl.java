@@ -5,8 +5,6 @@ package org.muml.testlanguage.specification.impl;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 
-import javax.print.attribute.standard.Severity;
-
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.Notification;
@@ -182,11 +180,6 @@ public class CheckMTCTLImpl extends NodeSpecificationImpl implements CheckMTCTL 
 					.createElementToVerifyExtension();
 			protocol.getExtensions().add(extension);
 		}
-
-		// Copy the MUML model so we do not destroy it.
-//		org.eclipse.emf.ecore.util.EcoreUtil.Copier copier = new org.eclipse.emf.ecore.util.EcoreUtil.Copier();
-//		muml = (org.muml.core.modelinstance.RootNode) copier.copy(rootNode);
-//		copier.copyReferences();
 
 		// Look for a CoordinationProtocol that asks for a verification,
 		// otherwise just choose any.
