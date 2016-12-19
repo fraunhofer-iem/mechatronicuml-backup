@@ -46,11 +46,14 @@ public class JavaFederation extends Federation {
 		this.setClockHashSet(clocks);
 		indicesToClockNames = new LinkedHashMap<Integer, UDBMClock>();
 		clockNamesToIndices = new LinkedHashMap<UDBMClock, Integer>();
-		// add Zero clock
-		UDBMClock zeroClock = new UDBMClock("zeroclock", "zeroclock");
-		indicesToClockNames.put(0, zeroClock);
-		clockNamesToIndices.put(zeroClock, 0);
-		addToClock(zeroClock);
+		
+		if (clockNamesToIndices.containsKey("zeroclock") == false && indicesToClockNames.containsValue("zeroclock") == false){
+			// add Zero clock
+			UDBMClock zeroClock = new UDBMClock("zeroclock", "zeroclock");
+			indicesToClockNames.put(0, zeroClock);
+			clockNamesToIndices.put(zeroClock, 0);
+			addToClock(zeroClock);
+		}
 		// add other clocks
 		for (UDBMClock clock : clocks) {
 			addToClock(clock);
@@ -220,11 +223,12 @@ public class JavaFederation extends Federation {
 
 	@Override
 	public void and(ClockConstraint constraint) {
+
 		Iterator<?> it = (Iterator<?>) this.iteratorOfClockZone();
 		while (it.hasNext()) {
 			// Intersect against constraint
 			JavaClockZone curZone = (JavaClockZone) it.next();
-			System.out.println("###     Current zone: " + curZone);
+			//System.out.println("###     Current zone: " + curZone);
 			curZone.and(constraint);
 			System.out.println("###     Current zone and constraint: " + curZone);
 			// delete zone if it became empty
@@ -233,7 +237,7 @@ public class JavaFederation extends Federation {
 				it.remove();
 			}
 		}
-		System.out.println("###     Federation and constraint: " + this.toString());
+		//System.out.println("###     Federation and constraint: " + this.toString());
 	}
 
 	@Override
