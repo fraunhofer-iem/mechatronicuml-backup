@@ -223,7 +223,6 @@ public class JavaFederation extends Federation {
 
 	@Override
 	public void and(ClockConstraint constraint) {
-
 		Iterator<?> it = (Iterator<?>) this.iteratorOfClockZone();
 		while (it.hasNext()) {
 			// Intersect against constraint
@@ -498,14 +497,29 @@ public class JavaFederation extends Federation {
 		// iterate all zone to obtain smaller clock value
 		Iterator<?> it = (Iterator<?>) this.iteratorOfClockZone();
 		while (it.hasNext()) {
+			
 			int tmpValue = ((JavaClockZone) it.next()).getLowerBound(clock);
-			if (tmpValue < value)
-				value = tmpValue;
+			
+			// positive clock values (or clock differences)
+			if (tmpValue >= 0){
+				if (tmpValue < value){
+					value = tmpValue;
+				}
+			}
+			// negative clock values (or clock differences)
+			else {
+				if (value == Integer.MAX_VALUE){
+					value = (-1)*value;
+				}
+				if (tmpValue > value){
+					value = tmpValue;
+				}
+			}
 		}
 
 		if (value == Integer.MAX_VALUE)
 			return new FalseClockConstraint();
-		else if (value == -1)
+		else if (value == Integer.MIN_VALUE || value == -Integer.MAX_VALUE)
 			return new TrueClockConstraint();
 		else
 			return new SimpleClockConstraint(
