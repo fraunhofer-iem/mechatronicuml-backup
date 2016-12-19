@@ -15,6 +15,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.muml.core.modelinstance.RootNode;
 import org.muml.testlanguage.specification.CheckMTCTL;
 import org.muml.testlanguage.specification.NodeSpecification;
 import org.muml.testlanguage.specification.PortType;
@@ -105,7 +107,7 @@ public class CheckMTCTLImpl extends NodeSpecificationImpl implements CheckMTCTL 
 	 */
 	public void initialize() {
 		this.setLabel("Check MTCTL");
-		this.addPortSpecification(PortType.IN, "muml", false, org.muml.core.modelinstance.RootNode.class);
+		this.addPortSpecification(PortType.IN, "muml", false, EObject.class);
 		this.addPortSpecification(PortType.IN, "options", true, org.muml.uppaal.options.Options.class);
 		this.addPortSpecification(PortType.OUT, "results", false);
 	}
@@ -117,108 +119,107 @@ public class CheckMTCTLImpl extends NodeSpecificationImpl implements CheckMTCTL 
 	 */
 	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs)
 			throws ExecutionException, Exception {
-		// Do we even have properties to verify?
-		if ("".equals(this.getProperties())) {
-			throw new ExecutionException("No properties to verify.");
-		}
-
-		// Copy the MUML model so we do not destroy it.
-		// Copier copier = new Copier();
-
-		org.muml.core.modelinstance.RootNode muml = null;
+		
 		org.muml.pim.protocol.CoordinationProtocol protocol = null;
-
 		org.muml.core.Extension extension = null;
-
 		org.muml.core.modelinstance.RootNode rootNode = null;
-		// EObject rootNode = null;
-
+				
 		if (inputs.get("muml") instanceof org.muml.core.modelinstance.RootNode) {
 			rootNode = (org.muml.core.modelinstance.RootNode) inputs.get("muml");
+			
+			// Get the CoordinationProtocol category.
+			org.muml.core.modelinstance.ModelElementCategory category = null;
+			for (org.muml.core.modelinstance.ModelElementCategory cur : rootNode.getCategories()) {
+				if (cur.getKey().equals("org.muml.pim.protocol.category")) {
+					category = cur;
+					break;
+				}
+			}
+
+			if (category == null) {
+				throw new ExecutionException("Model does not contain a CoordinationProtocol category.");
+			}
+			
+			for (org.muml.core.ExtendableElement cur : category.getModelElements()) {
+				protocol = (org.muml.pim.protocol.CoordinationProtocol) cur;
+
+				if (protocol.getExtension(
+						org.muml.uppaal.adapter.extension.verificationextension.VerificationExtensionPackage.eINSTANCE
+								.getElementToVerifyExtension()) != null) {
+					break;
+				}
+				// In case there is no protocol with extension,
+				// the last coordination protocol is used
+			}
+			
 		} else if (inputs.get("muml") instanceof org.muml.pim.protocol.CoordinationProtocol) {
 
 			protocol = (org.muml.pim.protocol.CoordinationProtocol) inputs.get("muml");
-
-			// rootNode = (RootNode)((CoordinationProtocol)
-			// inputs.get("muml")).eContainer().eContainer();
-
-			if ((org.eclipse.emf.ecore.util.EcoreUtil
-					.getRootContainer(protocol) instanceof org.muml.core.modelinstance.RootNode)) {
-				rootNode = (org.muml.core.modelinstance.RootNode) org.eclipse.emf.ecore.util.EcoreUtil
-						.getRootContainer(protocol);
-			} else {
-				throw new ExecutionException("The coordination protocol doesn't have correct RootContainer");
+			
+			EObject container = EcoreUtil.getRootContainer(protocol);
+			
+			if (container instanceof RootNode) {
+				rootNode = (RootNode) container;
 			}
-
-			extension = protocol.getExtension(
-					org.muml.uppaal.adapter.extension.verificationextension.VerificationExtensionPackage.eINSTANCE
-							.getElementToVerifyExtension());
-			if (extension == null) {
-				extension = org.muml.uppaal.adapter.extension.verificationextension.VerificationExtensionFactory.eINSTANCE
-						.createElementToVerifyExtension();
-				protocol.getExtensions().add(extension);
+			else {
+				throw new ExecutionException("Root container of protocol is not of type RootNode.");
 			}
+			
 		} else {
 			throw new ExecutionException("Coordination protocol is not specified.");
 		}
-
-		// Copy the MUML model so we do not destroy it.
-		org.eclipse.emf.ecore.util.EcoreUtil.Copier copier = new org.eclipse.emf.ecore.util.EcoreUtil.Copier();
-		muml = (org.muml.core.modelinstance.RootNode) copier.copy(rootNode);
-		copier.copyReferences();
-
-		// Get the CoordinationProtocol category.
-		org.muml.core.modelinstance.ModelElementCategory category = null;
-		for (org.muml.core.modelinstance.ModelElementCategory cur : muml.getCategories()) {
-			if (cur.getKey().equals("org.muml.pim.protocol.category")) {
-				category = cur;
-				break;
-			}
-		}
-
-		if (category == null) {
-			throw new ExecutionException("Model does not contain a CoordinationProtocol category.");
-		}
-
-		// Look for a CoordinationProtocol that asks for a verification,
-		// otherwise just choose any.
-
-		for (org.muml.core.ExtendableElement cur : category.getModelElements()) {
-			protocol = (org.muml.pim.protocol.CoordinationProtocol) cur;
-
-			if (protocol.getExtension(
-					org.muml.uppaal.adapter.extension.verificationextension.VerificationExtensionPackage.eINSTANCE
-							.getElementToVerifyExtension()) != null) {
-				break;
-			}
-			// In case there is no protocol with extension,
-			// the last coordination protocol is used
-		}
+		
 		if (protocol == null) {
 			throw new ExecutionException("Model does not contain a CoordinationProtocol.");
 		}
-
-		org.eclipse.emf.ecore.resource.ResourceSet resourceSet = new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();
-		resourceSet.getLoadOptions().put(org.eclipse.xtext.resource.XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
-		org.muml.uppaal.adapter.mtctl.xtext.scoping.MtctlScopeProvider.getInstance().setScopeForEObject(protocol);
-		org.eclipse.emf.ecore.resource.Resource resource = resourceSet
-				.createResource(org.eclipse.emf.common.util.URI.createURI("dummy:/dummy.mtctl"));
-		resource.load(new java.io.ByteArrayInputStream(properties.getBytes(java.nio.charset.StandardCharsets.UTF_8)),
-				resourceSet.getLoadOptions());
-
-		// Parse the PropertyRepository we have in the context of the protocol.
 		
-		EObject content = resource.getContents().get(0);
+		extension = protocol.getExtension(
+				org.muml.uppaal.adapter.extension.verificationextension.VerificationExtensionPackage.eINSTANCE
+						.getElementToVerifyExtension());
 		
-		if (!(content instanceof PropertyRepository)) {
-			throw new ExecutionException("Model does not include a PropertyRepository.");
+		if (extension == null) {
+			extension = org.muml.uppaal.adapter.extension.verificationextension.VerificationExtensionFactory.eINSTANCE
+					.createElementToVerifyExtension();
+			protocol.getExtensions().add(extension);
 		}
-		
-		PropertyRepository propertyRepository = (PropertyRepository) content;
 
-		// Replace all existing PropertyRepositories by the one we just created.
-		protocol.getVerificationConstraintRepositories().clear();
-		protocol.getVerificationConstraintRepositories().add(propertyRepository);
+		// Copy the MUML model so we do not destroy it.
+//		org.eclipse.emf.ecore.util.EcoreUtil.Copier copier = new org.eclipse.emf.ecore.util.EcoreUtil.Copier();
+//		muml = (org.muml.core.modelinstance.RootNode) copier.copy(rootNode);
+//		copier.copyReferences();
+
+		// Look for a CoordinationProtocol that asks for a verification,
+		// otherwise just choose any.
+				
+		if (properties != null && !properties.isEmpty()) {
+			org.eclipse.emf.ecore.resource.ResourceSet resourceSet = new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();
+			resourceSet.getLoadOptions().put(org.eclipse.xtext.resource.XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
+			org.muml.uppaal.adapter.mtctl.xtext.scoping.MtctlScopeProvider.getInstance().setScopeForEObject(protocol);
+			org.eclipse.emf.ecore.resource.Resource resource = resourceSet
+					.createResource(org.eclipse.emf.common.util.URI.createURI("dummy:/dummy.mtctl"));
+			resource.load(new java.io.ByteArrayInputStream(properties.getBytes(java.nio.charset.StandardCharsets.UTF_8)),
+					resourceSet.getLoadOptions());
+	
+			// Parse the PropertyRepository we have in the context of the protocol.
+			
+			EObject content = resource.getContents().get(0);
+			
+			if (!(content instanceof PropertyRepository)) {
+				throw new ExecutionException("Model does not include a PropertyRepository.");
+			}
+			
+			PropertyRepository propertyRepository = (PropertyRepository) content;
+	
+			// Replace all existing PropertyRepositories by the one we just created.
+			protocol.getVerificationConstraintRepositories().clear();
+			protocol.getVerificationConstraintRepositories().add(propertyRepository);
+		}
+		else {
+			// Do we even have properties to verify?
+			if (protocol.getVerificationConstraintRepositories().isEmpty()) {
+				throw new ExecutionException("No properties to verify.");
+			}
+		}
 
 		// Verify for results (= apply the transformation by the MTCTL people).
 		org.eclipse.emf.common.util.URI realURI = org.eclipse.emf.common.util.URI.createURI(
@@ -244,7 +245,7 @@ public class CheckMTCTLImpl extends NodeSpecificationImpl implements CheckMTCTL 
 
 		// Create the extents.
 		org.eclipse.m2m.qvt.oml.BasicModelExtent mumlExtent = new org.eclipse.m2m.qvt.oml.BasicModelExtent();
-		mumlExtent.add(muml);
+		mumlExtent.add(rootNode);
 		org.eclipse.m2m.qvt.oml.BasicModelExtent optionsExtent = new org.eclipse.m2m.qvt.oml.BasicModelExtent();
 		optionsExtent.add(options);
 		org.eclipse.m2m.qvt.oml.BasicModelExtent resultExtent = new org.eclipse.m2m.qvt.oml.BasicModelExtent();
@@ -255,12 +256,7 @@ public class CheckMTCTLImpl extends NodeSpecificationImpl implements CheckMTCTL 
 		context.setLog(log);
 		org.eclipse.m2m.qvt.oml.ExecutionDiagnostic dia = executor.execute(context, mumlExtent, optionsExtent,
 				resultExtent);
-
-//		if (extension != null) {
-//			extension = null; // Is this enoguh or I should remove the extension
-//								// from the list of protocol's extensions?
-//		}
-
+		
 		// Check if we succeeded.
 		if (dia.getSeverity() != org.eclipse.m2m.qvt.oml.ExecutionDiagnostic.OK) {
 			throw new ExecutionException(new CoreException(BasicDiagnostic.toIStatus(dia)));
