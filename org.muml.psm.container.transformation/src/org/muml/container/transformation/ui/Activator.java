@@ -3,39 +3,39 @@ package org.muml.container.transformation.ui;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
-
 public class Activator extends AbstractUIPlugin {
-	
-	
-	
 
+	private static Activator plugin;
 	
-	private static Activator instance;
-
-	public Activator(){
-		
+	/**
+	 * The plug-in ID.
+	 */
+	public static final String PLUGIN_ID = "org.muml.psm.container.transformation";
+	
+	public Activator() {
+		// TODO Auto-generated constructor stub
 	}
-
+	
 	/*
 	 * (non-Javadoc)
 	 * @see org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext)
 	 */
 	public void start(BundleContext bundleContext) throws Exception {
 		super.start(bundleContext);
-		instance = this;
+		plugin = this;
 	}
 
+	
+	
 	/*
 	 * (non-Javadoc)
 	 * @see org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)
 	 */
 	public void stop(BundleContext bundleContext) throws Exception {
-		Activator.instance = null;
+		plugin = null;
 	}
 	
-	public static Activator getInstance() {
-		return instance;
+	public static Activator getDefault() {
+		return plugin;
 	}
-	
-
 }

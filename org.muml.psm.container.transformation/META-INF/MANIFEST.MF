@@ -18,3 +18,5 @@ Export-Package: org.muml.container.transformation.blackbox,
  org.muml.container.transformation.job,
  org.muml.container.transformation.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.muml.container.transformation.ui.Activator

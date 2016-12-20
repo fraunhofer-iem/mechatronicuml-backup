@@ -28,7 +28,9 @@ import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.m2m.qvt.oml.util.Log;
+import org.eclipse.m2m.qvt.oml.util.StringBufferLog;
 import org.eclipse.m2m.qvt.oml.util.WriterLog;
+import org.muml.container.transformation.ui.Activator;
 import org.muml.core.common.DiagramEditorUtil;
 import org.muml.core.common.edit.commands.ExecuteQvtoTransformationCommand;
 import org.muml.psm.muml_container.DeploymentConfiguration;
@@ -77,8 +79,9 @@ public class DDSContainerGenerationJob extends Job {
 			extentList.add(inputExtent);
 			extentList.add(outputExtent);
 			ExecutionContextImpl im=new ExecutionContextImpl();
-			OutputStreamWriter outStream = new OutputStreamWriter(System.out);
-			Log log = new WriterLog(outStream);
+		//	OutputStreamWriter outStream = new OutputStreamWriter(System.out);
+		//	Log log = new WriterLog(outStream);
+			StringBufferLog log = new StringBufferLog();
 			im.setLog(log);
 			ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(transformationExecutor,
 					extentList, im);
@@ -108,6 +111,13 @@ public class DDSContainerGenerationJob extends Job {
 			try {
 				resource.save(saveOptions);
 				resource2.save(Collections.EMPTY_MAP);
+				String tempString = log.getContents();
+				int startIndex = tempString.indexOf("Time for create DDS Model of MUML:");
+				int endIndex = tempString.lastIndexOf("seconds");
+				tempString = tempString.substring(startIndex, endIndex);
+				Status logTransformationTime = new Status(Status.INFO,Activator.PLUGIN_ID,tempString+" seconds");
+				// writes log into the .log file within the .metadata folder of the workspace
+				Activator.getDefault().getLog().log(logTransformationTime);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

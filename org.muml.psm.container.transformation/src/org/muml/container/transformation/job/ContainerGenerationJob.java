@@ -26,7 +26,9 @@ import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.m2m.qvt.oml.util.Log;
+import org.eclipse.m2m.qvt.oml.util.StringBufferLog;
 import org.eclipse.m2m.qvt.oml.util.WriterLog;
+import org.muml.container.transformation.ui.Activator;
 import org.muml.core.common.DiagramEditorUtil;
 import org.muml.core.common.edit.commands.ExecuteQvtoTransformationCommand;
 import org.muml.psm.allocation.SystemAllocation;
@@ -79,7 +81,9 @@ public class ContainerGenerationJob extends Job {
 			List<ModelExtent> extentList = new ArrayList<ModelExtent>();
 			extentList.add(inputExtent);
 			extentList.add(outputExtent);
-			Log log = new WriterLog(new OutputStreamWriter(System.out));
+			//Log log = new WriterLog(new OutputStreamWriter(System.out));
+			StringBufferLog log = new StringBufferLog();
+			
 			ExecutionContextImpl context = new ExecutionContextImpl();
 			context.setLog(log);
 			ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(transformationExecutor,
@@ -104,7 +108,15 @@ public class ContainerGenerationJob extends Job {
 			resource.getContents().addAll(outputExtent.getContents());
 			
 			try {
+	
 				resource.save(Collections.EMPTY_MAP);
+				String tempString = log.getContents();
+				int startIndex = tempString.indexOf("Time for create Deployment Configuration:");
+				int endIndex = tempString.lastIndexOf("seconds");
+				tempString = tempString.substring(startIndex, endIndex);
+				Status logTransformationTime = new Status(Status.INFO,Activator.PLUGIN_ID,tempString+" seconds");
+				// writes log into the .log file within the .metadata folder of the workspace
+				Activator.getDefault().getLog().log(logTransformationTime);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
