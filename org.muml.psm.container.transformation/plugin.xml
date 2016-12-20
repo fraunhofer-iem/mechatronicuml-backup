@@ -7,7 +7,7 @@
             category="org.muml.core.export"
             class="org.muml.container.transformation.ui.ContainerWizard"
             id="org.muml.container.transformation.ui.ContainerWizard"
-            name="Create Container and DDS Model">
+            name="Container Model and DDS Model">
       </wizard>
    </extension>
    
