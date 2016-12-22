@@ -88,7 +88,7 @@
             <root>${project.basedir}</root>
             <entries>
               <entry>
-                <input>\src\org\muml\codegen\allocation\latex\main</input>
+                <input>/src/org/muml/codegen/allocation/latex/main</input>
                 <output>target/classes</output>
               </entry>
             </entries>
