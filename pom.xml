@@ -8,7 +8,7 @@
   <packaging>pom</packaging>
   
   	<properties>
-		<tycho-version>0.25.0</tycho-version>
+		<tycho-version>0.26.0</tycho-version>
 		<maven-compiler-plugin-version>2.5.1</maven-compiler-plugin-version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
@@ -22,13 +22,6 @@
 			<artifactId>org.eclipse.xtend.lib</artifactId>
 			<version>2.10.0</version>
 		</dependency>
-    <!--<dependency>
-        <groupId>org.eclipse.xtend2</groupId>
-        <groupId>org.eclipse.xtext</groupId>
-        <artifactId>org.eclipse.xtend2.lib</artifactId>
-        <version>2.10.0</version>
-    </dependency>-->
-
 </dependencies>
 		
   
@@ -66,14 +59,11 @@
     <module>org.muml.psm.feature</module>
  <!--   <module>org.muml.psm.sdk.feature</module> -->
     <module>org.muml.psm.tests</module>
-    <module>org.muml.psm.transformation</module>
-    
-    
-        <module>org.muml.psm.repository</module>
-    
+    <!-- <module>org.muml.psm.transformation</module>-->
+    <module>org.muml.psm.repository</module>
   </modules>
-  <build>
   
+  <build>
     <plugins>
       <plugin>
         <groupId>org.eclipse.tycho</groupId>
@@ -81,173 +71,162 @@
         <version>${tycho-version}</version>
         <extensions>true</extensions>
       </plugin>
-
-   <!--     <plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>target-platform-configuration</artifactId>
-				<version>${tycho-version}</version>
-				<configuration>
-					<environments>
-						<environment>
-							<os>linux</os>
-							<ws>gtk</ws>
-							<arch>x86</arch>
-						</environment>
-						<environment>
-							<os>linux</os>
-							<ws>gtk</ws>
-							<arch>x86_64</arch>
-						</environment>
-						<environment>
-							<os>win32</os>
-							<ws>win32</ws>
-							<arch>x86</arch>
-						</environment>
-						<environment>
-							<os>win32</os>
-							<ws>win32</ws>
-							<arch>x86_64</arch>
-						</environment>
-						<environment>
-							<os>macosx</os>
-							<ws>cocoa</ws>
-							<arch>x86_64</arch>
-						</environment>
-					</environments>
-				</configuration>
-			</plugin> -->
-			<plugin>
-				<!-- set compiler version -->
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-			</plugin>
-			
-			          
-    <plugin>
-      <groupId>org.eclipse.xtend</groupId>
-      <artifactId>xtend-maven-plugin</artifactId>
-      <version>2.10.0</version>
-      <executions>
-  <execution>
-    <goals>
-      <goal>compile</goal>
-      <goal>xtend-install-debug-info</goal>
-      <goal>testCompile</goal>
-      <goal>xtend-test-install-debug-info</goal>
-    </goals>
-  </execution>
-      </executions>
-      <configuration>
-  <outputDirectory>xtend-gen</outputDirectory>
-      </configuration>
-    </plugin>
-  </plugins>
+      <plugin>
+            <groupId>org.eclipse.tycho</groupId>
+            <artifactId>target-platform-configuration</artifactId>
+            <version>${tycho-version}</version>
+            <configuration>
+              <environments>
+                <environment>
+                  <os>win32</os>
+                  <ws>win32</ws>
+                  <arch>x86</arch>
+                </environment>
+                <environment>
+                  <os>linux</os>
+                  <ws>gtk</ws>
+                  <arch>x86_64</arch>
+                </environment>
+                <environment>
+                  <os>macosx</os>
+                  <ws>cocoa</ws>
+                  <arch>x86_64</arch>
+                </environment>
+              </environments>
+            </configuration>
+        </plugin>  
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>${maven-compiler-plugin-version}</version>
+        </plugin>
+    </plugins>
+  
+      <pluginManagement>
+          <plugins>
+            <plugin>
+              <groupId>org.eclipse.xtend</groupId>
+              <artifactId>xtend-maven-plugin</artifactId>
+              <version>2.10.0</version>
+              <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+              <goal>xtend-install-debug-info</goal>
+              <goal>testCompile</goal>
+              <goal>xtend-test-install-debug-info</goal>
+            </goals>
+              <configuration>
+                  <outputDirectory>${basedir}/xtend-gen</outputDirectory>
+                </configuration>
+          </execution>
+              </executions>
+            </plugin>
+          </plugins>
+    </pluginManagement>
   </build>
   
-  
-  <!--<pluginRepositories>
-    <pluginRepository>
-        <id>xtend</id>
-        <url>http://build.eclipse.org/common/xtend/maven/</url>
-    </pluginRepository>
-    <pluginRepository>
-        <id>fornax</id>
-        <url>http://fornax-platform.org/nexus/content/groups/public/</url>
-    </pluginRepository>
-</pluginRepositories>-->
+    <profiles>
+        <profile>
+          <id>Local</id> <!-- local build, uses local maven repositories -->
+          <activation>
+            <property>
+              <name>env</name>
+              <value>local</value>
+            </property>
+          </activation>
+          <properties>
+            <repobase>file:///${userpath}</repobase>
+            <repopath></repopath>
+          </properties>
+        </profile>
+        <profile>
+          <id>Jenkins</id> <!-- Jenkins build, only works on Jenkins file system -->
+          <activation>
+            <property>
+              <name>env</name>
+              <value>!local</value>
+            </property>
+          </activation>
+          <properties>
+            <repobase>file:///data/jenkins/jobs</repobase>
+            <repopath>lastSuccessful/archive/</repopath>
+          </properties>
+        </profile>
+        <profile>
+          <id>localJenkins</id> <!-- build this locally, but download other projects from Jenkins-->
+          <activation>
+            <property>
+              <name>env</name>
+              <value>localJenkins</value>
+            </property>
+          </activation>
+          <properties>
+            <repobase>http://muml-build.cs.upb.de/job</repobase>
+            <repopath>lastSuccessfulBuild/artifact/</repopath>
+          </properties>
+        </profile>
+  </profiles>
   
   <repositories>
-	    <!--<repository>
-        <id>xtend</id>
-        <url>http://build.eclipse.org/common/xtend/maven/</url>
-    </repository>-->
-		<!-- basic eclipse dependencies -->
 		<repository>
-			<id>eclipse-kepler</id>
+			<id>eclipse-neon</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/releases/neon</url>
 		</repository>
-		
-		
-			<!-- basic eclipse dependencies -->
 		<repository>
 			<id>eclipse-updates</id>
 			<layout>p2</layout>
-			<url>		http://download.eclipse.org/eclipse/updates/4.6</url>
+			<url>http://download.eclipse.org/eclipse/updates/4.6</url>
 		</repository>
-
         <repository>
             <id>xtext</id>
             <layout>p2</layout>
             <url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases</url>
         </repository>
-		
-		
-
-		<!-- yakindu/xtext-jface-utils dependency -->
-		<repository>
-			<id>yakindu-releases</id>
-			<layout>p2</layout>
-			<url>file:///data/jenkins/jobs/Core/lastSuccessful/archive/targetPlatform/</url>
-		</repository>
-    
-		<!-- emf dependency -->
 		<repository>
 			<id>emf</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/technology/epp/packages/neon</url>
 		</repository>
-   
-		<!-- gmf-tooling dependency -->
 		<repository>
 			<id>gmf-tooling</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/releases/</url>
 		</repository>
-    
-		<!-- kit pcm dependencies -->
 		<repository>
-			<id>kit-palladio-35</id>
+			<id>ModelCopy</id>
 			<layout>p2</layout>
-			<url>file:///data/jenkins/jobs/ModelCopy/lastSuccessful/archive/targetPlatform/</url>
+			<url>${repobase}/ModelCopy-Maven/${repopath}org.muml.modelcopy.repository/target/repository</url>
 		</repository>
-
-		<!-- kit commons dependencies -->
 		<repository>
-			<id>kit-commons-14</id>
+			<id>ModelMigration</id>
 			<layout>p2</layout>
-			<url>file:///data/jenkins/jobs/ModelMigration/lastSuccessful/archive/targetPlatform/</url>
+			<url>${repobase}/ModelMigration-Maven/${repopath}org.muml.emm.repository/target/repository</url>
 		</repository>
-
-		<!-- swt-core dependencies  -->
 		<repository>
-			<id>swt-core-releases</id>
+			<id>APE</id>
 			<layout>p2</layout>
-			<url>file:///data/jenkins/jobs/APE/lastSuccessful/archive/targetPlatform/</url>
+			<url>${repobase}/APE-Maven/${repopath}org.muml.ape.repository/target/repository</url>
 		</repository>
-    
-		<!-- henshin -->
+        <repository>
+			<id>Core</id>
+			<layout>p2</layout>
+			<url>${repobase}/Core-Maven/${repopath}org.muml.core.repository/target/repository</url>
+		</repository>
 		<repository>
-			<id>henshi</id>
-			<layout>p2</layout>
-			<url>file:///data/jenkins/jobs/PlatformIndependentModeling/lastSuccessful/archive/targetPlatform/</url>
+			<id>PIM</id>
+			<url>${repobase}/PlatformIndependentModeling-Maven/${repopath}org.muml.pim.repository/target/repository</url>
 		</repository>
-		
-		
-		
-				<repository>
-			<id>hens</id>
-			<layout>p2</layout>
-			<url>file:///data/jenkins/jobs/PlatformModeling/lastSuccessful/archive/targetPlatform/</url>
-		</repository>
-		
 		<repository>
-			<id>he</id>
+			<id>PM</id>
 			<layout>p2</layout>
-			<url>file:///data/jenkins/jobs/ExternalDependencies/lastSuccessful/archive/targetPlatform/</url>
+			<url>${repobase}/PlatformModeling-Maven/${repopath}org.muml.pm.repository/target/repository</url>
 		</repository>
-		
-		
-		
+		<repository>
+			<id>ExternalDependencies</id>
+			<layout>p2</layout>
+			<url>${repobase}/ExternalDependencies-Maven/${repopath}org.muml.external.repository/target/repository</url>
+		</repository>
 	</repositories>
 </project>
