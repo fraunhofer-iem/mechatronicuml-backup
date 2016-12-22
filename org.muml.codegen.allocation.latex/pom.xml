@@ -191,7 +191,7 @@
 		<repository>
 			<id>Codegen</id>
 			<layout>p2</layout>
-			<url>http://muml-build.cs.upb.de/job/Codegen_C/lastSuccessfulBuild/artifact/targetPlatform/</url>
+			<url>file:///data/jenkins/jobs/Codegen_C/lastSuccessfulBuild/archive/targetPlatform/</url>
 		</repository>
 		<repository>
 			<id>EMM</id>
