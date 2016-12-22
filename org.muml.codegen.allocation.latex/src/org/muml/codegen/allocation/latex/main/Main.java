@@ -382,12 +382,6 @@ public class Main extends AbstractAcceleoGenerator {
         if (!isInWorkspace(org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.class)) {
             resourceSet.getPackageRegistry().put(org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE.getNsURI(), org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE);
         }
-        if (!isInWorkspace(org.muml.psm.allocation.AllocationPackage.class)) {
-            resourceSet.getPackageRegistry().put(org.muml.psm.allocation.AllocationPackage.eINSTANCE.getNsURI(), org.muml.psm.allocation.AllocationPackage.eINSTANCE);
-        }
-        if (!isInWorkspace(org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.class)) {
-            resourceSet.getPackageRegistry().put(org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE.getNsURI(), org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE);
-        }
         
         /*
          * If you want to change the content of this method, do NOT forget to change the "@generated"
