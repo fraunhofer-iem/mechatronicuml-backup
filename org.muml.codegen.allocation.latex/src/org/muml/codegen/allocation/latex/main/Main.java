@@ -35,7 +35,7 @@ public class Main extends AbstractAcceleoGenerator {
      *
      * @generated not
      */
-    public static final String MODULE_FILE_NAME = "bin/org/muml/codegen/allocation/latex/main/main";
+    public static final String MODULE_FILE_NAME = "org/muml/codegen/allocation/latex/main/main";
     
     /**
      * The name of the templates that are to be generated.
